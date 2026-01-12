@@ -3,119 +3,344 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>每日讀經方陣 聖經經卷查詢</title>
+  <title>每日讀經方陣｜聖經經卷查詢</title>
+
   <style>
     :root{
-      --bg:#fff7cc;
-      --card:#fffdf2;
-      --text:#111;
-      --muted:#555;
-      --border:#e6d58a;
-      --accent:#8b6b00;
+      --primary:#2f8fd8;      /* 主藍 */
+      --primary-2:#1f6fb2;    /* 深藍 */
+      --bg:#eef2f6;           /* 淺灰背景 */
+      --card:#ffffff;         /* 白卡 */
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#d9e2ec;
+      --shadow: 0 10px 26px rgba(16,24,40,.10);
+      --radius: 14px;
+
       --ok:#2e7d32;
       --todo:#b26a00;
       --danger:#b00020;
     }
+
+    *{box-sizing:border-box;}
+
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+        "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
     }
-    .wrap{max-width:1100px;margin:0 auto;padding:20px;}
-    header{text-align:center;margin-bottom:10px;}
-    h1{margin:6px 0 2px;font-size:26px;letter-spacing:.5px;}
-    .sub{color:var(--muted);font-size:13px;}
-    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--card);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:12px;}
-    .panel{
-      margin-top:14px;background:var(--card);
-      border:1px solid var(--border);border-radius:14px;
-      padding:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+
+    .wrap{
+      max-width: 1040px;
+      margin: 36px auto 56px;
+      padding: 0 18px;
     }
-    input, select{
-      background:#fff;color:#000;
-      border:1px solid var(--border);border-radius:10px;
-      padding:10px 12px;font-size:14px;outline:none;
+
+    /* 主白卡 */
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px 26px 22px;
     }
-    input::placeholder{color:#777;}
-    .stat{color:var(--muted);font-size:13px;}
-    .smallbtn{
-      background:#fff3bf;border:1px solid var(--border);
-      border-radius:10px;padding:10px 12px;cursor:pointer;font-size:14px;
+
+    header{
+      text-align:center;
+      margin-bottom: 18px;
     }
-    .smallbtn:hover{background:#ffec99;}
-    .err{margin-top:10px;color:var(--danger);font-size:13px;display:none;}
-    table{width:100%;border-collapse:collapse;margin-top:14px;background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
-    thead th{text-align:left;font-size:12px;color:#333;padding:10px;border-bottom:1px solid var(--border);background:#fff3bf;position:sticky;top:0;}
-    tbody td{padding:10px;border-bottom:1px solid #eee;font-size:14px;vertical-align:top;}
-    tbody tr:hover{background:#fff9db;}
-    a{color:var(--accent);text-decoration:none;}
+
+    h1{
+      margin: 6px 0 4px;
+      font-size: 30px;
+      letter-spacing: .6px;
+      font-weight: 850;
+    }
+
+    .sub{
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .topline{
+      height: 3px;
+      width: 100%;
+      background: var(--primary);
+      border-radius: 999px;
+      margin: 16px 0 18px;
+    }
+
+    .pillrow{
+      margin-top: 10px;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid var(--border);
+      background:#f8fafc;
+      padding:6px 10px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:12px;
+      font-weight:600;
+    }
+
+    a{color: var(--primary-2); text-decoration:none;}
     a:hover{text-decoration:underline;}
-    .muted{color:#666;font-size:12px;word-break:break-all;}
-    .badge{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;border:1px solid var(--border);}
-    .badge.ok{color:var(--ok);}
-    .badge.todo{color:var(--todo);}
-    .footer{margin-top:16px;color:var(--muted);font-size:12px;text-align:center;}
-    code{background:#fff3bf;padding:2px 6px;border-radius:8px;border:1px solid var(--border);}
-    @media (max-width:640px){
+
+    /* Accordion */
+    details{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      margin: 14px 0;
+      overflow: hidden;
+    }
+    details[open]{
+      border: 2px solid var(--primary);
+    }
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding: 16px 16px;
+      font-weight: 850;
+      color: var(--primary-2);
+      display:flex;
+      align-items:center;
+      gap:10px;
+      user-select: none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+
+    .section-body{
+      padding: 0 16px 16px;
+    }
+
+    /* 搜尋面板（放在 Accordion 裡） */
+    .panel{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      padding: 2px 0 0;
+    }
+
+    input, select{
+      background:#fff;
+      color: var(--text);
+      border:1px solid var(--border);
+      border-radius: 12px;
+      padding: 11px 12px;
+      font-size: 14px;
+      outline:none;
+      font-weight: 600;
+    }
+    input::placeholder{color:#94a3b8; font-weight:600;}
+    input:focus, select:focus{
+      border-color: rgba(47,143,216,.65);
+      box-shadow: 0 0 0 4px rgba(47,143,216,.18);
+    }
+
+    .smallbtn{
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 11px 12px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--primary-2);
+    }
+    .smallbtn:hover{
+      background: rgba(47,143,216,.08);
+      border-color: rgba(47,143,216,.45);
+    }
+
+    .stat{
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .err{
+      margin-top: 12px;
+      color: var(--danger);
+      font-size: 13px;
+      display:none;
+      font-weight: 700;
+      padding: 12px 12px;
+      border-radius: 12px;
+      background: rgba(176,0,32,.06);
+      border: 1px solid rgba(176,0,32,.18);
+    }
+
+    /* 表格：藍色表頭 */
+    table{
+      width:100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      background:#fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow:hidden;
+    }
+
+    thead th{
+      text-align:left;
+      font-size: 12px;
+      color:#fff;
+      padding: 12px 12px;
+      background: var(--primary);
+      position: sticky;
+      top: 0;
+      font-weight: 850;
+      letter-spacing: .2px;
+    }
+
+    tbody td{
+      padding: 12px 12px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      vertical-align: top;
+      line-height: 1.65;
+    }
+
+    tbody tr:hover{background: #f8fafc;}
+
+    .muted{
+      color:#64748b;
+      font-size: 12px;
+      word-break: break-all;
+      margin-top: 6px;
+      font-weight: 650;
+    }
+
+    .badge{
+      display:inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid var(--border);
+      background:#f8fafc;
+      font-weight: 850;
+    }
+    .badge.ok{ color: var(--ok); }
+    .badge.todo{ color: var(--todo); }
+
+    .footer{
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align:center;
+      font-weight: 650;
+    }
+
+    code{
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-weight: 800;
+    }
+
+    @media (max-width: 720px){
+      .card{ padding: 18px 16px 16px; }
+      h1{ font-size: 24px; }
+    }
+
+    @media (max-width: 640px){
       thead{display:none;}
       table,tbody,tr,td{display:block;width:100%;}
-      tbody td{border-bottom:none;}
-      tbody tr{border-bottom:1px solid #ddd;}
-      tbody td::before{content:attr(data-label);display:block;color:#666;font-size:12px;margin-bottom:4px;}
+      tbody td{border-top:none;}
+      tbody tr{border-top:1px solid var(--border);}
+      tbody td::before{
+        content:attr(data-label);
+        display:block;
+        color:#64748b;
+        font-size:12px;
+        margin-bottom: 4px;
+        font-weight: 800;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <header>
-      <h1>每日讀經方陣 聖經經卷查詢</h1>
-      <div class="sub">支援交集搜尋（空格＝AND），並可直接開啟對應的 Claude Artifacts（資料來源：GitHub CSV）</div>
-      <div style="margin-top:10px; display:flex; justify-content:center; flex-wrap:wrap; gap:8px;">
-        <span class="pill" id="buildInfo">Build: <span id="buildTime">--</span></span>
-        <span class="pill">CSV: <a href="https://raw.githubusercontent.com/jaoccjames/bible-reading-matrix/refs/heads/main/data/bible_index.csv" target="_blank" rel="noopener noreferrer">raw</a></span>
-      </div>
-    </header>
+    <div class="card">
 
-    <div class="panel">
-      <input id="q" style="flex:1;min-width:240px;" placeholder="🔎 搜尋：如『太 1』、『創 15』、『創世記第15章』、URL 末段…（空格＝交集）" />
+      <header>
+        <h1>每日讀經方陣｜聖經經卷查詢</h1>
+        <div class="sub">支援交集搜尋（空格＝AND），並可直接開啟對應的 Claude Artifacts（資料來源：GitHub CSV）</div>
 
-      <select id="hasUrl">
-        <option value="all">全部（含未建立）</option>
-        <option value="yes">只顯示有連結</option>
-        <option value="no">只顯示未建立</option>
-      </select>
+        <div class="pillrow">
+          <span class="pill" id="buildInfo">Build: <span id="buildTime">--</span></span>
+          <span class="pill">CSV:
+            <a href="https://raw.githubusercontent.com/jaoccjames/bible-reading-matrix/refs/heads/main/data/bible_index.csv"
+               target="_blank" rel="noopener noreferrer">raw</a>
+          </span>
+        </div>
 
-      <select id="scope">
-        <option value="all">全部</option>
-        <option value="OT">舊約</option>
-        <option value="NT">新約</option>
-      </select>
+        <div class="topline"></div>
+      </header>
 
-      <select id="book">
-        <option value="">全部書卷</option>
-      </select>
+      <!-- Accordion: 搜尋/篩選 -->
+      <details open>
+        <summary>▼ 搜尋與篩選</summary>
+        <div class="section-body">
+          <div class="panel">
+            <input id="q" style="flex:1;min-width:240px;"
+              placeholder="🔎 搜尋：如『太 1』、『創 15』、『創世記第15章』、URL 末段…（空格＝交集）" />
 
-      <button class="smallbtn" id="clear">清除</button>
-      <div class="stat" id="stat"></div>
-    </div>
+            <select id="hasUrl">
+              <option value="all">全部（含未建立）</option>
+              <option value="yes">只顯示有連結</option>
+              <option value="no">只顯示未建立</option>
+            </select>
 
-    <div class="err" id="err"></div>
+            <select id="scope">
+              <option value="all">全部</option>
+              <option value="OT">舊約</option>
+              <option value="NT">新約</option>
+            </select>
 
-    <table>
-      <thead>
-        <tr>
-          <th style="width:180px;">卷</th>
-          <th style="width:70px;">章</th>
-          <th>Artifacts（V1）</th>
-          <th style="width:90px;">狀態</th>
-        </tr>
-      </thead>
-      <tbody id="rows"></tbody>
-    </table>
+            <select id="book">
+              <option value="">全部書卷</option>
+            </select>
 
-    <div class="footer">
-      提示：搜尋中的「數字」會以「整章」比對，避免 <code>1</code> 誤中 <code>10</code>、<code>11</code>。
+            <button class="smallbtn" id="clear">清除</button>
+            <div class="stat" id="stat"></div>
+          </div>
+
+          <div class="err" id="err"></div>
+
+          <table>
+            <thead>
+              <tr>
+                <th style="width:180px;">卷</th>
+                <th style="width:70px;">章</th>
+                <th>Artifacts（V1）</th>
+                <th style="width:90px;">狀態</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+
+          <div class="footer">
+            提示：搜尋中的「數字」會以「整章」比對，避免 <code>1</code> 誤中 <code>10</code>、<code>11</code>。
+          </div>
+        </div>
+      </details>
+
     </div>
   </div>
 
@@ -159,8 +384,13 @@ const els = {
 
 function shortUrl(u){
   if(!u) return '';
-  try{ const url = new URL(u); const p=url.pathname.split('/').filter(Boolean); return p.slice(-1)[0] || u; }
-  catch(e){ return u.length>42 ? (u.slice(0,42)+'…') : u; }
+  try{
+    const url = new URL(u);
+    const p = url.pathname.split('/').filter(Boolean);
+    return p.slice(-1)[0] || u;
+  } catch(e){
+    return u.length>42 ? (u.slice(0,42)+'…') : u;
+  }
 }
 
 function tokenize(q){ return q.trim().toLowerCase().split(/\s+/).filter(Boolean); }

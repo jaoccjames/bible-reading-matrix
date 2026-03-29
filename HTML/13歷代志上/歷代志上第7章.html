@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志上第7章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px; text-align: center;
+  transition: color 0.2s;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; font-size: 1em; transition: transform 0.4s ease; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 12px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 10px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px;
+  padding: 15px; background: #fafafa;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none;
+  display: flex; align-items: center; transition: color 0.2s;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before {
+  content: '▶'; display: inline-block; margin-right: 10px;
+  transition: transform 0.25s ease;
+}
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; } h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; } h2 { font-size: 1.2em; }
+  table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1 onclick="toggleScripture()">
+    歷代志上第7章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+
+  <div class="chapter-subtitle">北方各支派：勇士、建設者與約書亞</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>以薩迦的兒子是陀拉、普瓦、雅述（在創世記第四十六章十三節作約伯）、伸崙，共四人。</div>
+    <div class="verse"><span class="verse-number">2</span>陀拉的兒子是烏西、利法雅、耶勒、雅買、易伯散、示母利，都是陀拉的族長，是大能的勇士。到大衛年間，他們的人數共有二萬二千六百名。</div>
+    <div class="verse"><span class="verse-number">3</span>烏西的兒子是伊斯拉希；伊斯拉希的兒子是米迦勒、俄巴底亞、約珥、伊示雅，共五人，都是族長。</div>
+    <div class="verse"><span class="verse-number">4</span>他們所率領的，按着宗族出戰的軍隊，共有三萬六千人，因為他們的妻和子眾多。</div>
+    <div class="verse"><span class="verse-number">5</span>他們的族弟兄在以薩迦各族中都是大能的勇士，按着家譜計算共有八萬七千人。</div>
+    <div class="verse"><span class="verse-number">6</span>便雅憫的兒子是比拉、比結、耶疊，共三人。</div>
+    <div class="verse"><span class="verse-number">7</span>比拉的兒子是以斯本、烏西、烏薛、耶利摩、以利，共五人，都是族長，是大能的勇士。按着家譜計算，他們的子孫共有二萬二千零三十四人。</div>
+    <div class="verse"><span class="verse-number">8</span>比結的兒子是細米拉、約阿施、以利以謝、以利約乃、暗利、耶利摩、亞比雅、亞拿突、亞拉篾。這都是比結的兒子。</div>
+    <div class="verse"><span class="verse-number">9</span>他們都是族長，是大能的勇士。按着家譜計算，他們的子孫共有二萬零二百人。</div>
+    <div class="verse"><span class="verse-number">10</span>耶疊的兒子是比勒罕；比勒罕的兒子是耶烏施、便雅憫、以忽、基拿拿、細坦、他施、亞希沙哈。</div>
+    <div class="verse"><span class="verse-number">11</span>這都是耶疊的兒子，都是族長，是大能的勇士；他們的子孫能上陣打仗的，共有一萬七千二百人。</div>
+    <div class="verse"><span class="verse-number">12</span>還有以珥的兒子書品、戶品，並亞黑的兒子戶伸。</div>
+    <div class="verse"><span class="verse-number">13</span>拿弗他利的兒子是雅薛、沽尼、耶色、沙龍。這都是辟拉的子孫。</div>
+    <div class="verse"><span class="verse-number">14</span>瑪拿西的兒子亞斯列是他妾亞蘭人所生的，又生了基列之父瑪吉。</div>
+    <div class="verse"><span class="verse-number">15</span>瑪吉娶的妻是戶品、書品的妹子，名叫瑪迦。瑪拿西的次子名叫西羅非哈；西羅非哈但有幾個女兒。</div>
+    <div class="verse"><span class="verse-number">16</span>瑪吉的妻瑪迦生了一個兒子，起名叫毘利施。毘利施的兄弟名叫示利施；示利施的兒子是烏蘭和利金。</div>
+    <div class="verse"><span class="verse-number">17</span>烏蘭的兒子是比但。這都是基列的子孫。基列是瑪吉的兒子，瑪吉是瑪拿西的兒子。</div>
+    <div class="verse"><span class="verse-number">18</span>基列的妹子哈摩利吉生了伊施荷、亞比以謝、瑪拉。</div>
+    <div class="verse"><span class="verse-number">19</span>示米大的兒子是亞現、示劍、利克希、阿尼安。</div>
+    <div class="verse"><span class="verse-number">20</span>以法蓮的兒子是書提拉；書提拉的兒子是比列；比列的兒子是他哈；他哈的兒子是以拉大；以拉大的兒子是他哈；</div>
+    <div class="verse"><span class="verse-number">21</span>他哈的兒子是撒拔；撒拔的兒子是書提拉。以法蓮又生以謝、以列；這二人因為下去奪取迦特人的牲畜，被本地的迦特人殺了。</div>
+    <div class="verse"><span class="verse-number">22</span>他們的父親以法蓮為他們悲哀了多日，他的弟兄都來安慰他。</div>
+    <div class="verse"><span class="verse-number">23</span>以法蓮與妻同房，他妻就懷孕生了一子，以法蓮因為家裏遭禍，就給這兒子起名叫比利亞。</div>
+    <div class="verse"><span class="verse-number">24</span>他的女兒名叫舍伊拉，就是建築上伯和崙、下伯和崙與烏羨舍伊拉的。</div>
+    <div class="verse"><span class="verse-number">25</span>比利亞的兒子是利法和利悉。利悉的兒子是他拉；他拉的兒子是他罕；</div>
+    <div class="verse"><span class="verse-number">26</span>他罕的兒子是拉但；拉但的兒子是亞米忽；亞米忽的兒子是以利沙瑪；</div>
+    <div class="verse"><span class="verse-number">27</span>以利沙瑪的兒子是嫩；嫩的兒子是約書亞。</div>
+    <div class="verse"><span class="verse-number">28</span>以法蓮人的地業和住處是伯特利與其村莊；東邊拿蘭，西邊基色與其村莊；示劍與其村莊，直到迦薩與其村莊；</div>
+    <div class="verse"><span class="verse-number">29</span>還有靠近瑪拿西人的境界，伯善與其村莊；他納與其村莊；米吉多與其村莊；多珥與其村莊。以色列兒子約瑟的子孫住在這些地方。</div>
+    <div class="verse"><span class="verse-number">30</span>亞設的兒子是音拿、亦施瓦、亦施韋、比利亞，還有他們的妹子西拉。</div>
+    <div class="verse"><span class="verse-number">31</span>比利亞的兒子是希別、瑪結；瑪結是比撒威的父親。</div>
+    <div class="verse"><span class="verse-number">32</span>希別生雅弗勒、朔默、何坦，和他們的妹子書雅。</div>
+    <div class="verse"><span class="verse-number">33</span>雅弗勒的兒子是巴薩、賓哈、亞施法。這都是雅弗勒的兒子。</div>
+    <div class="verse"><span class="verse-number">34</span>朔默的兒子是亞希、羅迦、耶戶巴、亞蘭。</div>
+    <div class="verse"><span class="verse-number">35</span>朔默兄弟希連的兒子是瑣法、音那、示利斯、亞抹。</div>
+    <div class="verse"><span class="verse-number">36</span>瑣法的兒子是書亞、哈尼弗、書阿勒、比利、音拉、</div>
+    <div class="verse"><span class="verse-number">37</span>比悉、河得、珊瑪、施沙、益蘭、比拉。</div>
+    <div class="verse"><span class="verse-number">38</span>益帖的兒子是耶孚尼、毘斯巴、亞拉。</div>
+    <div class="verse"><span class="verse-number">39</span>烏拉的兒子是亞拉、漢尼業、利寫。</div>
+    <div class="verse"><span class="verse-number">40</span>這都是亞設的子孫，都是族長，是精壯大能的勇士，也是首領中的頭目，按着家譜計算，他們的子孫能出戰的共有二萬六千人。</div>
+  </div>
+
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      歷代志上第七章集中記錄北方和中部支派的族譜，依序涵蓋以薩迦（1-5節）、便雅憫（6-12節）、拿弗他利（13節）、瑪拿西（14-19節）、以法蓮（20-29節）、亞設（30-40節）。本章特點在於族譜中多次提及「大能的勇士」與各族的軍事人數，顯示這些支派的記錄重心在於他們作為以色列軍事力量的貢獻。
+
+      其中最引人注目的片段是以法蓮的記載（20-29節）：他的兩個兒子下去奪取迦特人牲畜被殺，父親悲哀多日；之後又生了比利亞，而比利亞的後代中出現了約書亞——帶領以色列進入迦南的偉大領袖（27節）。族譜在密密麻麻的名字中，悄悄埋藏了這一位改變民族命運的人物，提醒讀者：神的計畫往往在最平凡的傳承中孕育最偉大的回應。女兒舍伊拉建城的記錄（24節）亦是罕見，顯示神也記念女性的貢獻。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 悲劇之後生命仍能延續更新</strong><br>
+      以法蓮因兩個兒子暴死而「悲哀了多日」，但悲傷沒有終結他的故事——他之後又生了比利亞，而這個「在遭禍時所生」的孩子，其後代中出現了約書亞。痛苦不是終點，神能在最深的悲傷之後，在人的生命中種下新的盼望與傳承。信徒在遭遇喪失時，可以如以法蓮一樣悲哀，但同時可以相信神的故事尚未結束。<br><br>
+
+      <strong>2. 偉大的使命藏在平凡的傳承中</strong><br>
+      約書亞的名字出現在族譜第27節，幾乎沒有任何特別標注，夾在一長串名字之間。然而正是這位在以法蓮族譜中不起眼的後代，帶領以色列民過約旦河、進入迦南。神的計畫往往透過平凡的家族傳承悄悄展開，每一個看似普通的名字，都可能是下一個偉大使命的起點。<br><br>
+
+      <strong>3. 神記念每一個忠心的貢獻，無論大小</strong><br>
+      本章記載以薩迦有八萬七千勇士，亞設有二萬六千；但也記載了女兒舍伊拉建築城市的貢獻（24節）。在以男性族譜為主的記錄中，一位女性建城的事蹟被刻意保留，說明神不按世俗的標準評估貢獻，祂記念每一個忠心盡力之人，不論其性別、地位或規模。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr><th>經文</th><th>思想題目</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>以法蓮為他們<strong>悲哀了多日</strong>，他的弟兄都來<strong>安慰他</strong>。（代上7:22）</td>
+            <td>以法蓮在喪子之痛中真實哀傷，弟兄們也真實地前來陪伴，就像手機低電量時需要插上充電器而非假裝電量充足——當你或身邊的人正在悲傷中，你是選擇真實陪伴，還是急著給出讓對方「振作」的建議？</td>
+          </tr>
+          <tr>
+            <td>以法蓮因為<strong>家裏遭禍</strong>，就給這兒子起名叫<strong>比利亞</strong>。（代上7:23）</td>
+            <td>比利亞的名字意含「在災禍中」，卻成了約書亞的先祖，就像一顆在廢墟土壤中發芽的種子，最終長成大樹——你生命中那些帶著「災禍」印記的經歷，是否也可能正在孕育你無法預見的美好果實？</td>
+          </tr>
+          <tr>
+            <td>以利沙瑪的兒子是嫩；嫩的兒子是<strong>約書亞</strong>。（代上7:27）</td>
+            <td>約書亞的名字靜靜地出現在族譜中，沒有任何誇讚，就像一顆尚未打開的禮物盒——你是否也曾在某個看似平凡的家庭或環境中，發現神早已為你預備的呼召，只等著你打開走進去？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>

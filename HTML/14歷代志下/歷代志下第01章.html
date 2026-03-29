@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志下第1章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px; text-align: center;
+  transition: color 0.2s;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; font-size: 1em; transition: transform 0.4s ease; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 12px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 10px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px;
+  padding: 15px; background: #fafafa;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none;
+  display: flex; align-items: center; transition: color 0.2s;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before {
+  content: '▶'; display: inline-block; margin-right: 10px;
+  transition: transform 0.25s ease;
+}
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; } h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; } h2 { font-size: 1.2em; }
+  table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">
+    歷代志下第1章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+  <div class="chapter-subtitle">所羅門求智慧：正確的祈求得超越的應許</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>大衛的兒子所羅門國位堅固；耶和華他的神與他同在，使他甚為尊大。</div>
+    <div class="verse"><span class="verse-number">2</span>所羅門吩咐以色列眾人，就是千夫長、百夫長、審判官、首領與族長都來。</div>
+    <div class="verse"><span class="verse-number">3</span>所羅門和會眾都往基遍的邱壇去，因那裏有神的會幕，就是耶和華僕人摩西在曠野所製造的。</div>
+    <div class="verse"><span class="verse-number">4</span>只是神的約櫃，大衛已經從基列耶琳搬到他所預備的地方，因他曾在耶路撒冷為約櫃支搭了帳幕，</div>
+    <div class="verse"><span class="verse-number">5</span>並且戶珥的孫子、烏利的兒子比撒列所造的銅壇也在基遍耶和華的會幕前。所羅門和會眾都就近壇前。</div>
+    <div class="verse"><span class="verse-number">6</span>所羅門上到耶和華面前會幕的銅壇那裏，獻一千犧牲為燔祭。</div>
+    <div class="verse"><span class="verse-number">7</span>當夜，神向所羅門顯現，對他說：「你願我賜你甚麼，你可以求。」</div>
+    <div class="verse"><span class="verse-number">8</span>所羅門對神說：「你曾向我父大衛大施慈愛，使我接續他作王。</div>
+    <div class="verse"><span class="verse-number">9</span>耶和華神啊，現在求你成就向我父大衛所應許的話；因你立我作這民的王，他們如同地上塵沙那樣多。</div>
+    <div class="verse"><span class="verse-number">10</span>求你賜我智慧聰明，我好在這民前出入；不然，誰能判斷這眾多的民呢？」</div>
+    <div class="verse"><span class="verse-number">11</span>神對所羅門說：「我已立你作我民的王。你既有這心意，並不求資財、豐富、尊榮，也不求滅絕那恨你之人的性命，又不求大壽數，只求智慧聰明好判斷我的民；</div>
+    <div class="verse"><span class="verse-number">12</span>我必賜你智慧聰明，也必賜你資財、豐富、尊榮。在你以前的列王都沒有這樣，在你以後也必沒有這樣的。」</div>
+    <div class="verse"><span class="verse-number">13</span>於是，所羅門從基遍邱壇會幕前回到耶路撒冷，治理以色列人。</div>
+    <div class="verse"><span class="verse-number">14</span>所羅門聚集戰車馬兵，有戰車一千四百輛，馬兵一萬二千名，安置在屯車的城邑和耶路撒冷，就是王那裏。</div>
+    <div class="verse"><span class="verse-number">15</span>王在耶路撒冷使金銀多如石頭，香柏木多如高原的桑樹。</div>
+    <div class="verse"><span class="verse-number">16</span>所羅門的馬是從埃及帶來的，是王的商人一群一群按着定價買來的。</div>
+    <div class="verse"><span class="verse-number">17</span>他們從埃及買來的車，每輛價銀七百舍客勒，馬每匹一百五十舍客勒。赫人諸王和亞蘭諸王所買的車馬，也是按這價值經他們手買來的。</div>
+  </div>
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      歷代志下第一章是全書的起點，記述所羅門繼位後的首要行動：率領全以色列往基遍邱壇獻祭（1-6節），以及神在夜間向他顯現並允許他求任何事（7節）。所羅門謙卑地求「智慧聰明，好判斷我的民」（10節），沒有求財富、尊榮或敵人的性命。神因此大悅，不但應許賜下智慧，還加添了他沒有求的——資財、豐富與尊榮（12節）。
+
+      本章後半（13-17節）簡述所羅門登基後的豐盛：金銀如石頭，香柏木如高原桑樹。這些財富的出現，正是神應驗應許的明證。歷代志選擇以「神與他同在，使他甚為尊大」（1節）開篇，強調所羅門的一切成就都源於神的恩典，而非個人的才幹。本章是理解整卷歷代志下神學的鑰匙：求的動機決定了回應的品質。
+
+    </div>
+  </details>
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 正確的祈求動機開啟神更大的賜福</strong><br>
+      所羅門求智慧是為了「判斷我的民」，而非為了個人利益。這個以他人為中心的祈求，觸動了神的心，神不但應允，還額外賜下他沒有求的資財和尊榮。求的動機決定了祈求的品質——為了服事他人而求，比為了成就自己而求，往往帶來更大、更深的神的回應。<br><br>
+
+      <strong>2. 謙卑承認自己不足，是領受神智慧的起點</strong><br>
+      所羅門說「我不知道怎樣出入」（9-10節，撒下8:14的平行版本），面對大任卻先承認自己的不足。這種謙卑不是懦弱，而是真實的自我認知。許多人因覺得「已經夠聰明了」而不再求問神，反而是那些清楚知道自己有限的人，才會迫切尋求神的智慧。<br><br>
+
+      <strong>3. 神的賜福往往超過人所求所想</strong><br>
+      所羅門只求智慧，神卻給了智慧加上資財、豐富、尊榮。保羅在以弗所書3:20說的「神能照着運行在我們心裏的大力，充充足足的成就一切，超過我們所求所想的」，在所羅門的故事中具體呈現。信徒若以正確的動機來到神面前，往往會發現神的賜予遠超過自己的祈求。
+
+    </div>
+  </details>
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>所羅門對神說：……「<strong>求你賜我智慧聰明，我好在這民前出入</strong>；不然，誰能判斷這眾多的民呢？」（代下1:9-10）</td>
+            <td>所羅門求智慧是為了服事百姓，而不是為了讓自己顯得聰明，就像一個新上任的主管說「我需要培訓，好讓我的團隊做得更好」，而不是「我要比別人更厲害」——你最近最常求神的是什麼？那個祈求的核心動機，更像是為了自己，還是為了服事他人？</td>
+          </tr>
+          <tr>
+            <td>神對所羅門說：「……你既有這心意，並不求資財、豐富、尊榮……只求<strong>智慧聰明</strong>好判斷我的民；我必賜你智慧聰明，也必賜你<strong>資財、豐富、尊榮</strong>。」（代下1:11-12）</td>
+            <td>所羅門求一樣，神給了三樣，就像訂了一份餐點，廚師卻送上整桌佳餚——你是否曾因著正確的動機祈禱，事後回頭才發現神給的遠超過你當時所求的？那次的經歷如何影響了你之後禱告的方式？</td>
+          </tr>
+          <tr>
+            <td>王在耶路撒冷使<strong>金銀多如石頭，香柏木多如高原的桑樹</strong>。（代下1:15）</td>
+            <td>神所應許的財富最終真實成就，就像一個農夫播下種子，秋天果然結出豐盛的果實——你在等候神應許成就的過程中，有沒有一些「金銀多如石頭」的時刻，讓你確認神的應許是真實可信的？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

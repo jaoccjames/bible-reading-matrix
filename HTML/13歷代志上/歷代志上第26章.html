@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志上第26章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px; text-align: center;
+  transition: color 0.2s;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; font-size: 1em; transition: transform 0.4s ease; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 12px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 10px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px;
+  padding: 15px; background: #fafafa;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none;
+  display: flex; align-items: center; transition: color 0.2s;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before {
+  content: '▶'; display: inline-block; margin-right: 10px;
+  transition: transform 0.25s ease;
+}
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; } h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; } h2 { font-size: 1.2em; }
+  table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1 onclick="toggleScripture()">
+    歷代志上第26章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+
+  <div class="chapter-subtitle">守門與管庫：忠信的看守是神聖的職分</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>守門的班次記在下面：可拉族亞薩的子孫中，有可利的兒子米施利米雅。</div>
+    <div class="verse"><span class="verse-number">2</span>米施利米雅的長子是撒迦利亞，次子是耶疊，三子是西巴第雅，四子是耶提聶，</div>
+    <div class="verse"><span class="verse-number">3</span>五子是以攔，六子是約哈難，七子是以利約乃。</div>
+    <div class="verse"><span class="verse-number">4</span>俄別以東的長子是示瑪雅，次子是約薩拔，三子是約亞，四子是沙甲，五子是拿坦業，</div>
+    <div class="verse"><span class="verse-number">5</span>六子是亞米利，七子是以薩迦，八子是毘烏利太，因為神賜福與俄別以東。</div>
+    <div class="verse"><span class="verse-number">6</span>他的兒子示瑪雅有幾個兒子，都是大能的壯士，掌管父親的家。</div>
+    <div class="verse"><span class="verse-number">7</span>示瑪雅的兒子是俄得尼、利法益、俄備得、以利薩巴。以利薩巴的弟兄是壯士，還有以利戶和西瑪迦。</div>
+    <div class="verse"><span class="verse-number">8</span>這都是俄別以東的子孫，他們和他們的兒子並弟兄，都是善於辦事的壯士。俄別以東的子孫共六十二人。</div>
+    <div class="verse"><span class="verse-number">9</span>米施利米雅的兒子和弟兄都是壯士，共十八人。</div>
+    <div class="verse"><span class="verse-number">10</span>米拉利子孫何薩有幾個兒子：長子是申利，他原不是長子，是他父親立他作長子。</div>
+    <div class="verse"><span class="verse-number">11</span>次子是希勒家，三子是底巴利雅，四子是撒迦利亞。何薩的兒子並弟兄共十三人。</div>
+    <div class="verse"><span class="verse-number">12</span>這些人都是守門的班長，與他們的弟兄一同在耶和華殿裏按班供職。</div>
+    <div class="verse"><span class="verse-number">13</span>他們無論大小，都按着宗族掣籤分守各門。</div>
+    <div class="verse"><span class="verse-number">14</span>掣籤守東門的是示利米雅；他的兒子撒迦利亞是精明的謀士，掣籤守北門。</div>
+    <div class="verse"><span class="verse-number">15</span>俄別以東守南門，他的兒子守庫房。</div>
+    <div class="verse"><span class="verse-number">16</span>書聘與何薩守西門，在靠近沙利基門、通着往上去的街道上，班與班相對。</div>
+    <div class="verse"><span class="verse-number">17</span>每日東門有六個利未人，北門有四個，南門有四個，庫房有兩個，又有兩個輪班替換。</div>
+    <div class="verse"><span class="verse-number">18</span>在西面街道上有四個，在遊廊上有兩個。</div>
+    <div class="verse"><span class="verse-number">19</span>以上是可拉子孫和米拉利子孫守門的班次。</div>
+    <div class="verse"><span class="verse-number">20</span>利未子孫中有亞希雅掌管神殿的府庫和聖物的府庫。</div>
+    <div class="verse"><span class="verse-number">21</span>革順族、拉但子孫裏，作族長的是革順族拉但的子孫耶希伊利。</div>
+    <div class="verse"><span class="verse-number">22</span>耶希伊利的兒子西坦和他兄弟約珥掌管耶和華殿裏的府庫。</div>
+    <div class="verse"><span class="verse-number">23</span>暗蘭族、以斯哈族、希伯倫族、烏泄族也有職分。</div>
+    <div class="verse"><span class="verse-number">24</span>摩西的孫子、革舜的兒子細布業掌管府庫。</div>
+    <div class="verse"><span class="verse-number">25</span>還有他的弟兄以利以謝。以利以謝的兒子是利哈比雅；利哈比雅的兒子是耶篩亞；耶篩亞的兒子是約蘭；約蘭的兒子是細基利；細基利的兒子是示羅密。</div>
+    <div class="verse"><span class="verse-number">26</span>這示羅密和他的弟兄掌管府庫的聖物，就是大衛王和眾族長、千夫長、百夫長，並軍長所分別為聖的物。</div>
+    <div class="verse"><span class="verse-number">27</span>他們將爭戰時所奪的財物分別為聖，以備修造耶和華的殿。</div>
+    <div class="verse"><span class="verse-number">28</span>先見撒母耳、基士的兒子掃羅、尼珥的兒子押尼珥、洗魯雅的兒子約押所分別為聖的物都歸示羅密和他的弟兄掌管。</div>
+    <div class="verse"><span class="verse-number">29</span>以斯哈族有基拿尼雅和他眾子作官長和士師，管理以色列的外事。</div>
+    <div class="verse"><span class="verse-number">30</span>希伯倫族有哈沙比雅和他弟兄一千七百人，都是壯士，在約但河西、以色列地辦理耶和華與王的事。</div>
+    <div class="verse"><span class="verse-number">31</span>希伯倫族中有耶利雅作族長。大衛作王第四十年，在基列的雅謝，從這族中尋得大能的勇士。</div>
+    <div class="verse"><span class="verse-number">32</span>耶利雅的弟兄有二千七百人，都是壯士，且作族長；大衛王派他們在流便支派、迦得支派、瑪拿西半支派中辦理神和王的事。</div>
+  </div>
+
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      歷代志上第二十六章詳述兩類利未人的職分：守門者（1-19節）與管理府庫者（20-32節）。守門者共四族：可拉族米施利米雅（2-3節），俄別以東族（4-8節），米拉利族何薩（10-11節），以及綜合各族（12-19節）。他們在東西南北四方各設守衛，也有管理庫房的，「四個門領都是利未人，各有緊要的職任」（26節）。管庫部分（20-28節）記錄掌管聖物府庫者，他們負責保管歷代領袖所分別為聖的戰利品和奉獻物。
+
+      本章特別記錄了俄別以東的子孫——正是當初約櫃曾在其家三個月、蒙神賜福的那一位（代上13:14）。他的子孫「都是善於辦事的壯士」（8節），共六十二人。這是神忠信者後代蒙福的寫照。守門看似不起眼，管庫更是幕後工作，但本章的詳細記錄傳達了一個信息：在神面前，沒有崗位因為「太普通」而不值得被記念。
+
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 看守神的家是神聖的使命，不是低微的工作</strong><br>
+      守門者被派在殿的四方「各有緊要的職任」（26節），每日早晨開門（9:27），徹夜警醒。這聽起來像保全的工作，但歷代志用大量篇幅記錄他們的名字和班次，顯示神把這份「尋常」的工作視為神聖的事奉。信徒在自己崗位上忠心的「看守」，不論是家庭、教會還是工作崗位，在神眼中都是有價值的職分。<br><br>
+
+      <strong>2. 忠信者的後代承接祝福</strong><br>
+      俄別以東的子孫「都是善於辦事的壯士」（8節），共六十二人。他們的父親因著款待約櫃而蒙福，如今後代繼承了事奉的呼召。一個人對神忠信的態度，可以影響下一代的生命質素和屬靈遺傳。今日信徒對神的委身，正在為下一代鋪路。<br><br>
+
+      <strong>3. 管理聖物需要可信的人</strong><br>
+      管理府庫的人負責保管神聖的奉獻物，這需要絕對的誠信。本章強調他們的名字和族系，表明對「管理神所託付之物」的高度重視。信徒在教會或事工中，若蒙神托以物資或資訊的管理，誠信是最基本也是最重要的品格要求。
+
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr><th>經文</th><th>思想題目</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>這四個門領都是利未人，<strong>各有緊要的職任</strong>，看守神殿的倉庫。他們住在神殿的四圍，是因委託他們守殿，要<strong>每日早晨開門</strong>。（代上26:26-27節，參9:26-27）</td>
+            <td>守門者每天最早開門，讓其他人能進入敬拜，自己卻可能是最不被注意的，就像一個餐廳最早到的準備廚師，讓一天的服務成為可能——在你的群體中，有沒有那些默默「每日早晨開門」的人，你是否曾向他們表達感謝？</td>
+          </tr>
+          <tr>
+            <td>俄別以東的子孫……都是<strong>善於辦事的壯士</strong>。俄別以東的子孫<strong>共六十二人</strong>。（代上26:7-8）</td>
+            <td>俄別以東因款待約櫃蒙福，後代成為大能的壯士，六十二人都在殿中事奉，就像一棵被精心栽培的樹，到下一代結出豐盛的果子——你今日對神的委身，你認為會如何影響你的子女或下一代對神的態度？</td>
+          </tr>
+          <tr>
+            <td>先見撒母耳、基士的兒子掃羅、尼珥的兒子押尼珥、洗魯雅的兒子約押<strong>所分別為聖的物都歸示羅密和他的弟兄掌管</strong>。（代上26:28）</td>
+            <td>歷代的戰利品都被分別為聖，交給可信的人掌管，就像一個博物館把珍貴的文物交給通過嚴格審核的保管員——神把什麼「聖物」託付在你手中，你是否以同樣的誠信和謹慎在看待它？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志上第16章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px; text-align: center;
+  transition: color 0.2s;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; font-size: 1em; transition: transform 0.4s ease; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 12px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 10px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px;
+  padding: 15px; background: #fafafa;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none;
+  display: flex; align-items: center; transition: color 0.2s;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before {
+  content: '▶'; display: inline-block; margin-right: 10px;
+  transition: transform 0.25s ease;
+}
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; } h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; } h2 { font-size: 1.2em; }
+  table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1 onclick="toggleScripture()">
+    歷代志上第16章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+
+  <div class="chapter-subtitle">約櫃安位：大衛的感恩詩與敬拜制度</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>眾人將神的約櫃請進去，安放在大衛所搭的帳幕裏，就在神面前獻燔祭和平安祭。</div>
+    <div class="verse"><span class="verse-number">2</span>大衛獻完了燔祭和平安祭，就奉耶和華的名給民祝福，</div>
+    <div class="verse"><span class="verse-number">3</span>並且分給以色列人，無論男女，每人一個餅，一塊肉，一個葡萄餅。</div>
+    <div class="verse"><span class="verse-number">4</span>大衛派幾個利未人在耶和華的約櫃前事奉，頌揚，稱謝，讚美耶和華以色列的神：</div>
+    <div class="verse"><span class="verse-number">5</span>為首的是亞薩，其次是撒迦利雅、雅薛、示米拉末、耶歇、瑪他提雅、以利押、比拿雅、俄別以東、耶利，鼓瑟彈琴；惟有亞薩敲鈸，大發響聲；</div>
+    <div class="verse"><span class="verse-number">6</span>祭司比拿雅和雅哈悉常在神的約櫃前吹號。</div>
+    <div class="verse"><span class="verse-number">7</span>那日，大衛初次藉亞薩和他的弟兄以詩歌稱頌耶和華，說：</div>
+    <div class="verse"><span class="verse-number">8</span>你們要稱謝耶和華，求告他的名，在萬民中傳揚他的作為！</div>
+    <div class="verse"><span class="verse-number">9</span>要向他唱詩、歌頌，談論他一切奇妙的作為。</div>
+    <div class="verse"><span class="verse-number">10</span>要以他的聖名誇耀；尋求耶和華的人，心中應當歡喜。</div>
+    <div class="verse"><span class="verse-number">11</span>要尋求耶和華與他的能力，時常尋求他的面。</div>
+    <div class="verse"><span class="verse-number">12</span>他僕人以色列的後裔，他所揀選雅各的子孫哪，你們要記念他奇妙的作為和他的奇事，並他口中的判語。</div>
+    <div class="verse"><span class="verse-number">13</span>併於上節</div>
+    <div class="verse"><span class="verse-number">14</span>他是耶和華我們的神，全地都有他的判斷。</div>
+    <div class="verse"><span class="verse-number">15</span>你們要記念他的約，直到永遠；他所吩咐的話，直到千代，</div>
+    <div class="verse"><span class="verse-number">16</span>就是與亞伯拉罕所立的約，向以撒所起的誓。</div>
+    <div class="verse"><span class="verse-number">17</span>他又將這約向雅各定為律例，向以色列定為永遠的約，</div>
+    <div class="verse"><span class="verse-number">18</span>說：我必將迦南地賜給你，作你產業的分。</div>
+    <div class="verse"><span class="verse-number">19</span>當時你們人丁有限，數目稀少，並且在那地為寄居的；</div>
+    <div class="verse"><span class="verse-number">20</span>他們從這邦游到那邦，從這國行到那國。</div>
+    <div class="verse"><span class="verse-number">21</span>耶和華不容甚麼人欺負他們，為他們的緣故責備君王，</div>
+    <div class="verse"><span class="verse-number">22</span>說：不可難為我受膏的人，也不可惡待我的先知！</div>
+    <div class="verse"><span class="verse-number">23</span>全地都要向耶和華歌唱！天天傳揚他的救恩，</div>
+    <div class="verse"><span class="verse-number">24</span>在列邦中述說他的榮耀，在萬民中述說他的奇事。</div>
+    <div class="verse"><span class="verse-number">25</span>因耶和華為大，當受極大的讚美；他在萬神之上，當受敬畏。</div>
+    <div class="verse"><span class="verse-number">26</span>外邦的神都屬虛無，惟獨耶和華創造諸天。</div>
+    <div class="verse"><span class="verse-number">27</span>有尊榮和威嚴在他面前，有能力和喜樂在他聖所。</div>
+    <div class="verse"><span class="verse-number">28</span>民中的萬族啊，你們要將榮耀能力歸給耶和華，都歸給耶和華！</div>
+    <div class="verse"><span class="verse-number">29</span>要將耶和華的名所當得的榮耀歸給他，拿供物來奉到他面前；當以聖潔的〔的：或作為〕妝飾敬拜耶和華。</div>
+    <div class="verse"><span class="verse-number">30</span>全地要在他面前戰抖，世界也堅定不得動搖。</div>
+    <div class="verse"><span class="verse-number">31</span>願天歡喜，願地快樂；願人在列邦中說：耶和華作王了！</div>
+    <div class="verse"><span class="verse-number">32</span>願海和其中所充滿的澎湃；願田和其中所有的都歡樂。</div>
+    <div class="verse"><span class="verse-number">33</span>那時，林中的樹木都要在耶和華面前歡呼，因為他來要審判全地。</div>
+    <div class="verse"><span class="verse-number">34</span>應當稱謝耶和華；因他本為善，他的慈愛永遠長存！</div>
+    <div class="verse"><span class="verse-number">35</span>要說：拯救我們的神啊，求你救我們，聚集我們，使我們脫離外邦，我們好稱讚你的聖名，以讚美你為誇勝。</div>
+    <div class="verse"><span class="verse-number">36</span>耶和華以色列的神，從亙古直到永遠，是應當稱頌的！眾民都說：「阿們！」並且讚美耶和華。</div>
+    <div class="verse"><span class="verse-number">37</span>大衛派亞薩和他的弟兄在約櫃前常常事奉耶和華，一日盡一日的職分；</div>
+    <div class="verse"><span class="verse-number">38</span>又派俄別以東和他的弟兄六十八人，與耶杜頓的兒子俄別以東，並何薩作守門的；</div>
+    <div class="verse"><span class="verse-number">39</span>且派祭司撒督和他弟兄眾祭司在基遍的邱壇、耶和華的帳幕前燔祭壇上，每日早晚，照着耶和華律法書上所吩咐以色列人的，常給耶和華獻燔祭。</div>
+    <div class="verse"><span class="verse-number">40</span>併於上節</div>
+    <div class="verse"><span class="verse-number">41</span>與他們一同被派的有希幔、耶杜頓，和其餘被選名字錄在冊上的，稱謝耶和華，因他的慈愛永遠長存。</div>
+    <div class="verse"><span class="verse-number">42</span>希幔、耶杜頓同着他們吹號、敲鈸，大發響聲，並用別的樂器隨着歌頌神。耶杜頓的子孫作守門的。</div>
+    <div class="verse"><span class="verse-number">43</span>於是眾民各歸各家；大衛也回去為家眷祝福。</div>
+  </div>
+
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      歷代志上第十六章記述約櫃安置後的慶典與大衛建立的敬拜制度。大衛獻祭（1-3節），指派利未人事奉（4-6節），並親自作詩歌頌耶和華（7-36節）。這首詩融合了詩篇105篇、96篇和106篇的內容，是一首宏大的讚美與感恩之歌，從神的創造、與以色列立約、神在萬民中的榮耀，到呼籲全地讚美神、神必審判全地、祂的慈愛永遠長存。
+
+      章末（37-43節）大衛安排了兩套事奉體系：在耶路撒冷約櫃前，亞薩和他的弟兄「常常事奉耶和華，一日盡一日的職分」；在基遍邱壇，撒督和眾祭司繼續按律法獻燔祭。這種制度性安排說明大衛不只是靠情感推動敬拜，更是建立了可持續的事奉結構，使敬拜成為日常生活的一部分，而非偶爾的宗教活動。
+
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 真正的讚美建立在對神作為的記念上</strong><br>
+      大衛的詩歌反覆呼籲「記念」——記念神的奇妙作為、記念祂的約（15節）、記念祂在列邦中的榮耀（24節）。讚美不只是情緒的宣洩，更是有意識地回想並宣告神曾做過的事。信徒若缺乏讚美，往往是因為忘記了神的作為；讚美的更新，從重新記念神的恩典開始。<br><br>
+
+      <strong>2. 敬拜是向萬民的見證</strong><br>
+      大衛的詩歌屢次呼籲「在萬民中述說他的榮耀」（24節）、「全地都要向耶和華歌唱！天天傳揚他的救恩」（23節）。敬拜不只是私下的靈修，更是向外的宣告。信徒的讚美生命是向世界最有力的見證之一——一個真實歡喜讚美神的人，比任何道理都更能吸引人認識這位神。<br><br>
+
+      <strong>3. 持續穩定的事奉比偶發的激情更有果效</strong><br>
+      大衛安排亞薩「一日盡一日的職分」（37節），建立了每日固定的事奉節奏。屬靈生命的成長靠的是長期穩定的操練，而非偶爾的高峰體驗。就像體能訓練需要每日的持續，靈性的成熟也需要「一日盡一日」的忠心，而不是靠週期性的屬靈復興節維繫。
+
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr><th>經文</th><th>思想題目</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>你們要<strong>稱謝耶和華</strong>，求告他的名，<strong>在萬民中傳揚他的作為</strong>！（代上16:8）</td>
+            <td>稱謝和傳揚是一體兩面：感謝神的人自然會向外說出神的作為，就像吃到一道好菜的人忍不住要推薦給朋友——你對神的感恩，是只停留在自己心裡，還是也在生活中自然地讓別人聽見？</td>
+          </tr>
+          <tr>
+            <td>應當<strong>稱謝耶和華；因他本為善，他的慈愛永遠長存</strong>！（代上16:34）</td>
+            <td>神的慈愛是「永遠」長存的，不隨情況好壞而改變，就像地心引力不會因為天氣陰晴而時有時無——在你最難讚美的那段日子裡，「他本為善，慈愛永遠長存」對你而言是信念，還是你確實能相信的真實？</td>
+          </tr>
+          <tr>
+            <td>大衛派亞薩和他的弟兄在約櫃前<strong>常常事奉耶和華，一日盡一日的職分</strong>。（代上16:37）</td>
+            <td>「一日盡一日的職分」說明敬拜是每日的功課，不是週末才有的活動，就像刷牙不是心情好才做，而是每天都要做的基本——你的靈性操練（禱告、讀經、讚美），是「一日盡一日」的節奏，還是等情緒到位才進行的偶發行動？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>

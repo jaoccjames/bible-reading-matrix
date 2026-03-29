@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志上第15章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px; text-align: center;
+  transition: color 0.2s;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; font-size: 1em; transition: transform 0.4s ease; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 12px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 10px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px;
+  padding: 15px; background: #fafafa;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none;
+  display: flex; align-items: center; transition: color 0.2s;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before {
+  content: '▶'; display: inline-block; margin-right: 10px;
+  transition: transform 0.25s ease;
+}
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; } h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; } h2 { font-size: 1.2em; }
+  table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1 onclick="toggleScripture()">
+    歷代志上第15章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+
+  <div class="chapter-subtitle">再次運約櫃：按法而行，歡歌入城</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>大衛在大衛城為自己建造宮殿，又為神的約櫃預備地方，支搭帳幕。</div>
+    <div class="verse"><span class="verse-number">2</span>那時大衛說：「除了利未人之外，無人可抬神的約櫃；因為耶和華揀選他們抬神的約櫃，且永遠事奉他。」</div>
+    <div class="verse"><span class="verse-number">3</span>大衛招聚以色列眾人到耶路撒冷，要將耶和華的約櫃抬到他所預備的地方。</div>
+    <div class="verse"><span class="verse-number">4</span>大衛又聚集亞倫的子孫和利未人。</div>
+    <div class="verse"><span class="verse-number">5</span>哥轄子孫中有族長烏列和他的弟兄一百二十人。</div>
+    <div class="verse"><span class="verse-number">6</span>米拉利子孫中有族長亞帥雅和他的弟兄二百二十人。</div>
+    <div class="verse"><span class="verse-number">7</span>革順子孫中有族長約珥和他的弟兄一百三十人。</div>
+    <div class="verse"><span class="verse-number">8</span>以利撒反子孫中有族長示瑪雅和他的弟兄二百人。</div>
+    <div class="verse"><span class="verse-number">9</span>希伯崙子孫中有族長以列和他的弟兄八十人。</div>
+    <div class="verse"><span class="verse-number">10</span>烏薛子孫中有族長亞米拿達和他的弟兄一百一十二人。</div>
+    <div class="verse"><span class="verse-number">11</span>大衛將祭司撒督和亞比亞他，並利未人烏列、亞帥雅、約珥、示瑪雅、以列、亞米拿達召來，</div>
+    <div class="verse"><span class="verse-number">12</span>對他們說：「你們是利未人的族長，你們和你們的弟兄應當自潔，好將耶和華以色列神的約櫃抬到我所預備的地方。</div>
+    <div class="verse"><span class="verse-number">13</span>因你們先前沒有抬這約櫃，按定例求問耶和華我們的神，所以他刑罰〔原文作闖殺〕我們。」</div>
+    <div class="verse"><span class="verse-number">14</span>於是祭司利未人自潔，好將耶和華以色列神的約櫃抬上來。</div>
+    <div class="verse"><span class="verse-number">15</span>利未子孫就用杠，肩抬神的約櫃，是照耶和華藉摩西所吩咐的。</div>
+    <div class="verse"><span class="verse-number">16</span>大衛吩咐利未人的族長，派他們歌唱的弟兄用琴瑟和鈸作樂，歡歡喜喜的大聲歌頌。</div>
+    <div class="verse"><span class="verse-number">17</span>於是利未人派約珥的兒子希幔和他弟兄中比利家的兒子亞薩，並他們族弟兄米拉利子孫裏古沙雅的兒子以探。</div>
+    <div class="verse"><span class="verse-number">18</span>其次還有他們的弟兄撒迦利雅、便雅薛、示米拉末、耶歇、烏尼、以利押、比拿雅、瑪西雅、瑪他提雅、以利斐利戶、彌克尼雅，並守門的俄別以東和耶利。</div>
+    <div class="verse"><span class="verse-number">19</span>這樣，派歌唱的希幔、亞薩、以探敲銅鈸，大發響聲；</div>
+    <div class="verse"><span class="verse-number">20</span>派撒迦利雅、雅薛、示米拉末、耶歇、烏尼、以利押、瑪西雅、比拿雅鼓瑟，調用女音；</div>
+    <div class="verse"><span class="verse-number">21</span>又派瑪他提雅、以利斐利戶、彌克尼雅、俄別以東、耶利、亞撒西雅領首彈琴，調用第八。</div>
+    <div class="verse"><span class="verse-number">22</span>利未人的族長基拿尼雅是歌唱人的首領，又教訓人歌唱，因為他精通此事。</div>
+    <div class="verse"><span class="verse-number">23</span>比利家、以利加拿是約櫃前守門的。</div>
+    <div class="verse"><span class="verse-number">24</span>祭司示巴尼、約沙法、拿坦業、亞瑪賽、撒迦利雅、比拿亞、以利以謝在神的約櫃前吹號。俄別以東和耶希亞也是約櫃前守門的。</div>
+    <div class="verse"><span class="verse-number">25</span>於是，大衛和以色列的長老，並千夫長都去從俄別以東的家歡歡喜喜的將耶和華的約櫃抬上來。</div>
+    <div class="verse"><span class="verse-number">26</span>神賜恩與抬耶和華約櫃的利未人，他們就獻上七隻公牛，七隻公羊。</div>
+    <div class="verse"><span class="verse-number">27</span>大衛和抬約櫃的利未人，並歌唱人的首領基拿尼雅，以及歌唱的人，都穿着細麻布的外袍；大衛另外穿着細麻布的以弗得。</div>
+    <div class="verse"><span class="verse-number">28</span>這樣，以色列眾人歡呼吹角、吹號、敲鈸、鼓瑟、彈琴，大發響聲，將耶和華的約櫃抬上來。</div>
+    <div class="verse"><span class="verse-number">29</span>耶和華的約櫃進了大衛城的時候，掃羅的女兒米甲從窗戶裏觀看，見大衛王踴躍跳舞，心裏就輕視他。</div>
+  </div>
+
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      歷代志上第十五章記述約櫃成功運入耶路撒冷的過程。這是第十三章失敗嘗試的對比與修正。大衛這次明確宣告：「除了利未人之外，無人可抬神的約櫃」（2節），並召集祭司和利未人，讓他們先自潔（12-14節），再依照摩西律法以肩扛杠的方式抬送（15節）。
+
+      大衛向眾首領承認了上次失敗的原因：「因你們先前沒有抬這約櫃，按定例求問耶和華我們的神，所以他刑罰我們」（13節）。這是一個領袖難得的公開認錯。本章另一個重要元素是音樂敬拜的精心安排——大衛任命希幔、亞薩、以探等人，分別負責銅鈸、瑟和琴（17-21節），並有精通此事的基拿尼雅統籌歌唱（22節）。整個過程歡歡喜喜、井然有序。章末米甲冷眼旁觀大衛跳舞、心裏輕視他，為下一章的發展埋下伏筆。
+
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 認錯是重新出發的必要條件</strong><br>
+      大衛在眾人面前承認上次失敗是因為「沒有按定例求問耶和華」（13節），這種公開認錯需要極大的謙卑。一個領袖若能清楚指出自己的錯誤並說明改正的方向，不但不會失去威信，反而建立了更深的信任。真正的悔改是具體的：說清楚錯在哪裡，並切實改變行動方式。<br><br>
+
+      <strong>2. 敬拜需要準備與秩序</strong><br>
+      大衛不只有熱情，也有周全的準備：利未人自潔、各族長被一一召集、音樂人員分工明確。敬拜不是即興的感動，而是有準備、有秩序的呈獻。神配得最好的預備，而不只是最隨意的衝動。這提醒信徒，認真對待敬拜的準備，本身就是一種對神的尊重。<br><br>
+
+      <strong>3. 真誠的敬拜可能被人誤解</strong><br>
+      大衛在約櫃前踴躍跳舞，全心投入敬拜，卻被米甲從窗戶裡「輕視他」（29節）。真誠的敬拜並不總是被所有人理解和接受——有時最親近的人反而是最冷眼旁觀的。信徒不應因外人的誤解或輕視而收斂對神真實的愛慕，敬拜的對象是神，不是旁觀者的評價。
+
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr><th>經文</th><th>思想題目</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>那時大衛說：「<strong>除了利未人之外，無人可抬神的約櫃</strong>；因為耶和華揀選他們抬神的約櫃，且永遠事奉他。」（代上15:2）</td>
+            <td>大衛學到了教訓：敬拜要按神定的方式，而不是按人覺得方便的方式，就像藥要按醫囑服用，自行調整劑量可能造成反效果——你在信仰實踐上，有沒有「覺得差不多就好」的地方，其實那裡可能正需要重新按神的話語對齊？</td>
+          </tr>
+          <tr>
+            <td>大衛對他們說：「……因你們先前<strong>沒有抬這約櫃，按定例求問耶和華我們的神，所以他刑罰我們</strong>。」（代上15:12-13）</td>
+            <td>大衛在眾人面前公開承認失敗的原因，沒有推諉，沒有找藉口，就像一個工程師在事故後誠實說出是哪個環節出了問題，而不是說「這不是我的責任」——當你搞砸了一件事，你更容易解釋原因，還是誠實認錯？</td>
+          </tr>
+          <tr>
+            <td>耶和華的約櫃進了大衛城的時候，掃羅的女兒<strong>米甲</strong>從窗戶裡觀看，見大衛王踴躍跳舞，心裏就<strong>輕視他</strong>。（代上15:29）</td>
+            <td>大衛最真誠的敬拜，在最親近的人眼中卻顯得可笑，就像一個全情投入的讚美者在冷漠的旁觀者旁邊顯得格格不入——當你的敬拜或信仰行為被身邊的人不理解甚至輕視，你的回應是收斂還是繼續？你的敬拜是為誰而獻的？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利未記第11章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; justify-content: center; align-items: center; }
+h1:hover { color: #3498db; }
+.bible-icon { margin-left: 15px; display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 10px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.2s, box-shadow 0.2s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 8px; transition: transform 0.2s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  利未記第11章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">飲食律法：聖潔延伸至日常生活</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>耶和華對摩西、亞倫說：</div>
+  <div class="verse"><span class="verse-number">2</span>「你們曉諭以色列人說，在地上一切走獸中可吃的乃是這些：</div>
+  <div class="verse"><span class="verse-number">3</span>凡蹄分兩瓣、倒嚼的走獸，你們都可以吃。</div>
+  <div class="verse"><span class="verse-number">4</span>但那倒嚼或分蹄之中不可吃的乃是：駱駝，因為倒嚼不分蹄，就與你們不潔淨；</div>
+  <div class="verse"><span class="verse-number">5</span>沙番，因為倒嚼不分蹄，就與你們不潔淨；</div>
+  <div class="verse"><span class="verse-number">6</span>兔子，因為倒嚼不分蹄，就與你們不潔淨；</div>
+  <div class="verse"><span class="verse-number">7</span>豬，因為蹄分兩瓣，卻不倒嚼，就與你們不潔淨。</div>
+  <div class="verse"><span class="verse-number">8</span>這些獸的肉，你們不可吃；死的，你們不可摸，都與你們不潔淨。</div>
+  <div class="verse"><span class="verse-number">9</span>「水中可吃的乃是這些：凡在水裏、海裏、河裏、有翅有鱗的，都可以吃。</div>
+  <div class="verse"><span class="verse-number">10</span>凡在海裏、河裏，並一切水裏游動的活物，無翅無鱗的，你們都當以為可憎。</div>
+  <div class="verse"><span class="verse-number">11</span>這些無翅無鱗、以為可憎的，你們不可吃牠的肉；死的也當以為可憎。</div>
+  <div class="verse"><span class="verse-number">12</span>凡水裏無翅無鱗的，你們都當以為可憎。</div>
+  <div class="verse"><span class="verse-number">13</span>「雀鳥中你們當以為可憎、不可吃的乃是：鵰、狗頭鵰、紅頭鵰、</div>
+  <div class="verse"><span class="verse-number">14</span>鷂鷹、小鷹與其類；</div>
+  <div class="verse"><span class="verse-number">15</span>烏鴉與其類；</div>
+  <div class="verse"><span class="verse-number">16</span>鴕鳥、夜鷹、魚鷹、鷹與其類；</div>
+  <div class="verse"><span class="verse-number">17</span>鴞鳥、鸕鶿、貓頭鷹、</div>
+  <div class="verse"><span class="verse-number">18</span>角鴟、鵜鶘、禿鵰、</div>
+  <div class="verse"><span class="verse-number">19</span>鸛、鷺鷥與其類；戴鵀與蝙蝠。</div>
+  <div class="verse"><span class="verse-number">20</span>「凡有翅膀用四足爬行的物，你們都當以為可憎。</div>
+  <div class="verse"><span class="verse-number">21</span>只是有翅膀用四足爬行的物中，有足有腿，在地上蹦跳的，你們還可以吃。</div>
+  <div class="verse"><span class="verse-number">22</span>其中有蝗蟲、螞蚱、蟋蟀與其類；蚱蜢與其類；這些你們都可以吃。</div>
+  <div class="verse"><span class="verse-number">23</span>但是有翅膀有四足的爬物，你們都當以為可憎。</div>
+  <div class="verse"><span class="verse-number">24</span>「這些都能使你們不潔淨。凡摸了死的，必不潔淨到晚上。</div>
+  <div class="verse"><span class="verse-number">25</span>凡拿了死的，必不潔淨到晚上，並要洗衣服。</div>
+  <div class="verse"><span class="verse-number">26</span>凡走獸分蹄不成兩瓣、也不倒嚼的，是與你們不潔淨；凡摸了的就不潔淨。</div>
+  <div class="verse"><span class="verse-number">27</span>凡四足的走獸，用掌行走的，是與你們不潔淨；摸其屍的，必不潔淨到晚上。</div>
+  <div class="verse"><span class="verse-number">28</span>拿其屍的，必不潔淨到晚上，並要洗衣服。這些是與你們不潔淨的。</div>
+  <div class="verse"><span class="verse-number">29</span>「地上爬物與你們不潔淨的乃是這些：鼬鼠、鼫鼠、蜥蜴與其類；</div>
+  <div class="verse"><span class="verse-number">30</span>壁虎、龍子、守宮、蛇醫、蝘蜓。</div>
+  <div class="verse"><span class="verse-number">31</span>這些爬物都是與你們不潔淨的。在牠死了以後，凡摸了的，必不潔淨到晚上。</div>
+  <div class="verse"><span class="verse-number">32</span>其中死了的，掉在甚麼東西上，這東西就不潔淨，無論是木器、衣服、皮子、口袋，不拘是作甚麼工用的器皿，須要放在水中，必不潔淨到晚上，到晚上才潔淨了。</div>
+  <div class="verse"><span class="verse-number">33</span>若有死了掉在瓦器裏的，其中不拘有甚麼，就不潔淨，你們要把這瓦器打破了。</div>
+  <div class="verse"><span class="verse-number">34</span>其中一切可吃的食物，沾水的就不潔淨，並且那樣器皿中一切可喝的，也必不潔淨。</div>
+  <div class="verse"><span class="verse-number">35</span>其中已死的，若有一點掉在甚麼物件上，那物件就不潔淨，不拘是爐子，是鍋臺，就要打碎，都不潔淨，也必與你們不潔淨。</div>
+  <div class="verse"><span class="verse-number">36</span>但是泉源或是聚水的池子仍是潔淨；惟挨了那死的，就不潔淨。</div>
+  <div class="verse"><span class="verse-number">37</span>若是死的，有一點掉在要種的子粒上，子粒仍是潔淨；</div>
+  <div class="verse"><span class="verse-number">38</span>若水已經澆在子粒上，那死的有一點掉在上頭，這子粒就與你們不潔淨。</div>
+  <div class="verse"><span class="verse-number">39</span>「你們可吃的走獸若是死了，有人摸牠，必不潔淨到晚上；</div>
+  <div class="verse"><span class="verse-number">40</span>有人吃那死了的走獸，必不潔淨到晚上，並要洗衣服；拿了死走獸的，必不潔淨到晚上，並要洗衣服。</div>
+  <div class="verse"><span class="verse-number">41</span>「凡地上的爬物是可憎的，都不可吃。</div>
+  <div class="verse"><span class="verse-number">42</span>凡用肚子行走的和用四足行走的，或是有許多足的，就是一切爬在地上的，你們都不可吃，因為是可憎的。</div>
+  <div class="verse"><span class="verse-number">43</span>你們不可因甚麼爬物使自己成為可憎的，也不可因這些使自己不潔淨，以致染了污穢。</div>
+  <div class="verse"><span class="verse-number">44</span>我是耶和華你們的神；所以你們要成為聖潔，因為我是聖潔的。你們也不可在地上的爬物污穢自己。</div>
+  <div class="verse"><span class="verse-number">45</span>我是把你們從埃及地領出來的耶和華，要作你們的神；所以你們要聖潔，因為我是聖潔的。」</div>
+  <div class="verse"><span class="verse-number">46</span>這是走獸、飛鳥，和水中游動的活物，並地上爬物的條例。</div>
+  <div class="verse"><span class="verse-number">47</span>要把潔淨的和不潔淨的，可吃的與不可吃的活物，都分別出來。</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖'; bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕'; bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    利未記第11章記載神頒布給以色列人的飲食律法，涵蓋四大類動物：陸地走獸（需分蹄且倒嚼）、水中生物（需有翅有鱗）、飛鳥（列舉不可吃的種類）及爬行動物（大多禁止）。這些律法的目的不僅是衛生或健康考量，更有其深刻的屬靈神學意涵。在古代近東，某些動物（如豬）常與外邦宗教儀式相關，禁食這些動物強化了以色列人與外邦的分別。更重要的是，這些律法將「聖潔」的概念延伸至日常飲食——信仰不只是在會幕的儀式中表達，而是在每一頓飯、每一個生活細節中都有所體現。本章以兩個核心句子作為神學基礎：「你們要成為聖潔，因為我是聖潔的」（利11:44-45），這是整個利未記聖潔神學的旗幟性宣言，說明聖潔的呼召不是出於律法主義，而是出於效法那位呼召以色列的聖潔神。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 信仰滲透日常：聖潔不只在會幕，也在餐桌</strong><br>
+    飲食律法把屬靈的聖潔延伸到最日常的生活細節——吃什麼、摸什麼。這宣告了一個重要真理：信仰不是只在宗教場合才有效的事，而是應該滲透並塑造生活的每一個層面。信徒對飲食、娛樂、消費、語言的選擇，都可以是信仰的表達，而非與信仰無關的「私事」。<br><br>
+    <strong>2. 分別的身份：聖潔的生活方式彰顯神的子民身份</strong><br>
+    以色列人的飲食習慣使他們在外邦人中顯得「不同」。這種分別是刻意的：神的子民在生活方式上應有別於周圍文化，以彰顯他們的神聖身份。新約的呼召同樣如此：「不要效法這個世界，只要心意更新而變化」（羅12:2）。基督徒的生活方式應體現他們屬於另一個國度。<br><br>
+    <strong>3. 效法聖者：聖潔的根基是神的本性，不是律法的強制</strong><br>
+    「你們要聖潔，因為我是聖潔的」（利11:44-45）揭示聖潔呼召的根本動機：不是因為律法的強制，而是因為我們的神是聖潔的，我們效法祂。聖潔不是一套規則的遵守，而是神本性在人身上的顯明。這種以神的性情為根基的聖潔觀，才是真正持久的靈命動力。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>經文</th><th>思想題目</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「我是耶和華你們的神；所以你們要<strong>成為聖潔</strong>，因為<strong>我是聖潔的</strong>。」（利11:44）</td>
+          <td>聖潔的呼召根基是<strong>效法神的本性</strong>，不是恐懼律法的懲罰。就像孩子模仿父母的行為方式，是因為愛與認同，而非強制要求——你追求聖潔生活的主要動力是什麼？是對懲罰的恐懼，還是對神本性的認識與愛慕？</td>
+        </tr>
+        <tr>
+          <td>「你們不可因甚麼爬物使自己<strong>成為可憎的</strong>，也不可因這些使自己<strong>不潔淨</strong>，以致染了污穢。」（利11:43）</td>
+          <td>神警告不可讓外在接觸的事物<strong>污染自己</strong>，使自己在神面前變得可憎。就像白色衣服接觸染料會留下難以去除的污跡——在你的生活中，哪些「習以為常」的接觸（媒體、環境、關係）正在悄悄地污染你的屬靈潔淨？你如何保護自己免受這些影響？</td>
+        </tr>
+        <tr>
+          <td>「要把<strong>潔淨的</strong>和<strong>不潔淨的</strong>，可吃的與不可吃的活物，都分別出來。」（利11:47）</td>
+          <td>飲食律法訓練以色列人養成<strong>分別聖俗</strong>的習慣，讓辨別成為生活方式。就像習慣分類回收的人會自然而然地在各種情境下做出正確分類——你是否在日常生活的選擇中養成了「屬靈分辨」的習慣？你如何培養這種自然辨別善惡、聖俗的生活方式？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利未記第27章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 15px; cursor: pointer;
+  display: flex; justify-content: center; align-items: center;
+}
+h1:hover { color: #3498db; }
+.bible-icon { margin-left: 15px; display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px; line-height: 2;
+  max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 10px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px;
+  padding: 15px; background: #fafafa; transition: border-color 0.2s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 8px; transition: transform 0.2s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tbody tr:nth-child(even) td { background: #f9f9f9; }
+tbody tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1 onclick="toggleScripture()">
+    利未記第27章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+
+  <div class="chapter-subtitle">許願估價與十一奉獻：誠實履行對神的承諾</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>耶和華對摩西說：</div>
+    <div class="verse"><span class="verse-number">2</span>「你曉諭以色列人說：人還特許的願，被許的人要按你所估的價值歸給耶和華。</div>
+    <div class="verse"><span class="verse-number">3</span>你估定的，從二十歲到六十歲的男人，要按聖所的平，估定價銀五十舍客勒。</div>
+    <div class="verse"><span class="verse-number">4</span>若是女人，你要估定三十舍客勒。</div>
+    <div class="verse"><span class="verse-number">5</span>若是從五歲到二十歲，男子你要估定二十舍客勒，女子估定十舍客勒。</div>
+    <div class="verse"><span class="verse-number">6</span>若是從一月到五歲，男子你要估定五舍客勒，女子估定三舍客勒。</div>
+    <div class="verse"><span class="verse-number">7</span>若是從六十歲以上，男人你要估定十五舍客勒，女人估定十舍客勒。</div>
+    <div class="verse"><span class="verse-number">8</span>他若貧窮，不能照你所估定的價，就要把他帶到祭司面前，祭司要按許願人的力量估定他的價。</div>
+    <div class="verse"><span class="verse-number">9</span>「所許的若是牲畜，就是人獻給耶和華為供物的，凡這一類獻給耶和華的，都要成為聖。</div>
+    <div class="verse"><span class="verse-number">10</span>人不可改換，也不可更換，或是好的換壞的，或是壞的換好的。若以牲畜更換牲畜，所許的與所換的都要成為聖。</div>
+    <div class="verse"><span class="verse-number">11</span>若牲畜不潔淨，是不可獻給耶和華為供物的，就要把牲畜安置在祭司面前。</div>
+    <div class="verse"><span class="verse-number">12</span>祭司就要估定價值；牲畜是好是壞，祭司怎樣估定，就要以怎樣為是。</div>
+    <div class="verse"><span class="verse-number">13</span>他若一定要贖回，就要在你所估定的價值以外加上五分之一。</div>
+    <div class="verse"><span class="verse-number">14</span>「人將房屋分別為聖，歸給耶和華，祭司就要估定價值。房屋是好是壞，祭司怎樣估定，就要以怎樣為定。</div>
+    <div class="verse"><span class="verse-number">15</span>將房屋分別為聖的人，若要贖回房屋，就必在你所估定的價值以外加上五分之一，房屋仍舊歸他。</div>
+    <div class="verse"><span class="verse-number">16</span>「人若將承受為業的幾分地分別為聖，歸給耶和華，你要按這地撒種多少估定價值，若撒大麥一賀梅珥，要估價五十舍客勒。</div>
+    <div class="verse"><span class="verse-number">17</span>他若從禧年將地分別為聖，就要以你所估定的價為定。</div>
+    <div class="verse"><span class="verse-number">18</span>倘若他在禧年以後將地分別為聖，祭司就要按着未到禧年所剩的年數推算價值，也要從你所估的減去價值。</div>
+    <div class="verse"><span class="verse-number">19</span>將地分別為聖的人若定要把地贖回，他便要在你所估的價值以外加上五分之一，地就准定歸他。</div>
+    <div class="verse"><span class="verse-number">20</span>他若不贖回那地，或是將地賣給別人，就再不能贖了。</div>
+    <div class="verse"><span class="verse-number">21</span>但到了禧年，那地從買主手下出來的時候，就要歸耶和華為聖，和永獻的地一樣，要歸祭司為業。</div>
+    <div class="verse"><span class="verse-number">22</span>他若將所買的一塊地，不是承受為業的，分別為聖歸給耶和華，</div>
+    <div class="verse"><span class="verse-number">23</span>祭司就要將你所估的價值給他推算到禧年。當日，他要以你所估的價銀為聖，歸給耶和華。</div>
+    <div class="verse"><span class="verse-number">24</span>到了禧年，那地要歸賣主，就是那承受為業的原主。</div>
+    <div class="verse"><span class="verse-number">25</span>凡你所估定的價銀都要按着聖所的平：二十季拉為一舍客勒。</div>
+    <div class="verse"><span class="verse-number">26</span>「惟獨牲畜中頭生的，無論是牛是羊，既歸耶和華，誰也不可再分別為聖，因為這是耶和華的。</div>
+    <div class="verse"><span class="verse-number">27</span>若是不潔淨的牲畜生的，就要按你所估定的價值加上五分之一贖回；若不贖回，就要按你所估定的價值賣了。</div>
+    <div class="verse"><span class="verse-number">28</span>「但一切永獻的，就是人從他所有永獻給耶和華的，無論是人，是牲畜，是他承受為業的地，都不可賣，也不可贖。凡永獻的是歸給耶和華為至聖。</div>
+    <div class="verse"><span class="verse-number">29</span>凡從人中當滅的都不可贖，必被治死。」</div>
+    <div class="verse"><span class="verse-number">30</span>「地上所有的，無論是地上的種子是樹上的果子，十分之一是耶和華的，是歸給耶和華為聖的。</div>
+    <div class="verse"><span class="verse-number">31</span>人若要贖這十分之一的甚麼物，就要加上五分之一。</div>
+    <div class="verse"><span class="verse-number">32</span>凡牛群羊群中，一切從杖下經過的，每第十隻要歸給耶和華為聖。</div>
+    <div class="verse"><span class="verse-number">33</span>不可問是好是壞，也不可更換；若定要更換，所更換的與本來的牲畜都要成為聖，不可贖回。」</div>
+    <div class="verse"><span class="verse-number">34</span>這就是耶和華在西乃山為以色列人所吩咐摩西的命令。</div>
+  </div>
+
+  <script>
+  function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+      bibleIcon.textContent = '📖';
+      bibleIcon.classList.add('open');
+    } else {
+      bibleIcon.textContent = '📕';
+      bibleIcon.classList.remove('open');
+    }
+  }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      利未記第27章是全書最後一章，以一個相對技術性卻充滿屬靈意義的主題作結：許願的估價與贖回，以及十一奉獻的規定。在以色列文化中，人可以向神許願，將人、牲畜、房屋或土地分別為聖歸給耶和華，但若許願後想要贖回，必須按祭司估定的價值再加上五分之一，這一規定防止輕率許願或反悔後無代價地取消。章節的後半特別強調「十分之一是耶和華的」——農產與牲畜都要按規定繳納十一奉獻，這是對神主權的基本承認：所有的出產本就來自神，十一奉獻不過是歸還其中的一部分。本章以「永獻」的概念結語：凡真正獻給神的，不可更改、不可贖回，彰顯了奉獻的嚴肅性和不可逆轉性。利未記以這個結語宣告：整本書的核心信息是，在神面前所說的每一個承諾、所獻的每一份奉獻，都是認真且有代價的。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 對神的承諾需要認真對待，不可輕率</strong><br>
+      許願後若要贖回需加五分之一的懲罰，是對「說說而已」的警告。神不是許願機器——信徒若向神許願、立志或承諾，必須認真對待。輕率的許願比不許願更糟，因為它顯示對神主權的輕慢。在禱告、獻身或奉獻的承諾上，信徒應當先數算代價，再謹慎地說出口，說出後便要努力履行，這才是對神的尊重。<br><br>
+      <strong>2. 十一奉獻是對神主權的信心宣告</strong><br>
+      「十分之一是耶和華的」這一宣告的前提是：一切都是神的，十一奉獻不是人「給」神，而是人承認神對全部所有的主權後所作的信心行動。把十一獻給神，是在說：「我相信剩下的九分之十，神也能供應我。」在物質主義盛行的時代，十一奉獻是一個非常具體的信仰告白——信任神的供應超過自己對財富的掌控。<br><br>
+      <strong>3. 奉獻的精髓是不求取回的委身</strong><br>
+      「永獻的……不可賣，也不可贖」，這代表某些對神的委身是沒有後路的。信仰中的委身常常如此——洗禮的宣告、結婚的誓言、全職事奉的呼召——這些是「永獻」而非「暫借」。利未記以此結束，提醒讀者：整卷書所要求的聖潔，不是暫時性的道德努力，而是一種整個人生命全然獻上、不留後路的委身姿態。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr><th>經文</th><th>思想題目</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>「人不可<strong>改換</strong>，也不可更換，或是好的換壞的，或是壞的換好的。」（利27:10）</td>
+            <td>就像簽了合約之後不能單方面隨意更改條款，向神所作的承諾同樣需要認真履行，你是否有對神說過但後來找藉口沒有兌現的承諾？今天是重新誠實面對那個承諾的時候嗎？</td>
+          </tr>
+          <tr>
+            <td>「地上所有的，無論是地上的種子是樹上的果子，<strong>十分之一是耶和華的</strong>，是歸給耶和華為聖的。」（利27:30）</td>
+            <td>就像工資單上有一項固定的所得稅在發薪前就已扣除，十一奉獻的精神是在收入到手前就先承認神的主權，你在管理財務時，神的份是第一順位還是最後剩下的部分——這個順序透露了你真正相信誰是一切的主？</td>
+          </tr>
+          <tr>
+            <td>「但一切<strong>永獻</strong>的……都不可賣，也不可贖。凡永獻的是歸給耶和華為<strong>至聖</strong>。」（利27:28）</td>
+            <td>就像結婚誓言中的「直到死亡將我們分開」代表一種無後路的委身，真正的信仰委身也是不留退路的，你對神的委身是有條件的（當情況好時才守）還是「永獻」式的——不論環境如何改變都不動搖？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>

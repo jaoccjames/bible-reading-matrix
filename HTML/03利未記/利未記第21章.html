@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利未記第21章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 15px; cursor: pointer;
+  display: flex; justify-content: center; align-items: center;
+}
+h1:hover { color: #3498db; }
+.bible-icon { margin-left: 15px; display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px; line-height: 2;
+  max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 10px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px;
+  padding: 15px; background: #fafafa; transition: border-color 0.2s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 8px; transition: transform 0.2s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tbody tr:nth-child(even) td { background: #f9f9f9; }
+tbody tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1 onclick="toggleScripture()">
+    利未記第21章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+
+  <div class="chapter-subtitle">祭司的聖潔：服事者須有更高標準</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>耶和華對摩西說：「你告訴亞倫子孫作祭司的說：祭司不可為民中的死人沾染自己，</div>
+    <div class="verse"><span class="verse-number">2</span>除非為他骨肉之親的父母、兒女、弟兄，</div>
+    <div class="verse"><span class="verse-number">3</span>和未曾出嫁、作處女的姐妹，才可以沾染自己。</div>
+    <div class="verse"><span class="verse-number">4</span>祭司既在民中為首，就不可從俗沾染自己。</div>
+    <div class="verse"><span class="verse-number">5</span>不可使頭光禿；不可剃除鬍鬚的周圍，也不可用刀劃身。</div>
+    <div class="verse"><span class="verse-number">6</span>要歸神為聖，不可褻瀆神的名；因為耶和華的火祭，就是神的食物，是他們獻的，所以他們要成為聖。</div>
+    <div class="verse"><span class="verse-number">7</span>不可娶妓女或被污的女人為妻，也不可娶被休的婦人為妻，因為祭司是歸神為聖。</div>
+    <div class="verse"><span class="verse-number">8</span>所以你要使他成聖，因為他奉獻你神的食物；你要以他為聖，因為我使你們成聖的耶和華是聖的。</div>
+    <div class="verse"><span class="verse-number">9</span>祭司的女兒若行淫辱沒自己，就辱沒了父親，必用火將她焚燒。</div>
+    <div class="verse"><span class="verse-number">10</span>「在弟兄中作大祭司、頭上倒了膏油、又承接聖職，穿了聖衣的，不可蓬頭散髮，也不可撕裂衣服。</div>
+    <div class="verse"><span class="verse-number">11</span>不可挨近死屍，也不可為父母沾染自己。</div>
+    <div class="verse"><span class="verse-number">12</span>不可出聖所，也不可褻瀆神的聖所，因為神膏油的冠冕在他頭上。我是耶和華。</div>
+    <div class="verse"><span class="verse-number">13</span>他要娶處女為妻。</div>
+    <div class="verse"><span class="verse-number">14</span>寡婦或是被休的婦人，或是被污為妓的女人，都不可娶；只可娶本民中的處女為妻。</div>
+    <div class="verse"><span class="verse-number">15</span>不可在民中辱沒他的兒女，因為我是叫他成聖的耶和華。」</div>
+    <div class="verse"><span class="verse-number">16</span>耶和華對摩西說：</div>
+    <div class="verse"><span class="verse-number">17</span>「你告訴亞倫說：你世世代代的後裔，凡有殘疾的，都不可近前來獻他上帝的食物。</div>
+    <div class="verse"><span class="verse-number">18</span>因為凡有殘疾的，無論是瞎眼的、瘸腿的、塌鼻子的、肢體有餘的、</div>
+    <div class="verse"><span class="verse-number">19</span>折腳折手的、</div>
+    <div class="verse"><span class="verse-number">20</span>駝背的、矮矬的、眼睛有毛病的、長癬的、長疥的，或是損壞腎子的，都不可近前來。</div>
+    <div class="verse"><span class="verse-number">21</span>祭司亞倫的後裔，凡有殘疾的，都不可近前來，將火祭獻給耶和華。他有殘疾，不可近前來獻神的食物。</div>
+    <div class="verse"><span class="verse-number">22</span>神的食物，無論是聖的，至聖的，他都可以吃。</div>
+    <div class="verse"><span class="verse-number">23</span>但不可進到幔子前，也不可就近壇前；因為他有殘疾，免得褻瀆我的聖所。我是叫他成聖的耶和華。」</div>
+    <div class="verse"><span class="verse-number">24</span>於是，摩西曉諭亞倫和亞倫的子孫，並以色列眾人。</div>
+  </div>
+
+  <script>
+  function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+      bibleIcon.textContent = '📖';
+      bibleIcon.classList.add('open');
+    } else {
+      bibleIcon.textContent = '📕';
+      bibleIcon.classList.remove('open');
+    }
+  }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      利未記第21章記載了神對祭司族群（亞倫子孫）更嚴格的聖潔要求。普通以色列人須守基本的潔淨律例，祭司作為在神與民之間擔任中保的人，被要求在更高層次上活出聖潔。本章前半針對一般祭司，規定他們不可為大多數死人沾染自己（只允許為最親密的骨肉），不可從事異教習俗（剃頭、劃身），也不可娶品行有污點的女性為妻。後半則針對大祭司，要求更嚴格：他完全不可接觸死屍，甚至是父母，因為神的膏油冠冕使他隨時準備進入聖所。本章末尾的身體殘疾條例，規定有身體缺陷的祭司不可上壇獻祭，但仍可享用聖物。這並非歧視，而是用身體的完整性象徵屬靈獻祭的完全性——這個象徵最終在完全無瑕疵的大祭司基督身上得到完全應驗（希伯來書7:26-28）。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 服事者承擔更高的聖潔責任</strong><br>
+      神對祭司的要求明顯高於對一般百姓的要求。這不是不公平，而是因為職責不同，標準自然不同。越靠近神，責任越大；服事神的人，其生命方式本身就是一種信息。今日擔任領袖、傳道人或教師角色的信徒，在行為與品格上同樣被神和會眾以更高的標準來看待，這是榮譽，也是嚴肅的責任。<br><br>
+      <strong>2. 代表神的人，其生命見證影響神的形象</strong><br>
+      祭司若行事不合神的聖潔，便是「褻瀆神的名」。祭司代表神站在百姓面前，他的行為直接影響百姓對神的認識。同樣，每一個信徒在世界面前都代表著基督的名，我們的生命是世人讀到的「書信」（哥林多後書3:2-3）。如何生活，就是在向周圍的人宣告我們所信的神是誰。<br><br>
+      <strong>3. 完全無瑕疵的獻祭只能由基督成就</strong><br>
+      要求祭司身體完整才能上壇獻祭，象徵著神所接納的祭必須是完全的。舊約的祭司沒有一位能真正完全，他們的聖潔也只是相對的。這套制度最終指向那位唯一完全無罪的大祭司——耶穌基督，祂一次獻上自己，成就了舊約所有祭司制度無法完成的完全獻祭（希伯來書10:1-14）。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr><th>經文</th><th>思想題目</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>「祭司既在民中為<strong>首</strong>，就不可<strong>從俗</strong>沾染自己。」（利21:4）</td>
+            <td>就像機長在飛行中不能因旅客要求而偏離安全程序，屬靈領袖不能因群體壓力而降低聖潔標準，你在擔任任何領袖角色時，是否有意識地讓神的標準而非周圍的眼光來引導你的決定？</td>
+          </tr>
+          <tr>
+            <td>「要<strong>歸神為聖</strong>，不可褻瀆神的名；……所以他們要成為<strong>聖</strong>。」（利21:6）</td>
+            <td>就像品牌大使的一言一行都代表公司形象，信徒的生命方式也在向世界宣告所信之神的屬性，你日常生活中哪些具體的行為或言語，最能或最不能反映你所說你所信的神？</td>
+          </tr>
+          <tr>
+            <td>「他有殘疾，不可近前來獻<strong>神的食物</strong>。……但不可進到<strong>幔子</strong>前，也不可就近壇前；因為他有殘疾，免得褻瀆我的聖所。」（利21:21、23）</td>
+            <td>就像舊約祭牲必須是沒有殘疾的才被接納，這個標準最終只有基督才能完全滿足，你是否感謝神，祂不再要求你用自己不完全的努力來換取接納，因為基督已代替你成就了完全的獻祭？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>

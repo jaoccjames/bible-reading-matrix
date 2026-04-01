@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利未記第26章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 15px; cursor: pointer;
+  display: flex; justify-content: center; align-items: center;
+}
+h1:hover { color: #3498db; }
+.bible-icon { margin-left: 15px; display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px; line-height: 2;
+  max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 10px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px;
+  padding: 15px; background: #fafafa; transition: border-color 0.2s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 8px; transition: transform 0.2s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tbody tr:nth-child(even) td { background: #f9f9f9; }
+tbody tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1 onclick="toggleScripture()">
+    利未記第26章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+
+  <div class="chapter-subtitle">順服與背約：祝福或審判出於神的信實</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>「你們不可作甚麼虛無的神像，不可立雕刻的偶像或是柱像，也不可在你們的地上安甚麼鏨成的石像，向它跪拜，因為我是耶和華你們的神。</div>
+    <div class="verse"><span class="verse-number">2</span>你們要守我的安息日，敬我的聖所。我是耶和華。</div>
+    <div class="verse"><span class="verse-number">3</span>「你們若遵行我的律例，謹守我的誡命，</div>
+    <div class="verse"><span class="verse-number">4</span>我就給你們降下時雨，叫地生出土產，田野的樹木結果子。</div>
+    <div class="verse"><span class="verse-number">5</span>你們打糧食要打到摘葡萄的時候，摘葡萄要摘到撒種的時候；並且要吃得飽足，在你們的地上安然居住。</div>
+    <div class="verse"><span class="verse-number">6</span>我要賜平安在你們的地上；你們躺臥，無人驚嚇。我要叫惡獸從你們的地上息滅；刀劍也必不經過你們的地。</div>
+    <div class="verse"><span class="verse-number">7</span>你們要追趕仇敵，他們必倒在你們刀下。</div>
+    <div class="verse"><span class="verse-number">8</span>你們五個人要追趕一百人，一百人要追趕一萬人；仇敵必倒在你們刀下。</div>
+    <div class="verse"><span class="verse-number">9</span>我要眷顧你們，使你們生養眾多，也要與你們堅定所立的約。</div>
+    <div class="verse"><span class="verse-number">10</span>你們要吃陳糧，又因新糧挪開陳糧。</div>
+    <div class="verse"><span class="verse-number">11</span>我要在你們中間立我的帳幕；我的心也不厭惡你們。</div>
+    <div class="verse"><span class="verse-number">12</span>我要在你們中間行走；我要作你們的神，你們要作我的子民。</div>
+    <div class="verse"><span class="verse-number">13</span>我是耶和華你們的神，曾將你們從埃及地領出來，使你們不作埃及人的奴僕；我也折斷你們所負的軛，叫你們挺身而走。」</div>
+    <div class="verse"><span class="verse-number">14</span>「你們若不聽從我，不遵行我的誡命，</div>
+    <div class="verse"><span class="verse-number">15</span>厭棄我的律例，厭惡我的典章，不遵行我一切的誡命，背棄我的約，</div>
+    <div class="verse"><span class="verse-number">16</span>我待你們就要這樣：我必命定驚惶，叫眼目乾癟、精神消耗的癆病、熱病轄制你們。你們也要白白的撒種，因為仇敵要吃你們所種的。</div>
+    <div class="verse"><span class="verse-number">17</span>我要向你們變臉，你們就要敗在仇敵面前。恨惡你們的，必轄管你們；無人追趕，你們卻要逃跑。</div>
+    <div class="verse"><span class="verse-number">18</span>你們因這些事若還不聽從我，我就要為你們的罪加七倍懲罰你們。</div>
+    <div class="verse"><span class="verse-number">19</span>我必斷絕你們因勢力而有的驕傲，又要使覆你們的天如鐵，載你們的地如銅。</div>
+    <div class="verse"><span class="verse-number">20</span>你們要白白地勞力；因為你們的地不出土產，其上的樹木也不結果子。</div>
+    <div class="verse"><span class="verse-number">21</span>「你們行事若與我反對，不肯聽從我，我就要按你們的罪加七倍降災與你們。</div>
+    <div class="verse"><span class="verse-number">22</span>我也要打發野地的走獸到你們中間，搶吃你們的兒女，吞滅你們的牲畜，使你們的人數減少，道路荒涼。</div>
+    <div class="verse"><span class="verse-number">23</span>「你們因這些事若仍不改正歸我，行事與我反對，</div>
+    <div class="verse"><span class="verse-number">24</span>我就要行事與你們反對，因你們的罪擊打你們七次。</div>
+    <div class="verse"><span class="verse-number">25</span>我又要使刀劍臨到你們，報復你們背約的仇；聚集你們在各城內，降瘟疫在你們中間，也必將你們交在仇敵的手中。</div>
+    <div class="verse"><span class="verse-number">26</span>我要折斷你們的杖，就是斷絕你們的糧。那時，必有十個女人在一個爐子給你們烤餅，按分量秤給你們；你們要吃，也吃不飽。</div>
+    <div class="verse"><span class="verse-number">27</span>「你們因這一切的事若不聽從我，卻行事與我反對，</div>
+    <div class="verse"><span class="verse-number">28</span>我就要發烈怒，行事與你們反對，又因你們的罪懲罰你們七次。</div>
+    <div class="verse"><span class="verse-number">29</span>並且你們要吃兒子的肉，也要吃女兒的肉。</div>
+    <div class="verse"><span class="verse-number">30</span>我又要毀壞你們的邱壇，砍下你們的日像，把你們的屍首扔在你們偶像的身上；我的心也必厭惡你們。</div>
+    <div class="verse"><span class="verse-number">31</span>我要使你們的城邑變為荒涼，使你們的眾聖所成為荒場；我也不聞你們馨香的香氣。</div>
+    <div class="verse"><span class="verse-number">32</span>我要使地成為荒場，住在其上的仇敵就因此詫異。</div>
+    <div class="verse"><span class="verse-number">33</span>我要把你們散在列邦中；我也要拔刀追趕你們。你們的地要成為荒場；你們的城邑要變為荒涼。</div>
+    <div class="verse"><span class="verse-number">34</span>「你們在仇敵之地居住的時候，你們的地荒涼，要享受眾安息；正在那時候，地要歇息，享受安息。</div>
+    <div class="verse"><span class="verse-number">35</span>地多時為荒場，就要多時歇息；地這樣歇息，是你們住在其上的安息年所不能得的。</div>
+    <div class="verse"><span class="verse-number">36</span>至於你們剩下的人，我要使他們在仇敵之地心驚膽怯。葉子被風吹的響聲，要追趕他們；他們要逃避，像人逃避刀劍，無人追趕，卻要跌倒。</div>
+    <div class="verse"><span class="verse-number">37</span>無人追趕，他們要彼此撞跌，像在刀劍之前。你們在仇敵面前也必站立不住。</div>
+    <div class="verse"><span class="verse-number">38</span>你們要在列邦中滅亡；仇敵之地要吞喫你們。</div>
+    <div class="verse"><span class="verse-number">39</span>你們剩下的人必因自己的罪孽和祖宗的罪孽在仇敵之地消滅。</div>
+    <div class="verse"><span class="verse-number">40</span>「他們要承認自己的罪和他們祖宗的罪，就是干犯我的那罪，並且承認自己行事與我反對，</div>
+    <div class="verse"><span class="verse-number">41</span>我所以行事與他們反對，把他們帶到仇敵之地。那時，他們未受割禮的心若謙卑了，他們也服了罪孽的刑罰，</div>
+    <div class="verse"><span class="verse-number">42</span>我就要記念我與雅各所立的約，與以撒所立的約，與亞伯拉罕所立的約，並要記念這地。</div>
+    <div class="verse"><span class="verse-number">43</span>他們離開這地，地在荒廢無人的時候就要享受安息。並且他們要服罪孽的刑罰；因為他們厭棄了我的典章，心中厭惡了我的律例。</div>
+    <div class="verse"><span class="verse-number">44</span>雖是這樣，他們在仇敵之地，我卻不厭棄他們，也不厭惡他們，將他們盡行滅絕，也不背棄我與他們所立的約，因為我是耶和華他們的神。</div>
+    <div class="verse"><span class="verse-number">45</span>我卻要為他們的緣故記念我與他們先祖所立的約。他們的先祖是我在列邦人眼前、從埃及地領出來的，為要作他們的神。我是耶和華。」</div>
+    <div class="verse"><span class="verse-number">46</span>這些律例、典章和法度，是耶和華與以色列人在西乃山藉着摩西立的。</div>
+  </div>
+
+  <script>
+  function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+      bibleIcon.textContent = '📖';
+      bibleIcon.classList.add('open');
+    } else {
+      bibleIcon.textContent = '📕';
+      bibleIcon.classList.remove('open');
+    }
+  }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      利未記第26章是整卷書的高潮之一，以「祝福與咒詛」的結構為以色列的聖約關係作出最終的總結宣告，類似申命記28章的結構。章節前半（1-13節）是令人神往的祝福清單：豐收、平安、勝利、人口增長，以及最核心的祝福——「我要在你們中間行走；我要作你們的神，你們要作我的子民」。後半（14-39節）則是逐步升級的審判警告，神若見以色列不悔改，將四次以「加七倍」的形式加重懲罰，從疾病、農業失敗、野獸侵害、刀劍瘟疫，最終到被擄散居列邦。然而，本章以一個充滿盼望的結語收尾（40-45節）：即使以色列在審判中，神仍不背棄祂與亞伯拉罕、以撒、雅各所立的約。只要以色列謙卑認罪，神就記念約，重新施恩。這顯示神的審判是管教，不是棄絕，是要引人悔改回轉，而非永久毀滅。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 順服神是祝福的道路，不只是義務</strong><br>
+      神所應許的祝福是全方位的——物質豐足、社會安穩、靈性相交——這些並非神用來引誘人遵守規則的獎賞，而是在聖約關係中自然湧現的果實。就如同健康的飲食和運動自然帶來身體的活力，而非「義務完成後的獎品」，與神同行的生命自然包含豐盛。信徒遵行神的話，不是為了換取祝福，而是因為生命在與神的同在中本就是豐盛的。<br><br>
+      <strong>2. 神的管教是出於愛，目的是引人悔改</strong><br>
+      審判的升級模式——從輕到重，重複警告後才加重——顯示神不是急於懲罰，而是一再給機會。第18節「若還不聽從」、第21節「若仍不改正」、第27節「若不聽從」，每一階段都在等待以色列的回應。這正是希伯來書12:6所說的：「主所愛的，他必管教。」神的嚴厲不是憤恨，而是不肯放棄的父親之愛。<br><br>
+      <strong>3. 神的約是永不廢棄的，悔改永遠開路</strong><br>
+      章末神宣告：即使以色列被擄，「我卻不厭棄他們，也不厭惡他們……也不背棄我與他們所立的約」。這是舊約最震撼人心的恩典宣告之一——神的約不因人的失敗而失效。只要有真實的悔改與謙卑，回轉的門永遠敞開。這個原則在新約中藉著基督的赦免工作得到終極的應驗：沒有任何失敗能使人永遠與神分離，只要轉向祂。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr><th>經文</th><th>思想題目</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>「我要在你們中間<strong>行走</strong>；我要作你們的神，你們要作我的<strong>子民</strong>。」（利26:12）</td>
+            <td>就像住在同一屋簷下的家人能彼此扶持、隨時照應，神應許住在祂子民中間是最大的祝福，你在日常生活中是否真實地體驗到神與你同行的臨在，還是祂的同在只是你在主日才想起的一個概念？</td>
+          </tr>
+          <tr>
+            <td>「你們因這些事若還<strong>不聽從我</strong>，我就要為你們的罪<strong>加七倍</strong>懲罰你們。」（利26:18）</td>
+            <td>就像忽視身體的病痛不去就醫，最終小病拖成大病，靈命上對神的警告一再漠視，只會使問題越來越嚴重，你生命中是否有神反複提醒、你卻一再推遲回應的事，你計畫什麼時候真正面對它？</td>
+          </tr>
+          <tr>
+            <td>「雖是這樣，他們在仇敵之地，我卻<strong>不厭棄</strong>他們，也不厭惡他們，……也<strong>不背棄</strong>我與他們所立的約。」（利26:44）</td>
+            <td>就像父母即使對孩子失望也不會徹底拋棄孩子，神對祂子民的約是永不廢棄的，你是否曾因自己的失敗和軟弱而認為神已經放棄你？這節經文如何改變你對自己靈命低谷的理解？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>

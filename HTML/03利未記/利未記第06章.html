@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利未記第6章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; justify-content: center; align-items: center; }
+h1:hover { color: #3498db; }
+.bible-icon { margin-left: 15px; display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 10px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.2s, box-shadow 0.2s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 8px; transition: transform 0.2s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  利未記第6章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">壇火長燃：敬拜須持續不可熄滅</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>耶和華曉諭摩西說：</div>
+  <div class="verse"><span class="verse-number">2</span>「若有人犯罪，干犯耶和華，在鄰舍交付他的物上，或是在交易上行了詭詐，或是搶奪人的財物，或是欺壓鄰舍，</div>
+  <div class="verse"><span class="verse-number">3</span>或是在撿了遺失的物上行了詭詐，說謊起誓，在這一切的事上犯了甚麼罪；</div>
+  <div class="verse"><span class="verse-number">4</span>他既犯了罪，有了過犯，就要歸還他所搶奪的，或是因欺壓所得的，或是人交付他的，或是人遺失他所撿的物，</div>
+  <div class="verse"><span class="verse-number">5</span>或是他因甚麼物起了假誓，就要如數歸還，另外加上五分之一，在查出他有罪的日子要交還本主。</div>
+  <div class="verse"><span class="verse-number">6</span>也要照你所估定的價，把贖愆祭牲，就是羊群中一隻沒有殘疾的公綿羊，牽到耶和華面前，給祭司為贖愆祭。</div>
+  <div class="verse"><span class="verse-number">7</span>祭司要在耶和華面前為他贖罪；他無論行了甚麼事，使他有了罪，都必蒙赦免。」</div>
+  <div class="verse"><span class="verse-number">8</span>耶和華曉諭摩西說：</div>
+  <div class="verse"><span class="verse-number">9</span>「你要吩咐亞倫和他的子孫說，燔祭的條例乃是這樣：燔祭要放在壇的柴上，從晚上到天亮，壇上的火要常常燒着。</div>
+  <div class="verse"><span class="verse-number">10</span>祭司要穿上細麻布衣服，又要把細麻布褲子穿在身上，把壇上所燒的燔祭灰收起來，倒在壇的旁邊；</div>
+  <div class="verse"><span class="verse-number">11</span>隨後要脫去這衣服，穿上別的衣服，把灰拿到營外潔淨之處。</div>
+  <div class="verse"><span class="verse-number">12</span>壇上的火要在其上常常燒着，不可熄滅。祭司要每日早晨在上面燒柴，並要把燔祭擺在壇上，在其上燒平安祭牲的脂油。</div>
+  <div class="verse"><span class="verse-number">13</span>在壇上必有常常燒着的火，不可熄滅。」</div>
+  <div class="verse"><span class="verse-number">14</span>「素祭的條例乃是這樣：亞倫的子孫要在壇前把這祭獻在耶和華面前。</div>
+  <div class="verse"><span class="verse-number">15</span>祭司要從其中，就是從素祭的細麵中取出自己的一把，又要取些油和素祭上所有的乳香，燒在壇上，奉給耶和華為馨香素祭的紀念。</div>
+  <div class="verse"><span class="verse-number">16</span>所剩下的，亞倫和他子孫要吃，必在聖處不帶酵而吃，要在會幕的院子裏吃。</div>
+  <div class="verse"><span class="verse-number">17</span>烤的時候不可攙酵。這是從所獻給我的火祭中賜給他們的分，是至聖的，和贖罪祭並贖愆祭一樣。</div>
+  <div class="verse"><span class="verse-number">18</span>凡獻給耶和華的火祭，亞倫子孫中的男丁都要吃這一分，直到萬代，作他們永得的分。摸這些祭物的，都要成為聖。」</div>
+  <div class="verse"><span class="verse-number">19</span>耶和華曉諭摩西說：</div>
+  <div class="verse"><span class="verse-number">20</span>「當亞倫受膏的日子，他和他子孫所要獻給耶和華的供物，就是細麵伊法十分之一，為常獻的素祭：早晨一半，晚上一半。</div>
+  <div class="verse"><span class="verse-number">21</span>要在鐵鏊上用油調和作成，調勻了，你就拿進來；烤好了分成塊子，獻給耶和華為馨香的素祭。</div>
+  <div class="verse"><span class="verse-number">22</span>亞倫的子孫中，接續他為受膏的祭司，要把這素祭獻上，要全燒給耶和華。這是永遠的定例。</div>
+  <div class="verse"><span class="verse-number">23</span>祭司的素祭都要燒了，卻不可吃。」</div>
+  <div class="verse"><span class="verse-number">24</span>耶和華曉諭摩西說：</div>
+  <div class="verse"><span class="verse-number">25</span>「你對亞倫和他的子孫說，贖罪祭的條例乃是這樣：要在耶和華面前、宰燔祭牲的地方宰贖罪祭牲；這是至聖的。</div>
+  <div class="verse"><span class="verse-number">26</span>為贖罪獻這祭的祭司要吃，要在聖處，就是在會幕的院子裏吃。</div>
+  <div class="verse"><span class="verse-number">27</span>凡摸這祭肉的要成為聖；這祭牲的血若彈在甚麼衣服上，所彈的那一件要在聖處洗淨。</div>
+  <div class="verse"><span class="verse-number">28</span>惟有煮祭物的瓦器要打碎；若是煮在銅器裏，這銅器要擦磨，在水中涮淨。</div>
+  <div class="verse"><span class="verse-number">29</span>凡祭司中的男丁都可以吃；這是至聖的。</div>
+  <div class="verse"><span class="verse-number">30</span>凡贖罪祭，若將血帶進會幕在聖所贖罪，那肉都不可吃，必用火焚燒。」</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖'; bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕'; bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    利未記第6章在結構上分為兩部分：前段（利6:1-7）延續第5章對贖愆祭的討論，具體列舉涉及對人不誠實的罪行（詭詐、搶奪、欺壓、拾物不還、假誓），並強調賠償與獻祭並重；後段（利6:8-30）則轉入對祭司執行各種祭儀的具體條例，包括燔祭、素祭、受膏祭司素祭及贖罪祭的規定。本章最具神學分量的段落是關於壇火的規定（利6:9、12-13）：壇上的火「要常常燒著，不可熄滅」，這句話重複出現兩次，強調不間斷敬拜的重要性。祭司每日早晨都需添柴維持火焰，這是一種不以情緒與環境為轉移的服事紀律。本章同時揭示神對祭司生計的供應——素祭所剩歸給亞倫和子孫食用，贖罪祭肉也由祭司分享，說明神的服事體系有其公平合理的供應機制。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 壇火常燃：敬拜是持續的紀律而非偶發的情緒</strong><br>
+    「在壇上必有常常燒着的火，不可熄滅」（利6:13）這道命令揭示敬拜的本質：它不是靠感覺驅動的偶發性行為，而是每日持守的屬靈紀律。就如同聖靈的工作在信徒心中燃燒，信徒有責任持續「添柴」——透過讀經、禱告、敬拜、團契來維持靈命的火焰。當「感動」消退時，紀律的「添柴」讓信仰之火持續燃燒。<br><br>
+    <strong>2. 罪對人際的虧欠：向神和好必先向人和好</strong><br>
+    本章前段清楚說明，對鄰舍的詭詐、欺壓和搶奪不僅是對人的虧欠，也是「干犯耶和華」（利6:2）。神將對人的誠信直接連結到對神的忠誠，說明人際倫理與屬靈關係不可分割。在獻贖愆祭之前，必須先對人「如數歸還，另外加上五分之一」（利6:5），這預示耶穌的教導：「先去與弟兄和好，然後來獻禮物」（太5:24）。<br><br>
+    <strong>3. 至聖的分別：事奉者需在聖潔中領受供應</strong><br>
+    本章規定祭司在特定地點、以特定方式食用祭物，強調「至聖」（利6:17、25、29）的性質。這說明事奉神的人在領受神賜下的供應時，同樣需要保持分別為聖的態度，不可隨意對待神所定為聖的事物。當代信徒在領受神話語的餵養與恩典的供應時，同樣需要以敬畏與感謝的心來回應，而非視為理所當然。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>經文</th><th>思想題目</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「在壇上必有<strong>常常燒着的火</strong>，<strong>不可熄滅</strong>。」（利6:13）</td>
+          <td>壇火<strong>不可熄滅</strong>，靠的是每日早晨祭司添柴的紀律，而非火焰自然持續。就像植物需要每天澆水才能存活——你的靈命之火目前是靠紀律在燃燒，還是已經逐漸減弱？什麼是你今天需要「添加」的屬靈柴火？</td>
+        </tr>
+        <tr>
+          <td>「若有人犯罪，<strong>干犯耶和華</strong>，在鄰舍交付他的物上，或是在交易上行了<strong>詭詐</strong>⋯⋯」（利6:2）</td>
+          <td>對人的詭詐被定義為<strong>干犯耶和華</strong>，說明人際誠信與敬神不可分。就像公司的企業文化反映其核心價值——你在職場或日常交易中的誠信態度，是否真實反映了你對神的敬畏？有沒有哪些「小小的不誠實」是你覺得無關緊要、但其實已干犯神的？</td>
+        </tr>
+        <tr>
+          <td>「他既犯了罪，有了過犯，就要<strong>歸還</strong>他所搶奪的⋯⋯另外加上<strong>五分之一</strong>，在查出他有罪的日子要交還本主。」（利6:4-5）</td>
+          <td>犯罪後必須<strong>如數歸還再加五分之一</strong>，真正的悔改帶來超額的補償行動。就像修繕被損壞的東西還要補償額外的損失費——你是否曾因對某人造成的傷害（物質或情感上），停留在「道歉」層面，卻從未採取任何實際的補償行動？神的標準提醒我們，悔改需要「加五分之一」的誠意。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

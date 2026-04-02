@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第7章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; font-style: normal; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 20px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0;
+  border-radius: 8px; padding: 15px; background: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before {
+  content: "▶"; display: inline-block; margin-right: 8px;
+  transition: transform 0.3s;
+}
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th {
+  background: #3498db; color: white; padding: 15px;
+  font-size: 1.1em; text-align: left;
+}
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  民數記第7章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">十二首領獻禮與神同在</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>摩西立完了帳幕，就把帳幕用膏抹了，使他成聖，又把其中的器具和壇，並壇上的器具，都抹了，使他成聖。</div>
+  <div class="verse"><span class="verse-number">2</span>當天，以色列的眾首領，就是各族的族長，都來奉獻。他們是各支派的首領，管理那些被數的人。</div>
+  <div class="verse"><span class="verse-number">3</span>他們把自己的供物送到耶和華面前，就是六輛篷子車和十二隻公牛。每兩個首領奉獻一輛車，每首領奉獻一隻牛。他們把這些都奉到帳幕前。</div>
+  <div class="verse"><span class="verse-number">4</span>耶和華曉諭摩西說：</div>
+  <div class="verse"><span class="verse-number">5</span>「你要收下這些，好作會幕的使用，都要照利未人所辦的事交給他們。」</div>
+  <div class="verse"><span class="verse-number">6</span>於是摩西收了車和牛，交給利未人，</div>
+  <div class="verse"><span class="verse-number">7</span>把兩輛車，四隻牛，照革順子孫所辦的事交給他們，</div>
+  <div class="verse"><span class="verse-number">8</span>又把四輛車，八隻牛，照米拉利子孫所辦的事交給他們；他們都在祭司亞倫的兒子以他瑪手下。</div>
+  <div class="verse"><span class="verse-number">9</span>但車與牛都沒有交給哥轄子孫；因為他們辦的是聖所的事，在肩頭上抬聖物。</div>
+  <div class="verse"><span class="verse-number">10</span>用膏抹壇的日子，首領都來行奉獻壇的禮，眾首領就在壇前獻供物。</div>
+  <div class="verse"><span class="verse-number">11</span>耶和華對摩西說：「眾首領為行奉獻壇的禮，要每天一個首領來獻供物。」</div>
+  <div class="verse"><span class="verse-number">12</span>頭一日獻供物的是猶大支派的亞米拿達的兒子拿順。</div>
+  <div class="verse"><span class="verse-number">13</span>他的供物是：一個銀盤子，重一百三十舍客勒，一個銀碗，重七十舍客勒，都是按聖所的平，也都盛滿了調油的細麵作素祭；</div>
+  <div class="verse"><span class="verse-number">14</span>一個金盂，重十舍客勒，盛滿了香；</div>
+  <div class="verse"><span class="verse-number">15</span>一隻公牛犢，一隻公綿羊，一隻一歲的公羊羔作燔祭；</div>
+  <div class="verse"><span class="verse-number">16</span>一隻公山羊作贖罪祭；</div>
+  <div class="verse"><span class="verse-number">17</span>兩隻公牛，五隻公綿羊，五隻公山羊，五隻一歲的公羊羔作平安祭。這是亞米拿達兒子拿順的供物。</div>
+  <div class="verse"><span class="verse-number">18</span>第二日來獻的是以薩迦子孫的首領、蘇押的兒子拿坦業。</div>
+  <div class="verse"><span class="verse-number">19</span>他獻為供物的是：一個銀盤子，重一百三十舍客勒，一個銀碗，重七十舍客勒，都是按聖所的平，也都盛滿了調油的細麵作素祭；</div>
+  <div class="verse"><span class="verse-number">20</span>一個金盂，重十舍客勒，盛滿了香；</div>
+  <div class="verse"><span class="verse-number">21</span>一隻公牛犢，一隻公綿羊，一隻一歲的公羊羔作燔祭；</div>
+  <div class="verse"><span class="verse-number">22</span>一隻公山羊作贖罪祭；</div>
+  <div class="verse"><span class="verse-number">23</span>兩隻公牛，五隻公綿羊，五隻公山羊，五隻一歲的公羊羔作平安祭。這是蘇押兒子拿坦業的供物。</div>
+  <div class="verse"><span class="verse-number">24</span>第三日來獻的是西布倫子孫的首領、希倫的兒子以利押。</div>
+  <div class="verse"><span class="verse-number">25</span>他的供物是：一個銀盤子，重一百三十舍客勒，一個銀碗，重七十舍客勒，都是按聖所的平，也都盛滿了調油的細麵作素祭；</div>
+  <div class="verse"><span class="verse-number">26</span>一個金盂，重十舍客勒，盛滿了香；</div>
+  <div class="verse"><span class="verse-number">27</span>一隻公牛犢，一隻公綿羊，一隻一歲的公羊羔作燔祭；</div>
+  <div class="verse"><span class="verse-number">28</span>一隻公山羊作贖罪祭；</div>
+  <div class="verse"><span class="verse-number">29</span>兩隻公牛，五隻公綿羊，五隻公山羊，五隻一歲的公羊羔作平安祭。這是希倫兒子以利押的供物。</div>
+  <div class="verse"><span class="verse-number">30</span>第四日來獻的是流便子孫的首領、示丟珥的兒子以利蓿。</div>
+  <div class="verse"><span class="verse-number">31</span>他的供物是：一個銀盤子，重一百三十舍客勒，一個銀碗，重七十舍客勒，都是按聖所的平，也都盛滿了調油的細麵作素祭；</div>
+  <div class="verse"><span class="verse-number">32</span>一個金盂，重十舍客勒，盛滿了香；</div>
+  <div class="verse"><span class="verse-number">33</span>一隻公牛犢，一隻公綿羊，一隻一歲的公羊羔作燔祭；</div>
+  <div class="verse"><span class="verse-number">34</span>一隻公山羊作贖罪祭；</div>
+  <div class="verse"><span class="verse-number">35</span>兩隻公牛，五隻公綿羊，五隻公山羊，五隻一歲的公羊羔作平安祭。這是示丟珥的兒子以利蓿的供物。</div>
+  <div class="verse"><span class="verse-number">36</span>第五日來獻的是西緬子孫的首領、蘇利沙代的兒子示路蔑。</div>
+  <div class="verse"><span class="verse-number">37</span>他的供物是：一個銀盤子，重一百三十舍客勒，一個銀碗，重七十舍客勒，都是按聖所的平，也都盛滿了調油的細麵作素祭；</div>
+  <div class="verse"><span class="verse-number">38</span>一個金盂，重十舍客勒，盛滿了香；</div>
+  <div class="verse"><span class="verse-number">39</span>一隻公牛犢，一隻公綿羊，一隻一歲的公羊羔作燔祭；</div>
+  <div class="verse"><span class="verse-number">40</span>一隻公山羊作贖罪祭；</div>
+  <div class="verse"><span class="verse-number">41</span>兩隻公牛，五隻公綿羊，五隻公山羊，五隻一歲的公羊羔作平安祭。這是蘇利沙代兒子示路蔑的供物。</div>
+  <div class="verse"><span class="verse-number">42</span>第六日來獻的是迦得子孫的首領、丟珥的兒子以利雅薩。</div>
+  <div class="verse"><span class="verse-number">43</span>他的供物是：一個銀盤子，重一百三十舍客勒，一個銀碗，重七十舍客勒，都是按聖所的平，也都盛滿了調油的細麵作素祭；</div>
+  <div class="verse"><span class="verse-number">44</span>一個金盂，重十舍客勒，盛滿了香；</div>
+  <div class="verse"><span class="verse-number">45</span>一隻公牛犢，一隻公綿羊，一隻一歲的公羊羔作燔祭；</div>
+  <div class="verse"><span class="verse-number">46</span>一隻公山羊作贖罪祭；</div>
+  <div class="verse"><span class="verse-number">47</span>兩隻公牛，五隻公綿羊，五隻公山羊，五隻一歲的公羊羔作平安祭。這是丟珥的兒子以利雅薩的供物。</div>
+  <div class="verse"><span class="verse-number">48</span>第七日來獻的是以法蓮子孫的首領、亞米忽的兒子以利沙瑪。</div>
+  <div class="verse"><span class="verse-number">49</span>他的供物是：一個銀盤子，重一百三十舍客勒，一個銀碗，重七十舍客勒，都是按聖所的平，也都盛滿了調油的細麵作素祭；</div>
+  <div class="verse"><span class="verse-number">50</span>一個金盂，重十舍客勒，盛滿了香；</div>
+  <div class="verse"><span class="verse-number">51</span>一隻公牛犢，一隻公綿羊，一隻一歲的公羊羔作燔祭；</div>
+  <div class="verse"><span class="verse-number">52</span>一隻公山羊作贖罪祭；</div>
+  <div class="verse"><span class="verse-number">53</span>兩隻公牛，五隻公綿羊，五隻公山羊，五隻一歲的公羊羔作平安祭。這是亞米忽兒子以利沙瑪的供物。</div>
+  <div class="verse"><span class="verse-number">54</span>第八日來獻的是瑪拿西子孫的首領、比大蓿的兒子迦瑪列。</div>
+  <div class="verse"><span class="verse-number">55</span>他的供物是：一個銀盤子，重一百三十舍客勒，一個銀碗，重七十舍客勒，都是按聖所的平，也都盛滿了調油的細麵作素祭；</div>
+  <div class="verse"><span class="verse-number">56</span>一個金盂，重十舍客勒，盛滿了香；</div>
+  <div class="verse"><span class="verse-number">57</span>一隻公牛犢，一隻公綿羊，一隻一歲的公羊羔作燔祭；</div>
+  <div class="verse"><span class="verse-number">58</span>一隻公山羊作贖罪祭；</div>
+  <div class="verse"><span class="verse-number">59</span>兩隻公牛，五隻公綿羊，五隻公山羊，五隻一歲的公羊羔作平安祭。這是比大蓿兒子迦瑪列的供物。</div>
+  <div class="verse"><span class="verse-number">60</span>第九日來獻的是便雅憫子孫的首領、基多尼的兒子亞比但。</div>
+  <div class="verse"><span class="verse-number">61</span>他的供物是：一個銀盤子，重一百三十舍客勒，一個銀碗，重七十舍客勒，都是按聖所的平，也都盛滿了調油的細麵作素祭；</div>
+  <div class="verse"><span class="verse-number">62</span>一個金盂，重十舍客勒，盛滿了香；</div>
+  <div class="verse"><span class="verse-number">63</span>一隻公牛犢，一隻公綿羊，一隻一歲的公羊羔作燔祭；</div>
+  <div class="verse"><span class="verse-number">64</span>一隻公山羊作贖罪祭；</div>
+  <div class="verse"><span class="verse-number">65</span>兩隻公牛，五隻公綿羊，五隻公山羊，五隻一歲的公羊羔作平安祭。這是基多尼兒子亞比但的供物。</div>
+  <div class="verse"><span class="verse-number">66</span>第十日來獻的是但子孫的首領、亞米沙代的兒子亞希以謝。</div>
+  <div class="verse"><span class="verse-number">67</span>他的供物是：一個銀盤子，重一百三十舍客勒，一個銀碗，重七十舍客勒，都是按聖所的平，也都盛滿了調油的細麵作素祭；</div>
+  <div class="verse"><span class="verse-number">68</span>一個金盂，重十舍客勒，盛滿了香；</div>
+  <div class="verse"><span class="verse-number">69</span>一隻公牛犢，一隻公綿羊，一隻一歲的公羊羔作燔祭；</div>
+  <div class="verse"><span class="verse-number">70</span>一隻公山羊作贖罪祭；</div>
+  <div class="verse"><span class="verse-number">71</span>兩隻公牛，五隻公綿羊，五隻公山羊，五隻一歲的公羊羔作平安祭。這是亞米沙代兒子亞希以謝的供物。</div>
+  <div class="verse"><span class="verse-number">72</span>第十一日來獻的是亞設子孫的首領、俄蘭的兒子帕結。</div>
+  <div class="verse"><span class="verse-number">73</span>他的供物是：一個銀盤子，重一百三十舍客勒，一個銀碗，重七十舍客勒，都是按聖所的平，也都盛滿了調油的細麵作素祭；</div>
+  <div class="verse"><span class="verse-number">74</span>一個金盂，重十舍客勒，盛滿了香；</div>
+  <div class="verse"><span class="verse-number">75</span>一隻公牛犢，一隻公綿羊，一隻一歲的公羊羔作燔祭；</div>
+  <div class="verse"><span class="verse-number">76</span>一隻公山羊作贖罪祭；</div>
+  <div class="verse"><span class="verse-number">77</span>兩隻公牛，五隻公綿羊，五隻公山羊，五隻一歲的公羊羔作平安祭。這是俄蘭兒子帕結的供物。</div>
+  <div class="verse"><span class="verse-number">78</span>第十二日來獻的是拿弗他利子孫的首領、以南兒子亞希拉。</div>
+  <div class="verse"><span class="verse-number">79</span>他的供物是：一個銀盤子，重一百三十舍客勒，一個銀碗，重七十舍客勒，都是按聖所的平，也都盛滿了調油的細麵作素祭；</div>
+  <div class="verse"><span class="verse-number">80</span>一個金盂，重十舍客勒，盛滿了香；</div>
+  <div class="verse"><span class="verse-number">81</span>一隻公牛犢，一隻公綿羊，一隻一歲的公羊羔作燔祭；</div>
+  <div class="verse"><span class="verse-number">82</span>一隻公山羊作贖罪祭；</div>
+  <div class="verse"><span class="verse-number">83</span>兩隻公牛，五隻公綿羊，五隻公山羊，五隻一歲的公羊羔作平安祭。這是以南兒子亞希拉的供物。</div>
+  <div class="verse"><span class="verse-number">84</span>用膏抹壇的日子，以色列的眾首領為行獻壇之禮所獻的是：銀盤子十二個，銀碗十二個，金盂十二個；</div>
+  <div class="verse"><span class="verse-number">85</span>每盤子重一百三十舍客勒，每碗重七十舍客勒。一切器皿的銀子，按聖所的平，共有二千四百舍客勒。</div>
+  <div class="verse"><span class="verse-number">86</span>十二個金盂盛滿了香，按聖所的平，每盂重十舍客勒，所有的金子共一百二十舍客勒。</div>
+  <div class="verse"><span class="verse-number">87</span>作燔祭的，共有公牛十二隻，公羊十二隻，一歲的公羊羔十二隻，並同獻的素祭作贖罪祭的公山羊十二隻；</div>
+  <div class="verse"><span class="verse-number">88</span>作平安祭的，共有公牛二十四隻，公綿羊六十隻，公山羊六十隻，一歲的公羊羔六十隻。這就是用膏抹壇之後，為行奉獻壇之禮所獻的。</div>
+  <div class="verse"><span class="verse-number">89</span>摩西進會幕要與耶和華說話的時候，聽見法櫃的施恩座以上、二基路伯中間有與他說話的聲音，就是耶和華與他說話。</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖';
+    bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕';
+    bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">民數記第七章是民數記中最長的一章，記載了帳幕被膏抹後，以色列十二支派首領在十二天內輪流奉獻供物，每位首領各帶一份相同的供物——銀盤子、銀碗、金盂、燔祭、贖罪祭及平安祭的牲畜——在壇前獻上。神先接受以色列首領的六輛篷子車和十二隻公牛，按所辦的事分給利未人各族使用。哥轄族因負責搬運最神聖的器具，不分配車輛，須肩抬聖物。本章以重複性的記載強調每個支派的奉獻都同等受到神的重視與接納。最後記載摩西進入會幕，在約櫃施恩座二基路伯中間聽見神的聲音，象徵神的同在在其子民中間。本章彰顯了全體以色列對神聖殿的共同委身，以及每個領袖平等承擔責任的精神。</div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 每一份奉獻，神都同等珍視</strong><br>十二位首領輪流獻上完全相同的供物，神沒有因支派大小或排名前後而有所差異。這告訴我們，神不以規模、地位或先後次序衡量奉獻，而是看心態是否誠實。無論我們的資源多少、服事大小，神都看重每一份出於愛與順服的奉獻，在祂眼中每一份都同等珍貴。<br><br>
+    <strong>2. 屬靈領袖以身作則帶動群體奉獻</strong><br>首領們主動走在前頭，以自己的資源奉獻，帶動了整個民族對神的委身。真正的屬靈領袖不只是指揮他人，更是率先在奉獻和委身上成為榜樣。當領袖以行動而非只以言語領導，群體的信仰生命才能被真正激勵。<br><br>
+    <strong>3. 神在祂子民中間說話</strong><br>本章以摩西進入會幕、聆聽神聲音作結，強調再多的奉獻最終目的是為了維繫與神的關係。帳幕的建立、奉獻的完成，使神與人的相交成為可能。奉獻的目的不只是支持事工，更是建立一個讓神可以與祂子民相遇的空間。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>經文</th><th>思想題目</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「他的供物是：一個銀盤子……也都盛滿了調油的細麵作<strong>素祭</strong>。」（民7:13）</td>
+          <td>每位首領的供物格式完全相同，神對每份都同等接納，就像老師批改作業時看的是認真程度而非紙張的厚薄一樣。你在服事或奉獻時，是否顧慮自己的貢獻是否「夠多」，還是相信神<strong>同等珍視</strong>你真誠的付出？</td>
+        </tr>
+        <tr>
+          <td>「用膏抹壇的日子，<strong>首領</strong>都來行奉獻壇的禮，眾首領就在壇前獻供物。」（民7:10）</td>
+          <td>首領們率先在壇前獻上，以行動帶動群體，就像家長自己先養成固定禱告的習慣，子女才自然跟進一樣。在你的家庭或小組中，你是否願意<strong>以身作則</strong>，在靈性上走在前面？</td>
+        </tr>
+        <tr>
+          <td>「摩西……聽見法櫃的施恩座以上、二基路伯中間有與他<strong>說話</strong>的聲音。」（民7:89）</td>
+          <td>一切奉獻完成後，摩西進入會幕聆聽神的聲音，就像準備充分才能進入重要的會議室一樣。你是否願意在參與服事和奉獻之後，<strong>靜下心來</strong>聆聽神要對你說的話？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

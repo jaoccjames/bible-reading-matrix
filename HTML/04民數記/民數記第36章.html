@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第36章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; transition: color 0.3s; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; font-style: normal; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 12px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s, background 0.3s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; transition: color 0.3s; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '▶'; margin-right: 10px; display: inline-block; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+strong { color: #c0392b; font-weight: bold; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">民數記第36章<span id="bibleIcon" class="bible-icon">📕</span></h1>
+  <div class="chapter-subtitle">女兒繼業嫁同族保守產業</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span> 約瑟的後裔，瑪拿西的孫子，瑪吉的兒子基列，他子孫中的諸族長來到摩西和作首領的以色列人族長面前，說：</div>
+    <div class="verse"><span class="verse-number">2</span> 「耶和華曾吩咐我主拈鬮分地給以色列人為業，我主也受了耶和華的吩咐將我們兄弟西羅非哈的產業分給他的眾女兒。</div>
+    <div class="verse"><span class="verse-number">3</span> 她們若嫁以色列別支派的人，就必將我們祖宗所遺留的產業加在她們丈夫支派的產業中。這樣，我們拈鬮所得的產業就要減少了。</div>
+    <div class="verse"><span class="verse-number">4</span> 到了以色列人的禧年，這女兒的產業就必加在她們丈夫支派的產業上。這樣，我們祖宗支派的產業就減少了。」</div>
+    <div class="verse"><span class="verse-number">5</span> 摩西照耶和華的話吩咐以色列人說：「約瑟支派的人說得有理。</div>
+    <div class="verse"><span class="verse-number">6</span> 論到西羅非哈的眾女兒，耶和華這樣吩咐說：她們可以隨意嫁人，只是要嫁同宗支派的人。</div>
+    <div class="verse"><span class="verse-number">7</span> 這樣，以色列人的產業就不從這支派歸到那支派，因為以色列人要各守各祖宗支派的產業。</div>
+    <div class="verse"><span class="verse-number">8</span> 凡在以色列支派中得了產業的女子必作同宗支派人的妻，好叫以色列人各自承受他祖宗的產業。</div>
+    <div class="verse"><span class="verse-number">9</span> 這樣，她們的產業就不從這支派歸到那支派，因為以色列支派的人要各守各的產業。」</div>
+    <div class="verse"><span class="verse-number">10</span> 耶和華怎樣吩咐摩西，西羅非哈的眾女兒就怎樣行。</div>
+    <div class="verse"><span class="verse-number">11</span> 西羅非哈的女兒瑪拉、得撒、曷拉、密迦、挪阿都嫁了她們伯叔的兒子。</div>
+    <div class="verse"><span class="verse-number">12</span> 她們嫁入約瑟兒子、瑪拿西子孫的族中；她們的產業仍留在同宗支派中。</div>
+    <div class="verse"><span class="verse-number">13</span> 這是耶和華在摩押平原約但河邊、耶利哥對面藉着摩西所吩咐以色列人的命令典章。</div>
+  </div>
+  <script>
+  function toggleScripture() {
+    const s = document.getElementById('scriptureText');
+    const i = document.getElementById('bibleIcon');
+    s.classList.toggle('show');
+    if (s.classList.contains('show')) { i.textContent='📖'; i.classList.add('open'); }
+    else { i.textContent='📕'; i.classList.remove('open'); }
+  }
+  </script>
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">民數記第36章是整卷書的結尾，呼應了第27章西羅非哈女兒繼業的問題，提出了一個補充的法律問題。瑪拿西支派的族長們來到摩西面前，提出了一個新的憂慮：如果西羅非哈的女兒們嫁給其他支派的男人，她們的產業就會在禧年後永久地從瑪拿西支派轉移到她們丈夫的支派，造成各支派土地的流失。<br><br>神的回應是：這些女兒「可以隨意嫁人，只是要嫁同宗支派的人」。這樣，以色列各支派的產業就不會從一個支派流到另一個支派，「以色列人要各守各祖宗支派的產業」。西羅非哈的五個女兒遵照神的命令，都嫁給了父親兄弟的兒子（即同族的人）。本章以「這是耶和華在摩押平原約但河邊、耶利哥對面藉着摩西所吩咐以色列人的命令典章」作結，為民數記的律法傳遞部分畫上句號，以色列人即將越過約但河，進入應許之地。</div>
+  </details>
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content"><strong>1. 產業的保守——每個家族和支派的傳承都有價值</strong><br>神關心每個支派的土地不被流失，顯示神對每一個群體、家族和傳承的獨特性都有重視。每一個支派的產業都有其特定的意義和神的安排，不應因任意的選擇而消失。信仰群體中，各地方教會、各文化中的信仰表達，都有其神所賦予的獨特性，值得被珍視和守護。<br><br><strong>2. 自由與責任的平衡——可以自由選擇，但需在神的範圍內</strong><br>「她們可以隨意嫁人，只是要嫁同宗支派的人。」這一原則是自由與責任的平衡：個人的選擇是被尊重的，但個人的選擇同時有其對更大群體的影響需要考量。信仰中，個人自由不是無限的；成熟的信徒在行使個人自由時，同時考量其行動對群體和傳承的影響。<br><br><strong>3. 遵從到底——西羅非哈的女兒的完整順服</strong><br>「耶和華怎樣吩咐摩西，西羅非哈的眾女兒就怎樣行」，她們不只在第27章勇敢地為自己的應得之份發聲，也在第36章完整地遵從了神所設的範圍。從主張權益到接受限制，她們都順服了神的命令。這是民數記以最後一個故事所呈現的信仰典範：在神的應許中主動求取，在神的命令中甘心順服。</div>
+  </details>
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>族長們說：「她們若嫁以色列別支派的人，就必將我們祖宗所遺留的<strong>產業加在她們丈夫支派的產業中</strong>。這樣，我們拈鬮所得的<strong>產業就要減少了</strong>。」（民36:3）</td>
+            <td>就像一個家族擔心婚姻帶走了祖傳的資產，族長們關心<strong>支派產業的保守</strong>——你是否曾思考過，你個人的選擇（婚姻、工作、移居）對你所屬的信仰群體或家族的「屬靈產業」有什麼影響？</td>
+          </tr>
+          <tr>
+            <td>神說：「她們可以<strong>隨意嫁人</strong>，只是要<strong>嫁同宗支派的人</strong>。這樣，以色列人的產業就不從這支派歸到那支派。」（民36:6-7）</td>
+            <td>就像一個組織給員工充分的自由，但有一條清楚的底線保護整體利益，神給了女兒們<strong>自由，卻設了邊界</strong>——在你的個人自由與對群體的責任之間，你如何找到平衡？有沒有哪些「自由的選擇」，你需要在群體責任的角度重新思考？</td>
+          </tr>
+          <tr>
+            <td>耶和華<strong>怎樣吩咐摩西</strong>，西羅非哈的眾女兒就<strong>怎樣行</strong>。（民36:10）</td>
+            <td>就像一個故事的結尾，用最後一個人物的順服作為整卷書的收尾，民數記以西羅非哈女兒們的<strong>完整順服</strong>畫上句號——從第27章她們勇敢發聲，到第36章甘心遵從，你看見了什麼樣的信仰成熟？你自己在「主動爭取」和「甘心接受限制」這兩方面，哪一方面更需要成長？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

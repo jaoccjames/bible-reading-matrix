@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第13章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; transition: color 0.3s; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; font-style: normal; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 12px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s, background 0.3s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; transition: color 0.3s; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '▶'; margin-right: 10px; display: inline-block; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+strong { color: #c0392b; font-weight: bold; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">民數記第13章<span id="bibleIcon" class="bible-icon">📕</span></h1>
+  <div class="chapter-subtitle">十二探子窺探迦南地</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span> 耶和華曉諭摩西說：</div>
+    <div class="verse"><span class="verse-number">2</span> 「你打發人去窺探我所賜給以色列人的迦南地，他們每支派中要打發一個人，都要作首領的。」</div>
+    <div class="verse"><span class="verse-number">3</span> 摩西就照耶和華的吩咐從巴蘭的曠野打發他們去；他們都是以色列人的族長。</div>
+    <div class="verse"><span class="verse-number">4</span> 他們的名字：屬流便支派的有撒刻的兒子沙母亞。</div>
+    <div class="verse"><span class="verse-number">5</span> 屬西緬支派的有何利的兒子沙法。</div>
+    <div class="verse"><span class="verse-number">6</span> 屬猶大支派的有耶孚尼的兒子迦勒。</div>
+    <div class="verse"><span class="verse-number">7</span> 屬以薩迦支派的有約色的兒子以迦。</div>
+    <div class="verse"><span class="verse-number">8</span> 屬以法蓮支派的有嫩的兒子何西阿。</div>
+    <div class="verse"><span class="verse-number">9</span> 屬便雅憫支派的有拉孚的兒子帕提。</div>
+    <div class="verse"><span class="verse-number">10</span> 屬西布倫支派的有梭底的兒子迦疊。</div>
+    <div class="verse"><span class="verse-number">11</span> 約瑟的子孫，屬瑪拿西支派的有穌西的兒子迦底。</div>
+    <div class="verse"><span class="verse-number">12</span> 屬但支派的有基瑪利的兒子亞米利。</div>
+    <div class="verse"><span class="verse-number">13</span> 屬亞設支派的有米迦勒的兒子西帖。</div>
+    <div class="verse"><span class="verse-number">14</span> 屬拿弗他利支派的有縛西的兒子拿比。</div>
+    <div class="verse"><span class="verse-number">15</span> 屬迦得支派的有瑪基的兒子臼利。</div>
+    <div class="verse"><span class="verse-number">16</span> 這就是摩西所打發窺探那地之人的名字。摩西就稱嫩的兒子何西阿為約書亞。</div>
+    <div class="verse"><span class="verse-number">17</span> 摩西打發他們去窺探迦南地，說：「你們從南地上山地去，</div>
+    <div class="verse"><span class="verse-number">18</span> 看那地如何，其中所住的民是強是弱，是多是少，</div>
+    <div class="verse"><span class="verse-number">19</span> 所住之地是好是歹，所住之處是營盤是堅城。</div>
+    <div class="verse"><span class="verse-number">20</span> 又看那地土是肥美是瘠薄，其中有樹木沒有。你們要放開膽量，把那地的果子帶些來。」（那時正是葡萄初熟的時候。）</div>
+    <div class="verse"><span class="verse-number">21</span> 他們上去窺探那地，從尋的曠野到利合，直到哈馬口。</div>
+    <div class="verse"><span class="verse-number">22</span> 他們從南地上去，到了希伯崙；在那裏有亞衲族人亞希幔、示篩、撻買。（原來希伯崙城被建造比埃及的鎖安城早七年。）</div>
+    <div class="verse"><span class="verse-number">23</span> 他們到了以實各谷，從那裏砍了葡萄樹的一枝，上頭有一掛葡萄，兩個人用杠抬着，又帶了些石榴和無花果來。</div>
+    <div class="verse"><span class="verse-number">24</span> （因為以色列人從那裏砍來的那掛葡萄，所以那地方叫作以實各谷。）</div>
+    <div class="verse"><span class="verse-number">25</span> 過了四十天，他們窺探那地才回來，</div>
+    <div class="verse"><span class="verse-number">26</span> 到了巴蘭曠野的加低斯，見摩西、亞倫，並以色列的全會眾，回報摩西、亞倫，並全會眾，又把那地的果子給他們看；</div>
+    <div class="verse"><span class="verse-number">27</span> 又告訴摩西說：「我們到了你所打發我們去的那地，果然是流奶與蜜之地；這就是那地的果子。</div>
+    <div class="verse"><span class="verse-number">28</span> 然而住那地的民強壯，城邑也堅固寬大，並且我們在那裏看見了亞衲族的人。</div>
+    <div class="verse"><span class="verse-number">29</span> 亞瑪力人住在南地；赫人、耶布斯人、亞摩利人住在山地；迦南人住在海邊並約但河旁。」</div>
+    <div class="verse"><span class="verse-number">30</span> 迦勒在摩西面前安撫百姓，說：「我們立刻上去得那地吧！我們足能得勝。」</div>
+    <div class="verse"><span class="verse-number">31</span> 但那些和他同去的人說：「我們不能上去攻擊那民，因為他們比我們強壯。」</div>
+    <div class="verse"><span class="verse-number">32</span> 探子中有人論到所窺探之地，向以色列人報惡信，說：「我們所窺探、經過之地是吞喫居民之地，我們在那裏所看見的人民都身量高大。</div>
+    <div class="verse"><span class="verse-number">33</span> 我們在那裏看見亞衲族人，就是偉人；他們是偉人的後裔。據我們看，自己就如蚱蜢一樣；據他們看，我們也是如此。」</div>
+  </div>
+  <script>
+  function toggleScripture() {
+    const s = document.getElementById('scriptureText');
+    const i = document.getElementById('bibleIcon');
+    s.classList.toggle('show');
+    if (s.classList.contains('show')) { i.textContent='📖'; i.classList.add('open'); }
+    else { i.textContent='📕'; i.classList.remove('open'); }
+  }
+  </script>
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">民數記第13章記載以色列人在巴蘭曠野時，耶和華吩咐摩西從每一支派中各選一名首領，共十二人，前往窺探神應許賜給以色列人的迦南地。這是出埃及後一個關鍵的歷史時刻，以色列人即將面對進入應許之地的挑戰。<br><br>十二位探子奉命進入迦南，歷時四十天，帶回了豐盛的果子（一掛葡萄需兩人抬），也帶回了詳細的報告。然而在描述那地的居民時，十位探子與迦勒的評估出現了截然不同的結論：多數人看見的是高牆大城、身量高大的亞衲族，並稱自己「如同蚱蜢一樣」；而迦勒則說「我們足能得勝」，展現出以信心為依據的判斷。本章揭示同一處境在不同信仰視角下的天壤之別，是整本民數記中最核心的信心考驗之一。</div>
+  </details>
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content"><strong>1. 神的命令背後有神的應許——信心的行動根基</strong><br>耶和華命以色列人去窺探「我所賜給你們的迦南地」，那地已是「所賜的」，窺探是認識，不是決定去不去。迦勒的信心回應正是建立在神已賜下的應許上：既然神說要給，就「足能得勝」。信仰生活中，神的呼召本身就包含了成就的保證；以信心回應神的應許，而非憑眼見衡量困難的大小。<br><br><strong>2. 眼見與信心的對比——「如同蚱蜢」還是「足能得勝」</strong><br>十位探子說「我們在那裏看見亞衲族人，就如蚱蜢一樣」；迦勒卻說「我們足能得勝」。兩種回應面對同樣的事實，卻因信仰的有無而得出截然不同的結論。信心不是忽視困難，而是把困難放在神的大能面前來衡量。以自我為衡量標準，永遠是「蚱蜢」；以神為衡量標準，才能看見「足能得勝」。<br><br><strong>3. 少數與多數——真理不由多數決定</strong><br>十二人中只有兩人（迦勒和約書亞）給出正確的信心報告。多數人的「現實評估」反而是對神應許的輕忽。信仰生活中，跟隨神的路往往是少數人的路；在眾人都說「不可能」的時刻，仍能說「神必帶我們進去」，需要超凡的信心和對神的認識。</div>
+  </details>
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>迦勒在摩西面前安撫百姓，說：「<strong>我們立刻上去得那地吧！我們足能得勝。</strong>」（民13:30）</td>
+            <td>就像同一場比賽，悲觀的球員說「對方太強了贏不了」，而有信心的球員說「我們可以做到」，迦勒面對<strong>同樣的困難</strong>卻有截然不同的信心宣告——在你目前面對的最大挑戰中，你的內心更像那十位探子，還是像迦勒？</td>
+          </tr>
+          <tr>
+            <td>探子說：「據我們看，自己就如<strong>蚱蜢</strong>一樣；據他們看，我們也是如此。」（民13:33）</td>
+            <td>就像一個人總以別人的眼光來定義自己的價值，十位探子用<strong>敵人的眼光</strong>來衡量自己——你是否也有某個領域，習慣用「別人怎麼看我」或「跟別人比我差太多」來限制自己？神如何定義你的身分與能力？</td>
+          </tr>
+          <tr>
+            <td>他們……把那地的<strong>果子</strong>給他們看，又告訴摩西說：「我們到了你所打發我們去的那地，果然是<strong>流奶與蜜之地</strong>。」（民13:26-27）</td>
+            <td>就像一份報告既有好消息也有壞消息，探子帶回的<strong>果子見證了神應許的真實</strong>——當神的應許在你生命中已有初步的成就跡象時，你是傾向抓住那個盼望繼續前進，還是更容易被隨後的困難嚇退？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

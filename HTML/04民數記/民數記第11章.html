@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第11章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; font-style: normal; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 20px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0;
+  border-radius: 8px; padding: 15px; background: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before {
+  content: "▶"; display: inline-block; margin-right: 8px;
+  transition: transform 0.3s;
+}
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th {
+  background: #3498db; color: white; padding: 15px;
+  font-size: 1.1em; text-align: left;
+}
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  民數記第11章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">百姓貪慾發怨神降震怒</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>眾百姓發怨言，他們的惡語達到耶和華的耳中。耶和華聽見了就怒氣發作，使火在他們中間焚燒，直燒到營的邊界。</div>
+  <div class="verse"><span class="verse-number">2</span>百姓向摩西哀求，摩西祈求耶和華，火就熄了。</div>
+  <div class="verse"><span class="verse-number">3</span>那地方便叫作他備拉，因為耶和華的火燒在他們中間。</div>
+  <div class="verse"><span class="verse-number">4</span>他們中間的閒雜人大起貪慾的心；以色列人又哭號說：「誰給我們肉吃呢？</div>
+  <div class="verse"><span class="verse-number">5</span>我們記得，在埃及的時候不花錢就吃魚，也記得有黃瓜、西瓜、韭菜、蔥、蒜。</div>
+  <div class="verse"><span class="verse-number">6</span>現在我們的心血枯竭了，除這嗎哪以外，在我們眼前並沒有別的東西。」</div>
+  <div class="verse"><span class="verse-number">7</span>（這嗎哪彷彿芫荽子，又好像珍珠。</div>
+  <div class="verse"><span class="verse-number">8</span>百姓周圍行走，把嗎哪收起來，或用磨推，或用臼搗，煮在鍋中，又作成餅，滋味好像新油。</div>
+  <div class="verse"><span class="verse-number">9</span>夜間露水降在營中，嗎哪也隨着降下。）</div>
+  <div class="verse"><span class="verse-number">10</span>摩西聽見百姓各在各家的帳棚門口哭號。耶和華的怒氣便大發作，摩西就不喜悅。</div>
+  <div class="verse"><span class="verse-number">11</span>摩西對耶和華說：「你為何苦待僕人？我為何不在你眼前蒙恩，竟把這管理百姓的重任加在我身上呢？</div>
+  <div class="verse"><span class="verse-number">12</span>這百姓豈是我懷的胎，豈是我生下來的呢？你竟對我說：『把他們抱在懷裏，如養育之父抱吃奶的孩子，直抱到你起誓應許給他們祖宗的地去。』</div>
+  <div class="verse"><span class="verse-number">13</span>我從那裏得肉給這百姓吃呢？他們都向我哭號說：『你給我們肉吃吧！』</div>
+  <div class="verse"><span class="verse-number">14</span>管理這百姓的責任太重了，我獨自擔當不起。</div>
+  <div class="verse"><span class="verse-number">15</span>你這樣待我，我若在你眼前蒙恩，求你立時將我殺了，不叫我見自己的苦情。」</div>
+  <div class="verse"><span class="verse-number">16</span>耶和華對摩西說：「你從以色列的長老中招聚七十個人，就是你所知道作百姓的長老和官長的，到我這裏來，領他們到會幕前，使他們和你一同站立。</div>
+  <div class="verse"><span class="verse-number">17</span>我要在那裏降臨，與你說話，也要把降於你身上的靈分賜他們，他們就和你同當這管百姓的重任，免得你獨自擔當。</div>
+  <div class="verse"><span class="verse-number">18</span>又要對百姓說：『你們應當自潔，預備明天吃肉，因為你們哭號說：誰給我們肉吃！我們在埃及很好。這聲音達到了耶和華的耳中，所以他必給你們肉吃。</div>
+  <div class="verse"><span class="verse-number">19</span>你們不止吃一天、兩天、五天、十天、二十天，</div>
+  <div class="verse"><span class="verse-number">20</span>要吃一個整月，甚至肉從你們鼻孔裏噴出來，使你們厭惡了，因為你們厭棄住在你們中間的耶和華，在他面前哭號說：我們為何出了埃及呢！』」</div>
+  <div class="verse"><span class="verse-number">21</span>摩西對耶和華說：「這與我同住的百姓、步行的男人有六十萬，你還說：『我要把肉給他們，使他們可以吃一個整月。』</div>
+  <div class="verse"><span class="verse-number">22</span>難道給他們宰了羊群牛群，或是把海中所有的魚都聚了來，就彀他們吃嗎？」</div>
+  <div class="verse"><span class="verse-number">23</span>耶和華對摩西說：「耶和華的膀臂豈是縮短了嗎？現在要看我的話向你應驗不應驗。」</div>
+  <div class="verse"><span class="verse-number">24</span>摩西出去，將耶和華的話告訴百姓，又招聚百姓的長老中七十個人來，使他們站在會幕的四圍。</div>
+  <div class="verse"><span class="verse-number">25</span>耶和華在雲中降臨，對摩西說話，把降與他身上的靈分賜那七十個長老。靈停在他們身上的時候，他們就受感說話，以後卻沒有再說。</div>
+  <div class="verse"><span class="verse-number">26</span>但有兩個人仍在營裏，一個名叫伊利達，一個名叫米達。他們本是在那些被錄的人中，卻沒有到會幕那裏去。靈停在他們身上，他們就在營裏說預言。</div>
+  <div class="verse"><span class="verse-number">27</span>有個少年人跑來告訴摩西說：「伊利達、米達在營裏說預言。」</div>
+  <div class="verse"><span class="verse-number">28</span>摩西的幫手，嫩的兒子約書亞，就是摩西所揀選的一個人，說：「請我主摩西禁止他們。」</div>
+  <div class="verse"><span class="verse-number">29</span>摩西對他說：「你為我的緣故嫉妒人嗎？惟願耶和華的百姓都受感說話！願耶和華把他的靈降在他們身上！」</div>
+  <div class="verse"><span class="verse-number">30</span>於是，摩西和以色列的長老都回到營裏去了。</div>
+  <div class="verse"><span class="verse-number">31</span>有風從耶和華那裏颳起，把鵪鶉由海面颳來，飛散在營邊和營的四圍；這邊約有一天的路程，那邊約有一天的路程，離地面約有二肘。</div>
+  <div class="verse"><span class="verse-number">32</span>百姓起來，終日終夜，並次日一整天，捕取鵪鶉；至少的也取了十賀梅珥，為自己擺列在營的四圍。</div>
+  <div class="verse"><span class="verse-number">33</span>肉在他們牙齒之間尚未嚼爛，耶和華的怒氣就向他們發作，用最重的災殃擊殺了他們。</div>
+  <div class="verse"><span class="verse-number">34</span>那地方便叫作基博羅哈他瓦〔就是貪慾之人的墳墓〕，因為他們在那裏葬埋那起貪慾之心的人。</div>
+  <div class="verse"><span class="verse-number">35</span>百姓從基博羅哈他瓦走到哈洗錄，就住在哈洗錄。</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖';
+    bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕';
+    bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">民數記第十一章是以色列人曠野旅程中第一次嚴重的屬靈危機。百姓因抱怨引起神的怒火，只因摩西代求才平息。接着，混雜在以色列中的外族人挑動貪慾，眾人哭號渴望在埃及所吃的食物，輕視神每日賜下的嗎哪。摩西在重壓下幾乎崩潰，向神傾訴無法獨自承擔領導重任。神回應了三件事：從摩西身上取靈分給七十長老以分擔領導責任；預告賜下大量鵪鶉；同時因百姓的貪慾而發怒。鵪鶉果然大量降下，但在人們貪婪地大量捕食時，神用嚴厲的瘟疫打擊了他們，那地因此被稱為「貪慾人的墳墓」。本章還記載了兩人在營中說預言的事件，以及摩西寬廣的胸懷——他希望神的靈降在所有人身上，毫不嫉妒。整章警戒信徒勿以貪慾取代感恩，勿以抱怨取代信靠。</div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 感恩是信仰的根基，貪慾是屬靈衰退的警號</strong><br>以色列人輕視每日的嗎哪，懷念埃及的食物，這是忘恩的表現，更是信仰衰退的訊號。他們記得埃及的美食，卻忘了那裏的奴役。貪慾往往使人美化過去、輕視現有的恩典。感恩的眼光是對抗貪慾最有效的靈性操練。<br><br>
+    <strong>2. 真實地向神傾訴重擔，是信仰的成熟表現</strong><br>摩西沒有勉強撐持，而是誠實地向神說出領導的痛苦與疲憊，甚至求死。神沒有責備他，反而立即給予實際的幫助——七十長老分擔重任。對神誠實地傾訴，是比假裝堅強更有力量的信仰行動，神也在誠實的禱告中回應真實的需要。<br><br>
+    <strong>3. 神的能力遠超我們的想像與計算</strong><br>摩西質疑神如何能在曠野中給六十萬人肉吃一整月，神回答說「耶和華的膀臂豈是縮短了嗎？」神的供應不受人的資源估算所限制。每當我們以「不可能」封閉對神的信靠，就是在以人的眼光限制神無限的能力與創意。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>經文</th><th>思想題目</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「我們記得，在埃及的時候不花錢就吃魚……現在我們的<strong>心血枯竭</strong>了。」（民11:5-6）</td>
+          <td>百姓懷念埃及的食物，忘了那裏是奴役之地，就像照片濾鏡只能美化表面，無法呈現真實一樣。你是否也曾因貪慾或不滿，讓自己<strong>選擇性地美化</strong>某段不應回頭的過去？</td>
+        </tr>
+        <tr>
+          <td>「管理這百姓的責任太重了，我<strong>獨自擔當不起</strong>。」（民11:14）</td>
+          <td>摩西誠實地說出無法獨撐的重擔，神立刻給予幫助，就像求救訊號發出後救援才能到來一樣。你是否也有一個重擔壓得你喘不過氣，你願意<strong>向神誠實傾訴</strong>，而非獨力硬撐？</td>
+        </tr>
+        <tr>
+          <td>「耶和華的<strong>膀臂</strong>豈是縮短了嗎？」（民11:23）</td>
+          <td>摩西用自己的算術懷疑神的供應，神的回答是祂的能力不受人的估算所限，就像搬到新城市前無法完全預知神會如何供應卻仍選擇信靠一樣。當你面對「不可能」的處境，你是否願意<strong>相信神的能力</strong>超過你的計算？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第5章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; font-style: normal; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 20px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0;
+  border-radius: 8px; padding: 15px; background: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before {
+  content: "▶"; display: inline-block; margin-right: 8px;
+  transition: transform 0.3s;
+}
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th {
+  background: #3498db; color: white; padding: 15px;
+  font-size: 1.1em; text-align: left;
+}
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  民數記第5章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">潔淨營地與認罪賠還之例</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>耶和華曉諭摩西說：</div>
+  <div class="verse"><span class="verse-number">2</span>「你吩咐以色列人，使一切長大痲瘋的，患漏症的，並因死屍不潔淨的，都出營外去。</div>
+  <div class="verse"><span class="verse-number">3</span>無論男女，都要使他們出到營外，免得污穢他們的營；這營是我所住的。」</div>
+  <div class="verse"><span class="verse-number">4</span>以色列人就這樣行，使他們出到營外。耶和華怎樣吩咐摩西，以色列人就怎樣行了。</div>
+  <div class="verse"><span class="verse-number">5</span>耶和華對摩西說：</div>
+  <div class="verse"><span class="verse-number">6</span>「你曉諭以色列人說：無論男女，若犯了人所常犯的罪，以致干犯耶和華，那人就有了罪。</div>
+  <div class="verse"><span class="verse-number">7</span>他要承認所犯的罪，將所虧負人的，如數賠還，另外加上五分之一，也歸與所虧負的人。</div>
+  <div class="verse"><span class="verse-number">8</span>那人若沒有親屬可受所賠還的，那所賠還的就要歸與服事耶和華的祭司；至於那為他贖罪的公羊是在外。</div>
+  <div class="verse"><span class="verse-number">9</span>以色列人一切的聖物中，所奉給祭司的舉祭都要歸與祭司。</div>
+  <div class="verse"><span class="verse-number">10</span>各人所分別為聖的物，無論是甚麼，都要歸給祭司。」</div>
+  <div class="verse"><span class="verse-number">11</span>耶和華對摩西說：</div>
+  <div class="verse"><span class="verse-number">12</span>「你曉諭以色列人說：人的妻若有邪行，得罪她丈夫，</div>
+  <div class="verse"><span class="verse-number">13</span>有人與她行淫，事情嚴密，瞞過她丈夫，而且她被玷污沒有作見證的人，當她行淫的時候也沒有被捉住，</div>
+  <div class="verse"><span class="verse-number">14</span>她丈夫生了疑恨的心，疑恨她，她是被玷污，或是她丈夫生了疑恨的心，疑恨她，她並沒有被玷污，</div>
+  <div class="verse"><span class="verse-number">15</span>這人就要將妻送到祭司那裏，又為她帶着大麥麵伊法十分之一作供物，不可澆上油，也不可加上乳香；因為這是疑恨的素祭，是思念的素祭，使人思念罪孽。</div>
+  <div class="verse"><span class="verse-number">16</span>「祭司要使那婦人近前來，站在耶和華面前。</div>
+  <div class="verse"><span class="verse-number">17</span>祭司要把聖水盛在瓦器裏，又從帳幕的地上取點塵土，放在水中。</div>
+  <div class="verse"><span class="verse-number">18</span>祭司要叫那婦人蓬頭散髮，站在耶和華面前，把思念的素祭，就是疑恨的素祭，放在她手中。祭司手裏拿着致咒詛的苦水，</div>
+  <div class="verse"><span class="verse-number">19</span>要叫婦人起誓，對她說：『若沒有人與你行淫，也未曾背着丈夫作污穢的事，你就免受這致咒詛苦水的災。</div>
+  <div class="verse"><span class="verse-number">20</span>你若背着丈夫行了污穢的事，在你丈夫以外有人與你行淫，</div>
+  <div class="verse"><span class="verse-number">21</span>（祭司叫婦人發咒起誓），願耶和華叫你大腿消瘦，肚腹發脹，使你在你民中被人咒詛，成了誓語；</div>
+  <div class="verse"><span class="verse-number">22</span>並且這致咒詛的水入你的腸中，要叫你的肚腹發脹，大腿消瘦。』婦人要回答說：『阿們，阿們。』</div>
+  <div class="verse"><span class="verse-number">23</span>「祭司要寫這咒詛的話，將所寫的字抹在苦水裏，</div>
+  <div class="verse"><span class="verse-number">24</span>又叫婦人喝這致咒詛的苦水；這水要進入她裏面變苦了。</div>
+  <div class="verse"><span class="verse-number">25</span>祭司要從婦人的手中取那疑恨的素祭，在耶和華面前搖一搖，拿到壇前；</div>
+  <div class="verse"><span class="verse-number">26</span>又要從素祭中取出一把，作為這事的記念，燒在壇上，然後叫婦人喝這水。</div>
+  <div class="verse"><span class="verse-number">27</span>叫她喝了以後，她若被玷污，得罪了丈夫，這致咒詛的水必進入她裏面變苦了，她的肚腹就要發脹，大腿就要消瘦，那婦人便要在她民中被人咒詛。</div>
+  <div class="verse"><span class="verse-number">28</span>若婦人沒有被玷污，卻是清潔的，就要免受這災，且要懷孕。</div>
+  <div class="verse"><span class="verse-number">29</span>「妻子背着丈夫行了污穢的事，</div>
+  <div class="verse"><span class="verse-number">30</span>或是人生了疑恨的心，疑恨他的妻，就有這疑恨的條例。那時他要叫婦人站在耶和華面前，祭司要在她身上照這條例而行。</div>
+  <div class="verse"><span class="verse-number">31</span>男人就為無罪，婦人必擔當自己的罪孽。」</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖';
+    bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕';
+    bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    民數記第五章記載三項使會眾保持聖潔的條例。首先，神命令將一切不潔淨者——患痲瘋、漏症或因接觸死屍而不潔的人——遷移到營外，理由是「這營是我所住的」，說明神的同在要求會眾保持聖潔。其次，神設立了認罪與賠還的制度：凡虧負他人者，須承認罪，如數賠還並加上五分之一，顯示道德責任必須以實際行動承擔。第三，本章詳述了「疑恨的條例」——當丈夫懷疑妻子不貞時，可帶她到祭司面前，透過飲苦水的方式在神面前得到公正的裁決。這些條例反映了古以色列社會中神作為最終審判者的地位，同時也保護無辜者免受冤枉。本章核心在於：神聖潔的同在要求祂的子民在靈性、道德與關係上都保持純潔。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 神的聖潔要求群體的潔淨</strong><br>
+    神命令不潔之人出營，因為「這營是我所住的」。神的同在不只是個人的福氣，更對整個群體有神聖的要求。罪不只是個人的私事，它會影響整個群體與神的關係。這提醒教會，維護群體的屬靈純潔是每個肢體的責任，不能因為個人主義而忽視群體聖潔的重要性。<br><br>
+    <strong>2. 認罪必須伴隨實際的賠還行動</strong><br>
+    神要求犯罪者不只是口頭認罪，還要如數賠還並加五分之一。真實的悔改不只是感情上的後悔，還需要以具體行動修補所造成的傷害。這是聖經對悔改的完整定義——態度的轉變必須體現在行為的改變上，才是神所悅納的認罪。<br><br>
+    <strong>3. 神是公義的鑑察者與護衛者</strong><br>
+    「疑恨的條例」讓神成為最終的仲裁者。在無法查明真相的情況下，神掌管最終的審判。這既是對犯罪者的警告，也是對無辜者的保護。信仰教導我們，當人間的公義無法伸張時，神必然是公義的終極保障。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>經文</th><th>思想題目</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「無論男女，都要使他們出到營外，免得<strong>污穢</strong>他們的營；這營是<strong>我所住的</strong>。」（民5:3）</td>
+          <td>神的同在要求環境的潔淨，就像醫院手術室必須保持無菌才能保護病人一樣。你是否意識到神居住在你生命中，因此你的<strong>內心與生活環境</strong>需要保持聖潔？</td>
+        </tr>
+        <tr>
+          <td>「他要<strong>承認</strong>所犯的罪，將所虧負人的，如數<strong>賠還</strong>，另外加上五分之一。」（民5:7）</td>
+          <td>認罪若不伴隨行動就像道歉後卻不修復所造成的損壞一樣，只是空話。當你傷害了別人，你是否願意不只是說「對不起」，更採取<strong>實際行動</strong>來彌補損失？</td>
+        </tr>
+        <tr>
+          <td>「那時他要叫婦人站在<strong>耶和華面前</strong>，祭司要在她身上照這條例而行。」（民5:30）</td>
+          <td>在人無法判斷真相時，神成為最終的裁決者，就像密碼箱只有設定者才能打開一樣。當你面對無法解決的不公平時，你是否能把事情<strong>交在神手中</strong>，相信祂的公義必然伸張？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

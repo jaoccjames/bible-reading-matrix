@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>撒迦利亞書第2章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            display: inline-block;
+            transition: transform 0.5s ease;
+            white-space: nowrap;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .scripture-text.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .verse {
+            margin-bottom: 12px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            margin: -10px -15px -10px -15px;
+            padding: 10px 15px;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        summary::before {
+            content: "▶";
+            margin-right: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #3498db;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                flex-direction: row;
+            }
+
+            .bible-icon {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            summary {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            撒迦利亞書第2章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+
+        <div class="chapter-subtitle">神的同在與保護</div>
+
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>我又舉目觀看，見一人手拿準繩。</div>
+            <div class="verse"><span class="verse-number">2</span>我說：「你往哪裡去？」他對我說：「要去量耶路撒冷，看有多寬多長。」</div>
+            <div class="verse"><span class="verse-number">3</span>與我說話的天使去的時候，又有一位天使迎著他來，</div>
+            <div class="verse"><span class="verse-number">4</span>對他說：「你跑去告訴那少年人說，耶路撒冷必有人居住，好像無城牆的鄉村，因為人民和牲畜甚多。</div>
+            <div class="verse"><span class="verse-number">5</span>耶和華說：我要作耶路撒冷四圍的火城，並要作其中的榮耀。」</div>
+            <div class="verse"><span class="verse-number">6</span>「耶和華說：我從前分散你們在天的四方（原文是猶如天的四風），現在你們要從北方之地逃回。這是耶和華說的。</div>
+            <div class="verse"><span class="verse-number">7</span>與巴比倫人同住的錫安民哪，應當逃脫。」</div>
+            <div class="verse"><span class="verse-number">8</span>萬軍之耶和華說，在顯出榮耀之後，差遣我去懲罰那擄掠你們的列國，摸你們的就是摸他眼中的瞳人。</div>
+            <div class="verse"><span class="verse-number">9</span>看哪，我（或譯：他）要向他們掄手，他們就必作服事他們之人的擄物，你們便知道萬軍之耶和華差遣我了。</div>
+            <div class="verse"><span class="verse-number">10</span>錫安城啊，應當歡樂歌唱，因為我來要住在你中間。這是耶和華說的。</div>
+            <div class="verse"><span class="verse-number">11</span>那時，必有許多國歸附耶和華，作他（原文是我）的子民。他（原文是我）要住在你中間，你就知道萬軍之耶和華差遣我到你那裡去了。</div>
+            <div class="verse"><span class="verse-number">12</span>耶和華必收回猶大作他聖地的分，也必再揀選耶路撒冷。</div>
+            <div class="verse"><span class="verse-number">13</span>凡有血氣的都當在耶和華面前靜默無聲；因為他興起，從聖所出來了。</div>
+        </div>
+
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                撒迦利亞書第2章記錄量繩的異象，這是撒迦利亞所見的第三個異象。當時耶路撒冷城牆仍未完全重建，百姓對未來充滿疑慮。一位天使手拿準繩要量耶路撒冷，象徵神對這城有復興的計畫。神應許耶路撒冷將擴展到無法用城牆圍住的地步，祂自己要作城的保護與榮耀。神呼召仍在巴比倫的猶太人回歸，宣告祂要親自住在百姓中間。本章充滿盼望與應許，預言不只是地上耶路撒冷的復興，更指向末世神與人永遠同在的榮耀。
+            </div>
+        </details>
+
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 神的同在比任何物質保護更可靠與寶貴</strong><br>耶路撒冷將像無城牆的鄉村，因為神自己要作火城圍繞保護。這顛覆了當時人的安全觀——城牆象徵保護與防衛。但神說祂的同在勝過一切人造的保障。火城象徵神的聖潔與能力，無人能攻破。神不只是保護者，更是城中的榮耀，祂的同在就是最大的祝福。真正的安全感來自與神的關係，而非外在環境。<br><br>
+                <strong>2. 神的子民如同祂眼中的瞳人，祂必為他們伸冤</strong><br>神說「摸你們的就是摸他眼中的瞳人」，這是何等親密的比喻！瞳人是眼睛最敏感的部分，稍有觸碰就會引起強烈反應。這顯示神對祂子民的愛與保護何等深切。雖然百姓曾經犯罪被管教，但神仍視他們為珍寶。這應許激勵我們——無論處境如何艱難，神都看顧我們如同保護自己的眼睛。<br><br>
+                <strong>3. 神要住在祂子民中間，這是最終極的應許與盼望</strong><br>神說「我來要住在你中間」，這是聖經中最美的應許之一。從伊甸園到會幕、聖殿，神一直渴望與人同住。這預言不只指向當時的耶路撒冷，更指向基督的道成肉身與末世的新天新地。神與人同住是救恩歷史的高峰，也是信徒終極的盼望。神的目的不只是拯救我們脫離罪，更是要永遠與我們同在。
+            </div>
+        </details>
+
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>「耶和華說：我要作耶路撒冷<strong>四圍的火城</strong>，並要作其中的榮耀。」（撒迦利亞書 2:5）</td>
+                            <td>在你的生活中，你更依賴什麼來獲得安全感——存款數字、工作穩定、健康保險，還是神的同在？就像孩子在父母懷中感到安全不是因為房子堅固，而是因為父母的保護，你是否願意將終極的安全感建立在神的同在上，而非外在環境？</td>
+                        </tr>
+                        <tr>
+                            <td>「萬軍之耶和華說...差遣我去懲罰那擄掠你們的列國，<strong>摸你們的就是摸他眼中的瞳人</strong>。」（撒迦利亞書 2:8）</td>
+                            <td>當你感到被世界傷害、被人輕視或遭受不公時，你是否記得自己在神眼中的寶貴？就像父母對傷害孩子的人會異常憤怒，神對祂兒女的愛與保護遠超過我們所想像。這個認知如何改變你面對困難的態度？</td>
+                        </tr>
+                        <tr>
+                            <td>「錫安城啊，應當歡樂歌唱，因為<strong>我來要住在你中間</strong>。這是耶和華說的。」（撒迦利亞書 2:10）</td>
+                            <td>神的同在對你而言是抽象的神學概念、還是真實可經歷的事實？就像好友來訪會讓家裡充滿歡笑，神住在你心中應該帶來喜樂與平安。你如何在日常生活中操練感受並回應神的同在？你的生活方式是否反映出神真的住在你裡面？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function toggleScripture() {
+            const scriptureText = document.getElementById('scriptureText');
+            const bibleIcon = document.getElementById('bibleIcon');
+            
+            scriptureText.classList.toggle('show');
+            
+            if (scriptureText.classList.contains('show')) {
+                bibleIcon.textContent = '📖';
+                bibleIcon.classList.add('open');
+            } else {
+                bibleIcon.textContent = '📕';
+                bibleIcon.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>

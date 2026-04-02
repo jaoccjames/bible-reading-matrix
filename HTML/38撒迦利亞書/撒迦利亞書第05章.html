@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>撒迦利亞書第5章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            display: inline-block;
+            transition: transform 0.5s ease;
+            white-space: nowrap;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .scripture-text.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .verse {
+            margin-bottom: 12px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            margin: -10px -15px -10px -15px;
+            padding: 10px 15px;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        summary::before {
+            content: "▶";
+            margin-right: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #3498db;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                flex-direction: row;
+            }
+
+            .bible-icon {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            summary {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            撒迦利亞書第5章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+
+        <div class="chapter-subtitle">罪惡的審判與除去</div>
+
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>我又舉目觀看，見有一飛行的書卷。</div>
+            <div class="verse"><span class="verse-number">2</span>他問我說：「你看見甚麼？」我回答說：「我看見一飛行的書卷，長二十肘，寬十肘。」</div>
+            <div class="verse"><span class="verse-number">3</span>他對我說：「這是發出行在遍地上的咒詛。凡偷竊的必按卷上這面的話除滅；凡起假誓的必按卷上那面的話除滅。</div>
+            <div class="verse"><span class="verse-number">4</span>萬軍之耶和華說：我必使這書卷出去，進入偷竊人的家和指我名起假誓人的家，必常在他家裡，連房屋帶木石都毀滅了。」</div>
+            <div class="verse"><span class="verse-number">5</span>與我說話的天使出來，對我說：「你要舉目觀看，見所出來的是甚麼？」</div>
+            <div class="verse"><span class="verse-number">6</span>我說：「這是甚麼呢？」他說：「這出來的是量器。」他又說：「這是惡人在遍地的形狀。」</div>
+            <div class="verse"><span class="verse-number">7</span>（我見有一片圓鉛被舉起來。）這坐在量器中的是個婦人。</div>
+            <div class="verse"><span class="verse-number">8</span>天使說：「這是罪惡。」他就把婦人扔在量器中，將那片圓鉛扔在量器的口上。</div>
+            <div class="verse"><span class="verse-number">9</span>我又舉目觀看，見有兩個婦人出來，在她們翅膀中有風，飛得甚快，翅膀如同鸛鳥的翅膀。她們將量器抬起來，懸在天地中間。</div>
+            <div class="verse"><span class="verse-number">10</span>我問與我說話的天使說：「她們要將量器抬到哪裡去呢？」</div>
+            <div class="verse"><span class="verse-number">11</span>他對我說：「要往示拿地去，為它蓋造房屋；等房屋齊備，就把它安置在自己的地方。」</div>
+        </div>
+
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                撒迦利亞書第5章記錄兩個異象——飛行的書卷與量器中的婦人。這兩個異象都與罪惡的審判有關。飛行的書卷象徵神的律法與咒詛，針對偷竊與起假誓的罪。量器中的婦人代表罪惡本身，被帶往示拿地（巴比倫）。這些異象提醒歸回的百姓，雖然神施恩典重建聖殿，但祂仍是公義的神，必定審判罪惡。神不只要建立外在的聖殿，更要潔淨百姓內心的罪。本章強調神的恩典與公義並存，祂要將罪惡從祂子民中除去。
+            </div>
+        </details>
+
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 神的話語如書卷飛行，必定追上罪惡施行審判</strong><br>飛行的書卷象徵神的律法與審判無所不在，罪人無處可逃。書卷長二十肘、寬十肘，與會幕的尺寸相同，顯示神的標準。偷竊與起假誓代表對人與對神的罪。神的審判不只臨到個人，更進入他的家，連房屋都要毀滅。這顯示罪的後果何等嚴重。我們不能輕忽罪惡，以為神不會追究。祂的話語必定成就，罪必受審判。<br><br>
+                <strong>2. 罪惡必須被完全除去，不能與神的子民同住</strong><br>量器中的婦人被封住並帶往巴比倫，象徵罪惡必須從神的百姓中根除。神不只赦免罪，更要除掉罪的影響力。罪不能與聖潔共存。被帶往示拿（巴比倫）象徵罪歸回它的源頭——悖逆神的地方。這教導我們，成聖不只是少犯罪，而是讓神完全除去罪在我們生命中的地位。神要建立聖潔的群體，必須清除罪惡。<br><br>
+                <strong>3. 神既施恩典也執行公義，兩者不可分割</strong><br>第3-4章強調神的恩典與聖靈的能力，第5章卻強調審判與潔淨。這顯示神的屬性是完整的——祂既慈愛又公義。恩典不是縱容罪惡，而是在審判中施憐憫，在憐憫中也不失公義。神對祂子民的愛包括管教與潔淨。真正愛我們的神不會容許罪毀壞我們，祂必定除去罪惡，使我們聖潔。
+            </div>
+        </details>
+
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>「我必使這書卷出去，<strong>進入偷竊人的家和指我名起假誓人的家</strong>，必常在他家裡，連房屋帶木石都毀滅了。」（撒迦利亞書 5:4）</td>
+                            <td>你是否以為某些「小罪」神不會在意——如佔小便宜、說謊、背後批評？就像監視器會記錄所有動作，神的眼目察看一切。你生活中有哪些隱藏的罪需要悔改？你是否意識到罪不只影響你自己，也會影響你的家庭？</td>
+                        </tr>
+                        <tr>
+                            <td>「天使說：『<strong>這是罪惡</strong>。』他就把婦人扔在量器中，將那片圓鉛扔在量器的口上...要往示拿地去。」（撒迦利亞書 5:8-11）</td>
+                            <td>你是否有某些罪惡的習慣或思想模式一直無法擺脫？就像垃圾必須徹底清出家門才能保持清潔，神要將罪惡完全從你生命中除去，而非只是掩蓋或壓制。你願意讓神動手術般地切除這些罪嗎？還是仍然捨不得放手？</td>
+                        </tr>
+                        <tr>
+                            <td>「這是發出行在遍地上的<strong>咒詛</strong>...萬軍之耶和華說：我必使這書卷出去。」（撒迦利亞書 5:3-4）</td>
+                            <td>當你讀到神的審判時，你的反應是恐懼逃避、還是感謝神潔淨你？就像醫生切除腫瘤雖然痛苦但為了病人的益處，神的管教是出於愛。你如何在神的公義與慈愛之間取得平衡的認識？你是否相信祂的管教都是為了你的好處？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function toggleScripture() {
+            const scriptureText = document.getElementById('scriptureText');
+            const bibleIcon = document.getElementById('bibleIcon');
+            
+            scriptureText.classList.toggle('show');
+            
+            if (scriptureText.classList.contains('show')) {
+                bibleIcon.textContent = '📖';
+                bibleIcon.classList.add('open');
+            } else {
+                bibleIcon.textContent = '📕';
+                bibleIcon.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>

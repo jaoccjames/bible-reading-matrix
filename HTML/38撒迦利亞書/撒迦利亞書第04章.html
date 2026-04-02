@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>撒迦利亞書第4章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            display: inline-block;
+            transition: transform 0.5s ease;
+            white-space: nowrap;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .scripture-text.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .verse {
+            margin-bottom: 12px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            margin: -10px -15px -10px -15px;
+            padding: 10px 15px;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        summary::before {
+            content: "▶";
+            margin-right: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #3498db;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                flex-direction: row;
+            }
+
+            .bible-icon {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            summary {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            撒迦利亞書第4章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+
+        <div class="chapter-subtitle">靠聖靈方能成事</div>
+
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>那與我說話的天使又來叫醒我，好像人睡覺被喚醒一樣。</div>
+            <div class="verse"><span class="verse-number">2</span>他問我說：「你看見了甚麼？」我說：「我看見了一個純金的燈臺，頂上有盞燈，燈臺上有七盞燈，每盞有七個管子。</div>
+            <div class="verse"><span class="verse-number">3</span>旁邊有兩棵橄欖樹，一棵在燈盞的右邊，一棵在燈盞的左邊。」</div>
+            <div class="verse"><span class="verse-number">4</span>我問與我說話的天使說：「主啊，這是甚麼意思？」</div>
+            <div class="verse"><span class="verse-number">5</span>與我說話的天使回答我說：「你不知道這是甚麼意思嗎？」我說：「主啊，我不知道。」</div>
+            <div class="verse"><span class="verse-number">6</span>他對我說：「這是耶和華指示所羅巴伯的。萬軍之耶和華說：不是倚靠勢力，不是倚靠才能，乃是倚靠我的靈方能成事。</div>
+            <div class="verse"><span class="verse-number">7</span>大山哪，你算甚麼呢？在所羅巴伯面前，你必成為平地。他必搬出一塊石頭，安在殿頂上。人且大聲歡呼說：『願恩惠恩惠歸與這殿（殿：或譯石）！』」</div>
+            <div class="verse"><span class="verse-number">8</span>耶和華的話又臨到我說：</div>
+            <div class="verse"><span class="verse-number">9</span>「所羅巴伯的手立了這殿的根基，他的手也必完成這工，你就知道萬軍之耶和華差遣我到你們這裡來了。</div>
+            <div class="verse"><span class="verse-number">10</span>誰藐視這日的事為小呢？這七眼乃是耶和華的眼睛，遍察全地，見所羅巴伯手拿線鉈就歡喜。」</div>
+            <div class="verse"><span class="verse-number">11</span>我又問天使說：「這燈臺左右的兩棵橄欖樹是甚麼意思？」</div>
+            <div class="verse"><span class="verse-number">12</span>我二次問他說：「這兩根橄欖枝在兩個流出金色油的金嘴旁邊是甚麼意思？」</div>
+            <div class="verse"><span class="verse-number">13</span>他對我說：「你不知道這是甚麼意思嗎？」我說：「主啊，我不知道。」</div>
+            <div class="verse"><span class="verse-number">14</span>他說：「這是兩個受膏者站在普天下主的旁邊。」</div>
+        </div>
+
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                撒迦利亞書第4章記錄第五個異象——金燈臺與兩棵橄欖樹。當時聖殿重建工程面臨巨大阻力，百姓士氣低落。所羅巴伯是帶領重建的省長，面對如山般的困難。神透過異象鼓勵他，金燈臺象徵神的同在與見證，兩棵橄欖樹代表源源不絕供應油的管道，象徵聖靈的能力。神宣告著名的應許「不是倚靠勢力，不是倚靠才能，乃是倚靠我的靈方能成事」。本章強調神的工作不是靠人的力量完成，而是靠聖靈的大能，即使起頭微小，神必使之完成。
+            </div>
+        </details>
+
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 神的工作唯有靠聖靈的能力才能成就</strong><br>面對聖殿重建的巨大挑戰，神不是應許增加人力或資源，而是宣告「倚靠我的靈方能成事」。人的勢力與才能都有限，但聖靈的能力無限。這教導我們，屬靈的工作不能用屬世的方法完成。我們可以有策略、有恩賜、有資源，但若沒有聖靈的工作，一切都是徒然。真正的改變與果效來自神的靈。<br><br>
+                <strong>2. 在神眼中沒有無法克服的障礙</strong><br>神說「大山哪，你算甚麼呢？...你必成為平地」。山象徵看似不可能克服的困難——敵對勢力、資金缺乏、人心軟弱。但在神的能力中，這些大山都要變為平地。神不是挪移困難，而是賜下能力讓我們跨越。當我們倚靠聖靈，沒有任何障礙能阻擋神的計畫。問題不在於困難有多大，而在於我們是否倚靠神。<br><br>
+                <strong>3. 神看重忠心的起頭，必親自成就完工</strong><br>神說「誰藐視這日的事為小呢？」當時聖殿的根基相比所羅門的聖殿顯得微不足道，但神看重的是忠心的開始。神應許所羅巴伯「他的手也必完成這工」，顯示神必負責到底。我們常因起步艱難而灰心，但神看重的是信心的順服。只要憑信心開始，神必賜下能力完成。祂不輕看微小的開始，反而為之歡喜。
+            </div>
+        </details>
+
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>「萬軍之耶和華說：<strong>不是倚靠勢力，不是倚靠才能，乃是倚靠我的靈方能成事</strong>。」（撒迦利亞書 4:6）</td>
+                            <td>在你的服事或生活中，你更依賴什麼——自己的能力、人脈、計畫，還是聖靈的引導與能力？就像電器需要插電才能運作，你是否每天透過禱告「插上」聖靈的電源？你如何分辨是靠自己努力、還是靠聖靈工作？</td>
+                        </tr>
+                        <tr>
+                            <td>「大山哪，你算甚麼呢？在所羅巴伯面前，<strong>你必成為平地</strong>。」（撒迦利亞書 4:7）</td>
+                            <td>你目前面對的「大山」是什麼——健康問題、經濟壓力、關係破裂、事工瓶頸？就像推土機能把山丘剷平，當你倚靠聖靈時，這些看似無法克服的困難會如何改變？你是專注在山的高大、還是神的大能？</td>
+                        </tr>
+                        <tr>
+                            <td>「<strong>誰藐視這日的事為小呢</strong>？...見所羅巴伯手拿線鉈就歡喜。」（撒迦利亞書 4:10）</td>
+                            <td>你是否曾因為起步微小而灰心放棄？就像嬰兒的第一步雖然搖搖晃晃卻讓父母欣喜若狂，神對你信心的第一步、服事的小開始感到何等喜悅。你是否願意憑信心踏出第一步，相信神必負責完成？你如何鼓勵自己或他人不輕看小的開始？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function toggleScripture() {
+            const scriptureText = document.getElementById('scriptureText');
+            const bibleIcon = document.getElementById('bibleIcon');
+            
+            scriptureText.classList.toggle('show');
+            
+            if (scriptureText.classList.contains('show')) {
+                bibleIcon.textContent = '📖';
+                bibleIcon.classList.add('open');
+            } else {
+                bibleIcon.textContent = '📕';
+                bibleIcon.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>

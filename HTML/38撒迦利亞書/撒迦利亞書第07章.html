@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒迦利亞書第7章 - 聖經重點與思考</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 15px;
+transition: color 0.3s;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+.bible-icon {
+font-size: 1.2em;
+transition: transform 0.5s;
+display: inline-block;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.scripture-text {
+display: none;
+background: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+transition: color 0.3s;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::before {
+content: "▶";
+position: absolute;
+left: 10px;
+transition: transform 0.3s;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary:hover {
+color: #3498db;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th {
+background: #3498db;
+color: white;
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tbody tr:hover {
+background: #f0f8ff;
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+h1 {
+font-size: 1.6em;
+}
+.chapter-subtitle {
+font-size: 1em;
+}
+h2 {
+font-size: 1.2em;
+}
+table {
+font-size: 0.9em;
+}
+th, td {
+padding: 10px;
+}
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒迦利亞書第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">真誠敬拜勝於形式禁食</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>大流士王第四年九月，就是基斯流月初四日，耶和華的話臨到撒迦利亞。</div>
+<div class="verse"><span class="verse-number">2</span>那時伯特利人已經打發沙利色和利堅米勒，並跟從他們的人，去懇求耶和華的恩，</div>
+<div class="verse"><span class="verse-number">3</span>並問萬軍之耶和華殿中的祭司和先知說：我歷年以來，在五月間哭泣齋戒，現在還當這樣行嗎？</div>
+<div class="verse"><span class="verse-number">4</span>萬軍之耶和華的話就臨到我說：</div>
+<div class="verse"><span class="verse-number">5</span>你要宣告國內的眾民和祭司，說：你們這七十年，在五月、七月禁食悲哀，豈是絲毫向我禁食嗎？</div>
+<div class="verse"><span class="verse-number">6</span>你們吃喝，不是為自己吃，為自己喝嗎？</div>
+<div class="verse"><span class="verse-number">7</span>當耶路撒冷和四圍的城邑有居民，正興盛，南地高原有人居住的時候，耶和華藉從前的先知所宣告的話，你們不當聽嗎？</div>
+<div class="verse"><span class="verse-number">8</span>耶和華的話又臨到撒迦利亞說：</div>
+<div class="verse"><span class="verse-number">9</span>萬軍之耶和華曾對你們的列祖如此說：要按至理判斷，各人以慈愛憐憫弟兄。</div>
+<div class="verse"><span class="verse-number">10</span>不可欺壓寡婦、孤兒、寄居的，和貧窮人。誰都不可心裡謀害弟兄。</div>
+<div class="verse"><span class="verse-number">11</span>他們卻不肯聽從，扭轉肩頭，塞耳不聽，</div>
+<div class="verse"><span class="verse-number">12</span>使心硬如金鋼石，不聽律法和萬軍之耶和華用靈藉從前的先知所說的話。故此，萬軍之耶和華大發烈怒。</div>
+<div class="verse"><span class="verse-number">13</span>萬軍之耶和華說：我曾呼喚他們，他們不聽；將來他們呼求我，我也不聽！</div>
+<div class="verse"><span class="verse-number">14</span>我必以旋風吹散他們到素不認識的萬國中。這樣，他們的地就荒涼，甚至無人來往經過，因為他們使美好之地荒涼了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章發生在大流士王第四年（約主前518年），距離聖殿被毀已七十年。伯特利人派代表詢問是否仍需延續禁食哀悼的傳統。神藉撒迦利亞回應：真正的敬拜不在於外在儀式，而在於內心的誠實和公義的生活。本章揭露了以色列過去失敗的原因——他們注重宗教形式，卻忽略了憐憫與公義，最終導致被擄的審判。這段信息對於正在重建聖殿的歸回者極為重要，提醒他們不可重蹈覆轍。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 敬拜的真實性</strong><br>神關注的不是宗教儀式的外表，而是敬拜者內心的真誠。禁食、禱告等屬靈操練若只是為了自己的感受或傳統習慣，而非真正尋求神的心意，就失去了屬靈意義。真實的敬拜必須從內心發出，帶著對神的敬畏和順服。<br><br>
+
+<strong>2. 公義與憐憫的實踐</strong><br>神要求祂的子民在日常生活中活出公義和憐憫，特別是對待弱勢群體。照顧寡婦、孤兒、寄居者和貧窮人，不是可有可無的善行，而是信仰的核心表現。宗教儀式若沒有伴隨著愛人如己的實際行動，就是虛假的信仰。<br><br>
+
+<strong>3. 硬心的危險</strong><br>以色列人的悲劇在於他們一再拒絕神的呼喚，使心變硬如金鋼石。當人持續抗拒神的話語，最終會失去聆聽神聲音的能力。硬心不僅導致個人的靈性死亡，更會帶來整體的審判和荒涼。保持柔軟受教的心是持守信仰的關鍵。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>你們這七十年，在五月、七月<strong>禁食悲哀</strong>，豈是<strong>絲毫向我</strong>禁食嗎？（撒7:5）</td>
+<td>我們的<strong>禱告和敬拜</strong>是真心尋求神，還是只為滿足自己的宗教習慣？就像<strong>健身打卡只為社群按讚</strong>，卻不在意真實的健康改變，我們的屬靈生活是否也流於表面？</td>
+</tr>
+<tr>
+<td>要按<strong>至理判斷</strong>，各人以<strong>慈愛憐憫</strong>弟兄。不可欺壓寡婦、孤兒、寄居的，和貧窮人。（撒7:9-10）</td>
+<td>當我們熱心參與教會活動時，是否同樣關心身邊的<strong>弱勢者</strong>？就像<strong>熱衷環保倡議卻隨手亂丟垃圾</strong>，我們的信仰是否只停留在口號，而沒有落實在具體的憐憫行動中？</td>
+</tr>
+<tr>
+<td>他們卻不肯聽從，扭轉肩頭，塞耳不聽，使心<strong>硬如金鋼石</strong>，不聽律法。（撒7:11-12）</td>
+<td>面對神透過聖經、講道或生活處境向我們說話時，我們是否<strong>選擇性聆聽</strong>？就像<strong>手機通知設定成靜音模式</strong>，我們是否對不想聽的真理關閉了心門，讓心越來越剛硬？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+
+scriptureText.classList.toggle('show');
+
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+</body>
+</html>

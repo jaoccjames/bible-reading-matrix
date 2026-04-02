@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>創世記第25章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        h1:hover {
+            color: #3498db;
+        }
+        
+        .bible-icon {
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+        
+        .chapter-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .scripture-text {
+            display: none;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .scripture-text.show {
+            display: block;
+        }
+        
+        .verse {
+            margin-bottom: 10px;
+        }
+        
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+        
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+        
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+        
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        summary:before {
+            content: "▶";
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+            color: #3498db;
+        }
+        
+        details[open] summary:before {
+            transform: rotate(90deg);
+        }
+        
+        summary:hover {
+            color: #3498db;
+        }
+        
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        tr:hover {
+            background: #f0f8ff;
+        }
+        
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            創世記第25章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        <div class="chapter-subtitle">以掃輕看長子名分</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>亞伯拉罕又娶了一妻,名叫基土拉。</div>
+            <div class="verse"><span class="verse-number">2</span>基土拉給他生了心蘭、約珊、米但、米甸、伊施巴,和書亞。</div>
+            <div class="verse"><span class="verse-number">3</span>約珊生了示巴和底但。底但的子孫是亞書利族、利都是族,和利烏米族。</div>
+            <div class="verse"><span class="verse-number">4</span>米甸的兒子是以法、以弗、哈諾、亞比大,和以勒大。這都是基土拉的子孫。</div>
+            <div class="verse"><span class="verse-number">5</span>亞伯拉罕將一切所有的都給了以撒。</div>
+            <div class="verse"><span class="verse-number">6</span>亞伯拉罕把財物分給他庶出的眾子,趁著自己還在世的時候打發他們離開他的兒子以撒,往東方去。</div>
+            <div class="verse"><span class="verse-number">7</span>亞伯拉罕一生的年日是一百七十五歲。</div>
+            <div class="verse"><span class="verse-number">8</span>亞伯拉罕壽高年邁,氣絕而死,歸到他列祖(原文是本民)那裡。</div>
+            <div class="verse"><span class="verse-number">9</span>他兩個兒子以撒、以實瑪利把他埋葬在麥比拉洞裡。這洞在幔利前、赫人瑣轄的兒子以弗崙的田中,</div>
+            <div class="verse"><span class="verse-number">10</span>就是亞伯拉罕向赫人買的那塊田。亞伯拉罕和他妻子撒拉都葬在那裡。</div>
+            <div class="verse"><span class="verse-number">11</span>亞伯拉罕死了以後,神賜福給他的兒子以撒。以撒靠近庇耳拉海萊居住。</div>
+            <div class="verse"><span class="verse-number">12</span>撒拉的使女埃及人夏甲給亞伯拉罕所生的兒子是以實瑪利。</div>
+            <div class="verse"><span class="verse-number">13</span>以實瑪利兒子們的名字,按著他們的家譜記在下面。以實瑪利的長子是尼拜約,又有基達、亞德別、米比衫、</div>
+            <div class="verse"><span class="verse-number">14</span>米施瑪、度瑪、瑪撒、</div>
+            <div class="verse"><span class="verse-number">15</span>哈大、提瑪、伊突、拿非施、基底瑪。</div>
+            <div class="verse"><span class="verse-number">16</span>這是以實瑪利眾子的名字,照著他們的村莊、營寨,作了十二族的族長。</div>
+            <div class="verse"><span class="verse-number">17</span>以實瑪利享壽一百三十七歲,氣絕而死,歸到他列祖(原文是本民)那裡。</div>
+            <div class="verse"><span class="verse-number">18</span>他子孫的住處在他眾弟兄東邊,從哈腓拉直到埃及前的書珥,正在亞述的道上。</div>
+            <div class="verse"><span class="verse-number">19</span>亞伯拉罕的兒子以撒的後代記在下面。亞伯拉罕生以撒。</div>
+            <div class="verse"><span class="verse-number">20</span>以撒娶利百加為妻的時候正四十歲。利百加是巴旦亞蘭地的亞蘭人彼土利的女兒,是亞蘭人拉班的妹子。</div>
+            <div class="verse"><span class="verse-number">21</span>以撒因他妻子不生育,就為她祈求耶和華;耶和華應允他的祈求,他的妻子利百加就懷了孕。</div>
+            <div class="verse"><span class="verse-number">22</span>孩子們在她腹中彼此相爭,她就說:若是這樣,我為什麼活著呢(或譯:我為什麼如此呢)?她就去求問耶和華。</div>
+            <div class="verse"><span class="verse-number">23</span>耶和華對她說:兩國在你腹內;兩族要從你身上出來。這族必強於那族;將來大的要服事小的。</div>
+            <div class="verse"><span class="verse-number">24</span>生產的日子到了,腹中果然是雙子。</div>
+            <div class="verse"><span class="verse-number">25</span>先產的身體發紅,渾身有毛,如同皮衣,他們就給他起名叫以掃(以掃就是有毛的意思)。</div>
+            <div class="verse"><span class="verse-number">26</span>隨後又生了以掃的兄弟,手抓住以掃的腳跟,因此給他起名叫雅各(雅各就是抓住的意思)。利百加生下兩個兒子的時候,以撒年正六十歲。</div>
+            <div class="verse"><span class="verse-number">27</span>兩個孩子漸漸長大,以掃善於打獵,常在田野;雅各為人安靜,常住在帳棚裡。</div>
+            <div class="verse"><span class="verse-number">28</span>以撒愛以掃,因為常吃他的野味;利百加卻愛雅各。</div>
+            <div class="verse"><span class="verse-number">29</span>有一天,雅各熬湯,以掃從田野回來累昏了。</div>
+            <div class="verse"><span class="verse-number">30</span>以掃對雅各說:我累昏了,求你把這紅湯給我喝。因此以掃又叫以東(以東就是紅的意思)。</div>
+            <div class="verse"><span class="verse-number">31</span>雅各說:你今日把長子的名分賣給我吧。</div>
+            <div class="verse"><span class="verse-number">32</span>以掃說:我將要死,這長子的名分於我有什麼益處呢?</div>
+            <div class="verse"><span class="verse-number">33</span>雅各說:你今日對我起誓吧。以掃就對他起了誓,把長子的名分賣給雅各。</div>
+            <div class="verse"><span class="verse-number">34</span>於是雅各將餅和紅豆湯給了以掃,以掃吃了喝了,便起來走了。這就是以掃輕看了他長子的名分。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                創世記第25章記載信心之父亞伯拉罕175歲去世,葬在麥比拉洞,以撒承受產業。本章也記載以實瑪利的後裔和去世。以撒娶妻20年不育,禱告後利百加懷了雙胞胎,神預言大的要服事小的。以掃和雅各性格迥異,父母各有偏愛。一天以掃打獵回來飢餓,雅各趁機要求用紅豆湯換取長子名分,以掃輕率答應。本章是世代交替,也揭示了雅各和以掃未來衝突的根源,顯示人看重眼前享受勝過屬靈產業的軟弱。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 輕看屬靈產業帶來永遠損失</strong><br>
+                以掃為一碗紅豆湯賣掉長子名分,換取短暫滿足卻失去永恆祝福。長子名分代表屬靈的產業與責任,輕看它顯示以掃只看重肉體需要,不在乎屬靈價值。今日信徒若輕看與神的關係,也會失去屬天的產業。
+                <br><br>
+                <strong>2. 即時滿足毀掉長遠價值</strong><br>
+                以掃說「我將要死」顯示他誇大眼前的飢餓,看不見未來的祝福。被即時滿足驅動的人,會為暫時的快樂出賣永恆的價值。屬靈成熟是能夠延遲滿足,看重永恆勝過短暫。
+                <br><br>
+                <strong>3. 錯誤的優先次序定型人生</strong><br>
+                以掃「吃了喝了,便起來走了」顯示他不在乎這交易的嚴重性。人生的優先次序決定人生的結局,將物質放在屬靈之上,將享樂放在責任之上,終將帶來無法挽回的後果。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>以掃說:<strong>我將要死</strong>,這<strong>長子的名分於我有什麼益處</strong>呢?(創25:32)</td>
+                            <td>你是否曾為了<strong>眼前的需要或慾望</strong>,放棄了<strong>長遠的價值或原則</strong>?就像熬夜追劇犧牲隔天精神,你是否常讓<strong>即時滿足</strong>勝過<strong>重要目標</strong>?</td>
+                        </tr>
+                        <tr>
+                            <td>於是雅各將餅和紅豆湯給了以掃,以掃<strong>吃了喝了,便起來走了</strong>。這就是<strong>以掃輕看了他長子的名分</strong>。(創25:34)</td>
+                            <td>你對待<strong>屬靈事物</strong>的態度是認真還是隨便?就像健身卡辦了卻不去,你是否也<strong>輕看了</strong>與神關係、讀經禱告、教會服事的<strong>價值</strong>?</td>
+                        </tr>
+                        <tr>
+                            <td>以撒愛以掃,因為常吃他的野味;利百加卻愛雅各。(創25:28)</td>
+                            <td>你愛一個人是因為他<strong>能給你什麼</strong>,還是<strong>無條件的接納</strong>?就像只在需要時才聯絡朋友,你的愛是<strong>有條件的交換</strong>還是<strong>真誠的付出</strong>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

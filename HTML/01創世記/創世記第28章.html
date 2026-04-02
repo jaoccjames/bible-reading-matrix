@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>創世記第28章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        h1:hover {
+            color: #3498db;
+        }
+        
+        .bible-icon {
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+        
+        .chapter-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .scripture-text {
+            display: none;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .scripture-text.show {
+            display: block;
+        }
+        
+        .verse {
+            margin-bottom: 10px;
+        }
+        
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+        
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+        
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+        
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        summary:before {
+            content: "▶";
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+            color: #3498db;
+        }
+        
+        details[open] summary:before {
+            transform: rotate(90deg);
+        }
+        
+        summary:hover {
+            color: #3498db;
+        }
+        
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        tr:hover {
+            background: #f0f8ff;
+        }
+        
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            創世記第28章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        <div class="chapter-subtitle">雅各夢見天梯</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>以撒叫了雅各來,給他祝福,並囑咐他說:你不要娶迦南的女子為妻。</div>
+            <div class="verse"><span class="verse-number">2</span>你起身往巴旦亞蘭去,到你外祖彼土利家裡,在你母舅拉班的女兒中娶一女為妻。</div>
+            <div class="verse"><span class="verse-number">3</span>願全能的神賜福給你,使你生養眾多,成為多族,</div>
+            <div class="verse"><span class="verse-number">4</span>將應許亞伯拉罕的福賜給你和你的後裔,使你承受你所寄居的地為業,就是神賜給亞伯拉罕的地。</div>
+            <div class="verse"><span class="verse-number">5</span>以撒打發雅各走了,他就往巴旦亞蘭去,到亞蘭人彼土利的兒子拉班那裡。拉班是雅各、以掃的母舅。</div>
+            <div class="verse"><span class="verse-number">6</span>以掃見以撒已經給雅各祝福,而且打發他往巴旦亞蘭去,在那裡娶妻,並見祝福的時候囑咐他說:不要娶迦南的女子為妻,</div>
+            <div class="verse"><span class="verse-number">7</span>又見雅各聽從父母的話往巴旦亞蘭去了,</div>
+            <div class="verse"><span class="verse-number">8</span>以掃就曉得他父親以撒看不中迦南的女子,</div>
+            <div class="verse"><span class="verse-number">9</span>便往以實瑪利那裡去,在他二妻之外又娶了瑪哈拉為妻。她是亞伯拉罕兒子以實瑪利的女兒,尼拜約的妹子。</div>
+            <div class="verse"><span class="verse-number">10</span>雅各出了別是巴,向哈蘭走去;</div>
+            <div class="verse"><span class="verse-number">11</span>到了一個地方,因為太陽落了,就在那裡住宿,便拾起那地方的一塊石頭枕在頭下,在那裡躺臥睡了,</div>
+            <div class="verse"><span class="verse-number">12</span>夢見一個梯子立在地上,梯子的頭頂著天,有神的使者在梯子上,上去下來。</div>
+            <div class="verse"><span class="verse-number">13</span>耶和華站在梯子以上(或譯:站在他旁邊),說:我是耶和華─你祖亞伯拉罕的神,也是以撒的神;我要將你現在所躺臥之地賜給你和你的後裔。</div>
+            <div class="verse"><span class="verse-number">14</span>你的後裔必像地上的塵沙那樣多,必向東西南北開展;地上萬族必因你和你的後裔得福。</div>
+            <div class="verse"><span class="verse-number">15</span>我也與你同在。你無論往那裡去,我必保佑你,領你歸回這地,總不離棄你,直到我成全了向你所應許的。</div>
+            <div class="verse"><span class="verse-number">16</span>雅各睡醒了,說:耶和華真在這裡,我竟不知道!</div>
+            <div class="verse"><span class="verse-number">17</span>就懼怕,說:這地方何等可畏!這不是別的,乃是神的殿,也是天的門。</div>
+            <div class="verse"><span class="verse-number">18</span>雅各清早起來,把所枕的石頭立作柱子,澆油在上面。</div>
+            <div class="verse"><span class="verse-number">19</span>他就給那地方起名叫伯特利(就是神殿的意思);但那地方起先名叫路斯。</div>
+            <div class="verse"><span class="verse-number">20</span>雅各許願說:神若與我同在,在我所行的路上保佑我,又給我食物吃,衣服穿,</div>
+            <div class="verse"><span class="verse-number">21</span>使我平平安安的回到我父親的家,我就必以耶和華為我的神。</div>
+            <div class="verse"><span class="verse-number">22</span>我所立為柱子的石頭也必作神的殿;凡你所賜給我的,我必將十分之一獻給你。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                創世記第28章記載雅各逃亡的旅程。以撒正式祝福雅各並囑咐他回本族娶妻,雅各啟程前往哈蘭。在曠野過夜時,雅各夢見一個梯子連接天地,神的使者上下往來。神向雅各顯現,重申對亞伯拉罕的應許,並應許與他同在、保護他、帶他回來。雅各驚醒,將枕石立為柱子,稱那地為伯特利(神的殿)。雅各向神許願,若神保守他平安歸回,他就以耶和華為神並獻上十分之一。本章是神恩典的彰顯,在雅各逃亡的最低谷中,神主動向他顯現並賜下應許。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 神主動尋找而非人尋找神</strong><br>
+                雅各不是在敬拜中而是在逃亡途中遇見神,不是他尋找神而是神主動顯現。救恩不是人的功勞,而是神的恩典。當我們在人生最黑暗、最孤單的時刻,神仍然看顧並主動臨到我們。
+                <br><br>
+                <strong>2. 天地之間有通道連結</strong><br>
+                天梯象徵神與人之間的連結,天使上下傳遞神的心意。耶穌基督就是那真正的天梯,祂道成肉身,使天與地、神與人得以連結。我們不再與神隔絕,在基督裡能坦然來到神面前。
+                <br><br>
+                <strong>3. 神的同在比順境更重要</strong><br>
+                神沒有應許雅各一帆風順,而是應許「我必與你同在」。基督徒的盼望不是無災無難,而是在任何處境中神都同在。有神同在的苦難,勝過沒有神同在的順境。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>雅各睡醒了,說:<strong>耶和華真在這裡,我竟不知道</strong>!就懼怕,說:這地方何等可畏!這不是別的,<strong>乃是神的殿,也是天的門</strong>。(創28:16-17)</td>
+                            <td>你是否曾在<strong>困難或孤單</strong>時才發現<strong>神一直都在</strong>?就像抬頭才看見滿天星星,你是否常在<strong>平順時忽略</strong>了神,在<strong>低谷時才驚覺</strong>祂的同在?</td>
+                        </tr>
+                        <tr>
+                            <td>我也<strong>與你同在</strong>。你無論往那裡去,<strong>我必保佑你</strong>,領你歸回這地,<strong>總不離棄你</strong>,直到我成全了向你所應許的。(創28:15)</td>
+                            <td>面對未知的前路,你最需要的是<strong>一帆風順</strong>還是<strong>神的同在</strong>?就像孩子需要的不是沒有困難的生活而是父母的陪伴,你是否明白<strong>神的同在比順境更重要</strong>?</td>
+                        </tr>
+                        <tr>
+                            <td>雅各許願說:神若與我同在,在我所行的路上保佑我,又給我食物吃,衣服穿,使我平平安安的回到我父親的家,<strong>我就必以耶和華為我的神</strong>。(創28:20-21)</td>
+                            <td>你對神的委身是<strong>有條件的交易</strong>還是<strong>無條件的降服</strong>?就像只在考試前才臨時抱佛腳,你是否在<strong>需要時才尋求神</strong>,而非<strong>無論如何都跟隨祂</strong>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

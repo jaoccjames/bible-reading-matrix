@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>創世記第30章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        h1:hover {
+            color: #3498db;
+        }
+        
+        .bible-icon {
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+        
+        .chapter-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .scripture-text {
+            display: none;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .scripture-text.show {
+            display: block;
+        }
+        
+        .verse {
+            margin-bottom: 10px;
+        }
+        
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+        
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+        
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+        
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        summary:before {
+            content: "▶";
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+            color: #3498db;
+        }
+        
+        details[open] summary:before {
+            transform: rotate(90deg);
+        }
+        
+        summary:hover {
+            color: #3498db;
+        }
+        
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        tr:hover {
+            background: #f0f8ff;
+        }
+        
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            創世記第30章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        <div class="chapter-subtitle">兩姐妹的競爭</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>拉結見自己不給雅各生子,就嫉妒她姊姊,對雅各說:你給我孩子,不然我就死了。</div>
+            <div class="verse"><span class="verse-number">2</span>雅各向拉結生氣,說:叫你不生育的是神,我豈能代替他作主呢?</div>
+            <div class="verse"><span class="verse-number">3</span>拉結說:有我的使女辟拉在這裡,你可以與她同房,使她生子在我膝下,我便因她也得孩子(原文是被建立)。</div>
+            <div class="verse"><span class="verse-number">4</span>拉結就把她的使女辟拉給丈夫為妾;雅各便與她同房,</div>
+            <div class="verse"><span class="verse-number">5</span>辟拉就懷孕,給雅各生了一個兒子。</div>
+            <div class="verse"><span class="verse-number">6</span>拉結說:神伸了我的冤,也聽了我的聲音,賜我一個兒子,因此給他起名叫但(就是伸冤的意思)。</div>
+            <div class="verse"><span class="verse-number">7</span>拉結的使女辟拉又懷孕,給雅各生了第二個兒子。</div>
+            <div class="verse"><span class="verse-number">8</span>拉結說:我與我姊姊大大相爭,並且得勝,於是給他起名叫拿弗他利(就是相爭的意思)。</div>
+            <div class="verse"><span class="verse-number">9</span>利亞見自己停了生育,就把使女悉帕給雅各為妾。</div>
+            <div class="verse"><span class="verse-number">10</span>利亞的使女悉帕給雅各生了一個兒子。</div>
+            <div class="verse"><span class="verse-number">11</span>利亞說:萬幸!於是給他起名叫迦得(就是萬幸的意思)。</div>
+            <div class="verse"><span class="verse-number">12</span>利亞的使女悉帕又給雅各生了第二個兒子。</div>
+            <div class="verse"><span class="verse-number">13</span>利亞說:我有福啊,眾女子都要稱我是有福的,於是給他起名叫亞設(就是有福的意思)。</div>
+            <div class="verse"><span class="verse-number">14</span>割麥子的時候,流便往田裡去,尋見風茄,拿來給他母親利亞。拉結對利亞說:請你把你兒子的風茄給我些。</div>
+            <div class="verse"><span class="verse-number">15</span>利亞說:你奪了我的丈夫還算小事嗎?你又要奪我兒子的風茄嗎?拉結說:為你兒子的風茄,今夜他可以與你同寢。</div>
+            <div class="verse"><span class="verse-number">16</span>到了晚上,雅各從田裡回來,利亞出來迎接他,說:你要與我同寢,因為我實在用我兒子的風茄把你雇下了。那一夜,雅各就與她同寢。</div>
+            <div class="verse"><span class="verse-number">17</span>神應允了利亞,她就懷孕,給雅各生了第五個兒子。</div>
+            <div class="verse"><span class="verse-number">18</span>利亞說:神給了我價值,因為我把使女給了我丈夫,於是給他起名叫以薩迦(就是價值的意思)。</div>
+            <div class="verse"><span class="verse-number">19</span>利亞又懷孕,給雅各生了第六個兒子。</div>
+            <div class="verse"><span class="verse-number">20</span>利亞說:神賜我厚賞;我丈夫必與我同住,因我給他生了六個兒子,於是給他起名西布倫(就是同住的意思)。</div>
+            <div class="verse"><span class="verse-number">21</span>後來又生了一個女兒,給她起名叫底拿。</div>
+            <div class="verse"><span class="verse-number">22</span>神顧念拉結,應允了她,使她能生育。</div>
+            <div class="verse"><span class="verse-number">23</span>拉結懷孕生子,說:神除去了我的羞恥,</div>
+            <div class="verse"><span class="verse-number">24</span>就給他起名叫約瑟(就是增添的意思),意思說:願耶和華再增添我一個兒子。</div>
+            <div class="verse"><span class="verse-number">25</span>拉結生約瑟之後,雅各對拉班說:請打發我走,叫我回到我本鄉本土去。</div>
+            <div class="verse"><span class="verse-number">26</span>請你把我服事你所得的妻子和兒女給我,讓我走;我怎樣服事你,你都知道。</div>
+            <div class="verse"><span class="verse-number">27</span>拉班對他說:我若在你眼前蒙恩,請你仍與我同住,因為我已算定,耶和華賜福與我是為你的緣故;</div>
+            <div class="verse"><span class="verse-number">28</span>又說:請你定你的工價,我就給你。</div>
+            <div class="verse"><span class="verse-number">29</span>雅各對他說:我怎樣服事你,你的牲畜在我手裡是怎樣,是你知道的。</div>
+            <div class="verse"><span class="verse-number">30</span>我未來之先,你所有的很少,現今卻發大眾多,耶和華隨我的腳步賜福與你。如今,我什麼時候才為自己興家立業呢?</div>
+            <div class="verse"><span class="verse-number">31</span>拉班說:我當給你什麼呢?雅各說:什麼你也不必給我,只有一件事,你若應承,我便仍舊牧放你的羊群。</div>
+            <div class="verse"><span class="verse-number">32</span>今天我要走遍你的羊群,把綿羊中凡有點的、有斑的,和黑色的,並山羊中凡有斑的、有點的,都挑出來;將來這一等的就算我的工價。</div>
+            <div class="verse"><span class="verse-number">33</span>以後你來查看我的工價,凡在我手裡的山羊不是有點有斑的,綿羊不是黑色的,那就算是我偷的;這樣便可證出我的公義來。</div>
+            <div class="verse"><span class="verse-number">34</span>拉班說:好啊!我情願照著你的話行。</div>
+            <div class="verse"><span class="verse-number">35</span>當日,拉班把有紋的、有斑的公山羊,有點的、有斑的、有雜白紋的母山羊,並黑色的綿羊,都挑出來,交在他兒子們的手下,</div>
+            <div class="verse"><span class="verse-number">36</span>又使自己和雅各相離三天的路程。雅各就牧養拉班其餘的羊。</div>
+            <div class="verse"><span class="verse-number">37</span>雅各拿楊樹、杏樹、楓樹的嫩枝,將皮剝成白紋,使枝子露出白的來,</div>
+            <div class="verse"><span class="verse-number">38</span>將剝了皮的枝子,對著羊群,插在飲羊的水溝裡和水槽裡,羊來喝的時候,牝牡配合。</div>
+            <div class="verse"><span class="verse-number">39</span>羊對著枝子配合,就生下有紋的、有點的、有斑的來。</div>
+            <div class="verse"><span class="verse-number">40</span>雅各把羊羔分出來,使拉班的羊與這有紋和黑色的羊相對,把自己的羊另放一處,不叫他和拉班的羊混雜。</div>
+            <div class="verse"><span class="verse-number">41</span>到羊群肥壯配合的時候,雅各就把枝子插在水溝裡,使羊對著枝子配合。</div>
+            <div class="verse"><span class="verse-number">42</span>只是到羊瘦弱配合的時候就不插枝子。這樣,瘦弱的就歸拉班,肥壯的就歸雅各。</div>
+            <div class="verse"><span class="verse-number">43</span>於是雅各極其發大,得了許多的羊群、僕婢、駱駝,和驢。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                創世記第30章記載雅各家中激烈的競爭。拉結不能生育而嫉妒利亞,讓使女辟拉代為生子,利亞也效法讓使女悉帕生子。兩姐妹甚至用風茄交易丈夫的同寢權,利亞又生三個孩子。最後神垂聽拉結,使她生下約瑟。雅各要求離開,拉班挽留並讓他定工價。雅各用智慧使羊群中有紋有斑的歸自己,極其發達。本章展現一個破碎家庭的混亂:嫉妒、競爭、操縱,但神仍在其中工作,預備以色列十二支派的誕生。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 比較與嫉妒毀掉關係</strong><br>
+                拉結嫉妒利亞能生育,利亞渴望丈夫的愛,兩姐妹陷入痛苦的競爭。比較使人永遠不滿足,嫉妒毒化關係。神給每個人不同的恩賜和祝福,我們要學習知足感恩,而非與人比較。
+                <br><br>
+                <strong>2. 用人的方法無法得神的祝福</strong><br>
+                拉結和利亞都想用使女生子、用風茄催生的方式達到目的,但真正的祝福來自神。人的籌算和操縱可能暫時有效,卻帶來更多問題。我們要等候神的時間,而非用自己的方法強求。
+                <br><br>
+                <strong>3. 神賜智慧勝過詭詐</strong><br>
+                雅各用智慧使羊群興旺,雖然方法看似技巧,但下章顯明是神的祝福。神能賜給我們智慧處理不公的環境,不需要用欺騙或報復,神自己會為我們伸冤和開路。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>拉結見自己不給雅各生子,就<strong>嫉妒她姊姊</strong>,對雅各說:你給我孩子,<strong>不然我就死了</strong>。(創30:1)</td>
+                            <td>你是否常將自己與別人<strong>比較而感到不滿</strong>?就像看到同事升遷而心生嫉妒,你是否因為<strong>沒有別人所擁有的</strong>就覺得<strong>自己的人生失敗</strong>?</td>
+                        </tr>
+                        <tr>
+                            <td>拉結說:有我的使女辟拉在這裡,你可以與她同房,使她生子在我膝下,<strong>我便因她也得孩子</strong>。(創30:3)</td>
+                            <td>當神的時間未到時,你會<strong>用自己的方法強求</strong>,還是<strong>耐心等候神的預備</strong>?就像考試作弊想快速過關,你的<strong>急躁</strong>是否讓你選擇<strong>錯誤的捷徑</strong>?</td>
+                        </tr>
+                        <tr>
+                            <td><strong>神顧念拉結</strong>,應允了她,<strong>使她能生育</strong>。拉結懷孕生子,說:<strong>神除去了我的羞恥</strong>。(創30:22-23)</td>
+                            <td>當你長期等候神的應許時,你是否相信<strong>神的時間終會來到</strong>?就像種子埋在土裡看不見卻在成長,你能否在<strong>看不見的等候中</strong>仍然<strong>信靠神</strong>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

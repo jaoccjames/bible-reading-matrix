@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>創世記第23章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        h1:hover {
+            color: #3498db;
+        }
+        
+        .bible-icon {
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+        
+        .chapter-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .scripture-text {
+            display: none;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .scripture-text.show {
+            display: block;
+        }
+        
+        .verse {
+            margin-bottom: 10px;
+        }
+        
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+        
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+        
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+        
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        summary:before {
+            content: "▶";
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+            color: #3498db;
+        }
+        
+        details[open] summary:before {
+            transform: rotate(90deg);
+        }
+        
+        summary:hover {
+            color: #3498db;
+        }
+        
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        tr:hover {
+            background: #f0f8ff;
+        }
+        
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            創世記第23章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        <div class="chapter-subtitle">撒拉之死與購地</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>撒拉享壽一百二十七歲,這是撒拉一生的歲數。</div>
+            <div class="verse"><span class="verse-number">2</span>撒拉死在迦南地的基列亞巴,就是希伯崙。亞伯拉罕為她哀慟哭號。</div>
+            <div class="verse"><span class="verse-number">3</span>後來亞伯拉罕從死人面前起來,對赫人說:</div>
+            <div class="verse"><span class="verse-number">4</span>我在你們中間是外人,是寄居的。求你們在這裡給我一塊地,我好埋葬我的死人,使她不在我眼前。</div>
+            <div class="verse"><span class="verse-number">5</span>赫人回答亞伯拉罕說:</div>
+            <div class="verse"><span class="verse-number">6</span>我主請聽。你在我們中間是一位尊大的王子,只管在我們最好的墳地裡埋葬你的死人;我們沒有一人不容你在他的墳地裡埋葬你的死人。</div>
+            <div class="verse"><span class="verse-number">7</span>亞伯拉罕就起來,向那地的赫人下拜,</div>
+            <div class="verse"><span class="verse-number">8</span>對他們說:你們若有意叫我埋葬我的死人,使她不在我眼前,就請聽我的話,為我求瑣轄的兒子以弗崙,</div>
+            <div class="verse"><span class="verse-number">9</span>把田頭上那麥比拉洞給我;他可以按著足價賣給我,作我在你們中間的墳地。</div>
+            <div class="verse"><span class="verse-number">10</span>當時以弗崙正坐在赫人中間。於是,赫人以弗崙在城門出入的赫人面前對亞伯拉罕說:</div>
+            <div class="verse"><span class="verse-number">11</span>不然,我主請聽。我送給你這塊田,連田間的洞也送給你,在我同族的人面前都給你,可以埋葬你的死人。</div>
+            <div class="verse"><span class="verse-number">12</span>亞伯拉罕就在那地的人民面前下拜,</div>
+            <div class="verse"><span class="verse-number">13</span>在他們面前對以弗崙說:你若應允,請聽我的話。我要把田價給你,求你收下,我就在那裡埋葬我的死人。</div>
+            <div class="verse"><span class="verse-number">14</span>以弗崙回答亞伯拉罕說:</div>
+            <div class="verse"><span class="verse-number">15</span>我主請聽。值四百舍客勒銀子的一塊田,在你我中間還算什麼呢?只管埋葬你的死人吧!</div>
+            <div class="verse"><span class="verse-number">16</span>亞伯拉罕聽從了以弗崙,照著他在赫人面前所說的話,把買賣通用的銀子平了四百舍客勒給以弗崙。</div>
+            <div class="verse"><span class="verse-number">17</span>於是,麥比拉、幔利前、以弗崙的那塊田和其中的洞,並田間四圍的樹木,</div>
+            <div class="verse"><span class="verse-number">18</span>都定準歸與亞伯拉罕,乃是他在赫人面前並城門出入的人面前買妥的。</div>
+            <div class="verse"><span class="verse-number">19</span>此後,亞伯拉罕把他妻子撒拉埋葬在迦南地幔利前的麥比拉田間的洞裡。(幔利就是希伯崙)。</div>
+            <div class="verse"><span class="verse-number">20</span>從此,那塊田和田間的洞就藉著赫人定準歸與亞伯拉罕作墳地。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                創世記第23章記載撒拉127歲去世,亞伯拉罕為她哀慟哭號。作為寄居者,亞伯拉罕在迦南地沒有自己的土地,他謙卑地向赫人請求購買墳地。赫人尊重亞伯拉罕,願意免費提供墳地,但亞伯拉罕堅持要按足價購買。經過公開的議價過程,亞伯拉罕以四百舍客勒銀子買下麥比拉洞和周圍的田地,這是他在應許之地擁有的第一塊合法產業。本章詳細記載交易過程,顯示這產業的重要性,也表明亞伯拉罕對神應許的信心。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 信心在盼望中看見永恆</strong><br>
+                亞伯拉罕雖一生寄居,卻堅持購買墳地,表明他相信後裔必得這地為業。購墓地是信心的宣告,相信死亡不是終點,神的應許必在後裔中實現。真信心在今生不完全中仍持守永恆盼望。
+                <br><br>
+                <strong>2. 誠實正直贏得世人尊重</strong><br>
+                赫人稱亞伯拉罕為「尊大的王子」,願免費贈地。亞伯拉罕一生的見證使外邦人敬重他。基督徒的品格是最好的見證,正直的生活能為福音開路,讓人看見神的榮耀。
+                <br><br>
+                <strong>3. 合法產業需要付代價</strong><br>
+                亞伯拉罕堅持付足價購買,確保產權無可爭議。屬靈的產業也需要代價,不是廉價的恩典。真實跟隨主需要委身、捨己、順服,這是得著屬靈產業的必經之路。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>我在你們中間是<strong>外人,是寄居的</strong>。求你們在這裡給我一塊地,我好<strong>埋葬我的死人</strong>。(創23:4)</td>
+                            <td>你是否認識到自己在世上只是<strong>客旅寄居</strong>,真正的家在天上?就像旅館再豪華也不是家,你的<strong>心是否被世界綑綁</strong>,還是<strong>輕看地上財寶</strong>而盼望永恆?</td>
+                        </tr>
+                        <tr>
+                            <td>赫人回答亞伯拉罕說:我主請聽。你在我們中間是<strong>一位尊大的王子</strong>。(創23:5-6)</td>
+                            <td>你的生活見證是否讓<strong>不信的人也尊重你</strong>?就像好的餐廳連路人都推薦,你的<strong>品格與誠信</strong>是否能為基督<strong>贏得好名聲</strong>,還是讓人厭惡?</td>
+                        </tr>
+                        <tr>
+                            <td>亞伯拉罕聽從了以弗崙,照著他在赫人面前所說的話,把買賣通用的銀子<strong>平了四百舍客勒</strong>給以弗崙。(創23:16)</td>
+                            <td>你是否願意<strong>付代價</strong>來獲得合法、清白的產業,還是想<strong>走捷徑、佔便宜</strong>?就像考試作弊雖能快速過關卻不踏實,你追求的是<strong>廉價的祝福</strong>還是<strong>付代價的產業</strong>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

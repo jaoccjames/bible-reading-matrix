@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>創世記第45章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+            border-radius: 4px;
+        }
+
+        .scripture-text.show {
+            display: block;
+        }
+
+        .verse {
+            margin-bottom: 10px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            transition: color 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: "▶ ";
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            創世記第45章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        
+        <div class="chapter-subtitle">約瑟與兄弟相認</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>約瑟在左右站著的人面前情不自禁，吩咐一聲說：人都要離開我出去！約瑟和弟兄相認的時候並沒有一人站在他面前。</div>
+            <div class="verse"><span class="verse-number">2</span>他就放聲大哭；埃及人和法老家中的人都聽見了。</div>
+            <div class="verse"><span class="verse-number">3</span>約瑟對他弟兄們說：我是約瑟。我的父親還在嗎？他弟兄不能回答，因為在他面前都驚惶。</div>
+            <div class="verse"><span class="verse-number">4</span>約瑟又對他弟兄們說：請你們近前來。他們就近前來。他說：我是你們的兄弟約瑟，就是你們所賣到埃及的。</div>
+            <div class="verse"><span class="verse-number">5</span>現在，不要因為把我賣到這裡自憂自恨。這是神差我在你們以先來，為要保全生命。</div>
+            <div class="verse"><span class="verse-number">6</span>現在這地的饑荒已經二年了，還有五年不能耕種，不能收成。</div>
+            <div class="verse"><span class="verse-number">7</span>神差我在你們以先來，為要給你們存留餘種在世上，又要大施拯救，保全你們的生命。</div>
+            <div class="verse"><span class="verse-number">8</span>這樣看來，差我到這裡來的不是你們，乃是神。他又使我如法老的父，作他全家的主，並埃及全地的宰相。</div>
+            <div class="verse"><span class="verse-number">9</span>你們要趕緊上到我父親那裡，對他說：你兒子約瑟這樣說：神使我作全埃及的主，請你下到我這裡來，不要耽延。</div>
+            <div class="verse"><span class="verse-number">10</span>你和你的兒子孫子，連牛群羊群，並一切所有的，都可以住在歌珊地，與我相近。</div>
+            <div class="verse"><span class="verse-number">11</span>我要在那裡奉養你；因為還有五年的饑荒，免得你和你的眷屬，並一切所有的，都敗落了。</div>
+            <div class="verse"><span class="verse-number">12</span>況且你們的眼和我兄弟便雅憫的眼都看見是我親口對你們說話。</div>
+            <div class="verse"><span class="verse-number">13</span>你們也要將我在埃及一切的榮耀和你們所看見的事都告訴我父親，又要趕緊地將我父親搬到我這裡來。</div>
+            <div class="verse"><span class="verse-number">14</span>於是約瑟伏在他兄弟便雅憫的頸項上哭，便雅憫也在他的頸項上哭。</div>
+            <div class="verse"><span class="verse-number">15</span>他又與眾弟兄親嘴，抱著他們哭，隨後他弟兄就和他說話。</div>
+            <div class="verse"><span class="verse-number">16</span>這風聲傳到法老的宮裡，說：約瑟的弟兄們來了。法老和他的臣僕都很喜歡。</div>
+            <div class="verse"><span class="verse-number">17</span>法老對約瑟說：你吩咐你的弟兄們說：你們要這樣行：把馱子抬在牲口上，起身往迦南地去。</div>
+            <div class="verse"><span class="verse-number">18</span>將你們的父親和你們的眷屬都搬到我這裡來，我要把埃及地的美物賜給你們，你們也要吃這地肥美的出產。</div>
+            <div class="verse"><span class="verse-number">19</span>現在我吩咐你們要這樣行：從埃及地帶著車輛去，把你們的孩子和妻子，並你們的父親都搬來。</div>
+            <div class="verse"><span class="verse-number">20</span>你們眼中不要愛惜你們的家具，因為埃及全地的美物都是你們的。</div>
+            <div class="verse"><span class="verse-number">21</span>以色列的兒子們就如此行。約瑟照著法老的吩咐給他們車輛和路上用的食物，</div>
+            <div class="verse"><span class="verse-number">22</span>又給他們各人一套衣服，惟獨給便雅憫三百銀子，五套衣服；</div>
+            <div class="verse"><span class="verse-number">23</span>送給他父親公驢十匹，馱著埃及的美物，母驢十匹，馱著糧食與餅和菜，為他父親路上用。</div>
+            <div class="verse"><span class="verse-number">24</span>於是約瑟打發他弟兄們回去，又對他們說：你們不要在路上相爭。</div>
+            <div class="verse"><span class="verse-number">25</span>他們從埃及上去，來到迦南地、他們的父親雅各那裡，</div>
+            <div class="verse"><span class="verse-number">26</span>告訴他說：約瑟還在，並且作埃及全地的宰相。雅各心裡冰涼，因為不信他們。</div>
+            <div class="verse"><span class="verse-number">27</span>他們便將約瑟對他們說的一切話都告訴了他。他們父親雅各又看見約瑟打發來接他的車輛，心就甦醒了。</div>
+            <div class="verse"><span class="verse-number">28</span>以色列說：罷了！罷了！我的兒子約瑟還在，趁我未死以先，我要去見他一面。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                本章記載約瑟故事最高潮的一幕：與兄弟相認。猶大的懇求打動約瑟的心，他終於情不自禁，遣散所有埃及人後向兄弟們表明身分。約瑟放聲大哭宣告「我是約瑟」，兄弟們驚惶失措無法回答。約瑟不僅沒有責備他們，反而以神學的眼光解釋這一切：神差他先來埃及是為了保全全家性命。他三次強調是神而非人的作為，顯明他完全饒恕並看見神的美意。約瑟邀請全家下埃及，法老也慷慨提供車輛和美物。約瑟特別提醒兄弟們「不要在路上相爭」，顯示他對人性的洞察。雅各起初不信，但看見車輛後心甦醒，決定趁未死前去見約瑟。二十二年的分離終於要結束。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 完全的饒恕超越人的傷害</strong><br>約瑟不僅沒有報復，反而安慰兄弟們「不要自憂自恨」。真正的饒恕不是忘記傷害，而是選擇不讓過去的痛苦繼續轄制關係。饒恕使受害者從苦毒中得自由，也給傷害者悔改與和好的機會，是最大的恩典。<br><br>
+                <strong>2. 從神的眼光看待苦難與逆境</strong><br>約瑟三次宣告「是神差我來」，將兄弟的惡行重新詮釋為神的計畫。屬靈成熟不是否認痛苦，而是能在苦難中看見神的主權與美意。當我們用神的眼光回顧人生，就能將咒詛化為祝福，將傷痛轉為見證。<br><br>
+                <strong>3. 和好需要主動跨出第一步</strong><br>約瑟主動表明身分並安慰兄弟，打破僵局。和好從來不是等對方先來道歉，而是願意承擔主動的風險。真正的愛會放下身段，跨越驕傲的障礙，用恩典融化仇恨的冰牆。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>現在，<strong>不要</strong>因為把我賣到這裡<strong>自憂自恨</strong>。這是<strong>神差我</strong>在你們以先來，為要<strong>保全生命</strong>。（創45:5）</td>
+                            <td>就像<strong>被誤診後發現及時救了命</strong>能感恩而非追究，約瑟從神的眼光看待傷害。我對過去的<strong>傷痛</strong>或<strong>不公</strong>，是一直活在<strong>苦毒</strong>和<strong>控訴</strong>中，還是願意尋求神在其中的<strong>美意</strong>與<strong>帶領</strong>？</td>
+                        </tr>
+                        <tr>
+                            <td>這樣看來，差我到這裡來的<strong>不是你們</strong>，<strong>乃是神</strong>。（創45:8）</td>
+                            <td>就像<strong>繞遠路卻避開車禍</strong>發現是神保護，約瑟將人的惡轉化為神的計畫。回顧我的人生<strong>挫折</strong>或<strong>打擊</strong>（如失業、分手、疾病），我能否看見神可能在其中的<strong>保護</strong>、<strong>預備</strong>或<strong>更美心意</strong>？</td>
+                        </tr>
+                        <tr>
+                            <td>約瑟又對他弟兄們說：<strong>請你們近前來</strong>。他們就近前來。（創45:4）</td>
+                            <td>就像<strong>父母主動擁抱犯錯的孩子</strong>消除恐懼，約瑟主動邀請驚惶的兄弟靠近。當我與某人有<strong>裂痕</strong>或<strong>誤會</strong>時，我是等對方先<strong>示好</strong>、<strong>道歉</strong>，還是願意<strong>主動</strong>跨出第一步，放下<strong>驕傲</strong>創造<strong>和好</strong>的機會？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

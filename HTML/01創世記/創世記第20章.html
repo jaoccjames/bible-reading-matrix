@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>創世記第20章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        h1:hover {
+            color: #3498db;
+        }
+        
+        .bible-icon {
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+        
+        .chapter-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .scripture-text {
+            display: none;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .scripture-text.show {
+            display: block;
+        }
+        
+        .verse {
+            margin-bottom: 10px;
+        }
+        
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+        
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+        
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+        
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        summary:before {
+            content: "▶";
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+            color: #3498db;
+        }
+        
+        details[open] summary:before {
+            transform: rotate(90deg);
+        }
+        
+        summary:hover {
+            color: #3498db;
+        }
+        
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        tr:hover {
+            background: #f0f8ff;
+        }
+        
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            創世記第20章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        <div class="chapter-subtitle">亞伯拉罕再次說謊</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>亞伯拉罕從那裡向南地遷去,寄居在加低斯和書珥中間的基拉耳。</div>
+            <div class="verse"><span class="verse-number">2</span>亞伯拉罕稱他的妻撒拉為妹子,基拉耳王亞比米勒差人把撒拉取了去。</div>
+            <div class="verse"><span class="verse-number">3</span>但夜間,神來,在夢中對亞比米勒說:你是個死人哪!因為你取了那女人來;她原是別人的妻子。</div>
+            <div class="verse"><span class="verse-number">4</span>亞比米勒卻還沒有親近撒拉;他說:主啊,連有義的國,你也要毀滅嗎?</div>
+            <div class="verse"><span class="verse-number">5</span>那人豈不是自己對我說她是我的妹子嗎?就是女人也自己說:他是我的哥哥。我做這事是心正手潔的。</div>
+            <div class="verse"><span class="verse-number">6</span>神在夢中對他說:我知道你做這事是心中正直;我也攔阻了你,免得你得罪我,所以我不容你沾著她。</div>
+            <div class="verse"><span class="verse-number">7</span>現在你把這人的妻子歸還他;因為他是先知,他要為你禱告,使你存活。你若不歸還他,你當知道,你和你所有的人都必要死。</div>
+            <div class="verse"><span class="verse-number">8</span>亞比米勒清早起來,召了眾臣僕來,將這些事都說給他們聽,他們都甚懼怕。</div>
+            <div class="verse"><span class="verse-number">9</span>亞比米勒召了亞伯拉罕來,對他說:你怎麼向我這樣行呢?我在什麼事上得罪了你,你竟使我和我國裡的人陷在大罪裡?你向我行不當行的事了!</div>
+            <div class="verse"><span class="verse-number">10</span>亞比米勒又對亞伯拉罕說:你見了什麼才做這事呢?</div>
+            <div class="verse"><span class="verse-number">11</span>亞伯拉罕說:我以為這地方的人總不懼怕神,必為我妻子的緣故殺我。</div>
+            <div class="verse"><span class="verse-number">12</span>況且她也實在是我的妹子;她與我是同父異母,後來作了我的妻子。</div>
+            <div class="verse"><span class="verse-number">13</span>當神叫我離開父家、飄流在外的時候,我對她說:我們無論走到什麼地方,你可以對人說:他是我的哥哥;這就是你待我的恩典了。</div>
+            <div class="verse"><span class="verse-number">14</span>亞比米勒把牛、羊、僕、婢賜給亞伯拉罕,又把他的妻子撒拉歸還他。</div>
+            <div class="verse"><span class="verse-number">15</span>亞比米勒又說:看哪,我的地都在你面前,你可以隨意居住;</div>
+            <div class="verse"><span class="verse-number">16</span>又對撒拉說:我給你哥哥一千銀子,作為你在闔家人面前遮羞的(羞:原文是眼),你就在眾人面前沒有不是了。</div>
+            <div class="verse"><span class="verse-number">17</span>亞伯拉罕禱告神,神就醫好了亞比米勒和他的妻子,並他的眾女僕,她們便能生育。</div>
+            <div class="verse"><span class="verse-number">18</span>因耶和華為亞伯拉罕的妻子撒拉的緣故,已經使亞比米勒家中的婦人不能生育。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                創世記第20章記載亞伯拉罕重蹈覆轍,再次用妻子冒充妹子的謊言來保護自己。這次發生在基拉耳,當地王亞比米勒取了撒拉,神卻在夢中警告他將面臨死亡。亞比米勒辯解自己是無辜受騙,神承認他心中正直並攔阻了他犯罪。亞比米勒質問亞伯拉罕為何陷他於罪中,亞伯拉罕解釋因懼怕這地方的人不敬畏神。亞比米勒不但歸還撒拉,還賜給亞伯拉罕許多財物。本章顯示即使是信心偉人也會重複犯罪,但神仍信實保守祂的應許和百姓。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 懼怕使人重複同樣的罪</strong><br>
+                亞伯拉罕曾在埃及犯同樣的錯誤,多年後又在基拉耳重演。懼怕是信心的對立面,當我們靠自己的聰明而非信靠神時,就會陷入罪的循環。未對付的恐懼會成為慣性的試探。
+                <br><br>
+                <strong>2. 神保護祂的應許不被破壞</strong><br>
+                神主動介入阻止亞比米勒親近撒拉,因為以撒必須從亞伯拉罕和撒拉而生。即使我們失敗,神的應許和計畫不會因人的軟弱而改變。神有能力在人的錯誤中仍成就祂的旨意。
+                <br><br>
+                <strong>3. 半真半假的謊言仍是謊言</strong><br>
+                亞伯拉罕辯稱撒拉確實是他同父異母的妹子,但這種半真半假的說法仍是欺騙。神看重的是誠實的心,用技術性真相來掩蓋實情,在神眼中仍是不誠實。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>亞伯拉罕說:<strong>我以為這地方的人總不懼怕神</strong>,必為我妻子的緣故殺我。(創20:11)</td>
+                            <td>你是否曾因<strong>懼怕環境或他人</strong>而做出違背誠實的事?就像面試時誇大履歷因怕不被錄取,你的<strong>恐懼是否大過對神保護的信心</strong>?</td>
+                        </tr>
+                        <tr>
+                            <td>神在夢中對他說:我知道你做這事是心中正直;我也<strong>攔阻了你</strong>,免得你得罪我,所以<strong>我不容你沾著她</strong>。(創20:6)</td>
+                            <td>你是否相信神會<strong>主動保護你免於犯罪</strong>?就像父母會擋住孩子伸向熱鍋的手,你能否看見神在你<strong>未意識到的危險中保守你</strong>?</td>
+                        </tr>
+                        <tr>
+                            <td>亞伯拉罕說:況且<strong>她也實在是我的妹子</strong>;她與我是同父異母,後來作了我的妻子。(創20:12)</td>
+                            <td>你是否曾用<strong>技術性真相</strong>來為自己的不誠實辯護?就像說「我沒騙你」但卻隱瞞關鍵資訊,你是否認為<strong>半真半假就不算說謊</strong>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

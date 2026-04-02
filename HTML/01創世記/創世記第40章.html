@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>創世記第40章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+            border-radius: 4px;
+        }
+
+        .scripture-text.show {
+            display: block;
+        }
+
+        .verse {
+            margin-bottom: 10px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            transition: color 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: "▶ ";
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            創世記第40章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        
+        <div class="chapter-subtitle">約瑟為囚犯解夢</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>這事以後，埃及王的酒政和膳長得罪了他們的主─埃及王，</div>
+            <div class="verse"><span class="verse-number">2</span>法老就惱怒酒政和膳長這二臣，</div>
+            <div class="verse"><span class="verse-number">3</span>把他們下在護衛長府內的監裡，就是約瑟被囚的地方。</div>
+            <div class="verse"><span class="verse-number">4</span>護衛長把他們交給約瑟，約瑟便伺候他們；他們有些日子在監裡。</div>
+            <div class="verse"><span class="verse-number">5</span>被囚在監之埃及王的酒政和膳長二人同夜各做一夢，各夢都有講解。</div>
+            <div class="verse"><span class="verse-number">6</span>到了早晨，約瑟進到他們那裡，見他們有愁悶的樣子。</div>
+            <div class="verse"><span class="verse-number">7</span>他便問法老的二臣，就是與他同囚在他主人府內的，說：他們今日為什麼面帶愁容呢？</div>
+            <div class="verse"><span class="verse-number">8</span>他們對他說：我們各人做了一夢，沒有人能解。約瑟說：解夢不是出於神嗎？請你們將夢告訴我。</div>
+            <div class="verse"><span class="verse-number">9</span>酒政便將他的夢告訴約瑟說：我夢見在我面前有一棵葡萄樹，</div>
+            <div class="verse"><span class="verse-number">10</span>樹上有三根枝子，好像發了芽，開了花，上頭的葡萄都成熟了。</div>
+            <div class="verse"><span class="verse-number">11</span>法老的杯在我手中，我就拿葡萄擠在法老的杯裡，將杯遞在他手中。</div>
+            <div class="verse"><span class="verse-number">12</span>約瑟對他說：你所做的夢是這樣解：三根枝子就是三天；</div>
+            <div class="verse"><span class="verse-number">13</span>三天之內，法老必提你出監，叫你官復原職，你仍要遞杯在法老的手中，和先前作他的酒政一樣。</div>
+            <div class="verse"><span class="verse-number">14</span>但你得好處的時候，求你記念我，施恩與我，在法老面前提說我，救我出這監牢。</div>
+            <div class="verse"><span class="verse-number">15</span>我實在是從希伯來人之地被拐來的；我在這裡也沒有做過什麼，叫他們把我下在監裡。</div>
+            <div class="verse"><span class="verse-number">16</span>膳長見夢解得好，就對約瑟說：我在夢中見我頭上頂著三筐白餅；</div>
+            <div class="verse"><span class="verse-number">17</span>極上的筐子裡有為法老烤的各樣食物，有飛鳥來吃我頭上筐子裡的食物。</div>
+            <div class="verse"><span class="verse-number">18</span>約瑟說：你的夢是這樣解：三個筐子就是三天；</div>
+            <div class="verse"><span class="verse-number">19</span>三天之內，法老必斬斷你的頭，把你掛在木頭上，必有飛鳥來吃你身上的肉。</div>
+            <div class="verse"><span class="verse-number">20</span>到了第三天，是法老的生日，他為眾臣僕設擺筵席，把酒政和膳長提出監來，</div>
+            <div class="verse"><span class="verse-number">21</span>使酒政官復原職，他仍舊遞杯在法老手中；</div>
+            <div class="verse"><span class="verse-number">22</span>但把膳長掛起來，正如約瑟向他們所解的話。</div>
+            <div class="verse"><span class="verse-number">23</span>酒政卻不記念約瑟，竟忘了他。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                本章記載約瑟在監獄中為法老的酒政和膳長解夢的經歷。這兩位王室官員因得罪法老被下監，與約瑟同囚。一夜他們各做了一夢卻無人能解，約瑟察覺他們的憂愁主動關心。約瑟宣告解夢的能力來自神，準確預言酒政三天後復職、膳長三天後處死。約瑟請求酒政復職後在法老面前為他說情，幫助他脫離冤獄。三天後正值法老生日，兩個夢境的解釋完全應驗。然而酒政官復原職後卻忘記約瑟的請求。這段看似令人失望的結局，實則是神的時間表，為約瑟日後在更高的位置上服事做預備。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 困境中仍要關心他人需要</strong><br>約瑟身處冤獄卻沒有自憐自艾，反而主動關心同囚者的憂愁。真正屬靈成熟的人不會被自己的苦難所困，仍能敏銳察覺他人的需要並伸出援手。服事他人是走出苦境的關鍵，因為當我們成為別人的祝福時，神也在預備我們的道路。<br><br>
+                <strong>2. 恩賜與能力都來自神而非自己</strong><br>約瑟明確宣告「解夢不是出於神嗎？」將榮耀歸給神。真正的恩賜不會使人驕傲，反而使人謙卑依靠神。我們的才能、智慧、機會都是神所賜，承認這點能保守我們不陷入自我中心，也讓神的能力更完全地彰顯。<br><br>
+                <strong>3. 神的時間往往超越人的計畫</strong><br>酒政忘記約瑟看似是挫折，實則是神更美好計畫的一部分。若酒政當時替約瑟求情成功，約瑟可能只是恢復自由，而非兩年後成為埃及宰相。神的延遲不是拒絕，而是為了更大的祝福在預備合適的時機。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>到了早晨，約瑟進到他們那裡，見他們有<strong>愁悶</strong>的樣子。他便問法老的二臣說：他們今日為什麼<strong>面帶愁容</strong>呢？（創40:6-7）</td>
+                            <td>就像<strong>在醫院候診時主動關心旁邊焦慮的人</strong>，約瑟在自己困境中仍察覺他人需要。當我正經歷<strong>困難</strong>或<strong>低潮</strong>時，我是完全專注在自己的<strong>痛苦</strong>中，還是仍能保持<strong>敏銳</strong>，注意到身邊也在<strong>掙扎</strong>的人？</td>
+                        </tr>
+                        <tr>
+                            <td>約瑟說：<strong>解夢不是出於神嗎</strong>？請你們將夢告訴我。（創40:8）</td>
+                            <td>就像<strong>領獎時感謝團隊</strong>而不是獨攬功勞，約瑟將能力歸給神而非炫耀自己。當我的<strong>才能</strong>或<strong>成就</strong>被認可時，我是暗自<strong>得意</strong>享受掌聲，還是記得這一切都是神的<strong>恩典</strong>與<strong>裝備</strong>，將<strong>榮耀</strong>歸給祂？</td>
+                        </tr>
+                        <tr>
+                            <td><strong>酒政卻不記念</strong>約瑟，竟<strong>忘了他</strong>。（創40:23）</td>
+                            <td>就像<strong>包裹延遲送達</strong>卻最終到了更好的時機，酒政的遺忘是神計畫的一部分。當我的<strong>禱告</strong>沒有立刻應允、<strong>幫助</strong>我的人忘記承諾時，我是<strong>灰心</strong>埋怨，還是相信神的<strong>延遲</strong>可能是為了預備<strong>更大</strong>的祝福？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>創世記第34章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        h1:hover {
+            color: #3498db;
+        }
+        
+        .bible-icon {
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+        
+        .chapter-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .scripture-text {
+            display: none;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .scripture-text.show {
+            display: block;
+        }
+        
+        .verse {
+            margin-bottom: 10px;
+        }
+        
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+        
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+        
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+        
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        summary:before {
+            content: "▶";
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+            color: #3498db;
+        }
+        
+        details[open] summary:before {
+            transform: rotate(90deg);
+        }
+        
+        summary:hover {
+            color: #3498db;
+        }
+        
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        tr:hover {
+            background: #f0f8ff;
+        }
+        
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            創世記第34章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        <div class="chapter-subtitle">底拿事件的悲劇</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>利亞給雅各所生的女兒底拿出去,要見那地的女子們。</div>
+            <div class="verse"><span class="verse-number">2</span>那地的主─希未人、哈抹的兒子示劍看見她,就拉住她,與她行淫,玷辱她。</div>
+            <div class="verse"><span class="verse-number">3</span>示劍的心繫戀雅各的女兒底拿,喜愛這女子,甜言蜜語的安慰她。</div>
+            <div class="verse"><span class="verse-number">4</span>示劍對他父親哈抹說:求你為我聘這女子為妻。</div>
+            <div class="verse"><span class="verse-number">5</span>雅各聽見示劍玷污了他的女兒底拿。那時他的兒子們正和群畜在田野,雅各就閉口不言,等他們回來。</div>
+            <div class="verse"><span class="verse-number">6</span>示劍的父親哈抹出來見雅各,要和他商議。</div>
+            <div class="verse"><span class="verse-number">7</span>雅各的兒子們聽見這事,就從田野回來,人人忿恨,十分惱怒;因示劍在以色列家做了醜事,與雅各的女兒行淫,這本是不該做的事。</div>
+            <div class="verse"><span class="verse-number">8</span>哈抹和他們商議說:我兒子示劍的心戀慕這女子,求你們將她給我的兒子為妻。</div>
+            <div class="verse"><span class="verse-number">9</span>你們與我們彼此結親;你們可以把女兒給我們,也可以娶我們的女兒。</div>
+            <div class="verse"><span class="verse-number">10</span>你們與我們同住吧;這地都在你們面前,只管在此居住,做買賣,置產業。</div>
+            <div class="verse"><span class="verse-number">11</span>示劍對女兒的父親和弟兄們說:但願我在你們眼前蒙恩,你們向我要什麼,我必給你們。</div>
+            <div class="verse"><span class="verse-number">12</span>任憑向我要多重的聘金和禮物,我必照你們所說的給你們;只要把女子給我為妻。</div>
+            <div class="verse"><span class="verse-number">13</span>雅各的兒子們因為示劍玷污了他們的妹子底拿,就用詭詐的話回答示劍和他父親哈抹,</div>
+            <div class="verse"><span class="verse-number">14</span>對他們說:我們不能把我們的妹子給沒有受割禮的人為妻,因為那是我們的羞辱。</div>
+            <div class="verse"><span class="verse-number">15</span>惟有一件才可以應允:若你們所有的男丁都受割禮,和我們一樣,</div>
+            <div class="verse"><span class="verse-number">16</span>我們就把女兒給你們,也娶你們的女兒;我們便與你們同住,兩下成為一樣的人民。</div>
+            <div class="verse"><span class="verse-number">17</span>倘若你們不聽從我們受割禮,我們就帶著妹子走了。</div>
+            <div class="verse"><span class="verse-number">18</span>哈抹和他的兒子示劍喜歡這話。</div>
+            <div class="verse"><span class="verse-number">19</span>那少年人做這事並不遲延,因為他喜愛雅各的女兒;他在他父親家中也是人最尊重的。</div>
+            <div class="verse"><span class="verse-number">20</span>哈抹和他兒子示劍到本城的門口,對本城的人說:</div>
+            <div class="verse"><span class="verse-number">21</span>這些人與我們和睦,不如許他們在這地居住,做買賣;這地也寬闊,足可容下他們。我們可以娶他們的女兒為妻,也可以把我們的女兒嫁給他們。</div>
+            <div class="verse"><span class="verse-number">22</span>惟有一件事我們必須做,他們才肯應允和我們同住,成為一樣的人民:就是我們中間所有的男丁都要受割禮,和他們一樣。</div>
+            <div class="verse"><span class="verse-number">23</span>他們的群畜、貨財,和一切的牲口豈不都歸我們嗎?只要依從他們,他們就與我們同住。</div>
+            <div class="verse"><span class="verse-number">24</span>凡從城門出入的人就都聽從哈抹和他兒子示劍的話;於是凡從城門出入的男丁都受了割禮。</div>
+            <div class="verse"><span class="verse-number">25</span>到第三天,眾人正在疼痛的時候,雅各的兩個兒子,就是底拿的哥哥西緬和利未,各拿刀劍,趁著眾人想不到的時候來到城中,把一切男丁都殺了,</div>
+            <div class="verse"><span class="verse-number">26</span>又用刀殺了哈抹和他兒子示劍,把底拿從示劍家裡帶出來就走了。</div>
+            <div class="verse"><span class="verse-number">27</span>雅各的兒子們因為他們的妹子受了玷污,就來到被殺的人那裡,擄掠那城,</div>
+            <div class="verse"><span class="verse-number">28</span>奪了他們的羊群、牛群,和驢,並城裡田間所有的;</div>
+            <div class="verse"><span class="verse-number">29</span>又把他們一切貨財、孩子、婦女,並各房中所有的,都擄掠去了。</div>
+            <div class="verse"><span class="verse-number">30</span>雅各對西緬和利未說:你們連累我,使我在這地的居民中,就是在迦南人和比利洗人中,有了臭名。我的人丁既然稀少,他們必聚集來擊殺我,我和全家的人都必滅絕。</div>
+            <div class="verse"><span class="verse-number">31</span>他們說:他豈可待我們的妹子如同妓女嗎?</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                創世記第34章記載雅各家中一個慘痛的悲劇。雅各定居示劍後,女兒底拿出去見當地女子,被示劍王子強暴。示劍愛上底拿要娶她,願付任何代價。雅各的兒子們用詭計要求全城男丁受割禮才同意婚事。第三天眾人疼痛最劇烈時,西緬和利未趁機殺了全城男丁,其他兒子擄掠財物。雅各擔心遭報復,兒子們則堅持要為妹妹伸冤。本章揭示與世界妥協的危險後果,以及以暴制暴帶來的更大災難,也顯示雅各作為屬靈領袖的失職。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 屬靈妥協招致實際危險</strong><br>
+                雅各本應回伯特利敬拜神,卻選擇在示劍定居買地,與當地人混居。當信徒與世界的界線模糊,就容易讓家人陷入試探和危險。分別為聖不是自我隔絕,而是在生活中保持清楚的屬靈身分和價值觀。
+                <br><br>
+                <strong>2. 以惡報惡違背神的心意</strong><br>
+                西緬和利未用欺騙和殺戮報復,看似為妹妹伸冤,實際上犯了更大的罪,使全家陷入危機。神從不允許我們用罪惡的手段達成正義的目的,伸冤在神而非在人。報復只會製造更多仇恨和傷害。
+                <br><br>
+                <strong>3. 父親失職導致家庭悲劇</strong><br>
+                雅各沒有帶領家人回伯特利敬拜神,聽聞女兒被辱竟閉口不言,缺乏屬靈權柄管教兒子的暴行。父親的屬靈軟弱和失職,直接影響兒女陷入罪中。家庭領袖必須在神面前負起帶領全家走正路的責任。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>利亞給雅各所生的女兒底拿<strong>出去,要見那地的女子們</strong>。那地的主...示劍看見她,就拉住她,<strong>與她行淫,玷辱她</strong>。(創34:1-2)</td>
+                            <td>你是否清楚<strong>哪些環境容易讓你陷入試探</strong>?就像明知深夜獨自走暗巷危險,你是否有<strong>屬靈的警覺</strong>避開<strong>容易跌倒的場合</strong>?</td>
+                        </tr>
+                        <tr>
+                            <td>雅各的兒子們因為示劍玷污了他們的妹子底拿,就<strong>用詭詐的話</strong>回答...西緬和利未...來到城中,<strong>把一切男丁都殺了</strong>。(創34:13,25)</td>
+                            <td>當你被<strong>嚴重傷害</strong>時,你會選擇<strong>暴力報復</strong>還是<strong>交託給神</strong>?就像被霸凌想以暴制暴,你是否明白<strong>報復只會帶來更大傷害</strong>?</td>
+                        </tr>
+                        <tr>
+                            <td>雅各聽見示劍玷污了他的女兒底拿。那時他的兒子們正和群畜在田野,<strong>雅各就閉口不言</strong>,等他們回來。(創34:5)</td>
+                            <td>面對家中的<strong>重大問題</strong>,你是<strong>逃避沉默</strong>還是<strong>勇敢面對處理</strong>?就像孩子闖禍父母裝作沒看見,你是否因為<strong>害怕衝突而逃避責任</strong>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

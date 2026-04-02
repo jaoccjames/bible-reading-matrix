@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>創世記第27章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        h1:hover {
+            color: #3498db;
+        }
+        
+        .bible-icon {
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+        
+        .chapter-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .scripture-text {
+            display: none;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .scripture-text.show {
+            display: block;
+        }
+        
+        .verse {
+            margin-bottom: 10px;
+        }
+        
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+        
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+        
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+        
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        summary:before {
+            content: "▶";
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+            color: #3498db;
+        }
+        
+        details[open] summary:before {
+            transform: rotate(90deg);
+        }
+        
+        summary:hover {
+            color: #3498db;
+        }
+        
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        tr:hover {
+            background: #f0f8ff;
+        }
+        
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            創世記第27章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        <div class="chapter-subtitle">雅各奪取祝福</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>以撒年老,眼睛昏花,不能看見,就叫了他大兒子以掃來,說:我兒。以掃說:我在這裡。</div>
+            <div class="verse"><span class="verse-number">2</span>他說:我如今老了,不知道哪一天死。</div>
+            <div class="verse"><span class="verse-number">3</span>現在請你拿你的器械,就是箭囊和弓,往田野去為我打獵,</div>
+            <div class="verse"><span class="verse-number">4</span>照我所愛的做成美味,拿來給我吃,使我在未死之先給你祝福。</div>
+            <div class="verse"><span class="verse-number">5</span>以撒對他兒子以掃說話,利百加也聽見了。以掃往田野去打獵,要得野味帶來。</div>
+            <div class="verse"><span class="verse-number">6</span>利百加就對她兒子雅各說:我聽見你父親對你哥哥以掃說:</div>
+            <div class="verse"><span class="verse-number">7</span>你去把野獸帶來,做成美味給我吃,我好在未死之先,在耶和華面前給你祝福。</div>
+            <div class="verse"><span class="verse-number">8</span>現在,我兒,你要照著我所吩咐你的,聽從我的話。</div>
+            <div class="verse"><span class="verse-number">9</span>你到羊群裡去,給我拿兩隻肥山羊羔來,我便照你父親所愛的給他做成美味。</div>
+            <div class="verse"><span class="verse-number">10</span>你拿到你父親那裡給他吃,使他在未死之先給你祝福。</div>
+            <div class="verse"><span class="verse-number">11</span>雅各對他母親利百加說:我哥哥以掃渾身是有毛的,我身上是光滑的;</div>
+            <div class="verse"><span class="verse-number">12</span>倘若我父親摸著我,必以我為欺哄人的,我就招咒詛,不得祝福。</div>
+            <div class="verse"><span class="verse-number">13</span>他母親對他說:我兒,你招的咒詛歸到我身上;你只管聽我的話,去把羊羔給我拿來。</div>
+            <div class="verse"><span class="verse-number">14</span>他便去拿來,交給他母親;他母親就照他父親所愛的做成美味。</div>
+            <div class="verse"><span class="verse-number">15</span>利百加又把家裡所存大兒子以掃上好的衣服給她小兒子雅各穿上,</div>
+            <div class="verse"><span class="verse-number">16</span>又用山羊羔皮包在雅各的手上和頸項的光滑處,</div>
+            <div class="verse"><span class="verse-number">17</span>就把所做的美味和餅交在她兒子雅各的手裡。</div>
+            <div class="verse"><span class="verse-number">18</span>雅各到他父親那裡說:我父親!他說:我在這裡。我兒,你是誰?</div>
+            <div class="verse"><span class="verse-number">19</span>雅各對他父親說:我是你的長子以掃;我已照你所吩咐我的行了。請起來坐著,吃我的野味,好給我祝福。</div>
+            <div class="verse"><span class="verse-number">20</span>以撒對他兒子說:我兒,你如何找得這麼快呢?他說:因為耶和華─你的神使我遇見好機會得著的。</div>
+            <div class="verse"><span class="verse-number">21</span>以撒對雅各說:我兒,你近前來,我摸摸你,知道你真是我的兒子以掃不是?</div>
+            <div class="verse"><span class="verse-number">22</span>雅各就挨近他父親以撒。以撒摸著他,說:聲音是雅各的聲音,手卻是以掃的手。</div>
+            <div class="verse"><span class="verse-number">23</span>以撒就辨不出他來;因為他手上有毛,像他哥哥以掃的手一樣,就給他祝福;</div>
+            <div class="verse"><span class="verse-number">24</span>又說:你真是我兒子以掃嗎?他說:我是。</div>
+            <div class="verse"><span class="verse-number">25</span>以撒說:你遞給我,我好吃我兒子的野味,給你祝福。雅各就遞給他,他便吃了,又拿酒給他,他也喝了。</div>
+            <div class="verse"><span class="verse-number">26</span>他父親以撒對他說:我兒,你上前來與我親嘴。</div>
+            <div class="verse"><span class="verse-number">27</span>他就上前與父親親嘴。他父親一聞他衣服上的香氣,就給他祝福,說:我兒的香氣如同耶和華賜福之田地的香氣一樣。</div>
+            <div class="verse"><span class="verse-number">28</span>願神賜你天上的甘露,地上的肥土,並許多五穀新酒。</div>
+            <div class="verse"><span class="verse-number">29</span>願多民事奉你,多國跪拜你。願你作你弟兄的主;你母親的兒子向你跪拜。凡咒詛你的,願他受咒詛;為你祝福的,願他蒙福。</div>
+            <div class="verse"><span class="verse-number">30</span>以撒為雅各祝福已畢,雅各從他父親那裡才出來,他哥哥以掃正打獵回來,</div>
+            <div class="verse"><span class="verse-number">31</span>也做了美味,拿來給他父親,說:請父親起來,吃你兒子的野味,好給我祝福。</div>
+            <div class="verse"><span class="verse-number">32</span>他父親以撒對他說:你是誰?他說:我是你的長子以掃。</div>
+            <div class="verse"><span class="verse-number">33</span>以撒就大大的戰兢,說:你未來之先,是誰得了野味拿來給我呢?我已經吃了,為他祝福;他將來也必蒙福。</div>
+            <div class="verse"><span class="verse-number">34</span>以掃聽了他父親的話,就放聲痛哭,說:我父啊,求你也為我祝福!</div>
+            <div class="verse"><span class="verse-number">35</span>以撒說:你兄弟已經用詭計來將你的福分奪去了。</div>
+            <div class="verse"><span class="verse-number">36</span>以掃說:他名雅各,豈不是正對嗎?因為他欺騙了我兩次:他從前奪了我長子的名分,你看,他現在又奪了我的福分。以掃又說:你沒有留下為我可祝的福嗎?</div>
+            <div class="verse"><span class="verse-number">37</span>以撒回答以掃說:我已立他為你的主,使他的弟兄都給他作僕人,並賜他五穀新酒可以養生。我兒,現在我還能為你做什麼呢?</div>
+            <div class="verse"><span class="verse-number">38</span>以掃對他父親說:父啊,你只有一樣可祝的福嗎?我父啊,求你也為我祝福!以掃就放聲而哭。</div>
+            <div class="verse"><span class="verse-number">39</span>他父親以撒說:地上的肥土必為你所住;天上的甘露必為你所得。</div>
+            <div class="verse"><span class="verse-number">40</span>你必倚靠刀劍度日,又必事奉你的兄弟;到你強盛的時候,必從你頸項上掙開他的軛。</div>
+            <div class="verse"><span class="verse-number">41</span>以掃因他父親給雅各祝的福,就怨恨雅各,心裡說:為我父親居喪的日子近了,到那時候,我要殺我的兄弟雅各。</div>
+            <div class="verse"><span class="verse-number">42</span>有人把利百加大兒子以掃的話告訴利百加,她就打發人去,叫了她小兒子雅各來,對他說:你哥哥以掃想要殺你,報仇雪恨。</div>
+            <div class="verse"><span class="verse-number">43</span>現在,我兒,你要聽我的話:起來,逃往哈蘭、我哥哥拉班那裡去,</div>
+            <div class="verse"><span class="verse-number">44</span>同他住些日子,直等你哥哥的怒氣消了。</div>
+            <div class="verse"><span class="verse-number">45</span>你哥哥向你消了怒氣,忘了你向他所做的事,我便打發人去把你從那裡帶回來。為什麼一日喪你們二人呢?</div>
+            <div class="verse"><span class="verse-number">46</span>利百加對以撒說:我因這赫人的女子連性命都厭煩了;倘若雅各也娶赫人的女子為妻,像這些一樣,我活著還有什麼益處呢?</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                創世記第27章記載一個充滿詭計的家庭悲劇。年老眼盲的以撒想在死前為長子以掃祝福,利百加偷聽後策劃讓雅各假扮以掃欺騙父親。雅各雖有疑慮但順從母親,穿上以掃的衣服、用羊皮裹手,成功騙取了長子的祝福。以掃回來發現真相,放聲痛哭求祝福,卻只得次等的祝福。以掃懷恨要殺雅各,利百加安排雅各逃往哈蘭。本章展現一個破碎家庭中人人都有錯:父母偏心、母子詭詐、兄弟仇恨,罪帶來長遠的痛苦後果。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 用錯誤方法達成神的旨意仍是罪</strong><br>
+                神已預言「大的要服事小的」,但利百加和雅各用欺騙的方式奪取祝福。目的正確不能使手段合理化,神的旨意必須用神的方法成就。用人的詭計會帶來痛苦的後果,雅各為此付出20年流亡的代價。
+                <br><br>
+                <strong>2. 偏心造成家庭破碎</strong><br>
+                以撒偏愛以掃,利百加偏愛雅各,導致家庭分裂、兄弟成仇。父母的偏心在孩子心中種下苦毒和競爭,傷害所有人。神的愛是公平的,父母也當學習不偏待地愛每個孩子。
+                <br><br>
+                <strong>3. 罪的後果遠超過想像</strong><br>
+                利百加說「住些日子」就回來,結果雅各離家20年,她至死未再見兒子。罪看似能快速解決問題,實際上帶來更大更長遠的痛苦。我們常低估罪的破壞力,以為可以控制後果,結果失控收場。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>雅各對他父親說:<strong>我是你的長子以掃</strong>;我已照你所吩咐我的行了。請起來坐著,吃我的野味,<strong>好給我祝福</strong>。(創27:19)</td>
+                            <td>你是否曾為了<strong>得到想要的結果</strong>而使用<strong>不誠實的手段</strong>?就像考試偷看答案想得高分,你是否以為<strong>目的正確就能合理化過程</strong>?</td>
+                        </tr>
+                        <tr>
+                            <td>以撒愛以掃,因為常吃他的野味;<strong>利百加卻愛雅各</strong>。(創27:28,參25:28)</td>
+                            <td>作為父母或領導者,你是否<strong>偏愛某些人</strong>而忽略其他人?就像老師特別關照某些學生,你的<strong>偏心</strong>是否在不知不覺中<strong>傷害了別人</strong>?</td>
+                        </tr>
+                        <tr>
+                            <td>利百加對以撒說:我因這赫人的女子連性命都厭煩了;倘若雅各也娶赫人的女子為妻,像這些一樣,<strong>我活著還有什麼益處</strong>呢?(創27:46)</td>
+                            <td>當你犯錯造成嚴重後果時,你是否願意<strong>承認錯誤</strong>,還是找<strong>藉口掩飾</strong>?就像打破東西卻說是別人碰的,你是否為了<strong>保護自己而繼續說謊</strong>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

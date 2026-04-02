@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第20章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            display: inline-block;
+            transition: transform 0.5s ease;
+            white-space: nowrap;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .scripture-text.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .verse {
+            margin-bottom: 12px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            margin: -10px -15px -10px -15px;
+            padding: 10px 15px;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        summary::before {
+            content: "▶";
+            margin-right: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #3498db;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                flex-direction: row;
+            }
+
+            .bible-icon {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            summary {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第20章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+
+        <div class="chapter-subtitle">恩典、服事與犧牲</div>
+
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>「因為天國好像家主清早去雇人進他的葡萄園做工，</div>
+            <div class="verse"><span class="verse-number">2</span>和工人講定一天一錢銀子，就打發他們進葡萄園去。</div>
+            <div class="verse"><span class="verse-number">3</span>約在巳初出去，看見市上還有閒站的人，</div>
+            <div class="verse"><span class="verse-number">4</span>就對他們說：『你們也進葡萄園去，所當給的，我必給你們。』他們也進去了。</div>
+            <div class="verse"><span class="verse-number">5</span>約在午正和申初又出去，也是這樣行。</div>
+            <div class="verse"><span class="verse-number">6</span>約在酉初出去，看見還有人站在那裡，就問他們說：『你們為甚麼整天在這裡閒站呢？』</div>
+            <div class="verse"><span class="verse-number">7</span>他們說：『因為沒有人雇我們。』他說：『你們也進葡萄園去。』</div>
+            <div class="verse"><span class="verse-number">8</span>到了晚上，園主對管事的說：『叫工人都來，給他們工錢，從後來的起，到先來的為止。』</div>
+            <div class="verse"><span class="verse-number">9</span>約在酉初雇的人來了，各人得了一錢銀子。</div>
+            <div class="verse"><span class="verse-number">10</span>及至那先雇的來了，他們以為必要多得；誰知也是各得一錢。</div>
+            <div class="verse"><span class="verse-number">11</span>他們得了，就埋怨家主說：</div>
+            <div class="verse"><span class="verse-number">12</span>『我們整天勞苦受熱，那後來的只做了一小時，你竟叫他們和我們一樣嗎？』</div>
+            <div class="verse"><span class="verse-number">13</span>家主回答其中的一人說：『朋友，我不虧負你，你與我講定的不是一錢銀子嗎？</div>
+            <div class="verse"><span class="verse-number">14</span>拿你的走吧！我給那後來的和給你一樣，這是我願意的。</div>
+            <div class="verse"><span class="verse-number">15</span>我的東西難道不可隨我的意思用嗎？因為我作好人，你就紅了眼嗎？』</div>
+            <div class="verse"><span class="verse-number">16</span>這樣，那在後的，將要在前；在前的，將要在後了。」</div>
+            <div class="verse"><span class="verse-number">17</span>耶穌上耶路撒冷去的時候，在路上把十二個門徒帶到一邊，對他們說：</div>
+            <div class="verse"><span class="verse-number">18</span>「看哪，我們上耶路撒冷去，人子要被交給祭司長和文士。他們要定他死罪，</div>
+            <div class="verse"><span class="verse-number">19</span>又交給外邦人，將他戲弄，鞭打，釘在十字架上；第三日他要復活。」</div>
+            <div class="verse"><span class="verse-number">20</span>那時，西庇太兒子的母親同她兩個兒子上前來拜耶穌，求他一件事。</div>
+            <div class="verse"><span class="verse-number">21</span>耶穌說：「你要甚麼呢？」她說：「願你叫我這兩個兒子在你國裡，一個坐在你右邊，一個坐在你左邊。」</div>
+            <div class="verse"><span class="verse-number">22</span>耶穌回答說：「你們不知道所求的是甚麼；我將要喝的杯，你們能喝嗎？」他們說：「我們能。」</div>
+            <div class="verse"><span class="verse-number">23</span>耶穌說：「我所喝的杯，你們必要喝；只是坐在我的左右，不是我可以賜的，乃是我父為誰預備的，就賜給誰。」</div>
+            <div class="verse"><span class="verse-number">24</span>那十個門徒聽見，就惱怒他們弟兄二人。</div>
+            <div class="verse"><span class="verse-number">25</span>耶穌叫了他們來，說：「你們知道外邦人有君王為主治理他們，有大臣操權管束他們。</div>
+            <div class="verse"><span class="verse-number">26</span>只是在你們中間，不可這樣；你們中間誰願為大，就必作你們的用人；</div>
+            <div class="verse"><span class="verse-number">27</span>誰願為首，就必作你們的僕人。</div>
+            <div class="verse"><span class="verse-number">28</span>正如人子來，不是要受人的服事，乃是要服事人，並且要捨命作多人的贖價。」</div>
+            <div class="verse"><span class="verse-number">29</span>他們出耶利哥的時候，有極多的人跟隨他。</div>
+            <div class="verse"><span class="verse-number">30</span>有兩個瞎子坐在路旁，聽說是耶穌經過，就喊著說：「主啊，大衛的子孫，可憐我們吧！」</div>
+            <div class="verse"><span class="verse-number">31</span>眾人責備他們，不許他們作聲；他們卻越發喊著說：「主啊，大衛的子孫，可憐我們吧！」</div>
+            <div class="verse"><span class="verse-number">32</span>耶穌就站住，叫他們來，說：「要我為你們做甚麼？」</div>
+            <div class="verse"><span class="verse-number">33</span>他們說：「主啊，要我們的眼睛能看見！」</div>
+            <div class="verse"><span class="verse-number">34</span>耶穌就動了慈心，把他們的眼睛一摸，他們立刻看見，就跟從了耶穌。</div>
+        </div>
+
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第20章延續前章關於天國價值觀的教導。葡萄園工人的比喻顛覆了人對公平的理解，揭示神恩典的本質——祂的慷慨不受人的功勞限制。耶穌第三次預言自己的受難與復活，但門徒仍爭論誰為大。雅各和約翰的母親為兒子求高位，引發耶穌關於真正偉大的教導——在神國中，偉大在於服事而非被服事。章末記載兩個瞎子堅持呼求耶穌，得著醫治並跟隨祂。本章以恩典、服事、犧牲為主題，為耶穌即將進入耶路撒冷預備門徒的心。
+            </div>
+        </details>
+
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 神的恩典超越人的功勞，祂的慷慨不受人的計算限制</strong><br>葡萄園工人的比喻挑戰人對公平的理解。早到的工人抱怨園主對晚到者的慷慨，卻忘記自己已得著所講定的工價。這揭示人性傾向於比較與計算，期待憑功勞得獎賞。但神的恩典不是按人的工作量分配，而是出於祂的主權與慷慨。我們不該因神對他人的恩典而眼紅，而應感恩自己能進入葡萄園服事。<br><br>
+                <strong>2. 天國的偉大在於謙卑服事，而非追求地位與權力</strong><br>雅各和約翰求高位，反映門徒仍以世界的標準看待偉大。耶穌教導天國的價值觀完全相反——誰願為大就必作僕人。真正的領袖不是高高在上發號施令，而是謙卑服事他人。基督自己就是最好的榜樣，祂來不是要受服事，而是要服事人並捨命。天國的偉大是犧牲性的愛，而非自私的野心。<br><br>
+                <strong>3. 基督的受難是為多人付贖價，這是救恩的核心</strong><br>耶穌第三次預言受難，強調祂要「捨命作多人的贖價」。這揭示十字架不是意外或悲劇，而是神救贖計畫的核心。贖價的概念說明人類被罪捆綁，無法自救，需要基督以祂的生命來交換我們的自由。這犧牲的愛是整個福音的基礎，也是信徒效法的榜樣——真正的愛是願意為他人捨己。
+            </div>
+        </details>
+
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>「我的東西難道不可隨我的意思用嗎？<strong>因為我作好人，你就紅了眼嗎</strong>？」（馬太福音 20:15）</td>
+                            <td>當你看到別人似乎比你付出更少卻得到同樣甚至更多的祝福時，你的反應是什麼？就像同事遲到卻沒被責備而你準時卻沒被誇獎，你是否會因神對他人的恩典而心生不平？這反映出你更看重公平、還是感恩自己所領受的恩典？</td>
+                        </tr>
+                        <tr>
+                            <td>「你們中間<strong>誰願為大，就必作你們的用人</strong>；誰願為首，就必作你們的僕人。」（馬太福音 20:26-27）</td>
+                            <td>在你的生活或工作中，你是更渴望被人服事、還是服事他人？就像餐廳經理不只管理而是帶頭洗碗掃地，你是否願意在教會、家庭或職場中做那些別人不願做的事？你如何重新定義「成功」與「偉大」？</td>
+                        </tr>
+                        <tr>
+                            <td>「正如人子來，不是要受人的服事，乃是要服事人，並且要<strong>捨命作多人的贖價</strong>。」（馬太福音 20:28）</td>
+                            <td>你是否真正明白「贖價」的意義——你無法靠自己脫離罪的捆綁，唯有基督的犧牲能拯救你？就像被綁架者無法自救、需要有人付贖金，你如何回應基督為你付出的生命代價？這個認知如何改變你對服事他人的態度？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function toggleScripture() {
+            const scriptureText = document.getElementById('scriptureText');
+            const bibleIcon = document.getElementById('bibleIcon');
+            
+            scriptureText.classList.toggle('show');
+            
+            if (scriptureText.classList.contains('show')) {
+                bibleIcon.textContent = '📖';
+                bibleIcon.classList.add('open');
+            } else {
+                bibleIcon.textContent = '📕';
+                bibleIcon.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>

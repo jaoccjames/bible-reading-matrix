@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第3章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+            border-radius: 4px;
+        }
+
+        .scripture-text.show {
+            display: block;
+        }
+
+        .verse {
+            margin-bottom: 10px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            transition: color 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: "▶ ";
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第3章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        
+        <div class="chapter-subtitle">施洗約翰與耶穌受洗</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>那時，有施洗的約翰出來，在猶太的曠野傳道，說：</div>
+            <div class="verse"><span class="verse-number">2</span>天國近了，你們應當悔改！</div>
+            <div class="verse"><span class="verse-number">3</span>這人就是先知以賽亞所說的。他說：在曠野有人聲喊著說：預備主的道，修直他的路！</div>
+            <div class="verse"><span class="verse-number">4</span>這約翰身穿駱駝毛的衣服，腰束皮帶，吃的是蝗蟲、野蜜。</div>
+            <div class="verse"><span class="verse-number">5</span>那時，耶路撒冷和猶太全地，並約旦河一帶地方的人，都出去到約翰那裡，</div>
+            <div class="verse"><span class="verse-number">6</span>承認他們的罪，在約旦河裡受他的洗。</div>
+            <div class="verse"><span class="verse-number">7</span>約翰看見許多法利賽人和撒都該人也來受洗，就對他們說：毒蛇的種類！誰指示你們逃避將來的忿怒呢？</div>
+            <div class="verse"><span class="verse-number">8</span>你們要結出果子來，與悔改的心相稱。</div>
+            <div class="verse"><span class="verse-number">9</span>不要自己心裡說：有亞伯拉罕為我們的祖宗。我告訴你們，神能從這些石頭中給亞伯拉罕興起子孫來。</div>
+            <div class="verse"><span class="verse-number">10</span>現在斧子已經放在樹根上，凡不結好果子的樹就砍下來，丟在火裡。</div>
+            <div class="verse"><span class="verse-number">11</span>我是用水給你們施洗，叫你們悔改。但那在我以後來的，能力比我更大，我就是給他提鞋也不配。他要用聖靈與火給你們施洗。</div>
+            <div class="verse"><span class="verse-number">12</span>他手裡拿著簸箕，要揚淨他的場，把麥子收在倉裡，把糠用不滅的火燒盡了。</div>
+            <div class="verse"><span class="verse-number">13</span>當下，耶穌從加利利來到約旦河，見了約翰，要受他的洗。</div>
+            <div class="verse"><span class="verse-number">14</span>約翰想要攔住他，說：我當受你的洗，你反倒上我這裡來嗎？</div>
+            <div class="verse"><span class="verse-number">15</span>耶穌回答說：你暫且許我，因為我們理當這樣盡諸般的義。於是約翰許了他。</div>
+            <div class="verse"><span class="verse-number">16</span>耶穌受了洗，隨即從水裡上來。天忽然為他開了，他就看見神的靈彷彿鴿子降下，落在他身上。</div>
+            <div class="verse"><span class="verse-number">17</span>從天上有聲音說：這是我的愛子，我所喜悅的。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第3章記載施洗約翰的事工與耶穌的受洗。約翰是舊約最後一位先知，應驗以賽亞預言，在曠野呼召人悔改。他的外表與生活方式（駱駝毛衣、蝗蟲野蜜）仿效先知以利亞，宣告天國近了。大批群眾從耶路撒冷和猶太各地前來認罪受洗，但約翰嚴厲斥責假冒為善的法利賽人和撒都該人，要求他們結出與悔改相稱的果子。約翰強調自己只是先鋒，將有一位更大的要用聖靈與火施洗。耶穌來到約旦河要求受洗時，約翰認出祂的身分而謙卑推辭，但耶穌堅持「盡諸般的義」。耶穌受洗後，天開了，聖靈如鴿子降下，天父聲音宣告：「這是我的愛子，我所喜悅的。」這是三一神首次完整同時顯現。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 真實悔改必帶來生命的果子</strong><br>約翰斥責法利賽人和撒都該人，要他們結出與悔改相稱的果子。真正的悔改不只是口頭認罪或宗教儀式，而必須在生活中產生實際的改變。屬靈身分或宗教背景不能代替真實的生命轉變，神看重的是內心與行為一致的真誠。<br><br>
+                <strong>2. 謙卑是服事神的必要態度</strong><br>約翰雖有極大的影響力，卻說自己不配給耶穌提鞋。耶穌雖是神的兒子，卻謙卑接受人的洗禮「盡諸般的義」。服事神最重要的不是地位或恩賜，而是認識自己的位置，高舉基督而非自己，甘願為神的計畫降卑。<br><br>
+                <strong>3. 神對祂兒女的肯定與喜悅</strong><br>天父在耶穌出來服事前就宣告「這是我的愛子，我所喜悅的」。耶穌還未行神蹟、未講道、未上十架，就已經被父完全接納。同樣，神對我們的愛不是基於表現，而是基於關係。我們是祂的兒女，這身分是服事的根基而非結果。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>你們要<strong>結出果子</strong>來，與<strong>悔改的心</strong>相稱。（太3:8）</td>
+                            <td>就像<strong>減肥不能只說要瘦</strong>而要實際改變飲食運動，真正的悔改需要結出果子。我的<strong>信仰</strong>是否停留在<strong>口頭宣稱</strong>或<strong>宗教儀式</strong>，還是真的在<strong>態度</strong>、<strong>言語</strong>、<strong>行為</strong>上有<strong>具體改變</strong>，讓人看出基督在我生命中的工作？</td>
+                        </tr>
+                        <tr>
+                            <td>那在我以後來的，<strong>能力比我更大</strong>，我就是給他<strong>提鞋也不配</strong>。（太3:11）</td>
+                            <td>就像<strong>經紀人把聚光燈讓給明星</strong>而非搶風頭，約翰甘願降卑高舉基督。在服事、工作、家庭中，我是否有時<strong>搶功勞</strong>、<strong>爭地位</strong>，還是願意如約翰般<strong>退居幕後</strong>，讓基督和他人得<strong>榮耀</strong>？</td>
+                        </tr>
+                        <tr>
+                            <td>從天上有聲音說：這是我的<strong>愛子</strong>，我所<strong>喜悅的</strong>。（太3:17）</td>
+                            <td>就像<strong>父母在孩子比賽前說「我以你為榮」</strong>而非等得獎才肯定，天父在耶穌服事前就宣告喜悅。我是否相信神對我的<strong>愛</strong>與<strong>接納</strong>不是基於<strong>表現</strong>，而是基於我在基督裡的<strong>身分</strong>？這認知如何影響我服事的<strong>動機</strong>？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

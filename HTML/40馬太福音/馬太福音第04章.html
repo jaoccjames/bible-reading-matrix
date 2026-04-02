@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第4章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+            border-radius: 4px;
+        }
+
+        .scripture-text.show {
+            display: block;
+        }
+
+        .verse {
+            margin-bottom: 10px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            transition: color 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: "▶ ";
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第4章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        
+        <div class="chapter-subtitle">耶穌受試探與傳道開始</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>當時，耶穌被聖靈引到曠野，受魔鬼的試探。</div>
+            <div class="verse"><span class="verse-number">2</span>他禁食四十晝夜，後來就餓了。</div>
+            <div class="verse"><span class="verse-number">3</span>那試探人的進前來，對他說：你若是神的兒子，可以吩咐這些石頭變成食物。</div>
+            <div class="verse"><span class="verse-number">4</span>耶穌卻回答說：經上記著說：人活著，不是單靠食物，乃是靠神口裡所出的一切話。</div>
+            <div class="verse"><span class="verse-number">5</span>魔鬼就帶他進了聖城，叫他站在殿頂上，</div>
+            <div class="verse"><span class="verse-number">6</span>對他說：你若是神的兒子，可以跳下去，因為經上記著說：主要為你吩咐他的使者用手托著你，免得你的腳碰在石頭上。</div>
+            <div class="verse"><span class="verse-number">7</span>耶穌對他說：經上又記著說：不可試探主─你的神。</div>
+            <div class="verse"><span class="verse-number">8</span>魔鬼又帶他上了一座最高的山，將世上的萬國與萬國的榮華都指給他看，</div>
+            <div class="verse"><span class="verse-number">9</span>對他說：你若俯伏拜我，我就把這一切都賜給你。</div>
+            <div class="verse"><span class="verse-number">10</span>耶穌說：撒但，退去吧！因為經上記著說：當拜主─你的神，單要事奉他。</div>
+            <div class="verse"><span class="verse-number">11</span>於是，魔鬼離了耶穌，有天使來伺候他。</div>
+            <div class="verse"><span class="verse-number">12</span>耶穌聽見約翰下了監，就退到加利利去；</div>
+            <div class="verse"><span class="verse-number">13</span>後又離開拿撒勒，往迦百農去，就住在那裡。那地方靠海，在西布倫和拿弗他利的邊界上。</div>
+            <div class="verse"><span class="verse-number">14</span>這是要應驗先知以賽亞的話，</div>
+            <div class="verse"><span class="verse-number">15</span>說：西布倫地，拿弗他利地，就是沿海的路，約旦河外，外邦人的加利利地。</div>
+            <div class="verse"><span class="verse-number">16</span>那坐在黑暗裡的百姓看見了大光；坐在死蔭之地的人有光發現照著他們。</div>
+            <div class="verse"><span class="verse-number">17</span>從那時候，耶穌就傳起道來，說：天國近了，你們應當悔改！</div>
+            <div class="verse"><span class="verse-number">18</span>耶穌在加利利海邊行走，看見弟兄二人，就是那稱呼彼得的西門和他兄弟安得烈，在海裡撒網；他們本是打魚的。</div>
+            <div class="verse"><span class="verse-number">19</span>耶穌對他們說：來跟從我，我要叫你們得人如得魚一樣。</div>
+            <div class="verse"><span class="verse-number">20</span>他們就立刻捨了網，跟從了他。</div>
+            <div class="verse"><span class="verse-number">21</span>從那裡往前走，又看見弟兄二人，就是西庇太的兒子雅各和他兄弟約翰，同他們的父親西庇太在船上補網，耶穌就招呼他們，</div>
+            <div class="verse"><span class="verse-number">22</span>他們立刻捨了船，別了父親，跟從了耶穌。</div>
+            <div class="verse"><span class="verse-number">23</span>耶穌走遍加利利，在各會堂裡教訓人，傳天國的福音，醫治百姓各樣的病症。</div>
+            <div class="verse"><span class="verse-number">24</span>他的名聲就傳遍了敘利亞。那裡的人把一切害病的，就是害各樣疾病、各樣疼痛的和被鬼附的、癲癇的、癱瘓的，都帶了來，耶穌就治好了他們。</div>
+            <div class="verse"><span class="verse-number">25</span>當下，有許多人從加利利、低加坡里、耶路撒冷、猶太、約旦河外來跟著他。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第4章記載耶穌公開事工前的關鍵時刻。受洗後聖靈引導耶穌到曠野禁食四十天，期間魔鬼三次試探祂：用食物試探肉體需要、用跳殿試探信心驕傲、用萬國榮華試探權力野心。耶穌三次以神的話語回應得勝。約翰下監後，耶穌遷居迦百農開始公開傳道，信息與約翰相同：「天國近了，你們應當悔改！」祂在加利利海邊呼召首批門徒：漁夫彼得、安得烈、雅各、約翰，他們立刻撇下一切跟從。耶穌走遍加利利教訓人、傳福音、醫治各樣病症，名聲傳遍敘利亞，大批群眾從各地來跟隨祂。本章標誌著耶穌事工的正式開始，從受試探得勝到呼召門徒，展現祂作為彌賽亞的權柄與使命。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 神的話語是勝過試探的武器</strong><br>耶穌三次以「經上記著說」回應魔鬼的試探。勝過試探不是靠意志力或神蹟，而是靠神話語的權柄。熟悉聖經、將神的話藏在心裡，是我們面對各樣試探時最有效的防禦與反擊。魔鬼也會曲解聖經，因此我們需要正確理解神話語的全備真理。<br><br>
+                <strong>2. 跟從耶穌需要立刻的回應與捨棄</strong><br>四位門徒聽見呼召後「立刻」撇下網、船、甚至父親跟從耶穌。跟從基督不是等到條件完美才行動，而是在聽見呼召時立刻回應。真正的門徒訓練始於願意放下熟悉的、安全的、珍愛的，為了更大的使命和呼召。<br><br>
+                <strong>3. 耶穌的事工是全人的關懷</strong><br>耶穌教訓人（心智）、傳福音（靈魂）、醫治病症（身體），顯示祂關心人的全部需要。福音不只是屬靈的信息，更是帶來生命全面更新的大能。跟隨耶穌的人也當效法祂，關懷人靈魂與身體的雙重需要。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>耶穌卻回答說：<strong>經上記著說</strong>：人活著，不是單靠食物，乃是靠<strong>神口裡所出的一切話</strong>。（太4:4）</td>
+                            <td>就像<strong>手機需要定期充電</strong>才能運作，我們的靈命需要神話語的滋養。我是否把<strong>讀經</strong>當作<strong>日常必需</strong>如同吃飯，還是只在<strong>遇到困難</strong>時才翻開聖經？神的話語在我面對<strong>試探</strong>時，是否能成為<strong>隨時的幫助</strong>？</td>
+                        </tr>
+                        <tr>
+                            <td>耶穌對他們說：來<strong>跟從我</strong>，我要叫你們<strong>得人如得魚</strong>一樣。他們就<strong>立刻</strong>捨了網，跟從了他。（太4:19-20）</td>
+                            <td>就像<strong>接到夢想工作的錄取通知</strong>會立刻回應，門徒聽見耶穌呼召就立刻跟從。我對神的<strong>呼召</strong>（服事、改變、順服）是否<strong>立刻回應</strong>，還是總有<strong>藉口</strong>等待「更好的時機」？我願意<strong>放下</strong>什麼來跟從祂？</td>
+                        </tr>
+                        <tr>
+                            <td>那坐在<strong>黑暗</strong>裡的百姓看見了<strong>大光</strong>；坐在<strong>死蔭之地</strong>的人有光發現<strong>照著他們</strong>。（太4:16）</td>
+                            <td>就像<strong>停電時一盞燈</strong>能帶來巨大安慰，耶穌來到被忽視的加利利帶來盼望。我周圍是否有人正在<strong>黑暗</strong>中（絕望、迷失、痛苦）？我是否願意成為<strong>光的器皿</strong>，把基督的<strong>盼望</strong>帶給他們？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

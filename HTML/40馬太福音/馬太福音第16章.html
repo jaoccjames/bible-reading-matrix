@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第16章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            display: inline-block;
+            transition: transform 0.5s ease;
+            white-space: nowrap;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .scripture-text.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .verse {
+            margin-bottom: 12px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            margin: -10px -15px -10px -15px;
+            padding: 10px 15px;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        summary::before {
+            content: "▶";
+            margin-right: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #3498db;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                flex-direction: row;
+            }
+
+            .bible-icon {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            summary {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第16章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+
+        <div class="chapter-subtitle">基督身分與十架道路</div>
+
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>法利賽人和撒都該人來試探耶穌，請他從天上顯個神蹟給他們看。</div>
+            <div class="verse"><span class="verse-number">2</span>耶穌回答說：「晚上天發紅，你們就說：『天必要晴。』</div>
+            <div class="verse"><span class="verse-number">3</span>早晨天發紅，又發黑，你們就說：『今日必有風雨。』你們知道分辨天上的氣色，倒不能分辨這時候的神蹟。</div>
+            <div class="verse"><span class="verse-number">4</span>一個邪惡淫亂的世代求神蹟，除了約拿的神蹟以外，再沒有神蹟給他看。」耶穌就離開他們去了。</div>
+            <div class="verse"><span class="verse-number">5</span>門徒渡到那邊去，忘了帶餅。</div>
+            <div class="verse"><span class="verse-number">6</span>耶穌對他們說：「你們要謹慎，防備法利賽人和撒都該人的酵。」</div>
+            <div class="verse"><span class="verse-number">7</span>門徒彼此議論說：「這是因為我們沒有帶餅吧。」</div>
+            <div class="verse"><span class="verse-number">8</span>耶穌看出來，就說：「你們這小信的人，為甚麼因為沒有餅彼此議論呢？</div>
+            <div class="verse"><span class="verse-number">9</span>你們還不明白嗎？不記得那五個餅分給五千人，又收拾了多少籃子的零碎嗎？</div>
+            <div class="verse"><span class="verse-number">10</span>也不記得那七個餅分給四千人，又收拾了多少筐子的零碎嗎？</div>
+            <div class="verse"><span class="verse-number">11</span>我對你們說：『要防備法利賽人和撒都該人的酵』，這話不是指著餅說的，你們怎麼不明白呢？」</div>
+            <div class="verse"><span class="verse-number">12</span>門徒這才曉得他說的不是叫他們防備餅的酵，乃是防備法利賽人和撒都該人的教訓。</div>
+            <div class="verse"><span class="verse-number">13</span>耶穌到了該撒利亞腓立比的境內，就問門徒說：「人說人子是誰？」</div>
+            <div class="verse"><span class="verse-number">14</span>他們說：「有人說是施洗的約翰；有人說是以利亞；又有人說是耶利米或是先知裡的一位。」</div>
+            <div class="verse"><span class="verse-number">15</span>耶穌說：「你們說我是誰？」</div>
+            <div class="verse"><span class="verse-number">16</span>西門彼得回答說：「你是基督，是永生神的兒子。」</div>
+            <div class="verse"><span class="verse-number">17</span>耶穌對他說：「西門巴約拿，你是有福的！因為這不是屬血肉的指示你的，乃是我在天上的父指示的。</div>
+            <div class="verse"><span class="verse-number">18</span>我還告訴你，你是彼得，我要把我的教會建造在這磐石上；陰間的權柄不能勝過他。</div>
+            <div class="verse"><span class="verse-number">19</span>我要把天國的鑰匙給你，凡你在地上所捆綁的，在天上也要捆綁；凡你在地上所釋放的，在天上也要釋放。」</div>
+            <div class="verse"><span class="verse-number">20</span>當下，耶穌囑咐門徒，不可對人說他是基督。</div>
+            <div class="verse"><span class="verse-number">21</span>從此，耶穌才指示門徒，他必須上耶路撒冷去，受長老、祭司長、文士許多的苦，並且被殺，第三日復活。</div>
+            <div class="verse"><span class="verse-number">22</span>彼得就拉著他，勸他說：「主啊，萬不可如此！這事必不臨到你身上。」</div>
+            <div class="verse"><span class="verse-number">23</span>耶穌轉過來，對彼得說：「撒但，退我後邊去吧！你是絆我腳的，因為你不體貼神的意思，只體貼人的意思。」</div>
+            <div class="verse"><span class="verse-number">24</span>於是耶穌對門徒說：「若有人要跟從我，就當捨己，背起他的十字架來跟從我。</div>
+            <div class="verse"><span class="verse-number">25</span>因為凡要救自己生命的，必喪掉生命；凡為我喪掉生命的，必得著生命。</div>
+            <div class="verse"><span class="verse-number">26</span>人若賺得全世界，賠上自己的生命，有甚麼益處呢？人還能拿甚麼換生命呢？</div>
+            <div class="verse"><span class="verse-number">27</span>人子要在他父的榮耀裡，同他的使者降臨；那時候，他要照各人的行為報應各人。</div>
+            <div class="verse"><span class="verse-number">28</span>我實在告訴你們，站在這裡的，有人在沒有嚐死味以前，必看見人子降臨在他的國裡。」</div>
+        </div>
+
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第16章是整卷福音書的關鍵轉折點。耶穌拒絕了法利賽人和撒都該人對神蹟的要求，警告門徒防備他們的錯誤教訓。在該撒利亞腓立比，彼得宣認耶穌是基督、是永生神的兒子，這是門徒信仰認知的高峰。耶穌隨即建立教會的應許，並首次明確預言自己將受苦、被殺與復活。彼得試圖阻止耶穌走上十架之路，卻被嚴厲斥責。耶穌藉此教導真正跟隨祂的意義——捨己、背十字架，為祂喪失生命反而得著永生。本章揭示彌賽亞使命的真諦。
+            </div>
+        </details>
+
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 認識基督的真實身分是信仰的核心與基礎</strong><br>彼得的認信「你是基督，是永生神的兒子」標誌著門徒信仰的成熟。這不是人的智慧能達到的結論,而是天父的啟示。真正的信仰始於正確認識耶穌是誰——祂不只是先知或教師,而是神的兒子、人類的救主。這個認信成為教會建立的根基,沒有對基督身分的正確認識,就沒有真正的信仰。<br><br>
+                <strong>2. 跟隨基督必須捨己背十字架,放棄自我中心的生命</strong><br>耶穌對門徒的呼召不是通往成功與榮耀的捷徑,而是一條捨己的道路。背十字架意味著甘願為基督受苦、犧牲自己的意願與野心。這與世界追求自我實現的價值觀完全相反。真門徒願意為主喪失生命,因為明白唯有在基督裡才能找到真正的生命意義與永恆的價值。<br><br>
+                <strong>3. 體貼人的意思而非神的意思,會成為神計畫的攔阻</strong><br>彼得剛被稱讚為有福,轉眼卻被稱為撒但。他的問題在於用人的標準評估神的計畫,想要一個沒有苦難的彌賽亞。這警告信徒,即使出於善意,若不以神的旨意為中心,仍可能成為神工作的絆腳石。真正的屬靈智慧是學會辨別並順服神的心意,即使它超越人的理解。
+            </div>
+        </details>
+
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>「你是<strong>基督,是永生神的兒子</strong>。」耶穌對他說:「西門巴約拿,你是有福的!因為這不是屬血肉的指示你的,乃是我在天上的父指示的。」（馬太福音 16:16-17）</td>
+                            <td>如果有人問你「耶穌是誰」,你會如何回答?這個答案是從書本知識來的、還是從真實經歷神而來的?就像認識一個人不只是知道他的名字和職業,你對基督的認識是頭腦的知識、還是心靈深處的確信?</td>
+                        </tr>
+                        <tr>
+                            <td>「若有人要跟從我,就當<strong>捨己,背起他的十字架</strong>來跟從我。」（馬太福音 16:24）</td>
+                            <td>在你的生命中,有哪些「自我」是你需要捨棄的?就像運動員為了奪牌必須放棄許多享樂和舒適,跟隨基督意味著你願意放下什麼樣的個人野心、舒適圈或自我形象?你是否願意為了更高的呼召而付出這樣的代價?</td>
+                        </tr>
+                        <tr>
+                            <td>「撒但,退我後邊去吧!你是絆我腳的,因為你<strong>不體貼神的意思,只體貼人的意思</strong>。」（馬太福音 16:23）</td>
+                            <td>當面對重大決定時,你通常是根據「這對我有什麼好處」、還是「這是否合神心意」來判斷?就像導航系統可能給你最快的路線,但不一定是最安全的路線,你如何分辨自己是在體貼人的意思、還是真正尋求神的旨意?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function toggleScripture() {
+            const scriptureText = document.getElementById('scriptureText');
+            const bibleIcon = document.getElementById('bibleIcon');
+            
+            scriptureText.classList.toggle('show');
+            
+            if (scriptureText.classList.contains('show')) {
+                bibleIcon.textContent = '📖';
+                bibleIcon.classList.add('open');
+            } else {
+                bibleIcon.textContent = '📕';
+                bibleIcon.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第7章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+            border-radius: 4px;
+        }
+
+        .scripture-text.show {
+            display: block;
+        }
+
+        .verse {
+            margin-bottom: 10px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            transition: color 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: "▶ ";
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第7章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        
+        <div class="chapter-subtitle">登山寶訓的結論</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>你們不要論斷人，免得你們被論斷。</div>
+            <div class="verse"><span class="verse-number">2</span>因為你們怎樣論斷人，也必怎樣被論斷；你們用什麼量器量給人，也必用什麼量器量給你們。</div>
+            <div class="verse"><span class="verse-number">3</span>為什麼看見你弟兄眼中有刺，卻不想你自己眼中有樑木呢？</div>
+            <div class="verse"><span class="verse-number">4</span>你自己眼中有樑木，怎能對你弟兄說：讓我把你眼中的刺剜出來呢？</div>
+            <div class="verse"><span class="verse-number">5</span>你這假冒為善的人！先把你眼中的樑木剜出來，然後才能看得清楚，把你弟兄眼中的刺剜出來。</div>
+            <div class="verse"><span class="verse-number">6</span>不要把聖物給狗，也不要把你們的珍珠丟在豬前；恐怕它踐踏了珍珠，轉過來咬你們。</div>
+            <div class="verse"><span class="verse-number">7</span>你們祈求，就給你們；尋找，就尋見；叩門，就給你們開門。</div>
+            <div class="verse"><span class="verse-number">8</span>因為凡祈求的，就得著；尋找的，就尋見；叩門的，就給他開門。</div>
+            <div class="verse"><span class="verse-number">9</span>你們中間，誰有兒子求餅，反給他石頭呢？</div>
+            <div class="verse"><span class="verse-number">10</span>求魚，反給他蛇呢？</div>
+            <div class="verse"><span class="verse-number">11</span>你們雖然不好，尚且知道拿好東西給兒女，何況你們在天上的父呢？他豈不更把好東西給求他的人嗎？</div>
+            <div class="verse"><span class="verse-number">12</span>所以，無論何事，你們願意人怎樣待你們，你們也要怎樣待人。這就是律法和先知的總綱。</div>
+            <div class="verse"><span class="verse-number">13</span>你們要進窄門。因為引到滅亡，那門是寬的，路是大的，進去的人也多；</div>
+            <div class="verse"><span class="verse-number">14</span>引到永生，那門是窄的，路是小的，找著的人也少。</div>
+            <div class="verse"><span class="verse-number">15</span>你們要防備假先知。他們到你們這裡來，外面披著羊皮，裡面卻是殘暴的狼。</div>
+            <div class="verse"><span class="verse-number">16</span>憑著他們的果子，就可以認出他們來。荊棘上豈能摘葡萄呢？蒺藜裡豈能摘無花果呢？</div>
+            <div class="verse"><span class="verse-number">17</span>這樣，凡好樹都結好果子；唯獨壞樹結壞果子。</div>
+            <div class="verse"><span class="verse-number">18</span>好樹不能結壞果子；壞樹不能結好果子。</div>
+            <div class="verse"><span class="verse-number">19</span>凡不結好果子的樹就砍下來，丟在火裡。</div>
+            <div class="verse"><span class="verse-number">20</span>所以，憑著他們的果子，就可以認出他們來。</div>
+            <div class="verse"><span class="verse-number">21</span>凡稱呼我「主啊，主啊」的人不能都進天國；惟獨遵行我天父旨意的人才能進去。</div>
+            <div class="verse"><span class="verse-number">22</span>當那日，必有許多人對我說：主啊，主啊，我們不是奉你的名傳道，奉你的名趕鬼，奉你的名行許多異能嗎？</div>
+            <div class="verse"><span class="verse-number">23</span>我就明明地告訴他們說：我從來不認識你們，你們這些作惡的人，離開我去吧！</div>
+            <div class="verse"><span class="verse-number">24</span>所以，凡聽見我這話就去行的，好比一個聰明人，把房子蓋在磐石上。</div>
+            <div class="verse"><span class="verse-number">25</span>雨淋，水沖，風吹，撞著那房子，房子總不倒塌，因為根基立在磐石上。</div>
+            <div class="verse"><span class="verse-number">26</span>凡聽見我這話不去行的，好比一個無知的人，把房子蓋在沙土上。</div>
+            <div class="verse"><span class="verse-number">27</span>雨淋，水沖，風吹，撞著那房子，房子就倒塌了，並且倒塌得很大。</div>
+            <div class="verse"><span class="verse-number">28</span>耶穌講完了這些話，眾人都希奇他的教訓；</div>
+            <div class="verse"><span class="verse-number">29</span>因為他教訓他們，正像有權柄的人，不像他們的文士。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第7章是登山寶訓的結論部分。耶穌開始談論論斷他人的危害，用樑木與刺的比喻強調要先改正自己的過失再批評他人。他提出黃金法則：「你們願意人怎樣待你們，你們也要怎樣待人。」呼籲進入窄門尋求永生而非寬路的滅亡。他警告假先知的危害，教導用果子辨別真假先知。耶穌強調光有名號（稱呼「主啊」）與行為（傳道、趕鬼、行異能）還不夠，必須遵行天父的旨意。最後以兩個房子的比喻作為高潮：聽耶穌的話並去行是蓋房在磐石上，只聽不行是蓋房在沙土上。登山寶訓以這個比喻結束，強調知道真理與實踐真理的區別。眾人對耶穌的權威教訓感到希奇，因他不像文士般引證傳統，而是以自身的權柄直接講論。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 自我審視勝於批評他人</strong><br>「樑木與刺」的比喻不是說不應指正他人的罪，而是說我們必須先審視自己。真正有資格給予建設性批評的人，是已經誠實面對自己問題的人。屬靈成熟不表現在論斷他人的尖銳上，而表現在對自己的誠實與謙卑上。<br><br>
+                <strong>2. 行動比言語更能彰顯信仰</strong><br>「果子」比喻用來衡量先知的真假，同樣適用於所有信徒。一個人的真實信仰表現在他的行為與品格上，而非言語或表面的屬靈表現。知道真理卻不實踐，就如蓋房在沙土上，當試煉來臨時必然倒塌。信仰的真實性在於行動。<br><br>
+                <strong>3. 通往永生的道路是狹窄與困難的</strong><br>寬路代表世俗的方向，容易行走但引致滅亡；窄路代表遵行神旨意，困難但通往永生。真實的信仰不是輕鬆舒適的，而需要持續的努力、自我否定與堅持。找著窄路的人「也少」，這不表示救恩的稀有，而表示真實的委身需要代價。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>為什麼看見你弟兄眼中有刺，卻不想你自己眼中有<strong>樑木</strong>呢？（太7:3）</td>
+                            <td>就像<strong>眼睛有污垢時看東西會歪曲</strong>，內心有罪時對他人的批評往往失於公允。我批評他人時，是否有<strong>檢視自己</strong>的同等嚴厲？我看別人的<strong>缺點</strong>是否比看自己的<strong>過失</strong>更清楚，暴露了什麼？</td>
+                        </tr>
+                        <tr>
+                            <td>無論何事，你們願意人怎樣待你們，你們也要<strong>怎樣待人</strong>。這就是<strong>律法和先知的總綱</strong>。（太7:12）</td>
+                            <td>就像<strong>對待他人的方式迴圈回到自己</strong>，黃金法則是終極的同理心測試。我在<strong>衝突、競爭、權力失衡</strong>的情況下，能否仍根據「我希望被如何待」來對待他人？這原則如何挑戰我的<strong>自利本性</strong>？</td>
+                        </tr>
+                        <tr>
+                            <td>聽見我這話就<strong>去行</strong>的，好比一個聰明人，把房子蓋在<strong>磐石</strong>上。（太7:24）</td>
+                            <td>就像<strong>學會游泳與真正下水游</strong>的差別，聽見真理與實踐真理是本質的差異。我對聖經或屬靈教導的<strong>認知</strong>與<strong>實踐</strong>的落差有多大？是什麼阻止我從<strong>聽者</strong>成為<strong>行動者</strong>？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

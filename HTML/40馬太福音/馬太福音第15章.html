@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第15章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            display: inline-block;
+            transition: transform 0.5s ease;
+            white-space: nowrap;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .scripture-text.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .verse {
+            margin-bottom: 12px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            margin: -10px -15px -10px -15px;
+            padding: 10px 15px;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        summary::before {
+            content: "▶";
+            margin-right: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #3498db;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                flex-direction: row;
+            }
+
+            .bible-icon {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            summary {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第15章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+
+        <div class="chapter-subtitle">內心潔淨與信心疆界</div>
+
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>那時，有法利賽人和文士從耶路撒冷來見耶穌，說：</div>
+            <div class="verse"><span class="verse-number">2</span>「你的門徒為甚麼犯古人的遺傳呢？因為吃飯的時候，他們不洗手。」</div>
+            <div class="verse"><span class="verse-number">3</span>耶穌回答說：「你們為甚麼因著你們的遺傳犯神的誡命呢？</div>
+            <div class="verse"><span class="verse-number">4</span>神說：『當孝敬父母』，又說：『咒罵父母的，必須死。』</div>
+            <div class="verse"><span class="verse-number">5</span>你們倒說：『無論何人對父母說：我所當供給你的已經作了獻給神的禮物，</div>
+            <div class="verse"><span class="verse-number">6</span>他就可以不孝敬父母。』這就是你們藉著遺傳廢了神的誡命。</div>
+            <div class="verse"><span class="verse-number">7</span>假冒為善的人哪，以賽亞指著你們說的預言是不錯的。他說：</div>
+            <div class="verse"><span class="verse-number">8</span>『這百姓用嘴唇尊敬我，心卻遠離我。</div>
+            <div class="verse"><span class="verse-number">9</span>他們將人的吩咐當作道理教導人，所以拜我也是枉然。』」</div>
+            <div class="verse"><span class="verse-number">10</span>耶穌就叫了眾人來，對他們說：「你們要聽，也要明白。</div>
+            <div class="verse"><span class="verse-number">11</span>入口的不能污穢人，出口的乃能污穢人。」</div>
+            <div class="verse"><span class="verse-number">12</span>當時，門徒進前來對他說：「法利賽人聽見這話，就不服（原文作『跌倒』），你知道嗎？」</div>
+            <div class="verse"><span class="verse-number">13</span>耶穌回答說：「凡栽種的物，若不是我天父栽種的，必要拔出來。</div>
+            <div class="verse"><span class="verse-number">14</span>任憑他們吧！他們是瞎眼領路的；若是瞎子領瞎子，兩個人都要掉在坑裡。」</div>
+            <div class="verse"><span class="verse-number">15</span>彼得對耶穌說：「請將這比喻講給我們聽。」</div>
+            <div class="verse"><span class="verse-number">16</span>耶穌說：「你們到如今還不明白嗎？</div>
+            <div class="verse"><span class="verse-number">17</span>豈不知凡入口的，是運到肚子裡，又落在茅廁裡嗎？</div>
+            <div class="verse"><span class="verse-number">18</span>惟獨出口的，是從心裡發出來的，這才污穢人。</div>
+            <div class="verse"><span class="verse-number">19</span>因為從心裡發出來的，有惡念、凶殺、姦淫、苟合、偷盜、妄證、謗讟。</div>
+            <div class="verse"><span class="verse-number">20</span>這都是污穢人的；至於不洗手吃飯，那卻不污穢人。」</div>
+            <div class="verse"><span class="verse-number">21</span>耶穌離開那裡，退到推羅、西頓的境內去。</div>
+            <div class="verse"><span class="verse-number">22</span>有一個迦南婦人，從那地方出來，喊著說：「主啊，大衛的子孫，可憐我！我女兒被鬼附得甚苦。」</div>
+            <div class="verse"><span class="verse-number">23</span>耶穌卻一言不答。門徒進前來，求他說：「這婦人在我們後頭喊叫，請打發她走吧。」</div>
+            <div class="verse"><span class="verse-number">24</span>耶穌說：「我奉差遣不過是到以色列家迷失的羊那裡去。」</div>
+            <div class="verse"><span class="verse-number">25</span>那婦人來拜他，說：「主啊，幫助我！」</div>
+            <div class="verse"><span class="verse-number">26</span>他回答說：「不好拿兒女的餅丟給狗吃。」</div>
+            <div class="verse"><span class="verse-number">27</span>婦人說：「主啊，不錯；但是狗也吃牠主人桌子上掉下來的碎渣兒。」</div>
+            <div class="verse"><span class="verse-number">28</span>耶穌說：「婦人，你的信心是大的！照你所要的，給你成全了吧。」從那時候，她女兒就好了。</div>
+            <div class="verse"><span class="verse-number">29</span>耶穌離開那地方，來到靠近加利利的海邊，就上山坐下。</div>
+            <div class="verse"><span class="verse-number">30</span>有許多人到他那裡，帶著瘸子、瞎子、啞巴、有殘疾的，和好些別的病人，都放在他腳前；他就治好了他們。</div>
+            <div class="verse"><span class="verse-number">31</span>甚至眾人都希奇，因為看見啞巴說話，殘疾的痊癒，瘸子行走，瞎子看見，他們就歸榮耀給以色列的神。</div>
+            <div class="verse"><span class="verse-number">32</span>耶穌叫門徒來，說：「我憐憫這眾人，因為他們同我在這裡已經三天，也沒有吃的了。我不願意叫他們餓著回去，恐怕在路上困乏。」</div>
+            <div class="verse"><span class="verse-number">33</span>門徒說：「我們在這野地，哪裡有這麼多的餅叫這許多人吃飽呢？」</div>
+            <div class="verse"><span class="verse-number">34</span>耶穌說：「你們有多少餅？」他們說：「有七個，還有幾條小魚。」</div>
+            <div class="verse"><span class="verse-number">35</span>他就吩咐眾人坐在地上，</div>
+            <div class="verse"><span class="verse-number">36</span>拿著這七個餅和幾條魚，祝謝了，擘開，遞給門徒，門徒又遞給眾人。</div>
+            <div class="verse"><span class="verse-number">37</span>眾人都吃，並且吃飽了，收拾剩下的零碎，裝滿了七個筐子。</div>
+            <div class="verse"><span class="verse-number">38</span>吃的人，除了婦女孩子，共有四千。</div>
+            <div class="verse"><span class="verse-number">39</span>耶穌叫眾人散去，就上船，來到馬加丹的境界。</div>
+        </div>
+
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第15章記錄耶穌對法利賽人傳統主義的挑戰與對外邦人信心的肯定。本章開始於法利賽人質疑門徒不遵守洗手的傳統，耶穌藉此揭露他們的假冒為善——用人的遺傳廢棄神的誡命。祂教導真正的污穢源於內心而非外在儀式。隨後耶穌前往外邦地區，遇見迦南婦人展現驚人的信心，打破了猶太人對救恩的狹隘理解。章末再次行神蹟餵飽四千人，展現神對所有尋求祂之人的憐憫。本章凸顯真信仰超越種族與儀式的界限。
+            </div>
+        </details>
+
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 真正的污穢與潔淨源於內心而非外在儀式</strong><br>耶穌徹底顛覆了法利賽人對潔淨的理解。祂指出入口的食物不能污穢人，真正使人不潔的是從心裡發出的惡念與罪行。這教導信徒，屬靈生命的核心在於內心的更新，而非外在行為的遵守。宗教儀式若沒有內在的真誠與聖潔，就變成空洞的形式主義。<br><br>
+                <strong>2. 信心能突破文化與種族的界限，得著神的恩典</strong><br>迦南婦人的故事展現信心的力量。即使面對耶穌看似拒絕的回應，她謙卑而堅持地求告，最終得著女兒的醫治。這教導我們，神的救恩不受種族、文化或身分的限制，凡憑信心來到神面前的人，都能經歷祂的憐憫與大能。<br><br>
+                <strong>3. 假冒為善用人的傳統取代神的誡命，破壞真正的敬虔</strong><br>法利賽人用各耳板的傳統逃避孝敬父母的責任，顯示他們心中沒有神。耶穌嚴厲斥責這種以敬虔為幌子實則違背神心意的做法。真正的信仰不是死守規條，而是從心裡愛神並遵行祂的話語，特別是在愛人如己的實際行動中。
+            </div>
+        </details>
+
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>「惟獨出口的，是<strong>從心裡發出來</strong>的，這才污穢人。因為從心裡發出來的，有惡念、凶殺、姦淫…」（馬太福音 15:18-19）</td>
+                            <td>當你評估自己的屬靈狀態時，你更關注外在行為的正確、還是內心動機的純潔？就像水果表面光鮮但內部可能腐爛，你是否願意讓神的光照進內心深處，檢視那些隱藏的惡念、驕傲或苦毒？</td>
+                        </tr>
+                        <tr>
+                            <td>「婦人，你的<strong>信心是大的</strong>！照你所要的，給你成全了吧。」從那時候，她女兒就好了。（馬太福音 15:28）</td>
+                            <td>當你向神祈求卻似乎得不到回應時，你會像迦南婦人一樣堅持、還是很快放棄？就像登山者即使遇到障礙也不回頭，你的禱告生活是否展現出對神的信心與堅持，相信祂的時間與方式總是最好的？</td>
+                        </tr>
+                        <tr>
+                            <td>「你們藉著<strong>遺傳廢了神的誡命</strong>…這百姓用嘴唇尊敬我，心卻遠離我。」（馬太福音 15:6-8）</td>
+                            <td>在你的信仰生活中，是否有某些宗教傳統或習慣反而成為你真正愛神、愛人的阻礙？就像有人嚴格遵守健身計畫卻忽略了家人的需要，你是否曾因為堅持某些宗教形式而忽略了神更看重的憐憫與公義？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function toggleScripture() {
+            const scriptureText = document.getElementById('scriptureText');
+            const bibleIcon = document.getElementById('bibleIcon');
+            
+            scriptureText.classList.toggle('show');
+            
+            if (scriptureText.classList.contains('show')) {
+                bibleIcon.textContent = '📖';
+                bibleIcon.classList.add('open');
+            } else {
+                bibleIcon.textContent = '📕';
+                bibleIcon.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>

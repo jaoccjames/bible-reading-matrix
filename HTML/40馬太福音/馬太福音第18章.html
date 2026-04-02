@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第18章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            display: inline-block;
+            transition: transform 0.5s ease;
+            white-space: nowrap;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .scripture-text.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .verse {
+            margin-bottom: 12px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            margin: -10px -15px -10px -15px;
+            padding: 10px 15px;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        summary::before {
+            content: "▶";
+            margin-right: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #3498db;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                flex-direction: row;
+            }
+
+            .bible-icon {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            summary {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第18章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+
+        <div class="chapter-subtitle">謙卑、饒恕與群體</div>
+
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>當時，門徒進前來，問耶穌說：「天國裡誰是最大的？」</div>
+            <div class="verse"><span class="verse-number">2</span>耶穌便叫一個小孩子來，使他站在他們當中，</div>
+            <div class="verse"><span class="verse-number">3</span>說：「我實在告訴你們，你們若不回轉，變成小孩子的樣式，斷不得進天國。</div>
+            <div class="verse"><span class="verse-number">4</span>所以，凡自己謙卑像這小孩子的，他在天國裡就是最大的。</div>
+            <div class="verse"><span class="verse-number">5</span>凡為我的名接待一個像這小孩子的，就是接待我。」</div>
+            <div class="verse"><span class="verse-number">6</span>「凡使這信我的一個小子跌倒的，倒不如把大磨石拴在這人的頸項上，沉在深海裡。</div>
+            <div class="verse"><span class="verse-number">7</span>這世界有禍了，因為將人絆倒；絆倒人的事是免不了的，但那絆倒人的有禍了！</div>
+            <div class="verse"><span class="verse-number">8</span>倘若你一隻手，或是一隻腳，叫你跌倒，就砍下來丟掉。你缺一隻手，或是一隻腳，進入永生，強如有兩手兩腳被丟在永火裡。</div>
+            <div class="verse"><span class="verse-number">9</span>倘若你一隻眼叫你跌倒，就把它剜出來丟掉。你只有一隻眼進入永生，強如有兩隻眼被丟在地獄的火裡。」</div>
+            <div class="verse"><span class="verse-number">10</span>「你們要小心，不可輕看這小子裡的一個；我告訴你們，他們的使者在天上，常見我天父的面。</div>
+            <div class="verse"><span class="verse-number">11</span>人子來，為要拯救失喪的人。</div>
+            <div class="verse"><span class="verse-number">12</span>一個人若有一百隻羊，一隻走迷了路，你們的意思如何？他豈不撇下這九十九隻，往山裡去找那隻迷路的羊嗎？</div>
+            <div class="verse"><span class="verse-number">13</span>若是找著了，我實在告訴你們，他為這一隻羊歡喜，比為那沒有迷路的九十九隻歡喜還大呢！</div>
+            <div class="verse"><span class="verse-number">14</span>你們在天上的父也是這樣，不願意這小子裡失喪一個。」</div>
+            <div class="verse"><span class="verse-number">15</span>「倘若你的弟兄得罪你，你就去，趁著只有他和你在一處的時候，指出他的錯來。他若聽你，你便得了你的弟兄；</div>
+            <div class="verse"><span class="verse-number">16</span>他若不聽，你就另外帶一兩個人同去，要憑兩三個人的口作見證，句句都可定準。</div>
+            <div class="verse"><span class="verse-number">17</span>若是不聽他們，就告訴教會；若是不聽教會，就看他像外邦人和稅吏一樣。</div>
+            <div class="verse"><span class="verse-number">18</span>我實在告訴你們，凡你們在地上所捆綁的，在天上也要捆綁；凡你們在地上所釋放的，在天上也要釋放。</div>
+            <div class="verse"><span class="verse-number">19</span>我又告訴你們，若是你們中間有兩個人在地上同心合意地求甚麼事，我在天上的父必為他們成全。</div>
+            <div class="verse"><span class="verse-number">20</span>因為無論在哪裡，有兩三個人奉我的名聚會，那裡就有我在他們中間。」</div>
+            <div class="verse"><span class="verse-number">21</span>那時，彼得進前來，對耶穌說：「主啊，我弟兄得罪我，我當饒恕他幾次呢？到七次可以嗎？」</div>
+            <div class="verse"><span class="verse-number">22</span>耶穌說：「我對你說，不是到七次，乃是到七十個七次。</div>
+            <div class="verse"><span class="verse-number">23</span>天國好像一個王要和他僕人算帳。</div>
+            <div class="verse"><span class="verse-number">24</span>才算的時候，有人帶了一個欠一千萬銀子的來。</div>
+            <div class="verse"><span class="verse-number">25</span>因為他沒有甚麼償還之物，主人吩咐把他和他妻子兒女，並一切所有的都賣了償還。</div>
+            <div class="verse"><span class="verse-number">26</span>那僕人就俯伏拜他，說：『主啊，寬容我，將來我都要還清。』</div>
+            <div class="verse"><span class="verse-number">27</span>那僕人的主人就動了慈心，把他釋放了，並且免了他的債。</div>
+            <div class="verse"><span class="verse-number">28</span>那僕人出來，遇見他的一個同伴欠他十兩銀子，便揪著他，掐住他的喉嚨，說：『你把所欠的還我！』</div>
+            <div class="verse"><span class="verse-number">29</span>他的同伴就俯伏央求他，說：『寬容我吧，將來我必還清。』</div>
+            <div class="verse"><span class="verse-number">30</span>他不肯，竟去把他下在監裡，等他還了所欠的債。</div>
+            <div class="verse"><span class="verse-number">31</span>眾同伴看見他所做的事就甚憂愁，去把這事都告訴了主人。</div>
+            <div class="verse"><span class="verse-number">32</span>於是主人叫了他來，對他說：『你這惡奴才！你央求我，我就把你所欠的都免了；</div>
+            <div class="verse"><span class="verse-number">33</span>你不應當憐恤你的同伴，像我憐恤你嗎？』</div>
+            <div class="verse"><span class="verse-number">34</span>主人就大怒，把他交給掌刑的，等他還清了所欠的債。</div>
+            <div class="verse"><span class="verse-number">35</span>你們各人若不從心裡饒恕你的弟兄，我天父也要這樣待你們了。」</div>
+        </div>
+
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第18章是關於天國群體生活的重要教導。門徒爭論誰最大，耶穌用小孩子教導謙卑的重要性。祂警告不可絆倒信徒，並用迷羊的比喻說明神對每個靈魂的珍視。接著耶穌教導處理弟兄犯罪的步驟，建立教會紀律的原則。彼得詢問饒恕的次數，耶穌以無憐憫僕人的比喻回應，強調信徒應以無限的饒恕對待他人，因為我們已從神領受了無法償還的恩典。本章揭示天國群體應是謙卑、彼此看顧、願意饒恕的信仰群體。
+            </div>
+        </details>
+
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 天國的偉大在於謙卑如孩童，而非屬世的地位與權力</strong><br>耶穌徹底顛覆了門徒對偉大的理解。真正的偉大不是掌控他人或高高在上，而是像小孩子一樣謙卑、單純、依賴神。孩童的特質是承認自己的軟弱與需要，不追求權力與名聲。進入天國需要這種徹底的謙卑，願意放下自我中心，像孩子般信靠天父。<br><br>
+                <strong>2. 神極度珍視每一個信徒，不願一人失喪</strong><br>迷羊的比喻展現神對每個靈魂的重視。即使有九十九隻安全的羊，祂仍然尋找那迷失的一隻。這教導信徒，教會群體應效法天父的心腸，不輕看任何軟弱或迷失的弟兄姊妹。每個人在神眼中都是寶貴的，沒有人是可以被放棄的。教會的使命是尋回失喪的，而非審判定罪。<br><br>
+                <strong>3. 領受神饒恕的人必須以同樣的憐憫饒恕他人</strong><br>無憐憫僕人的比喻揭示饒恕的核心真理。我們欠神的債是天文數字（一千萬銀子），而他人欠我們的不過是微不足道（十兩銀子）。當我們真正明白自己從神那裡領受了多大的饒恕，就不可能對他人的過錯斤斤計較。饒恕不是七次，而是無限次，因為我們所領受的恩典本身就是無限的。
+            </div>
+        </details>
+
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>「你們若不回轉，變成<strong>小孩子的樣式</strong>，斷不得進天國。所以，凡自己謙卑像這小孩子的，他在天國裡就是最大的。」（馬太福音 18:3-4）</td>
+                            <td>在你的生活或工作中，你是更看重別人對你的尊重、還是在神面前的謙卑？就像孩童願意承認「我不會，請教我」，你是否願意在屬靈生命中放下專家的姿態，承認自己的無知與軟弱，單純地依靠神？</td>
+                        </tr>
+                        <tr>
+                            <td>「一個人若有一百隻羊，一隻走迷了路...他豈不撇下這九十九隻，往山裡去找那隻迷路的羊嗎？...你們在天上的父也是這樣，<strong>不願意這小子裡失喪一個</strong>。」（馬太福音 18:12-14）</td>
+                            <td>當你看到教會中軟弱、跌倒或遠離信仰的弟兄姊妹時，你的第一反應是批評論斷、還是積極尋回？就像救生員不會嫌棄溺水者掙扎得太醜，你是否願意付出時間與心力去關懷那些靈性迷失的人，即使他們讓你覺得「麻煩」？</td>
+                        </tr>
+                        <tr>
+                            <td>「你這惡奴才！你央求我，我就把你所欠的都免了；你<strong>不應當憐恤你的同伴，像我憐恤你</strong>嗎？」（馬太福音 18:32-33）</td>
+                            <td>當有人傷害你時，你是更容易記住對方的過錯、還是想起自己曾從神那裡得到的饒恕？就像欠銀行百萬卻計較朋友欠十元的人，你是否意識到自己對他人的不饒恕，反映出你並未真正理解神對你的恩典有多大？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function toggleScripture() {
+            const scriptureText = document.getElementById('scriptureText');
+            const bibleIcon = document.getElementById('bibleIcon');
+            
+            scriptureText.classList.toggle('show');
+            
+            if (scriptureText.classList.contains('show')) {
+                bibleIcon.textContent = '📖';
+                bibleIcon.classList.add('open');
+            } else {
+                bibleIcon.textContent = '📕';
+                bibleIcon.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>

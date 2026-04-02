@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第28章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            display: inline-block;
+            transition: transform 0.5s ease;
+            white-space: nowrap;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .scripture-text.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .verse {
+            margin-bottom: 12px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            margin: -10px -15px -10px -15px;
+            padding: 10px 15px;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        summary::before {
+            content: "▶";
+            margin-right: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #3498db;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                flex-direction: row;
+            }
+
+            .bible-icon {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            summary {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第28章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+
+        <div class="chapter-subtitle">復活顯現與大使命</div>
+
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>安息日將盡，七日的頭一日，天快亮的時候，抹大拉的馬利亞和那個馬利亞來看墳墓。</div>
+            <div class="verse"><span class="verse-number">2</span>忽然，地大震動；因為有主的使者從天上下來，把石頭滾開，坐在上面。</div>
+            <div class="verse"><span class="verse-number">3</span>他的像貌如同閃電，衣服潔白如雪。</div>
+            <div class="verse"><span class="verse-number">4</span>看守的人就因他嚇得渾身亂戰，甚至和死人一樣。</div>
+            <div class="verse"><span class="verse-number">5</span>天使對婦女說：「不要害怕！我知道你們是尋找那釘十字架的耶穌。</div>
+            <div class="verse"><span class="verse-number">6</span>他不在這裡，照他所說的，已經復活了。你們來看安放主的地方。</div>
+            <div class="verse"><span class="verse-number">7</span>快去告訴他的門徒，說他從死裡復活了，並且在你們以先往加利利去，在那裡你們要見他。看哪，我已經告訴你們了。」</div>
+            <div class="verse"><span class="verse-number">8</span>婦女們就急忙離開墳墓，又害怕，又大大地歡喜，跑去要報給他的門徒。</div>
+            <div class="verse"><span class="verse-number">9</span>忽然，耶穌遇見她們，說：「願你們平安！」她們就上前抱住他的腳拜他。</div>
+            <div class="verse"><span class="verse-number">10</span>耶穌對她們說：「不要害怕！你們去告訴我的弟兄，叫他們往加利利去，在那裡必見我。」</div>
+            <div class="verse"><span class="verse-number">11</span>她們去的時候，看守的兵有幾個進城去，將所經歷的事都報給祭司長。</div>
+            <div class="verse"><span class="verse-number">12</span>祭司長和長老聚集商議，就拿許多銀錢給兵丁，說：</div>
+            <div class="verse"><span class="verse-number">13</span>「你們要這樣說：『夜間我們睡覺的時候，他的門徒來，把他偷去了。』</div>
+            <div class="verse"><span class="verse-number">14</span>倘若這話被巡撫聽見，有我們勸他，保你們無事。」</div>
+            <div class="verse"><span class="verse-number">15</span>兵丁受了銀錢，就照所囑咐他們的去行。這話就傳說在猶太人中間，直到今日。</div>
+            <div class="verse"><span class="verse-number">16</span>十一個門徒往加利利去，到了耶穌約定的山上。</div>
+            <div class="verse"><span class="verse-number">17</span>他們見了耶穌就拜他，然而還有人疑惑。</div>
+            <div class="verse"><span class="verse-number">18</span>耶穌進前來，對他們說：「天上地下所有的權柄都賜給我了。</div>
+            <div class="verse"><span class="verse-number">19</span>所以，你們要去，使萬民作我的門徒，奉父、子、聖靈的名給他們施洗。</div>
+            <div class="verse"><span class="verse-number">20</span>凡我所吩咐你們的，都教訓他們遵守，我就常與你們同在，直到世界的末了。」</div>
+        </div>
+
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第28章是整卷福音書的高潮與結論，記錄耶穌的復活與升天前的大使命。七日的頭一日清晨，婦女們來到墳墓，天使宣告耶穌已經復活。復活的耶穌向她們顯現，吩咐她們告訴門徒往加利利去。宗教領袖賄賂兵丁編造謊言，說門徒偷走了屍體。在加利利山上，耶穌向十一個門徒顯現，頒布大使命——要門徒使萬民作主的門徒，並應許與他們同在直到世界的末了。這章不僅是馬太福音的結束，更是教會使命的開始，復活的基督繼續透過門徒在世上工作。
+            </div>
+        </details>
+
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 基督的復活是基督教信仰的基石與確據</strong><br>空墳墓證明耶穌真的復活了，祂勝過了死亡與罪惡的權勢。天使宣告「祂不在這裡，照祂所說的，已經復活了」，應驗了耶穌的預言。復活不只是神蹟，更是救恩成就的印記。若基督沒有復活，我們的信仰就是徒然的，但因祂復活，我們有了永生的盼望。復活證明耶穌是神的兒子，祂的話語全然可信，祂的救恩確實有效。<br><br>
+                <strong>2. 大使命呼召每個信徒成為使萬民作門徒的見證人</strong><br>耶穌頒布大使命，要門徒「去，使萬民作我的門徒」。這不只是給十一個門徒的命令，而是給所有世代信徒的託付。使命不是可有可無的選項，而是每個基督徒的責任。我們蒙召不只是自己得救，更要傳揚福音、教導真理、使人成為主的門徒。大使命的範圍是「萬民」，超越種族、文化與地理界限。<br><br>
+                <strong>3. 基督應許與門徒同在直到世界的末了，這是完成使命的保證</strong><br>大使命伴隨著大應許——「我就常與你們同在，直到世界的末了」。門徒不是憑自己的能力去完成使命，而是靠著復活基督的同在與能力。這應許讓我們確信，無論面對什麼困難，基督都與我們同在。祂擁有天上地下所有權柄，因此我們可以放膽前行。基督的同在是我們服事的力量與安慰。
+            </div>
+        </details>
+
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>「他不在這裡，照他所說的，<strong>已經復活了</strong>。你們來看安放主的地方。」（馬太福音 28:6）</td>
+                            <td>復活節對你而言是慶祝的節日、還是改變生命的真實事件？就像歷史課本記載的事實與真實經歷的事件截然不同，基督的復活是否只是你知道的教義，還是真正影響你每天生活的確據？若基督真的復活了，這如何改變你對死亡、苦難與未來的看法？</td>
+                        </tr>
+                        <tr>
+                            <td>「所以，你們<strong>要去，使萬民作我的門徒</strong>，奉父、子、聖靈的名給他們施洗。凡我所吩咐你們的，都教訓他們遵守。」（馬太福音 28:19-20）</td>
+                            <td>在你的生活中，你是只關注自己的屬靈成長、還是也積極幫助他人成為主的門徒？就像醫生不只為自己學醫而是為了醫治病人，你是否意識到神拯救你不只是為了你自己，更是要透過你去影響他人？你如何在日常生活中實踐大使命？</td>
+                        </tr>
+                        <tr>
+                            <td>「天上地下所有的權柄都賜給我了...我就<strong>常與你們同在，直到世界的末了</strong>。」（馬太福音 28:18,20）</td>
+                            <td>當你面對生活的挑戰、服事的困難或未來的不確定時，你是依靠自己的能力、還是支取基督同在的應許？就像登山者靠著繩索的保護才敢攀登，你是否真正經歷到在每個處境中基督都與你同在？你如何在軟弱時記起並抓住這個應許？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function toggleScripture() {
+            const scriptureText = document.getElementById('scriptureText');
+            const bibleIcon = document.getElementById('bibleIcon');
+            
+            scriptureText.classList.toggle('show');
+            
+            if (scriptureText.classList.contains('show')) {
+                bibleIcon.textContent = '📖';
+                bibleIcon.classList.add('open');
+            } else {
+                bibleIcon.textContent = '📕';
+                bibleIcon.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>

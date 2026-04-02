@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第11章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            display: inline-block;
+            transition: transform 0.5s ease;
+            white-space: nowrap;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .scripture-text.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .verse {
+            margin-bottom: 12px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            margin: -10px -15px -10px -15px;
+            padding: 10px 15px;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        summary::before {
+            content: "▶";
+            margin-right: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #3498db;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                flex-direction: row;
+            }
+
+            .bible-icon {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            summary {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第11章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+
+        <div class="chapter-subtitle">信與疑惑，安息與負軛</div>
+
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>耶穌吩咐了十二個門徒以後，就離開那裡，去各城傳道。</div>
+            <div class="verse"><span class="verse-number">2</span>約翰在監裡聽見基督所做的事，就打發門徒去，</div>
+            <div class="verse"><span class="verse-number">3</span>問他說：「那將要來的是你嗎？還是我們等候別人呢？」</div>
+            <div class="verse"><span class="verse-number">4</span>耶穌回答說：「你們去，把你們所看見、所聽見的事告訴約翰：</div>
+            <div class="verse"><span class="verse-number">5</span>就是瞎子看見，瘸子行走，長大痲瘋的潔淨，聾子聽見，死人復活，窮人有福音傳給他們。</div>
+            <div class="verse"><span class="verse-number">6</span>凡不因我跌倒的，就有福了。」</div>
+            <div class="verse"><span class="verse-number">7</span>他們去的時候，耶穌就對眾人講論約翰說：「你們從前出到曠野是要看甚麼呢？要看風吹動的蘆葦嗎？</div>
+            <div class="verse"><span class="verse-number">8</span>你們出去到底是要看甚麼呢？要看穿細軟衣服的人嗎？那穿細軟衣服的人，是在王宮裡。</div>
+            <div class="verse"><span class="verse-number">9</span>你們出去到底是為甚麼呢？是要看先知嗎？我告訴你們，是的，他比先知還大。</div>
+            <div class="verse"><span class="verse-number">10</span>經上記著說：『我要在你前面差遣我的使者，他要預備你的道路。』</div>
+            <div class="verse"><span class="verse-number">11</span>我實在告訴你們，婦女所生的，沒有一個興起來大過施洗約翰的；然而天國裡最小的，比他還大。</div>
+            <div class="verse"><span class="verse-number">12</span>從施洗約翰的時候到如今，天國是努力進入的，努力的人就得著了。</div>
+            <div class="verse"><span class="verse-number">13</span>因為眾先知和律法說預言，到約翰為止。</div>
+            <div class="verse"><span class="verse-number">14</span>你們若肯領受，約翰就是那應當來的以利亞。</div>
+            <div class="verse"><span class="verse-number">15</span>有耳可聽的，就應當聽。」</div>
+            <div class="verse"><span class="verse-number">16</span>「但我將這世代比作甚麼呢？好像孩子坐在街市上，招呼同伴，說：</div>
+            <div class="verse"><span class="verse-number">17</span>『我們為你們吹笛，你們沒有跳舞；我們唱哀歌，你們沒有捶胸。』</div>
+            <div class="verse"><span class="verse-number">18</span>約翰來了，也不吃，也不喝，人就說他是被鬼附著的；</div>
+            <div class="verse"><span class="verse-number">19</span>人子來了，也吃也喝，人又說他是貪食好酒的人，是稅吏和罪人的朋友。但智慧之子，都以智慧為是。」</div>
+            <div class="verse"><span class="verse-number">20</span>耶穌在諸城中多行異能，那些城的人終不悔改，就在那裡責備他們，說：</div>
+            <div class="verse"><span class="verse-number">21</span>「哥拉汛哪，你有禍了！伯賽大啊，你有禍了！因為在你們中間所行的異能，若行在推羅、西頓，他們早已披麻蒙灰悔改了。</div>
+            <div class="verse"><span class="verse-number">22</span>但我告訴你們，當審判的日子，推羅、西頓所受的，比你們還容易受呢。</div>
+            <div class="verse"><span class="verse-number">23</span>迦百農啊，你已經升到天上（或作：你將要升到天上嗎），將來必墜下陰間；因為在你那裡所行的異能，若行在所多瑪，他還可存到今日。</div>
+            <div class="verse"><span class="verse-number">24</span>但我告訴你們，當審判的日子，所多瑪所受的，比你還容易受。」</div>
+            <div class="verse"><span class="verse-number">25</span>那時，耶穌說：「父啊，天地的主啊，我感謝你，因為你將這些事向聰明通達人就藏起來，向嬰孩就顯出來。</div>
+            <div class="verse"><span class="verse-number">26</span>父啊，是的，因為你的美意本是如此。」</div>
+            <div class="verse"><span class="verse-number">27</span>「一切所有的，都是我父交付我的；除了父，沒有人知道子；除了子和子所願意指示的人，沒有人知道父。</div>
+            <div class="verse"><span class="verse-number">28</span>凡勞苦擔重擔的人，可以到我這裡來，我就使你們得安息。</div>
+            <div class="verse"><span class="verse-number">29</span>我心裡柔和謙卑，你們當負我的軛，學我的樣式；這樣，你們心裡就必得著安息。</div>
+            <div class="verse"><span class="verse-number">30</span>因為我的軛是容易的，我的擔子是輕省的。」</div>
+        </div>
+
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第11章轉向對信心與不信的深思。約翰在監獄中對耶穌的身分產生疑問，代表許多期待舊約預言應驗的人的困境。耶穌藉此機會闡明自己使命的性質——不是推翻政權，而是拯救靈魂。章節描述耶穌批評拒絕悔改的城市，並重申天國進入的急切性。最後以著名的邀請作結，提供心靈疲憊者在基督裡的安息。這章深化了馬太前面關於耶穌身分與使命的啟示，為讀者設定救恩的核心信息。
+            </div>
+        </details>
+
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 信心必須超越對外在標記與期待的依賴</strong><br>約翰在獄中的疑問反映了許多人對彌賽亞的錯誤想像——期待一位政治救星而非屬靈拯救者。耶穌的回答強調，真正的信心在於看見屬靈的果子（瞎子看見、窮人得福音），而非等候符合傳統預期的神蹟。信者需要調整對神的理解，超越文化期待而單純相信神的啟示。<br><br>
+                <strong>2. 悔改與相信是開啟天國的必要條件，拒絕帶來永恆後果</strong><br>耶穌對哥拉汛、伯賽大與迦百農的責備表明，看見神蹟而不悔改是最嚴重的審判。這些城市經歷最多的恩典與異能，卻仍然硬心拒絕，比起未曾看見的所多瑪要承受更重的審判。信仰不僅是理性認知，更需要意志的順服與生命的改變。<br><br>
+                <strong>3. 真正的安息來自於降卑與學習基督的謙卑樣式</strong><br>耶穌發出溫柔的邀請，應許凡勞苦擔重擔者都可得安息。這安息不是逃避責任，而是透過負軛——即學習基督的謙卑與溫柔——而得著的屬靈平安。信者的安息在於放下自我期待，完全依靠基督的引導。
+            </div>
+        </details>
+
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>「凡<strong>不因我跌倒</strong>的，就有福了。」（馬太福音 11:6）</td>
+                            <td>當生活中出現你沒有預期的困難或延遲時，你是否曾感到對信仰失望？就像約翰期待耶穌以某種方式行動、卻看見不同的結果，你願意如何調整自己的期待，相信神的計畫可能比你預想的更美好？</td>
+                        </tr>
+                        <tr>
+                            <td>「天國是<strong>努力進入</strong>的，努力的人就得著了。」（馬太福音 11:12）</td>
+                            <td>你是否將信仰當作一種被動接收的恩典、還是需要主動追求的寶藏？就像運動員努力訓練才能進入賽場，你在屬靈生命中付出了多少真誠的努力與渴望，而非只是浮面的認信？</td>
+                        </tr>
+                        <tr>
+                            <td>「凡勞苦擔重擔的人，可以到我這裡來，我就使你們得<strong>安息</strong>…我的軛是容易的，我的擔子是輕省的。」（馬太福音 11:28-30）</td>
+                            <td>你目前心靈或生活中最沉重的擔子是什麼？你是否相信向基督認罪、學習祂的謙卑，能真正轉化這份沉重？就像換一個更合適的軛會讓駕車更輕鬆，你願意如何讓基督的方式改變你對人生負擔的看法？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function toggleScripture() {
+            const scriptureText = document.getElementById('scriptureText');
+            const bibleIcon = document.getElementById('bibleIcon');
+            
+            scriptureText.classList.toggle('show');
+            
+            if (scriptureText.classList.contains('show')) {
+                bibleIcon.textContent = '📖';
+                bibleIcon.classList.add('open');
+            } else {
+                bibleIcon.textContent = '📕';
+                bibleIcon.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>

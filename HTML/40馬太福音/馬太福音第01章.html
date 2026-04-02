@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第1章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+            border-radius: 4px;
+        }
+
+        .scripture-text.show {
+            display: block;
+        }
+
+        .verse {
+            margin-bottom: 10px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            transition: color 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: "▶ ";
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第1章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        
+        <div class="chapter-subtitle">耶穌基督的降生</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>亞伯拉罕的後裔，大衛的兒子耶穌基督的家譜如下：</div>
+            <div class="verse"><span class="verse-number">2</span>亞伯拉罕生以撒；以撒生雅各；雅各生猶大和他的弟兄；</div>
+            <div class="verse"><span class="verse-number">3</span>猶大從他瑪氏生法勒斯和謝拉；法勒斯生希斯崙；希斯崙生亞蘭；</div>
+            <div class="verse"><span class="verse-number">4</span>亞蘭生亞米拿達；亞米拿達生拿順；拿順生撒門；</div>
+            <div class="verse"><span class="verse-number">5</span>撒門從喇合氏生波阿斯；波阿斯從路得氏生俄備得；俄備得生耶西；</div>
+            <div class="verse"><span class="verse-number">6</span>耶西生大衛王。大衛從烏利亞的妻子生所羅門；</div>
+            <div class="verse"><span class="verse-number">7</span>所羅門生羅波安；羅波安生亞比亞；亞比亞生亞撒；</div>
+            <div class="verse"><span class="verse-number">8</span>亞撒生約沙法；約沙法生約蘭；約蘭生烏西雅；</div>
+            <div class="verse"><span class="verse-number">9</span>烏西雅生約坦；約坦生亞哈斯；亞哈斯生希西家；</div>
+            <div class="verse"><span class="verse-number">10</span>希西家生瑪拿西；瑪拿西生亞們；亞們生約西亞；</div>
+            <div class="verse"><span class="verse-number">11</span>百姓被遷到巴比倫的時候，約西亞生耶哥尼雅和他的弟兄。</div>
+            <div class="verse"><span class="verse-number">12</span>遷到巴比倫之後，耶哥尼雅生撒拉鐵；撒拉鐵生所羅巴伯；</div>
+            <div class="verse"><span class="verse-number">13</span>所羅巴伯生亞比烏得；亞比烏得生以利亞敬；以利亞敬生亞瑣；</div>
+            <div class="verse"><span class="verse-number">14</span>亞瑣生撒督；撒督生亞金；亞金生以律得；</div>
+            <div class="verse"><span class="verse-number">15</span>以律得生以利亞撒；以利亞撒生馬但；馬但生雅各；</div>
+            <div class="verse"><span class="verse-number">16</span>雅各生約瑟，就是馬利亞的丈夫。那稱為基督的耶穌是從馬利亞生的。</div>
+            <div class="verse"><span class="verse-number">17</span>所以亞伯拉罕到大衛，共十四代；大衛到遷徙巴比倫的時候，也是十四代；遷徙巴比倫以後到基督，又是十四代。</div>
+            <div class="verse"><span class="verse-number">18</span>耶穌基督降生的事記在下面。他母親馬利亞已經許配給約瑟，還沒有迎娶，馬利亞就從聖靈懷了孕。</div>
+            <div class="verse"><span class="verse-number">19</span>她的丈夫約瑟是個義人，不願意明明地羞辱她，想要暗暗地把她休了。</div>
+            <div class="verse"><span class="verse-number">20</span>正在思想這事的時候，有主的使者向他夢中顯現，說：大衛的子孫約瑟，不要怕，只管娶你的妻子馬利亞來，因為她所懷的孕是從聖靈來的。</div>
+            <div class="verse"><span class="verse-number">21</span>她將要生一個兒子，你要給他起名叫耶穌，因為他要將自己的百姓從罪惡裡救出來。</div>
+            <div class="verse"><span class="verse-number">22</span>這一切的事成就，是要應驗主藉先知所說的話，</div>
+            <div class="verse"><span class="verse-number">23</span>說：必有童女懷孕生子，人要稱他的名為以馬內利。（以馬內利翻出來就是「神與我們同在」。）</div>
+            <div class="verse"><span class="verse-number">24</span>約瑟醒了，就照主使者所吩咐的，把妻子娶過來；</div>
+            <div class="verse"><span class="verse-number">25</span>只是沒有和她同房，等她生了兒子（有古卷：等她生了兒子，他就給孩子起名叫耶穌），就給孩子起名叫耶穌。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第1章開啟新約聖經，記載耶穌基督的家譜與降生。家譜從亞伯拉罕開始，追溯到約瑟，共四十二代，分為三個十四代（應驗數字完全性）。家譜中特別提及四位舊約婦女：他瑪、喇合、路得、烏利亞的妻子，她們的故事各具特色——他瑪寡婦求情、喇合妓女悔改、路得外邦人蒙救、烏利亞妻遭辱——都預表馬利亞：被社會邊緣化卻蒙神揀選。約瑟得知未婚妻懷孕時，作為義人欲暗暗休掉她，但天使在夢中啟示他真相，說明這孕出於聖靈，將生救主耶穌，名字意為「耶和華拯救」，應驗以賽亞先知預言「以馬內利—神與我們同在」。約瑟順服神的旨意，接納馬利亞，成為耶穌在地上的保護者。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 神在歷史中的主權與計畫</strong><br>耶穌的家譜跨越旦下民族歷史——從列祖時代、王國時代、亡國流放到復興時代。神的計畫不受人的失敗、罪惡或歷史變故影響，反而在這些事件中彰顯祂的恩典與主權。應許的實現比任何人的軟弱或失敗都更確定。<br><br>
+                <strong>2. 神揀選邊緣人彰顯恩典</strong><br>家譜中的四位婦女都是被社會貶低的：寡婦、妓女、異邦人、被辱者。她們的列入顯示神的恩典不看外表和社會地位，而看信心與品格。馬利亞雖是未婚懷孕容易遭指責的女子，卻被揀選為救主之母，預示神憐憫罪人、高舉謙卑者。<br><br>
+                <strong>3. 順服帶來救恩的成就</strong><br>約瑟的順服是關鍵——他可以選擇拒絕、隱瞞或責怪，但他選擇相信神的話、接納馬利亞、承擔責任。義人的順服使救恩計畫得以成就。每個人的順服都是神大計畫中的一部分，小的忠誠可帶來永恆的影響。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>她的丈夫約瑟是個義人，不願意明明地羞辱她，想要暗暗地把她休了。（太1:19）</td>
+                            <td>就像<strong>看似矛盾的困境</strong>需要更高的智慧去解決，約瑟面對無法理解的處境仍選擇慈悲。當我遇見<strong>無法解釋</strong>或<strong>違反常理</strong>的情況時，我是匆忙<strong>下判斷</strong>、<strong>指責</strong>，還是如約瑟般保持<strong>謙卑</strong>與<strong>慈愛</strong>，等待<strong>真相</strong>與<strong>神的啟示</strong>？</td>
+                        </tr>
+                        <tr>
+                            <td>她將要生一個兒子，你要給他起名叫耶穌，因為他要將自己的百姓從<strong>罪惡</strong>裡<strong>救出來</strong>。（太1:21）</td>
+                            <td>就像<strong>醫生對患者說「我會治好你」</strong>表示醫治的確定，耶穌的名字代表使命——<strong>拯救</strong>。我對耶穌的認識是否僅止於<strong>宗教人物</strong>或<strong>歷史人物</strong>，還是真實相信祂來的目的就是要將我從<strong>罪的捆綁</strong>中<strong>救出來</strong>？</td>
+                        </tr>
+                        <tr>
+                            <td>必有<strong>童女懷孕生子</strong>，人要稱他的名為<strong>以馬內利</strong>（神與我們同在）。（太1:23）</td>
+                            <td>就像<strong>親人從遠方返家</strong>帶來陪伴與安慰，基督的降生就是神與人同在。我在面對<strong>孤獨</strong>、<strong>恐懼</strong>、<strong>困難</strong>時，是否認識到耶穌來的目的就是要與我們同在，使我們不再<strong>獨自承受</strong>，而能經歷<strong>神的同在</strong>？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

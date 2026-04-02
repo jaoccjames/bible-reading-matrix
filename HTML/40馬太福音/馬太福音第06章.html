@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第6章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+            border-radius: 4px;
+        }
+
+        .scripture-text.show {
+            display: block;
+        }
+
+        .verse {
+            margin-bottom: 10px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            transition: color 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: "▶ ";
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第6章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        
+        <div class="chapter-subtitle">內在的屬靈生活</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>你們要小心，不可將善事行在人的面前，故意叫他們看見；若是這樣，就不能得你們天父的賞賜了。</div>
+            <div class="verse"><span class="verse-number">2</span>所以，你施捨的時候，不可在你前面吹號，像那假冒為善的人在會堂裡和街道上所行的，故意要得人的榮耀。我實在告訴你們：他們已經得了他們的賞賜。</div>
+            <div class="verse"><span class="verse-number">3</span>你施捨的時候，不要叫左手知道右手所做的；</div>
+            <div class="verse"><span class="verse-number">4</span>要叫你施捨的事行在暗中。你父在暗中察看，必然報答你。</div>
+            <div class="verse"><span class="verse-number">5</span>你們禱告的時候，不可像那假冒為善的人，愛站在會堂裡和十字街口上禱告，故意叫人看見。我實在告訴你們：他們已經得了他們的賞賜。</div>
+            <div class="verse"><span class="verse-number">6</span>你禱告的時候，要進你的內屋，關上門，禱告你的父親。你父在暗中察看，必然報答你。</div>
+            <div class="verse"><span class="verse-number">7</span>你們禱告，不可像外邦人，用許多重複的話。他們想，只要多說，就必蒙垂聽。</div>
+            <div class="verse"><span class="verse-number">8</span>你們不可像他們；因為你們沒有祈求以先，你們所需用的，你們的父早已知道了。</div>
+            <div class="verse"><span class="verse-number">9</span>所以，你們禱告要這樣說：我們在天上的父，願人都尊你的名為聖。</div>
+            <div class="verse"><span class="verse-number">10</span>願你的國降臨；願你的旨意行在地上，如同行在天上。</div>
+            <div class="verse"><span class="verse-number">11</span>我們日用的飲食，今日賜給我們。</div>
+            <div class="verse"><span class="verse-number">12</span>免我們的債，如同我們免了欠我們債的人。</div>
+            <div class="verse"><span class="verse-number">13</span>不叫我們陷入試探；救我們脫離兇惡。因為國度、權柄、榮耀，全是你的，直到永遠。阿們。</div>
+            <div class="verse"><span class="verse-number">14</span>你們饒恕人的過犯，你們的天父也必饒恕你們；</div>
+            <div class="verse"><span class="verse-number">15</span>你們不饒恕人的過犯，你們的天父也必不饒恕你們的過犯。</div>
+            <div class="verse"><span class="verse-number">16</span>你們禁食的時候，不可像那假冒為善的人，臉上帶著愁容；因為他們把臉弄得難看，故意叫人看出他們是在禁食。我實在告訴你們：他們已經得了他們的賞賜。</div>
+            <div class="verse"><span class="verse-number">17</span>你禁食的時候，要梳頭洗臉，</div>
+            <div class="verse"><span class="verse-number">18</span>不叫人看出你禁食，只叫你的父看出；你父在暗中察看，必然報答你。</div>
+            <div class="verse"><span class="verse-number">19</span>不要為自己積儹財寶在地上；地上有蟲子咬，能銹壞，也有賊挖窟窿來偷；</div>
+            <div class="verse"><span class="verse-number">20</span>只要積儹財寶在天上；天上沒有蟲子咬，不能銹壞，也沒有賊挖窟窿來偷。</div>
+            <div class="verse"><span class="verse-number">21</span>因為你的財寶在哪裡，你的心也在那裡。</div>
+            <div class="verse"><span class="verse-number">22</span>眼睛就是身上的燈。你的眼睛若瞭亮，全身就光明；</div>
+            <div class="verse"><span class="verse-number">23</span>你的眼睛若昏花，全身就黑暗。你身上的光若黑暗了，那黑暗是何等大呢！</div>
+            <div class="verse"><span class="verse-number">24</span>一個人不能事奉兩個主；不是惡這個、愛那個，就是重這個、輕那個。你們不能又事奉神，又事奉瑪門。</div>
+            <div class="verse"><span class="verse-number">25</span>所以我告訴你們，不要為生命憂慮，吃什麼、喝什麼；為身子憂慮，穿什麼。生命不勝於飲食嗎？身子不勝於衣裳嗎？</div>
+            <div class="verse"><span class="verse-number">26</span>你們看那天上的飛鳥，也不種，也不收，也不積蓄在倉裡，你們的天父尚且養活它。你們不比飛鳥貴重得多嗎？</div>
+            <div class="verse"><span class="verse-number">27</span>你們哪一個能用思慮使壽數多加一刻呢？</div>
+            <div class="verse"><span class="verse-number">28</span>何必為衣裳憂慮呢？你想野地裡的百合花，怎樣長起來；它也不勞苦，也不紡線。</div>
+            <div class="verse"><span class="verse-number">29</span>然而我告訴你們：就是所羅門極榮華的時候，他所穿戴的還不如這花一朵呢！</div>
+            <div class="verse"><span class="verse-number">30</span>你們這小信的人哪！野地裡的草今天還在，明天就丟在爐裡，神還給它這樣的妝飾，何況你們呢？</div>
+            <div class="verse"><span class="verse-number">31</span>所以，不要憂慮說：吃什麼？喝什麼？穿什麼？</div>
+            <div class="verse"><span class="verse-number">32</span>這都是外邦人所求的。你們需用的這一切東西，你們的天父是知道的。</div>
+            <div class="verse"><span class="verse-number">33</span>你們要先求他的國和他的義，這些東西都要加給你們。</div>
+            <div class="verse"><span class="verse-number">34</span>所以，不要為明天憂慮；因為明天自有明天的憂慮。一天的難處一天當就夠了。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第6章繼續登山寶訓，強調屬靈生活的內在性與真實性。耶穌警告不可為了得人稱讚而做善事，善行要暗中進行，只為讓天父看見。他詳細教導禱告之法，強調禱告應在隱密處進行，不需多言，因父已知道我們所需。耶穌傳授著名的「主禱文」，包括尊名、國度、旨意、日用飲食、饒恕、試探等內容。他強調饒恕他人與被饒恕的關聯，禁食時也要隱密進行。論及金錢與財富，耶穌指出不能同時事奉神和瑪門（金錢），呼籲積累天上的寶藏而非地上的。最後以飛鳥與百合花為例，教導門徒不要為生活必需品憂慮，因天父必然供應。關鍵是先求神的國和祂的義，其他一切都必加給。本章的核心是：屬靈生活應出於內在真實的信心，而非外在的表演；對神的信任勝過對物質的焦慮。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 真實的屬靈生活拒絕表演與虛偽</strong><br>耶穌三次譴責「假冒為善的人」（希臘文：hypocrites，字面意為「演員」），他們在人前作秀但無真實的內在。真正的信仰不在乎人的眼光，而在乎天父的察看。暗中的善行、隱密的禱告、真實的禁食，這些都指向一個原則：屬靈生活的本質是內在與真實，而非外在的表演。<br><br>
+                <strong>2. 財寶所在決定心之所在</strong><br>「你的財寶在哪裡，你的心也在那裡」深刻揭示了物質與靈性的關係。人們如何使用金錢反映了他們真正的價值觀和終極關懷。積累地上的財寶終會失去（被蟲咬、生銹、被偷），只有天上的財寶永恆。選擇事奉神還是瑪門，決定了我們人生的終極方向。<br><br>
+                <strong>3. 信心勝過憂慮是屬靈成熟的標記</strong><br>耶穌用飛鳥與百合花教導門徒，信心不是不計畫不工作，而是在盡力之後仍信靠天父的供應。憂慮根源於不信，以為一切依靠自己；信心根源於對天父之愛與全能的認識。先求神的國和義，而非先求物質保障，這是優先順序的根本改變。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>你施捨的時候，不要叫左手知道右手所做的；要叫你施捨的事行在<strong>暗中</strong>。你父在暗中察看，必然報答你。（太6:3-4）</td>
+                            <td>就像<strong>真正的朋友幫忙不會四處宣傳</strong>，真實的善行不需要公開認可。我做善事時，是否常有<strong>被讚美</strong>的期待，還是能甘願在<strong>無人知曉</strong>中服事？我的動機是<strong>人的掌聲</strong>還是<strong>天父的察看</strong>？</td>
+                        </tr>
+                        <tr>
+                            <td>因為你的<strong>財寶</strong>在哪裡，你的<strong>心</strong>也在那裡。（太6:21）</td>
+                            <td>就像<strong>手機使用記錄</strong>會洩露真實的興趣，我如何花錢最能反映真實的價值觀。我在<strong>金錢與時間</strong>的投入上，是把重點放在<strong>地上的積累</strong>（房、車、消費），還是<strong>天上的投資</strong>（靈魂、關係、永恆的事）？</td>
+                        </tr>
+                        <tr>
+                            <td>你們要先求他的<strong>國</strong>和他的<strong>義</strong>，這些東西都要加給你們。（太6:33）</td>
+                            <td>就像<strong>先穩固房子基礎再蓋樓</strong>才能安全，優先順序決定整個生活結構。我的<strong>禱告清單</strong>首先是什麼？是為<strong>物質豐富</strong>、<strong>事業成功</strong>禱告，還是為<strong>靈命成長</strong>、<strong>神的旨意</strong>禱告？若調整優先順序會如何改變我的生活選擇？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

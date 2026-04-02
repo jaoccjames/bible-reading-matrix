@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第13章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            display: inline-block;
+            transition: transform 0.5s ease;
+            white-space: nowrap;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .scripture-text.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .verse {
+            margin-bottom: 12px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            margin: -10px -15px -10px -15px;
+            padding: 10px 15px;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        summary::before {
+            content: "▶";
+            margin-right: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #3498db;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                flex-direction: row;
+            }
+
+            .bible-icon {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            summary {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第13章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+
+        <div class="chapter-subtitle">天國的奧秘與比喻</div>
+
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>當那一天，耶穌從房子裡出來，坐在海邊。</div>
+            <div class="verse"><span class="verse-number">2</span>有許多人到他那裡聚集，他只得上船坐下，眾人都站在岸上。</div>
+            <div class="verse"><span class="verse-number">3</span>他用比喻對他們講許多道理，說：「有一個撒種的出去撒種。</div>
+            <div class="verse"><span class="verse-number">4</span>撒的時候，有落在路旁的，飛鳥來吃盡了；</div>
+            <div class="verse"><span class="verse-number">5</span>有落在土淺石頭地上的，土既不深，發苗最快，</div>
+            <div class="verse"><span class="verse-number">6</span>日頭出來一曬，因為沒有根，就枯乾了；</div>
+            <div class="verse"><span class="verse-number">7</span>有落在荊棘裡的，荊棘長起來，把它擠住了；</div>
+            <div class="verse"><span class="verse-number">8</span>又有落在好土裡的，就結實，有一百倍的，有六十倍的，有三十倍的。</div>
+            <div class="verse"><span class="verse-number">9</span>有耳可聽的，就應當聽。」</div>
+            <div class="verse"><span class="verse-number">10</span>門徒進前來，問耶穌說：「對眾人講話，為甚麼用比喻呢？」</div>
+            <div class="verse"><span class="verse-number">11</span>耶穌回答說：「因為天國的奧秘，只叫你們知道，不叫他們知道。</div>
+            <div class="verse"><span class="verse-number">12</span>凡有的，還要加給他，叫他有餘；凡沒有的，連他所有的也要奪去。</div>
+            <div class="verse"><span class="verse-number">13</span>所以我用比喻對他們講，是因他們看也看不見，聽也聽不見，也不明白。</div>
+            <div class="verse"><span class="verse-number">14</span>在他們身上，正應了以賽亞的預言，說：『你們聽是要聽見，卻不明白；看是要看見，卻不曉得。</div>
+            <div class="verse"><span class="verse-number">15</span>因為這百姓油蒙了心，耳朵發沉，眼睛閉著；恐怕眼睛看見，耳朵聽見，心裡明白，回轉過來，我就醫治他們。』</div>
+            <div class="verse"><span class="verse-number">16</span>但你們的眼睛是有福的，因為看見了；你們的耳朵也是有福的，因為聽見了。</div>
+            <div class="verse"><span class="verse-number">17</span>我實在告訴你們，從前有許多先知和義人，要看你們所看的，卻沒有看見；要聽你們所聽的，卻沒有聽見。」</div>
+            <div class="verse"><span class="verse-number">18</span>「所以，你們當聽這撒種的比喻：</div>
+            <div class="verse"><span class="verse-number">19</span>凡聽見天國道理不明白的，那惡者就來，把所撒在他心裡的奪了去；這就是撒在路旁的了。</div>
+            <div class="verse"><span class="verse-number">20</span>撒在石頭地上的，就是人聽了道，當下歡喜領受；</div>
+            <div class="verse"><span class="verse-number">21</span>只因心裡沒有根，不過是暫時的；及至為道遭了患難，或是受了逼迫，立刻就跌倒了。</div>
+            <div class="verse"><span class="verse-number">22</span>撒在荊棘裡的，就是人聽了道，後來有世上的思慮、錢財的迷惑把道擠住了，不能結實。</div>
+            <div class="verse"><span class="verse-number">23</span>撒在好地上的，就是人聽道明白了，後來結實，有一百倍的，有六十倍的，有三十倍的。」</div>
+            <div class="verse"><span class="verse-number">24</span>耶穌又設個比喻對他們說：「天國好像人撒好種在田裡，</div>
+            <div class="verse"><span class="verse-number">25</span>及至人睡覺的時候，有仇敵來，將稗子撒在麥子裡就走了。</div>
+            <div class="verse"><span class="verse-number">26</span>到長苗吐穗的時候，稗子也顯出來。</div>
+            <div class="verse"><span class="verse-number">27</span>田主的僕人來告訴他說：『主啊，你不是撒好種在田裡嗎？從哪裡來的稗子呢？』</div>
+            <div class="verse"><span class="verse-number">28</span>主人說：『這是仇敵做的。』僕人說：『你要我們去薅出來嗎？』</div>
+            <div class="verse"><span class="verse-number">29</span>主人說：『不必，恐怕薅稗子，連麥子也拔出來。</div>
+            <div class="verse"><span class="verse-number">30</span>容這兩樣一齊長，等著收割。當收割的時候，我要對收割的人說：先將稗子薅出來，捆成捆，留著燒；惟有麥子要收在倉裡。』」</div>
+            <div class="verse"><span class="verse-number">31</span>他又設個比喻對他們說：「天國好像一粒芥菜種，有人拿去種在田裡。</div>
+            <div class="verse"><span class="verse-number">32</span>這原是百種裡最小的，等到長起來，卻比各樣的菜都大，且成了樹，天上的飛鳥來宿在它的枝上。」</div>
+            <div class="verse"><span class="verse-number">33</span>他又對他們講個比喻說：「天國好像麵酵，有婦人拿來藏在三斗麵裡，直等全團都發起來。」</div>
+            <div class="verse"><span class="verse-number">34</span>這都是耶穌用比喻對眾人說的話；若不用比喻，就不對他們說甚麼。</div>
+            <div class="verse"><span class="verse-number">35</span>這是要應驗先知的話，說：「我要開口用比喻，把創世以來所隱藏的事發明出來。」</div>
+            <div class="verse"><span class="verse-number">36</span>當下，耶穌離開眾人，進了房子。他的門徒進前來，說：「請把田間稗子的比喻講給我們聽。」</div>
+            <div class="verse"><span class="verse-number">37</span>他回答說：「那撒好種的就是人子；</div>
+            <div class="verse"><span class="verse-number">38</span>田地就是世界；好種就是天國之子；稗子就是那惡者之子；</div>
+            <div class="verse"><span class="verse-number">39</span>撒稗子的仇敵就是魔鬼；收割的時候就是世界的末了；收割的人就是天使。</div>
+            <div class="verse"><span class="verse-number">40</span>將稗子薅出來用火焚燒，世界的末了也要如此。</div>
+            <div class="verse"><span class="verse-number">41</span>人子要差遣使者，把一切叫人跌倒的和作惡的，從他國裡挑出來，</div>
+            <div class="verse"><span class="verse-number">42</span>丟在火爐裡，在那裡必要哀哭切齒了。</div>
+            <div class="verse"><span class="verse-number">43</span>那時，義人在他們父的國裡，要發出光來，像太陽一樣。有耳可聽的，就應當聽。」</div>
+            <div class="verse"><span class="verse-number">44</span>「天國好像寶貝藏在地裡，人遇見了就把它藏起來，歡歡喜喜地去變賣一切所有的，買這塊地。</div>
+            <div class="verse"><span class="verse-number">45</span>天國又好像買賣人尋找好珠子，</div>
+            <div class="verse"><span class="verse-number">46</span>遇見一顆重價的珠子，就去變賣他一切所有的，買了這顆珠子。</div>
+            <div class="verse"><span class="verse-number">47</span>天國又好像網撒在海裡，聚攏各樣水族。</div>
+            <div class="verse"><span class="verse-number">48</span>網既滿了，人就拉上岸來，坐下，揀好的收在器具裡，將不好的丟棄了。</div>
+            <div class="verse"><span class="verse-number">49</span>世界的末了也要這樣。天使要出來，從義人中把惡人分別出來，</div>
+            <div class="verse"><span class="verse-number">50</span>丟在火爐裡，在那裡必要哀哭切齒了。」</div>
+            <div class="verse"><span class="verse-number">51</span>耶穌說：「這一切的話你們都明白了嗎？」他們說：「我們明白了。」</div>
+            <div class="verse"><span class="verse-number">52</span>他說：「凡文士受教作天國的門徒，就像一個家主從他庫裡拿出新舊的東西來。」</div>
+            <div class="verse"><span class="verse-number">53</span>耶穌說完了這些比喻，就離開那裡，</div>
+            <div class="verse"><span class="verse-number">54</span>來到自己的家鄉，在會堂裡教訓人，甚至他們都希奇，說：「這人從哪裡有這等智慧和異能呢？</div>
+            <div class="verse"><span class="verse-number">55</span>這不是木匠的兒子嗎？他母親不是叫馬利亞嗎？他弟兄們不是雅各、約西、西門、猶大嗎？</div>
+            <div class="verse"><span class="verse-number">56</span>他妹妹們不是都在我們這裡嗎？這人從哪裡有這一切的事呢？」</div>
+            <div class="verse"><span class="verse-number">57</span>他們就厭棄他。耶穌對他們說：「大凡先知，除了本地本家之外，沒有不被人尊敬的。」</div>
+            <div class="verse"><span class="verse-number">58</span>耶穌因為他們不信，就在那裡不多行異能了。</div>
+        </div>
+
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第13章是耶穌事工的轉捩點，祂開始大量使用比喻教導天國的真理。面對日益增長的反對勢力，耶穌透過七個比喻揭示天國的奧秘，包括撒種者、稗子與麥子、芥菜種、麵酵、藏寶、珍珠與撒網的比喻。這些比喻向真心尋求的人啟示天國的性質，卻向硬心的人隱藏。章末記載耶穌在家鄉拿撒勒遭到厭棄，顯示即使是最親近的人也可能因不信而錯過神的作為。本章為理解天國的本質與發展提供了關鍵框架。
+            </div>
+        </details>
+
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 接受神話語的態度決定屬靈生命的結果</strong><br>撒種的比喻揭示同樣的種子落在不同土壤會產生截然不同的結果。神的話語本身是完美的，但人心的狀態——是否剛硬、膚淺、分心或柔軟——決定了話語能否生根結實。真正的門徒需要培養一顆好土般柔軟、深耕、專注的心，才能讓神的話語帶來生命的改變。<br><br>
+                <strong>2. 天國在現世與惡並存，最終審判將徹底分別善惡</strong><br>稗子與麥子的比喻教導信徒，在末日之前，真信徒與假冒者、善與惡都會混雜在一起。神容許這種混雜狀態，不是因為祂軟弱或不在乎，而是出於憐憫與智慧，給人悔改的機會。但收割的日子必定來臨，那時義與不義將被永遠分開。<br><br>
+                <strong>3. 天國的價值超越一切，值得人付出全部來得著</strong><br>藏寶與珍珠的比喻強調天國是無價之寶，遇見的人應當變賣一切來擁有它。這不是交易，而是認清價值後的理性回應。當人真正明白天國的榮耀與永恆，世上的一切都相形失色，放下所有來跟隨基督不是犧牲，而是智慧的選擇。
+            </div>
+        </details>
+
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>「撒在<strong>好地上</strong>的，就是人聽道明白了，後來結實，有一百倍的，有六十倍的，有三十倍的。」（馬太福音 13:23）</td>
+                            <td>當你聽到神的話語時，你的心是什麼樣的土壤？就像農夫必須翻土、除石、拔草才能讓土地肥沃，你是否願意讓神翻動你心中的剛硬、清除膚淺的情緒反應、拔除世俗的雜念，好讓神的話語深深扎根？</td>
+                        </tr>
+                        <tr>
+                            <td>「容這兩樣<strong>一齊長</strong>，等著收割…當收割的時候，我要對收割的人說：先將稗子薅出來…惟有麥子要收在倉裡。」（馬太福音 13:30）</td>
+                            <td>面對教會或社會中的虛偽與罪惡，你是急於審判定罪、還是學會了耐心等候神的時間？就像園丁知道過早拔草會傷害幼苗，你是否相信神有智慧與能力在合適的時候分別善惡，而你的責任是專注於自己的成長？</td>
+                        </tr>
+                        <tr>
+                            <td>「天國好像寶貝藏在地裡，人遇見了就把它藏起來，<strong>歡歡喜喜地去變賣一切所有的</strong>，買這塊地。」（馬太福音 13:44）</td>
+                            <td>你是否曾經歷過為了得到某樣極度渴望的東西而願意付出一切的時刻？就像有人為了夢想工作而放棄高薪穩定的職位，你認為天國在你心中的價值有多高？你願意為了更深認識神而放下什麼？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function toggleScripture() {
+            const scriptureText = document.getElementById('scriptureText');
+            const bibleIcon = document.getElementById('bibleIcon');
+            
+            scriptureText.classList.toggle('show');
+            
+            if (scriptureText.classList.contains('show')) {
+                bibleIcon.textContent = '📖';
+                bibleIcon.classList.add('open');
+            } else {
+                bibleIcon.textContent = '📕';
+                bibleIcon.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>

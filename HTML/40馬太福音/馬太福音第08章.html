@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第8章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+            border-radius: 4px;
+        }
+
+        .scripture-text.show {
+            display: block;
+        }
+
+        .verse {
+            margin-bottom: 10px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            transition: color 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: "▶ ";
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第8章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        
+        <div class="chapter-subtitle">耶穌的神蹟能力彰顯</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>耶穌下了山，有許多人跟著他。</div>
+            <div class="verse"><span class="verse-number">2</span>有一個長大痲瘋的來拜他，說：主啊，你若肯，必能叫我潔淨了。</div>
+            <div class="verse"><span class="verse-number">3</span>耶穌伸手摸他，說：我肯，你潔淨了吧。他的大痲瘋立刻就潔淨了。</div>
+            <div class="verse"><span class="verse-number">4</span>耶穌對他說：你切不可告訴人，只要去把身體給祭司察看，獻上摩西所吩咐的禮物，對眾人作證據。</div>
+            <div class="verse"><span class="verse-number">5</span>耶穌進了迦百農，有一個百夫長進前來，為僕人求他，</div>
+            <div class="verse"><span class="verse-number">6</span>說：主啊，我的僕人害癱瘓症，躺在家裡，甚是疼痛。</div>
+            <div class="verse"><span class="verse-number">7</span>耶穌說：我去醫治他。</div>
+            <div class="verse"><span class="verse-number">8</span>百夫長回答說：主啊，我不配你進我的舍下；只要你說一句話，我的僕人就必好了。</div>
+            <div class="verse"><span class="verse-number">9</span>因為我在人的權下，也有兵在我以下；我對這個說去，他就去；對那個說來，他就來；對我的僕人說：你做這事，他就做。</div>
+            <div class="verse"><span class="verse-number">10</span>耶穌聽見就希奇，對跟從的人說：我實在告訴你們，這麼大的信心，就是在以色列中我也沒有遇見過。</div>
+            <div class="verse"><span class="verse-number">11</span>我告訴你們：從東從西，將有許多人來，在天國裡與亞伯拉罕、以撒、雅各一同坐席；</div>
+            <div class="verse"><span class="verse-number">12</span>唯有本國的子民要被趕到外邊黑暗裡；在那裡必要哀哭切齒了。</div>
+            <div class="verse"><span class="verse-number">13</span>耶穌對百夫長說：你回去吧，照你的信心給你成全了。那時，他的僕人就好了。</div>
+            <div class="verse"><span class="verse-number">14</span>耶穌到了彼得家裡，看見彼得的岳母害熱病躺著。</div>
+            <div class="verse"><span class="verse-number">15</span>耶穌把她的手一摸，熱就退了；她就起來服侍耶穌。</div>
+            <div class="verse"><span class="verse-number">16</span>到了晚上，人帶著許多被鬼附的來到耶穌跟前，他只用一句話就把鬼都趕出去，並且把所有生病的人都醫好了。</div>
+            <div class="verse"><span class="verse-number">17</span>這是要應驗先知以賽亞的話，說：他代替我們的軟弱，擔當我們的疾病。</div>
+            <div class="verse"><span class="verse-number">18</span>耶穌看見許多人圍著他，就吩咐渡到那邊去。</div>
+            <div class="verse"><span class="verse-number">19</span>有一個文士來，對耶穌說：夫子，你無論往哪裡去，我都要跟從你。</div>
+            <div class="verse"><span class="verse-number">20</span>耶穌說：狐狸有洞，天空的飛鳥有窩，人子卻沒有枕頭的地方。</div>
+            <div class="verse"><span class="verse-number">21</span>又有一個門徒對耶穌說：主啊，容我先去埋葬我的父親。</div>
+            <div class="verse"><span class="verse-number">22</span>耶穌說：任憑死人埋葬他們的死人；你跟從我吧。</div>
+            <div class="verse"><span class="verse-number">23</span>耶穌上了船，他的門徒也跟著他。</div>
+            <div class="verse"><span class="verse-number">24</span>海裡忽然起了暴風，甚至船被波浪掩蓋；耶穌卻睡著了。</div>
+            <div class="verse"><span class="verse-number">25</span>門徒來叫醒他，說：主啊，救我們，我們喪命啦！</div>
+            <div class="verse"><span class="verse-number">26</span>耶穌說：你們為什麼膽怯，你們這小信的人呢？於是起來，斥責風和海，風和海就大大地平靜了。</div>
+            <div class="verse"><span class="verse-number">27</span>眾人希奇，說：這是怎樣的人呢？連風和海也聽從他了。</div>
+            <div class="verse"><span class="verse-number">28</span>他到了那邊，進入格拉森人的地方，就有兩個被鬼附的人從墳塚裡出來迎著他，甚是兇惡，甚至沒有人能從那條路上經過。</div>
+            <div class="verse"><span class="verse-number">29</span>他們喊著說：神的兒子，我們與你有什麼相干？時候還沒有到，你就上這裡來叫我們受苦嗎？</div>
+            <div class="verse"><span class="verse-number">30</span>離他們很遠，有一大群豬吃食。</div>
+            <div class="verse"><span class="verse-number">31</span>鬼就央求耶穌，說：若把我們趕出去，就容我們進入豬群吧。</div>
+            <div class="verse"><span class="verse-number">32</span>耶穌說：去吧。鬼就出來，進入豬群。全群豬忽然闖下山崖，投在海裡，都死了。</div>
+            <div class="verse"><span class="verse-number">33</span>放豬的就跑進城裡，把這一切事，和被鬼附的人所遭遇的都告訴人。</div>
+            <div class="verse"><span class="verse-number">34</span>全城的人都出來迎見耶穌，既然看見了，就央求他離開他們的地方。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第8章從登山寶訓轉向耶穌的神蹟事工，展現他的能力與權柄。耶穌醫治大痲瘋患者、百夫長的僕人、彼得岳母的熱病，以及許多被鬼附和患病的人。百夫長信心的故事特別深刻：這個外邦羅馬軍官因著對耶穌的信靠，獲得耶穌的稱讚，成為「大信心」的典範。耶穌藉此預告外邦人將進入天國，而拒絕祂的以色列人反而被趕到外邊。本章也記載兩個跟隨者的故事，一個文士誇口要跟隨，一個門徒卻以孝道延遲，耶穌用狐狸、飛鳥和死人的比喻強調跟隨的代價。在平靜風浪的神蹟中，門徒驚惶害怕，耶穌責備他們小信。最後格拉森被鬼附的人被拯救，但當地人反而央求耶穌離開，因為失去了豬群的利益。本章呈現耶穌神蹟的範圍廣闊、能力絕對，但人的反應卻有驚人的差異。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 信心是領受神蹟的關鍵</strong><br>大痲瘋患者的謙卑信心（「你若肯，必能」），百夫長超越民族界限的信心，都使耶穌行了神蹟。甚至耶穌說百夫長的信心是「這麼大的」，超過了以色列人。另一方面，門徒在風浪中的恐懼引來耶穌的斥責。信心不是感覺，而是對耶穌身分和能力的確信，無論外在環境如何。<br><br>
+                <strong>2. 跟隨基督需要無條件的委身</strong><br>耶穌對兩個有意跟隨者的回應，警示跟隨不是有條件的交易。文士的跟隨（我「都要」跟從）暗示有保留與條件；門徒的孝道雖然合理卻成為延遲。耶穌的話「任憑死人埋葬他們的死人，你跟從我吧」不是無情，而是強調屬靈優先順序的絕對性。<br><br>
+                <strong>3. 物質利益往往成為人拒絕基督的障礙</strong><br>格拉森人看見兩個被鬼附的人得救，卻因為失去豬群而央求耶穌離開。人會在自己的利益與基督之間作出選擇。這場景預示著整個人類歷史：許多人寧願失去靈魂也不願放棄物質利益。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>百夫長回答說：主啊，我不配你進我的舍下；只要你說一句話，我的僕人就必好了。（太8:8）</td>
+                            <td>就像<strong>一個有經驗的指揮官</strong>知道權柄的本質在於言語而非親臨，百夫長認識到耶穌的<strong>能力</strong>超越物理位置的限制。我對耶穌的認識是否停留在需要祂<strong>親身</strong>到場，還是相信祂的<strong>話語</strong>本身就具足夠的能力？</td>
+                        </tr>
+                        <tr>
+                            <td>你們為什麼<strong>膽怯</strong>？你們這<strong>小信</strong>的人呢？（太8:26）</td>
+                            <td>就像<strong>乘坐飛機時知道飛行員在駕駛</strong>能安心睡眠，耶穌在船上睡著象徵對環境的完全掌控。當我面對<strong>生活的風暴</strong>時，是允許<strong>恐懼</strong>支配我，還是記得<strong>耶穌同在</strong>而能平靜信賴？</td>
+                        </tr>
+                        <tr>
+                            <td>狐狸有洞，天空的飛鳥有窩，人子卻沒有<strong>枕頭的地方</strong>。（太8:20）</td>
+                            <td>就像<strong>士兵服役時要放棄家庭舒適</strong>為國效力，跟隨耶穌要放棄物質安全。我願意為跟隨基督犧牲到什麼程度？是只要不<strong>太不舒適</strong>就行，還是願意放下<strong>所有的</strong>安全感與物質保障？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

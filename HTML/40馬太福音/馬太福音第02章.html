@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬太福音第2章 - 聖經重點與思考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1:hover {
+            color: #3498db;
+        }
+
+        .bible-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .bible-icon.open {
+            transform: rotateY(180deg);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scripture-text {
+            display: none;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            line-height: 2;
+            max-height: 500px;
+            overflow-y: auto;
+            border-radius: 4px;
+        }
+
+        .scripture-text.show {
+            display: block;
+        }
+
+        .verse {
+            margin-bottom: 10px;
+        }
+
+        .verse-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+        }
+
+        details[open] {
+            background: #f0f8ff;
+            border-color: #3498db;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            list-style: none;
+            transition: color 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: "▶ ";
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        summary:hover {
+            color: #3498db;
+        }
+
+        .content {
+            margin-top: 15px;
+            padding: 15px;
+            line-height: 1.9;
+        }
+
+        strong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            summary {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="toggleScripture()">
+            馬太福音第2章
+            <span id="bibleIcon" class="bible-icon">📕</span>
+        </h1>
+        
+        <div class="chapter-subtitle">博士朝拜與逃往埃及</div>
+        
+        <div id="scriptureText" class="scripture-text">
+            <div class="verse"><span class="verse-number">1</span>當希律王的時候，耶穌生在猶太的伯利恆。有幾個博士從東方來到耶路撒冷，說：</div>
+            <div class="verse"><span class="verse-number">2</span>那生下來作猶太人之王的在哪裡？我們在東方看見他的星，特來拜他。</div>
+            <div class="verse"><span class="verse-number">3</span>希律王聽見了，就心裡不安；耶路撒冷合城的人也都不安。</div>
+            <div class="verse"><span class="verse-number">4</span>他就召聚了猶太人的祭司長和文士，問他們說：基督當生在何處？</div>
+            <div class="verse"><span class="verse-number">5</span>他們回答說：在猶太的伯利恆；因為有先知記著說：</div>
+            <div class="verse"><span class="verse-number">6</span>你這伯利恆啊，在猶太諸城中並不是最小的；因為將來有一位君主要從你那裡出來，牧養我以色列民。</div>
+            <div class="verse"><span class="verse-number">7</span>當下希律暗暗地召了博士們來，問他們星光出現的時候是幾時，</div>
+            <div class="verse"><span class="verse-number">8</span>就打發他們往伯利恆去，說：你們去仔細尋訪那小孩子，尋到了，就來報信給我，我也好去拜他。</div>
+            <div class="verse"><span class="verse-number">9</span>他們聽見王的話，就去了。不料，他們在東方所看見的星又在他們前頭行，直行到小孩子所在的地方，就在上面停住了。</div>
+            <div class="verse"><span class="verse-number">10</span>他們看見那星，就極其歡喜。</div>
+            <div class="verse"><span class="verse-number">11</span>進了房子，看見小孩子和他母親馬利亞，就俯伏拜他，打開寶盒，拿出黃金、乳香、沒藥為禮物獻給他。</div>
+            <div class="verse"><span class="verse-number">12</span>博士因為在夢中被主指示，不要回去見希律，就從別的路回本地去了。</div>
+            <div class="verse"><span class="verse-number">13</span>他們去後，有主的使者向約瑟夢中顯現，說：起來，把小孩子和他母親帶到埃及去，躲在那裡，等我吩咐你；因為希律必尋找小孩子要除掉他。</div>
+            <div class="verse"><span class="verse-number">14</span>約瑟就起來，夜間帶著小孩子和他母親逃到埃及去，</div>
+            <div class="verse"><span class="verse-number">15</span>存留在那裡，直到希律死了。這是要應驗主藉先知所說的話，說：我從埃及召出我的兒子來。</div>
+            <div class="verse"><span class="verse-number">16</span>希律見自己被博士們戲弄，就大大發怒，差人將伯利恆城裡並四境所有的男孩，照著他向博士們仔細查問的時候，凡兩歲以下的，都殺死了。</div>
+            <div class="verse"><span class="verse-number">17</span>這就應驗了先知耶利米所說的話，說：</div>
+            <div class="verse"><span class="verse-number">18</span>在拉瑪聽見號咷大哭的聲音，是拉結哭她的兒女，不肯受安慰，因為他們都不在了。</div>
+            <div class="verse"><span class="verse-number">19</span>希律死了以後，有主的使者在埃及向約瑟夢中顯現，說：</div>
+            <div class="verse"><span class="verse-number">20</span>起來，帶著小孩子和他母親往以色列地去，因為要害小孩子性命的人已經死了。</div>
+            <div class="verse"><span class="verse-number">21</span>約瑟就起來，把小孩子和他母親帶回以色列地去。</div>
+            <div class="verse"><span class="verse-number">22</span>只因聽見亞基老接續他父親希律作了猶太王，就怕去那裡，又在夢中被主指示，便往加利利地去了，</div>
+            <div class="verse"><span class="verse-number">23</span>到了一座城，名叫拿撒勒，就住在那裡。這是要應驗先知所說，他將稱為拿撒勒人的話了。</div>
+        </div>
+        
+        <script>
+            function toggleScripture() {
+                const scriptureText = document.getElementById('scriptureText');
+                const bibleIcon = document.getElementById('bibleIcon');
+                
+                scriptureText.classList.toggle('show');
+                
+                if (scriptureText.classList.contains('show')) {
+                    bibleIcon.textContent = '📖';
+                    bibleIcon.classList.add('open');
+                } else {
+                    bibleIcon.textContent = '📕';
+                    bibleIcon.classList.remove('open');
+                }
+            }
+        </script>
+        
+        <details>
+            <summary>背景簡介</summary>
+            <div class="content">
+                馬太福音第2章記載耶穌降生後的重大事件。東方博士看見耶穌的星，來到耶路撒冷尋求「猶太人之王」，卻不知道耶穌在伯利恆。希律王因擔心王位被威脅而心生恐懼，查問舊約預言後差博士去伯利恆尋找耶穌。博士找到耶穌並獻上禮物，但在夢中被神指示不要回去見希律，從別路返回。希律發現被戲弄後，為了除掉威脅，下令殺害伯利恆兩歲以下的男孩。約瑟受神啟示帶著耶穌一家逃往埃及躲避。希律死後，約瑟再次遵從天使指示返回以色列，但因懼怕新王亞基老，最終定居於加利利的拿撒勒。整章充滿五個夢中啟示，說明神如何保護救主的安全。
+            </div>
+        </details>
+        
+        <details>
+            <summary>核心屬靈意涵</summary>
+            <div class="content">
+                <strong>1. 尋求基督需要代價與順服</strong><br>東方博士為尋求基督走過漫長旅程，獻上貴重禮物，卻面臨危險。追尋神不是輕鬆舒適的，而需要付出時間、資源、甚至面對試煉。約瑟的重複順服——躲避、返回、改路——顯示跟隨神需要持續的信心與謙卑，願意在每個轉折點中聆聽神的引導。<br><br>
+                <strong>2. 惡人的計謀無法阻擋神的計畫</strong><br>希律的殘忍屠殺是人類最黑暗的罪惡之一，卻無法傷害救主。神提前透過夢示保護了耶穌一家。即使面對似乎無法克服的惡勢力，我們的盼望在於神的主權與保護，祂的計畫決不會被人的惡意所阻撓。<br><br>
+                <strong>3. 順應神的旨意往往超越常理</strong><br>東方博士、約瑟的多次遷移、最終定居拿撒勒而非耶路撒冷，都顯示神的方式常超越人的預期。我們需要學習不倚靠自己的理解，而是信靠神的智慧，即使看起來與期望不符。
+            </div>
+        </details>
+        
+        <details open>
+            <summary>重點經文與思想題目</summary>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>經文</th>
+                            <th>思想題目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>有幾個博士從東方來到耶路撒冷，說：那生下來作猶太人之王的在哪裡？我們在東方<strong>看見他的星</strong>，特來<strong>拜他</strong>。（太2:1-2）</td>
+                            <td>就像<strong>看到熟人就會主動靠近</strong>，博士看見星光就踏上尋主之旅。我是否像博士般對基督有<strong>主動的熱切</strong>？當神以各種方式（聖經、見證、內心感動）向我<strong>展示</strong>基督時，我會否願意付出<strong>時間、資源、努力</strong>去<strong>尋求</strong>祂？</td>
+                        </tr>
+                        <tr>
+                            <td>博士因為<strong>在夢中被主指示</strong>，不要<strong>回去見希律</strong>，就從別的路回本地去了。（太2:12）</td>
+                            <td>就像<strong>朋友善意提醒你避開危險</strong>，神透過啟示保護博士們。我是否認真對待神的<strong>引導與警告</strong>？當神透過<strong>直覺、聖經、禱告</strong>指示我遠離某些<strong>人、地方或決定</strong>時，我會否立刻順從還是尋找<strong>藉口延遲</strong>？</td>
+                        </tr>
+                        <tr>
+                            <td>約瑟就起來，夜間帶著小孩子和他母親<strong>逃到埃及</strong>去。（太2:14）</td>
+                            <td>就像<strong>父母在危急時刻不顧一切保護孩子</strong>，約瑟沒有遲疑、沒有多問。我對神的<strong>命令</strong>是否像約瑟般<strong>立刻順服</strong>？還是常因為<strong>疑慮、害怕、習慣</strong>而<strong>遲延</strong>或<strong>討價還價</strong>？</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

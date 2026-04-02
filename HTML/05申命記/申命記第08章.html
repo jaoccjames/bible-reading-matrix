@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第8章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; font-style: normal; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 20px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0;
+  border-radius: 8px; padding: 15px; background: #fafafa;
+  transition: border-color 0.2s, background 0.2s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none;
+  display: flex; align-items: center;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; margin-right: 10px; display: inline-block; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { padding-top: 15px; padding-left: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  申命記第8章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">曠野試煉與豐盛中的警醒</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「我今日所吩咐的一切誡命，你們要謹守遵行，好叫你們存活，人數增多，且進去得耶和華向你們列祖起誓應許的那地。</div>
+<div class="verse"><span class="verse-number">2</span>你也要記念耶和華你的神在曠野引導你這四十年，是要苦煉你，試驗你，要知道你心內如何，肯守他的誡命不肯。</div>
+<div class="verse"><span class="verse-number">3</span>他苦煉你，任你飢餓，將你和你列祖所不認識的嗎哪賜給你吃，使你知道，人活着不是單靠食物，乃是靠耶和華口裏所出的一切話。</div>
+<div class="verse"><span class="verse-number">4</span>這四十年，你的衣服沒有穿破，你的腳也沒有腫。</div>
+<div class="verse"><span class="verse-number">5</span>你當心裏思想，耶和華你神管教你，好像人管教兒子一樣。</div>
+<div class="verse"><span class="verse-number">6</span>你要謹守耶和華你神的誡命，遵行他的道，敬畏他。</div>
+<div class="verse"><span class="verse-number">7</span>因為耶和華你神領你進入美地，那地有河，有泉，有源，從山谷中流出水來。</div>
+<div class="verse"><span class="verse-number">8</span>那地有小麥、大麥、葡萄樹、無花果樹、石榴樹、橄欖樹，和蜜。</div>
+<div class="verse"><span class="verse-number">9</span>你在那地不缺食物，一無所缺。那地的石頭是鐵，山內可以挖銅。</div>
+<div class="verse"><span class="verse-number">10</span>你吃得飽足，就要稱頌耶和華你的神，因他將那美地賜給你了。」</div>
+<div class="verse"><span class="verse-number">11</span>「你要謹慎，免得忘記耶和華你的神，不守他的誡命、典章、律例，就是我今日所吩咐你的；</div>
+<div class="verse"><span class="verse-number">12</span>恐怕你吃得飽足，建造美好的房屋居住，</div>
+<div class="verse"><span class="verse-number">13</span>你的牛羊加多，你的金銀增添，並你所有的全都加增，</div>
+<div class="verse"><span class="verse-number">14</span>你就心高氣傲，忘記耶和華你的神，就是將你從埃及地為奴之家領出來的，</div>
+<div class="verse"><span class="verse-number">15</span>引你經過那大而可怕的曠野，那裏有火蛇、蠍子、乾旱無水之地。他曾為你使水從堅硬的磐石中流出來，</div>
+<div class="verse"><span class="verse-number">16</span>又在曠野將你列祖所不認識的嗎哪賜給你吃，是要苦煉你，試驗你，叫你終久享福；</div>
+<div class="verse"><span class="verse-number">17</span>恐怕你心裏說：『這貨財是我力量、我能力得來的。』</div>
+<div class="verse"><span class="verse-number">18</span>你要記念耶和華你的神，因為得貨財的力量是他給你的，為要堅定他向你列祖起誓所立的約，像今日一樣。</div>
+<div class="verse"><span class="verse-number">19</span>你若忘記耶和華你的神，隨從別神，事奉敬拜，你們必定滅亡；這是我今日警戒你們的。</div>
+<div class="verse"><span class="verse-number">20</span>耶和華在你們面前怎樣使列國的民滅亡，你們也必照樣滅亡，因為你們不聽從耶和華你們神的話。」</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖';
+    bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕';
+    bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第八章是一篇充滿張力的屬靈教導，摩西帶領以色列人回顧四十年的曠野歷程，揭示其深層的屬靈意義。本章首先指出曠野的試煉不是神的遺忘，而是神刻意設計的苦煉與試驗，目的是要讓百姓認識自己心裏的真實狀態，並學習完全倚靠神的話語而活。神藉嗎哪的供應讓以色列人體驗「人活着不是單靠食物，乃是靠耶和華口裏所出的一切話」（申8:3），這句話後來被耶穌在曠野受試探時引用。本章下半部急轉直下，轉為嚴肅的警告：當以色列人進入美地，享受豐衣足食的生活後，最大的危險是心高氣傲、自認成功是靠自己能力所致，進而忘記神。摩西特別提醒：「得貨財的力量是他給你的」（申8:18），一切豐盛的根源在於神的賜予，不在人的努力，這是財富神學的重要基石。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 試煉是神塑造靈魂的課堂，不是神遺棄的信號</strong><br>
+四十年的曠野並非神的懲罰，而是精心設計的屬靈學校，目的是「苦煉你，試驗你，要知道你心內如何」（申8:2）。飢餓、等待、不確定感，都是神用來揭示人心、塑造品格的工具。信徒面對生命的困境時，不應只問「為何如此」，而應問「神要在這裏教導我什麼」——這樣的問法會將逆境變成成長的跳板。<br><br>
+<strong>2. 人的生命源泉是神的話語，不只是物質的供應</strong><br>
+「人活着不是單靠食物，乃是靠耶和華口裏所出的一切話」（申8:3）這句話揭示了人類生命本質的需要：物質的滿足只能維持肉體，而神的話語才能滋養靈魂。現代人花大量時間追求物質的豐富，卻往往忽略了靈命的飢渴。讓神的話語成為日常生命的糧食，才能使人在每個處境中都得以存活且有力量。<br><br>
+<strong>3. 豐盛中最需要記念神，防止自我中心的驕傲</strong><br>
+「得貨財的力量是他給你的」（申8:18）一語道破人類在成功時最容易犯的罪：將神的賜予歸功於自己的才幹與努力。越是成功、越是豐盛，越需要刻意操練感恩與謙卑，以防驕傲遮蔽了對神的記念。真正的屬靈成熟是在豐盛中仍能清醒地說：「這一切都是神所賜的，不是我能力所得的。」
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr><th>經文</th><th>思想題目</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>「他苦煉你，任你飢餓，將你和你列祖所不認識的嗎哪賜給你吃，使你知道，<strong>人活着不是單靠食物</strong>，乃是靠<strong>耶和華口裏所出的一切話</strong>。」（申8:3）</td>
+<td>神的話語是生命的真正糧食，就像<strong>運動員需要的不只是熱量，更需要正確的訓練指導</strong>，你每天花多少時間在神的話語上，與花在滿足物質需求的時間相比，比例如何？</td>
+</tr>
+<tr>
+<td>「你當心裏思想，耶和華你神<strong>管教你</strong>，好像人<strong>管教兒子</strong>一樣。」（申8:5）</td>
+<td>神的管教出於父愛，就像<strong>嚴格的教練背後是對選手成長的期望</strong>，當你回顧生命中最艱難的時期，你能否看見神藉那段日子在你身上做了什麼塑造的工作？</td>
+</tr>
+<tr>
+<td>「你要<strong>記念</strong>耶和華你的神，因為<strong>得貨財的力量是他給你的</strong>，為要堅定他向你列祖起誓所立的約。」（申8:18）</td>
+<td>一切成就的根源是神所賜的能力，就像<strong>選手贏得冠軍後不應忘記一路上幫助他的教練和隊友</strong>，在你人生最有成就感的時刻，你如何確保自己沒有忘記神在其中的角色？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+</body>
+</html>

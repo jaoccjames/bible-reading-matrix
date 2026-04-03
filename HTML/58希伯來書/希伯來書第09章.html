@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>希伯來書第9章 - 聖經重點與思考</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+.bible-icon {
+margin-left: 15px;
+transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.scripture-text {
+display: none;
+background: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s ease;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::before {
+content: '▶';
+position: absolute;
+left: 10px;
+transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary:hover {
+color: #3498db;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th {
+background: #3498db;
+color: white;
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tr:hover {
+background: #f0f8ff;
+}
+
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+
+h1 {
+font-size: 1.6em;
+}
+
+.chapter-subtitle {
+font-size: 1em;
+}
+
+h2 {
+font-size: 1.2em;
+}
+
+table {
+font-size: 0.9em;
+}
+
+th, td {
+padding: 10px;
+}
+
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+希伯來書第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">基督一次獻上成就永遠救贖</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>原來前約有禮拜的條例和屬世界的聖幕。</div>
+<div class="verse"><span class="verse-number">2</span>因為有預備的帳幕,頭一層叫作聖所,裡面有燈臺、桌子,和陳設餅。</div>
+<div class="verse"><span class="verse-number">3</span>第二幔子後又有一層帳幕,叫作至聖所,</div>
+<div class="verse"><span class="verse-number">4</span>有金香爐(爐:或作壇),有包金的約櫃,櫃裡有盛嗎哪的金罐和亞倫發過芽的杖,並兩塊約版;</div>
+<div class="verse"><span class="verse-number">5</span>櫃上面有榮耀基路伯的影罩著施恩座。這幾件我現在不能一一細說。</div>
+<div class="verse"><span class="verse-number">6</span>這些物件既如此預備齊了,眾祭司就常進頭一層帳幕,行拜神的禮。</div>
+<div class="verse"><span class="verse-number">7</span>至於第二層帳幕,惟有大祭司一年一次獨自進去,沒有不帶著血為自己和百姓的過錯獻上。</div>
+<div class="verse"><span class="verse-number">8</span>聖靈用此指明,頭一層帳幕仍存的時候,進入至聖所的路還未顯明。</div>
+<div class="verse"><span class="verse-number">9</span>那頭一層帳幕作現今的一個表樣,所獻的禮物和祭物,就著良心說,都不能叫禮拜的人得以完全。</div>
+<div class="verse"><span class="verse-number">10</span>這些事,連那飲食和諸般洗濯的規矩,都不過是屬肉體的條例,命定到振興的時候為止。</div>
+<div class="verse"><span class="verse-number">11</span>但現在基督已經來到,作了將來美事的大祭司,經過那更大更全備的帳幕,不是人手所造,也不是屬乎這世界的;</div>
+<div class="verse"><span class="verse-number">12</span>並且不用山羊和牛犢的血,乃用自己的血,只一次進入聖所,成了永遠的救贖。</div>
+<div class="verse"><span class="verse-number">13</span>若山羊和公牛的血,並母牛犢的灰,灑在不潔的人身上,尚且叫人成聖,身體潔淨,</div>
+<div class="verse"><span class="verse-number">14</span>何況基督藉著永遠的靈,將自己無瑕無疵獻給神,他的血豈不更能洗淨你們的心(原文是良心),除去你們的死行,使你們事奉那永生神嗎?</div>
+<div class="verse"><span class="verse-number">15</span>為此,他作了新約的中保,既然受死贖了人在前約之時所犯的罪過,便叫蒙召之人得著所應許永遠的產業。</div>
+<div class="verse"><span class="verse-number">16</span>凡有遺命必須等到留遺命(遺命:原文與約字同)的人死了;</div>
+<div class="verse"><span class="verse-number">17</span>因為人死了,遺命才有效力,若留遺命的尚在,那遺命還有用處嗎?</div>
+<div class="verse"><span class="verse-number">18</span>所以,前約也不是不用血立的;</div>
+<div class="verse"><span class="verse-number">19</span>因為摩西當日照著律法將各樣誡命傳給眾百姓,就拿朱紅色絨和牛膝草,把牛犢山羊的血和水灑在書上,又灑在眾百姓身上,說:</div>
+<div class="verse"><span class="verse-number">20</span>這血就是神與你們立約的憑據。</div>
+<div class="verse"><span class="verse-number">21</span>他又照樣把血灑在帳幕和各樣器皿上。</div>
+<div class="verse"><span class="verse-number">22</span>按著律法,凡物差不多都是用血潔淨的;若不流血,罪就不得赦免了。</div>
+<div class="verse"><span class="verse-number">23</span>照著天上樣式作的物件必須用這些祭物去潔淨;但那天上的本物自然當用更美的祭物去潔淨。</div>
+<div class="verse"><span class="verse-number">24</span>因為基督並不是進了人手所造的聖所(這不過是真聖所的影像),乃是進了天堂,如今為我們顯在神面前;</div>
+<div class="verse"><span class="verse-number">25</span>也不是多次將自己獻上,像那大祭司每年帶著牛羊的血(牛羊的血:原文作不是自己的血)進入聖所,</div>
+<div class="verse"><span class="verse-number">26</span>如果這樣,他從創世以來,就必多次受苦了。但如今在這末世顯現一次,把自己獻為祭,好除掉罪。</div>
+<div class="verse"><span class="verse-number">27</span>按著定命,人人都有一死,死後且有審判。</div>
+<div class="verse"><span class="verse-number">28</span>像這樣,基督既然一次被獻,擔當了多人的罪,將來要向那等候他的人第二次顯現,並與罪無關,乃是為拯救他們。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第九章詳細對比舊約會幕的事奉與基督的獻祭。作者先描述會幕的結構:外層的聖所和內層的至聖所,大祭司每年一次帶血進入至聖所為百姓贖罪。這些儀式只是表樣,不能真正洗淨人的良心。基督卻用自己的血,只一次進入天上的聖所,成就永遠的救贖。舊約的獻祭需要不斷重複,證明其不完全;基督一次的獻祭就完全有效,因為祂獻的是自己無瑕疵的生命。作者用遺命的比喻說明約的生效需要立約者的死,基督的死使新約生效。本章強調基督獻祭的超越性、完全性和永恆性,為信徒帶來真正的救贖和潔淨。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 基督的血能洗淨良心除去死行</strong><br>舊約的祭物只能潔淨身體,不能洗淨良心。但基督藉著永遠的靈,將自己無瑕無疵獻給神,祂的血能洗淨我們的良心,除去死行,使我們事奉永生神。真正的潔淨不只是外在的儀式,而是內心的更新。基督的寶血能除去罪疚感,使我們不再被過去的罪綑綁,可以帶著清潔的良心來到神面前事奉。<br><br>
+
+<strong>2. 基督一次獻上成就永遠的救贖</strong><br>舊約大祭司每年都要帶血進入至聖所,年復一年重複獻祭,顯示祭物的不完全。基督卻只一次進入聖所,用自己的血成就永遠的救贖。祂不需要多次獻祭,因為一次就夠了、就完全了。這給我們極大的確據:救恩已經完成,不需要我們再添加什麼,只需憑信心接受和持守。<br><br>
+
+<strong>3. 若不流血罪就不得赦免</strong><br>按著律法,若不流血,罪就不得赦免。這顯明罪的嚴重性和代價的昂貴。罪不是小事,需要付上生命的代價才能贖回。基督為我們流血捨命,不是因為神殘忍,而是因為罪的工價就是死。當我們明白基督為我們付上的代價,就會更珍惜救恩,更恨惡罪惡,更感恩神的愛。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基督藉著永遠的靈,將自己無瑕無疵獻給神,他的血豈不更能<strong>洗淨你們的心</strong>,<strong>除去你們的死行</strong>,使你們事奉那永生神嗎?(來9:14)</td>
+<td>你的<strong>良心</strong>是否被基督的血<strong>洗淨</strong>?就像<strong>洗衣機能洗掉深層污漬</strong>,你還在被罪疚感困擾,還是真正經歷內心的潔淨?</td>
+</tr>
+<tr>
+<td>並且不用山羊和牛犢的血,乃用<strong>自己的血</strong>,<strong>只一次</strong>進入聖所,成了<strong>永遠的救贖</strong>。(來9:12)</td>
+<td>你是否相信基督<strong>一次</strong>的獻祭已經<strong>足夠</strong>?就像<strong>終身保固不需要重複購買</strong>,你知道救恩已經完全成就不需要重複嗎?</td>
+</tr>
+<tr>
+<td>按著律法,凡物差不多都是用血潔淨的;<strong>若不流血,罪就不得赦免了</strong>。(來9:22)</td>
+<td>你是否明白<strong>罪的代價</strong>有多高?就像<strong>重病需要昂貴的藥才能治癒</strong>,你知道基督為你的罪付上生命的代價嗎?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+scriptureText.classList.toggle('show');
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+</body>
+</html>

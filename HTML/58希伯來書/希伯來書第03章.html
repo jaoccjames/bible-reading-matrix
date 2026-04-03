@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>希伯來書第3章 - 聖經重點與思考</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+.bible-icon {
+margin-left: 15px;
+transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.scripture-text {
+display: none;
+background: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s ease;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::before {
+content: '▶';
+position: absolute;
+left: 10px;
+transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary:hover {
+color: #3498db;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th {
+background: #3498db;
+color: white;
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tr:hover {
+background: #f0f8ff;
+}
+
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+
+h1 {
+font-size: 1.6em;
+}
+
+.chapter-subtitle {
+font-size: 1em;
+}
+
+h2 {
+font-size: 1.2em;
+}
+
+table {
+font-size: 0.9em;
+}
+
+th, td {
+padding: 10px;
+}
+
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+希伯來書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">基督超越摩西與不可硬心</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>同蒙天召的聖潔弟兄啊,你們應當思想我們所認為使者、為大祭司的耶穌。</div>
+<div class="verse"><span class="verse-number">2</span>他為那設立他的盡忠,如同摩西在神的全家盡忠一樣。</div>
+<div class="verse"><span class="verse-number">3</span>他比摩西算是更配多得榮耀,好像建造房屋的比房屋更尊榮;</div>
+<div class="verse"><span class="verse-number">4</span>因為房屋都必有人建造,但建造萬物的就是神。</div>
+<div class="verse"><span class="verse-number">5</span>摩西為僕人,在神的全家誠然盡忠,為要證明將來必傳說的事。</div>
+<div class="verse"><span class="verse-number">6</span>但基督為兒子,治理神的家;我們若將可誇的盼望和膽量堅持到底,便是他的家了。</div>
+<div class="verse"><span class="verse-number">7</span>聖靈有話說:你們今日若聽他的話,</div>
+<div class="verse"><span class="verse-number">8</span>就不可硬著心,像在曠野惹他發怒、試探他的時候一樣。</div>
+<div class="verse"><span class="verse-number">9</span>在那裡,你們的祖宗試我探我,並且觀看我的作為有四十年之久。</div>
+<div class="verse"><span class="verse-number">10</span>所以,我厭煩那世代的人,說:他們心裡常常迷糊,竟不曉得我的作為!</div>
+<div class="verse"><span class="verse-number">11</span>我就在怒中起誓說:他們斷不可進入我的安息。</div>
+<div class="verse"><span class="verse-number">12</span>弟兄們,你們要謹慎,免得你們中間或有人存著不信的惡心,把永生神離棄了。</div>
+<div class="verse"><span class="verse-number">13</span>總要趁著還有今日,天天彼此相勸,免得你們中間有人被罪迷惑,心裡就剛硬了。</div>
+<div class="verse"><span class="verse-number">14</span>我們若將起初確實的信心堅持到底,就在基督裡有分了。</div>
+<div class="verse"><span class="verse-number">15</span>經上說:你們今日若聽他的話,就不可硬著心,像惹他發怒的日子一樣。</div>
+<div class="verse"><span class="verse-number">16</span>那時,聽見他話惹他發怒的是誰呢?豈不是跟著摩西從埃及出來的眾人嗎?</div>
+<div class="verse"><span class="verse-number">17</span>神四十年之久,又厭煩誰呢?豈不是那些犯罪、屍首倒在曠野的人嗎?</div>
+<div class="verse"><span class="verse-number">18</span>又向誰起誓,不容他們進入他的安息呢?豈不是向那些不信從的人嗎?</div>
+<div class="verse"><span class="verse-number">19</span>這樣看來,他們不能進入安息是因為不信的緣故了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第三章將基督與摩西作比較,摩西在猶太人心中地位極高,是律法的頒布者和以色列的領袖。作者承認摩西在神的家中盡忠,但指出基督比摩西更配得榮耀,因為摩西是僕人,基督是兒子;摩西在家中服事,基督治理全家;摩西是受造的,基督是創造者。接著作者引用詩篇95篇,警告讀者不可像以色列人在曠野時硬著心、試探神,以致不能進入安息。那一代人雖然出埃及、經歷神蹟,卻因不信而倒斃曠野。作者勸勉信徒要彼此相勸,堅持信心到底,免得重蹈覆轍,失去神的安息。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 基督是建造者而非僅是僕人</strong><br>摩西雖然忠心,但他是神家中的僕人,為要證明將來的事。基督卻是兒子,治理神的家,祂是建造萬物的神。這個對比顯明基督的超越性,不只在於程度的不同,更在於本質的差異。我們所跟隨的不是一位偉大的宗教領袖,而是創造並掌管一切的主,祂配得我們全心的敬拜和順服。<br><br>
+
+<strong>2. 硬心和不信會使人失去神的安息</strong><br>以色列人出埃及後,因為硬著心、不信神,在曠野試探神四十年,最終不能進入應許之地。他們的失敗不是因為缺乏神蹟或見證,而是心裡剛硬、不願意信靠順服。同樣,今天的信徒若硬著心、存不信的惡心,也會失去神的安息。信心不是一次性的決定,而是持續的信靠,需要我們持守到底。<br><br>
+
+<strong>3. 信徒需要天天彼此相勸免得被罪迷惑</strong><br>作者強調要趁著還有今日,天天彼此相勸,免得被罪迷惑,心裡剛硬。信仰不是個人的事,我們需要在信仰群體中彼此守望、互相提醒。罪的迷惑是漸進的,心裡的剛硬是累積的,因此需要每天警醒,藉著弟兄姊妹的勸勉保持柔軟的心,持續聽從神的話。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>他比摩西算是<strong>更配多得榮耀</strong>,好像<strong>建造房屋的比房屋更尊榮</strong>。(來3:3)</td>
+<td>你給基督的<strong>地位</strong>是否超過所有的<strong>屬靈偉人</strong>?就像<strong>建築師比建築物本身更重要</strong>,你是否真正尊基督為主?</td>
+</tr>
+<tr>
+<td>你們今日若聽他的話,就<strong>不可硬著心</strong>,像在曠野惹他發怒、試探他的時候一樣。(來3:7-8)</td>
+<td>你的心對神的話是否越來越<strong>麻木</strong>?就像<strong>聽太多警告就不當一回事</strong>,你是否正在逐漸硬心而不自覺?</td>
+</tr>
+<tr>
+<td>總要趁著<strong>還有今日</strong>,<strong>天天彼此相勸</strong>,免得你們中間有人被罪迷惑,心裡就剛硬了。(來3:13)</td>
+<td>你是否有<strong>信仰夥伴</strong>能<strong>彼此提醒</strong>?就像<strong>運動需要教練督促才能持續</strong>,你有讓弟兄姊妹進入你的生命來守望你嗎?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+scriptureText.classList.toggle('show');
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+</body>
+</html>

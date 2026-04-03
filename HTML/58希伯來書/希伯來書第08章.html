@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>希伯來書第8章 - 聖經重點與思考</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+.bible-icon {
+margin-left: 15px;
+transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.scripture-text {
+display: none;
+background: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s ease;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::before {
+content: '▶';
+position: absolute;
+left: 10px;
+transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary:hover {
+color: #3498db;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th {
+background: #3498db;
+color: white;
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tr:hover {
+background: #f0f8ff;
+}
+
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+
+h1 {
+font-size: 1.6em;
+}
+
+.chapter-subtitle {
+font-size: 1em;
+}
+
+h2 {
+font-size: 1.2em;
+}
+
+table {
+font-size: 0.9em;
+}
+
+th, td {
+padding: 10px;
+}
+
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+希伯來書第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">新約的中保與更美之約</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我們所講的事,其中第一要緊的,就是我們有這樣的大祭司,已經坐在天上至大者寶座的右邊,</div>
+<div class="verse"><span class="verse-number">2</span>在聖所,就是真帳幕裡,作執事;這帳幕是主所支的,不是人所支的。</div>
+<div class="verse"><span class="verse-number">3</span>凡大祭司都是為獻禮物和祭物設立的,所以這位大祭司也必須有所獻的。</div>
+<div class="verse"><span class="verse-number">4</span>他若在地上,必不得為祭司,因為已經有照律法獻禮物的祭司。</div>
+<div class="verse"><span class="verse-number">5</span>他們供奉的事本是天上事的形狀和影像,正如摩西將要造帳幕的時候,蒙神警戒他,說:你要謹慎,作各樣的物件都要照著在山上指示你的樣式。</div>
+<div class="verse"><span class="verse-number">6</span>如今耶穌所得的職任是更美的,正如他作更美之約的中保;這約原是憑更美之應許立的。</div>
+<div class="verse"><span class="verse-number">7</span>那前約若沒有瑕疵,就無處尋求後約了。</div>
+<div class="verse"><span class="verse-number">8</span>所以主指責他的百姓說(或作:所以主指前約的缺欠說):日子將到,我要與以色列家和猶大家另立新約,</div>
+<div class="verse"><span class="verse-number">9</span>不像我拉著他們祖宗的手,領他們出埃及的時候,與他們所立的約。因為他們不恆心守我的約,我也不理他們。這是主說的。</div>
+<div class="verse"><span class="verse-number">10</span>主又說:那些日子以後,我與以色列家所立的約乃是這樣:我要將我的律法放在他們裡面,寫在他們心上;我要作他們的神;他們要作我的子民。</div>
+<div class="verse"><span class="verse-number">11</span>他們不用各人教導自己的鄉鄰和自己的弟兄,說:你該認識主;因為他們從最小的到至大的,都必認識我。</div>
+<div class="verse"><span class="verse-number">12</span>我要寬恕他們的不義,不再記念他們的罪愆。</div>
+<div class="verse"><span class="verse-number">13</span>既說新約,就以前約為舊了;但那漸舊漸衰的,就必快歸無有了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第八章是希伯來書論述的高峰之一,對比舊約與新約的關係。作者首先指出基督在天上真帳幕中作大祭司,地上的會幕只是天上事物的影像和形狀。接著引用耶利米書31章,說明神應許要與祂的百姓另立新約,因為舊約有瑕疵——不是約本身的問題,而是人無法遵守。新約的特點是:律法寫在人心上,人人都認識神,罪得完全赦免。基督作為這更美之約的中保,使新約得以實現。舊約的功用是預表和影子,指向基督;新約則是實體,帶來真正的救贖。本章清楚顯明基督徒活在新約之下,享受比舊約更美的應許和關係。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 地上的會幕只是天上真帳幕的影像</strong><br>舊約的會幕和祭司制度都是天上事物的形狀和影像,不是真實的本體。摩西按照神在山上指示的樣式建造會幕,顯示地上的敬拜只是指向天上真實的敬拜。基督在天上真帳幕中事奉,帶來真正的救贖。我們不應停留在影子和儀式中,而要進入基督帶來的真實,直接來到神面前敬拜。<br><br>
+
+<strong>2. 新約將律法寫在心上而非石版上</strong><br>舊約的律法寫在石版上,是外在的規條;新約的律法寫在人心上,成為內在的生命。這不是說律法的內容改變,而是律法的位置改變了——從外在的要求變成內在的渴望。聖靈將神的心意刻印在我們心中,使我們不是勉強遵守,而是甘心樂意順服。真正的改變是從心開始的。<br><br>
+
+<strong>3. 新約帶來罪的完全赦免和遺忘</strong><br>新約最寶貴的應許是神說「我要寬恕他們的不義,不再記念他們的罪愆」。神不只赦免我們的罪,更不再記念,意思是不會再翻舊帳、再定罪。這是舊約獻祭無法達成的,因為每年的贖罪日都在提醒人的罪。但基督一次的獻祭帶來永遠的赦免,使我們不再活在罪疚感中,可以坦然無懼來到神面前。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>如今耶穌所得的職任是<strong>更美的</strong>,正如他作<strong>更美之約的中保</strong>;這約原是憑<strong>更美之應許</strong>立的。(來8:6)</td>
+<td>你是否常常<strong>懷念</strong>舊約的<strong>宗教儀式</strong>?就像<strong>有了新手機還捨不得舊的</strong>,你知道新約帶來的祝福遠超過舊約嗎?</td>
+</tr>
+<tr>
+<td>我要將我的律法<strong>放在他們裡面</strong>,<strong>寫在他們心上</strong>;我要作他們的神;他們要作我的子民。(來8:10)</td>
+<td>你順服神是出於<strong>外在壓力</strong>還是<strong>內心渴望</strong>?就像<strong>被逼著運動和自己想運動完全不同</strong>,聖靈是否已將神的心意刻在你心上?</td>
+</tr>
+<tr>
+<td>我要寬恕他們的不義,<strong>不再記念</strong>他們的罪愆。(來8:12)</td>
+<td>你是否還在為<strong>過去的罪</strong>自責?就像<strong>刪除的檔案不會再出現</strong>,你知道神已經完全赦免並且不再記念你的罪嗎?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+scriptureText.classList.toggle('show');
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>希伯來書第13章 - 聖經重點與思考</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+.bible-icon {
+margin-left: 15px;
+transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.scripture-text {
+display: none;
+background: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s ease;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::before {
+content: '▶';
+position: absolute;
+left: 10px;
+transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary:hover {
+color: #3498db;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th {
+background: #3498db;
+color: white;
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tr:hover {
+background: #f0f8ff;
+}
+
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+
+h1 {
+font-size: 1.6em;
+}
+
+.chapter-subtitle {
+font-size: 1em;
+}
+
+h2 {
+font-size: 1.2em;
+}
+
+table {
+font-size: 0.9em;
+}
+
+th, td {
+padding: 10px;
+}
+
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+希伯來書第13章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">實踐信仰與末了勸勉</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們務要常存弟兄相愛的心。</div>
+<div class="verse"><span class="verse-number">2</span>不可忘記用愛心接待客旅;因為曾有接待客旅的,不知不覺就接待了天使。</div>
+<div class="verse"><span class="verse-number">3</span>你們要記念被捆綁的人,好像與他們同受捆綁;也要記念遭苦害的人,想到自己也在肉身之內。</div>
+<div class="verse"><span class="verse-number">4</span>婚姻,人人都當尊重,床也不可污穢;因為苟合行淫的人,神必要審判。</div>
+<div class="verse"><span class="verse-number">5</span>你們存心不可貪愛錢財,要以自己所有的為足;因為主曾說:我總不撇下你,也不丟棄你。</div>
+<div class="verse"><span class="verse-number">6</span>所以我們可以放膽說:主是幫助我的,我必不懼怕;人能把我怎麼樣呢?</div>
+<div class="verse"><span class="verse-number">7</span>從前引導你們、傳神之道給你們的人,你們要想念他們,效法他們的信心,留心看他們為人的結局。</div>
+<div class="verse"><span class="verse-number">8</span>耶穌基督,昨日、今日、一直到永遠、是一樣的。</div>
+<div class="verse"><span class="verse-number">9</span>你們不要被那諸般怪異的教訓勾引了去;因為人心靠恩得堅固才是好的,並不是靠飲食。那在飲食上專心的從來沒有得著益處。</div>
+<div class="verse"><span class="verse-number">10</span>我們有一祭壇,上面的祭物是那些在帳幕中供職的人不可同吃的。</div>
+<div class="verse"><span class="verse-number">11</span>原來牲畜的血被大祭司帶入聖所作贖罪祭;牲畜的身子被燒在營外。</div>
+<div class="verse"><span class="verse-number">12</span>所以,耶穌要用自己的血叫百姓成聖,也就在城門外受苦。</div>
+<div class="verse"><span class="verse-number">13</span>這樣,我們也當出到營外,就了他去,忍受他所受的凌辱。</div>
+<div class="verse"><span class="verse-number">14</span>我們在這裡本沒有常存的城,乃是尋求那將來的城。</div>
+<div class="verse"><span class="verse-number">15</span>我們應當靠著耶穌,常常以頌讚為祭獻給神,這就是那承認主名之人嘴唇的果子。</div>
+<div class="verse"><span class="verse-number">16</span>只是不可忘記行善和捐輸的事,因為這樣的祭是神所喜悅的。</div>
+<div class="verse"><span class="verse-number">17</span>你們要依從那些引導你們的,且要順服;因他們為你們的靈魂時刻警醒,好像那將來交賬的人。你們要使他們交的時候有快樂,不至憂愁;若憂愁就與你們無益了。</div>
+<div class="verse"><span class="verse-number">18</span>請你們為我們禱告,因我們自覺良心無虧,願意凡事按正道而行。</div>
+<div class="verse"><span class="verse-number">19</span>我更求你們為我禱告,使我快些回到你們那裡去。</div>
+<div class="verse"><span class="verse-number">20</span>但願賜平安的神,就是那憑永約之血、使群羊的大牧人─我主耶穌從死裡復活的神,</div>
+<div class="verse"><span class="verse-number">21</span>在各樣善事上成全你們,叫你們遵行他的旨意;又藉著耶穌基督在你們心裡行他所喜悅的事。願榮耀歸給他,直到永永遠遠。阿們!</div>
+<div class="verse"><span class="verse-number">22</span>弟兄們,我略略寫信給你們,望你們聽我勸勉的話。</div>
+<div class="verse"><span class="verse-number">23</span>你們該知道,我們的兄弟提摩太已經釋放了;他若快來,我必同他去見你們。</div>
+<div class="verse"><span class="verse-number">24</span>請你們問引導你們的諸位和眾聖徒安。從義大利來的人也問你們安。</div>
+<div class="verse"><span class="verse-number">25</span>願恩惠常與你們眾人同在。阿們!</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第十三章是希伯來書的結尾,提供了許多實際生活的勸勉。作者呼籲信徒要常存弟兄相愛的心,用愛心接待客旅,記念被捆綁和遭苦害的人,尊重婚姻,不可貪愛錢財。接著提醒信徒要效法屬靈領袖的信心,不要被異端教訓勾引,要靠恩典得堅固。作者用營外的比喻,勉勵信徒要出到營外就耶穌去,忍受祂所受的凌辱,因為我們在地上沒有常存的城,乃是尋求將來的城。信徒應當以頌讚為祭獻給神,不可忘記行善和捐輸。最後是禱告、問安和祝福,願神在各樣善事上成全信徒,叫他們遵行祂的旨意。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 信仰必須表現在實際的愛心行動中</strong><br>作者列舉多項實際的勸勉:弟兄相愛、接待客旅、記念被捆綁的人、尊重婚姻、不貪愛錢財、行善捐輸。這些都是信心的具體表現。真正的信仰不是抽象的神學知識,而是在日常生活中活出基督的樣式,用實際行動愛神愛人。信心若沒有行為就是死的,我們要將所信的活出來。<br><br>
+
+<strong>2. 要出到營外就耶穌去忍受凌辱</strong><br>耶穌在城門外受苦,我們也當出到營外就祂去,忍受祂所受的凌辱。這意味著願意為基督的緣故被世界排斥、被宗教體系拒絕。我們在這裡本沒有常存的城,乃是尋求將來的城,因此不應貪戀世界,而要勇敢為主作見證,即使會遭受逼迫和羞辱。<br><br>
+
+<strong>3. 耶穌基督昨日今日直到永遠不改變</strong><br>在一切都改變的世界中,唯有耶穌基督是永不改變的。祂的愛不變,祂的應許不變,祂的能力不變,祂的同在不變。無論環境如何變化,無論我們經歷什麼,基督始終如一。這是我們信心的根基和盼望的源頭,使我們在動盪中有穩固,在迷惑中有確據。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思考題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>你們存心<strong>不可貪愛錢財</strong>,要<strong>以自己所有的為足</strong>;因為主曾說:我總不撇下你,也不丟棄你。(來13:5)</td>
+<td>你的<strong>安全感</strong>是建立在<strong>金錢</strong>上還是<strong>神的同在</strong>上?就像<strong>存款多少影響你的心情</strong>,你真的相信神永不離棄你嗎?</td>
+</tr>
+<tr>
+<td><strong>耶穌基督</strong>,昨日、今日、一直到永遠、<strong>是一樣的</strong>。(來13:8)</td>
+<td>當環境<strong>改變</strong>時,你的信心會<strong>動搖</strong>嗎?就像<strong>天氣變化但太陽依然存在</strong>,你知道基督永不改變是你穩固的根基嗎?</td>
+</tr>
+<tr>
+<td>這樣,我們也當<strong>出到營外</strong>,就了他去,<strong>忍受他所受的凌辱</strong>。我們在這裡本<strong>沒有常存的城</strong>,乃是尋求那<strong>將來的城</strong>。(來13:13-14)</td>
+<td>你願意為了<strong>跟隨基督</strong>而被世界<strong>排斥</strong>嗎?就像<strong>堅持原則會失去朋友</strong>,你能忍受為主受的凌辱嗎?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+scriptureText.classList.toggle('show');
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+</body>
+</html>

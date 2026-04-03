@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>希伯來書第6章 - 聖經重點與思考</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 15px;
+transition: color 0.3s;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+.bible-icon {
+font-size: 1.2em;
+transition: transform 0.5s;
+display: inline-block;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.scripture-text {
+display: none;
+background: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+transition: color 0.3s;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::before {
+content: "▶";
+position: absolute;
+left: 10px;
+transition: transform 0.3s;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary:hover {
+color: #3498db;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th {
+background: #3498db;
+color: white;
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tbody tr:hover {
+background: #f0f8ff;
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+h1 {
+font-size: 1.6em;
+}
+.chapter-subtitle {
+font-size: 1em;
+}
+h2 {
+font-size: 1.2em;
+}
+table {
+font-size: 0.9em;
+}
+th, td {
+padding: 10px;
+}
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+希伯來書第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">竭力進到完全持定盼望</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>所以,我們應當離開基督道理的開端,竭力進到完全的地步,不必再立根基,就如那懊悔死行、信靠神、</div>
+<div class="verse"><span class="verse-number">2</span>各樣洗禮、按手之禮、死人復活,以及永遠審判各等教訓。</div>
+<div class="verse"><span class="verse-number">3</span>神若許我們,我們必如此行。</div>
+<div class="verse"><span class="verse-number">4</span>論到那些已經蒙了光照、嘗過天恩的滋味、又於聖靈有分,</div>
+<div class="verse"><span class="verse-number">5</span>並嘗過神善道的滋味、覺悟來世權能的人,</div>
+<div class="verse"><span class="verse-number">6</span>若是離棄道理,就不能叫他們從新懊悔了。因為他們把神的兒子重釘十字架,明明地羞辱他。</div>
+<div class="verse"><span class="verse-number">7</span>就如一塊田地,吃過屢次下的雨水,生長菜蔬,合乎耕種的人用,就從神得福;</div>
+<div class="verse"><span class="verse-number">8</span>若長荊棘和蒺藜,必被廢棄,近於咒詛,結局就是焚燒。</div>
+<div class="verse"><span class="verse-number">9</span>親愛的弟兄們,我們雖是這樣說,卻深信你們的行為強過這些,而且近乎得救。</div>
+<div class="verse"><span class="verse-number">10</span>因為神並非不公義,竟忘記你們所做的工和你們為他名所顯的愛心,就是先前伺候聖徒,如今還是伺候。</div>
+<div class="verse"><span class="verse-number">11</span>我們願你們各人都顯出這樣的殷勤,使你們有滿足的指望,一直到底。</div>
+<div class="verse"><span class="verse-number">12</span>並且不懈怠,總要效法那些憑信心和忍耐承受應許的人。</div>
+<div class="verse"><span class="verse-number">13</span>當初神應許亞伯拉罕的時候,因為沒有比自己更大可以指著起誓的,就指著自己起誓,說:</div>
+<div class="verse"><span class="verse-number">14</span>論福,我必賜大福給你;論子孫,我必叫你的子孫多起來。</div>
+<div class="verse"><span class="verse-number">15</span>這樣,亞伯拉罕既恆久忍耐,就得了所應許的。</div>
+<div class="verse"><span class="verse-number">16</span>人都是指著比自己大的起誓,並且以起誓為實據,了結各樣的爭論。</div>
+<div class="verse"><span class="verse-number">17</span>照樣,神願意為那承受應許的人格外顯明他的旨意是不更改的,就起誓為證。</div>
+<div class="verse"><span class="verse-number">18</span>藉這兩件不更改的事,神決不能說謊,好叫我們這逃往避難所、持定擺在我們前頭指望的人可以大得勉勵。</div>
+<div class="verse"><span class="verse-number">19</span>我們有這指望,如同靈魂的錨,又堅固又牢靠,且通入幔內。</div>
+<div class="verse"><span class="verse-number">20</span>作先鋒的耶穌,既照著麥基洗德的等次成了永遠的大祭司,就為我們進入幔內。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章是希伯來書中最具挑戰性的段落之一,針對信仰停滯不前的信徒發出嚴厲警告與溫柔勉勵。作者呼籲讀者離開基督道理的開端,竭力進到成熟。第4-6節的警告引發神學討論,但重點是強調持續跟隨基督的重要性,而非真信徒會失去救恩。作者接著用田地比喻說明結果子的重要,並以神對亞伯拉罕不更改的應許鼓勵信徒。本章結尾以靈魂的錨為意象,指出我們的盼望穩固在進入幔內的大祭司耶穌基督身上,這盼望堅固牢靠,永不動搖。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 信仰需要持續成長不可停滯</strong><br>作者呼籲信徒不要停留在基督道理的開端,而要竭力進到完全。屬靈生命如同身體成長,不能永遠停留在嬰孩階段,必須不斷成熟。停滯不前的信仰容易枯乾、退後,甚至面臨離棄的危險。神給我們的呼召是持續向前、不斷深入、更多認識基督。成熟的信仰不是自動發生的,需要殷勤追求、持續操練、竭力進深。<br><br>
+
+<strong>2. 結果子顯明生命真實性</strong><br>田地領受雨水若結出菜蔬就得福,若長荊棘蒺藜就被廢棄。這比喻強調生命必須有相應的果效。真實的信仰會產生愛心的行動、服事聖徒的實際表現。神記念我們為祂名所做的工,這些果子證明生命的真實。信心與行為不可分割,有生命就必有果子,這是屬靈生命健康的自然表現。<br><br>
+
+<strong>3. 神的應許是確實可靠的盼望</strong><br>神指著自己起誓,以兩件不更改的事為證,祂決不能說謊。這應許成為我們靈魂的錨,堅固又牢靠。在人生的風浪中,我們需要這穩固的錨,使我們不致漂流。這錨不是拋在海底,而是通入幔內,連結於天上的至聖所,連結於我們的大祭司耶穌基督。持定這指望,我們就能在任何處境中站立得穩。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>所以,我們應當<strong>離開基督道理的開端</strong>,<strong>竭力進到完全</strong>的地步,不必再立根基。(希伯來書6:1)</td>
+<td>我們的<strong>信仰是否持續成長</strong>還是停滯不前?就像<strong>手機系統需要定期更新才能發揮最佳功能</strong>,我們是否仍停留在多年前的屬靈認知,還是持續追求更深認識主?</td>
+</tr>
+<tr>
+<td>就如一塊田地,吃過屢次下的雨水,生長<strong>菜蔬</strong>,合乎耕種的人用,就從神得福;若長<strong>荊棘和蒺藜</strong>,必被廢棄。(希伯來書6:7-8)</td>
+<td>我們的生命<strong>結出什麼果子</strong>?就像<strong>果樹領受陽光雨水卻不結果實</strong>,我們是否只領受恩典卻沒有愛心行動、服事他人的實際表現?我們的信仰有可見的果效嗎?</td>
+</tr>
+<tr>
+<td>我們有這<strong>指望</strong>,如同<strong>靈魂的錨</strong>,又堅固又牢靠,且通入幔內。作先鋒的耶穌就為我們進入幔內。(希伯來書6:19-20)</td>
+<td>在人生的<strong>風浪動盪</strong>中,什麼是我們的錨?就像<strong>船隻需要拋錨才不會被海浪沖走</strong>,我們是否把盼望穩固在那位已進入幔內的耶穌身上?還是依靠容易動搖的事物?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+
+scriptureText.classList.toggle('show');
+
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+</body>
+</html>

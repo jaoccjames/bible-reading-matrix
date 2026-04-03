@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>希伯來書第12章 - 聖經重點與思考</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+.bible-icon {
+margin-left: 15px;
+transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.scripture-text {
+display: none;
+background: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s ease;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::before {
+content: '▶';
+position: absolute;
+left: 10px;
+transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary:hover {
+color: #3498db;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th {
+background: #3498db;
+color: white;
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tr:hover {
+background: #f0f8ff;
+}
+
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+
+h1 {
+font-size: 1.6em;
+}
+
+.chapter-subtitle {
+font-size: 1em;
+}
+
+h2 {
+font-size: 1.2em;
+}
+
+table {
+font-size: 0.9em;
+}
+
+th, td {
+padding: 10px;
+}
+
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+希伯來書第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">仰望耶穌與神的管教</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我們既有這許多的見證人,如同雲彩圍著我們,就當放下各樣的重擔,脫去容易纏累我們的罪,存心忍耐,奔那擺在我們前頭的路程,</div>
+<div class="verse"><span class="verse-number">2</span>仰望為我們信心創始成終的耶穌(或作:仰望那將真道創始成終的耶穌)。他因那擺在前面的喜樂,就輕看羞辱,忍受了十字架的苦難,便坐在神寶座的右邊。</div>
+<div class="verse"><span class="verse-number">3</span>那忍受罪人這樣頂撞的,你們要思想,免得疲倦灰心。</div>
+<div class="verse"><span class="verse-number">4</span>你們與罪惡相爭,還沒有抵擋到流血的地步。</div>
+<div class="verse"><span class="verse-number">5</span>你們又忘了那勸你們如同勸兒子的話,說:我兒,你不可輕看主的管教,被他責備的時候也不可灰心;</div>
+<div class="verse"><span class="verse-number">6</span>因為主所愛的,他必管教,又鞭打凡所收納的兒子。</div>
+<div class="verse"><span class="verse-number">7</span>你們所忍受的,是神管教你們,待你們如同待兒子。焉有兒子不被父親管教的呢?</div>
+<div class="verse"><span class="verse-number">8</span>管教原是眾子所共受的,你們若不受管教,就是私子,不是兒子了。</div>
+<div class="verse"><span class="verse-number">9</span>再者,我們曾有生身的父管教我們,我們尚且敬重他,何況萬靈的父,我們豈不更當順服他得生嗎?</div>
+<div class="verse"><span class="verse-number">10</span>生身的父都是暫隨己意管教我們;惟有萬靈的父管教我們,是要我們得益處,使我們在他的聖潔上有分。</div>
+<div class="verse"><span class="verse-number">11</span>凡管教的事,當時不覺得快樂,反覺得愁苦;後來卻為那經練過的人結出平安的果子,就是義。</div>
+<div class="verse"><span class="verse-number">12</span>所以,你們要把下垂的手、發酸的腿挺起來;</div>
+<div class="verse"><span class="verse-number">13</span>也要為自己的腳,把道路修直了,使瘸子不至歪腳(或作:差路),反得痊愈。</div>
+<div class="verse"><span class="verse-number">14</span>你們要追求與眾人和睦,並要追求聖潔;非聖潔沒有人能見主。</div>
+<div class="verse"><span class="verse-number">15</span>又要謹慎,恐怕有人失了神的恩;恐怕有毒根生出來擾亂你們,因此叫眾人沾染污穢;</div>
+<div class="verse"><span class="verse-number">16</span>恐怕有淫亂的,有貪戀世俗如以掃的,他因一點食物把自己長子的名分賣了。</div>
+<div class="verse"><span class="verse-number">17</span>後來想要承受父所祝的福,竟被棄絕,雖然號哭切求,卻得不著門路使他父親的心意回轉。這是你們知道的。</div>
+<div class="verse"><span class="verse-number">18</span>你們原不是來到那能摸的山;此山有火焰、密雲、黑暗、暴風、</div>
+<div class="verse"><span class="verse-number">19</span>角聲與說話的聲音。那些聽見這聲音的,都求不要再向他們說話;</div>
+<div class="verse"><span class="verse-number">20</span>因為他們當不起所命他們的話,說:靠近這山的,即便是走獸,也要用石頭打死。</div>
+<div class="verse"><span class="verse-number">21</span>所見的極其可怕,甚至摩西說:我甚是恐懼戰兢。</div>
+<div class="verse"><span class="verse-number">22</span>你們乃是來到錫安山,永生神的城邑,就是天上的耶路撒冷。那裡有千萬的天使,</div>
+<div class="verse"><span class="verse-number">23</span>有名錄在天上諸長子之會所共聚的總會,有審判眾人的神和被成全之義人的靈魂,</div>
+<div class="verse"><span class="verse-number">24</span>並新約的中保耶穌,以及所灑的血;這血所說的比亞伯的血所說的更美。</div>
+<div class="verse"><span class="verse-number">25</span>你們總要謹慎,不可棄絕那向你們說話的。因為,那些棄絕在地上警戒他們的尚且不能逃罪,何況我們違背那從天上警戒我們的呢?</div>
+<div class="verse"><span class="verse-number">26</span>當時他的聲音震動了地,但如今他應許說:再一次我不單要震動地,還要震動天。</div>
+<div class="verse"><span class="verse-number">27</span>這再一次的話,是指明被震動的,就是受造之物都要挪去,使那不被震動的常存。</div>
+<div class="verse"><span class="verse-number">28</span>所以我們既得了不能震動的國,就當感恩,照神所喜悅的,用虔誠、敬畏的心事奉神。</div>
+<div class="verse"><span class="verse-number">29</span>因為我們的神乃是烈火。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第十二章延續第十一章信心偉人的見證,勉勵信徒要仰望耶穌,奔跑前面的路程。作者用賽跑的比喻,提醒信徒要放下重擔,脫去纏累的罪,存心忍耐奔跑。耶穌是信心的創始成終者,祂因前面的喜樂忍受十架苦難,是我們的最佳榜樣。接著論到神的管教,指出管教是兒子的身份證明,神管教我們是為使我們在聖潔上有分,結出義的果子。作者警告不可輕忽神的恩典,要追求聖潔和睦,免得像以掃貪戀世俗失去祝福。最後對比西乃山的可怕與錫安山的榮耀,強調新約的超越性,勉勵信徒要感恩,用虔誠敬畏的心事奉神。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 要仰望耶穌奔跑屬靈的賽程</strong><br>信徒的人生如同賽跑,要放下各樣重擔和容易纏累的罪,存心忍耐奔跑。最重要的是仰望耶穌,祂是信心的創始成終者,為我們走過這條路,並且已經得勝坐在神右邊。當我們定睛仰望祂,就不會疲倦灰心,能有力量跑完全程。不要看環境,不要看自己,單單仰望耶穌。<br><br>
+
+<strong>2. 神的管教是愛的證明和成聖的途徑</strong><br>管教不是懲罰,而是神愛我們的證據,證明我們是祂的兒子。神管教我們,是要我們得益處,在聖潔上有分。雖然當時不覺得快樂,反覺得愁苦,但後來卻結出平安的果子,就是義。因此,當我們經歷苦難時,不要灰心,要認識這可能是神的管教,為要塑造我們更像基督。<br><br>
+
+<strong>3. 不可貪戀世俗輕看屬靈的福分</strong><br>以掃因一點食物賣了長子名分,後來想承受祝福卻被棄絕,找不著悔改的機會。這警告我們不可為了眼前短暫的滿足,放棄永恆的福分。世界的享樂是暫時的,神的祝福是永遠的。我們要看重屬靈的事,不要像以掃一樣因小失大,等到後悔時已經太遲。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思考題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>就當放下各樣的<strong>重擔</strong>,脫去容易<strong>纏累我們的罪</strong>,存心忍耐,奔那擺在我們前頭的路程,<strong>仰望</strong>為我們信心創始成終的<strong>耶穌</strong>。(來12:1-2)</td>
+<td>你生命中有什麼<strong>重擔或罪</strong>正在拖累你?就像<strong>跑步時背著重物會跑不快</strong>,你願意放下這些重擔專心仰望耶穌嗎?</td>
+</tr>
+<tr>
+<td>因為<strong>主所愛的,他必管教</strong>,又鞭打凡所收納的兒子。(來12:6)</td>
+<td>當你遇到<strong>困難</strong>時,會認為是<strong>神的管教</strong>還是神不愛你?就像<strong>父母管教孩子是因為愛</strong>,你能在苦難中看見神的愛嗎?</td>
+</tr>
+<tr>
+<td>恐怕有淫亂的,有<strong>貪戀世俗</strong>如以掃的,他因<strong>一點食物</strong>把自己<strong>長子的名分賣了</strong>。(來12:16)</td>
+<td>你是否為了<strong>眼前的享受</strong>放棄<strong>永恆的福分</strong>?就像<strong>為了看劇熬夜犧牲健康</strong>,你會因小失大嗎?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+scriptureText.classList.toggle('show');
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+</body>
+</html>

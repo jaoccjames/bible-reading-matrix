@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雅各書第1章 - 聖經重點與思考</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+.bible-icon {
+margin-left: 15px;
+transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.scripture-text {
+display: none;
+background: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s ease;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::before {
+content: '▶';
+position: absolute;
+left: 10px;
+transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary:hover {
+color: #3498db;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th {
+background: #3498db;
+color: white;
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tr:hover {
+background: #f0f8ff;
+}
+
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+
+h1 {
+font-size: 1.6em;
+}
+
+.chapter-subtitle {
+font-size: 1em;
+}
+
+h2 {
+font-size: 1.2em;
+}
+
+table {
+font-size: 0.9em;
+}
+
+th, td {
+padding: 10px;
+}
+
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+雅各書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">試煉中的信心與行道</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>作神和主耶穌基督僕人的雅各請散住十二個支派之人的安。</div>
+<div class="verse"><span class="verse-number">2</span>我的弟兄們,你們落在百般試煉中,都要以為大喜樂;</div>
+<div class="verse"><span class="verse-number">3</span>因為知道你們的信心經過試驗,就生忍耐。</div>
+<div class="verse"><span class="verse-number">4</span>但忍耐也當成功,使你們成全、完備,毫無欠缺。</div>
+<div class="verse"><span class="verse-number">5</span>你們中間若有缺少智慧的,應當求那厚賜與眾人、也不斥責人的神,主就必賜給他。</div>
+<div class="verse"><span class="verse-number">6</span>只要憑著信心求,一點不疑惑;因為那疑惑的人,就像海中的波浪,被風吹動翻騰。</div>
+<div class="verse"><span class="verse-number">7</span>這樣的人不要想從主那裡得甚麼。</div>
+<div class="verse"><span class="verse-number">8</span>心懷二意的人,在他一切所行的路上都沒有定見。</div>
+<div class="verse"><span class="verse-number">9</span>卑微的弟兄升高,就該喜樂;</div>
+<div class="verse"><span class="verse-number">10</span>富足的降卑,也該如此;因為他必要過去,如同草上的花一樣。</div>
+<div class="verse"><span class="verse-number">11</span>太陽出來,熱風颳起,草就枯乾,花也凋謝,美容就消沒了;那富足的人,在他所行的事上也要這樣衰殘。</div>
+<div class="verse"><span class="verse-number">12</span>忍受試探的人是有福的,因為他經過試驗以後,必得生命的冠冕;這是主應許給那些愛他之人的。</div>
+<div class="verse"><span class="verse-number">13</span>人被試探,不可說:我是被神試探;因為神不能被惡試探,他也不試探人。</div>
+<div class="verse"><span class="verse-number">14</span>但各人被試探,乃是被自己的私慾牽引誘惑的。</div>
+<div class="verse"><span class="verse-number">15</span>私慾既懷了胎,就生出罪來;罪既長成,就生出死來。</div>
+<div class="verse"><span class="verse-number">16</span>我親愛的弟兄們,不要看錯了。</div>
+<div class="verse"><span class="verse-number">17</span>各樣美善的恩賜和各樣全備的賞賜都是從上頭來的,從眾光之父那裡降下來的;在他並沒有改變,也沒有轉動的影兒。</div>
+<div class="verse"><span class="verse-number">18</span>他按自己的旨意,用真道生了我們,叫我們在他所造的萬物中好像初熟的果子。</div>
+<div class="verse"><span class="verse-number">19</span>我親愛的弟兄們,這是你們所知道的,但你們各人要快快的聽,慢慢的說,慢慢的動怒,</div>
+<div class="verse"><span class="verse-number">20</span>因為人的怒氣並不成就神的義。</div>
+<div class="verse"><span class="verse-number">21</span>所以,你們要脫去一切的污穢和盈餘的邪惡,存溫柔的心領受那所栽種的道,就是能救你們靈魂的道。</div>
+<div class="verse"><span class="verse-number">22</span>只是你們要行道,不要單單聽道,自己欺哄自己。</div>
+<div class="verse"><span class="verse-number">23</span>因為聽道而不行道的,就像人對著鏡子看自己本來的面目,</div>
+<div class="verse"><span class="verse-number">24</span>看見,走後,隨即忘了他的相貌如何。</div>
+<div class="verse"><span class="verse-number">25</span>惟有詳細察看那全備、使人自由之律法的,並且時常如此,這人既不是聽了就忘,乃是實在行出來,就在他所行的事上必然得福。</div>
+<div class="verse"><span class="verse-number">26</span>若有人自以為虔誠,卻不勒住他的舌頭,反欺哄自己的心,這人的虔誠是虛的。</div>
+<div class="verse"><span class="verse-number">27</span>在神我們的父面前,那清潔沒有玷污的虔誠,就是看顧在患難中的孤兒寡婦,並且保守自己不沾染世俗。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+雅各書是新約中最早的書信之一,約寫於主後45-50年間,作者是耶穌的弟弟雅各,耶路撒冷教會的領袖。本書寫給散居各地的猶太基督徒,當時他們正面臨逼迫和各樣試煉。第一章是全書的序言和主題概述,涵蓋了試煉、智慧、禱告、試探、神的本性、聽道與行道等重要議題。雅各以實用的教導和具體的例子,勉勵信徒在困境中持守信心,並將信仰活出在日常生活中。本章強調真實的信仰不僅是知識上的認同,更要表現在生命的改變和實際的行動上。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 試煉是信心成長的必經之路</strong><br>雅各教導信徒要以喜樂的態度面對試煉,因為試煉能試驗信心,產生忍耐,最終使人成熟完備。這顯示困難不是信仰的阻礙,反而是屬靈生命成長的契機。神允許試煉臨到,是為了塑造我們更像基督,得著生命的冠冕。<br><br>
+
+<strong>2. 真實的信心必須伴隨實際的行動</strong><br>雅各用鏡子的比喻說明,單單聽道而不行道,就像照鏡子後立刻忘記自己的樣子,是自欺欺人。真正的虔誠不在於宗教儀式或言語表白,而在於實際的愛心行動,如看顧孤兒寡婦,以及在生活中活出神的話語。信心若沒有行為就是死的。<br><br>
+
+<strong>3. 神是一切美善的源頭,試探來自人的私慾</strong><br>雅各清楚區分試煉與試探:試煉來自神,為要造就我們;試探源於私慾,會引誘我們犯罪。神的本性是良善不變的,祂只賜下美好的恩賜。當我們面對誘惑時,不可歸咎於神,而要認清罪惡的源頭在於自己內心的私慾,並靠神的恩典勝過。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>我的弟兄們,你們落在<strong>百般試煉</strong>中,都要<strong>以為大喜樂</strong>;因為知道你們的<strong>信心經過試驗</strong>,就生<strong>忍耐</strong>。(雅1:2-3)</td>
+<td>當你遇到困難時,是<strong>抱怨逃避</strong>還是<strong>看見成長機會</strong>?就像<strong>健身時肌肉需要負重才能變強壯</strong>,你能在試煉中看見神對你的塑造嗎?</td>
+</tr>
+<tr>
+<td>只是你們要<strong>行道</strong>,不要單單<strong>聽道</strong>,自己欺哄自己。因為聽道而不行道的,就像人對著<strong>鏡子</strong>看自己本來的面目,看見,走後,隨即<strong>忘了</strong>他的相貌如何。(雅1:22-24)</td>
+<td>你聽了多少道理卻沒有<strong>實際去做</strong>?就像<strong>看完健康飲食的影片卻繼續吃垃圾食物</strong>,你的信仰只停留在知識層面,還是真正改變了生活?</td>
+</tr>
+<tr>
+<td>但各人被試探,乃是被<strong>自己的私慾</strong>牽引誘惑的。<strong>私慾</strong>既懷了胎,就<strong>生出罪</strong>來;罪既長成,就<strong>生出死</strong>來。(雅1:14-15)</td>
+<td>你是否看見罪惡的<strong>連鎖反應</strong>?就像<strong>滑手機五分鐘變成滑兩小時</strong>,你生命中有哪些看似無害的私慾,正在一步步引誘你走向更大的罪?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+scriptureText.classList.toggle('show');
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第2章 - 聖經重點與思考</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+.bible-icon {
+margin-left: 15px;
+transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.scripture-text {
+display: none;
+background: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s ease;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::before {
+content: '▶';
+position: absolute;
+left: 10px;
+transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary:hover {
+color: #3498db;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th {
+background: #3498db;
+color: white;
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tr:hover {
+background: #f0f8ff;
+}
+
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+
+h1 {
+font-size: 1.6em;
+}
+
+.chapter-subtitle {
+font-size: 1em;
+}
+
+h2 {
+font-size: 1.2em;
+}
+
+table {
+font-size: 0.9em;
+}
+
+th, td {
+padding: 10px;
+}
+
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神設立伊甸園與造女人</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>天地萬物都造齊了。</div>
+<div class="verse"><span class="verse-number">2</span>到第七日,神造物的工已經完畢,就在第七日歇了他一切的工,安息了。</div>
+<div class="verse"><span class="verse-number">3</span>神賜福給第七日,定為聖日;因為在這日,神歇了他一切創造的工,就安息了。</div>
+<div class="verse"><span class="verse-number">4</span>創造天地的來歷,在耶和華神造天地的日子,乃是這樣,</div>
+<div class="verse"><span class="verse-number">5</span>野地還沒有草木,田間的菜蔬還沒有長起來;因為耶和華神還沒有降雨在地上,也沒有人耕地,</div>
+<div class="verse"><span class="verse-number">6</span>但有霧氣從地上騰,滋潤遍地。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華神用地上的塵土造人,將生氣吹在他鼻孔裡,他就成了有靈的活人,名叫亞當。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華神在東方的伊甸立了一個園子,把所造的人安置在那裡。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華神使各樣的樹從地裡長出來,可以悅人的眼目,其上的果子好作食物。園子當中又有生命樹和分別善惡的樹。</div>
+<div class="verse"><span class="verse-number">10</span>有河從伊甸流出來,滋潤那園子,從那裡分為四道:</div>
+<div class="verse"><span class="verse-number">11</span>第一道名叫比遜,就是環繞哈腓拉全地的。在那裡有金子,</div>
+<div class="verse"><span class="verse-number">12</span>並且那地的金子是好的;在那裡又有珍珠和紅瑪瑙。</div>
+<div class="verse"><span class="verse-number">13</span>第二道河名叫基訓,就是環繞古實全地的。</div>
+<div class="verse"><span class="verse-number">14</span>第三道河名叫底格里斯,流在亞述的東邊。第四道河就是伯拉河。</div>
+<div class="verse"><span class="verse-number">15</span>耶和華神將那人安置在伊甸園,使他修理,看守。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華神吩咐他說:園中各樣樹上的果子,你可以隨意吃,</div>
+<div class="verse"><span class="verse-number">17</span>只是分別善惡樹上的果子,你不可吃,因為你吃的日子必定死!</div>
+<div class="verse"><span class="verse-number">18</span>耶和華神說:那人獨居不好,我要為他造一個配偶幫助他。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華神用土所造成的野地各樣走獸和空中各樣飛鳥都帶到那人面前,看他叫甚麼。那人怎樣叫各樣的活物,那就是牠的名字。</div>
+<div class="verse"><span class="verse-number">20</span>那人便給一切牲畜和空中飛鳥、野地走獸都起了名;只是那人沒有遇見配偶幫助他。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華神使他沉睡,他就睡了;於是取下他的一條肋骨,又把肉合起來。</div>
+<div class="verse"><span class="verse-number">22</span>耶和華神就用那人身上所取的肋骨造成一個女人,領她到那人跟前。</div>
+<div class="verse"><span class="verse-number">23</span>那人說:這是我骨中的骨,肉中的肉,可以稱她為女人,因為她是從男人身上取出來的。</div>
+<div class="verse"><span class="verse-number">24</span>因此,人要離開父母,與妻子連合,二人成為一體。</div>
+<div class="verse"><span class="verse-number">25</span>當時夫妻二人赤身露體,並不羞恥。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+創世記第2章從另一個角度補充第1章的創造記載,聚焦在人的受造和伊甸園的設立。神在第七日歇了一切的工,安息了,並定這日為聖日,成為後來安息日的根據。本章詳細描述神用地上塵土造人,將生氣吹入使人成為有靈的活人,並在伊甸園安置人,賦予他修理看守的責任。神設立一條誡命:園中果子可隨意吃,唯獨分別善惡樹的果子不可吃。神看人獨居不好,為他造配偶,用亞當的肋骨造夏娃,建立婚姻的神聖制度。本章強調人與神、人與工作、人與配偶的關係,奠定人類生活的基本架構。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神設立安息日要人與祂同享安息</strong><br>神在第七日歇了一切的工,安息了,並賜福給這日,定為聖日。神不是因疲倦需要休息,而是為人設立安息的典範。安息日不只是停止工作,更是與神親近、享受祂同在的時間。在忙碌的生活中,我們需要定期停下來,記念神的創造和救贖,恢復與神的關係,這是神賜給我們的恩典和命令。<br><br>
+
+<strong>2. 順服神的命令是人蒙福的關鍵</strong><br>神給人完全的自由:園中各樣果子可隨意吃,但有一個界限:分別善惡樹的果子不可吃。這不是神的苛刻,而是愛的保護和信任的考驗。順服神的命令是人得生命的路,悖逆帶來死亡。神的誡命不是限制我們的自由,而是保護我們的生命,使我們在正確的界限內享受真正的自由和祝福。<br><br>
+
+<strong>3. 婚姻是神設立的神聖盟約</strong><br>神說人獨居不好,為他造配偶幫助他。女人從男人身上取出,二人成為一體,這建立了婚姻的神聖性和一夫一妻的原則。婚姻不是人的發明,而是神的設計,要人離開父母,與配偶連合,成為生命共同體。夫妻應彼此相愛、互相幫助、彼此忠誠,這是神給婚姻的美好心意。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思考題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>到第七日,神造物的工已經完畢,就在第七日<strong>歇了他一切的工,安息了</strong>。神賜福給第七日,<strong>定為聖日</strong>。(創2:2-3)</td>
+<td>你的生活中有<strong>安息</strong>的時間嗎?就像<strong>手機需要充電才能繼續使用</strong>,你有定期停下來與神親近、恢復心靈嗎?</td>
+</tr>
+<tr>
+<td>園中各樣樹上的果子,你可以隨意吃,只是<strong>分別善惡樹</strong>上的果子,<strong>你不可吃</strong>,因為你吃的日子<strong>必定死</strong>!(創2:16-17)</td>
+<td>你如何看待神的<strong>界限和命令</strong>?就像<strong>紅綠燈是保護而非限制</strong>,你知道神的誡命是為了保護你的生命嗎?</td>
+</tr>
+<tr>
+<td>因此,人要<strong>離開父母</strong>,與妻子<strong>連合</strong>,<strong>二人成為一體</strong>。(創2:24)</td>
+<td>你是否尊重<strong>婚姻</strong>的神聖性?就像<strong>合約需要雙方信守承諾</strong>,你知道婚姻是神設立要一生一世的盟約嗎?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+scriptureText.classList.toggle('show');
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+</body>
+</html>

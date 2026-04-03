@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第9章 - 聖經重點與思考</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+.bible-icon {
+margin-left: 15px;
+transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.scripture-text {
+display: none;
+background: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s ease;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::before {
+content: '▶';
+position: absolute;
+left: 10px;
+transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary:hover {
+color: #3498db;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th {
+background: #3498db;
+color: white;
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tr:hover {
+background: #f0f8ff;
+}
+
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+
+h1 {
+font-size: 1.6em;
+}
+
+.chapter-subtitle {
+font-size: 1em;
+}
+
+h2 {
+font-size: 1.2em;
+}
+
+table {
+font-size: 0.9em;
+}
+
+th, td {
+padding: 10px;
+}
+
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神與挪亞立約與彩虹記號</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>神賜福給挪亞和他的兒子,對他們說:你們要生養眾多,遍滿了地。</div>
+<div class="verse"><span class="verse-number">2</span>凡地上的走獸和空中的飛鳥都必驚恐,懼怕你們,連地上一切的昆蟲並海裡一切的魚都交付你們的手。</div>
+<div class="verse"><span class="verse-number">3</span>凡活著的動物都可以作你們的食物。這一切我都賜給你們,如同菜蔬一樣。</div>
+<div class="verse"><span class="verse-number">4</span>惟獨肉帶著血,那就是牠的生命,你們不可吃。</div>
+<div class="verse"><span class="verse-number">5</span>流你們血、害你們命的,無論是獸是人,我必討他的罪,就是向各人的弟兄也是如此。</div>
+<div class="verse"><span class="verse-number">6</span>凡流人血的,他的血也必被人所流,因為神造人是照自己的形像造的。</div>
+<div class="verse"><span class="verse-number">7</span>你們要生養眾多,在地上昌盛繁茂。</div>
+<div class="verse"><span class="verse-number">8</span>神曉諭挪亞和他的兒子說:</div>
+<div class="verse"><span class="verse-number">9</span>我與你們和你們的後裔立約,</div>
+<div class="verse"><span class="verse-number">10</span>並與你們這裡的一切活物─就是飛鳥、牲畜、走獸,凡從方舟裡出來的活物─立約。</div>
+<div class="verse"><span class="verse-number">11</span>我與你們立約,凡有血肉的,不再被洪水滅絕,也不再有洪水毀壞地了。</div>
+<div class="verse"><span class="verse-number">12</span>神說:我與你們並你們這裡的各樣活物所立的永約是有記號的。</div>
+<div class="verse"><span class="verse-number">13</span>我把虹放在雲彩中,這就可作我與地立約的記號了。</div>
+<div class="verse"><span class="verse-number">14</span>我使雲彩蓋地的時候,必有虹現在雲彩中,</div>
+<div class="verse"><span class="verse-number">15</span>我便記念我與你們和各樣有血肉的活物所立的約,水就再不氾濫、毀壞一切有血肉的物了。</div>
+<div class="verse"><span class="verse-number">16</span>虹必現在雲彩中,我看見,就要記念我與地上各樣有血肉的活物所立的永約。</div>
+<div class="verse"><span class="verse-number">17</span>神對挪亞說:這就是我與地上一切有血肉之物立約的記號了。</div>
+<div class="verse"><span class="verse-number">18</span>出方舟挪亞的兒子就是閃、含、雅弗。含是迦南的父親。</div>
+<div class="verse"><span class="verse-number">19</span>這是挪亞的三個兒子,他們的後裔分散在全地。</div>
+<div class="verse"><span class="verse-number">20</span>挪亞作起農夫來,栽了一個葡萄園。</div>
+<div class="verse"><span class="verse-number">21</span>他喝了園中的酒便醉了,在帳棚裡赤著身子。</div>
+<div class="verse"><span class="verse-number">22</span>迦南的父親含看見他父親赤身,就到外邊告訴他兩個弟兄。</div>
+<div class="verse"><span class="verse-number">23</span>於是閃和雅弗拿件衣服搭在肩上,倒退著進去,給他父親蓋上;他們背著臉就看不見父親的赤身。</div>
+<div class="verse"><span class="verse-number">24</span>挪亞醒了酒,知道小兒子向他所做的事,</div>
+<div class="verse"><span class="verse-number">25</span>就說:迦南當受咒詛,必給他弟兄作奴僕的奴僕;</div>
+<div class="verse"><span class="verse-number">26</span>又說:耶和華─閃的神是應當稱頌的!願迦南作閃的奴僕。</div>
+<div class="verse"><span class="verse-number">27</span>願神使雅弗擴張,使他住在閃的帳棚裡;又願迦南作他的奴僕。</div>
+<div class="verse"><span class="verse-number">28</span>洪水以後,挪亞又活了三百五十年。</div>
+<div class="verse"><span class="verse-number">29</span>挪亞共活了九百五十歲就死了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+創世記第9章記載神與挪亞立約,重新賜福人類。神吩咐挪亞和他兒子要生養眾多,遍滿全地,並賜給他們治理萬物的權柄,允許他們吃動物的肉,但不可吃帶血的肉,也不可殺人,因為人是按神形像造的。神與挪亞立永約,應許不再用洪水毀滅地,並以彩虹為記號。每當雲彩中出現彩虹,就提醒神記念祂的約。本章後半記載挪亞醉酒,含不尊重父親,閃和雅弗卻尊榮父親。挪亞醒後咒詛迦南(含的兒子),祝福閃和雅弗。挪亞又活了三百五十年才去世。本章強調神的信實、人生命的尊嚴,以及尊榮父母的重要。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的約是恩典的保證和信實的記號</strong><br>神主動與挪亞和所有活物立永約,應許不再用洪水毀滅地,並以彩虹為記號。這約完全是神的恩典,不是因為人配得,而是因為神的憐憫。彩虹提醒我們神是守約施慈愛的神,祂的應許永不改變。每次看見彩虹,就當記念神的信實和祂對受造界的保守。神在基督裡與我們立的新約也是如此可靠。<br><br>
+
+<strong>2. 人的生命神聖不可侵犯因有神的形像</strong><br>神嚴禁殺人,因為人是按神的形像造的。流人血的,他的血也必被人所流,這建立了公義審判的原則。每個人的生命都有神聖的尊嚴和價值,不可任意傷害或殺害。這也是死刑的聖經根據。我們要尊重每個人的生命,因為他們都帶著神的形像,有永恆的價值。<br><br>
+
+<strong>3. 尊榮父母是蒙福咒詛他們必受懲罰</strong><br>含不尊重父親,反而羞辱他,結果他的兒子迦南受咒詛。閃和雅弗尊榮父親,遮蓋他的羞恥,結果蒙福。這顯示孝敬父母的重要性,是神所定的誡命。我們要尊榮父母,遮蓋他們的軟弱,而非暴露和嘲笑。尊榮父母帶來祝福,輕慢父母招致咒詛。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思考題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>我與你們立約,凡有血肉的,<strong>不再被洪水滅絕</strong>,也不再有洪水毀壞地了。我把<strong>虹</strong>放在雲彩中,這就可作我與地<strong>立約的記號</strong>了。(創9:11,13)</td>
+<td>你是否相信神的<strong>應許</strong>永不改變?就像<strong>合約簽訂就有法律效力</strong>,你知道神說的話必定成就嗎?</td>
+</tr>
+<tr>
+<td>凡<strong>流人血的</strong>,他的血也必被人所流,因為<strong>神造人是照自己的形像</strong>造的。(創9:6)</td>
+<td>你是否<strong>尊重</strong>每個人的<strong>生命</strong>?就像<strong>名畫因畫家而珍貴</strong>,你知道每個人都按神形像造,生命神聖不可侵犯嗎?</td>
+</tr>
+<tr>
+<td>於是閃和雅弗拿件衣服搭在肩上,倒退著進去,給他父親<strong>蓋上</strong>;他們背著臉就<strong>看不見父親的赤身</strong>。(創9:23)</td>
+<td>你如何對待父母的<strong>軟弱和過失</strong>?就像<strong>好子女會保護父母的尊嚴</strong>,你會遮蓋還是暴露父母的缺點?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+scriptureText.classList.toggle('show');
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+</body>
+</html>

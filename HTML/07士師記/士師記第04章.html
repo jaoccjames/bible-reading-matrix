@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>士師記第4章 - 聖經重點與思考</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 15px;
+transition: color 0.3s;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+.bible-icon {
+font-size: 1.2em;
+transition: transform 0.5s;
+display: inline-block;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.scripture-text {
+display: none;
+background: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+transition: color 0.3s;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::before {
+content: "▶";
+position: absolute;
+left: 10px;
+transition: transform 0.3s;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary:hover {
+color: #3498db;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th {
+background: #3498db;
+color: white;
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tbody tr:hover {
+background: #f0f8ff;
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+h1 {
+font-size: 1.6em;
+}
+.chapter-subtitle {
+font-size: 1em;
+}
+h2 {
+font-size: 1.2em;
+}
+table {
+font-size: 0.9em;
+}
+th, td {
+padding: 10px;
+}
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+士師記第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">底波拉與雅億的信心</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以笏死後,以色列人又行耶和華眼中看為惡的事,</div>
+<div class="verse"><span class="verse-number">2</span>耶和華就把他們付與在夏瑣作王的迦南王耶賓手中;他的將軍是西西拉,住在外邦人的夏羅設。</div>
+<div class="verse"><span class="verse-number">3</span>耶賓王有鐵車九百輛。他大大欺壓以色列人二十年,以色列人就呼求耶和華。</div>
+<div class="verse"><span class="verse-number">4</span>有一位女先知名叫底波拉,是拉比多的妻,當時作以色列的士師。</div>
+<div class="verse"><span class="verse-number">5</span>她住在以法蓮山地拉瑪和伯特利中間,在底波拉的棕樹下。以色列人都上她那裡去聽判斷。</div>
+<div class="verse"><span class="verse-number">6</span>她打發人從拿弗他利的基低斯將亞比挪菴的兒子巴拉召來,對他說:耶和華—以色列的神吩咐你說:你率領一萬拿弗他利和西布倫人上他泊山去。</div>
+<div class="verse"><span class="verse-number">7</span>我必使耶賓的將軍西西拉率領他的車輛和全軍往基順河,到你那裡去;我必將他交在你手中。</div>
+<div class="verse"><span class="verse-number">8</span>巴拉說:你若同我去,我就去;你若不同我去,我就不去。</div>
+<div class="verse"><span class="verse-number">9</span>底波拉說:我必與你同去,只是你在所行的路上得不著榮耀,因為耶和華要將西西拉交在一個婦人手裡。於是底波拉起來,與巴拉一同往基低斯去了。</div>
+<div class="verse"><span class="verse-number">10</span>巴拉就招聚西布倫人和拿弗他利人到基低斯,跟他上去的有一萬人。底波拉也同他上去。</div>
+<div class="verse"><span class="verse-number">11</span>摩西岳父(或譯:內兄)何巴的後裔,基尼人希百曾離開基尼族,到靠近基低斯、撒拿音的橡樹旁支搭帳棚。</div>
+<div class="verse"><span class="verse-number">12</span>有人告訴西西拉說:亞比挪菴的兒子巴拉已經上他泊山了。</div>
+<div class="verse"><span class="verse-number">13</span>西西拉就聚集所有的鐵車九百輛和跟隨他的全軍,從外邦人的夏羅設出來,到了基順河。</div>
+<div class="verse"><span class="verse-number">14</span>底波拉對巴拉說:你起來,今日就是耶和華將西西拉交在你手的日子。耶和華豈不在你前頭行嗎?於是巴拉下了他泊山,跟隨他有一萬人。</div>
+<div class="verse"><span class="verse-number">15</span>耶和華使西西拉和他一切車輛全軍潰亂,在巴拉面前被刀殺敗;西西拉下車步行逃跑。</div>
+<div class="verse"><span class="verse-number">16</span>巴拉追趕車輛、軍隊,直到外邦人的夏羅設。西西拉的全軍都倒在刀下,沒有留下一人。</div>
+<div class="verse"><span class="verse-number">17</span>只有西西拉步行逃跑,到了基尼人希百之妻雅億的帳棚,因為夏瑣王耶賓與基尼人希百家和好。</div>
+<div class="verse"><span class="verse-number">18</span>雅億出來迎接西西拉,對他說:請我主進來,不要懼怕;就進了她的帳棚。雅億用被將他遮蓋。</div>
+<div class="verse"><span class="verse-number">19</span>西西拉對雅億說:我渴了,求你給我一點水喝。雅億就打開皮袋,給他奶子喝,仍舊把他遮蓋。</div>
+<div class="verse"><span class="verse-number">20</span>西西拉又對雅億說:請你站在帳棚門口,若有人來問你說:有人在這裡沒有?你就說:沒有。</div>
+<div class="verse"><span class="verse-number">21</span>西西拉疲乏沉睡。希百的妻雅億取了帳棚的橛子,手裡拿著錘子,輕悄悄地到他旁邊,將橛子從他鬢邊釘進去,釘入地裡。西西拉就死了。</div>
+<div class="verse"><span class="verse-number">22</span>巴拉追趕西西拉的時候,雅億出來迎接他說:來吧,我將你所尋找的人給你看。他就進入帳棚,看見西西拉已經死了,倒在地上,橛子還在他鬢中。</div>
+<div class="verse"><span class="verse-number">23</span>這樣,神使迦南王耶賓被以色列人制伏了。</div>
+<div class="verse"><span class="verse-number">24</span>以色列人的手越發有力,勝了迦南王耶賓,直到將他滅絕了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載唯一的女士師底波拉的故事。以笏死後,以色列人再次行惡,被迦南王耶賓欺壓二十年。耶賓擁有九百輛鐵車,在當時是壓倒性的軍事優勢。神興起女先知底波拉作士師,她召來巴拉,傳達神的命令要他帶兵攻打西西拉。巴拉缺乏信心,要求底波拉同去,底波拉預言榮耀將歸給婦人。戰場上神使敵軍潰亂,西西拉逃到基尼人雅億的帳棚,以為找到避難所,卻被雅億用帳棚橛子釘死。這場勝利完全出於神的介入,顯明祂不受人的軍事力量限制,也願意使用各樣的人——女先知、缺乏信心的將軍、平凡的婦人——成就祂的計畫。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神不受性別和身份限制</strong><br>在男性主導的士師時代,神興起女先知底波拉作領袖,又使用家庭主婦雅億完成關鍵任務。這顯明神看重的是人的信心和順服,而非外在條件。神的呼召不分男女老幼、不論社會地位,祂能使用任何願意順服的人。當我們說「我只是...」時,要記得神專門使用「只是」的人成就大事。關鍵不在於我們是誰,而在於我們是否願意被神使用。<br><br>
+
+<strong>2. 信心的強弱不阻礙神的作為</strong><br>巴拉的信心明顯不足,要求底波拉同去才肯出戰,因此失去了榮耀。但神仍然使用他,仍然賜下勝利。這給我們極大的鼓勵:神不是等我們完美才使用我們,祂在我們軟弱時就開始工作。雖然信心的缺乏會使我們錯失祝福,但不會阻礙神的計畫。我們可以帶著不完美的信心來到神面前,祂會在過程中建造我們。<br><br>
+
+<strong>3. 勝利完全出於神的作為</strong><br>面對九百輛鐵車,以色列的步兵毫無勝算,但「耶和華使西西拉和他一切車輛全軍潰亂」。勝利不是因為以色列軍隊強大,而是神親自介入。屬靈爭戰中,我們常面對看似無法克服的困難,但得勝不倚靠勢力、不倚靠才能,乃倚靠神的靈。當我們順服神的引導,祂會為我們爭戰,使不可能變為可能。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有一位<strong>女先知</strong>名叫底波拉,是拉比多的妻,當時作以色列的<strong>士師</strong>。以色列人都上她那裡去聽判斷。(士師記4:4-5)</td>
+<td>我們是否因為<strong>自身條件而限制</strong>神的使用?就像<strong>認為自己資歷淺就不敢承擔責任</strong>,我們是否常說「我只是...所以不行」?神看重的是願意的心還是完美的條件?</td>
+</tr>
+<tr>
+<td>巴拉說:你若同我去,我就去;<strong>你若不同我去,我就不去</strong>。底波拉說:我必與你同去,只是你在所行的路上<strong>得不著榮耀</strong>。(士師記4:8-9)</td>
+<td>我們是否因為<strong>信心不足而設條件</strong>順服神?就像<strong>只有在確定結果才願意冒險</strong>,我們是否也在神清楚的呼召上討價還價?這種妥協會使我們失去什麼祝福?</td>
+</tr>
+<tr>
+<td><strong>耶和華使</strong>西西拉和他一切車輛全軍<strong>潰亂</strong>,在巴拉面前被刀殺敗。(士師記4:15)</td>
+<td>面對<strong>強大的困難</strong>時,我們是否相信神會親自介入?就像<strong>大衛面對歌利亞靠的是神</strong>,當我們遇到「九百輛鐵車」般的難題時,是否仍然信靠神會為我們爭戰?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+
+scriptureText.classList.toggle('show');
+
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+</body>
+</html>

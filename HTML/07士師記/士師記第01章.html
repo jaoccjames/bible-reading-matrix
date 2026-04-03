@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>士師記第1章 - 聖經重點與思考</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 15px;
+transition: color 0.3s;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+.bible-icon {
+font-size: 1.2em;
+transition: transform 0.5s;
+display: inline-block;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.scripture-text {
+display: none;
+background: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+transition: color 0.3s;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::before {
+content: "▶";
+position: absolute;
+left: 10px;
+transition: transform 0.3s;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary:hover {
+color: #3498db;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th {
+background: #3498db;
+color: white;
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tbody tr:hover {
+background: #f0f8ff;
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+h1 {
+font-size: 1.6em;
+}
+.chapter-subtitle {
+font-size: 1em;
+}
+h2 {
+font-size: 1.2em;
+}
+table {
+font-size: 0.9em;
+}
+th, td {
+padding: 10px;
+}
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+士師記第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">未完全得地的妥協後果</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>約書亞死後,以色列人求問耶和華說:我們中間誰當首先上去攻擊迦南人,與他們爭戰?</div>
+<div class="verse"><span class="verse-number">2</span>耶和華說:猶大當先上去,我已將那地交在他手中。</div>
+<div class="verse"><span class="verse-number">3</span>猶大對他哥哥西緬說:請你同我到拈鬮所得之地去,好與迦南人爭戰;以後我也同你到你拈鬮所得之地去。於是西緬與他同去。</div>
+<div class="verse"><span class="verse-number">4</span>猶大就上去;耶和華將迦南人和比利洗人交在他們手中。他們在比色擊殺了一萬人,</div>
+<div class="verse"><span class="verse-number">5</span>又在那裡遇見亞多尼‧比色,與他爭戰,殺敗迦南人和比利洗人。</div>
+<div class="verse"><span class="verse-number">6</span>亞多尼‧比色逃跑;他們追趕,拿住他,砍斷他手腳的大姆指。</div>
+<div class="verse"><span class="verse-number">7</span>亞多尼‧比色說:從前有七十個王,手腳的大姆指都被我砍斷,在我桌子底下拾取零碎食物。現在神按著我所行的報應我了。於是他們將亞多尼‧比色帶到耶路撒冷,他就死在那裡。</div>
+<div class="verse"><span class="verse-number">8</span>猶大人攻打耶路撒冷,將城攻取,用刀殺了城內的人,並且放火燒城。</div>
+<div class="verse"><span class="verse-number">9</span>後來猶大人下去,與住山地、南地,和高原的迦南人爭戰。</div>
+<div class="verse"><span class="verse-number">10</span>猶大人去攻擊住希伯崙的迦南人,殺了示篩、亞希幔、撻買。希伯崙從前名叫基列‧亞巴。</div>
+<div class="verse"><span class="verse-number">11</span>他們從那裡去攻擊底璧的居民;底璧從前名叫基列‧西弗。</div>
+<div class="verse"><span class="verse-number">12</span>迦勒說:誰能攻打基列‧西弗,將城奪取,我就把我女兒押撒給他為妻。</div>
+<div class="verse"><span class="verse-number">13</span>迦勒兄弟基納斯的兒子俄陀聶奪取了那城,迦勒就把女兒押撒給他為妻。</div>
+<div class="verse"><span class="verse-number">14</span>押撒過門的時候,勸丈夫向她父親求一塊田。押撒一下驢,迦勒問她說:你要甚麼?</div>
+<div class="verse"><span class="verse-number">15</span>她說:求你賜福給我,你既將我安置在南地,求你也給我水泉。迦勒就把上泉下泉賜給她。</div>
+<div class="verse"><span class="verse-number">16</span>摩西的內兄(或譯:岳父)是基尼人,他的子孫與猶大人一同離了棕樹城,往亞拉得以南的猶大曠野去,就住在民中。</div>
+<div class="verse"><span class="verse-number">17</span>猶大和他哥哥西緬同去,擊殺了住洗法的迦南人,將城盡行毀滅,那城的名便叫何珥瑪。</div>
+<div class="verse"><span class="verse-number">18</span>猶大又取了迦薩和迦薩的四境,亞實基倫和亞實基倫的四境,以革倫和以革倫的四境。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華與猶大同在,猶大就趕出山地的居民,只是不能趕出平原的居民,因為他們有鐵車。</div>
+<div class="verse"><span class="verse-number">20</span>以色列人照摩西所說的,將希伯崙給了迦勒;迦勒就從那裡趕出亞衲族的三個族長。</div>
+<div class="verse"><span class="verse-number">21</span>便雅憫人沒有趕出住耶路撒冷的耶布斯人。耶布斯人仍在耶路撒冷與便雅憫人同住,直到今日。</div>
+<div class="verse"><span class="verse-number">22</span>約瑟家也上去攻打伯特利;耶和華與他們同在。</div>
+<div class="verse"><span class="verse-number">23</span>約瑟家打發人去窺探伯特利(那城起先名叫路斯)。</div>
+<div class="verse"><span class="verse-number">24</span>窺探的人看見一個人從城裡出來,就對他說:求你將進城的路指示我們,我們必恩待你。</div>
+<div class="verse"><span class="verse-number">25</span>那人將進城的路指示他們,他們就用刀擊殺了城中的居民,但將那人和他全家放去。</div>
+<div class="verse"><span class="verse-number">26</span>那人往赫人之地去,築了一座城,起名叫路斯。那城到如今還叫這名。</div>
+<div class="verse"><span class="verse-number">27</span>瑪拿西沒有趕出伯‧善和屬伯‧善鄉村的居民,他納和屬他納鄉村的居民,多珥和屬多珥鄉村的居民,以伯蓮和屬以伯蓮鄉村的居民,米吉多和屬米吉多鄉村的居民;迦南人卻執意住在那些地方。</div>
+<div class="verse"><span class="verse-number">28</span>及至以色列強盛了,就使迦南人做苦工,沒有把他們全然趕出。</div>
+<div class="verse"><span class="verse-number">29</span>以法蓮沒有趕出住基色的迦南人。於是迦南人仍住在基色,在以法蓮中間。</div>
+<div class="verse"><span class="verse-number">30</span>西布倫沒有趕出基倫的居民和拿哈拉的居民。於是迦南人仍住在西布倫中間,成了服苦的人。</div>
+<div class="verse"><span class="verse-number">31</span>亞設沒有趕出亞柯和西頓的居民,亞黑拉和亞革悉的居民,黑巴、亞弗革與利合的居民。</div>
+<div class="verse"><span class="verse-number">32</span>於是,亞設因為沒有趕出那地的迦南人,就住在他們中間。</div>
+<div class="verse"><span class="verse-number">33</span>拿弗他利沒有趕出伯‧示麥和伯‧亞納的居民,於是拿弗他利就住在那地的迦南人中間;然而伯‧示麥和伯‧亞納的居民成了服苦的人。</div>
+<div class="verse"><span class="verse-number">34</span>亞摩利人強逼但人住在山地,不容他們下到平原;</div>
+<div class="verse"><span class="verse-number">35</span>亞摩利人卻執意住在希烈山和亞雅倫並沙賓。然而約瑟家勝了他們,使他們成了服苦的人。</div>
+<div class="verse"><span class="verse-number">36</span>亞摩利人的境界,是從亞克拉濱坡,從西拉而上。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+士師記第1章記載約書亞死後,以色列各支派繼續征服迦南地的情況。本章開始時氣氛還算積極,猶大和西緬聯手攻取領地,神與他們同在,取得多場勝利。然而從第19節開始,情況急轉直下,出現一連串「沒有趕出」的記錄。瑪拿西、以法蓮、西布倫、亞設、拿弗他利、但等支派都沒有完全遵行神的命令,反而與迦南人共存,甚至使他們做苦工。這種妥協看似務實,實則埋下日後屬靈墮落的禍根。本章為整卷士師記定下基調:不完全的順服帶來循環的失敗與拯救。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 不完全的順服就是不順服</strong><br>神清楚命令以色列人要完全趕出迦南人,但各支派卻選擇性順服,留下一些城邑未攻取。他們或許認為「大部分都做到了」就夠好,或覺得「使他們做苦工」也算是某種勝利。但神的標準是完全順服,不是部分達成。這種「差不多就好」的心態看似務實,實則是對神權柄的輕視。屬靈生活沒有妥協的空間,半途而廢的順服在神眼中仍是悖逆。<br><br>
+
+<strong>2. 與罪惡共存終必被其影響</strong><br>以色列人沒有趕出迦南人,反而與他們同住,以為可以控制局面。但後續歷史證明,這些留下的迦南人成為他們的網羅,引誘他們拜偶像、遠離神。我們不能與罪惡和平共處,以為可以保持距離而不受影響。罪像酵一樣會蔓延,今天的妥協會成為明天的捆綁。我們必須徹底對付罪,不能留任何餘地。<br><br>
+
+<strong>3. 起初的得勝不能保證持續的得勝</strong><br>猶大支派起初戰無不勝,但到第19節卻「不能趕出平原的居民」。起初的熱心和得勝,若沒有持續倚靠神,最終也會失敗。屬靈生命需要持續的爭戰和警醒,昨天的得勝不能成為今天的本錢。我們必須時刻倚靠神,在每個階段都尋求祂的同在,才能持續得勝、完成神的託付。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>瑪拿西<strong>沒有趕出</strong>伯‧善和屬伯‧善鄉村的居民;及至以色列強盛了,就使迦南人做苦工,<strong>沒有把他們全然趕出</strong>。(士師記1:27-28)</td>
+<td>我們對神的<strong>順服是完全還是選擇性</strong>的?就像<strong>打掃房間只清理看得見的地方,角落卻堆滿雜物</strong>,我們是否也在生命某些領域向神妥協,覺得「差不多就好」?</td>
+</tr>
+<tr>
+<td>以法蓮沒有趕出住基色的迦南人。於是<strong>迦南人仍住在基色,在以法蓮中間</strong>。(士師記1:29)</td>
+<td>我們是否容許某些<strong>罪惡與自己共存</strong>?就像<strong>明知冰箱有過期食物卻不處理</strong>,我們是否也對生命中的罪惡視而不見,以為可以和平相處?這些罪會不會最終污染我們?</td>
+</tr>
+<tr>
+<td><strong>耶和華與猶大同在</strong>,猶大就趕出山地的居民,只是<strong>不能趕出</strong>平原的居民,因為他們有鐵車。(士師記1:19)</td>
+<td>當遇到<strong>看似無法克服的困難</strong>時,我們是否仍然信靠神?就像<strong>爬山爬到一半因為太累就放棄</strong>,我們是否也因為某些挑戰太大,就停止倚靠神、停止前進?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+
+scriptureText.classList.toggle('show');
+
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+</body>
+</html>

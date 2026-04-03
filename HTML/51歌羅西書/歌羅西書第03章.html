@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歌羅西書第3章 - 聖經重點與思考</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em;
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+}
+h1:hover {
+  color: #3498db;
+}
+.bible-icon {
+  display: inline-block;
+  transition: transform 0.5s ease;
+  font-style: normal;
+}
+.bible-icon.open {
+  transform: rotateY(180deg);
+}
+.chapter-subtitle {
+  font-size: 1.2em;
+  color: #7f8c8d;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.scripture-text {
+  display: none;
+  background: #f8f9fa;
+  border-left: 4px solid #3498db;
+  padding: 20px;
+  line-height: 2;
+  max-height: 500px;
+  overflow-y: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.scripture-text.show {
+  display: block;
+}
+.verse {
+  margin-bottom: 4px;
+}
+.verse-number {
+  color: #3498db;
+  font-weight: bold;
+  margin-right: 6px;
+}
+details {
+  margin: 20px 0;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  background: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+details:hover {
+  border-color: #3498db;
+  box-shadow: 0 2px 8px rgba(52,152,219,0.15);
+}
+details[open] {
+  background: #f0f8ff;
+  border-color: #3498db;
+}
+summary {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2980b9;
+  cursor: pointer;
+  padding: 10px;
+  list-style: none;
+  transition: color 0.3s;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.3s;
+}
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+summary:hover {
+  color: #3498db;
+}
+.content {
+  margin-top: 15px;
+  padding: 15px;
+  line-height: 1.9;
+}
+strong {
+  color: #c0392b;
+  font-weight: bold;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th {
+  background: #3498db;
+  color: white;
+  padding: 15px;
+  font-size: 1.1em;
+  text-align: left;
+}
+td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+tbody tr:nth-child(even) td {
+  background: #f9f9f9;
+}
+tbody tr:hover td {
+  background: #f0f8ff;
+}
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1 onclick="toggleScripture()">
+    歌羅西書第3章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+
+  <div class="chapter-subtitle">脫去舊人，穿上新人，以愛聯絡</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>所以，你們若真與基督一同復活，就當求在上面的事；那裏有基督坐在　神的右邊。</div>
+    <div class="verse"><span class="verse-number">2</span>你們要思念那上面的事，不要思念地上的事。</div>
+    <div class="verse"><span class="verse-number">3</span>因為你們已經死了，你們的生命與基督一同藏在　神裏面。</div>
+    <div class="verse"><span class="verse-number">4</span>基督是我們的生命，他顯現的時候，你們也要與他一同顯現在榮耀裏。</div>
+    <div class="verse"><span class="verse-number">5</span>所以，要治死你們在地上的肢體，就如淫亂、污穢、邪情、惡慾，和貪婪（貪婪就與拜偶像一樣）；</div>
+    <div class="verse"><span class="verse-number">6</span>因這些事，　神的忿怒必臨到那悖逆之子。</div>
+    <div class="verse"><span class="verse-number">7</span>當你們在這些事中活著的時候，也曾這樣行過。</div>
+    <div class="verse"><span class="verse-number">8</span>但現在你們要棄絕這一切的事，以及惱恨、忿怒、惡毒（或譯：懷恨）、毀謗，並口中污穢的言語。</div>
+    <div class="verse"><span class="verse-number">9</span>不要彼此說謊；因你們已經脫去舊人和舊人的行為，</div>
+    <div class="verse"><span class="verse-number">10</span>穿上了新人。這新人在知識上漸漸更新，正如造他主的形像；</div>
+    <div class="verse"><span class="verse-number">11</span>在此並不分希利尼人、猶太人、受割禮的、未受割禮的、化外人、西古提人、為奴的、自主的，惟有基督是包括一切，又住在各人之中。</div>
+    <div class="verse"><span class="verse-number">12</span>所以，你們既是　神的選民，聖潔蒙愛的人，就要存憐憫、恩慈、謙虛、溫柔、忍耐的心。</div>
+    <div class="verse"><span class="verse-number">13</span>倘若這人與那人有嫌隙，總要彼此包容，彼此饒恕；主怎樣饒恕了你們，你們也要怎樣饒恕人。</div>
+    <div class="verse"><span class="verse-number">14</span>在這一切之外，要存著愛心，愛心就是聯絡全德的。</div>
+    <div class="verse"><span class="verse-number">15</span>又要叫基督的平安在你們心裏作主；你們也為此蒙召，歸為一體；且要存感謝的心。</div>
+    <div class="verse"><span class="verse-number">16</span>當用各樣的智慧，把基督的道理豐豐富富地存在心裏（或譯：當把基督的道理豐豐富富地存在心裏，以各樣智慧），用詩章、頌詞、靈歌彼此教導，互相勸戒，心被恩感，歌頌　神。</div>
+    <div class="verse"><span class="verse-number">17</span>無論做甚麼，或說話或行事，都要奉主耶穌的名，藉著他感謝父　神。</div>
+    <div class="verse"><span class="verse-number">18</span>你們作妻子的，當順服自己的丈夫，這在主裏面是相宜的。</div>
+    <div class="verse"><span class="verse-number">19</span>你們作丈夫的，要愛你們的妻子，不可苦待她們。</div>
+    <div class="verse"><span class="verse-number">20</span>你們作兒女的，要凡事聽從父母，因為這是主所喜悅的。</div>
+    <div class="verse"><span class="verse-number">21</span>你們作父親的，不要惹兒女的氣，恐怕他們失了志氣。</div>
+    <div class="verse"><span class="verse-number">22</span>你們作僕人的，要凡事聽從你們肉身的主人，不要只在眼前事奉，像是討人喜歡的，總要存心誠實敬畏主。</div>
+    <div class="verse"><span class="verse-number">23</span>無論做甚麼，都要從心裏做，像是給主做的，不是給人做的，</div>
+    <div class="verse"><span class="verse-number">24</span>因你們知道從主那裏必得著基業為賞賜；你們所事奉的乃是主基督。</div>
+    <div class="verse"><span class="verse-number">25</span>那行不義的，必受不義的報應；主並不偏待人。</div>
+  </div>
+
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      歌羅西書第三章是全書倫理教導的核心，緊接第二章護教論述之後，保羅將神學真理轉化為具體的生活實踐。他以「與基督一同復活」的屬靈身份為出發點，呼召信徒「思念上面的事」（3:2），以永恆的視角重整人生的優先次序。本章可分為兩大段：前半（3:1-17）論信徒個人的更新——脫去舊人（情慾、謊言、紛爭）、穿上新人（憐憫、恩慈、謙虛、忍耐），並以愛心作為一切美德的聯絡（3:14）；後半（3:18-25）則進入家庭與職場的關係倫理，包括夫妻、親子、主僕之道，一切都回歸到「奉主耶穌的名而行」（3:17）和「從心裏做，像是給主做的」（3:23）的根本原則，顯示基督信仰應深透生活的每一層面。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 思念上面的事：以永恆價值重整生命優先次序</strong><br>
+      保羅呼召信徒「求在上面的事」、「思念那上面的事」（3:1-2），這不是逃避現實，而是以基督的價值觀取代世俗標準來評估生命的輕重緩急。當信徒的心意常被屬天的真理所充滿，地上的私慾和紛爭就失去了主導的力量。這是基督徒成聖生命的根本方向：讓永恆的視角持續校正每日的選擇與態度。<br><br>
+      <strong>2. 脫去舊人，穿上新人：生命的持續更新</strong><br>
+      「脫去舊人」與「穿上新人」（3:9-10）是一個積極主動的靈命操練過程。保羅列出需要棄絕的罪行（淫亂、惱恨、謊言），也描繪要穿戴的美德（憐憫、恩慈、謙虛、忍耐、愛心）。這更新是「在知識上漸漸更新，正如造他主的形像」（3:10），顯示成聖是一生持續的動態歷程，需要信徒主動配合聖靈的工作，捨棄舊有的惡習，養成基督的品格。<br><br>
+      <strong>3. 凡事奉主：在日常關係中活出信仰</strong><br>
+      保羅將信仰帶入最平凡的家庭和職場關係中，夫妻、親子、主僕各有對應的責任（3:18-22），一切都歸結於「無論做甚麼，都要從心裏做，像是給主做的」（3:23）。這意味著基督信仰不只是禮拜天的宗教活動，而是每一個角色關係中都應彰顯的生命見證。平凡的日常就是信仰的操練場。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>經文</th>
+            <th>思想題目</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>「你們要<strong>思念那上面的事</strong>，不要思念<strong>地上的事</strong>。」（歌羅西書3:2）</td>
+            <td>就像出遠門旅行前會<strong>預先了解目的地</strong>的氣候和文化，才能做好準備，你每天是否也在思念那「上面的事」——以<strong>永恆的視角</strong>來決定今天哪些事情真正值得投入心力？</td>
+          </tr>
+          <tr>
+            <td>「在這一切之外，要存著<strong>愛心</strong>，愛心就是<strong>聯絡全德</strong>的。」（歌羅西書3:14）</td>
+            <td>就像鏈條上少了一個扣環，整條鏈便無法發揮作用，你是否經歷過在缺乏<strong>愛心</strong>的情況下，其他的美德（忍耐、謙虛、恩慈）變得<strong>勉強空洞</strong>？愛心如何讓你的各樣美德真實連結？</td>
+          </tr>
+          <tr>
+            <td>「無論做甚麼，都要<strong>從心裏做</strong>，像是<strong>給主做的</strong>，不是給人做的。」（歌羅西書3:23）</td>
+            <td>就像員工獨自工作時，若知道主管正在<strong>錄影觀察</strong>，態度便截然不同，你在沒有人看見、沒有人稱讚的時候，是否仍能以<strong>全心事奉主的態度</strong>對待手邊平凡的工作與責任？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>

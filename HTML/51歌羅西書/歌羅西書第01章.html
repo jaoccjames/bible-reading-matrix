@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歌羅西書第1章 - 聖經重點與思考</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em;
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+}
+h1:hover {
+  color: #3498db;
+}
+.bible-icon {
+  display: inline-block;
+  transition: transform 0.5s ease;
+  font-style: normal;
+}
+.bible-icon.open {
+  transform: rotateY(180deg);
+}
+.chapter-subtitle {
+  font-size: 1.2em;
+  color: #7f8c8d;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.scripture-text {
+  display: none;
+  background: #f8f9fa;
+  border-left: 4px solid #3498db;
+  padding: 20px;
+  line-height: 2;
+  max-height: 500px;
+  overflow-y: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.scripture-text.show {
+  display: block;
+}
+.verse {
+  margin-bottom: 4px;
+}
+.verse-number {
+  color: #3498db;
+  font-weight: bold;
+  margin-right: 6px;
+}
+details {
+  margin: 20px 0;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  background: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+details:hover {
+  border-color: #3498db;
+  box-shadow: 0 2px 8px rgba(52,152,219,0.15);
+}
+details[open] {
+  background: #f0f8ff;
+  border-color: #3498db;
+}
+summary {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2980b9;
+  cursor: pointer;
+  padding: 10px;
+  list-style: none;
+  transition: color 0.3s;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.3s;
+}
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+summary:hover {
+  color: #3498db;
+}
+.content {
+  margin-top: 15px;
+  padding: 15px;
+  line-height: 1.9;
+}
+strong {
+  color: #c0392b;
+  font-weight: bold;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th {
+  background: #3498db;
+  color: white;
+  padding: 15px;
+  font-size: 1.1em;
+  text-align: left;
+}
+td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+tbody tr:nth-child(even) td {
+  background: #f9f9f9;
+}
+tbody tr:hover td {
+  background: #f0f8ff;
+}
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1 onclick="toggleScripture()">
+    歌羅西書第1章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+
+  <div class="chapter-subtitle">基督至高無上，信徒蒙恩稱謝</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>奉　神旨意，作基督耶穌使徒的保羅和兄弟提摩太，</div>
+    <div class="verse"><span class="verse-number">2</span>寫信給在歌羅西的聖徒，就是在基督裏有忠心的弟兄。願恩惠、平安從　神我們的父歸與你們！</div>
+    <div class="verse"><span class="verse-number">3</span>我們感謝　神──我們主耶穌基督的父，常常為你們禱告，</div>
+    <div class="verse"><span class="verse-number">4</span>因聽見你們在基督耶穌裏的信心，並你們向衆聖徒的愛心，</div>
+    <div class="verse"><span class="verse-number">5</span>是為那給你們存在天上的盼望；這盼望就是你們從前在福音真理的話上所聽見的。</div>
+    <div class="verse"><span class="verse-number">6</span>這福音傳到你們那裏，也傳到普天之下，並且結果，增長，如同在你們中間，自從你們聽見福音，真知道　神恩典的日子也是這樣。</div>
+    <div class="verse"><span class="verse-number">7</span>正如你們從我們所親愛、一同作僕人的以巴弗所學的；他也為我們作了基督忠心的執事，</div>
+    <div class="verse"><span class="verse-number">8</span>並且把你們因聖靈所有的愛心告訴了我們。</div>
+    <div class="verse"><span class="verse-number">9</span>因此，我們自從聽見的日子，也就為你們不住地禱告祈求，願你們在一切屬靈的智慧悟性上，滿心知道　神的旨意；</div>
+    <div class="verse"><span class="verse-number">10</span>好叫你們行事為人對得起主，凡事蒙他喜悅，在一切善事上結果子，漸漸地多知道　神；</div>
+    <div class="verse"><span class="verse-number">11</span>照他榮耀的權能，得以剛強，凡事歡歡喜喜地忍耐、寬容；</div>
+    <div class="verse"><span class="verse-number">12</span>又感謝父，叫我們能與衆聖徒在光明中同得基業。</div>
+    <div class="verse"><span class="verse-number">13</span>他救了我們脫離黑暗的權勢，把我們遷到他愛子的國裏；</div>
+    <div class="verse"><span class="verse-number">14</span>我們在愛子裏得蒙救贖，罪過得以赦免。</div>
+    <div class="verse"><span class="verse-number">15</span>愛子是那不能看見之　神的像，是首生的，在一切被造的以先；</div>
+    <div class="verse"><span class="verse-number">16</span>因為萬有都是靠他造的，無論是天上的、地上的、能看見的、不能看見的，或是有位的、主治的、執政的、掌權的，一概都是藉著他造的，又是為他造的。</div>
+    <div class="verse"><span class="verse-number">17</span>他在萬有之先；萬有也靠他而立。</div>
+    <div class="verse"><span class="verse-number">18</span>他也是教會全體之首。他是元始、是從死裏首先復生的，使他可以在凡事上居首位。</div>
+    <div class="verse"><span class="verse-number">19</span>因為父喜歡叫一切的豐盛在他裏面居住；</div>
+    <div class="verse"><span class="verse-number">20</span>既然藉著他在十字架上所流的血成就了和平，便藉著他叫萬有──無論是地上的、天上的──都與自己和好了。</div>
+    <div class="verse"><span class="verse-number">21</span>你們從前與　神隔絕，因着惡念，在惡事上與他為敵；</div>
+    <div class="verse"><span class="verse-number">22</span>但如今藉著基督的肉身受死，叫你們與自己和好，都成了聖潔，沒有瑕疵，無可責備，把你們呈獻在自己面前。</div>
+    <div class="verse"><span class="verse-number">23</span>只要你們在所信的道上恆心到底，根基穩固，堅定不移，不至被引動失去福音的盼望；這福音就是你們所聽見的，也是傳揚在天下萬人中的；我保羅也作了這福音的執事。</div>
+    <div class="verse"><span class="verse-number">24</span>現在我為你們受苦，倒覺歡樂；並且為基督的身體，就是為教會，要在我肉身上補滿基督患難的缺欠。</div>
+    <div class="verse"><span class="verse-number">25</span>我照　神為你們所賜我的職分作了教會的執事，要把　神的道理傳得全備，</div>
+    <div class="verse"><span class="verse-number">26</span>這道理就是歷世歷代所隱藏的奧祕；但如今向他的聖徒顯明了，</div>
+    <div class="verse"><span class="verse-number">27</span>　神願意叫他們知道，這奧祕在外邦人中有何等豐盛的榮耀，就是基督在你們心裏成了有榮耀的盼望。</div>
+    <div class="verse"><span class="verse-number">28</span>我們傳揚他，是用諸般的智慧，勸戒各人，教導各人，要把各人在基督裏完完全全地引到　神面前。</div>
+    <div class="verse"><span class="verse-number">29</span>我也為此勞苦，照著他在我裏面運用的大能盡心竭力。</div>
+  </div>
+
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      歌羅西書是使徒保羅在羅馬監獄中所寫的書信（約主後61-63年），收信對象是小亞細亞歌羅西城的教會。歌羅西教會並非保羅親自建立，乃是由以巴弗所創立（1:7）。當時教會面臨一種結合猶太律法主義與希臘哲學的異端思想入侵，輕視基督的地位，主張需藉天使或其他中介才能到達神面前。保羅在第一章首先以感恩和代禱為開端，肯定信徒在信心、盼望、愛心上的美好見證，繼而引出全書最重要的神學核心——基督頌（1:15-20），莊嚴地宣告基督是神的形象、萬有的創造者與維繫者、教會的元首，在萬有中居首位。本章也說明保羅傳揚這「奧祕的福音」的呼召，奠定整卷書「基督至高無上」的主旋律。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 基督是萬有的創造者與維繫者</strong><br>
+      歌羅西書第一章以雄偉的「基督頌」（1:15-17）宣告，基督不僅是神不能看見之形象，更是在一切被造之先的永恆者。萬有——無論有形無形、天上地上——都靠祂而造，也靠祂而立。這提醒信徒，宇宙的秩序與意義皆根植於基督，任何將基督降格或邊緣化的思想都是根本性的錯誤，基督信仰的核心是對這位至高主宰的全然順服與信靠。<br><br>
+      <strong>2. 基督藉十字架成就和好與赦免</strong><br>
+      保羅指出，人因惡念與罪行與神隔絕（1:21），但基督藉肉身受死，使我們與神和好，成為聖潔無瑕疵（1:22）。這和好不是人的努力或宗教行為所能成就，乃是神主動的恩典作為。十字架是宇宙和好的樞紐（1:20），提醒信徒珍視救贖的代價，並以感恩的心活出蒙恩的新生命。<br><br>
+      <strong>3. 「基督在你們心裏」是信徒榮耀的盼望</strong><br>
+      保羅揭開歷代所隱藏的奧祕：基督住在信徒心中，成了榮耀的盼望（1:27）。這不是遙遠的宗教理論，而是每位信徒當下可經歷的屬靈實存。這個奧祕跨越民族界限，向外邦人廣開，呼召每位信徒在基督裏尋找生命的完全與意義，不需借助任何外在的規條或中介。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>經文</th>
+            <th>思想題目</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>「他在<strong>萬有之先</strong>；萬有也靠他而<strong>立</strong>。」（歌羅西書1:17）</td>
+            <td>就像建築物的<strong>地基</strong>決定整棟大樓能否屹立不搖，你生命中的「地基」是什麼？你是否讓基督成為你一切決定與價值觀的<strong>根基與中心</strong>？</td>
+          </tr>
+          <tr>
+            <td>「他救了我們脫離<strong>黑暗的權勢</strong>，把我們遷到他愛子的<strong>國裏</strong>；我們在愛子裏得蒙救贖，罪過得以<strong>赦免</strong>。」（歌羅西書1:13-14）</td>
+            <td>就像從一個嘈雜、充滿污染的城市<strong>搬遷</strong>到空氣清新的新居，你是否真實體驗到神將你「遷移」出罪惡轄制的那份<strong>自由與更新</strong>？這份體驗如何改變你每天的生活態度？</td>
+          </tr>
+          <tr>
+            <td>「　神願意叫他們知道，這奧祕在外邦人中有何等豐盛的<strong>榮耀</strong>，就是<strong>基督在你們心裏</strong>成了有榮耀的盼望。」（歌羅西書1:27）</td>
+            <td>就像手機<strong>內建的導航</strong>隨時可以指引方向，而不需要每次出門都外求他人，你是否習慣在每天的抉擇與困難中，轉向<strong>住在你心中的基督</strong>尋求引導，而非只靠外在規條？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>

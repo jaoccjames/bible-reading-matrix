@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記下第3章 - 聖經重點與思考</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 15px;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+.bible-icon {
+font-size: 1.2em;
+transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.scripture-text {
+background: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+margin: 20px 0;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+display: none;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 5px;
+}
+
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s ease;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52,152,219,0.1);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::before {
+content: "▶";
+position: absolute;
+left: 10px;
+transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary:hover {
+color: #3498db;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th {
+background: #3498db;
+color: white;
+padding: 15px;
+text-align: left;
+font-size: 1.1em;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tr:hover {
+background: #f0f8ff;
+}
+
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+h1 {
+font-size: 1.6em;
+}
+.chapter-subtitle {
+font-size: 1em;
+}
+summary {
+font-size: 1em;
+}
+table {
+font-size: 0.9em;
+}
+th, td {
+padding: 10px;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記下第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">押尼珥歸降被殺</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>掃羅家和大衛家爭戰許久。大衛家日見強盛;掃羅家日見衰弱。</div>
+<div class="verse"><span class="verse-number">2</span>大衛在希伯崙得了幾個兒子:長子暗嫩是耶斯列人亞希暖生的;</div>
+<div class="verse"><span class="verse-number">3</span>次子基利押是作過拿八妻的迦密人亞比該生的;三子押沙龍是基述王達買的女兒瑪迦生的;</div>
+<div class="verse"><span class="verse-number">4</span>四子亞多尼雅是哈及生的;五子示法提雅是亞比她生的;</div>
+<div class="verse"><span class="verse-number">5</span>六子以特念是大衛的妻以格拉生的。大衛這六個兒子都是在希伯崙生的。</div>
+<div class="verse"><span class="verse-number">6</span>掃羅家和大衛家爭戰的時候,押尼珥在掃羅家大有權勢。</div>
+<div class="verse"><span class="verse-number">7</span>掃羅有一妃嬪,名叫利斯巴,是愛亞的女兒。一日,伊施波設對押尼珥說:「你為什麼與我父的妃嬪同房呢?」</div>
+<div class="verse"><span class="verse-number">8</span>押尼珥因伊施波設的話就甚發怒,說:「我豈是狗頭呢?我恩待你父掃羅的家和他的弟兄、朋友,不將你交在大衛手裡,今日你竟為這婦人責備我嗎?</div>
+<div class="verse"><span class="verse-number">9</span>我若不照著耶和華起誓應許大衛的話行,廢去掃羅的位,建立大衛的位,使他治理以色列和猶大,從但直到別是巴,願神重重地降罰與我!」</div>
+<div class="verse"><span class="verse-number">10</span>伊施波設懼怕押尼珥,一句話也不敢回答。</div>
+<div class="verse"><span class="verse-number">11</span>押尼珥打發人去見大衛,替他說:「這國歸誰呢?」又說:「你與我立約,我必幫助你,使以色列人都歸服你。」</div>
+<div class="verse"><span class="verse-number">12</span>大衛說:「好!我與你立約。但有一件,你來見我面的時候,若不將掃羅的女兒米甲帶來,必不得見我的面。」</div>
+<div class="verse"><span class="verse-number">13</span>大衛就打發人去見掃羅的兒子伊施波設,說:「你要將我的妻米甲歸還我;她是我從前用一百非利士人的陽皮所聘定的。」</div>
+<div class="verse"><span class="verse-number">14</span>伊施波設就打發人去,將米甲從拉億的兒子她丈夫帕鐵那裡取了來。</div>
+<div class="verse"><span class="verse-number">15</span>米甲的丈夫跟著她,一面走一面哭,直跟到巴戶琳。押尼珥說:「你回去吧!」帕鐵就回去了。</div>
+<div class="verse"><span class="verse-number">16</span>押尼珥與以色列長老商議說:「從前你們願意大衛作王治理你們,</div>
+<div class="verse"><span class="verse-number">17</span>現在你們可以照心願而行。因為耶和華曾論到大衛說:『我必藉我僕人大衛的手,救我民以色列脫離非利士人和眾仇敵的手。』」</div>
+<div class="verse"><span class="verse-number">18</span>押尼珥也用這話說給便雅憫人聽,又到希伯崙,將以色列人和便雅憫全家一切所喜悅的事說給大衛聽。</div>
+<div class="verse"><span class="verse-number">19</span>押尼珥帶著二十個人來到希伯崙見大衛,大衛就為押尼珥和他帶來的人設擺筵席。</div>
+<div class="verse"><span class="verse-number">20</span>押尼珥對大衛說:「我要起身去招聚以色列眾人來見我主我王,與你立約,你就可以照著心願作王。」於是大衛送押尼珥去,押尼珥就平平安安地去了。</div>
+<div class="verse"><span class="verse-number">21</span>約押和大衛的僕人從征伐回來,帶回許多掠物。那時押尼珥不在希伯崙大衛那裡,因大衛已經送他去,他也平平安安地去了。</div>
+<div class="verse"><span class="verse-number">22</span>約押和跟隨他的軍兵回來,有人告訴約押說:「尼珥的兒子押尼珥來到王這裡,王送他去,他也平平安安地去了。」</div>
+<div class="verse"><span class="verse-number">23</span>約押去見王說:「你這是做什麼呢?押尼珥來見你,你為何送他去,他就蹤影不見了呢?</div>
+<div class="verse"><span class="verse-number">24</span>你知道,尼珥的兒子押尼珥來是要誑哄你,要知道你的出入和你一切所行的事。」</div>
+<div class="verse"><span class="verse-number">25</span>約押從大衛那裡出來,就打發人去追趕押尼珥,從西拉井那裡叫他回來,大衛卻不知道。</div>
+<div class="verse"><span class="verse-number">26</span>押尼珥回到希伯崙,約押領他到城門的甬道,假作要與他說機密話,就在那裡刺透他的肚腹,他便死了。這是報殺他兄弟亞撒黑的仇。</div>
+<div class="verse"><span class="verse-number">27</span>大衛聽見了,就說:「流尼珥兒子押尼珥的血,這罪在耶和華面前必永不歸我和我的國!</div>
+<div class="verse"><span class="verse-number">28</span>願流他血的罪歸到約押頭上和他父的全家;又願約押家不斷有患漏症的,長大痲瘋的,架拐而行的,被刀殺死的,缺乏飲食的。」</div>
+<div class="verse"><span class="verse-number">29</span>約押和他兄弟亞比篩殺了押尼珥,是因押尼珥在基遍爭戰的時候殺了他們的兄弟亞撒黑。</div>
+<div class="verse"><span class="verse-number">30</span>大衛吩咐約押和跟隨他的眾人說:「你們當撕裂衣服,腰束麻布,在押尼珥棺前哀哭。」大衛王也跟在棺後。</div>
+<div class="verse"><span class="verse-number">31</span>他們將押尼珥葬在希伯崙。王在押尼珥的墓旁放聲而哭;眾民也都哭了。</div>
+<div class="verse"><span class="verse-number">32</span>王為押尼珥舉哀,說:押尼珥何竟像愚頑人死呢?</div>
+<div class="verse"><span class="verse-number">33</span>你手未曾捆綁,腳未曾鎖住。你死,如人死在罪孽之輩手下一樣。於是眾民又為押尼珥哀哭。</div>
+<div class="verse"><span class="verse-number">34</span>日未沒的時候,眾民來勸大衛吃飯,但大衛起誓說:「我若在日頭未落以前吃飯,或吃別物,願神重重地降罰與我!」</div>
+<div class="verse"><span class="verse-number">35</span>眾民知道了就都喜悅。凡王所行的,眾民無不喜悅。</div>
+<div class="verse"><span class="verse-number">36</span>那日,以色列眾民才知道殺尼珥的兒子押尼珥,並非出於王意。</div>
+<div class="verse"><span class="verse-number">37</span>王對臣僕說:「你們豈不知今日以色列人中死了一個作元帥的大丈夫嗎?</div>
+<div class="verse"><span class="verse-number">38</span>我雖然受膏為王,今日還是軟弱;這洗魯雅的兩個兒子比我剛強。願耶和華照著惡人所行的惡報應他。」</div>
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+scriptureText.classList.toggle('show');
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載掃羅家和大衛家的長期爭戰,大衛逐漸強盛,掃羅家日漸衰弱。押尼珥在掃羅家大有權勢,但因伊施波設指控他與掃羅的妃嬪同房而大怒,決定歸降大衛。押尼珥說服以色列長老,並來希伯崙與大衛立約。大衛要求先歸還妻子米甲,押尼珥辦成此事並與大衛和平締約。但約押得知後,以報弟弟亞撒黑被殺之仇為名,設計殺害押尼珥。大衛聽聞後極其悲憤,公開咒詛約押,為押尼珥舉哀禁食,向眾民表明這不是他的意思。眾民因此知道大衛的清白,更加擁護他。本章展現政治鬥爭的複雜、個人恩怨如何影響大局,以及大衛在困境中保持清白的智慧。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的應許必定成就,無需人為操縱</strong><br>
+大衛日漸強盛是神的工作,不是靠人為手段。約押殺押尼珥看似為大衛除去對手,實則是血氣行為,破壞了和平統一的進程。神的應許會按祂的時間和方式成就,我們只需順服等候,不要用血氣的方法去促成。人的籌算和暴力只會帶來後遺症,唯有神的作為才能帶來真正的祝福和穩固。<br><br>
+
+<strong>2. 個人恩怨不可凌駕於大局之上</strong><br>
+約押為私仇殺押尼珥,破壞了國家統一的機會。當個人恩怨凌駕於大局時,眾人都受害。真正成熟的領袖懂得為大局放下個人恩怨,約押卻做不到。我們也常因個人的情緒和恩怨,破壞了團隊、教會或家庭的和諧。屬靈的成熟表現在能為神的國度放下個人的得失和怨恨。<br><br>
+
+<strong>3. 在別人的罪中保持清白</strong><br>
+大衛無法阻止約押的行為,但他立即公開表態,劃清界線,為押尼珥哀哭。我們無法控制他人的行為,但可以選擇自己的立場和反應。當周圍的人犯罪時,我們要清楚表明自己的立場,不被牽連。大衛的公開哀悼和咒詛約押,使他在神和人面前保持清白。這需要勇氣和智慧。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>掃羅家和大衛家爭戰許久。<strong>大衛家日見強盛</strong>;掃羅家日見衰弱。(撒下3:1)</td>
+<td>大衛的得勝是<strong>漸進的過程</strong>,不是一夕之間。<strong>就像健身需要長期堅持</strong>,你在等候神應許實現時是否有耐心?如何在漸進的過程中保持信心?</td>
+</tr>
+<tr>
+<td>約押...就在那裡<strong>刺透他的肚腹</strong>,他便死了。這是<strong>報殺他兄弟</strong>亞撒黑的仇。(撒下3:27)</td>
+<td>約押為<strong>私仇</strong>破壞國家和平統一。<strong>就像為了個人恩怨破壞團隊合作</strong>,你是否曾因個人恩怨影響大局?如何學習為大局放下個人情緒?</td>
+</tr>
+<tr>
+<td>大衛聽見了,就說:「流尼珥兒子押尼珥的血,這罪在耶和華面前<strong>必永不歸我</strong>和我的國!」(撒下3:28)</td>
+<td>大衛立即<strong>劃清界線</strong>,表明立場。<strong>就像同事做錯事時你公開澄清</strong>,當別人犯錯牽連到你時,你如何在不背叛的情況下保持清白?這需要什麼智慧?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+</body>
+</html>

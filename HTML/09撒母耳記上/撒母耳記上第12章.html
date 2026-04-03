@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記上第12章 - 聖經重點與思考</title>
+<style>
+/* 全域樣式 */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+/* 容器樣式 */
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* 標題樣式 */
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 15px;
+transition: color 0.3s ease;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+/* 聖經ICON樣式 */
+.bible-icon {
+display: inline-block;
+transition: transform 0.5s ease;
+font-size: 1em;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+/* 章標題樣式 */
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+/* 經文區塊樣式 */
+.scripture-text {
+display: none;
+background-color: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+/* Details/Summary樣式 */
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s ease;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+transition: color 0.3s ease;
+}
+
+summary:hover {
+color: #3498db;
+}
+
+summary::before {
+content: "▶";
+position: absolute;
+left: 10px;
+transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+/* 表格樣式 */
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+thead {
+background: #3498db;
+color: white;
+}
+
+th {
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tbody tr:hover {
+background: #f0f8ff;
+}
+
+/* 強調文字樣式 */
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+/* 響應式設計（手機版） */
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+
+h1 {
+font-size: 1.6em;
+}
+
+.chapter-subtitle {
+font-size: 1em;
+}
+
+h2 {
+font-size: 1.2em;
+}
+
+table {
+font-size: 0.9em;
+}
+
+th, td {
+padding: 10px;
+}
+
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- 標題與ICON -->
+<h1 onclick="toggleScripture()">
+撒母耳記上第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<!-- 章標題說明 -->
+<div class="chapter-subtitle">撒母耳告別演說</div>
+
+<!-- 經文區塊 -->
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>撒母耳對以色列眾人說:你們向我所求的,我已應允了,為你們立了一個王;</div>
+<div class="verse"><span class="verse-number">2</span>現在有這王在你們前面行。我已年老髮白,我的兒子都在你們這裡。我從幼年直到今日都在你們前面行。</div>
+<div class="verse"><span class="verse-number">3</span>我在這裡,你們要在耶和華和他的受膏者面前給我作見證。我奪過誰的牛,搶過誰的驢,欺負過誰,虐待過誰,從誰手裡受過賄賂因而眼瞎呢?若有,我必償還。</div>
+<div class="verse"><span class="verse-number">4</span>眾人說:你未曾欺負我們,虐待我們,也未曾從誰手裡受過甚麼。</div>
+<div class="verse"><span class="verse-number">5</span>撒母耳對他們說:你們在我手裡沒有找著甚麼,有耶和華和他的受膏者今日為證。他們說:願他為證。</div>
+<div class="verse"><span class="verse-number">6</span>撒母耳對百姓說:從前立摩西、亞倫,又領你們列祖出埃及地的是耶和華。</div>
+<div class="verse"><span class="verse-number">7</span>現在你們要站住,等我在耶和華面前對你們講論耶和華向你們和你們列祖所行一切公義的事。</div>
+<div class="verse"><span class="verse-number">8</span>從前雅各到了埃及,後來你們列祖呼求耶和華,耶和華就差遣摩西、亞倫領你們列祖出埃及,使他們在這地方居住。</div>
+<div class="verse"><span class="verse-number">9</span>他們卻忘記耶和華他們的神,他就把他們付與夏瑣將軍西西拉的手裡,和非利士人並摩押王的手裡。於是這些人常來攻擊他們。</div>
+<div class="verse"><span class="verse-number">10</span>他們就呼求耶和華說:我們離棄耶和華,事奉巴力和亞斯他錄,是有罪了。現在求你救我們脫離仇敵的手,我們必事奉你。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華就差遣耶路巴力、比但、耶弗他、撒母耳救你們脫離四圍仇敵的手,你們才安然居住。</div>
+<div class="verse"><span class="verse-number">12</span>你們見亞捫人的王拿轄來攻擊你們,就對我說:我們定要一個王治理我們。其實耶和華你們的神是你們的王。</div>
+<div class="verse"><span class="verse-number">13</span>現在,你們所求所選的王在這裡。看哪,耶和華已經為你們立王了。</div>
+<div class="verse"><span class="verse-number">14</span>你們若敬畏耶和華,事奉他,聽從他的話,不違背他的命令,你們和治理你們的王也都順從耶和華你們的神就好了。</div>
+<div class="verse"><span class="verse-number">15</span>倘若不聽從耶和華的話,違背他的命令,耶和華的手必攻擊你們,像從前攻擊你們列祖一樣。</div>
+<div class="verse"><span class="verse-number">16</span>現在你們要站住,看耶和華在你們眼前要行一件大事。</div>
+<div class="verse"><span class="verse-number">17</span>這不是割麥子的時候嗎?我求告耶和華,他必打雷降雨,使你們又知道又看見,你們求立王的事是在耶和華面前犯大罪了。</div>
+<div class="verse"><span class="verse-number">18</span>於是撒母耳求告耶和華,耶和華就在這日打雷降雨,眾民便甚懼怕耶和華和撒母耳。</div>
+<div class="verse"><span class="verse-number">19</span>眾民對撒母耳說:求你為僕人們禱告耶和華你的神,免得我們死亡,因為我們求立王的事正是罪上加罪了。</div>
+<div class="verse"><span class="verse-number">20</span>撒母耳對百姓說:不要懼怕!你們雖然行了這惡,卻不要偏離耶和華,只要盡心事奉他。</div>
+<div class="verse"><span class="verse-number">21</span>若偏離耶和華去順從那不能救人的虛神是無益的。</div>
+<div class="verse"><span class="verse-number">22</span>耶和華既喜悅選你們作他的子民,就必因他的大名不撇棄你們。</div>
+<div class="verse"><span class="verse-number">23</span>至於我,斷不停止為你們禱告,以致得罪耶和華。我必以善道正路指教你們。</div>
+<div class="verse"><span class="verse-number">24</span>只要你們敬畏耶和華,誠誠實實地盡心事奉他,想念他向你們所行的事何等大。</div>
+<div class="verse"><span class="verse-number">25</span>你們若仍然作惡,你們和你們的王必一同滅亡。</div>
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+scriptureText.classList.toggle('show');
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+<!-- 背景簡介 -->
+<details>
+<summary>背景簡介</summary>
+<div class="content">本章記載撒母耳在掃羅正式登基後的告別演說,標誌著以色列從士師時代正式進入王國時代。撒母耳以公開的方式為自己多年的事奉作見證,讓百姓確認他清白正直的品格,沒有利用職權謀取私利。隨後他回顧以色列的歷史,指出百姓不斷重複「犯罪—受苦—呼求—蒙拯救」的循環,而要求立王正是對神缺乏信心的表現。為了讓百姓深刻認識自己的罪,撒母耳求神在收割麥子的旱季降下雷雨,這個反常的神蹟使百姓震驚,承認自己的罪。然而撒母耳並沒有定罪他們,反而安慰並勉勵他們要盡心事奉神,並承諾會繼續為他們禱告。這篇演說充滿了牧者的心腸,既有嚴厲的責備,也有溫柔的安慰,為新時代的開始奠定屬靈基礎。</div>
+</details>
+
+<!-- 核心屬靈意涵 -->
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 正直的品格是事奉的根基</strong><br>撒母耳在交接權力時,公開邀請百姓檢視他的生活,證明他從未濫用職權、貪污受賄或虐待他人。他敢於接受檢驗,因為他一生清白。這顯示屬靈領袖的權威不只建立在恩賜或職位上,更建立在品格上。一個人可以有卓越的才能,但若品格有虧,就失去道德權威。撒母耳的榜樣提醒我們,事奉神的人必須在金錢、權力和人際關係上保持清潔,因為我們所做的一切都在神和人面前。真正的影響力來自於生命的見證,而非職位的高低。<br><br>
+<strong>2. 歷史教訓需要被記念和反思</strong><br>撒母耳詳細回顧以色列的歷史,指出百姓不斷重複「忘記神—受苦—悔改—蒙拯救」的循環。他用歷史教導現在,因為人容易健忘,尤其容易忘記神的恩典。記念神過去的作為能幫助我們在現在做出正確的選擇。百姓要求立王,正是因為忘記了神才是他們真正的拯救者。我們需要常常回顧神在個人和群體生命中的作為,免得重蹈覆轍。屬靈的健忘症是信仰退步的主要原因,而記念神的信實是持續信靠的動力。<br><br>
+<strong>3. 代禱是愛的持續表達</strong><br>撒母耳說「斷不停止為你們禱告,以致得罪耶和華」,顯示他對百姓深厚的愛。即使百姓拒絕了他的建議,他仍然為他們守望。代禱不是可有可無的選項,而是愛的責任。撒母耳將停止代禱視為得罪神,因為這等於放棄神託付給他的羊群。真正的屬靈領袖即使被拒絕、被取代,仍然為神的百姓禱告。這種愛超越了個人的得失,只關注神子民的益處。我們也當為家人、教會、國家持續代禱,這是我們能給予的最大禮物。
+</div>
+</details>
+
+<!-- 重點經文與思想題目 -->
+<details open>
+<summary>重點經文與思考題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>我在這裡,你們要在耶和華和他的受膏者面前給我作見證。我<strong>奪過誰的牛,搶過誰的驢,欺負過誰,虐待過誰</strong>,從誰手裡<strong>受過賄賂</strong>因而眼瞎呢?若有,我必償還。(撒母耳記上12:3)</td>
+<td>如果今天我要交出現在的職位或角色,我的生活能否經得起公開檢驗?就像<strong>會計離職前帳目要清楚交接</strong>,我在處理金錢、權力和人際關係時,是否能坦然無愧地說「我沒有虧欠任何人」?</td>
+</tr>
+<tr>
+<td>只要你們<strong>敬畏耶和華</strong>,誠誠實實地盡心事奉他,<strong>想念他向你們所行的事何等大</strong>。(撒母耳記上12:24)</td>
+<td>我是否常常回顧並記念神在我生命中的作為?就像<strong>翻看舊照片才記起曾經的美好時光</strong>,我是否因為忙碌而忘記神過去的恩典,以致在新挑戰面前失去信心?</td>
+</tr>
+<tr>
+<td>至於我,<strong>斷不停止為你們禱告</strong>,以致得罪耶和華。我必以善道正路指教你們。(撒母耳記上12:23)</td>
+<td>當別人拒絕我的建議或傷害我時,我是否仍願意為他們代禱?就像<strong>父母即使被孩子誤解也不停止關心</strong>,我是否因為受傷就停止為人禱告,忘記代禱是愛的責任而非選項?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+</body>
+</html>

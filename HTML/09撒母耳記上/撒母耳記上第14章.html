@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記上第14章 - 聖經重點與思考</title>
+<style>
+/* 全域樣式 */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+line-height: 1.8;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 20px;
+}
+
+/* 容器樣式 */
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* 標題樣式 */
+h1 {
+font-size: 2.2em;
+color: #2c3e50;
+border-bottom: 3px solid #3498db;
+padding-bottom: 15px;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 15px;
+transition: color 0.3s ease;
+}
+
+h1:hover {
+color: #3498db;
+}
+
+/* 聖經ICON樣式 */
+.bible-icon {
+display: inline-block;
+transition: transform 0.5s ease;
+font-size: 1em;
+}
+
+.bible-icon.open {
+transform: rotateY(180deg);
+}
+
+/* 章標題樣式 */
+.chapter-subtitle {
+font-size: 1.2em;
+color: #7f8c8d;
+font-weight: bold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+/* 經文區塊樣式 */
+.scripture-text {
+display: none;
+background-color: #f8f9fa;
+border-left: 4px solid #3498db;
+padding: 20px;
+line-height: 2;
+max-height: 500px;
+overflow-y: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.scripture-text.show {
+display: block;
+}
+
+.verse {
+margin-bottom: 10px;
+}
+
+.verse-number {
+color: #3498db;
+font-weight: bold;
+margin-right: 8px;
+}
+
+/* Details/Summary樣式 */
+details {
+margin: 20px 0;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+padding: 15px;
+background: #fafafa;
+transition: all 0.3s ease;
+}
+
+details:hover {
+border-color: #3498db;
+box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+background: #f0f8ff;
+border-color: #3498db;
+}
+
+summary {
+font-size: 1.2em;
+font-weight: bold;
+color: #2980b9;
+cursor: pointer;
+padding: 10px;
+list-style: none;
+position: relative;
+padding-left: 30px;
+transition: color 0.3s ease;
+}
+
+summary:hover {
+color: #3498db;
+}
+
+summary::before {
+content: "▶";
+position: absolute;
+left: 10px;
+transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+transform: rotate(90deg);
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+.content {
+margin-top: 15px;
+padding: 15px;
+line-height: 1.9;
+}
+
+/* 表格樣式 */
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+thead {
+background: #3498db;
+color: white;
+}
+
+th {
+padding: 15px;
+font-size: 1.1em;
+text-align: left;
+}
+
+td {
+padding: 15px;
+border: 1px solid #ddd;
+vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+background: #f9f9f9;
+}
+
+tbody tr:hover {
+background: #f0f8ff;
+}
+
+/* 強調文字樣式 */
+strong {
+color: #c0392b;
+font-weight: bold;
+}
+
+/* 響應式設計（手機版） */
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+
+h1 {
+font-size: 1.6em;
+}
+
+.chapter-subtitle {
+font-size: 1em;
+}
+
+h2 {
+font-size: 1.2em;
+}
+
+table {
+font-size: 0.9em;
+}
+
+th, td {
+padding: 10px;
+}
+
+summary {
+font-size: 1em;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- 標題與ICON -->
+<h1 onclick="toggleScripture()">
+撒母耳記上第14章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<!-- 章標題說明 -->
+<div class="chapter-subtitle">約拿單的信心之戰</div>
+
+<!-- 經文區塊 -->
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>有一日,掃羅的兒子約拿單對拿他兵器的少年人說:我們不如過到那邊,到非利士人的防營那裡去。但他沒有告訴父親。</div>
+<div class="verse"><span class="verse-number">2</span>掃羅在基比亞的儘邊,坐在米磯崙的石榴樹下,跟隨他的約有六百人。</div>
+<div class="verse"><span class="verse-number">3</span>在那裡有亞希突的兒子亞希亞,穿著以弗得。(亞希突是以迦博的哥哥,非尼哈的兒子,以利的孫子。以利從前在示羅作耶和華的祭司。)約拿單去了,百姓卻不知道。</div>
+<div class="verse"><span class="verse-number">4</span>約拿單要從隘口過到非利士防營那裡去。這隘口兩邊各有一個山峰,一名播薛,一名西尼。</div>
+<div class="verse"><span class="verse-number">5</span>一峰向北,與密抹相對,一峰向南,與迦巴相對。</div>
+<div class="verse"><span class="verse-number">6</span>約拿單對拿兵器的少年人說:我們不如過到未受割禮人的防營那裡去,或者耶和華為我們施展能力;因為耶和華使人得勝,不在乎人多人少。</div>
+<div class="verse"><span class="verse-number">7</span>拿兵器的對他說:隨你的心意行吧。你可以上去,我必跟隨你,與你同心。</div>
+<div class="verse"><span class="verse-number">8</span>約拿單說:我們要過到那些人那裡去,使他們看見我們。</div>
+<div class="verse"><span class="verse-number">9</span>他們若對我們說:你們站住,等我們到你們那裡去,我們就站住,不上他們那裡去。</div>
+<div class="verse"><span class="verse-number">10</span>他們若說:你們上到我們這裡來,這話就是我們的證據;我們便上去,因為耶和華將他們交在我們手裡了。</div>
+<div class="verse"><span class="verse-number">11</span>二人就使非利士的防兵看見。非利士人說:希伯來人從所藏的洞穴裡出來了。</div>
+<div class="verse"><span class="verse-number">12</span>防兵對約拿單和拿兵器的人說:你們上到這裡來,我們有一件事指示你們。約拿單就對拿兵器的人說:你跟隨我上去,因為耶和華將他們交在以色列人手裡了。</div>
+<div class="verse"><span class="verse-number">13</span>約拿單就爬上去,拿兵器的人跟隨他。約拿單殺倒非利士人,拿兵器的人也隨著殺他們。</div>
+<div class="verse"><span class="verse-number">14</span>約拿單和拿兵器的人初次所殺的約有二十人,都在一畝地的半犁溝之內。</div>
+<div class="verse"><span class="verse-number">15</span>於是在營中、在田野、在眾民內都有戰兢,防兵和掠兵也都戰兢,地也震動,戰兢之勢甚大。</div>
+<div class="verse"><span class="verse-number">16</span>在便雅憫的基比亞,掃羅的守望兵看見非利士的軍眾潰散,四圍亂竄。</div>
+<div class="verse"><span class="verse-number">17</span>掃羅就對跟隨他的民說:你們查點查點,看從我們這裡出去的是誰?他們一查點,就知道約拿單和拿兵器的人沒有在這裡。</div>
+<div class="verse"><span class="verse-number">18</span>那時神的約櫃在以色列人那裡。掃羅對亞希亞說:你將神的約櫃運了來。</div>
+<div class="verse"><span class="verse-number">19</span>掃羅正與祭司說話的時候,非利士營中的喧嚷越發大了;掃羅就對祭司說:停手吧!</div>
+<div class="verse"><span class="verse-number">20</span>掃羅和跟隨他的人都聚集,來到戰場,看見非利士人用刀互相擊殺,大大惶亂。</div>
+<div class="verse"><span class="verse-number">21</span>從前由四方來跟隨非利士軍的希伯來人現在也轉過來,幫助跟隨掃羅和約拿單的以色列人了。</div>
+<div class="verse"><span class="verse-number">22</span>那藏在以法蓮山地的以色列人聽說非利士人逃跑,就出來緊緊地追殺他們。</div>
+<div class="verse"><span class="verse-number">23</span>那日,耶和華使以色列人得勝,一直戰到伯亞文。</div>
+<div class="verse"><span class="verse-number">24</span>掃羅叫百姓起誓說,凡不等到晚上向敵人報完了仇吃甚麼的,必受咒詛。因此這日百姓沒有吃甚麼,就極其困憊。</div>
+<div class="verse"><span class="verse-number">25</span>眾民進入樹林,見有蜜在地上。</div>
+<div class="verse"><span class="verse-number">26</span>他們進了樹林,見有蜜流下來,卻沒有人敢用手取蜜入口,因為他們怕那誓言。</div>
+<div class="verse"><span class="verse-number">27</span>約拿單沒有聽見他父親叫百姓起誓,所以伸手中的杖,用杖頭蘸在蜂房裡,轉手送入口內,眼睛就明亮了。</div>
+<div class="verse"><span class="verse-number">28</span>百姓中有一人對他說:你父親曾叫百姓嚴嚴地起誓說,今日吃甚麼的,必受咒詛;因此百姓就疲乏了。</div>
+<div class="verse"><span class="verse-number">29</span>約拿單說:我父親連累你們了。你看,我嘗了這一點蜜,眼睛就明亮了。</div>
+<div class="verse"><span class="verse-number">30</span>今日百姓若任意吃了從仇敵所奪的物,擊殺的非利士人豈不更多嗎?</div>
+<div class="verse"><span class="verse-number">31</span>這日,以色列人擊殺非利士人,從密抹直到亞雅崙。百姓甚是疲乏,</div>
+<div class="verse"><span class="verse-number">32</span>就急忙將所奪的牛羊和牛犢宰於地上,肉還帶血就吃了。</div>
+<div class="verse"><span class="verse-number">33</span>有人告訴掃羅說:百姓吃帶血的肉,得罪耶和華了。掃羅說:你們有罪了,今日要將大石頭滾到我這裡來。</div>
+<div class="verse"><span class="verse-number">34</span>掃羅又說:你們散在百姓中,對他們說,你們各人將牛羊牽到我這裡來宰了吃,不可吃帶血的肉得罪耶和華。這夜,百姓就把牛羊牽到那裡宰了。</div>
+<div class="verse"><span class="verse-number">35</span>掃羅為耶和華築了一座壇,這是他初次為耶和華築的壇。</div>
+<div class="verse"><span class="verse-number">36</span>掃羅說:我們不如夜裡下去追趕非利士人,搶掠他們,直到天亮,不留他們一人。眾民說:你看怎樣好就去行吧!祭司說:我們先當親近神。</div>
+<div class="verse"><span class="verse-number">37</span>掃羅求問神說:我下去追趕非利士人可以不可以?你將他們交在以色列人手裡不交?這日神沒有回答他。</div>
+<div class="verse"><span class="verse-number">38</span>掃羅說:你們百姓中的長老都上這裡來,查明今日是誰犯了罪。</div>
+<div class="verse"><span class="verse-number">39</span>我指著救以色列永生的耶和華起誓,就是我兒子約拿單犯了罪,他也必死。但百姓中無一人回答他。</div>
+<div class="verse"><span class="verse-number">40</span>掃羅就對以色列眾人說:你們站在一邊,我與我兒子約拿單也站在一邊。百姓對掃羅說:你看怎樣好就去行吧!</div>
+<div class="verse"><span class="verse-number">41</span>掃羅禱告耶和華以色列的神說:求你指示實情。於是掣籤掣出掃羅和約拿單來;百姓盡都無事。</div>
+<div class="verse"><span class="verse-number">42</span>掃羅說:你們再掣籤,看是我,是我兒子約拿單,就掣出約拿單來。</div>
+<div class="verse"><span class="verse-number">43</span>掃羅對約拿單說:你告訴我,你做了甚麼事?約拿單說:我實在以手裡的杖,用杖頭蘸了一點蜜嘗了一嘗。這樣我就死吧(或作:吧,我死啦)!</div>
+<div class="verse"><span class="verse-number">44</span>掃羅說:約拿單哪,你定要死!若不然,願神重重地降罰與我。</div>
+<div class="verse"><span class="verse-number">45</span>百姓對掃羅說:約拿單在以色列人中這樣大行拯救,豈可使他死呢?斷乎不可!我們指著永生的耶和華起誓,連他的一根頭髮也不可落地,因為他今日與神一同做事。於是百姓救約拿單免了死亡。</div>
+<div class="verse"><span class="verse-number">46</span>掃羅回去,不追趕非利士人;非利士人也回本地去了。</div>
+<div class="verse"><span class="verse-number">47</span>掃羅執掌以色列的國權,常常攻擊他四圍的一切仇敵,就是摩押人、亞捫人、以東人,和瑣巴諸王,並非利士人。他無論往何處去,都打敗仇敵。</div>
+<div class="verse"><span class="verse-number">48</span>掃羅奮勇攻擊亞瑪力人,救了以色列人脫離搶掠他們之人的手。</div>
+<div class="verse"><span class="verse-number">49</span>掃羅的兒子是約拿單、亦施韋、麥基舒亞。他的兩個女兒:長女名米拉,次女名米甲。</div>
+<div class="verse"><span class="verse-number">50</span>掃羅的妻名叫亞希暖,是亞希瑪斯的女兒。掃羅的元帥名叫押尼珥,是尼珥的兒子;尼珥是掃羅的叔叔。</div>
+<div class="verse"><span class="verse-number">51</span>掃羅的父親基士,押尼珥的父親尼珥,都是亞別的兒子。</div>
+<div class="verse"><span class="verse-number">52</span>掃羅平生常與非利士人大大爭戰。掃羅遇見有能力的人或勇士,都招募了來跟隨他。</div>
+</div>
+
+<script>
+function toggleScripture() {
+const scriptureText = document.getElementById('scriptureText');
+const bibleIcon = document.getElementById('bibleIcon');
+scriptureText.classList.toggle('show');
+if (scriptureText.classList.contains('show')) {
+bibleIcon.textContent = '📖';
+bibleIcon.classList.add('open');
+} else {
+bibleIcon.textContent = '📕';
+bibleIcon.classList.remove('open');
+}
+}
+</script>
+
+<!-- 背景簡介 -->
+<details>
+<summary>背景簡介</summary>
+<div class="content">本章記載約拿單憑信心攻打非利士人的防營,引發連鎖反應導致以色列大勝。當時以色列處於劣勢,掃羅只有六百人,全軍幾乎沒有武器。約拿單沒有告訴父親,只帶著拿兵器的少年人冒險攻擊敵營,他相信神能使人得勝,不在乎人多人少。他們設立印證,若敵人說「上來」就是神的應許。結果非利士人果然如此說,約拿單攀爬上去擊殺約二十人,引起敵營恐慌,甚至地也震動。掃羅見敵軍潰散才加入戰鬥。然而掃羅愚昧地命令百姓禁食,導致軍隊疲乏,約拿單不知情吃了蜜,掃羅竟要處死他,百姓出面救了約拿單。本章對比鮮明:約拿單的信心與掃羅的衝動,約拿單帶來勝利,掃羅卻幾乎毀掉英雄。本章也記載掃羅的家譜和他與非利士人持續的爭戰。</div>
+</details>
+
+<!-- 核心屬靈意涵 -->
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真信心願意冒險順服神</strong><br>約拿單面對強大的敵人,沒有精良的武器,甚至沒有父親的支持,卻願意憑信心行動。他說「耶和華使人得勝,不在乎人多人少」,顯示他真正倚靠的是神而非環境條件。他設立印證尋求神的引導,得到確據後就勇敢行動。真正的信心不是盲目的冒險,而是在尋求神的心意後願意順服,即使環境看似不利。約拿單的行動帶來神蹟般的勝利,證明神喜悅這樣的信心。相比之下,掃羅雖然有更多資源,卻坐在樹下等待,缺乏主動尋求神、順服神的心志。<br><br>
+<strong>2. 宗教熱心不能取代屬靈智慧</strong><br>掃羅要求百姓禁食,表面上看似敬虔,實際上缺乏智慧。他的誓言不是出於神的引導,而是出於自己的意氣。結果百姓疲乏無力,反而限制了神的作為,若不是約拿單不知情吃了蜜,勝利可能更有限。後來百姓餓極了甚至犯罪吃帶血的肉。掃羅的宗教行為看似熱心,實則自我中心,為了顯示自己的權威而非真正尋求神的榮耀。這提醒我們,熱心若沒有智慧和愛心,會成為別人的重擔。真正的屬靈領袖應該幫助人親近神,而非設立額外的規條使人遠離神。<br><br>
+<strong>3. 固執己見會傷害無辜並阻礙神的工作</strong><br>掃羅為了維護自己的誓言,竟然要處死為以色列帶來大勝利的約拿單。他寧願犧牲兒子也要堅持自己錯誤的決定,顯示出可怕的驕傲。幸好百姓有智慧和勇氣阻止他,否則以色列將失去最勇敢的戰士。掃羅的問題不只是做錯決定,更是知錯不改,為了面子寧願錯到底。這種領導風格會傷害跟隨者,也會阻礙神的工作。真正的謙卑是能夠承認錯誤、調整方向,而非用更多錯誤來掩蓋第一個錯誤。掃羅的固執預示了他後來更嚴重的失敗。
+</div>
+</details>
+
+<!-- 重點經文與思想題目 -->
+<details open>
+<summary>重點經文與思考題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>約拿單對拿兵器的少年人說:我們不如過到未受割禮人的防營那裡去,或者耶和華為我們施展能力;因為<strong>耶和華使人得勝,不在乎人多人少</strong>。(撒母耳記上14:6)</td>
+<td>面對看似不可能的挑戰時,我是專注於環境的困難還是神的能力?就像<strong>創業時只看市場競爭而忘記神能開路</strong>,我是否因為條件不足就放棄,還是願意尋求神的引導後憑信心跨出第一步?</td>
+</tr>
+<tr>
+<td>掃羅叫百姓起誓說,凡不等到晚上向敵人報完了仇吃甚麼的,<strong>必受咒詛</strong>。因此這日百姓沒有吃甚麼,就<strong>極其困憊</strong>。(撒母耳記上14:24)</td>
+<td>我的熱心是否真正幫助人親近神,還是成為別人的重擔?就像<strong>訂一堆讀經計畫卻讓人壓力大到放棄</strong>,我是否用自己的標準要求別人,卻沒有智慧和愛心,結果阻礙了神的工作?</td>
+</tr>
+<tr>
+<td>百姓對掃羅說:約拿單在以色列人中這樣<strong>大行拯救</strong>,豈可使他死呢?斷乎不可!我們指著永生的耶和華起誓,連他的一根頭髮也不可落地,因為他今日<strong>與神一同做事</strong>。(撒母耳記上14:45)</td>
+<td>當我犯錯時,是否願意承認並調整,還是為了面子堅持到底?就像<strong>走錯路卻不肯回頭只因不想承認看錯地圖</strong>,我是否寧願用更多錯誤來掩蓋第一個錯誤,即使這樣會傷害無辜的人?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+</body>
+</html>

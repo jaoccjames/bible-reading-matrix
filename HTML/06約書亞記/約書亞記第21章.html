@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約書亞記第21章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 20px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px;
+  padding: 15px; background: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; margin-right: 10px; display: inline-block; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+strong { color: #c0392b; font-weight: bold; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1 onclick="toggleScripture()">
+    約書亞記第21章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+
+  <div class="chapter-subtitle">利未城邑分配完畢，神應許一句不落空</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>那時，利未人的眾族長來到祭司以利亞撒和嫩的兒子約書亞，並以色列各支派的族長面前，</div>
+    <div class="verse"><span class="verse-number">2</span>在迦南地的示羅對他們說：「從前耶和華藉着摩西吩咐給我們城邑居住，並城邑的郊野可以牧養我們的牲畜。」</div>
+    <div class="verse"><span class="verse-number">3</span>於是以色列人照耶和華所吩咐的，從自己的地業中，將以下所記的城邑和城邑的郊野給了利未人。</div>
+    <div class="verse"><span class="verse-number">4</span>為哥轄族拈鬮：利未人的祭司、亞倫的子孫，從猶大支派、西緬支派、便雅憫支派的地業中，按鬮得了十三座城。</div>
+    <div class="verse"><span class="verse-number">5</span>哥轄其餘的子孫，從以法蓮支派、但支派、瑪拿西半支派的地業中，按鬮得了十座城。</div>
+    <div class="verse"><span class="verse-number">6</span>革順的子孫，從以薩迦支派、亞設支派、拿弗他利支派、住巴珊的瑪拿西半支派的地業中，按鬮得了十三座城。</div>
+    <div class="verse"><span class="verse-number">7</span>米拉利的子孫，按着宗族，從流便支派、迦得支派、西布倫支派的地業中，按鬮得了十二座城。</div>
+    <div class="verse"><span class="verse-number">8</span>以色列人照着耶和華藉摩西所吩咐的，將這些城邑和城邑的郊野，按鬮分給利未人。</div>
+    <div class="verse"><span class="verse-number">9</span>從猶大支派、西緬支派的地業中，將以下所記的城給了利未支派哥轄宗族亞倫的子孫；因為給他們拈出頭一鬮，</div>
+    <div class="verse"><span class="verse-number">10</span>併於上節</div>
+    <div class="verse"><span class="verse-number">11</span>將猶大山地的基列亞巴和四圍的郊野給了他們。亞巴是亞衲族的始祖。（基列亞巴就是希伯崙）。</div>
+    <div class="verse"><span class="verse-number">12</span>惟將屬城的田地和村莊給了耶孚尼的兒子迦勒為業。</div>
+    <div class="verse"><span class="verse-number">13</span>以色列人將希伯崙，就是誤殺人的逃城和屬城的郊野，給了祭司亞倫的子孫；又給他們立拿和屬城的郊野，</div>
+    <div class="verse"><span class="verse-number">14</span>雅提珥和屬城的郊野，以實提莫和屬城的郊野，</div>
+    <div class="verse"><span class="verse-number">15</span>何崙和屬城的郊野，底璧和屬城的郊野，</div>
+    <div class="verse"><span class="verse-number">16</span>亞因和屬城的郊野，淤他和屬城的郊野，伯示麥和屬城的郊野，共九座城，都是從這二支派中分出來的。</div>
+    <div class="verse"><span class="verse-number">17</span>又從便雅憫支派的地業中給了他們基遍和屬城的郊野，迦巴和屬城的郊野，</div>
+    <div class="verse"><span class="verse-number">18</span>亞拿突和屬城的郊野，亞勒們和屬城的郊野，共四座城。</div>
+    <div class="verse"><span class="verse-number">19</span>亞倫子孫作祭司的共有十三座城，還有屬城的郊野。</div>
+    <div class="verse"><span class="verse-number">20</span>利未支派中哥轄的宗族，就是哥轄其餘的子孫，拈鬮所得的城有從以法蓮支派中分出來的。</div>
+    <div class="verse"><span class="verse-number">21</span>以色列人將以法蓮山地的示劍，就是誤殺人的逃城和屬城的郊野，給了他們；又給他們基色和屬城的郊野，</div>
+    <div class="verse"><span class="verse-number">22</span>基伯先和屬城的郊野，伯和崙和屬城的郊野，共四座城；</div>
+    <div class="verse"><span class="verse-number">23</span>又從但支派的地業中給了他們伊利提基和屬城的郊野，基比頓和屬城的郊野，</div>
+    <div class="verse"><span class="verse-number">24</span>亞雅崙和屬城的郊野，迦特臨門和屬城的郊野，共四座城；</div>
+    <div class="verse"><span class="verse-number">25</span>又從瑪拿西半支派的地業中給了他們他納和屬城的郊野，迦特臨門和屬城的郊野，共兩座城。</div>
+    <div class="verse"><span class="verse-number">26</span>哥轄其餘的子孫共有十座城，還有屬城的郊野。</div>
+    <div class="verse"><span class="verse-number">27</span>以色列人又從瑪拿西半支派的地業中將巴珊的哥蘭，就是誤殺人的逃城和屬城的郊野，給了利未支派革順的子孫；又給他們比施提拉和屬城的郊野，共兩座城；</div>
+    <div class="verse"><span class="verse-number">28</span>又從以薩迦支派的地業中給了他們基善和屬城的郊野，大比拉和屬城的郊野，</div>
+    <div class="verse"><span class="verse-number">29</span>耶末和屬城的郊野，隱干寧和屬城的郊野，共四座城；</div>
+    <div class="verse"><span class="verse-number">30</span>又從亞設支派的地業中給了他們米沙勒和屬城的郊野，押頓和屬城的郊野，</div>
+    <div class="verse"><span class="verse-number">31</span>黑甲和屬城的郊野，利合和屬城的郊野，共四座城；</div>
+    <div class="verse"><span class="verse-number">32</span>又從拿弗他利支派的地業中將加利利的基低斯，就是誤殺人的逃城和屬城的郊野，給了他們；又給他們哈末多珥和屬城的郊野，加珥坦和屬城的郊野，共三座城。</div>
+    <div class="verse"><span class="verse-number">33</span>革順人按着宗族所得的城，共十三座，還有屬城的郊野。</div>
+    <div class="verse"><span class="verse-number">34</span>其餘利未支派米拉利子孫，從西布倫支派的地業中所得的，就是約念和屬城的郊野，加珥他和屬城的郊野，</div>
+    <div class="verse"><span class="verse-number">35</span>丁拿和屬城的郊野，拿哈拉和屬城的郊野，共四座城；</div>
+    <div class="verse"><span class="verse-number">36</span>又從流便支派的地業中給了他們比悉和屬城的郊野，雅雜和屬城的郊野，</div>
+    <div class="verse"><span class="verse-number">37</span>基底莫和屬城的郊野，米法押和屬城的郊野，共四座城；</div>
+    <div class="verse"><span class="verse-number">38</span>又從迦得支派的地業中，將基列的拉末，就是誤殺人的逃城和屬城的郊野，給了他們；又給他們瑪哈念和屬城的郊野，</div>
+    <div class="verse"><span class="verse-number">39</span>希實本和屬城的郊野，雅謝和屬城的郊野，共四座城。</div>
+    <div class="verse"><span class="verse-number">40</span>其餘利未支派的人，就是米拉利的子孫，按着宗族拈鬮所得的，共十二座城。</div>
+    <div class="verse"><span class="verse-number">41</span>利未人在以色列人的地業中所得的城，共四十八座，並有屬城的郊野。</div>
+    <div class="verse"><span class="verse-number">42</span>這些城四圍都有屬城的郊野，城城都是如此。</div>
+    <div class="verse"><span class="verse-number">43</span>這樣，耶和華將從前向他們列祖起誓所應許的全地賜給以色列人，他們就得了為業，住在其中。</div>
+    <div class="verse"><span class="verse-number">44</span>耶和華照着向他們列祖起誓所應許的一切話，使他們四境平安；他們一切仇敵中，沒有一人在他們面前站立得住。耶和華把一切仇敵都交在他們手中。</div>
+    <div class="verse"><span class="verse-number">45</span>耶和華應許賜福給以色列家的話一句也沒有落空，都應驗了。</div>
+  </div>
+
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      約書亞記第21章完成了分地工作的最後一個環節——利未人城邑的分配。利未人的族長主動前來申訴，提醒約書亞神藉摩西所立的命令：利未人雖無土地產業，但應在各支派的地業中得到城邑居住，並有郊野牧養牲畜。以色列各支派依照神的吩咐，從自己的地業中各自撥出城邑給利未三族——哥轄、革順、米拉利——共四十八座城，分佈在全地各處。其中六座逃城也包含在利未人所得的城邑之中。這樣的安排具有深遠的神學意義：利未人遍佈全地，使神的祭司職事與屬靈教導能觸及每個支派、每個角落。本章以令人振奮的神學總結作結：「耶和華應許賜福給以色列家的話一句也沒有落空，都應驗了。」這是整個分地敘事的最高潮，也是神信實屬性最有力的宣告。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 神的僕人主動申訴合理的需要，是信心而非軟弱</strong><br>
+      利未人的族長主動來到約書亞面前，提醒神藉摩西的吩咐，要求應得的城邑。他們沒有默默等候，而是依靠神的話語大膽申訴。這與西羅非哈女兒的行動一致，都體現了一個真理：依靠神的應許提出合理的需要，是信心的表現。信徒面對神的應許，不應消極等候，而應主動以神的話語為根基，清楚地向神和人表達需要。<br><br>
+
+      <strong>2. 利未人分散全地，彰顯神的教導應遍及每一個角落</strong><br>
+      四十八座城分佈在十二支派的土地上，使利未人遍佈全以色列。這不是偶然的安排，而是神智慧的設計——讓祭司和利未人能在每個支派中事奉、教導、帶領敬拜。這提醒當代教會：神的話語與屬靈教導不應只集中在特定地點或特定群體，而應透過信徒的生命和見證，遍及每一個生活的角落、每一個社會的層面。<br><br>
+
+      <strong>3. 神的應許一句也不落空，是信仰最穩固的根基</strong><br>
+      「耶和華應許賜福給以色列家的話一句也沒有落空，都應驗了。」這句話是整本約書亞記最有力的神學宣言。從亞伯拉罕時代的應許，經過幾百年的等待、曠野的漂流、無數的爭戰，每一個字都在此得到完整的應驗。這宣告神的信實超越時間、環境和人的軟弱，是信徒在任何處境中仍能堅定信靠神的最深根基。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>經文</th>
+            <th>思想題目</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>「以色列人照<strong>耶和華所吩咐</strong>的，從自己的地業中，將以下所記的城邑和城邑的<strong>郊野給了利未人</strong>。」（書21:3）</td>
+            <td>就像公司要求各部門分撥資源支持後勤團隊，各支派從自己的地業中撥出城邑給利未人。你在教會或群體中，是否也願意從自己所擁有的資源中，<strong>主動支持</strong>那些專心事奉神的人？</td>
+          </tr>
+          <tr>
+            <td>「<strong>利未人</strong>在以色列人的地業中所得的城，共<strong>四十八座</strong>，並有屬城的郊野。」（書21:41）</td>
+            <td>就像水源流動才能灌溉四方，利未人分散在全地各支派中，使屬靈的教導能觸及每個角落。你的信仰生命是否也在你所居住、工作的<strong>日常環境</strong>中，成為周圍人屬靈的光和供應？</td>
+          </tr>
+          <tr>
+            <td>「耶和華應許賜福給以色列家的話<strong>一句也沒有落空</strong>，都<strong>應驗</strong>了。」（書21:45）</td>
+            <td>就像一份可信賴的合約，每一條款都被完整履行，神對以色列數百年的應許在此全部應驗。你現在正在等待神應許成就的事是什麼？這節經文如何幫助你在<strong>等待中持守信心</strong>？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>

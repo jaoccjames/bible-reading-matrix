@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以斯帖記第8章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 20px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0;
+  border-radius: 8px; padding: 15px; background: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none; transition: color 0.3s;
+}
+summary:hover { color: #3498db; }
+summary::before { content: "▶"; display: inline-block; margin-right: 8px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">
+    以斯帖記第8章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+  <div class="chapter-subtitle">新詔書頒布，猶大人得以自衛</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>當日，亞哈隨魯王把猶大人仇敵哈曼的家產賜給王后以斯帖。末底改也來到王面前，因為以斯帖已經告訴王，末底改是她的親屬。</div>
+    <div class="verse"><span class="verse-number">2</span>王摘下自己的戒指，就是從哈曼追回的，給了末底改。以斯帖派末底改管理哈曼的家產。</div>
+    <div class="verse"><span class="verse-number">3</span>以斯帖又俯伏在王腳前，流淚哀告，求他除掉亞甲族哈曼害猶大人的惡謀。</div>
+    <div class="verse"><span class="verse-number">4</span>王向以斯帖伸出金杖；以斯帖就起來，站在王前，</div>
+    <div class="verse"><span class="verse-number">5</span>說：「亞甲族哈米大他的兒子哈曼設謀傳旨，要殺滅在王各省的猶大人。現今王若願意，我若在王眼前蒙恩，王若以為美，若喜悅我，請王另下旨意，廢除哈曼所傳的那旨意。</div>
+    <div class="verse"><span class="verse-number">6</span>我何忍見我本族的人受害？何忍見我同宗的人被滅呢？」</div>
+    <div class="verse"><span class="verse-number">7</span>亞哈隨魯王對王后以斯帖和猶大人末底改說：「因哈曼要下手害猶大人，我已將他的家產賜給以斯帖，人也將哈曼挂在木架上。</div>
+    <div class="verse"><span class="verse-number">8</span>現在你們可以隨意奉王的名寫諭旨給猶大人，用王的戒指蓋印；因為奉王名所寫、用王戒指蓋印的諭旨，人都不能廢除。」</div>
+    <div class="verse"><span class="verse-number">9</span>三月，就是西彎月二十三日，將王的書記召來，按着末底改所吩咐的，用各省的文字、各族的方言，並猶大人的文字方言寫諭旨，傳給那從印度直到古實一百二十七省的猶大人和總督省長首領。</div>
+    <div class="verse"><span class="verse-number">10</span>末底改奉亞哈隨魯王的名寫諭旨，用王的戒指蓋印，交給騎御馬圈快馬的驛卒，傳到各處。</div>
+    <div class="verse"><span class="verse-number">11</span>諭旨中，王准各省各城的猶大人在一日之間，十二月，就是亞達月十三日，聚集保護性命，剪除殺戮滅絕那要攻擊猶大人的一切仇敵和他們的妻子兒女，奪取他們的財為掠物。</div>
+    <div class="verse"><span class="verse-number">13</span>抄錄這諭旨，頒行各省，宣告各族，使猶大人預備等候那日，在仇敵身上報仇。</div>
+    <div class="verse"><span class="verse-number">14</span>於是騎快馬的驛卒被王命催促，急忙起行；諭旨也傳遍書珊城。</div>
+    <div class="verse"><span class="verse-number">15</span>末底改穿着藍色白色的朝服，頭戴大金冠冕，又穿紫色細麻布的外袍，從王面前出來；書珊城的人民都歡呼快樂。</div>
+    <div class="verse"><span class="verse-number">16</span>猶大人有光榮，歡喜快樂而得尊貴。</div>
+    <div class="verse"><span class="verse-number">17</span>王的諭旨所到的各省各城，猶大人都歡喜快樂，設擺筵宴，以那日為吉日。那國的人民，有許多因懼怕猶大人，就入了猶大籍。</div>
+  </div>
+
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      以斯帖記第8章記載哈曼覆亡後的善後工作，以及猶大人局勢的根本扭轉。哈曼的家產歸給以斯帖，戒指歸給末底改，末底改晉升掌管哈曼的產業——一切榮耀的顛倒完成。然而危機尚未完全解除：波斯的詔令一旦頒布，不能廢除，那道滅絕猶大人的詔令仍然有效。以斯帖再次俯伏在王面前，流淚哀求，請王頒布新的詔令，准許猶大人自衛。王准許他們以末底改的名義起草新詔，用王戒指蓋印，准許猶大人在同一天聚集抵抗仇敵。消息傳遍帝國，猶大人歡欣鼓舞，末底改穿上榮耀的朝服，百姓歡呼，甚至有許多外邦人因懼怕猶大人而歸入猶大籍。本章以「光榮、歡喜、快樂、尊貴」四個詞，宣告神的救贖帶來的全面翻轉。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 仇敵的覆滅不代表危機完全解除，信仰需要持續行動</strong><br>
+      哈曼雖死，但他所頒的詔令仍然有效，猶大人的生命仍在危險中。以斯帖沒有因哈曼的死而鬆懈，反而再次俯伏哀求，繼續為族人爭取。信仰的勝利有時不是一次性的，在一個危機解除後，往往仍需繼續警醒、繼續行動。屬靈的旅程需要持守，不因初步的成功而停步。<br><br>
+      <strong>2. 神能使原本的咒詛轉化為祝福</strong><br>
+      一道本要滅絕猶大人的詔令，在神的安排下成為猶大人可以自衛的授權，甚至讓全帝國的人都懼怕猶大人。這種翻轉——從死亡的威脅到生命的尊榮——是神救贖作為的縮影。神能使仇敵的計謀轉化，使原本的危機成為神榮耀的舞台，使「光榮、歡喜、快樂、尊貴」代替了原本預期的哀哭與死亡。<br><br>
+      <strong>3. 神百姓的得救，能影響並吸引周圍的人歸向神</strong><br>
+      猶大人得救後，許多外邦人因懼怕而「入了猶大籍」。這不只是政治上的轉向，也是信仰見證的力量——當神明顯地保護和祝福祂的百姓，周圍的人會因此受影響、甚至歸向神。神的拯救不只是為了被拯救者，也是向世界宣告神的真實與大能的方式。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr><th>經文</th><th>思想題目</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>以斯帖又<strong>俯伏在王腳前，流淚哀告</strong>，求他除掉亞甲族哈曼害猶大人的惡謀。（斯8:3）</td>
+            <td>就像一場手術成功後，病人仍需要漫長的復原，<strong>一個勝利不代表所有問題解決</strong>。你有沒有在某個階段性成功後鬆懈，而忽略了仍需要繼續為他人代求的責任？</td>
+          </tr>
+          <tr>
+            <td>我<strong>何忍見</strong>我本族的人受害？何忍見我同宗的人被滅呢？（斯8:6）</td>
+            <td>就像父母看見孩子受傷會本能地衝上前，<strong>「何忍見」</strong>這份不忍之心是以斯帖行動的深層動力。你對身邊誰的困境有這種「不忍見」的感受？那份感受是否在呼召你行動？</td>
+          </tr>
+          <tr>
+            <td>猶大人有<strong>光榮，歡喜快樂而得尊貴</strong>。（斯8:16）</td>
+            <td>就像一首先由小調後轉大調的樂曲，結尾截然不同，<strong>神的救贖帶來全面翻轉</strong>——你生命中是否有過一段「由哀轉喜」的經歷？那次翻轉如何加深了你對神的信靠？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

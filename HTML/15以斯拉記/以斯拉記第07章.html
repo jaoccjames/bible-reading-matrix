@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以斯拉記第7章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 20px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0;
+  border-radius: 8px; padding: 15px; background: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none; transition: color 0.3s;
+}
+summary:hover { color: #3498db; }
+summary::before { content: "▶"; display: inline-block; margin-right: 8px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">
+    以斯拉記第7章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+  <div class="chapter-subtitle">以斯拉奉命歸回，神手幫助他</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>這事以後，波斯王亞達薛西年間，有個以斯拉，他是西萊雅的兒子，西萊雅是亞撒利雅的兒子，亞撒利雅是希勒家的兒子，</div>
+    <div class="verse"><span class="verse-number">2</span>希勒家是沙龍的兒子，沙龍是撒督的兒子，撒督是亞希突的兒子，</div>
+    <div class="verse"><span class="verse-number">3</span>亞希突是亞瑪利雅的兒子，亞瑪利雅是亞撒利雅的兒子，亞撒利雅是米拉約的兒子，</div>
+    <div class="verse"><span class="verse-number">4</span>米拉約是西拉希雅的兒子，西拉希雅是烏西的兒子，烏西是布基的兒子，</div>
+    <div class="verse"><span class="verse-number">5</span>布基是亞比書的兒子，亞比書是非尼哈的兒子，非尼哈是以利亞撒的兒子，以利亞撒是大祭司亞倫的兒子。</div>
+    <div class="verse"><span class="verse-number">6</span>這以斯拉從巴比倫上來，他是敏捷的文士，通達耶和華以色列神所賜摩西的律法書。王允准他一切所求的，是因耶和華他神的手幫助他。</div>
+    <div class="verse"><span class="verse-number">7</span>亞達薛西王第七年，以色列人、祭司、利未人、歌唱的、守門的、尼提寧，有上耶路撒冷的。</div>
+    <div class="verse"><span class="verse-number">8</span>王第七年五月，以斯拉到了耶路撒冷。</div>
+    <div class="verse"><span class="verse-number">9</span>正月初一日，他從巴比倫起程；因他神施恩的手幫助他，五月初一日就到了耶路撒冷。</div>
+    <div class="verse"><span class="verse-number">10</span>以斯拉定志考究遵行耶和華的律法，又將律例典章教訓以色列人。</div>
+    <div class="verse"><span class="verse-number">11</span>祭司以斯拉是通達耶和華誡命和賜以色列之律例的文士。亞達薛西王賜給他諭旨，上面寫着說：</div>
+    <div class="verse"><span class="verse-number">12</span>「諸王之王亞達薛西，達於祭司以斯拉通達天上神律法大德的文士，云云。</div>
+    <div class="verse"><span class="verse-number">13</span>住在我國中的以色列人、祭司、利未人，凡甘心上耶路撒冷去的，我降旨准他們與你同去。</div>
+    <div class="verse"><span class="verse-number">14</span>王與七個謀士既然差你去，照你手中神的律法書察問猶大和耶路撒冷的景況；</div>
+    <div class="verse"><span class="verse-number">15</span>又帶金銀，就是王和謀士甘心獻給住耶路撒冷、以色列神的，</div>
+    <div class="verse"><span class="verse-number">16</span>並帶你在巴比倫全省所得的金銀，和百姓、祭司樂意獻給耶路撒冷他們神殿的禮物。</div>
+    <div class="verse"><span class="verse-number">17</span>所以你當用這金銀，急速買公牛、公綿羊、綿羊羔，和同獻的素祭奠祭之物，獻在耶路撒冷你們神殿的壇上。</div>
+    <div class="verse"><span class="verse-number">18</span>剩下的金銀，你和你的弟兄看着怎樣好，就怎樣用，總要遵着你們神的旨意。</div>
+    <div class="verse"><span class="verse-number">19</span>所交給你神殿中使用的器皿，你要交在耶路撒冷神面前。</div>
+    <div class="verse"><span class="verse-number">20</span>你神殿裏若再有需用的經費，你可以從王的府庫裏支取。</div>
+    <div class="verse"><span class="verse-number">21</span>「我亞達薛西王又降旨與河西的一切庫官，說：『通達天上神律法的文士祭司以斯拉，無論向你們要甚麼，你們要速速地備辦，</div>
+    <div class="verse"><span class="verse-number">22</span>就是銀子直到一百他連得，麥子一百柯珥，酒一百罷特，油一百罷特，鹽不計其數，也要給他。</div>
+    <div class="verse"><span class="verse-number">23</span>凡天上之神所吩咐的，當為天上神的殿詳細辦理。為何使忿怒臨到王和王眾子的國呢？</div>
+    <div class="verse"><span class="verse-number">24</span>我又曉諭你們，至於祭司、利未人、歌唱的、守門的，和尼提寧，並在神殿當差的人，不可叫他們進貢，交課，納稅。』</div>
+    <div class="verse"><span class="verse-number">25</span>「以斯拉啊，要照着你神賜你的智慧，將所有明白你神律法的人立為士師、審判官，治理河西的百姓，使他們教訓一切不明白神律法的人。</div>
+    <div class="verse"><span class="verse-number">26</span>凡不遵行你神律法和王命令的人就當速速定他的罪，或治死，或充軍，或抄家，或囚禁。」</div>
+    <div class="verse"><span class="verse-number">27</span>以斯拉說：「耶和華我們列祖的神是應當稱頌的！因他使王起這心意修飾耶路撒冷耶和華的殿，</div>
+    <div class="verse"><span class="verse-number">28</span>又在王和謀士，並大能的軍長面前施恩於我。因耶和華我神的手幫助我，我就得以堅強，從以色列中招聚首領，與我一同上來。」</div>
+  </div>
+
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      以斯拉記第7章標誌著全書的第二個主要段落的開始（第7-10章），主角從所羅巴伯轉換為以斯拉本人。時間跳躍至亞達薛西王第七年（約主前458年），距聖殿落成已約六十年。以斯拉是亞倫大祭司的直系後裔，也是通達律法的文士。本章先列出他的家譜，說明他祭司血脈的純正；再介紹他的品格——定志考究、遵行、教導律法。亞達薛西王授予他一份極為慷慨的諭旨，准許以色列人自願同行，並撥出大量銀兩和物資，支持在耶路撒冷的聖殿事工和律法教導。以斯拉的使命不只是物質重建，更是屬靈重建——恢復百姓對神律法的遵行。本章以以斯拉的感恩頌讚結束，他將一切成就歸於「神的手幫助他」。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 定志學習、遵行、教導神的話語是事奉的根基</strong><br>
+      第10節是本章的核心：以斯拉「定志考究遵行耶和華的律法，又將律例典章教訓以色列人」。三個動詞的順序意義深遠——先學習（考究），再身體力行（遵行），最後才教導他人。真正的屬靈領袖不是只有知識或只會說教，而是先將真理活出來，才有權威傳授他人。這個原則適用於每一個在神家中服事的人。<br><br>
+      <strong>2. 神的手幫助是一切成就的根本原因</strong><br>
+      本章兩次提到「神的手幫助他」（第6、9節），以斯拉自己也在感恩中說「神的手幫助我」（第28節）。無論是王的允准、旅途的平安，還是人心的歸附，以斯拉將每件事的成就歸於神的恩手，而非自己的才幹或努力。這種謙遜的歸榮耀態度，正是神能繼續使用他的原因，也是每個服事者應有的生命基調。<br><br>
+      <strong>3. 屬靈重建比物質重建更深更久遠</strong><br>
+      以斯拉的使命不只是攜帶金銀器皿，更是帶去律法的教導，使百姓重新明白並遵行神的旨意。物質的聖殿已由所羅巴伯完成，但靈性的重建——百姓心中對神話語的認識與順服——才是更根本、更持久的工作。信仰的更新需要真理的栽培，教導神的話語是代代傳承信仰最重要的事工。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr><th>經文</th><th>思想題目</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>以斯拉<strong>定志考究遵行</strong>耶和華的律法，又將律例典章<strong>教訓以色列人</strong>。（拉7:10）</td>
+            <td>就像學習游泳必須先下水練習才能教導別人，你在將神的話語<strong>教導他人</strong>之前，是否先在自己生活中認真<strong>考究並遵行</strong>？你的靈命裝備與你的服事責任是否相稱？</td>
+          </tr>
+          <tr>
+            <td>這以斯拉從巴比倫上來，他是敏捷的文士，通達耶和華以色列神所賜摩西的律法書。王允准他一切所求的，是因<strong>耶和華他神的手幫助他</strong>。（拉7:6）</td>
+            <td>就像划船需要方向一致才能前進，當你回顧過去的成就時，你能否誠實地說，哪些是靠自己努力，哪些是因為<strong>神的手幫助</strong>？這份分辨如何影響你對神的感恩與謙遜？</td>
+          </tr>
+          <tr>
+            <td>因耶和華我神的手<strong>幫助我</strong>，我就得以<strong>堅強</strong>，從以色列中招聚首領，與我一同上來。（拉7:28）</td>
+            <td>就像登山者在最陡峭處需要繩索的保護，在你面對最艱難的挑戰時，<strong>神的手幫助</strong>如何讓你「得以堅強」？你現在最需要神扶持的是哪一個領域？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

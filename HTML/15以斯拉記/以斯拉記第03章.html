@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以斯拉記第3章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 20px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0;
+  border-radius: 8px; padding: 15px; background: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none; transition: color 0.3s;
+}
+summary:hover { color: #3498db; }
+summary::before { content: "▶"; display: inline-block; margin-right: 8px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">
+    以斯拉記第3章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+  <div class="chapter-subtitle">重建祭壇立殿基，淚與歡呼交織</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>到了七月，以色列人住在各城；那時他們如同一人，聚集在耶路撒冷。</div>
+    <div class="verse"><span class="verse-number">2</span>約薩達的兒子耶書亞和他的弟兄眾祭司，並撒拉鐵的兒子所羅巴伯與他的弟兄，都起來建築以色列神的壇，要照神人摩西律法書上所寫的，在壇上獻燔祭。</div>
+    <div class="verse"><span class="verse-number">3</span>他們在原有的根基上築壇，因懼怕鄰國的民，又在其上向耶和華早晚獻燔祭，</div>
+    <div class="verse"><span class="verse-number">4</span>又照律法書上所寫的守住棚節，按數照例獻每日所當獻的燔祭；</div>
+    <div class="verse"><span class="verse-number">5</span>其後獻常獻的燔祭，並在月朔與耶和華的一切聖節獻祭，又向耶和華獻各人的甘心祭。</div>
+    <div class="verse"><span class="verse-number">6</span>從七月初一日起，他們就向耶和華獻燔祭。但耶和華殿的根基尚未立定。</div>
+    <div class="verse"><span class="verse-number">7</span>他們又將銀子給石匠、木匠，把糧食、酒、油給西頓人、推羅人，使他們將香柏樹從利巴嫩運到海裏，浮海運到約帕，是照波斯王古列所允准的。</div>
+    <div class="verse"><span class="verse-number">8</span>百姓到了耶路撒冷神殿的地方。第二年二月，撒拉鐵的兒子所羅巴伯，約薩達的兒子耶書亞和其餘的弟兄，就是祭司、利未人，並一切被擄歸回耶路撒冷的人，都興工建造；又派利未人，從二十歲以外的，督理建造耶和華殿的工作。</div>
+    <div class="verse"><span class="verse-number">9</span>於是猶大〔在二章四十節作何達威雅〕的後裔，就是耶書亞和他的子孫與弟兄，甲篾和他的子孫，利未人希拿達的子孫與弟兄，都一同起來，督理那在神殿作工的人。</div>
+    <div class="verse"><span class="verse-number">10</span>匠人立耶和華殿根基的時候，祭司皆穿禮服吹號，亞薩的子孫利未人敲鈸，照以色列王大衛所定的例，都站着讚美耶和華。</div>
+    <div class="verse"><span class="verse-number">11</span>他們彼此唱和，讚美稱謝耶和華說：他本為善，他向以色列人永發慈愛。他們讚美耶和華的時候，眾民大聲呼喊，因耶和華殿的根基已經立定。</div>
+    <div class="verse"><span class="verse-number">12</span>然而有許多祭司、利未人、族長，就是見過舊殿的老年人，現在親眼看見立這殿的根基，便大聲哭號，也有許多人大聲歡呼，</div>
+    <div class="verse"><span class="verse-number">13</span>甚至百姓不能分辨歡呼的聲音和哭號的聲音；因為眾民大聲呼喊，聲音聽到遠處。</div>
+  </div>
+
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      以斯拉記第3章記載歸回百姓回到耶路撒冷後的頭兩項重大行動：重建祭壇（第1-6節）與奠立聖殿根基（第7-13節）。歸回的第一個七月，百姓便「如同一人」聚集，在廢墟中重新建立敬拜的壇，儘管面對鄰國的威脅，仍堅持早晚獻祭。這顯示歸回者將敬拜的恢復置於一切之先。接著在第二年二月，正式動工建殿。奠基之日，祭司吹號、利未人擊鈸，眾民高聲讚美，場面震撼。然而感人的是，見過昔日所羅門聖殿榮美的老人痛哭，年輕一代則歡呼，兩種聲音交織，無法分辨。這份複雜的情感——對昔日榮耀的惋惜與對未來盼望的喜悅——成為本章最深刻的屬靈圖像，也道出信仰更新時人心的真實面貌。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 在困境中仍以敬拜為優先</strong><br>
+      百姓歸回後，殿的根基尚未立定，環境充滿威脅，但他們選擇先重建祭壇、恢復獻祭。「因懼怕鄰國的民」，他們不但沒有退縮，反而更積極親近神。這顯示真正的信仰在壓力下不是收縮，而是更主動地尋求神。當信徒面對困難時，優先回到敬拜的位置，是屬靈力量的根源，而非等待環境平穩後才敬拜。<br><br>
+      <strong>2. 讚美是建造神家的屬靈基石</strong><br>
+      奠基之日，讚美先於建造。祭司吹號、利未人敲鈸，眾民齊聲頌揚「他本為善，他向以色列人永發慈愛」。這不只是慶典儀式，更是宣告：神的慈愛是建造的根基，讚美是動工前的屬靈預備。任何神的工程，無論是建立教會、家庭或個人生命，若以讚美和感恩為起點，便是立在最穩固的基礎上。<br><br>
+      <strong>3. 哭泣與歡呼都是信仰的真實回應</strong><br>
+      老人哭號，是因看見現實與昔日榮耀的落差；年輕人歡呼，是因看見新的開始。兩種回應都蒙神接納，都是信仰的真誠表達。信仰不要求信徒壓抑悲傷，假裝一切美好；也不讓人沉溺於過去而拒絕前行。在神面前，哭泣與歡喜都是真實的禱告，神都俯聽。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr><th>經文</th><th>思想題目</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>他們在原有的根基上<strong>築壇</strong>，因<strong>懼怕鄰國的民</strong>，又在其上向耶和華早晚獻燔祭。（拉3:3）</td>
+            <td>就像健身需要汗水才能見效，即使環境充滿阻力，<strong>在壓力中仍堅持敬拜</strong>是信仰成長的關鍵。你在生活中最大的「鄰國壓力」是什麼，有沒有讓你中斷與神的連結？</td>
+          </tr>
+          <tr>
+            <td>他們彼此唱和，讚美稱謝耶和華說：<strong>他本為善</strong>，他向以色列人<strong>永發慈愛</strong>。他們讚美耶和華的時候，眾民大聲呼喊，因耶和華殿的根基已經立定。（拉3:11）</td>
+            <td>就像划船需要方向一致才能前進，當眾人同心讚美神時，建造的工程才得以推進。你在團體敬拜中能否真心喊出「<strong>他本為善</strong>」——即使你正走過艱難的處境？</td>
+          </tr>
+          <tr>
+            <td>然而有許多祭司、利未人、族長……便<strong>大聲哭號</strong>，也有許多人<strong>大聲歡呼</strong>，甚至百姓不能分辨歡呼的聲音和哭號的聲音。（拉3:12-13）</td>
+            <td>就像搬到新城市前無法完全預知一切，面對信仰的更新，你是更像<strong>歡呼的年輕人</strong>，還是更像<strong>哭號的老人</strong>？你允許自己在神面前真實地表達這兩種情緒嗎？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

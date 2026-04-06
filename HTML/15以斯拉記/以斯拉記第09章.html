@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以斯拉記第9章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 20px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0;
+  border-radius: 8px; padding: 15px; background: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none; transition: color 0.3s;
+}
+summary:hover { color: #3498db; }
+summary::before { content: "▶"; display: inline-block; margin-right: 8px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">
+    以斯拉記第9章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+  <div class="chapter-subtitle">以斯拉認罪代禱，為民慚愧俯伏</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>這事作完了，眾首領來見我，說：「以色列民和祭司並利未人，沒有離絕迦南人、赫人、比利洗人、耶布斯人、亞捫人、摩押人、埃及人、亞摩利人，仍效法這些國的民，行可憎的事。</div>
+    <div class="verse"><span class="verse-number">2</span>因他們為自己和兒子娶了這些外邦女子為妻，以致聖潔的種類和這些國的民混雜；而且首領和官長在這事上為罪魁。」</div>
+    <div class="verse"><span class="verse-number">3</span>我一聽見這事，就撕裂衣服和外袍，拔了頭髮和鬍鬚，驚懼憂悶而坐。</div>
+    <div class="verse"><span class="verse-number">4</span>凡為以色列神言語戰兢的，都因這被擄歸回之人所犯的罪聚集到我這裏來。我就驚懼憂悶而坐，直到獻晚祭的時候。</div>
+    <div class="verse"><span class="verse-number">5</span>獻晚祭的時候我起來，心中愁苦，穿着撕裂的衣袍，雙膝跪下向耶和華我的神舉手，</div>
+    <div class="verse"><span class="verse-number">6</span>說：「我的神啊，我抱愧蒙羞，不敢向我神仰面；因為我們的罪孽滅頂，我們的罪惡滔天。</div>
+    <div class="verse"><span class="verse-number">7</span>從我們列祖直到今日，我們的罪惡甚重；因我們的罪孽，我們和君王、祭司都交在外邦列王的手中，殺害、擄掠、搶奪、臉上蒙羞正如今日的光景。</div>
+    <div class="verse"><span class="verse-number">8</span>現在耶和華我們的神暫且施恩與我們，給我們留些逃脫的人，使我們安穩如釘子釘在他的聖所，我們的神好光照我們的眼目，使我們在受轄制之中稍微復興。</div>
+    <div class="verse"><span class="verse-number">9</span>我們是奴僕，然而在受轄制之中，我們的神仍沒有丟棄我們，在波斯王眼前向我們施恩，叫我們復興，能重建我們神的殿，修其毀壞之處，使我們在猶大和耶路撒冷有牆垣。</div>
+    <div class="verse"><span class="verse-number">10</span>「我們的神啊，既是如此，我們還有甚麼話可說呢？因為我們已經離棄你的命令，</div>
+    <div class="verse"><span class="verse-number">11</span>就是你藉你僕人眾先知所吩咐的說：『你們要去得為業之地是污穢之地；因列國之民的污穢和可憎的事，叫全地從這邊直到那邊滿了污穢。</div>
+    <div class="verse"><span class="verse-number">12</span>所以不可將你們的女兒嫁他們的兒子，也不可為你們的兒子娶他們的女兒，永不可求他們的平安和他們的利益，這樣你們就可以強盛，喫這地的美物，並遺留這地給你們的子孫永遠為業。』</div>
+    <div class="verse"><span class="verse-number">13</span>神啊，我們因自己的惡行和大罪，遭遇了這一切的事，並且你刑罰我們輕於我們罪所當得的，又給我們留下這些人。</div>
+    <div class="verse"><span class="verse-number">14</span>我們豈可再違背你的命令，與這行可憎之事的民結親呢？若這樣行，你豈不向我們發怒，將我們滅絕，以致沒有一個剩下逃脫的人嗎？</div>
+    <div class="verse"><span class="verse-number">15</span>耶和華以色列的神啊，因你是公義的，我們這剩下的人纔得逃脫，正如今日的光景。看哪，我們在你面前有罪惡，因此無人在你面前站立得住。」</div>
+  </div>
+
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      以斯拉記第9章記載以斯拉抵達耶路撒冷後不久，得知一個令他震驚的消息：以色列百姓、甚至祭司和利未人，都與外邦人通婚，使「聖潔的種類」與列邦混雜，且領袖們更是帶頭犯罪。這直接違反了神藉摩西所頒布的誡命，其根本問題不在於種族，而在於宗教信仰的污染——外邦人帶來偶像崇拜的影響，危及以色列的信仰純正。以斯拉本人並未參與此罪，卻撕裂衣袍，拔髮，在眾人面前俯伏認罪，為全體百姓作代禱式的認罪。他的禱告深刻承認罪的嚴重性、神的慈愛與公義，以及百姓的無地自容。這種代禱的精神——為他人的罪悲痛並跪下求恩——是本章最動人的屬靈圖像，也是真正靈性領袖的標記。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 真正的屬靈領袖為群體的罪代禱並感同身受</strong><br>
+      以斯拉雖非通婚罪的參與者，卻說「我們的罪惡」，將自己完全與百姓認同。他撕裂衣袍、拔髮、俯伏，外在的哀慟表達出內心真實的破碎。這種代禱的靈是屬靈領導力的核心——真正的牧人不是批判羊群的審判官，而是為羊群的罪擔憂，在神面前俯伏懇求的代禱者。摩西、尼希米、使徒保羅都有這樣的心腸。<br><br>
+      <strong>2. 承認罪的嚴重性是悔改的第一步</strong><br>
+      以斯拉的禱告沒有為罪辯解，也沒有輕描淡寫，而是直言「罪孽滅頂」、「罪惡滔天」，承認這罪不是偶發的失誤，而是歷史性、根深蒂固的悖逆。真實的悔改始於對罪的清醒認識——不縮小罪的嚴重性，不轉移責任，而是在神面前坦然承認。這種對罪的嚴肅態度，是屬靈更新的起點。<br><br>
+      <strong>3. 神的恩典在審判中仍照耀，成為悔改的動力</strong><br>
+      以斯拉認罪時，一面承認罪的嚴重，一面感謝神「刑罰我們輕於我們罪所當得的」，還給百姓留存了剩餘的人。正是神的恩典，而非神的嚴威，成為他呼籲悔改的基礎。認識神的恩典使人謙卑，使人不敢再妄然犯罪，因為得罪一位如此慈愛的神，比得罪嚴厲的審判者更令人心痛。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr><th>經文</th><th>思想題目</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>我一聽見這事，就<strong>撕裂衣服和外袍</strong>，拔了頭髮和鬍鬚，<strong>驚懼憂悶而坐</strong>。（拉9:3）</td>
+            <td>就像聽到摯友重病的消息，你會立刻放下手邊一切事，當你得知身邊的肢體或群體陷入<strong>屬靈危機</strong>時，你內心是否真的感到沉重？還是你選擇視而不見或置身事外？</td>
+          </tr>
+          <tr>
+            <td>我的神啊，我<strong>抱愧蒙羞</strong>，不敢向我神仰面；因為我們的罪孽<strong>滅頂</strong>，我們的罪惡<strong>滔天</strong>。（拉9:6）</td>
+            <td>就像照片濾鏡只能美化表面，無法改變真實狀況，你在神面前是否也有過類似以斯拉般<strong>無地自容的認罪</strong>經歷？真實的認罪如何改變了你與神的關係？</td>
+          </tr>
+          <tr>
+            <td>現在耶和華我們的神暫且<strong>施恩與我們</strong>，給我們留些逃脫的人，使我們安穩如釘子釘在他的聖所，我們的神好<strong>光照我們的眼目</strong>，使我們在受轄制之中稍微復興。（拉9:8）</td>
+            <td>就像手機低電量時充電後才能繼續運作，<strong>神在審判中仍施恩</strong>的事實是否讓你感到心軟？這份恩典有沒有成為你不敢輕易再犯罪的動力，而非讓你覺得神反正會寬恕？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

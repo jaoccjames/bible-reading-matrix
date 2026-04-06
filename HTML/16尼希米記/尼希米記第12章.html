@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尼希米記第12章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 20px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0;
+  border-radius: 8px; padding: 15px; background: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none; transition: color 0.3s;
+}
+summary:hover { color: #3498db; }
+summary::before { content: "▶"; display: inline-block; margin-right: 8px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">
+    尼希米記第12章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+  <div class="chapter-subtitle">城牆告成大祭歡慶，歌聲遠聞</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>同着撒拉鐵的兒子所羅巴伯和耶書亞回來的祭司與利未人記在下面：祭司是西萊雅、耶利米、以斯拉、</div>
+    <div class="verse"><span class="verse-number">2</span>亞瑪利雅、瑪鹿、哈突、</div>
+    <div class="verse"><span class="verse-number">3</span>示迦尼、利宏、米利末、</div>
+    <div class="verse"><span class="verse-number">4</span>易多、近頓、亞比雅、</div>
+    <div class="verse"><span class="verse-number">5</span>米雅民、瑪底雅、璧迦、</div>
+    <div class="verse"><span class="verse-number">6</span>示瑪雅、約雅立、耶大雅、</div>
+    <div class="verse"><span class="verse-number">7</span>撒路、亞木、希勒家、耶大雅。這些人在耶書亞的時候作祭司和他們弟兄的首領。</div>
+    <div class="verse"><span class="verse-number">8</span>利未人是耶書亞、賓內、甲篾、示利比、猶大、瑪他尼。這瑪他尼和他的弟兄管理稱謝的事。</div>
+    <div class="verse"><span class="verse-number">9</span>他們的弟兄八布迦和烏尼照自己的班次與他們相對。</div>
+    <div class="verse"><span class="verse-number">10</span>耶書亞生約雅金；約雅金生以利亞實；以利亞實生耶何耶大；</div>
+    <div class="verse"><span class="verse-number">11</span>耶何耶大生約拿單；約拿單生押杜亞。</div>
+    <div class="verse"><span class="verse-number">12</span>在約雅金的時候，祭司作族長的西萊雅族〔或作：班；本段同〕有米拉雅；耶利米族有哈拿尼雅；</div>
+    <div class="verse"><span class="verse-number">13</span>以斯拉族有米書蘭；亞瑪利雅族有約哈難；</div>
+    <div class="verse"><span class="verse-number">14</span>米利古族有約拿單；示巴尼族有約瑟；</div>
+    <div class="verse"><span class="verse-number">15</span>哈琳族有押拿；米拉約族有希勒愷；</div>
+    <div class="verse"><span class="verse-number">16</span>易多族有撒迦利亞；近頓族有米書蘭；</div>
+    <div class="verse"><span class="verse-number">17</span>亞比雅族有細基利；米拿民族某；摩亞底族有毘勒太；</div>
+    <div class="verse"><span class="verse-number">18</span>璧迦族有沙母亞；示瑪雅族有約拿單；</div>
+    <div class="verse"><span class="verse-number">19</span>約雅立族有瑪特乃；耶大雅族有烏西；</div>
+    <div class="verse"><span class="verse-number">20</span>撒來族有加萊；亞木族有希伯；</div>
+    <div class="verse"><span class="verse-number">21</span>希勒家族有哈沙比雅；耶大雅族有拿坦業。</div>
+    <div class="verse"><span class="verse-number">22</span>至於利未人，當以利亞實、耶何耶大、約哈難、押杜亞的時候，他們的族長記在冊上。波斯王大利烏在位的時候，作族長的祭司也記在冊上。</div>
+    <div class="verse"><span class="verse-number">23</span>利未人作族長的記在歷史上，直到以利亞實的兒子約哈難的時候。</div>
+    <div class="verse"><span class="verse-number">24</span>利未人的族長是哈沙比雅、示利比、甲篾的兒子耶書亞，與他們弟兄的班次相對，照着神人大衛的命令一班一班的讚美稱謝。</div>
+    <div class="verse"><span class="verse-number">25</span>瑪他尼、八布迦、俄巴底亞、米書蘭、達們、亞谷是守門的，就是在庫房那裏守門。</div>
+    <div class="verse"><span class="verse-number">26</span>這都是在約撒達的孫子、耶書亞的兒子約雅金和省長尼希米，並祭司文士以斯拉的時候，有職任的。</div>
+    <div class="verse"><span class="verse-number">27</span>耶路撒冷城牆告成的時候，眾民就把各處的利未人招到耶路撒冷，要稱謝、歌唱、敲鈸、鼓瑟、彈琴，歡歡喜喜的行告成之禮。</div>
+    <div class="verse"><span class="verse-number">28</span>歌唱的人從耶路撒冷的周圍和尼陀法的村莊與伯吉甲，又從迦巴和押瑪弗的田地聚集，因為歌唱的人在耶路撒冷四圍為自己立了村莊。</div>
+    <div class="verse"><span class="verse-number">30</span>祭司和利未人就潔淨自己，也潔淨百姓和城門，並城牆。</div>
+    <div class="verse"><span class="verse-number">31</span>我帶猶大的首領上城，使稱謝的人分為兩大隊，排列而行：第一隊在城上往右邊向糞廠門行走，</div>
+    <div class="verse"><span class="verse-number">32</span>在他們後頭的有何沙雅與猶大首領的一半，</div>
+    <div class="verse"><span class="verse-number">33</span>又有亞撒利雅、以斯拉、米書蘭、</div>
+    <div class="verse"><span class="verse-number">34</span>猶大、便雅憫、示瑪雅、耶利米。</div>
+    <div class="verse"><span class="verse-number">35</span>還有些吹號之祭司的子孫，約拿單的兒子撒迦利亞。約拿單是示瑪雅的兒子；示瑪雅是瑪他尼的兒子；瑪他尼是米該亞的兒子；米該亞是撒刻的兒子；撒刻是亞薩的兒子；</div>
+    <div class="verse"><span class="verse-number">36</span>又有撒迦利亞的弟兄示瑪雅、亞撒利、米拉萊、基拉萊、瑪艾、拿坦業、猶大、哈拿尼，都拿着神人大衛的樂器，文士以斯拉引領他們。</div>
+    <div class="verse"><span class="verse-number">37</span>他們經過泉門往前，從大衛城的台階隨地勢而上，在大衛宮殿以上，直行到朝東的水門。</div>
+    <div class="verse"><span class="verse-number">38</span>第二隊稱謝的人要與那一隊相迎而行。我和民的一半跟隨他們，在城牆上過了爐樓，直到寬牆；</div>
+    <div class="verse"><span class="verse-number">39</span>又過了以法蓮門、古門、魚門、哈楠業樓、哈米亞樓，直到羊門，就在護衛門站住。</div>
+    <div class="verse"><span class="verse-number">40</span>於是，這兩隊稱謝的人連我和官長的一半，站在神的殿裏。</div>
+    <div class="verse"><span class="verse-number">41</span>還有祭司以利亞金、瑪西雅、米拿民、米該雅、以利約乃、撒迦利亞、哈楠尼亞吹號；</div>
+    <div class="verse"><span class="verse-number">42</span>又有瑪西雅、示瑪雅、以利亞撒、烏西、約哈難、瑪基雅、以攔，和以謝奏樂。歌唱的就大聲歌唱，伊斯拉希雅管理他們。</div>
+    <div class="verse"><span class="verse-number">43</span>那日，眾人獻大祭而歡樂；因為神使他們大大歡樂，連婦女帶孩童也都歡樂，甚至耶路撒冷中的歡聲聽到遠處。</div>
+    <div class="verse"><span class="verse-number">44</span>當日，派人管理庫房，將舉祭、初熟之物和所取的十分之一，就是按各城田地，照律法所定歸給祭司和利未人的分，都收在裏頭。猶大人因祭司和利未人供職，就歡樂了。</div>
+    <div class="verse"><span class="verse-number">45</span>祭司利未人遵守神所吩咐的，並守潔淨的禮。歌唱的、守門的，照着大衛和他兒子所羅門的命令也如此行。</div>
+    <div class="verse"><span class="verse-number">46</span>古時，在大衛和亞薩的日子，有歌唱的伶長，並有讚美稱謝神的詩歌。</div>
+    <div class="verse"><span class="verse-number">47</span>當所羅巴伯和尼希米的時候，以色列眾人將歌唱的、守門的，每日所當得的分供給他們，又給利未人當得的分；利未人又給亞倫的子孫當得的分。</div>
+  </div>
+
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      尼希米記第12章分為兩部分：前半（第1-26節）記錄歷代祭司和利未人的名冊，從第一批歸回所羅巴伯時代一直列到尼希米時代，顯示事奉傳承的連續性；後半（第27-47節）是全書最歡慶的場景——城牆告成的獻典禮。尼希米帶領百姓在城牆上分兩隊行進，吹號奏樂，高聲讚美，最終在聖殿前匯合，獻大祭、歡聲大作，「甚至耶路撒冷中的歡聲聽到遠處」。這場慶典經過仔細籌備：招聚各地利未人，潔淨自己、百姓和城門，以詩歌讚美為整個儀式的核心。章末記錄百姓如何忠心供應事奉者所需，使聖殿的各項事工能夠持續進行。這是歸回重建歷程中最輝煌的頂點，也是讚美神的全民屬靈大慶典。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 讚美是完成神工程後最合宜的回應</strong><br>
+      城牆告成，尼希米沒有開慶功宴，而是組織兩隊讚美的行列繞城而行，最終在聖殿前匯合獻祭。這說明一切成就最終都應歸回到神的面前，以讚美作為回應。讚美不只是個人的情緒表達，更是一個公開的神學宣告——這是神做的，不是我們做的。每一次神的工程完成，讚美是最合宜、最誠實的回應。<br><br>
+      <strong>2. 歡樂是神賜的，信仰群體的喜樂可以感染周遭</strong><br>
+      「因為神使他們大大歡樂，連婦女帶孩童也都歡樂，甚至耶路撒冷中的歡聲聽到遠處」——這種喜樂是具有感染力的公共見證。當信仰群體真實地在神面前歡樂，這喜樂不只是內部的感受，更向外傳遞，讓周圍的人也感受到有些不尋常的事在發生。屬靈喜樂是一種宣教的力量。<br><br>
+      <strong>3. 事奉的傳承與供應確保神工程的持久</strong><br>
+      本章一方面記錄歷代祭司利未人的傳承，另一方面記錄百姓如何按規定供應事奉者的日常所需。這兩者——世代的傳承和物質的支持——共同確保神殿事奉不因時間流逝而中斷。信仰的持久不只靠熱情，更需要有序的傳承和忠心的供應，使每一代人都能繼續在神面前事奉。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr><th>經文</th><th>思想題目</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>耶路撒冷城牆告成的時候，眾民就把各處的利未人招到耶路撒冷，要稱謝、歌唱、敲鈸、鼓瑟、彈琴，<strong>歡歡喜喜的行告成之禮</strong>。（尼12:27）</td>
+            <td>就像完成一個重要項目後舉辦慶祝，讚美神是最合宜的方式，你在神的工程完成後，是否有習慣<strong>停下來歡慶感謝</strong>，還是立刻轉向下一個任務而忘記感恩？</td>
+          </tr>
+          <tr>
+            <td>那日，眾人獻大祭而歡樂；因為<strong>神使他們大大歡樂</strong>，連婦女帶孩童也都歡樂，甚至耶路撒冷中的<strong>歡聲聽到遠處</strong>。（尼12:43）</td>
+            <td>就像一個家庭歡笑的聲音讓鄰居也感到溫暖，<strong>信仰群體真實的喜樂</strong>能否讓你周圍不信的人也感受到神的同在？你的信仰生活是否散發出讓人想靠近的喜樂？</td>
+          </tr>
+          <tr>
+            <td>猶大人因<strong>祭司和利未人供職</strong>，就<strong>歡樂了</strong>。（尼12:44）</td>
+            <td>就像欣賞一場精彩的音樂會，觀眾的喜樂來自台上演奏者的忠心付出，<strong>忠心供職的事奉者</strong>是否也讓你感到喜樂？你如何以具體行動支持和感謝那些在神家中服事的人？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

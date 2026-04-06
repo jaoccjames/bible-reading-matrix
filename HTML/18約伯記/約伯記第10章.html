@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第10章 - 聖經重點與思考</title>
+<style>* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s, background 0.3s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; transition: color 0.3s; }
+summary:hover { color: #3498db; }
+summary::before { content: "▶"; display: inline-block; margin-right: 8px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">約伯記第10章 <span id="bibleIcon" class="bible-icon">📕</span></h1>
+  <div class="chapter-subtitle">約伯向神申訴：為何創造又毀滅我</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>我厭煩我的性命，必由着自己述說我的哀情；因心裏苦惱，我要說話，</div>
+    <div class="verse"><span class="verse-number">2</span>對神說：不要定我有罪，要指示我，你為何與我爭辯？</div>
+    <div class="verse"><span class="verse-number">3</span>你手所造的，你又欺壓，又藐視，卻光照惡人的計謀。這事你以為美嗎？</div>
+    <div class="verse"><span class="verse-number">4</span>你的眼豈是肉眼？你查看豈像人查看嗎？</div>
+    <div class="verse"><span class="verse-number">5</span>你的日子豈像人的日子，你的年歲豈像人的年歲，</div>
+    <div class="verse"><span class="verse-number">6</span>就追問我的罪孽，尋察我的罪過嗎？</div>
+    <div class="verse"><span class="verse-number">7</span>其實，你知道我沒有罪惡，並沒有能救我脫離你手的。</div>
+    <div class="verse"><span class="verse-number">8</span>你的手創造我，造就我的四肢百體，你還要毀滅我。</div>
+    <div class="verse"><span class="verse-number">9</span>求你記念製造我如摶泥一般，你還要使我歸於塵土嗎？</div>
+    <div class="verse"><span class="verse-number">10</span>你不是倒出我來好像奶，使我凝結如同奶餅嗎？</div>
+    <div class="verse"><span class="verse-number">11</span>你以皮和肉為衣給我穿上，用骨與筋把我全體聯絡。</div>
+    <div class="verse"><span class="verse-number">12</span>你將生命和慈愛賜給我；你也眷顧保全我的心靈。</div>
+    <div class="verse"><span class="verse-number">13</span>然而，你待我的這些事早已藏在你心裏；我知道你久有此意。</div>
+    <div class="verse"><span class="verse-number">14</span>我若犯罪，你就察看我，並不赦免我的罪孽。</div>
+    <div class="verse"><span class="verse-number">15</span>我若行惡，便有了禍；我若為義，也不敢抬頭，正是滿心羞愧，眼見我的苦情。</div>
+    <div class="verse"><span class="verse-number">16</span>我若昂首自得，你就追捕我如獅子，又在我身上顯出奇能。</div>
+    <div class="verse"><span class="verse-number">17</span>你重立見證攻擊我，向我加增惱怒，如軍兵更換着攻擊我。</div>
+    <div class="verse"><span class="verse-number">18</span>你為何使我出母胎呢？不如我當時氣絕，無人得見我；</div>
+    <div class="verse"><span class="verse-number">19</span>這樣，就如沒有我一般，一出母胎就被送入墳墓。</div>
+    <div class="verse"><span class="verse-number">20</span>我的日子不是甚少嗎？求你停手寬容我，叫我在往而不返之先，就是往黑暗和死蔭之地以先可以稍得暢快。</div>
+    <div class="verse"><span class="verse-number">21</span>併於上節</div>
+    <div class="verse"><span class="verse-number">22</span>那地甚是幽暗，是死蔭混沌之地；那裏的光好像幽暗。</div>
+  </div>
+  <script>function toggleScripture() {
+  const s = document.getElementById('scriptureText');
+  const i = document.getElementById('bibleIcon');
+  s.classList.toggle('show');
+  if (s.classList.contains('show')) { i.textContent = '📖'; i.classList.add('open'); }
+  else { i.textContent = '📕'; i.classList.remove('open'); }
+}</script>
+  <details><summary>背景簡介</summary><div class="content">約伯記第10章是約伯向神最直接的申訴之一，語氣從比較到質問，帶著強烈的情感張力。他不解神為何先精心創造他，又任憑他受如此苦難：「你的手創造我，造就我的四肢百體，你還要毀滅我。」他回憶神過去對他的眷顧——「你將生命和慈愛賜給我；你也眷顧保全我的心靈」——與當下的苦難形成強烈對比。他問神：你是否用肉眼查看？你的眼光是否與人一樣？他的控訴是：神清楚知道他無辜，卻仍任憑他受苦。本章以一個沉痛的請求結束：「我的日子不是甚少嗎？求你停手寬容我，叫我在往而不返之先……可以稍得暢快。」這是一個在絕望中仍然向神說話的靈魂——他沒有停止對話，即使對話充滿了痛苦。</div></details>
+  <details><summary>核心屬靈意涵</summary><div class="content"><strong>1. 創造主的愛與允許苦難之間的張力是信仰的核心掙扎</strong><br>約伯說神「倒出我來好像奶，使我凝結如同奶餅」，以精緻的工藝描述神的創造之愛；卻又問「你還要使我歸於塵土嗎？」這種創造之愛與允許毀滅之間的張力，是苦難中信仰最真實的掙扎。信仰沒有要求我們假裝這個張力不存在。<br><br><strong>2. 回憶神過去的恩典是在苦難中持守的錨</strong><br>約伯說「你將生命和慈愛賜給我；你也眷顧保全我的心靈」——在最黑暗的時刻，他仍然記得神過去的恩典。這種對過去神作為的記念，既是他申訴的基礎（「你從前愛我，為何如今這樣對我」），也是信仰中最重要的持守方式：記念神過去的信實，是面對當下苦難的力量。<br><br><strong>3. 繼續與神對話，即使對話充滿痛苦，是信仰最真實的見證</strong><br>約伯沒有停止說話——即使他說的是申訴、質問、甚至控訴。這種在極度痛苦中仍堅持向神說話的姿態，本身就是信仰的明證。一個真正失去信仰的人，不再需要向神申訴，因為他已不再認為神在聽，或神值得對話。</div></details>
+  <details open><summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr><td>你的手<strong>創造我</strong>，造就我的四肢百體，你還要<strong>毀滅我</strong>。（伯10:8）</td><td>就像一個藝術家精心製作的作品卻被自己砸碎，<strong>神創造又允許毀滅</strong>的矛盾讓約伯困惑。你有沒有過「神創造了我，為何允許這樣的事發生在我身上」的疑問？你如何在那疑問中繼續持守與神的關係？</td></tr>
+          <tr><td>你將<strong>生命和慈愛</strong>賜給我；你也<strong>眷顧保全</strong>我的心靈。（伯10:12）</td><td>就像翻舊照片時突然想起曾有的美好，<strong>回憶神過去的恩典</strong>在苦難中既是安慰，也是痛苦的來源。你生命中哪一個神恩典的記憶，在最難的時候給了你力量繼續？</td></tr>
+          <tr><td>我的日子不是<strong>甚少嗎</strong>？求你<strong>停手寬容我</strong>，叫我……可以<strong>稍得暢快</strong>。（伯10:20）</td><td>就像長跑選手在最疲憊時，只求能稍微放慢腳步喘一口氣，<strong>約伯小小的請求</strong>——只求「稍得暢快」——是苦難中最真實的人性呼聲。你有沒有曾向神說過「只求給我一點喘息的空間」？那個請求神有沒有回應？</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

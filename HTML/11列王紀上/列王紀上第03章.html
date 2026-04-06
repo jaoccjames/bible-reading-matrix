@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀上第3章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8; color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: white;
+  padding: 40px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em; color: #2c3e50;
+  border-bottom: 3px solid #3498db; padding-bottom: 15px;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 15px;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em; color: #7f8c8d; font-weight: bold;
+  text-align: center; margin-bottom: 30px; margin-top: 10px;
+}
+.scripture-text {
+  display: none; background: #f8f9fa;
+  border-left: 4px solid #3498db; padding: 20px;
+  line-height: 2; max-height: 500px; overflow-y: auto;
+  border-radius: 4px; margin-bottom: 20px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px;
+  padding: 15px; background: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em; font-weight: bold; color: #2980b9;
+  cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; margin-right: 10px; display: inline-block; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+strong { color: #c0392b; font-weight: bold; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1 onclick="toggleScripture()">
+    列王紀上第3章
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+
+  <div class="chapter-subtitle">所羅門求智慧蒙悅納，斷案二婦顯神賜</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>所羅門與埃及王法老結親，娶了法老的女兒為妻，接她進入大衛城，直等到造完了自己的宮和耶和華的殿，並耶路撒冷周圍的城牆。</div>
+    <div class="verse"><span class="verse-number">2</span>當那些日子，百姓仍在邱壇獻祭，因為還沒有為耶和華的名建殿。</div>
+    <div class="verse"><span class="verse-number">3</span>所羅門愛耶和華，遵行他父親大衛的律例，只是還在邱壇獻祭燒香。</div>
+    <div class="verse"><span class="verse-number">4</span>所羅門王上基遍去獻祭；因為在那裏有極大〔或作：出名〕的邱壇，他在那壇上獻一千犧牲作燔祭。</div>
+    <div class="verse"><span class="verse-number">5</span>在基遍，夜間夢中，耶和華向所羅門顯現，對他說：「你願我賜你甚麼？你可以求。」</div>
+    <div class="verse"><span class="verse-number">6</span>所羅門說：「你僕人我父親大衛用誠實、公義、正直的心行在你面前，你就向他大施恩典，又為他存留大恩，賜他一個兒子坐在他的位上，正如今日一樣。</div>
+    <div class="verse"><span class="verse-number">7</span>耶和華我的神啊，如今你使僕人接續我父親大衛作王；但我是幼童，不知道應當怎樣出入。</div>
+    <div class="verse"><span class="verse-number">8</span>僕人住在你所揀選的民中，這民多得不可勝數。</div>
+    <div class="verse"><span class="verse-number">9</span>所以求你賜我智慧，可以判斷你的民，能辨別是非。不然，誰能判斷這眾多的民呢？」</div>
+    <div class="verse"><span class="verse-number">10</span>所羅門因為求這事，就蒙主喜悅。</div>
+    <div class="verse"><span class="verse-number">11</span>神對他說：「你既然求這事，不為自己求壽、求富，也不求滅絕你仇敵的性命，單求智慧可以聽訟，</div>
+    <div class="verse"><span class="verse-number">12</span>我就應允你所求的，賜你聰明智慧，甚至在你以前沒有像你的，在你以後也沒有像你的。</div>
+    <div class="verse"><span class="verse-number">13</span>你所沒有求的，我也賜給你，就是富足、尊榮，使你在世的日子，列王中沒有一個能比你的。</div>
+    <div class="verse"><span class="verse-number">14</span>你若效法你父親大衛，遵行我的道，謹守我的律例、誡命，我必使你長壽。」</div>
+    <div class="verse"><span class="verse-number">15</span>所羅門醒了，不料是個夢。他就回到耶路撒冷，站在耶和華的約櫃前，獻燔祭和平安祭，又為他眾臣僕設擺筵席。</div>
+    <div class="verse"><span class="verse-number">16</span>一日，有兩個妓女來，站在王面前。</div>
+    <div class="verse"><span class="verse-number">17</span>一個說：「我主啊，我和這婦人同住一房；她在房中的時候，我生了一個男孩。</div>
+    <div class="verse"><span class="verse-number">18</span>我生孩子後第三日，這婦人也生了孩子。我們是同住的，除了我們二人之外，房中再沒有別人。</div>
+    <div class="verse"><span class="verse-number">19</span>夜間，這婦人睡着的時候，壓死了她的孩子。</div>
+    <div class="verse"><span class="verse-number">20</span>她半夜起來，趁我睡着，從我旁邊把我的孩子抱去，放在她懷裏，將她的死孩子放在我懷裏。</div>
+    <div class="verse"><span class="verse-number">21</span>天要亮的時候，我起來要給我的孩子喫奶，不料，孩子死了；及至天亮，我細細的察看，不是我所生的孩子。」</div>
+    <div class="verse"><span class="verse-number">22</span>那婦人說：「不然，活孩子是我的，死孩子是你的。」這婦人說：「不然，死孩子是你的，活孩子是我的。」她們在王面前如此爭論。</div>
+    <div class="verse"><span class="verse-number">23</span>王說：「這婦人說『活孩子是我的，死孩子是你的』，那婦人說『不然，死孩子是你的，活孩子是我的』」，</div>
+    <div class="verse"><span class="verse-number">24</span>就吩咐說：「拿刀來！」人就拿刀來。</div>
+    <div class="verse"><span class="verse-number">25</span>王說：「將活孩子劈成兩半，一半給那婦人，一半給這婦人。」</div>
+    <div class="verse"><span class="verse-number">26</span>活孩子的母親為自己的孩子心裏急痛，就說：「求我主將活孩子給那婦人吧，萬不可殺他！」那婦人說：「這孩子也不歸我，也不歸你，把他劈了吧！」</div>
+    <div class="verse"><span class="verse-number">27</span>王說：「將活孩子給這婦人，萬不可殺他；這婦人實在是他的母親。」</div>
+    <div class="verse"><span class="verse-number">28</span>以色列眾人聽見王這樣判斷，就都敬畏他；因為見他心裏有神的智慧，能以斷案。</div>
+  </div>
+
+  <script>
+    function toggleScripture() {
+      const scriptureText = document.getElementById('scriptureText');
+      const bibleIcon = document.getElementById('bibleIcon');
+      scriptureText.classList.toggle('show');
+      if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+      } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+      }
+    }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      列王紀上第3章是所羅門王故事中最令人動容的篇章之一，記述他登基之初最關鍵的屬靈選擇。所羅門在基遍的大邱壇獻了一千燔祭，神在夢中向他顯現，賜給他一個史無前例的邀請：「你願我賜你甚麼？你可以求。」面對這份無限的應許，所羅門沒有求長壽、財富或消滅仇敵，而是以謙遜的心求一顆辨別是非的智慧心，好領導神所揀選的眾民。這個選擇讓神大為喜悅，不僅賜下前所未有的智慧，還額外賞賜財富和尊榮。隨後，本章以兩個爭子的婦人案件，立即展示這份智慧的真實運作——所羅門以「劈子」的策略，讓真正的母親因愛而暴露出來，斷案之精準令全以色列人敬畏。本章揭示真正的智慧來自謙遜地認識自己的有限，並以服事他人為目標，而非圖利自身。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 謙遜地認識自己的有限，是求智慧的正確起點</strong><br>
+      所羅門說「我是幼童，不知道應當怎樣出入」，這份自知之明使他能夠放下對個人利益的追求，轉而求能服事他人的智慧。驕傲的人往往只求讓自己更強大、更安全、更富足，謙遜的人才懂得求那些能讓自己更有效地服事神和他人的恩賜。真正的智慧始於承認自己的不足，而非炫耀自己的能力。<br><br>
+
+      <strong>2. 把服事他人放在個人利益之前，蒙神喜悅並得額外賞賜</strong><br>
+      所羅門「不為自己求壽、求富，也不求滅絕仇敵」，而是求能「判斷你的民」的智慧。這種捨己的求告讓神喜悅，神不僅給了他所求的，還把他沒求的一同賞賜。這揭示了一個顛覆世俗邏輯的屬靈原則：先求神國的事、以服事他人為優先的人，往往得到遠超所求所想的賞賜。這正是馬太福音6:33「先求他的國和他的義，這些東西都要加給你們了」的舊約印證。<br><br>
+
+      <strong>3. 真正的智慧能洞察人心，帶來公義的結果</strong><br>
+      所羅門「劈子」的斷案，不靠證據，而是洞察人心——真正的母親必因愛而寧可放棄孩子也不願孩子受傷害。這份洞察力是神所賜智慧的真實展現。屬靈的智慧不只是知識的累積，而是能看透表象、辨別真偽、在複雜情境中找到符合愛與公義的解答。信徒應當渴慕這樣的智慧，藉禱告和默想神的話語來培養。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>經文</th>
+            <th>思想題目</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>「但我是<strong>幼童</strong>，不知道應當怎樣出入……所以求你賜我<strong>智慧</strong>，可以判斷你的民，能辨別是非。」（王上3:7,9）</td>
+            <td>就像一個剛入職的新人誠實承認自己需要學習而非假裝無所不知，所羅門以謙遜贏得了神的喜悅。如果神今天問你「你願我賜你甚麼」，你的第一個答案會是什麼？這個答案反映了你<strong>最深的渴望</strong>是什麼？</td>
+          </tr>
+          <tr>
+            <td>「你既然求這事，<strong>不為自己求壽、求富</strong>……單求智慧可以聽訟，我就應允你所求的。」（王上3:11-12）</td>
+            <td>就像一位醫生選擇到偏遠地區服務而非留在城市賺取高薪，所羅門選擇以服事他人為優先而非個人利益。你在禱告中有多少比例是為<strong>自身的需要</strong>，又有多少是為服事他人的能力而求？</td>
+          </tr>
+          <tr>
+            <td>「以色列眾人……就都<strong>敬畏</strong>他；因為見他心裏有<strong>神的智慧</strong>，能以斷案。」（王上3:28）</td>
+            <td>就像一位能在關鍵時刻做出公正判斷的法官贏得眾人信任，所羅門的智慧在實際行動中彰顯出來。你生命中的智慧是否也在日常的<strong>決策與待人處事</strong>中真實展現，讓人看見神在你身上的作為？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>

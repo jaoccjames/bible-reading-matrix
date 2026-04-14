@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第19篇 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.2s, box-shadow 0.2s, background 0.2s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 10px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">詩篇第19篇 <span id="bibleIcon" class="bible-icon">📕</span></h1>
+  <div class="chapter-subtitle">創造與話語：神雙重的啟示與榮耀</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>（大衛的詩，交與伶長）諸天述說神的榮耀；穹蒼傳揚他的手段。</div>
+    <div class="verse"><span class="verse-number">2</span>這日到那日發出言語；這夜到那夜傳出知識。</div>
+    <div class="verse"><span class="verse-number">3</span>無言無語，也無聲音可聽。</div>
+    <div class="verse"><span class="verse-number">4</span>他的量帶通遍天下，他的言語傳到地極。神在其間為太陽安設帳幕；</div>
+    <div class="verse"><span class="verse-number">5</span>太陽如同新郎出洞房，又如勇士歡然奔路。</div>
+    <div class="verse"><span class="verse-number">6</span>他從天這邊出來，繞到天那邊，沒有一物被隱藏不得他的熱氣。</div>
+    <div class="verse"><span class="verse-number">7</span>耶和華的律法全備，能甦醒人心；耶和華的法度確定，能使愚人有智慧。</div>
+    <div class="verse"><span class="verse-number">8</span>耶和華的訓詞正直，能快活人的心；耶和華的命令清潔，能明亮人的眼目。</div>
+    <div class="verse"><span class="verse-number">9</span>耶和華的道理潔淨，存到永遠；耶和華的典章真實，全然公義，</div>
+    <div class="verse"><span class="verse-number">10</span>都比金子可羡慕，且比極多的精金可羡慕；比蜜甘甜，且比蜂房下滴的蜜甘甜。</div>
+    <div class="verse"><span class="verse-number">11</span>況且你的僕人因此受警戒，守着這些便有大賞。</div>
+    <div class="verse"><span class="verse-number">12</span>誰能知道自己的錯失呢？願你赦免我隱而未現的過錯。</div>
+    <div class="verse"><span class="verse-number">13</span>求你攔阻僕人不犯任意妄為的罪，不容這罪轄制我，我便完全，免犯大罪。</div>
+    <div class="verse"><span class="verse-number">14</span>耶和華我的磐石，我的救贖主啊，願我口中的言語、心裏的意念在你面前蒙悅納。</div>
+  </div>
+  <script>
+  function toggleScripture() {
+    const s = document.getElementById('scriptureText');
+    const i = document.getElementById('bibleIcon');
+    s.classList.toggle('show');
+    if (s.classList.contains('show')) { i.textContent = '📖'; i.classList.add('open'); }
+    else { i.textContent = '📕'; i.classList.remove('open'); }
+  }
+  </script>
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      詩篇第19篇是大衛的詩，被許多學者視為聖經中最優美的詩篇之一。C.S.路易斯稱之為「全世界最偉大的詩歌之一」。本篇結構獨特，分為兩個截然不同卻相互補充的部分：自然的啟示（1-6節）與聖經的啟示（7-14節）。
+
+      前半部以壯麗的詩意描述受造世界如何「述說神的榮耀」——從日夜交替的聲音，到太陽橫越天際的行程，整個宇宙都是神榮耀的見證者。然而這種「無言無語」的自然啟示是有限的，它告訴人神的存在與能力，卻無法揭示神的旨意與拯救之道。
+
+      後半部轉向神的律法，以五對詞語描述神話語的特質（全備、確定、正直、清潔、潔淨），並以三對詞語描述其功效（甦醒人心、使愚人有智慧、快活人心、明亮眼目、存到永遠、全然公義）。全篇以謙卑的禱告收結，求神赦免隱藏的過錯，並使口中的言語、心裡的意念都蒙神悅納，將個人回應神啟示的渴望表達得淋漓盡致。
+    </div>
+  </details>
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 受造世界是神榮耀持續不斷的宣告</strong><br>
+      「諸天述說神的榮耀；穹蒼傳揚他的手段。」（第1節）大衛揭示整個受造世界都在持續地、無聲地向人類宣告神的榮耀，從日出到日落，從季節更迭到星宿運行，無一不是神能力與美善的彰顯。信徒若能以敬拜者的眼光看世界，便能在每個日常場景中遇見神。這種透過自然仰望神的屬靈敏感度，需要刻意培養，卻能大大豐富信徒的靈命，使讚美從每日的日升日落中自然湧現。<br><br>
+      <strong>2. 神的話語比一切世界的珍寶更可羡慕</strong><br>
+      「都比金子可羡慕，且比極多的精金可羡慕；比蜜甘甜，且比蜂房下滴的蜜甘甜。」（第10節）大衛以黃金與蜂蜜這兩種當時最珍貴的事物作比，宣告神的話語更勝於此。這不只是詩意的誇飾，而是信仰生命的真實體驗——真正在神話語中找到滋養與喜悅的人，必然能體會這話語比一切物質享受更深的甘甜。這呼召信徒重新審視自己對聖經的態度：它在我心中是義務還是渴望？是負擔還是珍寶？<br><br>
+      <strong>3. 謙卑地求神鑒察並潔淨隱藏的過錯</strong><br>
+      「誰能知道自己的錯失呢？願你赦免我隱而未現的過錯。」（第12節）在經歷了自然與話語的啟示後，大衛的回應是謙卑的自省：人無法完全知道自己的錯失，因此需要神的鑒察與赦免。「隱而未現的過錯」指那些自己未曾察覺的罪，「任意妄為的罪」指主動選擇的叛逆。這兩種罪的祈求，涵蓋了屬靈生命最全面的潔淨需求，也是每位信徒在神啟示的光照下最誠實的回應。
+    </div>
+  </details>
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>諸天述說</strong>神的榮耀；穹蒼<strong>傳揚</strong>他的手段。（詩19:1）</td>
+            <td>就像博物館的展品無聲地訴說著創作者的心思與技藝，受造世界也在無聲中訴說神的榮耀，你上一次真正<strong>停下來欣賞自然</strong>、並因此產生對神的讚嘆是什麼時候？是什麼阻止你更常這樣做？</td>
+          </tr>
+          <tr>
+            <td>耶和華的<strong>律法全備</strong>，能<strong>甦醒人心</strong>；耶和華的法度確定，能使<strong>愚人有智慧</strong>。（詩19:7）</td>
+            <td>就像充電器對快沒電的手機的功效，神的話語能「甦醒」靈魂，讓疲軟的人重新得力，你是否在心靈疲憊或迷失方向時，第一個想到的是<strong>打開聖經尋求甦醒</strong>，還是先尋求其他的娛樂或逃避？</td>
+          </tr>
+          <tr>
+            <td>願我<strong>口中的言語</strong>、<strong>心裏的意念</strong>在你面前<strong>蒙悅納</strong>。（詩19:14）</td>
+            <td>就像在重要場合前會仔細檢查自己的儀容與言辭，你是否養成了在每天結束前，以「<strong>口中的言語、心裡的意念是否蒙神悅納</strong>」作為自我審視的標準，讓這習慣使你的生命逐漸更新？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

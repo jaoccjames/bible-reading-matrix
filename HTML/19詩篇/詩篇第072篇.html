@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第72篇 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 10px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">詩篇第72篇 <span id="bibleIcon" class="bible-icon">📕</span></h1>
+  <div class="chapter-subtitle">理想的君王：以公義牧養窮乏萬國歸服</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>（所羅門的詩）神阿，求你將判斷的權柄賜給王，將公義賜給王的兒子。</div>
+    <div class="verse"><span class="verse-number">2</span>他要按公義審判你的民，按公平審判你的困苦人。</div>
+    <div class="verse"><span class="verse-number">3</span>大山小山都要因公義使民得享平安。</div>
+    <div class="verse"><span class="verse-number">4</span>他必為民中的困苦人伸冤，拯救窮乏之輩，壓碎那欺壓人的。</div>
+    <div class="verse"><span class="verse-number">5</span>太陽還存，月亮還在，人要敬畏你，直到萬代！</div>
+    <div class="verse"><span class="verse-number">6</span>他必降臨，像雨降在已割的草地上，如甘霖滋潤田地。</div>
+    <div class="verse"><span class="verse-number">7</span>在他的日子，義人要發旺，大有平安，好像月亮長存。</div>
+    <div class="verse"><span class="verse-number">8</span>他要執掌權柄，從這海直到那海，從大河直到地極。</div>
+    <div class="verse"><span class="verse-number">9</span>住在曠野的，必在他面前下拜；他的仇敵必要餂土。</div>
+    <div class="verse"><span class="verse-number">10</span>他施和海島的王要進貢；示巴和西巴的王要獻禮物。</div>
+    <div class="verse"><span class="verse-number">11</span>諸王都要叩拜他；萬國都要事奉他。</div>
+    <div class="verse"><span class="verse-number">12</span>因為，窮乏人呼求的時候，他要搭救；沒有人幫助的困苦人，他也要搭救。</div>
+    <div class="verse"><span class="verse-number">13</span>他要憐恤貧寒和窮乏的人，拯救窮苦人的性命。</div>
+    <div class="verse"><span class="verse-number">14</span>他要救贖他們脫離欺壓和強暴；他們的血在他眼中看為寶貴。</div>
+    <div class="verse"><span class="verse-number">15</span>他們要存活。示巴的金子要奉給他；人要常常為他禱告，終日稱頌他。</div>
+    <div class="verse"><span class="verse-number">16</span>在地的山頂上，五穀必然茂盛〔或作：有一把五穀〕；所結的穀實要響動，如利巴嫩的樹林；城裏的人要發旺，如地上的草。</div>
+    <div class="verse"><span class="verse-number">17</span>他的名要存到永遠，要留傳如日之久。人要因他蒙福；萬國要稱他有福。</div>
+    <div class="verse"><span class="verse-number">18</span>獨行奇事的耶和華以色列的神是應當稱頌的！</div>
+    <div class="verse"><span class="verse-number">19</span>他榮耀的名也當稱頌，直到永遠。願他的榮耀充滿全地！阿們！阿們！</div>
+    <div class="verse"><span class="verse-number">20</span>耶西的兒子大衛的祈禱完畢。</div>
+  </div>
+  <script>
+  function toggleScripture() {
+    const s = document.getElementById('scriptureText');
+    const i = document.getElementById('bibleIcon');
+    s.classList.toggle('show');
+    if (s.classList.contains('show')) { i.textContent = '📖'; i.classList.add('open'); }
+    else { i.textContent = '📕'; i.classList.remove('open'); }
+  }
+  </script>
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      詩篇第72篇是所羅門的詩，也是詩篇第二卷（第42-72篇）的結尾篇，以「耶西的兒子大衛的祈禱完畢」作結（第20節），成為詩篇第二卷的壓軸。本篇可能是大衛為繼承者所羅門而作，或是所羅門為自己的統治而作，祈求神賜予理想的王治能力。
+
+      本篇描繪了理想君王的完整肖像：他以公義審判（1-4節）、帶來豐盛（6-7節）、統治萬邦（8-11節）、特別關顧窮苦人（12-14節）、名聲永存（17節）。這個理想遠超歷史上任何一位以色列王所能達到，使本篇成為強烈的彌賽亞詩篇——指向那位完全公義的王耶穌基督，在祂的國度中這一切理想將完全成就。
+
+      本篇最感人的部分是第12至14節，強調這位理想的王最特別的關顧對象：「窮乏人」、「沒有人幫助的困苦人」、「貧寒和窮乏的人」。一位偉大的王以窮苦人為首要關顧對象，這揭示了神國度的核心價值：在神的統治下，邊緣人得到中心的關注，弱小者的血在祂眼中是寶貴的。全篇以「願他的榮耀充滿全地！阿們！阿們！」的宏大頌讚收結，成為詩篇第二卷最壯麗的終曲。
+    </div>
+  </details>
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 真正的公義領袖最關注社會中最弱勢的群體</strong><br>
+      「他必為民中的困苦人伸冤，拯救窮乏之輩，壓碎那欺壓人的。」（第4節）本篇所描繪的理想王，把對窮苦人的關顧視為最重要的施政原則。「壓碎那欺壓人的」——他不只關顧弱者，更積極地對抗欺壓弱者的力量。這個原則對信徒有直接的屬靈呼召：那位以公義為核心的神，也呼召祂的子民以同樣的眼光關注身邊的弱勢，並勇敢地對抗不公義的結構與行為。<br><br>
+      <strong>2. 弱勢者的血在神眼中是寶貴的揭示神對生命的珍重</strong><br>
+      「他要救贖他們脫離欺壓和強暴；他們的血在他眼中看為寶貴。」（第14節）「他們的血在他眼中看為寶貴」——「他們」是指那些最被社會忽視、最容易被犧牲的人。然而神眼中的評估標準與人間的截然相反：人間以財富、地位、影響力評估人的價值；神眼中，每一個生命的血都是寶貴的，尤其是那些最無力保護自己的人。這個神學真理是尊重生命、關顧弱勢最深的屬靈根基。<br><br>
+      <strong>3. 神的榮耀充滿全地是信仰最宏大的盼望終點</strong><br>
+      「願他的榮耀充滿全地！阿們！阿們！」（第19節）本篇以這個宏大的禱告收結詩篇第二卷，表達了整部詩篇最深的神學盼望：神的榮耀不只在聖殿中、不只在以色列中，而是充滿「全地」——每一個角落、每一個文化、每一個民族。這個盼望使信徒的視野從個人、教會、甚至民族，擴展到全人類的救贖，成為宣教最深的神學動力。
+    </div>
+  </details>
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>他必為民中的<strong>困苦人伸冤</strong>，拯救<strong>窮乏之輩</strong>，壓碎那<strong>欺壓人的</strong>。（詩72:4）</td>
+            <td>就像最好的醫院把最多資源放在最需要醫治的病人身上，你是否受到「<strong>理想之王特別關顧弱勢</strong>」這個神學真理的影響，讓你開始主動注意並關顧生活中那些最容易被忽視的人？</td>
+          </tr>
+          <tr>
+            <td>他要救贖他們脫離欺壓和強暴；<strong>他們的血在他眼中看為寶貴</strong>。（詩72:14）</td>
+            <td>就像珠寶商以其訓練有素的眼光看出一塊原石的珍貴價值，而外行人可能完全不屑一顧，神對每一個生命的評估與人間截然不同——你是否也在學習以「<strong>神眼中的寶貴</strong>」來看待每一個你遇見的人，包括那些社會認為不值得重視的？</td>
+          </tr>
+          <tr>
+            <td>願他的<strong>榮耀充滿全地</strong>！阿們！阿們！（詩72:19）</td>
+            <td>就像期盼一個美好藝術作品被更多人欣賞一樣，你對「<strong>神的榮耀充滿全地</strong>」的盼望是否已成為你真實的心志，讓這個盼望驅使你在自己的生命圈中成為神榮耀的一個小小見證，讓更多人認識這位值得被讚美的神？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

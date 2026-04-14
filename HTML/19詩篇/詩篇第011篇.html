@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第11篇 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em;
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em;
+  color: #7f8c8d;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.scripture-text {
+  display: none;
+  background: #f8f9fa;
+  border-left: 4px solid #3498db;
+  padding: 20px;
+  line-height: 2;
+  max-height: 500px;
+  overflow-y: auto;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  background: #fafafa;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2980b9;
+  cursor: pointer;
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 10px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1 onclick="toggleScripture()">
+    詩篇第11篇
+    <span id="bibleIcon" class="bible-icon">📕</span>
+  </h1>
+
+  <div class="chapter-subtitle">投靠神：不逃避危機的信仰抉擇</div>
+
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>（大衛的詩，交與伶長）我是投靠耶和華；你們怎麼對我說：你當像鳥飛往你的山去。</div>
+    <div class="verse"><span class="verse-number">2</span>看哪，惡人彎弓，把箭搭在弦上，要在暗中射那心裏正直的人。</div>
+    <div class="verse"><span class="verse-number">3</span>根基若毀壞，義人還能作甚麼呢？</div>
+    <div class="verse"><span class="verse-number">4</span>耶和華在他的聖殿裏；耶和華的寶座在天上；他的慧眼察看世人。</div>
+    <div class="verse"><span class="verse-number">5</span>耶和華試驗義人；惟有惡人和喜愛強暴的人，他心裏恨惡。</div>
+    <div class="verse"><span class="verse-number">6</span>他要向惡人密布網羅；有烈火、硫磺、熱風，作他們杯中的分。</div>
+    <div class="verse"><span class="verse-number">7</span>因為耶和華是公義的，他喜愛公義；正直人必得見他的面。</div>
+  </div>
+
+  <script>
+  function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+      bibleIcon.textContent = '📖';
+      bibleIcon.classList.add('open');
+    } else {
+      bibleIcon.textContent = '📕';
+      bibleIcon.classList.remove('open');
+    }
+  }
+  </script>
+
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      詩篇第11篇是大衛的詩，標明「交與伶長」演奏。本篇可能寫於掃羅追殺大衛的時期，周遭的人勸告大衛逃往山中躲避，但大衛選擇以信仰的眼光回應危機，而非以恐懼的本能逃離。
+
+      本篇呈現了一個信仰的張力：一方面是看似無可逃避的現實威脅——惡人彎弓搭箭，根基被毀壞；另一方面是信仰所提供的另一種視野——神坐在天上，慧眼察看世人。大衛以「我是投靠耶和華」（第1節）開篇，堅定地回應那些勸他逃走的聲音。
+
+      全篇的核心神學宣告集中在第4節：「耶和華在他的聖殿裏；耶和華的寶座在天上；他的慧眼察看世人。」這一節揭示了信仰最重要的視角轉換——從只看地上的威脅，到仰望天上掌權的神。本篇以「正直人必得見他的面」（第7節）收尾，揭示敬虔生命的最終盼望：與公義的神相見，這是一切屬靈委身最深的動力與最美的應許。
+    </div>
+  </details>
+
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 信仰是面對危機的選擇，而非迴避</strong><br>
+      當周遭的人勸大衛「像鳥一樣飛逃」時，大衛的回應是宣告「我是投靠耶和華」。這個對比揭示了兩種面對危機的態度：以本能逃避，或以信仰投靠。信仰不是使人脫離現實的麻醉劑，而是使人能在現實的危機中站立的根基。真正的信靠神，不是在一切都安全時才顯出，而是在最需要逃走的時刻，仍選擇留在神的庇蔭下面對現實，這才是信仰最有力的宣告。<br><br>
+
+      <strong>2. 神的慧眼察看是信徒安全感的真實根基</strong><br>
+      「耶和華的寶座在天上；他的慧眼察看世人。」（第4節）大衛從天上的視角看待地上的危機，改變了整個局面。地上的威脅看似強大，但天上的神更大。「慧眼察看」表明神不只知曉一切，更對每一個生命有精準的洞察與關顧。信徒的安全感不應建立在環境的穩定上，而應建立在神的察看與掌管上。當我們對準這個視角，便能在不確定的環境中保持靈魂的穩定。<br><br>
+
+      <strong>3. 神的公義是正直人最終的盼望</strong><br>
+      「因為耶和華是公義的，他喜愛公義；正直人必得見他的面。」（第7節）本篇以這個宣告作結，揭示公義生活的終極意義——不只是在世上得到報償，更是在永恆中得見神的面。「得見神的面」是舊約信仰最高的渴望，代表與神的完全同在與相交。這個盼望使信徒在世上面對不公義時，不以妥協換取短暫安全，而是以正直換取那永恆而真實的獎賞——與公義的神相見。
+    </div>
+  </details>
+
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>經文</th>
+            <th>思想題目</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>我是<strong>投靠耶和華</strong>；你們怎麼對我說：你當像鳥<strong>飛往你的山</strong>去。（詩11:1）</td>
+            <td>就像在公司遭遇不公正的對待，有人勸你辭職走人，但也可以選擇留下來堅守崗位，當你面臨壓力時，你的第一反應是想辦法<strong>逃離</strong>，還是選擇<strong>投靠神並繼續面對</strong>？什麼使你傾向其中一個選擇？</td>
+          </tr>
+          <tr>
+            <td>耶和華在他的<strong>聖殿</strong>裏；耶和華的<strong>寶座在天上</strong>；他的<strong>慧眼</strong>察看世人。（詩11:4）</td>
+            <td>就像高樓的監控中心能俯瞰整棟建築的動態，視野遠比地面上的任何人都寬廣，你是否在面對困境時，有意識地將眼光從<strong>地面的威脅</strong>轉向<strong>天上掌權的神</strong>，讓這視角轉換改變你的反應？</td>
+          </tr>
+          <tr>
+            <td>因為耶和華是<strong>公義</strong>的，他喜愛公義；<strong>正直人</strong>必得見他的面。（詩11:7）</td>
+            <td>就像長途旅行中，知道終點有值得期待的目的地，會讓沿途的辛苦變得值得，你對「<strong>得見神的面</strong>」的渴望，是否足以支撐你在當下的困難中選擇繼續走正直的路，而不以妥協換取短暫的舒適？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>

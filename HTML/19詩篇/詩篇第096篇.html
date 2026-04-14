@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第96篇 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 10px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">詩篇第96篇 <span id="bibleIcon" class="bible-icon">📕</span></h1>
+  <div class="chapter-subtitle">唱新歌向列邦述說神的榮耀奇事</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>你們要向耶和華唱新歌！全地都要向耶和華歌唱！</div>
+    <div class="verse"><span class="verse-number">2</span>要向耶和華歌唱，稱頌他的名！天天傳揚他的救恩！</div>
+    <div class="verse"><span class="verse-number">3</span>在列邦中述說他的榮耀！在萬民中述說他的奇事！</div>
+    <div class="verse"><span class="verse-number">4</span>因耶和華為大，當受極大的讚美；他在萬神之上，當受敬畏。</div>
+    <div class="verse"><span class="verse-number">5</span>外邦的神都屬虛無；惟獨耶和華創造諸天。</div>
+    <div class="verse"><span class="verse-number">6</span>有尊榮和威嚴在他面前；有能力與華美在他聖所。</div>
+    <div class="verse"><span class="verse-number">7</span>民中的萬族阿，你們要將榮耀、能力歸給耶和華，都歸給耶和華！</div>
+    <div class="verse"><span class="verse-number">8</span>要將耶和華的名所當得的榮耀歸給他，拿供物來進入他的院宇。</div>
+    <div class="verse"><span class="verse-number">9</span>當以聖潔的〔的：或作為〕妝飾敬拜耶和華；全地要在他面前戰抖！</div>
+    <div class="verse"><span class="verse-number">10</span>人在列邦中要說：耶和華作王！世界就堅定，不得動搖；他要按公正審判眾民。</div>
+    <div class="verse"><span class="verse-number">11</span>願天歡喜，願地快樂！願海和其中所充滿的澎湃！</div>
+    <div class="verse"><span class="verse-number">12</span>願田和其中所有的都歡樂！那時，林中的樹木都要在耶和華面前歡呼。</div>
+    <div class="verse"><span class="verse-number">13</span>因為他來了，他來要審判全地。他要按公義審判世界，按他的信實審判萬民。</div></div>
+  <script>
+  function toggleScripture() {
+    const s = document.getElementById('scriptureText');
+    const i = document.getElementById('bibleIcon');
+    s.classList.toggle('show');
+    if (s.classList.contains('show')) { i.textContent = '📖'; i.classList.add('open'); }
+    else { i.textContent = '📕'; i.classList.remove('open'); }
+  }
+  </script>
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">詩篇第96篇是典型的讚美詩，呼召全地和萬民讚美耶和華，在詩篇第四卷「耶和華作王」詩群（詩93-100篇）中居核心地位。本篇與歷代志上16章23至33節幾乎完全相同，在那裡是大衛將約櫃迎入耶路撒冷時所唱的讚美詩。本篇呼召的範圍是最廣闊的——「全地」和「列邦」，不只是以色列，而是普天下所有的民族都受邀讚美神。第5節「外邦的神都屬虛無；惟獨耶和華創造諸天」是對古代多神教最直接的挑戰：其他所謂的「神」只是人的造作，惟有創造諸天的耶和華才是真實的神。第2節「天天傳揚他的救恩」揭示讚美的日常性——不是特殊場合的儀式，而是日復一日的生命見證。第13節以神來「按公義審判世界、按信實審判萬民」作結，為讚美提供了末世性的根基：讚美不只是回應過去的恩典，更是對神最終公義之治的確信表達。</div>
+  </details>
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content"><strong>1. 唱新歌是對神持續更新作為的最新回應</strong><br>「你們要向耶和華唱新歌！全地都要向耶和華歌唱！」（第1節）「新歌」不是說要棄絕古老的讚美，而是強調讚美必須是活的、更新的、回應神在最近作為的。當信徒只是重複習慣性的讚美語言，讚美可能失去其真實性；而「唱新歌」呼召信徒持續尋求看見神在當下的作為，以新鮮的見證和發現豐富自己的讚美。讚美不應停留在過去的恩典記憶中，而應在每個今天發現神新的作為，以新的讚美回應。<br><br><strong>2. 天天傳揚救恩使讚美成為最自然的日常見證</strong><br>「天天傳揚他的救恩！在列邦中述說他的榮耀！在萬民中述說他的奇事！」（第2-3節）「天天」揭示讚美不是週一次的宗教儀式，而是每日的習慣；「列邦」和「萬民」揭示讚美不只是在教會內部，而是向世界的見證。這種「天天傳揚、向外述說」的讚美模式，使信仰成為最自然的生命表達，而非特定場合的宗教表演。<br><br><strong>3. 全地歡喜神來審判揭示公義的審判是萬物的盼望</strong><br>「願天歡喜，願地快樂……因為他來了，他來要審判全地。」（第11、13節）「審判」在今人耳中常帶負面色彩，卻在詩篇傳統中是萬物歡喜的理由——因為那是公義的審判，將糾正所有的不公義，使世界恢復正確的秩序。信徒對神審判的盼望，不是對他人懲罰的幸災樂禍，而是對公義最終勝利的渴望。這種「歡迎神的審判」的信仰，是在不公義的世界中保持盼望的屬靈根基。</div>
+  </details>
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr><td>你們要向耶和華<strong>唱新歌</strong>！全地都要向耶和華<strong>歌唱</strong>！（詩96:1）</td><td>就像一段新的經歷讓你有了新的故事可以分享，你對神的讚美是否仍然是「新」的——源於你最近對神的認識與發現，還是你的敬拜語言已經變成沒有真實內容支撐的<strong>習慣性重複</strong>？</td></tr>
+          <tr><td>天天<strong>傳揚</strong>他的救恩！在列邦中<strong>述說</strong>他的榮耀！（詩96:2-3）</td><td>就像一個人遇到了真正的好消息，忍不住要告訴所有人，你對神救恩的讚美是否有一種自然向外流溢的衝動，還是你的信仰主要停留在教會四壁之內，而從未延伸到你的<strong>日常生活和人際關係</strong>中？</td></tr>
+          <tr><td>願天歡喜，願地快樂！……因為他來了，他來要<strong>審判全地</strong>……按他的<strong>信實</strong>審判萬民。（詩96:11、13）</td><td>就像等待一位公正法官最終宣判的受害者，那種對公義實現的渴望，你是否視神的最終審判為<strong>值得歡欣的盼望</strong>，讓這個盼望使你在面對眼前的不公義時，仍能以平靜等候的心而非憤恨的心回應？</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第86篇 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 10px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">詩篇第86篇 <span id="bibleIcon" class="bible-icon">📕</span></h1>
+  <div class="chapter-subtitle">大衛的祈禱：求神指教我道使我專心敬畏</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>（大衛的祈禱）耶和華啊，求你側耳應允我，因我是困苦窮乏的。</div>
+    <div class="verse"><span class="verse-number">2</span>求你保存我的性命，因我是虔誠人。我的神阿，求你拯救這倚靠你的僕人！</div>
+    <div class="verse"><span class="verse-number">3</span>主啊，求你憐憫我，因我終日求告你。</div>
+    <div class="verse"><span class="verse-number">4</span>主啊，求你使僕人心裏歡喜，因為我的心仰望你。</div>
+    <div class="verse"><span class="verse-number">5</span>主啊，你本為良善，樂意饒恕人，有豐盛的慈愛賜給凡求告你的人。</div>
+    <div class="verse"><span class="verse-number">6</span>耶和華啊，求你留心聽我的禱告，垂聽我懇求的聲音。</div>
+    <div class="verse"><span class="verse-number">7</span>我在患難之日要求告你，因為你必應允我。</div>
+    <div class="verse"><span class="verse-number">8</span>主啊，諸神之中沒有可比你的；你的作為也無可比。</div>
+    <div class="verse"><span class="verse-number">9</span>主啊，你所造的萬民都要來敬拜你；他們也要榮耀你的名。</div>
+    <div class="verse"><span class="verse-number">10</span>因你為大，且行奇妙的事；惟獨你是神。</div>
+    <div class="verse"><span class="verse-number">11</span>耶和華啊，求你將你的道指教我；我要照你的真理行；求你使我專心敬畏你的名！</div>
+    <div class="verse"><span class="verse-number">12</span>主我的神啊，我要一心稱讚你；我要榮耀你的名，直到永遠。</div>
+    <div class="verse"><span class="verse-number">13</span>因為，你向我發的慈愛是大的；你救了我的靈魂免入極深的陰間。</div>
+    <div class="verse"><span class="verse-number">14</span>神啊，驕傲的人起來攻擊我，又有一黨強橫的人尋索我的命；他們沒有將你放在眼中。</div>
+    <div class="verse"><span class="verse-number">15</span>主啊，你是有憐憫有恩典的神，不輕易發怒，並有豐盛的慈愛和誠實。</div>
+    <div class="verse"><span class="verse-number">16</span>求你向我轉臉，憐恤我，將你的力量賜給僕人，救你婢女的兒子。</div>
+    <div class="verse"><span class="verse-number">17</span>求你向我顯出恩待我的憑據，叫恨我的人看見便羞愧，因為你耶和華幫助我，安慰我。</div>
+  </div>
+  <script>
+  function toggleScripture() {
+    const s = document.getElementById('scriptureText');
+    const i = document.getElementById('bibleIcon');
+    s.classList.toggle('show');
+    if (s.classList.contains('show')) { i.textContent = '📖'; i.classList.add('open'); }
+    else { i.textContent = '📕'; i.classList.remove('open'); }
+  }
+  </script>
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      詩篇第86篇是大衛的祈禱，也是詩篇第三卷（第73-89篇）中唯一一篇標明大衛所作的詩篇。本篇的語言多處引用了其他詩篇，被學者稱為「拼湊詩篇」或「引用詩篇」，顯示大衛深諳詩篇傳統，在禱告中使用古老的讚美語言。
+
+      本篇結構呈現交替的模式：呼求（1-4節）、讚美宣告（5節）、呼求（6-7節）、讚美宣告（8-10節）、核心禱告（11節）、讚美宣告（12-13節）、描述危機（14節）、讚美宣告（15節）、呼求（16-17節）。這種在呼求中穿插讚美的結構，揭示大衛禱告生命的完整性——他不把禱告分割為「求告的禱告」和「讚美的禱告」，而是在每次求告中都有對神性格的宣告。
+
+      第11節是全篇的靈魂：「求你將你的道指教我；我要照你的真理行；求你使我專心敬畏你的名！」這個三重的心志——被教導、照真理行、專心敬畏——是大衛信仰最深的渴望。「專心」在希伯來文中有「合一的心」之意，表明大衛渴望自己的心不再分裂、不再三心二意，而是全然集中在對神的敬畏上。
+    </div>
+  </details>
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 神本為良善樂意饒恕是禱告最深的信心根基</strong><br>
+      「主啊，你本為良善，樂意饒恕人，有豐盛的慈愛賜給凡求告你的人。」（第5節）大衛在求告之前先宣告神的本性——良善、樂意饒恕、豐盛慈愛。這種「先宣告神的性格，再提出請求」的禱告結構，表明禱告的信心根基不在於自己的狀態，而在於神本性的確信。「凡求告你的人」——沒有條件，沒有門檻；神豐盛的慈愛為所有求告者預備，不排除任何一個真心呼求的靈魂。<br><br>
+      <strong>2. 求神指教我道使我專心敬畏是最深的靈性渴望</strong><br>
+      「耶和華啊，求你將你的道指教我；我要照你的真理行；求你使我專心敬畏你的名！」（第11節）這個禱告揭示了大衛對屬靈整全性的渴望：他不只求神幫助解決眼前的問題，而是求神從最根本處轉化他——指教他神的道、使他能照真理行、賜他專心敬畏的心。「專心」是對三心二意的解藥，是對分裂的靈魂的醫治。這個禱告呼召信徒把求告的重心從外在問題的解決，轉向內在生命的整全。<br><br>
+      <strong>3. 神有憐憫有恩典不輕易發怒是最深的盼望根基</strong><br>
+      「主啊，你是有憐憫有恩典的神，不輕易發怒，並有豐盛的慈愛和誠實。」（第15節）大衛在描述仇敵的攻擊之後，立刻轉向宣告神的性格——憐憫、恩典、不輕易發怒、豐盛慈愛和誠實。這種「在危機中確立神性格的宣告」是大衛信仰的核心策略：當環境告訴他神似乎缺席時，他主動宣告神的本性，讓神的性格超越環境成為信心的錨點。這種禱告習慣，是在一切風浪中保持靈魂穩定的屬靈操練。
+    </div>
+  </details>
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>主啊，你本為<strong>良善</strong>，<strong>樂意饒恕人</strong>，有豐盛的慈愛賜給凡<strong>求告你</strong>的人。（詩86:5）</td>
+            <td>就像知道某位長輩是慷慨大方的人，向他開口求助時內心有底氣，你在禱告時，是否真的以「<strong>神本為良善、樂意饒恕</strong>」的確信作為出發點，讓這份確信使你能大膽、頻繁地向神求告，而非因罪疚或不配而退縮？</td>
+          </tr>
+          <tr>
+            <td>求你將你的道<strong>指教我</strong>；我要照你的真理行；求你使我<strong>專心敬畏你的名</strong>！（詩86:11）</td>
+            <td>就像一個學生渴望有真正好的老師指導，你是否有深切地渴望神「<strong>指教你祂的道</strong>」，並且渴望有一顆「<strong>專心</strong>」的心——不再在神和其他事物之間三心二意，讓敬畏神成為整個生命的核心？</td>
+          </tr>
+          <tr>
+            <td>主啊，你是有<strong>憐憫有恩典</strong>的神，<strong>不輕易發怒</strong>，並有豐盛的慈愛和誠實。（詩86:15）</td>
+            <td>就像在最艱難的處境中回想一位永遠溫柔可靠的摯友，那份記憶給你繼續前行的力量，你在面對人生危機時，是否習慣像大衛一樣主動<strong>宣告神的性格</strong>，讓「憐憫、恩典、不輕易發怒」成為你信心的錨點？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

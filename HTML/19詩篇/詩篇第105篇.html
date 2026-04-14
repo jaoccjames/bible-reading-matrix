@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第105篇 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 10px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">詩篇第105篇 <span id="bibleIcon" class="bible-icon">📕</span></h1>
+  <div class="chapter-subtitle">記念神的約與作為：從亞伯拉罕到出埃及</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>你們要稱謝耶和華，求告他的名，在萬民中傳揚他的作為！</div>
+    <div class="verse"><span class="verse-number">2</span>要向他唱詩歌頌，談論他一切奇妙的作為！</div>
+    <div class="verse"><span class="verse-number">3</span>要以他的聖名誇耀！尋求耶和華的人，心中應當歡喜！</div>
+    <div class="verse"><span class="verse-number">4</span>要尋求耶和華與他的能力，時常尋求他的面。</div>
+    <div class="verse"><span class="verse-number">5</span>他僕人亞伯拉罕的後裔，他所揀選雅各的子孫哪，你們要記念他奇妙的作為和他的奇事，並他口中的判語。</div>
+    <div class="verse"><span class="verse-number">7</span>他是耶和華我們的神；全地都有他的判斷。</div>
+    <div class="verse"><span class="verse-number">8</span>他記念他的約，直到永遠；他所吩咐的話，直到千代，</div>
+    <div class="verse"><span class="verse-number">9</span>就是與亞伯拉罕所立的約，向以撒所起的誓。</div>
+    <div class="verse"><span class="verse-number">10</span>他又將這約向雅各定為律例，向以色列定為永遠的約，</div>
+    <div class="verse"><span class="verse-number">11</span>說：我必將迦南地賜給你，作你產業的分。</div>
+    <div class="verse"><span class="verse-number">14</span>他不容甚麼人欺負他們，為他們的緣故責備君王，</div>
+    <div class="verse"><span class="verse-number">15</span>說：不可難為我受膏的人，也不可惡待我的先知。</div>
+    <div class="verse"><span class="verse-number">17</span>在他們以先打發一個人去，約瑟被賣為奴僕。</div>
+    <div class="verse"><span class="verse-number">19</span>耶和華的話試煉他，直等到他所說的應驗了。</div>
+    <div class="verse"><span class="verse-number">37</span>他領自己的百姓帶銀子金子出來；他支派中沒有一個軟弱的。</div>
+    <div class="verse"><span class="verse-number">42</span>這都因他記念他的聖言和他的僕人亞伯拉罕。</div>
+    <div class="verse"><span class="verse-number">43</span>他帶領百姓歡樂而出，帶領選民歡呼前往。</div>
+    <div class="verse"><span class="verse-number">44</span>他將列國的地賜給他們，他們便承受眾民勞碌得來的，</div>
+    <div class="verse"><span class="verse-number">45</span>好使他們遵他的律例，守他的律法。你們要讚美耶和華！</div>
+  </div>
+  <script>
+  function toggleScripture() {
+    const s = document.getElementById('scriptureText');
+    const i = document.getElementById('bibleIcon');
+    s.classList.toggle('show');
+    if (s.classList.contains('show')) { i.textContent = '📖'; i.classList.add('open'); }
+    else { i.textContent = '📕'; i.classList.remove('open'); }
+  }
+  </script>
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      詩篇第105篇是一首歷史詩篇，以讚美的語氣回顧從亞伯拉罕到進入迦南的以色列歷史，與詩篇106篇形成姊妹篇——105篇強調神的信實，106篇強調以色列的悖逆。本篇前半部（1-15節）出現在歷代志上16章8至22節，是大衛迎接約櫃進耶路撒冷時所作的感謝詩。
+
+      本篇的神學核心是「神記念祂的約」（第8節），以這個主題串聯整個以色列歷史：從亞伯拉罕的揀選，到約瑟在埃及的試煉，到摩西帶領以色列出埃及，最終到進入迦南。每一個歷史事件，都是神記念約的具體表現。
+
+      第19節「耶和華的話試煉他，直等到他所說的應驗了」是本篇描述約瑟苦難最深刻的神學解釋：約瑟的苦難不是偶然的，而是「耶和華的話試煉他」的過程——在應驗之前的等候，本身就是信仰的試煉和深化。這個洞見使信徒能在自己的苦難等候中，看見神更大計劃的運行。
+    </div>
+  </details>
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 神記念祂的約直到永遠是歷史最確定的力量</strong><br>
+      「他記念他的約，直到永遠；他所吩咐的話，直到千代。」（第8節）本篇的每一個歷史事件——無論是族長時代的遊歷、約瑟的下獄、還是以色列在埃及的苦難——都被詩人解讀為「神記念祂的約」的大框架中的一部分。人類歷史常常顯得混亂無序，然而在神記念約的視野下，每一個事件都有其意義。信徒面對個人歷史的困惑時，同樣可以以「神記念祂的約」的確信，在混亂中找到方向。<br><br>
+      <strong>2. 耶和華的話試煉約瑟揭示苦難等候的屬靈意義</strong><br>
+      「耶和華的話試煉他，直等到他所說的應驗了。」（第19節）約瑟的苦難（被賣為奴、冤枉入獄）在這裡被解釋為「耶和華的話試煉他」的過程。神的話語是真實的，但其應驗需要時間和試煉。在等候中，試煉本身具有塑造性的功能——它在約瑟身上建立了謙卑、忠心、與神同在的品格，使他有足夠的成熟度承受後來的高位與責任。每一個在神的應許中等候的信徒，都在經歷同樣的試煉過程。<br><br>
+      <strong>3. 記念神的奇妙作為是維持信仰活力的屬靈習慣</strong><br>
+      「你們要記念他奇妙的作為和他的奇事，並他口中的判語。」（第5節）本篇呼召信徒主動「記念」——這是意志的行動，不是情感的自然流露。記念神過去的作為，能在信仰低潮時維持信心，在等候中提供確信，在感恩中加深讚美。建立定期「記念神作為」的屬靈習慣，是維持信仰活力最有效的方法之一，也是本篇最核心的屬靈呼召。
+    </div>
+  </details>
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>他<strong>記念他的約</strong>，直到永遠；他所吩咐的話，<strong>直到千代</strong>，（詩105:8）</td>
+            <td>就像一份永久有效的合約，無論時間過了多久都不失效，你是否真的相信神「<strong>記念祂的約直到永遠</strong>」——祂對你的應許不因時間流逝或環境改變而遺忘，讓這個確信成為你在漫長等候中的錨點？</td>
+          </tr>
+          <tr>
+            <td>耶和華的話<strong>試煉他</strong>，直等到他所說的<strong>應驗了</strong>。（詩105:19）</td>
+            <td>就像金屬在高溫中被提純，雜質去除後反而更純淨珍貴，你是否能以「<strong>神的話在試煉我，直到應驗</strong>」的視角看待你目前的等候與苦難，讓試煉本身成為你信仰成熟最重要的塑造過程？</td>
+          </tr>
+          <tr>
+            <td>你們要<strong>記念</strong>他奇妙的作為和他的奇事，並他口中的<strong>判語</strong>。（詩105:5）</td>
+            <td>就像定期翻閱過去的日記能找回感動與方向，你是否有固定「<strong>記念神奇妙作為</strong>」的屬靈習慣——寫感恩日記、與人分享見證、在禱告中回顧神的信實——讓記念成為信仰持續燃燒的燃料？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

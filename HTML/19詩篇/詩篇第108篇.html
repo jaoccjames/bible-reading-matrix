@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第108篇 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 10px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">詩篇第108篇 <span id="bibleIcon" class="bible-icon">📕</span></h1>
+  <div class="chapter-subtitle">心堅定歌頌：倚靠神才得施展大能</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>（大衛的詩歌）神啊，我心堅定；我口〔原文作榮耀〕要唱詩歌頌！</div>
+    <div class="verse"><span class="verse-number">2</span>琴瑟啊，你們當醒起！我自己要極早醒起！</div>
+    <div class="verse"><span class="verse-number">3</span>耶和華啊，我要在萬民中稱謝你，在列邦中歌頌你！</div>
+    <div class="verse"><span class="verse-number">4</span>因為，你的慈愛大過諸天；你的誠實達到穹蒼。</div>
+    <div class="verse"><span class="verse-number">5</span>神啊，願你崇高過於諸天！願你的榮耀高過全地！</div>
+    <div class="verse"><span class="verse-number">6</span>求你應允我們，用右手拯救我們，好叫你所親愛的人得救。</div>
+    <div class="verse"><span class="verse-number">7</span>神已經指着他的聖潔說〔說：或作應許我〕：我要歡樂；我要分開示劍，丈量疏割谷。</div>
+    <div class="verse"><span class="verse-number">8</span>基列是我的；瑪拿西是我的；以法蓮是護衛我頭的；猶大是我的杖；</div>
+    <div class="verse"><span class="verse-number">9</span>摩押是我的沐浴盆；我要向以東拋鞋；我必因勝非利士呼喊。</div>
+    <div class="verse"><span class="verse-number">10</span>誰能領我進堅固城？誰能引我到以東地？</div>
+    <div class="verse"><span class="verse-number">11</span>神啊，你不是丟棄了我們嗎？神啊，你不和我們的軍兵同去嗎？</div>
+    <div class="verse"><span class="verse-number">12</span>求你幫助我們攻擊敵人，因為人的幫助是枉然的。</div>
+    <div class="verse"><span class="verse-number">13</span>我們倚靠神纔得施展大能，因為踐踏我們敵人的就是他。</div>
+  </div>
+  <script>
+  function toggleScripture() {
+    const s = document.getElementById('scriptureText');
+    const i = document.getElementById('bibleIcon');
+    s.classList.toggle('show');
+    if (s.classList.contains('show')) { i.textContent = '📖'; i.classList.add('open'); }
+    else { i.textContent = '📕'; i.classList.remove('open'); }
+  }
+  </script>
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      詩篇第108篇是大衛的詩歌，是由兩首詩篇組合而成的獨特詩篇：前半部（1-5節）幾乎與詩篇57篇7至11節相同，後半部（6-13節）幾乎與詩篇60篇5至12節相同。這種「重組詩篇」的做法，表明古代以色列對詩篇的使用是靈活的，可以根據不同的敬拜情境重新組合。
+
+      本篇的結構獨特：以個人讚美的宣告開篇（1-5節），然後轉向集體的呼求（6-13節）。這種「先讚美後求告」的結構，是詩篇的成熟敬拜模式——在求告之前先確立神的性格與榮耀，使禱告有更堅實的基礎。
+
+      第13節「我們倚靠神才得施展大能，因為踐踏我們敵人的就是他」是全篇最核心的神學宣告，揭示人的能力與神的能力之間的根本關係：信徒的力量不是自身的，而是通過倚靠神而獲得的。「踐踏敵人的就是他」——最終的得勝是神的行動，信徒的倚靠使神的行動通過他們彰顯出來。
+    </div>
+  </details>
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 心堅定先行讚美是在困境中保持信仰的屬靈選擇</strong><br>
+      「神啊，我心堅定；我口要唱詩歌頌！」（第1節）在面對困境之前，大衛先宣告「我心堅定」，然後選擇讚美。這種「先宣告心志，再行讚美」的模式，揭示讚美不是情感的自然流露，而是信仰的主動選擇。「我心堅定」是意志的聲明，表明大衛的讚美不依賴感受的支持，而是建立在對神性格的確信上。這種在困境中主動選擇讚美的信仰實踐，是屬靈成熟最重要的標誌之一。<br><br>
+      <strong>2. 人的幫助是枉然使信徒轉向真正的力量泉源</strong><br>
+      「求你幫助我們攻擊敵人，因為人的幫助是枉然的。」（第12節）大衛在求神幫助時，同時宣告「人的幫助是枉然的」——不是輕視人的幫助，而是在神的幫助面前，一切人間的力量都是有限的。這個宣告對信徒是重要的視角調整：當我們面對超過人能力的困境時，需要清醒地認識「人的幫助是有限的」，並以此為動力，更迫切地尋求那位無限的神的幫助。<br><br>
+      <strong>3. 倚靠神才能施展大能揭示力量的真實來源</strong><br>
+      「我們倚靠神才得施展大能，因為踐踏我們敵人的就是他。」（第13節）「倚靠神才得施展大能」揭示一個深刻的屬靈原則：信徒的能力不是獨立的，而是通過與神的倚靠關係流出的。當信徒真正倚靠神，神的能力便透過他們的行動彰顯；當信徒倚靠自己的力量，便只能使用自身有限的資源。這種「通過倚靠接受能力」的信仰動態，使信徒能超越自身的限制，成就超越自然能力的事。
+    </div>
+  </details>
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>神啊，<strong>我心堅定</strong>；我口要<strong>唱詩歌頌</strong>！（詩108:1）</td>
+            <td>就像運動員在比賽前先調整好心理狀態才上場，你是否能在困境最深時，先做出「<strong>我心堅定</strong>」的意志聲明，然後以讚美作為信心的行動，而非等到感受到堅定後才開始讚美？</td>
+          </tr>
+          <tr>
+            <td>因為，你的<strong>慈愛大過諸天</strong>；你的<strong>誠實達到穹蒼</strong>。（詩108:4）</td>
+            <td>就像知道一份無限量的保險讓你可以放心使用醫療資源，你是否真的相信神「<strong>慈愛大過諸天、誠實達到穹蒼</strong>」的無限性，讓這份確信使你能以更大的信心向神呼求，而非以為神的慈愛是有限配額？</td>
+          </tr>
+          <tr>
+            <td>我們<strong>倚靠神</strong>纔得施展<strong>大能</strong>，因為踐踏我們敵人的就是他。（詩108:13）</td>
+            <td>就像插上電源才能讓電器運作，而非靠電器本身的結構發電，你是否清楚地認識到你的一切能力和成就，都是通過「<strong>倚靠神</strong>」而得的？這個認識如何影響你面對挑戰時的信心與姿態？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

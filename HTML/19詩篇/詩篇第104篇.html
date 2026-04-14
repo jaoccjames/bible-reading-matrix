@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第104篇 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 10px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">詩篇第104篇 <span id="bibleIcon" class="bible-icon">📕</span></h1>
+  <div class="chapter-subtitle">讚美創造主：遍地滿了你的豐富你所造何其多</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>我的心哪，你要稱頌耶和華！耶和華我的神阿，你為至大！你以尊榮威嚴為衣服，</div>
+    <div class="verse"><span class="verse-number">2</span>披上亮光，如披外袍，鋪張穹蒼，如鋪幔子，</div>
+    <div class="verse"><span class="verse-number">3</span>在水中立樓閣的棟梁，用雲彩為車輦，藉着風的翅膀而行，</div>
+    <div class="verse"><span class="verse-number">4</span>以風為使者，以火焰為僕役，</div>
+    <div class="verse"><span class="verse-number">5</span>將地立在根基上，使地永不動搖。</div>
+    <div class="verse"><span class="verse-number">6</span>你用深水遮蓋地面，猶如衣裳；諸水高過山嶺。</div>
+    <div class="verse"><span class="verse-number">7</span>你的斥責一發，水便奔逃；你的雷聲一發，水便奔流。</div>
+    <div class="verse"><span class="verse-number">8</span>諸山升上，諸谷沉下〔或作：隨山上翻，隨谷下流〕，歸你為它所安定之地。</div>
+    <div class="verse"><span class="verse-number">9</span>你定了界限，使水不能過去，不再轉回遮蓋地面。</div>
+    <div class="verse"><span class="verse-number">10</span>耶和華使泉源湧在山谷，流在山間，</div>
+    <div class="verse"><span class="verse-number">11</span>使野地的走獸有水喝，野驢得解其渴。</div>
+    <div class="verse"><span class="verse-number">12</span>天上的飛鳥在水旁住宿，在樹枝上啼叫。</div>
+    <div class="verse"><span class="verse-number">13</span>他從樓閣中澆灌山嶺；因他作為的功效，地就豐足。</div>
+    <div class="verse"><span class="verse-number">14</span>他使草生長，給六畜喫，使菜蔬發長，供給人用，使人從地裏能得食物，</div>
+    <div class="verse"><span class="verse-number">15</span>又得酒能悅人心，得油能潤人面，得糧能養人心。</div>
+    <div class="verse"><span class="verse-number">16</span>佳美的樹木，就是利巴嫩的香柏樹，是耶和華所栽種的，都滿了汁漿。</div>
+    <div class="verse"><span class="verse-number">17</span>雀鳥在其上搭窩；至於鶴，松樹是他的房屋。</div>
+    <div class="verse"><span class="verse-number">18</span>高山為野山羊的住所；巖石為沙番的藏處。</div>
+    <div class="verse"><span class="verse-number">19</span>你安置月亮為定節令；日頭自知沉落。</div>
+    <div class="verse"><span class="verse-number">20</span>你造黑暗為夜，林中的百獸就都爬出來。</div>
+    <div class="verse"><span class="verse-number">21</span>少壯獅子吼叫，要抓食，向神尋求食物。</div>
+    <div class="verse"><span class="verse-number">22</span>日頭一出，獸便躲避，臥在洞裏。</div>
+    <div class="verse"><span class="verse-number">23</span>人出去作工，勞碌直到晚上。</div>
+    <div class="verse"><span class="verse-number">24</span>耶和華啊，你所造的何其多！都是你用智慧造成的；遍地滿了你的豐富。</div>
+    <div class="verse"><span class="verse-number">25</span>那裏有海，又大又廣；其中有無數的動物，大小活物都有。</div>
+    <div class="verse"><span class="verse-number">26</span>那裏有船行走，有你所造的鱷魚游泳在其中。</div>
+    <div class="verse"><span class="verse-number">27</span>這都仰望你按時給他食物。</div>
+    <div class="verse"><span class="verse-number">28</span>你給他們，他們便拾起來；你張手，他們飽得美食。</div>
+    <div class="verse"><span class="verse-number">29</span>你掩面，他們便驚惶；你收回他們的氣，他們就死亡，歸於塵土。</div>
+    <div class="verse"><span class="verse-number">30</span>你發出你的靈，他們便受造；你使地面更換為新。</div>
+    <div class="verse"><span class="verse-number">31</span>願耶和華的榮耀存到永遠！願耶和華喜悅自己所造的！</div>
+    <div class="verse"><span class="verse-number">32</span>他看地，地便震動；他摸山，山就冒煙。</div>
+    <div class="verse"><span class="verse-number">33</span>我要一生向耶和華唱詩！我還活的時候，要向我神歌頌！</div>
+    <div class="verse"><span class="verse-number">34</span>願他以我的默念為甘甜！我要因耶和華歡喜！</div>
+    <div class="verse"><span class="verse-number">35</span>願罪人從世上消滅！願惡人歸於無有！我的心哪，要稱頌耶和華！你們要讚美耶和華！</div>
+  </div>
+  <script>
+  function toggleScripture() {
+    const s = document.getElementById('scriptureText');
+    const i = document.getElementById('bibleIcon');
+    s.classList.toggle('show');
+    if (s.classList.contains('show')) { i.textContent = '📖'; i.classList.add('open'); }
+    else { i.textContent = '📕'; i.classList.remove('open'); }
+  }
+  </script>
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      詩篇第104篇沒有標明作者，被學者稱為聖經中最偉大的「自然詩篇」，與創世記第1章有密切的平行結構，按照創造的六日次序讚美神的創造作為。本篇可能在某種程度上也與古埃及的「太陽頌」（Hymn to Aten）有類似的主題，顯示古代以色列神學的獨特性——不是崇拜自然本身，而是透過自然讚美那位創造自然的神。
+
+      全篇的讚美從宇宙的宏大（天、地、水，1-9節）到大地的豐富供應（泉源、草地、樹木，10-18節），到天象的規律（月亮、日頭，19-23節），到萬物對神的依靠（27-30節），最後以詩人個人的讚美委身收結（33-35節）。這種從宇宙到個人的讚美弧度，展示了創造神學最完整的敬拜視野。
+
+      第24節「耶和華啊，你所造的何其多！都是你用智慧造成的；遍地滿了你的豐富」是全篇的高峰，也是整部聖經對神創造最精煉的讚美。第30節「你發出你的靈，他們便受造；你使地面更換為新」揭示神的靈（Spirit）是所有受造物生命的源頭，是更新的力量。
+    </div>
+  </details>
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 透過自然看見神的榮耀是敬拜最自然的入門</strong><br>
+      「耶和華啊，你所造的何其多！都是你用智慧造成的；遍地滿了你的豐富。」（第24節）本篇以整個自然界作為讚美的內容，揭示自然不只是風景，更是神榮耀與智慧的展示。「遍地滿了你的豐富」表明神的豐富無處不在——不只在聖殿裡，也在山川、鳥獸、雲彩中。當信徒學會在自然界中看見神的作為，日常生活中每一個自然現象都成為敬拜的機會。<br><br>
+      <strong>2. 萬物仰望神按時賜食揭示全宇宙的倚靠關係</strong><br>
+      「這都仰望你按時給他食物。你給他們，他們便拾起來；你張手，他們飽得美食。」（第27-28節）從最小的昆蟲到最大的海獸，所有的受造物都在「仰望」神的供應。這種對神的全宇宙性的依靠，既是事實的陳述，也是屬靈的呼召——信徒在宇宙性的倚靠之中，也當以「仰望神按時供應」的信心面對每天的需要，不以焦慮代替信靠。<br><br>
+      <strong>3. 一生向神唱詩是對創造主最持久的回應</strong><br>
+      「我要一生向耶和華唱詩！我還活的時候，要向我神歌頌！」（第33節）在詳述神創造的宏大之後，詩人的回應是個人的、長期的委身——「一生」、「還活的時候」。這種對讚美的長期委身，不是偶爾的情感衝動，而是對所認識的神的持久回應。每一次的讚美，都是對「神創造並維持一切」這個事實的確認。
+    </div>
+  </details>
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>耶和華啊，你<strong>所造的何其多</strong>！都是你用<strong>智慧造成的</strong>；遍地滿了你的豐富。（詩104:24）</td>
+            <td>就像參觀一位大師的展覽，越是細看每件作品越能看見其中的心思，你是否習慣在日常的自然景物中——一棵樹、一隻鳥、一場雨——<strong>看見神智慧的痕跡</strong>，讓大自然成為你每天的讚美教室？</td>
+          </tr>
+          <tr>
+            <td>這都<strong>仰望你</strong>按時給他食物。你<strong>張手</strong>，他們飽得美食。（詩104:27-28）</td>
+            <td>就像幼小的動物完全仰賴父母餵食，毫無焦慮地等候，你是否能以「<strong>萬物都仰望神</strong>」的眼光看待自己每天的需要，讓這個宇宙性的倚靠事實幫助你以信心而非焦慮面對供應的問題？</td>
+          </tr>
+          <tr>
+            <td>我要<strong>一生</strong>向耶和華唱詩！我<strong>還活的時候</strong>，要向我神歌頌！（詩104:33）</td>
+            <td>就像一位音樂家終生獻身於他所愛的音樂，你是否有過「<strong>一生向神唱詩</strong>」的委身意志——讓讚美不只是在教會禮拜時的行為，而是你整個生命持續不斷的姿態與方向？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

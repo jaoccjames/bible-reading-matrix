@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第94篇 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 10px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">詩篇第94篇 <span id="bibleIcon" class="bible-icon">📕</span></h1>
+  <div class="chapter-subtitle">求伸冤之神發出光來：神的管教使義人得平安</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>耶和華啊，你是伸冤的神；伸冤的神啊，求你發出光來！</div>
+    <div class="verse"><span class="verse-number">2</span>審判世界的主啊，求你挺身而立，使驕傲人受應得的報應！</div>
+    <div class="verse"><span class="verse-number">3</span>耶和華啊，惡人誇勝要到幾時呢？要到幾時呢？</div>
+    <div class="verse"><span class="verse-number">4</span>他們絮絮叨叨說傲慢的話；一切作孽的人都自己誇張。</div>
+    <div class="verse"><span class="verse-number">5</span>耶和華啊，他們強壓你的百姓，苦害你的產業。</div>
+    <div class="verse"><span class="verse-number">6</span>他們殺死寡婦和寄居的，又殺害孤兒。</div>
+    <div class="verse"><span class="verse-number">7</span>他們說：耶和華必不看見；雅各的神必不思念。</div>
+    <div class="verse"><span class="verse-number">8</span>你們民間的畜類人當思想；你們愚頑人到幾時纔有智慧呢？</div>
+    <div class="verse"><span class="verse-number">9</span>造耳朵的，難道自己不聽見嗎？造眼睛的，難道自己不看見嗎？</div>
+    <div class="verse"><span class="verse-number">10</span>管教列邦的，就是叫人得知識的，難道自己不懲治人嗎？</div>
+    <div class="verse"><span class="verse-number">11</span>耶和華知道人的意念是虛妄的。</div>
+    <div class="verse"><span class="verse-number">12</span>耶和華啊，你所管教、用律法所教訓的人是有福的！</div>
+    <div class="verse"><span class="verse-number">13</span>你使他在遭難的日子得享平安；惟有惡人陷在所挖的坑中。</div>
+    <div class="verse"><span class="verse-number">14</span>因為耶和華必不丟棄他的百姓，也不離棄他的產業。</div>
+    <div class="verse"><span class="verse-number">15</span>審判要轉向公義；心裏正直的，必都隨從。</div>
+    <div class="verse"><span class="verse-number">16</span>誰肯為我起來攻擊作惡的？誰肯為我站起抵擋作孽的？</div>
+    <div class="verse"><span class="verse-number">17</span>若不是耶和華幫助我，我就住在寂靜之中了。</div>
+    <div class="verse"><span class="verse-number">18</span>我正說我失了腳，耶和華阿，那時你的慈愛扶助我。</div>
+    <div class="verse"><span class="verse-number">19</span>我心裏多憂多疑，你安慰我，就使我歡樂。</div>
+    <div class="verse"><span class="verse-number">20</span>那藉着律例架弄殘害、在位上行奸惡的，豈能與你相交嗎？</div>
+    <div class="verse"><span class="verse-number">21</span>他們大家聚集攻擊義人，將無辜的人定為死罪。</div>
+    <div class="verse"><span class="verse-number">22</span>但耶和華向來作了我的高臺；我的神作了我投靠的磐石。</div>
+    <div class="verse"><span class="verse-number">23</span>他叫他們的罪孽歸到他們身上。他們正在行惡之中，他要剪除他們；耶和華我們的神要把他們剪除。</div>
+  </div>
+  <script>
+  function toggleScripture() {
+    const s = document.getElementById('scriptureText');
+    const i = document.getElementById('bibleIcon');
+    s.classList.toggle('show');
+    if (s.classList.contains('show')) { i.textContent = '📖'; i.classList.add('open'); }
+    else { i.textContent = '📕'; i.classList.remove('open'); }
+  }
+  </script>
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      詩篇第94篇是詩篇第四卷中唯一的個人哀歌詩篇，沒有標明作者。本篇以呼求「伸冤的神」開篇，描述惡人對弱勢群體（寡婦、孤兒、寄居者）的欺壓，並呼求神的審判與介入。在詩篇第四卷的神學脈絡中，本篇是對「耶和華作王」（詩93篇）的現實考驗——既然神是王，為何允許這樣的不義持續？
+
+      本篇的神學亮點在第12至13節：「耶和華啊，你所管教、用律法所教訓的人是有福的！你使他在遭難的日子得享平安。」神的管教不是懲罰，而是教育——是通往平安的道路。這個視角顛覆了一般人對困難的理解：苦難不一定是神的棄絕，更可能是神的管教和教訓，是通向更深屬靈成熟的途徑。
+
+      第18至19節是全篇最溫柔的部分：「我正說我失了腳，耶和華阿，那時你的慈愛扶助我。我心裏多憂多疑，你安慰我，就使我歡樂。」在一片對惡人的控訴之中，這兩節話突然轉向個人的見證——神在最脆弱的時刻扶持了詩人，在最憂慮的心中給予安慰。這種「在義憤之中也有個人溫柔經歷」的信仰見證，使本篇不只是社會批判，更是個人信仰的深刻告白。
+    </div>
+  </details>
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 神的管教是通向屬靈平安與成熟的祝福之路</strong><br>
+      「耶和華啊，你所管教、用律法所教訓的人是有福的！你使他在遭難的日子得享平安。」（第12-13節）這個宣告顛覆了常識：受神管教的人是「有福的」？在遭難時卻得「平安」？「管教」在希伯來文中同時含有教育和訓練的意思，揭示神的介入（包括困難）的目的是教育，而非純粹懲罰。被神管教、被神話語教訓的人，即使在患難中，也因認識神的目的而得到超越環境的平安。<br><br>
+      <strong>2. 在失腳之際神的慈愛扶助是最真實的同在</strong><br>
+      「我正說我失了腳，耶和華阿，那時你的慈愛扶助我。」（第18節）「失了腳」表明在最危急的一刻——差點倒下——神的慈愛「那時」出現。「那時」是最精確的神聖時機：不是提前防止，而是在最需要的那一刻介入扶助。這種「在失腳瞬間的神聖扶持」是信仰最真實的個人見證，揭示神不一定阻止我們「差點跌倒」，卻保證在那「差點」的瞬間，祂的慈愛必然到場。<br><br>
+      <strong>3. 神安慰憂疑的心使人歡樂是超越環境的屬靈轉化</strong><br>
+      「我心裏多憂多疑，你安慰我，就使我歡樂。」（第19節）「多憂多疑」是信仰人都可能有的內在狀態，不是信心的失敗，而是人性的真實。神對這種狀態的回應不是責備（「你怎麼能憂疑？」），而是安慰——主動的、親密的介入，帶來「歡樂」。這種從「多憂多疑」到「歡樂」的轉化，不是環境的改變，而是神安慰的結果。這揭示信仰的歡樂不依賴環境的順遂，而依賴神安慰的降臨。
+    </div>
+  </details>
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>耶和華啊，你所<strong>管教</strong>、用律法所<strong>教訓</strong>的人是<strong>有福的</strong>！你使他在遭難的日子得享<strong>平安</strong>。（詩94:12-13）</td>
+            <td>就像一個被嚴師悉心教導的學生，雖然當下學習過程艱辛，但後來的成就勝過那些從未被嚴格要求的人，你是否能以「<strong>神管教我是祝福</strong>」的眼光回顧你生命中最艱難的時期，看見其中神的教訓如何使你成長？</td>
+          </tr>
+          <tr>
+            <td>我正說我<strong>失了腳</strong>，耶和華阿，那時你的<strong>慈愛扶助我</strong>。（詩94:18）</td>
+            <td>就像在結冰的路面上差點跌倒的瞬間，旁邊的人伸手扶住你，你是否曾在靈命最脆弱、「<strong>差點失腳</strong>」的時刻，回頭看見神的慈愛「<strong>那時</strong>」出現扶助你？那次的經歷如何加深了你對神同在的確信？</td>
+          </tr>
+          <tr>
+            <td>我心裏<strong>多憂多疑</strong>，你<strong>安慰我</strong>，就使我<strong>歡樂</strong>。（詩94:19）</td>
+            <td>就像在最黑暗的恐懼中，一個輕聲說「我在這裡」的聲音能帶來巨大的安慰，你是否曾在「<strong>多憂多疑</strong>」的內心煎熬中，真實地接受到神的安慰，讓那安慰轉化為超越環境的<strong>歡樂</strong>？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

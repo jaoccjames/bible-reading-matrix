@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第119篇 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 10px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">詩篇第119篇 <span id="bibleIcon" class="bible-icon">📕</span></h1>
+  <div class="chapter-subtitle">最長詩篇：愛慕神話語為腳前燈路上光</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>行為完全、遵行耶和華律法的，這人便為有福！</div>
+    <div class="verse"><span class="verse-number">2</span>遵守他的法度、一心尋求他的，這人便為有福！</div>
+    <div class="verse"><span class="verse-number">3</span>這人不作非義的事，但遵行他的道。</div>
+    <div class="verse"><span class="verse-number">9</span>少年人用甚麼潔淨他的行為呢？是要遵行你的話！</div>
+    <div class="verse"><span class="verse-number">11</span>我將你的話藏在心裏，免得我得罪你。</div>
+    <div class="verse"><span class="verse-number">18</span>求你開我的眼睛，使我看出你律法中的奇妙。</div>
+    <div class="verse"><span class="verse-number">50</span>這話將我救活了；我在患難中，因此得安慰。</div>
+    <div class="verse"><span class="verse-number">71</span>我受苦是與我有益，為要使我學習你的律例。</div>
+    <div class="verse"><span class="verse-number">89</span>耶和華啊，你的話安定在天，直到永遠。</div>
+    <div class="verse"><span class="verse-number">97</span>我何等愛慕你的律法，終日不住的思想。</div>
+    <div class="verse"><span class="verse-number">103</span>你的言語在我上膛何等甘美，在我口中比蜜更甜！</div>
+    <div class="verse"><span class="verse-number">105</span>你的話是我腳前的燈，是我路上的光。</div>
+    <div class="verse"><span class="verse-number">130</span>你的言語一解開，就發出亮光，使愚人通達。</div>
+    <div class="verse"><span class="verse-number">165</span>愛你律法的人有大平安，甚麼都不能使他們絆腳。</div>
+    <div class="verse"><span class="verse-number">176</span>我如亡羊走迷了路，求你尋找僕人，因我不忘記你的命令。</div>
+  </div>
+  <script>
+  function toggleScripture() {
+    const s = document.getElementById('scriptureText');
+    const i = document.getElementById('bibleIcon');
+    s.classList.toggle('show');
+    if (s.classList.contains('show')) { i.textContent = '📖'; i.classList.add('open'); }
+    else { i.textContent = '📕'; i.classList.remove('open'); }
+  }
+  </script>
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      詩篇第119篇是整部聖經中篇幅最長的章節，共176節，以希伯來文字母詩篇（Acrostic Psalm）的形式寫成——全篇分為22段，每段8節，每段的每一節都以同一個希伯來字母開頭，從第一個字母（Aleph）到最後一個字母（Taw），形成一個完整的字母循環。這個精心的文學設計本身就是一個神學宣告：對神話語的讚美是全面的、有序的、涵蓋一切的。
+
+      本篇幾乎每一節都提到神的話語，使用了八個不同的希伯來詞語描述神的話語：律法（Torah）、法度（edah）、訓詞（piqquim）、命令（mitzvah）、典章（mishpat）、律例（choq）、話（dabar）和言語（imrah）。這種對神話語的多面向描述，展示了神的話語的豐富性與全面性。
+
+      本篇的作者處境複雜——他面對驕傲人的逼迫（第21、51、85節）、對神話語的苦切渴慕（第20節）、在苦難中的呼求（第107節）——然而在所有這些處境中，神的話語始終是他的倚靠、他的安慰、他的指引和他的喜樂。第105節「你的話是我腳前的燈，是我路上的光」是整篇最廣為人知的名句，以燈和光的意象描繪神話語在黑暗人生旅途中的實際作用。
+    </div>
+  </details>
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 神的話語是腳前的燈和路上的光是信仰最實際的指引</strong><br>
+      「你的話是我腳前的燈，是我路上的光。」（第105節）「腳前的燈」照亮下一步，「路上的光」指示遠方的方向——神的話語既給具體的下一步指引，也給整體的人生方向指示。在一個充滿混亂、假新聞和相對主義的世界中，神的話語是唯一可靠的光源。信徒若想在黑暗的時代中走正確的路，必須持續地浸泡在神的話語中，讓它在每一個具體的選擇和整體的人生方向上都給予清明的指引。<br><br>
+      <strong>2. 將神的話藏在心裏是防止犯罪最有效的屬靈策略</strong><br>
+      「我將你的話藏在心裏，免得我得罪你。」（第11節）「藏在心裏」是內化的過程，不只是外在的行為規範，而是讓神的話語成為思想和動機的一部分。這種對神話語的內化，使信徒在面對誘惑時，不需要靠意志力的對抗，而是靠已經深入心靈的神的話語自然地引導正確的選擇。這個原則是今日信徒熟記和默想神話語最重要的屬靈動機。<br><br>
+      <strong>3. 愛神律法的人有大平安揭示遵守神話語的最深獎賞</strong><br>
+      「愛你律法的人有大平安，甚麼都不能使他們絆腳。」（第165節）「大平安」（shalom gadol）是最全面的祝福——不只是沒有衝突，而是身心靈全面的健全與安好。「甚麼都不能使他們絆腳」表明愛神律法的人不是沒有障礙，而是在障礙面前仍能保持穩定前行。這種平安不是環境的平靜，而是靈魂深處因與神話語和諧同行而產生的根本穩定。
+    </div>
+  </details>
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>我將你的話<strong>藏在心裏</strong>，免得我<strong>得罪你</strong>。（詩119:11）</td>
+            <td>就像知道緊急出口位置的人，在火災時不需要慌亂尋找，而是本能地走向正確方向，你是否有意識地將神的話語「<strong>藏在心裏</strong>」——透過記憶、默想和實踐——讓它在誘惑臨到時成為最自然的屬靈反射？</td>
+          </tr>
+          <tr>
+            <td>你的話是我<strong>腳前的燈</strong>，是我<strong>路上的光</strong>。（詩119:105）</td>
+            <td>就像在黑夜中行路，沒有燈的人只能站在原地或亂走，你的日常決策——從小事到大事——是否真的以神的話語作為「<strong>腳前的燈</strong>」，讓每一個選擇都在神話語的照耀下作出，而非只在重大問題時才翻開聖經？</td>
+          </tr>
+          <tr>
+            <td>愛你律法的人有<strong>大平安</strong>，甚麼都不能使他們<strong>絆腳</strong>。（詩119:165）</td>
+            <td>就像一棵根深的樹，風暴可以搖動枝葉，卻無法拔起根基，你對神律法的愛是否已到達那種「<strong>大平安</strong>」的深度——不是沒有風浪，而是在任何風浪中仍能「<strong>甚麼都不能使你絆腳</strong>」的靈魂穩定？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

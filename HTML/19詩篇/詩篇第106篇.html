@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第106篇 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.4s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▶"; display: inline-block; margin-right: 10px; transition: transform 0.3s; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 onclick="toggleScripture()">詩篇第106篇 <span id="bibleIcon" class="bible-icon">📕</span></h1>
+  <div class="chapter-subtitle">反覆悖逆與神的慈愛：他的慈愛永遠長存</div>
+  <div id="scriptureText" class="scripture-text">
+    <div class="verse"><span class="verse-number">1</span>你們要讚美耶和華！要稱謝耶和華，因他本為善；他的慈愛永遠長存！</div>
+    <div class="verse"><span class="verse-number">2</span>誰能傳說耶和華的大能？誰能表明他一切的美德？</div>
+    <div class="verse"><span class="verse-number">3</span>凡遵守公平，常行公義的，這人便為有福！</div>
+    <div class="verse"><span class="verse-number">4</span>耶和華啊，你用恩惠待你的百姓；求你也用這恩惠記念我，開你的救恩眷顧我，</div>
+    <div class="verse"><span class="verse-number">5</span>使我見你選民的福，樂你國民的樂，與你的產業一同誇耀。</div>
+    <div class="verse"><span class="verse-number">6</span>我們與我們的祖宗一同犯罪；我們作了孽，行了惡。</div>
+    <div class="verse"><span class="verse-number">7</span>我們的祖宗在埃及不明白你的奇事，不記念你豐盛的慈愛，反倒在紅海行了悖逆。</div>
+    <div class="verse"><span class="verse-number">8</span>然而，他因自己的名拯救他們，為要彰顯他的大能，</div>
+    <div class="verse"><span class="verse-number">13</span>等不多時，他們就忘了他的作為，不仰望他的指教，</div>
+    <div class="verse"><span class="verse-number">14</span>反倒在曠野大起慾心，在荒地試探神。</div>
+    <div class="verse"><span class="verse-number">23</span>所以，他說要滅絕他們；若非有他所揀選的摩西站在當中〔原文作破口〕，使他的忿怒轉消，恐怕他就滅絕他們。</div>
+    <div class="verse"><span class="verse-number">43</span>他屢次搭救他們，他們卻設謀背逆，因自己的罪孽降為卑下。</div>
+    <div class="verse"><span class="verse-number">44</span>然而，他聽見他們哀告的時候，就眷顧他們的急難，</div>
+    <div class="verse"><span class="verse-number">45</span>為他們記念他的約，照他豐盛的慈愛後悔。</div>
+    <div class="verse"><span class="verse-number">46</span>他也使他們在凡擄掠他們的人面前蒙憐恤。</div>
+    <div class="verse"><span class="verse-number">47</span>耶和華我們的神阿，求你拯救我們，從外邦中招聚我們，我們好稱讚你的聖名，以讚美你為誇勝。</div>
+    <div class="verse"><span class="verse-number">48</span>耶和華以色列的神是應當稱頌的，從亙古直到永遠。願眾民都說：阿們！你們要讚美耶和華！</div>
+  </div>
+  <script>
+  function toggleScripture() {
+    const s = document.getElementById('scriptureText');
+    const i = document.getElementById('bibleIcon');
+    s.classList.toggle('show');
+    if (s.classList.contains('show')) { i.textContent = '📖'; i.classList.add('open'); }
+    else { i.textContent = '📕'; i.classList.remove('open'); }
+  }
+  </script>
+  <details>
+    <summary>背景簡介</summary>
+    <div class="content">
+      詩篇第106篇是詩篇第四卷（詩90-106篇）的最後一篇，以「哈利路亞」開結，與第105篇形成完整的對比：105篇以神的信實為主題，106篇以以色列的悖逆為主題，兩篇合在一起呈現了聖約歷史最完整的圖景。本篇第1節和第47至48節的讚美框架，與歷代志上16章34、35和36節有對應關係。
+
+      本篇以認罪開篇（第6節：「我們與我們的祖宗一同犯罪」），然後詳述以色列歷史中的多次悖逆——在埃及不記念神的慈愛（7節）、在曠野忘記神的作為（13節）、造牛犢偶像（19節）、在米利巴激怒神（32節）等。然而每一次的悖逆後，都有神的憐憫介入——「他屢次搭救他們」（43節）、「他聽見他們哀告的時候，就眷顧他們的急難」（44節）。
+
+      第45節「為他們記念他的約，照他豐盛的慈愛後悔」是全篇最深的神學宣告——神的記念與憐憫，不是因為以色列配得，而是因為祂自己的約與豐盛的慈愛。本篇是詩篇第四卷的終止式，以讚美和「阿們！」作結，成為整卷的神聖終章。
+    </div>
+  </details>
+  <details>
+    <summary>核心屬靈意涵</summary>
+    <div class="content">
+      <strong>1. 承認自己與先祖一同犯罪是集體認罪最深的誠實</strong><br>
+      「我們與我們的祖宗一同犯罪；我們作了孽，行了惡。」（第6節）詩人沒有以「那是祖宗的罪，與我無關」的態度切割歷史，而是以「我們」的第一人稱集體認罪，承認罪的連續性。這種集體性的認罪，是對人類普遍罪性最誠實的承認，也是為社群尋求神恩典最謙卑的起點。真正的屬靈更新，常常從誠實地認罪開始，而非以比較（「我比別人好」）或切割（「那不關我的事」）來迴避。<br><br>
+      <strong>2. 神屢次搭救卻屢次被忘記揭示人的軟弱與神的長忍</strong><br>
+      「他屢次搭救他們，他們卻設謀背逆。」（第43節）「屢次」是全篇最震撼的詞語——以色列的歷史是一個「悖逆—搭救—忘記—再悖逆」的反覆循環，然而神仍「屢次搭救」，不因厭倦而放棄。這種神的長忍與信實，是信徒最深的盼望根基——不是因為我們足夠忠心，而是因為神的慈愛勝過我們的軟弱。同時，「他們卻設謀背逆」也是對信徒最深的警醒：得救之後的感恩短暫，是人心最普遍的弱點。<br><br>
+      <strong>3. 神記念祂的約照豐盛慈愛後悔是恩典最深的彰顯</strong><br>
+      「為他們記念他的約，照他豐盛的慈愛後悔。」（第45節）神的「後悔」不是祂改變了心意，而是祂的憐憫在審判的邊緣轉回。「豐盛的慈愛」是祂後悔的原因——祂的慈愛的豐盛，大過對悖逆的正義懲罰。這種「豐盛的慈愛」使神的審判在最後一刻轉向拯救，成為整部以色列歷史最深的奇蹟，也是每一個認罪歸向神的信徒最深的盼望。
+    </div>
+  </details>
+  <details open>
+    <summary>重點經文與思想題目</summary>
+    <div class="content">
+      <table>
+        <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>我們與我們的<strong>祖宗一同犯罪</strong>；我們<strong>作了孽，行了惡</strong>。（詩106:6）</td>
+            <td>就像承認家族中世代傳承的問題，不迴避也不推卸，而是誠實面對尋求改變，你是否有能力以「<strong>我們一同犯罪</strong>」的集體認罪姿態，在神面前代表你所屬的家庭、群體或民族認罪，而非只為個人的罪懺悔？</td>
+          </tr>
+          <tr>
+            <td>他<strong>屢次搭救</strong>他們，他們卻設謀背逆，因自己的罪孽<strong>降為卑下</strong>。（詩106:43）</td>
+            <td>就像反覆被同一個朋友原諒，卻又反覆讓他失望，你是否真誠地審視自己信仰生命中「<strong>屢次被救卻屢次忘記</strong>」的循環，讓這個認識帶來更深的感恩與警覺，而非自我安慰式的「神一定會再次饒恕我」？</td>
+          </tr>
+          <tr>
+            <td>為他們記念他的約，照他<strong>豐盛的慈愛</strong>後悔。（詩106:45）</td>
+            <td>就像一位父母的慈愛能使他們在孩子再次犯錯後仍伸手抱起孩子，你是否真的相信神的「<strong>豐盛的慈愛</strong>」能涵蓋你反覆的軟弱，讓你每次認罪後都真實地相信神的接納，而非在罪疚中徘徊無法得釋放？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+</body>
+</html>

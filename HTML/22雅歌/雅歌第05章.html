@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雅歌第5章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #9b59b6; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #9b59b6; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #9b59b6; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #9b59b6; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s; }
+details:hover { border-color: #9b59b6; box-shadow: 0 2px 8px rgba(155,89,182,0.15); }
+details[open] { background: #fdf5ff; border-color: #9b59b6; }
+summary { font-size: 1.2em; font-weight: bold; color: #8e44ad; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::before { content: "▶"; margin-right: 10px; transition: transform 0.3s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #9b59b6; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #9b59b6; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #fdf5ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  雅歌第5章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">良人敲門我未開：錯失相遇後的熱切尋求</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>［新郎］我妹子，我新婦，我進了我的園中，採了我的沒藥和香料，吃了我的蜜房和蜂蜜，喝了我的酒和奶。我的朋友們，請吃！我所親愛的，請喝，且多多的喝！</div>
+  <div class="verse"><span class="verse-number">2</span>［新娘］我身睡臥，我心卻醒。這是我良人的聲音；他敲門說：［新郎］我的妹子，我的佳偶，我的鴿子，我的完全人，求你給我開門；因我的頭滿了露水，我的頭髮被夜露滴濕。</div>
+  <div class="verse"><span class="verse-number">3</span>［新娘］我回答說：我脫了衣裳，怎能再穿上呢？我洗了腳，怎能再玷污呢？</div>
+  <div class="verse"><span class="verse-number">4</span>我的良人從門孔裏伸進手來，我便因他動了心。</div>
+  <div class="verse"><span class="verse-number">5</span>我起來，要給我良人開門。我的兩手滴下沒藥；我的指頭有沒藥汁滴在門閂上。</div>
+  <div class="verse"><span class="verse-number">6</span>我給我的良人開了門；我的良人卻已轉身走了。他說話的時候，我神不守舍；我尋找他，竟尋不見；我呼叫他，他卻不回答。</div>
+  <div class="verse"><span class="verse-number">7</span>城中巡邏看守的人遇見我，打了我，傷了我；看守城牆的人奪去我的披肩。</div>
+  <div class="verse"><span class="verse-number">8</span>耶路撒冷的眾女子啊，我囑咐你們：若遇見我的良人，要告訴他，我因思愛成病。</div>
+  <div class="verse"><span class="verse-number">9</span>［伴唱］你這女子中極美麗的，你的良人比別人的良人有何強處？你的良人比別人的良人有何強處，你就這樣囑咐我們？</div>
+  <div class="verse"><span class="verse-number">10</span>［新娘］我的良人白而且紅，超乎萬人之上。</div>
+  <div class="verse"><span class="verse-number">11</span>他的頭像至精的金子；他的頭髮厚密纍垂，黑如烏鴉。</div>
+  <div class="verse"><span class="verse-number">12</span>他的眼如溪水旁的鴿子眼，用奶洗淨，安得合式。</div>
+  <div class="verse"><span class="verse-number">13</span>他的兩腮如香花畦，如香草臺；他的嘴唇像百合花，且滴下沒藥汁。</div>
+  <div class="verse"><span class="verse-number">14</span>他的兩手好像金管，鑲嵌水蒼玉；他的身體如同雕刻的象牙，周圍鑲嵌藍寶石。</div>
+  <div class="verse"><span class="verse-number">15</span>他的腿好像白玉石柱，安在精金座上；他的形狀如利巴嫩，且佳美如香柏樹。</div>
+  <div class="verse"><span class="verse-number">16</span>他的口極其甘甜；他全然可愛。耶路撒冷的眾女子阿，這是我的良人；這是我的朋友。</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖'; bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕'; bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    雅歌第五章是全書最具戲劇性張力的章節，描繪了一段錯失相遇後痛苦尋求的故事，並以新娘熱情的讚美詩（10-16節）作結。第2-6節是本章的核心敘事：良人在夜間來敲門，新娘以「脫了衣裳」、「洗了腳」為藉口遲延，等她終於起身開門，良人已然轉身離去。這種因一時懈怠而錯失親密的痛苦，是愛情中最揪心的場景之一。在屬靈詮釋上，這段敘述對應啟示錄3:20「看哪，我站在門外叩門；若有聽見我聲音就開門的，我要進到他那裏去，我與他，他與我，一同坐席」——神叩門，信徒的回應決定了親密關係的深度。第10-16節是新娘對良人美麗的細膩描繪（wasf），以「他全然可愛」（16節）作結，呼應了第四章良人對新娘「全然美麗」的宣告，展現了愛情中互相讚美的雙向性。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 懈怠讓我們錯失與神的親密，但尋找的心必再次得見</strong><br>
+    第2-6節新娘的懈怠（「脫了衣裳，怎能再穿上呢？」）是人在靈命懈怠時的真實寫照——找各種理由不回應神的呼召，不打開心門迎接祂的同在。等到良人走了才後悔，又陷入痛苦的尋找。然而這故事不是以絕望結束，而是以新娘更熱切的尋求和對良人更深情的讚美作結。懈怠的後果是短暫的分離，但愛的渴望使人重新尋求，這是屬靈生命中「時而親近、時而疏離」的真實循環。<br><br>
+    <strong>2. 在痛苦的尋找中，我們對良人的描述變得更加深情</strong><br>
+    第10-16節新娘在失去良人的痛苦中，卻說出了全書對良人最詳盡、最熱情的讚美。這說明了一個屬靈真理：往往在我們感受不到神同在的時刻，我們才最清楚地看見神的美好。乾枯的時期使信徒更深地思念神、更清楚地回憶與神相遇的美好，這種「因思念而見美」的過程，反而深化了信徒對神的認識和愛。<br><br>
+    <strong>3. 「他全然可愛」：這是信仰最終的宣告</strong><br>
+    第16節「他的口極其甘甜；他全然可愛」，是新娘讚美良人的頂點。在屬靈層面，「他全然可愛」是信徒認識耶穌基督後最自然的回應——祂的憐憫、祂的公義、祂的慈愛、祂的能力，每一個面向都令人傾倒。信徒向世人介紹基督，最有力量的不是論據，而是對「他全然可愛」這個個人經歷的真誠分享。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>經文</th><th>思想題目</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「我脫了<strong>衣裳</strong>，怎能再穿上呢？我洗了腳，怎能再<strong>玷污</strong>呢？」（雅5:3）</td>
+          <td>就像一個人賴在床上，明知鬧鐘響了卻用各種藉口再多睡五分鐘，最終錯過了重要的事，你在信仰生命中是否有過以「太累了」、「等一下再說」等藉口拖延回應神呼召的時刻？那次懈怠的後果是什麼？</td>
+        </tr>
+        <tr>
+          <td>「我給我的良人<strong>開了門</strong>；我的良人卻已<strong>轉身走了</strong>。」（雅5:6）</td>
+          <td>就像在關鍵時刻猶豫而錯過了一班重要的列車，那種後悔的感覺久久難以平息，你是否有過靈命上「開門太晚」的時刻——在神的感動和呼召中拖延，等到想回應時感覺那個時刻已過？那次經歷如何影響你現在對神呼召的回應速度？</td>
+        </tr>
+        <tr>
+          <td>「他的口極其甘甜；<strong>他全然可愛</strong>。」（雅5:16）</td>
+          <td>就像一位深愛某種音樂的人，不需任何人催促就能滔滔不絕地介紹這種音樂的美好，你是否能對身邊的人說出「神全然可愛」並說出理由？若讓你用自己的話描述耶穌基督有多可愛，你會怎麼說？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

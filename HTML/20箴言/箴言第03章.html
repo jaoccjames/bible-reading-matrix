@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第3章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::before { content: "▶"; margin-right: 10px; transition: transform 0.3s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  箴言第3章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">信靠耶和華：謙卑倚靠神的指引與祝福</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>我兒，不要忘記我的法則〔或作：指教〕；你心要謹守我的誡命；</div>
+  <div class="verse"><span class="verse-number">2</span>因為他必將長久的日子，生命的年數與平安，加給你。</div>
+  <div class="verse"><span class="verse-number">3</span>不可使慈愛、誠實離開你，要繫在你頸項上，刻在你心版上。</div>
+  <div class="verse"><span class="verse-number">4</span>這樣，你必在神和世人眼前蒙恩寵，有聰明。</div>
+  <div class="verse"><span class="verse-number">5</span>你要專心仰賴耶和華，不可倚靠自己的聰明，</div>
+  <div class="verse"><span class="verse-number">6</span>在你一切所行的事上都要認定他，他必指引你的路。</div>
+  <div class="verse"><span class="verse-number">7</span>不要自以為有智慧；要敬畏耶和華，遠離惡事。</div>
+  <div class="verse"><span class="verse-number">8</span>這便醫治你的肚臍，滋潤你的百骨。</div>
+  <div class="verse"><span class="verse-number">9</span>你要以財物和一切初熟的土產尊榮耶和華。</div>
+  <div class="verse"><span class="verse-number">10</span>這樣，你的倉房必充滿有餘；你的酒醡有新酒盈溢。</div>
+  <div class="verse"><span class="verse-number">11</span>我兒，你不可輕看耶和華的管教〔或作：懲治〕，也不可厭煩他的責備；</div>
+  <div class="verse"><span class="verse-number">12</span>因為耶和華所愛的，他必責備，正如父親責備所喜愛的兒子。</div>
+  <div class="verse"><span class="verse-number">13</span>得智慧，得聰明的，這人便為有福。</div>
+  <div class="verse"><span class="verse-number">14</span>因為得智慧勝過得銀子，其利益強如精金，</div>
+  <div class="verse"><span class="verse-number">15</span>比珍珠〔或作：紅寶石〕寶貴；你一切所喜愛的，都不足與比較。</div>
+  <div class="verse"><span class="verse-number">16</span>他右手有長壽，左手有富貴。</div>
+  <div class="verse"><span class="verse-number">17</span>他的道是安樂；他的路全是平安。</div>
+  <div class="verse"><span class="verse-number">18</span>他與持守他的作生命樹；持定他的，俱各有福。</div>
+  <div class="verse"><span class="verse-number">19</span>耶和華以智慧立地，以聰明定天，</div>
+  <div class="verse"><span class="verse-number">20</span>以知識使深淵裂開，使天空滴下甘露。</div>
+  <div class="verse"><span class="verse-number">21</span>我兒，要謹守真智慧和謀略，不可使他離開你的眼目。</div>
+  <div class="verse"><span class="verse-number">22</span>這樣，他必作你的生命，頸項的美飾。</div>
+  <div class="verse"><span class="verse-number">23</span>你就坦然行路，不至碰腳。</div>
+  <div class="verse"><span class="verse-number">24</span>你躺下，必不懼怕；你躺臥，睡得香甜。</div>
+  <div class="verse"><span class="verse-number">25</span>忽然來的驚恐，不要害怕；惡人遭毀滅，也不要恐懼。</div>
+  <div class="verse"><span class="verse-number">26</span>因為耶和華是你所倚靠的；他必保守你的腳不陷入網羅。</div>
+  <div class="verse"><span class="verse-number">27</span>你手若有行善的力量，不可推辭，就當向那應得的人施行。</div>
+  <div class="verse"><span class="verse-number">28</span>你那裏若有現成的，不可對鄰舍說：去吧，明天再來，我必給你。</div>
+  <div class="verse"><span class="verse-number">29</span>你的鄰舍既在你附近安居，你不可設計害他。</div>
+  <div class="verse"><span class="verse-number">30</span>人未曾加害與你，不可無故與他相爭。</div>
+  <div class="verse"><span class="verse-number">31</span>不可嫉妒強暴的人，也不可選擇他所行的路。</div>
+  <div class="verse"><span class="verse-number">32</span>因為，乖僻人為耶和華所憎惡；正直人為他所親密。</div>
+  <div class="verse"><span class="verse-number">33</span>耶和華咒詛惡人的家庭，賜福與義人的居所。</div>
+  <div class="verse"><span class="verse-number">34</span>他譏誚那好譏誚的人，賜恩給謙卑的人。</div>
+  <div class="verse"><span class="verse-number">35</span>智慧人必承受尊榮；愚昧人高升也成為羞辱。</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖'; bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕'; bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    箴言第三章是箴言書中最廣為人知的一章，包含了許多影響深遠的屬靈格言。本章繼續以父親教導兒子的形式呈現，在語氣上既有溫柔的勸勉，也有清晰的神學宣告。在歷史背景上，本章反映了以色列人對神的信靠與委身，是所羅門王時代智慧傳統的精華所在。全章涵蓋多個主題：謹守神的誡命帶來長壽平安（1-4節）、全心倚靠耶和華而非自己的聰明（5-8節）、以財物尊榮神（9-10節）、神的管教出於愛（11-12節）、智慧的無價價值（13-18節）、神以智慧創造宇宙（19-20節），以及智慧帶來的安全感與對鄰舍的善待（21-35節）。本章在救恩歷史中提醒信徒，神不僅是宇宙的創造者，更是個人日常生活的引導者，凡謙卑倚靠祂的人，必得祂的指引與祝福。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 全心倚靠神勝過倚靠自己的聰明</strong><br>
+    第5-6節是本章的神學核心：「你要專心仰賴耶和華，不可倚靠自己的聰明，在你一切所行的事上都要認定他，他必指引你的路。」這提醒信徒，人的聰明才智有其侷限，真正的智慧是認識自己的有限並謙卑倚靠全知全能的神。信靠神不是消極放棄思考，而是在思考與行動中始終以神為中心，讓祂的旨意成為行事的依據。<br><br>
+    <strong>2. 神的管教是愛的表現，不可輕看</strong><br>
+    第11-12節指出，耶和華責備所愛的人，正如父親責備所喜愛的兒子。人在遭受試煉與管教時，往往容易灰心喪膽或產生怨恨，但本章提醒我們，神的管教背後是深厚的父愛。正確的回應不是逃避或抗拒，而是以謙卑和感恩的心接受，從中學習神所要教導的功課，讓生命在試煉中成長精煉。<br><br>
+    <strong>3. 善待鄰舍是智慧生命的具體表現</strong><br>
+    本章後半部分強調，真正的智慧必然落實在對人的態度上：及時行善、不拖延（27-28節）、不謀害鄰舍（29節）、不無故爭鬥（30節）。屬靈的智慧若不延伸至人際關係與社群責任，便是空洞的。神的智慧使人成為社群中的祝福，而非紛爭的根源。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>經文</th><th>思想題目</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「你要<strong>專心仰賴耶和華</strong>，不可倚靠自己的聰明，在你一切所行的事上都要認定他，他必<strong>指引你的路</strong>。」（箴3:5-6）</td>
+          <td>就像開車時即使自認熟悉路況，遇到陌生路段仍需打開導航，你在人生重大決定前，是否有習慣先向神禱告、尋求祂的引導，而不只是依靠自己的判斷？是什麼讓你難以放手交託？</td>
+        </tr>
+        <tr>
+          <td>「因為耶和華<strong>所愛的</strong>，他必<strong>責備</strong>，正如父親責備所喜愛的兒子。」（箴3:12）</td>
+          <td>就像教練在訓練時嚴格糾正選手的動作，正是因為看重他的潛力，你生命中曾有哪些讓你痛苦的管教或挫折，如今回顧時你能看見神的愛與用意嗎？</td>
+        </tr>
+        <tr>
+          <td>「你手若有行善的力量，<strong>不可推辭</strong>，就當向那應得的人施行。」（箴3:27）</td>
+          <td>就像手機電量充足時仍捨不得借給需要的人充電，你是否曾在有能力幫助他人時，因種種藉口而延遲或推辭？什麼原因讓你難以即時行善？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第31章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::before { content: "▶"; margin-right: 10px; transition: transform 0.3s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  箴言第31章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">才德的婦人誰能得著：敬畏耶和華的女子必得稱讚</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>利慕伊勒王的言語，是他母親教訓他的真言。</div>
+  <div class="verse"><span class="verse-number">2</span>我的兒啊，我腹中生的兒啊，我許願得的兒啊！我當怎樣教訓你呢？</div>
+  <div class="verse"><span class="verse-number">3</span>不要將你的精力給婦女；也不要有敗壞君王的行為。</div>
+  <div class="verse"><span class="verse-number">4</span>利慕伊勒啊，君王喝酒，君王喝酒不相宜；王子說，濃酒在那裏也不相宜；</div>
+  <div class="verse"><span class="verse-number">5</span>恐怕喝了就忘記律例，顛倒一切困苦人的是非。</div>
+  <div class="verse"><span class="verse-number">6</span>可以把濃酒給將亡的人喝，把清酒給苦心的人喝，</div>
+  <div class="verse"><span class="verse-number">7</span>讓他喝了，就忘記他的貧窮，不再記念他的苦楚。</div>
+  <div class="verse"><span class="verse-number">8</span>你當為啞吧〔或作：不能自辯的〕開口，為一切孤獨的伸冤。</div>
+  <div class="verse"><span class="verse-number">9</span>你當開口按公義判斷，為困苦和窮乏的辨屈。</div>
+  <div class="verse"><span class="verse-number">10</span>才德的婦人誰能得着呢？她的價值遠勝過珍珠。</div>
+  <div class="verse"><span class="verse-number">11</span>她丈夫心裏倚靠她，必不缺少利益；</div>
+  <div class="verse"><span class="verse-number">12</span>她一生使丈夫有益無損。</div>
+  <div class="verse"><span class="verse-number">13</span>她尋找羊羢和麻，甘心用手作工。</div>
+  <div class="verse"><span class="verse-number">14</span>她好像商船從遠方運糧來，</div>
+  <div class="verse"><span class="verse-number">15</span>未到黎明她就起來，把食物分給家中的人，將當作的工分派婢女。</div>
+  <div class="verse"><span class="verse-number">16</span>她想得田地就買來；用手所得之利栽種葡萄園。</div>
+  <div class="verse"><span class="verse-number">17</span>她以能力束腰，使膀臂有力。</div>
+  <div class="verse"><span class="verse-number">18</span>她覺得所經營的有利；她的燈終夜不滅。</div>
+  <div class="verse"><span class="verse-number">19</span>她手拿撚線竿，手把紡線車。</div>
+  <div class="verse"><span class="verse-number">20</span>她張手賙濟困苦人，伸手幫補窮乏人。</div>
+  <div class="verse"><span class="verse-number">21</span>她不因下雪為家裏的人擔心，因為全家都穿着朱紅衣服。</div>
+  <div class="verse"><span class="verse-number">22</span>她為自己製作繡花毯子；她的衣服是細麻和紫色布作的。</div>
+  <div class="verse"><span class="verse-number">23</span>她丈夫在城門口與本地的長老同坐，為眾人所認識。</div>
+  <div class="verse"><span class="verse-number">24</span>她作細麻布衣裳出賣，又將腰帶賣與商家。</div>
+  <div class="verse"><span class="verse-number">25</span>能力和威儀是她的衣服；她想到日後的景況就喜笑。</div>
+  <div class="verse"><span class="verse-number">26</span>她開口就發智慧；她舌上有仁慈的法則。</div>
+  <div class="verse"><span class="verse-number">27</span>她觀察家務，並不喫閒飯。</div>
+  <div class="verse"><span class="verse-number">28</span>她的兒女起來稱她有福；她的丈夫也稱讚她，</div>
+  <div class="verse"><span class="verse-number">29</span>說：才德的女子很多，惟獨你超過一切。</div>
+  <div class="verse"><span class="verse-number">30</span>豔麗是虛假的，美容是虛浮的；惟敬畏耶和華的婦女必得稱讚。</div>
+  <div class="verse"><span class="verse-number">31</span>願她享受操作所得的；願她的工作在城門口榮耀她。</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖'; bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕'; bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    箴言第三十一章是整本箴言書的終章，分為兩個部分：利慕伊勒王母親的訓言（1-9節）與「才德的婦人」詩（10-31節）。後者在希伯來文原典中是一首以字母表順序排列的詩歌（離合詩/Acrostic），每節以希伯來文二十二個字母依序開頭，顯示其精心的文學構思與高度的文化地位。本章作為整本箴言書的結語，以「才德的婦人」為箴言書智慧理想的具體化身——她不是一個理想化的「完美女性」藍圖，而是「智慧第一章所呼喚的那位智慧女性」的人格化實現。這位婦人的品格清單涵蓋了勤勞（13-15節）、智慧的商業判斷（16節）、體力與能力（17節）、憐憫窮人（20節）、對家人的預備（21節）、智慧的言語（26節）、家務管理（27節）。第30節以「敬畏耶和華的婦女必得稱讚」作為全書的神學結語，呼應了箴言書的開篇宣告（1:7）：「敬畏耶和華是智慧的開端」，首尾呼應，完美閉環。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 才德的婦人是箴言書智慧理想的具體彰顯</strong><br>
+    第31章「才德的婦人」不只是對女性的描述，更是整本箴言書智慧理想的活化身——勤勞、慷慨、智慧、有遠見、尊重家人、敬畏神。這位婦人所彰顯的，正是箴言書第一章所呼召的智慧生命：全面整合了靈性、人際、工作與憐憫的豐盛生命。她向每一位讀者發出邀請：智慧不只是知識或箴言，而是一種整全的生命方式。<br><br>
+    <strong>2. 真正的尊榮來自敬畏神，而非外在的美貌或財富</strong><br>
+    第30節「豔麗是虛假的，美容是虛浮的；惟敬畏耶和華的婦女必得稱讚」，以鮮明的對比作為全書最後的屬靈宣告：世界以外貌衡量價值，神以敬虔衡量尊榮。這一宣告不只是對女性的提醒，更是對所有信徒的挑戰——在追求外在形象的文化中，真正值得投資的是靈魂的敬虔品格。<br><br>
+    <strong>3. 敬畏神是智慧的開端也是智慧的終點：箴言書的首尾閉環</strong><br>
+    第30節的「敬畏耶和華」呼應了箴言書1:7「敬畏耶和華是智慧的開端」，形成全書的完美閉環。這意味著，讀完整本箴言書的讀者所領受的所有智慧——無論是關於言語、財富、關係、管教、謙卑、誠實——最終都匯聚回到同一個根源：敬畏耶和華。敬畏不是終點後的裝飾，而是使一切智慧得以生長的土壤。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>經文</th><th>思想題目</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「<strong>豔麗</strong>是虛假的，美容是虛浮的；惟<strong>敬畏耶和華</strong>的婦女必得稱讚。」（箴31:30）</td>
+          <td>就像花朵的美麗只維持幾天，而樹根的深厚卻能支撐百年，你目前在自己身上最投入的「美容」（外在形象、社會評價、成就）是什麼？你在「敬畏神的內在品格」上投入了多少？這個比例反映了你真正看重的是什麼？</td>
+        </tr>
+        <tr>
+          <td>「她<strong>張手賙濟</strong>困苦人，伸手幫補窮乏人。」（箴31:20）</td>
+          <td>就像才德的婦人在管理好家庭的同時，還能張手幫助外面的窮乏人，慷慨並非只有「有餘才能給」，你目前如何在自己的日常忙碌中，仍然為有需要的人「張手」和「伸手」？你有沒有一個具體的機會可以開始或擴大這樣的給予？</td>
+        </tr>
+        <tr>
+          <td>「她開口就<strong>發智慧</strong>；她舌上有<strong>仁慈的法則</strong>。」（箴31:26）</td>
+          <td>就像一位有經驗的輔導員，說話前先考慮對方的處境和需要，才德的婦人的言語兼具智慧的深度和仁慈的溫度，你的言語更多反映出「智慧」還是「仁慈」？是什麼讓你有時說話有智慧卻缺乏仁慈，或者有仁慈卻缺少智慧？你如何讓兩者更好地結合？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

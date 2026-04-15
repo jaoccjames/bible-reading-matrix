@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第6章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::before { content: "▶"; margin-right: 10px; transition: transform 0.3s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  箴言第6章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">警惕懶惰惡行：神恨惡的七種罪</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>我兒，你若為朋友作保，替外人擊掌，</div>
+  <div class="verse"><span class="verse-number">2</span>你就被口中的話語纏住，被嘴裏的言語捉住。</div>
+  <div class="verse"><span class="verse-number">3</span>我兒，你既落在朋友手中，就當這樣行纔可救自己：你要自卑，去懇求你的朋友。</div>
+  <div class="verse"><span class="verse-number">4</span>不要容你的眼睛睡覺；不要容你的眼皮打盹。</div>
+  <div class="verse"><span class="verse-number">5</span>要救自己，如鹿脫離獵戶的手，如鳥脫離捕鳥人的手。</div>
+  <div class="verse"><span class="verse-number">6</span>懶惰人哪，你去察看螞蟻的動作就可得智慧。</div>
+  <div class="verse"><span class="verse-number">7</span>螞蟻沒有元帥，沒有官長，沒有君王，</div>
+  <div class="verse"><span class="verse-number">8</span>尚且在夏天預備食物，在收割時聚斂糧食。</div>
+  <div class="verse"><span class="verse-number">9</span>懶惰人哪，你要睡到幾時呢？你何時睡醒呢？</div>
+  <div class="verse"><span class="verse-number">10</span>再睡片時，打盹片時，抱着手躺臥片時，</div>
+  <div class="verse"><span class="verse-number">11</span>你的貧窮就必如強盜速來，你的缺乏彷彿拿兵器的人來到。</div>
+  <div class="verse"><span class="verse-number">12</span>無賴的惡徒，行動就用乖僻的口，</div>
+  <div class="verse"><span class="verse-number">13</span>用眼傳神，用腳示意，用指點劃，</div>
+  <div class="verse"><span class="verse-number">14</span>心中乖僻，常設惡謀，布散紛爭。</div>
+  <div class="verse"><span class="verse-number">15</span>所以，災難必忽然臨到他身；他必頃刻敗壞，無法可治。</div>
+  <div class="verse"><span class="verse-number">16</span>耶和華所恨惡的有六樣，連他心所憎惡的共有七樣：</div>
+  <div class="verse"><span class="verse-number">17</span>就是高傲的眼，撒謊的舌，流無辜人血的手，</div>
+  <div class="verse"><span class="verse-number">18</span>圖謀惡計的心，飛跑行惡的腳，</div>
+  <div class="verse"><span class="verse-number">19</span>吐謊言的假見證，並弟兄中布散紛爭的人。</div>
+  <div class="verse"><span class="verse-number">20</span>我兒，要謹守你父親的誡命；不可離棄你母親的法則〔或作：指教〕，</div>
+  <div class="verse"><span class="verse-number">21</span>要常繫在你心上，挂在你項上。</div>
+  <div class="verse"><span class="verse-number">22</span>你行走，他必引導你；你躺臥，他必保守你；你睡醒，他必與你談論。</div>
+  <div class="verse"><span class="verse-number">23</span>因為誡命是燈，法則〔或作：指教〕是光，訓誨的責備是生命的道，</div>
+  <div class="verse"><span class="verse-number">24</span>能保你遠離惡婦，遠離外女諂媚的舌頭。</div>
+  <div class="verse"><span class="verse-number">25</span>你心中不要戀慕她的美色，也不要被她眼皮勾引。</div>
+  <div class="verse"><span class="verse-number">26</span>因為，妓女能使人只剩一塊餅；淫婦獵取人寶貴的生命。</div>
+  <div class="verse"><span class="verse-number">27</span>人若懷裏搋火，衣服豈能不燒呢？</div>
+  <div class="verse"><span class="verse-number">28</span>人若在火炭上走，腳豈能不燙呢？</div>
+  <div class="verse"><span class="verse-number">29</span>親近鄰舍之妻的，也是如此；凡挨近她的，不免受罰。</div>
+  <div class="verse"><span class="verse-number">30</span>賊因飢餓偷竊充飢，人不藐視他，</div>
+  <div class="verse"><span class="verse-number">31</span>若被找着，他必賠還七倍，必將家中所有的盡都償還。</div>
+  <div class="verse"><span class="verse-number">32</span>與婦人行淫的，便是無知；行這事的，必喪掉生命。</div>
+  <div class="verse"><span class="verse-number">33</span>他必受傷損，必被凌辱；他的羞恥不得塗抹。</div>
+  <div class="verse"><span class="verse-number">34</span>因為人的嫉恨成了烈怒，報仇的時候決不留情。</div>
+  <div class="verse"><span class="verse-number">35</span>甚麼贖價，他都不顧；你雖送許多禮物，他也不肯干休。</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖'; bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕'; bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    箴言第六章涵蓋多個實際的生活警示，內容豐富而多元，是箴言書中少有的以多重主題並列的章節。在以色列社會的歷史背景中，為他人作保是常見的商業行為，可能帶來嚴重的財務風險，父親因此第一個提出警告（1-5節）。接著轉向懶惰的主題，以螞蟻為正面榜樣，警告懶惰帶來的貧乏（6-11節）。本章的神學高峰出現在16-19節，列舉了「耶和華所恨惡的七樣」，涵蓋驕傲、謊言、暴力、詭計、急於行惡、假見證及布散紛爭，這七種罪構成一幅人類道德敗壞的圖像。後半部分（20-35節）呼應第五章，再次警告道德上的不忠貞，並以「火」的比喻說明性罪惡的毀滅性後果。本章在整個箴言書中展現了智慧的實踐面，從財務、勤勞、品格到性道德，全面勾勒出敬虔生活的輪廓。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 勤勞是屬靈智慧在生活中的具體表現</strong><br>
+    本章以螞蟻為例，說明自動自發、未雨綢繆的重要性。螞蟻不需要監督者，卻能有計劃地為未來預備。懶惰不只是個人的缺點，更是屬靈不成熟的表現——不願為神所托付的事盡心盡力。信徒應以螞蟻的精神，在神所給予的每個崗位上忠心服事，把握時機，不因安逸而荒廢責任。<br><br>
+    <strong>2. 神恨惡的七種罪警示信徒的內在與外在</strong><br>
+    第16-19節列出神所恨惡的七樣，從驕傲的眼到布散紛爭，涵蓋了心思（驕傲、惡計）、言語（謊言、假見證）與行動（流血、布散紛爭）三個層面。這提醒信徒，神對罪的恨惡是全面的，信仰的塑造必須觸及生命的每一個角落——內心的動機、口中的言語、腳下的行動，缺一不可。<br><br>
+    <strong>3. 神的話語是引導與保護生命的燈光</strong><br>
+    第22-23節說明父母的誡命與神的法則是燈與光，在人行走、躺臥、醒來時都能發揮引導與保護的功效。這是一個美麗的屬靈圖像：神的話語不是束縛，而是照亮前路的光，使人在黑暗中不至迷失。信徒若持續讓神的話居住在心中，便能在各樣誘惑與危險面前得到保守。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>經文</th><th>思想題目</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「懶惰人哪，你去<strong>察看螞蟻</strong>的動作就可得智慧。」（箴6:6）</td>
+          <td>就像螞蟻在夏天就開始為冬天儲糧，不等危機才行動，你在屬靈生命、健康或財務上，是否有「現在不急，以後再說」的態度？什麼事情你知道該做卻一再拖延？</td>
+        </tr>
+        <tr>
+          <td>「耶和華所<strong>恨惡</strong>的有六樣，連他心所憎惡的共有七樣……並弟兄中<strong>布散紛爭</strong>的人。」（箴6:16,19）</td>
+          <td>就像一個團隊中有人暗中散布謠言，整體氣氛和效率都會受損，你是否曾在家庭、教會或職場中，無意間成為紛爭的傳播者？你如何成為化解紛爭而非加劇的人？</td>
+        </tr>
+        <tr>
+          <td>「因為<strong>誡命是燈</strong>，法則〔或作：指教〕是光，訓誨的責備是<strong>生命的道</strong>，」（箴6:23）</td>
+          <td>就像夜間開車時車燈是不可缺少的安全設備，神的話語在你的日常決定中是否真的發揮「照明」的作用？你上一次因為讀到聖經某節經文而改變了一個決定，是什麼時候的事？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

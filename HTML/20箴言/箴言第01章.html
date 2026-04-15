@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第1章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2.2em;
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+h1:hover { color: #3498db; }
+.bible-icon {
+  display: inline-block;
+  transition: transform 0.5s;
+}
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle {
+  font-size: 1.2em;
+  color: #7f8c8d;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.scripture-text {
+  display: none;
+  background: #f8f9fa;
+  border-left: 4px solid #3498db;
+  padding: 20px;
+  line-height: 2;
+  max-height: 500px;
+  overflow-y: auto;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details {
+  margin: 20px 0;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  background: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2980b9;
+  cursor: pointer;
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+summary::before {
+  content: "▶";
+  margin-right: 10px;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th {
+  background: #3498db;
+  color: white;
+  padding: 15px;
+  font-size: 1.1em;
+  text-align: left;
+}
+td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.6em; }
+  .chapter-subtitle { font-size: 1em; }
+  table { font-size: 0.9em; }
+  th, td { padding: 10px; }
+  summary { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  箴言第1章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">智慧呼喚：敬畏耶和華是知識的開端</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>以色列王大衛兒子所羅門的箴言：</div>
+  <div class="verse"><span class="verse-number">2</span>要使人曉得智慧和訓誨，分辨通達的言語，</div>
+  <div class="verse"><span class="verse-number">3</span>使人處事領受智慧、仁義、公平、正直的訓誨，</div>
+  <div class="verse"><span class="verse-number">4</span>使愚人靈明，使少年人有知識和謀略，</div>
+  <div class="verse"><span class="verse-number">5</span>使智慧人聽見，增長學問，使聰明人得着智謀，</div>
+  <div class="verse"><span class="verse-number">6</span>使人明白箴言和譬喻，懂得智慧人的言詞和謎語。</div>
+  <div class="verse"><span class="verse-number">7</span>敬畏耶和華是知識的開端；愚妄人藐視智慧和訓誨。</div>
+  <div class="verse"><span class="verse-number">8</span>我兒，要聽你父親的訓誨，不可離棄你母親的法則〔或作：指教〕；</div>
+  <div class="verse"><span class="verse-number">9</span>因為這要作你頭上的華冠，你項上的金鍊。</div>
+  <div class="verse"><span class="verse-number">10</span>我兒，惡人若引誘你，你不可隨從。</div>
+  <div class="verse"><span class="verse-number">11</span>他們若說：你與我們同去，我們要埋伏流人之血，要蹲伏害無罪之人；</div>
+  <div class="verse"><span class="verse-number">12</span>我們好像陰間，把他們活活吞下；他們如同下坑的人，被我們囫圇吞了；</div>
+  <div class="verse"><span class="verse-number">13</span>我們必得各樣寶物，將所擄來的，裝滿房屋；</div>
+  <div class="verse"><span class="verse-number">14</span>你與我們大家同分，我們共用一個囊袋；</div>
+  <div class="verse"><span class="verse-number">15</span>我兒，不要與他們同行一道，禁止你腳走他們的路。</div>
+  <div class="verse"><span class="verse-number">16</span>因為，他們的腳奔跑行惡；他們急速流人的血，</div>
+  <div class="verse"><span class="verse-number">17</span>好像飛鳥，網羅設在眼前仍不躲避。</div>
+  <div class="verse"><span class="verse-number">18</span>這些人埋伏，是為自流己血；蹲伏，是為自害己命。</div>
+  <div class="verse"><span class="verse-number">19</span>凡貪戀財利的，所行之路都是如此；這貪戀之心乃奪去得財者之命。</div>
+  <div class="verse"><span class="verse-number">20</span>智慧在街市上呼喊，在寬闊處發聲，</div>
+  <div class="verse"><span class="verse-number">21</span>在熱鬧街頭喊叫，在城門口，在城中發出言語，</div>
+  <div class="verse"><span class="verse-number">22</span>說：你們愚昧人喜愛愚昧，褻慢人喜歡褻慢，愚頑人恨惡知識，要到幾時呢？</div>
+  <div class="verse"><span class="verse-number">23</span>你們當因我的責備回轉；我要將我的靈澆灌你們，將我的話指示你們。</div>
+  <div class="verse"><span class="verse-number">24</span>我呼喚，你們不肯聽從；我伸手，無人理會；</div>
+  <div class="verse"><span class="verse-number">25</span>反輕棄我一切的勸戒，不肯受我的責備。</div>
+  <div class="verse"><span class="verse-number">26</span>你們遭災難，我就發笑；驚恐臨到你們，我必嗤笑。</div>
+  <div class="verse"><span class="verse-number">27</span>驚恐臨到你們，好像狂風；災難來到，如同暴風；急難痛苦臨到你們身上。</div>
+  <div class="verse"><span class="verse-number">28</span>那時，你們必呼求我，我卻不答應，懇切的尋找我，卻尋不見。</div>
+  <div class="verse"><span class="verse-number">29</span>因為，你們恨惡知識，不喜愛敬畏耶和華，</div>
+  <div class="verse"><span class="verse-number">30</span>不聽我的勸戒，藐視我一切的責備，</div>
+  <div class="verse"><span class="verse-number">31</span>所以必喫自結的果子，充滿自設的計謀。</div>
+  <div class="verse"><span class="verse-number">32</span>愚昧人背道，必殺己身；愚頑人安逸，必害己命。</div>
+  <div class="verse"><span class="verse-number">33</span>惟有聽從我的，必安然居住，得享安靜，不怕災禍。</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖';
+    bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕';
+    bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    箴言書是舊約智慧文學的代表作，傳統上認為主要由以色列王所羅門所著，部分章節由其他智慧人士補充。本書大約成書於主前十世紀至六世紀之間，以詩歌格言的形式，將神的智慧傳遞給以色列百姓，尤其針對年輕人的品德培育。第一章是全書的序言與導論，清楚點明箴言書的目的：使人獲得智慧、訓誨、仁義、公平、正直，幫助各類人從中得益。本章核心宣告「敬畏耶和華是知識的開端」，奠定全書的神學基礎。此外，本章以父親對兒子的勸誡形式，警告年輕人拒絕惡人的引誘，並以智慧擬人化的方式，描繪她在街市公開呼喚眾人的圖像。智慧的呼聲如今仍在，拒絕者將自食惡果，接受者則得享平安。本章在整本箴言書中扮演著「開宗明義」的角色，確立了智慧、敬畏神與道德抉擇的主軸。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 敬畏耶和華是一切智慧的根基</strong><br>
+    本章第7節宣告「敬畏耶和華是知識的開端」，這是箴言書最核心的神學立場。真正的智慧不是來自人的聰明才智或世俗學識，而是奠基於對神的敬畏與順服。這種敬畏不是恐懼，而是對神的威榮與主權的認識，是靈魂謙卑在神面前的態度。缺乏對神的敬畏，一切知識都成了空殼，甚至引人驕傲墮落。<br><br>
+    <strong>2. 遠離惡人引誘需要主動的抉擇</strong><br>
+    本章以父親的口吻鄭重警告兒子，惡人的引誘往往披着利益的外衣，以「共享財富」為餌，卻帶來滅亡。信徒面對誘惑，不能被動等待，必須主動拒絕、禁止腳步走上那條路。屬靈的抵抗力量來自於事先的辨別力，而辨別力的培養則有賴於神話語的根植與敬虔的操練。<br><br>
+    <strong>3. 智慧的呼召是神憐憫的邀請，拒絕則自食惡果</strong><br>
+    智慧在街市上呼喊，是神主動向人發出的呼召，充滿恩典與憐憫。然而神的呼召不是強迫，人有自由接受或拒絕。拒絕智慧的人，在災難臨到時才想尋求，卻已為時已晚。這提醒信徒把握神賜予的每一次回轉機會，不可因輕忽而錯失恩典。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr>
+          <th>經文</th>
+          <th>思想題目</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「<strong>敬畏耶和華</strong>是知識的開端；愚妄人<strong>藐視智慧</strong>和訓誨。」（箴1:7）</td>
+          <td>就像蓋房子必須先打穩地基，否則樓層越高越危險，你生命中的「地基」是什麼？你是否曾因為忽視對神的敬畏，而在某件事上做出後來後悔的決定？</td>
+        </tr>
+        <tr>
+          <td>「我兒，<strong>不要與他們同行一道</strong>，禁止你腳走他們的路。」（箴1:15）</td>
+          <td>就像導航軟體在你走錯路時會立即提醒你重新規劃，你生命中有哪些「警示訊號」幫助你辨識正在走向錯誤的方向？你是否及時聆聽並調整？</td>
+        </tr>
+        <tr>
+          <td>「惟有<strong>聽從我的</strong>，必<strong>安然居住</strong>，得享安靜，不怕災禍。」（箴1:33）</td>
+          <td>就像戴上安全帽的工人在高空作業時心裡踏實，你在生活中有哪些屬靈的「防護裝備」，讓你面對壓力與不確定時仍能得享平安？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第33章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #e74c3c; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #e74c3c; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #e74c3c; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s; }
+details:hover { border-color: #e74c3c; box-shadow: 0 2px 8px rgba(231,76,60,0.15); }
+details[open] { background: #fff5f5; border-color: #e74c3c; }
+summary { font-size: 1.2em; font-weight: bold; color: #c0392b; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::before { content: "▶"; margin-right: 10px; transition: transform 0.3s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #e74c3c; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #e74c3c; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #fff5f5; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  以賽亞書第33章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶和華是我們的王他必拯救我們：以敬畏為至寶</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>禍哉！你這毀滅人的，自己倒不被毀滅；行事詭詐的，人倒不以詭詐待你。你毀滅罷休了，自己必被毀滅；你行完了詭詐，人必以詭詐待你。</div>
+  <div class="verse"><span class="verse-number">2</span>耶和華啊，求你施恩於我們；我們等候你。求你每早晨作我們的膀臂，遭難的時候為我們的拯救。</div>
+  <div class="verse"><span class="verse-number">3</span>喧嚷的響聲一發，眾民奔逃；你一興起，列國四散。</div>
+  <div class="verse"><span class="verse-number">4</span>你們所擄的必被斂盡，好像螞蚱吃〔原文作斂〕盡禾稼。人要蹦在其上，好像蝗蟲一樣。</div>
+  <div class="verse"><span class="verse-number">5</span>耶和華被尊崇，因他居在高處；他以公平公義充滿錫安。</div>
+  <div class="verse"><span class="verse-number">6</span>你一生一世必得安穩，有豐盛的救恩，並智慧和知識；你以<strong>敬畏耶和華</strong>為至寶。</div>
+  <div class="verse"><span class="verse-number">7</span>看哪，他們的豪傑在外頭哀號；求和的使臣痛痛哭泣。</div>
+  <div class="verse"><span class="verse-number">8</span>大路荒涼，行人止息；敵人背約，藐視城邑，不顧人民。</div>
+  <div class="verse"><span class="verse-number">9</span>地上悲哀衰殘；利巴嫩羞愧枯乾；沙崙像曠野；巴珊和迦密的樹林凋殘。</div>
+  <div class="verse"><span class="verse-number">10</span>耶和華說：現在我要起來；我要興起；我要勃然而興。</div>
+  <div class="verse"><span class="verse-number">11</span>你們要懷的是糠秕，要生的是碎稭；你們的氣就是吞滅自己的火。</div>
+  <div class="verse"><span class="verse-number">12</span>列邦必像已燒的石灰，像已割的荊棘在火中焚燒。</div>
+  <div class="verse"><span class="verse-number">13</span>你們遠方的人當聽我所行的；你們近處的人當承認我的大能。</div>
+  <div class="verse"><span class="verse-number">14</span>錫安中的罪人都懼怕；不敬虔的人被戰兢抓住。我們中間誰能與吞滅的火同住？我們中間誰能與永火同住呢？</div>
+  <div class="verse"><span class="verse-number">15</span>行事公義、說話正直、憎惡欺壓的財利、擺手不受賄賂、塞耳不聽流血的話，閉眼不看邪惡事的，</div>
+  <div class="verse"><span class="verse-number">16</span>他必居高處；他的保障是磐石的堅壘；他的糧必不缺乏〔原文作賜給〕；他的水必不斷絕。</div>
+  <div class="verse"><span class="verse-number">17</span>你的眼必見王的榮美，必見遼闊之地。</div>
+  <div class="verse"><span class="verse-number">18</span>你的心必思想那驚嚇的事，自問說：記數目的在哪裏呢？平貢銀的在那裏呢？數戍樓的在那裏呢？</div>
+  <div class="verse"><span class="verse-number">19</span>你必不見那強暴的民，就是說話深奧，你不能明白，言語呢喃，你不能懂得的。</div>
+  <div class="verse"><span class="verse-number">20</span>你要看錫安我們守聖節的城！你的眼必見耶路撒冷為安靜的居所，為不挪移的帳幕，橛子永不拔出，繩索一根也不折斷。</div>
+  <div class="verse"><span class="verse-number">21</span>在那裏，耶和華必顯威嚴與我們同在，當作江河寬闊之地；其中必沒有盪槳搖櫓的船來往，也沒有威武的船經過。</div>
+  <div class="verse"><span class="verse-number">22</span>因為，耶和華是審判我們的；耶和華是給我們設律法的；耶和華是我們的王；他必拯救我們。</div>
+  <div class="verse"><span class="verse-number">23</span>你的繩索鬆開：不能栽穩桅杆，也不能揚起篷來。那時許多擄來的物被分了；瘸腿的把掠物奪去了。</div>
+  <div class="verse"><span class="verse-number">24</span>城內居民必不說：我病了；其中居住的百姓，罪孽都赦免了。</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const st = document.getElementById('scriptureText');
+  const bi = document.getElementById('bibleIcon');
+  st.classList.toggle('show');
+  if (st.classList.contains('show')) { bi.textContent = '📖'; bi.classList.add('open'); }
+  else { bi.textContent = '📕'; bi.classList.remove('open'); }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    以賽亞書第三十三章是「禍哉系列」（28-35章）最後一首完整的詩歌，以亞述的毀滅（1節）為起點，過渡到信徒的祈禱（2節）、神的回應（3-12節）、義人的標準和保障（14-16節），最終以末世錫安的榮美圖景作結（17-24節）。本章有幾個重要的神學亮點：第6節「你以敬畏耶和華為至寶」，是以賽亞書對屬靈財富最直接的定義——不是金銀、地位或知識，而是對神的敬畏；第15-16節描繪了能「居高處」、得神保障者的特徵：行事公義、說話正直、憎惡貪財、不受賄賂——這是一份完整的道德清單，也是神的子民在末世審判前應有的生命樣式。第22節「耶和華是審判我們的；耶和華是給我們設律法的；耶和華是我們的王；他必拯救我們」，是全書對神三重身份最完整的宣告：審判者、立法者、王——三者集於一身，且都指向同一個目的：「他必拯救我們」。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 「你以敬畏耶和華為至寶」：敬畏神是信仰生命最珍貴的財富</strong><br>
+    第6節的「敬畏耶和華為至寶」，是以賽亞書對智慧和財富的最終定義，也呼應了箴言1:7「敬畏耶和華是知識的開端」。「至寶」（treasure）意味著這是最值得積累和保存的東西——比智慧更根本，比知識更珍貴，比安穩更可靠，因為它是所有這些美好事物的源頭和根基。信徒生命的目標不應是積累財富、知識或成就，而是深化對神的敬畏。<br><br>
+    <strong>2. 行事公義者得神保障：生命的品格決定屬靈的穩固</strong><br>
+    第15-16節描繪了一個義人的六個特徵：行事公義、說話正直、憎惡欺壓財利、不受賄賂、不聽流血話、不看邪惡事。這六個特徵涵蓋了行為（公義）、言語（正直）、財物（憎惡貪財）、決策（不受賄）、耳朵（不聽惡）、眼睛（不看邪惡）——是全方位的聖潔生活。這樣的人「必居高處」——不是指地位的高升，而是在屬靈上有神的保障和供應。<br><br>
+    <strong>3. 「耶和華是我們的王，他必拯救我們」：神的三重身份都指向拯救</strong><br>
+    第22節的三重身份宣告（審判者、立法者、王），在表面上令人敬畏，但每一個身份的最終目的都是「拯救」：審判者的審判是為了公義的恢復；立法者的律法是為了保護和引導；王的統治是為了子民的福祉。這三者共同指向「他必拯救我們」——神的主權和審判不是為了毀滅，而是為了最終的拯救和更新。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>「你一生一世必得安穩，有豐盛的救恩，並智慧和知識；你以<strong>敬畏耶和華為至寶</strong>。」（賽33:6）</td>
+          <td>就像一個投資者把最大的資金放在最可靠的標的上，「敬畏耶和華為至寶」意味著把最多的生命投資在對神的認識和敬畏上，你目前生命中最重視、花最多時間和精力的是什麼？那個「至寶」是神所認可的嗎？</td>
+        </tr>
+        <tr>
+          <td>「行事<strong>公義</strong>、說話<strong>正直</strong>、憎惡欺壓的財利……他必居高處；他的保障是磐石的堅壘。」（賽33:15-16）</td>
+          <td>就像一棟建築物的高度取決於地基的深度，靈命的「居高處」取決於品格的扎根，你在這六個特徵中（行事公義、說話正直、憎惡貪財、不受賄賂、不聽惡言、不看邪事），哪一個是你目前最需要刻意操練的？</td>
+        </tr>
+        <tr>
+          <td>「耶和華是<strong>審判我們的</strong>；耶和華是<strong>給我們設律法的</strong>；耶和華是<strong>我們的王</strong>；<strong>他必拯救我們</strong>。」（賽33:22）</td>
+          <td>就像一個孩子面對嚴格又充滿愛的父親，那個父親定規矩、執行管教，但一切都是為了孩子的好處，你在面對神作為「審判者和立法者」的這一面時，有多少安全感知道這一切都是為了「拯救我們」？那個確信如何影響你面對神的態度？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

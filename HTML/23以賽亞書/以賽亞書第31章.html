@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第31章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #e74c3c; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #e74c3c; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #e74c3c; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s; }
+details:hover { border-color: #e74c3c; box-shadow: 0 2px 8px rgba(231,76,60,0.15); }
+details[open] { background: #fff5f5; border-color: #e74c3c; }
+summary { font-size: 1.2em; font-weight: bold; color: #c0392b; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::before { content: "▶"; margin-right: 10px; transition: transform 0.3s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #e74c3c; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #e74c3c; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #fff5f5; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  以賽亞書第31章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">埃及人不過是人：不仰望神而倚靠人力的禍患</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>禍哉！那些下埃及求幫助的，是因仗賴馬匹，倚靠甚多的車輛，並倚靠強壯的馬兵，卻不仰望以色列的聖者，也不求問耶和華。</div>
+  <div class="verse"><span class="verse-number">2</span>其實耶和華有智慧；他必降災禍，並不反悔自己的話，卻要興起攻擊那作惡之家，又攻擊那作孽幫助人的。</div>
+  <div class="verse"><span class="verse-number">3</span>埃及人不過是人，並不是神；他們的馬不過是血肉，並不是靈。耶和華一伸手，那幫助人的必絆跌，那受幫助的也必跌倒，都一同滅亡。</div>
+  <div class="verse"><span class="verse-number">4</span>耶和華對我如此說：獅子和少壯獅子獲食咆哮，就是喊許多牧人來攻擊他，他總不因他們的聲音驚惶，也不因他們的喧嘩縮伏。如此，萬軍之耶和華也必降臨在錫安山岡上爭戰。</div>
+  <div class="verse"><span class="verse-number">5</span>雀鳥怎樣搧翅覆雛，萬軍之耶和華也要照樣保護耶路撒冷。他必保護拯救，要越門保守。</div>
+  <div class="verse"><span class="verse-number">6</span>以色列人哪，你們深深的悖逆耶和華，現今要歸向他。</div>
+  <div class="verse"><span class="verse-number">7</span>到那日，各人必將他金偶像銀偶像，就是親手所造、陷自己在罪中的，都拋棄了。</div>
+  <div class="verse"><span class="verse-number">8</span>亞述人必倒在刀下，並非人的刀；有刀要將他吞滅，並非人的刀。他必逃避這刀；他的少年人必成為服苦的。</div>
+  <div class="verse"><span class="verse-number">9</span>他的磐石必因驚嚇挪去；他的首領必因大旗驚惶。這是那有火在錫安、有爐在耶路撒冷的耶和華說的。</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const st = document.getElementById('scriptureText');
+  const bi = document.getElementById('bibleIcon');
+  st.classList.toggle('show');
+  if (st.classList.contains('show')) { bi.textContent = '📖'; bi.classList.add('open'); }
+  else { bi.textContent = '📕'; bi.classList.remove('open'); }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    以賽亞書第三十一章是第三十章主題的延續，針對猶大向埃及求援的行為發出最後的警告，但篇幅更短、論點更集中。本章歷史背景與第三十章相同：亞述威脅期間，猶大部分官員秘密遣使向埃及求軍事援助。以賽亞在第一節即以「禍哉！」開始，然後在第三節提出整章最核心的神學宣告：「埃及人不過是人，並不是神；他們的馬不過是血肉，並不是靈」——這是對人間一切「強大」力量最清醒的屬靈評估。所有人的力量，無論多強大，都只是「血肉」而非「靈」；信靠人的力量，就是把「靈」的位置讓給「肉」。第4-5節描繪神如同雄獅和護雛的母鳥，不被威脅嚇倒地保護錫安——這是神保護的主動性和無所畏懼的力量。第6-7節急轉直下，發出悔改的呼召：「現今要歸向他」，並應許人必丟棄偶像歸向神。第8-9節宣告亞述將被「非人的刀」所滅——表明神的介入超越人間的軍事邏輯。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 「埃及人不過是人」：清醒地認識一切人間力量的本質局限</strong><br>
+    第3節是全章的神學核心，也是以賽亞書中最有力的屬靈清醒劑之一。「血肉」對「靈」——這個對比不是貶低人，而是提醒信徒，在依靠對象的選擇上要有屬靈的清醒。最強大的軍隊、最有能力的領袖、最豐厚的財富，本質上都是「血肉」，有它的極限和脆弱性。信徒在面對挑戰時，若先尋求人的幫助而後才想到神，就是顛倒了「靈」與「肉」的優先次序。<br><br>
+    <strong>2. 神如雄獅和護雛母鳥：祂的保護是主動、無懼、溫柔兼備的</strong><br>
+    第4-5節以兩個截然不同的意象描繪神的保護：雄獅——不因牧人的喊叫而驚惶退縮；護雛母鳥——以翅膀溫柔地覆蓋幼雛。這兩個意象合在一起，描繪了神保護的全方位性格：祂既有力量（獅子）不被任何威脅動搖，又有溫柔（母鳥）親密地守護每一個需要的人。信徒在患難中可以同時倚靠神的「獅子力量」和「母鳥溫柔」。<br><br>
+    <strong>3. 「現今要歸向他」：悔改的呼召在任何時刻都有效</strong><br>
+    第6節「你們深深的悖逆耶和華，現今要歸向他」，在審判的宣告中突然插入悔改的邀請——這是以賽亞書一貫的神學結構：審判不是終點，悔改和歸回才是神的心意。「現今」這個詞強調了悔改沒有過了期限，無論以色列（或信徒）的悖逆有多深，「現今要歸向他」的門始終開著。信仰最艱難的選擇，往往就是在最深的失敗後仍然「歸向他」。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>「<strong>埃及人不過是人</strong>，並不是神；他們的馬不過是<strong>血肉</strong>，並不是靈。」（賽31:3）</td>
+          <td>就像把一把塑膠槍和一把真槍混在一起，外形相似，但遇到真正的危機時差別立現，人的力量和神的能力在平時看起來都很強，但在真正的挑戰面前，「血肉」和「靈」的差別就顯明了，你目前最依賴的「埃及」是什麼——是某個人、機構、財富或能力？</td>
+        </tr>
+        <tr>
+          <td>「<strong>雀鳥</strong>怎樣搧翅<strong>覆雛</strong>，萬軍之耶和華也要照樣保護耶路撒冷。」（賽31:5）</td>
+          <td>就像一隻母鳥在暴風雨中把翅膀張開、讓雛鳥藏在羽翼之下，那種溫柔而堅定的保護是無聲的愛，你在最脆弱、最需要保護的時刻，是否有過感受到神「搧翅覆雛」般守護的經歷？那個經歷如何加深了你對神的信任？</td>
+        </tr>
+        <tr>
+          <td>「你們<strong>深深的悖逆</strong>耶和華，<strong>現今要歸向他</strong>。」（賽31:6）</td>
+          <td>就像一個迷路的人，無論偏離方向多遠，只要轉身向正確方向走，每一步都是回家的進展，神的「現今要歸向他」沒有距離限制，你目前在信仰生命的哪個方向上「深深悖逆」了神？你願意現在就轉身嗎？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

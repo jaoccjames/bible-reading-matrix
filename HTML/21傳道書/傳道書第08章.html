@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>傳道書第8章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::before { content: "▶"; margin-right: 10px; transition: transform 0.3s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  傳道書第8章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">敬畏神必得福樂：神的作為人不能參透</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>誰如智慧人呢？誰知道事情的解釋呢？人的智慧使他的臉發光，並使他臉上的暴氣改變。</div>
+  <div class="verse"><span class="verse-number">2</span>我勸你遵守王的命令；既指神起誓，理當如此。</div>
+  <div class="verse"><span class="verse-number">3</span>不要急躁離開王的面前，不要固執行惡，因為他凡事都隨自己的心意而行。</div>
+  <div class="verse"><span class="verse-number">4</span>王的話本有權力，誰敢問他說「你作甚麼」呢？</div>
+  <div class="verse"><span class="verse-number">5</span>凡遵守命令的，必不經歷禍患；智慧人的心能辨明時候和定理〔原文作審判；下節同〕。</div>
+  <div class="verse"><span class="verse-number">6</span>各樣事務成就都有時候和定理，因為人的苦難重壓在他身上。</div>
+  <div class="verse"><span class="verse-number">7</span>他不知道將來的事，因為將來如何，誰能告訴他呢？</div>
+  <div class="verse"><span class="verse-number">8</span>無人有權力掌管生命，將生命留住；也無人有權力掌管死期；這場爭戰，無人能免；邪惡也不能救那好行邪惡的人。</div>
+  <div class="verse"><span class="verse-number">9</span>這一切我都見過，也專心查考日光之下所作的一切事。有時這人管轄那人，令人受害。</div>
+  <div class="verse"><span class="verse-number">10</span>我見惡人埋葬，歸入墳墓；又見行正直事的離開聖地，在城中被人忘記。這也是虛空。</div>
+  <div class="verse"><span class="verse-number">11</span>因為斷定罪名不立刻施刑，所以世人滿心作惡。</div>
+  <div class="verse"><span class="verse-number">12</span>罪人雖然作惡百次，倒享長久的年日；然而我準知道，敬畏神的，就是在他面前敬畏的人，終久必得福樂。</div>
+  <div class="verse"><span class="verse-number">13</span>惡人卻不得福樂，也不得長久的年日；這年日好像影兒，因他不敬畏神。</div>
+  <div class="verse"><span class="verse-number">14</span>世上有一件虛空的事，就是義人所遭遇的，反照惡人所行的；又有惡人所遭遇的，反照義人所行的。我說，這也是虛空。</div>
+  <div class="verse"><span class="verse-number">15</span>我就稱讚快樂，原來人在日光之下，莫強如吃喝快樂；因為他在日光之下，神賜他一生的年日，要從勞碌中，時常享受所得的。</div>
+  <div class="verse"><span class="verse-number">16</span>我專心求智慧，要看世上所作的事。（有晝夜不睡覺不合眼的。）</div>
+  <div class="verse"><span class="verse-number">17</span>我就看明神一切的作為，知道人查不出日光之下所作的事；任憑他費多少力尋查，都查不出來，就是智慧人雖想知道，也是查不出來。</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖'; bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕'; bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    傳道書第八章承接第七章的智慧建議，在更宏觀的社會與神學框架下探討公義、權力與神的主權。本章前半（1-9節）圍繞「王的權柄」展開，在古以色列近東的政治文化背景下，討論在威權之下如何智慧地生活，強調順服、謹慎與辨別時機的重要性。後半（10-17節）則直面了一個令敬虔者困惑的現象：惡人得享長壽（12節），義人遭遇惡人應得的報應（14節）——這種表面的「不公義」讓傳道者深感困惑。然而第12節「我準知道，敬畏神的……終久必得福樂」，是傳道者憑信心跨越困惑的宣告：即使現實看似不公，他仍相信敬畏神的人最終必得福樂。第17節「神一切的作為，知道人查不出日光之下所作的事」，是對神主權的最終承認——人的智慧有其極限，但這種限制本身呼籲人以信仰代替掌控，以敬畏回應無法理解的現實。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 在看似不公義的現實中，敬畏神的信心是屬靈的錨</strong><br>
+    第12節「我準知道，敬畏神的，就是在他面前敬畏的人，終久必得福樂」，是傳道書最強的信仰宣言之一。傳道者面對惡人得志、義人受苦的現實，沒有陷入虛無主義，而是以「我準知道」——這是信心的語言——宣告神的終極公義仍然有效。這提醒信徒：信仰不是對現實的逃避，而是在混亂的現實中仍然持守的確信，相信神必在適當的時候彰顯祂的公義。<br><br>
+    <strong>2. 人對未來的無知，是謙卑倚靠神的邀請</strong><br>
+    第7節「他不知道將來的事，因為將來如何，誰能告訴他呢？」點出了人類知識的根本限制。人無法掌控生命（8節），也無法預知將來，這種根本性的無知，並非令人絕望，而是邀請人以謙卑的態度放開對「掌控未來」的執著，轉而倚靠那位掌管一切的神。信仰的自由，部分就在於從「必須掌控一切」的焦慮中解放出來。<br><br>
+    <strong>3. 在神不可參透的作為中，以感恩享受當下是智慧的回應</strong><br>
+    第15節「莫強如吃喝快樂；因為他……神賜他一生的年日，要從勞碌中，時常享受所得的」，再次呈現了傳道書的核心主張：當一切都無法完全理解時，以感恩的心享受神今日的恩賜，是最智慧的選擇。這不是逃避問題，而是在承認神不可參透（17節）之後，以感恩代替焦慮，以當下的喜樂回應神的恩典。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>經文</th><th>思想題目</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「<strong>敬畏神</strong>的，就是在他面前敬畏的人，終久<strong>必得福樂</strong>。」（傳8:12）</td>
+          <td>就像在漫長冬季中仍相信春天必然到來的農夫，不因眼前的寒冷放棄耕耘，你在生活中有沒有某個「義人受苦、惡人得志」的情況讓你感到困惑？你如何在那個困境中仍然維持「敬畏神」的選擇？</td>
+        </tr>
+        <tr>
+          <td>「他不知道<strong>將來的事</strong>，因為將來如何，誰能<strong>告訴他</strong>呢？」（傳8:7）</td>
+          <td>就像航海者在沒有GPS的時代，必須學習依靠星象和風向而非自己的計算來航行，你對未來的「不可知」，是讓你焦慮的來源，還是讓你更緊緊倚靠神的機會？你願意如何練習把不確定的未來交給神？</td>
+        </tr>
+        <tr>
+          <td>「神一切的作為，知道人<strong>查不出</strong>日光之下所作的事。」（傳8:17）</td>
+          <td>就像試圖用肉眼直接觀看太陽，人的智慧有其極限，強行凝視只會傷害自己，你目前在信仰或人生中有哪些「為什麼」是你一直無法理解的？你願意嘗試以「這是神不可參透的作為」代替焦慮，並學習在其中安息嗎？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

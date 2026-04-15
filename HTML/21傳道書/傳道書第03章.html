@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>傳道書第3章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::before { content: "▶"; margin-right: 10px; transition: transform 0.3s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  傳道書第3章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">凡事都有定期：神造萬物各按其時成為美好</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>凡事都有定期，天下萬務都有定時。</div>
+  <div class="verse"><span class="verse-number">2</span>生有時，死有時；栽種有時，拔出所栽種的也有時；</div>
+  <div class="verse"><span class="verse-number">3</span>殺戮有時，醫治有時；拆毀有時，建造有時；</div>
+  <div class="verse"><span class="verse-number">4</span>哭有時，笑有時；哀慟有時，跳舞有時；</div>
+  <div class="verse"><span class="verse-number">5</span>拋擲石頭有時，堆聚石頭有時；懷抱有時，不懷抱有時；</div>
+  <div class="verse"><span class="verse-number">6</span>尋找有時，失落有時；保守有時，捨棄有時；</div>
+  <div class="verse"><span class="verse-number">7</span>撕裂有時，縫補有時；靜默有時，言語有時；</div>
+  <div class="verse"><span class="verse-number">8</span>喜愛有時，恨惡有時；爭戰有時，和好有時。</div>
+  <div class="verse"><span class="verse-number">9</span>這樣看來，作事的人在他的勞碌上有甚麼益處呢？</div>
+  <div class="verse"><span class="verse-number">10</span>我見神叫世人勞苦，使他們在其中受經練。</div>
+  <div class="verse"><span class="verse-number">11</span>神造萬物，各按其時成為美好，又將永生〔原文作永遠〕安置在世人心裏。然而神從始至終的作為，人不能參透。</div>
+  <div class="verse"><span class="verse-number">12</span>我知道世人，莫強如終身喜樂行善；</div>
+  <div class="verse"><span class="verse-number">13</span>並且人人吃喝，在他一切勞碌中享福，這也是神的恩賜。</div>
+  <div class="verse"><span class="verse-number">14</span>我知道神一切所作的都必永存；無所增添，無所減少。神這樣行，是要人在他面前存敬畏的心。</div>
+  <div class="verse"><span class="verse-number">15</span>現今的事早先就有了，將來的事早已也有了，並且神使已過的事重新再來〔或作：並且神再尋回已過的事〕。</div>
+  <div class="verse"><span class="verse-number">16</span>我又見日光之下，在審判之處有奸惡，在公義之處也有奸惡。</div>
+  <div class="verse"><span class="verse-number">17</span>我心裏說，神必審判義人和惡人；因為在那裏，各樣事務，一切工作，都有定時。</div>
+  <div class="verse"><span class="verse-number">18</span>我心裏說，這乃為世人的緣故，是神要試驗他們，使他們覺得自己不過像獸一樣。</div>
+  <div class="verse"><span class="verse-number">19</span>因為世人遭遇的，獸也遭遇，所遭遇的都是一樣：這個怎樣死，那個也怎樣死，氣息都是一樣。人不能強於獸，都是虛空。</div>
+  <div class="verse"><span class="verse-number">20</span>都歸一處，都是出於塵土，也都歸於塵土。</div>
+  <div class="verse"><span class="verse-number">21</span>誰知道人的靈是往上升，獸的魂是下入地呢？</div>
+  <div class="verse"><span class="verse-number">22</span>故此，我見人莫強如在他經營的事上喜樂，因為這是他的分。他身後的事誰能使他回來得見呢？</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖'; bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕'; bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    傳道書第三章是全書最著名、最具詩意的一章，以「凡事都有定期，天下萬務都有定時」（1節）開篇，隨後以14對對立的時刻（2-8節）構成一首宏大的時間詩歌，涵蓋了人生所有可能的經歷。這種對稱的詩歌結構在希伯來文學中極為罕見，顯示了傳道者對人類共同經驗的深刻洞察。本章的神學核心是第11節——「神造萬物，各按其時成為美好，又將永生安置在世人心裏」，揭示了兩個並存的真理：神的時間主權（各按其時）與人對永恆的渴望（永生安置在心裏）。這一節也解釋了人為何無法在「日光之下」找到完全的滿足——因為人心本就是為永恆而造的。第14節的神學宣告：「神一切所作的都必永存」，與第16-17節對現實不公義的承認形成張力，但傳道者以「神必審判」的信念安慰自己。本章是傳道書從虛空描述走向神學肯定的重要轉折點。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 人生的每個季節都在神的主權之下，各有其美好</strong><br>
+    第1-8節以14對對比的時刻，說明人生中沒有任何經歷是偶然的——哭泣有時，笑有時；哀慟有時，跳舞有時。神的主權不只掌管喜樂的時刻，也掌管哀痛的時刻。這提醒信徒，在哭泣的季節不需絕望，在笑樂的季節也不需驕傲——每個時刻都是神時間旅程的一部分，都有其不可替代的意義與功課。<br><br>
+    <strong>2. 神將永恆安置在人心，使人對「更多」有不可消除的渴望</strong><br>
+    第11節「神造萬物，各按其時成為美好，又將永生安置在世人心裏」，是傳道書最深刻的神學宣告。人心深處那種「還沒夠」的感覺，不是病態，而是神設計的渴望——它指向那超越時間的神自己。Augustine曾說：「我們的心為祢而造，在歸於祢之前，我們的心沒有安息。」這種永恆的渴望，是神邀請我們回轉向祂的呼召。<br><br>
+    <strong>3. 神的時間計劃不可參透，敬畏是最智慧的回應</strong><br>
+    第14節「神一切所作的都必永存；無所增添，無所減少。神這樣行，是要人在他面前存敬畏的心」，宣告了神計劃的完整性與不可更改性。人無法完全參透神從始至終的作為（11節），但這不是絕望的理由，而是敬畏的邀請。在不能理解的時候選擇信靠，在不能掌控的時候選擇順服，這是智慧生命的核心回應。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>經文</th><th>思想題目</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「凡事都有<strong>定期</strong>，天下萬務都有<strong>定時</strong>。」（傳3:1）</td>
+          <td>就像農夫知道不同的農作物有不同的生長季節，在錯誤的季節播種或收割都會失敗，你目前正處於人生的哪個「季節」？你是否接受了這個季節的本質，還是一直想跳到另一個季節？</td>
+        </tr>
+        <tr>
+          <td>「神造萬物，<strong>各按其時成為美好</strong>，又將<strong>永生</strong>安置在世人心裏。」（傳3:11）</td>
+          <td>就像拼圖的每一片單獨看都很片面，只有拼在一起才顯出完整的圖像，你生命中有沒有某個當時感覺很糟糕的時刻，事後才看出它在整幅圖中的美好意義？那次經歷如何加深了你對神主權的信靠？</td>
+        </tr>
+        <tr>
+          <td>「神一切所作的都必<strong>永存</strong>；……神這樣行，是要人在他面前存<strong>敬畏的心</strong>。」（傳3:14）</td>
+          <td>就像面對浩瀚的星空，人自然會感到自身的渺小與對宇宙的敬畏，你在哪些生命經歷或自然景象中，最強烈地感受到神的偉大與不可參透？那種感受如何影響你與神的關係？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

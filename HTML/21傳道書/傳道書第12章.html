@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>傳道書第12章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::before { content: "▶"; margin-right: 10px; transition: transform 0.3s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  傳道書第12章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">敬畏神守誡命：人所當盡的全部本分</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>你趁着年幼、衰敗的日子尚未來到，就是你所說，我毫無喜樂的那些年日未曾臨近之先，當記念造你的主。</div>
+  <div class="verse"><span class="verse-number">2</span>不要等到日頭、光明、月亮、星宿變為黑暗，雨後雲彩反回，</div>
+  <div class="verse"><span class="verse-number">3</span>看守房屋的發顫，有力的屈身，推磨的稀少就止息，從窗戶往外看的都昏暗；</div>
+  <div class="verse"><span class="verse-number">4</span>街門關閉，推磨的響聲微小，雀鳥一叫，人就起來，唱歌的女子也都衰微。</div>
+  <div class="verse"><span class="verse-number">5</span>人怕高處，路上有驚慌，杏樹開花，蚱蜢成為重擔，人所願的也都廢掉；因為人歸他永遠的家，弔喪的在街上往來。</div>
+  <div class="verse"><span class="verse-number">6</span>銀鍊折斷，金罐破裂，瓶子在泉旁損壞，水輪在井口破爛，</div>
+  <div class="verse"><span class="verse-number">7</span>塵土仍歸於地，靈仍歸於賜靈的神。</div>
+  <div class="verse"><span class="verse-number">8</span>傳道者說：「虛空的虛空，凡事都是虛空。」</div>
+  <div class="verse"><span class="verse-number">9</span>再者，傳道者因有智慧，仍將知識教訓眾人；又默想，又考查，又陳說許多箴言。</div>
+  <div class="verse"><span class="verse-number">10</span>傳道者專心尋求可喜悅的言語，是憑正直寫的誠實話。</div>
+  <div class="verse"><span class="verse-number">11</span>智慧人的言語好像刺棍；會中之師的言語又像釘穩的釘子，都是一個牧者所賜的。</div>
+  <div class="verse"><span class="verse-number">12</span>我兒，還有一層，你當受勸戒：着書多，沒有窮盡；讀書多，身體疲倦。</div>
+  <div class="verse"><span class="verse-number">13</span>這些事都已聽見了，總意就是：敬畏神，謹守他的誡命，這是人所當盡的本分〔或作：這是眾人的本分〕。</div>
+  <div class="verse"><span class="verse-number">14</span>因為人所作的事，連一切隱藏的事，無論是善是惡，神都必審問。</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖'; bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕'; bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    傳道書第十二章是全書的結語，也是整個智慧探索旅程的最終答案。本章以詩意的老年意象（2-7節）呼召年輕人在衰老來臨之前記念神，然後在第8節重複全書的主題「虛空的虛空，凡事都是虛空」，最後以第13-14節作出最終的神學宣告。第1-7節是希伯來文學中最美麗的老年寓言之一，以「看守房屋的發顫」（雙手顫抖）、「推磨的稀少就止息」（牙齒脫落）、「從窗戶往外看的都昏暗」（眼睛昏花）等隱喻，描繪了身體衰老的過程。第7節「塵土仍歸於地，靈仍歸於賜靈的神」，是傳道書對死後生命的最直接宣告，肯定了靈的永恆性——死亡不是終點，而是回歸的旅程。第13節「敬畏神，謹守他的誡命，這是人所當盡的本分」，是傳道書在經歷了十二章的哲學探索後，所得出的最終答案——一切智慧探索的終點，是回到最簡單、最根本的信仰事實：敬畏神，順服祂的命令。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 趁年輕記念神，是一生屬靈生命最重要的奠基</strong><br>
+    第1節「你趁着年幼……當記念造你的主」，是傳道書對年輕人最迫切的呼召。衰老必然來臨，身體的能力終將消退，而在年輕有力的日子裡建立與神的關係，是一生中最重要的屬靈投資。「記念」不只是認識神，而是持續地將神放在生命的中心，讓每一個選擇和方向都以祂為參照。這種早年的屬靈根基，使人在人生的各種風浪中有所依靠。<br><br>
+    <strong>2. 身體必朽壞，靈歸賜靈之神——死亡是回歸而非終結</strong><br>
+    第7節「塵土仍歸於地，靈仍歸於賜靈的神」，以簡潔的語言宣告了生命的兩重性——物質的必歸塵土，靈的必歸神。這是傳道書最接近永恆盼望的宣告，在新約復活信仰的光照下，更顯其深刻：死亡不是生命的消失，而是靈魂回歸造物主的旅程。這一真理使信徒能以平靜的心面對自己和所愛之人的死亡。<br><br>
+    <strong>3. 敬畏神、謹守誡命是一切智慧探索的最終答案</strong><br>
+    第13節「敬畏神，謹守他的誡命，這是人所當盡的本分」，是傳道書十二章探索之後最精煉的結論。在面對虛空、不公義、死亡、無法理解的現實之後，傳道者的結論不是絕望，而是回到最根本的信仰：敬畏神，順服祂。這「敬畏」不是恐懼，而是對神尊榮、權柄和慈愛的承認，以及由此而來的生命委身。這是智慧的終點，也是信仰生命的起點。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>經文</th><th>思想題目</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「你趁着年幼……當<strong>記念造你的主</strong>。」（傳12:1）</td>
+          <td>就像建房子的人若在有力的年輕時期打好地基，年老之後就能在穩固的基礎上安心生活，你在年輕的日子裡，與神的關係是你生命的優先事項嗎？你現在如何為年老的自己打下更穩固的屬靈根基？</td>
+        </tr>
+        <tr>
+          <td>「塵土仍歸於地，<strong>靈仍歸於賜靈的神</strong>。」（傳12:7）</td>
+          <td>就像出差的人最終會回到家，靈魂的歸宿是神，這旅程終將結束，你對於死亡的看法是什麼？「靈歸賜靈的神」這個真理，如何改變你面對生命有限性和失去所愛之人的方式？</td>
+        </tr>
+        <tr>
+          <td>「總意就是：<strong>敬畏神</strong>，謹守他的誡命，這是人所當盡的<strong>本分</strong>。」（傳12:13）</td>
+          <td>就像一本厚重的使用說明書，最後的重點摘要往往才是最關鍵的操作指引，傳道書用十二章得出這一句結論，你如何理解「敬畏神、謹守誡命」在你日常生活中的具體樣貌？這是你目前真正在實踐的「本分」嗎？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

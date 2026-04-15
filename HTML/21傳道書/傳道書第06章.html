@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>傳道書第6章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::before { content: "▶"; margin-right: 10px; transition: transform 0.3s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } .chapter-subtitle { font-size: 1em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1 onclick="toggleScripture()">
+  傳道書第6章
+  <span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">得物不能享用：心不知足是人最大的禍患</div>
+
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>我見日光之下有一宗禍患重壓在人身上，</div>
+  <div class="verse"><span class="verse-number">2</span>就是人蒙神賜他資財、豐富、尊榮，以致他心裏所願的一樣都不缺，只是神使他不能喫用，反有外人來喫用。這是虛空，也是禍患。</div>
+  <div class="verse"><span class="verse-number">3</span>人若生一百個兒子，活許多歲數，以致他的年日甚多，心裏卻不得滿享福樂，又不得埋葬；據我說，那不到期而落的胎比他倒好。</div>
+  <div class="verse"><span class="verse-number">4</span>因為虛虛而來，暗暗而去，名字被黑暗遮蔽，</div>
+  <div class="verse"><span class="verse-number">5</span>並且沒有見過天日，也毫無知覺；這胎，比那人倒享安息。</div>
+  <div class="verse"><span class="verse-number">6</span>那人雖然活千年，再活千年，卻不享福，眾人豈不都歸一個地方去嗎？</div>
+  <div class="verse"><span class="verse-number">7</span>人的勞碌都為口腹，心裏卻不知足。</div>
+  <div class="verse"><span class="verse-number">8</span>這樣看來，智慧人比愚昧人有甚麼長處呢？窮人在眾人面前知道如何行，有甚麼長處呢？</div>
+  <div class="verse"><span class="verse-number">9</span>眼睛所看的比心裏妄想的倒好。這也是虛空，也是捕風。</div>
+  <div class="verse"><span class="verse-number">10</span>先前所有的，早已起了名，並知道何為人，他也不能與那比自己力大的相爭。</div>
+  <div class="verse"><span class="verse-number">11</span>加增虛浮的事既多，這與人有甚麼益處呢？</div>
+  <div class="verse"><span class="verse-number">12</span>人一生虛度的日子，就如影兒經過，誰知道甚麼與他有益呢？誰能告訴他身後在日光之下有甚麼事呢？</div>
+</div>
+
+<script>
+function toggleScripture() {
+  const scriptureText = document.getElementById('scriptureText');
+  const bibleIcon = document.getElementById('bibleIcon');
+  scriptureText.classList.toggle('show');
+  if (scriptureText.classList.contains('show')) {
+    bibleIcon.textContent = '📖'; bibleIcon.classList.add('open');
+  } else {
+    bibleIcon.textContent = '📕'; bibleIcon.classList.remove('open');
+  }
+}
+</script>
+
+<details>
+  <summary>背景簡介</summary>
+  <div class="content">
+    傳道書第六章是全書最沉鬱、最具逼問性的一章，聚焦於一個令人不安的悖論：有人擁有了財富、子孫與長壽，卻仍然無法真正享用這些祝福——而這種「得而不能享」的處境，正是傳道者眼中最深重的禍患（1-2節）。本章在古以色列的世界觀中，長壽、子孫多、財富豐富是神祝福的象徵；然而傳道者指出，若缺少真實的喜樂與滿足，這些祝福都成了虛空。第7節「人的勞碌都為口腹，心裏卻不知足」，以簡短的對比揭示了人類勞碌的本質困境——勞碌所得能滿足肉身，卻無法填滿心靈。第9節「眼睛所看的比心裏妄想的倒好」，呼籲人珍惜眼前的實際，而非沉溺於遙不可及的幻想。本章是傳道書第一部分（1-6章）的高峰，幾乎以純然的困境結束，將問題推向極致，為後半部分（7-12章）的智慧應對做出鋪墊。
+  </div>
+</details>
+
+<details>
+  <summary>核心屬靈意涵</summary>
+  <div class="content">
+    <strong>1. 外在的豐富若缺乏內心的喜樂，本身便是一種禍患</strong><br>
+    第2節描繪了一個令人心驚的處境：擁有資財、豐富、尊榮，卻無法享用。這說明真正的福祉不在於所擁有的事物，而在於能否在其中找到神賜予的喜樂與意義。現代人常以為只要得到某個職位、某個財富水平，就能幸福，卻忽略了「能否享用」才是關鍵——而這「享用的能力」是神所賜的，不是人可以自己製造的。<br><br>
+    <strong>2. 心不知足是人類勞碌最根本的困境</strong><br>
+    第7節「人的勞碌都為口腹，心裏卻不知足」，以最簡潔的方式描述了人類的存在困境：肉體的需求是有限的，心靈的渴望卻是無限的。這種「心不知足」若沒有神的填充，就會成為驅動人不斷勞碌卻永遠不滿足的引擎。認識到這一點，是信徒轉向神尋求真正滿足的重要出發點——唯有在神裡面，心靈才能找到那超越物質的平安與滿足。<br><br>
+    <strong>3. 珍惜眼前的真實，勝過追逐遙不可及的幻想</strong><br>
+    第9節「眼睛所看的比心裏妄想的倒好」，是傳道書最實際的屬靈忠告之一。人常常在擁有眼前的美好時，卻因為心中的妄想（不真實的期望、對更多的渴求）而忽略甚至貶低了當下的禮物。信徒學習感恩地欣賞神已經賜予的，而非不斷地為尚未擁有的焦慮，這是一種需要培養的屬靈成熟。
+  </div>
+</details>
+
+<details open>
+  <summary>重點經文與思想題目</summary>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>經文</th><th>思想題目</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>「人蒙神賜他資財、豐富、尊榮……只是神使他<strong>不能喫用</strong>，反有外人來喫用。這是<strong>虛空</strong>，也是禍患。」（傳6:2）</td>
+          <td>就像一個人擁有美食卻因腸胃問題無法進食，外在的豐富若缺乏享用的能力，便毫無意義，你是否曾擁有某樣事物或成就，卻因為種種原因無法真正享受它？那次經歷讓你對「真正的福氣」有什麼新的理解？</td>
+        </tr>
+        <tr>
+          <td>「人的勞碌都為<strong>口腹</strong>，心裏卻<strong>不知足</strong>。」（傳6:7）</td>
+          <td>就像手機螢幕的亮度調高了反而耗電更快，滿足感的短暫讓人需要更多刺激才能維持，你在哪個領域最容易陷入「得到了但仍不夠」的循環？你認為什麼才能真正填滿那個「不知足」的空缺？</td>
+        </tr>
+        <tr>
+          <td>「<strong>眼睛</strong>所看的比心裏<strong>妄想</strong>的倒好。」（傳6:9）</td>
+          <td>就像旅遊時專注看眼前的風景，比一直刷手機看別人的旅遊照更讓人感到滿足，你目前是否有某個「妄想」或期望，正在讓你看不見神已經賜給你的真實美好？你可以如何練習珍惜「眼睛所看的」？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第8章 - 聖經重點與思考</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+h1 { font-size: 2.2em; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; }
+h1:hover { color: #3498db; }
+.bible-icon { display: inline-block; transition: transform 0.5s; }
+.bible-icon.open { transform: rotateY(180deg); }
+.chapter-subtitle { font-size: 1.2em; color: #7f8c8d; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top: 10px; }
+.scripture-text { display: none; background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; line-height: 2; max-height: 500px; overflow-y: auto; border-radius: 4px; margin-bottom: 20px; }
+.scripture-text.show { display: block; }
+.verse { margin-bottom: 4px; }
+.verse-number { color: #3498db; font-weight: bold; margin-right: 6px; }
+details { margin: 20px 0; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa; transition: border-color 0.3s, box-shadow 0.3s; }
+details:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.15); }
+details[open] { background: #f0f8ff; border-color: #3498db; }
+summary { font-size: 1.2em; font-weight: bold; color: #2980b9; cursor: pointer; padding: 10px; list-style: none; display: flex; align-items: center; }
+summary::before { content: "▶"; margin-right: 10px; transition: transform 0.3s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+summary:hover { color: #3498db; }
+.content { margin-top: 15px; padding: 15px; line-height: 1.9; }
+strong { color: #c0392b; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #3498db; color: white; padding: 15px; font-size: 1.1em; text-align: left; }
+td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:hover td { background: #f0f8ff; }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 1.6em; } table { font-size: 0.9em; } th, td { padding: 10px; } summary { font-size: 1em; } }
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">耶利米書第8章<span id="bibleIcon" class="bible-icon">📕</span></h1>
+<div class="chapter-subtitle">在基列豈沒有乳香沒有醫生：先知為百姓無藥可救而哀痛</div>
+<div id="scriptureText" class="scripture-text">
+  <div class="verse"><span class="verse-number">1</span>耶和華說：「到那時，人必將猶大王的骸骨和他首領的骸骨、祭司的骸骨、先知的骸骨，並耶路撒冷居民的骸骨，都從墳墓中取出來，</div>
+  <div class="verse"><span class="verse-number">2</span>拋散在日頭、月亮，和天上眾星之下，就是他們從前所喜愛、所事奉、所隨從、所求問、所敬拜的。這些骸骨不再收殮，不再葬埋，必在地面上成為糞土；</div>
+  <div class="verse"><span class="verse-number">3</span>並且這惡族所剩下的民在我所趕他們到的各處，寧可揀死不揀生。這是萬軍之耶和華說的。」</div>
+  <div class="verse"><span class="verse-number">4</span>你要對他們說，耶和華如此說：人跌倒，不再起來嗎？人轉去，不再轉來嗎？</div>
+  <div class="verse"><span class="verse-number">5</span>這耶路撒冷的民，為何恒久背道呢？他們守定詭詐，不肯回頭。</div>
+  <div class="verse"><span class="verse-number">6</span>我留心聽，聽見他們說不正直的話。無人悔改惡行，說：我作的是甚麼呢？他們各人轉奔己路，如馬直闖戰場。</div>
+  <div class="verse"><span class="verse-number">7</span>空中的鸛鳥知道來去的定期；斑鳩燕子與白鶴也守候當來的時令；我的百姓卻不知道耶和華的法則。</div>
+  <div class="verse"><span class="verse-number">8</span>你們怎麼說：我們有智慧，耶和華的律法在我們這裏？看哪，文士的假筆舞弄虛假。</div>
+  <div class="verse"><span class="verse-number">9</span>智慧人慚愧，驚惶，被擒拿；他們棄掉耶和華的話，心裏還有甚麼智慧呢？</div>
+  <div class="verse"><span class="verse-number">10</span>所以我必將他們的妻子給別人，將他們的田地給別人為業；因為他們從最小的到至大的都一味地貪婪，從先知到祭司都行事虛謊。</div>
+  <div class="verse"><span class="verse-number">11</span>他們輕輕忽忽的醫治我百姓的損傷，說：平安了！平安了！其實沒有平安。</div>
+  <div class="verse"><span class="verse-number">12</span>他們行可憎的事知道慚愧嗎？不然，他們毫不慚愧，也不知羞恥。因此他們必在仆倒的人中仆倒；我向他們討罪的時候，他們必致跌倒。這是耶和華說的。</div>
+  <div class="verse"><span class="verse-number">13</span>耶和華說：我必使他們全然滅絕；葡萄樹上必沒有葡萄，無花果樹上必沒有果子，葉子也必枯乾。我所賜給他們的，必離開他們過去。</div>
+  <div class="verse"><span class="verse-number">14</span>我們為何靜坐不動呢？我們當聚集，進入堅固城，在那裏靜默不言；因為耶和華我們的神使我們靜默不言，又將苦膽水給我們喝，都因我們得罪了耶和華。</div>
+  <div class="verse"><span class="verse-number">15</span>我們指望平安，卻得不着好處；指望痊癒的時候，不料，受了驚惶。</div>
+  <div class="verse"><span class="verse-number">16</span>聽見從但那裏敵人的馬噴鼻氣，他的壯馬發嘶聲，全地就都震動；因為他們來吞滅這地和其上所有的，吞滅這城與其中的居民。</div>
+  <div class="verse"><span class="verse-number">17</span>看哪，我必使毒蛇到你們中間，是不服法術的，必咬你們。這是耶和華說的。</div>
+  <div class="verse"><span class="verse-number">18</span>我有憂愁，願能自慰；我心在我裏面發昏。</div>
+  <div class="verse"><span class="verse-number">19</span>聽啊，是我百姓的哀聲從極遠之地而來，說：耶和華不在錫安麼？錫安的王不在其中麼？耶和華說：他們為甚麼以雕刻的偶像和外邦虛無的神惹我發怒呢？</div>
+  <div class="verse"><span class="verse-number">20</span>麥秋已過，夏令已完，我們還未得救！</div>
+  <div class="verse"><span class="verse-number">21</span>先知說：因我百姓的損傷，我也受了損傷。我哀痛，驚惶將我抓住。</div>
+  <div class="verse"><span class="verse-number">22</span>在基列豈沒有乳香呢？在那裏豈沒有醫生呢？我百姓為何不得痊癒呢？</div>
+</div>
+<script>
+function toggleScripture() {
+  const st = document.getElementById('scriptureText');
+  const bi = document.getElementById('bibleIcon');
+  st.classList.toggle('show');
+  if (st.classList.contains('show')) { bi.textContent = '📖'; bi.classList.add('open'); }
+  else { bi.textContent = '📕'; bi.classList.remove('open'); }
+}
+</script>
+<details><summary>背景簡介</summary><div class="content">耶利米書第八章延續第七章的審判主題，以幾個令人震驚的比較開始：連候鳥都知道「回來的時令」（7節），以色列卻不知道神的法則。本章充滿了反諷：以為有律法（有智慧）卻拒絕聽從神的話（8-9節）；說「平安了！平安了！其實沒有平安」（11節）的假先知在百姓將受苦難前提供虛假的安慰。第14節以色列百姓的反應「我們為何靜坐不動呢？」——在危機中的麻木和絕望。第18-22節是本章最感人的段落，也是整本耶利米書先知情感最赤裸的表達之一：第18節「我有憂愁，願能自慰；我心在我裏面發昏」；第19節先知聽見百姓的哀聲；第22節「在基列豈沒有乳香呢？在那裏豈沒有醫生呢？我百姓為何不得痊癒呢？」——這是一個宣告已有解決方案、卻因為百姓拒絕接受而痛苦的先知的哀歎。「基列的乳香」（balm of Gilead）是古代著名的醫藥，象徵神所提供的屬靈醫治；先知的問題是最深的悲劇性反問：醫治的資源明明存在，百姓卻「不得痊癒」——不是因為沒有藥，而是因為拒絕醫生。</div></details>
+<details><summary>核心屬靈意涵</summary><div class="content"><strong>1. 「鸛鳥知道來去的定期……我的百姓卻不知道耶和華的法則」：比鳥還要失去本能的屬靈麻木</strong><br>第7節以候鳥的本能對比以色列的屬靈麻木：候鳥按照造物主設定的時令飛來飛去，這是它們的「本能」；以色列應該有的「本能」是「知道耶和華的法則」，但這個屬靈本能已被罪和悖逆所磨滅。信徒的屬靈敏銳度（知道神的心意、感受神的呼召、辨別善惡）是可以被長期的不順從所磨鈍的。當一個人連候鳥的本能都比不上，那是屬靈最深的悲哀。<br><br>
+<strong>2. 「平安了！平安了！其實沒有平安」：虛假的保證在危機中是最大的傷害</strong><br>第11節的重複宣告在耶利米書6:14也出現，成為貫穿耶利米信息的主題之一。假先知在百姓即將面臨大災難前，仍然宣告「平安」——這種時機上的謊言是最具殺傷力的。信徒和屬靈領袖在面對他人生命的問題時，有一種說舒服話的誘惑；但在需要誠實的時刻說謊話，不是慈愛，而是「輕輕忽忽的醫治損傷」，延誤了真實的救治。<br><br>
+<strong>3. 「在基列豈沒有乳香？我百姓為何不得痊癒？」：神備好了醫治，百姓卻拒絕領受</strong><br>第22節是耶利米書中最讓人心碎的反問之一。「乳香」（醫治的資源）是有的；「醫生」（神的先知和神本身）是有的；但百姓「不得痊癒」——問題不在資源的缺乏，而在接受的拒絕。對信徒的應用：神已預備了完全的醫治（基督的救贖、聖靈的更新、神的話語），若信徒「不得痊癒」，問題不是神沒有預備，而是我們是否真正伸手領受？
+</div></details>
+<details open><summary>重點經文與思想題目</summary>
+<div class="content"><table><thead><tr><th>經文</th><th>思想題目</th></tr></thead><tbody>
+        <tr>
+          <td>空中的<strong>鸛鳥</strong>知道來去的定期……我的百姓卻<strong>不知道耶和華的法則</strong>。（耶8:7）</td>
+          <td>就像一個野生動物失去了方向感，連本能的遷徙路線都不再認識，屬靈的法則在罪中逐漸變得陌生，你對神心意的敏感度是否比以前更遲鈍了？是什麼讓你的「屬靈本能」變得不再敏銳？</td>
+        </tr>
+        <tr>
+          <td>他們輕輕忽忽的醫治我百姓的損傷，說：<strong>平安了！平安了！其實沒有平安</strong>。（耶8:11）</td>
+          <td>就像一個只開止痛藥的醫生，明知道是癌症卻不敢說，表面上的「仁慈」其實是在拖延治療的時機，你在哪些關係中最容易說「平安了」而不是說出需要說的真話？那種迴避如何影響了對方真正的屬靈狀況？</td>
+        </tr>
+        <tr>
+          <td>「在基列豈沒有<strong>乳香</strong>呢？在那裏豈沒有<strong>醫生</strong>呢？我百姓為何<strong>不得痊癒</strong>呢？」（耶8:22）</td>
+          <td>就像一個拒絕去醫院的病人，雖然知道醫療資源存在，卻因各種理由不去就診，最終病情惡化，神備好的屬靈醫治需要我們主動伸手領受，你目前生命中有哪些「未得痊癒」的地方？是什麼阻礙你去到「基列的醫生」面前？</td>
+        </tr>
+</tbody></table></div></details>
+</div></body></html>

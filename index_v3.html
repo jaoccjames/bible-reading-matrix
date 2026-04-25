@@ -1,1 +1,391 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>每日讀經方陣｜聖經經卷查詢</title>
+  <style>
+    :root{
+      --bg:#fff7cc;
+      --card:#fffdf2;
+      --text:#111;
+      --muted:#555;
+      --border:#e6d58a;
+      --accent:#8b6b00;
+      --built:#e7f5ff;
+      --unbuilt:#ffffff; /* 白色 */
+      --builtChap:#e7f5ff;
+      --unbuiltChap:#ffffff;
+    }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap{max-width:1050px;margin:0 auto;padding:18px;}
+    h1{margin:8px 0 10px;text-align:center;font-size:26px;letter-spacing:.5px;}
+    .toolbar{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px;
+    }
+    .leftTools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+    .rightTools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+    select, button{
+      background:#fff;color:#000;
+      border:1px solid var(--border);border-radius:10px;
+      padding:10px 12px;font-size:14px;outline:none;
+    }
+    button{cursor:pointer;background:#fff3bf;}
+    button:hover{background:#ffec99;}
+    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:#fff;padding:6px 10px;border-radius:999px;color:var(--muted);font-size:12px;}
+    .panel{
+      margin-top:14px;background:var(--card);
+      border:1px solid var(--border);border-radius:14px;
+      padding:14px;
+    }
+    .sectionTitle{
+      display:flex;align-items:center;justify-content:center;
+      margin:2px auto 12px;
+      width:320px;
+      background:#0b7285;
+      color:#fff;
+      font-weight:700;
+      border-radius:6px;
+      padding:10px 12px;
+      letter-spacing:.5px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:0;
+      border:2px solid #0b7285;
+      border-radius:6px;
+      overflow:hidden;
+      background:#fff;
+      width:min(520px, 100%);
+      margin:0 auto;
+    }
+    .cell{
+      display:flex;align-items:center;justify-content:center;
+      height:44px;
+      border-right:1px solid #0b7285;
+      border-bottom:1px solid #0b7285;
+      font-size:18px;
+      user-select:none;
+      cursor:default; /* 未建置不出現手型 */
+    }
+    .cell:nth-child(5n){border-right:none;}
+    .cell.book.built{cursor:pointer;} /* 只有已建置才出現手型 */
+    .cell.book.built:hover{filter:brightness(0.98);}
+    .cell.built{background:var(--built);}
+    .cell.unbuilt{background:var(--unbuilt);}
+    .legend{
+      display:flex;justify-content:center;gap:10px;flex-wrap:wrap;
+      margin-top:10px;color:var(--muted);font-size:12px;
+    }
+    .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:5px 10px;background:#fff;}
+    .dot{width:10px;height:10px;border-radius:3px;display:inline-block;}
+    .crumb{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      margin-bottom:12px;
+    }
+    .crumbLeft{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+    .title2{font-size:18px;font-weight:700;}
+    .chapGrid{
+      display:grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap:8px;
+      margin-top:8px;
+    }
+    .chap{
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:10px 0;
+      text-align:center;
+      font-size:14px;
+      background:#fff;
+      cursor:default;
+    }
+    .chap.built{background:var(--builtChap);}
+    .chap.unbuilt{background:var(--unbuiltChap); color:#333; opacity:0.9;}
+    .chap.built a{cursor:pointer;}
+    .chap a{color:var(--accent);text-decoration:none;display:block;}
+    .chap a:hover{text-decoration:underline;}
+    .err{margin-top:10px;color:#b00020;font-size:13px;display:none;}
+    .loading{margin-top:12px;text-align:center;color:var(--muted);font-size:13px;}
+    @media (max-width:640px){
+      .grid{width:100%;}
+      .chapGrid{grid-template-columns: repeat(6, 1fr);}
+      .cell{height:46px;font-size:18px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>每日讀經方陣｜聖經經卷查詢</h1>
 
+    <div style="display:flex;justify-content:flex-end;padding:4px 0 0 0;">
+      <button id="homeBtn" style="display:none;">回經卷</button>
+    </div>
+
+    <div class="err" id="err"></div>
+    <div class="loading" id="loading">載入資料中…</div>
+
+    <div id="booksView">
+      <div class="panel">
+        <div class="sectionTitle">舊約</div>
+        <div class="grid" id="otGrid"></div>
+      </div>
+
+      <div class="panel" style="margin-top:14px;">
+        <div class="sectionTitle">新約</div>
+        <div class="grid" id="ntGrid"></div>
+      </div>
+    </div>
+
+    <div id="chaptersView" class="panel" style="display:none;">
+      <div class="crumb">
+        <div class="crumbLeft">
+          <div class="title2" id="chapTitle">—</div>
+        </div>
+      </div>
+      <div class="chapGrid" id="chapGrid"></div>
+    </div>
+
+  </div>
+
+<script>
+const GITHUB_API = "https://api.github.com/repos/jaoccjames/bible-reading-matrix/contents/HTML2";
+
+const ORDER = [
+  {b:'創世記',t:'OT'},{b:'出埃及記',t:'OT'},{b:'利未記',t:'OT'},{b:'民數記',t:'OT'},{b:'申命記',t:'OT'},
+  {b:'約書亞記',t:'OT'},{b:'士師記',t:'OT'},{b:'路得記',t:'OT'},
+  {b:'撒母耳記上',t:'OT'},{b:'撒母耳記下',t:'OT'},{b:'列王紀上',t:'OT'},{b:'列王紀下',t:'OT'},
+  {b:'歷代志上',t:'OT'},{b:'歷代志下',t:'OT'},{b:'以斯拉記',t:'OT'},{b:'尼希米記',t:'OT'},{b:'以斯帖記',t:'OT'},
+  {b:'約伯記',t:'OT'},{b:'詩篇',t:'OT'},{b:'箴言',t:'OT'},{b:'傳道書',t:'OT'},{b:'雅歌',t:'OT'},
+  {b:'以賽亞書',t:'OT'},{b:'耶利米書',t:'OT'},{b:'耶利米哀歌',t:'OT'},{b:'以西結書',t:'OT'},{b:'但以理書',t:'OT'},
+  {b:'何西阿書',t:'OT'},{b:'約珥書',t:'OT'},{b:'阿摩司書',t:'OT'},{b:'俄巴底亞書',t:'OT'},{b:'約拿書',t:'OT'},
+  {b:'彌迦書',t:'OT'},{b:'那鴻書',t:'OT'},{b:'哈巴谷書',t:'OT'},{b:'西番雅書',t:'OT'},{b:'哈該書',t:'OT'},{b:'撒迦利亞書',t:'OT'},{b:'瑪拉基書',t:'OT'},
+  {b:'馬太福音',t:'NT'},{b:'馬可福音',t:'NT'},{b:'路加福音',t:'NT'},{b:'約翰福音',t:'NT'},
+  {b:'使徒行傳',t:'NT'},{b:'羅馬書',t:'NT'},{b:'哥林多前書',t:'NT'},{b:'哥林多後書',t:'NT'},
+  {b:'加拉太書',t:'NT'},{b:'以弗所書',t:'NT'},{b:'腓立比書',t:'NT'},{b:'歌羅西書',t:'NT'},
+  {b:'帖撒羅尼迦前書',t:'NT'},{b:'帖撒羅尼迦後書',t:'NT'},{b:'提摩太前書',t:'NT'},{b:'提摩太後書',t:'NT'},
+  {b:'提多書',t:'NT'},{b:'腓利門書',t:'NT'},{b:'希伯來書',t:'NT'},{b:'雅各書',t:'NT'},
+  {b:'彼得前書',t:'NT'},{b:'彼得後書',t:'NT'},{b:'約翰一書',t:'NT'},{b:'約翰二書',t:'NT'},{b:'約翰三書',t:'NT'},
+  {b:'猶大書',t:'NT'},{b:'啟示錄',t:'NT'}
+];
+
+const ABBR = {
+  '創世記':'創','出埃及記':'出','利未記':'利','民數記':'民','申命記':'申',
+  '約書亞記':'書','士師記':'士','路得記':'得',
+  '撒母耳記上':'撒上','撒母耳記下':'撒下','列王紀上':'王上','列王紀下':'王下',
+  '歷代志上':'代上','歷代志下':'代下','以斯拉記':'拉','尼希米記':'尼','以斯帖記':'斯',
+  '約伯記':'伯','詩篇':'詩','箴言':'箴','傳道書':'傳','雅歌':'歌',
+  '以賽亞書':'賽','耶利米書':'耶','耶利米哀歌':'哀','以西結書':'結','但以理書':'但',
+  '何西阿書':'何','約珥書':'珥','阿摩司書':'摩','俄巴底亞書':'俄','約拿書':'拿',
+  '彌迦書':'彌','那鴻書':'鴻','哈巴谷書':'哈','西番雅書':'番','哈該書':'該','撒迦利亞書':'亞','瑪拉基書':'瑪',
+  '馬太福音':'太','馬可福音':'可','路加福音':'路','約翰福音':'約',
+  '使徒行傳':'徒','羅馬書':'羅','哥林多前書':'林前','哥林多後書':'林後',
+  '加拉太書':'加','以弗所書':'弗','腓立比書':'腓','歌羅西書':'西',
+  '帖撒羅尼迦前書':'帖前','帖撒羅尼迦後書':'帖後','提摩太前書':'提前','提摩太後書':'提後',
+  '提多書':'多','腓利門書':'門','希伯來書':'來','雅各書':'雅',
+  '彼得前書':'彼前','彼得後書':'彼後','約翰一書':'約壹','約翰二書':'約貳','約翰三書':'約參',
+  '猶大書':'猶','啟示錄':'啟'
+};
+
+const BOOK_NUM = {
+  '創世記':'01','出埃及記':'02','利未記':'03','民數記':'04','申命記':'05',
+  '約書亞記':'06','士師記':'07','路得記':'08',
+  '撒母耳記上':'09','撒母耳記下':'10','列王紀上':'11','列王紀下':'12',
+  '歷代志上':'13','歷代志下':'14','以斯拉記':'15','尼希米記':'16','以斯帖記':'17',
+  '約伯記':'18','詩篇':'19','箴言':'20','傳道書':'21','雅歌':'22',
+  '以賽亞書':'23','耶利米書':'24','耶利米哀歌':'25','以西結書':'26','但以理書':'27',
+  '何西阿書':'28','約珥書':'29','阿摩司書':'30','俄巴底亞書':'31','約拿書':'32',
+  '彌迦書':'33','那鴻書':'34','哈巴谷書':'35','西番雅書':'36','哈該書':'37','撒迦利亞書':'38','瑪拉基書':'39',
+  '馬太福音':'40','馬可福音':'41','路加福音':'42','約翰福音':'43',
+  '使徒行傳':'44','羅馬書':'45','哥林多前書':'46','哥林多後書':'47',
+  '加拉太書':'48','以弗所書':'49','腓立比書':'50','歌羅西書':'51',
+  '帖撒羅尼迦前書':'52','帖撒羅尼迦後書':'53','提摩太前書':'54','提摩太後書':'55',
+  '提多書':'56','腓利門書':'57','希伯來書':'58','雅各書':'59',
+  '彼得前書':'60','彼得後書':'61','約翰一書':'62','約翰二書':'63','約翰三書':'64',
+  '猶大書':'65','啟示錄':'66'
+};
+
+const HTML2_BASE = 'https://jaoccjames.github.io/bible-reading-matrix/HTML2/';
+
+function chapUrl(book, chap){
+  const num = BOOK_NUM[book] || '00';
+  const ch  = String(chap).padStart(2, '0');
+  const filename = `${num}${book}第${ch}章.HTML`;
+  return HTML2_BASE + encodeURIComponent(filename);
+}
+
+const CHAPTERS = {
+  '創世記':50,'出埃及記':40,'利未記':27,'民數記':36,'申命記':34,
+  '約書亞記':24,'士師記':21,'路得記':4,
+  '撒母耳記上':31,'撒母耳記下':24,'列王紀上':22,'列王紀下':25,
+  '歷代志上':29,'歷代志下':36,'以斯拉記':10,'尼希米記':13,'以斯帖記':10,
+  '約伯記':42,'詩篇':150,'箴言':31,'傳道書':12,'雅歌':8,
+  '以賽亞書':66,'耶利米書':52,'耶利米哀歌':5,'以西結書':48,'但以理書':12,
+  '何西阿書':14,'約珥書':3,'阿摩司書':9,'俄巴底亞書':1,'約拿書':4,
+  '彌迦書':7,'那鴻書':3,'哈巴谷書':3,'西番雅書':3,'哈該書':2,'撒迦利亞書':14,'瑪拉基書':4,
+  '馬太福音':28,'馬可福音':16,'路加福音':24,'約翰福音':21,
+  '使徒行傳':28,'羅馬書':16,'哥林多前書':16,'哥林多後書':13,
+  '加拉太書':6,'以弗所書':6,'腓立比書':4,'歌羅西書':4,
+  '帖撒羅尼迦前書':5,'帖撒羅尼迦後書':3,'提摩太前書':6,'提摩太後書':4,
+  '提多書':3,'腓利門書':1,'希伯來書':13,'雅各書':5,
+  '彼得前書':5,'彼得後書':3,'約翰一書':5,'約翰二書':1,'約翰三書':1,
+  '猶大書':1,'啟示錄':22
+};
+
+const els = {
+  otGrid: document.getElementById('otGrid'),
+  ntGrid: document.getElementById('ntGrid'),
+  booksView: document.getElementById('booksView'),
+  chaptersView: document.getElementById('chaptersView'),
+  chapTitle: document.getElementById('chapTitle'),
+  chapGrid: document.getElementById('chapGrid'),
+  homeBtn: document.getElementById('homeBtn'),
+  err: document.getElementById('err'),
+  loading: document.getElementById('loading')
+};
+
+function showErr(msg){
+  els.err.style.display = msg ? 'block' : 'none';
+  els.err.textContent = msg || '';
+}
+function setLoading(on){
+  els.loading.style.display = on ? 'block' : 'none';
+}
+
+// 從 GitHub Contents API 回傳的檔案列表，解析出 {書名 → Set<章號>}
+// 檔名格式：01創世記第01章.HTML / 19詩篇第119章.HTML
+function buildIndexFromAPI(items){
+  const byBook = new Map();
+  const re = /^\d+(.+?)第(\d+)[章篇]\.HTML$/i;
+  for(const item of items){
+    if(item.type !== 'file') continue;
+    const m = item.name.match(re);
+    if(!m) continue;
+    const book = m[1];
+    const chap = parseInt(m[2], 10);
+    if(!byBook.has(book)) byBook.set(book, new Set());
+    byBook.get(book).add(chap);
+  }
+  return byBook;
+}
+
+function bookBuilt(byBook, book){
+  const s = byBook.get(book);
+  return !!(s && s.size > 0);
+}
+function chapBuilt(byBook, book, chap){
+  const s = byBook.get(book);
+  return !!(s && s.has(chap));
+}
+
+function renderBooks(byBook){
+  const otBooks = ORDER.filter(x=>x.t==='OT').map(x=>x.b);
+  const ntBooks = ORDER.filter(x=>x.t==='NT').map(x=>x.b);
+
+  els.otGrid.innerHTML = '';
+  els.ntGrid.innerHTML = '';
+
+  const fillCells = (gridEl, books, testament) => {
+    const shown = books;
+    const padTo = Math.ceil(shown.length / 5) * 5;
+
+    for(let i=0;i<padTo;i++){
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+
+      const book = shown[i];
+      if(!book){
+        cell.textContent = '';
+        gridEl.appendChild(cell);
+        continue;
+      }
+
+      const built = bookBuilt(byBook, book);
+      cell.classList.add('book', built ? 'built' : 'unbuilt');
+      cell.textContent = ABBR[book] || book;
+      cell.title = book;
+
+      if(built){
+        cell.addEventListener('click', ()=> openBook(byBook, book));
+      }
+      gridEl.appendChild(cell);
+    }
+  };
+
+  fillCells(els.otGrid, otBooks, 'OT');
+  fillCells(els.ntGrid, ntBooks, 'NT');
+}
+
+function openBook(byBook, book){
+  els.booksView.style.display = 'none';
+  els.chaptersView.style.display = 'block';
+  els.homeBtn.style.display = 'inline-block';
+
+  const total = CHAPTERS[book] || 0;
+  let ok = 0;
+  for(let i=1;i<=total;i++) if(chapBuilt(byBook, book, i)) ok++;
+
+  els.chapTitle.textContent = `${book}（${ABBR[book] || ''}）`;
+
+  els.chapGrid.innerHTML = '';
+  for(let i=1;i<=total;i++){
+    const built = chapBuilt(byBook, book, i);
+    const div = document.createElement('div');
+    div.className = 'chap ' + (built ? 'built' : 'unbuilt');
+
+    if(built){
+      const a = document.createElement('a');
+      a.href = chapUrl(book, i);
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = String(i);
+      div.appendChild(a);
+    } else {
+      div.textContent = String(i);
+    }
+    els.chapGrid.appendChild(div);
+  }
+}
+
+function goHome(){
+  els.chaptersView.style.display = 'none';
+  els.booksView.style.display = 'block';
+  els.homeBtn.style.display = 'none';
+}
+
+els.homeBtn.addEventListener('click', goHome);
+
+async function load(){
+  showErr('');
+  setLoading(true);
+
+  const res = await fetch(GITHUB_API, {
+    headers: { 'Accept': 'application/vnd.github+json' },
+    cache: 'no-store'
+  });
+  if(!res.ok) throw new Error('讀取 GitHub 檔案清單失敗：HTTP ' + res.status);
+
+  const items = await res.json();
+  const byBook = buildIndexFromAPI(items);
+
+  window.__BYBOOK__ = byBook;
+  renderBooks(byBook);
+
+  setLoading(false);
+}
+
+load().catch(err => {
+  console.error(err);
+  setLoading(false);
+  showErr('⚠️ ' + err.message);
+});
+</script>
+</body>
+</html>

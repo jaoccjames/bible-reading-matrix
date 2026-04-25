@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>傳道書第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+傳道書第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">撒種慷慨不等風停：趁年輕快樂行善事</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當將你的糧食撒在水面，因為日久必能得着。</div>
+<div class="verse"><span class="verse-number">2</span>你要分給七人，或分給八人，因為你不知道將來有甚麼災禍臨到地上。</div>
+<div class="verse"><span class="verse-number">3</span>雲若滿了雨，就必傾倒在地上。樹若向南倒，或向北倒，樹倒在何處，就存在何處。</div>
+<div class="verse"><span class="verse-number">4</span>看風的，必不撒種；望雲的，必不收割。</div>
+<div class="verse"><span class="verse-number">5</span>風從何道來，骨頭在懷孕婦人的胎中如何長成，你尚且不得知道；這樣，行萬事之神的作為，你更不得知道。</div>
+<div class="verse"><span class="verse-number">6</span>早晨要撒你的種，晚上也不要歇你的手，因為你不知道那一樣發旺；或是早撒的，或是晚撒的，或是兩樣都好。</div>
+<div class="verse"><span class="verse-number">7</span>光本是佳美的，眼見日光也是可悅的。</div>
+<div class="verse"><span class="verse-number">8</span>人活多年，就當快樂多年；然而也當想到黑暗的日子。因為這日子必多，所要來的都是虛空。</div>
+<div class="verse"><span class="verse-number">9</span>少年人哪，你在幼年時當快樂。在幼年的日子，使你的心歡暢，行你心所願行的，看你眼所愛看的；卻要知道，為這一切的事，神必審問你。</div>
+<div class="verse"><span class="verse-number">10</span>所以，你當從心中除掉愁煩，從肉體克去邪惡；因為一生的開端和幼年之時，都是虛空的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+傳道書第十一章是全書從沉重哲思轉向積極行動的高峰，分為兩個主題：前半（1-6節）呼籲慷慨行動、不等待完美時機；後半（7-10節）則以詩意的語言呼召人珍惜年輕、趁著有力的日子享受生命並行善。第1節「當將你的糧食撒在水面，因為日久必能得着」，在古近東的商業背景中，「撒在水面」指的是海上貿易的風險投資，說明慷慨的施予雖有風險，卻必有回報。第4節「看風的，必不撒種；望雲的，必不收割」，是對「等待完美時機」的委婉批評——若永遠等到條件完全具備才行動，就永遠不會行動。第5節以胎兒在母腹中成長的奧秘，類比神的作為之不可測，強調人在不能完全掌握的情況下仍需行動的信仰態度。第9節對少年人的呼召，既充滿歡愉（「使你的心歡暢」），又不失敬畏（「神必審問你」），是傳道書對年輕生命最均衡、最完整的教導。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 慷慨的給予不等待完美時機，信心使人在不確定中播種</strong><br>第1-4節呼籲人不要因等待完美的條件才行動，無論是施捨（1-2節）或撒種（4節），過度謹慎只會導致無所作為。「看風的，必不撒種」，說明總是等到一切安全、確定才出手，反而讓機會流逝。信徒在施予、服事、宣講福音的事上，也面對同樣的挑戰——不確定的結果不能成為不行動的理由，信心讓人在不確定中仍然慷慨播種。<br><br>
+<strong>2. 神的作為不可測透，謙卑讓人在不確定中持續投入</strong><br>第5-6節以胎兒成長的奧秘，說明神的作為超越人的理解。若人因為不知道哪一種努力會結果，就停止一切努力，那就是把不確定性當作不作為的藉口。第6節「早晨要撒你的種，晚上也不要歇你的手」，呼籲在不知道哪一個會成功的情況下，仍然持續多方面的努力，將結果謙卑地留給神決定。<br><br>
+<strong>3. 趁年輕快樂，但在喜樂中不忘神的審問</strong><br>第9節「少年人哪，你在幼年時當快樂……卻要知道，為這一切的事，神必審問你」，平衡了自由與責任兩個向度。神並非要年輕人壓抑喜樂；祂呼召年輕人在享受生命的同時，以神的審問為人生的參照——讓喜樂的選擇能在神面前站立得住。這是傳道書最成熟的屬靈教導：自由與責任、喜樂與敬畏，在信仰生命中並不矛盾。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>看風的</strong>，<strong>必不撒種</strong>；望雲的，必不收割。」（傳11:4）</td>
+<td>就像<strong>廚師若等到完全沒有犯錯的可能才</strong>開始做菜，那就永遠不會開始，你<strong>在服事、施予</strong>或追求某件有意義的事情上，是否正在等待「完美時機」而遲遲不行動？是什麼讓你<strong>難以在不確定</strong>中踏出第一步？</td>
+</tr>
+<tr>
+<td>「<strong>早晨要撒你的種</strong>，<strong>晚上也不要歇你的</strong>手，因為你不知道那一樣發旺。」（傳11:6）</td>
+<td>就像<strong>農夫在不同季節種下不同的作物</strong>，不把所有希望押注在單一收成上，你<strong>目前在哪些不</strong>同方向上「撒種」——在家庭、工作、信仰、服事中？你是否<strong>在持續播種</strong>，還是因為某次的不見成果而停了手？</td>
+</tr>
+<tr>
+<td>「<strong>少年人哪</strong>，<strong>你在幼年時當快樂</strong>……卻要知道，神必審問你。」（傳11:9）</td>
+<td>就像<strong>孩子在父母視線內自由玩耍</strong>，知道有人關注卻不受壓制，神的審問不是要消滅喜樂，而是為喜樂設定方向，你<strong>目前的「喜樂</strong>」是否是能在神面前站立得住的？是否有哪些喜樂你<strong>心裡其實知道</strong>，無法在神面前坦然面對？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

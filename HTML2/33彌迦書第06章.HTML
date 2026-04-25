@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>彌迦書第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+彌迦書第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">行公義好憐憫存謙卑</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列人哪，當聽耶和華的話！要起來向山嶺爭辯，使岡陵聽你的話。</div>
+<div class="verse"><span class="verse-number">2</span>山嶺和地永久的根基阿，要聽耶和華爭辯的話！因為耶和華要與他的百姓爭辯，與以色列爭論。</div>
+<div class="verse"><span class="verse-number">3</span>我的百姓啊，我向你作了甚麼呢？我在甚麼事上使你厭煩？你可以對我證明。</div>
+<div class="verse"><span class="verse-number">4</span>我曾將你從埃及地領出來，從作奴僕之家救贖你；我也差遣摩西、亞倫，和米利暗在你前面行。</div>
+<div class="verse"><span class="verse-number">5</span>我的百姓阿，你們當追念摩押王巴勒所設的謀和比珥的兒子巴蘭回答他的話，並你們從什亭到吉甲所遇見的事，好使你們知道耶和華公義的作為。</div>
+<div class="verse"><span class="verse-number">6</span>我朝見耶和華，在至高神面前跪拜，當獻上甚麼呢？豈可獻一歲的牛犢為燔祭嗎？</div>
+<div class="verse"><span class="verse-number">7</span>耶和華豈喜悅千千的公羊，或是萬萬的油河嗎？我豈可為自己的罪過獻我的長子嗎？為心中的罪惡獻我身所生的嗎？</div>
+<div class="verse"><span class="verse-number">8</span>世人哪，耶和華已指示你何為善。他向你所要的是甚麼呢？只要你行公義，好憐憫，存謙卑的心，與你的神同行。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華向這城呼叫，智慧人必敬畏他的名。你們當聽是誰派定刑杖的懲罰。</div>
+<div class="verse"><span class="verse-number">10</span>惡人家中不仍有非義之財和可惡的小升斗嗎？</div>
+<div class="verse"><span class="verse-number">11</span>我若用不公道的天平和囊中詭詐的法碼，豈可算為清潔呢？</div>
+<div class="verse"><span class="verse-number">12</span>城裏的富戶滿行強暴；其中的居民也說謊言，口中的舌頭是詭詐的。</div>
+<div class="verse"><span class="verse-number">13</span>因此，我擊打你，使你的傷痕甚重，使你因你的罪惡荒涼。</div>
+<div class="verse"><span class="verse-number">14</span>你要吃，卻吃不飽；你的虛弱必顯在你中間。你必挪去，卻不得救護；所救護的，我必交給刀劍。</div>
+<div class="verse"><span class="verse-number">15</span>你必撒種，卻不得收割；踹橄欖，卻不得油抹身；踹葡萄，卻不得酒喝。</div>
+<div class="verse"><span class="verse-number">16</span>因為你守暗利的惡規，行亞哈家一切所行的，順從他們的計謀；因此，我必使你荒涼，使你的居民令人嗤笑，你們也必擔當我民的羞辱。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+彌迦書第6章是整卷書的核心神學章節，以「法庭場景」呈現神與以色列之間的控訴——神呼召山嶺為見證人，向百姓提出訴訟。神問：「我向你作了什麼使你厭煩？」並列舉出埃及、蒙保護等救恩歷史。百姓的問題是：「我當獻上什麼才夠呢？」——以宗教表演代替真實的信仰回應。彌迦對此有全書最著名的回答（6-8節）：「世人哪，耶和華已指示你何為善。他向你所要的是什麼呢？只要你行公義，好憐憫，存謙卑的心，與你的神同行。」這三個要素——公義（道德正直）、憐憫（忠誠之愛）、謙卑同行（靈命深度）——成為整個先知書信息的精髓。章末描述因不公義而來的審判：播種卻不收割，踹橄欖卻不得油，因為他們效法亞哈家的惡規。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神要的不是更多宗教表演，而是真實的品格轉化】</strong><br>百姓以為問題是「獻什麼才夠」——更多的祭物、更大的供物、甚至獻上頭生的。神的回答直接否定了這個方向：神所要的是「行、好、存」——三個行動詞，指向日常品格，而非宗教儀式。今日教會中，也存在同樣的錯誤：以更多的宗教活動補償缺乏品格的生命。<br><br>
+<strong>2. 【行公義、好憐憫、存謙卑：三者缺一不可】</strong><br>公義沒有憐憫是冷酷的；憐憫沒有公義是軟弱的；兩者沒有謙卑的同行是驕傲的道德主義。這三者的均衡，構成了信仰生命最完整的型態。信徒需要定期檢視：我的信仰生活，這三者各佔多少比例？哪個最弱？<br><br>
+<strong>3. 【「與你的神同行」：謙卑是一種關係，不只是一種態度】</strong><br>「存謙卑的心與你的神同行」——謙卑不只是低調的個性，而是一種「跟隨」的關係。謙卑意味着承認自己不是路的主導者，而是跟在那位知道路的神旁邊同行。真正的謙卑是日常的信靠和跟隨，不是偶爾的認罪。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>世人哪</strong>，<strong>耶和華已指示你何</strong>為善。他向你所要的是甚麼呢？只要你行公義，好憐憫，存謙卑的心，與你的神同行。（彌6:8）</td>
+<td>「行公義、好憐憫、存謙卑」——在你<strong>目前的生活中</strong>，哪一個最弱？是公義（在面對不義時敢於發聲）、憐憫（真實地感受並回應他人的需要）、還是謙卑（真正跟從神，而非領先神）？就像<strong>三腳架缺一腳就倒塌</strong>，你<strong>最弱的那一腳</strong>，今天可以做什麼來加強？</td>
+</tr>
+<tr>
+<td><strong>我朝見耶和華</strong>，<strong>在至高神面前跪拜</strong>，當獻上甚麼呢？豈可獻一歲的牛犢為燔祭嗎？（彌6:6）</td>
+<td>以宗教表演取代真實品格，是最古老也最常見的屬靈陷阱。你有沒有<strong>時候以「做了</strong>宗教上的事」——去教會、讀聖經、禱告——來迴避一個更難的「行公義或好憐憫」的要求？就像<strong>用洗碗來避免一個困難的對話</strong>，你<strong>今天有沒有一</strong>個「更難的事」需要你<strong>面對</strong>？</td>
+</tr>
+<tr>
+<td><strong>我的百姓啊</strong>，<strong>我向你作了甚麼呢</strong>？我在甚麼事上使你厭煩？你可以對我證明。（彌6:3）</td>
+<td>神問以色列「我使你<strong>厭煩了什麼」</strong>——以受責問的姿態面對祂的百姓。如果神今天這樣問你，你<strong>的誠實回答</strong>是什麼？就像<strong>在一段關係中</strong>，願意說出「我感到失望」需要信任，你願意<strong>對神誠實地說</strong>出你<strong>信仰生命中感</strong>到困難或疑惑的地方嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尼希米記第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+尼希米記第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">城牆五十二天完工，仇敵懼怕</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>參巴拉、多比雅、亞拉伯人基善和我們其餘的仇敵聽見我已經修完了城牆，其中沒有破裂之處（那時我還沒有安門扇），</div>
+<div class="verse"><span class="verse-number">2</span>參巴拉和基善就打發人來見我，說：「請你來，我們在阿挪平原的一個村莊相會。」他們卻想害我。</div>
+<div class="verse"><span class="verse-number">3</span>於是我差遣人去見他們，說：「我現在辦理大工，不能下去。焉能停工下去見你們呢？」</div>
+<div class="verse"><span class="verse-number">4</span>他們這樣四次打發人來見我，我都如此回答他們。</div>
+<div class="verse"><span class="verse-number">5</span>參巴拉第五次打發僕人來見我，手裏拿着未封的信，</div>
+<div class="verse"><span class="verse-number">6</span>信上寫着說：「外邦人中有風聲，迦施慕〔就是基善，見二章十九節〕也說，你和猶大人謀反，修造城牆，你要作他們的王；</div>
+<div class="verse"><span class="verse-number">7</span>你又派先知在耶路撒冷指着你宣講，說在猶大有王。現在這話必傳與王知；所以請你來，與我們彼此商議。」</div>
+<div class="verse"><span class="verse-number">8</span>我就差遣人去見他，說：「你所說的這事，一概沒有，是你心裏捏造的。」</div>
+<div class="verse"><span class="verse-number">9</span>他們都要使我們懼怕，意思說，他們的手必軟弱，以致工作不能成就。神阿，求你堅固我的手。</div>
+<div class="verse"><span class="verse-number">10</span>我到了米希大別的孫子、第來雅的兒子示瑪雅家裏；那時，他閉門不出。他說：「我們不如在神的殿裏會面，將殿門關鎖；因為他們要來殺你，就是夜裏來殺你。」</div>
+<div class="verse"><span class="verse-number">11</span>我說：「像我這樣的人豈要逃跑呢？像我這樣的人豈能進入殿裏保全生命呢？我不進去！」</div>
+<div class="verse"><span class="verse-number">12</span>我看明神沒有差遣他，是他自己說這話攻擊我，是多比雅和參巴拉賄買了他。</div>
+<div class="verse"><span class="verse-number">13</span>賄買他的緣故，是要叫我懼怕，依從他犯罪，他們好傳揚惡言毀謗我。</div>
+<div class="verse"><span class="verse-number">14</span>我的神啊，多比雅、參巴拉、女先知挪亞底，和其餘的先知要叫我懼怕，求你記念他們所行的這些事。</div>
+<div class="verse"><span class="verse-number">15</span>以祿月二十五日，城牆修完了，共修了五十二天。</div>
+<div class="verse"><span class="verse-number">16</span>我們一切仇敵、四圍的外邦人聽見了便懼怕，愁眉不展；因為見這工作完成是出乎我們的神。</div>
+<div class="verse"><span class="verse-number">17</span>在那些日子，猶大的貴冑屢次寄信與多比雅，多比雅也來信與他們。</div>
+<div class="verse"><span class="verse-number">18</span>在猶大有許多人與多比雅結盟；因他是亞拉的兒子，示迦尼的女婿，並且他的兒子約哈難娶了比利迦兒子米書蘭的女兒為妻。</div>
+<div class="verse"><span class="verse-number">19</span>他們常在我面前說多比雅的善行，也將我的話傳與他。多比雅又常寄信來，要叫我懼怕。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+尼希米記第6章記載城牆接近完工時，敵人改用更精密的心理戰術。參巴拉和基善四次邀請尼希米到平原「會談」，企圖趁機加害；尼希米每次都以「我辦理大工不能停工」拒絕。隨後，他們以未封信件散布謠言，指控尼希米謀反，企圖以此迫使他面見辯解。尼希米直接否認並向神求堅固。最危險的是第三個陷阱——敵人收買假先知示瑪雅，勸尼希米躲進聖殿，試圖讓他犯下擅入聖所的罪或以懦弱形象損毀聲望。尼希米以屬靈辨別識破此計，堅定說「像我這樣的人豈要逃跑呢」。最終，城牆在五十二天內完工，連仇敵也不得不承認這是出於神的作為。本章是尼希米在壓力下信仰辨別力和持守力的最佳示範。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 專注使命，不被誘惑離開神所交付的工作</strong><br>尼希米面對四次邀請，每次都以同樣的理由拒絕：「我現在辦理大工，不能下去」。這種專注的能力源於他清楚自己的呼召——任何讓他離開城牆的邀請，無論表面多麼合理，都可能是阻礙神旨意的誘惑。信徒在事奉中保持使命的清晰，能夠識別並拒絕讓自己偏離的邀請，是屬靈成熟的表現。<br><br>
+<strong>2. 屬靈辨別力能識破看似善意的錯誤引導</strong><br>假先知示瑪雅的建議表面上是「為了尼希米的安全著想」，實際上是精心設計的陷阱。尼希米能夠識破，是因為他熟悉神的旨意，知道神不會叫他用違反律法的方式保護自己，也因為他有辨別異靈的屬靈直覺。信徒需要培養辨別力，不是懷疑一切，而是能在看似合理的建議中辨認出其是否符合神的心意。<br><br>
+<strong>3. 神的工程完成是最有力的屬靈見證</strong><br>城牆五十二天完工後，連仇敵也「愁眉不展」，不得不承認這是「出乎我們的神」。神的作為本身就是最有力的宣教。尼希米不需要用爭論或辯護證明神的存在和能力，神的工程完成了就是最好的答案。信徒的忠心服事，在神的祝福下結出的果子，往往比任何言語辯護更能見證神的真實。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我差遣人去見他們</strong>，說：「<strong>我現在辦理大工</strong>，不能下去。焉能停工下去見你們呢？」（尼6:3）</td>
+<td>就像<strong>正在進行心臟手術的醫生不會因為</strong>手機震動而分心，使命的清晰讓你能拒絕哪些看似合理的「邀請」？你<strong>生命中最常讓</strong>你<strong>離開神呼召的</strong>誘惑是什麼形式？</td>
+</tr>
+<tr>
+<td>我說：「<strong>像我這樣的人豈要</strong><strong>逃跑呢</strong>？像我這樣的人豈能進入殿裏保全生命呢？我不進去！」（尼6:11）</td>
+<td>就像<strong>知道自己的職位和責任的人不輕易</strong>棄職，清楚自己的身分與呼召讓尼希米在恐懼中站立。你有沒有<strong>一句「像我這</strong>樣的人」的信念，能讓你<strong>在壓力下不妥</strong>協？</td>
+</tr>
+<tr>
+<td><strong>我們一切仇敵</strong>……<strong>聽見了便懼怕</strong>，愁眉不展；因為見這工作完成是出乎我們的神。（尼6:16）</td>
+<td>就像<strong>一棵果樹結出豐盛果子</strong>，無需自我宣傳，神的工程完成本身就是見證。你<strong>生命或事工中</strong>有哪些「出乎神」的果效，曾讓周圍不信的人也不得不停下來思想？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

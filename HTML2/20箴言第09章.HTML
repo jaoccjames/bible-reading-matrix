@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">智慧與愚昧的筵席：兩種呼召兩種終局</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>智慧建造房屋，鑿成七根柱子，</div>
+<div class="verse"><span class="verse-number">2</span>宰殺牲畜，調和旨酒，設擺筵席；</div>
+<div class="verse"><span class="verse-number">3</span>打發使女出去，自己在城中至高處呼叫，</div>
+<div class="verse"><span class="verse-number">4</span>說：誰是愚蒙人，可以轉到這裏來！又對那無知的人說：</div>
+<div class="verse"><span class="verse-number">5</span>你們來，吃我的餅，喝我調和的酒。</div>
+<div class="verse"><span class="verse-number">6</span>你們愚蒙人，要捨棄愚蒙，就得存活，並要走光明的道。</div>
+<div class="verse"><span class="verse-number">7</span>指斥褻慢人的，必受辱罵；責備惡人的，必被玷污。</div>
+<div class="verse"><span class="verse-number">8</span>不要責備褻慢人，恐怕他恨你；要責備智慧人，他必愛你。</div>
+<div class="verse"><span class="verse-number">9</span>教導智慧人，他就越發有智慧；指示義人，他就增長學問。</div>
+<div class="verse"><span class="verse-number">10</span>敬畏耶和華是智慧的開端；認識至聖者便是聰明。</div>
+<div class="verse"><span class="verse-number">11</span>你藉着我，日子必增多，年歲也必加添。</div>
+<div class="verse"><span class="verse-number">12</span>你若有智慧，是與自己有益；你若褻慢，就必獨自擔當。</div>
+<div class="verse"><span class="verse-number">13</span>愚昧的婦人喧嚷；她是愚蒙，一無所知。</div>
+<div class="verse"><span class="verse-number">14</span>她坐在自己的家門口，坐在城中高處的座位上，</div>
+<div class="verse"><span class="verse-number">15</span>呼叫過路的，就是直行其道的人，</div>
+<div class="verse"><span class="verse-number">16</span>說：誰是愚蒙人，可以轉到這裏來！又對那無知的人說：</div>
+<div class="verse"><span class="verse-number">17</span>偷來的水是甜的，暗喫的餅是好的。</div>
+<div class="verse"><span class="verse-number">18</span>人卻不知有陰魂在她那裏；她的客在陰間的深處。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第九章是箴言書「前言部分」（第一至九章）的終章，以兩種對立的筵席作為整個導論的總結：智慧的筵席（1-12節）與愚昧的筵席（13-18節）。這種對比結構在希伯來文學中是一種有效的教學手法，透過鮮明對比，幫助讀者清楚辨識兩條截然不同的人生道路。本章的歷史背景延續了前幾章，處於以色列智慧傳統的核心，強調人生中的選擇具有根本的屬靈意義。智慧女神建造七柱大宅、設筵邀客，象徵豐盛與完全；愚昧婦人也在高處呼喚，卻以「偷來的水」引誘人走向死亡。中間的插段（7-12節）則討論如何回應責備，並再次宣告「敬畏耶和華是智慧的開端」，呼應第一章第7節。本章在整本箴言書的結構中具有「樞紐」地位，從第十章起進入大量的格言警句，而本章則為這一切提供了最根本的屬靈框架。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 智慧的邀請是神恩典的具體彰顯</strong><br>智慧設筵邀請「愚蒙人」前來，這是一個充滿恩典的行動——神不是等待人達到某種程度才伸出援手，而是主動邀請最無知、最需要的人前來享用。這個屬靈圖像在新約中藉耶穌設宴的比喻得到進一步的彰顯。每一個信徒都曾是那個「愚蒙人」，因神的恩召而轉向，得着生命與智慧。<br><br>
+<strong>2. 智慧人接受責備，褻慢人拒絕教導</strong><br>第8-9節指出，智慧人與褻慢人最根本的差異在於對責備的態度：褻慢人怨恨批評，智慧人感謝指正並因此成長。這是屬靈成熟度的重要標誌。一個真正在屬靈成長的人，會學習在批評中辨識真理，而非防衛性地拒絕一切聲音。謙卑接受責備，是智慧最重要的入口之一。<br><br>
+<strong>3. 愚昧以禁忌的甜美為餌，終點卻是死亡</strong><br>「偷來的水是甜的，暗喫的餅是好的」——愚昧婦人以「禁忌的刺激感」吸引人，這是罪惡一貫的伎倆：讓人誤以為違反規範本身就是一種享受。然而第18節揭穿了這個謊言：坐在她席上的人，正坐在通往陰間的入口。信徒需要清醒認識，罪惡的「甜味」是一種欺騙，其真實的滋味是死亡。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>要責備智慧人</strong>，<strong>他必愛你</strong>；教導智慧人，他就越發有智慧；」（箴9:8-9）</td>
+<td>就像<strong>運動員重視教練的嚴格糾正</strong>，因為他們知道這是進步的關鍵，你<strong>最近一次接受</strong>他人批評或指正時的內心反應是什麼？你是否能從責備中聽見幫助你<strong>成長的聲音</strong>？</td>
+</tr>
+<tr>
+<td>「<strong>敬畏耶和華是智慧</strong><strong>的開端</strong>；認識至聖者便是聰明。」（箴9:10）</td>
+<td>就像<strong>蓋房子必須先確定地基的位置和材</strong>料，然後才能規劃樓層，在你<strong>生命的重大決</strong>定中，「認識神、尊崇神」是否真的是你<strong>思考的起點</strong>？或者它更像是最後才想到的參考？</td>
+</tr>
+<tr>
+<td>「<strong>偷來的水是甜的</strong>，<strong>暗喫的餅是好的</strong>。」（箴9:17）</td>
+<td>就像<strong>某些高鹽高糖的食物讓人短暫感到</strong>滿足，卻長期損害健康，你<strong>生活中有哪些</strong>讓你<strong>感到「刺激」</strong>或「甜蜜」的選擇，其實是建立在違背神心意的基礎上？你如何<strong>辨識這種欺騙</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

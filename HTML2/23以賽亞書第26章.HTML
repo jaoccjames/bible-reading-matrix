@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第26章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第26章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">堅心倚賴你的必保守十分平安：信心之歌與復活的盼望</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當那日，在猶大地人必唱這歌說：我們有堅固的城。耶和華要將救恩定為城牆，為外郭。</div>
+<div class="verse"><span class="verse-number">2</span>敞開城門，使守信的義民得以進入。</div>
+<div class="verse"><span class="verse-number">3</span>堅心倚賴你的，你必保守他十分平安，因為他倚靠你。</div>
+<div class="verse"><span class="verse-number">4</span>你們當倚靠耶和華直到永遠，因為耶和華是永久的磐石。</div>
+<div class="verse"><span class="verse-number">5</span>他使住高處的與高城一併敗落，將城拆毀，拆平，直到塵埃，</div>
+<div class="verse"><span class="verse-number">6</span>要被腳踐踏，就是被困苦人的腳和窮乏人的腳踐踏。</div>
+<div class="verse"><span class="verse-number">7</span>義人的道是正直的；你為正直的主，必修平義人的路。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華啊，我們在你行審判的路上等候你；我們心裏所羡慕的是你的名，就是你那可記念的名。</div>
+<div class="verse"><span class="verse-number">9</span>夜間，我心中羡慕你；我裏面的靈切切尋求你。因為你在世上行審判的時候，地上的居民就學習公義。</div>
+<div class="verse"><span class="verse-number">10</span>以恩惠待惡人，他仍不學習公義；在正直的地上，他必行事不義，也不注意耶和華的威嚴。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華啊，你的手高舉，他們仍然不看；卻要看你為百姓發的熱心，因而抱愧，並且有火燒滅你的敵人。</div>
+<div class="verse"><span class="verse-number">12</span>耶和華啊，你必派定我們得平安，因為我們所作的事都是你給我們成就的。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華我們的神啊，在你以外曾有別的主管轄我們，但我們專要倚靠你，提你的名。</div>
+<div class="verse"><span class="verse-number">14</span>他們死了，必不能再活；他們去世，必不能再起；因為你刑罰他們，毀滅他們，他們的名號就全然消滅。</div>
+<div class="verse"><span class="verse-number">15</span>耶和華啊，你增添國民，你增添國民；你得了榮耀，又擴張地的四境。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華啊，他們在急難中尋求你；你的懲罰臨到他們身上，他們就傾心吐膽禱告你。</div>
+<div class="verse"><span class="verse-number">17</span>婦人懷孕，臨產疼痛，在痛苦之中喊叫；耶和華阿，我們在你面前也是如此。</div>
+<div class="verse"><span class="verse-number">18</span>我們也曾懷孕疼痛，所產的竟像風一樣。我們在地上未曾行甚麼拯救的事；世上的居民也未曾敗落。</div>
+<div class="verse"><span class="verse-number">19</span>死人〔原文作你的死人〕要復活，屍首〔原文作我的屍首〕要興起。睡在塵埃的啊，要醒起歌唱！因你的甘露好像菜蔬上的甘露，地也要交出死人來。</div>
+<div class="verse"><span class="verse-number">20</span>我的百姓啊，你們要來進入內室，關上門，隱藏片時，等到忿怒過去。</div>
+<div class="verse"><span class="verse-number">21</span>因為耶和華從他的居所出來，要刑罰地上居民的罪孽。地也必露出其中的血，不再掩蓋被殺的人。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第二十六章是「以賽亞的小啟示錄」中的一首感謝詩和盼望詩，格調與第二十五章相近，同樣充滿對神救贖的讚美和末世的期待。本章以「猶大地人必唱這歌」（1節）開始，表明這是一首集體的末世信仰告白。第3節「堅心倚賴你的，你必保守他十分平安」，是全章和整個以賽亞書最廣為人知的節次之一，在希伯來文中「十分平安」是「shalom shalom」（平安平安），雙重的平安表達了最完全的平安——不只是外在環境的和平，更是靈魂深處的穩定和安息。第9節「夜間，我心中羡慕你；我裏面的靈切切尋求你」，描繪了在最艱難的時刻（「夜間」）仍然渴慕神的靈命態度——不只在神明顯作為的白天讚美，也在黑暗中切切尋求。第19節「死人要復活，屍首要興起。睡在塵埃的啊，要醒起歌唱！」是舊約中對身體復活最清晰的宣告之一，與但以理書12:2並列，成為舊約末世論的重要基礎，在新約復活教義中得到完全的成就。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「堅心倚賴你的，你必保守他十分平安」：真正的平安建立在倚靠神之上</strong><br>第3節「堅心倚賴你的，你必保守他十分平安，因為他倚靠你」，揭示了平安的源頭和條件：「堅心倚賴」（יֵצֶר סָמוּךְ，mind stayed on him）——把心思固定在神身上，不因環境而飄移。第4節「倚靠耶和華直到永遠，因為耶和華是永久的磐石」，進一步指出倚靠的持續性，不是一時的，而是持續的委身。腓立比書4:7「神所賜出人意外的平安」正是這個真理的新約表達。<br><br>
+<strong>2. 在「夜間」切切尋求神，是最深的屬靈渴慕</strong><br>第9節「夜間，我心中羡慕你；我裏面的靈切切尋求你」，把最深的渴慕放在最黑暗的時刻——「夜間」不只是字面的夜晚，也是生命中黑暗、迷茫、苦難的時刻。在那個時候仍然「羡慕神」（不只是尋求神的幫助，而是羡慕神本身），是屬靈成熟最美麗的表現。這與詩篇42:1「鹿渴慕溪水，我的心渴慕你，神啊！」有深刻的共鳴。<br><br>
+<strong>3. 「死人要復活」：肉體復活的盼望是信仰最終的勝利</strong><br>第19節的復活宣告，是以賽亞書末世盼望的最高峰。「睡在塵埃的啊，要醒起歌唱！」——死亡不是沉默，而是等待歌唱的「睡眠」。這個盼望在新約中被耶穌的復活所確立，也是每位信徒在面對死亡（自己的、親人的）時最深的安慰——不是逃避死亡的現實，而是以復活的盼望超越死亡的終局。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>堅心倚賴你的</strong>，<strong>你必保守他十分平</strong>安，因為他倚靠你。」（賽26:3）</td>
+<td>就像<strong>一個人在強風中緊緊抓住固定物</strong>，抓得越緊，風越不容易把他刮走，「堅心倚賴」就是那種緊緊抓住的持續姿態，你<strong>目前的心思最</strong>容易在哪些事情上漂移，讓你<strong>失去那種「十</strong>分平安」？你如何<strong>重新讓心思「</strong>固定在神身上」？</td>
+</tr>
+<tr>
+<td>「夜間，<strong>我心中羡慕你</strong>；<strong>我裏面的靈切切尋</strong>求你。」（賽26:9）</td>
+<td>就像<strong>一個人在黑暗的房間裡比在光亮處</strong>更真切地感受到對光的渴望，屬靈的黑夜往往是最深渴慕萌生的時刻，你<strong>在信仰生命中</strong>最黑暗的時期，你<strong>的心</strong>是趨向神還是趨向逃避？那種差別如何影響你<strong>走出黑暗的速</strong>度？</td>
+</tr>
+<tr>
+<td>「<strong>死人要復活</strong>，<strong>屍首要興起</strong>。睡在塵埃的啊，要醒起歌唱！」（賽26:19）</td>
+<td>就像<strong>一個長途飛行後的旅客</strong>，雖然在飛機上沉睡，卻知道降落後會醒來，死亡對信徒只是一段有終點的沉睡，你<strong>對身體復活的</strong>盼望，是否真實地影響你<strong>面對自己或親</strong>人死亡的態度？這個盼望如何改變你<strong>看待今生所有</strong>「失去」的方式？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">這殿豈可看為賊窩：殿的信仰與生命的公義必須一致</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話臨到耶利米說：</div>
+<div class="verse"><span class="verse-number">2</span>「你當站在耶和華殿的門口，在那裏宣傳這話說：你們進這些門敬拜耶和華的一切猶大人，當聽耶和華的話。</div>
+<div class="verse"><span class="verse-number">3</span>萬軍之耶和華以色列的神如此說：你們改正行動作為，我就使你們在這地方仍然居住。</div>
+<div class="verse"><span class="verse-number">4</span>你們不要倚靠虛謊的話，說：『這些是耶和華的殿，是耶和華的殿，是耶和華的殿！』</div>
+<div class="verse"><span class="verse-number">5</span>「你們若實在改正行動作為，在人和鄰舍中間誠然施行公平，</div>
+<div class="verse"><span class="verse-number">6</span>不欺壓寄居的和孤兒寡婦；在這地方不流無辜人的血，也不隨從別神陷害自己；</div>
+<div class="verse"><span class="verse-number">7</span>我就使你們在這地方仍然居住，就是我古時所賜給你們列祖的地，直到永遠。</div>
+<div class="verse"><span class="verse-number">8</span>「看哪，你們倚靠虛謊無益的話。</div>
+<div class="verse"><span class="verse-number">9</span>你們偷盜，殺害，姦淫，起假誓，向巴力燒香，並隨從素不認識的別神，</div>
+<div class="verse"><span class="verse-number">10</span>且來到這稱為我名下的殿，在我面前敬拜；又說：『我們可以自由了。』你們這樣的舉動是要行那些可憎的事嗎？</div>
+<div class="verse"><span class="verse-number">11</span>這稱為我名下的殿在你們眼中豈可看為賊窩嗎？我都看見了。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">12</span>你們且往示羅去，就是我先前立為我名的居所，察看我因這百姓以色列的罪惡向那地所行的如何。」</div>
+<div class="verse"><span class="verse-number">13</span>耶和華說：「現在因你們行了這一切的事，我也從早起來警戒你們，你們卻不聽從；呼喚你們，你們卻不答應。</div>
+<div class="verse"><span class="verse-number">14</span>所以我要向這稱我為名下、你們所倚靠的殿，與我所賜給你們和你們列祖的地施行，照我從前向示羅所行的一樣。</div>
+<div class="verse"><span class="verse-number">15</span>我必將你們從我眼前趕出，正如趕出你們的眾弟兄，就是以法蓮的一切後裔。」</div>
+<div class="verse"><span class="verse-number">16</span>「所以，你不要為這百姓祈禱；不要為他們呼求禱告，也不要向我為他們祈求，因我不聽允你。</div>
+<div class="verse"><span class="verse-number">17</span>他們在猶大城邑中和耶路撒冷街上所行的，你沒有看見嗎？</div>
+<div class="verse"><span class="verse-number">18</span>孩子撿柴，父親燒火，婦女摶麵作餅，獻給天后，又向別神澆奠祭，惹我發怒。」</div>
+<div class="verse"><span class="verse-number">19</span>耶和華說：「他們豈是惹我發怒呢？不是自己惹禍，以致臉上慚愧嗎？」</div>
+<div class="verse"><span class="verse-number">20</span>所以主耶和華如此說：「看哪，我必將我的怒氣和忿怒傾在這地方的人和牲畜身上，並田野的樹木和地裏的出產上，必如火着起，不能熄滅。」</div>
+<div class="verse"><span class="verse-number">21</span>萬軍之耶和華以色列的神如此說：「你們將燔祭加在平安祭上，吃肉吧！</div>
+<div class="verse"><span class="verse-number">22</span>因為我將你們列祖從埃及地領出來的那日，燔祭平安祭的事我並沒有提說，也沒有吩咐他們。</div>
+<div class="verse"><span class="verse-number">23</span>我只吩咐他們這一件說：『你們當聽從我的話，我就作你們的神，你們也作我的子民。你們行我所吩咐的一切道，就可以得福。』</div>
+<div class="verse"><span class="verse-number">24</span>他們卻不聽從，不側耳而聽，竟隨從自己的計謀和頑梗的惡心，向後不向前。</div>
+<div class="verse"><span class="verse-number">25</span>自從你們列祖出埃及地的那日，直到今日，我差遣我的僕人眾先知到你們那裏去，每日從早起來差遣他們。</div>
+<div class="verse"><span class="verse-number">26</span>你們卻不聽從，不側耳而聽，竟硬着頸項行惡，比你們列祖更甚。</div>
+<div class="verse"><span class="verse-number">27</span>「你要將這一切的話告訴他們，他們卻不聽從；呼喚他們，他們卻不答應。</div>
+<div class="verse"><span class="verse-number">28</span>你要對他們說：這就是不聽從耶和華他們神的話、不受教訓的國民；從他們的口中，誠實滅絕了。」</div>
+<div class="verse"><span class="verse-number">29</span>耶路撒冷啊，要剪髮拋棄，在淨光的高處舉哀；因為耶和華丟掉離棄了惹他忿怒的世代。</div>
+<div class="verse"><span class="verse-number">30</span>耶和華說：「猶大人行我眼中看為惡的事，將可憎之物設立在稱為我名下的殿中，污穢這殿。</div>
+<div class="verse"><span class="verse-number">31</span>他們在欣嫩子谷建築陀斐特的邱壇，好在火中焚燒自己的兒女。這並不是我所吩咐的，也不是我心所起的意。」</div>
+<div class="verse"><span class="verse-number">32</span>耶和華說：「因此，日子將到，這地方不再稱為陀斐特和欣嫩子谷，反倒稱為殺戮谷。因為要在陀斐特葬埋屍首，甚至無處可葬；</div>
+<div class="verse"><span class="verse-number">33</span>並且這百姓的屍首必給空中的飛鳥和地上的野獸作食物，並無人鬨趕。</div>
+<div class="verse"><span class="verse-number">34</span>那時，我必使猶大城邑中和耶路撒冷街上，歡喜和快樂的聲音，新郎和新婦的聲音，都止息了，因為地必成為荒場。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第七章包含了著名的「聖殿講道」（Temple Sermon），這是耶利米最危險也最重要的一篇信息——他站在聖殿門口，向所有進殿敬拜的人宣告：你們倚靠虛謊的話「這是耶和華的殿！」（4節）。這篇講道在耶利米書26章有更詳細的歷史背景：耶利米因此幾乎被處死。本章的核心批判是一種根深蒂固的宗教迷信：以為只要有殿，神就必然保護這座城；以為在殿中敬拜可以抵消日常的罪惡。神透過耶利米指出兩個問題：外在的宗教行為（進殿、獻祭）與日常的道德行為（欺壓、不誠實、偶像崇拜）完全脫節（9-10節）。第11節「這稱為我名下的殿在你們眼中豈可看為賊窩嗎？我都看見了」，被耶穌在潔淨聖殿時直接引用（太21:13；可11:17），是跨越兩個時代最有力的神學連接。第23節「我只吩咐他們這一件說：你們當聽從我的話，我就作你們的神，你們也作我的子民」，揭示了神對以色列最根本的要求——不是宗教儀式的繁複，而是聽從和順服。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 殿不能保護不義的人：宗教建築的存在不能代替道德的要求</strong><br>第4節「你們不要倚靠虛謊的話，說：這些是耶和華的殿，是耶和華的殿，是耶和華的殿！」——三次重複「耶和華的殿」揭示了一種宗教迷信：以為聖殿的存在本身就是保護。第9-10節揭示了矛盾：在殿外偷盜、殺害、姦淫，然後進殿說「我們可以自由了」。這種宗教形式與道德生活的割裂，是耶利米時代和當代教會同樣面對的危機。信仰生活的真實性不是用去了多少次教會來衡量的，而是用日常生活中的公義和誠實來檢驗的。<br><br>
+<strong>2. 「我只吩咐他們這一件說：你們當聽從我的話」：遵行比獻祭更重要</strong><br>第22-23節揭示了神心意的核心：出埃及時，神的根本要求不是複雜的祭祀系統，而是「聽從我的話、我就作你們的神」這個關係性的順服。撒母耳記上15:22「聽命勝於獻祭」與此呼應，表明這是貫穿聖經的神學主題。信徒的信仰生活若充滿宗教活動，卻缺乏對神話語的真實順服，就走向了「獻祭沒有聽命」的以色列人的老路。<br><br>
+<strong>3. 「從早起來差遣先知，你們卻不聽從」：神的多次呼召與人的頑固拒絕</strong><br>第25-26節「自從你們列祖出埃及地的那日，我差遣我的僕人眾先知到你們那裏去，每日從早起來差遣他們。你們卻不聽從，不側耳而聽，竟硬着頸項行惡，比你們列祖更甚」——神的呼召是持續的、多次的、從早到晚的；人的拒絕也是持續的，甚至一代比一代更頑固。這個模式警告信徒：多次聽見卻不回應，會使心靈越來越硬化；每一次的順服或拒絕，都在強化相應的靈命習慣。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們不要倚靠虛謊</strong>的話，說：『<strong>這些是耶和華的殿</strong>，是耶和華的殿！』（耶7:4）</td>
+<td>就像<strong>一個人以為持有保險單就可以不注</strong>意安全，把保單當作實際的保護本身，殿的存在不等於神的保護，信仰的外在形式不能代替內在的順服，你是否<strong>有過把某種宗</strong>教習慣或信仰身份當作「保護符」的心態，認為那樣就可以「自由了」？那種心態如何影響你<strong>的日常道德生</strong>活？</td>
+</tr>
+<tr>
+<td>「<strong>這稱為我名下的殿</strong><strong>在你們眼中豈可看</strong>為賊窩嗎？我都看見了。」（耶7:11）</td>
+<td>就像<strong>一個人週末捐款給慈善機構</strong>，平日卻在工作中欺騙客戶，以為慈善可以抵消欺騙，神看見所有行為的一致性，進殿的虔誠和出殿後的行為同樣被神所見，你<strong>的信仰生活（</strong>敬拜、讀經、禱告）和日常生活（工作、家庭、社交）之間的一致性如何？有哪些差距是神「都看見了」的？</td>
+</tr>
+<tr>
+<td>「<strong>我只吩咐他們這一</strong>件說：<strong>你們當聽從我的話</strong>，我就作你們的神，你們也作我的子民。」（耶7:23）</td>
+<td>就像<strong>一段親密的友誼</strong>，最核心的不是共同完成了多少活動，而是是否真正聽見和理解對方，神與人關係的核心是「聽從」，不是儀式的繁複，你<strong>對神話語的「</strong>聽從」有多真實——是「聽而知道」還是「聽而順從」？你<strong>上一次因為聽</strong>從了一節神的話而在生活中做出了具體改變，是什麼時候？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

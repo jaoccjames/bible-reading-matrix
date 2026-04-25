@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀下第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀下第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶戶受膏為王，殺約蘭滅耶洗別應驗預言</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>先知以利沙叫了一個先知門徒來，吩咐他說：「你束上腰，手拿這瓶膏油往基列的拉末去。</div>
+<div class="verse"><span class="verse-number">2</span>到了那裏，要尋找寧示的孫子、約沙法的兒子耶戶，使他從同僚中起來，帶他進嚴密的屋子，</div>
+<div class="verse"><span class="verse-number">3</span>將瓶裏的膏油倒在他頭上，說：『耶和華如此說：我膏你作以色列王。』說完了，就開門逃跑，不要遲延。」</div>
+<div class="verse"><span class="verse-number">4</span>於是那少年先知往基列的拉末去了。</div>
+<div class="verse"><span class="verse-number">5</span>到了那裏，看見眾軍長都坐着，就說：「將軍哪，我有話對你說。」耶戶說：「我們眾人裏，你要對那一個說呢？」回答說：「將軍哪，我要對你說。」</div>
+<div class="verse"><span class="verse-number">6</span>耶戶就起來，進了屋子，少年人將膏油倒在他頭上，對他說：「耶和華以色列的神如此說：『我膏你作耶和華民以色列的王。</div>
+<div class="verse"><span class="verse-number">7</span>你要擊殺你主人亞哈的全家，我好在耶洗別身上伸我僕人眾先知和耶和華一切僕人流血的冤。</div>
+<div class="verse"><span class="verse-number">8</span>亞哈全家必都滅亡，凡屬亞哈的男丁，無論是困住的、自由的，我必從以色列中剪除，</div>
+<div class="verse"><span class="verse-number">9</span>使亞哈的家像尼八兒子耶羅波安的家，又像亞希雅兒子巴沙的家。</div>
+<div class="verse"><span class="verse-number">10</span>耶洗別必在耶斯列田裏被狗所吃，無人葬埋。』」說完了，少年人就開門逃跑了。</div>
+<div class="verse"><span class="verse-number">11</span>耶戶出來，回到他主人的臣僕那裏，有一人問他說：「平安麼？這狂妄的人來見你有甚麼事呢？」回答說：「你們認得那人，也知道他說甚麼。」</div>
+<div class="verse"><span class="verse-number">12</span>他們說：「這是假話，你據實的告訴我們。」回答說：「他如此如此對我說。他說：『耶和華如此說：我膏你作以色列王。』」</div>
+<div class="verse"><span class="verse-number">13</span>他們就急忙各將自己的衣服鋪在上層臺階，使耶戶坐在其上；他們吹角，說：「耶戶作王了！」</div>
+<div class="verse"><span class="verse-number">14</span>這樣，寧示的孫子、約沙法的兒子耶戶背叛約蘭。先是約蘭和以色列眾人因為亞蘭王哈薛的緣故，把守基列的拉末；</div>
+<div class="verse"><span class="verse-number">15</span>但約蘭王回到耶斯列，醫治與亞蘭王哈薛打仗所受的傷。耶戶說：「若合你們的意思，就不容人逃出城往耶斯列報信去。」</div>
+<div class="verse"><span class="verse-number">16</span>於是耶戶坐車往耶斯列去，因為約蘭病臥在那裏。猶大王亞哈謝已經下去看望他。</div>
+<div class="verse"><span class="verse-number">17</span>有一個守望的人站在耶斯列的樓上，看見耶戶帶着一群人來，就說：「我看見一群人。」約蘭說：「打發一個騎馬的去迎接他們，問說：平安不平安？」</div>
+<div class="verse"><span class="verse-number">18</span>騎馬的就去迎接耶戶，說：「王問說，平安不平安？」耶戶說：「平安不平安與你何干？你轉在我後頭吧！」守望的人又說：「使者到了他們那裏，卻不回來。」</div>
+<div class="verse"><span class="verse-number">19</span>王又打發一個騎馬的去。這人到了他們那裏，說：「王問說，平安不平安？」耶戶說：「平安不平安與你何干？你轉在我後頭吧！」</div>
+<div class="verse"><span class="verse-number">20</span>守望的人又說：「他到了他們那裏，也不回來；車趕得甚猛，像寧示的孫子耶戶的趕法。」</div>
+<div class="verse"><span class="verse-number">21</span>約蘭吩咐說：「套車！」人就給他套車。以色列王約蘭和猶大王亞哈謝各坐自己的車出去迎接耶戶，在耶斯列人拿伯的田那裏遇見他。</div>
+<div class="verse"><span class="verse-number">22</span>約蘭見耶戶就說：「耶戶啊，平安嗎？」耶戶說：「你母親耶洗別的淫行邪術這樣多，焉能平安呢？」</div>
+<div class="verse"><span class="verse-number">23</span>約蘭就轉車逃跑，對亞哈謝說：「亞哈謝啊，反了！」</div>
+<div class="verse"><span class="verse-number">24</span>耶戶開滿了弓，射中約蘭的脊背，箭從心窩穿出，約蘭就仆倒在車上。</div>
+<div class="verse"><span class="verse-number">25</span>耶戶對他的軍長畢甲說：「你把他拋在耶斯列人拿伯的田間。你當追想，你我一同坐車跟隨他父亞哈的時候，耶和華對亞哈所說的預言，</div>
+<div class="verse"><span class="verse-number">26</span>說：『我昨日看見拿伯的血和他眾子的血，我必在這塊田上報應你。』這是耶和華說的，現在你要照着耶和華的話，把他拋在這田間。」</div>
+<div class="verse"><span class="verse-number">27</span>猶大王亞哈謝見這光景，就從園亭之路逃跑。耶戶追趕他，說：「把這人也殺在車上。」到了靠近以伯蓮的姑珥坡上擊傷了他。他逃到米吉多，就死在那裏。</div>
+<div class="verse"><span class="verse-number">28</span>他的臣僕用車將他的屍首送到耶路撒冷，葬在大衛城他自己的墳墓裏，與他列祖同葬。</div>
+<div class="verse"><span class="verse-number">29</span>亞哈謝登基作猶大王的時候，是在亞哈的兒子約蘭第十一年。</div>
+<div class="verse"><span class="verse-number">30</span>耶戶到了耶斯列；耶洗別聽見就擦粉、梳頭，從窗戶裏往外觀看。</div>
+<div class="verse"><span class="verse-number">31</span>耶戶進門的時候，耶洗別說：「殺主人的心利啊，平安嗎？」</div>
+<div class="verse"><span class="verse-number">32</span>耶戶抬頭向窗戶觀看，說：「誰順從我？」有兩三個太監從窗戶往外看他。</div>
+<div class="verse"><span class="verse-number">33</span>耶戶說：「把她扔下來！」他們就把她扔下來。她的血濺在牆上和馬上；於是把她踐踏了。</div>
+<div class="verse"><span class="verse-number">34</span>耶戶進去，吃了喝了，吩咐說：「你們把這被咒詛的婦人葬埋了，因為她是王的女兒。」</div>
+<div class="verse"><span class="verse-number">35</span>他們就去葬埋她，只尋得她的頭骨和腳，並手掌。</div>
+<div class="verse"><span class="verse-number">36</span>他們回去告訴耶戶，耶戶說：「這正應驗耶和華藉他僕人提斯比人以利亞所說的話，說：『在耶斯列田間，狗必吃耶洗別的肉；</div>
+<div class="verse"><span class="verse-number">37</span>耶洗別的屍首必在耶斯列田間如同糞土，甚至人不能說這是耶洗別。』」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀下第9章記述神的審判如何藉耶戶的行動在歷史中成就，是一章充滿戲劇張力和神學意義的記敘。以利沙差遣門徒膏立軍長耶戶為以色列王，並清楚宣告使命：擊殺亞哈全家，為先知的血伸冤，讓耶洗別被狗所吃。耶戶受膏後立即行動，同僚們為他吹角宣告。他騎車趕往耶斯列，以急速的駕車姿態讓守望者認出了他。以色列王約蘭和猶大王亞哈謝竟出城相迎，在拿伯的田間，耶戶射死了約蘭，履行了以利亞昔日對亞哈的預言。猶大王亞哈謝也在逃跑中被射中，死於米吉多。耶洗別在耶斯列打扮后坐等耶戶，耶戶命太監將她扔下，她被踐踏而死，被狗所食，完全應驗了以利亞的預言。本章清楚展示：神的公義雖有時遲延，卻必然成就；審判的到來有時迅猛如急速的戰車。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 受膏的使命要求立即而決斷的行動</strong><br>耶戶受膏後，不是慢慢謀算，而是立即行動，並果斷地說「不容人逃出城報信」，掌控了局面。神的呼召和使命往往需要決斷的行動，而非無休止的猶豫和準備。當神的時機到來，信徒需要有耶戶的果斷——不拖延，不讓機會在猶豫中錯過。<br><br>
+<strong>2. 神的審判不因時間的流逝而失效</strong><br>以利亞對亞哈所說的預言（在拿伯田間）在多年後透過耶戶精確地成就了。神的審判雖有時看似遲緩，實際上從未取消，而是在神所定的時間到來。這對信徒有雙重提醒：對惡人，不要因神的審判「尚未來到」而以為可以繼續逃避；對義人，不要因神的公義似乎沉默而失去信心。<br><br>
+<strong>3. 屬靈的傳承要求忠心地完成前人所未竟的使命</strong><br>以利亞的預言由以利沙的門徒傳達，由耶戶執行——這是一個跨越三代的屬靈使命完成。神的計畫往往不在一代人身上完全成就，而是由不同的人在不同的時代接力完成。信徒要有長遠的眼光，看見自己所做的在更大的神的計畫中的位置。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>少年人將膏油倒在</strong><strong>他頭上</strong>，對他說：……『我膏你作耶和華民以色列的王。你要擊殺你主人亞哈的全家……在耶洗別身上伸我僕人眾先知……流血的冤。』」（王下9:6-7）</td>
+<td>就像<strong>一位新任命的官員接獲明確的任務</strong>清單，耶戶的膏立伴隨着清楚的使命宣告。你<strong>在神對你的呼</strong>召中，是否有同樣清楚的使命感？你<strong>知道神差你去</strong>做什麼嗎？</td>
+</tr>
+<tr>
+<td>「<strong>在耶斯列人拿伯的</strong><strong>田那裏遇見他</strong>……拋在耶斯列人拿伯的田間……正如耶和華藉……以利亞所說的預言。」（王下9:21,25-26）</td>
+<td>就像<strong>一份多年前簽訂的合約在特定條件</strong>成就時自動生效，以利亞昔日的預言在多年後精確應驗。這讓你<strong>對神話語的永</strong>久有效性有何感受？是否也因此對神給你<strong>的應許更有信</strong>心？</td>
+</tr>
+<tr>
+<td>「<strong>耶戶說</strong>：『<strong>把她扔下來</strong>！』……狗必吃耶洗別的肉；耶洗別的屍首必在耶斯列田間如同糞土。」（王下9:33,36-37）</td>
+<td>就像<strong>一個人在最高峰時說出的狂言</strong>，在日後以最難堪的方式成真，耶洗別的驕傲結局正應驗了多年前以利亞所說的話。驕傲所建立的一切，終究會倒塌。你<strong>在生命中有沒</strong>有看見過驕傲導致跌倒的真實案例，使你<strong>對謙遜有新的</strong>體悟？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

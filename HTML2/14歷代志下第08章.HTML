@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志下第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志下第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">所羅門的建設：事奉有序，各歸各職</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>所羅門建造耶和華殿和王宮，二十年纔完畢了。</div>
+<div class="verse"><span class="verse-number">2</span>以後所羅門重新修築希蘭送給他的那些城邑，使以色列人住在那裏。</div>
+<div class="verse"><span class="verse-number">3</span>所羅門往哈馬瑣巴去，攻取了那地方。</div>
+<div class="verse"><span class="verse-number">4</span>所羅門建造曠野裏的達莫，又建造哈馬所有的積貨城，</div>
+<div class="verse"><span class="verse-number">5</span>又建造上伯和崙、下伯和崙作為保障，都有牆，有門，有閂；</div>
+<div class="verse"><span class="verse-number">6</span>又建造巴拉和所有的積貨城，並屯車輛馬兵的城，與耶路撒冷、利巴嫩，以及自己治理的全國中所願意建造的。</div>
+<div class="verse"><span class="verse-number">7</span>至於國中所剩下不屬以色列人的赫人、亞摩利人、比利洗人、希未人、耶布斯人，</div>
+<div class="verse"><span class="verse-number">8</span>就是以色列人未曾滅絕的，所羅門挑取他們的後裔作服苦的奴僕，直到今日。</div>
+<div class="verse"><span class="verse-number">9</span>惟有以色列人，所羅門不使他們當奴僕作工，乃是作他的戰士、軍長的統領、車兵長、馬兵長。</div>
+<div class="verse"><span class="verse-number">10</span>所羅門王有二百五十督工的，監管工人。</div>
+<div class="verse"><span class="verse-number">11</span>所羅門將法老的女兒帶出大衛城，上到為她建造的宮裏；因所羅門說：「耶和華約櫃所到之處都為聖地，所以我的妻不可住在以色列王大衛的宮裏。」</div>
+<div class="verse"><span class="verse-number">12</span>所羅門在耶和華的壇上，就是在廊子前他所築的壇上，與耶和華獻燔祭；</div>
+<div class="verse"><span class="verse-number">13</span>又遵着摩西的吩咐在安息日、月朔，並一年三節，就是除酵節、七七節、住棚節，獻每日所當獻的祭。</div>
+<div class="verse"><span class="verse-number">14</span>所羅門照着他父大衛所定的例，派定祭司的班次，使他們各供己事，又使利未人各盡其職，讚美耶和華，在祭司面前作每日所當作的；又派守門的按着班次看守各門，因為神人大衛是這樣吩咐的。</div>
+<div class="verse"><span class="verse-number">15</span>王所吩咐眾祭司和利未人的，無論是管府庫或辦別的事，他們都不違背。</div>
+<div class="verse"><span class="verse-number">16</span>所羅門建造耶和華的殿，從立根基直到成功的日子，工料俱備。這樣，耶和華的殿全然完畢。</div>
+<div class="verse"><span class="verse-number">17</span>那時，所羅門往以東地靠海的以旬迦別和以祿去。</div>
+<div class="verse"><span class="verse-number">18</span>希蘭差遣他的臣僕，將船隻和熟悉泛海的僕人送到所羅門那裏。他們同着所羅門的僕人到了俄斐，得了四百五十他連得金子，運到所羅門王那裏。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志下第八章記述所羅門在建造聖殿和王宮之後（二十年完工，1節），繼續進行的各項建設與行政工作：重修希蘭所贈城邑（2節）、擴張版圖到哈馬（3節）、修建各積貨城和屯兵城（4-6節）、使用外邦人作苦工（7-9節）、安置法老之女（11節）、維持聖殿事奉秩序（12-16節），以及向南拓展海上貿易（17-18節）。
+
+      本章最具神學意義的細節是第11節：所羅門把法老的女兒安置在另一處，理由是「耶和華約櫃所到之處都為聖地，所以我的妻不可住在以色列王大衛的宮裏」。這個決定顯示所羅門對聖潔的認識——對神的尊榮保持高度敏感。另一個重要細節是第14節：他「照着他父大衛所定的例，派定祭司的班次……按班次看守各門，因為神人大衛是這樣吩咐的」。忠於前人所傳的秩序，是健全事奉體系的關鍵。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 忠於已建立的秩序是長久事奉的保障</strong><br>所羅門「照着他父大衛所定的例」安排各班次（14節），沒有因自己是新王而任意改變前人建立的事奉秩序。好的秩序值得被傳承，不是因為它「古老」，而是因為它經過驗證有其價值。信仰群體中，隨意廢除已有秩序往往帶來混亂；謙卑承接前人的智慧，同時在適當處更新，才是成熟的做法。<br><br>
+<strong>2. 對神的聖潔保持高度敏感</strong><br>所羅門因「約櫃所到之處都為聖地」而特別安排法老之女的住處，這種對聖潔的細膩考量說明他把神的尊榮放在日常決策中。信徒在生活的大小決定中，若也能問「這樣做是否尊榮神」，整體生命的方向就會更清晰。<br><br>
+<strong>3. 開拓與事奉可以並行不悖</strong><br>本章所羅門同時進行建設擴張和聖殿事奉的維持，二者並不衝突。今日信徒可以在商業、建設或其他世俗領域全力投入，同時維持對神的事奉和敬拜，二者是互相支持而非互相排斥的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>所在的建造耶和華</strong>的殿，<strong>二十年纔完畢了</strong>。（代下8:1）</td>
+<td>二十年才完成一項使命，不是拖延，而是長期的委身，就像<strong>一棵大樹不是一年長成的</strong>，但每一圈年輪都真實地記錄了它的成長——在你<strong>的信仰旅程中</strong>，有沒有一件你<strong>花了比預期更</strong>長時間才完成的事？回頭看，那個「慢」帶來了什麼你<strong>意想不到的深</strong>度？</td>
+</tr>
+<tr>
+<td><strong>所羅門照着他父大</strong><strong>衛所定的例</strong>，派定祭司的班次……又派守門的按着班次看守各門，因為神人大衛是這樣吩咐的。（代下8:14）</td>
+<td>所羅門傳承父親的秩序，不因自己是王就任意改變，就像<strong>一個接手老店的繼承人</strong>，在了解並尊重原有運作方式後，才思考如何改進——在你<strong>所在的群體中</strong>，你是否<strong>也懂得先了解</strong>並尊重已建立的秩序，而不是急於用自己的方式取代一切？</td>
+</tr>
+<tr>
+<td><strong>所羅門將法老的女</strong><strong>兒帶出大衛城</strong>……因所羅門說：「耶和華約櫃所到之處都為聖地，所以我的妻不可住在以色列王大衛的宮裏。」（代下8:11）</td>
+<td>所羅門因聖潔的考量而特別安排居住的地方，把神的尊榮放在家庭安排的優先位置，就像<strong>一個人裝修新家時優先考量「這裡</strong>適合靈修、禱告嗎」，而非只看裝潢效果——你<strong>在生活安排中</strong>，神的聖潔和尊榮佔據了多少決策的考量？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

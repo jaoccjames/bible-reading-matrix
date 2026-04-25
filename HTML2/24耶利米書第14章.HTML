@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第14章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第14章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">旱災中的哀求與假先知的審判</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華論到乾旱之災的話臨到耶利米：</div>
+<div class="verse"><span class="verse-number">2</span>猶大悲哀，城門衰敗。眾人披上黑衣坐在地上；耶路撒冷的哀聲上達。</div>
+<div class="verse"><span class="verse-number">3</span>他們的貴冑打發家僮打水；他們來到水池，見沒有水，就拿着空器皿，蒙羞慚愧，抱頭而回。</div>
+<div class="verse"><span class="verse-number">4</span>耕地的也蒙羞抱頭；因為無雨降在地上，地都乾裂。</div>
+<div class="verse"><span class="verse-number">5</span>田野的母鹿生下小鹿，就撇棄，因為無草。</div>
+<div class="verse"><span class="verse-number">6</span>野驢站在淨光的高處，喘氣好像野狗；因為無草，眼目失明。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華啊，我們的罪孽雖然作見證告我們，還求你為你名的緣故行事。我們本是多次背道，得罪了你。</div>
+<div class="verse"><span class="verse-number">8</span>以色列所盼望、在患難時作他救主的啊，你為何在這地像寄居的，又像行路的只住一宵呢？</div>
+<div class="verse"><span class="verse-number">9</span>你為何像受驚的人，像不能救人的勇士呢？耶和華阿，你仍在我們中間；我們也稱為你名下的人，求你不要離開我們。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華對這百姓如此說：這百姓喜愛妄行〔原文作飄流〕，不禁止腳步，所以耶和華不悅納他們。現今要記念他們的罪孽，追討他們的罪惡。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華又對我說：「不要為這百姓祈禱求好處。</div>
+<div class="verse"><span class="verse-number">12</span>他們禁食的時候，我不聽他們的呼求；他們獻燔祭和素祭，我也不悅納；我卻要用刀劍、饑荒、瘟疫滅絕他們。」</div>
+<div class="verse"><span class="verse-number">13</span>我就說：「唉！主耶和華啊，那些先知常對他們說：『你們必不看見刀劍，也不遭遇饑荒；耶和華要在這地方賜你們長久的平安。』」</div>
+<div class="verse"><span class="verse-number">14</span>耶和華對我說：「那些先知託我的名說假預言，我並沒有打發他們，沒有吩咐他們，也沒有對他們說話；他們向你們預言的，乃是虛假的異象和占卜，並虛無的事，以及本心的詭詐。</div>
+<div class="verse"><span class="verse-number">15</span>所以耶和華如此說：論到託我名說預言的那些先知，我並沒有打發他們；他們還說這地不能有刀劍饑荒，其實那些先知必被刀劍饑荒滅絕。</div>
+<div class="verse"><span class="verse-number">16</span>聽他們說預言的百姓必因饑荒刀劍拋在耶路撒冷的街道上，無人葬埋。他們連妻子帶兒女，都是如此。我必將他們的惡倒在他們身上〔或作：我必使他們罪惡的報應臨到他們身上〕。」</div>
+<div class="verse"><span class="verse-number">17</span>你要將這話對他們說：願我眼淚汪汪，晝夜不息，因為我百姓〔原文作民的處女〕受了裂口破壞的大傷。</div>
+<div class="verse"><span class="verse-number">18</span>我若出往田間，就見有被刀殺的；我若進入城內，就見有因饑荒患病的；連先知帶祭司在國中往來，也是毫無知識〔或作：不知怎樣纔好〕。</div>
+<div class="verse"><span class="verse-number">19</span>你全然棄掉猶大嗎？你心厭惡錫安嗎？為何擊打我們，以致無法醫治呢？我們指望平安，卻得不着好處；指望痊癒，不料，受了驚惶。</div>
+<div class="verse"><span class="verse-number">20</span>耶和華啊，我們承認自己的罪惡，和我們列祖的罪孽，因我們得罪了你。</div>
+<div class="verse"><span class="verse-number">21</span>求你為你名的緣故，不厭惡我們，不辱沒你榮耀的寶座。求你追念，不要背了與我們所立的約。</div>
+<div class="verse"><span class="verse-number">22</span>外邦人虛無的神中有能降雨的嗎？天能自降甘霖嗎？耶和華我們的神啊，能如此的不是你嗎？所以，我們仍要等候你，因為這一切都是你所造的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第14章記載一場嚴重旱災降臨猶大，人、牲畜與野生動物都因乾旱而受苦：貴冑的家僮打不到水、耕地開裂、野地母鹿棄養小鹿、野驢喘息如野狗。旱災在古代近東被視為神的審判，是違約的懲罰。本章由三個部分交織構成：其一是百姓透過耶利米代求的哀歌（7-9節），誠懇承認罪孽，呼求神不要離棄；其二是神對耶利米的嚴肅指示——不准為這百姓代禱，因他們的罪孽已達到不可挽回的地步（11-12節）；其三是假先知問題的揭露（13-16節），假先知散布「平安」的謊言，麻醉百姓，使他們看不見危機。神明確說他沒有打發這些假先知，他們的話是虛假的異象與心中的詭詐。章末（19-22節）是更深的哀求：百姓透過先知認罪，並呼求神為祂名的緣故施恩，承認唯有神能使雨降下，顯示他們在極度困境中重新轉向神。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【苦難是神呼召我們轉向祂的時機】</strong><br>旱災帶來的災難觸及每個社會階層：貴族、農夫、野獸都受影響。神用自然界的困境來警醒百姓，使他們在貧乏中看見自己的需要，轉向神。今日的信徒在「旱旱之地」的生命低潮期，是否能看見其中神的呼喚？苦難不必然是懲罰，有時是恩典的邀請，呼召我們停下來轉向神，承認我們的依賴與需要。<br><br>
+<strong>2. 【真誠認罪是恢復關係的第一步】</strong><br>第20至21節的禱告是本章精髓：「我們承認自己的罪惡，和我們列祖的罪孽，因我們得罪了你。」這禱告不辯解、不轉移責任，而是正面承認罪。真誠的認罪建立在對神公義性情的認識上，也建立在對神慈愛的信靠上。這種禱告顯示悔改並非軟弱，而是重建與神關係的誠實行動。<br><br>
+<strong>3. 【辨別真假信息，不受謊言迷惑】</strong><br>假先知說「你們必不看見刀劍，也不遭遇饑荒」，帶給百姓虛假的安慰。神明確表示他沒有差遣這些人，他們的信息是「本心的詭詐」。今日充斥着各種靈性信息，有些讓人「感覺良好」，卻可能是謊言。信徒需要學習以神的話為準則，辨別哪些話是真正出於神，哪些是人意奉承。真正愛人的信息，有時令人不舒服，但卻帶來生命。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華啊</strong>，<strong>我們的罪孽雖然作</strong>見證告我們，還求你為你名的緣故行事。我們本是多次背道，得罪了你。（耶14:7）</td>
+<td>當你<strong>面對生命的困</strong>境，你<strong>的第一反應</strong>是埋怨環境，還是誠實承認自己的責任？就像<strong>手機電量耗盡不是充電器的問題</strong>，你願意<strong>在困難中先誠</strong>實面對自己的狀態，向神認罪嗎？</td>
+</tr>
+<tr>
+<td><strong>那些先知託我的名</strong><strong>說假預言</strong>，我並沒有打發他們，沒有吩咐他們，也沒有對他們說話；他們向你們預言的，乃是虛假的異象和占卜，並虛無的事，以及本心的詭詐。（耶14:14）</td>
+<td>你如何<strong>判斷一個靈性</strong>信息是否真正出於神？就像<strong>辨別網路上的假新聞需要回到可靠</strong>的原始來源查證，你是否<strong>習慣用神的話</strong>來驗證你<strong>所聽到的教導</strong>或建議？</td>
+</tr>
+<tr>
+<td><strong>外邦人虛無的神中</strong><strong>有能降雨的嗎</strong>？天能自降甘霖嗎？耶和華我們的神啊，能如此的不是你嗎？所以，我們仍要等候你，因為這一切都是你所造的。（耶14:22）</td>
+<td>在你<strong>最無力的時刻</strong>，你仍能說出「我仍要等候你<strong>」嗎</strong>？就像<strong>在長時間的停電中</strong>，知道只有電力公司能恢復供電而耐心等待，你能把最終的解決權交在神手中，安心等候嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

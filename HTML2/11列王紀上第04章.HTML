@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀上第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀上第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">所羅門王國極盛，智慧廣博萬民傾慕</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>所羅門作以色列眾人的王。</div>
+<div class="verse"><span class="verse-number">2</span>他的臣子記在下面：撒督的兒子亞撒利雅作祭司，</div>
+<div class="verse"><span class="verse-number">3</span>示沙的兩個兒子以利何烈、亞希亞作書記，亞希律的兒子約沙法作史官，</div>
+<div class="verse"><span class="verse-number">4</span>耶何耶大的兒子比拿雅作元帥，撒督和亞比亞他作祭司長，</div>
+<div class="verse"><span class="verse-number">5</span>拿單的兒子亞撒利雅作眾吏長，王的朋友拿單的兒子撒布得作領袖，</div>
+<div class="verse"><span class="verse-number">6</span>亞希煞作家宰，亞比大的兒子亞多尼蘭掌管服苦的人。</div>
+<div class="verse"><span class="verse-number">7</span>所羅門在以色列全地立了十二個官吏，使他們供給王和王家的食物，每年各人供給一月。</div>
+<div class="verse"><span class="verse-number">8</span>他們的名字記在下面：在以法蓮山地有便戶珥；</div>
+<div class="verse"><span class="verse-number">9</span>在瑪迦斯、沙賓、伯示麥、以倫伯哈南有便底甲；</div>
+<div class="verse"><span class="verse-number">10</span>在亞魯泊有便希悉，他管理梭哥和希弗全地；</div>
+<div class="verse"><span class="verse-number">11</span>在多珥山崗〔或作：全境〕有便亞比拿達，他娶了所羅門的女兒他法為妻；</div>
+<div class="verse"><span class="verse-number">12</span>在他納和米吉多，並靠近撒拉他拿、耶斯列下邊的伯善全地，從伯善到亞伯米何拉直到約念之外，有亞希律的兒子巴拿；</div>
+<div class="verse"><span class="verse-number">13</span>在基列的拉末有便基別，他管理在基列的瑪拿西子孫睚珥的城邑，巴珊的亞珥歌伯地的大城六十座，都有城牆和銅閂；</div>
+<div class="verse"><span class="verse-number">14</span>在瑪哈念有易多的兒子亞希拿達；</div>
+<div class="verse"><span class="verse-number">15</span>在拿弗他利有亞希瑪斯，他也娶了所羅門的一個女兒巴實抹為妻；</div>
+<div class="verse"><span class="verse-number">16</span>在亞設和亞祿有戶篩的兒子巴拿；</div>
+<div class="verse"><span class="verse-number">17</span>在以薩迦有帕路亞的兒子約沙法；</div>
+<div class="verse"><span class="verse-number">18</span>在便雅憫有以拉的兒子示每；</div>
+<div class="verse"><span class="verse-number">19</span>在基列地，就是從前屬亞摩利王西宏和巴珊王噩之地，有烏利的兒子基別一人管理。</div>
+<div class="verse"><span class="verse-number">20</span>猶大人和以色列人如同海邊的沙那樣多，都吃喝快樂。</div>
+<div class="verse"><span class="verse-number">21</span>所羅門統管諸國，從大河到非利士地，直到埃及的邊界。所羅門在世的日子，這些國都進貢服事他。</div>
+<div class="verse"><span class="verse-number">22</span>所羅門每日所用的食物：細麵三十歌珥，粗麵六十歌珥，</div>
+<div class="verse"><span class="verse-number">23</span>肥牛十隻，草場的牛二十隻，羊一百隻，還有鹿、羚羊、麅子，並肥禽。</div>
+<div class="verse"><span class="verse-number">24</span>所羅門管理大河西邊的諸王，以及從提弗薩直到迦薩的全地，四境盡都平安。</div>
+<div class="verse"><span class="verse-number">25</span>所羅門在世的日子，從但到別是巴的猶大人和以色列人都在自己的葡萄樹下和無花果樹下安然居住。</div>
+<div class="verse"><span class="verse-number">26</span>所羅門有套車的馬四萬，還有馬兵一萬二千。</div>
+<div class="verse"><span class="verse-number">27</span>那十二個官吏各按各月供給所羅門王，並一切與他同席之人的食物，一無所缺。</div>
+<div class="verse"><span class="verse-number">28</span>眾人各按各分，將養馬與快馬的大麥和乾草送到官吏那裏。</div>
+<div class="verse"><span class="verse-number">29</span>神賜給所羅門極大的智慧聰明和廣大的心，如同海沙不可測量。</div>
+<div class="verse"><span class="verse-number">30</span>所羅門的智慧超過東方人和埃及人的一切智慧。</div>
+<div class="verse"><span class="verse-number">31</span>他的智慧勝過萬人，勝過以斯拉人以探，並瑪曷的兒子希幔、甲各、達大的智慧。他的名聲傳揚在四圍的列國。</div>
+<div class="verse"><span class="verse-number">32</span>他作箴言三千句，詩歌一千零五首。</div>
+<div class="verse"><span class="verse-number">33</span>他講論草木，自利巴嫩的香柏樹直到牆上長的牛膝草，又講論飛禽走獸、昆蟲水族。</div>
+<div class="verse"><span class="verse-number">34</span>天下列王聽見所羅門的智慧，就都差人來聽他的智慧話。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀上第4章描繪所羅門王國的全盛景象，呈現神所應許的豐盛在歷史上的具體實現。本章首先記載所羅門的文武百官名單，顯示其政府組織的嚴密有序；隨後記錄十二行政區及各區官吏，他們負責輪流供應王室每月的糧食需求。王國版圖從大河（幼發拉底河）延伸至埃及邊界，諸國皆來進貢。百姓人數眾多如海沙，「都吃喝快樂」，在葡萄樹和無花果樹下安然居住，正是應驗了先知對彌賽亞時代的預言圖景。本章高潮是對所羅門智慧的描述：神賜給他「廣大的心，如同海沙不可測量」，他超越東方所有智者，作箴言三千、詩歌千首，通曉自然萬物，使天下列王競相前來求教。本章是以色列歷史上最接近「應許完全實現」的黃金時代記錄，卻也隱含著日後衰落的種子。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神所賜的恩典廣及各個層面，物質與屬靈並不對立</strong><br>所羅門的繁榮涵蓋政治穩定、百姓安樂、國際聲望和超凡智慧——這一切都是神所賜的。本章告訴信徒：神的祝福不僅限於屬靈領域，也可以在物質、社會和智識的層面豐盛顯現。神是全人的神，祂的恩典可以滋養人生命的各個維度。然而，這一切恩典的根源和條件始終是與神的關係，一旦失去這個根基，再豐盛的繁榮也會凋零。<br><br>
+<strong>2. 神賜智慧的廣度，使人能榮耀祂並服事世界</strong><br>所羅門的智慧不只用於斷案或治國，也延伸到自然知識——從香柏樹到牛膝草、從飛禽到水族——他以廣博的知識讚頌神的創造。這提醒信徒：神所賜的智慧不應被侷限在狹窄的宗教領域，而應延伸到學術、藝術、科學和自然探索的各個層面。凡是尋求真理的努力，都可以成為榮耀神的方式，因為一切真理都源自那位創造萬物的神。<br><br>
+<strong>3. 真實的繁榮是使周圍的人都得享安息與快樂</strong><br>「猶大人和以色列人都吃喝快樂」、「在自己的葡萄樹下和無花果樹下安然居住」——所羅門的繁榮不只是王室的奢華，而是百姓普遍的安康。真正合神心意的領袖，其成就應當使周圍的人受益、得安息，而非只是彰顯自身的榮耀與財富。信徒在各自的崗位上，也應當問自己：我的「繁榮」是否使周圍的人也得到祝福？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>猶大人和以色列人</strong>……<strong>都吃喝快樂</strong>。」「從但到別是巴……都在自己的葡萄樹下和無花果樹下安然居住。」（王上4:20,25）</td>
+<td>就像<strong>一位好的父母讓全家人都感到安全</strong>和被愛，所羅門的繁榮讓每個百姓都切實享受。你<strong>現在擁有的祝</strong>福，有沒有讓周圍的人——家人、同事、鄰舍——也感受到恩惠與安息？</td>
+</tr>
+<tr>
+<td>「<strong>神賜給所羅門極大</strong><strong>的智慧聰明和廣大</strong>的心，如同海沙不可測量。」（王上4:29）</td>
+<td>就像<strong>水源流動才能灌溉更廣的田地</strong>，神賜給所羅門廣大的心是為了服事更多的人和萬物。你是否<strong>也在培養自己</strong>的心胸與眼界，讓神賜給你<strong>的知識與</strong>能力能夠流向更廣的服事範疇？</td>
+</tr>
+<tr>
+<td>「<strong>天下列王聽見所羅</strong><strong>門的智慧</strong>，就都差人來聽他的智慧話。」（王上4:34）</td>
+<td>就像<strong>一個出色的導師自然地吸引學生主</strong>動前來求教，所羅門的智慧使列王主動尋訪他。你<strong>的信仰生命</strong>是否也散發出一種讓人渴望靠近、想要聆聽的屬靈智慧與深度？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第32章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第32章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以信心買田地的行動預言</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>猶大王西底家第十年，就是尼布甲尼撒十八年，耶和華的話臨到耶利米。</div>
+<div class="verse"><span class="verse-number">2</span>那時巴比倫王的軍隊圍困耶路撒冷，先知耶利米囚在護衛兵的院內，在猶大王的宮中；</div>
+<div class="verse"><span class="verse-number">3</span>因為猶大王西底家已將他囚禁，說：「你為甚麼預言說，耶和華如此說：『我必將這城交在巴比倫王的手中，他必攻取這城。</div>
+<div class="verse"><span class="verse-number">4</span>猶大王西底家必不能逃脫迦勒底人的手，定要交在巴比倫王的手中，要口對口彼此說話，眼對眼彼此相看。</div>
+<div class="verse"><span class="verse-number">5</span>巴比倫王必將西底家帶到巴比倫；西底家必住在那裏，直到我眷顧他的時候。你們雖與迦勒底人爭戰，卻不順利。這是耶和華說的。』」</div>
+<div class="verse"><span class="verse-number">6</span>耶利米說：「耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">7</span>『你叔叔沙龍的兒子哈拿篾必來見你，說：我在亞拿突的那塊地，求你買來；因你買這地是合乎贖回之理。』」</div>
+<div class="verse"><span class="verse-number">8</span>我叔叔的兒子哈拿篾果然照耶和華的話來到護衛兵的院內，對我說：「我在便雅憫境內、亞拿突的那塊地，求你買來；因你買來是合乎承受之理，是你當贖的。你為自己買來吧！」我耶利米就知道這是耶和華的話。</div>
+<div class="verse"><span class="verse-number">9</span>我便向我叔叔的兒子哈拿篾買了亞拿突的那塊地，平了十七舍客勒銀子給他。</div>
+<div class="verse"><span class="verse-number">10</span>我在契上畫押，將契封緘，又請見證人來，並用天平將銀子平給他。</div>
+<div class="verse"><span class="verse-number">11</span>我便將照例按規所立的買契，就是封緘的那一張和敞着的那一張，</div>
+<div class="verse"><span class="verse-number">12</span>當着我叔叔的兒子哈拿篾和畫押作見證的人，並坐在護衛兵院內的一切猶大人眼前，交給瑪西雅的孫子尼利亞的兒子巴錄。</div>
+<div class="verse"><span class="verse-number">13</span>當着他們眾人眼前，我囑咐巴錄說：</div>
+<div class="verse"><span class="verse-number">14</span>「萬軍之耶和華以色列的神如此說：要將這封緘的和敞着的兩張契放在瓦器裏，可以存留多日。</div>
+<div class="verse"><span class="verse-number">15</span>因為萬軍之耶和華以色列的神如此說：將來在這地必有人再買房屋、田地，和葡萄園。」</div>
+<div class="verse"><span class="verse-number">16</span>我將買契交給尼利亞的兒子巴錄以後，便禱告耶和華說：</div>
+<div class="verse"><span class="verse-number">17</span>「主耶和華啊，你曾用大能和伸出來的膀臂創造天地，在你沒有難成的事。</div>
+<div class="verse"><span class="verse-number">18</span>你施慈愛與千萬人，又將父親的罪孽報應在他後世子孫的懷中，是至大全能的神，萬軍之耶和華是你的名。</div>
+<div class="verse"><span class="verse-number">19</span>謀事有大略，行事有大能，注目觀看世人一切的舉動，為要照各人所行的和他作事的結果報應他。</div>
+<div class="verse"><span class="verse-number">20</span>在埃及地顯神蹟奇事，直到今日在以色列和別人中間也是如此，使自己得了名聲，正如今日一樣。</div>
+<div class="verse"><span class="verse-number">21</span>用神蹟奇事和大能的手，並伸出來的膀臂與大可畏的事，領你的百姓以色列出了埃及。</div>
+<div class="verse"><span class="verse-number">22</span>將這地賜給他們，就是你向他們列祖起誓應許賜給他們流奶與蜜之地。</div>
+<div class="verse"><span class="verse-number">23</span>他們進入這地得了為業，卻不聽從你的話，也不遵行你的律法；你一切所吩咐他們行的，他們一無所行，因此你使這一切的災禍臨到他們。</div>
+<div class="verse"><span class="verse-number">24</span>看哪，敵人已經來到，築壘要攻取這城；城也因刀劍、饑荒、瘟疫交在攻城的迦勒底人手中。你所說的話都成就了，你也看見了。</div>
+<div class="verse"><span class="verse-number">25</span>主耶和華啊，你對我說：要用銀子為自己買那塊地，又請見證人。其實這城已交在迦勒底人的手中了。」</div>
+<div class="verse"><span class="verse-number">26</span>耶和華的話臨到耶利米說：</div>
+<div class="verse"><span class="verse-number">27</span>「我是耶和華，是凡有血氣者的神，豈有我難成的事嗎？</div>
+<div class="verse"><span class="verse-number">28</span>耶和華如此說：我必將這城交付迦勒底人的手和巴比倫王尼布甲尼撒的手，他必攻取這城。</div>
+<div class="verse"><span class="verse-number">29</span>攻城的迦勒底人必來放火焚燒這城和其中的房屋。在這房屋上，人曾向巴力燒香，向別神澆奠，惹我發怒。</div>
+<div class="verse"><span class="verse-number">30</span>以色列人和猶大人自從幼年以來，專行我眼中看為惡的事；以色列人盡以手所作的惹我發怒。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">31</span>這城自從建造的那日直到今日，常惹我的怒氣和忿怒，使我將這城從我面前除掉；</div>
+<div class="verse"><span class="verse-number">32</span>是因以色列人和猶大人一切的邪惡，就是他們和他們的君王、首領、祭司、先知，並猶大的眾人，以及耶路撒冷的居民所行的，惹我發怒。</div>
+<div class="verse"><span class="verse-number">33</span>他們以背向我，不以面向我；我雖從早起來教訓他們，他們卻不聽從，不受教訓，</div>
+<div class="verse"><span class="verse-number">34</span>竟把可憎之物設立在稱為我名下的殿中，污穢了這殿。</div>
+<div class="verse"><span class="verse-number">35</span>他們在欣嫩子谷建築巴力的邱壇，好使自己的兒女經火歸摩洛；他們行這可憎的事，使猶大陷在罪裏，這並不是我所吩咐的，也不是我心所起的意。」</div>
+<div class="verse"><span class="verse-number">36</span>現在論到這城，就是你們所說、已經因刀劍、饑荒、瘟疫交在巴比倫王手中的，耶和華以色列的神如此說：</div>
+<div class="verse"><span class="verse-number">37</span>「我在怒氣、忿怒，和大惱恨中，將以色列人趕到各國。日後我必從那裏將他們招聚出來，領他們回到此地，使他們安然居住。</div>
+<div class="verse"><span class="verse-number">38</span>他們要作我的子民，我要作他們的神。</div>
+<div class="verse"><span class="verse-number">39</span>我要使他們彼此同心同道，好叫他們永遠敬畏我，使他們和他們後世的子孫得福樂，</div>
+<div class="verse"><span class="verse-number">40</span>又要與他們立永遠的約，必隨着他們施恩，並不離開他們，且使他們有敬畏我的心，不離開我。</div>
+<div class="verse"><span class="verse-number">41</span>我必歡喜施恩與他們，要盡心盡意、誠誠實實將他們栽於此地。</div>
+<div class="verse"><span class="verse-number">42</span>「因為耶和華如此說：我怎樣使這一切大禍臨到這百姓，我也要照樣使我所應許他們的一切福樂都臨到他們。</div>
+<div class="verse"><span class="verse-number">43</span>你們說，這地是荒涼、無人民、無牲畜，是交付迦勒底人手之地。日後在這境內，必有人置買田地。</div>
+<div class="verse"><span class="verse-number">44</span>在便雅憫地、耶路撒冷四圍的各處、猶大的城邑、山地的城邑、高原的城邑，並南地的城邑，人必用銀子買田地，在契上畫押，將契封緘，請出見證人，因為我必使被擄的人歸回。這是耶和華說的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第32章是整卷書中最具行動戲劇性的一章，發生在耶路撒冷被圍困的緊要關頭（主前588年）。耶利米被囚於護衛兵院中，城外是巴比倫大軍，城破幾乎已成定局。就在此時，神吩咐他做一件在人看來荒謬的事：去買他家鄉亞拿突的一塊田地。這個行動的意義是：在城市即將被毀滅之際，以買賣田地的法律行動，宣告「神必使被擄的人歸回，將來這地必再有人置買田地」。耶利米照辦，辦齊所有法律手續：秤銀子、立契約、封緘、請見證人，將契約存在瓦器中。然後他禱告，誠實表達自己的困惑：明明城快被攻取，你為何吩咐我買地？神的回應是：「我是凡有血氣者的神，豈有我難成的事嗎？」接着宣告審判的必然，以及審判後恢復的確定——「我必歡喜施恩與他們，要盡心盡意、誠誠實實將他們栽於此地」。買地的行動，是在最黑暗的時刻以具體行動宣告對神應許的信心。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【信心需要具體行動，即使環境看似絕望】</strong><br>在城市即將陷落之際買地，從人的角度看是愚蠢的——但從信仰的角度看，這是最有力的見證。信心不只是腦中的相信，而是在不利的環境中仍然按神的話採取行動。當一切都朝反方向走，仍然「投資」於神的應許，這是信心的行動語言。信徒面對不確定的未來，最有力的宣告有時不是說的，而是做的。<br><br>
+<strong>2. 【誠實的困惑與禱告是信仰的一部分】</strong><br>耶利米買了地，然後誠實地禱告：「主啊，你叫我買地，但城已快被攻取了。」他沒有假裝沒有疑惑，而是把疑惑帶到神面前。神沒有責備他，而是回應：「豈有我難成的事嗎？」信仰不要求我們壓抑困惑，而是邀請我們把困惑誠實帶到禱告中，讓神的話回應我們的疑問。真信心可以同時持有行動與疑惑。<br><br>
+<strong>3. 【神的審判之後有確定的恢復計畫】</strong><br>神說：「我怎樣使這一切大禍臨到這百姓，我也要照樣使我所應許他們的一切福樂都臨到他們。」審判的規模有多大，恢復的確定性就有多大。神的信實在兩個方向上都同樣確定：祂的審判不落空，祂的應許也不落空。這個「同樣確定」的盼望，給信徒在管教之後的恢復以最有力的保證。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我是耶和華</strong>，<strong>是凡有血氣者的神</strong>，豈有我難成的事嗎？（耶32:27）</td>
+<td>你<strong>的禱告清單中</strong>有沒有某個你<strong>已半放棄的請</strong>求，因為感覺「太難了」？就像<strong>把一個複雜的工程問題交給世界頂</strong>級的工程師，你願意<strong>把那個「太難</strong>」的問題，重新以「豈有我難成的事嗎」為基礎，帶到神面前嗎？</td>
+</tr>
+<tr>
+<td><strong>要將這封緘的和敞</strong><strong>着的兩張契放在瓦</strong>器裏，可以存留多日。因為萬軍之耶和華以色列的神如此說：將來在這地必有人再買房屋、田地，和葡萄園。（耶32:14-15）</td>
+<td>在你<strong>生命中最困難</strong>的時刻，你是否<strong>曾做出一個「</strong>投資未來」的信心行動，哪怕當時環境根本不支持這個決定？就像<strong>在房市最低迷時買房的人後來往往</strong>受益，你願意<strong>在今天最艱難</strong>的處境中，採取一個宣告「神的應許必成就」的具體行動嗎？</td>
+</tr>
+<tr>
+<td><strong>我必歡喜施恩與他</strong>們，<strong>要盡心盡意</strong>、誠誠實實將他們栽於此地。（耶32:41）</td>
+<td>你是否<strong>有時覺得神對</strong>你<strong>的帶領</strong>是勉強的、被動的？「歡喜施恩」、「盡心盡意」這幾個詞如何改變你<strong>對神心意的想</strong>像？就像<strong>一個熱情的園丁為植物費心照料</strong>，神對你<strong>的「栽植」</strong>是帶着多少熱情和用心，你能在這個光中重新理解你<strong>的人生路徑嗎</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

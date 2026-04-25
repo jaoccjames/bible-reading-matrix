@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第38章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第38章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">燔祭壇洗盆院子與材料總賬</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>他用皂莢木作燔祭壇，是四方的，長五肘，寬五肘，高三肘，</div>
+<div class="verse"><span class="verse-number">2</span>在壇的四拐角上作四個角，與壇接連一塊，用銅把壇包裹。</div>
+<div class="verse"><span class="verse-number">3</span>他作壇上的盆、鏟子、盤子、肉鍤子、火鼎；這一切器具都是用銅作的。</div>
+<div class="verse"><span class="verse-number">4</span>又為壇作一個銅網，安在壇四面的圍腰板以下，從下達到壇的半腰。</div>
+<div class="verse"><span class="verse-number">5</span>為銅網的四角鑄四個環子，作為穿杠的用處。</div>
+<div class="verse"><span class="verse-number">6</span>用皂莢木作杠，用銅包裹，</div>
+<div class="verse"><span class="verse-number">7</span>把杠穿在壇兩旁的環子內，用以抬壇，並用板作壇；壇是空的。</div>
+<div class="verse"><span class="verse-number">8</span>他用銅作洗濯盆和盆座，是用會幕門前伺候的婦人之鏡子作的。</div>
+<div class="verse"><span class="verse-number">9</span>他作帳幕的院子。院子的南面用撚的細麻作帷子，寬一百肘。</div>
+<div class="verse"><span class="verse-number">10</span>帷子的柱子二十根，帶卯的銅座二十個；柱子上的鉤子和杆子都是用銀子作的。</div>
+<div class="verse"><span class="verse-number">11</span>北面也有帷子，寬一百肘。帷子的柱子二十根，帶卯的銅座二十個；柱子上的鉤子和杆子都是用銀子作的。</div>
+<div class="verse"><span class="verse-number">12</span>院子的西面有帷子，寬五十肘。帷子的柱子十根，帶卯的座十個；柱子的鉤子和杆子都是用銀子作的。</div>
+<div class="verse"><span class="verse-number">13</span>院子的東面，寬五十肘。</div>
+<div class="verse"><span class="verse-number">14</span>門這邊的帷子十五肘，那邊也是一樣。帷子的柱子三根，帶卯的座三個。在門的左右各有帷子十五肘，帷子的柱子三根，帶卯的座三個。</div>
+<div class="verse"><span class="verse-number">15</span>併於上節</div>
+<div class="verse"><span class="verse-number">16</span>院子四面的帷子都是用撚的細麻作的。</div>
+<div class="verse"><span class="verse-number">17</span>柱子帶卯的座是銅的，柱子上的鉤子和杆子是銀的，柱頂是用銀子包的。院子一切的柱子都是用銀杆連絡的。</div>
+<div class="verse"><span class="verse-number">18</span>院子的門簾是以繡花的手工，用藍色、紫色、朱紅色線和撚的細麻織的，寬二十肘，高五肘，與院子的帷子相配。</div>
+<div class="verse"><span class="verse-number">19</span>帷子的柱子四根，帶卯的銅座四個；柱子上的鉤子和杆子是銀的；柱頂是用銀子包的。</div>
+<div class="verse"><span class="verse-number">20</span>帳幕一切的橛子和院子四圍的橛子都是銅的。</div>
+<div class="verse"><span class="verse-number">21</span>這是法櫃的帳幕中利未人所用物件的總數，是照摩西的吩咐，經祭司亞倫的兒子以他瑪的手數點的。</div>
+<div class="verse"><span class="verse-number">22</span>凡耶和華所吩咐摩西的都是猶大支派戶珥的孫子、烏利的兒子比撒列作的。</div>
+<div class="verse"><span class="verse-number">23</span>與他同工的有但支派中亞希撒抹的兒子亞何利亞伯；他是雕刻匠，又是巧匠，又能用藍色、紫色、朱紅色線和細麻繡花。</div>
+<div class="verse"><span class="verse-number">24</span>為聖所一切工作使用所獻的金子，按聖所的平，有二十九他連得並七百三十舍客勒。</div>
+<div class="verse"><span class="verse-number">25</span>會中被數的人所出的銀子，按聖所的平，有一百他連得並一千七百七十五舍客勒。</div>
+<div class="verse"><span class="verse-number">26</span>凡過去歸那些被數之人的，從二十歲以外，有六十萬零三千五百五十人。按聖所的平，每人出銀半舍客勒，就是一比加。</div>
+<div class="verse"><span class="verse-number">27</span>用那一百他連得銀子鑄造聖所帶卯的座和幔子柱子帶卯的座；一百他連得共一百帶卯的座，每帶卯的座用一他連得。</div>
+<div class="verse"><span class="verse-number">28</span>用那一千七百七十五舍客勒銀子作柱子上的鉤子，包裹柱頂並柱子上的杆子。</div>
+<div class="verse"><span class="verse-number">29</span>所獻的銅有七十他連得並二千四百舍客勒。</div>
+<div class="verse"><span class="verse-number">30</span>用這銅作會幕門帶卯的座和銅壇，並壇上的銅網和壇的一切器具，</div>
+<div class="verse"><span class="verse-number">31</span>並院子四圍帶卯的座和院門帶卯的座，與帳幕一切的橛子和院子四圍所有的橛子。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第38章記載會幕外院設施的建造和材料的詳細總計。燔祭壇以皂莢木製造覆以銅，配備所有銅製器具和銅網，以環和杠抬運，壇是空心的。洗濯盆由一個特別來源製成：用聚集在會幕門前事奉婦女的銅鏡鑄造，這是信徒以個人珍愛之物奉獻的感人記錄。院子由細麻布帷幔圍成，長一百肘、寬五十肘；門簾精工繡製。本章末記載整個工程的材料總帳：金子共二十九他連得零七百三十舍客勒，來自自願奉獻；銀子共一百他連得零一千七百七十五舍客勒，來自被數之人（六十萬零三千五百五十人）每人繳交的半舍客勒贖罪銀；銅有七十他連得零二千四百舍客勒，用於壇和院子的各種器具。本章以詳細帳目的方式彰顯了整個工程的透明度和問責文化。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 日常物品的奉獻彰顯信仰的整合</strong><br>洗濯盆由婦女所獻的銅鏡鑄造，鏡子是日常梳妝的器具，被奉獻出來成為潔淨的器具。這是日常物品轉化為聖潔用途的感人圖畫，彰顯信仰不是生活的某個分隔部分，而是整合在所有日常物品和生活的每個角落。信徒的生命財物，不論大小，都可以成為神使用的器具。<br><br>
+<strong>2. 帳目的清楚記錄是信仰群體問責精神的體現</strong><br>本章詳細記錄了所有材料的數量和用途，這是透明度和問責制的聖經範例。神的工作需要誠實的管理和清楚的帳目，以建立群體的信任。信徒在管理神所託付的資源時，應以相同的誠實和透明對待，讓奉獻者和神都能清楚看到資源的使用。<br><br>
+<strong>3. 銅所象徵的院子是一切人可接近的地方</strong><br>院子的材料以銅為主（銅是最廉價的金屬），對比聖所的銀和至聖所的金，院子是所有人都可進入的空間，象徵神的施恩不只限於少數特殊人，而是向所有願意到祂面前的人開放的。信徒群體應是一個讓各種背景的人都感到可以接近的地方。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他用銅作洗濯盆和</strong>盆座，<strong>是用會幕門前伺候</strong>的婦人之鏡子作的。（出38:8）</td>
+<td>就像<strong>把心愛的珠寶捐出作義賣</strong>，婦女以銅鏡（日常梳妝的珍愛物品）奉獻，讓它成為潔淨的器具。你是否<strong>有過將自己珍</strong>視的東西奉獻給神或他人的經歷？那個奉獻行動對你<strong>自己的信仰生</strong>命產生了怎樣的影響？</td>
+</tr>
+<tr>
+<td><strong>這是法櫃的帳幕中</strong><strong>利未人所用物件的</strong>總數，是照摩西的吩咐，經祭司亞倫的兒子以他瑪的手數點的。（出38:21）</td>
+<td>就像<strong>一個管理良好的慈善機構公開財務</strong>報告讓捐款者放心，本章詳細的材料帳目是透明度和問責的聖經典範。你<strong>對神和信仰群</strong>體所賦予你<strong>管理的資源（</strong>時間、金錢、才能），是否能以同樣的誠實和透明給出清楚的交代？</td>
+</tr>
+<tr>
+<td><strong>凡耶和華所吩咐摩</strong><strong>西的都是</strong>……比撒列作的；與他同工的有……亞何利亞伯。（出38:22-23）</td>
+<td>就像<strong>一個大型工程需要主承包商和分包</strong>商各司其職，比撒列和亞何利亞伯的同工是群體配搭的典範。在你<strong>所參與的信仰</strong>群體中，是否有這樣彼此配搭的同工關係？你是否既能領導也能跟隨，在神的工程中找到自己合適的位置？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

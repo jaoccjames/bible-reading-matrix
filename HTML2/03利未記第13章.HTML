@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利未記第13章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+利未記第13章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大痲瘋診斷：辨明罪污須接受檢驗</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華曉諭摩西、亞倫說：</div>
+<div class="verse"><span class="verse-number">2</span>「人的肉皮上若長了癤子，或長了癬，或長了火斑，在他肉皮上成了大痲瘋的災病，就要將他帶到祭司亞倫或亞倫作祭司的一個子孫面前。</div>
+<div class="verse"><span class="verse-number">3</span>祭司要察看肉皮上的災病，若災病處的毛已經變白，災病的現象深於肉上的皮，這便是大痲瘋的災病。祭司要察看他，定他為不潔淨。</div>
+<div class="verse"><span class="verse-number">4</span>若火斑在他肉皮上是白的，現象不深於皮，其上的毛也沒有變白，祭司就要將有災病的人關鎖七天。</div>
+<div class="verse"><span class="verse-number">5</span>第七天，祭司要察看他，若看災病止住了，沒有在皮上發散，祭司還要將他關鎖七天。</div>
+<div class="verse"><span class="verse-number">6</span>第七天，祭司要再察看他，若災病發暗，而且沒有在皮上發散，祭司要定他為潔淨，原來是癬；那人就要洗衣服，得為潔淨。</div>
+<div class="verse"><span class="verse-number">7</span>但他為得潔淨，將身體給祭司察看以後，癬若在皮上發散開了，他要再將身體給祭司察看。</div>
+<div class="verse"><span class="verse-number">8</span>祭司要察看，癬若在皮上發散，就要定他為不潔淨，是大痲瘋。</div>
+<div class="verse"><span class="verse-number">9</span>「人有了大痲瘋的災病，就要將他帶到祭司面前。</div>
+<div class="verse"><span class="verse-number">10</span>祭司要察看，皮上若長了白癤，使毛變白，在長白癤之處有了紅瘀肉，</div>
+<div class="verse"><span class="verse-number">11</span>這是肉皮上的舊大痲瘋，祭司要定他為不潔淨，不用將他關鎖，因為他是不潔淨了。</div>
+<div class="verse"><span class="verse-number">12</span>大痲瘋若在皮上四外發散，長滿了患災病人的皮，據祭司察看，從頭到腳無處不有，</div>
+<div class="verse"><span class="verse-number">13</span>祭司就要察看，全身的肉若長滿了大痲瘋，就要定那患災病的為潔淨；全身都變為白，他乃潔淨了。</div>
+<div class="verse"><span class="verse-number">14</span>但紅肉幾時顯在他的身上就幾時不潔淨。</div>
+<div class="verse"><span class="verse-number">15</span>祭司一看那紅肉就定他為不潔淨。紅肉本是不潔淨，是大痲瘋。</div>
+<div class="verse"><span class="verse-number">16</span>紅肉若復原，又變白了，他就要來見祭司。</div>
+<div class="verse"><span class="verse-number">17</span>祭司要察看，災病處若變白了，祭司就要定那患災病的為潔淨，他乃潔淨了。</div>
+<div class="verse"><span class="verse-number">18</span>「人若在皮肉上長瘡，卻治好了，</div>
+<div class="verse"><span class="verse-number">19</span>在長瘡之處又起了白癤，或是白中帶紅的火斑，就要給祭司察看。</div>
+<div class="verse"><span class="verse-number">20</span>祭司要察看，若現象窪於皮，其上的毛也變白了，就要定他為不潔淨，是大痲瘋的災病發在瘡中。</div>
+<div class="verse"><span class="verse-number">21</span>祭司若察看，其上沒有白毛，也沒有窪於皮，乃是發暗，就要將他關鎖七天。</div>
+<div class="verse"><span class="verse-number">22</span>若在皮上發散開了，祭司就要定他為不潔淨，是災病。</div>
+<div class="verse"><span class="verse-number">23</span>火斑若在原處止住，沒有發散，便是瘡的痕跡，祭司就要定他為潔淨。</div>
+<div class="verse"><span class="verse-number">24</span>「人的皮肉上若起了火毒，火毒的瘀肉成了火斑，或是白中帶紅的，或是全白的，</div>
+<div class="verse"><span class="verse-number">25</span>祭司就要察看，火斑中的毛若變白了，現象又深於皮，是大痲瘋在火毒中發出，就要定他為不潔淨，是大痲瘋的災病。</div>
+<div class="verse"><span class="verse-number">26</span>但是祭司察看，在火斑中若沒有白毛，也沒有窪於皮，乃是發暗，就要將他關鎖七天。</div>
+<div class="verse"><span class="verse-number">27</span>到第七天，祭司要察看他，火斑若在皮上發散開了，就要定他為不潔淨，是大痲瘋的災病。</div>
+<div class="verse"><span class="verse-number">28</span>火斑若在原處止住，沒有在皮上發散，乃是發暗，是起的火毒，祭司要定他為潔淨，不過是火毒的痕跡。</div>
+<div class="verse"><span class="verse-number">29</span>「無論男女，若在頭上有災病，或是男人鬍鬚上有災病，</div>
+<div class="verse"><span class="verse-number">30</span>祭司就要察看；這災病現象若深於皮，其間有細黃毛，就要定他為不潔淨，這是頭疥，是頭上或是鬍鬚上的大痲瘋。</div>
+<div class="verse"><span class="verse-number">31</span>祭司若察看頭疥的災病，現象不深於皮，其間也沒有黑毛，就要將長頭疥災病的關鎖七天。</div>
+<div class="verse"><span class="verse-number">32</span>第七天，祭司要察看災病，若頭疥沒有發散，其間也沒有黃毛，頭疥的現象不深於皮，</div>
+<div class="verse"><span class="verse-number">33</span>那人就要剃去鬚髮，但他不可剃頭疥之處。祭司要將那長頭疥的，再關鎖七天。</div>
+<div class="verse"><span class="verse-number">34</span>第七天，祭司要察看頭疥，頭疥若沒有在皮上發散，現象也不深於皮，就要定他為潔淨，他要洗衣服，便成為潔淨。</div>
+<div class="verse"><span class="verse-number">35</span>但他得潔淨以後，頭疥若在皮上發散開了，</div>
+<div class="verse"><span class="verse-number">36</span>祭司就要察看他。頭疥若在皮上發散，就不必找那黃毛，他是不潔淨了。</div>
+<div class="verse"><span class="verse-number">37</span>祭司若看頭疥已經止住，其間也長了黑毛，頭疥已然痊癒，那人是潔淨了，就要定他為潔淨。</div>
+<div class="verse"><span class="verse-number">38</span>「無論男女，皮肉上若起了火斑，就是白火斑，</div>
+<div class="verse"><span class="verse-number">39</span>祭司就要察看，他們肉皮上的火斑若白中帶黑，這是皮上發出的白癬，那人是潔淨了。</div>
+<div class="verse"><span class="verse-number">40</span>「人頭上的髮若掉了，他不過是頭禿，還是潔淨。</div>
+<div class="verse"><span class="verse-number">41</span>他頂前若掉了頭髮，他不過是頂門禿，還是潔淨。</div>
+<div class="verse"><span class="verse-number">42</span>頭禿處或是頂門禿處若有白中帶紅的災病，這就是大痲瘋發在他頭禿處或是頂門禿處，</div>
+<div class="verse"><span class="verse-number">43</span>祭司就要察看，他起的那災病若在頭禿處或是頂門禿處有白中帶紅的，像肉皮上大痲瘋的現象，</div>
+<div class="verse"><span class="verse-number">44</span>那人就是長大痲瘋，不潔淨的，祭司總要定他為不潔淨，他的災病是在頭上。</div>
+<div class="verse"><span class="verse-number">45</span>「身上有長大痲瘋災病的，他的衣服要撕裂，也要蓬頭散髮，蒙着上唇，喊叫說：『不潔淨了！不潔淨了！』</div>
+<div class="verse"><span class="verse-number">46</span>災病在他身上的日子，他便是不潔淨；他既是不潔淨，就要獨居營外。」</div>
+<div class="verse"><span class="verse-number">47</span>「染了大痲瘋災病的衣服，無論是羊毛衣服、是麻布衣服，</div>
+<div class="verse"><span class="verse-number">48</span>無論是在經上、在緯上，是麻布的、是羊毛的，是在皮子上，或在皮子作的甚麼物件上，</div>
+<div class="verse"><span class="verse-number">49</span>或在衣服上、皮子上，經上、緯上，或在皮子作的甚麼物件上，這災病若是發綠，或是發紅，是大痲瘋的災病，要給祭司察看。</div>
+<div class="verse"><span class="verse-number">50</span>祭司就要察看那災病，把染了災病的物件關鎖七天。</div>
+<div class="verse"><span class="verse-number">51</span>第七天，他要察看那災病，災病或在衣服上，經上、緯上，皮子上，若發散，這皮子無論當作何用，這災病是蠶食的大痲瘋，都是不潔淨了。</div>
+<div class="verse"><span class="verse-number">52</span>那染了災病的衣服，或是經上、緯上，羊毛上，麻衣上，或是皮子作的甚麼物件上，他都要焚燒；因為這是蠶食的大痲瘋，必在火中焚燒。</div>
+<div class="verse"><span class="verse-number">53</span>「祭司要察看，若災病在衣服上，經上、緯上，或是皮子作的甚麼物件上，沒有發散，</div>
+<div class="verse"><span class="verse-number">54</span>祭司就要吩咐他們，把染了災病的物件洗了，再關鎖七天。</div>
+<div class="verse"><span class="verse-number">55</span>洗過以後，祭司要察看，那物件若沒有變色，災病也沒有消散，那物件就不潔淨，是透重的災病，無論正面反面，都要在火中焚燒。</div>
+<div class="verse"><span class="verse-number">56</span>洗過以後，祭司要察看，若見那災病發暗，他就要把那災病從衣服上，皮子上，經上、緯上，都撕去。</div>
+<div class="verse"><span class="verse-number">57</span>若仍現在衣服上，或是經上、緯上、皮子作的甚麼物件上，這就是災病又發了，必用火焚燒那染災病的物件。</div>
+<div class="verse"><span class="verse-number">58</span>所洗的衣服，或是經，或是緯，或是皮子作的甚麼物件，若災病離開了，要再洗，就潔淨了。」</div>
+<div class="verse"><span class="verse-number">59</span>這就是大痲瘋災病的條例，無論是在羊毛衣服上，麻布衣服上，經上、緯上，和皮子作的甚麼物件上，可以定為潔淨或是不潔淨。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+利未記第13章是篇幅最長的章節之一，詳細記載神對各種皮膚病與衣物霉菌的診斷條例。大痲瘋（希伯來文 tzara'at）在古代近東是令人聞之色變的疾病，不只對身體造成傷害，更帶來社會性的隔離。本章的核心不在於醫療診斷，而是藉由祭司對不潔淨狀態的辨識，維護神聖營地的聖潔。祭司擔任「診斷者」的角色，逐步觀察、記錄症狀，並在七天隔離後作出判斷。不潔淨的人須「撕裂衣服、蓬頭散髮」，高喊「不潔淨了」，甚至被隔離於營外。這套複雜程序的神學意義在於：罪的污染如同痲瘋病，會蔓延、深入，必須被辨識、承認，才能接受潔淨。本章後半更延伸至衣物，說明不潔淨可傳染至人的周遭環境，呼應罪的影響範圍不僅止於個人。整章對應的屬靈圖像在新約中由耶穌赦免並潔淨痲瘋病人的事蹟（馬可福音1:40-45）得到完全的應驗。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 罪如痲瘋，須被正視與承認</strong><br>痲瘋病的可怕在於它從皮膚深入皮下，從可見轉為不可見。神設立詳細的檢驗條例，是要教導以色列人：罪不能被忽視或掩蓋，必須誠實面對。祭司的察看程序代表神對罪的嚴肅態度——神察看人心的深度，比任何人都更準確。信徒若要保持靈命健康，必須學習讓神光照自己的內心，不逃避、不遮掩。<br><br>
+<strong>2. 不潔淨需要隔離，以防污染蔓延</strong><br>染病者被隔離於營外，這不只是衛生措施，更是屬靈的保護機制。罪的污染具有傳播性，一個不悔改的罪若任其蔓延，會影響整個群體的屬靈狀態。神要求隔離，是為保護群體的聖潔，同時也給患者一個反思與等候潔淨的空間。教會群體同樣需要智慧辨識並處理罪的影響，以愛心卻也以嚴肅的態度維護整體的屬靈健康。<br><br>
+<strong>3. 潔淨的判定出於神的標準，非人的感覺</strong><br>本章多次強調「祭司要察看」，最終的判定權在祭司（代表神的權威），而非患者自身的感受。這說明屬靈潔淨的標準是神設立的，不是人自定的。人的自我感覺往往不準確——有人以為自己潔淨卻仍有罪；有人以為不潔淨，卻被神宣告已潔淨。信徒當以神的話語為鏡子，而非以自我感覺評估自己的靈命狀況。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>祭司要察看肉皮上</strong><strong>的災病</strong>，若災病處的毛已經變白，災病的現象深於肉上的皮，這便是大痲瘋的災病。」（利13:3）</td>
+<td>就像<strong>健康檢查不能只看外表是否正常</strong>，而需要抽血、照X光才能發現深層問題，你是否<strong>願意讓神的話</strong>語深入檢視你<strong>內心隱藏的罪</strong>，而不只是維持表面的屬靈形象？</td>
+</tr>
+<tr>
+<td>「<strong>身上有長大痲瘋災</strong>病的，……<strong>喊叫說</strong>：『不潔淨了！不潔淨了！』……就要獨居營外。」（利13:45-46）</td>
+<td>就像<strong>電腦中毒後需要暫時隔離避免感染</strong>其他設備，承認自己的罪並暫時退後反思，你是否<strong>曾因自尊心而</strong>拒絕承認自己在某些事上的錯誤，反而讓問題繼續蔓延？</td>
+</tr>
+<tr>
+<td>「<strong>那染了災病的衣服</strong>，……<strong>他都要焚燒</strong>；因為這是蠶食的大痲瘋，必在火中焚燒。」（利13:52）</td>
+<td>就像<strong>發霉的食物不能只挖掉壞的部分繼</strong>續吃，罪的影響有時已深入到必須從根處理，你<strong>生命中</strong>是否有些習慣或環境，需要徹底切割而非只是表面修補？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

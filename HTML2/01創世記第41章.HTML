@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第41章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第41章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約瑟升為埃及宰相</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>過了兩年，法老作夢，夢見自己站在河邊，</div>
+<div class="verse"><span class="verse-number">2</span>有七隻母牛從河裏上來，又美好又肥壯，在蘆荻中吃草。</div>
+<div class="verse"><span class="verse-number">3</span>隨後又有七隻母牛從河裏上來，又醜陋又乾瘦，與那七隻母牛一同站在河邊。</div>
+<div class="verse"><span class="verse-number">4</span>這又醜陋又乾瘦的七隻母牛吃盡了那又美好又肥壯的七隻母牛。法老就醒了。</div>
+<div class="verse"><span class="verse-number">5</span>他又睡着，第二回作夢，夢見一棵麥子長了七個穗子，又肥大又佳美，</div>
+<div class="verse"><span class="verse-number">6</span>隨後又長了七個穗子，又細弱又被東風吹焦了。</div>
+<div class="verse"><span class="verse-number">7</span>這細弱的穗子吞了那七個又肥大又飽滿的穗子。法老醒了，不料是個夢。</div>
+<div class="verse"><span class="verse-number">8</span>到了早晨，法老心裏不安，就差人召了埃及所有的術士和博士來；法老就把所作的夢告訴他們，卻沒有人能給法老圓解。</div>
+<div class="verse"><span class="verse-number">9</span>那時酒政對法老說：「我今日想起我的罪來。</div>
+<div class="verse"><span class="verse-number">10</span>從前法老惱怒臣僕，把我和膳長下在護衛長府內的監裏。</div>
+<div class="verse"><span class="verse-number">11</span>我們二人同夜各作一夢，各夢都有講解。</div>
+<div class="verse"><span class="verse-number">12</span>在那裏同着我們有一個希伯來的少年人，是護衛長的僕人，我們告訴他，他就把我們的夢圓解，是按着各人的夢圓解的。</div>
+<div class="verse"><span class="verse-number">13</span>後來正如他給我們圓解的成就了；我官復原職，膳長被掛起來了。」</div>
+<div class="verse"><span class="verse-number">14</span>法老遂即差人去召約瑟，他們便急忙帶他出監，他就剃頭，刮臉，換衣裳，進到法老面前。</div>
+<div class="verse"><span class="verse-number">15</span>法老對約瑟說：「我作了一夢，沒有人能解；我聽見人說，你聽了夢就能解。」</div>
+<div class="verse"><span class="verse-number">16</span>約瑟回答法老說：「這不在乎我，神必將平安的話回答法老。」</div>
+<div class="verse"><span class="verse-number">17</span>法老對約瑟說：「我夢見我站在河邊，</div>
+<div class="verse"><span class="verse-number">18</span>有七隻母牛從河裏上來，又肥壯又美好，在蘆荻中吃草。</div>
+<div class="verse"><span class="verse-number">19</span>隨後又有七隻母牛上來，又軟弱又醜陋又乾瘦，在埃及遍地，我沒有見過這樣不好的。</div>
+<div class="verse"><span class="verse-number">20</span>這又乾瘦又醜陋的母牛吃盡了那以先的七隻肥母牛，</div>
+<div class="verse"><span class="verse-number">21</span>吃了以後卻看不出是吃了，那醜陋的樣子仍舊和先前一樣。我就醒了。</div>
+<div class="verse"><span class="verse-number">22</span>我又夢見一棵麥子，長了七個穗子，又飽滿又佳美，</div>
+<div class="verse"><span class="verse-number">23</span>隨後又長了七個穗子，枯槁細弱，被東風吹焦了。</div>
+<div class="verse"><span class="verse-number">24</span>這些細弱的穗子吞了那七個佳美的穗子。我將這夢告訴了術士，卻沒有人能給我解說。」</div>
+<div class="verse"><span class="verse-number">25</span>約瑟對法老說：「法老的夢乃是一個。神已將所要作的事指示法老了。</div>
+<div class="verse"><span class="verse-number">26</span>七隻好母牛是七年，七個好穗子也是七年；這夢乃是一個。</div>
+<div class="verse"><span class="verse-number">27</span>那隨後上來的七隻又乾瘦又醜陋的母牛是七年，那七個虛空、被東風吹焦的穗子也是七年，都是七個荒年。</div>
+<div class="verse"><span class="verse-number">28</span>這就是我對法老所說，神已將所要作的事顯明給法老了。</div>
+<div class="verse"><span class="verse-number">29</span>埃及遍地必來七個大豐年，</div>
+<div class="verse"><span class="verse-number">30</span>隨後又要來七個荒年，甚至在埃及地都忘了先前的豐收，全地必被饑荒所滅。</div>
+<div class="verse"><span class="verse-number">31</span>因那以後的饑荒甚大，便不覺得先前的豐收了。</div>
+<div class="verse"><span class="verse-number">32</span>至於法老兩回作夢，是因神命定這事，而且必速速成就。</div>
+<div class="verse"><span class="verse-number">33</span>所以，法老當揀選一個有聰明有智慧的人，派他治理埃及地。</div>
+<div class="verse"><span class="verse-number">34</span>法老當這樣行，又派官員管理這地。當七個豐年的時候，征收埃及地的五分之一，</div>
+<div class="verse"><span class="verse-number">35</span>叫他們把將來豐年一切的糧食聚斂起來，積蓄五穀，收存在各城裏作食物，歸於法老的手下。</div>
+<div class="verse"><span class="verse-number">36</span>所積蓄的糧食可以防備埃及地將來的七個荒年，免得這地被饑荒所滅。」</div>
+<div class="verse"><span class="verse-number">37</span>法老和他一切臣僕都以這事為妙。</div>
+<div class="verse"><span class="verse-number">38</span>法老對臣僕說：「像這樣的人，有神的靈在他裏頭，我們豈能找得着呢？」</div>
+<div class="verse"><span class="verse-number">39</span>法老對約瑟說：「神既將這事都指示你，可見沒有人像你這樣有聰明有智慧。</div>
+<div class="verse"><span class="verse-number">40</span>你可以掌管我的家；我的民都必聽從你的話。惟獨在寶座上我比你大。」</div>
+<div class="verse"><span class="verse-number">41</span>法老又對約瑟說：「我派你治理埃及全地。」</div>
+<div class="verse"><span class="verse-number">42</span>法老就摘下手上打印的戒指，戴在約瑟的手上，給他穿上細麻衣，把金鍊戴在他的頸項上，</div>
+<div class="verse"><span class="verse-number">43</span>又叫約瑟坐他的副車，喝道的在前呼叫說：「跪下。」這樣、法老派他治理埃及全地。</div>
+<div class="verse"><span class="verse-number">44</span>法老對約瑟說：「我是法老，在埃及全地，若沒有你的命令，不許人擅自辦事〔原文作動手動腳〕。」</div>
+<div class="verse"><span class="verse-number">45</span>法老賜名給約瑟，叫撒發那忒巴內亞，又將安城的祭司波提非拉的女兒亞西納給他為妻。約瑟就出去巡行埃及地。</div>
+<div class="verse"><span class="verse-number">46</span>約瑟見埃及王法老的時候年三十歲。他從法老面前出去，遍行埃及全地。</div>
+<div class="verse"><span class="verse-number">47</span>七個豐年之內，地的出產極豐極盛〔原文作一把一把的〕，</div>
+<div class="verse"><span class="verse-number">48</span>約瑟聚斂埃及地七個豐年一切的糧食，把糧食積存在各城裏；各城周圍田地的糧食都積存在本城裏。</div>
+<div class="verse"><span class="verse-number">49</span>約瑟積蓄五穀甚多，如同海邊的沙，無法計算，因為穀不可勝數。</div>
+<div class="verse"><span class="verse-number">50</span>荒年未到以前，安城的祭司波提非拉的女兒亞西納給約瑟生了兩個兒子。</div>
+<div class="verse"><span class="verse-number">51</span>約瑟給長子起名叫瑪拿西〔就是使之忘了的意思〕，因為他說：「神使我忘了一切的困苦和我父的全家。」</div>
+<div class="verse"><span class="verse-number">52</span>他給次子起名叫以法蓮〔就是使之昌盛的意思〕，因為他說：「神使我在受苦的地方昌盛。」</div>
+<div class="verse"><span class="verse-number">53</span>埃及地的七個豐年一完，</div>
+<div class="verse"><span class="verse-number">54</span>七個荒年就來了。正如約瑟所說的，各地都有饑荒；惟獨埃及全地有糧食。</div>
+<div class="verse"><span class="verse-number">55</span>及至埃及全地有了饑荒，眾民向法老哀求糧食，法老對他們說：「你們往約瑟那裏去，凡他所說的，你們都要作。」</div>
+<div class="verse"><span class="verse-number">56</span>當時饑荒遍滿天下，約瑟開了各處的倉，糶糧給埃及人；在埃及地饑荒甚大。</div>
+<div class="verse"><span class="verse-number">57</span>各地的人都往埃及去，到約瑟那裏糴糧，因為天下的饑荒甚大。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載約瑟生命中最戲劇化的轉折。兩年後法老做了兩個無人能解的夢，酒政終於想起約瑟的解夢恩賜。約瑟被急召出監，在法老面前謙卑地將解夢能力歸給神，並準確預言七年豐收後將有七年饑荒。約瑟不僅解夢，還提出完整的治國策略：在豐年儲糧以備荒年。法老深受感動，認出約瑟有神的靈，當場任命他為埃及宰相，位高權重僅次於法老。約瑟從十七歲被賣為奴，經歷十三年的苦難，在三十歲時一日之間從囚犯升為全國第二把手。他給兩個兒子取名瑪拿西和以法蓮，見證神使他忘記苦難並在困苦中昌盛。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神在最黑暗時刻預備翻轉</strong><br>約瑟在監獄中被遺忘兩年，看似絕望，卻是神預備最佳時機。法老的夢境只能在此刻出現，約瑟才能以完美時機進入權力核心。神的延遲從不是遺忘，而是在醞釀更大的翻轉，磨難的深度往往對應使命的高度。<br><br>
+<strong>2. 謙卑與智慧是蒙福的關鍵</strong><br>約瑟在最關鍵時刻沒有炫耀能力，反而將榮耀歸給神，又提出切實可行的計畫。真正的智慧不只是看見問題，更是提供解決方案。謙卑不是自卑，而是認清恩賜的來源，讓神的能力完全彰顯。<br><br>
+<strong>3. 苦難中的預備終將成就命定</strong><br>十三年的奴隸與囚犯生涯不是浪費，而是裝備約瑟治理埃及的能力。他學會管理、忍耐、倚靠神，這些都成為宰相的必備條件。神從不浪費我們的苦難，每個痛苦的經歷都是為更大使命的預備。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>約瑟回答法老說</strong>：<strong>這不在乎我</strong>，神必將平安的話回答法老。（創41:16）</td>
+<td>就像<strong>醫生手術成功歸功團隊而非獨攬</strong>，約瑟在關鍵時刻將榮耀歸神。當我有機會在重要場合表現時，我是急於證明自己的能力博取認同，還是謙卑承認這是神的恩典與裝備？</td>
+</tr>
+<tr>
+<td>所以，<strong>法老當揀選一個有</strong><strong>聰明有智慧的人</strong>，派他治理埃及地。（創41:33）</td>
+<td>就像<strong>簡報後提出具體行動方案更有說服</strong>力，約瑟不只解夢更提供治國策略。我在看見問題時，是只會批評抱怨，還是也能提出建設性的解決方案，成為帶來改變的人？</td>
+</tr>
+<tr>
+<td><strong>神使我忘了一切的</strong>困苦；<strong>神使我在受苦的地</strong>方昌盛。（創41:51-52）</td>
+<td>就像<strong>傷口癒合後不再疼痛但疤痕見證成</strong>長，約瑟在祝福中回顧苦難已不再苦毒。我能否在神翻轉處境後，以感恩而非怨恨回望過去，相信那些磨難都是塑造我昌盛的必經之路？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

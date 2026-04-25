@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第21章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第21章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以撒誕生與夏甲被逐</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華按着先前的話眷顧撒拉，便照他所說的給撒拉成就。</div>
+<div class="verse"><span class="verse-number">2</span>當亞伯拉罕年老的時候，撒拉懷了孕；到神所說的日期，就給亞伯拉罕生了一個兒子。</div>
+<div class="verse"><span class="verse-number">3</span>亞伯拉罕給撒拉所生的兒子起名叫以撒。</div>
+<div class="verse"><span class="verse-number">4</span>以撒生下來第八日，亞伯拉罕照着神所吩咐的，給以撒行了割禮。</div>
+<div class="verse"><span class="verse-number">5</span>他兒子以撒生的時候，亞伯拉罕年一百歲。</div>
+<div class="verse"><span class="verse-number">6</span>撒拉說：「神使我喜笑，凡聽見的必與我一同喜笑」；</div>
+<div class="verse"><span class="verse-number">7</span>又說：「誰能預先對亞伯拉罕說『撒拉要乳養嬰孩』呢？因為在他年老的時候，我給他生了一個兒子。」</div>
+<div class="verse"><span class="verse-number">8</span>孩子漸長，就斷了奶。以撒斷奶的日子，亞伯拉罕設擺豐盛的筵席。</div>
+<div class="verse"><span class="verse-number">9</span>當時，撒拉看見埃及人夏甲給亞伯拉罕所生的兒子戲笑，</div>
+<div class="verse"><span class="verse-number">10</span>就對亞伯拉罕說：「你把這使女和她兒子趕出去！因為這使女的兒子不可與我的兒子以撒一同承受產業。」</div>
+<div class="verse"><span class="verse-number">11</span>亞伯拉罕因他兒子的緣故很憂愁。</div>
+<div class="verse"><span class="verse-number">12</span>神對亞伯拉罕說：「你不必為這童子和你的使女憂愁。凡撒拉對你說的話，你都該聽從；因為從以撒生的，才要稱為你的後裔。</div>
+<div class="verse"><span class="verse-number">13</span>至於使女的兒子，我也必使他的後裔成立一國，因為他是你所生的。」</div>
+<div class="verse"><span class="verse-number">14</span>亞伯拉罕清早起來，拿餅和一皮袋水，給了夏甲，搭在她的肩上，又把孩子交給她，打發她走。夏甲就走了，在別是巴的曠野走迷了路。</div>
+<div class="verse"><span class="verse-number">15</span>皮袋的水用盡了，夏甲就把孩子撇在小樹底下，</div>
+<div class="verse"><span class="verse-number">16</span>自己走開約有一箭之遠，相對而坐，說：「我不忍見孩子死」，就相對而坐，放聲大哭。</div>
+<div class="verse"><span class="verse-number">17</span>神聽見童子的聲音；神的使者從天上呼叫夏甲說：「夏甲，你為何這樣呢？不要害怕，神已經聽見童子的聲音了。</div>
+<div class="verse"><span class="verse-number">18</span>起來！把童子抱在懷中〔懷：原文作手〕，我必使他的後裔成為大國。」</div>
+<div class="verse"><span class="verse-number">19</span>神使夏甲的眼睛明亮，他就看見一口水井，便去將皮袋盛滿了水，給童子喝。</div>
+<div class="verse"><span class="verse-number">20</span>神保佑童子，他就漸長，住在曠野，成了弓箭手。</div>
+<div class="verse"><span class="verse-number">21</span>他住在巴蘭的曠野；他母親從埃及地給他娶了一個妻子。</div>
+<div class="verse"><span class="verse-number">22</span>當那時候，亞比米勒同他軍長非各對亞伯拉罕說：「凡你所行的事都有神的保佑。</div>
+<div class="verse"><span class="verse-number">23</span>我願你如今在這裏指着神對我起誓，不要欺負我與我的兒子，並我的子孫。我怎樣厚待了你，你也要照樣厚待我與你所寄居這地的民。」</div>
+<div class="verse"><span class="verse-number">24</span>亞伯拉罕說：「我情願起誓。」</div>
+<div class="verse"><span class="verse-number">25</span>從前，亞比米勒的僕人霸佔了一口水井，亞伯拉罕為這事指責亞比米勒。</div>
+<div class="verse"><span class="verse-number">26</span>亞比米勒說：「誰作這事，我不知道，你也沒有告訴我，今日我才聽見了。」</div>
+<div class="verse"><span class="verse-number">27</span>亞伯拉罕把羊和牛給了亞比米勒，二人就彼此立約。</div>
+<div class="verse"><span class="verse-number">28</span>亞伯拉罕把七隻母羊羔另放在一處。</div>
+<div class="verse"><span class="verse-number">29</span>亞比米勒問亞伯拉罕說：「你把這七隻母羊羔另放在一處，是甚麼意思呢？」</div>
+<div class="verse"><span class="verse-number">30</span>他說：「你要從我手裏受這七隻母羊羔，作我挖這口井的證據。」</div>
+<div class="verse"><span class="verse-number">31</span>所以他給那地方起名叫別是巴〔就是盟誓的井的意思〕，因為他們二人在那裏起了誓。</div>
+<div class="verse"><span class="verse-number">32</span>他們在別是巴立了約，亞比米勒就同他軍長非各起身回非利士地去了。</div>
+<div class="verse"><span class="verse-number">33</span>亞伯拉罕在別是巴栽上一棵垂絲柳樹，又在那裏求告耶和華永生神的名。</div>
+<div class="verse"><span class="verse-number">34</span>亞伯拉罕在非利士人的地寄居了多日。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+創世記第21章記載神的應許終於實現,100歲的亞伯拉罕和90歲的撒拉生下以撒,這是神在25年前應許的成就。以撒斷奶時,撒拉看見以實瑪利戲笑,就要求亞伯拉罕趕走夏甲母子。亞伯拉罕憂愁,但神吩咐他聽從撒拉,並應許也賜福以實瑪利。夏甲母子在曠野絕望時,神再次拯救他們。本章後半部記載亞伯拉罕與亞比米勒立約,確保水井的權利,並在別是巴敬拜永生神。本章顯示神的信實、應許的實現,以及人為錯誤的後果仍需面對。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的應許必按祂的時間成就</strong><br>從應許到實現經過25年,神卻說「到神所說的日期」就成就了。神的時間表不同於人的期待,但祂從不遲延,總是在最合適的時刻成就應許。等候雖難,但神的時間永遠是最好的時間。<br><br>
+<strong>2. 人的方法帶來的後果需承擔</strong><br>當年用夏甲生子的決定,如今造成家庭衝突,必須趕走夏甲母子。人用自己的方法想要加速神的應許,最終要面對痛苦的後果。神雖保守應許,但人的選擇仍有其代價。<br><br>
+<strong>3. 神的憐憫延及所有受苦者</strong><br>神不只看顧以撒,也憐憫在曠野絕望的夏甲和以實瑪利。神的恩典不只給蒙揀選的人,也給受傷害、被排斥的人。神看見每個人的眼淚,聽見每個人的呼求。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>當亞伯拉罕年老的</strong>時候,<strong>撒拉懷了孕</strong>;到神所說的日期,就給亞伯拉罕生了一個兒子。(創21:2)</td>
+<td>當神的應許遲遲未實現時,你是否<strong>相信神有祂的</strong>最佳時間?就像<strong>水果需要等到成熟才最甜美</strong>,你是否<strong>願意信靠神的</strong>時間表而非急著催促?</td>
+</tr>
+<tr>
+<td><strong>神對亞伯拉罕說</strong>:<strong>你不必為這童子和</strong>你的使女憂愁。凡撒拉對你說的話,你都該聽從;因為從以撒生的,才要稱為你的後裔。(創21:12)</td>
+<td>當你<strong>過去的錯誤決</strong>定造成今日的痛苦時,你是否<strong>願意順服神的</strong>引導做出艱難選擇?就像<strong>必須放棄錯誤投資才能重新開始</strong>,你能否<strong>斷然處理過去</strong>的錯誤?</td>
+</tr>
+<tr>
+<td><strong>神聽見童子的聲音</strong>;<strong>神的使者從天上呼</strong>叫夏甲說:夏甲,你為何這樣呢?不要害怕,神已經聽見童子的聲音了。(創21:17)</td>
+<td>當你<strong>覺得自己</strong>是被遺忘、被排斥的那個人時,你是否<strong>相信神仍然看</strong>顧你?就像<strong>迷路的孩子其實一直在父母的視線</strong>中,你能否<strong>相信神從未離</strong>開過你?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

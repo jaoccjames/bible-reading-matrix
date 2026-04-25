@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第64章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第64章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">我們是泥你是窰匠：破碎中的懇求與對神父愛的信靠</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>願你裂天而降；願山在你面前震動，</div>
+<div class="verse"><span class="verse-number">2</span>好像火燒乾柴，又像火將水燒開，使你敵人知道你的名，使列國在你面前發顫！</div>
+<div class="verse"><span class="verse-number">3</span>你曾行我們不能逆料可畏的事。那時你降臨，山嶺在你面前震動。</div>
+<div class="verse"><span class="verse-number">4</span>從古以來，人未曾聽見、未曾耳聞、未曾眼見在你以外有甚麼神為等候他的人行事。</div>
+<div class="verse"><span class="verse-number">5</span>你迎接那歡喜行義、記念你道的人；你曾發怒，我們仍犯罪；這景況已久，我們還能得救嗎？</div>
+<div class="verse"><span class="verse-number">6</span>我們都像不潔淨的人；所有的義都像污穢的衣服。我們都像葉子漸漸枯乾；我們的罪孽好像風把我們吹去。</div>
+<div class="verse"><span class="verse-number">7</span>並且無人求告你的名；無人奮力抓住你。原來你掩面不顧我們，使我們因罪孽消化。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華啊，現在你仍是我們的父！我們是泥，你是窰匠；我們都是你手的工作。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華啊，求你不要大發震怒，也不要永遠記念罪孽。求你垂顧我們，我們都是你的百姓。</div>
+<div class="verse"><span class="verse-number">10</span>你的聖邑變為曠野。錫安變為曠野；耶路撒冷成為荒場。</div>
+<div class="verse"><span class="verse-number">11</span>我們聖潔華美的殿，就是我們列祖讚美你的所在被火焚燒；我們所羡慕的美地盡都荒廢。</div>
+<div class="verse"><span class="verse-number">12</span>耶和華啊，有這些事，你還忍得住嗎？你仍靜默使我們深受苦難嗎？</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第六十四章是一首哀禱詩，承接第六十三章後半的哀歌，繼續以色列在被擄痛苦中向神的呼求。本章以「願你裂天而降！」（1節）這個充滿渴望和緊迫感的開場，呼求神的神蹟干預，如同古時在西奈山顯現的可畏景象（2-3節）。本章的神學轉折在第6-8節：先承認自己的污穢（「我們都像不潔淨的人；所有的義都像污穢的衣服」，6節），然後在這種對自身罪性的深刻認識中，仍然大膽呼求「耶和華啊，現在你仍是我們的父！」（8節）。「我們是泥，你是窰匠」，是聖經中對神人關係最謙卑也最有力的描述——泥土完全倚賴窰匠的塑造，卻也完全信靠窰匠的目的。這個圖像在羅馬書9:21和耶利米書18:1-6中都有出現，貫穿聖經，成為神的主權和人的謙卑最生動的圖像。第4節「從古以來，人未曾聽見、未曾耳聞、未曾眼見在你以外有甚麼神為等候他的人行事」，在哥林多前書2:9中被保羅引用，宣告神為愛祂之人所預備的超越人心所能理解的。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「所有的義都像污穢的衣服」：對自身罪性的徹底認識是真實悔改的開始</strong><br>第6節是聖經中對人類自義最精確的批判：不只是惡行是罪，連「所有的義」——最好的道德努力、最虔誠的宗教行為——在神的面前也像「污穢的衣服」（原文指月經布）。這不是要信徒放棄善行，而是揭示了一個根本的真理：在神面前，人不能以自己的義建立地位，唯有倚靠神的恩典才能得到接納。這種對自身義不足的認識，是真實信仰的起點。<br><br>
+<strong>2. 「我們是泥，你是窰匠」：謙卑的自我認識帶來對神主權的完全倚靠</strong><br>第8節的窰匠比喻是信仰生命最深的謙卑宣告。「泥」沒有自己的形狀，沒有自己的目的，完全依賴窰匠的手和意念。「你是窰匠，我們都是你手的工作」——這不只是對神的主權的承認，也是對自己局限性的坦然接受。重要的是，這個宣告不是在驕傲和成功中說的，而是在廢墟和失敗中說的——在最破碎的時刻，仍然說「你是窰匠」，這才是真正的信仰謙卑。<br><br>
+<strong>3. 「耶和華啊，有這些事，你還忍得住嗎？」：誠實的禱告可以向神傾訴最深的掙扎</strong><br>第12節是全章最大膽的質疑：「你還忍得住嗎？你仍靜默使我們深受苦難嗎？」——這個對神的「抗議式禱告」，在詩篇22:1（「我的神，我的神，為何離棄我？」）、哀歌3、約伯記中都有類似的表達。聖經允許信徒帶著真實的痛苦和困惑去到神面前，誠實地問「你還忍得住嗎？」——這種誠實的禱告，比虛假的平靜更能建立真實的與神的關係。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>我們都像不潔淨的</strong>人；<strong>所有的義都像污穢</strong>的衣服。我們都像葉子漸漸枯乾；我們的罪孽好像風把我們吹去。」（賽64:6）</td>
+<td>就像<strong>一件看起來還算整潔的衣服</strong>，在紫外線燈下顯出無數污跡，神的聖潔之光照出我們「最好的義」的真實狀況，你<strong>在什麼時候最</strong>容易依賴自己的「義」來在神面前站立，而非完全依靠神的恩典？那種心態如何影響你<strong>的信仰生活</strong>？</td>
+</tr>
+<tr>
+<td>「<strong>耶和華啊</strong>，<strong>現在你仍是我們的</strong>父！我們是泥，你是窰匠；我們都是你手的工作。」（賽64:8）</td>
+<td>就像<strong>一塊正在被雕塑的黏土</strong>，若它抵抗窰匠的手，就只能是一個扭曲的形狀；若它柔軟地順從，就能成為窰匠心中美麗的器皿，你<strong>目前在哪些方</strong>面最抵抗神「窰匠之手」的塑造？是什麼讓你<strong>最難以完全交</strong>在神的手中？</td>
+</tr>
+<tr>
+<td>「<strong>耶和華啊</strong>，<strong>有這些事</strong>，你還忍得住嗎？你仍靜默使我們深受苦難嗎？」（賽64:12）</td>
+<td>就像<strong>一個深愛孩子的父親</strong>，當孩子在受苦時向他大聲呼求，那種誠實的呼求比沉默的忍耐更能引發父親的回應，神歡迎誠實的禱告，你<strong>在信仰最艱難</strong>的時刻，是否允許自己誠實地問「你<strong>還忍得住嗎</strong>？」你如何<strong>在這樣的質疑</strong>中仍然維持對神的信靠？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

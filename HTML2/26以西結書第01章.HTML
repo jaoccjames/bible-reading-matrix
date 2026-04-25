@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">天開異象：神榮耀的顯現</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當三十年四月初五日，以西結〔原文作我〕在迦巴魯河邊被擄的人中，天就開了，得見神的異象。</div>
+<div class="verse"><span class="verse-number">2</span>正是約雅斤王被擄去第五年四月初五日，</div>
+<div class="verse"><span class="verse-number">3</span>在迦勒底人之地、迦巴魯河邊，耶和華的話特特臨到布西的兒子祭司以西結；耶和華的靈〔原文作手〕降在他身上。</div>
+<div class="verse"><span class="verse-number">4</span>我觀看，見狂風從北方颳來，隨着有一朵包括閃爍火的大雲，周圍有光輝；從其中的火內發出好像光耀的精金；</div>
+<div class="verse"><span class="verse-number">5</span>又從其中顯出四個活物的形像來。他們的形狀是這樣：有人的形像，</div>
+<div class="verse"><span class="verse-number">6</span>各有四個臉面，四個翅膀。</div>
+<div class="verse"><span class="verse-number">7</span>他們的腿是直的，腳掌好像牛犢之蹄，都燦爛如光明的銅。</div>
+<div class="verse"><span class="verse-number">8</span>在四面的翅膀以下有人的手。這四個活物的臉和翅膀乃是這樣：</div>
+<div class="verse"><span class="verse-number">9</span>翅膀彼此相接，行走並不轉身，俱各直往前行。</div>
+<div class="verse"><span class="verse-number">10</span>至於臉的形像：前面各有人的臉，右面各有獅子的臉，左面各有牛的臉，後面各有鷹的臉。</div>
+<div class="verse"><span class="verse-number">11</span>各展開上邊的兩個翅膀相接，各以下邊的兩個翅膀遮體。</div>
+<div class="verse"><span class="verse-number">12</span>他們俱各直往前行。靈往那裏去，他們就往那裏去，行走並不轉身。</div>
+<div class="verse"><span class="verse-number">13</span>至於四活物的形像，就如燒着火炭的形狀，又如火把的形狀。火在四活物中間上去下來，這火有光輝，從火中發出閃電。</div>
+<div class="verse"><span class="verse-number">14</span>這活物往來奔走，好像電光一閃。</div>
+<div class="verse"><span class="verse-number">15</span>我正觀看活物的時候，見活物的臉旁各有一輪在地上。</div>
+<div class="verse"><span class="verse-number">16</span>輪的形狀和顏色〔原文作作法〕好像水蒼玉。四輪都是一個樣式，形狀和作法好像輪中套輪。</div>
+<div class="verse"><span class="verse-number">17</span>輪行走的時候，向四方都能直行，並不掉轉。</div>
+<div class="verse"><span class="verse-number">18</span>至於輪輞，高而可畏；四個輪輞周圍滿有眼睛。</div>
+<div class="verse"><span class="verse-number">19</span>活物行走，輪也在旁邊行走；活物從地上升，輪也都上升。</div>
+<div class="verse"><span class="verse-number">20</span>靈往那裏去，活物就往那裏去；活物上升，輪也在活物旁邊上升，因為活物的靈在輪中。</div>
+<div class="verse"><span class="verse-number">21</span>那些行走，這些也行走；那些站住，這些也站住；那些從地上升，輪也在旁邊上升，因為活物的靈在輪中。</div>
+<div class="verse"><span class="verse-number">22</span>活物的頭以上有穹蒼的形像，看着像可畏的水晶，鋪張在活物的頭以上。</div>
+<div class="verse"><span class="verse-number">23</span>穹蒼以下，活物的翅膀直張，彼此相對；每活物有兩個翅膀遮體。</div>
+<div class="verse"><span class="verse-number">24</span>活物行走的時候，我聽見翅膀的響聲，像大水的聲音，像全能者的聲音，也像軍隊鬨嚷的聲音。活物站住的時候，便將翅膀垂下。</div>
+<div class="verse"><span class="verse-number">25</span>在他們頭以上的穹蒼之上有聲音。他們站住的時候，便將翅膀垂下。</div>
+<div class="verse"><span class="verse-number">26</span>在他們頭以上的穹蒼之上有寶座的形像，彷彿藍寶石；在寶座形像以上有彷彿人的形狀。</div>
+<div class="verse"><span class="verse-number">27</span>我見從他腰以上有彷彿光耀的精金，周圍都有火的形狀，又見從他腰以下有彷彿火的形狀，周圍也有光輝。</div>
+<div class="verse"><span class="verse-number">28</span>下雨的日子，雲中虹的形狀怎樣，周圍光輝的形狀也是怎樣。這就是耶和華榮耀的形像。我一看見就俯伏在地，又聽見一位說話的聲音。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第1章記載以西結蒙召的起點，時在主前593年，地點是巴比倫迦巴魯河邊。以西結是祭司，卻在異邦受呼召成為先知——神的主權打破了地域與身分的限制。本章核心是一幅極其宏大的異象：從北方來的狂風大雲中，出現了四個活物（四面：人、獅、牛、鷹），各帶四翅，旁有「輪中套輪」的奇異車輪，周圍滿有眼睛，靈往哪裡輪就往哪裡。在活物之上是水晶般的穹蒼，穹蒼之上是藍寶石的寶座，寶座上有彷彿人形的光輝形狀——「這就是耶和華榮耀的形像」。這個異象後來成為猶太神秘主義的核心意象，也是新約中四活物傳統（啟4章）的源頭。關鍵神學信息是：即使在巴比倫的廢墟中，神的榮耀沒有消失，神的同在沒有受限於地理，祂的寶座超越所有的政治與歷史動盪。以西結的回應是「俯伏在地」——這是在神榮耀面前唯一適切的姿勢。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神的同在不受地域限制，即使在異鄉也能遇見神】</strong><br>以西結不是在聖殿中、不是在以色列地，而是在巴比倫河邊被擄的人中間，「天就開了，得見神的異象」。神突破了「只能在聖殿遇見神」的宗教框架，在人最意想不到的地方顯現。信徒無論身在何處——異鄉、困境、邊緣——都不在神的同在之外。神的榮耀不受地圖所限；祂在任何地方都能顯現自己。<br><br>
+<strong>2. 【輪中套輪滿有眼睛，象徵神對全地的全知與掌管】</strong><br>車輪「向四方都能直行，並不掉轉」，「輪輞滿有眼睛」——這些意象描繪神的全知（看見一切方向）和全能（不需轉身即可行動）。在信徒面對複雜的歷史局勢、不可測的未來時，這個異象提供了根本的安慰：神的眼目察看全地，沒有任何方向是祂的盲點；祂的主宰是全方位的、不受限制的。<br><br>
+<strong>3. 【在神榮耀面前，正確的回應是俯伏敬畏】</strong><br>以西結看見耶和華榮耀的形像，「就俯伏在地」（28節）——這是全章的信仰高峰。敬畏神、在祂面前俯伏，不是軟弱，而是對神真實性情的正確認識。現代信仰常常過於隨便，缺乏對神聖性的敬畏。回到這種「俯伏在地」的心態，是重新校準信仰中心的重要操練。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>在迦勒底人之地</strong>、<strong>迦巴魯河邊</strong>，耶和華的話特特臨到布西的兒子祭司以西結；耶和華的靈降在他身上。（結1:3）</td>
+<td>你是否<strong>曾在一個「不</strong>應該遇見神」的地方——困境、孤立、異鄉——卻真實地遇見了神？就像<strong>在最意想不到的角落找到一扇窗</strong>，神突破你<strong>對「哪裡才</strong>能遇見祂」的預期，你願意<strong>打開期待</strong>，相信神今天也可以在你<strong>最不預期的地</strong>方向你<strong>說話嗎</strong>？</td>
+</tr>
+<tr>
+<td><strong>四個輪輞周圍滿有</strong>眼睛……<strong>靈往那裏去</strong>，活物就往那裏去……因為活物的靈在輪中。（結1:18,20）</td>
+<td>「輪輞滿有眼睛」象徵神的全知——沒有任何角落是神看不見的。這讓你<strong>感到安慰</strong>，還是有點不舒服？就像<strong>24小時的監控攝影機</strong>，對守法的人是保護，對藏有秘密的人是壓力，你願意<strong>讓「神看見一</strong>切」這個事實，成為你<strong>生活更透明的</strong>動力嗎？</td>
+</tr>
+<tr>
+<td><strong>這就是耶和華榮耀</strong><strong>的形像</strong>。我一看見就俯伏在地，又聽見一位說話的聲音。（結1:28下）</td>
+<td>你<strong>上一次在神面</strong>前真正「俯伏在地」——無論是身體還是心靈的敬畏——是什麼時候？就像<strong>面對真正偉大的人或景象時</strong>，人會自然地屏息靜氣，你<strong>在日常的信仰</strong>生活中，還保有對神聖潔與榮耀的敬畏之心嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

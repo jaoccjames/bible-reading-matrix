@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第27章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第27章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">立石刻律與以巴路山的咒詛</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>摩西和以色列的眾長老吩咐百姓說：「你們要遵守我今日所吩咐的一切誡命。</div>
+<div class="verse"><span class="verse-number">2</span>你們過約但河，到了耶和華你神所賜給你的地，當天要立起幾塊大石頭，墁上石灰，</div>
+<div class="verse"><span class="verse-number">3</span>把這律法的一切話寫在石頭上。你過了河，可以進入耶和華你神所賜你流奶與蜜之地，正如耶和華你列祖之神所應許你的。</div>
+<div class="verse"><span class="verse-number">4</span>你們過了約但河，就要在以巴路山上照我今日所吩咐的，將這些石頭立起來，墁上石灰。</div>
+<div class="verse"><span class="verse-number">5</span>在那裏要為耶和華你的神築一座石壇；在石頭上不可動鐵器。</div>
+<div class="verse"><span class="verse-number">6</span>要用沒有鑿過的石頭築耶和華你神的壇，在壇上要將燔祭獻給耶和華你的神。</div>
+<div class="verse"><span class="verse-number">7</span>又要獻平安祭，且在那裏吃，在耶和華你的神面前歡樂。</div>
+<div class="verse"><span class="verse-number">8</span>你要將這律法的一切話明明的寫在石頭上。」</div>
+<div class="verse"><span class="verse-number">9</span>摩西和祭司利未人曉諭以色列眾人說：「以色列啊，要默默靜聽。你今日成為耶和華你神的百姓了。</div>
+<div class="verse"><span class="verse-number">10</span>所以要聽從耶和華你神的話，遵行他的誡命律例，就是我今日所吩咐你的。」</div>
+<div class="verse"><span class="verse-number">11</span>當日，摩西囑咐百姓說：</div>
+<div class="verse"><span class="verse-number">12</span>「你們過了約但河，西緬、利未、猶大、以薩迦、約瑟、便雅憫六個支派的人都要站在基利心山上為百姓祝福。</div>
+<div class="verse"><span class="verse-number">13</span>流便、迦得、亞設、西布倫、但、拿弗他利六個支派的人都要站在以巴路山上宣布咒詛。</div>
+<div class="verse"><span class="verse-number">14</span>利未人要向以色列眾人高聲說：</div>
+<div class="verse"><span class="verse-number">15</span>「『有人製造耶和華所憎惡的偶像，或雕刻，或鑄造，就是工匠手所作的，在暗中設立，那人必受咒詛！』百姓都要答應說：『阿們！』</div>
+<div class="verse"><span class="verse-number">16</span>「『輕慢父母的，必受咒詛！』百姓都要說：『阿們！』</div>
+<div class="verse"><span class="verse-number">17</span>「『挪移鄰舍地界的，必受咒詛！』百姓都要說：『阿們！』</div>
+<div class="verse"><span class="verse-number">18</span>「『使瞎子走差路的，必受咒詛！』百姓都要說：『阿們！』</div>
+<div class="verse"><span class="verse-number">19</span>「『向寄居的和孤兒寡婦屈枉正直的，必受咒詛！』百姓都要說：『阿們！』</div>
+<div class="verse"><span class="verse-number">20</span>「『與繼母行淫的，必受咒詛！因為掀開他父親的衣襟。』百姓都要說：『阿們！』</div>
+<div class="verse"><span class="verse-number">21</span>「『與獸淫合的，必受咒詛！』百姓都要說：『阿們！』</div>
+<div class="verse"><span class="verse-number">22</span>「『與異母同父，或異父同母的姐妹行淫的，必受咒詛！』百姓都要說：『阿們！』</div>
+<div class="verse"><span class="verse-number">23</span>「『與岳母行淫的，必受咒詛！』百姓都要說：『阿們！』</div>
+<div class="verse"><span class="verse-number">24</span>「『暗中殺人的，必受咒詛！』百姓都要說：『阿們！』</div>
+<div class="verse"><span class="verse-number">25</span>「『受賄賂害死無辜之人的，必受咒詛！』百姓都要說：『阿們！』</div>
+<div class="verse"><span class="verse-number">26</span>「『不堅守遵行這律法言語的，必受咒詛！』百姓都要說：『阿們！』」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第二十七章記錄了摩西和眾長老、祭司對以色列人的吩咐：當他們過了約旦河後，要在以巴路山立大石頭，塗上石灰，將律法所有的話刻在上面（27:1-4）；同時在那裏建築耶和華的壇，獻燔祭和平安祭，並在神面前歡樂（27:5-8）。本章強調：過河之日，以色列人就成為耶和華的子民，因此要聽從神的話（27:9-10）。接着規定了在基利心山和以巴路山上的分立儀式：六個支派在基利心山上宣讀祝福，另六個支派在以巴路山上宣讀咒詛。本章下半部列出了十二條帶來咒詛的行為（27:15-26），包括雕刻偶像、藐視父母、移動地界、欺壓孤兒寡婦和外人、姦淫、受賄、不守律法等，每條後面都有「民要說：阿們！」作為全體確認。這個儀式使律法的約束變成了一次全民公開的誓約，每個人都親口承認了神律法的效力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 立石刻律：使信仰有形可見，持續提醒世代</strong><br>神吩咐將律法刻在大石頭上，使每一個經過的人都能看見（申27:3-4，8）。這個行動說明信仰需要「具體化」——不只停留在心裏，也要在生活環境中留下清晰可見的提醒。今日信徒可以思考：在家庭生活、工作環境中，有什麼具體的設計或安排，能持續提醒自己和家人神的話語是生命的核心？<br><br>
+<strong>2. 全體認同的咒詛宣告，體現每個人在約中的個人責任</strong><br>十二條咒詛後面跟着全體「阿們」，意味著每個以色列人都公開認同這些準則的效力（申27:15-26）。「阿們」不只是一個儀式性的回應，而是一個嚴肅的誓言：我承認這些律法是對的，我若違犯就接受相應的後果。今日在信仰群體中，對神話語的「阿們」同樣需要是心裏真實的委身，而非習慣性的口頭回應。<br><br>
+<strong>3. 咒詛清單揭示了隱秘罪行的嚴肅性</strong><br>十二條咒詛中許多涉及「隱秘」的罪行——偷移地界、在暗中欺壓人、秘密受賄等（申27:17,19,25）。神的律法特別關注那些可以藏在暗中不被人察覺的罪，說明神的審判不只看外在行為，也看沒有人見到時的選擇。沒有人在場時我們的行為，才是道德品格最真實的指標。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你們過了約但河</strong>，<strong>要照我今日所吩咐</strong>你們的，將這律法的一切話刻在石頭上，塗上石灰。」（申27:2-3）</td>
+<td>讓信仰在日常生活中有形可見，就像<strong>在辦公桌上放家人的照片讓你時刻</strong>記念最重要的人，你<strong>家中或日常環</strong>境中有什麼具體的安排，幫助你<strong>和家人持續記</strong>念神的話語？</td>
+</tr>
+<tr>
+<td>「<strong>你今日成為耶和華</strong><strong>你神的子民</strong>，所以要聽從耶和華你神的話，遵行他的誡命律例。」（申27:9-10）</td>
+<td>身份的確認帶來行動的動力，就像<strong>正式成為某支球隊成員後才真正全</strong>力投入訓練，你是否<strong>清楚地認識自</strong>己「神的子民」的身份？這個身份如何影響你<strong>今日對神話語</strong>的回應方式？</td>
+</tr>
+<tr>
+<td>「<strong>凡不遵守行這律法</strong><strong>一切話的</strong>，必受咒詛！民都要說：阿們！」（申27:26）</td>
+<td>公開的信仰認同需要日常生活的配合，就像<strong>在婚禮上說「我願意」之後仍要每</strong>天用行動活出承諾，你<strong>在教會中所說</strong>的每一個「阿們」，如何真實地反映在你<strong>的日常選擇與</strong>行為上？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

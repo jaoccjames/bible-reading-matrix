@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記上第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記上第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大衛受膏為王</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華對撒母耳說：「我既厭棄掃羅作以色列的王，你為他悲傷要到幾時呢？你將膏油盛滿了角，我差遣你往伯利恆人耶西那裏去；因為我在他眾子之內，預定一個作王的。」</div>
+<div class="verse"><span class="verse-number">2</span>撒母耳說：「我怎能去呢？掃羅若聽見，必要殺我。」耶和華說：「你可以帶一隻牛犢去，就說：『我來是要向耶和華獻祭。』</div>
+<div class="verse"><span class="verse-number">3</span>你要請耶西來吃祭肉，我就指示你所當行的事。我所指給你的人，你要膏他。」</div>
+<div class="verse"><span class="verse-number">4</span>撒母耳就照耶和華的話去行。到了伯利恆，那城裏的長老都戰戰兢兢的出來迎接他，問他說：「你是為平安來的麼？」</div>
+<div class="verse"><span class="verse-number">5</span>他說：「為平安來的，我是給耶和華獻祭。你們當自潔，來與我同吃祭肉。」撒母耳就使耶西和他眾子自潔，請他們來吃祭肉。</div>
+<div class="verse"><span class="verse-number">6</span>他們來的時候，撒母耳看見以利押，就心裏說，耶和華的受膏者必定在他面前。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華卻對撒母耳說：「不要看他的外貌和他身材高大，我不揀選他。因為耶和華不像人看人：人是看外貌；耶和華是看內心。」</div>
+<div class="verse"><span class="verse-number">8</span>耶西叫亞比拿達從撒母耳面前經過，撒母耳說：「耶和華也不揀選他。」</div>
+<div class="verse"><span class="verse-number">9</span>耶西又叫沙瑪從撒母耳面前經過，撒母耳說：「耶和華也不揀選他。」</div>
+<div class="verse"><span class="verse-number">10</span>耶西叫他七個兒子都從撒母耳面前經過，撒母耳說：「這都不是耶和華所揀選的。」</div>
+<div class="verse"><span class="verse-number">11</span>撒母耳對耶西說：「你的兒子都在這裏麼？」他回答說：「還有個小的，現在放羊。」撒母耳對耶西說：「你打發人去叫他來；他若不來，我們必不坐席。」</div>
+<div class="verse"><span class="verse-number">12</span>耶西就打發人去叫了他來。他面色光紅，雙目清秀，容貌俊美。耶和華說：「這就是他，你起來膏他。」</div>
+<div class="verse"><span class="verse-number">13</span>撒母耳就用角裏的膏油，在他諸兄中膏了他。從這日起，耶和華的靈就大大感動大衛。撒母耳起身回拉瑪去了。</div>
+<div class="verse"><span class="verse-number">14</span>耶和華的靈離開掃羅，有惡魔從耶和華那裏來擾亂他。</div>
+<div class="verse"><span class="verse-number">15</span>掃羅的臣僕對他說：「現在有惡魔從神那裏來擾亂你。</div>
+<div class="verse"><span class="verse-number">16</span>我們的主可以吩咐面前的臣僕，找一個善於彈琴的來，等神那裏來的惡魔臨到你身上的時候，使他用手彈琴，你就好了。」</div>
+<div class="verse"><span class="verse-number">17</span>掃羅對臣僕說：「你們可以為我找一個善於彈琴的，帶到我這裏來。」</div>
+<div class="verse"><span class="verse-number">18</span>其中有一個少年人說：「我曾見伯利恆人耶西的一個兒子善於彈琴，是大有勇敢的戰士，說話合宜，容貌俊美，耶和華也與他同在。」</div>
+<div class="verse"><span class="verse-number">19</span>於是掃羅差遣使者去見耶西，說：「請你打發你放羊的兒子大衛到我這裏來。」</div>
+<div class="verse"><span class="verse-number">20</span>耶西就把幾個餅和一皮袋酒，並一隻山羊羔，都馱在驢上，交給他兒子大衛，送與掃羅。</div>
+<div class="verse"><span class="verse-number">21</span>大衛到了掃羅那裏，就侍立在掃羅面前。掃羅甚喜愛他，他就作了掃羅拿兵器的人。</div>
+<div class="verse"><span class="verse-number">22</span>掃羅差遣人去見耶西，說：「求你容大衛侍立在我面前，因為他在我眼前蒙了恩。」</div>
+<div class="verse"><span class="verse-number">23</span>從神那裏來的惡魔臨到掃羅身上的時候，大衛就拿琴，用手而彈，掃羅便舒暢爽快，惡魔離了他。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載神揀選大衛接替掃羅作王的過程,標誌著以色列歷史的重大轉折。神吩咐仍在為掃羅悲傷的撒母耳前往伯利恆膏立新王。撒母耳順服前往,在耶西的眾子中尋找神所揀選的人。當耶西的七個兒子依次經過時,撒母耳以為外表高大的以利押必是神所揀選的,但神明確告訴他:人看外貌,神看內心。最後被召回的是最小的兒子大衛,正在野地放羊,神指示撒母耳膏他為王。從那日起,聖靈大大感動大衛。與此同時,神的靈離開了掃羅,惡魔開始擾亂他。諷刺的是,掃羅為了得到安慰,招募了善於彈琴的大衛進入王宮,完全不知道這位年輕人正是神所膏立要取代他的人。本章為大衛的興起和掃羅的衰落揭開序幕。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神看人的標準與世人完全不同</strong><br>當耶西的長子以利押出現時,連先知撒母耳都被他的外表所吸引,認為他必是神所揀選的。但神立即糾正撒母耳:「人是看外貌,耶和華是看內心」。這句話成為整本聖經的核心原則之一。世人看重的是外在條件——相貌、身材、出身、才能,但神看重的是內心的品格、對祂的忠誠、謙卑的態度。大衛是最小的兒子,甚至父親都沒想到他可能被選上,但神卻揀選了他。這提醒我們不要用世界的標準評估自己或他人的價值,也不要因外在條件不足而自卑,神看重的是我們的內心。<br><br>
+<strong>2. 神的時間和人的悲傷需要平衡</strong><br>撒母耳為掃羅的失敗深感悲傷,神卻問他:「你為他悲傷要到幾時呢?」神並非責備撒母耳的同情心,而是要他明白,當神已經做出決定並開啟新的篇章時,我們不能一直停留在過去的失敗中。悲傷是正常的,但不能讓悲傷阻礙我們順服神的新帶領。撒母耳必須放下對掃羅的哀慟,轉而執行神膏立大衛的任務。我們也常常因為過去的失敗、失望或失去而停滯不前,但神要我們在適當的哀悼後,重新聚焦於祂當下的心意和未來的計劃。<br><br>
+<strong>3. 忠心在小事上預備我們承擔大使命</strong><br>大衛被找到時正在野地放羊,這是卑微的工作,但他忠心地做好。正是在這些看似平凡的日子裡,他學會了負責、勇敢(後來他告訴掃羅曾打死獅子和熊)、以及對神的倚靠。神沒有在大衛坐在王宮裡時呼召他,而是在他忠心牧羊時膏立他。這顯示神常常在隱藏的地方預備祂的僕人,在沒人看見的角落塑造品格。我們現在所做的每件小事,都可能是神為將來更大使命所做的預備。不要輕看現在的位置,忠心在小處,神會在大處使用你。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華卻對撒母耳</strong>說:<strong>不要看他的外貌和</strong>他身材高大,我已經厭棄他了。因為,耶和華不像人看人:人是看外貌;耶和華是看內心。(撒母耳記上16:7)</td>
+<td>我評估自己或他人的價值時,是用世界的標準還是神的眼光?就像<strong>面試時只看履歷而忽略品格</strong>,我是否過度在意外在條件,卻忽略了神更看重內心的忠誠和品格?</td>
+</tr>
+<tr>
+<td><strong>耶和華對撒母耳說</strong>:<strong>我既厭棄掃羅作以</strong>色列的王,你為他悲傷要到幾時呢?你將膏油盛滿了角,我差遣你往伯利恆人耶西那裡去。(撒母耳記上16:1)</td>
+<td>我是否因為過去的失敗或失望而停滯不前,錯過了神現在的帶領?就像<strong>失戀後一直沉浸在回憶中錯過新機</strong>會,我是否允許自己適度哀傷後,就重新聚焦於神為我預備的新篇章?</td>
+</tr>
+<tr>
+<td><strong>撒母耳對耶西說</strong>:<strong>你的兒子都在這裡</strong>嗎?他回答說:還有個小的,現在放羊。(撒母耳記上16:11)</td>
+<td>我是否輕看現在的位置,認為所做的事太小不重要?就像<strong>實習生覺得影印文件沒價值而不用</strong>心,我是否明白神常在隱藏處預備祂的僕人,現在的忠心正是為將來更大的使命做準備?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

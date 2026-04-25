@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記下第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記下第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">四境得勝</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>此後，大衛攻打非利士人，把他們治服，從他們手下奪取了京城的權柄〔原文作母城的嚼環〕；</div>
+<div class="verse"><span class="verse-number">2</span>又攻打摩押人，使他們躺臥在地上，用繩量一量：量二繩的殺了，量一繩的存留。摩押人就歸服大衛，給他進貢。</div>
+<div class="verse"><span class="verse-number">3</span>瑣巴王利合的兒子哈大底謝往大河去，要奪回他的國權。大衛就攻打他，</div>
+<div class="verse"><span class="verse-number">4</span>擒拿了他的馬兵一千七百，步兵二萬，將拉戰車的馬砍斷蹄筋，但留下一百輛車的馬。</div>
+<div class="verse"><span class="verse-number">5</span>大馬色的亞蘭人來幫助瑣巴王哈大底謝，大衛就殺了亞蘭人二萬二千。</div>
+<div class="verse"><span class="verse-number">6</span>於是大衛在大馬色的亞蘭地設立防營，亞蘭人就歸服他，給他進貢。大衛無論往那裏去，耶和華都使他得勝。</div>
+<div class="verse"><span class="verse-number">7</span>他奪了哈大底謝臣僕所拿的金盾牌，帶到耶路撒冷。</div>
+<div class="verse"><span class="verse-number">8</span>大衛王又從屬哈大底謝的比他和比羅他城中奪取了許多的銅。</div>
+<div class="verse"><span class="verse-number">9</span>哈馬王陀以聽見大衛殺敗哈大底謝的全軍，</div>
+<div class="verse"><span class="verse-number">10</span>就打發他兒子約蘭去見大衛王，問他的安，為他祝福，因為他殺敗了哈大底謝（原來陀以與哈大底謝常常爭戰）。約蘭帶了金銀銅的器皿來，</div>
+<div class="verse"><span class="verse-number">11</span>大衛王將這些器皿和他治服各國所得來的金銀都分別為聖，獻給耶和華，</div>
+<div class="verse"><span class="verse-number">12</span>就是從亞蘭、摩押、亞捫、非利士、亞瑪力人所得來的，以及從瑣巴王利合的兒子哈大底謝所掠之物。</div>
+<div class="verse"><span class="verse-number">13</span>大衛在鹽谷擊殺了亞蘭〔或作：以東，見詩篇六十篇詩題〕一萬八千人回來，就得了大名；</div>
+<div class="verse"><span class="verse-number">14</span>又在以東全地設立防營，以東人就都歸服大衛。大衛無論往那裏去，耶和華都使他得勝。</div>
+<div class="verse"><span class="verse-number">15</span>大衛作以色列眾人的王，又向眾民秉公行義。</div>
+<div class="verse"><span class="verse-number">16</span>洗魯雅的兒子約押作元帥；亞希律的兒子約沙法作史官；</div>
+<div class="verse"><span class="verse-number">17</span>亞希突的兒子撒督和亞比亞他的兒子亞希米勒作祭司長；西萊雅作書記；</div>
+<div class="verse"><span class="verse-number">18</span>耶何耶大的兒子比拿雅統轄基利提人和比利提人。大衛的眾子都作領袖。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載大衛在建立王國後,神如何實現祂在第七章的應許,使大衛四境得勝。大衛征服了以色列周圍的列國,包括西面的非利士、東面的摩押和亞捫、北面的亞蘭和瑣巴,以及南面的以東,建立了一個強大的帝國。這些勝利不是出於大衛的軍事才能,而是因為「耶和華都使他得勝」。大衛將戰利品分別為聖獻給神,並在國中秉公行義,治理百姓。本章也列出大衛的主要官員,顯示他建立了完善的行政體系。這是以色列歷史上的黃金時期,預表基督將來要建立的永恆國度。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 得勝的源頭是神</strong><br>本章兩次強調「耶和華都使他得勝」,顯明大衛的成功不是靠自己,而是神的同在和幫助。無論我們在哪個領域服事,真正的得勝都來自於神。我們可以盡力規劃和執行,但最終的成敗在神手中。當我們謙卑倚靠神,承認一切成就都出於祂時,神就會在我們的生命中彰顯祂的大能。<br><br>
+<strong>2. 將榮耀歸給神</strong><br>大衛將所有戰利品「分別為聖,獻給耶和華」,而不是據為己有或炫耀自己的功勳。這顯示他知道一切都是從神而來,應當歸給神。在我們的成就中,我們是否記得將榮耀歸給神?還是將功勞歸於自己?真正屬靈的成熟,在於我們能否在成功時仍保持謙卑,將一切榮耀歸給那位賜福的主。<br><br>
+<strong>3. 公義治理的重要</strong><br>大衛不僅在軍事上得勝,更「向眾民秉公行義」。真正的領袖不只追求權力和成就,更要以公義和憐憫治理。神不僅關心我們事奉的果效,更看重我們是否以祂的公義和慈愛對待身邊的人。一個蒙神祝福的生命,應該在各方面都反映出神的性情,不僅在外在成就上,更在內在品格和待人處事上。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>大衛無論往哪裡去</strong>,<strong>耶和華都使他得勝</strong>。(撒下8:6,14)</td>
+<td>當我們面對各樣挑戰時,就像<strong>運動員在不同場地比賽</strong>,我們是否相信神的同在能讓我們在各種環境中都能得勝?我們如何在每個處境中都經歷神的幫助?</td>
+</tr>
+<tr>
+<td><strong>大衛王將這些器皿</strong><strong>和他治服各國所得</strong>來的金銀都分別為聖,獻給耶和華。(撒下8:11)</td>
+<td>當我們獲得成就時,就像<strong>領取獎金或獲得升遷</strong>,我們是否願意將榮耀歸給神,而不是把功勞都歸於自己?什麼會攔阻我們將成果獻給神?</td>
+</tr>
+<tr>
+<td><strong>大衛作以色列眾人</strong>的王,<strong>又向眾民秉公行義</strong>。(撒下8:15)</td>
+<td>當我們擁有權柄或影響力時,就像<strong>成為團隊領導或部門主管</strong>,我們是否能公平對待每個人,而不是偏心或濫用權力?我們如何在位份上活出神的公義?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

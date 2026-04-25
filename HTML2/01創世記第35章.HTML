@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第35章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第35章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">回歸伯特利與生命更新</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>神對雅各說：「起來！上伯特利去，住在那裏；要在那裏築一座壇給神，就是你逃避你哥哥以掃的時候向你顯現的那位。」</div>
+<div class="verse"><span class="verse-number">2</span>雅各就對他家中的人並一切與他同在的人說：「你們要除掉你們中間的外邦神，也要自潔，更換衣裳。</div>
+<div class="verse"><span class="verse-number">3</span>我們要起來，上伯特利去，在那裏我要築一座壇給神，就是在我遭難的日子應允我的禱告、在我行的路上保佑我的那位。」</div>
+<div class="verse"><span class="verse-number">4</span>他們就把外邦人的神像和他們耳朵上的環子交給雅各；雅各都藏在示劍那裏的橡樹底下。</div>
+<div class="verse"><span class="verse-number">5</span>他們便起行前往。神使那周圍城邑的人都甚驚懼，就不追趕雅各的眾子了。</div>
+<div class="verse"><span class="verse-number">6</span>於是雅各和一切與他同在的人到了迦南地的路斯，就是伯特利。</div>
+<div class="verse"><span class="verse-number">7</span>他在那裏築了一座壇，就給那地方起名叫伊勒伯特利〔就是伯特利之神的意思〕；因為他逃避他哥哥的時候，神在那裏向他顯現。</div>
+<div class="verse"><span class="verse-number">8</span>利百加的奶母底波拉死了，就葬在伯特利下邊橡樹底下；那棵樹名叫亞倫巴古。</div>
+<div class="verse"><span class="verse-number">9</span>雅各從巴旦亞蘭回來，神又向他顯現，賜福與他，</div>
+<div class="verse"><span class="verse-number">10</span>且對他說：「你的名原是雅各，從今以後不要再叫雅各，要叫以色列。」這樣，他就改名叫以色列。</div>
+<div class="verse"><span class="verse-number">11</span>神又對他說：「我是全能的神；你要生養眾多，將來有一族和多國的民從你而生，又有君王從你而出。</div>
+<div class="verse"><span class="verse-number">12</span>我所賜給亞伯拉罕和以撒的地，我要賜給你與你的後裔。」</div>
+<div class="verse"><span class="verse-number">13</span>神就從那與雅各說話的地方升上去了。</div>
+<div class="verse"><span class="verse-number">14</span>雅各便在那裏立了一根石柱，在柱子上奠酒，澆油。</div>
+<div class="verse"><span class="verse-number">15</span>雅各就給那地方起名叫伯特利。</div>
+<div class="verse"><span class="verse-number">16</span>他們從伯特利起行，離以法他還有一段路程，拉結臨產甚是艱難。</div>
+<div class="verse"><span class="verse-number">17</span>正在艱難的時候，收生婆對她說：「不要怕，你又要得一個兒子了。」</div>
+<div class="verse"><span class="verse-number">18</span>她將近於死，靈魂要走的時候，就給她兒子起名叫便俄尼；他父親卻給他起名叫便雅憫。</div>
+<div class="verse"><span class="verse-number">19</span>拉結死了，葬在以法他的路旁；以法他就是伯利恆。</div>
+<div class="verse"><span class="verse-number">20</span>雅各在她的墳上立了一統碑，就是拉結的墓碑，到今日還在。</div>
+<div class="verse"><span class="verse-number">21</span>以色列起行前往，在以得臺那邊支搭帳棚。</div>
+<div class="verse"><span class="verse-number">22</span>以色列住在那地的時候，流便去與他父親的妾辟拉同寢，以色列也聽見了。雅各共有十二個兒子。</div>
+<div class="verse"><span class="verse-number">23</span>利亞所生的是雅各的長子流便，還有西緬、利未、猶大、以薩迦、西布倫。</div>
+<div class="verse"><span class="verse-number">24</span>拉結所生的是約瑟、便雅憫。</div>
+<div class="verse"><span class="verse-number">25</span>拉結的使女辟拉所生的是但、拿弗他利。</div>
+<div class="verse"><span class="verse-number">26</span>利亞的使女悉帕所生的是迦得、亞設。這是雅各在巴旦亞蘭所生的兒子。</div>
+<div class="verse"><span class="verse-number">27</span>雅各來到他父親以撒那裏，到了基列亞巴的幔利，乃是亞伯拉罕和以撒寄居的地方；基列亞巴就是希伯崙。</div>
+<div class="verse"><span class="verse-number">28</span>以撒共活了一百八十歲。</div>
+<div class="verse"><span class="verse-number">29</span>以撒年紀老邁，日子滿足，氣絕而死，歸到他列祖〔原文作本民〕那裏。他兩個兒子以掃、雅各把他葬埋了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載雅各遵神命令回到伯特利，是他靈性復興的關鍵轉捩點。二十多年前他曾在此遇見神並許願，如今神呼召他回歸起初之地。雅各要求全家除掉偶像，象徵徹底的心靈潔淨。神再次向他顯現，重申改名為「以色列」並確認應許，標誌著他生命的全面更新。本章也記錄了愛妻拉結難產而亡的悲痛，以及父親以撒的離世，顯示人生中的歡喜與憂傷常交織並存。雅各十二個兒子的名單，預示著以色列十二支派的形成，在救恩歷史中具有重要地位。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 回歸初心與生命更新</strong><br>神呼召雅各回到伯特利，就是他初次遇見神的地方，提醒信徒要常常回到信仰的起點，重溫起初的感動。真正的復興始於除去心中的偶像，並以潔淨的心重新來到神面前。<br><br>
+<strong>2. 神的信實與應許的延續</strong><br>儘管雅各經歷二十多年的漂泊與掙扎，神仍然信實地保守他，並在伯特利再次向他確認應許。神改變雅各的名字為「以色列」，代表他身分的轉化，從抓奪者成為與神同行的人。<br><br>
+<strong>3. 在苦難中經歷神的同在</strong><br>拉結的死亡提醒我們，即使在屬靈高峰時刻，人生仍有痛苦與失落。然而神的同在與應許並不因環境改變，祂在患難中仍是我們的安慰與盼望，引領我們繼續前行。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們要除掉你們中</strong><strong>間的外邦神</strong>，也要自潔，更換衣裳。（創35:2）</td>
+<td>就像<strong>清理手機要刪除不常用的APP才</strong>能釋放空間，我們的心靈是否也需要定期檢視，除去那些佔據心思、取代神位置的「偶像」（如金錢、名聲、享樂），才能騰出空間讓神居首位？</td>
+</tr>
+<tr>
+<td><strong>神又對他說</strong>：<strong>你的名原是雅各</strong>，從今以後不要再叫雅各，要叫以色列。這樣，他就改名叫以色列。（創35:10）</td>
+<td>就像<strong>畢業後換新名片代表新的身分與職</strong>責，神為我們改變身分是要我們活出新生命的樣式。我是否仍活在舊有的習慣與思維中，還是願意讓神更新改變我，活出祂所賜的新身分？</td>
+</tr>
+<tr>
+<td><strong>就是在我遭難的日</strong><strong>子應允我的禱告</strong>、在我行的路上保佑我的那位。（創35:3）</td>
+<td>就像<strong>手機導航在迷路時引導正確方向</strong>，回顧過去神如何在困境中帶領與保守，能幫助我們在當下的挑戰中重拾信心。我能否數算神過去的恩典，以此作為面對未來不確定時的力量？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

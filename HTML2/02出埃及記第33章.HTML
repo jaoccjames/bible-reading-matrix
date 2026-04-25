@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第33章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第33章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神的同在與摩西渴慕神榮耀</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華吩咐摩西說：「我曾起誓應許亞伯拉罕、以撒、雅各說：『要將迦南地賜給你的後裔。』現在你和你從埃及地所領出來的百姓，要從這裏往那地去。</div>
+<div class="verse"><span class="verse-number">2</span>我要差遣使者在你前面，攆出迦南人、亞摩利人、赫人、比利洗人、希未人、耶布斯人，</div>
+<div class="verse"><span class="verse-number">3</span>領你到那流奶與蜜之地。我自己不同你們上去；因為你們是硬着頸項的百姓，恐怕我在路上把你們滅絕。」</div>
+<div class="verse"><span class="verse-number">4</span>百姓聽見這兇信就悲哀，也沒有人佩戴妝飾。</div>
+<div class="verse"><span class="verse-number">5</span>耶和華對摩西說：「你告訴以色列人說：『耶和華說：你們是硬着頸項的百姓，我若一霎時臨到你們中間，必滅絕你們。現在你們要把身上的妝飾摘下來，使我可以知道怎樣待你們。』」</div>
+<div class="verse"><span class="verse-number">6</span>以色列人從住何烈山以後，就把身上的妝飾摘得乾淨。</div>
+<div class="verse"><span class="verse-number">7</span>摩西素常將帳棚支搭在營外，離營卻遠，他稱這帳棚為會幕。凡求問耶和華的，就到營外的會幕那裏去。</div>
+<div class="verse"><span class="verse-number">8</span>當摩西出營到會幕去的時候，百姓就都起來，各人站在自己帳棚的門口，望着摩西，直等到他進了會幕。</div>
+<div class="verse"><span class="verse-number">9</span>摩西進會幕的時候，雲柱降下來，立在會幕的門前，耶和華便與摩西說話。</div>
+<div class="verse"><span class="verse-number">10</span>眾百姓看見雲柱立在會幕門前，就都起來，各人在自己帳棚的門口下拜。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華與摩西面對面說話，好像人與朋友說話一般。摩西轉到營裏去，惟有他的幫手，一個少年人嫩的兒子約書亞不離開會幕。</div>
+<div class="verse"><span class="verse-number">12</span>摩西對耶和華說：「你吩咐我說：『將這百姓領上去』，卻沒有叫我知道你要打發誰與我同去，只說：『我按你的名認識你，你在我眼前也蒙了恩。』</div>
+<div class="verse"><span class="verse-number">13</span>我如今若在你眼前蒙恩，求你將你的道指示我，使我可以認識你，好在你眼前蒙恩。求你想到這民是你的民。」</div>
+<div class="verse"><span class="verse-number">14</span>耶和華說：「我必親自和你同去，使你得安息。」</div>
+<div class="verse"><span class="verse-number">15</span>摩西說：「你若不親自和我同去，就不要把我們從這裏領上去。</div>
+<div class="verse"><span class="verse-number">16</span>人在何事上得以知道我和你的百姓在你眼前蒙恩呢？豈不是因你與我們同去、使我和你的百姓與地上的萬民有分別嗎？」</div>
+<div class="verse"><span class="verse-number">17</span>耶和華對摩西說：「你這所求的我也要行；因為你在我眼前蒙了恩，並且我按你的名認識你。」</div>
+<div class="verse"><span class="verse-number">18</span>摩西說：「求你顯出你的榮耀給我看。」</div>
+<div class="verse"><span class="verse-number">19</span>耶和華說：「我要顯我一切的恩慈，在你面前經過，宣告我的名。我要恩待誰就恩待誰；要憐憫誰就憐憫誰」；</div>
+<div class="verse"><span class="verse-number">20</span>又說：「你不能看見我的面，因為人見我的面不能存活。」</div>
+<div class="verse"><span class="verse-number">21</span>耶和華說：「看哪，在我這裏有地方，你要站在磐石上。</div>
+<div class="verse"><span class="verse-number">22</span>我的榮耀經過的時候，我必將你放在磐石穴中，用我的手遮掩你，等我過去，</div>
+<div class="verse"><span class="verse-number">23</span>然後我要將我的手收回，你就得見我的背，卻不得見我的面。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第33章緊接金牛犢事件之後，記載神與以色列人關係的嚴峻轉折和摩西的深情代求。神告訴摩西繼續出發往應許之地，應許差天使在前引路，但祂自己不同行，「恐怕在路上把你們滅絕」，因為以色列是「硬着頸項的百姓」。以色列人聽到這壞消息，就悲哀，不佩戴妝飾。摩西在營外設立「會幕」（非後來建造的會幕），凡尋求神的就出去到那裏；神以雲柱降下在門口與摩西說話，百姓遠遠地俯伏敬拜，神與摩西面對面說話如同朋友。摩西繼續代求：若不同行就不要帶我們上去；神要摩西親自感知祂的同在。摩西進一步要求「求你顯出你的榮耀給我看」，神回應：我的恩典和憐憫臨到誰是我的主權；我要在磐石穴中遮護你，我的背後可以看見，卻不可以看見我的面。本章是舊約神學中最深刻的神人相遇敘事。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的同在比任何外在成功更珍貴</strong><br>摩西寧可不進應許之地，也不願沒有神的同在前去。在神的應許和神的同在之間，摩西選擇後者。這是信仰中最深刻的優先順序宣告：神的同在本身就是最大的恩賜，超過所有神所賜的禮物。信徒當問自己：在健康、成功、幸福和神的同在之間，真正的首選是哪一個？<br><br>
+<strong>2. 渴慕認識神是信仰生命中最高貴的動力</strong><br>摩西說「求你顯出你的榮耀給我看」，在已經深刻認識神的摩西心中，仍有更深渴慕的火焰。真正的信仰不會因為已有的認識而滿足，而是越認識越渴慕。這種對神的渴慕是信仰生命活力的標誌，也是驅動靈命持續成長的最高貴動力。<br><br>
+<strong>3. 神與人的友情是最美麗的關係</strong><br>「神與摩西說話如同朋友」是聖經中最動人的描述之一。神渴望與人建立真實的友誼關係，不只是主僕、創造主與受造物，更是朋友。耶穌也對門徒說「我稱你們為朋友」（約15:15）。這種神人之間的友誼是信仰最美的面向，是每位信徒都可以追求的關係深度。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>摩西說</strong>：「<strong>你若不親自和我同</strong>去，就不要把我們從這裏領上去。」（出33:15）</td>
+<td>就像<strong>一個人寧可放棄夢想機會也不願意</strong>在沒有摯友陪伴的情況下啟程，摩西把神的同在置於進入應許之地之上。你<strong>在人生重大的</strong>決定和機會中，神的同在對你<strong>而言有多重要</strong>？是否有過因為感受不到神的同在而拒絕一個看似好的機會的時刻？</td>
+</tr>
+<tr>
+<td><strong>耶和華與摩西面對</strong><strong>面說話</strong>，好像人與朋友說話一般。（出33:11上）</td>
+<td>就像<strong>多年的摯友之間可以無話不說、坦</strong>然分享最深層的想法，神與摩西之間的友誼式交通是信仰最美的面向。你<strong>與神的關係更</strong>像是緊張的臣下面見君王，還是真實的朋友之間的對話？是什麼影響了你<strong>進入這種親密</strong>關係的障礙？</td>
+</tr>
+<tr>
+<td><strong>摩西說</strong>：「<strong>求你顯出你的榮耀</strong>給我看。」（出33:18）</td>
+<td>就像<strong>無論多熟悉一座城市</strong>，每次從不同角度欣賞仍有新的發現，摩西<strong>對神的認識</strong>越深，渴慕看見神榮耀的心越強。你對神的認識是否帶來更深的渴慕？還是隨着年日越久，對神的熱情反而逐漸降溫？是什麼能重新點燃你<strong>對認識神的渴</strong>慕？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">真神與偶像的對比</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列家啊，要聽耶和華對你們所說的話。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華如此說：你們不要效法列國的行為，也不要為天象驚惶，因列國為此事驚惶。</div>
+<div class="verse"><span class="verse-number">3</span>眾民的風俗是虛空的；他們在樹林中用斧子砍伐一棵樹，匠人用手工造成偶像。</div>
+<div class="verse"><span class="verse-number">4</span>他們用金銀妝飾他，用釘子和錘子釘穩，使他不動搖。</div>
+<div class="verse"><span class="verse-number">5</span>他好像棕樹，是鏇成的，不能說話，不能行走，必須有人抬着。你們不要怕他；他不能降禍，也無力降福。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華啊，沒有能比你的！你本為大，有大能大力的名。</div>
+<div class="verse"><span class="verse-number">7</span>萬國的王啊，誰不敬畏你？敬畏你本是合宜的；因為在列國的智慧人中，雖有政權的尊榮，也不能比你。</div>
+<div class="verse"><span class="verse-number">8</span>他們盡都是畜類，是愚昧的。偶像的訓誨算甚麼呢？偶像不過是木頭。</div>
+<div class="verse"><span class="verse-number">9</span>有銀子打成片，是從他施帶來的，並有從烏法來的金子，都是匠人和銀匠的手工，又有藍色紫色料的衣服，都是巧匠的工作。</div>
+<div class="verse"><span class="verse-number">10</span>惟耶和華是真神，是活神，是永遠的王。他一發怒，大地震動；他一惱恨，列國都擔當不起。</div>
+<div class="verse"><span class="verse-number">11</span>（你們要對他們如此說：不是那創造天地的神，必從地上從天下被除滅！）</div>
+<div class="verse"><span class="verse-number">12</span>耶和華用能力創造大地，用智慧建立世界，用聰明鋪張穹蒼。</div>
+<div class="verse"><span class="verse-number">13</span>他一發聲，空中便有多水激動；他使雲霧從地極上騰；他造電隨雨而閃，從他府庫中帶出風來。</div>
+<div class="verse"><span class="verse-number">14</span>各人都成了畜類，毫無知識；各銀匠都因他雕刻的偶像羞愧。他所鑄的偶像本是虛假的，其中並無氣息，</div>
+<div class="verse"><span class="verse-number">15</span>都是虛無的，是迷惑人的工作；到追討的時候必被除滅。</div>
+<div class="verse"><span class="verse-number">16</span>雅各的分不像這些，因他是造作萬有的主。以色列也是他產業的支派，萬軍之耶和華是他的名。</div>
+<div class="verse"><span class="verse-number">17</span>受圍困的人哪，當收拾你的財物，從國中帶出去。</div>
+<div class="verse"><span class="verse-number">18</span>因為耶和華如此說：這時候，我必將此地的居民，好像用機弦甩出去，又必加害在他們身上，使他們覺悟。</div>
+<div class="verse"><span class="verse-number">19</span>民說：禍哉！我受損傷；我的傷痕極其重大。我卻說：這真是我的痛苦，必須忍受。</div>
+<div class="verse"><span class="verse-number">20</span>我的帳棚毀壞；我的繩索折斷。我的兒女離我出去，沒有了。無人再支搭我的帳棚，挂起我的幔子。</div>
+<div class="verse"><span class="verse-number">21</span>因為牧人都成為畜類，沒有求問耶和華，所以不得順利；他們的羊群也都分散。</div>
+<div class="verse"><span class="verse-number">22</span>有風聲！看哪，敵人來了！有大擾亂從北方出來，要使猶大城邑變為荒涼，成為野狗的住處。</div>
+<div class="verse"><span class="verse-number">23</span>耶和華啊，我曉得人的道路不由自己，行路的人也不能定自己的腳步。</div>
+<div class="verse"><span class="verse-number">24</span>耶和華啊，求你從寬懲治我，不要在你的怒中懲治我，恐怕使我歸於無有。</div>
+<div class="verse"><span class="verse-number">25</span>願你將忿怒傾在不認識你的列國中，和不求告你名的各族上；因為他們吞了雅各，不但吞了，而且滅絕，把他的住處變為荒場。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第10章寫於猶大王國末期，約在主前620至600年間。當時猶大人深受巴比倫、埃及等周邊強國的文化影響，偶像崇拜滲透到社會各層面。本章先知耶利米以強烈的對比手法，揭示列國偶像的虛空本質，同時高舉耶和華為獨一真神、活神與永遠的王。經文前半（1-16節）詳細描述偶像製造的過程——人砍樹、鑄銀、裁縫，耗費精力製作的偶像卻不能說話、不能行走，需要人抬，更不能降禍降福。相對的，耶和華用能力創造大地、用智慧建立世界，一發聲萬物響應。後半（17-25節）轉向猶大的審判預言：因牧人（領袖）不求問耶和華，百姓將被擄散。本章以耶利米的禱告作結，表達對神主權的倚靠，以及對公義管教的接受，在聖經護教學與屬靈警醒上有重要地位。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【偶像虛空，真神獨一】</strong><br>耶利米以細膩的筆觸描繪偶像的製作過程：由工匠砍伐、雕刻、以金銀裝飾，卻不能說話、不能行走，需人抬着，既不能降禍，也無力降福。與此對比，耶和華是真神、是活神、是永遠的王，他一發怒大地震動，一惱恨列國都擔當不起。這呼召信徒反思：我們生命中是否有以職涯、財富或他人肯定為「偶像」，仰賴那些本質上無能為力的事物？<br><br>
+<strong>2. 【神的創造彰顯祂的主權與智慧】</strong><br>第12至16節描述耶和華用能力創造大地、用智慧建立世界、用聰明鋪張穹蒼，他一發聲空中便有多水激動，雲霧從地極上騰。這與偶像的死寂形成鮮明對比。創造主不僅在宇宙掌權，也是「雅各的分」——以色列的盼望所在，萬軍之耶和華是他的名。信徒可從受造世界的秩序與奇妙，重新認識神的主權與可信靠性。<br><br>
+<strong>3. 【人需倚靠神的引導與管教】</strong><br>第23至24節記載耶利米深刻的禱告：「人的道路不由自己，行路的人也不能定自己的腳步。」他求神從寬懲治，而非在烈怒中管教。這揭示屬靈生命的核心功課：人不能自主，必須倚靠神的帶領；即便面對管教，也當以信心接受，求神憐憫而非憤恨抵擋。這是謙卑順服的典範。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>惟耶和華是真神</strong>，<strong>是活神</strong>，是永遠的王。他一發怒，大地震動；他一惱恨，列國都擔當不起。（耶10:10）</td>
+<td>你<strong>生命中有沒有</strong>什麼事物，讓你<strong>比倚靠神更依</strong>賴它？就像<strong>手機沒電就感到焦慮不安</strong>，你是否<strong>也有類似的「</strong>現代偶像」需要省察？</td>
+</tr>
+<tr>
+<td><strong>耶和華用能力創造</strong>大地，<strong>用智慧建立世界</strong>，用聰明鋪張穹蒼。（耶10:12）</td>
+<td>當你<strong>面對人生的複</strong>雜困境時，你如何<strong>找到方向與力</strong>量？就像<strong>看見精密的建築設計就知道背後有</strong>傑出的建築師，你能從生活中的秩序與美好，重新看見神的智慧與掌管嗎？</td>
+</tr>
+<tr>
+<td><strong>耶和華啊</strong>，<strong>我曉得人的道路不</strong>由自己，行路的人也不能定自己的腳步。（耶10:23）</td>
+<td>你是否<strong>曾努力規劃人</strong>生，卻發現事情完全出乎意料？就像<strong>GPS有時需要重新規劃路線</strong>，你願意<strong>讓神來調整你</strong>的方向，接受祂的帶領與管教嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

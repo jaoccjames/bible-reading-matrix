@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">萬族源流與神主權</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>挪亞的兒子閃、含、雅弗的後代記在下面。洪水以後，他們都生了兒子。</div>
+<div class="verse"><span class="verse-number">2</span>雅弗的兒子是歌篾、瑪各、瑪代、雅完、土巴、米設、提拉。</div>
+<div class="verse"><span class="verse-number">3</span>歌篾的兒子是亞實基拿、利法、陀迦瑪。</div>
+<div class="verse"><span class="verse-number">4</span>雅完的兒子是以利沙、他施、基提、多單。</div>
+<div class="verse"><span class="verse-number">5</span>這些人的後裔將各國的地土、海島分開居住，各隨各的方言、宗族立國。</div>
+<div class="verse"><span class="verse-number">6</span>含的兒子是古實、麥西、弗、迦南。</div>
+<div class="verse"><span class="verse-number">7</span>古實的兒子是西巴、哈腓拉、撒弗他、拉瑪、撒弗提迦。拉瑪的兒子是示巴、底但。</div>
+<div class="verse"><span class="verse-number">8</span>古實又生寧錄，他為世上英雄之首。</div>
+<div class="verse"><span class="verse-number">9</span>他在耶和華面前是個英勇的獵戶，所以俗語說：「像寧錄在耶和華面前是個英勇的獵戶。」</div>
+<div class="verse"><span class="verse-number">10</span>他國的起頭是巴別、以力、亞甲、甲尼，都在示拿地。</div>
+<div class="verse"><span class="verse-number">11</span>他從那地出來往亞述去，建造尼尼微、利河伯、迦拉，</div>
+<div class="verse"><span class="verse-number">12</span>和尼尼微、迦拉中間的利鮮，這就是那大城。</div>
+<div class="verse"><span class="verse-number">13</span>麥西生路低人、亞拿米人、利哈比人、拿弗土希人、</div>
+<div class="verse"><span class="verse-number">14</span>帕斯魯細人、迦斯路希人、迦斐託人；從迦斐託出來的有非利士人。</div>
+<div class="verse"><span class="verse-number">15</span>迦南生長子西頓，又生赫</div>
+<div class="verse"><span class="verse-number">16</span>和耶布斯人、亞摩利人、革迦撒人、</div>
+<div class="verse"><span class="verse-number">17</span>希未人、亞基人、西尼人、</div>
+<div class="verse"><span class="verse-number">18</span>亞瓦底人、洗瑪利人、哈馬人，後來迦南的諸族分散了。</div>
+<div class="verse"><span class="verse-number">19</span>迦南的境界是從西頓向基拉耳的路上，直到迦薩，又向所多瑪、蛾摩拉、押瑪、洗扁的路上，直到拉沙。</div>
+<div class="verse"><span class="verse-number">20</span>這就是含的後裔，各隨他們的宗族、方言，所住的地土、邦國。</div>
+<div class="verse"><span class="verse-number">21</span>雅弗的哥哥閃，是希伯子孫之祖，他也生了兒子。</div>
+<div class="verse"><span class="verse-number">22</span>閃的兒子是以攔、亞述、亞法撒、路德、亞蘭。</div>
+<div class="verse"><span class="verse-number">23</span>亞蘭的兒子是烏斯、戶勒、基帖、瑪施。</div>
+<div class="verse"><span class="verse-number">24</span>亞法撒生沙拉；沙拉生希伯。</div>
+<div class="verse"><span class="verse-number">25</span>希伯生了兩個兒子，一個名叫法勒〔就是分的意思〕，因為那時人就分地居住；法勒的兄弟名叫約坍。</div>
+<div class="verse"><span class="verse-number">26</span>約坍生亞摩答、沙列、哈薩瑪非、耶拉、</div>
+<div class="verse"><span class="verse-number">27</span>哈多蘭、烏薩、德拉、</div>
+<div class="verse"><span class="verse-number">28</span>俄巴路、亞比瑪利、示巴、</div>
+<div class="verse"><span class="verse-number">29</span>阿斐、哈腓拉、約巴，這都是約坍的兒子。</div>
+<div class="verse"><span class="verse-number">30</span>他們所住的地方是從米沙直到西發東邊的山。</div>
+<div class="verse"><span class="verse-number">31</span>這就是閃的子孫，各隨他們的宗族、方言，所住的地土、邦國。</div>
+<div class="verse"><span class="verse-number">32</span>這些都是挪亞三個兒子的宗族，各隨他們的支派立國。洪水以後，他們在地上分為邦國。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+創世記第10章記載了洪水之後挪亞三個兒子的後裔譜系,被稱為「萬國表」。本章詳細列出從閃、含、雅弗所繁衍的各族各邦,說明了洪水後人類如何重新遍滿全地。這份族譜不僅是歷史記錄,更顯明神對萬族的主權與計劃,為後續亞伯拉罕的揀選與救恩歷史奠定基礎。特別提到寧錄建立巴別等城,預示了人類文明的發展與神救贖計劃的展開。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神對萬族的主權</strong><br>本章詳盡記載各族各國的源頭,顯明神掌管人類歷史的進程。每個民族的興起、分散、居住地都在神的計劃之中,沒有任何國家或民族是偶然存在的。<br><br>
+<strong>2. 救恩歷史的預備</strong><br>族譜中特別記載閃的後裔,因為彌賽亞將從閃的支系而出。神在萬族中揀選一族,不是偏心,而是要透過這一族將救恩帶給萬族,顯明神對全人類的愛。<br><br>
+<strong>3. 多元合一的心意</strong><br>各族各方言各邦國的存在,顯明神喜悅多元的豐富性,但神的心意是要在基督裡將萬族合而為一,成為屬神的子民,彰顯神國度的榮耀。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>這些都是挪亞三個</strong><strong>兒子的宗族</strong>,各隨他們的支派立國。洪水以後,他們在地上分為邦國。(創10:32)</td>
+<td>就像<strong>一棵大樹從種子長成</strong>,枝葉繁茂卻都連於同一根源,你是否<strong>認識到所有人</strong>類都源於神的創造,每個民族國家的存在都在神的主權計劃中?</td>
+</tr>
+<tr>
+<td><strong>雅弗的哥哥閃</strong>,<strong>是希伯子孫之祖</strong>,他也生了兒子。(創10:21)</td>
+<td>就像<strong>在眾多選項中標記出關鍵項目</strong>,神特別標註閃的後裔,你能否<strong>看見神在萬族</strong>中揀選的心意,是要將救恩帶給全人類?</td>
+</tr>
+<tr>
+<td><strong>這些人的後裔將各</strong><strong>國的地土</strong>、海島分開居住,各隨各的方言、宗族立國。(創10:5)</td>
+<td>就像<strong>交響樂團中不同樂器各有獨特音色</strong>卻共譜樂章,面對不同文化、語言、種族的多元性,你是否<strong>明白這</strong>是神創造的豐富,而非分裂的藉口,最終要在基督裡合一?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

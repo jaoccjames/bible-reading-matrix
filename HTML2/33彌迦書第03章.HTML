@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>彌迦書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+彌迦書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以血建城：領袖的腐敗與錫安的傾覆</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我說：雅各的首領，以色列家的官長啊，你們要聽！你們不當知道公平嗎？</div>
+<div class="verse"><span class="verse-number">2</span>你們惡善好惡，從人身上剝皮，從人骨頭上剔肉，</div>
+<div class="verse"><span class="verse-number">3</span>吃我民的肉，剝他們的皮，打折他們的骨頭，分成塊子像要下鍋，又像釜中的肉。</div>
+<div class="verse"><span class="verse-number">4</span>到了遭災的時候，這些人必哀求耶和華，他卻不應允他們。那時他必照他們所行的惡事向他們掩面。</div>
+<div class="verse"><span class="verse-number">5</span>論到使我民走差路的先知，他們牙齒有所嚼的，他們就呼喊說：平安了！凡不供給他們吃的，他們就預備攻擊他〔預備攻擊他：或作說必遭遇刀兵〕，耶和華如此說：</div>
+<div class="verse"><span class="verse-number">6</span>你們必遭遇黑夜，以致不見異象；又必遭遇幽暗，以致不能占卜。日頭必向你們沉落，白晝變為黑暗。</div>
+<div class="verse"><span class="verse-number">7</span>先見必抱愧，占卜的必蒙羞，都必摀着嘴唇，因為神不應允他們。</div>
+<div class="verse"><span class="verse-number">8</span>至於我，我藉耶和華的靈，滿有力量、公平、才能，可以向雅各說明他的過犯，向以色列指出他的罪惡。</div>
+<div class="verse"><span class="verse-number">9</span>雅各家的首領、以色列家的官長阿，當聽我的話！你們厭惡公平，在一切事上屈枉正直；</div>
+<div class="verse"><span class="verse-number">10</span>以人血建立錫安，以罪孽建造耶路撒冷。</div>
+<div class="verse"><span class="verse-number">11</span>首領為賄賂行審判；祭司為雇價施訓誨；先知為銀錢行占卜。他們卻倚賴耶和華，說：耶和華不是在我們中間嗎？災禍必不臨到我們。</div>
+<div class="verse"><span class="verse-number">12</span>所以因你們的緣故，錫安必被耕種像一塊田，耶路撒冷必變為亂堆；這殿的山必像叢林的高處。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+彌迦書第3章是全書對領袖腐敗批判最集中、最有力的章節，分三段分別針對政治領袖、假先知和全體領袖。第一段（1-4節）：政治領袖「惡善好惡」，描述他們對百姓的剝削如同屠宰牲畜——剝皮、剔肉、打折骨頭——是極度殘忍的比喻。他們在遭難時呼求神，神卻不應允，因為他們所行的惡。第二段（5-7節）：假先知「凡不供給他們吃的，就預備攻擊」——預言的內容取決於賄賂，有錢就說平安，無錢就說凶兆。神使他們不得異象、不得占卜。第三段（9-12節）是高峰：首領、祭司、先知，各收賄賂，卻以「耶和華在我們中間」作護身符——以宗教名義掩蓋腐敗。彌迦的宣告震驚歷代：「因你們的緣故，錫安必被耕種像一塊田，耶路撒冷必變為亂堆」——這個預言後來成為耶利米書的先例（耶26:17-19）。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【以賄賂為本的預言，是最危險的假先知形態】</strong><br>假先知的報酬決定預言的內容——這是把神的話語商品化。當靈性服事的動機被金錢或利益所扭曲，所傳出的信息必然失真。今日的信仰服事中，需要持續問：我所傳達的，是神的心意，還是能讓我得益的話？<br><br>
+<strong>2. 【以宗教名義掩蓋腐敗，是最大的屬靈欺騙】</strong><br>「耶和華不是在我們中間嗎？災禍必不臨到我們」——他們用神的名作護身符，以宗教儀式掩蓋不義。這種「神聖化的腐敗」是最具破壞力的：它既欺騙領袖自己，也欺騙跟隨者。信仰語言若被用來合理化不義，那語言本身就成了最大的謊言。<br><br>
+<strong>3. 【至於我：彌迦以自身的對比宣告真先知的屬靈根源】</strong><br>第8節：「至於我，我藉耶和華的靈，滿有力量、公平、才能，可以向雅各說明他的過犯」——彌迦以「至於我」與假先知的一切形成鮮明對比。真先知的力量不來自賄賂或人的認可，而來自神的靈。這是信仰服事最基本的問題：我服事的力量和動機，來自神的靈，還是來自人的回報？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>首領為賄賂行審判</strong>；<strong>祭司為雇價施訓誨</strong>；先知為銀錢行占卜。他們卻倚賴耶和華，說：耶和華不是在我們中間嗎？災禍必不臨到我們。（彌3:11）</td>
+<td>「耶和華不是在我們中間嗎」——用宗教語言作為腐敗的保護傘。你有沒有<strong>用過「我</strong>是基督徒」或「神必保護我」來迴避一個必要的道德責任或改變？就像<strong>把安全帽借給別人用、自己卻不戴</strong>，宗教語言若沒有生命實質，反而是最危險的自欺。</td>
+</tr>
+<tr>
+<td><strong>至於我</strong>，<strong>我藉耶和華的靈</strong>，滿有力量、公平、才能，可以向雅各說明他的過犯，向以色列指出他的罪惡。（彌3:8）</td>
+<td>「至於我」是彌迦與周圍環境最清楚的劃界。在你<strong>身處的文化和</strong>環境中，有沒有一個你<strong>需要說「至於</strong>我」——就算別人都這樣做，我選擇不同的路——的場合？就像<strong>在隊伍中逆流而行需要確定的決心</strong>，你<strong>的「至於我」</strong>是什麼？</td>
+</tr>
+<tr>
+<td><strong>所以因你們的緣故</strong>，<strong>錫安必被耕種像一</strong>塊田，耶路撒冷必變為亂堆；這殿的山必像叢林的高處。（彌3:12）</td>
+<td>領袖的腐敗導致整座城市的傾覆——個人的道德失敗有群體性的代價。你<strong>今天所在的位</strong>置（家庭、職場、教會）的屬靈健康，有多少程度與你<strong>的個人誠信相</strong>關？就像<strong>一座建築的結構取決於每一根柱子</strong>，你願意<strong>今天在你所站</strong>的位置上，做一根誠信的柱子嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

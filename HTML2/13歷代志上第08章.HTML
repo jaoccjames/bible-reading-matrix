@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志上第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志上第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">便雅憫支派：掃羅王室的家族淵源</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>便雅憫的長子比拉，次子亞實別，三子亞哈拉，</div>
+<div class="verse"><span class="verse-number">2</span>四子挪哈，五子拉法。</div>
+<div class="verse"><span class="verse-number">3</span>比拉的兒子是亞大、基拉、亞比忽、</div>
+<div class="verse"><span class="verse-number">4</span>亞比書、乃幔、亞何亞、</div>
+<div class="verse"><span class="verse-number">5</span>基拉、示孚汛、戶蘭。</div>
+<div class="verse"><span class="verse-number">6</span>以忽的兒子作迦巴居民的族長，被擄到瑪拿轄；</div>
+<div class="verse"><span class="verse-number">7</span>以忽的兒子乃幔、亞希亞、基拉也被擄去。基拉生烏撒、亞希忽。</div>
+<div class="verse"><span class="verse-number">8</span>沙哈連休他二妻戶伸和巴拉之後，在摩押地生了兒子。</div>
+<div class="verse"><span class="verse-number">9</span>他與妻賀得同房，生了約巴、洗比雅、米沙、瑪拉干、</div>
+<div class="verse"><span class="verse-number">10</span>耶烏斯、沙迦、米瑪。他這些兒子都是族長。</div>
+<div class="verse"><span class="verse-number">11</span>他的妻戶伸給他生的兒子有亞比突、以利巴力。</div>
+<div class="verse"><span class="verse-number">12</span>以利巴力的兒子是希伯、米珊、沙麥。沙麥建立阿挪和羅德二城與其村莊。</div>
+<div class="verse"><span class="verse-number">13</span>又有比利亞和示瑪是亞雅崙居民的族長，是驅逐迦特人的。</div>
+<div class="verse"><span class="verse-number">14</span>亞希約、沙煞、耶利末、</div>
+<div class="verse"><span class="verse-number">15</span>西巴第雅、亞拉得、亞得、</div>
+<div class="verse"><span class="verse-number">16</span>米迦勒、伊施巴、約哈都是比利亞的兒子。</div>
+<div class="verse"><span class="verse-number">17</span>西巴第雅、米書蘭、希西基、希伯、</div>
+<div class="verse"><span class="verse-number">18</span>伊施米萊、伊斯利亞、約巴都是以利巴力的兒子。</div>
+<div class="verse"><span class="verse-number">19</span>雅金、細基利、撒底、</div>
+<div class="verse"><span class="verse-number">20</span>以利乃、洗勒太、以列、</div>
+<div class="verse"><span class="verse-number">21</span>亞大雅、比拉雅、申拉都是示每的兒子。</div>
+<div class="verse"><span class="verse-number">22</span>伊施班、希伯、以列、</div>
+<div class="verse"><span class="verse-number">23</span>亞伯頓、細基利、哈難、</div>
+<div class="verse"><span class="verse-number">24</span>哈拿尼雅、以攔、安陀提雅、</div>
+<div class="verse"><span class="verse-number">25</span>伊弗底雅、毘努伊勒都是沙煞的兒子。</div>
+<div class="verse"><span class="verse-number">26</span>珊示萊、示哈利、亞他利雅、</div>
+<div class="verse"><span class="verse-number">27</span>雅利西、以利亞、細基利都是耶羅罕的兒子。</div>
+<div class="verse"><span class="verse-number">28</span>這些人都是着名的族長，住在耶路撒冷。</div>
+<div class="verse"><span class="verse-number">29</span>在基遍住的有基遍的父親耶利。他的妻名叫瑪迦；</div>
+<div class="verse"><span class="verse-number">30</span>他長子是亞伯頓。他又生蘇珥、基士、巴力、拿答、</div>
+<div class="verse"><span class="verse-number">31</span>基多、亞希約、撒迦、米基羅。</div>
+<div class="verse"><span class="verse-number">32</span>米基羅生示米暗。這些人和他們的弟兄在耶路撒冷對面居住。</div>
+<div class="verse"><span class="verse-number">33</span>尼珥生基士；基士生掃羅；掃羅生約拿單、麥基舒亞、亞比拿達、伊施巴力。</div>
+<div class="verse"><span class="verse-number">34</span>約拿單的兒子是米力巴力（在撒母耳下四章四節作米非波設）；米力巴力生米迦。</div>
+<div class="verse"><span class="verse-number">35</span>米迦的兒子是毘敦、米勒、他利亞、亞哈斯；</div>
+<div class="verse"><span class="verse-number">36</span>亞哈斯生耶何阿達；耶何阿達生亞拉篾、亞斯瑪威、心利；心利生摩撒；</div>
+<div class="verse"><span class="verse-number">37</span>摩撒生比尼亞；比尼亞的兒子是拉法；拉法的兒子是以利亞薩；以利亞薩的兒子是亞悉。</div>
+<div class="verse"><span class="verse-number">38</span>亞悉有六個兒子，他們的名字是亞斯利干、波基路、以實瑪利、示亞利雅、俄巴底雅、哈難。這都是亞悉的兒子。</div>
+<div class="verse"><span class="verse-number">39</span>亞悉兄弟以設的長子是烏蘭，次子耶烏施，三子是以利法列。</div>
+<div class="verse"><span class="verse-number">40</span>烏蘭的兒子都是大能的勇士，是弓箭手，他們有許多的子孫，共一百五十名，都是便雅憫人。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志上第八章是便雅憫支派的詳細族譜，與第七章的簡短記載相比，本章給予便雅憫更多篇幅，原因在於便雅憫支派與以色列歷史的兩大城市——耶路撒冷和基遍——有密切關係，且是掃羅王朝的發源支派。本章前半（1-28節）記錄便雅憫各族家系，後半（29-40節）則專注追溯掃羅的家系：從基遍的父親耶利開始，經基士到掃羅，再到約拿單、米力巴力（即米非波設）及其後代。
+
+      本章將掃羅的家族血脈詳細記錄在案，這在神學上具有特殊意義。歷代志雖然以大衛為核心，卻沒有刻意抹去掃羅的歷史——掃羅一族的族譜在此保留，顯示神尊重歷史的完整性。這也為第九章歸回後居住於耶路撒冷的人名單做鋪墊，以及第十章掃羅之死的神學詮釋提供了人物背景。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 歷史的完整記錄包含失敗與成功</strong><br>便雅憫支派出了以色列的第一位王掃羅，他的家族在此被完整記錄，儘管掃羅最終以悲劇收場。歷代志沒有因為掃羅的失敗而刪去他的族譜，這體現了聖經記錄歷史的誠實態度——神的計畫不迴避人的失敗，祂的敘述包含了所有的陰影，使真實的教訓得以流傳。<br><br>
+<strong>2. 在城市中扎根是事奉的基礎</strong><br>本章多次提到便雅憫人「住在耶路撒冷」（28節）和基遍（29節）。這些族長選擇在具體的城市扎根、建立家族。對歸回後的以色列人而言，重建城市中的家族網絡，是重建民族秩序的第一步。今日信徒在所在的城市群體中扎根，同樣是長期事奉的基礎。<br><br>
+<strong>3. 忠心的後代是最長久的傳承</strong><br>本章末尾記錄烏蘭的兒子「都是大能的勇士，是弓箭手，他們有許多的子孫，共一百五十名」（40節）。一個人忠心的生命能繁衍出大量的後代與影響力。真正持久的遺產不是財富或地位，而是那些在信仰和品格上被塑造的下一代。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>沙麥建立阿挪和羅</strong><strong>德二城與其村莊</strong>。（代上8:12）</td>
+<td>沙麥在族譜中只有一節，卻留下了建城的具體貢獻，就像<strong>一個人的名字可能被遺忘</strong>，但他親手種的樹卻還在為後人遮蔭——你<strong>正在用什麼樣</strong>的方式為下一代「建城」，留下比名字更長久的影響？</td>
+</tr>
+<tr>
+<td><strong>這些人都是著名的</strong>族長，<strong>住在耶路撒冷</strong>。（代上8:28）</td>
+<td>著名的族長選擇在耶路撒冷這座核心城市扎根居住，就像<strong>一棵樹必須先把根扎穩</strong>，才能長得高——你是否<strong>在自己的城市</strong>、教會或群體中真正「扎根」，而不只是偶爾路過？</td>
+</tr>
+<tr>
+<td><strong>尼珥生基士</strong>；<strong>基士生掃羅</strong>；掃羅生約拿單……（代上8:33）</td>
+<td>同一個家族傳承中，掃羅走向悲劇，約拿單卻以忠誠留名，就像<strong>同一家公司的兩位主管</strong>，面對同樣壓力卻做出截然不同的選擇——你<strong>在面對相似的</strong>家庭或環境背景時，決定你<strong>走向的</strong>是什麼？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

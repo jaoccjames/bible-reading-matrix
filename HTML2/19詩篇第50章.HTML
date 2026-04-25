@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第50章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第50章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神不需要你的祭物：祂要感謝的心與順從</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（亞薩的詩）大能者神耶和華已經發言招呼天下，從日出之地到日落之處。</div>
+<div class="verse"><span class="verse-number">2</span>從全美的錫安中，神已經發光了。</div>
+<div class="verse"><span class="verse-number">3</span>我們的神要來，決不閉口。有烈火在他面前吞滅；有暴風在他四圍大颳。</div>
+<div class="verse"><span class="verse-number">4</span>他招呼上天下地，為要審判他的民，</div>
+<div class="verse"><span class="verse-number">5</span>說：招聚我的聖民到我這裏來，就是那些用祭物與我立約的人。</div>
+<div class="verse"><span class="verse-number">6</span>諸天必表明他的公義，因為神是施行審判的。（細拉）</div>
+<div class="verse"><span class="verse-number">7</span>我的民哪，你們當聽我的話！以色列啊，我要勸戒你；我是神，是你的神！</div>
+<div class="verse"><span class="verse-number">8</span>我並不因你的祭物責備你；你的燔祭常在我面前。</div>
+<div class="verse"><span class="verse-number">9</span>我不從你家中取公牛，也不從你圈內取山羊；</div>
+<div class="verse"><span class="verse-number">10</span>因為，樹林中的百獸是我的，千山上的牲畜也是我的。</div>
+<div class="verse"><span class="verse-number">11</span>山中的飛鳥，我都知道；野地的走獸也都屬我。</div>
+<div class="verse"><span class="verse-number">12</span>我若是飢餓，我不用告訴你，因為世界和其中所充滿的都是我的。</div>
+<div class="verse"><span class="verse-number">13</span>我豈吃公牛的肉呢？我豈喝山羊的血呢？</div>
+<div class="verse"><span class="verse-number">14</span>你們要以感謝為祭獻與神，又要向至高者還你的願，</div>
+<div class="verse"><span class="verse-number">15</span>並要在患難之日求告我；我必搭救你，你也要榮耀我。</div>
+<div class="verse"><span class="verse-number">16</span>但神對惡人說：你怎敢傳說我的律例，口中提到我的約呢？</div>
+<div class="verse"><span class="verse-number">17</span>其實你恨惡管教，將我的言語丟在背後。</div>
+<div class="verse"><span class="verse-number">18</span>你見了盜賊就樂意與他同夥，又與行姦淫的人一同有分。</div>
+<div class="verse"><span class="verse-number">19</span>你口任說惡言；你舌編造詭詐。</div>
+<div class="verse"><span class="verse-number">20</span>你坐着毀謗你的兄弟，讒毀你親母的兒子。</div>
+<div class="verse"><span class="verse-number">21</span>你行了這些事，我還閉口不言，你想我恰和你一樣；其實我要責備你，將這些事擺在你眼前。</div>
+<div class="verse"><span class="verse-number">22</span>你們忘記神的，要思想這事，免得我把你們撕碎，無人搭救。</div>
+<div class="verse"><span class="verse-number">23</span>凡以感謝獻上為祭的便是榮耀我；那按正路而行的，我必使他得着我的救恩。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第50篇是亞薩的詩，亞薩是大衛時代著名的聖殿樂師（代上6:39），他所作的詩篇共有12篇（詩50、73-83篇）。本篇是一首「神的聖言」詩篇（Oracle Psalm），以神親自發言的形式，對以色列的敬拜作出深刻的批判與糾正。
+
+      全篇分為三部分：神以審判者的姿態出現（1-6節）、神對以色列的第一個挑戰（7-15節）、神對形式主義敬拜者的第二個挑戰（16-23節）。第一個挑戰的核心是：神不需要以色列的祭物，因為萬物都屬祂。神所要的，不是外在的宗教行為，而是「以感謝為祭」和「在患難之日求告我」。
+
+      第二個挑戰更為嚴厲：那些口中傳說神律例、卻實際上恨惡管教、與惡同謀的人，將面臨神的審判。「你行了這些事，我還閉口不言，你想我恰和你一樣」（第21節）是神對這種雙重標準的最有力控訴。本篇全篇以「凡以感謝獻上為祭的便是榮耀我」（第23節）收結，揭示真正的敬拜是生命的感謝與正路的行走，而非宗教形式的維持。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神所要的是生命的感謝而非形式的宗教表現</strong><br>「你們要以感謝為祭獻與神。」（第14節）神明確宣告祂不需要以色列的祭物——不是因為祭物本身有問題，而是因為人若以為履行宗教儀式就滿足了神，這是對神最深的誤解。神是萬物的創造者與擁有者，祂不需要任何東西；祂所尋找的是真誠的心——以感謝、以信靠、以患難中的求告來親近祂。這種「以感謝為祭」的敬拜，是從內而外的生命回應，而非從外向內的儀式表演。<br><br>
+<strong>2. 口說信仰卻生活背道而馳是最危險的屬靈欺騙</strong><br>「你怎敢傳說我的律例，口中提到我的約呢？其實你恨惡管教，將我的言語丟在背後。」（第16-17節）神對第二類人的警告更為嚴厲：那些口中使用宗教語言、外表維持信仰形象，實際生活卻與惡同謀的人，是最危險的屬靈狀態。「你想我恰和你一樣」——這是對以為能用宗教外表欺瞞神的最嚴厲的糾正。信仰不只是語言，而是生命；不只是禮拜天的表現，而是一週七天的選擇。<br><br>
+<strong>3. 在患難中真誠求告神是最蒙悅納的禱告形式</strong><br>「並要在患難之日求告我；我必搭救你，你也要榮耀我。」（第15節）神主動邀請信徒在患難中求告祂，並應許必搭救。這個邀請揭示禱告最根本的意義：不是宗教義務的履行，而是關係中真實的求助。「在患難之日求告我」是把神視為真實幫助者的信仰行動；「你也要榮耀我」則揭示神搭救的目的——不只是解決人的問題，更是使人在得救中認識神、讚美神，讓救恩成為榮耀神的見證。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們要以感謝為祭</strong><strong>獻與神</strong>，又要向至高者還你的願，（詩50:14）</td>
+<td>就像<strong>送禮給人最重要的不是禮物的價格</strong>，而是那份心意是否真誠，你<strong>的敬拜</strong>是否從「完成宗教義務」轉化為真實的生命感謝——一種因認識神的恩典而自然湧出的喜樂與感恩？</td>
+</tr>
+<tr>
+<td><strong>並要在患難之日求</strong>告我；<strong>我必搭救你</strong>，你也要榮耀我。（詩50:15）</td>
+<td>就像<strong>生病時打電話給家庭醫生</strong>，而非強撐著不說，神主動邀請你<strong>在患難時求告</strong>祂，你是否<strong>真的將這個邀</strong>請視為神對你<strong>最真實的等待</strong>，讓患難成為深化禱告關係的機會而非信心危機？</td>
+</tr>
+<tr>
+<td><strong>凡以感謝獻上為祭</strong><strong>的便是榮耀我</strong>；那按正路而行的，我必使他得着我的救恩。（詩50:23）</td>
+<td>就像<strong>一個員工最榮耀老闆的方式</strong>，不是口頭的恭維，而是認真做好每件工作，你是否<strong>明白神最高興</strong>看到的，不是你<strong>的宗教表現</strong>，而是你<strong>真實的感謝之</strong>心與按神正路而行的生活？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

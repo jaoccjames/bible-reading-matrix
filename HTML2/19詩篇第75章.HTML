@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第75章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第75章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神在所定時期施行公義審判：惟有神使人升降</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（亞薩的詩歌，交與伶長。調用休要毀壞）神啊，我們稱謝你，我們稱謝你！因為你的名相近，人都述說你奇妙的作為。</div>
+<div class="verse"><span class="verse-number">2</span>我到了所定的日期，必按正直施行審判。</div>
+<div class="verse"><span class="verse-number">3</span>地和其上的居民都消化了；我曾立了地的柱子。（細拉）</div>
+<div class="verse"><span class="verse-number">4</span>我對狂傲人說：不要行事狂傲！對兇惡人說：不要舉角！</div>
+<div class="verse"><span class="verse-number">5</span>不要把你們的角高舉；不要挺着頸項說話。</div>
+<div class="verse"><span class="verse-number">6</span>因為高舉非從東，非從西，也非從南而來。</div>
+<div class="verse"><span class="verse-number">7</span>惟有神斷定；他使這人降卑，使那人升高。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華手裏有杯，其中的酒起沫，杯內滿了攙雜的酒；他倒出來，地上的惡人必都喝這酒的渣滓，而且喝盡。</div>
+<div class="verse"><span class="verse-number">9</span>但我要宣揚，直到永遠！我要歌頌雅各的神！</div>
+<div class="verse"><span class="verse-number">10</span>惡人一切的角，我要砍斷；惟有義人的角必被高舉。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第75篇是亞薩的詩歌，以感謝神的名「相近」（即祂的同在是真實可感的）開篇，然後以神的口吻直接宣告祂的審判計劃（2-5節），接著描述神公義審判的確定性（6-8節），以詩人的讚美與宣告收結（9-10節）。這種結構——讚美、神的聖言、再回到讚美——反映了一種敬拜與宣告並行的崇拜傳統。
+
+      本篇的神學核心在第7節：「惟有神斷定；他使這人降卑，使那人升高。」在古代近東文化中，「角」象徵力量與尊榮，「舉角」代表宣示自己的強大。本篇告誡驕傲的人：高舉不是從人間的任何方向而來，「惟有神」才是一切升降的最終決定者。
+
+      第2節神說「我到了所定的日期，必按正直施行審判」，揭示神的審判有其時間表——「所定的日期」。神的公義不是缺席，而是在祂所安排的時間中展開。這個認識使信徒能在惡人暫時得勢時保持信心：神的審判必然到來，只是在祂所定的時間。這個確信是在不公義的世界中保持心靈平靜的重要屬靈根基。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的審判在所定日期必然到來是公義最終的保證</strong><br>「我到了所定的日期，必按正直施行審判。」（第2節）神親自宣告：審判不是可能發生，而是必然在「所定的日期」發生。這對承受不公義的信徒是最深的安慰，對行不義的人是最嚴肅的警告。「所定的日期」表明神的審判有其時間表，不按人的急迫感，卻必然準時到來。信徒的呼召是在等候中繼續忠心，相信神的公義時鐘正在運行，只是不在人所預期的速度上。<br><br>
+<strong>2. 一切的高舉降卑惟有神能決定而非人間的力量</strong><br>「惟有神斷定；他使這人降卑，使那人升高。」（第7節）在人間，高升似乎取決於能力、關係、機遇；然而本篇宣告，這一切的背後有一個終極的決定者——神。這個真理對信徒有雙重意義：一方面，使人不必靠驕傲、操控或不義手段謀取高位，因為最終的安排在神手中；另一方面，使被降卑的信徒不必絕望，因為神也能使他升高，只要他不離棄神的公義道路。<br><br>
+<strong>3. 在神審判的確信中仍選擇永遠宣揚讚美是信仰的果實</strong><br>「但我要宣揚，直到永遠！我要歌頌雅各的神！」（第9節）在清楚看見惡人的審判與義人的高舉之後，詩人的回應是宣揚與歌頌——不只是暫時的感謝，而是「直到永遠」的持續讚美。對神公義審判的確信，不是讓信徒陷入等待的被動，而是激發出更深的敬拜與更積極的見證。認識神的公義，使讚美更有重量，也使信仰見證更有力量。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我到了所定的日期</strong>，<strong>必按正直施行審判</strong>。（詩75:2）</td>
+<td>就像<strong>火車一定在預定時刻到站</strong>，不因乘客的焦急而提早，也不因環境阻礙而永遠不到，你是否<strong>相信神的公義</strong>審判有其「所定的日期」，讓這個確信幫助你<strong>在面對當今世</strong>界的不公義時，不至於陷入絕望或憤恨？</td>
+</tr>
+<tr>
+<td><strong>惟有神斷定</strong>；<strong>他使這人降卑</strong>，使那人升高。（詩75:7）</td>
+<td>就像<strong>知道公司的最終人事決定在董事長</strong>手中，而非部門主管，你是否<strong>真的相信自己</strong>的職涯、地位、影響力的高低升降，惟有神有最終的決定權，讓這個確信使你<strong>放下對成功的</strong>焦慮與對失敗的恐懼？</td>
+</tr>
+<tr>
+<td><strong>但我要宣揚</strong>，<strong>直到永遠</strong>！我要歌頌雅各的神！（詩75:9）</td>
+<td>就像<strong>了解一部傑作的深意之後</strong>，自然地渴望向別人推薦它，你<strong>對神公義審判</strong>與最終勝利的確信，是否激發了你<strong>一種「要永遠</strong>宣揚與歌頌」的衝動，讓這份確信從個人的安慰化為對他人的見證？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀上第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀上第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">所羅門晚年隨從別神，王國因此分裂的伏筆</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>所羅門王在法老的女兒之外，又寵愛許多外邦女子，就是摩押女子、亞捫女子、以東女子、西頓女子、赫人女子。</div>
+<div class="verse"><span class="verse-number">2</span>論到這些國的人，耶和華曾曉諭以色列人說：「你們不可與他們往來相通，因為他們必誘惑你們的心去隨從他們的神。」所羅門卻戀愛這些女子。</div>
+<div class="verse"><span class="verse-number">3</span>所羅門有妃七百，都是公主；還有嬪三百。這些妃嬪誘惑他的心。</div>
+<div class="verse"><span class="verse-number">4</span>所羅門年老的時候，他的妃嬪誘惑他的心去隨從別神，不效法他父親大衛誠誠實實地順服耶和華他的神。</div>
+<div class="verse"><span class="verse-number">5</span>因為所羅門隨從西頓人的女神亞斯他錄和亞捫人可憎的神米勒公。</div>
+<div class="verse"><span class="verse-number">6</span>所羅門行耶和華眼中看為惡的事，不效法他父親大衛專心順從耶和華。</div>
+<div class="verse"><span class="verse-number">7</span>所羅門為摩押可憎的神基抹和亞捫人可憎的神摩洛，在耶路撒冷對面的山上建築邱壇。</div>
+<div class="verse"><span class="verse-number">8</span>他為那些向自己的神燒香獻祭的外邦女子，就是他娶來的妃嬪也是這樣行。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華向所羅門發怒，因為他的心偏離向他兩次顯現的耶和華以色列的神。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華曾吩咐他不可隨從別神，他卻沒有遵守耶和華所吩咐的。</div>
+<div class="verse"><span class="verse-number">11</span>所以耶和華對他說：「你既行了這事，不遵守我所吩咐你守的約和律例，我必將你的國奪回，賜給你的臣子。</div>
+<div class="verse"><span class="verse-number">12</span>然而，因你父親大衛的緣故，我不在你活着的日子行這事，必從你兒子的手中將國奪回。</div>
+<div class="verse"><span class="verse-number">13</span>只是我不將全國奪回，要因我僕人大衛和我所選擇的耶路撒冷，還留一支派給你的兒子。」</div>
+<div class="verse"><span class="verse-number">14</span>耶和華使以東人哈達興起，作所羅門的敵人；他是以東王的後裔。</div>
+<div class="verse"><span class="verse-number">15</span>先前大衛攻擊以東，元帥約押上去葬埋陣亡的人，將以東的男丁都殺了。</div>
+<div class="verse"><span class="verse-number">16</span>約押和以色列眾人在以東住了六個月，直到將以東的男丁盡都剪除。</div>
+<div class="verse"><span class="verse-number">17</span>那時哈達還是幼童；他和他父親的臣僕，幾個以東人逃往埃及。</div>
+<div class="verse"><span class="verse-number">18</span>他們從米甸起行，到了巴蘭；從巴蘭帶着幾個人來到埃及見埃及王法老；法老為他派定糧食，又給他房屋田地。</div>
+<div class="verse"><span class="verse-number">19</span>哈達在法老面前大蒙恩惠，以致法老將王后答比匿的妹子賜他為妻。</div>
+<div class="verse"><span class="verse-number">20</span>答比匿的妹子給哈達生了一個兒子，名叫基努拔。答比匿使基努拔在法老的宮裏斷奶，基努拔就與法老的眾子一同住在法老的宮裏。</div>
+<div class="verse"><span class="verse-number">21</span>哈達在埃及聽見大衛與他列祖同睡，元帥約押也死了，就對法老說：「求王容我回本國去。」</div>
+<div class="verse"><span class="verse-number">22</span>法老對他說：「你在我這裏有甚麼缺乏，你竟要回你本國去呢？」他回答說：「我沒有缺乏甚麼，只是求王容我回去。」</div>
+<div class="verse"><span class="verse-number">23</span>神又使以利亞大的兒子利遜興起，作所羅門的敵人。他先前逃避主人瑣巴王哈大底謝。</div>
+<div class="verse"><span class="verse-number">24</span>大衛擊殺瑣巴人的時候，利遜招聚了一群人，自己作他們的頭目，往大馬色居住，在那裏作王。</div>
+<div class="verse"><span class="verse-number">25</span>所羅門活着的時候，哈達為患之外，利遜也作以色列的敵人。他恨惡以色列人，且作了亞蘭人的王。</div>
+<div class="verse"><span class="verse-number">26</span>所羅門的臣僕、尼八的兒子耶羅波安也舉手攻擊王。他是以法蓮支派的洗利達人，他母親是寡婦，名叫洗魯阿。</div>
+<div class="verse"><span class="verse-number">27</span>他舉手攻擊王的緣故，乃由先前所羅門建造米羅，修補他父親大衛城的破口。</div>
+<div class="verse"><span class="verse-number">28</span>耶羅波安是大有才能的人。所羅門見這少年人殷勤，就派他監管約瑟家的一切工程。</div>
+<div class="verse"><span class="verse-number">29</span>一日，耶羅波安出了耶路撒冷，示羅人先知亞希雅在路上遇見他；亞希雅身上穿着一件新衣。他們二人在田野，以外並無別人。</div>
+<div class="verse"><span class="verse-number">30</span>亞希雅將自己穿的那件新衣撕成十二片，</div>
+<div class="verse"><span class="verse-number">31</span>對耶羅波安說：「你可以拿十片。耶和華以色列的神如此說：『我必將國從所羅門手裏奪回，將十個支派賜給你。</div>
+<div class="verse"><span class="verse-number">32</span>（我因僕人大衛和我在以色列眾支派中所選擇的耶路撒冷城的緣故，仍給所羅門留一個支派。）</div>
+<div class="verse"><span class="verse-number">33</span>因為他離棄我，敬拜西頓人的女神亞斯他錄、摩押的神基抹，和亞捫人的神米勒公，沒有遵從我的道，行我眼中看為正的事，守我的律例典章，像他父親大衛一樣。</div>
+<div class="verse"><span class="verse-number">34</span>但我不從他手裏將全國奪回；使他終身為君，是因我所揀選的僕人大衛謹守我的誡命律例。</div>
+<div class="verse"><span class="verse-number">35</span>我必從他兒子的手裏將國奪回，以十個支派賜給你，</div>
+<div class="verse"><span class="verse-number">36</span>還留一個支派給他的兒子，使我僕人大衛在我所選擇立我名的耶路撒冷城裏，在我面前長有燈光。</div>
+<div class="verse"><span class="verse-number">37</span>我必揀選你，使你照心裏一切所願的，作王治理以色列。</div>
+<div class="verse"><span class="verse-number">38</span>你若聽從我一切所吩咐你的，遵行我的道，行我眼中看為正的事，謹守我的律例誡命，像我僕人大衛所行的，我就與你同在，為你立堅固的家，像我為大衛所立的一樣，將以色列人賜給你。</div>
+<div class="verse"><span class="verse-number">39</span>我必因所羅門所行的使大衛後裔受患難，但不至於永遠。』」</div>
+<div class="verse"><span class="verse-number">40</span>所羅門因此想要殺耶羅波安。耶羅波安卻起身逃往埃及；到了埃及王示撒那裏，就住在埃及，直到所羅門死了。</div>
+<div class="verse"><span class="verse-number">41</span>所羅門其餘的事，凡他所行的和他的智慧都寫在所羅門記上。</div>
+<div class="verse"><span class="verse-number">42</span>所羅門在耶路撒冷作以色列眾人的王共四十年。</div>
+<div class="verse"><span class="verse-number">43</span>所羅門與他列祖同睡，葬在他父親大衛的城裏。他兒子羅波安接續他作王。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀上第11章是所羅門故事的轉折點，也是以色列王國走向分裂的起點。章節開頭即明確指出問題根源：所羅門愛了許多外邦女子，這些妃嬪在他年老時誘惑他的心去事奉別神。他為亞斯他錄、基抹、摩洛等異邦神明建造邱壇，直接違背了神的命令。神因此向所羅門發怒，宣告將從他兒子手中奪回王國的大部分。然而因着對大衛的應許，神不在所羅門在世時執行，且仍為大衛留一支派。神隨即興起三個對手：以東人哈達、亞蘭人利遜、以及以色列人耶羅波安。先知亞希雅以撕裂新衣的行動預言，宣告神將把十個支派賜給耶羅波安。所羅門試圖殺害耶羅波安，但他逃往埃及。本章以所羅門去世作結，以哀傷的筆調為這位曾被神賞賜無與倫比智慧的王畫上句點，留下最沉重的屬靈警示：智慧而不順服，終究走向衰落。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 晚年的靈性妥協，摧毀了一生的屬靈遺產</strong><br>所羅門在年老時走偏，這不是一夕之間的背叛，而是長期積累的妥協——從迎娶外邦女子開始，一步一步被誘惑離開神。他的晚節不保，使他一生的智慧和成就蒙上了難以磨滅的陰影。信徒必須警惕：屬靈的失落往往不在年輕氣盛時，而在年老鬆懈、自以為已經「站穩」的時候。持守到底，才是真正的勝利。<br><br>
+<strong>2. 神對罪惡的審判不因地位或成就而豁免</strong><br>所羅門曾兩度蒙神顯現，擁有空前的智慧和榮耀，卻仍無法逃脫因悖逆所帶來的後果。神宣告奪回王國，是對祂自己所立誓約的信實執行。這提醒信徒：神的恩典不是包庇罪惡的保護傘，無論一個人的屬靈背景多麼輝煌，若持續在罪中走離神，審判必然來到。神的公義是無私的。<br><br>
+<strong>3. 一人的選擇影響後代與群體</strong><br>所羅門的偶像崇拜直接導致王國的分裂，一個本可延續的輝煌王朝因領袖的個人失敗而瓦解。他的選擇不只影響自己，更影響了整個以色列未來的歷史走向。信徒的屬靈決定從來不只關係自己——父母的信仰或偏離，影響孩子；領袖的方向，影響群體。每一個靈性選擇都有超過個人的連帶影響。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>所羅門年老的時候</strong>，<strong>他的妃嬪誘惑他的</strong>心去隨從別神，不效法他父親大衛誠誠實實地順服耶和華他的神。」（王上11:4）</td>
+<td>就像<strong>長期不維護的橋樑</strong>，表面看似完好，卻在關鍵時刻突然崩塌，所羅門的靈性妥協是長期積累的結果。你<strong>生命中有沒有</strong>某些「小小的讓步」，正在年復一年地侵蝕你<strong>對神的忠心</strong>，而你<strong>卻以為無礙</strong>？</td>
+</tr>
+<tr>
+<td>「<strong>你既行了這事</strong>……<strong>我必將你的國奪回</strong>，賜給你的臣子。」（王上11:11）</td>
+<td>就像<strong>一位老闆對表現優秀但後來違規的</strong>員工也必須依規處理，神對所羅門的審判顯示祂的公義對任何人都一視同仁。你是否<strong>有時認為自己</strong>的屬靈背景或過去的服事可以為現在的妥協或輕忽提供豁免？</td>
+</tr>
+<tr>
+<td>「<strong>你若聽從我一切所</strong><strong>吩咐你的</strong>……我就與你同在，為你立堅固的家，像我為大衛所立的一樣。」（王上11:38）</td>
+<td>就像<strong>一份合約明確列出履行條件與相應</strong>的保障，神給耶羅波安的應許清楚顯示順服是蒙福的前提。神今天給你<strong>的呼召和機會</strong>，同樣附帶着順服的條件——你願意<strong>在接受祝福的</strong>同時，也接受這個要求嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

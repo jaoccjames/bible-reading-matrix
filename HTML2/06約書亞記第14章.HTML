@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約書亞記第14章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約書亞記第14章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">迦勒八十五歲仍專心跟從求山地</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列人在迦南地所得的產業，就是祭司以利亞撒和嫩的兒子約書亞，並以色列各支派的族長所分給他們的，都記在下面，</div>
+<div class="verse"><span class="verse-number">2</span>是照耶和華藉摩西所吩咐的，把產業拈鬮分給九個半支派。</div>
+<div class="verse"><span class="verse-number">3</span>原來，摩西在約但河東已經把產業分給那兩個半支派，只是在他們中間沒有把產業分給利未人。</div>
+<div class="verse"><span class="verse-number">4</span>因為約瑟的子孫是兩個支派，就是瑪拿西和以法蓮，所以沒有把地分給利未人，但給他們城邑居住，並城邑的郊野，可以牧養他們的牲畜，安置他們的財物。</div>
+<div class="verse"><span class="verse-number">5</span>耶和華怎樣吩咐摩西，以色列人就照樣行，把地分了。</div>
+<div class="verse"><span class="verse-number">6</span>那時，猶大人來到吉甲見約書亞，有基尼洗族耶孚尼的兒子迦勒對約書亞說：「耶和華在加低斯巴尼亞指着我與你對神人摩西所說的話，你都知道了。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華的僕人摩西從加低斯巴尼亞打發我窺探這地，那時我正四十歲；我按着心意回報他。</div>
+<div class="verse"><span class="verse-number">8</span>然而，同我上去的眾弟兄使百姓的心消化；但我專心跟從耶和華我的神。</div>
+<div class="verse"><span class="verse-number">9</span>當日摩西起誓說：『你腳所踏之地定要歸你和你的子孫永遠為業，因為你專心跟從耶和華我的神。』</div>
+<div class="verse"><span class="verse-number">10</span>自從耶和華對摩西說這話的時候，耶和華照他所應許的使我存活這四十五年；其間以色列人在曠野行走。看哪，現今我八十五歲了，</div>
+<div class="verse"><span class="verse-number">11</span>我還是強壯，像摩西打發我去的那天一樣；無論是爭戰，是出入，我的力量那時如何，現在還是如何。</div>
+<div class="verse"><span class="verse-number">12</span>求你將耶和華那日應許我的這山地給我；那裏有亞衲族人，並寬大堅固的城，你也曾聽見了。或者耶和華照他所應許的與我同在，我就把他們趕出去。」</div>
+<div class="verse"><span class="verse-number">13</span>於是約書亞為耶孚尼的兒子迦勒祝福，將希伯崙給他為業。</div>
+<div class="verse"><span class="verse-number">14</span>所以希伯崙作了基尼洗族耶孚尼的兒子迦勒的產業，直到今日，因為他專心跟從耶和華以色列的神。</div>
+<div class="verse"><span class="verse-number">15</span>希伯崙從前名叫基列亞巴；亞巴是亞衲族中最尊大的人。於是國中太平，沒有爭戰了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約書亞記第14章開始記載迦南地在約但河西的分配，以一個感人的個人故事作為引言。在分地程序正式展開之前，年屆八十五歲的迦勒來到約書亞面前，回憶起四十五年前在加低斯巴尼亞窺探迦南時，他與約書亞是僅有的兩位信心堅定的探子。其餘十人的消極報告使百姓心膽俱裂，卻沒有動搖迦勒對神的信心。神透過摩西應許，凡迦勒腳所踏之地都必歸他為業。四十五年後，迦勒不僅沒有忘記這個應許，更充滿勇氣地向約書亞要求他當年所看見、充滿亞衲巨人族的山地——希伯崙。他宣告自己雖已八十五歲，力量仍如昔日，並仰賴神與他同在去趕出強敵。約書亞為他祝福，將希伯崙賜給他為業。本章核心是迦勒那句宣告：「我專心跟從耶和華我的神」，這正是他得以持守應許、越老越剛強的秘訣。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 專心跟從神是靈命長青、持守到底的根基</strong><br>迦勒兩度強調「專心跟從耶和華」，這是他四十五年信心持守的核心秘訣。在同輩人都已凋零的情況下，他的力量仍然強壯，渴望仍然燃燒。「專心」意味着沒有旁騖、不被環境左右、不在壓力下妥協。屬靈生命長青不在於天賦異稟，而在於一生不離開對神的專注與委身，每一天選擇把神放在首位。<br><br>
+<strong>2. 神的應許值得用整個生命去等候和持守</strong><br>迦勒等待了四十五年，那個四十歲時聽見的應許，在八十五歲時終於兌現。這四十五年間有曠野的飄泊、世代的更替、戰爭的艱辛，但迦勒從未放棄那個應許。他的故事宣告：神的應許不受時間限制，信徒的責任是在等候中持守委身，而非在漫長的等待中放棄或轉向。神記得祂每一個應許，在祂的時間必然兌現。<br><br>
+<strong>3. 真正的信心在面對強敵時仍勇於前進</strong><br>迦勒明知希伯崙有亞衲巨人族和堅固的城，仍然主動要求那塊最艱難的地。他不求平坦的道路，而求有神同在的挑戰。這與那十個探子形成鮮明對比——同樣看見巨人，一邊說「我們如同蚱蜢」，另一邊說「或者耶和華照他所應許的與我同在，我就把他們趕出去」。真正的信心不是沒有看見困難，而是在看見困難的同時更看見神的同在。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>但我專心跟從耶和</strong><strong>華我的神</strong>。」（書14:8）</td>
+<td>就像<strong>划船需要方向一致才能有效前進</strong>，迦勒在眾人心消化的壓力下仍專心跟從神。當周圍的人都選擇退縮或妥協時，你是否能夠獨立地持守對神的委身，而不隨眾人的腳步動搖？</td>
+</tr>
+<tr>
+<td>「<strong>現今我八十五歲了</strong>，<strong>我還是強壯</strong>，像摩西打發我去的那天一樣。」（書14:10-11）</td>
+<td>就像<strong>老樹因根深扎入土中而能抵擋風暴</strong>，迦勒的強壯不是來自體力，而是來自多年專心跟從神的根基。你<strong>對神的熱忱與</strong>委身是隨着歲月增長而深化，還是逐漸冷卻淡漠？</td>
+</tr>
+<tr>
+<td>「<strong>求你將耶和華那日</strong><strong>應許我的這山地給</strong>我……耶和華照他所應許的與我同在，我就把他們趕出去。」（書14:12）</td>
+<td>就像<strong>一位長跑選手在終點前最後一段路</strong>反而加速，迦勒在八十五歲時不求安逸，反求最艱難的山地。在你<strong>的生命中</strong>，有沒有一個神給過你<strong>的應許或呼召</strong>，你<strong>一直未敢踏入</strong>，只因那裏有「亞衲巨人」？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

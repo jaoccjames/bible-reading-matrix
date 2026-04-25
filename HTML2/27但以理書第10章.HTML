@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>但以理書第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+但以理書第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">靈界的爭戰與天使的顯現</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>波斯王古列第三年，有事顯給稱為伯提沙撒的但以理。這事是真的，是指着大爭戰；但以理通達這事，明白這異象。</div>
+<div class="verse"><span class="verse-number">2</span>當那時，我但以理悲傷了三個七日。</div>
+<div class="verse"><span class="verse-number">3</span>美味我沒有吃，酒肉沒有入我的口，也沒有用油抹我的身，直到滿了三個七日。</div>
+<div class="verse"><span class="verse-number">4</span>正月二十四日，我在希底結大河邊，</div>
+<div class="verse"><span class="verse-number">5</span>舉目觀看，見有一人身穿細麻衣，腰束烏法精金帶。</div>
+<div class="verse"><span class="verse-number">6</span>他身體如水蒼玉，面貌如閃電，眼目如火把，手和腳如光明的銅，說話的聲音如大眾的聲音。</div>
+<div class="verse"><span class="verse-number">7</span>這異象惟有我但以理一人看見，同着我的人沒有看見。他們卻大大戰兢，逃跑隱藏，</div>
+<div class="verse"><span class="verse-number">8</span>只剩下我一人。我見了這大異象便渾身無力，面貌失色，毫無氣力。</div>
+<div class="verse"><span class="verse-number">9</span>我卻聽見他說話的聲音，一聽見就面伏在地沉睡了。</div>
+<div class="verse"><span class="verse-number">10</span>忽然，有一手按在我身上，使我用膝和手掌支持微起。</div>
+<div class="verse"><span class="verse-number">11</span>他對我說：「大蒙眷愛的但以理啊，要明白我與你所說的話，只管站起來，因為我現在奉差遣來到你這裏。」他對我說這話，我便戰戰兢兢的立起來。</div>
+<div class="verse"><span class="verse-number">12</span>他就說：「但以理啊，不要懼怕！因為從你第一日專心求明白將來的事，又在你神面前刻苦己心，你的言語已蒙應允；我是因你的言語而來。</div>
+<div class="verse"><span class="verse-number">13</span>但波斯國的魔君攔阻我二十一日。忽然有大君〔就是天使長；二十一節同〕中的一位米迦勒來幫助我，我就停留在波斯諸王那裏。</div>
+<div class="verse"><span class="verse-number">14</span>現在我來，要使你明白本國之民日後必遭遇的事，因為這異象關乎後來許多的日子。」</div>
+<div class="verse"><span class="verse-number">15</span>他向我這樣說，我就臉面朝地，啞口無聲。</div>
+<div class="verse"><span class="verse-number">16</span>不料，有一位像人的，摸我的嘴唇，我便開口向那站在我面前的說：「我主啊，因見這異象，我大大愁苦，毫無氣力。</div>
+<div class="verse"><span class="verse-number">17</span>我主的僕人怎能與我主說話呢？我一見異象就渾身無力，毫無氣息。」</div>
+<div class="verse"><span class="verse-number">18</span>有一位形狀像人的又摸我，使我有力量。</div>
+<div class="verse"><span class="verse-number">19</span>他說：「大蒙眷愛的人哪，不要懼怕，願你平安！你總要堅強。」他一向我說話，我便覺得有力量，說：「我主請說，因你使我有力量。」</div>
+<div class="verse"><span class="verse-number">20</span>他就說：「你知道我為何來見你嗎？現在我要回去與波斯的魔君爭戰，我去後，希臘〔原文作雅完〕的魔君必來。</div>
+<div class="verse"><span class="verse-number">21</span>但我要將那錄在真確書上的事告訴你。除了你們的大君米迦勒之外，沒有幫助我抵擋這兩魔君的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+但以理書第10章是整本但以理書中氣氛最神秘、最令人謙敬的一章，揭示了禱告背後的靈界爭戰。古列第三年，但以理為「大爭戰」的事禁食三周，期間見到一個輝煌的異象——形狀如人、面如閃電、眼如火把的存有（可能是天使或基督前現）。周圍的人雖看不見，卻因強烈的靈界力量而戰兢逃走；但以理倒在地上。天使摸他，使他有力量，並解釋了一個震撼的真相：「從你第一日……你的言語已蒙應允；我是因你的言語而來。但波斯國的魔君攔阻我二十一日。忽然有大君中的一位米迦勒來幫助我。」這是聖經中對禱告背後靈界爭戰最清楚的描述：禱告在第一日就蒙應允，但靈界的對抗延遲了答案的到達。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【禱告的第一日就蒙應允，但答案的到達可能有靈界的延遲】</strong><br>「從你第一日……你的言語已蒙應允」——神的答應是即時的，但靈界的爭戰可能造成答案延遲到達。信徒禱告許久似乎沒有回應時，可能不是神沒有聽見，而是靈界的爭戰正在進行。這個真理一方面呼召持守的禱告，另一方面也解釋了禱告的「延遲應允」。<br><br>
+<strong>2. 【神呼召每個人「大蒙眷愛」，這是靈命力量的根源】</strong><br>天使兩次稱但以理「大蒙眷愛的人」——不是「偉大的人」，而是「被愛的人」。這個認識使但以理在靈界的強烈壓力下能夠站立。信徒的屬靈能力不來自自己的偉大，而來自神對我們的愛。「我是被神深愛的」這個確信，是靈命力量最穩固的根基。<br><br>
+<strong>3. 【靈界的現實影響地上的歷史，屬靈的爭戰需要屬靈的回應】</strong><br>「波斯的魔君」、「希臘的魔君」、「你們的大君米迦勒」——地上的政治歷史有其對應的靈界力量。這告訴信徒：面對政治、社會的問題，僅靠人的力量和政治行動是不足的；屬靈的禱告是真正影響歷史的力量，因為它影響靈界的爭戰。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>但以理啊</strong>，<strong>不要懼怕</strong>！因為從你第一日專心求明白將來的事，又在你神面前刻苦己心，你的言語已蒙應允；我是因你的言語而來。（但10:12）</td>
+<td>「第一日就蒙應允」——你<strong>最近等待了很</strong>久的禱告，是否有可能神已經在第一天就說「是」，只是答案正在「飛來的路上」？就像<strong>一封已經寄出的信還在郵寄途中</strong>，你願意<strong>把那個等待的</strong>禱告，以「神已應允，我在等候答案到達」的信心繼續等候嗎？</td>
+</tr>
+<tr>
+<td><strong>大蒙眷愛的但以理</strong>啊，<strong>要明白我與你所說</strong>的話，只管站起來，因為我現在奉差遣來到你這裏。（但10:11）</td>
+<td>天使稱但以理「大蒙眷愛的」——這是神對他的定義，不是世界的定義。神如何定義你？你是否也是「大蒙眷愛的」？就像<strong>孩子的自我形象往往來自父母如何</strong>稱呼他，你<strong>讓神「大蒙眷</strong>愛」的宣告多深地進入你<strong>對自己的認識</strong>，成為你<strong>面對靈界壓力</strong>時的力量？</td>
+</tr>
+<tr>
+<td><strong>但波斯國的魔君攔</strong><strong>阻我二十一日</strong>。忽然有大君中的一位米迦勒來幫助我。（但10:13）</td>
+<td>禱告背後有靈界的爭戰——你<strong>的禱告正在影</strong>響一場你<strong>看不見的戰爭</strong>。這個真理如何改變你<strong>對禱告的態度</strong>？就像<strong>得知一場關鍵戰役正在進行</strong>，而你<strong>的支援電話正</strong>在為那場戰役提供至關重要的資源，你願意<strong>以「我的禱告</strong>正在影響一場靈界爭戰」的意識來看待你<strong>每天的禱告嗎</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

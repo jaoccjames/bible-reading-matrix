@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以斯帖記第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以斯帖記第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以斯帖設宴智謀，哈曼怒豎木架</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>第三日，以斯帖穿上朝服，進王宮的內院，對殿站立。王在殿裏坐在寶座上，對着殿門。</div>
+<div class="verse"><span class="verse-number">2</span>王見王后以斯帖站在院內，就施恩於她，向她伸出手中的金杖；以斯帖便向前摸杖頭。</div>
+<div class="verse"><span class="verse-number">3</span>王對她說：「王后以斯帖啊，你要甚麼？你求甚麼，就是國的一半也必賜給你。」</div>
+<div class="verse"><span class="verse-number">4</span>以斯帖說：「王若以為美，就請王帶着哈曼今日赴我所預備的筵席。」</div>
+<div class="verse"><span class="verse-number">5</span>王說：「叫哈曼速速照以斯帖的話去行。」於是王帶着哈曼赴以斯帖所預備的筵席。</div>
+<div class="verse"><span class="verse-number">6</span>在酒席筵前，王又問以斯帖說：「你要甚麼，我必賜給你；你求甚麼，就是國的一半也必為你成就。」</div>
+<div class="verse"><span class="verse-number">7</span>以斯帖回答說：「我有所要，我有所求。</div>
+<div class="verse"><span class="verse-number">8</span>我若在王眼前蒙恩，王若願意賜我所要的，准我所求的，就請王帶着哈曼再赴我所要預備的筵席。明日我必照王所問的說明。」</div>
+<div class="verse"><span class="verse-number">9</span>那日哈曼心中快樂，歡歡喜喜的出來；但見末底改在朝門不站起來，連身也不動，就滿心惱怒末底改。</div>
+<div class="verse"><span class="verse-number">10</span>哈曼暫且忍耐回家，叫人請他朋友和他妻子細利斯來。</div>
+<div class="verse"><span class="verse-number">11</span>哈曼將他富厚的榮耀、眾多的兒女，和王抬舉他使他超乎首領臣僕之上，都述說給他們聽。</div>
+<div class="verse"><span class="verse-number">12</span>哈曼又說：「王后以斯帖預備筵席，除了我之外不許別人隨王赴席。明日王后又請我隨王赴席；</div>
+<div class="verse"><span class="verse-number">13</span>只是我見猶大人末底改坐在朝門，雖有這一切榮耀，也與我無益。」</div>
+<div class="verse"><span class="verse-number">14</span>他的妻細利斯和他一切的朋友對他說：「不如立一個五丈高的木架，明早求王將末底改挂在其上，然後你可以歡歡喜喜的隨王赴席。」哈曼以這話為美，就叫人作了木架。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以斯帖記第5章記載以斯帖禁食三日後，鼓起勇氣進入王宮的行動，以及哈曼在喜悅與憤怒交織中加深仇恨的情節。以斯帖穿上朝服，步入內院，以行動實踐她「我若死就死吧」的宣告。王向她伸出金杖，她得以存活，使命得以開展。然而以斯帖沒有立刻提出請求，而是設宴邀請王和哈曼，並在宴席上再次邀請他們翌日再來，藉此製造更有利的時機和情境。這種智慧的等候，顯示以斯帖在勇氣之外，也具備謹慎的智慧。與此對比的是哈曼——他在出席筵席後因末底改不站立而憤怒難消，在妻子和友人的慫恿下，立刻豎起一個五丈高的木架，準備隔日求王將末底改掛上。驕傲、急躁與仇恨，已為哈曼鋪好了滅亡之路。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 勇氣與智慧並行，是神所使用的器皿的特質</strong><br>以斯帖的行動兼具勇氣與策略——她勇敢地闖入內院，卻也智慧地沒有倉促提出請求，而是以設宴創造更有利的情境。神所使用的人，往往不只有熱情或膽量，還需要屬靈的敏銳和策略的智慧。保羅說要「靈巧像蛇，馴良像鴿子」，以斯帖正是這種信仰與智慧結合的典範。<br><br>
+<strong>2. 等候也是信心的一部分</strong><br>以斯帖在宴席上沒有立即說出請求，而是等候第二天。這種在關鍵時刻的「暫停」，看似軟弱，實則是信心的成熟。等候神的時機，而非急於求成，是信仰操練中最難的功課之一。以斯帖的等候，給了神空間在第6章安排那個「巧合的夜晚」，讓局面在她開口之前已開始翻轉。<br><br>
+<strong>3. 驕傲在得到的時候仍不滿足，因為它永遠以自我為中心</strong><br>哈曼擁有一切榮耀，卻因末底改一人不站立而「雖有這一切榮耀，也與我無益」。這是驕傲的本質——它的滿足感完全取決於他人的認可，因此永遠無法真正知足。信仰所帶來的滿足，來源是神而非人的眼光，這是驕傲永遠無法企及的穩固。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>王見王后以斯帖站</strong><strong>在院內</strong>，就施恩於她，向她伸出手中的金杖；以斯帖便向前摸杖頭。（斯5:2）</td>
+<td>就像<strong>跨出去那一步之後</strong>，才發現地板是穩固的，以斯帖的勇敢踏出換來了神的施恩。你有沒有<strong>正在等待「確</strong>定安全」才願意踏出的那一步？神可能在等你<strong>先動</strong>。</td>
+</tr>
+<tr>
+<td><strong>以斯帖回答說</strong>：「<strong>我有所要</strong>，我有所求……就請王帶着哈曼再赴我所要預備的筵席。明日我必照王所問的說明。」（斯5:7-8）</td>
+<td>就像<strong>廚師知道要等食材入味才端上桌</strong>，智慧的等候有時比急於行動更有力量。你有沒有<strong>在重要的時刻</strong>，能夠辨別「現在還不是最佳時機」？什麼幫助你<strong>做出這種判斷</strong>？</td>
+</tr>
+<tr>
+<td>哈曼……說：「<strong>只是我見猶大人末</strong><strong>底改坐在朝門</strong>，雖有這一切榮耀，也與我無益。」（斯5:13）</td>
+<td>就像<strong>一頓滿桌佳肴</strong>，只因有一道菜不合口就覺得整頓飯毀了，驕傲的不滿足是否也曾讓你<strong>無法感恩眼前</strong>所擁有的一切？是什麼讓你<strong>「雖有這一切</strong>，也覺無益」？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

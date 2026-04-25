@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第18章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第18章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">比勒達再次發言：惡人必滅亡</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>書亞人比勒達回答說：</div>
+<div class="verse"><span class="verse-number">2</span>你尋索言語要到幾時呢？你可以揣摩思想，然後我們就說話。</div>
+<div class="verse"><span class="verse-number">3</span>我們為何算為畜生，在你眼中看作污穢呢？</div>
+<div class="verse"><span class="verse-number">4</span>你這惱怒將自己撕裂的，難道大地為你見棄、磐石挪開原處嗎？</div>
+<div class="verse"><span class="verse-number">5</span>惡人的亮光必要熄滅；他的火焰必不照耀。</div>
+<div class="verse"><span class="verse-number">6</span>他帳棚中的亮光要變為黑暗；他以上的燈也必熄滅。</div>
+<div class="verse"><span class="verse-number">7</span>他堅強的腳步必見狹窄；自己的計謀必將他絆倒。</div>
+<div class="verse"><span class="verse-number">8</span>因為他被自己的腳陷入網中，走在纏人的網羅上。</div>
+<div class="verse"><span class="verse-number">9</span>圈套必抓住他的腳跟；機關必擒獲他。</div>
+<div class="verse"><span class="verse-number">10</span>活扣為他藏在土內；羈絆為他藏在路上。</div>
+<div class="verse"><span class="verse-number">11</span>四面的驚嚇要使他害怕，並且追趕他的腳跟。</div>
+<div class="verse"><span class="verse-number">12</span>他的力量必因飢餓衰敗；禍患要在他旁邊等候。</div>
+<div class="verse"><span class="verse-number">13</span>他本身的肢體要被吞喫；死亡的長子要吞喫他的肢體。</div>
+<div class="verse"><span class="verse-number">14</span>他要從所倚靠的帳棚被拔出來，帶到驚嚇的王那裏。</div>
+<div class="verse"><span class="verse-number">15</span>不屬他的必住在他的帳棚裏；硫磺必撒在他所住之處。</div>
+<div class="verse"><span class="verse-number">16</span>下邊，他的根本要枯乾；上邊，他的枝子要剪除。</div>
+<div class="verse"><span class="verse-number">17</span>他的記念在地上必然滅亡；他的名字在街上也不存留。</div>
+<div class="verse"><span class="verse-number">18</span>他必從光明中被攆到黑暗裏，必被趕出世界。</div>
+<div class="verse"><span class="verse-number">19</span>在本民中必無子無孫；在寄居之地也無一人存留。</div>
+<div class="verse"><span class="verse-number">20</span>以後來的要驚奇他的日子，好像以前去的受了驚駭。</div>
+<div class="verse"><span class="verse-number">21</span>不義之人的住處總是這樣；此乃不認識神之人的地步。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第18章是書亞人比勒達的第二次發言，以更強硬的語氣詳細描述惡人的滅亡。他質問約伯為何還要繼續爭辯，並以「難道大地為你見棄、磐石挪開原處嗎？」表達對約伯「要神改變規則」的不耐。隨後他用大量比喻描述惡人的命運：亮光熄滅、計謀絆倒、四面的驚嚇、飢餓的力量消退、死亡的長子吞喫、被趕離世界、無子無孫、後人驚奇他的日子。本章的核心論點是：約伯的遭遇符合惡人的命運。比勒達沒有直接指名約伯是惡人，但描述的細節（包括帳棚被毀、無後代）與約伯的處境高度吻合，是一種殘忍的「影射式定罪」。本章反映了當一個人拒絕接受朋友的神學框架，朋友如何以更強硬的方式升級施壓。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 用惡人的命運來影射受苦者，是信仰上最殘忍的一種行為</strong><br>比勒達沒有直接說「約伯，你是惡人」，卻詳細描述惡人的命運，讓影射不言而喻。這種間接的定罪比直接指控更難反駁，卻同樣傷人。在信仰群體中，我們需要警惕那種「我沒有說你有罪，但你聽着……」的間接審判方式。<br><br>
+<strong>2. 惡人的結局確實是聖經的真實描述，但應用時機至關重要</strong><br>比勒達所說的惡人命運，在聖經神學中是有根據的。問題不在內容，而在於他以一個無辜受苦者作為惡人命運描述的隱含對象。聖經的真理需要在愛和智慧中應用，而非作為審判的工具。<br><br>
+<strong>3. 強硬的信仰論述背後，往往是缺乏真正傾聽的掩護</strong><br>比勒達越說越長、越說越嚴，其實是因為他無法真正回應約伯的申訴，只好以「更多的真理」來填補空缺。這是一個提醒：當我們在信仰對話中不斷升級論述，往往意味著我們已停止傾聽。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>惡人的亮光必要熄</strong>滅；<strong>他的火焰必不照耀</strong>。（伯18:5）</td>
+<td>就像<strong>說「蠟燭燒完就滅了」是對的</strong>，但用來對一個正在哭泣的人說卻傷人，正確的真理在錯誤的時機和對象說出，可能成為武器。你有沒有<strong>曾在錯誤的時</strong>機對一個人說了正確的話？那次你<strong>從中學到了什</strong>麼？</td>
+</tr>
+<tr>
+<td><strong>他被自己的腳陷入</strong>網中，<strong>走在纏人的網羅上</strong>。（伯18:8）</td>
+<td>就像<strong>相信一個人走入困境是他自找的</strong>，把受苦者的處境歸咎於他的選擇是最常見也最傷人的反應之一。你有沒有<strong>曾在別人受苦</strong>時，快速認定「他是咎由自取」？後來你<strong>的判斷正確嗎</strong>？</td>
+</tr>
+<tr>
+<td><strong>此乃不認識神之人</strong><strong>的地步</strong>。（伯18:21）</td>
+<td>就像<strong>用最終結語來蓋棺論定</strong>，以「不認識神」作為所有苦難的解釋是最簡單也最危險的神學裁判。你<strong>認為「認識神</strong>」和「遭受苦難」之間的關係是什麼？這兩者可以並存嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

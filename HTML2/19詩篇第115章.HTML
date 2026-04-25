@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第115章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第115章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">榮耀歸神之名：偶像無能活人當倚靠耶和華</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華啊，榮耀不要歸與我們，不要歸與我們；要因你的慈愛和誠實歸在你的名下！</div>
+<div class="verse"><span class="verse-number">2</span>為何容外邦人說：他們的神在那裏呢？</div>
+<div class="verse"><span class="verse-number">3</span>然而，我們的神在天上，都隨自己的意旨行事。</div>
+<div class="verse"><span class="verse-number">4</span>他們的偶像是金的，銀的，是人手所造的，</div>
+<div class="verse"><span class="verse-number">5</span>有口卻不能言，有眼卻不能看，</div>
+<div class="verse"><span class="verse-number">6</span>有耳卻不能聽，有鼻卻不能聞，</div>
+<div class="verse"><span class="verse-number">7</span>有手卻不能摸，有腳卻不能走，有喉嚨也不能出聲。</div>
+<div class="verse"><span class="verse-number">8</span>造他的要和他一樣；凡靠他的也要如此。</div>
+<div class="verse"><span class="verse-number">9</span>以色列啊，你要倚靠耶和華！他是你的幫助和你的盾牌。</div>
+<div class="verse"><span class="verse-number">10</span>亞倫家啊，你們要倚靠耶和華！他是你們的幫助和你們的盾牌。</div>
+<div class="verse"><span class="verse-number">11</span>你們敬畏耶和華的，要倚靠耶和華！他是你們的幫助和你們的盾牌。</div>
+<div class="verse"><span class="verse-number">12</span>耶和華向來眷念我們；他還要賜福給我們：要賜福給以色列的家，賜福給亞倫的家。</div>
+<div class="verse"><span class="verse-number">13</span>凡敬畏耶和華的，無論大小，主必賜福給他。</div>
+<div class="verse"><span class="verse-number">14</span>願耶和華叫你們和你們的子孫日見加增。</div>
+<div class="verse"><span class="verse-number">15</span>你們蒙了造天地之耶和華的福！</div>
+<div class="verse"><span class="verse-number">16</span>天，是耶和華的天；地，他卻給了世人。</div>
+<div class="verse"><span class="verse-number">17</span>死人不能讚美耶和華；下到寂靜中的也都不能。</div>
+<div class="verse"><span class="verse-number">18</span>但我們要稱頌耶和華，從今時直到永遠。你們要讚美耶和華！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第115篇是哈利路亞詩篇集中最長的一篇，以「榮耀不要歸與我們，要歸在你的名下」的謙卑禱告開篇，然後以對偶像的諷刺性批判（4-8節）、三重倚靠耶和華的呼召（9-11節）和祝福的宣告（12-15節）構成完整的神學宣言。
+
+      本篇第4至8節是整部舊約中對偶像最深刻的神學批判之一——不是從道德層面批判敬拜偶像是錯的，而是從存有論（ontology）層面指出偶像的根本無能：「有口卻不能言，有眼卻不能看……造他的要和他一樣；凡靠他的也要如此。」最後一句揭示敬拜偶像者的屬靈危機：人會漸漸像他所敬拜的對象——敬拜沉默、盲目、無感的偶像，人也會變得在屬靈上沉默、盲目、無感。
+
+      本篇以三重疊句呼召「以色列」、「亞倫家」和「敬畏耶和華的人」都要「倚靠耶和華」，涵蓋了所有的信仰群體。第17至18節的對比是全篇最深刻的動力：「死人不能讚美耶和華……但我們要稱頌耶和華，從今時直到永遠」——正因為我們還活著，就當盡情讚美，不將機會延誤到死後。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 榮耀歸神之名而非歸我們是一切服事最重要的動機</strong><br>「耶和華啊，榮耀不要歸與我們，不要歸與我們；要因你的慈愛和誠實歸在你的名下！」（第1節）「不要歸與我們」這個雙重否定，表明榮耀歸於自己的誘惑是真實的、需要被明確拒絕的。一切的服事、事業、成就，其最終的榮耀歸屬，是信仰最核心的動機測試。當我們尋求自己的榮耀，服事便成為自我表演；當我們真誠地以神的名得榮耀為目標，服事便成為敬拜。<br><br>
+<strong>2. 偶像無能揭示倚靠人造之物的屬靈危險</strong><br>「造他的要和他一樣；凡靠他的也要如此。」（第8節）這個宣告揭示了屬靈生命最重要的影響原則：人會漸漸像他所倚靠、所敬拜的對象。倚靠那些「有口不能言、有眼不能看」的死物，人自己也會漸漸在屬靈上失去感知、失去聲音、失去生命力。反過來，倚靠那位活生生的、能說話、能看見、能聽見的神，人也會漸漸具有神的性格——活潑、有感知、有聲音的屬靈生命。<br><br>
+<strong>3. 活著就要讚美神是信仰最迫切的屬靈動力</strong><br>「死人不能讚美耶和華……但我們要稱頌耶和華，從今時直到永遠。」（第17-18節）這個對比給了信徒最直接的讚美動機：趁著活著、趁著還能開口，就要讚美神。「死人不能讚美」不只是描述事實，更是呼召：既然死後無法讚美，就更要在今生把握每一個讚美的機會。這種「因為還活著所以要讚美」的動力，使讚美從宗教義務轉化為生命最自然的表達。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華啊</strong>，<strong>榮耀不要歸與我們</strong>，不要歸與我們；要因你的慈愛和誠實歸在你的名下！（詩115:1）</td>
+<td>就像<strong>一個成功的表演後</strong>，最謙卑的反應是把掌聲指向幕後的團隊，你<strong>在生命中的成</strong>就、才能和服事上，是否真的有能力說出「榮耀歸神之名，不歸我」，還是在某些地方你<strong>仍然難以放下</strong>那份被認可的渴望？</td>
+</tr>
+<tr>
+<td><strong>造他的要和他一樣</strong>；<strong>凡靠他的也要如此</strong>。（詩115:8）</td>
+<td>就像<strong>長期和什麼樣的人在一起</strong>，就會漸漸像那個人，你<strong>所倚靠和敬拜</strong>的對象——無論是神、財富、名譽、人際關係或其他——都在塑造你<strong>成為像它的人</strong>，你是否<strong>留意你所「倚</strong>靠」的事物正在把你<strong>塑造成什麼樣</strong>的人？</td>
+</tr>
+<tr>
+<td><strong>死人不能讚美耶和</strong>華……<strong>但我們要稱頌耶和</strong>華，從今時直到永遠。（詩115:17-18）</td>
+<td>就像<strong>知道機會稍縱即逝就會更珍視當下</strong>的機會，「死人不能讚美」這個事實，是否給了你<strong>一種「趁著還</strong>活著就要盡情讚美」的迫切感，讓你<strong>把握今天每一</strong>個讚美和感謝的機會，而非把讚美留到「更合適的時候」？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

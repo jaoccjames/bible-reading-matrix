@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第44章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第44章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">我塗抹你的過犯如厚雲消散：偶像的荒謬與神的赦免</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我的僕人雅各，我所揀選的以色列阿，現在你當聽。</div>
+<div class="verse"><span class="verse-number">2</span>造作你，又從你出胎造就你，並要幫助你的耶和華如此說：我的僕人雅各，我所揀選的耶書崙哪，不要害怕！</div>
+<div class="verse"><span class="verse-number">3</span>因為我要將水澆灌口渴的人，將河澆灌乾旱之地。我要將我的靈澆灌你的後裔，將我的福澆灌你的子孫。</div>
+<div class="verse"><span class="verse-number">4</span>他們要發生在草中，像溪水旁的柳樹。</div>
+<div class="verse"><span class="verse-number">5</span>這個要說：我是屬耶和華的；那個要以雅各的名自稱；又一個要親手寫：歸耶和華的〔或作：在手上寫歸耶和華〕，並自稱為以色列。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華以色列的君，以色列的救贖主萬軍之耶和華如此說：我是首先的，我是末後的；除我以外再沒有真神。</div>
+<div class="verse"><span class="verse-number">7</span>自從我設立古時的民，誰能像我宣告，並且指明，又為自己陳說呢？讓他將未來的事和必成的事說明。</div>
+<div class="verse"><span class="verse-number">8</span>你們不要恐懼，也不要害怕。我豈不是從上古就說明指示你們嗎？並且你們是我的見證！除我以外，豈有真神嗎？誠然沒有磐石，我不知道一個！</div>
+<div class="verse"><span class="verse-number">9</span>製造雕刻偶像的盡都虛空；他們所喜悅的都無益處；他們的見證無所看見，無所知曉，他們便覺羞愧。</div>
+<div class="verse"><span class="verse-number">10</span>誰製造神像，鑄造無益的偶像？</div>
+<div class="verse"><span class="verse-number">11</span>看哪，他的同伴都必羞愧。工匠也不過是人，任他們聚會，任他們站立，都必懼怕，一同羞愧。</div>
+<div class="verse"><span class="verse-number">12</span>鐵匠把鐵在火炭中燒熱，用鎚打鐵器，用他有力的膀臂錘成；他飢餓而無力，不喝水而發倦。</div>
+<div class="verse"><span class="verse-number">13</span>木匠拉線，用筆劃出樣子，用鉋子鉋成形狀，用圓尺劃了模樣，仿照人的體態，作成人形，好住在房屋中。</div>
+<div class="verse"><span class="verse-number">14</span>他砍伐香柏樹，又取柞〔或作：青桐〕樹和橡樹，在樹林中選定了一棵。他栽種松樹，得雨長養。</div>
+<div class="verse"><span class="verse-number">15</span>這樹，人可用以燒火；他自己取些烤火，又燒着烤餅，而且作神像跪拜，作雕刻的偶像向他叩拜。</div>
+<div class="verse"><span class="verse-number">16</span>他把一分燒在火中，把一分烤肉喫飽。自己烤火說：「阿哈，我暖和了，我見火了。」</div>
+<div class="verse"><span class="verse-number">17</span>他用剩下的作了一神，就是雕刻的偶像。他向這偶像俯伏叩拜，禱告他說：「求你拯救我，因你是我的神。」</div>
+<div class="verse"><span class="verse-number">18</span>他們不知道，也不思想；因為耶和華閉住他們的眼，不能看見，塞住他們的心，不能明白。</div>
+<div class="verse"><span class="verse-number">19</span>誰心裏也不醒悟，也沒有知識，沒有聰明，能說：「我曾拿一分在火中燒了，在炭火上烤過餅；我也烤過肉吃。這剩下的，我豈要作可憎的物嗎？我豈可向木不子叩拜呢？」</div>
+<div class="verse"><span class="verse-number">20</span>他以灰為食，心中昏迷，使他偏邪，他不能自救，也不能說：「我右手中豈不是有虛謊嗎？」</div>
+<div class="verse"><span class="verse-number">21</span>雅各，以色列啊，你是我的僕人，要記念這些事。以色列啊，你是我的僕人，我造就你必不忘記你。</div>
+<div class="verse"><span class="verse-number">22</span>我塗抹了你的過犯，像厚雲消散；我塗抹了你的罪惡，如薄雲滅沒。你當歸向我，因我救贖了你。</div>
+<div class="verse"><span class="verse-number">23</span>諸天哪，應當歌唱，因為耶和華作成這事。地的深處阿，應當歡呼；眾山應當發聲歌唱；樹林和其中所有的樹都當如此！因為耶和華救贖了雅各，並要因以色列榮耀自己。</div>
+<div class="verse"><span class="verse-number">24</span>從你出胎，造就你的救贖主耶和華如此說：我耶和華是創造萬物的，是獨自鋪張諸天、鋪開大地的。誰與我同在呢？</div>
+<div class="verse"><span class="verse-number">25</span>使說假話的兆頭失效，使占卜的癲狂，使智慧人退後，使他的知識變為愚拙；</div>
+<div class="verse"><span class="verse-number">26</span>使我僕人的話語立定，我使者的謀算成就。論到耶路撒冷說：必有人居住；論到猶大的城邑說：必被建造，其中的荒場我也必興起。</div>
+<div class="verse"><span class="verse-number">27</span>對深淵說：你乾了吧！我也要使你的江河乾涸。</div>
+<div class="verse"><span class="verse-number">28</span>論古列說：他是我的牧人，必成就我所喜悅的，必下令建造耶路撒冷，發命立穩聖殿的根基。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第四十四章是後半部中神學內容最豐富的章節之一，涵蓋了三個主題：聖靈的澆灌和信仰的傳承（1-5節）、神獨一性的宣告（6-8節）、偶像製造的荒謬諷刺（9-20節），以及神的赦免和對古列王的預言（21-28節）。本章最精彩的段落是9-20節對偶像製造的嘲諷描繪：同一棵樹，一半燒火烤肉、一半刻成「神」來跪拜——這種荒謬在以賽亞的筆下成為銳利的諷刺：人親手造出來的東西，怎麼可能是「神」？第22節「我塗抹了你的過犯，像厚雲消散」，以雲消散作為罪被赦免的意象，充滿詩意且深刻——罪的消除像雲的消散一樣完全，不留痕跡。第28節「論古列說：他是我的牧人」，是以賽亞書中最驚人的預言之一，在以賽亞時代（約700BC），巴比倫甚至還未成為霸主，但以賽亞卻指名道姓預言了波斯王古列（Cyrus），他在公元前538年頒布詔書，讓以色列人歸回建造聖殿（拉1章）——應驗了這個將近150年後的預言。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 偶像的荒謬：用同一棵樹烤肉和造神</strong><br>第15-17節的諷刺是聖經中最犀利的偶像批判：用同一棵樹的一半燒火、一半作神來跪拜，這種自相矛盾的行為，揭示了偶像崇拜最根本的荒謬——人把自己製造的東西當作高於自己的神。第20節「他以灰為食，心中昏迷，使他偏邪，他不能自救」，描繪了偶像崇拜的屬靈後果：不只是行為的問題，而是認知的蒙蔽。信徒需要警惕「用自己製造的事物代替神」的現代偶像。<br><br>
+<strong>2. 「我塗抹了你的過犯，像厚雲消散」：赦免的完全性</strong><br>第22節是整本以賽亞書中關於赦免最詩意的表達。「厚雲消散」——厚厚的、遮天蔽日的雲層，在某個時刻完全消散，天空變得清澈——這是罪被赦免的圖像。赦免不是把罪「壓在一邊」，而是完全消除，如雲的消散。「你當歸向我，因我救贖了你」——赦免是歸回的邀請，而非繼續停留在罪疚中的理由。<br><br>
+<strong>3. 「我造就你必不忘記你」：神的記念是信仰安全感的根基</strong><br>第21節「我造就你必不忘記你」，宣告了神對每一個被祂創造的人的永恆記念。「不忘記」是以色列人最深的恐懼的反面——被遺忘，被放棄。神對祂手所造的每一個人，有持續的、主動的記念，這個記念是信仰安全感最深的根基：無論我在世上多渺小、多不起眼，神「必不忘記我」。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>他把一分燒在火中</strong>……<strong>他用剩下的作了一</strong>神……向這偶像俯伏叩拜。」（賽44:16-17）</td>
+<td>就像<strong>把剩菜重新加工當成珍饈來供奉</strong>，用殘餘物件做成崇拜對象，這種荒謬在理性上顯而易見，但在靈性上我們同樣容易犯這種錯，你<strong>生命中</strong>是否有用「神所賜予的恩典或能力」作為偶像的傾向——把恩典本身取代了賜恩典的神？</td>
+</tr>
+<tr>
+<td>「<strong>我塗抹了你的過犯</strong>，<strong>像厚雲消散</strong>；我塗抹了你的罪惡，如薄雲滅沒。你當歸向我，因我救贖了你。」（賽44:22）</td>
+<td>就像<strong>一個佈滿雲霧的清晨</strong>，當太陽升起，那些看似永久的厚雲竟然完全消失，天空重現清澈，赦免的完全性就是如此，你是否<strong>在已被赦免的</strong>罪上繼續背負重擔？「厚雲消散」這個圖像如何幫助你<strong>真正放下那個</strong>重擔，轉而「歸向神」？</td>
+</tr>
+<tr>
+<td>「<strong>以色列啊</strong>，<strong>你是我的僕人</strong>，我造就你必不忘記你。」（賽44:21）</td>
+<td>就像<strong>一位藝術家對自己每一件作品都有</strong>深刻的記憶，因為那是他親手創造的心血，神對你<strong>的記念同樣深</strong>刻和持久，你是否<strong>有過「神已經</strong>忘記我」的感受？那種感受通常在什麼情況下出現？這節「必不忘記你」如何真實地回應那個感受？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

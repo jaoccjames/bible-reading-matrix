@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志下第17章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志下第17章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約沙法的治國：尋求神，傳律法，得太平</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>亞撒的兒子約沙法接續他作王，奮勇自強，防備以色列人，</div>
+<div class="verse"><span class="verse-number">2</span>安置軍兵在猶大一切堅固城裏，又安置防兵在猶大地和他父亞撒所得以法蓮的城邑中。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華與約沙法同在；因為他行他祖大衛初行的道，不尋求巴力，</div>
+<div class="verse"><span class="verse-number">4</span>只尋求他父親的神，遵行他的誡命，不效法以色列人的行為。</div>
+<div class="verse"><span class="verse-number">5</span>所以耶和華堅定他的國，猶大眾人給他進貢；約沙法大有尊榮資財。</div>
+<div class="verse"><span class="verse-number">6</span>他高興遵行耶和華的道，並且從猶大除掉一切邱壇和木偶。</div>
+<div class="verse"><span class="verse-number">7</span>他作王第三年，就差遣臣子便亥伊勒、俄巴底、撒迦利雅、拿坦業、米該亞往猶大各城去教訓百姓。</div>
+<div class="verse"><span class="verse-number">8</span>同着他們有利未人示瑪雅、尼探雅、西巴第雅、亞撒黑、示米拉末、約拿單、亞多尼雅、多比雅、駝巴多尼雅，又有祭司以利沙瑪、約蘭同着他們。</div>
+<div class="verse"><span class="verse-number">9</span>他們帶着耶和華的律法書，走遍猶大各城教訓百姓。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華使猶大四圍的列國都甚恐懼，不敢與約沙法爭戰。</div>
+<div class="verse"><span class="verse-number">11</span>有些非利士人與約沙法送禮物，納貢銀。亞拉伯人也送他公綿羊七千七百隻，公山羊七千七百隻。</div>
+<div class="verse"><span class="verse-number">12</span>約沙法日漸強大，在猶大建造營寨和積貨城。</div>
+<div class="verse"><span class="verse-number">13</span>他在猶大城邑中有許多工程，又在耶路撒冷有戰士，就是大能的勇士。</div>
+<div class="verse"><span class="verse-number">14</span>他們的數目，按着宗族，記在下面：猶大族的，千夫長押拿為首率領大能的勇士三十萬；</div>
+<div class="verse"><span class="verse-number">15</span>其次是，千夫長約哈難率領大能的勇士二十八萬；</div>
+<div class="verse"><span class="verse-number">16</span>其次是，細基利的兒子亞瑪斯雅（他為耶和華犧牲自己）率領大能的勇士二十萬。</div>
+<div class="verse"><span class="verse-number">17</span>便雅憫族，是大能的勇士以利雅大率領，拿弓箭和盾牌的二十萬；</div>
+<div class="verse"><span class="verse-number">18</span>其次是，約薩拔率領預備打仗的十八萬。</div>
+<div class="verse"><span class="verse-number">19</span>這都是伺候王的，還有王在猶大全地堅固城所安置的不在其內。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志下第十七章記述猶大王約沙法的登基與治國。約沙法「行他祖大衛初行的道，不尋求巴力，只尋求他父親的神，遵行他的誡命」（3-4節），結果「耶和華堅定他的國，猶大眾人給他進貢；約沙法大有尊榮資財」（5節）。他在位第三年做了一件非常特別的事：差遣官員、利未人和祭司，帶着律法書走遍猶大各城，系統性地「教訓百姓」（7-9節）。
+
+      這場全國性的律法教育帶來了意想不到的成果：「耶和華使猶大四圍的列國都甚恐懼，不敢與約沙法爭戰」（10節），非利士人和亞拉伯人都主動送禮納貢（11節）。本章詳細記錄了約沙法的軍事部署，共有勇士一百一十六萬八千人（14-18節），可見他軍力雄厚。然而這一章的重點不在軍隊，而在律法教育——神的話語廣傳帶來的屬靈影響，比百萬大軍更有力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 尋求神是所有成就的根源</strong><br>「耶和華堅定他的國」，原因只有一個：約沙法尋求神、遵行誡命。他沒有靠父親的遺產或自己的軍事才能建立名聲，而是靠與神的真實關係。信徒的成就若能持久，根源都指向同一個方向——對神的委身和尋求。<br><br>
+<strong>2. 主動傳揚神的話語是領袖的屬靈責任</strong><br>約沙法花資源差遣人帶着律法書走遍全國，這是一個君王主動把「教導百姓認識神」視為治國核心的罕見行動。今日信徒，無論身在何種崗位，都有責任用自己能影響的方式，把神的話語帶入身邊的人的生命。<br><br>
+<strong>3. 神的話語帶來的影響力超越武力</strong><br>律法書走遍全國後，列邦「不敢與約沙法爭戰」——這份震懾不是來自百萬大軍，而是來自神同在所帶來的氣象。信徒的生命若真實地被神話語塑造，那份影響力往往超過任何世俗的權力或資源。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華與約沙法同</strong>在；<strong>因為他行他祖大衛</strong>初行的道，不尋求巴力，只尋求他父親的神，遵行他的誡命，不效法以色列人的行為。（代下17:3-4）</td>
+<td>約沙法的成功被歸結為「尋求神、遵行誡命、不效法世俗」三件事，就像<strong>一棵果樹的豐收被歸結為「好土壤</strong>、澆水、曬太陽」——在你<strong>目前的生命中</strong>，哪一樣是你<strong>最容易忽略的</strong>？</td>
+</tr>
+<tr>
+<td><strong>他作王第三年</strong>，<strong>就差遣臣子</strong>……往猶大各城去教訓百姓。他們帶着耶和華的律法書，走遍猶大各城教訓百姓。（代下17:7, 9）</td>
+<td>約沙法把傳講神話語視為施政第一優先，就像<strong>一個校長說「品格教育比學科成績</strong>更重要」，然後真的花預算去做——你<strong>周圍的人認識</strong>神的話語，有多少是因為你<strong>主動分享的</strong>？</td>
+</tr>
+<tr>
+<td><strong>耶和華使猶大四圍</strong><strong>的列國都甚恐懼</strong>，不敢與約沙法爭戰。有些非利士人……送禮給約沙法，納貢銀。亞拉伯人也送他……（代下17:10-11）</td>
+<td>律法書走遍全國的結果，不是百姓更懂法規，而是列邦懼怕、萬方來朝——神的話語帶來的影響力超乎想像，就像<strong>一座燈塔不用追人</strong>，船自然就往燈光方向走——你<strong>生命中</strong>，有沒有因為神話語的真實作用，而看見了超乎預期的果效？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第22章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第22章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">君王的公義責任與審判</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華如此說：「你下到猶大王的宮中，在那裏說這話，</div>
+<div class="verse"><span class="verse-number">2</span>說：『坐大衛寶座的猶大王阿，你和你的臣僕，並進入城門的百姓，都當聽耶和華的話。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華如此說：你們要施行公平和公義，拯救被搶奪的脫離欺壓人的手，不可虧負寄居的和孤兒寡婦，不可以強暴待他們，在這地方也不可流無辜人的血。</div>
+<div class="verse"><span class="verse-number">4</span>你們若認真行這事，就必有坐大衛寶座的君王和他的臣僕百姓，或坐車或騎馬，從這城的各門進入。</div>
+<div class="verse"><span class="verse-number">5</span>你們若不聽這些話，耶和華說：我指着自己起誓，這城必變為荒場。』</div>
+<div class="verse"><span class="verse-number">6</span>耶和華論到猶大王的家如此說：我看你如基列，如利巴嫩頂；然而，我必使你變為曠野，為無人居住的城邑。</div>
+<div class="verse"><span class="verse-number">7</span>我要預備行毀滅的人，各拿器械攻擊你；他們要砍下你佳美的香柏樹，扔在火中。</div>
+<div class="verse"><span class="verse-number">8</span>「許多國的民要經過這城，各人對鄰舍說：『耶和華為何向這大城如此行呢？』</div>
+<div class="verse"><span class="verse-number">9</span>他們必回答說：『是因離棄了耶和華他們神的約，事奉敬拜別神。』」</div>
+<div class="verse"><span class="verse-number">10</span>不要為死人哭號；不要為他悲傷，卻要為離家出外的人大大哭號；因為他不得再回來，也不得再見他的本國。</div>
+<div class="verse"><span class="verse-number">11</span>因為耶和華論到從這地方出去的猶大王約西亞的兒子沙龍〔列王下二十三章三十節名約哈斯〕，就是接續他父親約西亞作王的，這樣說：「他必不得再回到這裏來，</div>
+<div class="verse"><span class="verse-number">12</span>卻要死在被擄去的地方，必不得再見這地。」</div>
+<div class="verse"><span class="verse-number">13</span>那行不義蓋房、行不公造樓、白白使用人的手工不給工價的有禍了！</div>
+<div class="verse"><span class="verse-number">14</span>他說：我要為自己蓋廣大的房、寬敞的樓，為自己開窗戶。這樓房的護牆板是香柏木的，樓房是丹色油漆的。</div>
+<div class="verse"><span class="verse-number">15</span>難道你作王是在乎造香柏木樓房爭勝嗎？你的父親豈不是也吃也喝、也施行公平和公義嗎？那時他得了福樂。</div>
+<div class="verse"><span class="verse-number">16</span>他為困苦和窮乏人伸冤，那時就得了福樂。認識我不在乎此嗎？這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">17</span>惟有你的眼和你的心專顧貪婪，流無辜人的血，行欺壓和強暴。</div>
+<div class="verse"><span class="verse-number">18</span>所以，耶和華論到猶大王約西亞的兒子約雅敬如此說：人必不為他舉哀說：哀哉！我的哥哥；或說：哀哉！我的姊姊；也不為他舉哀說：哀哉！我的主；或說：哀哉！我主的榮華。</div>
+<div class="verse"><span class="verse-number">19</span>他被埋葬，好像埋驢一樣，要拉出去扔在耶路撒冷的城門之外。</div>
+<div class="verse"><span class="verse-number">20</span>你要上利巴嫩哀號，在巴珊揚聲，從亞巴琳哀號，因為你所親愛的都毀滅了。</div>
+<div class="verse"><span class="verse-number">21</span>你興盛的時候，我對你說話；你卻說：我不聽。你自幼年以來總是這樣，不聽從我的話。</div>
+<div class="verse"><span class="verse-number">22</span>你的牧人要被風吞喫，你所親愛的必被擄去；那時你必因你一切的惡抱愧蒙羞。</div>
+<div class="verse"><span class="verse-number">23</span>你這住利巴嫩、在香柏樹上搭窩的，有痛苦臨到你，好像疼痛臨到產難的婦人，那時你何等可憐！</div>
+<div class="verse"><span class="verse-number">24</span>耶和華說：「猶大王約雅敬的兒子哥尼雅〔又名耶哥尼雅；下同〕，雖是我右手上帶印的戒指，我憑我的永生起誓，也必將你從其上摘下來，</div>
+<div class="verse"><span class="verse-number">25</span>並且我必將你交給尋索你命的人和你所懼怕的人手中，就是巴比倫王尼布甲尼撒和迦勒底人的手中。</div>
+<div class="verse"><span class="verse-number">26</span>我也必將你和生你的母親趕到別國，並不是你們生的地方；你們必死在那裏，</div>
+<div class="verse"><span class="verse-number">27</span>但心中甚想歸回之地，必不得歸回。」</div>
+<div class="verse"><span class="verse-number">28</span>哥尼雅這人是被輕看、破壞的器皿嗎？是無人喜愛的器皿嗎？他和他的後裔為何被趕到不認識之地呢？</div>
+<div class="verse"><span class="verse-number">29</span>地啊，地啊，地啊，當聽耶和華的話！</div>
+<div class="verse"><span class="verse-number">30</span>耶和華如此說：要寫明這人算為無子，是平生不得亨通的；因為他後裔中再無一人得亨通，能坐在大衛的寶座上治理猶大。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第22章是針對猶大君王的系列審判神諭，約寫於約西亞、約雅斯、約雅敬至哥尼雅各王年間。本章以一個普遍原則開始：坐大衛寶座的王，其執政的核心責任是施行公平公義，拯救被欺壓的人，不虧負寄居者、孤兒寡婦，不流無辜人的血——順服者，國祚得延；悖逆者，城必成荒。接下來針對三位具體的王分別發出審判：約哈斯（沙龍）被擄至埃及，死在異鄉不得歸回（10-12節）；約雅敬因建造奢華宮殿、以不義工錢壓榨工人，生前不受哀悼，死後如驢被拋棄（13-19節）；哥尼雅（哥尼雅）被比喻為被摘下的印戒，被擄至巴比倫，後裔中無人能再坐大衛寶座（24-30節）。本章的核心主題是：君王的地位不能豁免神的道德要求，奢華與不義是滅亡的根源，而認識神的核心在於為弱勢者主持公道。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【執政者的首要責任是公義與憐憫】</strong><br>神對猶大王的要求簡明扼要：施行公平公義，拯救弱勢，不欺壓外人、孤兒寡婦，不流無辜人的血。這不是可選的附加條件，而是神對所有領袖的核心要求。認識神，就必然在日常決策中展現公義。今日的信徒，無論在職場、家庭、或社群中擔任任何形式的領袖角色，都被這同樣的呼召所要求：以公平對待他人，是信仰真實性的最直接表達。<br><br>
+<strong>2. 【奢華自大與剝削他人是靈性墮落的標誌】</strong><br>約雅敬王建廣大宮殿、用香柏護牆、丹色油漆，卻不給工人工資——這是外表光鮮、內裡腐敗的縮影。神的評斷是：你的父親（約西亞）吃喝施行公義，那才是福樂；你只顧貪婪、流人血，這是對「認識神」的嘲弄。以物質成功衡量蒙福的標準，是本章明確否定的世界觀。<br><br>
+<strong>3. 【地位再高也無法豁免神的審判】</strong><br>哥尼雅即使是「右手上帶印的戒指」——象徵最尊貴的地位，神仍宣告摘下它。世上最高的地位、最大的權勢，在神的審判面前都無例外。這提醒信徒不要依靠地位、背景或關係網絡來規避神的公義。神對每個人的要求是一致的，不因身分高低而寬鬆。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華如此說</strong>：<strong>你們要施行公平和</strong>公義，拯救被搶奪的脫離欺壓人的手，不可虧負寄居的和孤兒寡婦，不可以強暴待他們，在這地方也不可流無辜人的血。（耶22:3）</td>
+<td>你是否<strong>曾因有</strong>能力而輕視或忽略了周圍比你<strong>弱勢的人</strong>？就像<strong>在塞車的路上</strong>，有人加插隊伍你是否<strong>發出抗議</strong>，但當別人需要禮讓時你是否<strong>願意讓路——</strong>你<strong>日常對弱勢者</strong>的態度，正是你<strong>認識神有多深</strong>的真實測量。</td>
+</tr>
+<tr>
+<td><strong>他為困苦和窮乏人</strong>伸冤，<strong>那時就得了福樂</strong>。認識我不在乎此嗎？這是耶和華說的。（耶22:16）</td>
+<td>你如何<strong>定義「認識神</strong>」？是很多神學知識、固定的宗教習慣，還是具體地關心和幫助需要的人？就像<strong>一個人說自己了解烹飪</strong>，但從不下廚，你<strong>的「認識神」</strong>是停在頭腦中，還是落實在對人的具體行動上？</td>
+</tr>
+<tr>
+<td><strong>耶和華說</strong>：「<strong>猶大王約雅敬的兒</strong>子哥尼雅，雖是我右手上帶印的戒指，我憑我的永生起誓，也必將你從其上摘下來。」（耶22:24）</td>
+<td>你是否<strong>有一種倚靠「</strong>地位」或「身分」來感覺安全的傾向？就像<strong>以為有VIP會員卡就可以不守規</strong>則，你是否<strong>需要提醒自己</strong>：在神面前，沒有任何頭銜能替代對祂真實的順服？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

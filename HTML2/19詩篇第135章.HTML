@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第135章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第135章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">讚美耶和華！偶像無能神隨意旨行萬事</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們要讚美耶和華！你們要讚美耶和華的名！耶和華的僕人站在耶和華殿中；站在我們神殿院中的，你們要讚美他！</div>
+<div class="verse"><span class="verse-number">2</span>併於上節</div>
+<div class="verse"><span class="verse-number">3</span>你們要讚美耶和華！耶和華本為善；要歌頌他的名，因為這是美好的。</div>
+<div class="verse"><span class="verse-number">4</span>耶和華揀選雅各歸自己，揀選以色列特作自己的子民。</div>
+<div class="verse"><span class="verse-number">5</span>原來我知道耶和華為大，也知道我們的主超乎萬神之上。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華在天上，在地下，在海中，在一切的深處，都隨自己的意旨而行。</div>
+<div class="verse"><span class="verse-number">7</span>他使雲霧從地極上騰，造電隨雨而閃，從府庫中帶出風來。</div>
+<div class="verse"><span class="verse-number">8</span>他將埃及頭生的，連人帶牲畜都擊殺了。</div>
+<div class="verse"><span class="verse-number">9</span>埃及啊，他施行神蹟奇事，在你當中，在法老和他一切臣僕身上。</div>
+<div class="verse"><span class="verse-number">10</span>他擊殺許多的民，又殺戮大能的王，</div>
+<div class="verse"><span class="verse-number">11</span>就是亞摩利王西宏和巴珊王噩，並迦南一切的國王，</div>
+<div class="verse"><span class="verse-number">12</span>將他們的地賞賜他的百姓以色列為業。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華啊，你的名存到永遠！耶和華啊，你可記念的名存到萬代！</div>
+<div class="verse"><span class="verse-number">14</span>耶和華要為他的百姓伸冤，為他的僕人後悔。</div>
+<div class="verse"><span class="verse-number">15</span>外邦的偶像是金的，銀的，是人手所造的；</div>
+<div class="verse"><span class="verse-number">16</span>有口卻不能言，有眼卻不能看，</div>
+<div class="verse"><span class="verse-number">17</span>有耳卻不能聽，口中也沒有氣息。</div>
+<div class="verse"><span class="verse-number">18</span>造他的要和他一樣，凡靠他的也要如此。</div>
+<div class="verse"><span class="verse-number">19</span>以色列家阿，你們要稱頌耶和華！亞倫家阿，你們要稱頌耶和華！</div>
+<div class="verse"><span class="verse-number">20</span>利未家阿，你們要稱頌耶和華！你們敬畏耶和華的，要稱頌耶和華！</div>
+<div class="verse"><span class="verse-number">21</span>住在耶路撒冷的耶和華，該從錫安受稱頌。你們要讚美耶和華！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第135篇是一首壯麗的讚美詩，以「你們要讚美耶和華！」開篇和收結，中間回顧神的創造大能（6-7節）、在埃及的拯救作為（8-12節）和祂名字的永遠性（13-14節），並以對偶像的批判（15-18節）和對信仰群體的呼召（19-21節）結尾。本篇在語言和主題上與詩篇115篇、136篇、申命記有密切的關聯，可能在節期崇拜中使用。第5至6節是全篇的神學中心：「原來我知道耶和華為大，也知道我們的主超乎萬神之上。耶和華在天上，在地下，在海中，在一切的深處，都隨自己的意旨而行。」「隨自己的意旨而行」揭示神的絕對主權——祂的行動不受任何外在力量的限制或決定，完全出於祂自己的旨意。這與偶像的「有口不能言、有眼不能看」形成鮮明對比，揭示真神與假神最根本的區別：一個是主動的、有意志的、全能的；另一個是被動的、無靈的、無能的。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 耶和華為大超乎萬神隨自己意旨而行揭示神的絕對主權</strong><br>「耶和華在天上，在地下，在海中，在一切的深處，都隨自己的意旨而行。」（第6節）「隨自己的意旨」是神絕對主權最清晰的宣告——神不受任何外在力量的約束或決定，祂的行動完全出於祂自己的旨意和計劃。這個宣告對信徒有雙重意義：一方面是最深的安慰（掌管一切的神在掌管我的生命）；另一方面是最嚴肅的挑戰（這位隨意旨而行的神是否也是我真正的主）。<br><br>
+<strong>2. 神的名永存萬代是讚美持久性的神學根基</strong><br>「耶和華啊，你的名存到永遠！耶和華啊，你可記念的名存到萬代！」（第13節）讚美的持久性建立在被讚美者名字永存的基礎上。神的名「存到永遠」、「到萬代」，意味著讚美神是一個沒有終止日期的行動——不只是今生的讚美，更是永恆的讚美。這個「神名永存」的確信，使信徒的讚美超越個人有限的生命，加入那個從永遠到永遠的讚美大合唱中。<br><br>
+<strong>3. 偶像無能者與神相比揭示信仰對象的根本區別</strong><br>「外邦的偶像是金的，銀的，是人手所造的；有口卻不能言，有眼卻不能看……造他的要和他一樣，凡靠他的也要如此。」（第15-18節）本篇對偶像的批判，不只是宗教上的反對，更是存有論上的揭示：偶像是人所造的，所以無法超越人的能力；神是造人的，所以超越人所能理解和掌控的。這個對比呼召信徒反思：我所倚靠的，究竟是神所造的，還是神本身？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華在天上</strong>，<strong>在地下</strong>，在海中，在一切的深處，都隨自己的意旨而行。（詩135:6）</td>
+<td>就像<strong>知道最高權威的決定不受任何人左</strong>右，你<strong>對「神隨自己</strong>意旨而行」的認識，是否給你<strong>一種深層的安</strong>心——知道掌管一切的那位是完全自由且全能的，祂的計劃不可能被任何人或事阻撓？</td>
+</tr>
+<tr>
+<td><strong>耶和華啊</strong>，<strong>你的名存到永遠</strong>！耶和華啊，你可記念的名存到萬代！（詩135:13）</td>
+<td>就像<strong>一個真正偉大的人的名字被歷史記</strong>念，你<strong>對「神的名永</strong>存萬代」的確信，是否使你<strong>的讚美有一種</strong>永恆的重量——知道你<strong>今日的讚美</strong>，是加入那個從不間斷的永恆讚美大合唱中？</td>
+</tr>
+<tr>
+<td><strong>造他的要和他一樣</strong>；<strong>凡靠他的也要如此</strong>。（詩135:18）</td>
+<td>就像<strong>一個人長期效仿某種榜樣</strong>，會漸漸像那個榜樣，你<strong>所倚靠和敬拜</strong>的對象正在塑造你<strong>成為什麼樣的</strong>人，你是否<strong>選擇倚靠那位</strong>「有口能言、有眼能看」的活神，讓你<strong>也漸漸具有活</strong>潑有靈的生命力？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

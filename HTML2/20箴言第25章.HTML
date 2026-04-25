@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第25章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第25章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">合宜的言語如金蘋果：謙卑節制與善待仇敵</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以下也是所羅門的箴言，是猶大王希西家的人所謄錄的。</div>
+<div class="verse"><span class="verse-number">2</span>將事隱秘乃神的榮耀；將事察清乃君王的榮耀。</div>
+<div class="verse"><span class="verse-number">3</span>天之高，地之厚，君王之心也測不透。</div>
+<div class="verse"><span class="verse-number">4</span>除去銀子的渣滓就有銀子出來，銀匠能以作器皿。</div>
+<div class="verse"><span class="verse-number">5</span>除去王面前的惡人，國位就靠公義堅立。</div>
+<div class="verse"><span class="verse-number">6</span>不要在王面前妄自尊大；不要在大人的位上站立。</div>
+<div class="verse"><span class="verse-number">7</span>寧可有人說：「請你上來」，強如在你覲見的王子面前叫你退下。</div>
+<div class="verse"><span class="verse-number">8</span>不要冒失出去與人爭競，免得至終被他羞辱，你就不知道怎樣行了。</div>
+<div class="verse"><span class="verse-number">9</span>你與鄰舍爭訟，要與他一人辯論，不可洩漏人的密事，</div>
+<div class="verse"><span class="verse-number">10</span>恐怕聽見的人罵你，你的臭名就難以脫離。</div>
+<div class="verse"><span class="verse-number">11</span>一句話說得合宜，就如金蘋果在銀網子裏。</div>
+<div class="verse"><span class="verse-number">12</span>智慧人的勸戒，在順從的人耳中，好像金耳環和精金的妝飾。</div>
+<div class="verse"><span class="verse-number">13</span>忠信的使者叫差他的人心裏舒暢，就如在收割時有冰雪的涼氣。</div>
+<div class="verse"><span class="verse-number">14</span>空誇贈送禮物的，好像無雨的風雲。</div>
+<div class="verse"><span class="verse-number">15</span>恒常忍耐可以勸動君王；柔和的舌頭能折斷骨頭。</div>
+<div class="verse"><span class="verse-number">16</span>你得了蜜嗎？只可喫彀而已，恐怕你過飽就嘔吐出來。</div>
+<div class="verse"><span class="verse-number">17</span>你的腳要少進鄰舍的家，恐怕他厭煩你，恨惡你。</div>
+<div class="verse"><span class="verse-number">18</span>作假見證陷害鄰舍的，就是大槌，是利刀，是快箭。</div>
+<div class="verse"><span class="verse-number">19</span>患難時倚靠不忠誠的人，好像破壞的牙，錯骨縫的腳。</div>
+<div class="verse"><span class="verse-number">20</span>對傷心的人唱歌，就如冷天脫衣服，又如鹼上倒醋。</div>
+<div class="verse"><span class="verse-number">21</span>你的仇敵若餓了，就給他飯吃；若渴了，就給他水喝；</div>
+<div class="verse"><span class="verse-number">22</span>因為你這樣行，就是把炭火堆在他的頭上；耶和華也必賞賜你。</div>
+<div class="verse"><span class="verse-number">23</span>北風生雨，讒謗人的舌頭也生怒容。</div>
+<div class="verse"><span class="verse-number">24</span>寧可住在房頂的角上，不在寬闊的房屋與爭吵的婦人同住。</div>
+<div class="verse"><span class="verse-number">25</span>有好消息從遠方來，就如拿涼水給口渴的人喝。</div>
+<div class="verse"><span class="verse-number">26</span>義人在惡人面前退縮，好像趟渾之泉，弄濁之井。</div>
+<div class="verse"><span class="verse-number">27</span>吃蜜過多是不好的；考究自己的榮耀也是可厭的。</div>
+<div class="verse"><span class="verse-number">28</span>人不制伏自己的心，好像毀壞的城邑沒有牆垣。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第二十五章開啟了所羅門箴言的第三大段落（25-29章），標題說明這些格言是由「猶大王希西家的人所謄錄的」（1節）。希西家（主前715-686年）是南國猶大的敬虔君王，他下令蒐集整理所羅門的格言，反映了以色列對智慧文學的持守與傳承。本章延續了豐富的比喻語言，以生活中常見的自然景象和社會場景呈現屬靈智慧。第11節「一句話說得合宜，就如金蘋果在銀網子裏」，是聖經中對「合宜言語」最美的比喻，強調時機與方式的重要性。第21-22節「你的仇敵若餓了，就給他飯吃……因為你這樣行，就是把炭火堆在他的頭上」，是舊約中最接近新約「愛仇敵」精神的段落，被保羅在羅馬書12:20引用。第28節「人不制伏自己的心，好像毀壞的城邑沒有牆垣」，以城牆的比喻說明自我管理是靈魂的防禦屏障，沒有自制力的人生是脆弱而易受攻擊的。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 合宜的言語是精心雕琢的美麗，時機與內容同等重要</strong><br>第11節以「金蘋果在銀網子裏」的精美圖像，說明合宜的言語具有雙重美：內容的美好（金蘋果）與呈現的美好（銀網子）。言語若內容正確但時機錯誤，或時機對了但方式不當，都無法產生最大的影響力。信徒被呼召不只要說真話，更要學習在對的時刻、以對的方式說出——這需要敏銳的感知力與持續的屬靈操練。<br><br>
+<strong>2. 善待仇敵是神國度的顛覆性邏輯，也是真正的得勝之道</strong><br>第21-22節呼召信徒在仇敵飢渴時主動供應，這「把炭火堆在他頭上」的比喻，一般解釋為用善行使對方深感羞愧、促進悔改。這不是報復的偽裝，而是以恩典為武器的屬靈爭戰——打破仇恨的循環，用愛創造和解的可能。耶穌的「愛仇敵」命令正是這一傳統的延伸與完全。<br><br>
+<strong>3. 自我管理是靈魂安全的城牆，不可輕忽</strong><br>第28節以「毀壞的城邑沒有牆垣」形容缺乏自制力的人，生動說明自我管理的屬靈防禦功能。沒有城牆的城市對一切攻擊毫無防禦；同樣，缺乏自制力的人對各種誘惑、情緒衝動與惡習毫無抵抗力。信徒當以紀律操練情緒管理、言語節制、慾望約束，建造靈魂的城牆，使生命有足夠的防禦力抵擋各樣的試探。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>一句話說得合宜</strong>，<strong>就如金蘋果在銀網</strong>子裏。」（箴25:11）</td>
+<td>就像<strong>一份精心準備的禮物</strong>，不只禮物本身珍貴，包裝與呈現的方式也讓人感受到心意，你<strong>最近有沒有說</strong>出一句「金蘋果」般合宜的話，讓對方深受感動？是什麼讓你能在那個時刻說出那句話？</td>
+</tr>
+<tr>
+<td>「<strong>你的仇敵若餓了</strong>，<strong>就給他飯吃</strong>；若渴了，就給他水喝；」（箴25:21）</td>
+<td>就像<strong>以善意回應惡意能打破對立的循環</strong>，改變雙方的關係動態，你<strong>現在生命中有</strong>沒有一個讓你<strong>感到難以善待</strong>的「仇敵」或讓你<strong>受傷的人</strong>？若要主動善待他，你<strong>的第一個行動</strong>會是什麼？</td>
+</tr>
+<tr>
+<td>「<strong>人不制伏自己的心</strong>，<strong>好像毀壞的城邑沒</strong>有牆垣。」（箴25:28）</td>
+<td>就像<strong>沒有防火牆的電腦容易被病毒入侵</strong>，沒有自制力的心容易被衝動和誘惑操控，你<strong>生命中哪個領</strong>域的「城牆」最薄弱——情緒、語言、飲食、螢幕使用、還是其他？你願意<strong>採取什麼具體</strong>步驟來修建這段城牆？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

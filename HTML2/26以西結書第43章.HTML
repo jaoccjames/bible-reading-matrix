@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第43章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第43章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神的榮耀歸回聖殿與祭壇的潔淨</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以後，他帶我到一座門，就是朝東的門。</div>
+<div class="verse"><span class="verse-number">2</span>以色列神的榮光從東而來。他的聲音如同多水的聲音；地就因他的榮耀發光。</div>
+<div class="verse"><span class="verse-number">3</span>其狀如從前他來滅城的時候我所見的異象，那異象如我在迦巴魯河邊所見的異象，我就俯伏在地。</div>
+<div class="verse"><span class="verse-number">4</span>耶和華的榮光從朝東的門照入殿中。</div>
+<div class="verse"><span class="verse-number">5</span>靈將我舉起，帶入內院，不料，耶和華的榮光充滿了殿。</div>
+<div class="verse"><span class="verse-number">6</span>我聽見有一位從殿中對我說話。有一人站在我旁邊。</div>
+<div class="verse"><span class="verse-number">7</span>他對我說：「人子啊，這是我寶座之地，是我腳掌所踏之地。我要在這裏住，在以色列人中直到永遠。以色列家和他們的君王必不再玷污我的聖名，就是行邪淫、在錫安的高處葬埋他們君王的屍首，</div>
+<div class="verse"><span class="verse-number">8</span>使他們的門檻挨近我的門檻，他們的門框挨近我的門框；他們與我中間僅隔一牆，並且行可憎的事，玷污了我的聖名，所以我發怒滅絕他們。</div>
+<div class="verse"><span class="verse-number">9</span>現在他們當從我面前遠除邪淫和他們君王的屍首，我就住在他們中間直到永遠。</div>
+<div class="verse"><span class="verse-number">10</span>「人子啊，你要將這殿指示以色列家，使他們因自己的罪孽慚愧，也要他們量殿的尺寸。</div>
+<div class="verse"><span class="verse-number">11</span>他們若因自己所行的一切事慚愧，你就將殿的規模、樣式、出入之處，和一切形狀、典章、禮儀、法則指示他們，在他們眼前寫上，使他們遵照殿的一切規模典章去作。</div>
+<div class="verse"><span class="verse-number">12</span>殿的法則乃是如此：殿在山頂上，四圍的全界要稱為至聖。這就是殿的法則。」</div>
+<div class="verse"><span class="verse-number">13</span>以下量祭壇，是以肘為度（這肘是一肘零一掌）。底座高一肘，邊寬一肘，四圍起邊高一掌，這是壇的座。</div>
+<div class="verse"><span class="verse-number">14</span>從底座到下層磴臺，高二肘，邊寬一肘。從小磴臺到大磴臺，高四肘，邊寬一肘。</div>
+<div class="verse"><span class="verse-number">15</span>壇上的供臺，高四肘。供臺的四拐角上都有角。</div>
+<div class="verse"><span class="verse-number">16</span>供臺長十二肘，寬十二肘，四面見方。</div>
+<div class="verse"><span class="verse-number">17</span>磴臺長十四肘，寬十四肘，四面見方。四圍起邊高半肘，底座四圍的邊寬一肘。臺階朝東。</div>
+<div class="verse"><span class="verse-number">18</span>他對我說：「人子啊，主耶和華如此說：建造祭壇，為要在其上獻燔祭灑血，造成的時候典章如下：</div>
+<div class="verse"><span class="verse-number">19</span>主耶和華說，你要將一隻公牛犢作為贖罪祭，給祭司利未人撒督的後裔，就是那親近我、事奉我的。</div>
+<div class="verse"><span class="verse-number">20</span>你要取些公牛的血，抹在壇的四角和磴臺的四拐角，並四圍所起的邊上。你這樣潔淨壇，壇就潔淨了。</div>
+<div class="verse"><span class="verse-number">21</span>你又要將那作贖罪祭的公牛犢燒在殿外、聖地之外預定之處。</div>
+<div class="verse"><span class="verse-number">22</span>次日，要將無殘疾的公山羊獻為贖罪祭；要潔淨壇，像用公牛犢潔淨的一樣。</div>
+<div class="verse"><span class="verse-number">23</span>潔淨了壇，就要將一隻無殘疾的公牛犢和羊群中一隻無殘疾的公綿羊</div>
+<div class="verse"><span class="verse-number">24</span>奉到耶和華前。祭司要撒鹽在其上，獻與耶和華為燔祭。</div>
+<div class="verse"><span class="verse-number">25</span>七日內，每日要預備一隻公山羊為贖罪祭，也要預備一隻公牛犢和羊群中的一隻公綿羊，都要沒有殘疾的。</div>
+<div class="verse"><span class="verse-number">26</span>七日祭司潔淨壇，壇就潔淨了；要這樣把壇分別為聖。</div>
+<div class="verse"><span class="verse-number">27</span>滿了七日，自八日以後，祭司要在壇上獻你們的燔祭和平安祭；我必悅納你們。這是主耶和華說的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第43章是整卷書神學最高峰之一：神的榮耀歸回聖殿。在第10至11章，神的榮耀漸漸離開聖殿、移到城東山上；如今，神的榮耀「從東而來」，聲音如同多水，地因祂的榮耀發光，榮光「從朝東的門照入殿中」——以西結俯伏在地。神宣告：「這是我寶座之地，是我腳掌所踏之地。我要在這裏住，在以色列人中直到永遠。」這是全書最溫柔、最莊嚴的宣告——流亡者的最大夢想：神再次與他們同在。神的回歸以告別玷污為前提：以色列家和他們的君王不可再玷污神的聖名，要「從我面前遠除邪淫和他們君王的屍首」。章末描述祭壇的潔淨規程（七日），以七次的潔淨準備祭壇，好在其上獻祭，使神悅納。歸回的榮耀需要與之相稱的潔淨和預備。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神的榮耀歸回：流亡的終點是神同在的恢復】</strong><br>「我要在這裏住，在以色列人中直到永遠」——這是被擄百姓最深的渴望：神不只是讓他們回國，更是讓神自己回到他們中間。終極的恢復不是環境的改善，而是神同在的恢復。信徒在任何形式的「流亡」（靈命的疏離、關係的破裂、身份的迷失）中，最深的盼望是神的同在重返。<br><br>
+<strong>2. 【神的歸回以百姓的潔淨為前提】</strong><br>神的榮耀歸回，同時也宣告：「你們當……遠除邪淫……我就住在他們中間直到永遠。」神的同在與百姓的聖潔是相關的——不是說神必須等到人完美才來，而是神的同在本身驅使人離罪。祂的到來本身就是潔淨的動力。想要神更深的同在，同時也是被呼召活出更深的潔淨。<br><br>
+<strong>3. 【潔淨需要過程：七日的準備象徵系統性的聖別】</strong><br>祭壇需要七日的潔淨程序，才能完全成聖、被神悅納。潔淨不是即時的，而是有過程的。屬靈生命的潔淨同樣如此：一次的悔改是起點，但完整的「成為聖潔」是一個持續的過程，需要時間和系統性的信仰操練。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他對我說</strong>：「<strong>人子啊</strong>，這是我寶座之地，是我腳掌所踏之地。我要在這裏住，在以色列人中直到永遠。」（結43:7上）</td>
+<td>神宣告「我要在這裏住，直到永遠」——祂選擇在人中間居住。你<strong>今天所在的地</strong>方——你<strong>的家、工作、</strong>關係——有沒有讓神的同在可以「在這裏住」的空間和條件？就像<strong>邀請一位尊貴的客人來住</strong>，你願意<strong>今天整理那個</strong>空間，讓神的榮耀可以「從東門照入」嗎？</td>
+</tr>
+<tr>
+<td><strong>以色列神的榮光從</strong><strong>東而來</strong>。他的聲音如同多水的聲音；地就因他的榮耀發光。（結43:2）</td>
+<td>「地就因他的榮耀發光」——神同在的最大副作用是使周圍的一切發光。你<strong>身邊的人</strong>，有沒有因為你<strong>帶着神同在的</strong>生命而感受到一種「發光」——某種安慰、某種盼望、某種力量？就像<strong>帶燈進入黑暗的房間</strong>，你有沒有<strong>意識到你攜帶</strong>着神同在這件事，以及它對周圍人的可能影響？</td>
+</tr>
+<tr>
+<td><strong>七日你要這樣潔淨</strong>壇，<strong>壇就潔淨了</strong>；要這樣把壇分別為聖，滿了七日，自八日以後，祭司要在壇上獻你們的燔祭和平安祭；我必悅納你們。（結43:26-27）</td>
+<td>「我必悅納你<strong>們」</strong>是神給完成潔淨過程後之人的應許。你<strong>在屬靈生命中</strong>，有沒有正在進行的「潔淨過程」——某個神正在處理的罪的習慣，或某個正在更新的關係模式？就像<strong>器皿需要清洗才能盛放美食</strong>，你願意<strong>耐心讓那個潔</strong>淨的過程進行完，而不是急着「直接用」？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

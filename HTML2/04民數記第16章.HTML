@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+民數記第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">可拉黨叛亂地裂火燒審判</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>利未的曾孫、哥轄的孫子、以斯哈的兒子可拉，和流便子孫中以利押的兒子大坍、亞比蘭，與比勒的兒子安，</div>
+<div class="verse"><span class="verse-number">2</span>並以色列會中的二百五十個首領，就是有名望選入會中的人，在摩西面前一同起來，</div>
+<div class="verse"><span class="verse-number">3</span>聚集攻擊摩西、亞倫，說：「你們擅自專權！全會眾個個既是聖潔，耶和華也在他們中間，你們為甚麼自高，超過耶和華的會眾呢？」</div>
+<div class="verse"><span class="verse-number">4</span>摩西聽見這話就俯伏在地，</div>
+<div class="verse"><span class="verse-number">5</span>對可拉和他一黨的人說：「到了早晨，耶和華必指示誰是屬他的，誰是聖潔的，就叫誰親近他；他所揀選的是誰，必叫誰親近他。</div>
+<div class="verse"><span class="verse-number">6</span>可拉啊，你們要這樣行，你和你的一黨要拿香爐來。</div>
+<div class="verse"><span class="verse-number">7</span>明日，在耶和華面前，把火盛在爐中，把香放在其上。耶和華揀選誰，誰就為聖潔。你們這利未的子孫擅自專權了！」</div>
+<div class="verse"><span class="verse-number">8</span>摩西又對可拉說：「利未的子孫哪，你們聽我說！</div>
+<div class="verse"><span class="verse-number">9</span>以色列的神從以色列會中將你們分別出來，使你們親近他，辦耶和華帳幕的事，並站在會眾面前替他們當差。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華又使你和你一切弟兄利未的子孫一同親近他，這豈為小事？你們還要求祭司的職任嗎？</div>
+<div class="verse"><span class="verse-number">11</span>你和你一黨的人聚集是要攻擊耶和華。亞倫算甚麼，你們竟向他發怨言呢？」</div>
+<div class="verse"><span class="verse-number">12</span>摩西打發人去召以利押的兒子大坍、亞比蘭。他們說：「我們不上去！</div>
+<div class="verse"><span class="verse-number">13</span>你將我們從流奶與蜜之地領上來，要在曠野殺我們，這豈為小事？你還要自立為王轄管我們嗎？</div>
+<div class="verse"><span class="verse-number">14</span>並且你沒有將我們領到流奶與蜜之地，也沒有把田地和葡萄園給我們為業。難道你要剜這些人的眼睛麼？我們不上去！」</div>
+<div class="verse"><span class="verse-number">15</span>摩西就甚發怒，對耶和華說：「求你不要享受他們的供物。我並沒有奪過他們一匹驢，也沒有害過他們一個人。」</div>
+<div class="verse"><span class="verse-number">16</span>摩西對可拉說：「明天，你和你一黨的人，並亞倫，都要站在耶和華面前；</div>
+<div class="verse"><span class="verse-number">17</span>各人要拿一個香爐，共二百五十個，把香放在上面，到耶和華面前。你和亞倫也各拿自己的香爐。」</div>
+<div class="verse"><span class="verse-number">18</span>於是他們各人拿一個香爐，盛上火，加上香，同摩西、亞倫站在會幕門前。</div>
+<div class="verse"><span class="verse-number">19</span>可拉招聚全會眾到會幕門前，要攻擊摩西、亞倫；耶和華的榮光就向全會眾顯現。</div>
+<div class="verse"><span class="verse-number">20</span>耶和華曉諭摩西、亞倫說：</div>
+<div class="verse"><span class="verse-number">21</span>「你們離開這會眾，我好在轉眼之間把他們滅絕。」</div>
+<div class="verse"><span class="verse-number">22</span>摩西、亞倫就俯伏在地，說：「神，萬人之靈的神阿，一人犯罪，你就要向全會眾發怒嗎？」</div>
+<div class="verse"><span class="verse-number">23</span>耶和華曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">24</span>「你吩咐會眾說：『你們離開可拉、大坍、亞比蘭帳棚的四圍。』」</div>
+<div class="verse"><span class="verse-number">25</span>摩西起來，往大坍、亞比蘭那裏去；以色列的長老也隨着他去。</div>
+<div class="verse"><span class="verse-number">26</span>他吩咐會眾說：「你們離開這惡人的帳棚吧，他們的物件，甚麼都不可摸，恐怕你們陷在他們的罪中，與他們一同消滅。」</div>
+<div class="verse"><span class="verse-number">27</span>於是眾人離開可拉、大坍、亞比蘭帳棚的四圍。大坍、亞比蘭帶着妻子、兒女、小孩子，都出來，站在自己的帳棚門口。</div>
+<div class="verse"><span class="verse-number">28</span>摩西說：「我行的這一切事本不是憑我自己心意行的，乃是耶和華打發我行的，必有證據使你們知道。</div>
+<div class="verse"><span class="verse-number">29</span>這些人死若與世人無異，或是他們所遭的與世人相同，就不是耶和華打發我來的。</div>
+<div class="verse"><span class="verse-number">30</span>倘若耶和華創作一件新事，使地開口，把他們和一切屬他們的都吞下去，叫他們活活地墜落陰間，你們就明白這些人是藐視耶和華了。」</div>
+<div class="verse"><span class="verse-number">31</span>摩西剛說完了這一切話，他們腳下的地就開了口，</div>
+<div class="verse"><span class="verse-number">32</span>把他們和他們的家眷，並一切屬可拉的人丁、財物，都吞下去。</div>
+<div class="verse"><span class="verse-number">33</span>這樣，他們和一切屬他們的，都活活地墜落陰間；地口在他們上頭照舊合閉，他們就從會中滅亡。</div>
+<div class="verse"><span class="verse-number">34</span>在他們四圍的以色列眾人聽他們呼號，就都逃跑，說：「恐怕地也把我們吞下去。」</div>
+<div class="verse"><span class="verse-number">35</span>又有火從耶和華那裏出來，燒滅了那獻香的二百五十個人。</div>
+<div class="verse"><span class="verse-number">36</span>耶和華曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">37</span>「你吩咐祭司亞倫的兒子以利亞撒從火中撿起那些香爐來，把火撒在別處，因為那些香爐是聖的。</div>
+<div class="verse"><span class="verse-number">38</span>把那些犯罪、自害己命之人的香爐，叫人錘成片子，用以包壇。那些香爐本是他們在耶和華面前獻過的，所以是聖的，並且可以給以色列人作記號。」</div>
+<div class="verse"><span class="verse-number">39</span>於是祭司以利亞撒將被燒之人所獻的銅香爐拿來，人就錘出來，用以包壇，</div>
+<div class="verse"><span class="verse-number">40</span>給以色列人作紀念，使亞倫後裔之外的人不得近前來在耶和華面前燒香，免得他遭可拉和他一黨所遭的。這乃是照耶和華藉着摩西所吩咐的。</div>
+<div class="verse"><span class="verse-number">41</span>第二天，以色列全會眾都向摩西、亞倫發怨言說：「你們殺了耶和華的百姓了。」</div>
+<div class="verse"><span class="verse-number">42</span>會眾聚集攻擊摩西、亞倫的時候，向會幕觀看，不料，有雲彩遮蓋了，耶和華的榮光顯現。</div>
+<div class="verse"><span class="verse-number">43</span>摩西、亞倫就來到會幕前。</div>
+<div class="verse"><span class="verse-number">44</span>耶和華吩咐摩西說：</div>
+<div class="verse"><span class="verse-number">45</span>「你們離開這會眾，我好在轉眼之間把他們滅絕。」他們二人就俯伏於地。</div>
+<div class="verse"><span class="verse-number">46</span>摩西對亞倫說：「拿你的香爐，把壇上的火盛在其中，又加上香，快快帶到會眾那裏，為他們贖罪；因為有忿怒從耶和華那裏出來，瘟疫已經發作了。」</div>
+<div class="verse"><span class="verse-number">47</span>亞倫照着摩西所說的拿來，跑到會中，不料，瘟疫在百姓中已經發作了。他就加上香，為百姓贖罪。</div>
+<div class="verse"><span class="verse-number">48</span>他站在活人死人中間，瘟疫就止住了。</div>
+<div class="verse"><span class="verse-number">49</span>除了因可拉事情死的以外，遭瘟疫死的，共有一萬四千七百人。</div>
+<div class="verse"><span class="verse-number">50</span>亞倫回到會幕門口，到摩西那裏，瘟疫已經止住了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+民數記第16章記載了曠野旅程中規模最大的一次叛亂。可拉（利未人）聯合流便支派的大坍和亞比蘭，加上二百五十位會眾首領，共同攻擊摩西和亞倫，質疑他們的領袖地位：「全會眾個個既是聖潔，你們為何自高？」這不只是政治上的反叛，更是神學上對「誰有資格親近神」的挑戰。
+摩西設立了一個拿香爐的考驗，讓神親自判定誰是祂所揀選的。神的審判在轉眼之間臨到：大地開口吞沒了可拉、大坍、亞比蘭和他們的一切；火從耶和華那裏出來，燒滅了那獻香的二百五十人。然而第二天，全會眾又向摩西和亞倫發怨言，瘟疫因此爆發。亞倫在摩西的指示下拿香爐跑到會眾中間，站在活人死人之間，瘟疫才止住了。本章揭示了叛逆神所設立的秩序、貪求聖職的嚴重後果，以及代求行動（拿香爐）在攔截審判中的象徵意義。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 人人皆聖的誤解——神的揀選與人的平等不同</strong><br>可拉一黨說「全會眾個個既是聖潔」，混淆了普遍的身分（全會眾都是聖潔的百姓）與特定的職分（神所揀選的祭司和領袖）。平等的地位不等於沒有職分的差異。神的教會中，每個信徒都有尊嚴和聖潔的地位，但這不等於所有職分和呼召都相同。攻擊神所設立的權柄，本質上是攻擊神本身。<br><br>
+<strong>2. 神親自判定——試驗的目的是顯明神的揀選</strong><br>摩西沒有與可拉爭辯，而是設立考驗：「耶和華揀選誰，誰就為聖潔。」信仰生活中對於真假領袖、真假教導的辨別，最終的裁判是神，不是輿論或多數決。把衝突帶到神面前，以神的話語和工作為依據，是處理信仰紛爭的正確方式。<br><br>
+<strong>3. 亞倫站在活人死人中間——代求能攔截審判</strong><br>亞倫拿着香爐跑到會眾中，「站在活人死人中間，瘟疫就止住了」。這是代禱在屬靈爭戰中最生動的圖像：一個人站在死亡與生命之間，以代求的行動攔截審判。希伯來書指出，耶穌基督的代求職事正是這種「站在中間」的永恆完成。每一個代求的信徒，都參與了這種攔截的使命。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>可拉一黨說</strong>：「<strong>全會眾個個既是聖</strong>潔，耶和華也在他們中間，你們為甚麼自高，超過耶和華的會眾呢？」（民16:3）</td>
+<td>就像<strong>公司裡所有員工都值得尊重</strong>，但並非人人都適合擔任CEO，可拉混淆了身分的平等與職分的差異——你是否<strong>曾因不服某種</strong>屬靈的權柄或帶領，而在心裡說「我和他一樣聖潔，憑什麼他說了算」？那個態度背後是什麼？</td>
+</tr>
+<tr>
+<td><strong>摩西說</strong>：「<strong>到了早晨</strong>，耶和華必指示誰是屬他的，誰是聖潔的……耶和華揀選誰，誰就為聖潔。」（民16:5）</td>
+<td>就像<strong>在爭議無解時</strong>，雙方同意交由更高的權威裁決，摩西把問題帶到神面前決定——當你<strong>在信仰群體中</strong>面對衝突或爭議時，你<strong>的第一反應</strong>是辯論爭論，還是把問題帶到神面前，讓祂的話語和帶領成為裁決？</td>
+</tr>
+<tr>
+<td><strong>亞倫照着摩西所說</strong>的……<strong>跑到會中</strong>……他就加上香，為百姓贖罪。他站在活人死人中間，瘟疫就止住了。（民16:47-48）</td>
+<td>就像<strong>一個急救員衝進災難現場</strong>，站在危險與安全之間拼命救人，亞倫的代求行動攔截了死亡——你是否<strong>相信你的代禱</strong>真的能在屬靈層面「站在活人死人中間」？這如何激勵你<strong>更認真地為他</strong>人代求？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

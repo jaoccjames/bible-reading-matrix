@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第48章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第48章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">雅各祝福約瑟二子</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>這事以後，有人告訴約瑟說：「你的父親病了。」他就帶着兩個兒子瑪拿西和以法蓮同去。</div>
+<div class="verse"><span class="verse-number">2</span>有人告訴雅各說：「請看，你兒子約瑟到你這裏來了。」以色列就勉強在床上坐起來。</div>
+<div class="verse"><span class="verse-number">3</span>雅各對約瑟說：「全能的神曾在迦南地的路斯向我顯現，賜福與我，</div>
+<div class="verse"><span class="verse-number">4</span>對我說：『我必使你生養眾多，成為多民，又要把這地賜給你的後裔，永遠為業。』</div>
+<div class="verse"><span class="verse-number">5</span>我未到埃及見你之先，你在埃及地所生的以法蓮和瑪拿西這兩個兒子是我的，正如流便和西緬是我的一樣。</div>
+<div class="verse"><span class="verse-number">6</span>你在他們以後所生的就是你的，他們可以歸於他們弟兄的名下得產業。</div>
+<div class="verse"><span class="verse-number">7</span>至於我，我從巴旦來的時候，拉結死在我眼前，在迦南地的路上，離以法他還有一段路程，我就把她葬在以法他的路上（以法他就是伯利恆）。」</div>
+<div class="verse"><span class="verse-number">8</span>以色列看見約瑟的兩個兒子，就說：「這是誰？」</div>
+<div class="verse"><span class="verse-number">9</span>約瑟對他父親說：「這是神在這裏賜給我的兒子。」以色列說：「請你領他們到我跟前，我要給他們祝福。」</div>
+<div class="verse"><span class="verse-number">10</span>以色列年紀老邁，眼睛昏花，不能看見。約瑟領他們到他跟前，他就和他們親嘴，抱着他們。</div>
+<div class="verse"><span class="verse-number">11</span>以色列對約瑟說：「我想不到得見你的面，不料，神又使我得見你的兒子。」</div>
+<div class="verse"><span class="verse-number">12</span>約瑟把兩個兒子從以色列兩膝中領出來，自己就臉伏於地下拜。</div>
+<div class="verse"><span class="verse-number">13</span>隨後，約瑟又拉着他們兩個，以法蓮在他的右手裏，對着以色列的左手，瑪拿西在他的左手裏，對着以色列的右手，領他們到以色列的跟前。</div>
+<div class="verse"><span class="verse-number">14</span>以色列伸出右手來，按在以法蓮的頭上（以法蓮乃是次子），又剪搭過左手來，按在瑪拿西的頭上（瑪拿西原是長子）。</div>
+<div class="verse"><span class="verse-number">15</span>他就給約瑟祝福說：「願我祖亞伯拉罕和我父以撒所事奉的神，就是一生牧養我直到今日的神，</div>
+<div class="verse"><span class="verse-number">16</span>救贖我脫離一切患難的那使者，賜福與這兩個童子。願他們歸在我的名下和我祖亞伯拉罕、我父以撒的名下。又願他們在世界中生養眾多。」</div>
+<div class="verse"><span class="verse-number">17</span>約瑟見他父親把右手按在以法蓮的頭上，就不喜悅，便提起他父親的手，要從以法蓮頭上挪到瑪拿西的頭上。</div>
+<div class="verse"><span class="verse-number">18</span>約瑟對他父親說：「我父，不是這樣。這本是長子，求你把右手按在他的頭上。」</div>
+<div class="verse"><span class="verse-number">19</span>他父親不從，說：「我知道，我兒，我知道。他也必成為一族，也必昌大。只是他的兄弟將來比他還大；他兄弟的後裔要成為多族。」</div>
+<div class="verse"><span class="verse-number">20</span>當日就給他們祝福說：「以色列人要指着你們祝福說：『願神使你如以法蓮、瑪拿西一樣。』」於是立以法蓮在瑪拿西以上。</div>
+<div class="verse"><span class="verse-number">21</span>以色列又對約瑟說：「我要死了，但神必與你們同在，領你們回到你們列祖之地。</div>
+<div class="verse"><span class="verse-number">22</span>並且我從前用弓用刀從亞摩利人手下奪的那塊地，我都賜給你，使你比眾弟兄多得一分。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載雅各臨終前為約瑟的兩個兒子以法蓮和瑪拿西祝福。雅各首先回顧神在伯特利向他顯現並應許使他成為大族，然後宣告收養約瑟的兩個兒子為自己的兒子，使他們與流便、西緬同等，得以色列支派的地位。這個決定使約瑟實際上得到雙份產業，應驗長子的祝福。雅各刻意將右手按在次子以法蓮頭上，左手按在長子瑪拿西頭上，預言以法蓮將來要比瑪拿西更昌大。約瑟試圖糾正，但雅各堅持這是神的心意。雅各祝福約瑟的兩個兒子時，回顧神一生的牧養與救贖，顯明他對神信實的見證。最後雅各預言以色列人必回到應許之地，並將示劍那塊地特別賜給約瑟。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的揀選超越人的常規</strong><br>雅各刻意將右手按在次子以法蓮頭上，延續神揀選次子的模式（如雅各勝過以掃）。神的揀選不按人的傳統或眼光，而是按祂的主權與計畫。我們不應用世界的標準衡量神的作為，而要謙卑接受神奇妙的安排。<br><br>
+<strong>2. 信心的傳承需要刻意的行動</strong><br>雅各收養約瑟的兩個兒子，使他們歸入以色列支派，保守信仰的傳承。在異教文化中養育敬虔的後代需要刻意的努力，不能放任環境同化。屬靈產業的傳承需要上一代主動的祝福、教導與榜樣。<br><br>
+<strong>3. 回顧神的信實堅固信心</strong><br>雅各在祝福時回顧神一生的牧養、救贖與應許的應驗。數算神的恩典不是懷舊，而是為未來建立信心的根基。當我們記得神過去如何帶領，就能相信祂未來的應許必定成就。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>以色列伸出右手來</strong>，<strong>按在以法蓮的頭上</strong>（以法蓮乃是次子），又剪搭過左手來，按在瑪拿西的頭上。（創48:14）</td>
+<td>就像<strong>選秀節目爆冷門評審看見別人看不</strong>到的潛力，神的揀選常超越人的預期。我是否用世界標準（學歷、外貌、背景）評斷自己或他人的價值，還是相信神有獨特心意，祂的揀選不受限於人的常規？</td>
+</tr>
+<tr>
+<td><strong>願我祖亞伯拉罕和</strong><strong>我父以撒所事奉的</strong>神，就是一生牧養我直到今日的神，救贖我脫離一切患難。（創48:15-16）</td>
+<td>就像<strong>寫感恩日記回顧恩典能重拾盼望</strong>，雅各數算神一生的帶領堅固信心。回顧我的人生，我能否看見神如何牧養、保護、拯救我？這些見證能否成為我面對未來挑戰的信心根基？</td>
+</tr>
+<tr>
+<td><strong>你在埃及地所生的</strong><strong>以法蓮和瑪拿西這</strong>兩個兒子是我的，正如流便和西緬是我的一樣。（創48:5）</td>
+<td>就像<strong>領養孩子賜予合法身分使其得產業</strong>，雅各收納約瑟兒子保守信仰傳承。我是否刻意將信仰傳給下一代（子女、後輩、學生），還是放任他們被世界同化，沒有主動給予屬靈的祝福與身分？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

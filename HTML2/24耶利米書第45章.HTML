@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第45章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第45章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">巴錄的哀嘆與神的安慰</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>猶大王約西亞的兒子約雅敬第四年，尼利亞的兒子巴錄將先知耶利米口中所說的話寫在書上。耶利米說：</div>
+<div class="verse"><span class="verse-number">2</span>「巴錄阿，耶和華以色列的神說：</div>
+<div class="verse"><span class="verse-number">3</span>巴錄〔原文作你〕曾說：『哀哉！耶和華將憂愁加在我的痛苦上，我因唉哼而困乏，不得安歇。』</div>
+<div class="verse"><span class="verse-number">4</span>你要這樣告訴他，耶和華如此說：我所建立的，我必拆毀；我所栽植的，我必拔出；在全地我都如此行。</div>
+<div class="verse"><span class="verse-number">5</span>你為自己圖謀大事嗎？不要圖謀！我必使災禍臨到凡有血氣的。但你無論往那裏去，我必使你以自己的命為掠物。這是耶和華說的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第45章是整卷書中篇幅最短的章節（僅5節），卻有深刻的個人屬靈意義。它在時序上回到主前605年，約雅敬第四年——就是巴錄替耶利米抄寫書卷的時候（第36章）。神透過耶利米給巴錄一個個人性的回應：神聽見了巴錄的哀嘆——「耶和華將憂愁加在我的痛苦上，我因唉哼而困乏，不得安歇」。巴錄身為先知的書記，承擔了許多抄寫、宣讀、受逼迫的壓力，卻看不見即時的回報，反而因忠心事奉受到更多苦楚。神的回應並不是「一切都會好起來」，而是清醒而真實的話：「我所建立的，我必拆毀；我所栽植的，我必拔出——在全地我都如此行。」換句話說，整個世界都在審判的過程中，巴錄期望的「大事」（個人的成就或安穩）不是這個時代的主旋律。但神給他一個最後的應許：「你無論往哪裏去，我必使你以自己的命為掠物」——在普遍的毀滅中，命得保全，這就是恩典。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神聽見忠心服事者的疲憊與委屈】</strong><br>巴錄的哀嘆是一個忠心卻疲憊的服事者的內心寫照：「我因唉哼而困乏，不得安歇。」神沒有忽視它，也沒有責備他，而是直接回應——顯示神對那些在祂工作中疲乏的人有特別的看顧。若你在服事中感到筋疲力竭、看不見果效，這個應許提醒我們：神不只看見我們的外在行動，也看見內心的疲憊，並以祂的話直接臨到。<br><br>
+<strong>2. 【在審判的時代，不要期望個人的「大事」】</strong><br>巴錄可能期待自己的忠心帶來個人的晉升或安穩；神說：「你為自己圖謀大事嗎？不要圖謀！」在整個世界都在被拆毀、重整的大時代中，個人的野心和期望需要被重新調整。信徒服事神的動機，若混入了「我應該得到什麼回報」的期待，神的話是清醒的提醒：在神的審判與恩典的大敘事中，個人的成就不是最重要的關注點。<br><br>
+<strong>3. 【命得保全，已是最大的恩典】</strong><br>「你以自己的命為掠物」——在普遍的毀滅中活下去，是神給巴錄的應許。這是以色列人熟悉的表達，意思是「生命是你最珍貴的得着」。在最艱難的時代，能夠活下去、繼續與神同行，已是巨大的恩典。信徒在困境中，有時需要重新定義「恩典」——不是一切順利，而是神的同在與生命的延續。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你為自己圖謀大事</strong>嗎？<strong>不要圖謀</strong>！我必使災禍臨到凡有血氣的；但你無論往那裏去，我必使你以自己的命為掠物。這是耶和華說的。（耶45:5）</td>
+<td>你是否<strong>有時在服事神</strong>的同時，暗暗期待著個人的「大事」——更好的位置、更大的認可、更穩定的生活？就像<strong>一邊做義工一邊計算自己的服務時</strong>數，你願意<strong>誠實地審視服</strong>事背後的動機，把「圖謀大事」的期待交給神嗎？</td>
+</tr>
+<tr>
+<td><strong>巴錄曾說</strong>：「哀哉！<strong>耶和華將憂愁加在</strong>我的痛苦上，我因唉哼而困乏，不得安歇。」（耶45:3）</td>
+<td>你<strong>上一次真正告</strong>訴神「我累了，我看不見意義」是什麼時候？就像<strong>一個忠心工作多年卻感覺不被看見</strong>的員工，你願意<strong>把那份疲憊和</strong>委屈帶到神面前，讓祂的話直接臨到那個疲憊的部分嗎？</td>
+</tr>
+<tr>
+<td><strong>我所建立的</strong>，<strong>我必拆毀</strong>；我所栽植的，我必拔出；在全地我都如此行。（耶45:4）</td>
+<td>神的大作為有時是拆毀而非建立。你<strong>生命中有沒有</strong>被「拆毀」的部分，是你<strong>一直不理解為</strong>何發生的？就像<strong>城市改造時必須先拆除舊建築</strong>，你願意<strong>把那些「被拆</strong>毀的地方」重新放在神更大的計畫框架中來理解嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

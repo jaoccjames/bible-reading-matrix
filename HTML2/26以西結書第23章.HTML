@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第23章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第23章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">兩姐妹的淫亂比喻</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話又臨到我說：</div>
+<div class="verse"><span class="verse-number">2</span>「人子阿，有兩個女子，是一母所生，</div>
+<div class="verse"><span class="verse-number">3</span>她們在埃及行邪淫，在幼年時行邪淫。她們在那裏作處女的時候，有人擁抱她們的懷，撫摸她們的乳。</div>
+<div class="verse"><span class="verse-number">4</span>她們的名字，姊姊名叫阿荷拉，妹妹名叫阿荷利巴。她們都歸於我，生了兒女。論到她們的名字，阿荷拉就是撒瑪利亞，阿荷利巴就是耶路撒冷。</div>
+<div class="verse"><span class="verse-number">5</span>「阿荷拉歸我之後行邪淫，貪戀所愛的人，就是她的鄰邦亞述人。</div>
+<div class="verse"><span class="verse-number">6</span>這些人都穿藍衣，作省長、副省長，都騎着馬，是可愛的少年人。</div>
+<div class="verse"><span class="verse-number">7</span>阿荷拉就與亞述人中最美的男子放縱淫行，她因所戀愛之人的一切偶像，玷污自己。</div>
+<div class="verse"><span class="verse-number">8</span>自從在埃及的時候，她就沒有離開淫亂，因為她年幼作處女的時候，埃及人與她行淫，撫摸她的乳，縱慾與她行淫。</div>
+<div class="verse"><span class="verse-number">9</span>因此，我將她交在她所愛的人手中，就是她所戀愛的亞述人手中。</div>
+<div class="verse"><span class="verse-number">10</span>他們就露了她的下體，擄掠她的兒女，用刀殺了她，使她在婦女中留下臭名，因他們向她施行審判。</div>
+<div class="verse"><span class="verse-number">11</span>「她妹妹阿荷利巴雖然看見了，卻還貪戀，比她姊姊更醜；行淫亂比她姊姊更多。</div>
+<div class="verse"><span class="verse-number">12</span>她貪戀鄰邦的亞述人，就是穿極華美的衣服，騎着馬的省長、副省長，都是可愛的少年人。</div>
+<div class="verse"><span class="verse-number">13</span>我看見她被玷污了，她姐妹二人同行一路。</div>
+<div class="verse"><span class="verse-number">14</span>阿荷利巴又加增淫行，因她看見人像畫在牆上，就是用丹色所畫迦勒底人的像，</div>
+<div class="verse"><span class="verse-number">15</span>腰間繫着帶子，頭上有下垂的裹頭巾，都是軍長的形狀，仿照巴比倫人的形像；他們的故土就是迦勒底。</div>
+<div class="verse"><span class="verse-number">16</span>阿荷利巴一看見就貪戀他們，打發使者往迦勒底去見他們。</div>
+<div class="verse"><span class="verse-number">17</span>巴比倫人就來登她愛情的床，與她行淫玷污她。她被玷污，隨後心裏與他們生疏。</div>
+<div class="verse"><span class="verse-number">18</span>這樣，她顯露淫行，又顯露下體；我心就與她生疏，像先前與她姊姊生疏一樣。</div>
+<div class="verse"><span class="verse-number">19</span>她還加增她的淫行，追念她幼年在埃及地行邪淫的日子，</div>
+<div class="verse"><span class="verse-number">20</span>貪戀情人身壯精足，如驢如馬。</div>
+<div class="verse"><span class="verse-number">21</span>這樣，你就想起你幼年的淫行。那時，埃及人擁抱你的懷，撫摸你的乳。」</div>
+<div class="verse"><span class="verse-number">22</span>阿荷利巴啊，主耶和華如此說：「我必激動你先愛而後生疏的人來攻擊你。我必使他們來，在你四圍攻擊你。</div>
+<div class="verse"><span class="verse-number">23</span>所來的就是巴比倫人、迦勒底的眾人、比割人、書亞人、哥亞人，同着他們的還有亞述眾人，乃是作省長、副省長、作軍長有名聲的，都騎着馬，是可愛的少年人。</div>
+<div class="verse"><span class="verse-number">24</span>他們必帶兵器、戰車、輜重車，率領大眾來攻擊你。他們要拿大小盾牌，頂盔擺陣，在你四圍攻擊你。我要將審判的事交給他們，他們必按着自己的條例審判你。</div>
+<div class="verse"><span class="verse-number">25</span>我必以忌恨攻擊你；他們必以忿怒辦你。他們必割去你的鼻子和耳朵；你遺留〔或作：餘剩；下同〕的人必倒在刀下。他們必擄去你的兒女；你所遺留的必被火焚燒。</div>
+<div class="verse"><span class="verse-number">26</span>他們必剝去你的衣服，奪取你華美的寶器。</div>
+<div class="verse"><span class="verse-number">27</span>這樣，我必使你的淫行和你從埃及地染來的淫亂止息了，使你不再仰望亞述，也不再追念埃及。</div>
+<div class="verse"><span class="verse-number">28</span>主耶和華如此說：我必將你交在你所恨惡的人手中，就是你心與他生疏的人手中。</div>
+<div class="verse"><span class="verse-number">29</span>他們必以恨惡辦你，奪取你一切勞碌得來的，留下你赤身露體。你淫亂的下體，連你的淫行，帶你的淫亂，都被顯露。</div>
+<div class="verse"><span class="verse-number">30</span>人必向你行這些事；因為你隨從外邦人行邪淫，被他們的偶像玷污了。</div>
+<div class="verse"><span class="verse-number">31</span>你走了你姊姊所走的路，所以我必將她的杯交在你手中。」</div>
+<div class="verse"><span class="verse-number">32</span>主耶和華如此說：你必喝你姊姊所喝的杯；那杯又深又廣，盛得甚多，使你被人嗤笑譏刺。</div>
+<div class="verse"><span class="verse-number">33</span>你必酩酊大醉，滿有愁苦，喝乾你姊姊撒瑪利亞的杯，就是令人驚駭淒涼的杯。</div>
+<div class="verse"><span class="verse-number">34</span>你必喝這杯，以致喝盡。杯破又齦杯片，撕裂自己的乳；因為這事我曾說過。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">35</span>主耶和華如此說：「因你忘記我，將我丟在背後，所以你要擔當你淫行和淫亂的報應。」</div>
+<div class="verse"><span class="verse-number">36</span>耶和華又對我說：「人子啊，你要審問阿荷拉與阿荷利巴嗎？當指出她們所行可憎的事。</div>
+<div class="verse"><span class="verse-number">37</span>她們行淫，手中有殺人的血，又與偶像行淫，並使她們為我所生的兒女經火燒給偶像。</div>
+<div class="verse"><span class="verse-number">38</span>此外，她們還有向我所行的，就是同日玷污我的聖所，干犯我的安息日。</div>
+<div class="verse"><span class="verse-number">39</span>她們殺了兒女獻與偶像，當天又入我的聖所，將聖所褻瀆了。她們在我殿中所行的乃是如此。</div>
+<div class="verse"><span class="verse-number">40</span>「況且你們二婦打發使者去請遠方人。使者到他們那裏，他們就來了。你們為他們沐浴己身，粉飾眼目，佩戴妝飾，</div>
+<div class="verse"><span class="verse-number">41</span>坐在華美的床上，前面擺設桌案，將我的香料膏油擺在其上。</div>
+<div class="verse"><span class="verse-number">42</span>在那裏有群眾安逸歡樂的聲音，並有粗俗的人和酒徒從曠野同來，把鐲子戴在二婦的手上，把華冠戴在她們的頭上。</div>
+<div class="verse"><span class="verse-number">43</span>「我論這行淫衰老的婦人說：現在人還要與她行淫，她也要與人行淫。</div>
+<div class="verse"><span class="verse-number">44</span>人與阿荷拉，並阿荷利巴二淫婦苟合，好像與妓女苟合。</div>
+<div class="verse"><span class="verse-number">45</span>必有義人，照審判淫婦和流人血的婦人之例，審判她們；因為她們是淫婦，手中有殺人的血。」</div>
+<div class="verse"><span class="verse-number">46</span>主耶和華如此說：「我必使多人來攻擊她們，使她們拋來拋去，被人搶奪。</div>
+<div class="verse"><span class="verse-number">47</span>這些人必用石頭打死她們，用刀劍殺害她們，又殺戮她們的兒女，用火焚燒她們的房屋。</div>
+<div class="verse"><span class="verse-number">48</span>這樣，我必使淫行從境內止息，好叫一切婦人都受警戒，不效法你們的淫行。</div>
+<div class="verse"><span class="verse-number">49</span>人必照着你們的淫行報應你們；你們要擔當拜偶像的罪，就知道我是主耶和華。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第23章是一章極其強烈的比喻，以兩姐妹（阿荷拉=撒瑪利亞，阿荷利巴=耶路撒冷）的淫亂故事，象徵以色列兩個王國與外邦的政治宗教聯盟。北國（阿荷拉）先與亞述行淫，最終被亞述所滅；南國（阿荷利巴）見此竟還變本加厲，先與亞述，再與巴比倫，當巴比倫轉而攻打她，她又轉向埃及。本章語言極為直白，令人不安，這正是神的用意：讓以色列的背叛在最赤裸的語言中被揭示，使人看清楚偶像崇拜和政治依附的屬靈實質——是對婚約的背叛，是對丈夫的不忠。最深的信息在第35節：「因你忘記我，將我丟在背後。」一切的淫行，根源是「忘記神，丟棄神」。章末宣告審判，且強調這是以色列人自己選擇的後果。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【信仰的核心是忠誠的婚約關係，偶像崇拜就是屬靈的不忠】</strong><br>以色列與神的關係被描述為婚姻，偶像崇拜被描述為淫亂。這個比喻說明：信仰不只是宗教制度的遵守，而是一段親密的、排他性的盟約關係。任何將心交給神以外之物的行為，在神眼中的性質如同婚姻中的不忠。這個視角賦予了信仰最深的人格性意義。<br><br>
+<strong>2. 【「忘記神，將神丟在背後」是一切屬靈敗壞的根源】</strong><br>第35節：「因你忘記我，將我丟在背後。」不是突然的悖逆，而是漸進的「忘記」——先是心思放在其他事上，然後是行為跟上。屬靈的敗落往往不是一個決定性的叛逆，而是一系列的「轉移注意力」。防止「忘記神」，需要有意識的、積極的「記念」操練。<br><br>
+<strong>3. 【見姐妹受懲仍不悔改，顯示人心的剛硬】</strong><br>阿荷利巴「雖然看見了，卻還貪戀，比她姊姊更醜」——歷史的教訓在眼前，仍然重蹈覆轍。這是對人性最深的診斷：人傾向於從歷史中學習的，遠比我們期望的少。每一代人都需要自己的「悔改」，不能靠別人的教訓自動更新。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>因你忘記我</strong>，<strong>將我丟在背後</strong>，所以你要擔當你淫行和淫亂的報應。（結23:35）</td>
+<td>「忘記神」——不是主動的拒絕，只是不再記念。你<strong>最近有沒有察</strong>覺自己生活中「忘記神」的跡象：禱告越來越短、神的話越來越少、對信仰的熱情越來越淡？就像<strong>一段關係若不主動維繫就會自然疏</strong>遠，你<strong>今天可以做什</strong>麼具體的「記念神」的行動？</td>
+</tr>
+<tr>
+<td><strong>她妹妹阿荷利巴雖</strong><strong>然看見了</strong>，卻還貪戀，比她姊姊更醜。（結23:11）</td>
+<td>你是否<strong>曾看見別人因</strong>某個罪或習慣而受苦，心裡說「我不會那樣做」，卻後來發現自己走上了同樣的路？就像<strong>看見別人在那個坑裡掉下去還是不</strong>繞道，人心的剛硬讓我們常常不從別人的教訓中學習。你<strong>現在最需要從</strong>哪個別人的前車之鑑中汲取教訓？</td>
+</tr>
+<tr>
+<td><strong>她們在那裏作處女</strong><strong>的時候</strong>，有人擁抱她們的懷，撫摸她們的乳。（結23:3）</td>
+<td>「從埃及開始」——以色列在被拯救之前就已染上了偶像崇拜的習慣。你<strong>生命中有沒有</strong>某些根深蒂固的「從埃及帶來的習慣」——在信主之前就養成的思維或行為模式，至今仍在影響你<strong>的屬靈生命</strong>？就像<strong>長期的姿勢習慣需要刻意糾正</strong>，這些「埃及的習慣」需要什麼樣的對待？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

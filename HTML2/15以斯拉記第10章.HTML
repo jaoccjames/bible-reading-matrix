@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以斯拉記第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以斯拉記第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">眾民悔改立約，離絕外邦之妻</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以斯拉禱告，認罪，哭泣，俯伏在神殿前的時候，有以色列中的男女孩童聚集到以斯拉那裏，成了大會，眾民無不痛哭。</div>
+<div class="verse"><span class="verse-number">2</span>屬以攔的子孫、耶歇的兒子示迦尼對以斯拉說：「我們在此地娶了外邦女子為妻，干犯了我們的神，然而以色列人還有指望。</div>
+<div class="verse"><span class="verse-number">3</span>現在當與我們的神立約，休這一切的妻，離絕她們所生的，照着我主和那因神命令戰兢之人所議定的，按律法而行。</div>
+<div class="verse"><span class="verse-number">4</span>你起來，這是你當辦的事，我們必幫助你，你當奮勉而行。」</div>
+<div class="verse"><span class="verse-number">5</span>以斯拉便起來，使祭司長和利未人，並以色列眾人起誓說，必照這話去行；他們就起了誓。</div>
+<div class="verse"><span class="verse-number">6</span>以斯拉從神殿前起來，進入以利亞實的兒子約哈難的屋裏，到了那裏不喫飯，也不喝水；因為被擄歸回之人所犯的罪，心裏悲傷。</div>
+<div class="verse"><span class="verse-number">7</span>他們通告猶大和耶路撒冷被擄歸回的人，叫他們在耶路撒冷聚集。</div>
+<div class="verse"><span class="verse-number">8</span>凡不遵首領和長老所議定、三日之內不來的，就必抄他的家，使他離開被擄歸回之人的會。</div>
+<div class="verse"><span class="verse-number">9</span>於是，猶大和便雅憫眾人，三日之內都聚集在耶路撒冷。那日正是九月二十日，眾人都坐在神殿前的寬闊處；因這事，又因下大雨，就都戰兢。</div>
+<div class="verse"><span class="verse-number">10</span>祭司以斯拉站起來，對他們說：「你們有罪了；因你們娶了外邦的女子為妻，增添以色列人的罪惡。</div>
+<div class="verse"><span class="verse-number">11</span>現在當向耶和華你們列祖的神認罪，遵行他的旨意，離絕這些國的民和外邦的女子。」</div>
+<div class="verse"><span class="verse-number">12</span>會眾都大聲回答說：「我們必照着你的話行，</div>
+<div class="verse"><span class="verse-number">13</span>只是百姓眾多，又逢大雨的時令，我們不能站在外頭，這也不是一兩天辦完的事，因我們在這事上犯了大罪；</div>
+<div class="verse"><span class="verse-number">14</span>不如為全會眾派首領辦理。凡我們城邑中娶外邦女子為妻的，當按所定的日期，同着本城的長老和士師而來，直到辦完這事，神的烈怒就轉離我們了。」</div>
+<div class="verse"><span class="verse-number">15</span>惟有亞撒黑的兒子約拿單，特瓦的兒子雅哈謝阻擋〔或作：總辦〕這事，並有米書蘭和利未人沙比太幫助他們。</div>
+<div class="verse"><span class="verse-number">16</span>被擄歸回的人如此而行。祭司以斯拉和些族長按着宗族都指名見派；在十月初一日，一同在座查辦這事，</div>
+<div class="verse"><span class="verse-number">17</span>到正月初一日，纔查清娶外邦女子的人數。</div>
+<div class="verse"><span class="verse-number">18</span>在祭司中查出娶外邦女子為妻的，就是耶書亞的子孫約薩達的兒子，和他弟兄瑪西雅、以利以謝、雅立、基大利；</div>
+<div class="verse"><span class="verse-number">19</span>他們便應許必休他們的妻。他們因有罪，就獻群中的一隻公綿羊贖罪。</div>
+<div class="verse"><span class="verse-number">20</span>音麥的子孫中，有哈拿尼、西巴第雅。</div>
+<div class="verse"><span class="verse-number">21</span>哈琳的子孫中，有瑪西雅、以利雅、示瑪雅、耶歇、烏西雅。</div>
+<div class="verse"><span class="verse-number">22</span>巴施戶珥的子孫中，有以利約乃、瑪西雅、以實瑪利、拿坦業、約撒拔、以利亞撒。</div>
+<div class="verse"><span class="verse-number">23</span>利未人中，有約撒拔、示每、基拉雅（基拉雅就是基利他），還有毘他希雅、猶大、以利以謝。</div>
+<div class="verse"><span class="verse-number">24</span>歌唱的人中有以利亞實。守門的人中，有沙龍、提聯、烏利。</div>
+<div class="verse"><span class="verse-number">25</span>以色列人巴錄的子孫中，有拉米、耶西雅、瑪基雅、米雅民、以利亞撒、瑪基雅、比拿雅。</div>
+<div class="verse"><span class="verse-number">26</span>以攔的子孫中，有瑪他尼、撒迦利亞、耶歇、押底、耶利末、以利雅。</div>
+<div class="verse"><span class="verse-number">27</span>薩土的子孫中，有以利約乃、以利亞實、瑪他尼、耶利末、撒拔、亞西撒。</div>
+<div class="verse"><span class="verse-number">28</span>比拜的子孫中，有約哈難、哈拿尼雅、薩拜、亞勒。</div>
+<div class="verse"><span class="verse-number">29</span>巴尼的子孫中，有米書蘭、瑪鹿、亞大雅、雅述、示押、耶利末。</div>
+<div class="verse"><span class="verse-number">30</span>巴哈摩押的子孫中，有阿底拿、基拉、比拿雅、瑪西雅、瑪他尼、比撒列、賓內、瑪拿西。</div>
+<div class="verse"><span class="verse-number">31</span>哈琳的子孫中，有以利以謝、伊示雅、瑪基雅、示瑪雅、西緬、</div>
+<div class="verse"><span class="verse-number">32</span>便雅憫、瑪鹿、示瑪利雅。</div>
+<div class="verse"><span class="verse-number">33</span>哈順的子孫中，有瑪特乃、瑪達他、撒拔、以利法列、耶利買、瑪拿西、示每。</div>
+<div class="verse"><span class="verse-number">34</span>巴尼的子孫中，有瑪玳、暗蘭、烏益、</div>
+<div class="verse"><span class="verse-number">35</span>比拿雅、比底雅、基祿、</div>
+<div class="verse"><span class="verse-number">36</span>瓦尼雅、米利末、以利亞實、</div>
+<div class="verse"><span class="verse-number">37</span>瑪他尼、瑪特乃、雅掃、</div>
+<div class="verse"><span class="verse-number">38</span>巴尼、賓內、示每、</div>
+<div class="verse"><span class="verse-number">39</span>示利米雅、拿單、亞大雅、</div>
+<div class="verse"><span class="verse-number">40</span>瑪拿底拜、沙賽、沙賴、</div>
+<div class="verse"><span class="verse-number">41</span>亞薩利、示利米雅、示瑪利雅、</div>
+<div class="verse"><span class="verse-number">42</span>沙龍、亞瑪利雅、約瑟。</div>
+<div class="verse"><span class="verse-number">43</span>尼波的子孫中，有耶利、瑪他提雅、撒拔、西比拿、雅玳、約珥、比拿雅。</div>
+<div class="verse"><span class="verse-number">44</span>這些人都娶了外邦女子為妻，其中也有生了兒女的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以斯拉記第10章是全書的終章，記載百姓在以斯拉認罪代禱的感召下，自發聚集痛哭，並決意悔改的過程。示迦尼代表百姓提出立約離絕外邦之妻的具體方案，鼓勵以斯拉「奮勉而行」。以斯拉隨即組織全國聚集，在雨中嚴肅宣告，眾民同意悔改。接着設立制度，用三個月的時間逐一查核所有通婚的案例。本章末尾列出所有娶外邦妻子的人名，從祭司、利未人到一般百姓都涵蓋在內，顯示罪的範圍之廣。這段歷史在神學上頗具張力——命令休妻本身會造成家庭痛苦。全書以一份名單結束，沒有歡慶，沒有結語，留給讀者一種沉重的省思：歸回的旅程，是持續不斷的靈性整頓，而非一勞永逸的成就。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 領袖的悔改能感召群體的悔改</strong><br>以斯拉個人的痛哭俯伏，吸引了男女孩童聚集，「眾民無不痛哭」。這說明真實的屬靈破碎具有感召力——不是用言詞說服，而是用生命感染。領袖的謙卑比說教更有力量。當一個人真實地在神面前破碎，這種屬靈的真誠往往能打動旁觀者，引發連鎖的屬靈回應，在群體中掀起更新的浪潮。<br><br>
+<strong>2. 悔改需要具體的行動，不能只停在情感層面</strong><br>眾民的痛哭若只停留在感情宣洩，便毫無實質意義。示迦尼的提議——「與神立約，照律法而行」——將悔改轉化為具體的決定與行動。真正的悔改必有果效（路3:8），包括願意付上代價。以色列人的「悔改行動」代價極高，卻是信仰純正所必須的。信徒今日的悔改，同樣需要落實於具體的生命改變，而非只是言語表示。<br><br>
+<strong>3. 信仰的純正需要持續的群體辨別與整頓</strong><br>以斯拉沒有獨自決定，而是組織整個群體，設立程序，用三個月時間認真查核。這顯示屬靈的整頓需要群體的參與和制度性的落實，不能靠衝動行事，也不能用一次運動代替持續的委身。教會或信仰群體的屬靈健康，需要有序的辨別、認真的查核，以及持守到底的意志。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>以斯拉禱告</strong>，認罪，哭泣，<strong>俯伏在神殿前的時</strong>候，有以色列中的男女孩童聚集到以斯拉那裏，成了大會，眾民無不痛哭。（拉10:1）</td>
+<td>就像<strong>一個人真誠道歉時</strong>，旁人也會受感動跟着反省自己，領袖的真實悔改能否感動你？你<strong>身邊</strong>是否有人曾因靈命的真實而讓你<strong>也想靠近神、</strong>認罪悔改？</td>
+</tr>
+<tr>
+<td><strong>示迦尼</strong>……<strong>對以斯拉說</strong>：「我們在此地娶了外邦女子為妻，干犯了我們的神，然而以色列人還有指望。」（拉10:2）</td>
+<td>就像<strong>手機當機後可以重新開機</strong>，不代表機器就此報廢，即使在犯了大罪之後，還有指望這句話是否讓你<strong>也感到鬆了一</strong>口氣？神的恩典是否讓你<strong>有勇氣面對自</strong>己生命中需要悔改的地方？</td>
+</tr>
+<tr>
+<td><strong>現在當向耶和華你</strong><strong>們列祖的神認罪</strong>，遵行他的旨意，離絕這些國的民和外邦的女子。（拉10:11）</td>
+<td>就像<strong>清理手機儲存空間需要真的刪除檔</strong>案，而不只是說「我應該清理了」，認罪後的離絕行動是否也是你<strong>悔改的一部分</strong>？你<strong>生命中</strong>是否有什麼需要具體「離絕」的事物？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

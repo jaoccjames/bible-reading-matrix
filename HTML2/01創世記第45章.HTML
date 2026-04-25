@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第45章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第45章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約瑟與兄弟相認</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>約瑟在左右站着的人面前情不自禁，吩咐一聲說：「人都要離開我出去！」約瑟和弟兄們相認的時候並沒有一人站在他面前。</div>
+<div class="verse"><span class="verse-number">2</span>他就放聲大哭；埃及人和法老家中的人都聽見了。</div>
+<div class="verse"><span class="verse-number">3</span>約瑟對他弟兄們說：「我是約瑟。我的父親還在嗎？」他弟兄不能回答，因為在他面前都驚惶。</div>
+<div class="verse"><span class="verse-number">4</span>約瑟又對他弟兄們說：「請你們近前來。」他們就近前來。他說：「我是你們的兄弟約瑟，就是你們所賣到埃及的。</div>
+<div class="verse"><span class="verse-number">5</span>現在，不要因為把我賣到這裏自憂自恨。這是神差我在你們以先來，為要保全生命。</div>
+<div class="verse"><span class="verse-number">6</span>現在這地的饑荒已經二年了，還有五年不能耕種，不能收成。</div>
+<div class="verse"><span class="verse-number">7</span>神差我在你們以先來，為要給你們存留餘種在世上，又要大施拯救，保全你們的生命。</div>
+<div class="verse"><span class="verse-number">8</span>這樣看來，差我到這裏來的不是你們，乃是神。他又使我如法老的父，作他全家的主，並埃及全地的宰相。</div>
+<div class="verse"><span class="verse-number">9</span>你們要趕緊上到我父親那裏。對他說：『你兒子約瑟這樣說：神使我作全埃及的主，請你下到我這裏來，不要耽延。</div>
+<div class="verse"><span class="verse-number">10</span>你和你的兒子孫子，連牛群羊群，並一切所有的，都可以住在歌珊地，與我相近。</div>
+<div class="verse"><span class="verse-number">11</span>我要在那裏奉養你；因為還有五年的饑荒，免得你和你的眷屬，並一切所有的，都敗落了。』</div>
+<div class="verse"><span class="verse-number">12</span>況且你們的眼和我兄弟便雅憫的眼都看見是我親口對你們說話。</div>
+<div class="verse"><span class="verse-number">13</span>你們也要將我在埃及一切的榮耀和你們所看見的事都告訴我父親，又要趕緊地將我父親搬到我這裏來。」</div>
+<div class="verse"><span class="verse-number">14</span>於是約瑟伏在他兄弟便雅憫的頸項上哭，便雅憫也在他的頸項上哭。</div>
+<div class="verse"><span class="verse-number">15</span>他又與眾弟兄親嘴，抱着他們哭，隨後他弟兄們就和他說話。</div>
+<div class="verse"><span class="verse-number">16</span>這風聲傳到法老的宮裏，說：「約瑟的弟兄們來了。」法老和他的臣僕都很喜歡。</div>
+<div class="verse"><span class="verse-number">17</span>法老對約瑟說：「你吩咐你的弟兄們說：『你們要這樣行：把馱子抬在牲口上，起身往迦南地去。</div>
+<div class="verse"><span class="verse-number">18</span>將你們的父親和你們的眷屬都搬到我這裏來，我要把埃及地的美物賜給你們，你們也要吃這地肥美的出產。</div>
+<div class="verse"><span class="verse-number">19</span>現在我吩咐你們要這樣行：從埃及地帶着車輛去，把你們的孩子和妻子，並你們的父親都搬來。</div>
+<div class="verse"><span class="verse-number">20</span>你們眼中不要愛惜你們的家具，因為埃及全地的美物都是你們的。』」</div>
+<div class="verse"><span class="verse-number">21</span>以色列的兒子們就如此行。約瑟照着法老的吩咐給他們車輛和路上用的食物，</div>
+<div class="verse"><span class="verse-number">22</span>又給他們各人一套衣服，惟獨給便雅憫三百銀子，五套衣服；</div>
+<div class="verse"><span class="verse-number">23</span>送給他父親公驢十匹，馱着埃及的美物，母驢十匹，馱着糧食與餅和菜，為他父親路上用。</div>
+<div class="verse"><span class="verse-number">24</span>於是約瑟打發他弟兄們回去，又對他們說：「你們不要在路上相爭。」</div>
+<div class="verse"><span class="verse-number">25</span>他們從埃及上去，來到迦南地、他們的父親雅各那裏，</div>
+<div class="verse"><span class="verse-number">26</span>告訴他說：「約瑟還在，並且作埃及全地的宰相。」雅各心裏冰涼，因為不信他們。</div>
+<div class="verse"><span class="verse-number">27</span>他們便將約瑟對他們說的一切話都告訴了他。他們父親雅各又看見約瑟打發來接他的車輛，心就甦醒了。</div>
+<div class="verse"><span class="verse-number">28</span>以色列說：「罷了！罷了！我的兒子約瑟還在，趁我未死以先，我要去見他一面。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載約瑟故事最高潮的一幕：與兄弟相認。猶大的懇求打動約瑟的心，他終於情不自禁，遣散所有埃及人後向兄弟們表明身分。約瑟放聲大哭宣告「我是約瑟」，兄弟們驚惶失措無法回答。約瑟不僅沒有責備他們，反而以神學的眼光解釋這一切：神差他先來埃及是為了保全全家性命。他三次強調是神而非人的作為，顯明他完全饒恕並看見神的美意。約瑟邀請全家下埃及，法老也慷慨提供車輛和美物。約瑟特別提醒兄弟們「不要在路上相爭」，顯示他對人性的洞察。雅各起初不信，但看見車輛後心甦醒，決定趁未死前去見約瑟。二十二年的分離終於要結束。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>現在，<strong>不要因為把我賣到</strong><strong>這裡自憂自恨</strong>。這是神差我在你們以先來，為要保全生命。（創45:5）</td>
+<td>就像<strong>被誤診後發現及時救了命能感恩而</strong>非追究，約瑟從神的眼光看待傷害。我對過去的傷痛或不公，是一直活在苦毒和控訴中，還是願意尋求神在其中的美意與帶領？</td>
+</tr>
+<tr>
+<td><strong>這樣看來</strong>，<strong>差我到這裡來的不</strong>是你們，乃是神。（創45:8）</td>
+<td>就像<strong>繞遠路卻避開車禍發現是神保護</strong>，約瑟將人的惡轉化為神的計畫。回顧我的人生挫折或打擊（如失業、分手、疾病），我能否看見神可能在其中的保護、預備或更美心意？</td>
+</tr>
+<tr>
+<td><strong>約瑟又對他弟兄們</strong>說：<strong>請你們近前來</strong>。他們就近前來。（創45:4）</td>
+<td>就像<strong>父母主動擁抱犯錯的孩子消除恐懼</strong>，約瑟主動邀請驚惶的兄弟靠近。當我與某人有裂痕或誤會時，我是等對方先示好、道歉，還是願意主動跨出第一步，放下驕傲創造和好的機會？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約書亞記第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約書亞記第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">北方聯軍盡敗，全地征服國中太平</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>夏瑣王耶賓聽見這事，就打發人去見瑪頓王約巴、伸崙王、押煞王，</div>
+<div class="verse"><span class="verse-number">2</span>與北方山地、基尼烈南邊的亞拉巴高原，並西邊多珥山崗的諸王；</div>
+<div class="verse"><span class="verse-number">3</span>又去見東方和西方的迦南人，與山地的亞摩利人、赫人、比利洗人、耶布斯人，並黑門山根米斯巴地的希未人。</div>
+<div class="verse"><span class="verse-number">4</span>這些王和他們的眾軍都出來，人數多如海邊的沙，並有許多馬匹車輛。</div>
+<div class="verse"><span class="verse-number">5</span>這諸王會合，來到米倫水邊，一同安營，要與以色列人爭戰。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華對約書亞說：「你不要因他們懼怕。明日這時，我必將他們交付以色列人全然殺了。你要砍斷他們馬的蹄筋，用火焚燒他們的車輛。」</div>
+<div class="verse"><span class="verse-number">7</span>於是約書亞率領一切兵丁，在米倫水邊突然向前攻打他們。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華將他們交在以色列人手裏，以色列人就擊殺他們，追趕他們到西頓大城，到米斯利弗瑪音，直到東邊米斯巴的平原，將他們擊殺，沒有留下一個。</div>
+<div class="verse"><span class="verse-number">9</span>約書亞就照耶和華所吩咐他的去行，砍斷他們馬的蹄筋，用火焚燒他們的車輛。</div>
+<div class="verse"><span class="verse-number">10</span>當時，約書亞轉回奪了夏瑣，用刀擊殺夏瑣王。（素來夏瑣在這諸國中是為首的。）</div>
+<div class="verse"><span class="verse-number">11</span>以色列人用刀擊殺城中的人口，將他們盡行殺滅；凡有氣息的沒有留下一個。約書亞又用火焚燒夏瑣。</div>
+<div class="verse"><span class="verse-number">12</span>約書亞奪了這些王的一切城邑，擒獲其中的諸王，用刀擊殺他們，將他們盡行殺滅，正如耶和華僕人摩西所吩咐的。</div>
+<div class="verse"><span class="verse-number">13</span>至於造在山崗上的城，除了夏瑣以外，以色列人都沒有焚燒。約書亞只將夏瑣焚燒了。</div>
+<div class="verse"><span class="verse-number">14</span>那些城邑所有的財物和牲畜，以色列人都取為自己的掠物；惟有一切人口都用刀擊殺，直到殺盡；凡有氣息的沒有留下一個。</div>
+<div class="verse"><span class="verse-number">15</span>耶和華怎樣吩咐他僕人摩西，摩西就照樣吩咐約書亞，約書亞也照樣行。凡耶和華所吩咐摩西的，約書亞沒有一件懈怠不行的。</div>
+<div class="verse"><span class="verse-number">16</span>約書亞奪了那全地，就是山地、一帶南地、歌珊全地、高原、亞拉巴、以色列的山地，和山下的高原。</div>
+<div class="verse"><span class="verse-number">17</span>從上西珥的哈拉山，直到黑門山下利巴嫩平原的巴力迦得，並且擒獲那些地的諸王，將他們殺死。</div>
+<div class="verse"><span class="verse-number">18</span>約書亞和這諸王爭戰了許多年日。</div>
+<div class="verse"><span class="verse-number">19</span>除了基遍的希未人之外，沒有一城與以色列人講和的，都是以色列人爭戰奪來的。</div>
+<div class="verse"><span class="verse-number">20</span>因為耶和華的意思是要使他們心裏剛硬，來與以色列人爭戰，好叫他們盡被殺滅，不蒙憐憫，正如耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">21</span>當時約書亞來到，將住山地、希伯崙、底璧、亞拿伯、猶大山地、以色列山地所有的亞衲族人剪除了。約書亞將他們和他們的城邑盡都毀滅。</div>
+<div class="verse"><span class="verse-number">22</span>在以色列人的地沒有留下一個亞衲族人，只在迦薩、迦特，和亞實突有留下的。</div>
+<div class="verse"><span class="verse-number">23</span>這樣，約書亞照着耶和華所吩咐摩西的一切話奪了那全地，就按着以色列支派的宗族將地分給他們為業。於是國中太平，沒有爭戰了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約書亞記第11章記述以色列人在南方征戰得勝後，面對北方更大規模的聯合挑戰。夏瑣王耶賓召集迦南北方眾多諸王，聚集了數量龐大的聯合軍隊——「人數多如海邊的沙，並有許多馬匹車輛」，這是以色列人前所未見的強大敵陣。然而神再次對約書亞說不要懼怕，並預先宣告得勝。約書亞率軍突然在米倫水邊發動攻擊，耶和華使敵人潰散，以色列人一路追殺，沒有留下一個。此後約書亞轉回攻取夏瑣，這座迦南北方最重要的城市也被攻克焚燒。本章以重要的神學總結作結：「凡耶和華所吩咐摩西的，約書亞沒有一件懈怠不行的」，強調約書亞完全順服的領袖品格。征戰歷經多年，最終以「國中太平，沒有爭戰了」作結，應許之地大體落入以色列人手中，準備進入分地的階段。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在壓倒性的強敵面前，神的應許勝過人的恐懼</strong><br>北方聯軍人數如海沙、馬匹車輛眾多，對以色列人形成極大的心理壓力。然而神對約書亞的回應仍是「不要因他們懼怕」，並宣告明日的得勝。這說明屬靈得勝的關鍵不在敵我力量的對比，而在於信徒是否選擇相信神的應許而非被困境的外觀嚇倒。越是巨大的挑戰，越需要更堅定地抓住神的話語，而非被形勢牽着走。<br><br>
+<strong>2. 完全順服神的吩咐是長期事奉的核心品格</strong><br>本章特別強調約書亞「沒有一件懈怠不行的」——包括砍斷馬的蹄筋、焚燒車輛這些不符合人的軍事常識的命令，約書亞也照行不誤。這種完全順服不是一時的熱情，而是歷經多年征戰、一以貫之的操守。對當代信徒的提醒是：長期的順服比短暫的熱忱更有價值；屬靈生命的深度，在於能否在漫長的日子裡持守對神的話語不打折扣的委身。<br><br>
+<strong>3. 神的應許終必成就，帶來真實的平安</strong><br>「國中太平，沒有爭戰了」是本章最令人安慰的結語。神在亞伯拉罕時代所立的應許，歷經幾百年的等待、四十年曠野、多年征戰，終於在約書亞時代成就。這宣告：神的應許不受時間和環境的影響，祂的計畫終必完成。信徒有時在等待神應許成就的漫長過程中感到疲倦，這一節提醒我們：「太平」正在前面等候那些持守到底的人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你不要因他們懼怕</strong>。<strong>明日這時</strong>，我必將他們交付以色列人全然殺了。」（書11:6）</td>
+<td>就像<strong>面試前看到競爭者陣容強大時容易</strong>自我懷疑，以色列人面對人數如海沙的聯軍同樣壓力巨大。你<strong>今天面對的「</strong>強大聯軍」是什麼？你願意<strong>以神的應許取</strong>代對形勢的恐懼嗎？</td>
+</tr>
+<tr>
+<td>「<strong>凡耶和華所吩咐摩</strong>西的，<strong>約書亞沒有一件懈</strong>怠不行的。」（書11:15）</td>
+<td>就像<strong>健身需要長期持續的汗水才能見效</strong>，約書亞歷經多年征戰仍對每一條命令完全遵從。在你<strong>的信仰生活中</strong>，有沒有某些神的吩咐你<strong>長期「留下待</strong>辦」而一直懈怠未行？</td>
+</tr>
+<tr>
+<td>「<strong>於是國中太平</strong>，<strong>沒有爭戰了</strong>。」（書11:23）</td>
+<td>就像<strong>長跑選手在最後衝線時體會到的那</strong>種深度滿足，神給以色列人的應許在漫長的等待與爭戰後終於成就。你是否<strong>相信神對你的</strong>應許雖需要時間，但終必成就太平？你願意<strong>持守到那一天</strong>嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

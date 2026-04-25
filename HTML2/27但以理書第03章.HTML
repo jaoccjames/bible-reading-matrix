@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>但以理書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+但以理書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">三友在烈火窰中的信仰考驗</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>尼布甲尼撒王造了一個金像，高六十肘，寬六肘，立在巴比倫省杜拉平原。</div>
+<div class="verse"><span class="verse-number">2</span>尼布甲尼撒王差人將總督、欽差、巡撫、臬司、藩司、謀士、法官，和各省的官員都召了來，為尼布甲尼撒王所立的像行開光之禮。</div>
+<div class="verse"><span class="verse-number">3</span>於是總督、欽差、巡撫、臬司、藩司、謀士、法官，和各省的官員都聚集了來，要為尼布甲尼撒王所立的像行開光之禮，就站在尼布甲尼撒所立的像前。</div>
+<div class="verse"><span class="verse-number">4</span>那時傳令的大聲呼叫說：「各方、各國、各族〔原文作舌：下同〕的人哪，有令傳與你們：</div>
+<div class="verse"><span class="verse-number">5</span>你們一聽見角、笛、琵琶、琴、瑟、笙，和各樣樂器的聲音，就當俯伏敬拜尼布甲尼撒王所立的金像。</div>
+<div class="verse"><span class="verse-number">6</span>凡不俯伏敬拜的，必立時扔在烈火的窰中。」</div>
+<div class="verse"><span class="verse-number">7</span>因此各方、各國、各族的人民一聽見角、笛、琵琶、琴、瑟，和各樣樂器的聲音，就都俯伏敬拜尼布甲尼撒王所立的金像。</div>
+<div class="verse"><span class="verse-number">8</span>那時，有幾個迦勒底人進前來控告猶大人。</div>
+<div class="verse"><span class="verse-number">9</span>他們對尼布甲尼撒王說：「願王萬歲！</div>
+<div class="verse"><span class="verse-number">10</span>王啊，你曾降旨說，凡聽見角、笛、琵琶、琴、瑟、笙，和各樣樂器聲音的都當俯伏敬拜金像。</div>
+<div class="verse"><span class="verse-number">11</span>凡不俯伏敬拜的，必扔在烈火的窰中。</div>
+<div class="verse"><span class="verse-number">12</span>現在有幾個猶大人，就是王所派管理巴比倫省事務的沙得拉、米煞、亞伯尼歌；王阿，這些人不理你，不事奉你的神，也不敬拜你所立的金像。」</div>
+<div class="verse"><span class="verse-number">13</span>當時，尼布甲尼撒沖沖大怒，吩咐人把沙得拉、米煞、亞伯尼歌帶過來，他們就把那些人帶到王面前。</div>
+<div class="verse"><span class="verse-number">14</span>尼布甲尼撒問他們說：「沙得拉、米煞、亞伯尼歌，你們不事奉我的神，也不敬拜我所立的金像，是故意的嗎？</div>
+<div class="verse"><span class="verse-number">15</span>你們再聽見角、笛、琵琶、琴、瑟、笙，和各樣樂器的聲音，若俯伏敬拜我所造的像，卻還可以；若不敬拜，必立時扔在烈火的窰中，有何神能救你們脫離我手呢？」</div>
+<div class="verse"><span class="verse-number">16</span>沙得拉、米煞、亞伯尼歌對王說：「尼布甲尼撒啊，這件事我們不必回答你；</div>
+<div class="verse"><span class="verse-number">17</span>即便如此，我們所事奉的神能將我們從烈火的窰中救出來。王啊，他也必救我們脫離你的手；</div>
+<div class="verse"><span class="verse-number">18</span>即或不然，王啊，你當知道我們決不事奉你的神，也不敬拜你所立的金像。」</div>
+<div class="verse"><span class="verse-number">19</span>當時，尼布甲尼撒怒氣填胸，向沙得拉、米煞、亞伯尼歌變了臉色，吩咐人把窰燒熱，比尋常更加七倍；</div>
+<div class="verse"><span class="verse-number">20</span>又吩咐他軍中的幾個壯士，將沙得拉、米煞、亞伯尼歌捆起來，扔在烈火的窰中。</div>
+<div class="verse"><span class="verse-number">21</span>這三人穿着褲子、內袍、外衣，和別的衣服，被捆起來扔在烈火的窰中。</div>
+<div class="verse"><span class="verse-number">22</span>因為王命緊急，窰又甚熱，那抬沙得拉、米煞、亞伯尼歌的人都被火焰燒死。</div>
+<div class="verse"><span class="verse-number">23</span>沙得拉、米煞、亞伯尼歌這三個人都被捆着落在烈火的窰中。</div>
+<div class="verse"><span class="verse-number">24</span>那時，尼布甲尼撒王驚奇，急忙起來，對謀士說：「我捆起來扔在火裏的不是三個人嗎？」他們回答王說：「王啊，是。」</div>
+<div class="verse"><span class="verse-number">25</span>王說：「看哪，我見有四個人，並沒有捆綁，在火中遊行，也沒有受傷；那第四個的相貌好像神子。」</div>
+<div class="verse"><span class="verse-number">26</span>於是，尼布甲尼撒就近烈火窰門，說：「至高神的僕人沙得拉、米煞、亞伯尼歌出來，上這裏來吧！」沙得拉、米煞、亞伯尼歌就從火中出來了。</div>
+<div class="verse"><span class="verse-number">27</span>那些總督、欽差、巡撫，和王的謀士一同聚集看這三個人，見火無力傷他們的身體，頭髮也沒有燒焦，衣裳也沒有變色，並沒有火燎的氣味。</div>
+<div class="verse"><span class="verse-number">28</span>尼布甲尼撒說：「沙得拉、米煞、亞伯尼歌的神是應當稱頌的！他差遣使者救護倚靠他的僕人，他們不遵王命，捨去己身，在他們神以外不肯事奉敬拜別神。</div>
+<div class="verse"><span class="verse-number">29</span>現在我降旨，無論何方、何國、何族的人，謗讟沙得拉、米煞、亞伯尼歌之神的，必被凌遲，他的房屋必成糞堆，因為沒有別神能這樣施行拯救。」</div>
+<div class="verse"><span class="verse-number">30</span>那時王在巴比倫省，高升了沙得拉、米煞、亞伯尼歌。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+但以理書第3章是全書中最著名的信仰敘事之一，主角是但以理的三位同伴——沙得拉、米煞、亞伯尼歌。尼布甲尼撒立一座金像，命令全國在音樂響起時俯伏敬拜，不從者扔入烈火窰中。三人拒絕，被帶到王前受審問。王再給一次機會，語氣帶威脅：「有何神能救你們脫離我手呢？」三人的回答是整本聖經中最著名的信心宣言之一：「我們所事奉的神能將我們從烈火的窰中救出來……即或不然，王啊，你當知道我們決不事奉你的神，也不敬拜你所立的金像。」「即或不然」——無論神是否搭救，立場不變。他們被扔入烈火，王卻看見「第四個的相貌好像神子」在其中與他們同行，三人從火中出來毫髮無傷，「並沒有火燎的氣味」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【「即或不然」：真實的信仰不以神的保護作為服從的條件】</strong><br>「即或不然……我們決不事奉你的神」——三人的信仰宣告分兩層：第一，我們的神能救我們；第二，即使祂不救，我們仍然不拜。第二層才是真正的信心。很多人的信仰是「只要神保護我，我就跟隨」——這是條件性的跟隨。真正的信仰在神「沒有出手」的情況下仍然忠心。<br><br>
+<strong>2. 【在最深的苦難中，神同在而非必然保護——但同在本身就是最深的恩典】</strong><br>第四個人在火中同行——神沒有阻止三人進入烈火，但在烈火中同行。有時神的保護不是免除苦難，而是在苦難中的同在。「並沒有火燎的氣味」說明神的同在使苦難沒有留下預期的傷痕。信徒面對苦難，最深的盼望不是「神讓我免受」，而是「神與我同行」。<br><br>
+<strong>3. 【信仰的見證有時在外邦人眼前比在自己人中間更有力量】</strong><br>尼布甲尼撒——一個外邦暴君——在見到第四個人和三人毫髮無傷後，公開宣告神的榮耀，並頒布禁令保護信徒。三人的信仰立場產生的最大影響，是在一個完全敵對的外邦環境中。信仰的最有力見證，往往發生在最有壓力的場合。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>即便如此</strong>，<strong>我們所事奉的神能</strong>將我們從烈火的窰中救出來。王啊，他也必救我們脫離你的手；即或不然，王啊，你當知道我們決不事奉你的神，也不敬拜你所立的金像。（但3:17-18）</td>
+<td>「即或不然」——你<strong>的信仰裡有沒</strong>有這個「即或不然」？就像<strong>在婚姻中說「我愛你</strong>，即使你<strong>生病了也</strong>是如此」，這個「即或不然」是愛的最真實表達。你<strong>現在有沒有某</strong>個「若神不按我期望的方式回應，我是否仍然跟隨」的考驗？你願意<strong>在那裡說出你</strong>的「即或不然」嗎？</td>
+</tr>
+<tr>
+<td>看哪，<strong>我見有四個人</strong>，<strong>並沒有捆綁</strong>，在火中遊行，也沒有受傷；那第四個的相貌好像神子。（但3:25）</td>
+<td>神沒有阻止三人進入火中，但在火中同行。你<strong>生命中有沒有</strong>一段「進入火中」的時期，事後回看，你<strong>感受到「第四</strong>個人」在其中同行的跡象——某種說不清楚但真實的支撐？就像<strong>在最艱難的時刻有一種說不出的平</strong>靜，你願意<strong>回憶並說出那</strong>個「火中同行」的經歷嗎？</td>
+</tr>
+<tr>
+<td><strong>沙得拉</strong>、米煞、<strong>亞伯尼歌的神是應</strong>當稱頌的！他差遣使者救護倚靠他的僕人，他們不遵王命，捨去己身，在他們神以外不肯事奉敬拜別神。（但3:28）</td>
+<td>一個外邦暴君因三人的信仰立場而公開稱頌神——信仰最有力的見證往往在最不友善的場合。你<strong>身邊有沒有某</strong>個「尼布甲尼撒式」的人物——對信仰不友善甚至敵對——是你<strong>放棄為他代禱</strong>或見證的？三人的故事如何激勵你<strong>繼續在那個看</strong>似不可能的地方保持信仰的見證？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

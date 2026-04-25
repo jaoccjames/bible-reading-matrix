@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第22章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+民數記第22章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">巴勒請巴蘭咒詛以色列</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列人起行，在摩押平原、約但河東，對着耶利哥安營。</div>
+<div class="verse"><span class="verse-number">2</span>以色列人向亞摩利人所行的一切事，西撥的兒子巴勒都看見了。</div>
+<div class="verse"><span class="verse-number">3</span>摩押人因以色列民甚多，就大大懼怕，心內憂急，</div>
+<div class="verse"><span class="verse-number">4</span>對米甸的長老說：「現在這眾人要把我們四圍所有的一概餂盡，就如牛餂盡田間的草一般。」那時西撥的兒子巴勒作摩押王。</div>
+<div class="verse"><span class="verse-number">5</span>他差遣使者往大河邊的毘奪去，到比珥的兒子巴蘭本鄉那裏，召巴蘭來，說：「有一宗民從埃及出來，遮滿地面，與我對居。</div>
+<div class="verse"><span class="verse-number">6</span>這民比我強盛，現在求你來為我咒詛他們，或者我能得勝，攻打他們，趕出此地。因為我知道，你為誰祝福，誰就得福；你咒詛誰，誰就受咒詛。」</div>
+<div class="verse"><span class="verse-number">7</span>摩押的長老和米甸的長老手裏拿着卦金，到了巴蘭那裏，將巴勒的話都告訴了他。</div>
+<div class="verse"><span class="verse-number">8</span>巴蘭說：「你們今夜在這裏住宿，我必照耶和華所曉諭我的回報你們。」摩押的使臣就在巴蘭那裏住下了。</div>
+<div class="verse"><span class="verse-number">9</span>神臨到巴蘭那裏，說：「在你這裏的人都是誰？」</div>
+<div class="verse"><span class="verse-number">10</span>巴蘭回答說：「是摩押王西撥的兒子巴勒打發人到我這裏來，說：</div>
+<div class="verse"><span class="verse-number">11</span>『從埃及出來的民遮滿地面，你來為我咒詛他們，或者我能與他們爭戰，把他們趕出去。』」</div>
+<div class="verse"><span class="verse-number">12</span>神對巴蘭說：「你不可同他們去，也不可咒詛那民，因為那民是蒙福的。」</div>
+<div class="verse"><span class="verse-number">13</span>巴蘭早晨起來，對巴勒的使臣說：「你們回本地去吧，因為耶和華不容我和你們同去。」</div>
+<div class="verse"><span class="verse-number">14</span>摩押的使臣就起來，回巴勒那裏去，說：「巴蘭不肯和我們同來。」</div>
+<div class="verse"><span class="verse-number">15</span>巴勒又差遣使臣，比先前的又多又尊貴。</div>
+<div class="verse"><span class="verse-number">16</span>他們到了巴蘭那裏，對他說：「西撥的兒子巴勒這樣說：『求你不容甚麼事攔阻你不到我這裏來，</div>
+<div class="verse"><span class="verse-number">17</span>因為我必使你得極大的尊榮。你向我要甚麼，我就給你甚麼；只求你來為我咒詛這民。』」</div>
+<div class="verse"><span class="verse-number">18</span>巴蘭回答巴勒的臣僕說：「巴勒就是將他滿屋的金銀給我，我行大事小事也不得越過耶和華我神的命。</div>
+<div class="verse"><span class="verse-number">19</span>現在我請你們今夜在這裏住宿，等我得知耶和華還要對我說甚麼。」</div>
+<div class="verse"><span class="verse-number">20</span>當夜，神臨到巴蘭那裏，說：「這些人若來召你，你就起來同他們去，你只要遵行我對你所說的話。」</div>
+<div class="verse"><span class="verse-number">21</span>巴蘭早晨起來，備上驢，和摩押的使臣一同去了。</div>
+<div class="verse"><span class="verse-number">22</span>神因他去就發了怒；耶和華的使者站在路上敵擋他。他騎着驢，有兩個僕人跟隨他。</div>
+<div class="verse"><span class="verse-number">23</span>驢看見耶和華的使者站在路上，手裏有拔出來的刀，就從路上跨進田間，巴蘭便打驢，要叫牠回轉上路。</div>
+<div class="verse"><span class="verse-number">24</span>耶和華的使者就站在葡萄園的窄路上；這邊有牆，那邊也有牆。</div>
+<div class="verse"><span class="verse-number">25</span>驢看見耶和華的使者，就貼靠牆，將巴蘭的腳擠傷了；巴蘭又打驢。</div>
+<div class="verse"><span class="verse-number">26</span>耶和華的使者又往前去，站在狹窄之處，左右都沒有轉折的地方。</div>
+<div class="verse"><span class="verse-number">27</span>驢看見耶和華的使者，就臥在巴蘭底下，巴蘭發怒，用杖打驢。</div>
+<div class="verse"><span class="verse-number">28</span>耶和華叫驢開口，對巴蘭說：「我向你行了甚麼，你竟打我這三次呢？」</div>
+<div class="verse"><span class="verse-number">29</span>巴蘭對驢說：「因為你戲弄我，我恨不能手中有刀，把你殺了。」</div>
+<div class="verse"><span class="verse-number">30</span>驢對巴蘭說：「我不是你從小時直到今日所騎的驢嗎？我素常向你這樣行過嗎？」巴蘭說：「沒有。」</div>
+<div class="verse"><span class="verse-number">31</span>當時，耶和華使巴蘭的眼目明亮，他就看見耶和華的使者站在路上，手裏有拔出來的刀，巴蘭便低頭俯伏在地。</div>
+<div class="verse"><span class="verse-number">32</span>耶和華的使者對他說：「你為何這三次打你的驢呢？我出來敵擋你，因你所行的，在我面前偏僻。</div>
+<div class="verse"><span class="verse-number">33</span>驢看見我就三次從我面前偏過去；驢若沒有偏過去，我早把你殺了，留牠存活。」</div>
+<div class="verse"><span class="verse-number">34</span>巴蘭對耶和華的使者說：「我有罪了。我不知道你站在路上阻擋我；你若不喜歡我去，我就轉回。」</div>
+<div class="verse"><span class="verse-number">35</span>耶和華的使者對巴蘭說：「你同這些人去吧！你只要說我對你說的話。」於是巴蘭同着巴勒的使臣去了。</div>
+<div class="verse"><span class="verse-number">36</span>巴勒聽見巴蘭來了，就往摩押京城去迎接他；這城是在邊界上，在亞嫩河旁。</div>
+<div class="verse"><span class="verse-number">37</span>巴勒對巴蘭說：「我不是急急地打發人到你那裏去召你嗎？你為何不到我這裏來呢？我豈不能使你得尊榮嗎？」</div>
+<div class="verse"><span class="verse-number">38</span>巴蘭說：「我已經到你這裏來了！現在我豈能擅自說甚麼呢？神將甚麼話傳給我，我就說甚麼。</div>
+<div class="verse"><span class="verse-number">39</span>巴蘭和巴勒同行，來到基列胡瑣。</div>
+<div class="verse"><span class="verse-number">40</span>巴勒宰了〔原文作獻〕牛羊，送給巴蘭和陪伴的使臣。</div>
+<div class="verse"><span class="verse-number">41</span>到了早晨，巴勒領巴蘭到巴力的高處；巴蘭從那裏觀看以色列營的邊界。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+民數記第22章開啟了巴蘭的敘事（22-24章），是民數記中最特殊的文學段落之一。以色列人在摩押平原安營，摩押王巴勒因恐懼而派人去請先知巴蘭來咒詛以色列人。神兩次向巴蘭說話，第一次明確禁止他去；第二次因使者再來，神允許他去，但要求他只說神所說的話。
+在前往途中，耶和華的使者攔路，巴蘭的驢三次看見天使而偏避，巴蘭卻沒有看見，只是憤怒地打驢。神叫驢開口說話，質問巴蘭的行為；隨後神開了巴蘭的眼，讓他看見天使。巴蘭承認「我有罪了」，天使允許他繼續前行，但再次強調「你只要說我對你說的話」。本章呈現了神對以色列的保護：即使在以色列人不知情的情況下，神已在防線之外攔截了潛在的咒詛。驢的言語則成為一個關於屬靈眼盲的有力諷刺。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神在以色列人不知情時的保護——看不見的防護</strong><br>整個巴蘭的敘事，以色列人完全不知情。他們在安營生活，而神已在他們不知道的地方，攔截了一個試圖咒詛他們的計謀。信仰生活中，神的保護大多是在我們看不見的層面運作的。我們不知道有多少「咒詛」已被神轉化，多少危險已在我們察覺之前被攔截。<br><br>
+<strong>2. 巴蘭的驢——神可以用意想不到的方式說話</strong><br>神讓驢開口說話，這不只是一個神蹟，更是一個諷刺：聲稱能聽到神話語的先知，反而看不見神使者的阻擋；而一頭驢卻三次躲避了危險。屬靈的眼光不是地位或恩賜的自然結果，而是神開啟的禮物。神可以用任何方式向人說話，包括通過最意想不到的管道。<br><br>
+<strong>3. 「只說我所說的」——順服是先知服事的核心</strong><br>天使兩次提醒巴蘭：「你只要說我對你說的話。」先知服事的本質不在於個人的能力或感應，而在於忠實地傳達神的話語。貪圖利益（巴勒的重賞）是先知失職的根本誘惑。對任何承擔傳講神話語責任的人來說，「只說神所說的」是最難也是最基本的委身。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>神對巴蘭說</strong>：「<strong>你不可同他們去</strong>，也不可咒詛那民，因為那民是蒙福的。」（民22:12）</td>
+<td>就像<strong>一個保鑣在主人不知情的情況下攔</strong>截了威脅，神在以色列人毫不知情時保護了他們——這讓你如何<strong>理解神的保護</strong>？你是否能以感恩的心相信，神在你<strong>看不見的層面</strong>，也有許多你<strong>所不知道的保</strong>護在運作？</td>
+</tr>
+<tr>
+<td><strong>驢看見耶和華的使</strong>者，<strong>就三次從他面前偏</strong>過去；巴蘭卻沒有看見天使，只是憤怒地打驢。（參民22:23-27）</td>
+<td>就像<strong>一個人忽略了多次的警告信號</strong>，卻責怪給他提醒的人，巴蘭三次看不見天使，驢卻看見了——你是否<strong>曾有過「身邊</strong>有人或事在提醒你，你<strong>卻視而不見</strong>，反而惱怒提醒者」的經歷？回想那次，你<strong>後來</strong>如何看待那個「驢式的提醒」？</td>
+</tr>
+<tr>
+<td><strong>耶和華的使者對他</strong>說：「<strong>你同這些人去吧</strong>！你只要說我對你說的話。」（民22:35）</td>
+<td>就像<strong>一位翻譯員的職責是忠實傳達</strong>，而不是加入自己的意見，神對巴蘭的要求是「只說我所說的」——對於任何傳講神話語的人來說，這個要求有多嚴格？在你<strong>的生活中</strong>，你是否<strong>曾被誘惑說出</strong>「神沒說但我覺得你<strong>應該聽的話」</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

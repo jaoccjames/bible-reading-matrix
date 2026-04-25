@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第26章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第26章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約伯反駁：神的大能遠超你們所說</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>約伯回答說：</div>
+<div class="verse"><span class="verse-number">2</span>無能的人蒙你何等的幫助！膀臂無力的人蒙你何等的拯救！</div>
+<div class="verse"><span class="verse-number">3</span>無智慧的人蒙你何等的指教！你向他多顯大知識！</div>
+<div class="verse"><span class="verse-number">4</span>你向誰發出言語來？誰的靈從你而出？</div>
+<div class="verse"><span class="verse-number">5</span>在大水和水族以下的陰魂戰兢。</div>
+<div class="verse"><span class="verse-number">6</span>在神面前，陰間顯露；滅亡也不得遮掩。</div>
+<div class="verse"><span class="verse-number">7</span>神將北極鋪在空中，將大地懸在虛空；</div>
+<div class="verse"><span class="verse-number">8</span>將水包在密雲中，雲卻不破裂；</div>
+<div class="verse"><span class="verse-number">9</span>遮蔽他的寶座，將雲鋪在其上；</div>
+<div class="verse"><span class="verse-number">10</span>在水面的周圍劃出界限，直到光明黑暗的交界。</div>
+<div class="verse"><span class="verse-number">11</span>天的柱子因他的斥責震動驚奇。</div>
+<div class="verse"><span class="verse-number">12</span>他以能力攪動〔或作：平靜〕大海；他藉知識打傷拉哈伯，</div>
+<div class="verse"><span class="verse-number">13</span>藉他的靈使天有妝飾；他的手刺殺快蛇。</div>
+<div class="verse"><span class="verse-number">14</span>看哪，這不過是神工作的些微；我們所聽於他的是何等細微的聲音！他大能的雷聲誰能明透呢？</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第26章是約伯對比勒達最後一次發言的回應，也是全書中對神大能最詩意的描述之一。他先諷刺地問：「你幫助了何等軟弱的人！」——暗指比勒達的論點對他毫無幫助。然後約伯用壯麗的詩句描述神的大能：神將陰間和滅亡的地方擺在眼前、他懸地在虛空之中、他用雲彩遮蓋水面、他在黑暗中劃了水和旱地的界限……最後說「這不過是神工作的些微，我們所聽於他的是何等細小的聲音！他大能的雷聲誰能明透呢？」本章的妙處在於：約伯用比朋友更宏大的神學視野，來反駁朋友對神大能的描述是不足的。他並非否定神的偉大，而是說：你們所說的神，比真實的神小得多。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真正的敬畏神，能說出比別人更宏大的神學見解</strong><br>約伯不是一個失去信仰的人，他對神的描述比三位朋友都更豐富、更詩意。這說明真正的信仰不因苦難而縮小，反而可能因苦難而深化對神的認識。受苦中的信徒有時對神有獨特的洞見，是旁觀者所沒有的。<br><br>
+<strong>2. 神的奧祕遠超人的語言所能描述</strong><br>「這不過是神工作的些微……他大能的雷聲誰能明透呢？」這是全書最深刻的神學謙遜——不是說神不可知，而是說我們所知的，比神的實際更小得多。這種謙遜是信仰成熟的標誌。<br><br>
+<strong>3. 在苦難中仍能讚美神的大能，是信仰最高的表現</strong><br>約伯在身體最痛苦、被朋友誤解的情況下，仍然說出「他懸地在虛空之中」這樣的壯麗句子。這種在苦難中仍然能看見和描述神之偉大的能力，是靈命深度的見證。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你幫助了何等軟弱</strong>的人！<strong>你搭救了無力的膀</strong>臂！（伯26:2）</td>
+<td>就像<strong>被一個沒有打算真正幫忙的人給了</strong>一個無效的建議，形式上的安慰而非真實的幫助讓受苦者更孤單。你<strong>的屬靈陪伴</strong>，有沒有讓對方感到被真正扶持，還是讓他更感到「軟弱」？</td>
+</tr>
+<tr>
+<td><strong>他懸地在虛空之中</strong>。（伯26:7）</td>
+<td>就像<strong>太空照片中地球懸浮在無邊宇宙中</strong>的震撼感，神的創造秩序讓人深感敬畏。在你<strong>生命中</strong>，有沒有某個自然現象或事件，讓你<strong>突然對神的偉</strong>大有全新的感受？那次體驗如何影響了你？</td>
+</tr>
+<tr>
+<td><strong>這不過是神工作的</strong>些微，<strong>我們所聽於他的是</strong>何等細小的聲音！他大能的雷聲誰能明透呢？（伯26:14）</td>
+<td>就像<strong>我們所看見的宇宙只是實際宇宙的</strong>一小部分，我們對神的認識只是「些微」。這個意識是否讓你<strong>對自己確信的</strong>神學觀點保持謙遜？你<strong>有哪些關於神</strong>的認識，是你願意<strong>以謙卑的態度</strong>說「也許我理解不全」的？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志上第23章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志上第23章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">利未人的新職分：事奉神殿，讚美不息</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>大衛年紀老邁，日子滿足，就立他兒子所羅門作以色列的王。</div>
+<div class="verse"><span class="verse-number">2</span>大衛招聚以色列的眾首領和祭司利未人。</div>
+<div class="verse"><span class="verse-number">3</span>利未人從三十歲以外的都被數點，他們男丁的數目共有三萬八千；</div>
+<div class="verse"><span class="verse-number">4</span>其中有二萬四千人管理耶和華殿的事，有六千人作官長和士師，</div>
+<div class="verse"><span class="verse-number">5</span>有四千人作守門的，又有四千人用大衛所作的樂器頌讚耶和華。</div>
+<div class="verse"><span class="verse-number">6</span>大衛將利未人革順、哥轄、米拉利的子孫分了班次。</div>
+<div class="verse"><span class="verse-number">7</span>革順的子孫有拉但和示每。</div>
+<div class="verse"><span class="verse-number">8</span>拉但的長子是耶歇，還有細坦和約珥，共三人。</div>
+<div class="verse"><span class="verse-number">9</span>示每的兒子是示羅密、哈薛、哈蘭三人。這是拉但族的族長。</div>
+<div class="verse"><span class="verse-number">10</span>示每的兒子是雅哈、細拿、耶烏施、比利亞共四人。</div>
+<div class="verse"><span class="verse-number">11</span>雅哈是長子，細撒是次子。但耶烏施和比利亞的子孫不多，所以算為一族。</div>
+<div class="verse"><span class="verse-number">12</span>哥轄的兒子是暗蘭、以斯哈、希伯倫、烏薛共四人。</div>
+<div class="verse"><span class="verse-number">13</span>暗蘭的兒子是亞倫、摩西。亞倫和他的子孫分出來，好分別至聖的物，在耶和華面前燒香、事奉他，奉他的名祝福，直到永遠。</div>
+<div class="verse"><span class="verse-number">14</span>至於神人摩西，他的子孫名字記在利未支派的冊上。</div>
+<div class="verse"><span class="verse-number">15</span>摩西的兒子是革舜和以利以謝。</div>
+<div class="verse"><span class="verse-number">16</span>革舜的長子是細布業；</div>
+<div class="verse"><span class="verse-number">17</span>以利以謝的兒子是利哈比雅。以利以謝沒有別的兒子，但利哈比雅的子孫甚多。</div>
+<div class="verse"><span class="verse-number">18</span>以斯哈的長子是示羅密。</div>
+<div class="verse"><span class="verse-number">19</span>希伯倫的長子是耶利雅，次子是亞瑪利亞，三子是雅哈悉，四子是耶加面。</div>
+<div class="verse"><span class="verse-number">20</span>烏薛的長子是米迦，次子是耶西雅。</div>
+<div class="verse"><span class="verse-number">21</span>米拉利的兒子是抹利、母示。抹利的兒子是以利亞撒、基士。</div>
+<div class="verse"><span class="verse-number">22</span>以利亞撒死了，沒有兒子，只有女兒，他們本族基士的兒子娶了她們為妻。</div>
+<div class="verse"><span class="verse-number">23</span>母示的兒子是末力、以得、耶利摩共三人。</div>
+<div class="verse"><span class="verse-number">24</span>以上利未子孫作族長的，照着男丁的數目，從二十歲以外，都辦耶和華殿的事務。</div>
+<div class="verse"><span class="verse-number">25</span>大衛說：「耶和華以色列的神已經使他的百姓平安，他永遠住在耶路撒冷。</div>
+<div class="verse"><span class="verse-number">26</span>利未人不必再抬帳幕和其中所用的一切器皿了。」</div>
+<div class="verse"><span class="verse-number">27</span>照着大衛臨終所吩咐的，利未人從二十歲以外的都被數點。</div>
+<div class="verse"><span class="verse-number">28</span>他們的職任是服事亞倫的子孫，在耶和華的殿和院子，並屋中辦事，潔淨一切聖物，就是辦神殿的事務，</div>
+<div class="verse"><span class="verse-number">29</span>並管理陳設餅，素祭的細麵，或無酵薄餅，或用盤烤，或用油調和的物，又管理各樣的升斗尺度；</div>
+<div class="verse"><span class="verse-number">30</span>每日早晚，站立稱謝讚美耶和華，</div>
+<div class="verse"><span class="verse-number">31</span>又在安息日、月朔，並節期，按數照例，將燔祭常常獻給耶和華；</div>
+<div class="verse"><span class="verse-number">32</span>又看守會幕和聖所，並守耶和華吩咐他們弟兄亞倫子孫的，辦耶和華殿的事。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志上第二十三章記述大衛晚年為聖殿事奉所做的組織安排。大衛立所羅門為王後（1節），召聚利未人從事殿務。本章先是數點三十歲以上的利未人，共三萬八千人（3節），然後分派各職：管理殿事二萬四千人，官長士師六千人，守門者四千人，歌唱者四千人（4-5節）。隨後詳列利未三族革順、哥轄、米拉利的子孫名單（6-23節）。末尾說明大衛調整了利未人的服事條件：以往在曠野遷移時需要抬帳幕，如今神已定居，因此起始年齡從三十歲降至二十歲（24-27節），並詳述利未人在固定殿宇中的各項職責（28-32節）。
+
+      本章的神學重點在於：「每日早晚，站立稱謝讚美耶和華」（30節）。這是神百姓的首要使命，不是間歇性的，而是每日不輟的。利未人從曠野遷移的抬扛工作，轉型為固定殿宇的讚美事奉，象徵著神百姓進入一個新的屬靈階段——從漂移到扎根，從搬運到頌讚。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 時代改變，事奉的形式也當更新</strong><br>大衛根據「神已使以色列人平安，他永遠住在耶路撒冷」（25節），調整了利未人的事奉年齡和職責。事奉的核心不變，但方式因時代而更新。信徒不應僵化地守住過時的形式，應當在神的帶領下，以現有的資源和環境，找到最能榮耀神的事奉方式。<br><br>
+<strong>2. 每日讚美是最基本的屬靈操練</strong><br>利未人被明確吩咐「每日早晚，站立稱謝讚美耶和華」（30節）。讚美不是偶爾高興才做的事，而是每日的本分——早晨和晚上，像呼吸一樣的節奏。這種對讚美的紀律性安排，提醒信徒：靈命的維繫靠的是每日固定的操練，而非週期性的宗教活動。<br><br>
+<strong>3. 各有職分，同服一主</strong><br>本章列出了利未人的四大職分，各有其重要性。不是每個人都是歌唱者，也不是每個人都是守門的，但每一個職分都在神殿事奉的整體中不可或缺。在神的家中，沒有「比較重要」或「比較不重要」的崗位，只有忠心與不忠心的區別。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>大衛說</strong>：「<strong>耶和華以色列的神</strong>已經使他的百姓平安，他永遠住在耶路撒冷。利未人不必再抬帳幕和其中所用的一切器皿了。」（代上23:25-26）</td>
+<td>進入穩定的新時代，事奉的形式隨之更新，就像<strong>從遊牧生活轉為定居農耕</strong>，工具和方式都需要調整——你是否<strong>也在某個新的</strong>生命階段，需要重新思考事奉或靈修的方式，而不是硬套舊的形式？</td>
+</tr>
+<tr>
+<td><strong>每日早晚</strong>，<strong>站立稱謝讚美耶和</strong>華。（代上23:30）</td>
+<td>讚美被設計為每日早晚的定時功課，就像<strong>固定時間運動才能真正改變體質</strong>，偶爾一次的大爆發效果有限——你<strong>的讚美與感恩</strong>，是有固定節奏的習慣，還是只在心情好或感動時才出現的偶發事件？</td>
+</tr>
+<tr>
+<td><strong>他們的職任是服事</strong><strong>亞倫的子孫</strong>，在耶和華的殿和院子……辦神殿的事務。（代上23:28）</td>
+<td>利未人的職責包括服事祭司、管理聖物、打掃殿院——許多都是默默無聞的後台工作，就像<strong>一個舞台劇能順利演出</strong>，台後的燈光音響工程師功不可沒——你願意<strong>在信仰群體中</strong>做那個「台後」的人嗎？還是只對有曝光度的崗位感興趣？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

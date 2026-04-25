@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第34章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第34章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">真牧人與假牧人的對比</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">2</span>「人子啊，你要向以色列的牧人發預言，攻擊他們，說，主耶和華如此說：禍哉！以色列的牧人只知牧養自己。牧人豈不當牧養群羊嗎？</div>
+<div class="verse"><span class="verse-number">3</span>你們吃脂油、穿羊毛、宰肥壯的，卻不牧養群羊。</div>
+<div class="verse"><span class="verse-number">4</span>瘦弱的，你們沒有養壯；有病的，你們沒有醫治；受傷的，你們沒有纏裹；被逐的，你們沒有領回；失喪的，你們沒有尋找；但用強暴嚴嚴的轄制。</div>
+<div class="verse"><span class="verse-number">5</span>因無牧人，羊就分散；既分散，便作了一切野獸的食物。</div>
+<div class="verse"><span class="verse-number">6</span>我的羊在諸山間、在各高岡上流離，在全地上分散，無人去尋，無人去找。</div>
+<div class="verse"><span class="verse-number">7</span>「所以，你們這些牧人要聽耶和華的話。</div>
+<div class="verse"><span class="verse-number">8</span>主耶和華說：我指着我的永生起誓，我的羊因無牧人就成為掠物，也作了一切野獸的食物。我的牧人不尋找我的羊；這些牧人只知牧養自己，並不牧養我的羊。</div>
+<div class="verse"><span class="verse-number">9</span>所以你們這些牧人要聽耶和華的話。</div>
+<div class="verse"><span class="verse-number">10</span>主耶和華如此說：我必與牧人為敵，必向他們的手追討我的羊，使他們不再牧放群羊；牧人也不再牧養自己。我必救我的羊脫離他們的口，不再作他們的食物。」</div>
+<div class="verse"><span class="verse-number">11</span>「主耶和華如此說：看哪，我必親自尋找我的羊，將他們尋見。</div>
+<div class="verse"><span class="verse-number">12</span>牧人在羊群四散的日子怎樣尋找他的羊，我必照樣尋找我的羊。這些羊在密雲黑暗的日子散到各處，我必從那裏救回他們來。</div>
+<div class="verse"><span class="verse-number">13</span>我必從萬民中領出他們，從各國內聚集他們，引導他們歸回故土，也必在以色列山上一切溪水旁邊、境內一切可居之處牧養他們。</div>
+<div class="verse"><span class="verse-number">14</span>我必在美好的草場牧養他們。他們的圈必在以色列高處的山上，他們必在佳美之圈中躺臥，也在以色列山肥美的草場吃草。</div>
+<div class="verse"><span class="verse-number">15</span>主耶和華說：我必親自作我羊的牧人，使他們得以躺臥。</div>
+<div class="verse"><span class="verse-number">16</span>失喪的，我必尋找；被逐的，我必領回；受傷的，我必纏裹；有病的，我必醫治；只是肥的壯的，我必除滅，也要秉公牧養他們。</div>
+<div class="verse"><span class="verse-number">17</span>「我的羊群哪，論到你們，主耶和華如此說：我必在羊與羊中間、公綿羊與公山羊中間施行判斷。</div>
+<div class="verse"><span class="verse-number">18</span>你們這些肥壯的羊，在美好的草場吃草還以為小事嗎？剩下的草，你們竟用蹄踐踏了；你們喝清水，剩下的水，你們竟用蹄攪渾了。</div>
+<div class="verse"><span class="verse-number">19</span>至於我的羊，只得吃你們所踐踏的，喝你們所攪渾的。</div>
+<div class="verse"><span class="verse-number">20</span>「所以，主耶和華如此說：我必在肥羊和瘦羊中間施行判斷。</div>
+<div class="verse"><span class="verse-number">21</span>因為你們用脅用肩擁擠一切瘦弱的，又用角牴觸，以致使他們四散。</div>
+<div class="verse"><span class="verse-number">22</span>所以，我必拯救我的群羊不再作掠物；我也必在羊和羊中間施行判斷。</div>
+<div class="verse"><span class="verse-number">23</span>我必立一牧人照管他們，牧養他們，就是我的僕人大衛。他必牧養他們，作他們的牧人。</div>
+<div class="verse"><span class="verse-number">24</span>我耶和華必作他們的神，我的僕人大衛必在他們中間作王。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">25</span>「我必與他們立平安的約，使惡獸從境內斷絕，他們就必安居在曠野，躺臥在林中。</div>
+<div class="verse"><span class="verse-number">26</span>我必使他們與我山的四圍成為福源，我也必叫時雨落下，必有福如甘霖而降。</div>
+<div class="verse"><span class="verse-number">27</span>田野的樹必結果，地也必有出產；他們必在故土安然居住。我折斷他們所負的軛，救他們脫離那以他們為奴之人的手；那時，他們就知道我是耶和華。</div>
+<div class="verse"><span class="verse-number">28</span>他們必不再作外邦人的掠物，地上的野獸也不再吞喫他們；卻要安然居住，無人驚嚇。</div>
+<div class="verse"><span class="verse-number">29</span>我必給他們興起有名的植物；他們在境內不再為饑荒所滅，也不再受外邦人的羞辱，</div>
+<div class="verse"><span class="verse-number">30</span>必知道我、耶和華他們的神是與他們同在的，並知道他們以色列家是我的民。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">31</span>你們作我的羊，我草場上的羊，乃是以色列人，我也是你們的神。這是主耶和華說的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第34章是整卷書中最著名的一章之一，圍繞「牧人」主題展開，是詩篇23篇和約翰福音10章（耶穌的好牧人教導）的舊約基礎。神嚴厲責備以色列的牧人（領袖）：他們吃脂油、穿羊毛、宰肥壯的，卻不牧養群羊；瘦弱的沒有養壯，病的沒有醫治，受傷的沒有纏裹，被逐的沒有領回，失喪的沒有尋找，反用強暴轄制。神宣告要親自成為以色列的牧人：「我必親自尋找我的羊，將他們尋見」——一一列出相對應的牧養行動：失喪的尋找、被逐的領回、受傷的纏裹、有病的醫治。中段還宣告要在強羊（欺壓弱羊者）和弱羊之間施行公平的審判。章末的彌賽亞性高峰：「我必立一牧人照管他們……就是我的僕人大衛」——這是對彌賽亞的應許，在耶穌身上完全應驗。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【真牧養的核心是服事羊，而非從羊身上得益】</strong><br>假牧人「吃脂油、穿羊毛」——從羊群中獲取，而非付出。真牧人的標誌是：養壯、醫治、纏裹、領回、尋找。這個原則適用於任何形式的屬靈領導：真正的牧養是以被牧養者的需要為中心，而非以牧者的利益為中心。任何以「服事」為包裝的自我服務，都是假牧人的形態。<br><br>
+<strong>2. 【神親自尋找迷失的羊，是耶穌好牧人比喻的舊約根基】</strong><br>「我必親自尋找我的羊」——這是神在以色列最黑暗的時期宣告的應許，也是整個福音的預告。失喪的羊不是靠自己回來，而是被牧人主動尋找。信徒無論曾如何「迷失」，都可以相信有一位牧人正在尋找——這個確信是所有「歸回」故事的動力。<br><br>
+<strong>3. 【強羊欺壓弱羊，神必在其中施行公平的審判】</strong><br>神不只審判失職的牧人，也審判那些在羊群中欺負弱小者的「肥壯的羊」。這個細節提示：神的公義關注的不只是領袖的失職，也關注群體中平信徒之間的不公義。每一個信徒都有責任不欺壓比自己更弱小的人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>失喪的</strong>，<strong>我必尋找</strong>；被逐的，我必領回；受傷的，我必纏裹；有病的，我必醫治。（結34:16上）</td>
+<td>神對每種「失喪的羊」有針對性的牧養行動：尋找、領回、纏裹、醫治。你<strong>現在的屬靈狀</strong>態，更像哪種羊？是「失喪的」、「被逐的」、「受傷的」還是「有病的」？知道自己需要哪種牧養，是讓神來牧養你<strong>的第一步</strong>。你願意<strong>向神說明你現</strong>在的狀態嗎？</td>
+</tr>
+<tr>
+<td>禍哉！<strong>以色列的牧人只知</strong><strong>牧養自己</strong>。牧人豈不當牧養群羊嗎？（結34:2）</td>
+<td>你<strong>在任</strong>何形式的「牧養」位置上——父母、老師、主管、小組長——你<strong>的服事更像「</strong>牧養羊群」還是「牧養自己」？就像<strong>一個保母把孩子放在一旁自己看電</strong>視，你<strong>對那些在你牧</strong>養範圍內的人，真正投入了多少關注和付出？</td>
+</tr>
+<tr>
+<td><strong>我必立一牧人照管</strong>他們，<strong>牧養他們</strong>，就是我的僕人大衛。他必牧養他們，作他們的牧人。（結34:23）</td>
+<td>這個「大衛」的應許在耶穌基督身上完全應驗——祂是那位完全的好牧人。在你<strong>生命中</strong>，你是否<strong>真正讓耶穌「</strong>作你<strong><strong>的牧人</strong>」——</strong>讓祂帶領你<strong>走哪條路</strong>，讓祂決定你<strong>的方向</strong>？就像<strong>一隻羊信任牧人而非自己尋路</strong>，你<strong>今天在哪個決</strong>定上需要讓祂作你的牧人？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

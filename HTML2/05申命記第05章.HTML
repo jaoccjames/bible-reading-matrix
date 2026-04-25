@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">重申十誡與立約的神聖關係</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>摩西將以色列眾人召了來，對他們說：「以色列人哪，我今日曉諭你們的律例典章，你們要聽，可以學習，謹守遵行。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華我們的神在何烈山與我們立約。</div>
+<div class="verse"><span class="verse-number">3</span>這約不是與我們列祖立的，乃是與我們今日在這裏存活之人立的。</div>
+<div class="verse"><span class="verse-number">4</span>耶和華在山上，從火中，面對面與你們說話，</div>
+<div class="verse"><span class="verse-number">5</span>（那時我站在耶和華和你們中間，要將耶和華的話傳給你們；因為你們懼怕那火，沒有上山。）說：</div>
+<div class="verse"><span class="verse-number">6</span>「『我是耶和華你的神，曾將你從埃及地為奴之家領出來。</div>
+<div class="verse"><span class="verse-number">7</span>「『除了我以外，你不可有別的神。</div>
+<div class="verse"><span class="verse-number">8</span>「『不可為自己雕刻偶像，也不可作甚麼形像，彷彿上天、下地和地底下、水中的百物。</div>
+<div class="verse"><span class="verse-number">9</span>不可跪拜那些像，也不可事奉他，因為我耶和華你的神是忌邪的神。恨我的，我必追討他的罪，自父及子，直到三、四代；</div>
+<div class="verse"><span class="verse-number">10</span>愛我、守我誡命的，我必向他們發慈愛，直到千代。</div>
+<div class="verse"><span class="verse-number">11</span>「『不可妄稱耶和華你神的名；因為妄稱耶和華名的，耶和華必不以他為無罪。</div>
+<div class="verse"><span class="verse-number">12</span>「『當照耶和華你神所吩咐的守安息日為聖日。</div>
+<div class="verse"><span class="verse-number">13</span>六日要勞碌作你一切的工，</div>
+<div class="verse"><span class="verse-number">14</span>但第七日是向耶和華你神當守的安息日。這一日，你和你的兒女、僕婢、牛、驢、牲畜，並在你城裏寄居的客旅，無論何工都不可作，使你的僕婢可以和你一樣安息。</div>
+<div class="verse"><span class="verse-number">15</span>你也要記念你在埃及地作過奴僕；耶和華你神用大能的手和伸出來的膀臂將你從那裏領出來。因此，耶和華你的神吩咐你守安息日。</div>
+<div class="verse"><span class="verse-number">16</span>「『當照耶和華你神所吩咐的孝敬父母，使你得福，並使你的日子在耶和華你神所賜你的地上得以長久。</div>
+<div class="verse"><span class="verse-number">17</span>「『不可殺人。</div>
+<div class="verse"><span class="verse-number">18</span>「『不可姦淫。</div>
+<div class="verse"><span class="verse-number">19</span>「『不可偷盜。</div>
+<div class="verse"><span class="verse-number">20</span>「『不可作假見證陷害人。</div>
+<div class="verse"><span class="verse-number">21</span>「『不可貪戀人的妻子；也不可貪圖人的房屋、田地、僕婢、牛、驢，並他一切所有的。』</div>
+<div class="verse"><span class="verse-number">22</span>「這些話是耶和華在山上，從火中、雲中、幽暗中，大聲曉諭你們全會眾的；此外並沒有添別的話。他就把這話寫在兩塊石版上，交給我了。」</div>
+<div class="verse"><span class="verse-number">23</span>「那時，火焰燒山，你們聽見從黑暗中出來的聲音；你們支派中所有的首領和長老都來就近我，</div>
+<div class="verse"><span class="verse-number">24</span>說：『看哪，耶和華我們神將他的榮光和他的大能顯給我們看，我們又聽見他的聲音從火中出來。今日我們得見神與人說話，人還存活。</div>
+<div class="verse"><span class="verse-number">25</span>現在這大火將要燒滅我們，我們何必冒死呢？若再聽見耶和華我們神的聲音就必死亡。</div>
+<div class="verse"><span class="verse-number">26</span>凡屬血氣的，曾有何人聽見永生神的聲音從火中出來，像我們聽見還能存活呢？</div>
+<div class="verse"><span class="verse-number">27</span>求你近前去，聽耶和華我們神所要說的一切話，將他對你說的話都傳給我們，我們就聽從遵行。』</div>
+<div class="verse"><span class="verse-number">28</span>「你們對我說的話，耶和華都聽見了。耶和華對我說：『這百姓的話我聽見了；他們所說的都是。</div>
+<div class="verse"><span class="verse-number">29</span>惟願他們存這樣的心敬畏我，常遵守我的一切誡命，使他們和他們的子孫永遠得福。</div>
+<div class="verse"><span class="verse-number">30</span>你去對他們說：你們回帳棚去吧！</div>
+<div class="verse"><span class="verse-number">31</span>至於你，可以站在我這裏，我要將一切誡命、律例、典章傳給你；你要教訓他們，使他們在我賜他們為業的地上遵行。』</div>
+<div class="verse"><span class="verse-number">32</span>所以，你們要照耶和華你們神所吩咐的謹守遵行，不可偏離左右。</div>
+<div class="verse"><span class="verse-number">33</span>耶和華你們神所吩咐你們行的，你們都要去行，使你們可以存活得福，並使你們的日子在所要承受的地上得以長久。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第五章是摩西向新一代以色列人重申十誡的核心篇章。摩西在此鄭重聲明：何烈山之約不是只與已過世的列祖立的舊約，而是與「今日在這裏存活之人」立的活約（申5:3），強調每一代人都需要親自承擔與神立約的責任。本章詳細列出十誡的完整內容，從對神的義務（前四誡）到對人的義務（後六誡），涵蓋生命秩序的各個層面。與出埃及記二十章的記載相比，申命記的十誡在安息日的理由上有所不同，強調以色列人曾在埃及為奴，神拯救他們，因此他們也應讓僕人和寄居者安息，體現恩典與人道精神。本章結尾記述百姓因懼怕神的威嚴而請求摩西作中保，神對此深感欣慰，同時表達了對百姓能持守敬畏、世代順服的渴望。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的約是活的，每一代人都需親自承擔</strong><br>摩西明確說明，何烈山之約是「與我們今日在這裏存活之人立的」（申5:3），而不僅是歷史上的一次性事件。這說明信仰的傳承不能只靠祖先的信心，每一個人都需要個人地與神立約，親自回應神的呼召。信仰不是遺產，而是每代人都需要在生命中活出的委身關係。<br><br>
+<strong>2. 十誡是愛的框架，保護生命免於自我毀滅</strong><br>神頒布十誡不是要束縛人，而是要在人際關係和人神關係中建立愛與公義的秩序。從不可拜偶像、不可妄稱神名，到孝敬父母、不可殺人姦淫偷盜，這十條誡命構成了一個充滿愛的生命框架，防止人因貪婪、驕傲或放縱而傷害自己和他人。遵守誡命不是律法主義，而是活在神愛中的自然流露。<br><br>
+<strong>3. 敬畏神是智慧的開端，也是持久得福的根源</strong><br>神在聽見百姓渴望敬畏的心聲後說：「惟願他們存這樣的心敬畏我，常遵守我的一切誡命，使他們和他們的子孫永遠得福。」（申5:29）敬畏神不是一種恐懼的情緒，而是一種對神威嚴的認識所產生的深刻尊重與順服，這種敬畏是生命福祉和世代祝福的根基。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>這約不是與我們列</strong><strong>祖立的</strong>，乃是與我們今日在這裏存活之人立的。」（申5:3）</td>
+<td>信仰的約是每代人自己的事，就像<strong>健身房的會員資格不能由父母代替</strong>你<strong>使用</strong>，你是否<strong>已經親自在神</strong>面前立定自己的委身，而不是單靠家庭傳統來維持信仰？</td>
+</tr>
+<tr>
+<td>「愛我、<strong>守我誡命的</strong>，<strong>我必向他們發慈愛</strong>，直到千代。」（申5:10）</td>
+<td>順服神的誡命帶來代代相傳的祝福，就像<strong>一棵深根的樹為後代遮蔭擋風</strong>，你<strong>今日對神的順</strong>服，將如何影響你<strong>子孫後代所承</strong>受的屬靈遺產？</td>
+</tr>
+<tr>
+<td>「<strong>惟願他們存這樣的</strong><strong>心敬畏我</strong>，常遵守我的一切誡命，使他們和他們的子孫永遠得福。」（申5:29）</td>
+<td>敬畏神是長久得福的根基，就像<strong>遵守交通規則才能讓駕駛者長期平</strong>安出行，在你<strong>日常生活中</strong>，哪些具體的選擇反映出你<strong>對神的敬畏</strong>，而不只是表面的宗教行為？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

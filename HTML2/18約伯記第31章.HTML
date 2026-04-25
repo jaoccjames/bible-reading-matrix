@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第31章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第31章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約伯最後的誓言：我行了公義慈愛</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我與眼睛立約，怎能戀戀瞻望處女呢？</div>
+<div class="verse"><span class="verse-number">2</span>從至上的神所得之分，從至高全能者所得之業是甚麼呢？</div>
+<div class="verse"><span class="verse-number">3</span>豈不是禍患臨到不義的，災害臨到作孽的呢？</div>
+<div class="verse"><span class="verse-number">4</span>神豈不是察看我的道路，數點我的腳步呢？</div>
+<div class="verse"><span class="verse-number">5</span>我若與虛謊同行，腳若追隨詭詐；</div>
+<div class="verse"><span class="verse-number">6</span>我若被公道的天平稱度，使神可以知道我的純正；</div>
+<div class="verse"><span class="verse-number">7</span>我的腳步若偏離正路，我的心若隨着我的眼目，若有玷污粘在我手上；</div>
+<div class="verse"><span class="verse-number">8</span>就願我所種的有別人吃，我田所產的被拔出來。</div>
+<div class="verse"><span class="verse-number">9</span>我若受迷惑，向婦人起淫念，在鄰舍的門外蹲伏，</div>
+<div class="verse"><span class="verse-number">10</span>就願我的妻子給別人推磨，別人也與他同室。</div>
+<div class="verse"><span class="verse-number">11</span>因為這是大罪，是審判官當罰的罪孽。</div>
+<div class="verse"><span class="verse-number">12</span>這本是火焚燒，直到燬滅，必拔除我所有的家產。</div>
+<div class="verse"><span class="verse-number">13</span>我的僕婢與我爭辯的時候，我若藐視不聽他們的情節；</div>
+<div class="verse"><span class="verse-number">14</span>神興起，我怎樣行呢？他察問，我怎樣回答呢？</div>
+<div class="verse"><span class="verse-number">15</span>造我在腹中的，不也是造他嗎？將他與我摶在腹中的豈不是一位嗎？</div>
+<div class="verse"><span class="verse-number">16</span>我若不容貧寒人得其所願，或叫寡婦眼中失望，</div>
+<div class="verse"><span class="verse-number">17</span>或獨自吃我一點食物，孤兒沒有與我同吃；</div>
+<div class="verse"><span class="verse-number">18</span>（從幼年時孤兒與我同長，好像父子一樣；我從出母腹就扶助〔原文作引領〕寡婦。）</div>
+<div class="verse"><span class="verse-number">19</span>我若見人因無衣死亡，或見窮乏人身無遮蓋；</div>
+<div class="verse"><span class="verse-number">20</span>我若不使他因我羊的毛得暖，為我祝福；</div>
+<div class="verse"><span class="verse-number">21</span>我若在城門口見有幫助我的，舉手攻擊孤兒；</div>
+<div class="verse"><span class="verse-number">22</span>情願我的肩頭從缺盆骨脫落，我的膀臂從羊矢骨折斷。</div>
+<div class="verse"><span class="verse-number">23</span>因神降的災禍使我恐懼；因他的威嚴，我不能妄為。</div>
+<div class="verse"><span class="verse-number">24</span>我若以黃金為指望，對精金說：你是我的倚靠；</div>
+<div class="verse"><span class="verse-number">25</span>我若因財物豐裕，因我手多得資財而歡喜；</div>
+<div class="verse"><span class="verse-number">26</span>我若見太陽發光，明月行在空中，</div>
+<div class="verse"><span class="verse-number">27</span>心就暗暗被引誘，口便親手；</div>
+<div class="verse"><span class="verse-number">28</span>這也是審判官當罰的罪孽，又是我背棄在上的神。</div>
+<div class="verse"><span class="verse-number">29</span>我若見恨我的遭報就歡喜，見他遭災便高興；</div>
+<div class="verse"><span class="verse-number">30</span>（我沒有容口犯罪，咒詛他的生命；）</div>
+<div class="verse"><span class="verse-number">31</span>若我帳棚的人未嘗說，誰不以主人的食物喫飽呢？</div>
+<div class="verse"><span class="verse-number">32</span>（從來我沒有容客旅在街上住宿，卻開門迎接行路的人；）</div>
+<div class="verse"><span class="verse-number">33</span>我若像亞當〔或作：別人〕遮掩我的過犯，將罪孽藏在懷中；</div>
+<div class="verse"><span class="verse-number">34</span>因懼怕大眾，又因宗族藐視我使我驚恐，以致閉口無言，杜門不出；</div>
+<div class="verse"><span class="verse-number">35</span>惟願有一位肯聽我！（看哪，在這裏有我所劃的押，願全能者回答我！）</div>
+<div class="verse"><span class="verse-number">36</span>願那敵我者所寫的狀詞在我這裏！我必帶在肩上，又綁在頭上為冠冕。</div>
+<div class="verse"><span class="verse-number">37</span>我必向他述說我腳步的數目，必如君王進到他面前。</div>
+<div class="verse"><span class="verse-number">38</span>我若奪取田地，這地向我喊冤，犁溝一同哭泣；</div>
+<div class="verse"><span class="verse-number">39</span>我若喫地的出產不給價值，或叫原主喪命；</div>
+<div class="verse"><span class="verse-number">40</span>願這地長蒺藜代替麥子，長惡草代替大麥。約伯的話說完了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第31章是約伯最後一篇長篇獨白，也是全書最詳細的「無辜誓言」。他逐一列出人可能犯的道德罪孽，並以誓言宣告自己清白：眼目沒有貪看女人、行事沒有詭詐、手沒有拒絕窮人、沒有倚靠金銀、沒有崇拜日月、沒有對仇敵感到幸災樂禍、沒有讓旅客在外露宿……這份道德清單令人嘆為觀止，涵蓋了當時社會對正直人的最全面期待。他說「我必將關乎我的事情述說，如君王一樣到他面前，親自呈上。」本章是約伯的最後陳述，他已做完了他能做的一切——他誠實地說出了一切，他在神面前持守了一切。現在他唯一能做的，就是等候神的回應。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 全面的道德誠信是信仰的必要外顯</strong><br>約伯的誓言涵蓋了內心（貪念、驕傲）、行為（對窮人的慷慨、對仇敵的公正）和崇拜（不拜日月）的各個層面。真實的信仰不只是內心的虔誠，更要在生活各方面活出道德的誠信。約伯的清單是對信仰整全性最完整的聖經描述之一。<br><br>
+<strong>2. 對窮人、孤兒、寡婦的慷慨是神學的實踐</strong><br>約伯說他沒有讓窮人空手而回、沒有讓孤兒孤立無助。這種對弱勢的關懷，是他對神信仰最直接的流露。信仰必須落實在對他人的具體愛心行動上，才是完整的。<br><br>
+<strong>3. 在神面前「呈上自己的案情」是信仰成熟的表現</strong><br>約伯說「如君王一樣到他面前，親自呈上」——他不是在逃避神，而是主動希望直接在神面前陳明一切。這種直面神的勇氣，是信仰成熟的標誌。不逃避神的審視，而是在神面前誠實呈上自己，是信仰最深的委身。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我與眼睛立約</strong>，<strong>怎能戀戀觀看女子</strong>呢？（伯31:1）</td>
+<td>就像<strong>一個人主動為自己設定防護界限</strong>，約伯與眼睛立約是主動管理自己心思的屬靈功課。你有沒有<strong>在某個容易犯</strong>罪的領域，為自己設立過這樣主動的界限？那個界限如何保護了你？</td>
+</tr>
+<tr>
+<td><strong>我若閉眼不看窮人</strong><strong>的需要</strong>，奪去孤兒的糧食，但我素來是他的父親……我救了呼求的窮人和無人幫助的孤兒。（伯31:16-18）</td>
+<td>就像<strong>一個人的慷慨不在於他能給多少</strong>，而在於他看見別人需要時的回應，對弱勢者的主動關懷是約伯信仰中最美麗的部分。你<strong>在日常生活中</strong>，有哪些機會可以成為「孤兒的父親」？你如何<strong>把握這些機會</strong>？</td>
+</tr>
+<tr>
+<td><strong>我必將關乎我的事</strong><strong>情述說</strong>，如君王一樣到他面前，親自呈上。（伯31:37）</td>
+<td>就像<strong>在最高法庭上親自說出自己的案情</strong>，在神面前不逃避地呈上自己是信仰最深的勇氣。你有沒有<strong>在神面前誠實</strong>呈上你<strong>心中最深的疑</strong>惑、委屈或請求？那種誠實的禱告讓你<strong>和神的關係有</strong>什麼改變？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

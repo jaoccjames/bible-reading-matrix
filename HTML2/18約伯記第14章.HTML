@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第14章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第14章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約伯沉思死亡與復活的渴望</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>人為婦人所生，日子短少，多有患難；</div>
+<div class="verse"><span class="verse-number">2</span>出來如花，又被割下，飛去如影，不能存留。</div>
+<div class="verse"><span class="verse-number">3</span>這樣的人你豈睜眼看他嗎？又叫我來受審嗎？</div>
+<div class="verse"><span class="verse-number">4</span>誰能使潔淨之物出於污穢之中呢？無論誰也不能！</div>
+<div class="verse"><span class="verse-number">5</span>人的日子既然限定，他的月數在你那裏，你也派定他的界限，使他不能越過，</div>
+<div class="verse"><span class="verse-number">6</span>便求你轉眼不看他，使他得歇息，直等他像雇工人完畢他的日子。</div>
+<div class="verse"><span class="verse-number">7</span>樹若被砍下，還可指望發芽，嫩枝生長不息；</div>
+<div class="verse"><span class="verse-number">8</span>其根雖然衰老在地裏，榦也死在土中，</div>
+<div class="verse"><span class="verse-number">9</span>及至得了水氣，還要發芽，又長枝條，像新栽的樹一樣。</div>
+<div class="verse"><span class="verse-number">10</span>但人死亡而消滅；他氣絕，竟在何處呢？</div>
+<div class="verse"><span class="verse-number">11</span>海中的水絕盡，江河消散乾涸。</div>
+<div class="verse"><span class="verse-number">12</span>人也是如此，躺下不再起來，等到天沒有了，仍不得復醒，也不得從睡中喚醒。</div>
+<div class="verse"><span class="verse-number">13</span>惟願你把我藏在陰間，存於隱密處，等你的忿怒過去；願你為我定了日期，記念我。</div>
+<div class="verse"><span class="verse-number">14</span>人若死了豈能再活呢？我只要在我一切爭戰的日子，等我被釋放〔或作：改變〕的時候來到。</div>
+<div class="verse"><span class="verse-number">15</span>你呼叫，我便回答；你手所作的，你必羡慕。</div>
+<div class="verse"><span class="verse-number">16</span>但如今你數點我的腳步，豈不窺察我的罪過嗎？</div>
+<div class="verse"><span class="verse-number">17</span>我的過犯被你封在囊中，也縫嚴了我的罪孽。</div>
+<div class="verse"><span class="verse-number">18</span>山崩變為無有；磐石挪開原處。</div>
+<div class="verse"><span class="verse-number">19</span>水流消磨石頭，所流溢的洗去地上的塵土；你也照樣滅絕人的指望。</div>
+<div class="verse"><span class="verse-number">20</span>你攻擊人常常得勝，使他去世；你改變他的容貌，叫他往而不回。</div>
+<div class="verse"><span class="verse-number">21</span>他兒子得尊榮，他也不知道，降為卑，他也不覺得。</div>
+<div class="verse"><span class="verse-number">22</span>但知身上疼痛，心中悲哀。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第14章是約伯第一輪辯論的結語，充滿了對生命短暫和死亡必然的沉思，並帶著對復活可能性的渴望。他以「人為婦人所生，日子短少，多有患難」開篇，以詩意的語言描述人的生命如同草、如同影，轉眼即逝。他問：若樹被砍還能發芽，人死後豈能再活？他渴望神「把我藏在陰間，等你的忿怒過去；願你為我定了日期，記念我」——這是一個對復活隱約的渴望，在新約中得到了清晰的應許。本章末尾以沉重的筆觸描述人的終局：山崩、磐石挪移、水磨石頭——人的指望也被磨滅。這是全書最具詩意的章節之一，也展示了約伯在極度苦難中對死亡與永恆最深刻的思索。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 人生短暫的現實是謙卑的基礎，也是向神仰望的動力</strong><br>「出來如花，又被割下，飛去如影，不能存留」——約伯對生命短暫的沉思，不是虛無主義，而是對人類狀況的誠實描述。這種對短暫的清醒認識，可以成為謙卑的基礎（不高傲），也可以成為緊抓每一刻與神同行的動力。<br><br>
+<strong>2. 死後復活的渴望是人心深處最深的盼望</strong><br>「人若死了豈能再活呢？」約伯提出了這個問題，並在痛苦中渴望「神在忿怒過去後記念我」。這個渴望在舊約中是隱約的，在新約中因基督的復活成為確實的應許。苦難中對永恆的渴望，是靈魂深處神所放置的印記。<br><br>
+<strong>3. 神「記念」受苦者是信仰最核心的盼望</strong><br>約伯說「願你為我定了日期，記念我」——在一切失去之後，最深的渴望是被神記念。這不只是舊約的盼望，也是信仰的核心：神認識我、神記念我，即使在最深的陰暗中，我也不是被遺忘的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>人為婦人所生</strong>，<strong>日子短少</strong>，多有患難；出來如花，又被割下，飛去如影，不能存留。（伯14:1-2）</td>
+<td>就像<strong>一朵花的美麗恰恰在於它的短暫</strong>，生命的有限是否讓你<strong>更珍視當下與</strong>神、與人的每一個時刻？你有沒有<strong>因意識到生命</strong>短促，而改變了某個優先順序？</td>
+</tr>
+<tr>
+<td><strong>樹若被砍下</strong>，<strong>還可指望發芽</strong>，嫩枝生長不息……但人死亡而消滅；他氣絕，竟在何處呢？（伯14:7,10）</td>
+<td>就像<strong>即使樹幹砍掉了</strong>，根還在，還能再長，對死後復活的渴望是人心深處的呼聲。你<strong>相信死後有復</strong>活嗎？這個信念如何影響你<strong>面對自己或所</strong>愛之人死亡的方式？</td>
+</tr>
+<tr>
+<td><strong>惟願你把我藏在陰</strong>間，……<strong>願你為我定了日期</strong>，記念我。（伯14:13）</td>
+<td>就像<strong>一個孩子在最困難的時候</strong>，只求父母記得自己，「願你<strong>記念我」</strong>是苦難中最小也是最大的禱告。你有沒有<strong>曾只求神「記</strong>念你<strong>」的時刻</strong>？那個禱告如何支撐了你？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

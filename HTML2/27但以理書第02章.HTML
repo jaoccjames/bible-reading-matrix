@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>但以理書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+但以理書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大像異象：神掌管歷史的列國</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>尼布甲尼撒在位第二年，他作了夢，心裏煩亂，不能睡覺。</div>
+<div class="verse"><span class="verse-number">2</span>王吩咐人將術士、用法術的、行邪術的，和迦勒底人召來，要他們將王的夢告訴王，他們就來站在王前。</div>
+<div class="verse"><span class="verse-number">3</span>王對他們說：「我作了一夢，心裏煩亂，要知道這是甚麼夢。」</div>
+<div class="verse"><span class="verse-number">4</span>迦勒底人用亞蘭的言語對王說：「願王萬歲！請將那夢告訴僕人，僕人就可以講解。」</div>
+<div class="verse"><span class="verse-number">5</span>王回答迦勒底人說：「夢我已經忘了〔或作：我已定命；八節同〕，你們若不將夢和夢的講解告訴我，就必被凌遲，你們的房屋必成為糞堆；</div>
+<div class="verse"><span class="verse-number">6</span>你們若將夢和夢的講解告訴我，就必從我這裏得贈品和賞賜，並大尊榮。現在你們要將夢和夢的講解告訴我。」</div>
+<div class="verse"><span class="verse-number">7</span>他們第二次對王說：「請王將夢告訴僕人，僕人就可以講解。」</div>
+<div class="verse"><span class="verse-number">8</span>王回答說：「我准知道你們是故意遲延，因為你們知道那夢我已經忘了。</div>
+<div class="verse"><span class="verse-number">9</span>你們若不將夢告訴我，只有一法待你們；因為你們預備了謊言亂語向我說，要等候時勢改變。現在你們要將夢告訴我，因我知道你們能將夢的講解告訴我。」</div>
+<div class="verse"><span class="verse-number">10</span>迦勒底人在王面前回答說：「世上沒有人能將王所問的事說出來；因為沒有君王、大臣、掌權的向術士，或用法術的，或迦勒底人問過這樣的事。</div>
+<div class="verse"><span class="verse-number">11</span>王所問的事甚難。除了不與世人同居的神明，沒有人在王面前能說出來。」</div>
+<div class="verse"><span class="verse-number">12</span>因此，王氣忿忿的大發烈怒，吩咐滅絕巴比倫所有的哲士。</div>
+<div class="verse"><span class="verse-number">13</span>於是命令發出，哲士將要見殺，人就尋找但以理和他的同伴，要殺他們。</div>
+<div class="verse"><span class="verse-number">14</span>王的護衛長亞略出來，要殺巴比倫的哲士，但以理就用婉言回答他，</div>
+<div class="verse"><span class="verse-number">15</span>向王的護衛長亞略說：「王的命令為何這樣緊急呢？」亞略就將情節告訴但以理。</div>
+<div class="verse"><span class="verse-number">16</span>但以理遂進去求王寬限，就可以將夢的講解告訴王。</div>
+<div class="verse"><span class="verse-number">17</span>但以理回到他的居所，將這事告訴他的同伴哈拿尼雅、米沙利、亞撒利雅，</div>
+<div class="verse"><span class="verse-number">18</span>要他們祈求天上的神施憐憫，將這奧祕的事指明，免得但以理和他的同伴與巴比倫其餘的哲士一同滅亡。</div>
+<div class="verse"><span class="verse-number">19</span>這奧祕的事就在夜間異象中給但以理顯明，但以理便稱頌天上的神。</div>
+<div class="verse"><span class="verse-number">20</span>但以理說：「神的名是應當稱頌的！從亙古直到永遠，因為智慧能力都屬乎他。</div>
+<div class="verse"><span class="verse-number">21</span>他改變時候、日期，廢王，立王，將智慧賜與智慧人，將知識賜與聰明人。</div>
+<div class="verse"><span class="verse-number">22</span>他顯明深奧隱祕的事，知道暗中所有的，光明也與他同居。</div>
+<div class="verse"><span class="verse-number">23</span>我列祖的神啊，我感謝你，讚美你，因你將智慧才能賜給我，允准我們所求的，把王的事給我們指明。」</div>
+<div class="verse"><span class="verse-number">24</span>於是，但以理進去見亞略，就是王所派滅絕巴比倫哲士的，對他說：「不要滅絕巴比倫的哲士，求你領我到王面前，我要將夢的講解告訴王。」</div>
+<div class="verse"><span class="verse-number">25</span>亞略就急忙將但以理領到王面前，對王說：「我在被擄的猶大人中遇見一人，他能將夢的講解告訴王。」</div>
+<div class="verse"><span class="verse-number">26</span>王問稱為伯提沙撒的但以理說：「你能將我所作的夢和夢的講解告訴我嗎？」</div>
+<div class="verse"><span class="verse-number">27</span>但以理在王面前回答說：「王所問的那奧祕事，哲士、用法術的、術士、觀兆的都不能告訴王；</div>
+<div class="verse"><span class="verse-number">28</span>只有一位在天上的神能顯明奧祕的事。他已將日後必有的事指示尼布甲尼撒王。你的夢和你在床上腦中的異象是這樣：</div>
+<div class="verse"><span class="verse-number">29</span>王啊，你在床上想到後來的事，那顯明奧祕事的主把將來必有的事指示你。</div>
+<div class="verse"><span class="verse-number">30</span>至於那奧祕的事顯明給我，並非因我的智慧勝過一切活人，乃為使王知道夢的講解和心裏的思念。</div>
+<div class="verse"><span class="verse-number">31</span>「王啊，你夢見一個大像，這像甚高，極其光耀，站在你面前，形狀甚是可怕。</div>
+<div class="verse"><span class="verse-number">32</span>這像的頭是精金的，胸膛和膀臂是銀的，肚腹和腰是銅的，</div>
+<div class="verse"><span class="verse-number">33</span>腿是鐵的，腳是半鐵半泥的。</div>
+<div class="verse"><span class="verse-number">34</span>你觀看，見有一塊非人手鑿出來的石頭打在這像半鐵半泥的腳上，把腳砸碎；</div>
+<div class="verse"><span class="verse-number">35</span>於是金、銀、銅、鐵、泥都一同砸得粉碎，成如夏天禾場上的糠秕，被風吹散，無處可尋。打碎這像的石頭變成一座大山，充滿天下。</div>
+<div class="verse"><span class="verse-number">36</span>「這就是那夢。我們在王面前要講解那夢。</div>
+<div class="verse"><span class="verse-number">37</span>王啊，你是諸王之王。天上的神已將國度、權柄、能力、尊榮都賜給你。</div>
+<div class="verse"><span class="verse-number">38</span>凡世人所住之地的走獸，並天空的飛鳥，他都交付你手，使你掌管這一切。你就是那金頭。</div>
+<div class="verse"><span class="verse-number">39</span>在你以後必另興一國，不及於你；又有第三國，就是銅的，必掌管天下。</div>
+<div class="verse"><span class="verse-number">40</span>第四國，必堅壯如鐵，鐵能打碎克制百物，又能壓碎一切，那國也必打碎壓制列國。</div>
+<div class="verse"><span class="verse-number">41</span>你既見像的腳和腳指頭，一半是窰匠的泥，一半是鐵，那國將來也必分開。你既見鐵與泥攙雜，那國也必有鐵的力量。</div>
+<div class="verse"><span class="verse-number">42</span>那腳指頭，既是半鐵半泥，那國也必半強半弱。</div>
+<div class="verse"><span class="verse-number">43</span>你既見鐵與泥攙雜，那國民也必與各種人攙雜，卻不能彼此相合，正如鐵與泥不能相合一樣。</div>
+<div class="verse"><span class="verse-number">44</span>當那列王在位的時候，天上的神必另立一國，永不敗壞，也不歸別國的人，卻要打碎滅絕那一切國，這國必存到永遠。</div>
+<div class="verse"><span class="verse-number">45</span>你既看見非人手鑿出來的一塊石頭從山而出，打碎金、銀、銅、鐵、泥，那就是至大的神把後來必有的事給王指明。這夢準是這樣，這講解也是確實的。」</div>
+<div class="verse"><span class="verse-number">46</span>當時，尼布甲尼撒王俯伏在地，向但以理下拜，並且吩咐人給他奉上供物和香品。</div>
+<div class="verse"><span class="verse-number">47</span>王對但以理說：「你既能顯明這奧祕的事，你們的神誠然是萬神之神、萬王之主，又是顯明奧祕事的。」</div>
+<div class="verse"><span class="verse-number">48</span>於是王高抬但以理，賞賜他許多上等禮物，派他管理巴比倫全省，又立他為總理，掌管巴比倫的一切哲士。</div>
+<div class="verse"><span class="verse-number">49</span>但以理求王，王就派沙得拉、米煞、亞伯尼歌管理巴比倫省的事務，只是但以理常在朝中侍立。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+但以理書第2章是全書第一個大型末世異象，時在尼布甲尼撒在位第二年。王作了一個夢，卻忘記了內容，要求術士告訴他夢的內容和解說——否則殺死所有哲士。但以理和同伴祈禱，神在夜間異象中啟示了夢的內容。但以理在解夢之前，先給神獻上讚美，強調「智慧能力都屬乎神」。夢是一個大像：金頭（巴比倫）、銀胸（瑪代波斯）、銅腹（希臘）、鐵腿（羅馬）、半鐵半泥的腳（末後的聯盟）。最後，一塊「非人手鑿出的石頭」打碎大像，成為充滿天下的大山——象徵神永恆的國度。尼布甲尼撒俯伏敬拜，承認但以理的神是「萬神之神、萬王之主」。本章的核心信息是：歷史上所有的帝國都在神的掌管中興起和衰落；神的國度是唯一永不敗壞的。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神掌管歷史，歷史的興衰都在神的主宰中】</strong><br>大像代表歷史中的四大帝國，但它們都被「非人手鑿出的石頭」打碎。神不是歷史的旁觀者，而是設計者和掌管者——「他改變時候、日期，廢王，立王」（21節）。在世界動盪時，這個確信是信徒最穩固的錨：沒有任何政治力量超過神的主權，歷史的終點是神的國度充滿天下。<br><br>
+<strong>2. 【在生死危機中的第一個動作是禱告，而非慌亂】</strong><br>面對死亡令諭，但以理的第一個動作是「求王寬限」，然後「回到居所，告訴同伴，要他們祈求天上的神」。禱告是危機中的第一個行動，不是最後的手段。這個次序很重要：不是先想盡辦法，萬不得已再禱告；而是先把問題交給神，再看神如何工作。<br><br>
+<strong>3. 【得着答案後先讚美神，再完成使命】</strong><br>神啟示了夢的內容後，但以理先「稱頌天上的神」，再去見亞略。在完成使命之前先停下來感謝神——這個屬靈順序說明：使命不是但以理彰顯自己能力的機會，而是讓神得榮耀的機會。每次神使用我們成就某件事，先感謝神再行動，是保持正確動機的屬靈操練。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>但以理回到他的居</strong>所，<strong>將這事告訴他的同</strong>伴哈拿尼雅、米沙利、亞撒利雅，要他們祈求天上的神施憐憫，將這奧祕的事指明。（但2:17-18）</td>
+<td>面對危機，你<strong>的第一個動作</strong>是什麼？就像<strong>在火災中</strong>，第一個動作是逃還是找滅火器或撥打電話，你<strong>在重大壓力或</strong>危機中，「祈求天上的神」有沒有成為你<strong>真正的第一個</strong>動作，而不是想盡辦法後才想起禱告？</td>
+</tr>
+<tr>
+<td><strong>他改變時候</strong>、日期，廢王，立王，<strong>將智慧賜與智慧人</strong>，將知識賜與聰明人。（但2:21）</td>
+<td>「廢王，立王」——神在人類的政治歷史中有主動的介入。你<strong>面對當今世界</strong>的政治動盪和不確定時，這個真理如何影響你<strong>的恐懼或焦慮</strong>？就像<strong>在暴風雨的船上知道有能幹的船長</strong>掌舵，「神改變時候、日期」這個確信如何讓你<strong>在大環境的不</strong>穩定中保持平靜？</td>
+</tr>
+<tr>
+<td><strong>當那列王在位的時</strong>候，<strong>天上的神必另立一</strong>國，永不敗壞，也不歸別國的人，卻要打碎滅絕那一切國，這國必存到永遠。（但2:44）</td>
+<td>「永不敗壞」的國是神的國，所有其他的國都終將「被打碎」。你<strong>在日常生活中</strong>，把多少期望和盼望寄托在「最終會被打碎的」事物上（政府、公司、趨勢、科技），而把多少寄托在「永不敗壞的神的國」上？這個比例如何影響你<strong>的生活優先次</strong>序？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

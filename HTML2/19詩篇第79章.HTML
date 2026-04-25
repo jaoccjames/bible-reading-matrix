@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第79章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第79章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">聖殿被毀的哀歌：求神因名的榮耀搭救赦免</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（亞薩的詩）神啊，外邦人進入你的產業，污穢你的聖殿，使耶路撒冷變成荒堆，</div>
+<div class="verse"><span class="verse-number">2</span>把你僕人的屍首交與天空的飛鳥為食，把你聖民的肉交與地上的野獸，</div>
+<div class="verse"><span class="verse-number">3</span>在耶路撒冷周圍流他們的血如水，無人葬埋。</div>
+<div class="verse"><span class="verse-number">4</span>我們成為鄰國的羞辱，成為我們四圍人的嗤笑譏刺。</div>
+<div class="verse"><span class="verse-number">5</span>耶和華啊，這到幾時呢？你要動怒到永遠嗎？你的憤恨要如火焚燒嗎？</div>
+<div class="verse"><span class="verse-number">6</span>願你將你的忿怒倒在那不認識你的外邦和那不求告你名的國度。</div>
+<div class="verse"><span class="verse-number">7</span>因為他們吞了雅各，把他的住處變為荒場。</div>
+<div class="verse"><span class="verse-number">8</span>求你不要記念我們先祖的罪孽，向我們追討；願你的慈悲快迎着我們，因為我們落到極卑微的地步。</div>
+<div class="verse"><span class="verse-number">9</span>拯救我們的神阿，求你因你名的榮耀幫助我們！為你名的緣故搭救我們，赦免我們的罪。</div>
+<div class="verse"><span class="verse-number">10</span>為何容外邦人說「他們的神在那裏」呢？願你使外邦人知道你在我們眼前伸你僕人流血的冤。</div>
+<div class="verse"><span class="verse-number">11</span>願被囚之人的歎息達到你面前；願你按你的大能力存留那些將要死的人。</div>
+<div class="verse"><span class="verse-number">12</span>主啊，願你將我們鄰邦所羞辱你的羞辱加七倍歸到他們身上。</div>
+<div class="verse"><span class="verse-number">13</span>這樣，你的民，你草場的羊，要稱謝你，直到永遠；要述說讚美你的話，直到萬代。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第79篇是亞薩的詩，是一首在民族大災難中所作的集體哀歌，與詩篇74篇有相似的歷史背景，可能寫於巴比倫攻破耶路撒冷（主前586年）或其他聖殿遭毀的時期。本篇與哀歌書在語言和情感上有許多相似之處，都是對同一歷史悲劇的不同記錄。
+
+      本篇詩人的痛苦來自三個層面：神的子民遭受滅絕（1-4節）、神自己的名受到外邦人的藐視（10節）、以及先祖的罪孽尚未清算（8節）。在這三重痛苦中，詩人轉向神最有力的根基：「求你因你名的榮耀幫助我們！」（第9節）——不是以自己的功德，而是以神自己的名和榮耀作為求告的根據。
+
+      第13節的結語是整篇最美的轉折：在最深的哀嘆之後，詩人以「你的民，你草場的羊，要稱謝你，直到永遠；要述說讚美你的話，直到萬代」作收，揭示了信仰在苦難中的最終走向——不是絕望，而是以讚美回應，相信神必在某時某刻轉危為安，使讚美成為真實。這個「以預期的讚美終結哀嘆」的信仰姿態，是詩篇傳統中最深刻的屬靈動作。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 為神的名的榮耀而祈求是禱告最深的根基</strong><br>「拯救我們的神阿，求你因你名的榮耀幫助我們！為你名的緣故搭救我們，赦免我們的罪。」（第9節）在民族陷落、似乎毫無可以依賴之處時，詩人發現禱告最深的根基不是自己的功勞或委屈，而是「你的名的榮耀」。以神的名為根基禱告，表明這個禱告超越了個人的利益，指向神在歷史中的聲譽——若神救祂的民，外邦人便知道神是真實的；若神棄絕，外邦人便說「他們的神在哪裡」。這種「為神的名而求」的禱告，是最不自我中心也最有力量的禱告形式。<br><br>
+<strong>2. 求神不追討先祖罪孽而以慈悲迎接是悔罪的誠實承認</strong><br>「求你不要記念我們先祖的罪孽，向我們追討；願你的慈悲快迎着我們，因為我們落到極卑微的地步。」（第8節）詩人沒有假裝以色列的苦難全是外邦人的錯，而是承認「先祖的罪孽」是苦難的部分原因，並以此為基礎求神的慈悲。這種「帶著罪的承認去求憐憫」的禱告姿態，是悔罪中最重要的誠實——不為自己辯護，而是以卑微之心等候神的慈悲。<br><br>
+<strong>3. 在最深哀嘆中以永恆讚美作結是信仰對苦難的最終回應</strong><br>「你的民，你草場的羊，要稱謝你，直到永遠；要述說讚美你的話，直到萬代。」（第13節）這個結尾是尚未到來的讚美——詩人在苦難仍未解除時，已以信心宣告未來的讚美。這種「預先宣告讚美」的信仰行動，是對神應許最強烈的確信表達，也是在絕望中拒絕讓絕望有最後一句話的屬靈剛強。讚美在苦難中成為信心的行動，而非感受的結果。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>拯救我們的神阿</strong>，<strong>求你因你名的榮耀</strong>幫助我們！為你名的緣故搭救我們，赦免我們的罪。（詩79:9）</td>
+<td>就像<strong>向有信譽的品牌求援時</strong>，對方為維護自己的聲譽而出手相助，你<strong>的禱告</strong>是否能超越「因為我需要」，達到「為你<strong>名的榮耀」的</strong>深度，讓神的榮耀成為你<strong>最強的禱告動</strong>力？</td>
+</tr>
+<tr>
+<td><strong>求你不要記念我們</strong><strong>先祖的罪孽</strong>，向我們追討；願你的慈悲快迎着我們，因為我們落到極卑微的地步。（詩79:8）</td>
+<td>就像<strong>一個坦誠承認家族問題的人</strong>，比推卸責任的人更能得到別人的同情和幫助，你是否<strong>敢於在神面前</strong>誠實地承認那些影響你<strong>的「先祖罪孽</strong>」，以卑微之心等候神的慈悲，而非為自己或自己的群體辯護？</td>
+</tr>
+<tr>
+<td><strong>你的民</strong>，<strong>你草場的羊</strong>，要稱謝你，直到永遠；要述說讚美你的話，直到萬代。（詩79:13）</td>
+<td>就像<strong>在最壞的時刻選擇對未來抱持希望</strong>，不讓眼前的黑暗蓋過對光明的盼望，你是否能在苦難未解除之前，以信心預先宣告讚美，讓讚美成為你<strong>對神必定回應</strong>的信心宣告，而非等苦難解除後才感謝？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

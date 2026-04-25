@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第22章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第22章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">財產道德與社會公義律例</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「人若偷牛或羊，無論是宰了，是賣了，他就要以五牛賠一牛，四羊賠一羊。</div>
+<div class="verse"><span class="verse-number">2</span>人若遇見賊挖窟窿，把賊打了，以至於死，就不能為他有流血的罪。</div>
+<div class="verse"><span class="verse-number">3</span>若太陽已經出來，就為他有流血的罪。賊若被拿，總要賠還。若他一無所有，就要被賣，頂他所偷的物。</div>
+<div class="verse"><span class="verse-number">4</span>若他所偷的，或牛，或驢，或羊，仍在他手下存活，他就要加倍賠還。</div>
+<div class="verse"><span class="verse-number">5</span>「人若在田間或在葡萄園裏放牲畜，任憑牲畜上別人的田裏去吃，就必拿自己田間上好的和葡萄園上好的賠還。</div>
+<div class="verse"><span class="verse-number">6</span>「若點火焚燒荊棘，以致將別人堆積的禾捆，站着的禾稼，或是田園，都燒盡了，那點火的必要賠還。</div>
+<div class="verse"><span class="verse-number">7</span>「人若將銀錢或家具交付鄰舍看守，這物從那人的家被偷去，若把賊找到了，賊要加倍賠還；</div>
+<div class="verse"><span class="verse-number">8</span>若找不到賊，那家主必就近審判官，要看看他拿了原主的物件沒有。</div>
+<div class="verse"><span class="verse-number">9</span>「兩個人的案件，無論是為甚麼過犯，或是為牛，為驢，為羊，為衣裳，或是為甚麼失掉之物，有一人說：『這是我的』，兩造就要將案件稟告審判官，審判官定誰有罪，誰就要加倍賠還。</div>
+<div class="verse"><span class="verse-number">10</span>「人若將驢，或牛，或羊，或別的牲畜，交付鄰舍看守，牲畜或死，或受傷，或被趕去，無人看見，</div>
+<div class="verse"><span class="verse-number">11</span>那看守的人要憑着耶和華起誓，手裏未曾拿鄰舍的物，本主就要罷休，看守的人不必賠還。</div>
+<div class="verse"><span class="verse-number">12</span>牲畜若從看守的那裏被偷去，他就要賠還本主；</div>
+<div class="verse"><span class="verse-number">13</span>若被野獸撕碎，看守的要帶來當作證據，所撕的不必賠還。</div>
+<div class="verse"><span class="verse-number">14</span>「人若向鄰舍借甚麼，所借的或受傷，或死，本主沒有同在一處，借的人總要賠還；</div>
+<div class="verse"><span class="verse-number">15</span>若本主同在一處，他就不必賠還；若是雇的，也不必賠還，本是為雇價來的。」</div>
+<div class="verse"><span class="verse-number">16</span>「人若引誘沒有受聘的處女，與她行淫，他總要交出聘禮，娶她為妻。</div>
+<div class="verse"><span class="verse-number">17</span>若女子的父親決不肯將女子給他，他就要按處女的聘禮，交出錢來。</div>
+<div class="verse"><span class="verse-number">18</span>「行邪術的女人，不可容她存活。</div>
+<div class="verse"><span class="verse-number">19</span>「凡與獸淫合的，總要把他治死。</div>
+<div class="verse"><span class="verse-number">20</span>「祭祀別神，不單單祭祀耶和華的，那人必要滅絕。</div>
+<div class="verse"><span class="verse-number">21</span>「不可虧負寄居的，也不可欺壓他，因為你們在埃及地也作過寄居的。</div>
+<div class="verse"><span class="verse-number">22</span>不可苦待寡婦和孤兒；</div>
+<div class="verse"><span class="verse-number">23</span>若是苦待他們一點，他們向我一哀求，我總要聽他們的哀聲，</div>
+<div class="verse"><span class="verse-number">24</span>並要發烈怒，用刀殺你們，使你們的妻子為寡婦，兒女為孤兒。</div>
+<div class="verse"><span class="verse-number">25</span>「我民中有貧窮人與你同住，你若借錢給他，不可如放債的向他取利。</div>
+<div class="verse"><span class="verse-number">26</span>你即或拿鄰舍的衣服作當頭，必在日落以先歸還他；</div>
+<div class="verse"><span class="verse-number">27</span>因他只有這一件當蓋頭，是他蓋身的衣服，若是沒有，他拿甚麼睡覺呢？他哀求我，我就應允，因為我是有恩惠的。</div>
+<div class="verse"><span class="verse-number">28</span>「不可毀謗神；也不可毀謗你百姓的官長。</div>
+<div class="verse"><span class="verse-number">29</span>「你要從你莊稼中的穀和酒醡中滴出來的酒拿來獻上，不可遲延。「你要將頭生的兒子歸給我。</div>
+<div class="verse"><span class="verse-number">30</span>你牛羊頭生的，也要這樣；七天當跟着母，第八天要歸給我。</div>
+<div class="verse"><span class="verse-number">31</span>「你們要在我面前為聖潔的人。因此，田間被野獸撕裂牲畜的肉，你們不可吃，要丟給狗吃。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第22章延續第21章的典章，涵蓋財產保護、道德倫理及對弱勢的保護等方面的律例。財產部分包含偷盜牛羊的賠償（牛五倍，羊四倍）、主人殺死夜間盜賊的正當防衛、火燒田地的賠償、交付保管物品的責任、借用物品的責任。道德倫理方面包含引誘處女的補救、行邪術者的死刑、與獸淫合的死刑。對弱勢保護的律例涵蓋：不可虧待寄居者（因以色列也曾是寄居的）、不可苦待寡婦孤兒（否則神必施罰）、不可向同胞收利息、若拿人衣服為抵押需在日落前還回。本章反映神對社會各層面的治理關顧，尤其對弱勢和異鄉人的憐憫保護是神性情的彰顯。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的律法對弱勢者有特別的憐憫保護</strong><br>本章對寄居者、寡婦、孤兒的保護規定，顯示神的公義不只是維護強者的利益，更是積極保護無法自保的弱勢。神對欺壓寡婦孤兒者的回應是「我的怒氣必向你發作」，顯示神對社會不公義的強烈反應。信徒在社會中應成為弱勢的倡導者，將信仰化為具體的社會公義行動。<br><br>
+<strong>2. 同理心來自對自身脆弱的記憶</strong><br>「不可虧負寄居的，也不可欺壓他，因為你們在埃及地也作過寄居的」，神要以色列人用自身的歷史苦難培養對他人的同理心。信徒自身的苦難經歷，若能轉化為對他人苦難的同理，就成為最有力的愛的動力。記得自己曾是「寄居者」，是保持謙遜與憐憫的重要操練。<br><br>
+<strong>3. 財物的使用反映我們真實的心靈狀態</strong><br>借錢不收利息、借衣服要還回、不貪他人財物，這些規定都指向財物使用的心靈態度：財物是工具，不是偶像；是服事人的手段，不是積累地位的籌碼。信徒對金錢與財物的態度，是最能顯明心靈真實狀態的試金石之一。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>不可苦待寡婦和孤</strong>兒；<strong>若是苦待他們一點</strong>，他們向我一哀求，我總要聽他們的哀聲。（出22:22-23）</td>
+<td>就像<strong>孩子被欺負時父母必然挺身</strong>，神對寡婦孤兒的保護宣告是一種父親的守護。你<strong>在周遭的生活</strong>圈中是否有機會關顧孤單弱勢的人？是什麼阻礙了你<strong>將信仰化為具</strong>體的行動？</td>
+</tr>
+<tr>
+<td><strong>不可虧負寄居的</strong>，<strong>也不可欺壓他</strong>，因為你們在埃及地也作過寄居的。（出22:21）</td>
+<td>就像<strong>曾在陌生城市迷路的人更能體會外</strong>地人的迷茫而願意給予幫助，自身苦難的記憶是培養同理心的最深根源。你是否<strong>善用自己的艱</strong>難經歷去理解並幫助有類似處境的人？還是傾向把苦難埋藏而非轉化為憐憫？</td>
+</tr>
+<tr>
+<td><strong>你即或拿鄰舍的衣</strong><strong>服作當頭</strong>，必在日落以先歸還他；因他只有這一件當蓋頭，是他蓋身的衣服，若是沒有，他拿甚麼睡覺呢？（出22:26-27上）</td>
+<td>就像<strong>出借必需品時需要考量對方的實際</strong>需要而非只看合同條款，歸還衣服的規定要求看見人的需要超過法律的條件。你<strong>在與人的財物</strong>往來中，是否能超越法律權利的思維，以人的需要為優先考量？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

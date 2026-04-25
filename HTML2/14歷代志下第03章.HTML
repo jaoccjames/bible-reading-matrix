@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志下第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志下第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">聖殿奠基：在神揀選的地方，按神定的樣式建造</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>所羅門就在耶路撒冷、耶和華向他父大衛顯現的摩利亞山上，就是耶布斯人阿珥楠的禾場上、大衛所指定的地方預備好了，開工建造耶和華的殿。</div>
+<div class="verse"><span class="verse-number">2</span>所羅門作王第四年二月初二日開工建造。</div>
+<div class="verse"><span class="verse-number">3</span>所羅門建築神殿的根基，乃是這樣：長六十肘，寬二十肘，都按着古時的尺寸。</div>
+<div class="verse"><span class="verse-number">4</span>殿前的廊子長二十肘，與殿的寬窄一樣，高一百二十肘；裏面貼上精金。</div>
+<div class="verse"><span class="verse-number">5</span>大殿的牆都用松木板遮蔽，又貼了精金，上面雕刻棕樹和鍊子；</div>
+<div class="verse"><span class="verse-number">6</span>又用寶石裝飾殿牆，使殿華美；所用的金子都是巴瓦音的金子。</div>
+<div class="verse"><span class="verse-number">7</span>又用金子貼殿和殿的棟梁、門檻、牆壁、門扇；牆上雕刻基路伯。</div>
+<div class="verse"><span class="verse-number">8</span>又建造至聖所，長二十肘，與殿的寬窄一樣，寬也是二十肘；貼上精金，共用金子六百他連得。</div>
+<div class="verse"><span class="verse-number">9</span>金釘重五十舍客勒。樓房都貼上金子。</div>
+<div class="verse"><span class="verse-number">10</span>在至聖所按造像的法子造兩個基路伯，用金子包裹。</div>
+<div class="verse"><span class="verse-number">11</span>兩個基路伯的翅膀共長二十肘。這基路伯的一個翅膀長五肘，挨着殿這邊的牆；那一個翅膀也長五肘，與那基路伯的翅膀相接。</div>
+<div class="verse"><span class="verse-number">12</span>那基路伯的一個翅膀長五肘，挨着殿那邊的牆；那一個翅膀也長五肘，與這基路伯的翅膀相接。</div>
+<div class="verse"><span class="verse-number">13</span>兩個基路伯張開翅膀，共長二十肘，面向外殿而立。</div>
+<div class="verse"><span class="verse-number">14</span>又用藍色、紫色、朱紅色線和細麻織幔子，在其上繡出基路伯來。</div>
+<div class="verse"><span class="verse-number">15</span>在殿前造了兩根柱子，高三十五肘；每柱頂高五肘。</div>
+<div class="verse"><span class="verse-number">16</span>又照聖所內鍊子的樣式作鍊子，安在柱頂上；又作一百石榴，安在鍊子上。</div>
+<div class="verse"><span class="verse-number">17</span>將兩根柱子立在殿前，一根在右邊，一根在左邊；右邊的起名叫雅斤，左邊的起名叫波阿斯。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志下第三章記述所羅門建造聖殿的實際工程。建造地點是摩利亞山——耶和華向大衛顯現的地方，也是阿珥楠的禾場所在（1節）。開工時間明確記載：第四年二月初二日（2節）。本章詳述殿的尺寸（3節）、前廊（4節）、大殿的裝飾（5-7節）、至聖所（8-9節）、至聖所的基路伯（10-13節）、幔子（14節），以及殿前的兩根柱子雅斤和波阿斯（15-17節）。
+
+      本章的神學意義在於建造地點的選擇：摩利亞山是亞伯拉罕獻以撒的地方（創22），也是大衛在瘟疫中看見天使、購地築壇的禾場（代上21）。這個充滿「獻祭與赦罪」記憶的地點，成為聖殿的所在，說明神刻意將「赦免與蒙恩的歷史」與「敬拜的場所」連結在一起。信徒在神面前的敬拜，永遠以神的赦免恩典為根基。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 敬拜的地點承載著神的揀選與記念</strong><br>聖殿建在摩利亞山，不是偶然的地理選擇，而是神揀選之地的神學宣告。亞伯拉罕在此獻以撒、大衛在此購地求赦，這些歷史記憶使這個地方充滿了「信靠神、神赦免人」的神學意涵。敬拜不是在任意空間的自我表達，而是回應神在歷史中所行之事的感恩宣告。<br><br>
+<strong>2. 建造要按神定的樣式，而非人的創意</strong><br>本章詳細記錄了各部分的尺寸、材料和裝飾，這些都源於大衛從神所得的圖樣（代上28:12、19）。真正的事奉不是以人的創意取代神的指示，而是在神所定的框架內，用最好的材料和工藝去呈現。在信仰的事上，忠於神的原則比跟隨人的創新更為根本。<br><br>
+<strong>3. 至聖所的輝煌說明神是一切事奉的中心</strong><br>至聖所用六百他連得精金包裹（8節），金釘重五十舍客勒，是整個殿中最珍貴的所在。這裡是神的同在之處，也是一切事奉的終點和中心。信徒的事奉生命應如此設計：不論外在形式多麼豐富，最終的中心和目標必須是神的同在。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>所羅門就在耶路撒</strong>冷、<strong>耶和華向他父大衛</strong>顯現的摩利亞山上，就是耶布斯人阿珥楠的禾場上、大衛所指定的地方預備好了，開工建造耶和華的殿。（代下3:1）</td>
+<td>聖殿建在神曾顯現的地方，讓這個地點的歷史成為事奉的根基，就像<strong>一個人在他的信仰見證中最有力量</strong>的地方，往往是他曾深刻經歷神的那些時刻——你<strong>在哪裡曾最清</strong>楚感受到神的同在？那個「摩利亞山」的記憶，如何成為你<strong>今日信仰的根</strong>基？</td>
+</tr>
+<tr>
+<td><strong>在至聖所按造像的</strong><strong>法子造兩個基路伯</strong>，用金子包裹……兩個基路伯張開翅膀，共長二十肘，面向外殿而立。（代下3:10、13）</td>
+<td>基路伯張開翅膀守護約櫃，又面向外殿，象徵神的同在向外輻射，就像<strong>一個光源不只照亮自己周圍</strong>，也向四周散射——你<strong>的靈命中有沒</strong>有一個「聖所」，使你<strong>從神那裡得著</strong>供應，然後又能向周圍的人散發神的光？</td>
+</tr>
+<tr>
+<td><strong>將兩根柱子立在殿</strong>前，<strong>右邊的起名叫雅斤</strong>，左邊的起名叫波阿斯。（代下3:17）</td>
+<td>雅斤意為「祂必堅立」，波阿斯意為「在祂裡有力量」——站在殿前的兩根柱子，每天向進入的人宣告神的堅定與力量，就像<strong>走廊入口的標語</strong>，每天提醒你<strong>前進的力量所</strong>在——在你<strong>的日常信仰中</strong>，有沒有類似「雅斤」和「波阿斯」的提醒，使你<strong>每日記住神</strong>是你<strong>力量的根源</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

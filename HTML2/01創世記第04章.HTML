@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">該隱殺亞伯與人類文明發展</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>有一日，那人和他妻子夏娃同房，夏娃就懷孕，生了該隱〔就是得的意思〕，便說：「耶和華使我得了一個男子。」</div>
+<div class="verse"><span class="verse-number">2</span>又生了該隱的兄弟亞伯。亞伯是牧羊的；該隱是種地的。</div>
+<div class="verse"><span class="verse-number">3</span>有一日，該隱拿地裏的出產為供物獻給耶和華；</div>
+<div class="verse"><span class="verse-number">4</span>亞伯也將他羊群中頭生的和羊的脂油獻上。耶和華看中了亞伯和他的供物，</div>
+<div class="verse"><span class="verse-number">5</span>只是看不中該隱和他的供物。該隱就大大的發怒，變了臉色。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華對該隱說：「你為甚麼發怒呢？你為甚麼變了臉色呢？</div>
+<div class="verse"><span class="verse-number">7</span>你若行得好，豈不蒙悅納？你若行得不好，罪就伏在門前。它必戀慕你，你卻要制伏它。」</div>
+<div class="verse"><span class="verse-number">8</span>該隱與他兄弟亞伯說話；二人正在田間。該隱起來打他兄弟亞伯，把他殺了。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華對該隱說：「你兄弟亞伯在那裏？」他說：「我不知道！我豈是看守我兄弟的嗎？」</div>
+<div class="verse"><span class="verse-number">10</span>耶和華說：「你作了甚麼事呢？你兄弟的血有聲音從地裏向我哀告。</div>
+<div class="verse"><span class="verse-number">11</span>地開了口，從你手裏接受你兄弟的血。現在你必從這地受咒詛。</div>
+<div class="verse"><span class="verse-number">12</span>你種地，地不再給你效力；你必流離飄蕩在地上。」</div>
+<div class="verse"><span class="verse-number">13</span>該隱對耶和華說：「我的刑罰太重，過於我所能當的。</div>
+<div class="verse"><span class="verse-number">14</span>你如今趕逐我離開這地，以致不見你面；我必流離飄蕩在地上，凡遇見我的必殺我。」</div>
+<div class="verse"><span class="verse-number">15</span>耶和華對他說：「凡殺該隱的，必遭報七倍。」耶和華就給該隱立一個記號，免得人遇見他就殺他。</div>
+<div class="verse"><span class="verse-number">16</span>於是該隱離開耶和華的面，去住在伊甸東邊挪得之地。</div>
+<div class="verse"><span class="verse-number">17</span>該隱與妻子同房，他妻子就懷孕，生了以諾。該隱建造了一座城，就按着他兒子的名將那城叫作以諾。</div>
+<div class="verse"><span class="verse-number">18</span>以諾生以拿；以拿生米戶雅利；米戶雅利生瑪土撒利；瑪土撒利生拉麥。</div>
+<div class="verse"><span class="verse-number">19</span>拉麥娶了兩個妻：一個名叫亞大，一個名叫洗拉。</div>
+<div class="verse"><span class="verse-number">20</span>亞大生雅八；雅八就是住帳棚、牧養牲畜之人的祖師。</div>
+<div class="verse"><span class="verse-number">21</span>雅八的兄弟名叫猶八；他是一切彈琴吹簫之人的祖師。</div>
+<div class="verse"><span class="verse-number">22</span>洗拉又生了土八該隱；他是打造各樣銅鐵利器的〔或作：是銅匠鐵匠的祖師〕。土八該隱的妹子是拿瑪。</div>
+<div class="verse"><span class="verse-number">23</span>拉麥對他兩個妻子說：亞大、洗拉，聽我的聲音；拉麥的妻子，細聽我的話語：壯年人傷我，我把他殺了；少年人損我，我把他害了〔或作：我殺壯士卻傷自己，我害幼童卻損本身〕。</div>
+<div class="verse"><span class="verse-number">24</span>若殺該隱，遭報七倍，殺拉麥，必遭報七十七倍。</div>
+<div class="verse"><span class="verse-number">25</span>亞當又與妻子同房，她就生了一個兒子，起名叫塞特，意思說：「神另給我立了一個兒子代替亞伯，因為該隱殺了他。」</div>
+<div class="verse"><span class="verse-number">26</span>塞特也生了一個兒子，起名叫以挪士。那時候，人才求告耶和華的名。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+創世記第4章記載人類歷史上第一起謀殺案。該隱和亞伯向神獻祭,神看中亞伯的供物卻看不中該隱的供物。該隱因嫉妒發怒,雖然神警告他要制伏罪,他仍殺了弟弟亞伯。神審問該隱,宣告咒詛:地不再為他效力,他要流離飄蕩。該隱離開神的面,建立城市,他的後代發展出畜牧、音樂、冶金等文明,但也越來越暴力,拉麥誇耀報復殺人。與該隱的後代對比,神為亞當夏娃立塞特代替亞伯,塞特的後代開始求告神的名。本章顯示罪如何迅速擴散,人類文明的發展與道德的墮落並存,但神仍保守敬虔的後裔。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神看重的是獻祭者的心而非祭物本身</strong><br>神看中亞伯和他的供物,卻看不中該隱和他的供物。問題不在於祭物的種類,而在於獻祭者的心。亞伯憑信心獻上頭生的和脂油,是最好的部分;該隱只是拿地裡的出產,沒有用心。神看內心,不看外表。我們事奉神、奉獻給神,重要的不是數量多少,而是是否出於真誠的愛和信心。<br><br>
+<strong>2. 罪像野獸伏在門前要制伏它</strong><br>神警告該隱:罪就伏在門前,它戀慕你,你卻要制伏它。罪不會自動消失,而是像野獸等待機會吞吃我們。面對試探和怒氣,我們必須主動制伏,不能任由它掌控。該隱沒有聽從神的警告,讓怒氣和嫉妒控制他,最終犯下謀殺罪。我們要警醒,在罪還小的時候就制伏它,不要等它長大吞噬我們。<br><br>
+<strong>3. 離開神的面帶來文明卻無真正平安</strong><br>該隱離開神的面,建造城市,他的後代發展出畜牧、音樂、冶金等文明成就,但同時也越來越暴力和驕傲。物質文明的進步不能取代與神的關係,離開神的生命再輝煌也是空虛的。相反,塞特的後代開始求告神的名,雖然聖經沒記載他們的文明成就,但他們與神同行,這才是真正的祝福。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>亞伯也將他羊群中</strong><strong>頭生的和羊的脂油</strong>獻上。耶和華看中了亞伯和他的供物。(創4:4)</td>
+<td>你<strong>獻給神的</strong>是最好的還是剩餘的?就像<strong>用剩菜招待貴賓很失禮</strong>,你是否<strong>將最好的時間</strong>、金錢、才幹獻給神?</td>
+</tr>
+<tr>
+<td><strong>你若行得不好</strong>,<strong>罪就伏在門前</strong>。它必戀慕你,你卻要制伏它。(創4:7)</td>
+<td>你是否<strong>主動制伏罪的</strong>試探?就像<strong>看到垃圾食物要主動避開</strong>,你<strong>會在罪還小的</strong>時候就對付它,還是讓它越長越大?</td>
+</tr>
+<tr>
+<td><strong>於是該隱離開耶和</strong><strong>華的面</strong>,去住在伊甸東邊挪得之地。(創4:16)</td>
+<td>你是否<strong>因犯罪而遠離</strong>神?就像<strong>做錯事就躲避父母</strong>,你<strong>知道離開神的</strong>面會失去真正的平安嗎?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

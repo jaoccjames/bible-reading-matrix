@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記上第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記上第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">掃羅首戰得勝</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>亞捫人的王拿轄上來，對着基列雅比安營。雅比眾人對拿轄說：「你與我們立約，我們就服事你。」</div>
+<div class="verse"><span class="verse-number">2</span>亞捫人拿轄說：「你們若由我剜出你們各人的右眼，以此凌辱以色列眾人，我就與你們立約。」</div>
+<div class="verse"><span class="verse-number">3</span>雅比的長老對他說：「求你寬容我們七日，等我們打發人往以色列的全境去；若沒有人救我們，我們就出來歸順你。」</div>
+<div class="verse"><span class="verse-number">4</span>使者到了掃羅住的基比亞，將這話說給百姓聽，百姓就都放聲而哭。</div>
+<div class="verse"><span class="verse-number">5</span>掃羅正從田間趕牛回來，問說：「百姓為甚麼哭呢？」眾人將雅比人的話告訴他。</div>
+<div class="verse"><span class="verse-number">6</span>掃羅聽見這話，就被神的靈大大感動，甚是發怒。</div>
+<div class="verse"><span class="verse-number">7</span>他將一對牛切成塊子，託付使者傳送以色列的全境，說：「凡不出來跟隨掃羅和撒母耳的，也必這樣切開他的牛。」於是耶和華使百姓懼怕，他們就都出來，如同一人。</div>
+<div class="verse"><span class="verse-number">8</span>掃羅在比色數點他們：以色列人有三十萬，猶大人有三萬。</div>
+<div class="verse"><span class="verse-number">9</span>眾人對那使者說：「你們要回覆基列雅比人說，明日太陽近午的時候，你們必得解救。」使者回去告訴雅比人，他們就歡喜了。</div>
+<div class="verse"><span class="verse-number">10</span>於是雅比人對亞捫人說：「明日我們出來歸順你們，你們可以隨意待我們。」</div>
+<div class="verse"><span class="verse-number">11</span>第二日，掃羅將百姓分為三隊，在晨更的時候入了亞捫人的營，擊殺他們直到太陽近午，剩下的人都逃散，沒有二人同在一處的。</div>
+<div class="verse"><span class="verse-number">12</span>百姓對撒母耳說：「那說『掃羅豈能管理我們』的是誰呢？可以將他交出來，我們好殺死他。」</div>
+<div class="verse"><span class="verse-number">13</span>掃羅說：「今日耶和華在以色列中施行拯救，所以不可殺人。」</div>
+<div class="verse"><span class="verse-number">14</span>撒母耳對百姓說：「我們要往吉甲去，在那裏立國。」</div>
+<div class="verse"><span class="verse-number">15</span>眾百姓就到了吉甲那裏，在耶和華面前立掃羅為王，又在耶和華面前獻平安祭。掃羅和以色列眾人大大歡喜。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載掃羅作王後的第一場軍事勝利,確立了他在以色列的領導地位。亞捫人圍攻基列雅比,提出極為羞辱的條件——剜出每個人的右眼作為立約的代價。這不僅是身體的傷害,更是對整個以色列民族的侮辱,因為失去右眼意味著失去作戰能力。掃羅聽聞此事後被聖靈大大感動,展現出果斷的領導力,迅速召集軍隊並策劃突襲。他在黎明時分兵三路進攻,取得壓倒性勝利。這場勝利不僅解救了雅比城,更證明了神對掃羅的膏立,使原本質疑他的人也閉口無言。掃羅在勝利後展現出寬大的胸懷,拒絕報復那些曾經藐視他的人,將榮耀歸給神。隨後百姓在吉甲重新確認掃羅的王位,標誌著他王權的真正建立。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 聖靈的能力帶來行動的勇氣</strong><br>掃羅聽到雅比人的危機後,被神的靈大大感動,從一個躲在器具中的膽怯者變成果斷的領袖。這個轉變不是靠自己的努力,而是聖靈的工作。聖靈不只給人內在的平安,更賜下行動的勇氣和智慧。掃羅能夠迅速召集三十三萬大軍,策劃周密的作戰計劃,都是聖靈賦予的能力。這提醒我們,真正的屬靈能力不是讓我們躲在舒適圈中享受,而是推動我們走出去面對挑戰,為神的國度爭戰。當我們順服聖靈的感動時,原本不可能的事就成為可能。<br><br>
+<strong>2. 危機是領導力被驗證的時刻</strong><br>掃羅雖然已被膏立為王,但直到這場戰役才真正贏得百姓的心。頭銜不等於權柄,位份不等於影響力,真正的領導力必須在危機中被驗證。掃羅面對國家危機時展現出的果斷、勇氣和智慧,使百姓心悅誠服。同樣,我們在屬靈生命中也需要經歷考驗,才能證明神在我們身上的工作。神允許困難臨到,不是要擊倒我們,而是要在我們身上彰顯祂的能力,使我們成為別人的祝福。每一次危機都是神給我們的機會,讓我們經歷祂、見證祂。<br><br>
+<strong>3. 得勝後的態度顯明屬靈成熟度</strong><br>掃羅在大勝之後,拒絕報復那些曾經藐視他的人,反而將榮耀歸給神,說「今日耶和華在以色列中施行拯救」。這顯示出真正的屬靈成熟——知道勝利來自神而非自己的能力。得勝後能否保持謙卑,是檢驗一個人屬靈生命的關鍵。許多人在成功後就忘記神的恩典,變得驕傲自大。掃羅此時展現出的寬容和謙卑令人讚賞,可惜他後來沒有持守這樣的態度。這提醒我們,一次的得勝不代表永久的成熟,屬靈生命需要持續的警醒和操練。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>掃羅聽見這話</strong>,<strong>就被神的靈大大感</strong>動,甚是發怒。(撒母耳記上11:6)</td>
+<td>當我看見不公義的事發生時,是否願意讓聖靈感動我採取行動?就像<strong>看到朋友被霸凌時不能只是同情而</strong>要勇敢站出來,我是否常常被感動卻不行動,讓聖靈的催促停留在情緒層面?</td>
+</tr>
+<tr>
+<td><strong>於是耶和華使百姓</strong>懼怕,<strong>他們就都出來</strong>,如同一人。(撒母耳記上11:7)</td>
+<td>在面對重大挑戰時,我是否相信神能將分散的力量凝聚成一?就像<strong>拔河比賽中各自用力不如同心協力</strong>,我是否願意放下個人的計算,與其他信徒合一來回應神的呼召?</td>
+</tr>
+<tr>
+<td><strong>掃羅說</strong>:<strong>今日耶和華在以色</strong>列中施行拯救,所以不可殺人。(撒母耳記上11:13)</td>
+<td>當我經歷成功時,是否將榮耀歸給神還是歸給自己?就像<strong>團隊專案成功後只強調自己的貢獻</strong>,我是否在得勝後仍記得是神的恩典,還是開始驕傲並想報復曾經反對我的人?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

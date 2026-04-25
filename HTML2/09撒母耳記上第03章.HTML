@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記上第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記上第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神呼召少年撒母耳</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>童子撒母耳在以利面前事奉耶和華。當那些日子，耶和華的言語稀少，不常有默示。</div>
+<div class="verse"><span class="verse-number">2</span>一日，以利睡臥在自己的地方；他眼目昏花，看不分明。</div>
+<div class="verse"><span class="verse-number">3</span>神的燈在神耶和華殿內約櫃那裏，還沒有熄滅，撒母耳已經睡了。</div>
+<div class="verse"><span class="verse-number">4</span>耶和華呼喚撒母耳。撒母耳說：「我在這裏！」</div>
+<div class="verse"><span class="verse-number">5</span>就跑到以利那裏，說：「你呼喚我？我在這裏。」以利回答說：「我沒有呼喚你，你去睡吧。」他就去睡了。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華又呼喚撒母耳。撒母耳起來，到以利那裏，說：「你呼喚我？我在這裏。」以利回答說：「我的兒，我沒有呼喚你，你去睡吧。」</div>
+<div class="verse"><span class="verse-number">7</span>那時撒母耳還未認識耶和華，也未得耶和華的默示。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華第三次呼喚撒母耳。撒母耳起來，到以利那裏，說：「你又呼喚我？我在這裏。」以利才明白是耶和華呼喚童子。</div>
+<div class="verse"><span class="verse-number">9</span>因此以利對撒母耳說：「你仍去睡吧；若再呼喚你，你就說：『耶和華啊，請說，僕人敬聽！』」撒母耳就去，仍睡在原處。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華又來站着，像前三次呼喚說：「撒母耳啊！撒母耳啊！」撒母耳回答說：「請說，僕人敬聽！」</div>
+<div class="verse"><span class="verse-number">11</span>耶和華對撒母耳說：「我在以色列中必行一件事，叫聽見的人都必耳鳴。</div>
+<div class="verse"><span class="verse-number">12</span>我指着以利家所說的話，到了時候，我必始終應驗在以利身上。</div>
+<div class="verse"><span class="verse-number">13</span>我曾告訴他必永遠降罰與他的家，因他知道兒子作孽，自招咒詛，卻不禁止他們。</div>
+<div class="verse"><span class="verse-number">14</span>所以我向以利家起誓說：『以利家的罪孽，雖獻祭奉禮物，永不能得贖去。』」</div>
+<div class="verse"><span class="verse-number">15</span>撒母耳睡到天亮，就開了耶和華的殿門，不敢將默示告訴以利。</div>
+<div class="verse"><span class="verse-number">16</span>以利呼喚撒母耳說：「我兒撒母耳啊！」撒母耳回答說：「我在這裏！」</div>
+<div class="verse"><span class="verse-number">17</span>以利說：「耶和華對你說甚麼，你不要向我隱瞞；你若將神對你所說的隱瞞一句，願他重重的降罰與你。」</div>
+<div class="verse"><span class="verse-number">18</span>撒母耳就把一切話都告訴了以利，並沒有隱瞞。以利說：「這是出於耶和華，願他憑自己的意旨而行。」</div>
+<div class="verse"><span class="verse-number">19</span>撒母耳長大了，耶和華與他同在，使他所說的話一句都不落空。</div>
+<div class="verse"><span class="verse-number">20</span>從但到別是巴所有的以色列人都知道耶和華立撒母耳為先知。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華又在示羅顯現；因為耶和華將自己的話默示撒母耳，撒母耳就把這話傳遍以色列地。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+撒母耳記上第3章記載了神首次向少年撒母耳說話的歷史性時刻。當時以色列處於士師時代末期,祭司以利年老,他的兒子們敗壞神的祭司職分,導致神的言語稀少。在這屬靈黑暗的時期,神呼召在聖殿中事奉的童子撒母耳,向他啟示對以利家的審判。撒母耳起初不認識神的聲音,經過以利的指導才學會回應。這次經歷標誌著撒母耳先知職分的開始,他將成為帶領以色列進入君王時代的關鍵人物。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神主動呼召人</strong><br>神在黑暗時代主動呼喚撒母耳,顯明神尋找人的心意。神的呼召不受環境限制,即使在屬靈低潮中,神仍興起合用的器皿。呼召是神的主權,人只需以敞開的心回應。<br><br>
+<strong>2. 敬聽順服的態度</strong><br>撒母耳從不認識神的聲音,到學會說「請說,僕人敬聽」,展現了謙卑受教的心。認識神的聲音需要屬靈導師的引導,更需要個人願意順服的心志,這是事奉神的基本態度。<br><br>
+<strong>3. 忠心傳講神話語</strong><br>撒母耳雖面對艱難的信息,仍完全誠實地傳達神的話,不加修飾也不隱瞞。真實的先知必須忠於神的託付,即使話語嚴厲或不受歡迎,也要完整傳講,這是神僕人的品格。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華呼喚撒母耳</strong>。<strong>撒母耳說</strong>:我在這裡!(撒上3:4)</td>
+<td>就像<strong>手機響起卻不確定是誰來電</strong>,撒母耳起初無法分辨神的聲音,你<strong>在生活中</strong>是否也曾聽見神的呼喚卻誤以為是其他聲音?你如何<strong>培養敏銳聽見</strong>神聲音的能力?</td>
+</tr>
+<tr>
+<td><strong>撒母耳回答說</strong>:請說,<strong>僕人敬聽</strong>!(撒上3:10)</td>
+<td>就像<strong>打開應用程式前需要先允許權限</strong>,撒母耳從「我在這裡」到「僕人敬聽」,態度轉變顯明他願意順服。你<strong>在回應神時</strong>,是帶著主權還是帶著順服的心?</td>
+</tr>
+<tr>
+<td><strong>撒母耳就把一切話</strong><strong>都告訴了以利</strong>,並沒有隱瞞。(撒上3:18)</td>
+<td>就像<strong>醫生必須完整告知病情而不能隱瞞</strong>壞消息,撒母耳面對艱難的信息仍忠心傳講。當神託付你<strong>傳遞不受歡迎</strong>的真理時,你是否<strong>有勇氣完整表</strong>達,還是會選擇性地美化或隱瞞?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

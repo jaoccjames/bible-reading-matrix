@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第109章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第109章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以愛回報恨：困苦中呼求神照慈愛拯救</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩，交與伶長）我所讚美的神啊，求你不要閉口不言。</div>
+<div class="verse"><span class="verse-number">2</span>因為惡人的嘴和詭詐人的口已經張開攻擊我；他們用撒謊的舌頭對我說話。</div>
+<div class="verse"><span class="verse-number">3</span>他們圍繞我，說怨恨的話，又無故的攻打我。</div>
+<div class="verse"><span class="verse-number">4</span>他們與我為敵以報我愛，但我專心祈禱。</div>
+<div class="verse"><span class="verse-number">5</span>他們向我以惡報善，以恨報愛。</div>
+<div class="verse"><span class="verse-number">6</span>願你派一個惡人轄制他，派一個對頭站在他右邊！</div>
+<div class="verse"><span class="verse-number">7</span>他受審判的時候，願他出來擔當罪名！願他的祈禱反成為罪！</div>
+<div class="verse"><span class="verse-number">8</span>願他的年日短少！願別人得他的職分！</div>
+<div class="verse"><span class="verse-number">9</span>願他的兒女為孤兒，他的妻子為寡婦！</div>
+<div class="verse"><span class="verse-number">10</span>願他的兒女漂流討飯，從他們荒涼之處出來求食！</div>
+<div class="verse"><span class="verse-number">11</span>願強暴的債主牢籠他一切所有的！願外人搶他勞碌得來的！</div>
+<div class="verse"><span class="verse-number">12</span>願無人向他延綿施恩！願無人可憐他的孤兒！</div>
+<div class="verse"><span class="verse-number">13</span>願他的後人斷絕，名字被塗抹，不傳於下代！</div>
+<div class="verse"><span class="verse-number">14</span>願他祖宗的罪孽被耶和華記念！願他母親的罪過不被塗抹！</div>
+<div class="verse"><span class="verse-number">15</span>願這些罪常在耶和華面前，使他的名號斷絕於世！</div>
+<div class="verse"><span class="verse-number">16</span>因為他不想施恩，卻逼迫困苦窮乏的和傷心的人，要把他們治死。</div>
+<div class="verse"><span class="verse-number">17</span>他愛咒罵，咒罵就臨到他；他不喜愛福樂，福樂就與他遠離！</div>
+<div class="verse"><span class="verse-number">18</span>他拿咒罵當衣服穿上；這咒罵就如水進他裏面，像油入他的骨頭。</div>
+<div class="verse"><span class="verse-number">19</span>願這咒罵當他遮身的衣服，當他常束的腰帶！</div>
+<div class="verse"><span class="verse-number">20</span>這就是我對頭和用惡言議論我的人從耶和華那裏所受的報應。</div>
+<div class="verse"><span class="verse-number">21</span>主耶和華啊，求你為你的名恩待我；因你的慈愛美好，求你搭救我！</div>
+<div class="verse"><span class="verse-number">22</span>因為我困苦窮乏，內心受傷。</div>
+<div class="verse"><span class="verse-number">23</span>我如日影漸漸偏斜而去；我如蝗蟲被抖出來。</div>
+<div class="verse"><span class="verse-number">24</span>我因禁食，膝骨軟弱；我身上的肉也漸漸瘦了。</div>
+<div class="verse"><span class="verse-number">25</span>我受他們的羞辱，他們看見我便搖頭。</div>
+<div class="verse"><span class="verse-number">26</span>耶和華我的神阿，求你幫助我，照你的慈愛拯救我，</div>
+<div class="verse"><span class="verse-number">27</span>使他們知道這是你的手，是你耶和華所行的事。</div>
+<div class="verse"><span class="verse-number">28</span>任憑他們咒罵，惟願你賜福；他們幾時起來就必蒙羞，你的僕人卻要歡喜。</div>
+<div class="verse"><span class="verse-number">29</span>願我的對頭披戴羞辱！願他們以自己的羞愧為外袍遮身！</div>
+<div class="verse"><span class="verse-number">30</span>我要用口極力稱謝耶和華；我要在眾人中間讚美他；</div>
+<div class="verse"><span class="verse-number">31</span>因為他必站在窮乏人的右邊，要救他脫離審判他靈魂的人。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第109篇是大衛所作，是詩篇中最著名的「咒詛詩篇」之一，以大量對仇敵的咒詛語言著稱（第6-19節）。使徒行傳1章20節引用第8節（「願別人得他的職分！」），將其應用於猶大，確認本篇在新約中的使用。
+
+      理解本篇有幾個重要的神學考量。首先，咒詛的對象（第6-19節）可能是仇敵對大衛所說的咒詛話語的引述，而非大衛自己的祈禱——這個解釋使第20節「這就是我對頭……所受的報應」成為對引述的總結。其次，即使這些是大衛自己的咒詛祈禱，詩篇傳統允許在義憤中將審判的請求帶到神面前，讓神作最終的裁決，而非自己報復。
+
+      本篇最重要的轉折在第21節：在所有的咒詛之後，大衛以「求你為你的名恩待我；因你的慈愛美好，求你搭救我！」轉向神的慈愛。全篇以「我要用口極力稱謝耶和華」（第30節）的讚美作結，揭示即使在深重的仇恨與苦難中，信仰最終仍回到讚美的方向。第31節「因為他必站在窮乏人的右邊」是神為弱勢者辯護最深情的宣告。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 以愛回報恨卻仍遭迫害是信仰者最深的委屈</strong><br>「他們與我為敵以報我愛，但我專心祈禱……他們向我以惡報善，以恨報愛。」（第4-5節）大衛描述了人際關係中最深的不公義：他以愛待仇敵，卻換來更深的攻擊。「但我專心祈禱」是大衛對這種委屈的回應——不是以惡報惡，而是將憤怒帶到神面前，在禱告中尋求出口。這種「在委屈中仍選擇禱告而非報復」的信仰回應，是耶穌「愛你們的仇敵」教導最早的舊約雛形。<br><br>
+<strong>2. 將審判的憤怒帶到神面前而非自行報復是信仰的智慧</strong><br>「主耶和華啊，求你為你的名恩待我；因你的慈愛美好，求你搭救我！」（第21節）在經歷了大量的咒詛祈禱之後，大衛最終的求告是以神的名和慈愛作基礎，而非以自己的報復心願為動力。將對仇敵的憤怒帶到神面前，讓神來決定審判——這是比自行報復更高的信仰行動。信徒在遭受不公正對待時，可以像大衛一樣，在禱告中誠實地表達憤怒，但將最終的審判權交在神手中。<br><br>
+<strong>3. 神必站在窮乏人的右邊是信仰對弱勢者最深的保證</strong><br>「因為他必站在窮乏人的右邊，要救他脫離審判他靈魂的人。」（第31節）在古代法庭中，「站在右邊」是辯護者的位置。神不是遠距離的旁觀者，而是那位主動站在最弱勢者旁邊、為他辯護的神。「窮乏人」——那些在人間沒有辯護者、沒有力量自保的人——在神那裡有最確實的辯護者。這個宣告對信徒是最深的安慰，也是對任何欺壓弱勢者的最嚴重警告。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他們與我為敵以報</strong>我愛，<strong>但我專心祈禱</strong>。（詩109:4）</td>
+<td>就像<strong>善意被曲解和惡意回報是人際關係</strong>中最令人寒心的遭遇，你<strong>在遭受「以惡</strong>報善、以恨報愛」的委屈時，是否能像大衛一樣選擇「專心祈禱」，讓禱告而非報復成為你<strong>憤怒的出口</strong>？</td>
+</tr>
+<tr>
+<td><strong>主耶和華啊</strong>，<strong>求你為你的名恩待</strong>我；因你的慈愛美好，求你搭救我！（詩109:21）</td>
+<td>就像<strong>在最激烈的情緒之後重新回到理性</strong>，選擇以更高的原則行動，你是否能在憤怒與委屈之後，仍能轉向「以神的名和慈愛為根基」的禱告，讓這個轉向成為你<strong>靈魂從苦毒到</strong>釋放的起點？</td>
+</tr>
+<tr>
+<td><strong>因為他必站在窮乏</strong><strong>人的右邊</strong>，要救他脫離審判他靈魂的人。（詩109:31）</td>
+<td>就像<strong>在沒有任何人願意替你<strong>辯護時</strong></strong>，發現法庭上有一位你<strong>不認識卻代表</strong>正義的辯護人站起來，你是否<strong>真的相信神「</strong>必站在你<strong>的右邊」——</strong>在那些你<strong>最感到孤立無</strong>援、被眾人誤解或欺壓的時刻，祂是你<strong>的辯護者</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雅歌第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+雅歌第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">我屬我的良人他也戀慕我：愛情的主動邀請</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>［新郎］王女啊，你的腳在鞋中何其美好！你的大腿圓潤，好像美玉，是巧匠的手作成的。</div>
+<div class="verse"><span class="verse-number">2</span>你的肚臍如圓杯，不缺調和的酒；你的腰如一堆麥子，周圍有百合花。</div>
+<div class="verse"><span class="verse-number">3</span>你的兩乳好像一對小鹿，就是母鹿雙生的。</div>
+<div class="verse"><span class="verse-number">4</span>你的頸項如象牙臺；你的眼目像希實本、巴特拉併門旁的水池；你的鼻子彷彿朝大馬色的利巴嫩塔。</div>
+<div class="verse"><span class="verse-number">5</span>你的頭在你身上好像迦密山；你頭上的髮是紫黑色；王的心因這下垂的髮綹繫住了。</div>
+<div class="verse"><span class="verse-number">6</span>我所愛的，你何其美好！何其可悅，使人歡暢喜樂！</div>
+<div class="verse"><span class="verse-number">7</span>你的身量好像棕樹；你的兩乳如同其上的果子，纍纍下垂。</div>
+<div class="verse"><span class="verse-number">8</span>我說：我要上這棕樹，抓住枝子。願你的兩乳好像葡萄纍纍下垂，你鼻子的氣味香如蘋果；</div>
+<div class="verse"><span class="verse-number">9</span>你的口如上好的酒。［新娘］女子說：為我的良人下咽舒暢，流入睡覺人的嘴中。</div>
+<div class="verse"><span class="verse-number">10</span>我屬我的良人，他也戀慕我。</div>
+<div class="verse"><span class="verse-number">11</span>我的良人，來吧！你我可以往田間去；你我可以在村莊住宿。</div>
+<div class="verse"><span class="verse-number">12</span>我們早晨起來往葡萄園去，看看葡萄發芽開花沒有，石榴放蕊沒有；我在那裏要將我的愛情給你。</div>
+<div class="verse"><span class="verse-number">13</span>風茄放香，在我們的門內有各樣新陳佳美的果子；我的良人，這都是我為你存留的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+雅歌第七章是全書第三首、也是最詳盡的新郎讚美詩（wasf），從腳到頭細膩描繪新娘的美麗（1-9節），然後由新娘主動發出邀請，呼召良人一同到田間去共度美好時光（10-13節）。本章的讚美詩從腳開始（1節），向上描繪身體的各個部位，這種從下而上的讚美順序，在古近東詩歌中有時象徵對愛人整體的接納。第10節「我屬我的良人，他也戀慕我」，是雅歌三次「歸屬宣言」的最後一次，但有一個微妙的不同：前兩次（2:16,6:3）說「良人屬我，我也屬他」，這次改為「我屬我的良人，他也戀慕我」——強調「他戀慕我」，使用的動詞 teshukah（戀慕）與創世紀3:16「你必戀慕你的丈夫」同字，指出了神恢復創造秩序的應許——在恩典的愛中，彼此戀慕取代了創世記墮落後的衝突。第11-13節新娘主動邀請良人到田間，為他準備了「新陳佳美的果子」，展現了愛的主動服事與奉獻。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「他也戀慕我」：神主動地、持續地渴望與我們親近</strong><br>第10節「他也戀慕我」，是雅歌最深刻的屬靈啟示之一。「戀慕」（teshukah）是強烈渴望和深情盼望的動詞。神不只是接受信徒的愛，祂也主動「戀慕」信徒的回應和委身。這對許多信徒是難以置信的——「神真的渴望與我親近嗎？」然而聖經清楚地揭示：神創造人是為了與祂建立親密關係，祂在人尋求祂的回應中感到喜悅，如同父親渴望與兒女同在。<br><br>
+<strong>2. 主動邀請良人：信徒在愛中的主動性讓關係更豐富</strong><br>第11-13節新娘主動說「來吧！你我往田間去」，並為良人預備了果子。在雅歌的愛情關係中，新娘不只是被動的接受者，她也主動地邀請、服事和奉獻。在屬靈層面，與神的關係也需要這種主動性——主動靠近、主動禱告、主動為神預備（清潔自己、在生命中結出果子）——這種主動性使關係更加豐富和深入，而非單方面等待神來找我們。<br><br>
+<strong>3. 「這都是我為你存留的」：愛是積累的預備與獻上</strong><br>第13節「在我們的門內有各樣新陳佳美的果子；我的良人，這都是我為你存留的」，描繪了愛的準備性——新娘在平時就積存了各樣果子，等待與良人分享。在屬靈層面，信徒在日常生命中積累的美德、服事的果子、在苦難中磨練的信仰，都是「為神存留的」，等待在愛的關係中獻給祂，這是信仰生命的美麗目標。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>我屬我的良人</strong>，<strong>他也戀慕我</strong>。」（雅7:10）</td>
+<td>就像<strong>一位深情的父母</strong>，無論孩子離得多遠，都時刻思念著與孩子相聚，神的「戀慕」是真實的、持續的、不因我們的疏遠而消退的，你<strong>有多容易相信</strong>「神渴望與你<strong>親近」這個事</strong>實？什麼讓你<strong>覺得神不可</strong>能真的「戀慕」你？</td>
+</tr>
+<tr>
+<td>「<strong>我的良人</strong>，來吧！<strong>你我可以往田間去</strong>……我在那裏要將我的愛情給你。」（雅7:11-12）</td>
+<td>就像<strong>情侶自發地計劃一次特別約會</strong>，主動為關係創造美好時光，你<strong>在與神的關係</strong>中是否也有這種主動性——主動計劃靈修時間、主動安排服事機會、主動預備心來親近神？還是你<strong>更多地在等神</strong>先來找你？</td>
+</tr>
+<tr>
+<td>「<strong>在我們的門內有各</strong><strong>樣新陳佳美的果子</strong>；我的良人，這都是我為你存留的。」（雅7:13）</td>
+<td>就像<strong>農夫整年辛勤耕作</strong>，等待豐收的果子在適當時機呈獻，你<strong>生命中「為神</strong>存留的果子」是什麼？那些在日常生活、職場、家庭或服事中積累的屬靈成果，你是否<strong>有意識地將它</strong>們視為「獻給神的」而非只是自己的成就？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志上第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志上第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">各方歸附：一心立大衛為王的勇士</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>大衛因怕基士的兒子掃羅，躲在洗革拉的時候，有勇士到他那裏幫助他打仗。</div>
+<div class="verse"><span class="verse-number">2</span>他們善於拉弓，能用左右兩手甩石射箭，都是便雅憫人掃羅的族弟兄。</div>
+<div class="verse"><span class="verse-number">3</span>為首的是亞希以謝，其次是約阿施，都是基比亞人示瑪的兒子。還有亞斯瑪威的兒子耶薛和毘力，又有比拉迦，並亞拿突人耶戶，</div>
+<div class="verse"><span class="verse-number">4</span>基遍人以實買雅（他在三十人中是勇士，管理他們），且有耶利米、雅哈悉、約哈難，和基得拉人約撒拔、</div>
+<div class="verse"><span class="verse-number">5</span>伊利烏賽、耶利摩、比亞利雅、示瑪利雅，哈律弗人示法提雅，</div>
+<div class="verse"><span class="verse-number">6</span>可拉人以利加拿、耶西亞、亞薩列、約以謝、雅朔班，</div>
+<div class="verse"><span class="verse-number">7</span>基多人耶羅罕的兒子猶拉和西巴第雅。</div>
+<div class="verse"><span class="verse-number">8</span>迦得支派中有人到曠野的山寨投奔大衛，都是大能的勇士，能拿盾牌和槍的戰士。他們的面貌好像獅子，快跑如同山上的鹿。</div>
+<div class="verse"><span class="verse-number">9</span>第一以薛，第二俄巴底雅，第三以利押，</div>
+<div class="verse"><span class="verse-number">10</span>第四彌施瑪拿，第五耶利米，</div>
+<div class="verse"><span class="verse-number">11</span>第六亞太，第七以利業，</div>
+<div class="verse"><span class="verse-number">12</span>第八約哈難，第九以利薩巴，</div>
+<div class="verse"><span class="verse-number">13</span>第十耶利米，第十一末巴奈。</div>
+<div class="verse"><span class="verse-number">14</span>這都是迦得人中的軍長，至小的能抵一百人，至大的能抵一千人。</div>
+<div class="verse"><span class="verse-number">15</span>正月，約但河水漲過兩岸的時候，他們過河，使一切住平原的人東奔西逃。</div>
+<div class="verse"><span class="verse-number">16</span>又有便雅憫和猶大人到山寨大衛那裏。</div>
+<div class="verse"><span class="verse-number">17</span>大衛出去迎接他們，對他們說：「你們若是和和平平的來幫助我，我心就與你們相契；你們若是將我這無罪的人賣在敵人手裏，願我們列祖的神察看責罰。」</div>
+<div class="verse"><span class="verse-number">18</span>那時神的靈感動那三十個勇士的首領亞瑪撒，他就說：大衛啊，我們是歸於你的！耶西的兒子啊，我們是幫助你的！願你平平安安，願幫助你的也都平安！因為你的神幫助你。大衛就收留他們，立他們作軍長。</div>
+<div class="verse"><span class="verse-number">19</span>大衛從前與非利士人同去，要與掃羅爭戰，有些瑪拿西人來投奔大衛，他們卻沒有幫助非利士人；因為非利士人的首領商議，打發他們回去，說：「恐怕大衛拿我們的首級，歸降他的主人掃羅。」</div>
+<div class="verse"><span class="verse-number">20</span>大衛往洗革拉去的時候，有瑪拿西人的千夫長押拿、約撒拔、耶疊、米迦勒、約撒拔、以利戶、洗勒太都來投奔他。</div>
+<div class="verse"><span class="verse-number">21</span>這些人幫助大衛攻擊群賊；他們都是大能的勇士，且作軍長。</div>
+<div class="verse"><span class="verse-number">22</span>那時天天有人來幫助大衛，以致成了大軍，如神的軍一樣。</div>
+<div class="verse"><span class="verse-number">23</span>預備打仗的兵來到希伯崙見大衛，要照着耶和華的話將掃羅的國位歸與大衛。他們的數目如下：</div>
+<div class="verse"><span class="verse-number">24</span>猶大支派，拿盾牌和槍預備打仗的有六千八百人。</div>
+<div class="verse"><span class="verse-number">25</span>西緬支派，能上陣大能的勇士有七千一百人。</div>
+<div class="verse"><span class="verse-number">26</span>利未支派有四千六百人。</div>
+<div class="verse"><span class="verse-number">27</span>耶何耶大是亞倫家的首領，跟從他的有三千七百人。</div>
+<div class="verse"><span class="verse-number">28</span>還有少年大能的勇士撒督，同着他的有族長二十二人。</div>
+<div class="verse"><span class="verse-number">29</span>便雅憫支派，掃羅的族弟兄也有三千人，他們向來大半歸順掃羅家。</div>
+<div class="verse"><span class="verse-number">30</span>以法蓮支派大能的勇士，在本族着名的有二萬零八百人。</div>
+<div class="verse"><span class="verse-number">31</span>瑪拿西半支派，冊上有名的共一萬八千人，都來立大衛作王。</div>
+<div class="verse"><span class="verse-number">32</span>以薩迦支派，有二百族長都通達時務，知道以色列人所當行的；他們族弟兄都聽從他們的命令。</div>
+<div class="verse"><span class="verse-number">33</span>西布倫支派，能上陣用各樣兵器打仗、行伍整齊、不生二心的有五萬人。</div>
+<div class="verse"><span class="verse-number">34</span>拿弗他利支派，有一千軍長；跟從他們、拿盾牌和槍的有三萬七千人。</div>
+<div class="verse"><span class="verse-number">35</span>但支派，能擺陣的有二萬八千六百人。</div>
+<div class="verse"><span class="verse-number">36</span>亞設支派，能上陣打仗的有四萬人。</div>
+<div class="verse"><span class="verse-number">37</span>約但河東的流便支派、迦得支派、瑪拿西半支派，拿着各樣兵器打仗的有十二萬人。</div>
+<div class="verse"><span class="verse-number">38</span>以上都是能守行伍的戰士，他們都誠心來到希伯崙，要立大衛作以色列的王。以色列其餘的人也都一心要立大衛作王。</div>
+<div class="verse"><span class="verse-number">39</span>他們在那裏三日，與大衛一同喫喝，因為他們的族弟兄給他們預備了。</div>
+<div class="verse"><span class="verse-number">40</span>靠近他們的人以及以薩迦、西布倫、拿弗他利人將許多麵餅、無花果餅、乾葡萄、酒、油，用驢、駱駝、騾子、牛馱來，又帶了許多的牛和羊來，因為以色列人甚是歡樂。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志上第十二章記錄在大衛尚未登基的過渡時期，來自各支派投奔他的勇士們。全章分三個時期：大衛躲在洗革拉時來投的便雅憫和迦得勇士（1-18節）、在山寨時加入的便雅憫和猶大人（16-18節）、以及大衛到達希伯崙時各支派大規模聚集的情形（23-40節）。
+
+      本章最感人的片段是亞瑪撒受神靈感動後的宣言（18節），他代表三十勇士向大衛表忠心：「大衛啊，我們是歸於你的！」這句話不只是政治表態，更是屬靈委身的宣告。本章強調「一心」（38節）——各支派的人「都誠心來到希伯崙，要立大衛作以色列的王」，呈現了以色列歷史中難得的合一時刻。以薩迦支派「通達時務，知道以色列人所當行的」（32節），在眾多勇士中格外特別，突顯了屬靈洞見的重要性。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的計畫透過人的合一得以成就</strong><br>本章記錄各支派「一心」來到希伯崙立大衛為王，數以萬計的人放下地方主義和宗派偏見，為一個更大的使命合而為一。這種合一不是偶然，而是「照耶和華的話」（23節）的應驗。神的計畫往往在祂的子民合一時得到最完整的彰顯。<br><br>
+<strong>2. 靈性的辨別力比軍事勇力更珍貴</strong><br>以薩迦支派只派了兩百個族長，遠少於其他支派的萬人大軍，但他們「通達時務，知道以色列人所當行的」（32節）。在神的國度裡，知道「當行的」比「能做的」更關鍵。屬靈的辨別力是任何計畫與行動的前提，有時兩百個能辨別時務的人，比兩萬個強壯但方向不清的人更有價值。<br><br>
+<strong>3. 委身需要公開的宣告與行動</strong><br>亞瑪撒受聖靈感動，公開宣告：「大衛啊，我們是歸於你的！」（18節）這種委身不是私下的，而是在眾人面前清楚表態。屬靈的跟隨需要具體的行動和公開的承諾——信仰不只是內心的感動，更需要具體的表達和實際的跟從。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>以薩迦支派</strong>，<strong>有二百族長都通達</strong>時務，知道以色列人所當行的；他們族弟兄都聽從他們的命令。（代上12:32）</td>
+<td>兩百個通達時務的族長帶動了整個支派，就像<strong>一個準確的指南針</strong>，比一千個功率強大但方向錯誤的馬達更有價值——在你<strong>面對選擇的時</strong>候，你有沒有<strong>尋找那些「通</strong>達時務」、能看清當行之路的人，聽聽他們怎麼說？</td>
+</tr>
+<tr>
+<td><strong>那時神的靈感動那</strong><strong>三十個勇士的首領</strong>亞瑪撒，他就說：大衛啊，我們是歸於你的！……因為你的神幫助你。（代上12:18）</td>
+<td>亞瑪撒受聖靈感動，公開宣告委身，沒有觀望也沒有猶豫，就像<strong>球賽時在最關鍵的時刻決定上場</strong>，而不是繼續坐在替補席——你<strong>對神和祂所要</strong>你<strong>跟從的使命</strong>，有沒有類似「我們是歸於你<strong>的」這樣清楚</strong>的委身宣告？</td>
+</tr>
+<tr>
+<td><strong>以上都是能守行伍</strong><strong>的戰士</strong>，他們都誠心來到希伯崙，要立大衛作以色列的王。以色列其餘的人也都一心要立大衛作王。（代上12:38）</td>
+<td>數以萬計的人「誠心」「一心」聚集，放下各自的立場為同一個目標合力，就像<strong>一首多聲部合唱</strong>，各聲部的音色不同，卻共同指向同一個旋律——在你<strong>的家庭、教會</strong>或團隊中，是什麼讓大家願意放下差異「一心」同行？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

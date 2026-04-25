@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第42章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第42章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">兄弟們首次赴埃及</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>雅各見埃及有糧，就對兒子們說：「你們為甚麼彼此觀望呢？</div>
+<div class="verse"><span class="verse-number">2</span>我聽見埃及有糧，你們可以下去，從那裏為我們糴些來，使我們可以存活，不至於死。」</div>
+<div class="verse"><span class="verse-number">3</span>於是，約瑟的十個哥哥都下埃及糴糧去了。</div>
+<div class="verse"><span class="verse-number">4</span>但約瑟的兄弟便雅憫，雅各沒有打發他和哥哥們同去，因為雅各說：「恐怕他遭害。」</div>
+<div class="verse"><span class="verse-number">5</span>來糴糧的人中有以色列的兒子們，因為迦南地也有饑荒。</div>
+<div class="verse"><span class="verse-number">6</span>當時治理埃及地的是約瑟；糶糧給那地眾民的就是他。約瑟的哥哥們來了，臉伏於地，向他下拜。</div>
+<div class="verse"><span class="verse-number">7</span>約瑟看見他哥哥們，就認得他們，卻裝作生人，向他們說些嚴厲話，問他們說：「你們從那裏來？」他們說：「我們從迦南地來糴糧。」</div>
+<div class="verse"><span class="verse-number">8</span>約瑟認得他哥哥們，他們卻不認得他。</div>
+<div class="verse"><span class="verse-number">9</span>約瑟想起從前所作的那兩個夢，就對他們說：「你們是奸細，來窺探這地的虛實。」</div>
+<div class="verse"><span class="verse-number">10</span>他們對他說：「我主啊，不是的。僕人們是糴糧來的。</div>
+<div class="verse"><span class="verse-number">11</span>我們都是一個人的兒子，是誠實人；僕人們並不是奸細。」</div>
+<div class="verse"><span class="verse-number">12</span>約瑟說：「不然，你們必是窺探這地的虛實來的。」</div>
+<div class="verse"><span class="verse-number">13</span>他們說：「僕人們本是弟兄十二人，是迦南地一個人的兒子，頂小的現今在我們的父親那裏，有一個沒有了。」</div>
+<div class="verse"><span class="verse-number">14</span>約瑟說：「我才說你們是奸細，這話實在不錯。</div>
+<div class="verse"><span class="verse-number">15</span>我指着法老的性命起誓，若是你們的小兄弟不到這裏來，你們就不得出這地方，從此就可以把你們證驗出來了。</div>
+<div class="verse"><span class="verse-number">16</span>須要打發你們中間一個人去，把你們的兄弟帶來。至於你們，都要囚在這裏，好證驗你們的話真不真，若不真，我指着法老的性命起誓，你們一定是奸細。」</div>
+<div class="verse"><span class="verse-number">17</span>於是約瑟把他們都下在監裏三天。</div>
+<div class="verse"><span class="verse-number">18</span>到第三天，約瑟對他們說：「我是敬畏神的；你們照我的話行就可以存活。</div>
+<div class="verse"><span class="verse-number">19</span>你們如果是誠實人，可以留你們中間的一個人囚在監裏，但你們可以帶着糧食回去，救你們家裏的饑荒。</div>
+<div class="verse"><span class="verse-number">20</span>把你們的小兄弟帶到我這裏來，如此，你們的話便有證據，你們也不至於死。」他們就照樣而行。</div>
+<div class="verse"><span class="verse-number">21</span>他們彼此說：「我們在兄弟身上實在有罪。他哀求我們的時候，我們見他心裏的愁苦，卻不肯聽，所以這場苦難臨到我們身上。」</div>
+<div class="verse"><span class="verse-number">22</span>流便說：「我豈不是對你們說過，不可傷害那孩子麼？只是你們不肯聽，所以流他血的罪向我們追討。」</div>
+<div class="verse"><span class="verse-number">23</span>他們不知道約瑟聽得出來，因為在他們中間用通事傳話。</div>
+<div class="verse"><span class="verse-number">24</span>約瑟轉身退去，哭了一場，又回來對他們說話，就從他們中間挑出西緬來，在他們眼前把他捆綁。</div>
+<div class="verse"><span class="verse-number">25</span>約瑟吩咐人把糧食裝滿他們的器具，把各人的銀子歸還在各人的口袋裏，又給他們路上用的食物，人就照他的話辦了。</div>
+<div class="verse"><span class="verse-number">26</span>他們就把糧食馱在驢上，離開那裏去了。</div>
+<div class="verse"><span class="verse-number">27</span>到了住宿的地方，他們中間有一個人打開口袋，要拿料餵驢，才看見自己的銀子仍在口袋裏，</div>
+<div class="verse"><span class="verse-number">28</span>就對弟兄們說：「我的銀子歸還了，看哪，仍在我口袋裏！」他們就提心吊膽，戰戰兢兢的彼此說：「這是神向我們作甚麼呢？」</div>
+<div class="verse"><span class="verse-number">29</span>他們來到迦南地、他們的父親雅各那裏，將所遭遇的事都告訴他，說：</div>
+<div class="verse"><span class="verse-number">30</span>「那地的主對我們說嚴厲的話，把我們當作窺探那地的奸細。</div>
+<div class="verse"><span class="verse-number">31</span>我們對他說：『我們是誠實人，並不是奸細。</div>
+<div class="verse"><span class="verse-number">32</span>我們本是弟兄十二人，都是一個父親的兒子，有一個沒有了，頂小的如今同我們的父親在迦南地。』</div>
+<div class="verse"><span class="verse-number">33</span>那地的主對我們說：『若要我知道你們是誠實人，可以留下你們中間的一個人在我這裏，你們可以帶着糧食回去，救你們家裏的饑荒。</div>
+<div class="verse"><span class="verse-number">34</span>把你們的小兄弟帶到我這裏來，我便知道你們不是奸細，乃是誠實人。這樣，我就把你們的弟兄交給你們，你們也可以在這地作買賣。』」</div>
+<div class="verse"><span class="verse-number">35</span>後來他們倒口袋，不料，各人的銀包都在口袋裏；他們和父親看見銀包就都害怕。</div>
+<div class="verse"><span class="verse-number">36</span>他們的父親雅各對他們說：「你們使我喪失我的兒子：約瑟沒有了，西緬也沒有了，你們又要將便雅憫帶去；這些事都歸到我身上了。」</div>
+<div class="verse"><span class="verse-number">37</span>流便對他父親說：「我若不帶他回來交給你，你可以殺我的兩個兒子。只管把他交在我手裏，我必帶他回來交給你。」</div>
+<div class="verse"><span class="verse-number">38</span>雅各說：「我的兒子不可與你們一同下去；他哥哥死了，只剩下他，他若在你們所行的路上遭害，那便是你們使我白髮蒼蒼、悲悲慘慘的下陰間去了。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載饑荒迫使雅各的兒子們到埃及糴糧，二十多年後與約瑟重逢。十個哥哥來到約瑟面前卻不認得他，反而俯伏下拜，應驗了約瑟年少時的夢。約瑟認出他們卻裝作生人，以嚴厲態度指控他們是奸細，要求他們帶小弟便雅憫來證明清白。約瑟將他們下監三天後釋放，只留下西緬作人質。哥哥們在困境中開始反省當年對約瑟的殘忍行為，承認這是報應。約瑟聽見他們的悔悟忍不住哭泣，卻仍繼續試驗他們。他暗中將銀子歸還在糧袋裡，使他們驚恐不安。雅各得知必須送便雅憫去埃及才能救回西緬，陷入極大的掙扎與痛苦。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 罪惡終將浮現並要求面對</strong><br>哥哥們二十多年前的罪行在困境中重新浮現，他們開始承認當年對約瑟的虧欠。罪惡不會因時間而消失，反而在神的時間表中要求我們面對與悔改。真正的平安來自誠實面對過去的錯誤，而非逃避或遺忘。<br><br>
+<strong>2. 苦難能引發真實的悔改</strong><br>哥哥們在監獄和威脅中開始反省，認識到他們正在經歷約瑟當年的處境。神有時容許苦難臨到，不是為了報復，而是讓人體會自己曾加諸他人的痛苦，從而產生真實的同理心與悔改。<br><br>
+<strong>3. 恩典往往藏在嚴厲背後</strong><br>約瑟的嚴厲不是出於報復，而是要試驗哥哥們是否真心悔改，並保護便雅憫。他暗中將銀子歸還，顯明恩典始終與管教並行。神的管教出於愛，目的是恢復而非毀滅，嚴厲的背後往往藏著深沉的慈愛。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他們彼此說</strong>：<strong>我們在兄弟身上實</strong>在有罪。他哀求我們的時候，我們見他心裡的愁苦，卻不肯聽。（創42:21）</td>
+<td>就像<strong>老照片勾起往事讓人反省過去的錯</strong>誤，困境使哥哥們想起約瑟的哀求。我是否也有對某人造成的傷害一直沒有道歉或彌補，需要在神面前誠實面對並尋求和解？</td>
+</tr>
+<tr>
+<td><strong>他們就提心吊膽</strong>，<strong>戰戰兢兢地彼此說</strong>：這是神向我們做什麼呢？（創42:28）</td>
+<td>就像<strong>意外收到退款卻擔心是系統錯誤</strong>，哥哥們的良心使恩典變成恐懼。當我領受超過所求的祝福時，我是心虛不安覺得不配，還是能坦然領受神的恩典，知道這是祂的慈愛？</td>
+</tr>
+<tr>
+<td><strong>約瑟轉身退去</strong>，<strong>哭了一場</strong>，又回來對他們說話。（創42:24）</td>
+<td>就像<strong>父母管教後躲起來流淚因為心疼孩</strong>子，約瑟的眼淚顯示他的嚴厲出於愛。當我需要糾正或管教他人時，我的動機是發洩情緒、維護權威，還是真心盼望對方悔改與成長？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

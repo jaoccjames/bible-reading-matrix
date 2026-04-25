@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>但以理書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+但以理書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">但以理的立志與神的賜福</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>猶大王約雅敬在位第三年，巴比倫王尼布甲尼撒來到耶路撒冷，將城圍困。</div>
+<div class="verse"><span class="verse-number">2</span>主將猶大王約雅敬，並神殿中器皿的幾分交付他手。他就把這器皿帶到示拿地，收入他神的廟裏，放在他神的庫中。</div>
+<div class="verse"><span class="verse-number">3</span>王吩咐太監長亞施毘拿，從以色列人的宗室和貴冑中帶進幾個人來，</div>
+<div class="verse"><span class="verse-number">4</span>就是年少沒有殘疾、相貌俊美、通達各樣學問、知識聰明俱備、足能侍立在王宮裏的，要教他們迦勒底的文字言語。</div>
+<div class="verse"><span class="verse-number">5</span>王派定將自己所用的膳和所飲的酒，每日賜他們一分，養他們三年。滿了三年，好叫他們在王面前侍立。</div>
+<div class="verse"><span class="verse-number">6</span>他們中間有猶大族的人：但以理、哈拿尼雅、米沙利、亞撒利雅。</div>
+<div class="verse"><span class="verse-number">7</span>太監長給他們起名：稱但以理為伯提沙撒，稱哈拿尼雅為沙得拉，稱米沙利為米煞，稱亞撒利雅為亞伯尼歌。</div>
+<div class="verse"><span class="verse-number">8</span>但以理卻立志不以王的膳和王所飲的酒玷污自己，所以求太監長容他不玷污自己。</div>
+<div class="verse"><span class="verse-number">9</span>神使但以理在太監長眼前蒙恩惠，受憐憫。</div>
+<div class="verse"><span class="verse-number">10</span>太監長對但以理說：「我懼怕我主我王，他已經派定你們的飲食；倘若他見你們的面貌比你們同歲的少年人肌瘦，怎麼好呢？這樣，你們就使我的頭在王那裏難保。」</div>
+<div class="verse"><span class="verse-number">11</span>但以理對太監長所派管理但以理、哈拿尼雅、米沙利、亞撒利雅的委辦說：</div>
+<div class="verse"><span class="verse-number">12</span>「求你試試僕人們十天，給我們素菜吃，白水喝，</div>
+<div class="verse"><span class="verse-number">13</span>然後看看我們的面貌和用王膳那少年人的面貌，就照你所看的待僕人吧！」</div>
+<div class="verse"><span class="verse-number">14</span>委辦便允准他們這件事，試看他們十天。</div>
+<div class="verse"><span class="verse-number">15</span>過了十天，見他們的面貌比用王膳的一切少年人更加俊美肥胖。</div>
+<div class="verse"><span class="verse-number">16</span>於是委辦撤去派他們用的膳，飲的酒，給他們素菜吃。</div>
+<div class="verse"><span class="verse-number">17</span>這四個少年人，神在各樣文字學問〔學問：原文作智慧〕上賜給他們聰明知識；但以理又明白各樣的異象和夢兆。</div>
+<div class="verse"><span class="verse-number">18</span>尼布甲尼撒王預定帶進少年人來的日期滿了，太監長就把他們帶到王面前。</div>
+<div class="verse"><span class="verse-number">19</span>王與他們談論，見少年人中無一人能比但以理、哈拿尼雅、米沙利、亞撒利雅，所以留他們在王面前侍立。</div>
+<div class="verse"><span class="verse-number">20</span>王考問他們一切事，就見他們的智慧聰明比通國的術士和用法術的勝過十倍。</div>
+<div class="verse"><span class="verse-number">21</span>到古列王元年，但以理還在。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+但以理書第1章是全書的序幕，時在主前605年，巴比倫王尼布甲尼撒第一次圍攻耶路撒冷。神允許以色列部分器皿和貴族子弟被帶往巴比倫，其中包括但以理、哈拿尼雅、米沙利、亞撒利雅。巴比倫的同化計畫非常系統化：改名字（剝奪身份認同）、改飲食（切斷宗教習俗）、改教育（以迦勒底的智慧取代神的智慧）。但以理在這文化壓力下作出了決定性的選擇：「立志不以王的膳和王所飲的酒玷污自己」。這個「立志」不只是飲食的決定，而是在同化壓力下保持信仰身份認同的宣告。神因但以理的立志賜他在太監長眼前蒙恩，並賜四人在各樣學問上的聰明知識——且「比通國的術士和用法術的勝過十倍」。本章設立了全書的核心主題：在外邦文化的同化壓力下，如何以信仰立志，並在其中蒙神賜福。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【立志是信仰面對文化壓力的第一個行動】</strong><br>「但以理卻立志不以王的膳……玷污自己」——在一切外在壓力都朝同化方向推進的時候，立志是對神的主動委身。信仰不是在危機中才表現的，而是在日常的「小事」（選什麼吃、接受什麼影響）中就作出的決定。你每天面對的文化選擇，都是信仰的「立志」場合。<br><br>
+<strong>2. 【神因人的忠心為他開路，不是因人先爭取到機會才忠心】</strong><br>但以理立志在前，神使太監長蒙恩在後——不是先有保障才立志，而是先立志，神隨後開路。這是信心的次序：先有委身，再有神的供應。等到所有條件都安全才決定委身，往往就沒有真正的委身；在不確定中先立志，才是信心的真正考驗。<br><br>
+<strong>3. 【在外邦環境中忠心者，神使他們勝過十倍】</strong><br>四個少年人在素食的條件下，面貌比用王膳的更俊美；在學問上比術士「勝過十倍」。神的賜福不是讓他們勉強維持，而是讓他們卓越超群。信仰的忠心不讓人「輸在起跑點」，而是讓神的恩典在最不利的條件下彰顯得最清楚。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>但以理卻立志不以</strong><strong>王的膳和王所飲的</strong>酒玷污自己，所以求太監長容他不玷污自己。（但1:8）</td>
+<td>你<strong>在日常生活中</strong>面對的「王的膳」是什麼——哪些看似普通、其實會悄悄侵蝕你<strong>信仰身份的事</strong>物？就像<strong>慢慢升溫的水讓青蛙不知危險</strong>，你有沒有<strong>察覺某些「漸</strong>漸習以為常的妥協」，正在慢慢改變你<strong>的屬靈身份認</strong>同？你<strong>今天願意「立</strong>志」在哪一件事上？</td>
+</tr>
+<tr>
+<td><strong>神使但以理在太監</strong><strong>長眼前蒙恩惠</strong>，受憐憫。（但1:9）</td>
+<td>但以理先立志，神後開路。你是否<strong>曾在「先立志</strong>，再看神怎麼開路」的信心裡行動？就像<strong>跳出飛機前要先信任降落傘</strong>，信心常常要求在看見結果之前先行動。你<strong>現在有沒有一</strong>個神呼召你<strong>「先立志」、</strong>然後等待祂開路的領域？</td>
+</tr>
+<tr>
+<td><strong>王考問他們一切事</strong>，<strong>就見他們的智慧聰</strong>明比通國的術士和用法術的勝過十倍。（但1:20）</td>
+<td>「勝過十倍」——神對忠心者的賜福往往超過人的預期。你有沒有<strong>這樣的見證：</strong>因為在某個信仰原則上的堅守，神反而讓你<strong>得着了比妥協</strong>還要好的結果？就像<strong>拒絕走捷徑反而建立了更長遠的信</strong>譽，你願意<strong>分享或記念一</strong>個「因忠心而蒙神超乎所求所想的賜福」的時刻嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

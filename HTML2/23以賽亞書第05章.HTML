@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">葡萄園的哀歌：六禍宣告社會罪惡的後果</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我要為我所親愛的唱歌，是我所愛者的歌，論他葡萄園的事：我所親愛的有葡萄園在肥美的山崗上。</div>
+<div class="verse"><span class="verse-number">2</span>他刨挖園子，撿去石頭，栽種上等的葡萄樹，在園中蓋了一座樓，又鑿出壓酒池；指望結好葡萄，反倒結了野葡萄。</div>
+<div class="verse"><span class="verse-number">3</span>耶路撒冷的居民和猶大人哪，請你們現今在我與我的葡萄園中，斷定是非。</div>
+<div class="verse"><span class="verse-number">4</span>我為我葡萄園所作之外，還有甚麼可作的呢？我指望結好葡萄，怎麼倒結了野葡萄呢？</div>
+<div class="verse"><span class="verse-number">5</span>現在我告訴你們，我要向我葡萄園怎樣行：我必撤去籬笆，使他被吞滅，拆毀牆垣，使他被踐踏。</div>
+<div class="verse"><span class="verse-number">6</span>我必使他荒廢，不再修理，不再鋤刨，荊棘蒺藜倒要生長。我也必命雲不降雨在其上。</div>
+<div class="verse"><span class="verse-number">7</span>萬軍之耶和華的葡萄園就是以色列家；他所喜愛的樹就是猶大人。他指望的是公平，誰知倒有暴虐〔或作：倒流人血〕；指望的是公義，誰知倒有冤聲。</div>
+<div class="verse"><span class="verse-number">8</span>禍哉！那些以房接房，以地連地，以致不留餘地的，只顧自己獨居境內。</div>
+<div class="verse"><span class="verse-number">9</span>我耳聞萬軍之耶和華說：必有許多又大又美的房屋成為荒涼，無人居住。</div>
+<div class="verse"><span class="verse-number">10</span>三十畝葡萄園只出一罷特酒；一賀梅珥穀種只結一伊法糧食。</div>
+<div class="verse"><span class="verse-number">11</span>禍哉！那些清早起來追求濃酒，留連到夜深，甚至因酒發燒的人。</div>
+<div class="verse"><span class="verse-number">12</span>他們在筵席上彈琴，鼓瑟，擊鼓，吹笛，飲酒，卻不顧念耶和華的作為，也不留心他手所作的。</div>
+<div class="verse"><span class="verse-number">13</span>所以，我的百姓因無知就被擄去；他們的尊貴人甚是飢餓，群眾極其乾渴。</div>
+<div class="verse"><span class="verse-number">14</span>故此，陰間擴張其欲，開了無限量的口；他們的榮耀、群眾、繁華，並快樂的人都落在其中。</div>
+<div class="verse"><span class="verse-number">15</span>卑賤人被壓服；尊貴人降為卑；眼目高傲的人也降為卑。</div>
+<div class="verse"><span class="verse-number">16</span>惟有萬軍之耶和華因公平而崇高；聖者神因公義顯為聖。</div>
+<div class="verse"><span class="verse-number">17</span>那時，羊羔必來吃草，如同在自己的草場；豐肥人的荒場被遊行的人吃盡。</div>
+<div class="verse"><span class="verse-number">18</span>禍哉！那些以虛假之細繩牽罪孽的人！他們又像以套繩拉罪惡，</div>
+<div class="verse"><span class="verse-number">19</span>說：任他急速行，趕快成就他的作為，使我們看看；任以色列聖者所謀劃的臨近成就，使我們知道。</div>
+<div class="verse"><span class="verse-number">20</span>禍哉！那些稱惡為善，稱善為惡，以暗為光，以光為暗，以苦為甜，以甜為苦的人。</div>
+<div class="verse"><span class="verse-number">21</span>禍哉！那些自以為有智慧，自看為通達的人。</div>
+<div class="verse"><span class="verse-number">22</span>禍哉！那些勇於飲酒，以能力調濃酒的人。</div>
+<div class="verse"><span class="verse-number">23</span>他們因受賄賂，就稱惡人為義，將義人的義奪去。</div>
+<div class="verse"><span class="verse-number">24</span>火苗怎樣吞滅碎稭，乾草怎樣落在火焰之中，照樣，他們的根必像朽物，他們的花必像灰塵飛騰；因為他們厭棄萬軍之耶和華的訓誨，藐視以色列聖者的言語。</div>
+<div class="verse"><span class="verse-number">25</span>所以，耶和華的怒氣向他的百姓發作。他的手伸出攻擊他們，山嶺就震動；他們的屍首在街市上好像糞土。雖然如此，他的怒氣還未轉消；他的手仍伸不縮。</div>
+<div class="verse"><span class="verse-number">26</span>他必豎立大旗，招遠方的國民，發噝聲叫他們從地極而來，看哪，他們必急速奔來。</div>
+<div class="verse"><span class="verse-number">27</span>其中沒有疲倦的，絆跌的；沒有打盹的，睡覺的；腰帶並不放鬆，鞋帶也不折斷。</div>
+<div class="verse"><span class="verse-number">28</span>他們的箭快利，弓也上了弦。馬蹄算如堅石，車輪好像旋風。</div>
+<div class="verse"><span class="verse-number">29</span>他們要吼叫，像母獅子，咆哮，像少壯獅子；他們要咆哮抓食，坦然叼去，無人救回。</div>
+<div class="verse"><span class="verse-number">30</span>那日，他們要向以色列人吼叫，像海浪匉訇；人若望地，只見黑暗艱難，光明在雲中變為昏暗。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第五章是全書中文學藝術最精湛的章節之一，以「葡萄園之歌」（1-7節）開篇，以六個「禍哉」（8、11、18、20、21、22節）的詛咒詩句構成主體，最後以亞述入侵的末日景象作結。「葡萄園之歌」是以賽亞書中最著名的比喻之一：神作為葡萄園主，傾注一切心力（刨挖、撿石、栽種、建樓、鑿酒池），卻只結出野葡萄（罪惡和不義）——第7節以希伯來文的雙關語點明：神指望的是「公平」（mishpat），卻得到「暴虐」（mispach）；指望的是「公義」（tsedakah），卻得到「冤聲」（tse'akah）——同音異義，形成犀利的諷刺。六個「禍哉」分別針對六種社會罪惡：土地兼併（8節）、縱欲享樂忘神（11-12節）、以罪惡為驕傲（18節）、顛倒善惡（20節）、自以為聰明（21節）、以酒為能（22-23節）。第20節「稱惡為善，稱善為惡」被後世廣泛引用，成為對道德相對主義最精準的批判。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神傾注一切心力栽培，仍有可能得不到祂所期待的果子</strong><br>第1-4節描繪神作為悉心的葡萄園主，卻得到「野葡萄」的悲哀。這個比喻不只是對以色列的控訴，也是對所有蒙神恩典栽培的人的一個嚴肅問題：「我指望結好葡萄，怎麼倒結了野葡萄呢？」（4節）信徒接受了神的話語、教導、恩典和同在，生命中結出的是什麼果子？「野葡萄」不是中性的，它是對神供給和期望的背叛。<br><br>
+<strong>2. 「稱惡為善，稱善為惡」是道德混亂最危險的形式</strong><br>第20節「禍哉！那些稱惡為善，稱善為惡，以暗為光，以光為暗，以苦為甜，以甜為苦的人」，是以賽亞書中最具預言性的一句話。這種道德顛倒不只存在於個人選擇中，更蔓延到文化和社會層面——當一個時代開始以罪惡的事為可愛的、以道德的事為可恥的，那個社會就處於深度的屬靈危機中。信徒需要以神的話語為道德標準，而非以時代潮流為準則。<br><br>
+<strong>3. 「因無知就被擄去」：忽略神的作為導致靈性和現實的崩潰</strong><br>第12-13節「他們在筵席上……卻不顧念耶和華的作為，也不留心他手所作的。所以，我的百姓因無知就被擄去」，指出以色列的「無知」不是缺乏信息，而是刻意不理會神——享樂充斥生命，以致沒有空間留給神。「因無知被擄」是一個嚴肅的警告：忽略神的作為不是中性的選擇，而是導致靈性和現實後果的根源。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>我指望結好葡萄</strong>，<strong>怎麼倒結了野葡萄</strong>呢？」（賽5:4）</td>
+<td>就像<strong>農夫花費整年心力照料果樹</strong>，到了收成季節卻發現結的都是苦澀的野果，那種失望是真實的，神對以色列也有同樣的感受，你<strong>領受了多少神</strong>的栽培和恩典（家庭、教育、信仰群體）？你<strong>認為你生命中</strong>結出的果子，是神所期望的「好葡萄」嗎？</td>
+</tr>
+<tr>
+<td>「禍哉！<strong>那些稱惡為善</strong>，<strong>稱善為惡</strong>，以暗為光，以光為暗的人。」（賽5:20）</td>
+<td>就像<strong>把路標的方向改反</strong>，會讓所有按照指示行走的人都走向危險，道德標準的顛倒危害整個社會，你<strong>在哪些方面感</strong>受到現代文化正在「稱惡為善」？你如何<strong>在不與社會為</strong>敵的情況下，仍然持守神話語中清晰的道德標準？</td>
+</tr>
+<tr>
+<td>「<strong>我的百姓因無知就</strong><strong>被擄去</strong>；……因為在筵席上……卻不顧念耶和華的作為。」（賽5:13,12）</td>
+<td>就像<strong>一個人整天沉浸在娛樂和消遣中</strong>，忙到忘記去看重要的通知，以致錯失關鍵時機，你<strong>的生活中</strong>是否有某些習慣或活動，讓你<strong>難以「留心神</strong>的作為」？你願意<strong>做哪些調整</strong>，讓神的作為在你<strong>生命中佔有應</strong>有的位置？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

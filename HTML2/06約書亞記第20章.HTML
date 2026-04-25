@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約書亞記第20章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約書亞記第20章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">設立逃城，彰顯神公義中的憐憫保護</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華曉諭約書亞說：</div>
+<div class="verse"><span class="verse-number">2</span>「你吩咐以色列人說：你們要照着我藉摩西所曉諭你們的，為自己設立逃城，</div>
+<div class="verse"><span class="verse-number">3</span>使那無心而誤殺人的，可以逃到那裏。這些城可以作你們逃避報血仇人的地方。</div>
+<div class="verse"><span class="verse-number">4</span>那殺人的要逃到這些城中的一座城，站在城門口，將他的事情說給城內的長老們聽。他們就把他收進城裏，給他地方，使他住在他們中間。</div>
+<div class="verse"><span class="verse-number">5</span>若是報血仇的追了他來，長老不可將他交在報血仇的手裏；因為他是素無仇恨，無心殺了人的。</div>
+<div class="verse"><span class="verse-number">6</span>他要住在那城裏，站在會眾面前聽審判，等到那時的大祭司死了，殺人的才可以回到本城本家，就是他所逃出來的那城。」</div>
+<div class="verse"><span class="verse-number">7</span>於是，以色列人在拿弗他利山地分定加利利的基低斯；在以法蓮山地分定示劍；在猶大山地分定基列亞巴（基列亞巴就是希伯崙）；</div>
+<div class="verse"><span class="verse-number">8</span>又在約但河外耶利哥東，從流便支派中，在曠野的平原，設立比悉；從迦得支派中設立基列的拉末；從瑪拿西支派中設立巴珊的哥蘭。</div>
+<div class="verse"><span class="verse-number">9</span>這都是為以色列眾人和在他們中間寄居的外人所分定的地邑，使誤殺人的都可以逃到那裏，不死在報血仇人的手中，等他站在會眾面前聽審判。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約書亞記第20章雖然篇幅短小，卻具有深刻的神學意義。在分地工作進入尾聲之際，神吩咐約書亞設立六座「逃城」，分別在約但河東西兩側各設三座，遍佈南北，使任何誤殺人者都能便利地逃到其中一城。逃城制度早在摩西時代就已指示（民數記35章，申命記19章），如今在應許之地正式落實。這套制度的設計精妙：誤殺者可進城受庇護，但必須公開申訴並接受審判；城裏的長老有責任辨別是否屬於無心之失；被庇護者須居住逃城直到當時大祭司去世才能返鄉。逃城制度彰顯了神的法律體系中一個重要原則：公義要區分「有意謀殺」與「無心誤殺」，並為後者提供公平的保護，同時保障受害者家屬的情感。六座逃城分佈在全地，確保每個人在任何地方都有機會逃到其中一座。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的公義中包含對無辜者的憐憫與保護</strong><br>逃城制度的設立，說明神的律法不是冷酷的報復機器，而是包含細緻分辨的公義系統。神區別「有意謀殺」與「無心誤殺」，為後者提供庇護的空間。這揭示了神性格中公義與憐憫並存的本質——祂不會讓無辜者因意外而喪失生命，同時也維護社會秩序的公正。今日的信徒常把公義與憐憫對立，逃城制度提醒我們：真正的公義中本就包含憐憫。<br><br>
+<strong>2. 神為犯錯之人預備了逃脫之路</strong><br>逃城的設立，在屬靈意義上預表了基督作為信徒的「逃城」。在罪的定罪之下，神沒有讓人走投無路，而是在律法的恐懼中預備了一條逃脫之路。希伯來書6:18描述信徒「逃去持定擺在我們前頭的指望」，正是引用了逃城的意象。神不願任何人滅亡，乃願人人悔改，這份救恩的邀請向所有人敞開。<br><br>
+<strong>3. 逃城的保護需要主動逃入，不是自動得救</strong><br>逃城的保護不會自動臨到誤殺者，他必須起身逃跑、主動進城、在城門口申訴。這是一個積極的行動，缺一不可。在屬靈上，神的救恩雖是白白賜予，卻需要信徒主動回應——認罪、信靠、來到神面前。等待救恩自動到來而不主動回應，只會讓人繼續暴露在危險之中。救恩是敞開的門，但人需要選擇走進去。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>使那無心而誤殺人</strong>的，<strong>可以逃到那裏</strong>。這些城可以作你們逃避報血仇人的地方。」（書20:3）</td>
+<td>就像<strong>緊急避難所的存在讓人在災難中有</strong>安全的去處，逃城為誤殺者提供了庇護。你是否<strong>相信神為在罪</strong>中感到無助的人，也預備了逃脫之路？你是否<strong>願意主動奔向</strong>那條路？</td>
+</tr>
+<tr>
+<td>「<strong>他們就把他收進城</strong>裏，<strong>給他地方</strong>，使他住在他們中間。」（書20:4）</td>
+<td>就像<strong>一個受傷的人被接納進入家庭而非</strong>被拒於門外，逃城的長老主動接納申訴者。教會是否也成為那些「在意外中犯錯」、需要接納與保護的人的屬靈逃城？你<strong>的群體</strong>是接納還是排斥？</td>
+</tr>
+<tr>
+<td>「<strong>這都是為以色列眾</strong><strong>人和在他們中間寄</strong>居的外人所分定的地邑。」（書20:9）</td>
+<td>就像<strong>公共緊急服務不分國籍皆可使用</strong>，神的逃城保護連外人也包含在內。神的憐憫沒有設下族群或身份的界限。你<strong>在對待「局外</strong>人」或「與你<strong>不同的人」時</strong>，是否也能以同樣的憐憫敞開接納之門？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

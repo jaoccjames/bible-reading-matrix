@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第33章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第33章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">摩西為十二支派的臨終祝福</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以下是神人摩西在未死之先為以色列人所祝的福：</div>
+<div class="verse"><span class="verse-number">2</span>他說：耶和華從西乃而來，從西珥向他們顯現，從巴蘭山發出光輝，從萬萬聖者中來臨，從他右手為百姓傳出烈火的律法。</div>
+<div class="verse"><span class="verse-number">3</span>他疼愛百姓；眾聖徒都在他手中。他們坐在他的腳下，領受他的言語。</div>
+<div class="verse"><span class="verse-number">4</span>摩西將律法傳給我們，作為雅各會眾的產業。</div>
+<div class="verse"><span class="verse-number">5</span>百姓的眾首領，以色列的各支派，一同聚會的時候，耶和華〔原文作他〕在耶書崙中為王。</div>
+<div class="verse"><span class="verse-number">6</span>願流便存活，不至死亡；願他人數不至稀少。</div>
+<div class="verse"><span class="verse-number">7</span>為猶大祝福說：求耶和華俯聽猶大的聲音，引導他歸於本族；他曾用手為自己爭戰，你必幫助他攻擊敵人。</div>
+<div class="verse"><span class="verse-number">8</span>論利未說：耶和華啊，你的土明和烏陵都在你的虔誠人那裏。你在瑪撒曾試驗他，在米利巴水與他爭論。</div>
+<div class="verse"><span class="verse-number">9</span>他論自己的父母說：我未曾看見；他也不承認弟兄，也不認識自己的兒女。這是因利未人遵行你的話，謹守你的約。</div>
+<div class="verse"><span class="verse-number">10</span>他們要將你的典章教訓雅各，將你的律法教訓以色列。他們要把香焚在你面前，把全牲的燔祭獻在你的壇上。</div>
+<div class="verse"><span class="verse-number">11</span>求耶和華降福在他的財物上，悅納他手裏所辦的事。那些起來攻擊他和恨惡他的人，願你刺透他們的腰，使他們不得再起來。</div>
+<div class="verse"><span class="verse-number">12</span>論便雅憫說：耶和華所親愛的必同耶和華安然居住；耶和華終日遮蔽他，也住在他兩肩之中。</div>
+<div class="verse"><span class="verse-number">13</span>論約瑟說：願他的地蒙耶和華賜福，得天上的寶物、甘露，以及地裏所藏的泉水；</div>
+<div class="verse"><span class="verse-number">14</span>得太陽所曬熟的美果，月亮所養成的寶物；</div>
+<div class="verse"><span class="verse-number">15</span>得上古之山的至寶，永世之嶺的寶物；</div>
+<div class="verse"><span class="verse-number">16</span>得地和其中所充滿的寶物，並住荊棘中上主的喜悅。願這些福都歸於約瑟的頭上，歸於那與弟兄迥別之人的頂上。</div>
+<div class="verse"><span class="verse-number">17</span>他為牛群中頭生的，有威嚴；他的角是野牛的角，用以牴觸萬邦，直到地極。這角是以法蓮的萬萬，瑪拿西的千千。</div>
+<div class="verse"><span class="verse-number">18</span>論西布倫說：西布倫哪，你出外可以歡喜。以薩迦啊，在你帳棚裏可以快樂。</div>
+<div class="verse"><span class="verse-number">19</span>他們要將列邦召到山上，在那裏獻公義的祭；因為他們要吸取海裏的豐富，並沙中所藏的珍寶。</div>
+<div class="verse"><span class="verse-number">20</span>論迦得說：使迦得擴張的應當稱頌！迦得住如母獅；他撕裂膀臂，連頭頂也撕裂。</div>
+<div class="verse"><span class="verse-number">21</span>他為自己選擇頭一段地，因在那裏有設立律法者的分存留。他與百姓的首領同來；他施行耶和華的公義和耶和華與以色列所立的典章。</div>
+<div class="verse"><span class="verse-number">22</span>論但說：但為小獅子，從巴珊跳出來。</div>
+<div class="verse"><span class="verse-number">23</span>論拿弗他利說：拿弗他利啊，你足沾恩惠，滿得耶和華的福，可以得西方和南方為業。</div>
+<div class="verse"><span class="verse-number">24</span>論亞設說：願亞設享受多子的福樂，得他弟兄的喜悅，可以把腳蘸在油中。</div>
+<div class="verse"><span class="verse-number">25</span>你的門閂〔或作：鞋〕是銅的，鐵的。你的日子如何，你的力量也必如何。</div>
+<div class="verse"><span class="verse-number">26</span>耶書崙哪，沒有能比神的。他為幫助你，乘在天空，顯其威榮，駕行穹蒼。</div>
+<div class="verse"><span class="verse-number">27</span>永生的神是你的居所；他永久的膀臂在你以下。他在你前面攆出仇敵，說：毀滅吧。</div>
+<div class="verse"><span class="verse-number">28</span>以色列安然居住；雅各的本源獨居五穀新酒之地。他的天也滴甘露。</div>
+<div class="verse"><span class="verse-number">29</span>以色列啊，你是有福的！誰像你這蒙耶和華所拯救的百姓呢？他是你的盾牌，幫助你，是你威榮的刀劍。你的仇敵必投降你；你必踏在他們的高處。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第三十三章是摩西在去世前為以色列十二支派所作的臨終祝福，與創世記第四十九章雅各對十二子的祝福形成對照，同樣是長篇詩歌形式。本章以神從西乃山、西珥山、巴蘭山顯現的宏大景象開始（33:2），描述神降臨帶給祂子民的榮光。摩西逐一對各支派發出祝福：呼珥便（33:6）、猶大（33:7）、利未（33:8-11）、便雅憫（33:12）、約瑟（33:13-17）、西布倫和以薩迦（33:18-19）、迦得（33:20-21）、但（33:22）、拿弗他利（33:23）、亞設（33:24-25）——每個支派都有獨特的應許和屬靈期望。本章以一首讚美神的詩歌作結（33:26-29），以充滿感恩的語氣宣告：「以色列啊，你是有福的！誰像你這蒙耶和華所拯救的百姓呢？」（33:29）。這個結尾充滿盼望：在即將進入應許之地的前夕，摩西最後留給以色列人的，不是悲哀或恐懼，而是信心的祝福與對神守約之愛的確信。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 祝福是信仰長者最珍貴的屬靈遺產</strong><br>摩西在臨終前所做的最後一件事，是為每個支派祝福。這顯示了一位忠心領袖對下一代最深的關心：不是要他們記念自己，而是要他們得到神的祝福。今日年長的信徒、父母和牧者，同樣可以學習摩西這種「以祝福作別」的精神，在離開某個角色時為繼承者說出信仰的祝福而非留下遺憾。<br><br>
+<strong>2. 神是無與倫比的幫助和保護，是子民真正的依靠</strong><br>「以色列的神，他乘駕諸天，宇宙間有誰能像他？他是你的幫助，是你威嚴的刀劍」（申33:26,29）。在一切的祝福之後，摩西將焦點拉回到神本身：真正使以色列人「有福」的不是土地、財富或軍事力量，而是有神與他們同在。信徒的福分不在於環境有多好，而在於有這樣一位神同行。<br><br>
+<strong>3. 個別的祝福說明神認識並看顧每個人的獨特需要</strong><br>摩西對每個支派都有量身訂做的祝福，說明神不是一個對所有人「一視同仁、不加分辨」的神，而是認識每個人、每個群體的獨特需要的牧人。這個原則在整本聖經中得到印證：神呼召亞伯拉罕、摩西、大衛，都是按著他們獨特的性格和處境而有特殊的關係。神同樣這樣認識你。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>以色列的神</strong>，<strong>他乘駕諸天</strong>，宇宙間有誰能像他？他是你的幫助，是你威嚴的刀劍。」（申33:26,29）</td>
+<td>神是無與倫比的幫助，就像<strong>只有真正的醫學才能治癒疾病</strong>，其他的只是暫時的緩解，在你<strong>生活中所面對</strong>的各種「幫助來源」中，你<strong>把神排在哪個</strong>位置？是第一個還是最後才想到的選項？</td>
+</tr>
+<tr>
+<td>「<strong>利未人哪</strong>，<strong>願你的土明和烏陵</strong>都歸你所虔誠的人……他謹守你的話，遵守你的約。」（申33:8-9）</td>
+<td>忠心事奉神需要把神的話置於所有關係之上，就像<strong>真正敬業的醫生在緊急時刻甚至需</strong>要把職業責任放在個人情感前面，在你<strong>事奉神的過程</strong>中，是否有時因為人情或壓力而讓神的標準讓步？你如何<strong>在愛人與忠於</strong>真理之間保持平衡？</td>
+</tr>
+<tr>
+<td>「<strong>以色列啊</strong>，<strong>你是有福的</strong>！誰像你這蒙耶和華所拯救的百姓呢？他是你的盾牌，幫助你，是你威嚴的刀劍。」（申33:29）</td>
+<td>蒙神拯救是最深的祝福，超越一切外在的條件，就像<strong>有深厚友誼的人即使在艱困環境中</strong>也能感到富足，你是否<strong>真實地體驗過</strong>「我是被神拯救的人」這個身份所帶來的喜樂與安全感？什麼東西阻礙你<strong>完全享受這個</strong>福分？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

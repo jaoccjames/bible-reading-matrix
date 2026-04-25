@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志下第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志下第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">羅波安拒諫：輕率的決定，分裂的後果</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>羅波安往示劍去，因為以色列人都到了示劍，要立他作王。</div>
+<div class="verse"><span class="verse-number">2</span>尼八的兒子耶羅波安先前躲避所羅門王，逃往埃及，住在那裏；他聽見這事，就從埃及回來。</div>
+<div class="verse"><span class="verse-number">3</span>以色列人打發人去請他，他就和以色列眾人來見羅波安，對他說：</div>
+<div class="verse"><span class="verse-number">4</span>「你父親使我們負重軛、作苦工，現在求你使我們作的苦工負的重軛輕鬆些，我們就事奉你。」</div>
+<div class="verse"><span class="verse-number">5</span>羅波安對他們說：「第三日再來見我吧！」民就去了。</div>
+<div class="verse"><span class="verse-number">6</span>羅波安之父所羅門在世的日子，有侍立在他面前的老年人，羅波安王和他們商議，說：「你們給我出個甚麼主意，我好回覆這民。」</div>
+<div class="verse"><span class="verse-number">7</span>老年人對他說：「王若恩待這民，使他們喜悅，用好話回覆他們，他們就永遠作王的僕人。」</div>
+<div class="verse"><span class="verse-number">8</span>王卻不用老年人給他出的主意，就和那些與他一同長大、在他面前侍立的少年人商議，</div>
+<div class="verse"><span class="verse-number">9</span>說：「這民對我說：『你父親使我們負重軛，求你使我們輕鬆些』；你們給我出個甚麼主意，我好回覆他們。」</div>
+<div class="verse"><span class="verse-number">10</span>那同他長大的少年人說：「這民對王說：『你父親使我們負重軛，求你使我們輕鬆些』；王要對他們如此說：『我的小拇指比我父親的腰還粗；</div>
+<div class="verse"><span class="verse-number">11</span>我父親使你們負重軛，我必使你們負更重的軛；我父親用鞭子責打你們，我要用蠍子鞭責打你們。』」</div>
+<div class="verse"><span class="verse-number">12</span>耶羅波安和眾百姓遵着羅波安王所說「你們第三日再來見我」的那話，第三日他們果然來了。</div>
+<div class="verse"><span class="verse-number">13</span>羅波安王用嚴厲的話回覆他們，不用老年人所出的主意，</div>
+<div class="verse"><span class="verse-number">14</span>照着少年人所出的主意對他們說：「我父親使你們負重軛，我必使你們負更重的軛；我父親用鞭子責打你們，我要用蠍子鞭責打你們。」</div>
+<div class="verse"><span class="verse-number">15</span>王不肯依從百姓；這事乃出於神，為要應驗耶和華藉示羅人亞希雅對尼八兒子耶羅波安所說的話。</div>
+<div class="verse"><span class="verse-number">16</span>以色列眾民見王不依從他們，就對王說：「我們與大衛有甚麼分兒呢？與耶西的兒子並沒有關涉！以色列人哪，各回各家去吧！大衛家啊，自己顧自己吧！」於是，以色列眾人都回自己家裏去了。</div>
+<div class="verse"><span class="verse-number">17</span>惟獨住在猶大城邑的以色列人，羅波安仍作他們的王。</div>
+<div class="verse"><span class="verse-number">18</span>羅波安王差遣掌管服苦之人的哈多蘭往以色列人那裏去，以色列人就用石頭打死他。羅波安王急忙上車，逃回耶路撒冷去了。</div>
+<div class="verse"><span class="verse-number">19</span>這樣，以色列人背叛大衛家，直到今日。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志下第十章記述所羅門死後，以色列的分裂。羅波安前往示劍登基，耶羅波安帶領百姓請求減輕勞役（1-5節）。羅波安諮詢老年謀士，他們建議用好話回覆（6-7節）；他卻捨棄老人的建議，聽從同齡少年的強硬意見（8-11節）。結果羅波安以嚴厲的話回覆，以色列十支派隨即「背叛大衛家」（16-19節）。
+
+      本章是一個關於領袖決策失誤的經典案例。羅波安的失敗不在能力，而在於：他用錯了諮詢對象（少年人代替老年人），且背後的動機是「強硬展示權威」而非「服事百姓」。歷代志特別指出「這事乃出於神」（15節），神在人的錯誤決定中仍然掌管著更大的歷史進程。然而這並不免除羅波安為自己的愚蠢決定承擔後果。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 謙卑聆聽智慧的聲音是領袖的首要功課</strong><br>老年謀士的建議「用好話回覆，永遠作王的僕人」（7節），是歷久彌新的領袖智慧；少年人的建議「用蠍子鞭責打」（11節），是以恐懼管理的短視之計。羅波安選擇了後者，結果失去了十個支派。謙卑地向有經驗的人請益，遠比堅持自己的直覺更有智慧。<br><br>
+<strong>2. 領袖的職責是服事，而非彰顯權威</strong><br>羅波安的核心錯誤是把王位視為「可以展示力量」的平台，而非「服事百姓」的責任。真正的領袖是「你們中間為首的，必須作眾人的僕人」（可10:44）。任何以展示威權代替服事百姓的領袖，終將失去追隨者的心。<br><br>
+<strong>3. 神在人的錯誤中仍然掌管歷史</strong><br>「這事乃出於神，為要應驗耶和華藉示羅人亞希雅對耶羅波安所說的話」（15節）。這不是說神認可羅波安的愚行，而是說神的歷史計畫不會被人的錯誤所終止。信徒面對人的失敗時，可以悲嘆其後果，但同時相信神仍然掌管更大的走向。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>老年人對他說</strong>：「<strong>王若恩待這民</strong>，使他們喜悅，用好話回覆他們，他們就永遠作王的僕人。」（代下10:7）</td>
+<td>老謀士用一句話概括了領袖之道：好話和善待帶來長久的歸心，就像<strong>一個好的雇主知道讓員工心甘情願</strong>遠比讓他們心存恐懼更有長期成效——在你<strong>的生命中（家</strong>庭、職場、教會），你<strong>更習慣用「好</strong>話善待」還是「強硬施壓」來建立影響力？</td>
+</tr>
+<tr>
+<td><strong>王卻不用老年人給</strong><strong>他出的主意</strong>，就和那些與他同齡少年人商議。（代下10:8）</td>
+<td>羅波安的問題不是沒有諮詢，而是選擇了只聽與他立場相近的人，就像<strong>只在同溫層搜尋資訊</strong>，確認的永遠是自己的偏見——你<strong>在重要決定之</strong>前，是否會刻意去聽和你<strong>不同立場或世</strong>代的人的意見？</td>
+</tr>
+<tr>
+<td><strong>王不肯依從百姓</strong>；<strong>這事乃出於神</strong>，為要應驗耶和華藉示羅人亞希雅對尼八兒子耶羅波安所說的話。（代下10:15）</td>
+<td>羅波安的愚蠢決定成了神更大計畫的一部分，就像<strong>一個意外的轉錯彎</strong>，最終走上了一條更長遠的路——這讓你如何<strong>看待生命中那</strong>些「領袖的失誤」或「意料之外的轉折」？你能接受神在那些時刻也仍然掌管嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

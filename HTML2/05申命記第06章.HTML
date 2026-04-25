@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">全心愛神與世代傳承信仰</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「這是耶和華你們神所吩咐教訓你們的誡命、律例、典章，使你們在所要過去得為業的地上遵行，</div>
+<div class="verse"><span class="verse-number">2</span>好叫你和你子子孫孫一生敬畏耶和華你的神，謹守他的一切律例誡命，就是我所吩咐你的，使你的日子得以長久。</div>
+<div class="verse"><span class="verse-number">3</span>以色列啊，你要聽，要謹守遵行，使你可以在那流奶與蜜之地得以享福，人數極其增多，正如耶和華你列祖的神所應許你的。</div>
+<div class="verse"><span class="verse-number">4</span>「以色列啊，你要聽！耶和華我們神是獨一的主。</div>
+<div class="verse"><span class="verse-number">5</span>你要盡心、盡性、盡力愛耶和華你的神。</div>
+<div class="verse"><span class="verse-number">6</span>我今日所吩咐你的話都要記在心上，</div>
+<div class="verse"><span class="verse-number">7</span>也要殷勤教訓你的兒女。無論你坐在家裏，行在路上，躺下，起來，都要談論。</div>
+<div class="verse"><span class="verse-number">8</span>也要繫在手上為記號，戴在額上為經文；</div>
+<div class="verse"><span class="verse-number">9</span>又要寫在你房屋的門框上，並你的城門上。」</div>
+<div class="verse"><span class="verse-number">10</span>「耶和華你的神領你進他向你列祖亞伯拉罕、以撒、雅各起誓應許給你的地。那裏有城邑，又大又美，非你所建造的；</div>
+<div class="verse"><span class="verse-number">11</span>有房屋，裝滿各樣美物，非你所裝滿的；有鑿成的水井，非你所鑿成的；還有葡萄園、橄欖園，非你所栽種的；你吃了而且飽足。</div>
+<div class="verse"><span class="verse-number">12</span>那時你要謹慎，免得你忘記將你從埃及地、為奴之家領出來的耶和華。</div>
+<div class="verse"><span class="verse-number">13</span>你要敬畏耶和華你的神，事奉他，指着他的名起誓。</div>
+<div class="verse"><span class="verse-number">14</span>不可隨從別神，就是你們四圍國民的神；</div>
+<div class="verse"><span class="verse-number">15</span>因為在你們中間的耶和華你神是忌邪的神，惟恐耶和華你神的怒氣向你發作，就把你從地上除滅。</div>
+<div class="verse"><span class="verse-number">16</span>「你們不可試探耶和華你們的神，像你們在瑪撒那樣試探他。</div>
+<div class="verse"><span class="verse-number">17</span>要留意遵守耶和華你們神所吩咐的誡命、法度、律例。</div>
+<div class="verse"><span class="verse-number">18</span>耶和華眼中看為正、看為善的，你都要遵行，使你可以享福，並可以進去得耶和華向你列祖起誓應許的那美地，</div>
+<div class="verse"><span class="verse-number">19</span>照耶和華所說的，從你面前攆出你的一切仇敵。</div>
+<div class="verse"><span class="verse-number">20</span>「日後，你的兒子問你說：『耶和華我們神吩咐你們的這些法度、律例、典章是甚麼意思呢？』</div>
+<div class="verse"><span class="verse-number">21</span>你就告訴你的兒子說：『我們在埃及作過法老的奴僕；耶和華用大能的手將我們從埃及領出來，</div>
+<div class="verse"><span class="verse-number">22</span>在我們眼前，將重大可怕的神蹟奇事施行在埃及地和法老並他全家的身上，</div>
+<div class="verse"><span class="verse-number">23</span>將我們從那裏領出來，要領我們進入他向我們列祖起誓應許之地，把這地賜給我們。</div>
+<div class="verse"><span class="verse-number">24</span>耶和華又吩咐我們遵行這一切律例，要敬畏耶和華我們的神，使我們常得好處，蒙他保全我們的生命，像今日一樣。</div>
+<div class="verse"><span class="verse-number">25</span>我們若照耶和華我們神所吩咐的一切誡命謹守遵行，這就是我們的義了。』」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第六章是全書最著名的章節之一，包含猶太人最神聖的信仰宣言——「示瑪」（Shema，希伯來文「聽」之意），即第4-9節。這段話歷代以來被猶太人視為每日信仰告白的核心，也是耶穌在被問及最大誡命時所引用的經文（馬太福音22:37）。本章背景是摩西在以色列人進入迦南前，最後一次深刻地呼籲百姓以全人之愛愛神，並將這份信仰傳承給下一代。本章下半部描述以色列人即將進入一個充滿現成豐富的土地：建好的城市、裝滿的房屋、鑿好的水井和種好的果園。正因如此，摩西特別警戒百姓，在物質豐盛時最容易忘記神，因此要刻意養成日常傳講信仰的習慣，使愛神的心不因環境的改善而冷淡。本章也強調，當子女問起信仰的理由時，父母要用親身的故事來見證神的作為。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 愛神必須是全人的投入，不可分心</strong><br>「盡心、盡性、盡力愛耶和華你的神」（申6:5）這道命令要求的是全方位的委身：理智（心）、情感（性）和行動（力）都要向神敞開。這種愛不是一種感覺，而是一種持續的生命取向。現代人常將信仰分割在生活的某個角落，而本章挑戰我們把愛神的心滲透進日常的每個場景——坐下、行路、躺下、起來，神都在其中。<br><br>
+<strong>2. 信仰的傳承需要日常的談論與生活示範</strong><br>摩西吩咐百姓要「殷勤教訓你的兒女」，不只在特定的宗教場合，而是在生活的每個時刻（申6:7）。將神的話繫在手上、寫在門框上，是一種提醒信仰生活化的具體設計。真正的信仰傳承不是週一次的宗教教育，而是父母以生命帶動生命，讓孩子在日常的言談中自然地認識神。<br><br>
+<strong>3. 豐盛反而是信仰最大的考驗</strong><br>摩西預見百姓進入應許之地後將面對物質的誘惑，因此反覆警告「要謹慎，免得你忘記耶和華」（申6:12）。歷史一再印證：患難中人往往緊緊倚靠神，豐盛時卻容易自滿而忘記恩典的來源。信仰在順境中的考驗往往比逆境更深，懂得在豐足中感恩並持守敬畏，才是成熟信仰生命的標誌。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你要盡心</strong>、盡性、<strong>盡力愛耶和華你的</strong>神。」（申6:5）</td>
+<td>全人愛神意味著沒有任何保留，就像<strong>全馬選手不能只用一半的力氣跑完</strong>賽程，你<strong>的信仰生活中</strong>，哪個部分——理智、情感或行動——還沒有完全向神敞開？</td>
+</tr>
+<tr>
+<td>「<strong>也要殷勤教訓你的</strong>兒女。<strong>無論你坐在家裏</strong>，行在路上，躺下，起來，都要談論。」（申6:7）</td>
+<td>信仰傳承發生在生活的縫隙裡，就像<strong>家常飯桌上的對話比正式演講更影</strong>響孩子，你<strong>最近一次在日</strong>常生活中主動與家人分享信仰的感動或經歷是什麼時候？</td>
+</tr>
+<tr>
+<td>「<strong>那時你要謹慎</strong>，<strong>免得你忘記將你從</strong>埃及地、為奴之家領出來的耶和華。」（申6:12）</td>
+<td>豐盛最容易讓人忘恩，就像<strong>手機充滿電後往往不再想到電源</strong>，在你<strong>生活較順遂的</strong>時期，你如何<strong>保持對神恩典</strong>的感謝與對祂的依靠，而不是視為理所當然？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>傳道書第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+傳道書第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">敬畏神言語謹慎：勞碌享福乃神的恩賜</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你到神的殿要謹慎腳步；因為近前聽，勝過愚昧人獻祭〔或作：勝過獻愚昧人的祭〕，他們本不知道所作的是惡。</div>
+<div class="verse"><span class="verse-number">2</span>你在神面前不可冒失開口，也不可心急發言；因為神在天上，你在地下，所以你的言語要寡少。</div>
+<div class="verse"><span class="verse-number">3</span>事務多，就令人作夢；言語多，就顯出愚昧。</div>
+<div class="verse"><span class="verse-number">4</span>你向神許願，償還不可遲延，因他不喜悅愚昧人，所以你許的願應當償還。</div>
+<div class="verse"><span class="verse-number">5</span>你許願不還，不如不許。</div>
+<div class="verse"><span class="verse-number">6</span>不可任你的口使肉體犯罪，也不可在祭司〔原文作使者〕面前說是錯許了。為何使神因你的聲音發怒，敗壞你手所作的呢？</div>
+<div class="verse"><span class="verse-number">7</span>多夢和多言，其中多有虛幻，你只要敬畏神。</div>
+<div class="verse"><span class="verse-number">8</span>你若在一省之中見窮人受欺壓，並奪去公義公平的事，不要因此詫異；因有一位高過居高位的鑒察，在他們以上還有更高的。</div>
+<div class="verse"><span class="verse-number">9</span>況且地的益處歸眾人，就是君王也受田地的供應。</div>
+<div class="verse"><span class="verse-number">10</span>貪愛銀子的，不因得銀子知足；貪愛豐富的，也不因得利益知足。這也是虛空。</div>
+<div class="verse"><span class="verse-number">11</span>貨物增添，吃的人也增添，物主得甚麼益處呢？不過眼看而已！</div>
+<div class="verse"><span class="verse-number">12</span>勞碌的人不拘吃多吃少，睡得香甜；富足人的豐滿卻不容他睡覺。</div>
+<div class="verse"><span class="verse-number">13</span>我見日光之下有一宗大禍患，就是財主積存資財，反害自己。</div>
+<div class="verse"><span class="verse-number">14</span>因遭遇禍患，這些資財就消滅；那人若生了兒子，手裏也一無所有。</div>
+<div class="verse"><span class="verse-number">15</span>他怎樣從母胎赤身而來，也必照樣赤身而去；他所勞碌得來的，手中分毫不能帶去。</div>
+<div class="verse"><span class="verse-number">16</span>他來的情形怎樣，他去的情形也怎樣。這也是一宗大禍患。他為風勞碌有甚麼益處呢？</div>
+<div class="verse"><span class="verse-number">17</span>並且他終身在黑暗中吃喝，多有煩惱，又有病患嘔氣。</div>
+<div class="verse"><span class="verse-number">18</span>我所見為善為美的，就是人在神賜他一生的日子吃喝，享受日光之下勞碌得來的好處，因為這是他的分。</div>
+<div class="verse"><span class="verse-number">19</span>神賜人資財豐富，使他能以吃用，能取自己的分，在他勞碌中喜樂，這乃是神的恩賜。</div>
+<div class="verse"><span class="verse-number">20</span>他不多思念自己一生的年日，因為神應他的心使他喜樂。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+傳道書第五章分為兩個主要段落：一是關於敬拜與許願的警告（1-7節），二是關於財富貪婪的虛空與真正知足的反思（8-20節）。本章前半在以色列聖殿崇拜的背景下，傳道者提醒人在神面前的態度——「近前聽，勝過愚昧人獻祭」，強調真實的聆聽比形式化的宗教行為更重要；許願必須踐行，否則不如不許，這反映了古以色列社會中許願（neder）的嚴肅性（申23:21-23）。第2節「神在天上，你在地下，所以你的言語要寡少」，是謙卑在神面前的最精煉表達。後半段轉向財富的主題：第10節「貪愛銀子的，不因得銀子知足」，揭示了貪婪的無限性——慾望只會隨著滿足而增長，而非消退。第15節「赤身而來，赤身而去」，強調財富的暫時性，是對物質主義的深刻批判。第18-19節則呼籲信徒在神賜予的一生中，以感恩之心享受勞碌的成果，這是傳道書積極肯定生命的神學立場。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在神面前謹慎的言語與真實的聆聽，是真正敬拜的核心</strong><br>第1-2節呼籲信徒在進入神面前時，要謹慎腳步、寡少言語。這不是禁止人向神傾訴，而是提醒人：真正的敬拜始於聆聽，而非冒失地用許多言語填滿神聖的空間。在現代喧囂的敬拜文化中，這提醒信徒學習在神面前靜默等候、用心聆聽，讓神的話先進入心裏，然後才回應。這種謙卑的敬拜，比任何形式上的宗教熱情都更蒙神喜悅。<br><br>
+<strong>2. 貪婪是無底洞，只有知足才能帶來真正的安息</strong><br>第10節「貪愛銀子的，不因得銀子知足」，是對物質主義最簡潔的批判。貪婪的本質是一個會隨著滿足而擴張的洞——越填越大。第12節「勞碌的人睡得香甜；富足人的豐滿卻不容他睡覺」，以睡眠這一最基本的生命需求，說明過多財富反而成為人安息的障礙。信徒在神面前學習知足，不只是道德操練，更是靈魂健康的基礎。<br><br>
+<strong>3. 在神賜予的日子中感恩享受，是屬靈成熟的表現</strong><br>第18-19節說明真正的善與美是：在神所賜的一生中，以感恩的心吃喝、在勞碌中喜樂——這是神的恩賜，而非靠人的努力換來的。第20節「神應他的心使他喜樂」，指出這種快樂不是主動爭取的，而是神主動賜予的恩典。信徒若能以敬畏神的心接受每日的恩賜，就能在最平凡的日子中找到神國度的喜樂。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>神在天上</strong>，<strong>你在地下</strong>，所以你的言語要寡少。」（傳5:2）</td>
+<td>就像<strong>學生在尊師面前傾向安靜聆聽而非</strong>急於表達，謙卑讓人先聽再說，你<strong>在禱告或靈修</strong>時，「說話」與「聆聽」的比例大約是多少？你願意<strong>嘗試在某一次</strong>靈修中，先安靜十分鐘，只是等候神，看看會有什麼不同？</td>
+</tr>
+<tr>
+<td>「<strong>貪愛銀子的</strong>，<strong>不因得銀子知足</strong>；貪愛豐富的，也不因得利益知足。」（傳5:10）</td>
+<td>就像<strong>口渴時喝鹹水只會越喝越渴</strong>，貪婪讓人在得到更多後反而渴求更多，你<strong>目前對哪種事</strong>物或資源有一種「永遠不夠」的感覺？是什麼讓你<strong>難以在那個領</strong>域感到滿足？</td>
+</tr>
+<tr>
+<td>「<strong>神賜人資財豐富</strong>，<strong>使他能以吃用</strong>，在他勞碌中喜樂，這乃是神的恩賜。」（傳5:19）</td>
+<td>就像<strong>一頓帶著感恩心情享用的簡單便當</strong>，往往比帶著壓力吃的豪華大餐更令人滿足，你<strong>最近一次真正</strong>地停下來、感謝神賜給你<strong>的「今日之糧</strong>」是什麼時候？那種感恩如何改變了你<strong>對日常生活的</strong>感受？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

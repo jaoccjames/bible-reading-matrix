@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀上第17章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀上第17章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以利亞宣告旱災，烏鴉供養撒勒法復活</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>基列寄居的提斯比人以利亞對亞哈說：「我指着所事奉永生耶和華以色列的神起誓，這幾年我若不禱告，必不降露，不下雨。」</div>
+<div class="verse"><span class="verse-number">2</span>耶和華的話臨到以利亞說：</div>
+<div class="verse"><span class="verse-number">3</span>「你離開這裏往東去，藏在約但河東邊的基立溪旁。</div>
+<div class="verse"><span class="verse-number">4</span>你要喝那溪裏的水，我已吩咐烏鴉在那裏供養你。」</div>
+<div class="verse"><span class="verse-number">5</span>於是以利亞照着耶和華的話，去住在約但河東的基立溪旁。</div>
+<div class="verse"><span class="verse-number">6</span>烏鴉早晚給他叼餅和肉來，他也喝那溪裏的水。</div>
+<div class="verse"><span class="verse-number">7</span>過了些日子，溪水就乾了，因為雨沒有下在地上。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華的話臨到他說：</div>
+<div class="verse"><span class="verse-number">9</span>「你起身往西頓的撒勒法（撒勒法與路加福音四章二十六節同）去，住在那裏；我已吩咐那裏的一個寡婦供養你。」</div>
+<div class="verse"><span class="verse-number">10</span>以利亞就起身往撒勒法去。到了城門，見有一個寡婦在那裏撿柴，以利亞呼叫她說：「求你用器皿取點水來給我喝。」</div>
+<div class="verse"><span class="verse-number">11</span>她去取水的時候，以利亞又呼叫她說：「也求你拿點餅來給我！」</div>
+<div class="verse"><span class="verse-number">12</span>她說：「我指着永生耶和華你的神起誓，我沒有餅，罈內只有一把麵，瓶裏只有一點油；我現在找兩根柴，回家要為我和我兒子作餅；我們吃了，死就死吧！」</div>
+<div class="verse"><span class="verse-number">13</span>以利亞對她說：「不要懼怕！可以照你所說的去作吧！只要先為我作一個小餅拿來給我，然後為你和你的兒子作餅。</div>
+<div class="verse"><span class="verse-number">14</span>因為耶和華以色列的神如此說：罈內的麵必不減少，瓶裏的油必不缺短，直到耶和華使雨降在地上的日子。」</div>
+<div class="verse"><span class="verse-number">15</span>婦人就照以利亞的話去行。她和她家中的人，並以利亞，吃了許多日子。</div>
+<div class="verse"><span class="verse-number">16</span>罈內的麵果不減少，瓶裏的油也不缺短，正如耶和華藉以利亞所說的話。</div>
+<div class="verse"><span class="verse-number">17</span>這事以後，作那家主母的婦人，她兒子病了；病得甚重，以致身無氣息。</div>
+<div class="verse"><span class="verse-number">18</span>婦人對以利亞說：「神人哪，我與你何干？你竟到我這裏來，使神想念我的罪，以致我的兒子死呢？」</div>
+<div class="verse"><span class="verse-number">19</span>以利亞對她說：「把你兒子交給我。」以利亞就從婦人懷中將孩子接過來，抱到他所住的樓中，放在自己的床上，</div>
+<div class="verse"><span class="verse-number">20</span>就求告耶和華說：「耶和華我的神啊，我寄居在這寡婦的家裏，你就降禍與她，使她的兒子死了麼？」</div>
+<div class="verse"><span class="verse-number">21</span>以利亞三次伏在孩子的身上，求告耶和華說：「耶和華我的神阿，求你使這孩子的靈魂仍入他的身體！」</div>
+<div class="verse"><span class="verse-number">22</span>耶和華應允以利亞的話，孩子的靈魂仍入他的身體，他就活了。</div>
+<div class="verse"><span class="verse-number">23</span>以利亞將孩子從樓上抱下來，進屋子交給他母親，說：「看哪，你的兒子活了！」</div>
+<div class="verse"><span class="verse-number">24</span>婦人對以利亞說：「現在我知道你是神人，耶和華藉你口所說的話是真的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀上第17章突然引入了舊約最偉大的先知之一——以利亞，他的登場就像黑暗中一道閃電。以利亞在毫無預兆的情況下出現在亞哈王面前，宣告以色列將有嚴重的旱災，直到他禱告為止。神隨即吩咐以利亞躲避，先在基立溪邊以烏鴉供養他；溪水乾涸後，又差他往西頓的撒勒法，去住在一個極度貧困的外邦寡婦家中。這位寡婦只剩最後一把麵和一點油，準備為自己和兒子作最後一頓飯；以利亞卻要求她先為他作餅，並宣告神的應許：麵不會減少，油不會短缺。婦人以信心順從，神的應許奇蹟般地成就。此後，婦人的兒子病重而死，以利亞三次俯伏在孩子身上禱告，神使孩子復活——這是聖經中記載的第一個死人復活的神蹟。本章呈現了以利亞在極端困境下的信心與順服，以及一位外邦寡婦在貧乏中以信心行動所領受的神蹟，揭示神對順服之人出乎意料的供應方式。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在神的呼召下，順服比看見更重要</strong><br>以利亞離開基立溪後，神吩咐他去找一個外邦的寡婦——而她當時正值最貧困的時刻，完全看不出如何能「供養」先知。以利亞沒有質疑神的邏輯，而是照着吩咐起行。信徒常常等待「條件成熟」才順服神的呼召，但神的呼召往往指向那些看起來最不合理的方向，考驗的正是我們是否願意在看不見答案時先踏出去。<br><br>
+<strong>2. 神的供應往往通過最意想不到的管道和方式</strong><br>神用烏鴉喂養先知，又通過一個幾乎一無所有的外邦寡婦來接待先知，然後使麵罈不空、油瓶不乾。這些都是人的智慧完全想不到的供應方式。信徒在缺乏時，不應把目光固定在「看得見的資源」上，而應仰望那位能以任何方式供應的神。神的供應之道，往往超出我們的想象。<br><br>
+<strong>3. 信心的行動即使微小，也能開啟神的大能</strong><br>撒勒法寡婦只是先用最後的麵油為以利亞作了一個小餅，這個微小的信心行動，開啟了一個持續許多日子的神蹟。神從不要求我們一次拿出所有，而是要求我們在當下能做的範圍內邁出信心的一步。那一步往往是神開始施行大能的起點。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>以利亞對她說</strong>：『……<strong>只要先為我作一個</strong>小餅拿來給我，然後為你和你的兒子作餅。因為耶和華以色列的神如此說：罈內的麵必不減少，瓶裏的油必不缺短。』」（王上17:13-14）</td>
+<td>就像<strong>一位捐出最後積蓄的人</strong>，反而因此開啟了意想不到的財務轉機，寡婦先給先知，神便使她的供應從未斷絕。你有沒有<strong>曾在「幾乎一</strong>無所有」的時候，仍選擇先給出去，然後見到神奇妙的供應？</td>
+</tr>
+<tr>
+<td>「<strong>婦人就照以利亞的</strong><strong>話去行</strong>。她和她家中的人，並以利亞，吃了許多日子。罈內的麵果不減少，瓶裏的油也不缺短。」（王上17:15-16）</td>
+<td>就像<strong>一個看似不可能的數學題</strong>，在神手中卻有了意想不到的解答，寡婦的麵和油在人的邏輯中早就應該用完。你是否<strong>也有神蹟般的</strong>「不減少、不缺短」的經歷，支撐你<strong>走過了一個看</strong>似不可能的時期？</td>
+</tr>
+<tr>
+<td>「<strong>以利亞三次伏在孩</strong><strong>子的身上</strong>，求告耶和華說：……求你使這孩子的靈魂仍入他的身體！耶和華應允以利亞的話。」（王上17:21-22）</td>
+<td>就像<strong>一個人在最黑暗的時刻一遍遍地呼</strong>求，以利亞三次伏在孩子身上禱告，不放棄地求告。你<strong>在為某個「似</strong>乎已死」的事情或關係禱告時，有沒有以利亞這樣的持續不放棄的信心禱告？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

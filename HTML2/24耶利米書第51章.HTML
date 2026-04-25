@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第51章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第51章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">巴比倫傾倒與子民的出走</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華如此說：我必使毀滅的風颳起，攻擊巴比倫和住在立加米的人。</div>
+<div class="verse"><span class="verse-number">2</span>我要打發外邦人來到巴比倫，簸揚她，使她的地空虛。在她遭禍的日子，他們要周圍攻擊她。</div>
+<div class="verse"><span class="verse-number">3</span>拉弓的，要向拉弓的和貫甲挺身的射箭。不要憐惜他的少年人；要滅盡他的全軍。</div>
+<div class="verse"><span class="verse-number">4</span>他們必在迦勒底人之地被殺仆倒，在巴比倫的街上被刺透。</div>
+<div class="verse"><span class="verse-number">5</span>以色列和猶大雖然境內充滿違背以色列聖者的罪，卻沒有被他的神萬軍之耶和華丟棄。</div>
+<div class="verse"><span class="verse-number">6</span>你們要從巴比倫中逃奔，各救自己的性命！不要陷在他的罪孽中一同滅亡；因為這是耶和華報仇的時候，他必向巴比倫施行報應。</div>
+<div class="verse"><span class="verse-number">7</span>巴比倫素來是耶和華手中的金杯，使天下沉醉；萬國喝了他的酒就顛狂了。</div>
+<div class="verse"><span class="verse-number">8</span>巴比倫忽然傾覆毀壞；要為他哀號；為止他的疼痛，拿乳香或者可以治好。</div>
+<div class="verse"><span class="verse-number">9</span>我們想醫治巴比倫，他卻沒有治好。離開他吧！我們各人歸回本國；因為他受的審判通於上天，達到穹蒼。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華已經彰顯我們的公義。來吧！我們可以在錫安報告耶和華我們神的作為。</div>
+<div class="verse"><span class="verse-number">11</span>你們要磨尖了箭頭，抓住盾牌。耶和華定意攻擊巴比倫，將他毀滅，所以激動了瑪代君王的心；因這是耶和華報仇，就是為自己的殿報仇。</div>
+<div class="verse"><span class="verse-number">12</span>你們要豎立大旗，攻擊巴比倫的城牆；要堅固瞭望臺，派定守望的設下埋伏；因為耶和華指着巴比倫居民所說的話、所定的意，他已經作成。</div>
+<div class="verse"><span class="verse-number">13</span>住在眾水之上多有財寶的啊，你的結局到了！你貪婪之量滿了！</div>
+<div class="verse"><span class="verse-number">14</span>萬軍之耶和華指着自己起誓說：我必使敵人充滿你，像螞蚱一樣；他們必吶喊攻擊你。</div>
+<div class="verse"><span class="verse-number">15</span>耶和華用能力創造大地，用智慧建立世界，用聰明鋪張穹蒼。</div>
+<div class="verse"><span class="verse-number">16</span>他一發聲，空中便有多水激動；他使雲霧從地極上騰。他造電隨雨而閃，從他府庫中帶出風來。</div>
+<div class="verse"><span class="verse-number">17</span>各人都成了畜類，毫無知識。各銀匠都因他的偶像羞愧；他所鑄的偶像本是虛假的，其中並無氣息，</div>
+<div class="verse"><span class="verse-number">18</span>都是虛無的，是迷惑人的工作，到追討的時候，必被除滅。</div>
+<div class="verse"><span class="verse-number">19</span>雅各的分不像這些，因他是造作萬有的主；以色列也是他產業的支派。萬軍之耶和華是他的名。</div>
+<div class="verse"><span class="verse-number">20</span>你是我爭戰的斧子和打仗的兵器；我要用你打碎列國，用你毀滅列邦；</div>
+<div class="verse"><span class="verse-number">21</span>用你打碎馬和騎馬的；用你打碎戰車和坐在其上的；</div>
+<div class="verse"><span class="verse-number">22</span>用你打碎男人和女人；用你打碎老年人和少年人；用你打碎壯丁和處女；</div>
+<div class="verse"><span class="verse-number">23</span>用你打碎牧人和他的群畜；用你打碎農夫和他一對牛；用你打碎省長和副省長。</div>
+<div class="verse"><span class="verse-number">24</span>耶和華說：「我必在你們眼前報復巴比倫人和迦勒底居民在錫安所行的諸惡。」</div>
+<div class="verse"><span class="verse-number">25</span>耶和華說：你這行毀滅的山哪，就是毀滅天下的山，我與你反對。我必向你伸手，將你從山巖滾下去，使你成為燒毀的山。</div>
+<div class="verse"><span class="verse-number">26</span>人必不從你那裏取石頭為房角石，也不取石頭為根基石；你必永遠荒涼。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">27</span>要在境內豎立大旗，在各國中吹角，使列國預備攻擊巴比倫，將亞拉臘、米尼、亞實基拿各國招來攻擊他；又派軍長來攻擊他，使馬匹上來如螞蚱，</div>
+<div class="verse"><span class="verse-number">28</span>使列國和瑪代君王，與省長和副省長，並他們所管全地之人，都預備攻擊她。</div>
+<div class="verse"><span class="verse-number">29</span>地必震動而瘠苦；因耶和華向巴比倫所定的旨意成立了，使巴比倫之地荒涼，無人居住。</div>
+<div class="verse"><span class="verse-number">30</span>巴比倫的勇士止息爭戰，藏在堅壘之中。他們的勇力衰盡，好像婦女一樣。巴比倫的住處有火着起，門閂都折斷了。</div>
+<div class="verse"><span class="verse-number">31</span>跑報的要彼此相遇，送信的要互相迎接，報告巴比倫王說：城的四方被攻取了，</div>
+<div class="verse"><span class="verse-number">32</span>渡口被佔據了，葦塘被火燒了，兵丁也驚慌了。</div>
+<div class="verse"><span class="verse-number">33</span>萬軍之耶和華以色列的神如此說：巴比倫〔原文作女子〕城好像踹穀的禾場；再過片時，收割他的時候就到了。</div>
+<div class="verse"><span class="verse-number">34</span>以色列人說：巴比倫王尼布甲尼撒吞滅我，壓碎我，使我成為空虛的器皿。他像大魚將我吞下，用我的美物充滿他的肚腹，又將我趕出去。</div>
+<div class="verse"><span class="verse-number">35</span>錫安的居民要說：巴比倫以強暴待我，損害我的身體，願這罪歸給他。耶路撒冷人要說：願流我們血的罪歸到迦勒底的居民。</div>
+<div class="verse"><span class="verse-number">36</span>所以，耶和華如此說：我必為你伸冤，為你報仇；我必使巴比倫的海枯竭，使他的泉源乾涸。</div>
+<div class="verse"><span class="verse-number">37</span>巴比倫必成為亂堆，為野狗的住處，令人驚駭、嗤笑，並且無人居住。</div>
+<div class="verse"><span class="verse-number">38</span>他們要像少壯獅子咆哮，像小獅子吼叫。</div>
+<div class="verse"><span class="verse-number">39</span>他們火熱的時候，我必為他們設擺酒席，使他們沉醉，好叫他們快樂，睡了長覺，永不醒起。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">40</span>我必使他們像羊羔、像公綿羊和公山羊下到宰殺之地。</div>
+<div class="verse"><span class="verse-number">41</span>示沙克〔就是巴比倫〕何竟被攻取？天下所稱讚的何竟被佔據？巴比倫在列國中何竟變為荒場？</div>
+<div class="verse"><span class="verse-number">42</span>海水漲起，漫過巴比倫；他被許多海浪遮蓋。</div>
+<div class="verse"><span class="verse-number">43</span>他的城邑變為荒場、旱地、沙漠，無人居住，無人經過之地。</div>
+<div class="verse"><span class="verse-number">44</span>我必刑罰巴比倫的彼勒，使他吐出所吞的。萬民必不再流歸他那裏；巴比倫的城牆也必坍塌了。</div>
+<div class="verse"><span class="verse-number">45</span>我的民哪，你們要從其中出去！各人拯救自己，躲避耶和華的烈怒。</div>
+<div class="verse"><span class="verse-number">46</span>你們不要心驚膽怯，也不要因境內所聽見的風聲懼怕；因為這年有風聲傳來；那年也有風聲傳來，境內有強暴的事，官長攻擊官長。</div>
+<div class="verse"><span class="verse-number">47</span>日子將到，我必刑罰巴比倫雕刻的偶像。他全地必然抱愧；他被殺的人必在其中仆倒。</div>
+<div class="verse"><span class="verse-number">48</span>那時，天地和其中所有的，必因巴比倫歡呼，因為行毀滅的要從北方來到他那裏。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">49</span>巴比倫怎樣使以色列被殺的人仆倒，照樣他全地被殺的人也必在巴比倫仆倒。</div>
+<div class="verse"><span class="verse-number">50</span>你們躲避刀劍的要快走，不要站住！要在遠方記念耶和華，心中追想耶路撒冷。</div>
+<div class="verse"><span class="verse-number">51</span>我們聽見辱罵就蒙羞，滿面慚愧，因為外邦人進入耶和華殿的聖所。</div>
+<div class="verse"><span class="verse-number">52</span>耶和華說：日子將到，我必刑罰巴比倫雕刻的偶像，通國受傷的人必唉哼。</div>
+<div class="verse"><span class="verse-number">53</span>巴比倫雖升到天上，雖使他堅固的高處更堅固，還有行毀滅的從我這裏到他那裏。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">54</span>有哀號的聲音從巴比倫出來；有大毀滅的響聲從迦勒底人之地發出。</div>
+<div class="verse"><span class="verse-number">55</span>因耶和華使巴比倫變為荒場，使其中的大聲滅絕。仇敵彷彿眾水，波浪匉訇，響聲已經發出。</div>
+<div class="verse"><span class="verse-number">56</span>這是行毀滅的臨到巴比倫。巴比倫的勇士被捉住，他們的弓折斷了；因為耶和華是施行報應的神，必定施行報應。</div>
+<div class="verse"><span class="verse-number">57</span>君王名為萬軍之耶和華的說：我必使巴比倫的首領、智慧人、省長、副省長，和勇士都沉醉，使他們睡了長覺，永不醒起。</div>
+<div class="verse"><span class="verse-number">58</span>萬軍之耶和華如此說：巴比倫寬闊的城牆必全然傾倒；她高大的城門必被火焚燒。眾民所勞碌的必致虛空；列國所勞碌的被火焚燒，他們都必困乏。</div>
+<div class="verse"><span class="verse-number">59</span>猶大王西底家在位第四年，上巴比倫去的時候，瑪西雅的孫子、尼利亞的兒子西萊雅與王同去（西萊雅是王宮的大臣），先知耶利米有話吩咐他。</div>
+<div class="verse"><span class="verse-number">60</span>耶利米將一切要臨到巴比倫的災禍，就是論到巴比倫的一切話，寫在書上。</div>
+<div class="verse"><span class="verse-number">61</span>耶利米對西萊雅說：「你到了巴比倫務要念這書上的話；</div>
+<div class="verse"><span class="verse-number">62</span>又說：『耶和華阿，你曾論到這地方說：要剪除，甚至連人帶牲畜沒有在這裏居住的，必永遠荒涼。』</div>
+<div class="verse"><span class="verse-number">63</span>你念完了這書，就把一塊石頭拴在書上，扔在伯拉河中，</div>
+<div class="verse"><span class="verse-number">64</span>說：『巴比倫因耶和華所要降與他的災禍，必如此沉下去，不再興起，人民也必困乏。』」耶利米的話到此為止。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第51章是論巴比倫神諭的終篇，也是整個「列國神諭」的高峰。本章以宏大的末世意象描繪巴比倫的徹底毀滅：毀滅的風（1節）、神的金杯轉為報應（7-8節）、城牆傾倒（58節）。中段（15-19節）插入讚美創造主的詩歌，宣告造作萬有的神與虛假偶像的鮮明對比，為整個審判提供神學根基。第20至23節宣告神曾使用巴比倫作「打碎列國的斧子」，但現在這工具已完成使命，神親自轉而審判它。神在第45節再次呼召以色列人：「我的民哪，你們要從其中出去！各人拯救自己，躲避耶和華的烈怒。」本章末段（59-64節）有一個特別的行動預言：耶利米把論巴比倫的書卷交給西萊雅，叫他帶到巴比倫宣讀，然後把書卷綁在石頭上沉入伯拉河，宣告「巴比倫因耶和華的災禍，必如此沉下去，不再興起」。最後一句「耶利米的話到此為止」，是全卷的文學收束，充滿庄嚴的終結感。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【任何看似不可攻克的強大，都在神的主權之下】</strong><br>巴比倫是古代世界的超級強國，號稱「眾水之上、多有財寶」的帝國，城牆寬廣聞名。然而神只需一句話，就使「寬闊的城牆全然傾倒」。這對信徒是絕對的安慰：無論眼前的「巴比倫」有多強大——無論是疾病、制度、或人的強勢——沒有任何力量超過神的主權。神的話語是最終的權威，祂所說的審判，必然成就。<br><br>
+<strong>2. 【在神審判的時候，屬祂的人需要「出來」，不要與罪一同滅亡】</strong><br>「我的民哪，你們要從其中出去！」這個呼召不只是地理的移動，更是屬靈的分別——不要讓自己的生命與世界的罪惡體系纏繞太深，以至於在審判臨到時無法分離。信徒在世界中卻不屬於這個世界，這種「在其中卻出來」的張力，是信仰生命的核心功課。<br><br>
+<strong>3. 【神的話語像石頭沉入河中，不再浮出地面，必然成就】</strong><br>書卷綁在石頭上沉入伯拉河的行動預言，是整卷書最後的象徵行動：神的審判宣告已發出，必沉甸甸地下去，不再浮回、不再撤回。這是神話語確定性的最後一個意象。信徒在面對神的應許時，也可以這樣確信：神的話一旦發出，就像石頭沉入水中，不會無效地浮回，必然在祂所定的時間成就。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我的民哪</strong>，<strong>你們要從其中出去</strong>！各人拯救自己，躲避耶和華的烈怒。（耶51:45）</td>
+<td>你<strong>生命中</strong>是否有某些「巴比倫式的纏繞」——某種罪的模式、有害的關係、或世界的體系——你<strong>仍身陷其中</strong>，需要神的呼召來「出來」？就像<strong>在充滿煙霧的房間裡</strong>，即使不想離開也需要出去呼吸，你願意<strong>回應神「出來</strong>」的呼召，從那個正在妨礙你<strong>屬靈呼吸的地</strong>方分離嗎？</td>
+</tr>
+<tr>
+<td><strong>萬軍之耶和華如此</strong>說：<strong>巴比倫寬闊的城牆</strong>必全然傾倒；她高大的城門必被火焚燒。眾民所勞碌的必致虛空；列國所勞碌的被火焚燒，他們都必困乏。（耶51:58）</td>
+<td>你<strong>在追求的某些</strong>事情，有沒有可能是「眾民所勞碌必致虛空」的努力？就像<strong>花大力氣裝修一棟即將拆除的舊樓</strong>，你願意<strong>讓神幫你辨認</strong>，你<strong>的時間和精力</strong>正在投入的，是有永恆意義的事，還是最終會成為虛空的勞碌？</td>
+</tr>
+<tr>
+<td><strong>巴比倫因耶和華所</strong><strong>要降與他的災禍</strong>，必如此沉下去，不再興起，人民也必困乏。（耶51:64上）</td>
+<td>神說的話「必如此沉下去，不再興起」——祂的審判是確定的，祂的應許也是確定的。你<strong>目前最需要相</strong>信哪一個神的應許是「已沉入水中、不會改變」的？就像<strong>存款已到帳但還沒花</strong>，你願意<strong>以信心使用那</strong>個應許，把它當作已成就的事實活出來嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

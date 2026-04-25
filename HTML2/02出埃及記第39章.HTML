@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第39章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第39章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">聖衣完成照旨意驗收祝福</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>比撒列用藍色、紫色、朱紅色線作精緻的衣服，在聖所用以供職，又為亞倫作聖衣，是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">2</span>他用金線和藍色、紫色、朱紅色線，並撚的細麻作以弗得；</div>
+<div class="verse"><span class="verse-number">3</span>把金子錘成薄片，剪出線來，與藍色、紫色、朱紅色線，用巧匠的手工一同繡上。</div>
+<div class="verse"><span class="verse-number">4</span>又為以弗得作兩條相連的肩帶，接連在以弗得的兩頭。</div>
+<div class="verse"><span class="verse-number">5</span>其上巧工織的帶子和以弗得一樣的作法，用以束上，與以弗得接連一塊，是用金線和藍色、紫色、朱紅色線，並撚的細麻作的，是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">6</span>又琢出兩塊紅瑪瑙，鑲在金槽上，彷彿刻圖書，按着以色列兒子的名字雕刻；</div>
+<div class="verse"><span class="verse-number">7</span>將這兩塊寶石安在以弗得的兩條肩帶上，為以色列人作紀念石，是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">8</span>他用巧匠的手工作胸牌，和以弗得一樣的作法，用金線與藍色、紫色、朱紅色線，並撚的細麻作的。</div>
+<div class="verse"><span class="verse-number">9</span>胸牌是四方的，疊為兩層；這兩層長一虎口，寬一虎口，</div>
+<div class="verse"><span class="verse-number">10</span>上面鑲着寶石四行：第一行是紅寶石、紅璧璽、紅玉；</div>
+<div class="verse"><span class="verse-number">11</span>第二行是綠寶石、藍寶石、金鋼石；</div>
+<div class="verse"><span class="verse-number">12</span>第三行是紫瑪瑙、白瑪瑙、紫晶；</div>
+<div class="verse"><span class="verse-number">13</span>第四行是水蒼玉、紅瑪瑙、碧玉。這都鑲在金槽中。</div>
+<div class="verse"><span class="verse-number">14</span>這些寶石都是按着以色列十二個兒子的名字，彷彿刻圖書，刻十二個支派的名字。</div>
+<div class="verse"><span class="verse-number">15</span>在胸牌上，用精金擰成如繩子的鍊子。</div>
+<div class="verse"><span class="verse-number">16</span>又作兩個金槽和兩個金環，安在胸牌的兩頭。</div>
+<div class="verse"><span class="verse-number">17</span>把那兩條擰成的金鍊子穿過胸牌兩頭的環子，</div>
+<div class="verse"><span class="verse-number">18</span>又把鍊子的那兩頭接在兩槽上，安在以弗得前面肩帶上。</div>
+<div class="verse"><span class="verse-number">19</span>作兩個金環，安在胸牌的兩頭，在以弗得裏面的邊上，</div>
+<div class="verse"><span class="verse-number">20</span>又作兩個金環，安在以弗得前面兩條肩帶的下邊，挨近相接之處，在以弗得巧工織的帶子以上。</div>
+<div class="verse"><span class="verse-number">21</span>用一條藍細帶子把胸牌的環子和以弗得的環子繫住，使胸牌貼在以弗得巧工織的帶子上，不可與以弗得離縫，是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">22</span>他用織工作以弗得的外袍，顏色全是藍的。</div>
+<div class="verse"><span class="verse-number">23</span>袍上留一領口，口的周圍織出領邊來，彷彿鎧甲的領口，免得破裂。</div>
+<div class="verse"><span class="verse-number">24</span>在袍子底邊上，用藍色、紫色、朱紅色線，並撚的細麻作石榴，</div>
+<div class="verse"><span class="verse-number">25</span>又用精金作鈴鐺，把鈴鐺釘在袍子周圍底邊上的石榴中間：</div>
+<div class="verse"><span class="verse-number">26</span>一個鈴鐺一個石榴，一個鈴鐺一個石榴，在袍子周圍底邊上用以供職，是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">27</span>他用織成的細麻布為亞倫和他的兒子作內袍，</div>
+<div class="verse"><span class="verse-number">28</span>並用細麻布作冠冕和華美的裹頭巾，用撚的細麻布作褲子，</div>
+<div class="verse"><span class="verse-number">29</span>又用藍色、紫色、朱紅色線，並撚的細麻，以繡花的手工作腰帶，是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">30</span>他用精金作聖冠上的牌，在上面按刻圖書之法，刻着「歸耶和華為聖」。</div>
+<div class="verse"><span class="verse-number">31</span>又用一條藍細帶子將牌繫在冠冕上，是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">32</span>帳幕，就是會幕，一切的工就這樣作完了。凡耶和華所吩咐摩西的，以色列人都照樣作了。</div>
+<div class="verse"><span class="verse-number">33</span>他們送到摩西那裏。帳幕和帳幕的一切器具，就是鉤子、板、閂、柱子、帶卯的座，</div>
+<div class="verse"><span class="verse-number">34</span>染紅公羊皮的蓋、海狗皮的頂蓋，和遮掩櫃的幔子，</div>
+<div class="verse"><span class="verse-number">35</span>法櫃和櫃的杠並施恩座，</div>
+<div class="verse"><span class="verse-number">36</span>桌子和桌子的一切器具並陳設餅，</div>
+<div class="verse"><span class="verse-number">37</span>精金的燈臺和擺列的燈盞，與燈臺的一切器具，並點燈的油，</div>
+<div class="verse"><span class="verse-number">38</span>金壇、膏油、馨香的香料、會幕的門簾，</div>
+<div class="verse"><span class="verse-number">39</span>銅壇和壇上的銅網，壇的杠並壇的一切器具，洗濯盆和盆座，</div>
+<div class="verse"><span class="verse-number">40</span>院子的帷子和柱子，並帶卯的座，院子的門簾、繩子、橛子，並帳幕和會幕中一切使用的器具，</div>
+<div class="verse"><span class="verse-number">41</span>精工作的禮服，和祭司亞倫並他兒子在聖所用以供祭司職分的聖衣。</div>
+<div class="verse"><span class="verse-number">42</span>這一切工作都是以色列人照耶和華所吩咐摩西作的。</div>
+<div class="verse"><span class="verse-number">43</span>耶和華怎樣吩咐的，他們就怎樣作了。摩西看見一切的工都作成了，就給他們祝福。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第39章記載聖衣的完成製作和整個會幕工程的竣工驗收。比撒列按照神所指示摩西的樣式，完成了所有的聖衣：以弗得（以金線和彩色線繡製，肩帶上有刻十二支派名字的紅瑪瑙）、胸牌（十二塊寶石刻十二支派名字，附金鍊繫於以弗得）、藍色外袍（下擺有石榴和金鈴鐺交替）、細麻布內袍和冠冕、腰帶，以及刻着「歸耶和華為聖」的精金聖牌。每樣衣物的描述都附有「是照耶和華所吩咐摩西的」，這個短語在本章反覆出現，強調完全遵循神指示的忠心。工程完成後，所有器具和衣物都呈交給摩西。摩西看見所有的工都完成了，就給他們祝福。本章是整個會幕建造的終篇，以「照耶和華所吩咐」的反覆宣告和摩西的祝福作結，是對順服工程的嚴肅確認。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「照耶和華所吩咐」是整個建造工程的核心聲明</strong><br>本章中「照耶和華所吩咐摩西的」出現多次，是整個會幕建造的核心句式。遵照神的指示，不多也不少，是服事忠心的最高標準。信徒在各自的服事崗位上，核心問題始終是：「這是按照神的話所做的嗎？」不按自己的意思，而按神的指示行，是一切服事的根本原則。<br><br>
+<strong>2. 竣工的驗收是對服事嚴肅確認的必要過程</strong><br>摩西逐一查看所有完成的器具和聖衣，確認一切都照神所吩咐的完成。這種嚴肅的驗收不是不信任工匠，而是對神委託之工的嚴謹負責。信徒在服事後的省思和評估，是屬靈成長的重要過程，也是對神所委託之工的尊重。<br><br>
+<strong>3. 忠心完工之後得着祝福是神的應許</strong><br>「摩西看見一切的工都作成了，就給他們祝福」，竣工後的祝福是神對忠心服事的肯定與賜福。信徒在完成神所交付的任務後，可以期待神的肯定和祝福。這個祝福不是報酬式的交換，而是父神對忠心兒女的愛的表達，是「好，你這又良善又忠心的僕人」的具體彰顯。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他用精金作聖冠上</strong>的牌，<strong>在上面按刻圖書之</strong>法，刻着「歸耶和華為聖」。（出39:30）</td>
+<td>就像<strong>職業球衣上的號碼和隊名宣告球員</strong>的歸屬，刻在冠冕上的「歸耶和華為聖」是祭司身份的核心宣告。在你<strong>日常生活的「</strong>額頭上」（外在行為與言語中），別人能看出你是「歸耶和華為聖」的人嗎？你<strong>認同這個身份</strong>，還是更願意在不同場合隱藏它？</td>
+</tr>
+<tr>
+<td><strong>凡耶和華所吩咐摩</strong>西的，<strong>以色列人都照樣作</strong>了。（出39:42）</td>
+<td>就像<strong>學生按照老師的指引完成作品後</strong>，帶着成品去接受老師的評鑑，「照耶和華所吩咐」貫穿整個工程是忠心最真實的宣告。在你<strong>的信仰生活中</strong>，「照神所吩咐的去行」是一個你<strong>努力實踐的標</strong>準，還是一個你<strong>覺得過於理想</strong>化而難以達到的要求？</td>
+</tr>
+<tr>
+<td><strong>摩西看見一切的工</strong><strong>都作成了</strong>，就給他們祝福。（出39:43）</td>
+<td>就像<strong>辛苦完成一個長期專案後</strong>，聽到上司真心的讚許讓人感到所有付出都值得，摩西的祝福是對忠心服事的神聖肯定。你<strong>在服事神的過</strong>程中，是否有意識地期待神對你<strong>忠心的肯定</strong>？這種對神肯定的期待如何成為你<strong>持守服事的動</strong>力之一？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

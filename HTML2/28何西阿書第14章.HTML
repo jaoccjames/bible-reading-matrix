@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何西阿書第14章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+何西阿書第14章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">歸向耶和華：悔改的呼召與醫治的應許</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列啊，你要歸向耶和華你的神；你是因自己的罪孽跌倒了。</div>
+<div class="verse"><span class="verse-number">2</span>當歸向耶和華，用言語禱告他說：求你除淨罪孽，悅納善行；這樣，我們就把嘴唇的祭代替牛犢獻上。</div>
+<div class="verse"><span class="verse-number">3</span>我們不向亞述求救，不騎埃及的馬，也不再對我們手所造的說：你是我們的神。因為孤兒在你耶和華那裏得蒙憐憫。</div>
+<div class="verse"><span class="verse-number">4</span>我必醫治他們背道的病，甘心愛他們；因為我的怒氣向他們轉消。</div>
+<div class="verse"><span class="verse-number">5</span>我必向以色列如甘露；他必如百合花開放，如利巴嫩的樹木扎根。</div>
+<div class="verse"><span class="verse-number">6</span>他的枝條必延長；他的榮華如橄欖樹；他的香氣如利巴嫩的香柏樹。</div>
+<div class="verse"><span class="verse-number">7</span>曾住在他蔭下的必歸回，發旺如五穀，開花如葡萄樹。他的香氣如利巴嫩的酒。</div>
+<div class="verse"><span class="verse-number">8</span>以法蓮必說：我與偶像還有甚麼關涉呢？我耶和華回答他，也必顧念他。我如青翠的松樹；你的果子從我而得。</div>
+<div class="verse"><span class="verse-number">9</span>誰是智慧人，可以明白這些事；誰是通達人，可以知道這一切。因為，耶和華的道是正直的；義人必在其中行走，罪人卻在其上跌倒。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+何西阿書第14章是全書最後一章，也是最充滿盼望的一章，是先知書中悔改呼召和恢復應許最完整的範本之一。第1至2節是呼召：「以色列啊，你要歸向耶和華你的神；你是因自己的罪孽跌倒了。當歸向耶和華，用言語禱告他說……」接着提供了一個具體的悔改禱文（2-3節）：承認罪孽、求神悅納、放棄倚靠亞述和埃及的馬、不再以手所造的為神、承認孤兒在神那裏蒙憐憫。神的回應是一系列令人心動的應許（4-7節）：「我必醫治他們背道的病，甘心愛他們……我必向以色列如甘露；他必如百合花開放，如利巴嫩的樹木扎根……他的香氣如利巴嫩的香柏樹。」章末（8-9節）以以法蓮的宣告作結：「我與偶像還有什麼關涉呢？」神說「我如青翠的松樹；你的果子從我而得」——最終，一切的好果子來源是神，而不是偶像。全書以一句智慧語結束：「誰是智慧人，可以明白這些事……因為耶和華的道是正直的；義人必在其中行走，罪人卻在其上跌倒。」
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【悔改有其具體的話語：「用言語禱告他」】</strong><br>神不只說「回轉」，還提供了一個悔改禱文的範本。真實的悔改需要具體的言語承認——不是模糊的「我知道我不好」，而是具體地說出：「除淨罪孽，不倚靠亞述，不騎埃及的馬，不再稱手所造的為神」。信仰的悔改有它具體的言語，把模糊的感受說成具體的承認和委身，是完成悔改的重要一步。<br><br>
+<strong>2. 【神「甘心愛他們」：愛是發自神內心的意願，不是被迫的義務】</strong><br>「我必醫治他們背道的病，甘心愛他們」——「甘心」表示這是神自願、發自心中的愛，不是被要求或被迫的恩惠。神對我們的愛，不是因為我們配得或因為義務，而是神「甘心」如此——這是最自由的、最純粹的愛。信仰最深的安息，來自相信「神甘心愛我」這個真理。<br><br>
+<strong>3. 【「你的果子從我而得」：一切生命的果實最終來源是神】</strong><br>「我如青翠的松樹；你的果子從我而得」——這是全書最後的神學宣告：人以為從偶像（情人）得到果子，其實是從神而得。生命一切真實的果實——喜樂、意義、關係、創造力——都是從神這棵「青翠的松樹」而得。回到神，就是回到一切果實的真實來源。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>以色列啊</strong>，<strong>你要歸向耶和華你</strong>的神；你是因自己的罪孽跌倒了。（何14:1）</td>
+<td>「你是因自己的罪孽跌倒了」——何西阿書的最後呼召非常直接，承認是自己的罪讓自己跌倒，而不是怪罪環境或他人。你<strong>現在生命中最</strong>真實的「跌倒」，你有沒有<strong>誠實地承認它</strong>的真實原因是什麼？就像<strong>找出機器故障的真正原因才能修好</strong>，你願意<strong>今天向神誠實</strong>地說出你<strong>「跌倒」的真</strong>實原因嗎？</td>
+</tr>
+<tr>
+<td><strong>我必醫治他們背道</strong>的病，<strong>甘心愛他們</strong>；因為我的怒氣向他們轉消。（何14:4）</td>
+<td>「甘心愛他們」——神愛你不是義務，不是被迫，而是甘心的。你<strong>在與神的關係</strong>中，有沒有覺得自己是「被神勉強接受的」而不是「被神甘心愛着的」？就像<strong>感受到婚姻中的甘心與勉強是完全</strong>不同的質量，神對你<strong>的「甘心之愛</strong>」，有多深地進入了你<strong>對這段關係的</strong>感受？</td>
+</tr>
+<tr>
+<td><strong>我如青翠的松樹</strong>；<strong>你的果子從我而得</strong>。（何14:8下）</td>
+<td>「你<strong>的果子從我而</strong>得」——一切真實的生命果實來源是神。你<strong>現在最在乎的</strong>生命果實（成就、關係、意義、創意），你是否<strong>認識到它們真</strong>正的來源是神？就像<strong>果樹需要連接樹根才能結果</strong>，你<strong>和神的連接（</strong>禱告、讀經、委身）有多深，直接影響你<strong>生命果實的豐</strong>盛。你願意<strong>今天重新確認</strong>你<strong>和那棵「青翠</strong>松樹」的連接嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

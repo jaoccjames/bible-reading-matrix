@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尼希米記第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+尼希米記第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以斯拉宣讀律法，眾民喜樂守節</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>到了七月，以色列人住在自己的城裏。那時，他們如同一人聚集在水門前的寬闊處，請文士以斯拉將耶和華藉摩西傳給以色列人的律法書帶來。</div>
+<div class="verse"><span class="verse-number">2</span>七月初一日，祭司以斯拉將律法書帶到聽了能明白的男女會眾面前。</div>
+<div class="verse"><span class="verse-number">3</span>在水門前的寬闊處，從清早到晌午，在眾男女、一切聽了能明白的人面前讀這律法書。眾民側耳而聽。</div>
+<div class="verse"><span class="verse-number">4</span>文士以斯拉站在為這事特備的木臺上。瑪他提雅、示瑪、亞奈雅、烏利亞、希勒家，和瑪西雅站在他的右邊；毘大雅、米沙利、瑪基雅、哈順、哈拔大拿、撒迦利亞，和米書蘭站在他的左邊。</div>
+<div class="verse"><span class="verse-number">5</span>以斯拉站在眾民以上，在眾民眼前展開這書。他一展開，眾民就都站起來。</div>
+<div class="verse"><span class="verse-number">6</span>以斯拉稱頌耶和華至大的神；眾民都舉手應聲說：「阿們！阿們！」就低頭，面伏於地，敬拜耶和華。</div>
+<div class="verse"><span class="verse-number">7</span>耶書亞、巴尼、示利比、雅憫、亞谷、沙比太、荷第雅、瑪西雅、基利他、亞撒利雅、約撒拔、哈難、毘萊雅，和利未人使百姓明白律法；百姓都站在自己的地方。</div>
+<div class="verse"><span class="verse-number">8</span>他們清清楚楚的念神的律法書，講明意思，使百姓明白所念的。</div>
+<div class="verse"><span class="verse-number">9</span>省長尼希米和作祭司的文士以斯拉，並教訓百姓的利未人，對眾民說：「今日是耶和華你們神的聖日，不要悲哀哭泣。」這是因為眾民聽見律法書上的話都哭了；</div>
+<div class="verse"><span class="verse-number">10</span>又對他們說：「你們去喫肥美的，喝甘甜的，有不能預備的就分給他，因為今日是我們主的聖日。你們不要憂愁，因靠耶和華而得的喜樂是你們的力量。」</div>
+<div class="verse"><span class="verse-number">11</span>於是利未人使眾民靜默，說：「今日是聖日；不要作聲，也不要憂愁。」</div>
+<div class="verse"><span class="verse-number">12</span>眾民都去喫喝，也分給人，大大快樂，因為他們明白所教訓他們的話。</div>
+<div class="verse"><span class="verse-number">13</span>次日，眾民的族長、祭司，和利未人都聚集到文士以斯拉那裏，要留心聽律法上的話。</div>
+<div class="verse"><span class="verse-number">14</span>他們見律法上寫着，耶和華藉摩西吩咐以色列人要在七月節住棚，</div>
+<div class="verse"><span class="verse-number">15</span>並要在各城和耶路撒冷宣傳報告說：「你們當上山，將橄欖樹、野橄欖樹、番石榴樹、棕樹，和各樣茂密樹的枝子取來，照着所寫的搭棚。」</div>
+<div class="verse"><span class="verse-number">16</span>於是百姓出去，取了樹枝來，各人在自己的房頂上，或院內，或神殿的院內，或水門的寬闊處，或以法蓮門的寬闊處搭棚。</div>
+<div class="verse"><span class="verse-number">17</span>從擄到之地歸回的全會眾就搭棚，住在棚裏。從嫩的兒子約書亞的時候直到這日，以色列人沒有這樣行。於是眾人大大喜樂。</div>
+<div class="verse"><span class="verse-number">18</span>從頭一天直到末一天，以斯拉每日念神的律法書。眾人守節七日，第八日照例有嚴肅會。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+尼希米記第8章是全書屬靈復興的核心場景。城牆完工後，百姓自發聚集在水門前的廣場，請以斯拉宣讀神的律法書——這是百姓主動尋求神話語的珍貴時刻。以斯拉站在特備的木台上，從清早讀到晌午，眾民「側耳而聽」，站立敬拜，甚至聽到哭泣。這不是一場普通的宗教聚會，而是在長達幾十年被擄、重建後，百姓重新面對神話語的深刻時刻。尼希米和以斯拉的教導提醒百姓不要悲哀，因「靠耶和華而得的喜樂是你們的力量」。百姓不只聽，還行動——次日查到住棚節的命令便立刻遵行，「大大喜樂」。本章揭示，屬靈復興的關鍵是回到神的話語，「明白所念的」，然後以喜樂的心遵行。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神話語的宣讀與講解是屬靈復興的核心動力</strong><br>本章描述的屬靈復興不是靠情緒煽動或神蹟奇事，而是靠清楚宣讀和講解神的話語——「清清楚楚的念神的律法書，講明意思，使百姓明白所念的」。明白帶來回應，回應帶來轉化。這說明教會和個人生命的更新，根本上離不開對神話語的認識和理解。宣讀不夠，還需要「講明意思」，使人真正明白。<br><br>
+<strong>2. 靠耶和華而得的喜樂是屬靈生命的力量泉源</strong><br>百姓聽見律法哭泣，是因看見自己的虧欠；但領袖教導他們轉向喜樂，因「靠耶和華而得的喜樂是你們的力量」。這不是壓抑悲傷，而是引導人在神的恩典中找到真正的力量。屬靈生命不能長期活在悲傷和定罪中——神的恩典使人在認識罪之後，也能昂首領受神的赦免和喜樂，這才是持久事奉的動力。<br><br>
+<strong>3. 聽到神的話就立刻遵行，是信仰成熟的標誌</strong><br>百姓次日重新聚集，查到住棚節的命令，當天便開始行動。從知道到遵行之間沒有拖延，更沒有討論「這命令現在還適用嗎」。這種立刻順服的態度，正是信仰活潑的表現。神的話語不只是知識，更是生命的引導，應當以行動回應，而非停留在頭腦的了解。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他們清清楚楚的念</strong><strong>神的律法書</strong>，講明意思，使百姓明白所念的。（尼8:8）</td>
+<td>就像<strong>說明書需要用清晰的語言才能讓人</strong>正確使用產品，清楚講解神的話讓人明白比單純引用更重要。你<strong>上一次真正「</strong>明白」一段聖經的意思，是在什麼情況下發生的？</td>
+</tr>
+<tr>
+<td><strong>你們不要憂愁</strong>，<strong>因靠耶和華而得的</strong>喜樂是你們的力量。（尼8:10）</td>
+<td>就像<strong>手機低電量時需要充電才能繼續使</strong>用，靠耶和華的喜樂是你<strong>屬靈力量的充</strong>電站。當你<strong>感到疲倦或憂</strong>愁時，你如何<strong>重新連上這個</strong>喜樂的源頭？什麼讓你<strong>與它斷開</strong>？</td>
+</tr>
+<tr>
+<td><strong>從擄到之地歸回的</strong><strong>全會眾就搭棚</strong>，住在棚裏。從嫩的兒子約書亞的時候直到這日，以色列人沒有這樣行。於是眾人大大喜樂。（尼8:17）</td>
+<td>就像<strong>久久沒有做某件有意義的事之後終</strong>於去做，那份滿足感特別深，重新遵行神的話語帶來的喜樂是否也讓你<strong>想到</strong>，自己有哪些久被忽略的屬靈習慣值得恢復？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

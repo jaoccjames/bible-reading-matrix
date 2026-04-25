@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第36章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第36章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以利戶論神的教導：神藉苦難引人歸向祂</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以利戶又接着說：</div>
+<div class="verse"><span class="verse-number">2</span>你再容我片時，我就指示你，因我還有話為神說。</div>
+<div class="verse"><span class="verse-number">3</span>我要將所知道的從遠處引來，將公義歸給造我的主。</div>
+<div class="verse"><span class="verse-number">4</span>我的言語真不虛謊；有知識全備的與你同在。</div>
+<div class="verse"><span class="verse-number">5</span>神有大能，並不藐視人；他的智慧甚廣。</div>
+<div class="verse"><span class="verse-number">6</span>他不保護惡人的性命，卻為困苦人伸冤。</div>
+<div class="verse"><span class="verse-number">7</span>他時常看顧義人，使他們和君王同坐寶座，永遠要被高舉。</div>
+<div class="verse"><span class="verse-number">8</span>他們若被鎖鍊捆住，被苦難的繩索纏住，</div>
+<div class="verse"><span class="verse-number">9</span>他就把他們的作為和過犯指示他們，叫他們知道有驕傲的行動。</div>
+<div class="verse"><span class="verse-number">10</span>他也開通他們的耳朵得受教訓，吩咐他們離開罪孽轉回。</div>
+<div class="verse"><span class="verse-number">11</span>他們若聽從事奉他，就必度日亨通，歷年福樂；</div>
+<div class="verse"><span class="verse-number">12</span>若不聽從，就要被刀殺滅，無知無識而死。</div>
+<div class="verse"><span class="verse-number">13</span>那心中不敬虔的人積蓄怒氣；神捆綁他們，他們竟不求救；</div>
+<div class="verse"><span class="verse-number">14</span>必在青年時死亡，與污穢人一樣喪命。</div>
+<div class="verse"><span class="verse-number">15</span>神藉着困苦救拔困苦人，趁他們受欺壓開通他們的耳朵。</div>
+<div class="verse"><span class="verse-number">16</span>神也必引你出離患難，進入寬闊不狹窄之地；擺在你席上的必滿有肥甘。</div>
+<div class="verse"><span class="verse-number">17</span>但你滿口有惡人批評的言語；判斷和刑罰抓住你。</div>
+<div class="verse"><span class="verse-number">18</span>不可容忿怒觸動你，使你不服責罰；也不可因贖價大就偏行。</div>
+<div class="verse"><span class="verse-number">19</span>你的呼求〔或作：資財〕，或是你一切的勢力，果有靈驗，叫你不受患難嗎？</div>
+<div class="verse"><span class="verse-number">20</span>不要切慕黑夜，就是眾民在本處被除滅的時候。</div>
+<div class="verse"><span class="verse-number">21</span>你要謹慎，不可重看罪孽，因你選擇罪孽過於選擇苦難。</div>
+<div class="verse"><span class="verse-number">22</span>神行事有高大的能力；教訓人的有誰像他呢？</div>
+<div class="verse"><span class="verse-number">23</span>誰派定他的道路？誰能說：你所行的不義？</div>
+<div class="verse"><span class="verse-number">24</span>你不可忘記稱讚他所行的為大，就是人所歌頌的。</div>
+<div class="verse"><span class="verse-number">25</span>他所行的，萬人都看見；世人也從遠處觀看。</div>
+<div class="verse"><span class="verse-number">26</span>神為大，我們不能全知；他的年數不能測度。</div>
+<div class="verse"><span class="verse-number">27</span>他吸取水點，這水點從雲霧中就變成雨；</div>
+<div class="verse"><span class="verse-number">28</span>雲彩將雨落下，沛然降與世人。</div>
+<div class="verse"><span class="verse-number">29</span>誰能明白雲彩如何鋪張，和神行宮的雷聲呢？</div>
+<div class="verse"><span class="verse-number">30</span>他將亮光普照在自己的四圍；他又遮覆海底。</div>
+<div class="verse"><span class="verse-number">31</span>他用這些審判眾民，且賜豐富的糧食。</div>
+<div class="verse"><span class="verse-number">32</span>他以電光遮手，命閃電擊中敵人〔或作：中了靶子〕。</div>
+<div class="verse"><span class="verse-number">33</span>所發的雷聲顯明他的作為，又向牲畜指明要起暴風。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第36章是以利戶最長的一次發言中的第一部分，也是他神學最深刻的一章。他說要「將公義歸給造我的主」，並提出一個核心論點：神雖大，卻不藐視人；神看顧義人，也藉管教引導人歸正。他描述神的模式：若人被鎖鍊捆住、被苦難的繩索纏住，神就把他們的作為和罪指示他們，吩咐他們離開罪孽轉回。若他們聽從，就度日亨通；若不聽從，就要被刀殺滅。最美麗的一句是「神藉着困苦救拔困苦人」——苦難不是懲罰的終點，而是神用來引人轉回的工具。以利戶呼籲約伯不要以憤怒回應管教，而要在苦難中尋求神的教訓。本章在神學上是三友和以利戶所有發言中最接近真理的一章。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 苦難是神引人轉回的工具，不是懲罰的終點</strong><br>「神藉着困苦救拔困苦人」——這是以利戶最深刻的神學貢獻。苦難的目的不只是懲罰罪孽，更是神用來引人轉回、使人「開通耳朵」的方式。在這個框架下，苦難有積極的目的，信徒可以在苦難中問：「神在這苦難中要引導我走向哪裡？」<br><br>
+<strong>2. 神藉苦難引人進入「寬闊不狹窄之地」</strong><br>「神也必引你出離患難，進入寬闊不狹窄之地；擺在你席上的必滿有肥甘。」這個應許揭示了苦難的終點——不是繼續狹窄，而是進入更廣闊的地方。苦難不是終局，而是通往更廣闊之地的通道。<br><br>
+<strong>3. 不要在苦難中選擇憤怒和罪孽，要選擇神的教訓</strong><br>「你要謹慎，不可重看罪孽；因你選擇罪孽過於選擇苦難。」苦難中有兩種回應：一是憤怒和罪孽（逃避苦難），二是謙卑接受神的教訓。以利戶呼籲約伯選擇後者。在苦難中如何回應，往往決定了苦難最終帶來的是成長還是傷害。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>神藉着困苦救拔困</strong>苦人，<strong>趁他們受欺壓開通</strong>他們的耳朵。（伯36:15）</td>
+<td>就像<strong>一個一直聽不進去的人</strong>，在重大挫折後突然開始真正聆聽，苦難作為開通耳朵的工具是許多信徒都有的經歷。你有沒有<strong>一次因為某種</strong>困苦，使你<strong>開始真正聽見</strong>神在說什麼？那次聽見了什麼？</td>
+</tr>
+<tr>
+<td><strong>神也必引你出離患</strong>難，<strong>進入寬闊不狹窄之</strong>地；擺在你席上的必滿有肥甘。（伯36:16）</td>
+<td>就像<strong>狹窄的山路走完之後是開闊的山頂</strong>，苦難引人進入更寬廣之地的應許是信仰最美的盼望之一。你<strong>目前正走在狹</strong>窄還是寬闊的地方？若在狹窄中，這個應許如何讓你<strong>持守</strong>？</td>
+</tr>
+<tr>
+<td><strong>神行事有高大的能</strong>力；<strong>教訓人的有誰像他</strong>呢？（伯36:22）</td>
+<td>就像<strong>最好的老師不只教知識</strong>，更能在困難中幫學生成長，神是最好的教師——祂用各種方式教訓，包括苦難。你<strong>最近在「神的</strong>課堂」上正在學習什麼功課？這個功課是怎麼來的？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

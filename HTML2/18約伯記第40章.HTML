@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第40章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第40章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神問：你能像我管理一切嗎？河馬的力量</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華又對約伯說：</div>
+<div class="verse"><span class="verse-number">2</span>強辯的豈可與全能者爭論嗎？與神辯駁的可以回答這些吧！</div>
+<div class="verse"><span class="verse-number">3</span>於是，約伯回答耶和華說：</div>
+<div class="verse"><span class="verse-number">4</span>我是卑賤的！我用甚麼回答你呢？只好用手摀口。</div>
+<div class="verse"><span class="verse-number">5</span>我說了一次，再不回答；說了兩次，就不再說。</div>
+<div class="verse"><span class="verse-number">6</span>於是，耶和華從旋風中回答約伯說：</div>
+<div class="verse"><span class="verse-number">7</span>你要如勇士束腰；我問你，你可以指示我。</div>
+<div class="verse"><span class="verse-number">8</span>你豈可廢棄我所擬定的？豈可定我有罪，好顯自己為義嗎？</div>
+<div class="verse"><span class="verse-number">9</span>你有神那樣的膀臂嗎？你能像他發雷聲嗎？</div>
+<div class="verse"><span class="verse-number">10</span>你要以榮耀莊嚴為妝飾，以尊榮威嚴為衣服；</div>
+<div class="verse"><span class="verse-number">11</span>要發出你滿溢的怒氣，見一切驕傲的人，使他降卑；</div>
+<div class="verse"><span class="verse-number">12</span>見一切驕傲的人，將他制伏，把惡人踐踏在本處；</div>
+<div class="verse"><span class="verse-number">13</span>將他們一同隱藏在塵土中，把他們的臉蒙蔽在隱密處；</div>
+<div class="verse"><span class="verse-number">14</span>我就認你右手能以救自己。</div>
+<div class="verse"><span class="verse-number">15</span>你且觀看河馬；我造你也造牠。牠喫草與牛一樣；</div>
+<div class="verse"><span class="verse-number">16</span>它的氣力在腰間，能力在肚腹的筋上。</div>
+<div class="verse"><span class="verse-number">17</span>它搖動尾巴如香柏樹；牠大腿的筋互相聯絡。</div>
+<div class="verse"><span class="verse-number">18</span>它的骨頭好像銅管；牠的肢體彷彿鐵棍。</div>
+<div class="verse"><span class="verse-number">19</span>牠在神所造的物中為首；創造牠的給牠刀劍。</div>
+<div class="verse"><span class="verse-number">20</span>諸山給牠出食物，也是百獸遊玩之處。</div>
+<div class="verse"><span class="verse-number">21</span>它伏在蓮葉之下，臥在蘆葦隱密處和水窪子裏。</div>
+<div class="verse"><span class="verse-number">22</span>蓮葉的陰涼遮蔽牠；溪旁的柳樹環繞牠。</div>
+<div class="verse"><span class="verse-number">23</span>河水氾濫，牠不發戰；就是約但河的水漲到牠口邊，也是安然。</div>
+<div class="verse"><span class="verse-number">24</span>在牠防備的時候，誰能捉拿牠？誰能牢籠牠穿牠的鼻子呢？</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第40章分為兩個部分。第一部分（1-14節）是神問答的第一輪結語：「強辯的豈可與全能者爭論嗎？」約伯的回應是完全的謙遜：「我是卑賤的！我用甚麼回答你呢？只好用手摀口。」這是約伯第一次在神面前沉默。然後神開始第二輪問話，更直接地問：「你豈可廢棄我所擬定的？豈可定我有罪，好顯自己為義嗎？」神問約伯是否有能力管理世上的驕傲人和惡人，若有，神就承認他右手能救自己。第二部分（15-24節）神描述河馬（Behemoth）的強大，以牠為神創造物中最有力量的代表，言下之意是：若人無法駕馭河馬，怎能要求掌管世界的秩序？
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在神面前的謙卑沉默，是一種屬靈的成熟</strong><br>約伯說「我是卑賤的！只好用手摀口……再不回答」——這不是被壓制的沉默，而是在真正看見神的宏大後，自然流露的謙卑。約伯沒有停止信仰，而是以沉默宣告：我在你面前沒有話可說。這種謙卑的靜默，有時比任何言語更接近神。<br><br>
+<strong>2. 「定神有罪，好顯自己為義」是苦難中最深的試探</strong><br>神問：「你豈可定我有罪，好顯自己為義嗎？」——這揭示了苦難中最深的靈性危機：為了解釋自己的無辜，而開始指控神的不公義。真正的信仰能在「我不理解」中仍堅持「神是公義的」，而不把自己的無辜建立在對神的定罪上。<br><br>
+<strong>3. 河馬的力量提醒人在受造秩序中的位置</strong><br>神描述河馬為「神所造的物中為首」，人無法駕馭它。這個描述不是要讓約伯絕望，而是讓他認識到：連管理自然界都超出人的能力，更何況管理人類的道德秩序？接受自己在宇宙中的有限位置，是信仰謙卑的根基。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我是卑賤的</strong>！<strong>我用甚麼回答你呢</strong>？只好用手摀口。（伯40:4）</td>
+<td>就像<strong>在真正偉大的事物面前</strong>，所有的話語都顯得渺小，約伯在神面前的靜默是信仰最深的謙卑。你有沒有<strong>曾在神面前感</strong>到「只好用手摀口」的時刻？那個時刻是壓制，還是一種深刻的平靜？</td>
+</tr>
+<tr>
+<td><strong>你豈可廢棄我所擬</strong>定的？<strong>豈可定我有罪</strong>，好顯自己為義嗎？（伯40:8）</td>
+<td>就像<strong>想要證明自己清白卻把對方說成惡</strong>人，「以定神有罪來顯自己為義」是苦難中很容易陷入的靈性陷阱。你有沒有<strong>曾因為想要解</strong>釋自己的苦難，而開始質疑神的公義？那種心態如何影響了你？</td>
+</tr>
+<tr>
+<td><strong>你且觀看河馬</strong>；<strong>我造你也造牠</strong>。牠在神所造的物中為首；創造牠的給牠刀劍。（伯40:15,19）</td>
+<td>就像<strong>看見一隻龐然大物讓人知道自己有</strong>多渺小，神造的河馬提醒約伯自己在受造秩序中的位置。你<strong>在生命中</strong>是否也有過這樣的「河馬時刻」——某件事或某個景象，讓你<strong>突然深刻感受</strong>到神的偉大和自己的有限？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

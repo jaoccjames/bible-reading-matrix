@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第87章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第87章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">錫安是萬民之母城：我的泉源都在你裡面</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（可拉後裔的詩歌）耶和華所立的根基在聖山上。</div>
+<div class="verse"><span class="verse-number">2</span>他愛錫安的門，勝於愛雅各一切的住處。</div>
+<div class="verse"><span class="verse-number">3</span>神的城阿，有榮耀的事乃指着你說的。（細拉）</div>
+<div class="verse"><span class="verse-number">4</span>我要提起拉哈伯和巴比倫人，是在認識我之中的；看哪，非利士和推羅並古實人，個個生在那裏。</div>
+<div class="verse"><span class="verse-number">5</span>論到錫安，必說：這一個、那一個都生在其中，而且至高者必親自堅立這城。</div>
+<div class="verse"><span class="verse-number">6</span>當耶和華記錄萬民的時候，他要點出這一個生在那裏。（細拉）</div>
+<div class="verse"><span class="verse-number">7</span>歌唱的，跳舞的，都要說：我的泉源都在你裏面。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第87篇是可拉後裔的詩歌，是詩篇中最短的詩篇之一，卻具有非常豐富的神學意義。本篇以錫安（神的城）為中心，宣告一個驚人的真理：原本是以色列仇敵的民族——埃及（拉哈伯）、巴比倫、非利士、推羅、古實——都將被算作「生在錫安」，在神的記錄中成為錫安的子民。
+
+      這個宣告在舊約中是革命性的：以色列雖是神特別揀選的民族，但神的城最終是向萬民敞開的，各族各邦的人都能藉著與神的關係「生在其中」。這個思想預告了新約中藉著基督使萬民得以進入神國度的普世性救恩（加拉太書3:28，以弗所書2:19）。
+
+      第7節「歌唱的，跳舞的，都要說：我的泉源都在你裏面」是全篇最美的結語——「錫安」作為神同在的象徵，是一切屬靈生命的泉源。「我的泉源都在你裏面」是對神同在的最深告白：不只是神滿足我的需要，而是神本身就是我生命的泉源，一切屬靈的活力和滿足都從祂那裡湧出。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的城向萬民敞開揭示救恩的普世性</strong><br>「我要提起拉哈伯和巴比倫人，是在認識我之中的……個個生在那裏。」（第4節）這個驚人的宣告——原來的仇敵都被算作「生在錫安」——揭示神恩典的邊界遠超過民族和文化的界限。任何人，無論出身於哪個民族、哪段歷史、哪種背景，都能藉著認識神而被算作屬神城市的子民。這個普世性的視野是新約福音最深的舊約根基，呼召信徒以同樣開放的眼光看待所有人，相信神的救恩為每個靈魂預備了位置。<br><br>
+<strong>2. 神的城有榮耀的事揭示教會的尊貴身份</strong><br>「神的城阿，有榮耀的事乃指着你說的。」（第3節）「榮耀的事」包括神的同在、祂的應許、祂在其中所成就的奇事。信徒作為神城市的公民，承載著這份榮耀——不是因為自身有多優秀，而是因為所屬的城市有神同在。這種「從所屬群體得到身份」的認識，呼召信徒珍視神所建立的信仰群體（教會），並在其中活出與這份榮耀相稱的生命見證。<br><br>
+<strong>3. 我的泉源都在你裏面是生命最深的歸屬宣告</strong><br>「歌唱的，跳舞的，都要說：我的泉源都在你裏面。」（第7節）「泉源」是生命最根本的水源，「都在你裏面」是全然的、不分散的依靠。這個宣告揭示了成熟信仰的核心：不是「神是我許多泉源之一」，而是「我的泉源『都』在你裏面」——神是唯一的、根本的、所有屬靈生命的源頭。當信徒真正以神為唯一的泉源，便不再需要在神以外尋找屬靈的滿足，因為那充沛的泉源就在神的同在中湧流不止。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>神的城阿</strong>，<strong>有榮耀的事乃指着</strong>你說的。（詩87:3）</td>
+<td>就像<strong>出身於歷史悠久、聲望卓著的家族</strong>，那個家族的榮耀賦予了每個成員一種特殊的身份，你是否<strong>真的認識到作</strong>為「神城的公民」意味著什麼，讓這份身份影響你如何<strong>看待自己和你</strong>所屬的信仰群體？</td>
+</tr>
+<tr>
+<td><strong>論到錫安</strong>，必說：<strong>這一個</strong>、那一個都生在其中，而且至高者必親自堅立這城。（詩87:5）</td>
+<td>就像<strong>一個接納所有背景的新社區</strong>，讓原本沒有歸屬的人都能找到家，你是否<strong>以「神的城向</strong>萬民開放」的普世視野，看待你<strong>生命中每一個</strong>人——相信神的救恩為所有人預備了位置，而非只為某些人？</td>
+</tr>
+<tr>
+<td><strong>歌唱的</strong>，<strong>跳舞的</strong>，都要說：我的泉源都在你裏面。（詩87:7）</td>
+<td>就像<strong>一口深井的水量取決於地下水源的</strong>豐沛程度，你<strong>靈命的活力和</strong>豐盛取決於你<strong>與神這「泉源</strong>」的連結有多深——你是否<strong>真的以神為你</strong>「所有」泉源，還是祂只是你<strong>眾多滋養來源</strong>中的其中一個？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第14章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+民數記第14章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">百姓抱怨被罰曠野四十年</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當下，全會眾大聲喧嚷；那夜百姓都哭號。</div>
+<div class="verse"><span class="verse-number">2</span>以色列眾人向摩西、亞倫發怨言；全會眾對他們說：「巴不得我們早死在埃及地，或是死在這曠野。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華為甚麼把我們領到那地，使我們倒在刀下呢？我們的妻子和孩子必被擄掠。我們回埃及去豈不好麼？」</div>
+<div class="verse"><span class="verse-number">4</span>眾人彼此說：「我們不如立一個首領回埃及去吧！」</div>
+<div class="verse"><span class="verse-number">5</span>摩西、亞倫就俯伏在以色列全會眾面前。</div>
+<div class="verse"><span class="verse-number">6</span>窺探地的人中，嫩的兒子約書亞和耶孚尼的兒子迦勒撕裂衣服，</div>
+<div class="verse"><span class="verse-number">7</span>對以色列全會眾說：「我們所窺探、經過之地是極美之地。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華若喜悅我們，就必將我們領進那地，把地賜給我們；那地原是流奶與蜜之地。</div>
+<div class="verse"><span class="verse-number">9</span>但你們不可背叛耶和華，也不要怕那地的居民；因為他們是我們的食物，並且蔭庇他們的已經離開他們。有耶和華與我們同在，不要怕他們！」</div>
+<div class="verse"><span class="verse-number">10</span>但全會眾說：「拿石頭打死他們二人。」忽然，耶和華的榮光在會幕中向以色列眾人顯現。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華對摩西說：「這百姓藐視我要到幾時呢？我在他們中間行了這一切神蹟，他們還不信我要到幾時呢？</div>
+<div class="verse"><span class="verse-number">12</span>我要用瘟疫擊殺他們，使他們不得承受那地，叫你的後裔成為大國，比他們強勝。」</div>
+<div class="verse"><span class="verse-number">13</span>摩西對耶和華說：「埃及人必聽見這事；因為你曾施展大能，將這百姓從他們中間領上來。</div>
+<div class="verse"><span class="verse-number">14</span>埃及人要將這事傳給迦南地的居民；那民已經聽見你耶和華是在這百姓中間；因為你面對面被人看見，有你的雲彩停在他們以上。你日間在雲柱中，夜間在火柱中，在他們前面行。</div>
+<div class="verse"><span class="verse-number">15</span>如今你若把這百姓殺了，如殺一人，那些聽見你名聲的列邦必議論說：</div>
+<div class="verse"><span class="verse-number">16</span>『耶和華因為不能把這百姓領進他向他們起誓應許之地，所以在曠野把他們殺了。』</div>
+<div class="verse"><span class="verse-number">17</span>現在求主大顯能力，照你所說過的話說：</div>
+<div class="verse"><span class="verse-number">18</span>『耶和華不輕易發怒，並有豐盛的慈愛，赦免罪孽和過犯；萬不以有罪的為無罪，必追討他的罪，自父及子，直到三、四代。』</div>
+<div class="verse"><span class="verse-number">19</span>求你照你的大慈愛赦免這百姓的罪孽，好像你從埃及到如今常赦免他們一樣。」</div>
+<div class="verse"><span class="verse-number">20</span>耶和華說：「我照着你的話赦免了他們。</div>
+<div class="verse"><span class="verse-number">21</span>然我指着我的永生起誓，遍地要被我的榮耀充滿。</div>
+<div class="verse"><span class="verse-number">22</span>這些人雖看見我的榮耀和我在埃及與曠野所行的神蹟，仍然試探我這十次，不聽從我的話，</div>
+<div class="verse"><span class="verse-number">23</span>他們斷不得看見我向他們的祖宗所起誓應許之地。凡藐視我的，一個也不得看見；</div>
+<div class="verse"><span class="verse-number">24</span>惟獨我的僕人迦勒，因他另有一個心志，專一跟從我，我就把他領進他所去過的那地；他的後裔也必得那地為業。</div>
+<div class="verse"><span class="verse-number">25</span>亞瑪力人和迦南人住在谷中，明天你們要轉回，從紅海的路往曠野去。」</div>
+<div class="verse"><span class="verse-number">26</span>耶和華對摩西、亞倫說：</div>
+<div class="verse"><span class="verse-number">27</span>「這惡會眾向我發怨言，我忍耐他們要到幾時呢？以色列人向我所發的怨言，我都聽見了。</div>
+<div class="verse"><span class="verse-number">28</span>你們告訴他們，耶和華說：『我指着我的永生起誓，我必要照你們達到我耳中的話待你們。</div>
+<div class="verse"><span class="verse-number">29</span>你們的屍首必倒在這曠野，並且你們中間凡被數點、從二十歲以外、向我發怨言的，</div>
+<div class="verse"><span class="verse-number">30</span>必不得進我起誓應許叫你們住的那地；惟有耶孚尼的兒子迦勒和嫩的兒子約書亞才能進去。</div>
+<div class="verse"><span class="verse-number">31</span>但你們的婦人孩子，就是你們所說、要被擄掠的，我必把他們領進去，他們就得知你們所厭棄的那地。</div>
+<div class="verse"><span class="verse-number">32</span>至於你們，你們的屍首必倒在這曠野；</div>
+<div class="verse"><span class="verse-number">33</span>你們的兒女必在曠野飄流四十年，擔當你們淫行的罪，直到你們的屍首在曠野消滅。</div>
+<div class="verse"><span class="verse-number">34</span>按你們窺探那地的四十日，一年頂一日，你們要擔當罪孽四十年，就知道我與你們疏遠了，</div>
+<div class="verse"><span class="verse-number">35</span>我耶和華說過，我總要這樣待這一切聚集敵我的惡會眾；他們必在這曠野消滅，在這裏死亡。』」</div>
+<div class="verse"><span class="verse-number">36</span>摩西所打發、窺探那地的人回來，報那地的惡信，叫全會眾向摩西發怨言，</div>
+<div class="verse"><span class="verse-number">37</span>這些報惡信的人都遭瘟疫，死在耶和華面前。</div>
+<div class="verse"><span class="verse-number">38</span>其中惟有嫩的兒子約書亞和耶孚尼的兒子迦勒仍然存活。</div>
+<div class="verse"><span class="verse-number">39</span>摩西將這些話告訴以色列眾人，他們就甚悲哀。</div>
+<div class="verse"><span class="verse-number">40</span>清早起來，上山頂去，說：「我們在這裏，我們有罪了；情願上耶和華所應許的地方去。」</div>
+<div class="verse"><span class="verse-number">41</span>摩西說：「你們為何違背耶和華的命令呢？這事不能順利了。</div>
+<div class="verse"><span class="verse-number">42</span>不要上去；因為耶和華不在你們中間，恐怕你們被仇敵殺敗了。</div>
+<div class="verse"><span class="verse-number">43</span>亞瑪力人和迦南人都在你們面前，你們必倒在刀下；因你們退回不跟從耶和華，所以他必不與你們同在。」</div>
+<div class="verse"><span class="verse-number">44</span>他們卻擅敢上山頂去，然而耶和華的約櫃和摩西沒有出營。</div>
+<div class="verse"><span class="verse-number">45</span>於是亞瑪力人和住在那山上的迦南人都下來擊打他們，把他們殺退了，直到何珥瑪。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+民數記第14章是以色列曠野旅程中最具決定性的轉折點。探子的惡信使全會眾大聲喧嚷、哭號，眾人向摩西亞倫發怨言，甚至想推選首領返回埃及。這是對神應許的全面拒絕。約書亞和迦勒撕裂衣服，力圖說服眾人，卻幾乎被眾人用石頭打死。
+耶和華的榮光在會幕中顯現，神宣告要用瘟疫擊殺全民，摩西再次為百姓代求，引用神自己的性情（「不輕易發怒，有豐盛慈愛」）來求神赦免，神應允了他的代求。然而神的赦免不等於沒有後果：凡從二十歲以外向神發怨言的，都不得進入應許之地，必在曠野飄流四十年，按窺探那地的四十天，一年頂一日。本章同時記錄了以色列人在神宣判後自行上山攻打迦南人，卻大敗而回，顯示離開神同在的努力是徒勞的。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 怨言的本質——不信神的應許和能力</strong><br>以色列人的怨言表面上是恐懼敵人，實質上是不信神的能力和應許。耶和華直接說：「我在他們中間行了這一切神蹟，他們還不信我要到幾時呢？」怨言不只是情緒的宣洩，而是對神的藐視。信仰生活的挑戰在於：在困難中，我們是選擇信靠神的應許，還是讓眼見的困難淹沒神的話語？<br><br>
+<strong>2. 摩西的代求——以神的性情為禱告的根基</strong><br>摩西為百姓代求時，直接引用神自己說過的話：「耶和華不輕易發怒，並有豐盛的慈愛。」他不是憑自己的論據，而是以神的性情和榮耀為根基求告。這是禱告深度的示範：最有力的禱告是根植於神的性情和已啟示的話語，而非單純的情感訴求。<br><br>
+<strong>3. 後果是真實的——赦免不等於後果消除</strong><br>神赦免了百姓，卻沒有取消後果：那一代人仍要在曠野飄流四十年，看不見應許之地。「四十天窺探，換四十年飄流」——這一對應顯示了神公義的嚴肅性。赦免是真實的，但罪的後果同樣是真實的。信仰的成熟包括理解：神的恩典赦免我們，但不一定免除我們行為所帶來的自然後果。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華說</strong>：「<strong>這些人雖看見我的</strong>榮耀和我在埃及與曠野所行的神蹟，仍然試探我這十次，不聽從我的話，他們斷不得看見我向他們的祖宗所起誓應許之地。」（民14:22-23）</td>
+<td>就像<strong>一個人一再錯過朋友的好意</strong>，終於失去了這份關係帶來的福份，以色列人因反覆不信而失去了進入應許地的機會——回顧你<strong>的信仰歷程</strong>，神給過你<strong>哪些「你卻錯</strong>過了」的邀請或機會？是什麼阻礙了你<strong>當時的回應</strong>？</td>
+</tr>
+<tr>
+<td><strong>摩西說</strong>：「<strong>現在求主大顯能力</strong>，照你所說過的話說：『耶和華不輕易發怒，並有豐盛的慈愛，赦免罪孽……』求你照你的大慈愛赦免這百姓的罪孽。」（民14:17-19）</td>
+<td>就像<strong>一位辯護律師引用法律條文來為委</strong>託人辯護，摩西以神自己宣告的性情作為代求的根基——在你<strong>為自己或他人</strong>禱告時，你是否<strong>習慣以神已啟</strong>示的應許和性情來立論，而非只是表達情緒或期望？</td>
+</tr>
+<tr>
+<td><strong>耶和華說</strong>：「<strong>我照着你的話赦免</strong>了他們。然而……他們必要死在這曠野；按你們窺探那地的四十天，一年頂一日，你們要擔當罪孽四十年。」（民14:20,29,34）</td>
+<td>就像<strong>一個人雖然得到了原諒</strong>，卻仍要面對行為帶來的自然後果，神的赦免與後果並存——這讓你如何<strong>思考「悔改」</strong>的意義？你是否<strong>曾以為得了赦</strong>免就一切歸零，卻發現某些後果仍然存在？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀下第24章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀下第24章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">猶大三次被擄，約雅斤投降巴比倫城破淪陷</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>約雅敬年間，巴比倫王尼布甲尼撒上到猶大；約雅敬服事他三年，然後背叛他。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華使迦勒底軍、亞蘭軍、摩押軍，和亞捫人的軍來攻擊約雅敬，毀滅猶大，正如耶和華藉他僕人眾先知所說的。</div>
+<div class="verse"><span class="verse-number">3</span>這禍臨到猶大人，誠然是耶和華所命的，要將他們從自己面前趕出，是因瑪拿西所犯的一切罪；</div>
+<div class="verse"><span class="verse-number">4</span>又因他流無辜人的血，充滿了耶路撒冷；耶和華決不肯赦免。</div>
+<div class="verse"><span class="verse-number">5</span>約雅敬其餘的事，凡他所行的都寫在猶大列王記上。</div>
+<div class="verse"><span class="verse-number">6</span>約雅敬與他列祖同睡。他兒子約雅斤接續他作王。</div>
+<div class="verse"><span class="verse-number">7</span>埃及王不再從他國中出來；因為巴比倫王將埃及王所管之地，從埃及小河直到伯拉河都奪去了。</div>
+<div class="verse"><span class="verse-number">8</span>約雅斤登基的時候年十八歲，在耶路撒冷作王三個月。他母親名叫尼護施他，是耶路撒冷人以利拿單的女兒。</div>
+<div class="verse"><span class="verse-number">9</span>約雅斤行耶和華眼中看為惡的事，效法他父親一切所行的。</div>
+<div class="verse"><span class="verse-number">10</span>那時，巴比倫王尼布甲尼撒的軍兵上到耶路撒冷，圍困城。</div>
+<div class="verse"><span class="verse-number">11</span>當他軍兵圍困城的時候，巴比倫王尼布甲尼撒就親自來了。</div>
+<div class="verse"><span class="verse-number">12</span>猶大王約雅斤和他母親、臣僕、首領、太監一同出城，投降巴比倫王；巴比倫王便拿住他。那時是巴比倫王第八年。</div>
+<div class="verse"><span class="verse-number">13</span>巴比倫王將耶和華殿和王宮裏的寶物都拿去了，將以色列王所羅門所造耶和華殿裏的金器都毀壞了，正如耶和華所說的；</div>
+<div class="verse"><span class="verse-number">14</span>又將耶路撒冷的眾民和眾首領，並所有大能的勇士，共一萬人，連一切木匠、鐵匠都擄了去；除了國中極貧窮的人以外，沒有剩下的；</div>
+<div class="verse"><span class="verse-number">15</span>並將約雅斤和王母、后妃、太監，與國中的大官，都從耶路撒冷擄到巴比倫去了；</div>
+<div class="verse"><span class="verse-number">16</span>又將一切勇士七千人和木匠、鐵匠一千人，都是能上陣的勇士，全擄到巴比倫去了。</div>
+<div class="verse"><span class="verse-number">17</span>巴比倫王立約雅斤的叔叔瑪探雅代替他作王，給瑪探雅改名叫西底家。</div>
+<div class="verse"><span class="verse-number">18</span>西底家登基的時候年二十一歲，在耶路撒冷作王十一年。他母親名叫哈慕他，是立拿人耶利米的女兒。</div>
+<div class="verse"><span class="verse-number">19</span>西底家行耶和華眼中看為惡的事，是照約雅敬一切所行的。</div>
+<div class="verse"><span class="verse-number">20</span>因此耶和華的怒氣在耶路撒冷和猶大發作，以致將人民從自己面前趕出。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀下第24章記述南國猶大在約西亞死後急速走向滅亡的過程，以三次連續的打擊描繪大廈將傾的末日景象。第一擊：約雅敬起初歸順巴比倫，後來背叛，神使各路軍隊來攻擊猶大，宣告這是因瑪拿西的罪所致——猶大的命運已然注定。第二擊：約雅斤在位三個月，巴比倫王親自圍城，約雅斤和王室被迫出城投降，整個精英階層——一萬人包括工匠、鐵匠、勇士和首領——被全數擄走，只留下最窮的人。聖殿的器皿也被奪去，應驗了以賽亞對希西家的預言。第三擊：巴比倫王立瑪探雅（改名西底家）為傀儡王，猶大實際上已成巴比倫的附庸。本章以一句話總結：「因此耶和華的怒氣在耶路撒冷和猶大發作，以致將人民從自己面前趕出。」這是一個失去神同在的民族所面對的終局。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 罪的代價可以跨越代際，前人的積累後人承擔</strong><br>本章明確說「這禍臨到猶大人……是因瑪拿西所犯的一切罪」，瑪拿西已死多年，但他的罪帶來的代價仍在後代身上發酵。信徒必須認識到：我們今日的選擇不只影響自己，也塑造了後代所繼承的屬靈遺產。惡的積累和善的積累，都會在世代的軌跡中顯現出來。<br><br>
+<strong>2. 神話語的應驗不因時間長短而改變</strong><br>「將以色列王所羅門所造耶和華殿裏的金器都毀壞了，正如耶和華所說的」——以賽亞對希西家的預言在幾十年後精確應驗。每一個神所說的話，在神所定的時間都必然成就。這對信徒有雙重的提醒：神的警告是真實的，不可輕忽；神的應許同樣是真實的，可以完全倚靠。<br><br>
+<strong>3. 失去最優秀的人才是一個群體衰亡的先兆</strong><br>巴比倫擄走的不是最弱的，而是最強的——勇士、工匠、首領、大能者。一個群體最優秀的人被帶走，剩下的是最貧窮最無力的。這不只是政治的打擊，更是文化和屬靈資本的瓦解。信徒應當珍視並培育群體中有恩賜的人，而非讓他們流失；一個群體的健康，在於是否能留住並裝備那些有恩賜的人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>這禍臨到猶大人</strong>，<strong>誠然是耶和華所命</strong>的，要將他們從自己面前趕出，是因瑪拿西所犯的一切罪；又因他流無辜人的血，充滿了耶路撒冷；耶和華決不肯赦免。」（王下24:3-4）</td>
+<td>就像<strong>一個長期的環境污染</strong>，其後果在幾十年後才以疾病的形式全面顯現，瑪拿西的罪在幾代後仍帶來不可逆轉的審判。你<strong>對自己今日的</strong>選擇對後代的影響，有多強烈的責任感和警覺感？</td>
+</tr>
+<tr>
+<td>「<strong>巴比倫王便拿住他</strong>……<strong>並將以色列王所羅</strong>門所造耶和華殿裏的金器都毀壞了，正如耶和華所說的。」（王下24:12-13）</td>
+<td>就像<strong>一份幾十年前的預言在今日精確應</strong>驗，以賽亞對希西家所說的話一字不差地成真。你<strong>對神那些「看</strong>似遙遠的應許」——無論是祝福的還是警告的——是否抱持同樣的認真和敬重？</td>
+</tr>
+<tr>
+<td>「<strong>猶大王約雅斤和他</strong>母親、臣僕、首領……<strong>一同出城</strong>，投降巴比倫王。」（王下24:12）</td>
+<td>就像<strong>一座原本堅不可摧的城池因長期的</strong>內部腐蝕而最終不得不開門投降，猶大的淪陷是長期屬靈積累的結果。回顧以色列的歷史，從所羅門的鼎盛到此刻的淪陷，哪一個轉折點給你<strong>留下最深刻的</strong>屬靈功課？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

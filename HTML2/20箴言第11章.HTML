@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">謙遜公義與慷慨施予：智慧生命的彰顯</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>詭詐的天平為耶和華所憎惡；公平的法碼為他所喜悅。</div>
+<div class="verse"><span class="verse-number">2</span>驕傲來，羞恥也來；謙遜人卻有智慧。</div>
+<div class="verse"><span class="verse-number">3</span>正直人的純正必引導自己；奸詐人的乖僻必毀滅自己。</div>
+<div class="verse"><span class="verse-number">4</span>發怒的日子資財無益；惟有公義能救人脫離死亡。</div>
+<div class="verse"><span class="verse-number">5</span>完全人的義必指引他的路；但惡人必因自己的惡跌倒。</div>
+<div class="verse"><span class="verse-number">6</span>正直人的義必拯救自己；奸詐人必陷在自己的罪孽中。</div>
+<div class="verse"><span class="verse-number">7</span>惡人一死，他的指望必滅絕；罪人的盼望也必滅沒。</div>
+<div class="verse"><span class="verse-number">8</span>義人得脫離患難，有惡人來代替他。</div>
+<div class="verse"><span class="verse-number">9</span>不虔敬的人用口敗壞鄰舍；義人卻因知識得救。</div>
+<div class="verse"><span class="verse-number">10</span>義人享福，合城喜樂；惡人滅亡，人都歡呼。</div>
+<div class="verse"><span class="verse-number">11</span>城因正直人祝福便高舉，卻因邪惡人的口就傾覆。</div>
+<div class="verse"><span class="verse-number">12</span>藐視鄰舍的，毫無智慧；明哲人卻靜默不言。</div>
+<div class="verse"><span class="verse-number">13</span>往來傳舌的，洩漏密事；心中誠實的，遮隱事情。</div>
+<div class="verse"><span class="verse-number">14</span>無智謀，民就敗落；謀士多，人便安居。</div>
+<div class="verse"><span class="verse-number">15</span>為外人作保的，必受虧損；恨惡擊掌的，卻得安穩。</div>
+<div class="verse"><span class="verse-number">16</span>恩德的婦女得尊榮；強暴的男子得資財。</div>
+<div class="verse"><span class="verse-number">17</span>仁慈的人善待自己；殘忍的人擾害己身。</div>
+<div class="verse"><span class="verse-number">18</span>惡人經營，得虛浮的工價；撒義種的，得實在的果效。</div>
+<div class="verse"><span class="verse-number">19</span>恒心為義的，必得生命；追求邪惡的，必致死亡。</div>
+<div class="verse"><span class="verse-number">20</span>心中乖僻的，為耶和華所憎惡；行事完全的，為他所喜悅。</div>
+<div class="verse"><span class="verse-number">21</span>惡人雖然連手，必不免受罰；義人的後裔必得拯救。</div>
+<div class="verse"><span class="verse-number">22</span>婦女美貌而無見識，如同金環帶在豬鼻上。</div>
+<div class="verse"><span class="verse-number">23</span>義人的心願盡得好處；惡人的指望致幹忿怒。</div>
+<div class="verse"><span class="verse-number">24</span>有施散的，卻更增添；有吝惜過度的，反致窮乏。</div>
+<div class="verse"><span class="verse-number">25</span>好施捨的，必得豐裕；滋潤人的，必得滋潤。</div>
+<div class="verse"><span class="verse-number">26</span>屯糧不賣的，民必咒詛他；情願出賣的，人必為他祝福。</div>
+<div class="verse"><span class="verse-number">27</span>懇切求善的，就求得恩惠；惟獨求惡的，惡必臨到他身。</div>
+<div class="verse"><span class="verse-number">28</span>倚仗自己財物的，必跌倒；義人必發旺如青葉。</div>
+<div class="verse"><span class="verse-number">29</span>擾害己家的，必承受清風；愚昧人必作慧心人的僕人。</div>
+<div class="verse"><span class="verse-number">30</span>義人所結的果子就是生命樹；有智慧的，必能得人。</div>
+<div class="verse"><span class="verse-number">31</span>看哪，義人在世尚且受報，何況惡人和罪人呢？</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第十一章是所羅門格言集的第二章，延續了義人與惡人對比的主題，並特別強調公正、謙遜與慷慨三個核心德行。本章開篇以「詭詐的天平」與「公平的法碼」作對比，呼應了古以色列社會中商業誠信的重要性——神明確表示，任何欺詐行為都是對祂的冒犯。在文化背景上，以色列的市集貿易中確曾存在使用不準確砝碼欺騙顧客的問題，律法（利19:35-36；申25:13-16）對此也有明確禁止。本章的另一個重要主題是謙遜（2節）與施捨（24-26節）——謙遜帶來智慧，施散反而增添，這兩種看似悖論的真理，正是神國度的顛覆性邏輯。第30節「義人所結的果子就是生命樹；有智慧的，必能得人」，預示了屬靈影響力的本質：真正的智慧使人生命豐盛，並吸引他人歸向神。本章在整本箴言書中強化了「德行決定命運、品格塑造社群」的中心思想。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 謙遜是智慧的入口，驕傲是羞恥的前奏</strong><br>第2節「驕傲來，羞恥也來；謙遜人卻有智慧」，點出了驕傲與謙遜的根本對比。驕傲使人自以為是、拒絕學習，最終在自己的盲點中跌倒；謙遜則使人持續開放、願意受教，從而積累真實的智慧。屬靈成長的關鍵不在於才能的多寡，而在於心態的謙卑程度——謙卑的人能從每一次經歷中學習，從每個人身上獲益。<br><br>
+<strong>2. 慷慨施散是神國度的悖論式增長法則</strong><br>第24-25節揭示了一個違反人類直覺的真理：施散的人反而增添，吝惜的人反而窮乏；滋潤人的，自己也必得滋潤。這不是單純的因果報應，而是神國度運作的法則——在神的設計中，給予創造了更大的豐盛，而囤積只會帶來枯竭。信徒若真正相信神是一切供應的源頭，就能從恐懼中釋放，選擇慷慨的生活方式。<br><br>
+<strong>3. 義人的生命是社群的祝福與生命樹</strong><br>第10-11節指出，義人享福時「合城喜樂」，正直人能使城市「高舉」；第30節更說義人所結的果子是「生命樹」。這提醒信徒，個人的屬靈生命不只影響自己，更對整個社群產生深遠的影響。一個有智慧、公義、謙遜的信徒，是神放置在社群中的祝福，其生命所發出的光，能照亮並吸引周圍的人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>驕傲來</strong>，<strong>羞恥也來</strong>；謙遜人卻有智慧。」（箴11:2）</td>
+<td>就像<strong>運動員若過度自信而不認真備戰</strong>，往往在比賽中意外落敗，你<strong>在哪些領域最</strong>容易出現驕傲的心態？那種驕傲曾讓你<strong>付出什麼代價</strong>？謙遜在那個情境中會帶來什麼不同？</td>
+</tr>
+<tr>
+<td>「<strong>有施散的</strong>，<strong>卻更增添</strong>；有吝惜過度的，反致窮乏。」（箴11:24）</td>
+<td>就像<strong>農夫若捨不得播種</strong>，便不可能有收成，你<strong>在金錢、時間</strong>或才能上的「施散」，是出於喜悅還是勉強？你是否<strong>曾經歷過慷慨</strong>給予後，反而獲得意想不到祝福的經歷？</td>
+</tr>
+<tr>
+<td>「<strong>義人所結的果子就</strong><strong>是生命樹</strong>；有智慧的，必能得人。」（箴11:30）</td>
+<td>就像<strong>一棵果樹的價值不在於它自己享受</strong>果實，而在於結出果子讓人得益，你<strong>的生命目前正</strong>在為周圍的人結出什麼「果子」？你<strong>希望你的生命</strong>對身邊的人產生什麼樣的長遠影響？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

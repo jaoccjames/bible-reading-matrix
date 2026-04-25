@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第23章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第23章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">公義安息節期與應許之地</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「不可隨夥佈散謠言；不可與惡人連手妄作見證。</div>
+<div class="verse"><span class="verse-number">2</span>不可隨眾行惡；不可在爭訟的事上隨眾偏行，作見證屈枉正直；</div>
+<div class="verse"><span class="verse-number">3</span>也不可在爭訟的事上偏護窮人。</div>
+<div class="verse"><span class="verse-number">4</span>「若遇見你仇敵的牛或驢失迷了路，總要牽回來交給他。</div>
+<div class="verse"><span class="verse-number">5</span>若看見恨你人的驢壓臥在重馱之下，不可走開，務要和驢主一同抬開重馱。</div>
+<div class="verse"><span class="verse-number">6</span>「不可在窮人爭訟的事上屈枉正直。</div>
+<div class="verse"><span class="verse-number">7</span>當遠離虛假的事。不可殺無辜和有義的人，因我必不以惡人為義。</div>
+<div class="verse"><span class="verse-number">8</span>不可受賄賂；因為賄賂能叫明眼人變瞎了，又能顛倒義人的話。</div>
+<div class="verse"><span class="verse-number">9</span>「不可欺壓寄居的；因為你們在埃及地作過寄居的，知道寄居的心。」</div>
+<div class="verse"><span class="verse-number">10</span>「六年你要耕種田地，收藏土產，</div>
+<div class="verse"><span class="verse-number">11</span>只是第七年要叫地歇息，不耕不種，使你民中的窮人有吃的；他們所剩下的，野獸可以吃。你的葡萄園和橄欖園也要照樣辦理。</div>
+<div class="verse"><span class="verse-number">12</span>「六日你要作工，第七日要安息，使牛、驢可以歇息，並使你婢女的兒子和寄居的都可以舒暢。</div>
+<div class="verse"><span class="verse-number">13</span>「凡我對你們說的話，你們要謹守。別神的名，你不可提，也不可從你口中傳說。」</div>
+<div class="verse"><span class="verse-number">14</span>「一年三次，你要向我守節。</div>
+<div class="verse"><span class="verse-number">15</span>你要守除酵節，照我所吩咐你的，在亞筆月內所定的日期，吃無酵餅七天。誰也不可空手朝見我，因為你是這月出了埃及。</div>
+<div class="verse"><span class="verse-number">16</span>又要守收割節，所收的是你田間所種、勞碌得來初熟之物。並在年底收藏，要守收藏節。</div>
+<div class="verse"><span class="verse-number">17</span>一切的男丁要一年三次朝見主耶和華。</div>
+<div class="verse"><span class="verse-number">18</span>「不可將我祭牲的血和有酵的餅一同獻上；也不可將我節上祭牲的脂油留到早晨。</div>
+<div class="verse"><span class="verse-number">19</span>「地裏首先初熟之物要送到耶和華你神的殿。「不可用山羊羔母的奶煮山羊羔。」</div>
+<div class="verse"><span class="verse-number">20</span>「看哪，我差遣使者在你前面，在路上保護你，領你到我所預備的地方去。</div>
+<div class="verse"><span class="verse-number">21</span>他是奉我名來的；你們要在他面前謹慎，聽從他的話，不可惹〔或作：違背〕他，因為他必不赦免你們的過犯。</div>
+<div class="verse"><span class="verse-number">22</span>「你若實在聽從他的話，照着我一切所說的去行，我就向你的仇敵作仇敵，向你的敵人作敵人。</div>
+<div class="verse"><span class="verse-number">23</span>「我的使者要在你前面行，領你到亞摩利人、赫人、比利洗人、迦南人、希未人、耶布斯人那裏去，我必將他們剪除。</div>
+<div class="verse"><span class="verse-number">24</span>你不可跪拜他們的神，不可事奉它，也不可效法他們的行為，卻要把神像盡行拆毀，打碎他們的柱像。</div>
+<div class="verse"><span class="verse-number">25</span>你們要事奉耶和華你們的神，他必賜福與你的糧與你的水，也必從你們中間除去疾病。</div>
+<div class="verse"><span class="verse-number">26</span>你境內必沒有墜胎的，不生產的。我要使你滿了你年日的數目。</div>
+<div class="verse"><span class="verse-number">27</span>凡你所到的地方，我要使那裏的眾民在你面前驚駭，擾亂，又要使你一切仇敵轉背逃跑。</div>
+<div class="verse"><span class="verse-number">28</span>我要打發黃蜂飛在你前面，把希未人、迦南人、赫人攆出去。</div>
+<div class="verse"><span class="verse-number">29</span>我不在一年之內將他們從你面前攆出去，恐怕地成為荒涼，野地的獸多起來害你。</div>
+<div class="verse"><span class="verse-number">30</span>我要漸漸地將他們從你面前攆出去，等到你的人數加多，承受那地為業。</div>
+<div class="verse"><span class="verse-number">31</span>我要定你的境界，從紅海直到非利士海，又從曠野直到大河。我要將那地的居民交在你手中，你要將他們從你面前攆出去。</div>
+<div class="verse"><span class="verse-number">32</span>不可和他們並他們的神立約。</div>
+<div class="verse"><span class="verse-number">33</span>他們不可住在你的地上，恐怕他們使你得罪我。你若事奉他們的神，這必成為你的網羅。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第23章是典章部分的最後一章，涵蓋司法公義、土地安息、三大節期和征服迦南的應許。司法公義部分包含：不可散佈謠言、不可偏從眾人行惡、不可偏待貧窮人、迷路的仇敵之牲畜要歸還、不可因賄賂枉曲公義、不可欺壓寄居的。安息年規定土地每七年要休耕，讓窮人和野獸食用自然生長之物。安息日讓牲口、奴僕和寄居者得以休息。三大節期：無酵節（出埃及紀念）、收割節（初熟之果）和收藏節（年終），都要在神面前朝見，不可空手朝見神。本章末是神關於帶領以色列進入迦南的應許：神要差天使在前引路，要逐漸驅趕迦南人，以色列人不可與他們立約或敬拜他們的神，否則會成為網羅。神應許賜福、賜健康、除疾病，並以大黃蜂在前驅逐仇敵。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的公義包括對仇敵的公平對待</strong><br>即便是仇敵的迷路牲畜也要歸還，這要求以色列人將公義延伸至私人情感之外。公義不能只在關係好的人之間施行，才算真正的公義。這是耶穌「愛仇敵」教導的舊約根基。信徒的公義不應受私人好惡左右，而應以神的標準對待所有人。<br><br>
+<strong>2. 土地和人都需要安息，這是神建立在創造秩序中的節律</strong><br>安息年讓土地休耕，安息日讓所有人（包括奴僕和寄居者）得以休息。神將安息的節律建立在創造秩序中，不只是身體的需要，更是靈命的更新。信徒在快速流動的現代社會中，應刻意建立安息的節律，抗拒效率至上的文化壓力。<br><br>
+<strong>3. 神的引導是逐步的，需要順服與等候</strong><br>神應許逐漸驅趕迦南人，「免得那地荒涼，野獸多起來害你」，顯示神的帶領有其時間表與節奏，不是一次性解決所有問題。信徒在神的帶領中需要接受逐步的改變過程，不要因進展緩慢就灰心，因神的時間表是為保護而設計的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>若遇見你仇敵的牛</strong><strong>或驢失迷了路</strong>，總要牽回來交給他。（出23:4）</td>
+<td>就像<strong>在停車場看見鄰居的車燈還亮着而</strong>主動去通知，即使你<strong>們關係不好</strong>，幫助仇敵需要超越個人情感的原則。你是否<strong>曾在不情願中</strong>選擇幫助一個與你<strong>有嫌隙的人</strong>？那次行動對你<strong>們的關係或你</strong>自己的心靈有何影響？</td>
+</tr>
+<tr>
+<td><strong>只是第七年要叫地</strong>歇息，<strong>不耕不種</strong>，使你民中的窮人有吃的；他們所剩下的，野獸可以吃。（出23:11）</td>
+<td>就像<strong>讓農地輪休才能保持長久的生產力</strong>，安息年的設計兼顧了土地的更新和窮人的需要。你<strong>在生活中</strong>是否實踐定期的安息——讓自己、身邊的人、甚至所使用的資源得到更新？是什麼讓你<strong>難以停下來安</strong>息？</td>
+</tr>
+<tr>
+<td>看哪，<strong>我差遣使者在你前</strong>面，<strong>在路上保護你</strong>，領你到我所預備的地方去。（出23:20）</td>
+<td>就像<strong>陌生城市裏有本地嚮導帶路</strong>，神差遣天使在前引路是對以色列人的保護與帶領。你<strong>相信神在你人</strong>生的每一個新階段都在你<strong>前面預備道路</strong>嗎？這個信念如何幫助你<strong>面對未知的將</strong>來？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

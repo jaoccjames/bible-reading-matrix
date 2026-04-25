@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第18章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第18章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">葉忒羅的拜訪與治理建議</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>摩西的岳父，米甸祭司葉忒羅，聽見神為摩西和神的百姓以色列所行的一切事，就是耶和華將以色列從埃及領出來的事，</div>
+<div class="verse"><span class="verse-number">2</span>便帶着摩西的妻子西坡拉，就是摩西從前打發回去的，</div>
+<div class="verse"><span class="verse-number">3</span>又帶着西坡拉的兩個兒子，一個名叫革舜，因為摩西說：「我在外邦作了寄居的」；</div>
+<div class="verse"><span class="verse-number">4</span>一個名叫以利以謝，因為他說：「我父親的神幫助了我，救我脫離法老的刀。」</div>
+<div class="verse"><span class="verse-number">5</span>摩西的岳父葉忒羅帶着摩西的妻子和兩個兒子來到神的山，就是摩西在曠野安營的地方。</div>
+<div class="verse"><span class="verse-number">6</span>他對摩西說：「我是你岳父葉忒羅，帶着你的妻子和兩個兒子來到你這裏。」</div>
+<div class="verse"><span class="verse-number">7</span>摩西迎接他的岳父，向他下拜，與他親嘴，彼此問安，都進了帳棚。</div>
+<div class="verse"><span class="verse-number">8</span>摩西將耶和華為以色列的緣故向法老和埃及人所行的一切事，以及路上所遭遇的一切艱難，並耶和華怎樣搭救他們，都述說與他岳父聽。</div>
+<div class="verse"><span class="verse-number">9</span>葉忒羅因耶和華待以色列的一切好處，就是拯救他們脫離埃及人的手，便甚歡喜。</div>
+<div class="verse"><span class="verse-number">10</span>葉忒羅說：「耶和華是應當稱頌的；他救了你們脫離埃及人和法老的手，將這百姓從埃及人的手下救出來。</div>
+<div class="verse"><span class="verse-number">11</span>我現今在埃及人向這百姓發狂傲的事上得知，耶和華比萬神都大。」</div>
+<div class="verse"><span class="verse-number">12</span>摩西的岳父葉忒羅把燔祭和平安祭獻給神。亞倫和以色列的眾長老都來了，與摩西的岳父在神面前吃飯。</div>
+<div class="verse"><span class="verse-number">13</span>第二天，摩西坐着審判百姓，百姓從早到晚都站在摩西的左右。</div>
+<div class="verse"><span class="verse-number">14</span>摩西的岳父看見他向百姓所作的一切事，就說：「你向百姓作的是甚麼事呢？你為甚麼獨自坐着，眾百姓從早到晚都站在你的左右呢？」</div>
+<div class="verse"><span class="verse-number">15</span>摩西對岳父說：「這是因百姓到我這裏來求問神。</div>
+<div class="verse"><span class="verse-number">16</span>他們有事的時候就到我這裏來，我便在兩造之間施行審判；我又叫他們知道神的律例和法度。」</div>
+<div class="verse"><span class="verse-number">17</span>摩西的岳父說：「你這作的不好。</div>
+<div class="verse"><span class="verse-number">18</span>你和這些百姓必都疲憊；因為這事太重，你獨自一人辦理不了。</div>
+<div class="verse"><span class="verse-number">19</span>現在你要聽我的話。我為你出個主意，願神與你同在。你要替百姓到神面前，將案件奏告神；</div>
+<div class="verse"><span class="verse-number">20</span>又要將律例和法度教訓他們，指示他們當行的道，當作的事；</div>
+<div class="verse"><span class="verse-number">21</span>並要從百姓中揀選有才能的人，就是敬畏神、誠實無妄、恨不義之財的人，派他們作千夫長、百夫長、五十夫長、十夫長，管理百姓，</div>
+<div class="verse"><span class="verse-number">22</span>叫他們隨時審判百姓，大事都要呈到你這裏，小事他們自己可以審判。這樣，你就輕省些，他們也可以同當此任。</div>
+<div class="verse"><span class="verse-number">23</span>你若這樣行，神也這樣吩咐你，你就能受得住，這百姓也都平平安安歸回他們的住處。」</div>
+<div class="verse"><span class="verse-number">24</span>於是，摩西聽從他岳父的話，按着他所說的去行。</div>
+<div class="verse"><span class="verse-number">25</span>摩西從以色列人中揀選了有才能的人，立他們為百姓的首領，作千夫長、百夫長、五十夫長、十夫長。</div>
+<div class="verse"><span class="verse-number">26</span>他們隨時審判百姓，有難斷的案件就呈到摩西那裏，但各樣小事他們自己審判。</div>
+<div class="verse"><span class="verse-number">27</span>此後，摩西讓他的岳父去，他就往本地去了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第18章記載摩西的岳父葉忒羅（米甸的祭司）聽聞神拯救以色列出埃及的一切事，帶着摩西的妻子西坡拉和兩個兒子來到曠野見摩西。摩西向岳父詳述神為以色列所行的一切事，葉忒羅因神的大恩而歡喜，說「耶和華比萬神都大」，並獻燔祭和平安祭給神，與亞倫和以色列長老同吃飯。次日摩西坐着審判百姓，百姓從早到晚站在摩西面前，葉忒羅看見這種低效的治理方式，提出管理建議：從百姓中選立能幹的人，設千夫長、百夫長、五十夫長、十夫長，讓他們處理小事，大事才帶到摩西面前。葉忒羅強調這樣摩西才能持久，百姓也能回到本處。摩西接受了這個明智的建議，照此施行。本章顯示神的智慧可以透過外邦人的實踐智慧傳達，也顯示謙遜的領袖能虛心接受忠誠建議。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的智慧可以透過任何人傳達，包括局外人</strong><br>葉忒羅是米甸的祭司，並非以色列人，卻提出了極具智慧的組織管理建議，摩西也虛心接受。神的普遍恩典使智慧能在任何人身上顯現。信徒不應因建議來源於「圈外人」而輕忽，也當在世俗的管理智慧中認識神普遍恩典的作為。<br><br>
+<strong>2. 謙遜的領袖能接受正確的批評與建議</strong><br>摩西是神所揀選的領袖，卻能謙遜地接受岳父的批評和建議。真正有智慧的領袖不因位置高就拒絕聆聽，謙遜地接受忠誠的建議是領袖成熟的標誌。信徒在各自的崗位上，應培養謙遜的聆聽心態，不因自尊心而拒絕可能幫助自己的意見。<br><br>
+<strong>3. 授權與分工是持久服事的必要條件</strong><br>葉忒羅指出摩西的問題是「必弄壞了，你和你這百姓也必弄壞了」，即精力耗盡和服事不持久。有效的服事需要授權，信徒在神給的崗位上服事，若不學習分工與授權，終將因筋疲力竭而失去長遠服事的能力。培育和信任他人是領袖最重要的功課之一。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>葉忒羅因耶和華待</strong><strong>以色列的一切好處</strong>，就是拯救他們脫離埃及人的手，便甚歡喜。（出18:9）</td>
+<td>就像<strong>一個外地人被當地的美食深深打動</strong>，葉忒羅這位外邦人因聽聞神的作為而真誠地歡喜。你是否<strong>曾向非信徒分</strong>享神在你<strong>生命中的作為</strong>，而對方的回應超出你<strong>預期</strong>？那次經歷給你<strong>帶來什麼啟示</strong>？</td>
+</tr>
+<tr>
+<td><strong>你和這些百姓必都</strong>疲憊；<strong>因為這事太重</strong>，你獨自一人辦理不了。（出18:18）</td>
+<td>就像<strong>一個人試圖獨自搬運超出能力的重</strong>物，結果傷了自己也耽誤了工程，葉忒羅看出摩西一人承擔的危機。你是否<strong>有過因不願授</strong>權而造成自己和他人兩敗俱傷的經歷？是什麼讓你<strong>難以放手讓他</strong>人分擔？</td>
+</tr>
+<tr>
+<td><strong>摩西聽從他岳父的</strong>話，<strong>按着他所說的去行</strong>。（出18:24）</td>
+<td>就像<strong>願意聽取教練建議的運動員比固執</strong>的人進步更快，摩西能謙遜接受岳父的建言。你是否<strong>有一位</strong>能對你<strong>說真話的「葉</strong>忒羅」？你是否能像摩西一樣，放下領袖的自尊，虛心接受正確的批評與建議？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

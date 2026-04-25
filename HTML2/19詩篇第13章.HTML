@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第13章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第13章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">從哀嘆「要到幾時」到信靠的讚美</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩，交與伶長）耶和華啊，你忘記我要到幾時呢？要到永遠麼？你掩面不顧我要到幾時呢？</div>
+<div class="verse"><span class="verse-number">2</span>我心裏籌算，終日愁苦，要到幾時呢？我的仇敵升高壓制我，要到幾時呢？</div>
+<div class="verse"><span class="verse-number">3</span>耶和華我的神啊，求你看顧我，應允我！使我眼目光明，免得我沉睡至死；</div>
+<div class="verse"><span class="verse-number">4</span>免得我的仇敵說：我勝了他；免得我的敵人在我搖動的時候喜樂。</div>
+<div class="verse"><span class="verse-number">5</span>但我倚靠你的慈愛；我的心因你的救恩快樂。</div>
+<div class="verse"><span class="verse-number">6</span>我要向耶和華歌唱，因他用厚恩待我。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第13篇是大衛所作的個人哀歌，全篇僅六節，卻被許多學者認為是最能代表詩篇哀歌結構的典範之一。本篇可能寫於大衛遭受長期逼迫、等候神拯救卻遲遲未見回應的某段艱難歲月。
+
+      全篇分為三個清晰的部分：哀嘆（1-2節）、祈求（3-4節）、信靠與讚美（5-6節）。前兩節連續出現四次「要到幾時」，是整部詩篇中最集中、最強烈的問神控訴，表達了漫長等待中幾近崩潰的心靈狀態——感覺被神遺忘、被仇敵壓制、終日愁苦。
+
+      然而，本篇最令人震撼的是其迅速的轉折：從第4節的哀求，到第5節的「但我倚靠你的慈愛」，內在的信仰抉擇帶來了根本性的改變。這個「但」字是全篇的靈魂，也是信仰在苦難中最真實的表達——環境沒有改變，神卻在心中成為真實的倚靠。第6節以讚美收尾，揭示信心先行於感受、讚美先行於得救的屬靈原則。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 誠實地向神傾訴等待之苦是正當的信仰表達</strong><br>四個「要到幾時」是大衛對神最真實的質問，卻沒有被聖經認為是不敬的表達。這告訴我們：真正的信仰關係允許信徒在等待中向神傾訴痛苦與困惑，而非強迫自己假裝平靜。神並不需要我們壓抑哀嘆來維持「屬靈形象」。將等待之苦誠實地帶到神面前，本身就是一種信仰——因為你仍然在向神說話，相信祂在聆聽，這正是禱告關係最真實的面貌。<br><br>
+<strong>2. 信仰的抉擇能夠超越感受的低谷</strong><br>「但我倚靠你的慈愛」這個「但」字是全篇的轉捩點，也是信仰最剛強的宣告。大衛的處境沒有改變，感受也沒有立刻好轉，但他選擇以意志的行動轉向神的慈愛。這種「逆感受而行的信靠」正是信仰成熟最深刻的標誌。信仰不是等到感覺良好才去相信，而是在感受最低谷時仍選擇信靠神，讓這個選擇成為靈魂回升的起點，最終帶來真實的喜樂。<br><br>
+<strong>3. 讚美可以先行於得救，成為信心的宣告</strong><br>第6節「我要向耶和華歌唱，因他用厚恩待我」是在尚未脫離困境前就發出的讚美。大衛以過去神的厚恩為基礎，在當前困境中預支未來的讚美。這種「預支的讚美」是信仰最有力的宣告：我還沒看見，但我相信神必然恩待我，所以我現在就選擇讚美。這種信心的讚美不只是情感的宣洩，更是屬靈爭戰中最有力的武器，能夠打破絕望的牢籠，讓靈魂重新進入神的同在。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華啊</strong>，<strong>你忘記我要到幾時</strong>呢？要到永遠麼？你掩面不顧我要到幾時呢？（詩13:1）</td>
+<td>就像<strong>等待重要郵件卻一直收不到回音</strong>，心裡開始懷疑對方是否真的收到了，你是否<strong>曾在漫長的等</strong>待中向神提出「要到幾時」的問題？你<strong>選擇繼續與神</strong>說話，還是就此沉默地退縮？</td>
+</tr>
+<tr>
+<td><strong>但我倚靠你的慈愛</strong>；<strong>我的心因你的救恩</strong>快樂。（詩13:5）</td>
+<td>就像<strong>在暴風雨中緊緊抓住船上的欄杆</strong>，不是因為感覺安全，而是因為知道那是唯一的支撐，你<strong>在最灰暗的時</strong>刻，是否曾做出「但我仍倚靠你<strong>」的意志抉擇</strong>，即使感受告訴你<strong>神似乎不在</strong>？</td>
+</tr>
+<tr>
+<td><strong>我要向耶和華歌唱</strong>，<strong>因他用厚恩待我</strong>。（詩13:6）</td>
+<td>就像<strong>在工作面試結果出來之前</strong>，先感謝已有的機會而非等到錄取才感恩，你是否能在禱告還未得答應時，就以神過去的厚恩為根基，預支未來的讚美，讓讚美成為你<strong>信心最真實的</strong>宣告？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

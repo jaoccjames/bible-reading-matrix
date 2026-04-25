@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第15章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第15章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">豁免之年與慷慨對待貧窮人</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「每逢七年末一年，你要施行豁免。</div>
+<div class="verse"><span class="verse-number">2</span>豁免的定例乃是這樣：凡債主要把所借給鄰舍的豁免了；不可向鄰舍和弟兄追討，因為耶和華的豁免年已經宣告了。</div>
+<div class="verse"><span class="verse-number">3</span>若借給外邦人，你可以向他追討；但借給你弟兄，無論是甚麼，你要鬆手豁免了。</div>
+<div class="verse"><span class="verse-number">4</span>你若留意聽從耶和華你神的話，謹守遵行我今日所吩咐你這一切的命令，就必在你們中間沒有窮人了（在耶和華你神所賜你為業的地上，耶和華必大大賜福與你。）</div>
+<div class="verse"><span class="verse-number">5</span>併於上節</div>
+<div class="verse"><span class="verse-number">6</span>因為耶和華你的神必照他所應許你的賜福與你。你必借給許多國民，卻不至向他們借貸；你必管轄許多國民，他們卻不能管轄你。</div>
+<div class="verse"><span class="verse-number">7</span>「在耶和華你神所賜你的地上，無論那一座城裏，你弟兄中若有一個窮人，你不可忍着心、揝着手不幫補你窮乏的弟兄。</div>
+<div class="verse"><span class="verse-number">8</span>總要向他鬆開手，照他所缺乏的借給他，補他的不足。</div>
+<div class="verse"><span class="verse-number">9</span>你要謹慎，不可心裏起惡念，說：『第七年的豁免年快到了』，你便惡眼看你窮乏的弟兄，甚麼都不給他，以致他因你求告耶和華，罪便歸於你了。</div>
+<div class="verse"><span class="verse-number">10</span>你總要給他，給他的時候心裏不可愁煩；因耶和華你的神必在你這一切所行的，並你手裏所辦的事上，賜福與你。</div>
+<div class="verse"><span class="verse-number">11</span>原來那地上的窮人永不斷絕；所以我吩咐你說：『總要向你地上困苦窮乏的弟兄鬆開手。』」</div>
+<div class="verse"><span class="verse-number">12</span>「你弟兄中，若有一個希伯來男人或希伯來女人被賣給你，服事你六年，到第七年就要任他自由出去。</div>
+<div class="verse"><span class="verse-number">13</span>你任他自由的時候，不可使他空手而去，</div>
+<div class="verse"><span class="verse-number">14</span>要從你羊群、禾場、酒醡之中多多的給他；耶和華你的神怎樣賜福與你，你也要照樣給他。</div>
+<div class="verse"><span class="verse-number">15</span>要記念你在埃及地作過奴僕，耶和華你的神將你救贖；因此，我今日吩咐你這件事。</div>
+<div class="verse"><span class="verse-number">16</span>他若對你說：『我不願意離開你』，是因他愛你和你的家，且因在你那裏很好，</div>
+<div class="verse"><span class="verse-number">17</span>你就要拿錐子將他的耳朵在門上刺透，他便永為你的奴僕了。你待婢女也要這樣。</div>
+<div class="verse"><span class="verse-number">18</span>你任他自由的時候，不可以為難事，因他服事你六年，較比雇工的工價多加一倍了。耶和華你的神就必在你所作的一切事上賜福與你。」</div>
+<div class="verse"><span class="verse-number">19</span>「你牛群羊群中頭生的，凡是公的，都要分別為聖，歸耶和華你的神。牛群中頭生的，不可用牠耕地；羊群中頭生的，不可剪毛。</div>
+<div class="verse"><span class="verse-number">20</span>這頭生的，你和你的家屬，每年要在耶和華所選擇的地方，在耶和華你神面前吃。</div>
+<div class="verse"><span class="verse-number">21</span>這頭生的若有甚麼殘疾，就如瘸腿的、瞎眼的，無論有甚麼惡殘疾，都不可獻給耶和華你的神；</div>
+<div class="verse"><span class="verse-number">22</span>可以在你城裏吃；潔淨人與不潔淨人都可以吃，就如吃羚羊與鹿一般。</div>
+<div class="verse"><span class="verse-number">23</span>只是不可吃牠的血；要倒在地上，如同倒水一樣。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第十五章是申命記律法中最具社會關懷精神的一章，核心是「豁免年」（每七年一次）的規定。每逢第七年，凡借出去的債務一律豁免，讓借貸者得以在這一年得到釋放與重新開始的機會（15:1-6）。本章最著名的宣告是第4節：「你們中間應當沒有窮人」，這不是一個描述性的預言，而是一個規範性的期望——只要以色列人完全遵行神的律法，彼此扶持，就能建立一個沒有長期貧困的社會。本章也規定希伯來奴僕在服事七年後應被釋放，且主人要慷慨地給他們食物、牲畜和酒，使他們可以有新的開始（15:12-18）。頭生牲畜的奉獻規定也在本章末尾提及。整章體現了一個深刻的屬靈原則：神的子民應當是大手寬心、樂意分享的群體，因為他們自己也曾在埃及為奴，蒙神拯救，因此要將同樣的恩典傳遞給有需要的人。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神渴望祂的群體中沒有長期的貧窮與絕望</strong><br>「你們中間應當沒有窮人」（申15:4）——這句話是對整個以色列社會的異象宣告。神的律法設計了豁免年制度，要防止貧富差距無限擴大、防止窮人永遠無法翻身。這個制度說明：信仰不只是個人與神的關係，也涉及社會中財富分配的公義。神關心祂子民中最脆弱的成員是否有尊嚴地生活。<br><br>
+<strong>2. 慷慨借貸是順服神的具體表現，不可因豁免年將至而吝嗇</strong><br>「你要謹慎，不可心裏起惡念……眼睛看你窮乏的弟兄現出吝嗇的意思……你要給他，給他的時候心裏不可愁煩」（申15:9-10）。神知道人心會因豁免年將近而不願意借出，因此特別警告這種「精明但自私」的算計。神所賜的福分，應當流通到有需要的人，而非被囤積保護。<br><br>
+<strong>3. 釋放奴僕要大方，因為自己也曾是被釋放者</strong><br>「你也要記念你在埃及地作過奴僕，耶和華你的神將你救贖」（申15:15）。以色列人釋放奴僕的動力來自於「記念」——記念神曾白白釋放了自己。今日信徒在施與和寬恕他人時，同樣應以自己蒙神白白恩典為動力：既然我們曾蒙如此大的恩典，就沒有理由對他人吝嗇。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你們中間應當沒有</strong>窮人；<strong>因為在你們應許之</strong>地上，耶和華你的神必大大賜福與你。」（申15:4）</td>
+<td>信仰群體應當是消除貧困的力量，就像<strong>健康的生態系統能讓所有生物都有</strong>足夠的資源生存，在你<strong>的教會或社區</strong>中，有什麼可以做的事情，讓「沒有窮人」這個理想更接近現實？</td>
+</tr>
+<tr>
+<td>「<strong>你要給他</strong>，<strong>給他的時候心裏不</strong>可愁煩；因為耶和華你的神必在你這一切所行的，並你手所辦的事上賜福與你。」（申15:10）</td>
+<td>慷慨給予不是虧損而是蒙福的途徑，就像<strong>播種的農夫把種子放進土裏才能有</strong>收成，你<strong>最近一次慷慨</strong>幫助有需要的人是什麼時候？你有沒有<strong>體驗到神在慷</strong>慨之後帶來的祝福？</td>
+</tr>
+<tr>
+<td>「<strong>你也要記念你在埃</strong><strong>及地作過奴僕</strong>；耶和華你的神將你救贖；因此我今日吩咐你這件事。」（申15:15）</td>
+<td>記念自己曾蒙救贖是慷慨對人的最深動力，就像<strong>曾被人無私幫助過的人更願意伸手</strong>幫助別人，當你<strong>感到對某人吝</strong>嗇或不願意寬恕時，如何讓對神恩典的記念改變你<strong>的心態</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

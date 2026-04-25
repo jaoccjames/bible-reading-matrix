@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約書亞記第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約書亞記第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">智取艾城後，立壇宣律更新立約</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華對約書亞說：「不要懼怕，也不要驚惶。你起來，率領一切兵丁上艾城去，我已經把艾城的王和他的民、他的城，並他的地，都交在你手裏。</div>
+<div class="verse"><span class="verse-number">2</span>你怎樣待耶利哥和耶利哥的王，也當照樣待艾城和艾城的王。只是城內所奪的財物和牲畜，你們可以取為自己的掠物。你要在城後設下伏兵。</div>
+<div class="verse"><span class="verse-number">3</span>於是，約書亞和一切兵丁都起來，要上艾城去。約書亞選了三萬大能的勇士，夜間打發他們前往，</div>
+<div class="verse"><span class="verse-number">4</span>吩咐他們說：「你們要在城後埋伏，不可離城太遠，都要各自準備。</div>
+<div class="verse"><span class="verse-number">5</span>我與我所帶領的眾民要向城前往。城裏的人像初次出來攻擊我們的時候，我們就在他們面前逃跑，</div>
+<div class="verse"><span class="verse-number">6</span>他們必出來追趕我們，直到我們引誘他們離開城；因為他們必說：『這些人像初次在我們面前逃跑。』所以我們要在他們面前逃跑，</div>
+<div class="verse"><span class="verse-number">7</span>你們就從埋伏的地方起來，奪取那城，因為耶和華你們的神必把城交在你們手裏。</div>
+<div class="verse"><span class="verse-number">8</span>你們奪了城以後，就放火燒城，要照耶和華的話行。這是我吩咐你們的。」</div>
+<div class="verse"><span class="verse-number">9</span>約書亞打發他們前往，他們就上埋伏的地方去，住在伯特利和艾城的中間，就是在艾城的西邊。這夜約書亞卻在民中住宿。</div>
+<div class="verse"><span class="verse-number">10</span>約書亞清早起來，點齊百姓，他和以色列的長老在百姓前面上艾城去。</div>
+<div class="verse"><span class="verse-number">11</span>眾民，就是他所帶領的兵丁，都上去，向前直往，來到城前，在艾城北邊安營。在約書亞和艾城中間有一山谷。</div>
+<div class="verse"><span class="verse-number">12</span>他挑了約有五千人，使他們埋伏在伯特利和艾城的中間，就是在艾城的西邊，</div>
+<div class="verse"><span class="verse-number">13</span>於是安置了百姓，就是城北的全軍和城西的伏兵。這夜約書亞進入山谷之中。</div>
+<div class="verse"><span class="verse-number">14</span>艾城的王看見這景況，就和全城的人，清早急忙起來，按所定的時候，出到亞拉巴前，要與以色列人交戰；王卻不知道在城後有伏兵。</div>
+<div class="verse"><span class="verse-number">15</span>約書亞和以色列眾人在他們面前裝敗，往那通曠野的路逃跑。</div>
+<div class="verse"><span class="verse-number">16</span>城內的眾民都被招聚，追趕他們；艾城人追趕的時候，就被引誘離開城。</div>
+<div class="verse"><span class="verse-number">17</span>艾城和伯特利城沒有一人不出來追趕以色列人的，撇了敞開的城門，去追趕以色列人。</div>
+<div class="verse"><span class="verse-number">18</span>耶和華吩咐約書亞說：「你向艾城伸出手裏的短槍，因為我要將城交在你手裏。」約書亞就向城伸出手裏的短槍。</div>
+<div class="verse"><span class="verse-number">19</span>他一伸手，伏兵就從埋伏的地方急忙起來，奪了城，跑進城去，放火焚燒。</div>
+<div class="verse"><span class="verse-number">20</span>艾城的人回頭一看，不料，城中煙氣沖天，他們就無力向左向右逃跑。那往曠野逃跑的百姓便轉身攻擊追趕他們的人。</div>
+<div class="verse"><span class="verse-number">21</span>約書亞和以色列眾人見伏兵已經奪了城，城中煙氣飛騰，就轉身回去，擊殺艾城的人。</div>
+<div class="verse"><span class="verse-number">22</span>伏兵也出城迎擊艾城人，艾城人就困在以色列人中間，前後都是以色列人。於是以色列人擊殺他們，沒有留下一個，也沒有一個逃脫的，</div>
+<div class="verse"><span class="verse-number">23</span>生擒了艾城的王，將他解到約書亞那裏。</div>
+<div class="verse"><span class="verse-number">24</span>以色列人在田間和曠野殺盡所追趕一切艾城的居民。艾城人倒在刀下，直到滅盡；以色列眾人就回到艾城，用刀殺了城中的人。</div>
+<div class="verse"><span class="verse-number">25</span>當日殺斃的人，連男帶女共有一萬二千，就是艾城所有的人。</div>
+<div class="verse"><span class="verse-number">26</span>約書亞沒有收回手裏所伸出來的短槍，直到把艾城的一切居民盡行殺滅。</div>
+<div class="verse"><span class="verse-number">27</span>惟獨城中的牲畜和財物，以色列人都取為自己的掠物，是照耶和華所吩咐約書亞的話。</div>
+<div class="verse"><span class="verse-number">28</span>約書亞將艾城焚燒，使城永為高堆、荒場，直到今日；</div>
+<div class="verse"><span class="verse-number">29</span>又將艾城王掛在樹上，直到晚上。日落的時候，約書亞吩咐人把屍首從樹上取下來，丟在城門口，在屍首上堆成一大堆石頭，直存到今日。</div>
+<div class="verse"><span class="verse-number">30</span>那時，約書亞在以巴路山上為耶和華以色列的神築一座壇，</div>
+<div class="verse"><span class="verse-number">31</span>是用沒有動過鐵器的整石頭築的，照着耶和華僕人摩西所吩咐以色列人的話，正如摩西律法書上所寫的。眾人在這壇上給耶和華奉獻燔祭和平安祭。</div>
+<div class="verse"><span class="verse-number">32</span>約書亞在那裏，當着以色列人面前，將摩西所寫的律法抄寫在石頭上。</div>
+<div class="verse"><span class="verse-number">33</span>以色列眾人，無論是本地人、是寄居的，和長老、官長，並審判官，都站在約櫃兩旁，在抬耶和華約櫃的祭司利未人面前，一半對着基利心山，一半對着以巴路山，為以色列民祝福，正如耶和華僕人摩西先前所吩咐的。</div>
+<div class="verse"><span class="verse-number">34</span>隨後，約書亞將律法上祝福、咒詛的話，照着律法書上一切所寫的，都宣讀了一遍。</div>
+<div class="verse"><span class="verse-number">35</span>摩西所吩咐的一切話，約書亞在以色列全會眾和婦女、孩子，並他們中間寄居的外人面前，沒有一句不宣讀的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約書亞記第8章記載以色列人在除去亞干罪孽之後，重新出征攻取艾城，並大獲全勝。神再次向約書亞說「不要懼怕，也不要驚惶」，並指示以伏兵之計奪城。約書亞精心部署：一支三萬人的軍隊先行埋伏在艾城後方，正面佯裝敗退將艾城人引出城外，待伏兵奪城放火為號，前後夾擊，艾城全軍覆沒。不同於耶利哥，神允許以色列人取艾城的財物和牲畜為掠物。得勝後，約書亞在以巴路山築壇獻祭，並將摩西律法抄寫在石頭上，又在全體以色列人——包括婦女、孩子和寄居的外人——面前，完整宣讀律法書上的祝福與咒詛。本章的軍事勝利與屬靈更新並列，展示了得勝後立即歸榮耀於神、公開重申律法之約的重要性，也說明勝利並非理所當然，乃是在與神立約的關係中才得以持守。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的恢復：失敗之後神仍賜機會重新出發</strong><br>艾城初敗，以色列人士氣崩潰。但在除罪之後，神立即對約書亞說「不要懼怕」，並宣告已將艾城交在手中。這彰顯了神的恢復性恩典：祂不因一次失敗而放棄祂的子民。信徒在經歷失敗、跌倒之後，若願意對付罪並回到神面前，神仍賜機會重新站立、繼續前行。失敗不是終點，而是學習倚靠神的轉機。<br><br>
+<strong>2. 智慧與順服並行：神賦予人運用才智完成使命</strong><br>攻取艾城不像耶利哥那樣純粹依靠神蹟，而是結合了戰略部署與神的指引。神允許約書亞使用伏兵之計，說明信仰不排斥人的智慧與籌謀，重要的是這一切都在神的命令和帶領下進行。屬靈成熟包含善用神所賜的才智，在神的旨意框架內盡力謀劃，而非以「信心」為藉口逃避應盡的責任與思考。<br><br>
+<strong>3. 得勝後立即歸榮耀給神、重申立約關係</strong><br>勝利之後，約書亞沒有慶功，而是立即在以巴路山築壇敬拜，並在全體以色列人面前宣讀律法。這說明屬靈領袖的重要責任：不讓勝利的喜悅取代對神的敬畏與感恩，不讓成功帶來屬靈的驕傲與疏忽。每一次的得勝，都應成為更新立約、歸榮耀於神的機會，而非自我膨脹的理由。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>不要懼怕</strong>，<strong>也不要驚惶</strong>。你起來，率領一切兵丁上艾城去，我已經把艾城的王……都交在你手裏。」（書8:1）</td>
+<td>就像<strong>一位選手失誤後教練立刻說「再來</strong>一次，我相信你」，神在以色列人失敗後立即給出恢復的機會。你有沒有<strong>因為過去的失</strong>敗而不敢相信神仍能使用你<strong>、帶領你重新</strong>前行？</td>
+</tr>
+<tr>
+<td>「<strong>你要在城後設下伏</strong>兵……<strong>要照耶和華的話行</strong>。這是我吩咐你們的。」（書8:2,8）</td>
+<td>就像<strong>工程師依照設計圖運用專業知識建</strong>造橋樑，神允許約書亞運用軍事智慧，但始終在神的吩咐框架內行動。你<strong>在面對挑戰時</strong>，如何在盡用智慧的同時，確保自己仍走在神的旨意之中？</td>
+</tr>
+<tr>
+<td>「<strong>約書亞在那裏</strong>，<strong>當着以色列人面前</strong>，將摩西所寫的律法抄寫在石頭上……沒有一句不宣讀的。」（書8:32,35）</td>
+<td>就像<strong>運動員奪冠後立刻回到訓練計畫</strong>，約書亞得勝後立即帶領眾人重新聆聽律法。你是否<strong>在生命中的得</strong>勝時刻，仍記得回到神的話語前，更新立約、防止屬靈的自滿？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

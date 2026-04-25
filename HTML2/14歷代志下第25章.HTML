@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志下第25章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志下第25章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">亞瑪謝的半心：勝利後拜偶像，驕傲後招禍敗</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>亞瑪謝登基的時候年二十五歲，在耶路撒冷作王二十九年。他母親名叫約耶但，是耶路撒冷人。</div>
+<div class="verse"><span class="verse-number">2</span>亞瑪謝行耶和華眼中看為正的事，只是心不專誠。</div>
+<div class="verse"><span class="verse-number">3</span>國一堅定，就把殺他父王的臣僕殺了，</div>
+<div class="verse"><span class="verse-number">4</span>卻沒有治死他們的兒子，是照摩西律法書上耶和華所吩咐的說：「不可因子殺父，也不可因父殺子，各人要為本身的罪而死。」</div>
+<div class="verse"><span class="verse-number">5</span>亞瑪謝招聚猶大人，按着猶大和便雅憫的宗族設立千夫長、百夫長，又數點人數，從二十歲以外，能拿槍拿盾牌出去打仗的精兵共有三十萬；</div>
+<div class="verse"><span class="verse-number">6</span>又用銀子一百他連得，從以色列招募了十萬大能的勇士。</div>
+<div class="verse"><span class="verse-number">7</span>有一個神人來見亞瑪謝，對他說：「王啊，不要使以色列的軍兵與你同去，因為耶和華不與以色列人以法蓮的後裔同在。</div>
+<div class="verse"><span class="verse-number">8</span>你若一定要去，就奮勇爭戰吧！但神必使你敗在敵人面前；因為神能助人得勝，也能使人傾敗。」</div>
+<div class="verse"><span class="verse-number">9</span>亞瑪謝問神人說：「我給了以色列軍的那一百他連得銀子怎麼樣呢？」神人回答說：「耶和華能把更多的賜給你。」</div>
+<div class="verse"><span class="verse-number">10</span>於是亞瑪謝將那從以法蓮來的軍兵分別出來，叫他們回家去。故此，他們甚惱怒猶大人，氣忿忿的回家去了。</div>
+<div class="verse"><span class="verse-number">11</span>亞瑪謝壯起膽來，率領他的民到鹽谷，殺了西珥人一萬。</div>
+<div class="verse"><span class="verse-number">12</span>猶大人又生擒了一萬帶到山崖上，從那裏把他們扔下去，以致他們都摔碎了。</div>
+<div class="verse"><span class="verse-number">13</span>但亞瑪謝所打發回去、不許一同出征的那些軍兵攻打猶大各城，從撒瑪利亞直到伯和崙，殺了三千人，搶了許多財物。</div>
+<div class="verse"><span class="verse-number">14</span>亞瑪謝殺了以東人回來，就把西珥的神像帶回，立為自己的神，在它面前叩拜燒香。</div>
+<div class="verse"><span class="verse-number">15</span>因此，耶和華的怒氣向亞瑪謝發作，就差一個先知去見他，說：「這些神不能救它的民脫離你的手，你為何尋求它呢？」</div>
+<div class="verse"><span class="verse-number">16</span>先知與王說話的時候，王對他說：「誰立你作王的謀士呢？你住口吧！為何找打呢？」先知就止住了，又說：「你行這事，不聽從我的勸戒，我知道神定意要滅你。」</div>
+<div class="verse"><span class="verse-number">17</span>猶大王亞瑪謝與群臣商議，就差遣使者去見耶戶的孫子、約哈斯的兒子、以色列王約阿施，說：「你來，我們二人相見於戰場。」</div>
+<div class="verse"><span class="verse-number">18</span>以色列王約阿施差遣使者去見猶大王亞瑪謝，說：「利巴嫩的蒺藜差遣使者去見利巴嫩的香柏樹，說：『將你的女兒給我兒子為妻。』後來利巴嫩有一個野獸經過，把蒺藜踐踏了。</div>
+<div class="verse"><span class="verse-number">19</span>你說：『看哪，我打敗了以東人』，你就心高氣傲，以致矜誇。你在家裏安居就罷了，為何要惹禍使自己和猶大國一同敗亡呢？」</div>
+<div class="verse"><span class="verse-number">20</span>亞瑪謝卻不肯聽從。這是出乎神，好將他們交在敵人手裏，因為他們尋求以東的神。</div>
+<div class="verse"><span class="verse-number">21</span>於是以色列王約阿施上來，在猶大的伯示麥與猶大王亞瑪謝相見於戰場。</div>
+<div class="verse"><span class="verse-number">22</span>猶大人敗在以色列人面前，各自逃回家裏去了。</div>
+<div class="verse"><span class="verse-number">23</span>以色列王約阿施在伯示麥擒住約哈斯〔就是亞哈謝〕的孫子、約阿施的兒子、猶大王亞瑪謝，將他帶到耶路撒冷，又拆毀耶路撒冷的城牆，從以法蓮門直到角門，共四百肘；</div>
+<div class="verse"><span class="verse-number">24</span>又將俄別以東所看守神殿裏的一切金銀和器皿，與王宮裏的財寶都拿了去，並帶人去為質，就回撒瑪利亞去了。</div>
+<div class="verse"><span class="verse-number">25</span>以色列王約哈斯的兒子約阿施死後，猶大王約阿施的兒子亞瑪謝又活了十五年。</div>
+<div class="verse"><span class="verse-number">26</span>亞瑪謝其餘的事，自始至終不都寫在猶大和以色列諸王記上嗎？</div>
+<div class="verse"><span class="verse-number">27</span>自從亞瑪謝離棄耶和華之後，在耶路撒冷有人背叛他，他就逃到拉吉；叛黨卻打發人到拉吉，將他殺了。</div>
+<div class="verse"><span class="verse-number">28</span>人就用馬將他的屍首馱回，葬在猶大京城他列祖的墳地裏。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志下第二十五章記述猶大王亞瑪謝充滿矛盾的在位期。他「行耶和華眼中看為正的事，只是心不專誠」（2節）——這句評語是全章的主題。他對的地方：聽從神人的話，打發花錢雇來的以色列傭兵回去，損失一百他連得卻倚靠神得勝（7-11節）。他錯的地方：得勝後把西珥的神像帶回，立為自己的神（14節）；不聽先知的警戒（16節）；輕率地向以色列王挑戰，慘遭城牆被拆、財寶被奪的大敗（17-24節）。
+
+      亞瑪謝的悲劇在於，他願意聽神人的話放棄有形的資源（100他連得），卻不願意聽先知的話放棄得勝後的驕傲和偶像崇拜。「這是出乎神，好將他們交在敵人手裏，因為他們尋求以東的神」（20節）是全章最嚴肅的神學評語——驕傲和偶像崇拜是亞瑪謝滅亡的直接原因。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「心不專誠」是最危險的半路信仰</strong><br>「行正的事，只是心不專誠」——這種人做了許多外表正確的事，卻沒有真正全心委身。半心的信仰比完全不信仰更危險，因為它足夠讓人自我感覺良好，卻不足以帶來真實的屬靈保護。真正的信仰要求的不是「大部分正確」，而是「盡心盡性盡意」。<br><br>
+<strong>2. 寧可損失金錢也要順服神，是真實的信心</strong><br>亞瑪謝聽從神人的話，把百他連得的傭兵打發走，說明他在具體利益面前仍能做出屬靈的選擇。然而他後來拜偶像，說明順服不是穩定的，而是選擇性的。信仰的真實性不由最艱難的一次顯現，而由一貫的持守展現。<br><br>
+<strong>3. 勝利後最容易跌入偶像的陷阱</strong><br>亞瑪謝「殺了以東人回來，就把西珥的神像帶回，立為自己的神」（14節）——得勝後不是更親近那位幫助他得勝的神，反而被戰利品的神吸引。這是一個屬靈悖論：勝利有時反而是信仰的軟肋，因為人在得勝後更容易覺得自己有力量掌控一切。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>亞瑪謝行耶和華眼</strong><strong>中看為正的事</strong>，只是心不專誠。（代下25:2）</td>
+<td>「行正的事，但心不專誠」——這是外在合規但內在未真實委身的狀態，就像<strong>一個員工按規定打卡上班</strong>，卻心不在焉地混日子——在你<strong>的信仰實踐中</strong>，哪個部分是「做了但心不在焉」，哪個部分是真實的全心投入？</td>
+</tr>
+<tr>
+<td><strong>神人回答說</strong>：「<strong>耶和華能把更多的</strong>賜給你。」（代下25:9）</td>
+<td>神人對亞瑪謝說「神能把更多的給你<strong>」——這句話</strong>邀請他相信：順服神帶來的收穫遠超過任何你<strong>以為必須抓住</strong>的東西，就像<strong>一個人放棄一份薪水不高但安穩的</strong>工作，卻得到了更適合自己的機會——在你<strong>的生命中</strong>，有沒有「放下了，卻得到更多」的經歷？</td>
+</tr>
+<tr>
+<td><strong>亞瑪謝殺了以東人</strong>回來，<strong>就把西珥的神像帶</strong>回，立為自己的神，在它面前叩拜燒香。（代下25:14）</td>
+<td>剛剛靠神得勝，轉身就拜被自己打敗的神的偶像——就像<strong>一個剛打贏比賽的球隊</strong>，賽後換上了對手的隊服慶功——你<strong>生命中有沒有</strong>過一段「得了神的幫助，卻把心交給了別的東西」的日子？那個「西珥的神像」對你<strong>而言</strong>是什麼？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

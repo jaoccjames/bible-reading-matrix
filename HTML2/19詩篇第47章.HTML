@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第47章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第47章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">萬民拍掌歡呼：神是全地至高的大君王</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（可拉後裔的詩，交與伶長）萬民哪，你們都要拍掌！要用誇勝的聲音向神呼喊！</div>
+<div class="verse"><span class="verse-number">2</span>因為耶和華至高者是可畏的；他是治理全地的大君王。</div>
+<div class="verse"><span class="verse-number">3</span>他叫萬民服在我們以下，又叫列邦服在我們腳下。</div>
+<div class="verse"><span class="verse-number">4</span>他為我們選擇產業，就是他所愛之雅各的榮耀。（細拉）</div>
+<div class="verse"><span class="verse-number">5</span>神上升，有喊聲相送；耶和華上升，有角聲相送。</div>
+<div class="verse"><span class="verse-number">6</span>你們要向神歌頌，歌頌！向我們王歌頌，歌頌！</div>
+<div class="verse"><span class="verse-number">7</span>因為神是全地的王；你們要用悟性歌頌。</div>
+<div class="verse"><span class="verse-number">8</span>神作王治理萬國；神坐在他的聖寶座上。</div>
+<div class="verse"><span class="verse-number">9</span>列邦的君王聚集要作亞伯拉罕之神的民。因為世界的盾牌是屬神的；他為至高！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第47篇是可拉後裔所作的讚美詩，被稱為「神為王詩篇」（Enthronement Psalm）之一，與詩篇93、96-99篇同屬此類。在猶太傳統中，本篇在每年吹角節（猶太新年）時被誦讀七次，象徵神作王的宣告。
+
+      本篇篇幅雖短，神學卻豐富：它呼召的對象不只是以色列，而是「萬民」（第1節）——這是詩篇中少見的普世性敬拜呼召，揭示神的王權不限於一個民族，而是涵蓋全地所有的人。「列邦的君王聚集要作亞伯拉罕之神的民」（第9節）更預示了末世萬國歸向神的大盼望。
+
+      第5節「神上升，有喊聲相送；耶和華上升，有角聲相送」在新約中被理解為基督升天的預表，表明神在勝過仇敵後，以勝利者的姿態升上高天。第7節「你們要用悟性歌頌」（或譯「用明智的理解敬拜」）提醒信徒敬拜不只是情感的宣洩，更是以對神有真實認識為基礎的智慧回應，使敬拜從表演轉為真實的靈魂交流。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 全身投入的讚美是對神王權最真實的承認</strong><br>「萬民哪，你們都要拍掌！要用誇勝的聲音向神呼喊！」（第1節）「拍掌」在希伯來文化中是歡呼勝利的身體表達，「誇勝的聲音呼喊」是對征服者最高的頌讚。本篇呼召信徒以全身投入、不保留的方式讚美神——不是安靜地點頭認同，而是積極地、熱情地表達對神王權的承認。這種全身投入的讚美，不是情緒的自我放縱，而是靈魂對神偉大的最誠實回應，也是信仰從知識進入感受的自然出口。<br><br>
+<strong>2. 神是全地的王，祂的主權超越一切人間政權</strong><br>「神作王治理萬國；神坐在他的聖寶座上。」（第8節）這個宣告在政治混亂、強權橫行的世代中具有革命性的意義：沒有任何地上的政權能凌駕於神的主權之上。「全地的王」表明神的治理沒有地理邊界，也沒有政治例外。這一確信使信徒在面對任何政治力量時，都能保持一種「更高主權」的意識——我效忠的對象是那位坐在聖寶座上的神，任何地上的權柄都在祂的管轄之下。<br><br>
+<strong>3. 用悟性歌頌是敬拜從形式深化到真實的關鍵</strong><br>「因為神是全地的王；你們要用悟性歌頌。」（第7節）「用悟性歌頌」表明真正的敬拜需要對神有真實的認識——不只是重複宗教語言，而是在明白所唱的話語的意義下，以整個人回應神。這種有「悟性」的敬拜，防止了宗教儀式的空洞化，使每一次的讚美都成為靈魂對神性格的真實承認。信徒若要深化敬拜，就需要持續地認識神——認識祂的作為、祂的性格、祂的旨意，讓這認識成為敬拜最豐富的內容。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>萬民哪</strong>，<strong>你們都要拍掌</strong>！要用誇勝的聲音向神呼喊！（詩47:1）</td>
+<td>就像<strong>球迷在球隊得分時</strong>，不自覺地起立歡呼、相互擊掌，你<strong>對神的讚美</strong>是否有這種發自內心的全身投入，還是你<strong>的敬拜常停留</strong>在「安全距離」——知道神偉大，卻習慣以旁觀者的姿態保持冷靜？</td>
+</tr>
+<tr>
+<td><strong>神作王治理萬國</strong>；<strong>神坐在他的聖寶座</strong>上。（詩47:8）</td>
+<td>就像<strong>知道整個城市的交通系統其實都受</strong>一個中央指揮台控制，儘管表面上看起來各自獨立，你是否<strong>真的以「神作</strong>王治理萬國」的眼光看待當今的世界政治局勢，讓這確信使你<strong>不至於在時代</strong>的混亂中失去方向？</td>
+</tr>
+<tr>
+<td><strong>因為神是全地的王</strong>；<strong>你們要用悟性歌頌</strong>。（詩47:7）</td>
+<td>就像<strong>知道歌詞含義的人唱歌</strong>，比只是跟著旋律哼唱的人更能進入歌曲的情感世界，你<strong>在敬拜時</strong>是否真正理解你<strong>所唱的每一句</strong>話的意思，讓敬拜從習慣性的重複轉化為對神性格的真實承認？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

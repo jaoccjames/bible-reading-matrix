@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第27章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第27章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神是亮光與拯救：一生尋求神的面</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩）耶和華是我的亮光，是我的拯救，我還怕誰呢？耶和華是我性命的保障〔或作：力量〕，我還懼誰呢？</div>
+<div class="verse"><span class="verse-number">2</span>那作惡的就是我的仇敵，前來吃我肉的時候就絆跌仆倒。</div>
+<div class="verse"><span class="verse-number">3</span>雖有軍兵安營攻擊我，我的心也不害怕；雖然興起刀兵攻擊我，我必仍舊安穩。</div>
+<div class="verse"><span class="verse-number">4</span>有一件事，我曾求耶和華，我仍要尋求：就是一生一世住在耶和華的殿中，瞻仰他的榮美，在他的殿裏求問。</div>
+<div class="verse"><span class="verse-number">5</span>因為我遭遇患難，他必暗暗的保守我；在他亭子裏，把我藏在他帳幕的隱密處，將我高舉在磐石上。</div>
+<div class="verse"><span class="verse-number">6</span>現在我得以昂首，高過四面的仇敵。我要在他的帳幕裏歡然獻祭；我要唱詩歌頌耶和華。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華啊，我用聲音呼籲的時候，求你垂聽；並求你憐恤我，應允我。</div>
+<div class="verse"><span class="verse-number">8</span>你說：你們當尋求我的面。那時我心向你說：耶和華啊，你的面我正要尋求。</div>
+<div class="verse"><span class="verse-number">9</span>不要向我掩面。不要發怒趕逐僕人，你向來是幫助我的。救我的神阿，不要丟掉我，也不要離棄我。</div>
+<div class="verse"><span class="verse-number">10</span>我父母離棄我，耶和華必收留我。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華啊，求你將你的道指教我，因我仇敵的緣故引導我走平坦的路。</div>
+<div class="verse"><span class="verse-number">12</span>求你不要把我交給敵人，遂其所願；因為妄作見證的和口吐兇言的，起來攻擊我。</div>
+<div class="verse"><span class="verse-number">13</span>我若不信在活人之地得見耶和華的恩惠，就早已喪膽了。</div>
+<div class="verse"><span class="verse-number">14</span>要等候耶和華！當壯膽，堅固你的心！我再說，要等候耶和華！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第27篇是大衛所作，被許多學者視為整部詩篇中最完美、最均衡的詩篇之一。全篇在信心的確信（1-6節）與迫切的禱告（7-14節）之間保持動人的張力，呈現了信仰生命最真實的面貌——不是毫無掙扎的平靜，而是在掙扎中仍保持信心的爭戰。
+
+      前半部（1-6節）以排山倒海的確信開篇：「耶和華是我的亮光，是我的拯救，我還怕誰呢？」即使面對軍兵圍攻，大衛宣告心不害怕。這種信心的根源在第4節揭示——他的最深渴望只有「一件事」：一生住在神的殿中，瞻仰神的榮美。後半部（7-14節）則轉為急切的禱告，反映了現實處境的壓力仍然真實存在，但信心的宣告依然支撐著他。
+
+      全篇以「要等候耶和華！當壯膽，堅固你的心！我再說，要等候耶和華！」收結，這個雙重的呼籲帶著強烈的自我激勵，是大衛在信心掙扎中對自己靈魂的鼓勵，也是他留給所有等候神的信徒最珍貴的遺言。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 認識神為亮光與拯救是勝過恐懼的根基</strong><br>「耶和華是我的亮光，是我的拯救，我還怕誰呢？」（第1節）這個問句的答案是隱含的：無人可懼。「亮光」驅散黑暗中的迷失感與恐懼；「拯救」提供危急時的出路。大衛不是在說他沒有感受到威脅，而是在宣告：即使威脅真實存在，神的同在使恐懼失去了統治靈魂的權力。真正的勇氣不是沒有恐懼，而是在恐懼中仍然選擇以神為依靠，讓對神的認識成為壓制恐懼最有力的力量。<br><br>
+<strong>2. 一生尋求神的面是信仰最崇高的渴望</strong><br>「有一件事，我曾求耶和華，我仍要尋求：就是一生一世住在耶和華的殿中，瞻仰他的榮美。」（第4節）在面對戰爭、仇敵、各種威脅的背景下，大衛的最深渴望竟然只有「一件事」——與神同在、瞻仰神的榮美。這種對神面的渴慕，超越了對安全、成功、長壽的追求，成為生命最純粹的核心動力。這呼召信徒反思：在我所有的禱告與追求中，尋求神的面是否真的在首位？<br><br>
+<strong>3. 等候耶和華是信心在時間考驗中最真實的操練</strong><br>「要等候耶和華！當壯膽，堅固你的心！我再說，要等候耶和華！」（第14節）「等候」不是被動的消極，而是在盼望中主動堅持的信心操練。「壯膽、堅固你的心」表明等候需要力量，因為等候很艱難。大衛對自己說出這句話，揭示他本人也在等候中掙扎，卻選擇繼續壯膽。這是對所有在漫長等候中幾近放棄的信徒最深的鼓勵：再等一次，因為等候耶和華的，必不失望。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>有一件事</strong>，<strong>我曾求耶和華</strong>，我仍要尋求：就是一生一世住在耶和華的殿中，瞻仰他的榮美。（詩27:4）</td>
+<td>就像<strong>一個人在面對人生所有的選擇與需</strong>要時，能說出「我只要一件事」，代表他已找到生命真正的重心，你能否<strong>誠實地說出：</strong>尋求神的面是你<strong>生命中唯一最</strong>重要的渴望？是什麼阻止你<strong>到達這個地步</strong>？</td>
+</tr>
+<tr>
+<td><strong>我父母離棄我</strong>，<strong>耶和華必收留我</strong>。（詩27:10）</td>
+<td>就像<strong>在所有人都轉身離去的時刻</strong>，仍有一個人選擇留下，你<strong>在生命最孤單</strong>、最被人拋棄的時刻，是否真的體驗過神「必收留我」的確信？那份確信如何改變了你<strong>面對孤獨的方</strong>式？</td>
+</tr>
+<tr>
+<td><strong>要等候耶和華</strong>！<strong>當壯膽</strong>，堅固你的心！我再說，要等候耶和華！（詩27:14）</td>
+<td>就像<strong>長跑選手在體力快撐不住時</strong>，在心裡對自己說「再跑一公里」，你<strong>在漫長等候神</strong>答應禱告的過程中，是否曾以這句話鼓勵自己的靈魂？是什麼支撐你<strong>繼續等候</strong>，而非中途放棄？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

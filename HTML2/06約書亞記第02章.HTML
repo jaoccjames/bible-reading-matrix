@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約書亞記第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約書亞記第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">喇合的信心，朱紅線繩的救恩記號</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當下，嫩的兒子約書亞從什亭暗暗打發兩個人作探子，吩咐說：「你們去窺探那地和耶利哥。」於是二人去了，來到一個妓女名叫喇合的家裏，就在那裏躺臥。</div>
+<div class="verse"><span class="verse-number">2</span>有人告訴耶利哥王說：「今夜有以色列人來到這裏窺探此地。」</div>
+<div class="verse"><span class="verse-number">3</span>耶利哥王打發人去見喇合說：「那來到你這裏、進了你家的人要交出來，因為他們來窺探全地。」</div>
+<div class="verse"><span class="verse-number">4</span>女人將二人隱藏，就回答說：「那人果然到我這裏來；他們是那裏來的我卻不知道。</div>
+<div class="verse"><span class="verse-number">5</span>天黑、要關城門的時候，他們出去了，往那裏去我卻不知道。你們快快地去追趕，就必追上。」</div>
+<div class="verse"><span class="verse-number">6</span>（先是女人領二人上了房頂，將他們藏在那裏所擺的麻稭中。）</div>
+<div class="verse"><span class="verse-number">7</span>那些人就往約但河的渡口追趕他們去了。追趕他們的人一出去，城門就關了。</div>
+<div class="verse"><span class="verse-number">8</span>二人還沒有躺臥，女人就上房頂，到他們那裏，</div>
+<div class="verse"><span class="verse-number">9</span>對他們說：「我知道耶和華已經把這地賜給你們，並且因你們的緣故我們都驚慌了。這地的一切居民在你們面前心都消化了；</div>
+<div class="verse"><span class="verse-number">10</span>因為我們聽見你們出埃及的時候，耶和華怎樣在你們前面使紅海的水乾了，並且你們怎樣待約但河東的兩個亞摩利王西宏和噩，將他們盡行毀滅。</div>
+<div class="verse"><span class="verse-number">11</span>我們一聽見這些事，心就消化了。因你們的緣故，並無一人有膽氣。耶和華你們的神本是上天下地的上帝。</div>
+<div class="verse"><span class="verse-number">12</span>現在我既是恩待你們，求你們指着耶和華向我起誓，也要恩待我父家，並給我一個實在的證據，</div>
+<div class="verse"><span class="verse-number">13</span>要救活我的父母、弟兄、姐妹，和一切屬他們的，拯救我們性命不死。」</div>
+<div class="verse"><span class="verse-number">14</span>二人對她說：「你若不洩漏我們這件事，我們情願替你們死。耶和華將這地賜給我們的時候，我們必以慈愛誠實待你。」</div>
+<div class="verse"><span class="verse-number">15</span>於是女人用繩子將二人從窗戶裏縋下去；因她的房子是在城牆邊上，她也住在城牆上。</div>
+<div class="verse"><span class="verse-number">16</span>她對他們說：「你們且往山上去，恐怕追趕的人碰見你們；要在那裏隱藏三天，等追趕的人回來，然後才可以走你們的路。」</div>
+<div class="verse"><span class="verse-number">17</span>二人對她說：「你要這樣行。不然，你叫我們所起的誓就與我們無干了。</div>
+<div class="verse"><span class="verse-number">18</span>我們來到這地的時候，你要把這條朱紅線繩繫在縋我們下去的窗戶上，並要使你的父母、弟兄，和你父的全家都聚集在你家中。</div>
+<div class="verse"><span class="verse-number">19</span>凡出了你家門往街上去的，他的罪〔原文作血〕必歸到自己的頭上，與我們無干了。凡在你家裏的，若有人下手害他，流他血的罪就歸到我們的頭上。</div>
+<div class="verse"><span class="verse-number">20</span>你若洩漏我們這件事，你叫我們所起的誓就與我們無干了。」</div>
+<div class="verse"><span class="verse-number">21</span>女人說：「照你們的話行吧！」於是打發他們去了，又把朱紅線繩繫在窗戶上。</div>
+<div class="verse"><span class="verse-number">22</span>二人到山上，在那裏住了三天，等着追趕的人回去了。追趕的人一路找他們，卻找不着。</div>
+<div class="verse"><span class="verse-number">23</span>二人就下山回來，過了河，到嫩的兒子約書亞那裏，向他述說所遭遇的一切事；</div>
+<div class="verse"><span class="verse-number">24</span>又對約書亞說：「耶和華果然將那全地交在我們手中；那地的一切居民在我們面前心都消化了。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約書亞記第2章緊接在神呼召約書亞之後，記述進攻迦南前的偵察行動。約書亞差派兩名探子秘密前往耶利哥城探情，他們借住在城牆邊一位名叫喇合的妓女家中。耶利哥王獲報後立即下令追查，但喇合冒險將探子藏在房頂的麻稭中，以機智的言辭蒙混追捕者。喇合之所以如此冒險相助，是因為她早已聽聞耶和華為以色列所行的神蹟，包括出埃及時使紅海乾涸以及擊潰亞摩利二王的事蹟。她以信心宣告「耶和華你們的神本是上天下地的上帝」，並求探子以朱紅線繩為記號，保全她全家的性命。探子允諾，並指示她將線繩繫於窗戶上。本章展現神的救恩如何超越種族與身份，臨到一位外邦女子。喇合後來更被列入耶穌基督的家譜（馬太福音第1章），成為信心的典範。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真實的信心產生具體的行動</strong><br>喇合並非憑空臆測，而是根據她所聽聞的神蹟事蹟，形成對耶和華真實的信仰。她的信心不停留在口頭承認，而是化為冒死保護探子的具體行動。希伯來書11章也為她的信心作見證。這提醒信徒，真正的信心必然在危急關頭顯出實質，而非只是知識上的認同。信心的強度，往往在我們願意為神承擔多少代價時才得真正彰顯。<br><br>
+<strong>2. 神的救恩超越出身背景與社會身份</strong><br>喇合是外邦人，又以妓女為業，在當時社會中處於最卑微的地位。然而神的救恩卻臨到她，她也因此進入以色列的救恩歷史，甚至成為大衛王和彌賽亞的先祖。這清楚宣告：神的恩典不受人的出身、過去或身份所限制。每一個人，無論背景如何，只要以信心回應神，都可以在神的計畫中擁有榮耀的位置。<br><br>
+<strong>3. 朱紅線繩象徵神所立的救恩記號必須緊緊持守</strong><br>探子吩咐喇合將朱紅線繩繫於窗戶，這是救恩的記號與保護的條件。喇合立刻照辦，毫不拖延。這朱紅色令人想起逾越節的羊血，指向耶穌基督寶血的救贖。救恩的記號必須持守且公開，不可羞於承認。信徒受洗、領聖餐、公開認信，都是持守這記號的方式，表明自己屬於神並倚靠祂的救贖。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>耶和華你們的神本</strong><strong>是上天下地的上帝</strong>。」（書2:11）</td>
+<td>喇合僅憑聽聞神蹟便產生信心並付諸行動，就像<strong>有人讀了一篇真實的見證分享便決</strong>定捐出積蓄幫助陌生人。你<strong>對神的認識</strong>是停留在「聽說」的層面，還是已轉化為改變行為的真實信仰？</td>
+</tr>
+<tr>
+<td>「<strong>耶和華將這地賜給</strong><strong>我們的時候</strong>，我們必以慈愛誠實待你。」（書2:14）</td>
+<td>就像<strong>照片濾鏡只能美化表面</strong>，口頭承諾若沒有行動支撐便毫無意義。喇合的救恩來自探子所立的真實誓約。你<strong>生命中有沒有</strong>對神或他人許下卻尚未兌現的承諾，需要今天就付諸行動？</td>
+</tr>
+<tr>
+<td>「<strong>你要把這條朱紅線</strong><strong>繩繫在縋我們下去</strong>的窗戶上。」（書2:18）</td>
+<td>就像<strong>緊急出口的指示燈必須時刻亮着才</strong>能在危急時發揮作用，喇合若不繫上朱紅線繩便無法得救。你是否<strong>在生活中公開</strong>且持守自己信仰的記號，讓人看見你<strong>屬於神</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志上第13章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志上第13章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">運送約櫃：熱情之下仍需按法而行</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>大衛與千夫長、百夫長，就是一切首領商議。</div>
+<div class="verse"><span class="verse-number">2</span>大衛對以色列全會眾說：「你們若以為美，見這事是出於耶和華我們的神，我們就差遣人走遍以色列地，見我們未來的弟兄，又見住在有郊野之城的祭司利未人，使他們都到這裏來聚集。</div>
+<div class="verse"><span class="verse-number">3</span>我們要把神的約櫃運到我們這裏來；因為在掃羅年間，我們沒有在約櫃前求問神。」</div>
+<div class="verse"><span class="verse-number">4</span>全會眾都說可以如此行；這事在眾民眼中都看為好。</div>
+<div class="verse"><span class="verse-number">5</span>於是，大衛將以色列人從埃及的西曷河直到哈馬口都招聚了來，要從基列耶琳將神的約櫃運來。</div>
+<div class="verse"><span class="verse-number">6</span>大衛率領以色列眾人上到巴拉，就是屬猶大的基列耶琳，要從那裏將約櫃運來。這約櫃就是坐在二基路伯上耶和華神留名的約櫃。</div>
+<div class="verse"><span class="verse-number">7</span>他們將神的約櫃從亞比拿達的家裏抬出來，放在新車上。烏撒和亞希約趕車。</div>
+<div class="verse"><span class="verse-number">8</span>大衛和以色列眾人在神前用琴、瑟、鑼、鼓、號作樂，極力跳舞歌唱。</div>
+<div class="verse"><span class="verse-number">9</span>到了基頓（在撒母耳下六章六節作拿艮）的禾場；因為牛失前蹄〔或作：驚跳〕，烏撒就伸手扶住約櫃。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華向他發怒，因他伸手扶住約櫃擊殺他，他就死在神面前。</div>
+<div class="verse"><span class="verse-number">11</span>大衛因耶和華擊殺〔原文作闖殺〕烏撒，心裏愁煩，就稱那地方為毘列斯烏撒，直到今日。</div>
+<div class="verse"><span class="verse-number">12</span>那日，大衛懼怕神，說：「神的約櫃怎可運到我這裏來？」</div>
+<div class="verse"><span class="verse-number">13</span>於是大衛不將約櫃運進大衛的城，卻運到迦特人俄別以東的家中。</div>
+<div class="verse"><span class="verse-number">14</span>神的約櫃在俄別以東家中三個月，耶和華賜福給俄別以東的家和他一切所有的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志上第十三章記述大衛登基後第一個重大行動——運送約櫃回耶路撒冷。大衛廣邀全以色列人參與（1-5節），眾人用新車運送約櫃，載歌載舞極力歡送（6-8節）。然而在基頓的禾場，因牛失前蹄，烏撒伸手扶住約櫃，隨即被神擊殺（9-10節）。大衛因此懼怕，將約櫃暫時存放在迦特人俄別以東家中三個月（11-14節）。
+
+      本章的神學張力在於：大衛的動機無可挑剔——他想將約櫃帶回讓神居中，是出於對神的愛慕。然而方式錯了。約櫃本應由利未人以肩扛杠抬送（民4:15），而非放在牛車上。烏撒的事件提醒以色列人：熱情的敬拜必須建立在神所定的規範上。情感的熱切不能取代神命令的遵從。本章同時顯示神的慈愛——祂讓約櫃停在俄別以東家三個月，並賜福給他的家，這是神在警戒之後仍保持慈愛的明證。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 敬拜神需要熱情，也需要按神的方式</strong><br>大衛和眾人的敬拜充滿熱情，但用牛車運約櫃違背了神的規定。烏撒之死不是神的殘酷，而是對「以自己覺得好的方式」代替「神所命定的方式」的嚴肅提醒。真正的敬虔不只是有美好的動機，更需要謙卑地按照神的話語行事，而非憑著熱情自行其是。<br><br>
+<strong>2. 神在管教中仍施慈愛</strong><br>約櫃在俄別以東家三個月，「耶和華賜福給俄別以東的家和他一切所有的」（14節）。神沒有因為以色列人的失誤而讓約櫃失去祝福的能力——祂只是讓它暫停在另一處，讓大衛有時間反省、學習正確的方式。神的管教從不是最終目的，祂的心意始終是祝福。<br><br>
+<strong>3. 懼怕神是智慧的開端</strong><br>大衛在烏撒事件後「懼怕神」（12節）。這種懼怕不是逃避神，而是開始認真思考「神的約櫃怎可運到我這裏」——開始認真對待神的聖潔。這種對神的敬畏，促使大衛後來認真研究律法，找出正確的運送方式，最終成功地完成了第二次運送。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>大衛因耶和華擊殺</strong>〔<strong>原文作闖殺</strong>〕烏撒，心裏愁煩，就稱那地方為毘列斯烏撒，直到今日。（代上13:11）</td>
+<td>大衛的計畫是美好的，卻在錯誤的方式上出了問題，就像<strong>一個懷著好意拆開電器修理</strong>，卻因不按說明書操作而燒壞了電路板——你有沒有<strong>在做「好事」</strong>時，因為跳過神的規範而造成意外的後果？</td>
+</tr>
+<tr>
+<td>那日，<strong>大衛懼怕神</strong>，說：「<strong>神的約櫃怎可運到</strong>我這裏來？」（代上13:12）</td>
+<td>大衛因懼怕而停下腳步，重新思考自己的方式，就像<strong>一個司機因看見警示燈亮起而主動</strong>靠邊停車查看，而非繼續往前硬開——當神在你<strong>的計畫中亮起</strong>「警示燈」時，你<strong>的反應</strong>是繼續硬撐，還是停下來認真重新評估？</td>
+</tr>
+<tr>
+<td><strong>神的約櫃在俄別以</strong><strong>東家中三個月</strong>，耶和華賜福給俄別以東的家和他一切所有的。（代上13:14）</td>
+<td>約櫃在俄別以東家三個月，神的同在帶來了祝福，就像<strong>陽光照在哪裡</strong>，那裡的植物就茂盛生長——在你<strong>生活中</strong>，哪些地方因為神的同在而明顯感受到祝福？那個同在，是你<strong>主動邀請並珍</strong>視的嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

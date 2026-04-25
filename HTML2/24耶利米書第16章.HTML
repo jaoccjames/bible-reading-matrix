@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">先知的獨身命令與復興盼望</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話又臨到我說：</div>
+<div class="verse"><span class="verse-number">2</span>「你在這地方不可娶妻，生兒養女。</div>
+<div class="verse"><span class="verse-number">3</span>因為論到在這地方所生的兒女，又論到在這國中生養他們的父母，耶和華如此說：</div>
+<div class="verse"><span class="verse-number">4</span>他們必死得甚苦，無人哀哭，必不得葬埋，必在地上像糞土，必被刀劍和饑荒滅絕；他們的屍首必給空中的飛鳥和地上的野獸作食物。」</div>
+<div class="verse"><span class="verse-number">5</span>耶和華如此說：「不要進入喪家，不要去哀哭，也不要為他們悲傷，因我已將我的平安、慈愛、憐憫從這百姓奪去了。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">6</span>連大帶小，都必在這地死亡，不得葬埋。人必不為他們哀哭，不用刀劃身，也不使頭光禿。</div>
+<div class="verse"><span class="verse-number">7</span>他們有喪事，人必不為他們擘餅，因死人安慰他們；他們喪父喪母，人也不給他們一杯酒安慰他們。</div>
+<div class="verse"><span class="verse-number">8</span>你不可進入宴樂的家，與他們同坐吃喝。</div>
+<div class="verse"><span class="verse-number">9</span>因為萬軍之耶和華以色列的神如此說：你們還活着的日子在你們眼前，我必使歡喜和快樂的聲音，新郎和新婦的聲音，從這地方止息了。</div>
+<div class="verse"><span class="verse-number">10</span>「你將這一切的話指示這百姓。他們問你說：『耶和華為甚麼說，要降這大災禍攻擊我們呢？我們有甚麼罪孽呢？我們向耶和華我們的神犯了甚麼罪呢？』</div>
+<div class="verse"><span class="verse-number">11</span>你就對他們說：『耶和華說：因為你們列祖離棄我，隨從別神，事奉敬拜，不遵守我的律法，</div>
+<div class="verse"><span class="verse-number">12</span>而且你們行惡比你們列祖更甚；因為各人隨從自己頑梗的惡心行事，甚至不聽從我，</div>
+<div class="verse"><span class="verse-number">13</span>所以我必將你們從這地趕出，直趕到你們和你們列祖素不認識的地。你們在那裏必晝夜事奉別神，因為我必不向你們施恩。』」</div>
+<div class="verse"><span class="verse-number">14</span>耶和華說：「日子將到，人必不再指着那領以色列人從埃及地上來之永生的耶和華起誓，</div>
+<div class="verse"><span class="verse-number">15</span>卻要指着那領以色列人從北方之地，並趕他們到的各國上來之永生的耶和華起誓，並且我要領他們再入我從前賜給他們列祖之地。」</div>
+<div class="verse"><span class="verse-number">16</span>耶和華說：「我要召許多打魚的把以色列人打上來，然後我要召許多打獵的，從各山上、各岡上、各石穴中獵取他們。</div>
+<div class="verse"><span class="verse-number">17</span>因我的眼目察看他們的一切行為；他們不能在我面前遮掩，他們的罪孽也不能在我眼前隱藏。</div>
+<div class="verse"><span class="verse-number">18</span>我先要加倍報應他們的罪孽和罪惡；因為他們用可憎之屍玷污我的地土，又用可厭之物充滿我的產業。」</div>
+<div class="verse"><span class="verse-number">19</span>耶和華啊，你是我的力量，是我的保障；在苦難之日是我的避難所。列國人必從地極來到你這裏，說：我們列祖所承受的，不過是虛假，是虛空無益之物。</div>
+<div class="verse"><span class="verse-number">20</span>人豈可為自己製造神呢？其實這不是神。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華說：「我要使他們知道，就是這一次使他們知道我的手和我的能力。他們就知道我的名是耶和華了。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第16章記載神對耶利米極為特殊的個人呼召：不可娶妻生子、不可進喪家、不可進宴樂家。這三個禁令不是苦行，而是活生生的「行動預言」：即將來臨的審判將使猶大之地喜樂盡消，兒女橫死無人哀哭，哀喪與歡慶都將成為過去式。神要先知以獨特的生活方式體現這個信息，使人無從迴避。第10至13節是百姓困惑的回應，以及神清楚的解答：因列祖及此代的罪，審判必至。然而本章並非只有審判，第14至15節突然出現盼望的曙光：將來人必以「出埃及」以外更大的救贖作為起誓的基準，那是歸回應許之地的新一代救贖。第16至18節描述神的眼目洞察一切，審判是確實的。章末（19-21節）以先知的禱告作結，承認唯有耶和華是力量與避難所，偶像不過是虛假，神必讓列國都認識祂的名。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【使命有時要求生命代價的委身】</strong><br>神要耶利米放棄娶妻生子的正常人生，以獨身來見證審判的嚴重性。這不是神不顧耶利米的需要，而是神呼召他以整個生命作工具傳遞信息。信徒被呼召時，有時也需要放棄某些「正常」的生活選擇，以順從神的帶領。委身使命，代表願意讓生命的某些部分為神的旨意而調整，這是深度跟隨的標誌。<br><br>
+<strong>2. 【神的眼目洞察一切，無處可藏】</strong><br>第17節說：「我的眼目察看他們的一切行為；他們不能在我面前遮掩，他們的罪孽也不能在我眼前隱藏。」神的全知是審判的基礎，也是信徒安慰的根源——神看見一切不公義，也看見每個在黑暗中的掙扎。活在神全知的面前，是一種屬靈的誠實操練：不掩飾、不偽裝，因為神已全然知道。<br><br>
+<strong>3. 【審判之後必有更大的救贖與盼望】</strong><br>即使在嚴厲的審判宣告中，神插入了一個盼望：將來的救贖將遠超出埃及，使人不再以出埃及為最大的見證，而以歸回為更新的起點。這顯示神的計畫永遠朝向恢復，審判不是終點。末日盼望讓信徒在最黑暗的處境中，仍能眼望那必要到來的新事，以盼望抵抗絕望。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華啊</strong>，<strong>你是我的力量</strong>，是我的保障；在苦難之日是我的避難所。列國人必從地極來到你這裏，說：我們列祖所承受的，不過是虛假，是虛空無益之物。（耶16:19）</td>
+<td>當苦難突然臨到，你<strong>第一個想到的</strong>是哪裡尋求安慰？就像<strong>停電時才發現只有某個角落有應急</strong>燈，你是否<strong>在平時就把神</strong>建立為你<strong>生命中真正的</strong>避難所？</td>
+</tr>
+<tr>
+<td><strong>因我的眼目察看他</strong><strong>們的一切行為</strong>；他們不能在我面前遮掩，他們的罪孽也不能在我眼前隱藏。（耶16:17）</td>
+<td>你<strong>生活中</strong>是否有某個角落，你<strong>不太願意讓神</strong>看見？就像<strong>整理房間時把雜物塞進衣櫃</strong>，你願意<strong>邀請神進入那</strong>些「關上的門」，讓祂的光照進去嗎？</td>
+</tr>
+<tr>
+<td><strong>耶和華說</strong>：「<strong>我要使他們知道</strong>，就是這一次使他們知道我的手和我的能力。他們就知道我的名是耶和華了。」（耶16:21）</td>
+<td>你<strong>相信神最終會</strong>讓人認識祂的真實與能力嗎？就像<strong>一部好電影起初看不懂</strong>，到最後才發現所有伏筆都在說同一件事，你能在人生困惑的章節中，相信神的故事必有完整的結局嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

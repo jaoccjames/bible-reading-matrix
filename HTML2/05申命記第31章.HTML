@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第31章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第31章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">摩西交棒約書亞與律法書的見證</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>摩西去告訴以色列眾人</div>
+<div class="verse"><span class="verse-number">2</span>說：「我現在一百二十歲了，不能照常出入；耶和華也曾對我說：『你必不得過這約但河。』</div>
+<div class="verse"><span class="verse-number">3</span>耶和華你們的神必引導你們過去，將這些國民在你們面前滅絕，你們就得他們的地。約書亞必引導你們過去，正如耶和華所說的。</div>
+<div class="verse"><span class="verse-number">4</span>耶和華必待他們，如同從前待他所滅絕的亞摩利二王西宏與噩以及他們的國一樣。</div>
+<div class="verse"><span class="verse-number">5</span>耶和華必將他們交給你們；你們要照我所吩咐的一切命令待他們。</div>
+<div class="verse"><span class="verse-number">6</span>你們當剛強壯膽，不要害怕，也不要畏懼他們，因為耶和華你的神和你同去。他必不撇下你，也不丟棄你。」</div>
+<div class="verse"><span class="verse-number">7</span>摩西召了約書亞來，在以色列眾人眼前對他說：「你當剛強壯膽！因為你要和這百姓一同進入耶和華向他們列祖起誓應許所賜之地；你也要使他們承受那地為業。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華必在你前面行；他必與你同在，必不撇下你，也不丟棄你。不要懼怕，也不要驚惶。」</div>
+<div class="verse"><span class="verse-number">9</span>摩西將這律法寫出來，交給抬耶和華約櫃的祭司利未子孫和以色列的眾長老。</div>
+<div class="verse"><span class="verse-number">10</span>摩西吩咐他們說：「每逢七年的末一年，就在豁免年的定期住棚節的時候，</div>
+<div class="verse"><span class="verse-number">11</span>以色列眾人來到耶和華你神所選擇的地方朝見他。那時，你要在以色列眾人面前將這律法念給他們聽。</div>
+<div class="verse"><span class="verse-number">12</span>要招聚他們男、女、孩子，並城裏寄居的，使他們聽，使他們學習，好敬畏耶和華你們的神，謹守、遵行這律法的一切話，</div>
+<div class="verse"><span class="verse-number">13</span>也使他們未曾曉得這律法的兒女得以聽見，學習敬畏耶和華你們的神，在你們過約但河要得為業之地，存活的日子，常常這樣行。」</div>
+<div class="verse"><span class="verse-number">14</span>耶和華對摩西說：「你的死期臨近了；要召約書亞來，你們二人站在會幕裏，我好囑咐他。」於是摩西和約書亞去站在會幕裏。</div>
+<div class="verse"><span class="verse-number">15</span>耶和華在會幕裏雲柱中顯現，雲柱停在會幕門以上。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華又對摩西說：「你必和你列祖同睡。這百姓要起來，在他們所要去的地上，在那地的人中，隨從外邦神行邪淫，離棄我，違背我與他們所立的約。</div>
+<div class="verse"><span class="verse-number">17</span>那時，我的怒氣必向他們發作；我也必離棄他們，掩面不顧他們，以致他們被吞滅，並有許多的禍患災難臨到他們。那日他們必說：『這些禍患臨到我們，豈不是因我們的神不在我們中間麼？』</div>
+<div class="verse"><span class="verse-number">18</span>那時，因他們偏向別神所行的一切惡，我必定掩面不顧他們。</div>
+<div class="verse"><span class="verse-number">19</span>現在你要寫一篇歌，教導以色列人，傳給他們，使這歌見證他們的不是；</div>
+<div class="verse"><span class="verse-number">20</span>因為我將他們領進我向他們列祖起誓應許那流奶與蜜之地，他們在那裏吃得飽足，身體肥胖，就必偏向別神，事奉他們，藐視我，背棄我的約。</div>
+<div class="verse"><span class="verse-number">21</span>那時，有許多禍患災難臨到他們，這歌必在他們面前作見證，他們後裔的口中必念誦不忘。我未領他們到我所起誓應許之地以先，他們所懷的意念我都知道了。」</div>
+<div class="verse"><span class="verse-number">22</span>當日摩西就寫了一篇歌，教導以色列人。</div>
+<div class="verse"><span class="verse-number">23</span>耶和華囑咐嫩的兒子約書亞說：「你當剛強壯膽，因為你必領以色列人進我所起誓應許他們的地；我必與你同在。」</div>
+<div class="verse"><span class="verse-number">24</span>摩西將這律法的話寫在書上，及至寫完了，</div>
+<div class="verse"><span class="verse-number">25</span>就吩咐抬耶和華約櫃的利未人說：</div>
+<div class="verse"><span class="verse-number">26</span>「將這律法書放在耶和華你們神的約櫃旁，可以在那裏見證以色列人的不是；</div>
+<div class="verse"><span class="verse-number">27</span>因為我知道你們是悖逆的，是硬着頸項的。我今日還活着與你們同在，你們尚且悖逆耶和華，何況我死後呢？</div>
+<div class="verse"><span class="verse-number">28</span>你們要將你們支派的眾長老和官長都招聚了來，我好將這些話說與他們聽，並呼天喚地見證他們的不是。</div>
+<div class="verse"><span class="verse-number">29</span>我知道我死後，你們必全然敗壞，偏離我所吩咐你們的道，行耶和華眼中看為惡的事，以手所作的惹他發怒；日後必有禍患臨到你們。」</div>
+<div class="verse"><span class="verse-number">30</span>摩西將這一篇歌的話都說與以色列全會眾聽。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第三十一章是全書轉折的關鍵章節，記述了摩西生命中最後的幾個重要行動。首先，摩西向以色列人宣告他即將離開，並鄭重地宣告約書亞將接替他帶領百姓進入迦南（31:1-8）。摩西勉勵百姓和約書亞：「你當剛強壯膽，不要懼怕，也不要驚惶，因為耶和華你的神和你同行，他必不撇下你，也不丟棄你」（31:6），這句話後來被希伯來書13:5所引用。其次，摩西將律法書交給祭司和眾長老，吩咐每逢七年的豁免年在住棚節時，要將律法書公開朗讀給全會眾聽（31:9-13）。接着，神親自呼召摩西和約書亞進入會幕，任命約書亞，並預言以色列人將來必然悖逆和離棄神（31:14-21）。神吩咐摩西將這首歌（申32章的歌）教導以色列人，作為將來對他們的見證。本章以摩西將律法書放在約櫃旁邊作為結束，強調律法書是神與以色列人之間立約的重要見證。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 剛強壯膽的力量來自神的同在，而非人的能力</strong><br>「你當剛強壯膽，不要懼怕，也不要驚惶，因為耶和華你的神和你同行」（申31:6）。「剛強壯膽」的命令不是叫人憑血氣勇敢，而是叫人因神的同在而勇敢。真正的膽量不是沒有恐懼，而是在恐懼中仍然選擇倚靠神前行。約書亞接下最艱鉅的任務，但他所依靠的是神的應許，而非自己的才幹。<br><br>
+<strong>2. 定期公開讀律法是防止信仰遺忘的制度設計</strong><br>每七年一次在全會眾面前朗讀律法（申31:10-13），確保每一代人都有機會親耳聽到神的話語，而非只是傳說或傳統。這個制度說明：信仰的傳承需要刻意的、有規律的制度安排，而非只靠自然流傳。今日教會的主日崇拜、查經班、家庭靈修等，都服務著同樣的功能。<br><br>
+<strong>3. 忠心的傳承包括誠實地預告困難與挑戰</strong><br>神告訴摩西：以色列人將來必然悖逆（申31:16-21），但神仍然命令摩西傳承領袖、存留律法書和教導歌曲，不因預知未來的失敗而放棄現在的忠心。這提醒我們：明知前路艱難，忠心的人仍然盡本分做好當下的每一件事，把結果交給神。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你當剛強壯膽</strong>，<strong>不要懼怕</strong>，也不要驚惶，因為耶和華你的神和你同行，他必不撇下你，也不丟棄你。」（申31:6）</td>
+<td>神的同在是勇氣的真正來源，就像<strong>有急救人員陪同才敢進行危險的急</strong>救操作，你<strong>目前面對的最</strong>大「不敢踏出去」是什麼？當你<strong>把神的同在放</strong>進這個困難中，你<strong>的感受有什麼</strong>改變？</td>
+</tr>
+<tr>
+<td>「<strong>要將這律法書念給</strong><strong>以色列眾人聽</strong>……叫他們學習敬畏耶和華你們的神，謹守遵行這律法的一切話。」（申31:11-12）</td>
+<td>定期聆聽神的話語是信仰世代傳承的關鍵，就像<strong>定期更新軟體才能維持設備的正常</strong>運作，你<strong>和你的家庭</strong>是否有定期、有規律地閱讀和學習神話語的習慣？這習慣是否已足夠紮實？</td>
+</tr>
+<tr>
+<td>「<strong>耶和華吩咐摩西</strong>……<strong>你要把律法書放在</strong>耶和華你神約櫃的旁邊，可以在那裏見證以色列人的不是。」（申31:25-26）</td>
+<td>神的話語是信仰群體的客觀見證，就像<strong>公司的章程是任何紛爭時的最終裁</strong>判標準，在你<strong>的信仰生活中</strong>，你是否<strong>讓聖經在生命</strong>的每個決定上有最高的裁判權，而不是選擇性地只在方便時才引用它？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

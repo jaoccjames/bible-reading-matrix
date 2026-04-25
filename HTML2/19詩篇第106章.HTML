@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第106章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第106章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">反覆悖逆與神的慈愛：他的慈愛永遠長存</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們要讚美耶和華！要稱謝耶和華，因他本為善；他的慈愛永遠長存！</div>
+<div class="verse"><span class="verse-number">2</span>誰能傳說耶和華的大能？誰能表明他一切的美德？</div>
+<div class="verse"><span class="verse-number">3</span>凡遵守公平，常行公義的，這人便為有福！</div>
+<div class="verse"><span class="verse-number">4</span>耶和華啊，你用恩惠待你的百姓；求你也用這恩惠記念我，開你的救恩眷顧我，</div>
+<div class="verse"><span class="verse-number">5</span>使我見你選民的福，樂你國民的樂，與你的產業一同誇耀。</div>
+<div class="verse"><span class="verse-number">6</span>我們與我們的祖宗一同犯罪；我們作了孽，行了惡。</div>
+<div class="verse"><span class="verse-number">7</span>我們的祖宗在埃及不明白你的奇事，不記念你豐盛的慈愛，反倒在紅海行了悖逆。</div>
+<div class="verse"><span class="verse-number">8</span>然而，他因自己的名拯救他們，為要彰顯他的大能，</div>
+<div class="verse"><span class="verse-number">9</span>並且斥責紅海，海便乾了；他帶領他們經過深處，如同經過曠野。</div>
+<div class="verse"><span class="verse-number">10</span>他拯救他們脫離恨他們人的手，從仇敵手中救贖他們。</div>
+<div class="verse"><span class="verse-number">11</span>水淹沒他們的敵人，沒有一個存留。</div>
+<div class="verse"><span class="verse-number">12</span>那時，他們纔信了他的話，歌唱讚美他。</div>
+<div class="verse"><span class="verse-number">13</span>等不多時，他們就忘了他的作為，不仰望他的指教，</div>
+<div class="verse"><span class="verse-number">14</span>反倒在曠野大起慾心，在荒地試探神。</div>
+<div class="verse"><span class="verse-number">15</span>他將他們所求的賜給他們，卻使他們的心靈軟弱。</div>
+<div class="verse"><span class="verse-number">16</span>他們又在營中嫉妒摩西和耶和華的聖者亞倫。</div>
+<div class="verse"><span class="verse-number">17</span>地裂開，吞下大坍，掩蓋亞比蘭一黨的人。</div>
+<div class="verse"><span class="verse-number">18</span>有火在他們的黨中發起；有火焰燒燬了惡人。</div>
+<div class="verse"><span class="verse-number">19</span>他們在何烈山造了牛犢，叩拜鑄成的像。</div>
+<div class="verse"><span class="verse-number">20</span>如此將他們榮耀的主換為吃草之牛的像，</div>
+<div class="verse"><span class="verse-number">21</span>忘了神他們的救主；他曾在埃及行大事，</div>
+<div class="verse"><span class="verse-number">22</span>在含地行奇事，在紅海行可畏的事。</div>
+<div class="verse"><span class="verse-number">23</span>所以，他說要滅絕他們；若非有他所揀選的摩西站在當中〔原文作破口〕，使他的忿怒轉消，恐怕他就滅絕他們。</div>
+<div class="verse"><span class="verse-number">24</span>他們又藐視那美地，不信他的話，</div>
+<div class="verse"><span class="verse-number">25</span>在自己帳棚內發怨言，不聽耶和華的聲音。</div>
+<div class="verse"><span class="verse-number">26</span>所以，他對他們起誓：必叫他們倒在曠野，</div>
+<div class="verse"><span class="verse-number">27</span>叫他們的後裔倒在列國之中，分散在各地。</div>
+<div class="verse"><span class="verse-number">28</span>他們又與巴力毘珥連合，且喫了祭死神〔或作：人〕的物。</div>
+<div class="verse"><span class="verse-number">29</span>他們這樣行，惹耶和華發怒，便有瘟疫流行在他們中間。</div>
+<div class="verse"><span class="verse-number">30</span>那時，非尼哈站起，刑罰惡人，瘟疫這纔止息。</div>
+<div class="verse"><span class="verse-number">31</span>那就算為他的義，世世代代，直到永遠。</div>
+<div class="verse"><span class="verse-number">32</span>他們在米利巴水又叫耶和華發怒，甚至摩西也受了虧損，</div>
+<div class="verse"><span class="verse-number">33</span>是因他們惹動他的靈，摩西〔原文作他〕用嘴說了急躁的話。</div>
+<div class="verse"><span class="verse-number">34</span>他們不照耶和華所吩咐的滅絕外邦人，</div>
+<div class="verse"><span class="verse-number">35</span>反與他們混雜相合，學習他們的行為，</div>
+<div class="verse"><span class="verse-number">36</span>事奉他們的偶像，這就成了自己的網羅，</div>
+<div class="verse"><span class="verse-number">37</span>把自己的兒女祭祀鬼魔，</div>
+<div class="verse"><span class="verse-number">38</span>流無辜人的血，就是自己兒女的血，把他們祭祀迦南的偶像，那地就被血污穢了。</div>
+<div class="verse"><span class="verse-number">39</span>這樣，他們被自己所作的污穢了，在行為上犯了邪淫。</div>
+<div class="verse"><span class="verse-number">40</span>所以，耶和華的怒氣向他的百姓發作，憎惡他的產業，</div>
+<div class="verse"><span class="verse-number">41</span>將他們交在外邦人的手裏；恨他們的人就轄制他們。</div>
+<div class="verse"><span class="verse-number">42</span>他們的仇敵也欺壓他們，他們就伏在敵人手下。</div>
+<div class="verse"><span class="verse-number">43</span>他屢次搭救他們，他們卻設謀背逆，因自己的罪孽降為卑下。</div>
+<div class="verse"><span class="verse-number">44</span>然而，他聽見他們哀告的時候，就眷顧他們的急難，</div>
+<div class="verse"><span class="verse-number">45</span>為他們記念他的約，照他豐盛的慈愛後悔。</div>
+<div class="verse"><span class="verse-number">46</span>他也使他們在凡擄掠他們的人面前蒙憐恤。</div>
+<div class="verse"><span class="verse-number">47</span>耶和華我們的神阿，求你拯救我們，從外邦中招聚我們，我們好稱讚你的聖名，以讚美你為誇勝。</div>
+<div class="verse"><span class="verse-number">48</span>耶和華以色列的神是應當稱頌的，從亙古直到永遠。願眾民都說：阿們！你們要讚美耶和華！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第106篇是詩篇第四卷（詩90-106篇）的最後一篇，以「哈利路亞」開結，與第105篇形成完整的對比：105篇以神的信實為主題，106篇以以色列的悖逆為主題，兩篇合在一起呈現了聖約歷史最完整的圖景。本篇第1節和第47至48節的讚美框架，與歷代志上16章34、35和36節有對應關係。
+
+      本篇以認罪開篇（第6節：「我們與我們的祖宗一同犯罪」），然後詳述以色列歷史中的多次悖逆——在埃及不記念神的慈愛（7節）、在曠野忘記神的作為（13節）、造牛犢偶像（19節）、在米利巴激怒神（32節）等。然而每一次的悖逆後，都有神的憐憫介入——「他屢次搭救他們」（43節）、「他聽見他們哀告的時候，就眷顧他們的急難」（44節）。
+
+      第45節「為他們記念他的約，照他豐盛的慈愛後悔」是全篇最深的神學宣告——神的記念與憐憫，不是因為以色列配得，而是因為祂自己的約與豐盛的慈愛。本篇是詩篇第四卷的終止式，以讚美和「阿們！」作結，成為整卷的神聖終章。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 承認自己與先祖一同犯罪是集體認罪最深的誠實</strong><br>「我們與我們的祖宗一同犯罪；我們作了孽，行了惡。」（第6節）詩人沒有以「那是祖宗的罪，與我無關」的態度切割歷史，而是以「我們」的第一人稱集體認罪，承認罪的連續性。這種集體性的認罪，是對人類普遍罪性最誠實的承認，也是為社群尋求神恩典最謙卑的起點。真正的屬靈更新，常常從誠實地認罪開始，而非以比較（「我比別人好」）或切割（「那不關我的事」）來迴避。<br><br>
+<strong>2. 神屢次搭救卻屢次被忘記揭示人的軟弱與神的長忍</strong><br>「他屢次搭救他們，他們卻設謀背逆。」（第43節）「屢次」是全篇最震撼的詞語——以色列的歷史是一個「悖逆—搭救—忘記—再悖逆」的反覆循環，然而神仍「屢次搭救」，不因厭倦而放棄。這種神的長忍與信實，是信徒最深的盼望根基——不是因為我們足夠忠心，而是因為神的慈愛勝過我們的軟弱。同時，「他們卻設謀背逆」也是對信徒最深的警醒：得救之後的感恩短暫，是人心最普遍的弱點。<br><br>
+<strong>3. 神記念祂的約照豐盛慈愛後悔是恩典最深的彰顯</strong><br>「為他們記念他的約，照他豐盛的慈愛後悔。」（第45節）神的「後悔」不是祂改變了心意，而是祂的憐憫在審判的邊緣轉回。「豐盛的慈愛」是祂後悔的原因——祂的慈愛的豐盛，大過對悖逆的正義懲罰。這種「豐盛的慈愛」使神的審判在最後一刻轉向拯救，成為整部以色列歷史最深的奇蹟，也是每一個認罪歸向神的信徒最深的盼望。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我們與我們的祖宗</strong><strong>一同犯罪</strong>；我們作了孽，行了惡。（詩106:6）</td>
+<td>就像<strong>承認家族中世代傳承的問題</strong>，不迴避也不推卸，而是誠實面對尋求改變，你是否有能力以「我們一同犯罪」的集體認罪姿態，在神面前代表你<strong>所屬的家庭、</strong>群體或民族認罪，而非只為個人的罪懺悔？</td>
+</tr>
+<tr>
+<td><strong>他屢次搭救他們</strong>，<strong>他們卻設謀背逆</strong>，因自己的罪孽降為卑下。（詩106:43）</td>
+<td>就像<strong>反覆被同一個朋友原諒</strong>，卻又反覆讓他失望，你是否<strong>真誠地審視自</strong>己信仰生命中「屢次被救卻屢次忘記」的循環，讓這個認識帶來更深的感恩與警覺，而非自我安慰式的「神一定會再次饒恕我」？</td>
+</tr>
+<tr>
+<td><strong>為他們記念他的約</strong>，<strong>照他豐盛的慈愛後</strong>悔。（詩106:45）</td>
+<td>就像<strong>一位父母的慈愛能使他們在孩子再</strong>次犯錯後仍伸手抱起孩子，你是否<strong>真的相信神的</strong>「豐盛的慈愛」能涵蓋你<strong>反覆的軟弱</strong>，讓你<strong>每次認罪後都</strong>真實地相信神的接納，而非在罪疚中徘徊無法得釋放？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記下第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記下第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">為仇敵之死哀哭</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>掃羅死後，大衛擊殺亞瑪力人回來，在洗革拉住了兩天。</div>
+<div class="verse"><span class="verse-number">2</span>第三天，有一人從掃羅的營裏出來，衣服撕裂，頭蒙灰塵，到大衛面前伏地叩拜。</div>
+<div class="verse"><span class="verse-number">3</span>大衛問他說：「你從那裏來？」他說：「我從以色列的營裏逃來。」</div>
+<div class="verse"><span class="verse-number">4</span>大衛又問他說：「事情怎樣？請你告訴我。」他回答說：「百姓從陣上逃跑，也有許多人仆倒死亡；掃羅和他兒子約拿單也死了。」</div>
+<div class="verse"><span class="verse-number">5</span>大衛問報信的少年人說：「你怎麼知道掃羅和他兒子約拿單死了呢？」</div>
+<div class="verse"><span class="verse-number">6</span>報信的少年人說：「我偶然到基利波山，看見掃羅伏在自己槍上，有戰車、馬兵緊緊的追他。</div>
+<div class="verse"><span class="verse-number">7</span>他回頭看見我，就呼叫我。我說：『我在這裏。』</div>
+<div class="verse"><span class="verse-number">8</span>他問我說：『你是甚麼人？』我說：『我是亞瑪力人。』</div>
+<div class="verse"><span class="verse-number">9</span>他說：『請你來，將我殺死；因為痛苦抓住我，我的生命尚存。』</div>
+<div class="verse"><span class="verse-number">10</span>我準知他仆倒必不能活，就去將他殺死，把他頭上的冠冕、臂上的鐲子拿到我主這裏。」</div>
+<div class="verse"><span class="verse-number">11</span>大衛就撕裂衣服，跟隨他的人也是如此，</div>
+<div class="verse"><span class="verse-number">12</span>而且悲哀哭號，禁食到晚上，是因掃羅和他兒子約拿單，並耶和華的民以色列家的人，倒在刀下。</div>
+<div class="verse"><span class="verse-number">13</span>大衛問報信的少年人說：「你是那裏的人？」他說：「我是亞瑪力客人的兒子。」</div>
+<div class="verse"><span class="verse-number">14</span>大衛說：「你伸手殺害耶和華的受膏者，怎麼不畏懼呢？」</div>
+<div class="verse"><span class="verse-number">15</span>大衛叫了一個少年人來，說：「你去殺他吧！」</div>
+<div class="verse"><span class="verse-number">16</span>大衛對他說：「你流人血的罪歸到自己的頭上，因為你親口作見證說：『我殺了耶和華的受膏者。』」少年人就把他殺了。</div>
+<div class="verse"><span class="verse-number">17</span>大衛作哀歌，弔掃羅和他兒子約拿單，</div>
+<div class="verse"><span class="verse-number">18</span>且吩咐將這歌教導猶大人。這歌名叫「弓歌」，寫在雅煞珥書上。</div>
+<div class="verse"><span class="verse-number">19</span>歌中說：以色列啊，你尊榮者在山上被殺！大英雄何竟死亡！</div>
+<div class="verse"><span class="verse-number">20</span>不要在迦特報告；不要在亞實基倫街上傳揚；免得非利士的女子歡樂；免得未受割禮之人的女子矜誇。</div>
+<div class="verse"><span class="verse-number">21</span>基利波山哪，願你那裏沒有雨露！願你田地無土產可作供物！因為英雄的盾牌在那裏被污丟棄；掃羅的盾牌彷彿未曾抹油。</div>
+<div class="verse"><span class="verse-number">22</span>約拿單的弓箭非流敵人的血不退縮；掃羅的刀劍非剖勇士的油不收回。</div>
+<div class="verse"><span class="verse-number">23</span>掃羅和約拿單活時相悅相愛，死時也不分離。他們比鷹更快，比獅子還強。</div>
+<div class="verse"><span class="verse-number">24</span>以色列的女子啊，當為掃羅哭號！他曾使你們穿朱紅色的美衣，使你們衣服有黃金的妝飾。</div>
+<div class="verse"><span class="verse-number">25</span>英雄何竟在陣上仆倒！約拿單何竟在山上被殺！</div>
+<div class="verse"><span class="verse-number">26</span>我兄約拿單哪，我為你悲傷！我甚喜悅你！你向我發的愛情奇妙非常，過於婦女的愛情。</div>
+<div class="verse"><span class="verse-number">27</span>英雄何竟仆倒！戰具何竟滅沒！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章是撒母耳記下的開端,記載大衛得知掃羅和約拿單陣亡的消息及其反應。一個自稱是亞瑪力人的少年來報信,謊稱是他殺了掃羅,並帶來王冠和臂鐲,期待得到賞賜。出乎意料的是,大衛不但沒有賞賜他,反而因他自稱殺害耶和華的受膏者而將他處死。大衛為掃羅和約拿單極其哀慟,撕裂衣服,禁食到晚上。他作了一首優美的哀歌,稱為「弓歌」,歌頌掃羅和約拿單的英勇,特別表達對摯友約拿單的深情。這章展現大衛高貴的品格:他不以仇敵之死為樂,反而真誠哀悼;他堅持尊重神的受膏者,即使對方曾追殺他;他的哀歌顯明他寬廣的心胸和真摯的情感。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真正的敬虔超越個人恩怨</strong><br>大衛為追殺他多年的掃羅哀哭,甚至處死自稱殺掃羅的人。這顯明他對神受膏者的尊重超越個人恩怨。真正屬靈的人能將個人情感與神的原則分開,不因私怨而喜見仇敵滅亡。大衛看重的是神的主權和秩序,而非個人的得失。這種品格使他配得作王。我們也當學習超越個人恩怨,以神的眼光看待每個人和每件事。<br><br>
+<strong>2. 為他人的失敗和死亡哀傷</strong><br>大衛的哀歌真摯感人,他為掃羅、約拿單和以色列民的死亡深深悲痛。即使掃羅的失敗是他自己造成的,大衛仍為之哀傷。真正有愛心的人,會為罪人的滅亡難過,而非幸災樂禍。神也不喜悅惡人死亡,而願他們悔改。我們應當學習大衛的心腸,為迷失者哀傷,為跌倒者難過,而非冷漠或嘲笑。<br><br>
+<strong>3. 真友誼超越死亡</strong><br>大衛對約拿單的情誼在哀歌中表露無遺,稱他的愛「過於婦女的愛情」。這是聖潔友誼的最高表現,超越生死的牽絆。真正的友誼建立在神的基礎上,能經得起時間和考驗。大衛沒有因約拿單死亡就忘記他,反而更深刻地懷念。真正的愛和友誼永不止息,即使人不在了,那份情感仍然珍貴。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>大衛就撕裂衣服</strong>,<strong>跟隨他的人也是如</strong>此,而且悲哀哭號,禁食到晚上,是因掃羅和他兒子約拿單...倒在刀下。(撒下1:11-12)</td>
+<td>大衛為曾追殺他的仇敵真誠哀哭。就像<strong>為傷害過你<strong>的人參加告別</strong>式</strong>,你能否<strong>為曾經傷害你</strong>的人的失敗或死亡感到難過?這需要什麼樣的心胸?</td>
+</tr>
+<tr>
+<td><strong>大衛說</strong>:「<strong>你伸手殺害耶和華</strong>的受膏者,怎麼不畏懼呢?」...少年人就把他殺了。(撒下1:14-16)</td>
+<td>大衛堅持尊重神的受膏者,即使對方曾是仇敵。就像<strong>不因主管離職就批評他</strong>,你如何<strong>在權柄者離開</strong>後仍保持尊重?這反映什麼價值觀?</td>
+</tr>
+<tr>
+<td><strong>我兄約拿單哪</strong>,<strong>我為你悲傷</strong>!我甚喜悅你!你向我發的愛情奇妙非常,過於婦女的愛情。(撒下1:26)</td>
+<td>大衛與約拿單的友誼超越死亡。就像<strong>多年後仍懷念已故的摯友</strong>,你<strong>生命中有沒有</strong>這樣深刻的友誼?什麼使友誼能經得起時間考驗?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">額上有記號的人得保全</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>他向我耳中大聲喊叫說：「要使那監管這城的人手中各拿滅命的兵器前來。」</div>
+<div class="verse"><span class="verse-number">2</span>忽然有六個人從朝北的上門而來，各人手拿殺人的兵器；內中有一人身穿細麻衣，腰間帶着墨盒子。他們進來，站在銅祭壇旁。</div>
+<div class="verse"><span class="verse-number">3</span>以色列神的榮耀本在基路伯上，現今從那裏升到殿的門檻。神將那身穿細麻衣、腰間帶着墨盒子的人召來。</div>
+<div class="verse"><span class="verse-number">4</span>耶和華對他說：「你去走遍耶路撒冷全城，那些因城中所行可憎之事歎息哀哭的人，畫記號在額上。」</div>
+<div class="verse"><span class="verse-number">5</span>我耳中聽見他對其餘的人說：「要跟隨他走遍全城，以行擊殺。你們的眼不要顧惜，也不要可憐他們。</div>
+<div class="verse"><span class="verse-number">6</span>要將年老的、年少的，並處女、嬰孩，和婦女，從聖所起全都殺盡，只是凡有記號的人不要挨近他。」於是他們從殿前的長老殺起。</div>
+<div class="verse"><span class="verse-number">7</span>他對他們說：「要污穢這殿，使院中充滿被殺的人。你們出去吧！」他們就出去，在城中擊殺。</div>
+<div class="verse"><span class="verse-number">8</span>他們擊殺的時候，我被留下，我就俯伏在地，說：「哎！主耶和華啊，你將忿怒傾在耶路撒冷，豈要將以色列所剩下的人都滅絕嗎？」</div>
+<div class="verse"><span class="verse-number">9</span>他對我說：「以色列家和猶大家的罪孽極其重大。遍地有流血的事，滿城有冤屈，因為他們說：『耶和華已經離棄這地，他看不見我們。』</div>
+<div class="verse"><span class="verse-number">10</span>故此，我眼必不顧惜，也不可憐他們，要照他們所行的報應在他們頭上。」</div>
+<div class="verse"><span class="verse-number">11</span>那穿細麻衣、腰間帶着墨盒子的人將這事回覆說：「我已經照你所吩咐的行了。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第9章緊接第8章的聖殿偶像異象，描述神召來六個持滅命兵器的人，以及一個穿細麻衣、腰間帶墨盒子的人。神命令墨盒子的人先遍走全城，在那些「因城中可憎之事歎息哀哭」的人額上畫記號——這是得保全的標記。然後六個持兵器的人隨後擊殺一切沒有記號的人，「從聖所起」（意即從最應該聖潔的地方，從宗教領袖開始）殺起。以西結俯伏代求：「你要將以色列所剩下的人都滅絕嗎？」神的回應是：以色列的罪孽極其重大，而且他們說「耶和華看不見我們」——正是這種屬靈的麻木與誤判，使審判不可避免。穿細麻衣的人最後回報：「我已照你所吩咐的行了。」本章的核心是「記號的神學」：神能辨別那些真正為罪悲傷的人。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【為罪歎息哀哭，是神保全之人的標誌】</strong><br>神在審判之前，先找出那些「因城中可憎之事歎息哀哭」的人，給他們畫上保全的記號。這些人不一定是最完美的，但他們對罪的存在有真實的悲傷。對罪有感覺，是屬靈存活的一個關鍵指標。信徒應問自己：我對周圍的罪有感覺，還是已麻木不仁？那份悲傷是屬靈敏銳的象徵。<br><br>
+<strong>2. 【審判從「聖所」起——神的家從自己人先受審判】</strong><br>「從聖所起」的審判提示：神的標準首先適用於那些最接近祂的人，最靠近神的地方承擔最高的道德責任。彼得後書也說：「審判從神的家起首」（彼前4:17）。教會不是免於審判的避難所，而是審判最先開始的地方，也因此是責任最重的地方。<br><br>
+<strong>3. 【代求是先知在審判中的應有姿態】</strong><br>以西結在異象中仍然「俯伏代求」——即使看見了審判的確定性，仍然為百姓代禱。這是信仰群體最高貴的行動：在知道有人面臨審判時，仍然站在神面前為他們呼求。代禱不是改變神的旨意，而是讓我們站在神的心腸中看見人的需要。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你去走遍耶路撒冷</strong>全城，<strong>那些因城中所行可</strong>憎之事歎息哀哭的人，畫記號在額上。（結9:4）</td>
+<td>你<strong>對周圍社會、</strong>教會或家庭中的罪惡，還有「歎息哀哭」的感覺，還是已經習以為常、麻木了？就像<strong>長期住在噪音環境中耳朵會逐漸失</strong>去敏感，屬靈的麻木往往是在不知不覺中發生的。你<strong>最近一次因為</strong>「見到罪惡」而真正在神面前悲傷是什麼時候？</td>
+</tr>
+<tr>
+<td><strong>於是他們從殿前的</strong><strong>長老殺起</strong>。（結9:6中）</td>
+<td>「從聖所起」的審判提醒我們，蒙受更多屬靈資源的人承擔更多責任。你是否<strong>有時以「我</strong>是信徒、我參加教會」作為一種隱性的豁免牌？就像<strong>持有食品安全執照的餐廳若賣了不</strong>潔食物會受到更嚴格的調查，你<strong>所擁有的屬靈</strong>資源是否反而讓你<strong>的責任更重</strong>？</td>
+</tr>
+<tr>
+<td><strong>我就俯伏在地</strong>，說：哎！<strong>主耶和華啊</strong>，你將忿怒傾在耶路撒冷，豈要將以色列所剩下的人都滅絕嗎？（結9:8）</td>
+<td>以西結在最確定的審判場景中仍然代求。你<strong>周圍有沒有你</strong>知道正走向危險道路的人，你是否<strong>在神面前為他</strong>們「俯伏」禱告？就像<strong>朋友落水時你願意<strong>跳進去救他</strong></strong>，代禱是你<strong>在屬靈上</strong>能為人做的最積極的「跳進去」行動。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

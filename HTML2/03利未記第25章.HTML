@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利未記第25章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+利未記第25章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">安息年與禧年：萬物歸神自由重建</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華在西乃山對摩西說：</div>
+<div class="verse"><span class="verse-number">2</span>「你曉諭以色列人說：你們到了我所賜你們那地的時候，地就要向耶和華守安息。</div>
+<div class="verse"><span class="verse-number">3</span>六年要耕種田地，也要修理葡萄園，收藏地的出產。</div>
+<div class="verse"><span class="verse-number">4</span>第七年，地要守聖安息，就是向耶和華守的安息，不可耕種田地，也不可修理葡萄園。</div>
+<div class="verse"><span class="verse-number">5</span>遺落自長的莊稼不可收割；沒有修理的葡萄樹也不可摘取葡萄。這年，地要守聖安息。</div>
+<div class="verse"><span class="verse-number">6</span>地在安息年所出的，要給你和你的僕人、婢女、雇工人，並寄居的外人當食物。</div>
+<div class="verse"><span class="verse-number">7</span>這年的土產也要給你的牲畜和你地上的走獸當食物。」</div>
+<div class="verse"><span class="verse-number">8</span>「你要算計七個安息年，就是七七年。這便為你成了七個安息年，共是四十九年。</div>
+<div class="verse"><span class="verse-number">9</span>當年七月初十日，你要大發角聲；這日就是贖罪日，要在遍地發出角聲。</div>
+<div class="verse"><span class="verse-number">10</span>第五十年，你們要當作聖年，在遍地給一切的居民宣告自由。這年必為你們的禧年，各人要歸自己的產業，各歸本家。</div>
+<div class="verse"><span class="verse-number">11</span>第五十年要作為你們的禧年。這年不可耕種；地中自長的，不可收割；沒有修理的葡萄樹也不可摘取葡萄。</div>
+<div class="verse"><span class="verse-number">12</span>因為這是禧年，你們要當作聖年，吃地中自出的土產。</div>
+<div class="verse"><span class="verse-number">13</span>「這禧年，你們各人要歸自己的地業。</div>
+<div class="verse"><span class="verse-number">14</span>你若賣甚麼給鄰舍，或是從鄰舍的手中買甚麼，彼此不可虧負。</div>
+<div class="verse"><span class="verse-number">15</span>你要按禧年以後的年數向鄰舍買；他也要按年數的收成賣給你。</div>
+<div class="verse"><span class="verse-number">16</span>年歲若多，要照數加添價值；年歲若少，要照數減去價值，因為他照收成的數目賣給你。</div>
+<div class="verse"><span class="verse-number">17</span>你們彼此不可虧負，只要敬畏你們的神，因為我是耶和華你們的神。」</div>
+<div class="verse"><span class="verse-number">18</span>「我的律例，你們要遵行，我的典章，你們要謹守，就可以在那地上安然居住。</div>
+<div class="verse"><span class="verse-number">19</span>地必出土產，你們就要吃飽，在那地上安然居住。</div>
+<div class="verse"><span class="verse-number">20</span>你們若說：『這第七年我們不耕種，也不收藏土產，吃甚麼呢？』</div>
+<div class="verse"><span class="verse-number">21</span>我必在第六年將我所命的福賜給你們，地便生三年的土產。</div>
+<div class="verse"><span class="verse-number">22</span>第八年，你們要耕種，也要吃陳糧，等到第九年出產收來的時候，你們還吃陳糧。」</div>
+<div class="verse"><span class="verse-number">23</span>「地不可永賣，因為地是我的；你們在我面前是客旅，是寄居的。</div>
+<div class="verse"><span class="verse-number">24</span>在你們所得為業的全地，也要准人將地贖回。</div>
+<div class="verse"><span class="verse-number">25</span>你的弟兄〔弟兄指本國人說；下同〕若漸漸窮乏，賣了幾分地業，他至近的親屬就要來把弟兄所賣的贖回。</div>
+<div class="verse"><span class="verse-number">26</span>若沒有能給他贖回的，他自己漸漸富足，能彀贖回，</div>
+<div class="verse"><span class="verse-number">27</span>就要算出賣地的年數，把餘剩年數的價值還那買主，自己便歸回自己的地業。</div>
+<div class="verse"><span class="verse-number">28</span>倘若不能為自己得回所賣的，仍要存在買主的手裏，直到禧年；到了禧年，地業要出買主的手，自己便歸回自己的地業。</div>
+<div class="verse"><span class="verse-number">29</span>「人若賣城內的住宅，賣了以後，一年之內可以贖回；在一整年，必有贖回的權柄。</div>
+<div class="verse"><span class="verse-number">30</span>若在一整年之內不贖回，這城內的房屋就定準永歸買主，世世代代為業；在禧年也不得出買主的手。</div>
+<div class="verse"><span class="verse-number">31</span>但房屋在無城牆的村莊裏，要看如鄉下的田地一樣，可以贖回；到了禧年，都要出買主的手。</div>
+<div class="verse"><span class="verse-number">32</span>然而利未人所得為業的城邑，其中的房屋，利未人可以隨時贖回。</div>
+<div class="verse"><span class="verse-number">33</span>若是一個利未人不將所賣的房屋贖回，是在所得為業的城內，到了禧年就要出買主的手，因為利未人城邑的房屋是他們在以色列人中的產業。</div>
+<div class="verse"><span class="verse-number">34</span>只是他們各城郊野之地不可賣，因為是他們永遠的產業。」</div>
+<div class="verse"><span class="verse-number">35</span>「你的弟兄在你那裏若漸漸貧窮，手中缺乏，你就要幫補他，使他與你同住，像外人和寄居的一樣。</div>
+<div class="verse"><span class="verse-number">36</span>不可向他取利，也不可向他多要；只要敬畏你的神，使你的弟兄與你同住。</div>
+<div class="verse"><span class="verse-number">37</span>你借錢給他，不可向他取利；借糧給他，也不可向他多要。</div>
+<div class="verse"><span class="verse-number">38</span>我是耶和華你們的神，曾領你們從埃及地出來，為要把迦南地賜給你們，要作你們的神。」</div>
+<div class="verse"><span class="verse-number">39</span>「你的弟兄若在你那裏漸漸窮乏，將自己賣給你，不可叫他像奴僕服事你。</div>
+<div class="verse"><span class="verse-number">40</span>他要在你那裏像雇工人和寄居的一樣，要服事你直到禧年。</div>
+<div class="verse"><span class="verse-number">41</span>到了禧年，他和他兒女要離開你，一同出去歸回本家，到他祖宗的地業那裏去。</div>
+<div class="verse"><span class="verse-number">42</span>因為他們是我的僕人，是我從埃及地領出來的，不可賣為奴僕。</div>
+<div class="verse"><span class="verse-number">43</span>不可嚴嚴地轄管他，只要敬畏你的神。</div>
+<div class="verse"><span class="verse-number">44</span>至於你的奴僕、婢女，可以從你四圍的國中買。</div>
+<div class="verse"><span class="verse-number">45</span>並且那寄居在你們中間的外人和他們的家屬，在你們地上所生的，你們也可以從其中買人；他們要作你們的產業。</div>
+<div class="verse"><span class="verse-number">46</span>你們要將他們遺留給你們的子孫為產業，要永遠從他們中間揀出奴僕；只是你們的弟兄以色列人，你們不可嚴嚴地轄管。</div>
+<div class="verse"><span class="verse-number">47</span>「住在你那裏的外人，或是寄居的，若漸漸富足，你的弟兄卻漸漸窮乏，將自己賣給那外人，或是寄居的，或是外人的宗族，</div>
+<div class="verse"><span class="verse-number">48</span>賣了以後，可以將他贖回。無論是他的弟兄，</div>
+<div class="verse"><span class="verse-number">49</span>或伯叔、伯叔的兒子，本家的近支，都可以贖他。他自己若漸漸富足，也可以自贖。</div>
+<div class="verse"><span class="verse-number">50</span>他要和買主計算，從賣自己的那年起，算到禧年；所賣的價值照着年數多少，好像工人每年的工價。</div>
+<div class="verse"><span class="verse-number">51</span>若缺少的年數多，就要按着年數從買價中償還他的贖價。</div>
+<div class="verse"><span class="verse-number">52</span>若到禧年只缺少幾年，就要按着年數和買主計算，償還他的贖價。</div>
+<div class="verse"><span class="verse-number">53</span>他和買主同住，要像每年雇的工人，買主不可嚴嚴的轄管他。</div>
+<div class="verse"><span class="verse-number">54</span>他若不這樣被贖，到了禧年，要和他的兒女一同出去。</div>
+<div class="verse"><span class="verse-number">55</span>因為以色列人都是我的僕人，是我從埃及地領出來的。我是耶和華你們的神。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+利未記第25章記載了兩個以色列獨特的經濟與社會制度：安息年（每七年）和禧年（每五十年）。安息年要求土地每七年休耕一年，讓地得到安息，所有自然生長的出產對所有人開放。禧年則是更宏大的重置：每五十年，所有賣出的土地歸還原主，所有因貧困而賣身為奴的以色列人獲得自由，並歸回本家。這兩個制度共同呈現了神對土地、財富和人的主權宣告：「地不可永賣，因為地是我的」（第23節）。人是神的寄居者，不是終極的擁有者。禧年也直接預告了新約的救贖：耶穌在路加福音4:18-19引用以賽亞書61章，宣告自己是真正「禧年」的應驗——宣告被擄的得釋放，使受壓制的得自由。此外，本章也規定以色列人不可向貧窮的弟兄取利，並有義務幫助至親贖回所失去的產業，彰顯了以神的公義為根基的社會互助精神。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 萬物屬神，人是管家而非擁有者</strong><br>「地是我的」這句宣告顛覆了人對財產的終極所有權觀念。以色列人每七年讓地休耕，每五十年歸還地業，是對這一真理的具體承認。信徒若真正相信萬物屬神，對財富的態度便會從「擁有」轉為「管理」，從積累轉為分享。安息年的精神挑戰我們：是否願意讓部分的「擁有感」定期鬆手，承認神才是一切的主？<br><br>
+<strong>2. 禧年宣告自由，預表基督帶來的終極釋放</strong><br>禧年的角聲宣告自由、歸還產業，是舊約最接近「福音」的社會制度——負債得赦、奴僕自由、失地歸還。這一制度預表了基督所帶來的終極禧年：罪債得赦、被罪奴役的靈魂得自由、失落的神的形像得以恢復。每個信徒在基督裡所進入的救贖，就是那真實禧年的應驗，是不受時限、永久生效的。<br><br>
+<strong>3. 對貧窮弟兄的扶助是敬畏神的具體表現</strong><br>本章明確要求以色列人不可向貧窮的弟兄取利，要幫補他、不可嚴嚴地轄管他。這些要求以「只要敬畏你的神」作為動機，將對神的信仰直接連結於對窮人的態度。對神的敬畏不是抽象的宗教情感，而是在面對最脆弱、最無助的人時，仍然以神的公義和憐憫待他的具體行動。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>第五十年</strong>，<strong>你們要當作聖年</strong>，在遍地給一切的居民宣告自由。這年必為你們的禧年，各人要歸自己的產業，各歸本家。」（利25:10）</td>
+<td>就像<strong>企業債務重組讓瀕臨破產的公司重</strong>新獲得出發的機會，禧年制度讓每個人都能從貧困的惡性循環中被重置，你是否<strong>真實地經歷過</strong>，基督的救恩如何為你<strong>個人帶來一次</strong>「禧年」式的屬靈重置與自由？</td>
+</tr>
+<tr>
+<td>「<strong>地不可永賣</strong>，<strong>因為地是我的</strong>；你們在我面前是客旅，是寄居的。」（利25:23）</td>
+<td>就像<strong>租房者知道房子不是自己的所以不</strong>會過度依附，承認自己是神的管家而非擁有者，你<strong>在面對金錢、</strong>工作、房產等物質資源時，是以「擁有者」還是「管家」的心態在管理？這兩種心態如何影響你<strong>的決定</strong>？</td>
+</tr>
+<tr>
+<td>「<strong>不可向他取利</strong>，<strong>也不可向他多要</strong>；只要敬畏你的神，使你的弟兄與你同住。」（利25:36）</td>
+<td>就像<strong>有些咖啡廳設有「掛單咖啡」讓顧</strong>客為有需要的人預先付款，幫助弟兄不求利益是敬畏神的具體行動，你<strong>身邊</strong>是否有正在艱難中的弟兄姊妹，你<strong>所謂的「敬畏</strong>神」是否正在透過對他們的幫助而展現出來？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

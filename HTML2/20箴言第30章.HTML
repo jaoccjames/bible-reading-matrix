@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第30章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第30章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神的言語句句煉淨：謙卑知足仰望至聖者</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>雅基的兒子亞古珥的言語，就是真言。這人對以鐵和烏甲說：</div>
+<div class="verse"><span class="verse-number">2</span>我比眾人更蠢笨，也沒有人的聰明。</div>
+<div class="verse"><span class="verse-number">3</span>我沒有學好智慧，也不認識至聖者。</div>
+<div class="verse"><span class="verse-number">4</span>誰升天又降下來？誰聚風在掌握中？誰包水在衣服裏？誰立定地的四極？他名叫甚麼？他兒子名叫甚麼？你知道麼？</div>
+<div class="verse"><span class="verse-number">5</span>神的言語句句都是煉淨的；投靠他的，他便作他們的盾牌。</div>
+<div class="verse"><span class="verse-number">6</span>他的言語，你不可加添，恐怕他責備你，你就顯為說謊言的。</div>
+<div class="verse"><span class="verse-number">7</span>我求你兩件事，在我未死之先，不要不賜給我：</div>
+<div class="verse"><span class="verse-number">8</span>求你使虛假和謊言遠離我；使我也不貧窮也不富足；賜給我需用的飲食，</div>
+<div class="verse"><span class="verse-number">9</span>恐怕我飽足不認你，說：耶和華是誰呢？又恐怕我貧窮就偷竊，以致褻瀆我神的名。</div>
+<div class="verse"><span class="verse-number">10</span>你不要向主人讒謗僕人，恐怕他咒詛你，你便算為有罪。</div>
+<div class="verse"><span class="verse-number">11</span>有一宗人〔宗：原文作代；下同〕，咒詛父親，不給母親祝福。</div>
+<div class="verse"><span class="verse-number">12</span>有一宗人，自以為清潔，卻沒有洗去自己的污穢。</div>
+<div class="verse"><span class="verse-number">13</span>有一宗人，眼目何其高傲，眼皮也是高舉。</div>
+<div class="verse"><span class="verse-number">14</span>有一宗人，牙如劍，齒如刀，要吞滅地上的困苦人和世間的窮乏人。</div>
+<div class="verse"><span class="verse-number">15</span>螞蟥有兩個女兒，常說：給呀，給呀！有三樣不知足的，連不說「彀的」共有四樣：</div>
+<div class="verse"><span class="verse-number">16</span>就是陰間和石胎，浸水不足的地，並火。</div>
+<div class="verse"><span class="verse-number">17</span>戲笑父親、藐視而不聽從母親的，他的眼睛必為谷中的烏鴉啄出來，為鷹雛所吃。</div>
+<div class="verse"><span class="verse-number">18</span>我所測不透的奇妙有三樣，連我所不知道的共有四樣：</div>
+<div class="verse"><span class="verse-number">19</span>就是鷹在空中飛的道；蛇在磐石上爬的道；船在海中行的道；男與女交合的道。</div>
+<div class="verse"><span class="verse-number">20</span>淫婦的道也是這樣：她喫了，把嘴一擦就說：我沒有行惡。</div>
+<div class="verse"><span class="verse-number">21</span>使地震動的有三樣，連地擔不起的共有四樣：</div>
+<div class="verse"><span class="verse-number">22</span>就是僕人作王；愚頑人喫飽；</div>
+<div class="verse"><span class="verse-number">23</span>醜惡的女子出嫁；婢女接續主母。</div>
+<div class="verse"><span class="verse-number">24</span>地上有四樣小物，卻甚聰明：</div>
+<div class="verse"><span class="verse-number">25</span>螞蟻是無力之類，卻在夏天預備糧食。</div>
+<div class="verse"><span class="verse-number">26</span>沙番是軟弱之類，卻在磐石中造房。</div>
+<div class="verse"><span class="verse-number">27</span>蝗蟲沒有君王，卻分隊而出。</div>
+<div class="verse"><span class="verse-number">28</span>守宮用爪抓牆，卻住在王宮。</div>
+<div class="verse"><span class="verse-number">29</span>步行威武的有三樣，連行走威武的共有四樣：</div>
+<div class="verse"><span class="verse-number">30</span>就是獅子，乃百獸中最為猛烈、無所躲避的，</div>
+<div class="verse"><span class="verse-number">31</span>獵狗，公山羊，和無人能敵的君王。</div>
+<div class="verse"><span class="verse-number">32</span>你若行事愚頑，自高自傲，或是懷了惡念，就當用手摀口。</div>
+<div class="verse"><span class="verse-number">33</span>搖牛奶必成奶油；扭鼻子必出血。照樣，激動怒氣必起爭端。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第三十章是箴言書中最獨特的一章，作者不再是所羅門，而是「雅基的兒子亞古珥」（1節）——一位生平不詳卻展現深刻屬靈謙卑的智者。亞古珥以驚人的謙遜開篇，宣告自己「比眾人更蠢笨」、「不認識至聖者」（2-3節），以反問的方式（4節）宣告神的無限超越與人的有限認知。這是整本箴言書中神學最深刻的人論宣告之一——智慧的起點是認識自己的無知。第7-9節的禱告極為特別：亞古珥求神賜給他「不貧窮也不富足」，理由是怕飽足時不認神，也怕貧窮時犯罪。這是聖經中最「現實主義」的禱告之一，坦誠面對人性的脆弱。本章後半以「三樣…四樣」的文學格式（15-31節），呈現了一系列自然界的觀察，從螞蟻、沙番、蝗蟲和守宮身上學習智慧，是聖經中對自然神學最生動的運用。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 謙卑承認自己的無知，是真實智慧的起點</strong><br>亞古珥的開篇宣告（2-3節）是整本箴言書中最反常規的智慧宣言：一位被稱為有「真言」的智者，卻首先宣告自己的蠢笨與無知。這提醒信徒，真正的智慧不以知識的多寡為標誌，而以對自身有限性的清醒認識為起點。越是真正有智慧的人，越清楚自己所不知道的有多少；越是自以為有智慧的人，越容易陷入驕傲的盲點。<br><br>
+<strong>2. 知足的禱告：不貧不富，只求需用的飲食</strong><br>第8-9節的禱告呈現了一種罕見的靈命成熟——對物質的態度不是求多，而是求「剛好夠」。亞古珥清醒地看見人性的兩個極端：富足帶來的驕傲與遺忘，貧窮帶來的絕望與犯罪。這禱告呼召信徒以同樣的清醒審視自己對物質的態度，學習保羅在腓立比書4:11說的「我學會了，無論在甚麼狀態可以知足」。<br><br>
+<strong>3. 從微小受造物學習智慧：弱小不等於無用</strong><br>第24-28節的螞蟻、沙番、蝗蟲、守宮，每一樣都「甚小」卻「甚聰明」。螞蟻以勤勞的預備勝過力量的不足；沙番以智慧選址勝過身體的軟弱；蝗蟲以集體協作勝過個體的渺小；守宮以堅持與技巧住進了王宮。這四樣動物共同宣告：真正的能力不在於外在的條件，而在於善用所擁有的，以智慧面對自身的限制。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>求你使我也不貧窮</strong><strong>也不富足</strong>；賜給我需用的飲食，」（箴30:8）</td>
+<td>就像<strong>登山者寧可揹輕一點讓腳步更穩</strong>，而不是揹得越多越好，亞古珥知道「剛好夠」比太多或太少都更能讓他靠近神，你<strong>對「需用的飲</strong>食」的定義是什麼？你<strong>目前</strong>是「求夠用」還是「求越多越好」？那背後的驅動力是什麼？</td>
+</tr>
+<tr>
+<td>「<strong>神的言語句句都是</strong><strong>煉淨的</strong>；投靠他的，他便作他們的盾牌。」（箴30:5）</td>
+<td>就像<strong>純金不會因為時間流逝而失去價值</strong>，神煉淨的言語也不會因時代改變而失效，你<strong>最近有沒有一</strong>句神的話語，像盾牌一樣保護了你<strong>免受某種恐懼</strong>、謊言或攻擊的傷害？那句話是什麼？</td>
+</tr>
+<tr>
+<td>「<strong>螞蟻是無力之類</strong>，<strong>卻在夏天預備糧食</strong>。」（箴30:25）</td>
+<td>就像<strong>弱小的螞蟻靠著不懈的勤勞</strong>，在冬天來臨前積累了足夠的糧食，你<strong>在自己最感到</strong>「無力」或「不足」的領域，有沒有像螞蟻一樣的持守與預備？那種「弱小卻聰明」的態度在你<strong>生命中</strong>如何呈現？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

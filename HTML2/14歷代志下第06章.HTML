@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志下第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志下第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">所羅門的獻殿禱告：神必垂聽各種境況的禱告</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>那時，所羅門說：耶和華曾說他必住在幽暗之處。</div>
+<div class="verse"><span class="verse-number">2</span>但我已經建造殿宇作你的居所，為你永遠的住處。</div>
+<div class="verse"><span class="verse-number">3</span>王轉臉為以色列會眾祝福，以色列會眾就都站立。</div>
+<div class="verse"><span class="verse-number">4</span>所羅門說：「耶和華以色列的神是應當稱頌的！因他親口向我父大衛所應許的，也親手成就了。</div>
+<div class="verse"><span class="verse-number">5</span>他說：『自從我領我民出埃及地以來，我未曾在以色列眾支派中選擇一城建造殿宇為我名的居所，也未曾揀選一人作我民以色列的君；</div>
+<div class="verse"><span class="verse-number">6</span>但選擇耶路撒冷為我名的居所，又揀選大衛治理我民以色列。』」</div>
+<div class="verse"><span class="verse-number">7</span>所羅門說：「我父大衛曾立意要為耶和華以色列神的名建殿，</div>
+<div class="verse"><span class="verse-number">8</span>耶和華卻對我父大衛說：『你立意要為我的名建殿，這意思甚好；</div>
+<div class="verse"><span class="verse-number">9</span>只是你不可建殿，惟你所生的兒子必為我名建殿。』</div>
+<div class="verse"><span class="verse-number">10</span>「現在耶和華成就了他所應許的話，使我接續我父大衛坐以色列的國位，是照耶和華所說的，又為耶和華以色列神的名建造了殿。</div>
+<div class="verse"><span class="verse-number">11</span>我將約櫃安置在其中，櫃內有耶和華的約，就是他與以色列人所立的約。」</div>
+<div class="verse"><span class="verse-number">12</span>所羅門當着以色列會眾，站在耶和華的壇前，舉起手來，</div>
+<div class="verse"><span class="verse-number">13</span>（所羅門曾造一個銅臺，長五肘，寬五肘，高三肘，放在院中）就站在臺上，當着以色列的會眾跪下，向天舉手，</div>
+<div class="verse"><span class="verse-number">14</span>說：「耶和華以色列的神阿，天上地下沒有神可比你的！你向那盡心行在你面前的僕人守約施慈愛；</div>
+<div class="verse"><span class="verse-number">15</span>向你僕人我父大衛所應許的話現在應驗了。你親口應許，親手成就，正如今日一樣。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華以色列的神阿，你所應許你僕人我父大衛的話說：『你的子孫若謹慎自己的行為，遵守我的律法，像你在我面前所行的一樣，就不斷人坐以色列的國位。』現在求你應驗這話。</div>
+<div class="verse"><span class="verse-number">17</span>耶和華以色列的神啊，求你成就向你僕人大衛所應許的話。</div>
+<div class="verse"><span class="verse-number">18</span>「神果真與世人同住在地上嗎？看哪，天和天上的天尚且不足你居住的，何況我所建的這殿呢？</div>
+<div class="verse"><span class="verse-number">19</span>惟求耶和華我的神垂顧僕人的禱告祈求，俯聽僕人在你面前的祈禱呼籲。</div>
+<div class="verse"><span class="verse-number">20</span>願你晝夜看顧這殿，就是你應許立為你名的居所；求你垂聽僕人向此處禱告的話。</div>
+<div class="verse"><span class="verse-number">21</span>你僕人和你民以色列向此處祈禱的時候，求你從天上你的居所垂聽，垂聽而赦免。</div>
+<div class="verse"><span class="verse-number">22</span>「人若得罪鄰舍，有人叫他起誓，他來到這殿，在你的壇前起誓，</div>
+<div class="verse"><span class="verse-number">23</span>求你從天上垂聽，判斷你的僕人，定惡人有罪，照他所行的報應在他頭上；定義人有理，照他的義賞賜他。</div>
+<div class="verse"><span class="verse-number">24</span>「你的民以色列若得罪你，敗在仇敵面前，又回心轉意承認你的名，在這殿裏向你祈求禱告，</div>
+<div class="verse"><span class="verse-number">25</span>求你從天上垂聽，赦免你民以色列的罪，使他們歸回你賜給他們和他們列祖之地。</div>
+<div class="verse"><span class="verse-number">26</span>「你的民因得罪你，你懲罰他們，使天閉塞不下雨，他們若向此處禱告，承認你的名，離開他們的罪，</div>
+<div class="verse"><span class="verse-number">27</span>求你在天上垂聽，赦免你僕人和你民以色列的罪，將當行的善道指教他們，且降雨在你的地，就是你賜給你民為業之地。</div>
+<div class="verse"><span class="verse-number">28</span>「國中若有饑荒、瘟疫、旱風、霉爛、蝗蟲、螞蚱，或有仇敵犯境，圍困城邑，無論遭遇甚麼災禍疾病，</div>
+<div class="verse"><span class="verse-number">29</span>你的民以色列，或是眾人，或是一人，自覺災禍甚苦，向這殿舉手，無論祈求甚麼，禱告甚麼，</div>
+<div class="verse"><span class="verse-number">30</span>求你從天上你的居所垂聽赦免。你是知道人心的，要照各人所行的待他們（惟有你知道世人的心），</div>
+<div class="verse"><span class="verse-number">31</span>使他們在你賜給我們列祖之地上一生一世敬畏你，遵行你的道。</div>
+<div class="verse"><span class="verse-number">32</span>「論到不屬你民以色列的外邦人，為你的大名和大能的手，並伸出來的膀臂，從遠方而來，向這殿禱告，</div>
+<div class="verse"><span class="verse-number">33</span>求你從天上你的居所垂聽，照着外邦人所祈求的而行，使天下萬民都認識你的名，敬畏你，像你的民以色列一樣，又使他們知道我建造的這殿是稱為你名下的。</div>
+<div class="verse"><span class="verse-number">34</span>「你的民若奉你的差遣，無論往何處去與仇敵爭戰，向你所選擇的城與我為你名所建造的殿禱告，</div>
+<div class="verse"><span class="verse-number">35</span>求你從天上垂聽他們的禱告祈求，使他們得勝。</div>
+<div class="verse"><span class="verse-number">36</span>「你的民若得罪你（世上沒有不犯罪的人），你向他們發怒，將他們交給仇敵擄到或遠或近之地；</div>
+<div class="verse"><span class="verse-number">37</span>他們若在擄到之地想起罪來，回心轉意，懇求你說：『我們有罪了，我們悖逆了，我們作惡了』；</div>
+<div class="verse"><span class="verse-number">38</span>他們若在擄到之地盡心盡性歸服你，又向自己的地，就是你賜給他們列祖之地和你所選擇的城，並我為你名所建造的殿禱告，</div>
+<div class="verse"><span class="verse-number">39</span>求你從天上你的居所垂聽你民的禱告祈求，為他們伸冤，赦免他們的過犯。</div>
+<div class="verse"><span class="verse-number">40</span>「我的神啊，現在求你睜眼看，側耳聽在此處所獻的禱告。</div>
+<div class="verse"><span class="verse-number">41</span>耶和華神啊，求你起來，和你有能力的約櫃同入安息之所。耶和華神啊，願你的祭司披上救恩；願你的聖民蒙福歡樂。</div>
+<div class="verse"><span class="verse-number">42</span>耶和華神啊，求你不要厭棄你的受膏者，要記念向你僕人大衛所施的慈愛。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志下第六章是聖殿奉獻時所羅門最長的禱告，也是全書最重要的神學宣告之一。所羅門先宣告神的應許已成就（1-11節），再跪在會眾前向天舉手禱告（12-13節）。禱告本體（14-42節）涵蓋七個不同的求告情境：個人誓言糾紛（22-23節）、戰敗後的求告（24-25節）、乾旱後的懺悔（26-27節）、各種災難（28-31節）、外邦人的禱告（32-33節）、出征爭戰（34-35節）、被擄後的悔改（36-39節）。禱告以「記念向你僕人大衛所施的慈愛」（42節）作結。
+
+      本章最具普世意義的是第32-33節：所羅門為外邦人的禱告代求，求神從天上垂聽，「使天下萬民都認識你的名，敬畏你，像你的民以色列一樣」。這顯示以色列人的敬拜，從一開始就不是民族宗教的私產，而是神使萬民得認識祂的媒介。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神是垂聽各種境況禱告的神</strong><br>所羅門的禱告涵蓋個人糾紛、戰敗、乾旱、瘟疫、外邦人、出征和被擄等七種情境，告訴以色列人：無論處於何種困境，這座殿都是可以向神呼求的地方。對今日信徒而言，神不只是「在事情順利時值得感謝」的神，也是在一切困難和失敗中「可以求告」的神。<br><br>
+<strong>2. 真誠的悔改是重新蒙恩的路徑</strong><br>在每一個求告情境中，所羅門都強調同樣的模式：人若自省、認罪、回轉，神就必從天上垂聽赦免（如25、27、39節）。這個「回轉—赦免」的原則，是整部歷代志的核心神學主軸。悔改不是軟弱，而是重新接入神恩典源頭的正確回路。<br><br>
+<strong>3. 聖殿是萬民可以禱告之所</strong><br>所羅門為外邦人的禱告代求（32-33節），表明神的殿不只是以色列人的排他空間，而是「使天下萬民都認識神的名」的媒介。這個普世視野在今日教會中同樣重要——教會的敬拜和事奉，不只是服務會眾，更是成為列國認識神的窗口。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>神果真與世人同住</strong><strong>在地上嗎</strong>？看哪，天和天上的天尚且不足你居住的，何況我所建的這殿呢？（代下6:18）</td>
+<td>所羅門在宏偉的殿宇中仍清楚知道這殿裝不下神，就像<strong>一個人越是親近神</strong>，越能感受自己的有限和神的無限——你是否<strong>有過這樣的時</strong>刻，越是靠近神，越是意識到自己的渺小，但同時也越感受到祂的廣大和接納？</td>
+</tr>
+<tr>
+<td><strong>你的民若得罪你</strong>……<strong>他們若在擄到之地</strong>盡心盡性歸服你……求你從天上你的居所垂聽你民的禱告祈求，為他們伸冤，赦免他們的過犯。（代下6:36、38-39）</td>
+<td>所羅門預見到百姓可能被擄，卻也預備了回轉的路——盡心歸服就能重新得垂聽，就像<strong>一個人迷了路</strong>，只要轉身朝正確方向走，GPS就能重新導航——你<strong>人生中有沒有</strong>過那個「轉身那一刻」，感受到神重新為你<strong>導航的時刻</strong>？</td>
+</tr>
+<tr>
+<td><strong>論到不屬你民以色</strong><strong>列的外邦人</strong>……從遠方而來，向這殿禱告，求你從天上你的居所垂聽，照着外邦人所祈求的而行，使天下萬民都認識你的名。（代下6:32-33）</td>
+<td>所羅門求神也為外邦人禱告，說明這座殿是萬民尋求神的地方，就像<strong>一個社區圖書館不只服務附近居民</strong>，也歡迎任何尋找知識的人——在你<strong>的信仰群體中</strong>，是否有意識地成為「外邦人」——圈子以外的人——也能感受到歡迎和神同在的空間？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利未記第20章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+利未記第20章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">違律的刑罰：聖潔的底線不可越過</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華對摩西說：</div>
+<div class="verse"><span class="verse-number">2</span>「你還要曉諭以色列人說：凡以色列人，或是在以色列中寄居的外人，把自己的兒女獻給摩洛的，總要治死他；本地人要用石頭把他打死。</div>
+<div class="verse"><span class="verse-number">3</span>我也要向那人變臉，把他從民中剪除；因為他把兒女獻給摩洛，玷污我的聖所，褻瀆我的聖名。</div>
+<div class="verse"><span class="verse-number">4</span>那人把兒女獻給摩洛，本地人若佯為不見，不把他治死，</div>
+<div class="verse"><span class="verse-number">5</span>我就要向這人和他的家變臉，把他和一切隨他與摩洛行邪淫的人都從民中剪除。</div>
+<div class="verse"><span class="verse-number">6</span>「人偏向交鬼的和行巫術的，隨他們行邪淫，我要向那人變臉，把他從民中剪除。</div>
+<div class="verse"><span class="verse-number">7</span>所以你們要自潔成聖，因為我是耶和華你們的神。</div>
+<div class="verse"><span class="verse-number">8</span>你們要謹守遵行我的律例；我是叫你們成聖的耶和華。</div>
+<div class="verse"><span class="verse-number">9</span>凡咒罵父母的，總要治死他；他咒罵了父母，他的罪〔原文作血；本章同〕要歸到他身上。</div>
+<div class="verse"><span class="verse-number">10</span>「與鄰舍之妻行淫的，姦夫淫婦都必治死。</div>
+<div class="verse"><span class="verse-number">11</span>與繼母行淫的，就是羞辱了他父親，總要把他們二人治死，罪要歸到他們身上。</div>
+<div class="verse"><span class="verse-number">12</span>與兒婦同房的，總要把他們二人治死；他們行了逆倫的事，罪要歸到他們身上。</div>
+<div class="verse"><span class="verse-number">13</span>人若與男人苟合，像與女人一樣，他們二人行了可憎的事，總要把他們治死，罪要歸到他們身上。</div>
+<div class="verse"><span class="verse-number">14</span>人若娶妻，並娶其母，便是大惡，要把這三人用火焚燒，使你們中間免去大惡。</div>
+<div class="verse"><span class="verse-number">15</span>人若與獸淫合，總要治死他，也要殺那獸。</div>
+<div class="verse"><span class="verse-number">16</span>女人若與獸親近，與牠淫合，你要殺那女人和那獸，總要把他們治死，罪要歸到他們身上。</div>
+<div class="verse"><span class="verse-number">17</span>「人若娶他的姐妹，無論是異母同父的，是異父同母的，彼此見了下體，這是可恥的事；他們必在本民的眼前被剪除。他露了姐妹的下體，必擔當自己的罪孽。</div>
+<div class="verse"><span class="verse-number">18</span>婦人有月經，若與她同房，露了她的下體，就是露了婦人的血源，婦人也露了自己的血源，二人必從民中剪除。</div>
+<div class="verse"><span class="verse-number">19</span>不可露姨母或是姑母的下體，這是露了骨肉之親的下體；二人必擔當自己的罪孽。</div>
+<div class="verse"><span class="verse-number">20</span>人若與伯叔之妻同房，就羞辱了他的伯叔；二人要擔當自己的罪，必無子女而死。</div>
+<div class="verse"><span class="verse-number">21</span>人若娶弟兄之妻，這本是污穢的事，羞辱了他的弟兄；二人必無子女。</div>
+<div class="verse"><span class="verse-number">22</span>「所以，你們要謹守遵行我一切的律例典章，免得我領你們去住的那地把你們吐出。</div>
+<div class="verse"><span class="verse-number">23</span>我在你們面前所逐出的國民，你們不可隨從他們的風俗；因為他們行了這一切的事，所以我厭惡他們。</div>
+<div class="verse"><span class="verse-number">24</span>但我對你們說過，你們要承受他們的地，就是我要賜給你們為業、流奶與蜜之地。我是耶和華你們的神，使你們與萬民有分別的。</div>
+<div class="verse"><span class="verse-number">25</span>所以，你們要把潔淨和不潔淨的禽獸分別出來；不可因我給你們分為不潔淨的禽獸，或是滋生在地上的活物，使自己成為可憎惡的。</div>
+<div class="verse"><span class="verse-number">26</span>你們要歸我為聖，因為我耶和華是聖的，並叫你們與萬民有分別，使你們作我的民。</div>
+<div class="verse"><span class="verse-number">27</span>「無論男女，是交鬼的或行巫術的，總要治死他們。人必用石頭把他們打死，罪要歸到他們身上。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+利未記第20章是第18章性倫理律例的刑事對應章節——第18章列出禁止的行為，第20章則規定違反這些律例的刑罰。本章以最嚴厲的罪行開始：將兒女獻給迦南神摩洛。這種異教習俗涉及以兒童作為祭物，是對神所賜生命最直接的褻瀆，也是對以色列信仰的最根本背叛。神特別嚴肅地回應「佯為不見」的社群責任——即便個人沒有犯罪，若對群體中的嚴重罪行沉默，同樣面臨神的審判，顯示神對集體責任的重視。接下來列出各種亂倫、性道德違規和屬靈偏離（交鬼、巫術）的刑罰，多為死刑或被剪除（逐出社群）。本章的核心神學論述出現在第24-26節：神呼召以色列「與萬民有分別」，使他們成為神的子民，這種「分別」不是種族優越感，而是道德與屬靈身分的區別，彰顯神在地上的聖潔屬性。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 罪的嚴重性需要嚴肅的回應</strong><br>本章所列的嚴厲刑罰，在現代讀者眼中可能顯得過於嚴苛，但其神學意義在於宣告罪的嚴重性。神不輕看任何悖逆聖潔秩序的行為。在新約時代，雖然刑事處罰由教會和政府分開執行，但罪的嚴重性並未因此降低。基督為我們承擔了這些罪的刑罰，這正是十字架的代價如此沉重的原因。<br><br>
+<strong>2. 沉默對待罪也是一種罪</strong><br>神明確指出，本地人若對鄰人把兒女獻給摩洛「佯為不見」，同樣會受到審判。這宣告了群體責任的原則：在罪的問題上，沉默並非中立。信仰群體對成員中嚴重罪行的縱容，是一種集體的罪。新約的教會紀律原則（馬太福音18:15-17）延伸了這一精神，要求信徒在弟兄陷入罪中時主動介入，而非袖手旁觀。<br><br>
+<strong>3. 分別為聖是神子民的身分標記</strong><br>第24-26節清楚宣告，神使以色列與萬民「有分別」，目的是讓他們成為神的民，活出神的聖潔。這種分別不是自義的孤立，而是積極的見證——讓周圍的人透過以色列的生活方式，認識那位聖潔的神。今日的信徒同樣被呼召活出「在世而不屬世」的見證，以生命彰顯神的屬性。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>本地人若佯為不見</strong>，<strong>不把他治死</strong>，我就要向這人和他的家變臉……」（利20:4-5）</td>
+<td>就像<strong>公司員工發現同事造假帳卻選擇裝</strong>作沒看見，最終可能一起承擔法律後果，對罪行的沉默不等於無辜，你是否<strong>曾在群體中對</strong>明顯的錯誤保持沉默，以為這樣就與自己無關？</td>
+</tr>
+<tr>
+<td>「<strong>所以你們要自潔成</strong>聖，<strong>因為我是耶和華你</strong>們的神。你們要謹守遵行我的律例；我是叫你們成聖的耶和華。」（利20:7-8）</td>
+<td>就像<strong>運動員需要自我訓練紀律才能達到</strong>教練所要求的水準，屬靈的成聖需要信徒主動配合神的工作，你<strong>在哪些具體的</strong>生活習慣或選擇上，需要更主動地配合神讓你<strong>成聖的工作</strong>？</td>
+</tr>
+<tr>
+<td>「<strong>你們要歸我為聖</strong>，<strong>因為我耶和華是聖</strong>的，並叫你們與萬民有分別，使你們作我的民。」（利20:26）</td>
+<td>就像<strong>某品牌的產品因其獨特的設計語言</strong>而在市場上有明顯辨識度，神的子民也應在生活價值觀和行為方式上有別於世俗，別人能從你<strong>日常的選擇和</strong>待人方式中，辨認出你是屬神之人嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

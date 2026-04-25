@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第49章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第49章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">雅各祝福十二支派</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>雅各叫了他的兒子們來，說：「你們都來聚集，我好把你們日後必遇的事告訴你們。</div>
+<div class="verse"><span class="verse-number">2</span>雅各的兒子們，你們要聚集而聽，要聽你們父親以色列的話。</div>
+<div class="verse"><span class="verse-number">3</span>流便哪，你是我的長子，是我力量強壯的時候生的，本當大有尊榮，權力超眾。</div>
+<div class="verse"><span class="verse-number">4</span>但你放縱情慾，滾沸如水，必不得居首位；因為你上了你父親的床，污穢了我的榻。</div>
+<div class="verse"><span class="verse-number">5</span>西緬和利未是弟兄；他們的刀劍是殘忍的器具。</div>
+<div class="verse"><span class="verse-number">6</span>我的靈啊，不要與他們同謀；我的心哪，不要與他們聯絡；因為他們趁怒殺害人命，任意砍斷牛腿大筋。</div>
+<div class="verse"><span class="verse-number">7</span>他們的怒氣暴烈可咒；他們的忿恨殘忍可詛。我要使他們分居在雅各家裏，散住在以色列地中。</div>
+<div class="verse"><span class="verse-number">8</span>猶大啊，你弟兄們必讚美你；你手必掐住仇敵的頸項；你父親的兒子們必向你下拜。</div>
+<div class="verse"><span class="verse-number">9</span>猶大是個小獅子；我兒啊，你抓了食便上去。你屈下身去，臥如公獅，蹲如母獅，誰敢惹你？</div>
+<div class="verse"><span class="verse-number">10</span>圭必不離猶大，杖必不離他兩腳之間，直等細羅〔就是賜平安者〕來到，萬民都必歸順。</div>
+<div class="verse"><span class="verse-number">11</span>猶大把小驢拴在葡萄樹上，把驢駒拴在美好的葡萄樹上。他在葡萄酒中洗了衣服，在葡萄汁中洗了袍褂。</div>
+<div class="verse"><span class="verse-number">12</span>他的眼睛必因酒紅潤；他的牙齒必因奶白亮。</div>
+<div class="verse"><span class="verse-number">13</span>西布倫必住在海口，必成為停船的海口；他的境界必延到西頓。</div>
+<div class="verse"><span class="verse-number">14</span>以薩迦是個強壯的驢，臥在羊圈之中。</div>
+<div class="verse"><span class="verse-number">15</span>他以安靜為佳，以肥地為美，便低肩背重，成為服苦的僕人。</div>
+<div class="verse"><span class="verse-number">16</span>但必判斷他的民，作以色列支派之一。</div>
+<div class="verse"><span class="verse-number">17</span>但必作道上的蛇，路中的虺，咬傷馬蹄，使騎馬的墜落於後。</div>
+<div class="verse"><span class="verse-number">18</span>耶和華啊，我向來等候你的救恩。</div>
+<div class="verse"><span class="verse-number">19</span>迦得必被敵軍追逼，他卻要追逼他們的腳跟。</div>
+<div class="verse"><span class="verse-number">20</span>亞設之地必出肥美的糧食，且出君王的美味。</div>
+<div class="verse"><span class="verse-number">21</span>拿弗他利是被釋放的母鹿；他出嘉美的言語。</div>
+<div class="verse"><span class="verse-number">22</span>約瑟是多結果子的樹枝，是泉旁多結果的枝子；他的枝條探出牆外。</div>
+<div class="verse"><span class="verse-number">23</span>弓箭手將他苦害，向他射箭，逼迫他。</div>
+<div class="verse"><span class="verse-number">24</span>但他的弓仍舊堅硬；他的手健壯敏捷。這是因以色列的牧者，以色列的磐石，就是雅各的大能者。</div>
+<div class="verse"><span class="verse-number">25</span>你父親的神必幫助你；那全能者必將天上所有的福，地裏所藏的福，以及生產乳養的福，都賜給你。</div>
+<div class="verse"><span class="verse-number">26</span>你父親所祝的福，勝過我祖先所祝的福，如永世的山嶺，至極的邊界；這些福必降在約瑟的頭上，臨到那與弟兄迥別之人的頂上。</div>
+<div class="verse"><span class="verse-number">27</span>便雅憫是個撕掠的狼，早晨要吃他所抓的，晚上要分他所奪的。」</div>
+<div class="verse"><span class="verse-number">28</span>這一切是以色列的十二支派；這也是他們的父親對他們所說的話，為他們所祝的福，都是按着各人的福分為他們祝福。</div>
+<div class="verse"><span class="verse-number">29</span>他又囑咐他們說：「我將要歸到我列祖〔原文作本民〕那裏，你們要將我葬在赫人以弗崙田間的洞裏，與我祖我父在一處，</div>
+<div class="verse"><span class="verse-number">30</span>就是在迦南地幔利前、麥比拉田間的洞；那洞和田是亞伯拉罕向赫人以弗崙買來為業，作墳地的。</div>
+<div class="verse"><span class="verse-number">31</span>他們在那裏葬了亞伯拉罕和他妻子撒拉，又在那裏葬了以撒和他的妻子利百加；我也在那裏葬了利亞。</div>
+<div class="verse"><span class="verse-number">32</span>那塊田和田間的洞原是向赫人買的。」</div>
+<div class="verse"><span class="verse-number">33</span>雅各囑咐眾子已畢，就把腳收在床上，氣絕而死，歸到列祖〔原文作本民〕那裏去了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載雅各臨終前召集十二個兒子，以詩歌預言的形式為他們祝福。這些預言不僅關乎個人，更預告十二支派的未來命運。流便因犯罪失去長子地位；西緬和利未因殘暴被咒詛要分散；猶大得到君王的祝福，預言彌賽亞將從猶大而出；約瑟得到最豐盛的祝福，因他在苦難中堅守信心。每個兒子的祝福都與他們的品格和行為相關，顯明神公義的審判與恩典的賞賜。雅各最後再次囑咐要葬在麥比拉洞與列祖同在，然後安詳離世。這份祝福成為以色列民族歷史的預言藍圖，也見證神如何在人的軟弱與失敗中仍成就祂的計畫。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 過去的行為決定未來的祝福</strong><br>流便失去長子名分，西緬利未被咒詛分散，都因過去的罪行。我們今天的選擇塑造明天的命運，罪的後果往往延續到下一代。真正的祝福不是靠出身地位，而是靠品格與對神的忠誠，神賞賜那些在試煉中持守正直的人。<br><br>
+<strong>2. 神的救贖計畫超越人的失敗</strong><br>雅各祝福猶大預言彌賽亞要從他而出，但猶大也曾犯罪失敗。神的恩典不是忽略罪惡，而是在悔改者身上成就更大的計畫。即使我們失敗跌倒，真心悔改後神仍能使用我們成就祂的旨意。<br><br>
+<strong>3. 苦難中的忠誠帶來豐盛祝福</strong><br>約瑟得到最豐盛的祝福，因他在試煉中堅守信仰。真正的得勝不是沒有苦難，而是在苦難中仍信靠神。神看重的不是外在的順利，而是內在的忠誠，祂必以超乎想像的祝福回應那些在困境中仍跟隨祂的人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>流便哪</strong>，<strong>你本當大有尊榮</strong>，但你放縱情慾，必不得居首位；因為你上了你父親的床。（創49:3-4）</td>
+<td>就像<strong>運動員因禁藥被取消資格失去本該</strong>得的榮耀，流便的一時衝動毀掉長子地位。我是否也因一時放縱（如情慾、憤怒、貪心）而付出長遠代價，失去本該擁有的祝福與機會？</td>
+</tr>
+<tr>
+<td><strong>圭必不離猶大</strong>，<strong>杖必不離他兩腳之</strong>間，直等細羅來到，萬民都必歸順。（創49:10）</td>
+<td>就像<strong>王室血脈延續等候真正的君王誕生</strong>，猶大支派預言指向耶穌基督。我對彌賽亞的認識是否只停留在知識，還是真實地將祂當作生命的主，讓萬事歸順於祂的帶領？</td>
+</tr>
+<tr>
+<td><strong>約瑟是多結果子的</strong>樹枝，<strong>是泉旁多結果的枝</strong>子；他的枝條探出牆外。（創49:22）</td>
+<td>就像<strong>果樹枝條越過圍牆讓外面的人也能</strong>享用果子，約瑟的祝福影響周遭人。我的生命是自我中心只顧自己，還是像結果樹枝，因與神連結（泉旁）而能祝福更多人，影響力超越自己的限制（牆外）？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

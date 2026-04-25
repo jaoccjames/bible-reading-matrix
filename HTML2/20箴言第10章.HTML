@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">義人與惡人的對比：言語、品格與結局</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>所羅門的箴言：智慧之子使父親歡樂；愚昧之子叫母親擔憂。</div>
+<div class="verse"><span class="verse-number">2</span>不義之財毫無益處；惟有公義能救人脫離死亡。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華不使義人受飢餓；惡人所欲的，他必推開。</div>
+<div class="verse"><span class="verse-number">4</span>手懶的，要受貧窮；手勤的，卻要富足。</div>
+<div class="verse"><span class="verse-number">5</span>夏天聚斂的，是智慧之子；收割時沉睡的，是貽羞之子。</div>
+<div class="verse"><span class="verse-number">6</span>福祉臨到義人的頭；強暴蒙蔽惡人的口。</div>
+<div class="verse"><span class="verse-number">7</span>義人的記念被稱讚；惡人的名字必朽爛。</div>
+<div class="verse"><span class="verse-number">8</span>心中智慧的，必受命令；口裏愚妄的，必致傾倒。</div>
+<div class="verse"><span class="verse-number">9</span>行正直路的，步步安穩；走彎曲道的，必致敗露。</div>
+<div class="verse"><span class="verse-number">10</span>以眼傳神的，使人憂患；口裏愚妄的，必致傾倒。</div>
+<div class="verse"><span class="verse-number">11</span>義人的口是生命的泉源；強暴蒙蔽惡人的口。</div>
+<div class="verse"><span class="verse-number">12</span>恨能挑啟爭端；愛能遮掩一切過錯。</div>
+<div class="verse"><span class="verse-number">13</span>明哲人嘴裏有智慧；無知人背上受刑杖。</div>
+<div class="verse"><span class="verse-number">14</span>智慧人積存知識；愚妄人的口速致敗壞。</div>
+<div class="verse"><span class="verse-number">15</span>富戶的財物是他的堅城；窮人的貧乏是他的敗壞。</div>
+<div class="verse"><span class="verse-number">16</span>義人的勤勞致生；惡人的進項致死〔死：原文作罪〕。</div>
+<div class="verse"><span class="verse-number">17</span>謹守訓誨的，乃在生命的道上；違棄責備的，便失迷了路。</div>
+<div class="verse"><span class="verse-number">18</span>隱藏怨恨的，有說謊的嘴；口出讒謗的，是愚妄的人。</div>
+<div class="verse"><span class="verse-number">19</span>多言多語難免有過；禁止嘴唇是有智慧。</div>
+<div class="verse"><span class="verse-number">20</span>義人的舌乃似高銀；惡人的心所值無幾。</div>
+<div class="verse"><span class="verse-number">21</span>義人的口教養多人；愚昧人因無知而死亡。</div>
+<div class="verse"><span class="verse-number">22</span>耶和華所賜的福使人富足，並不加上憂慮。</div>
+<div class="verse"><span class="verse-number">23</span>愚妄人以行惡為戲耍；明哲人卻以智慧為樂。</div>
+<div class="verse"><span class="verse-number">24</span>惡人所怕的，必臨到他；義人所願的，必蒙應允。</div>
+<div class="verse"><span class="verse-number">25</span>暴風一過，惡人歸於無有；義人的根基卻是永久。</div>
+<div class="verse"><span class="verse-number">26</span>懶惰人叫差他的人如醋倒牙，如煙薰目。</div>
+<div class="verse"><span class="verse-number">27</span>敬畏耶和華使人日子加多；但惡人的年歲必被減少。</div>
+<div class="verse"><span class="verse-number">28</span>義人的盼望必得喜樂；惡人的指望必至滅沒。</div>
+<div class="verse"><span class="verse-number">29</span>耶和華的道是正直人的保障，卻成了作孽人的敗壞。</div>
+<div class="verse"><span class="verse-number">30</span>義人永不挪移；惡人不得住在地上。</div>
+<div class="verse"><span class="verse-number">31</span>義人的口滋生智慧；乖謬的舌必被割斷。</div>
+<div class="verse"><span class="verse-number">32</span>義人的嘴能令人喜悅；惡人的口說乖謬的話。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第十章標誌著箴言書進入第二大段落（10-22:16），正式進入所羅門的格言集，每節都是獨立的對句，大多以「義人與惡人」、「智慧人與愚昧人」的對比形式呈現。這種文學結構稱為「對偶格言」，是希伯來詩歌智慧傳統的典型形式，以簡練有力的語言傳達深刻的生活真理。在歷史背景上，這些格言反映了以色列社會對於品格、勤勞、言語與財富的看法，根植於對神公義的信仰——好人有好報、惡人終有惡報。本章特別著重言語的力量：「義人的口是生命的泉源」（11節）、「愛能遮掩一切過錯」（12節）、「多言多語難免有過」（19節）。全章在整本箴言書中是格言集的開篇，奠定了「德行與言語」為中心主題的基調，提醒信徒，日常生活中的每一個選擇和每一句話，都在塑造一個人的品格與命運。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 愛的力量能遮掩過錯、化解紛爭</strong><br>第12節「恨能挑啟爭端；愛能遮掩一切過錯」，是本章最具普世性的屬靈真理之一，在新約中也被彼得前書4:8所引用。「遮掩過錯」不是包庇罪惡，而是在愛中選擇不放大他人的錯誤、不以怨報怨。在家庭、教會和職場中，愛的能力表現在面對衝突時的寬容、忍耐與主動化解，而非以言語回擊、挑起更大的爭端。<br><br>
+<strong>2. 言語有生死的力量，當謹慎使用</strong><br>本章多次從不同角度強調言語的重要：義人的口是「生命的泉源」，義人的舌是「高銀」，義人的口能「教養多人」；同時警告「多言多語難免有過」。這提醒信徒，話語不是中性的工具，而是有屬靈重量的力量。謹慎說話、適時沉默，是智慧的重要標誌。每一句話都在建造或拆毀，在生命或死亡之間做選擇。<br><br>
+<strong>3. 義人的根基永久，惡人如暴風過後歸於無有</strong><br>第25節「暴風一過，惡人歸於無有；義人的根基卻是永久」，以自然現象說明屬靈真實：建立在神的義上的人生，能經得起任何風暴的衝擊；而以不義為基礎的人生，看似強大，卻在衝擊面前轟然倒塌。這鼓勵信徒在艱難中持守公義之道，因為每一份委身都是在為永久的根基添磚加瓦。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>恨能挑啟爭端</strong>；<strong>愛能遮掩一切過錯</strong>。」（箴10:12）</td>
+<td>就像<strong>滅火器能阻止火勢蔓延</strong>，愛的回應能讓衝突不繼續升溫，你<strong>最近在某段關</strong>係中遇到衝突時，你<strong>的第一反應</strong>是「點火」還是「滅火」？是什麼讓你<strong>難以選擇愛的</strong>方式回應？</td>
+</tr>
+<tr>
+<td>「<strong>多言多語難免有過</strong>；<strong>禁止嘴唇是有智慧</strong>。」（箴10:19）</td>
+<td>就像<strong>打字時發送前若能再讀一遍</strong>，往往能避免很多不必要的誤解，你<strong>在日常對話、</strong>社群媒體或工作溝通中，是否有「先想後說」的習慣？哪種情境最容易讓你<strong>說出後悔的話</strong>？</td>
+</tr>
+<tr>
+<td>「<strong>暴風一過</strong>，<strong>惡人歸於無有</strong>；義人的根基卻是永久。」（箴10:25）</td>
+<td>就像<strong>建築物的地基決定了它能承受的最</strong>大風壓，你<strong>生命中的「地</strong>基」——信仰、價值觀、品格——是否在面對壓力、失去或危機時仍能支撐你？你<strong>上一次感受到</strong>這根基穩固，是在什麼情況下？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

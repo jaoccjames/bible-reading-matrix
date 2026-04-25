@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第23章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第23章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">當買真理勿賣：警戒貪財飲酒歸心於神</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你若與官長坐席，要留意在你面前的是誰。</div>
+<div class="verse"><span class="verse-number">2</span>你若是貪食的，就當拿刀放在喉嚨上。</div>
+<div class="verse"><span class="verse-number">3</span>不可貪戀他的美食，因為是哄人的食物。</div>
+<div class="verse"><span class="verse-number">4</span>不要勞碌求富，休仗自己的聰明。</div>
+<div class="verse"><span class="verse-number">5</span>你豈要定睛在虛無的錢財上嗎？因錢財必長翅膀，如鷹向天飛去。</div>
+<div class="verse"><span class="verse-number">6</span>不要喫惡眼人的飯，也不要貪他的美味；</div>
+<div class="verse"><span class="verse-number">7</span>因為他心怎樣思量，他為人就是怎樣。他雖對你說，請喫，請喝，他的心卻與你相背。</div>
+<div class="verse"><span class="verse-number">8</span>你所喫的那點食物必吐出來；你所說的甘美言語也必落空。</div>
+<div class="verse"><span class="verse-number">9</span>你不要說話給愚昧人聽，因他必藐視你智慧的言語。</div>
+<div class="verse"><span class="verse-number">10</span>不可挪移古時的地界，也不可侵入孤兒的田地；</div>
+<div class="verse"><span class="verse-number">11</span>因他們的救贖主大有能力，他必向你為他們辨屈。</div>
+<div class="verse"><span class="verse-number">12</span>你要留心領受訓誨，側耳聽從知識的言語。</div>
+<div class="verse"><span class="verse-number">13</span>不可不管教孩童；你用杖打他，他必不至於死。</div>
+<div class="verse"><span class="verse-number">14</span>你要用杖打他，就可以救他的靈魂免下陰間。</div>
+<div class="verse"><span class="verse-number">15</span>我兒，你心若存智慧，我的心也甚歡喜。</div>
+<div class="verse"><span class="verse-number">16</span>你的嘴若說正直話，我的心腸也必快樂。</div>
+<div class="verse"><span class="verse-number">17</span>你心中不要嫉妒罪人，只要終日敬畏耶和華；</div>
+<div class="verse"><span class="verse-number">18</span>因為至終必有善報，你的指望也不至斷絕。</div>
+<div class="verse"><span class="verse-number">19</span>我兒，你當聽，當存智慧，好在正道上引導你的心。</div>
+<div class="verse"><span class="verse-number">20</span>好飲酒的，好喫肉的，不要與他們來往；</div>
+<div class="verse"><span class="verse-number">21</span>因為好酒貪食的，必致貧窮；好睡覺的，必穿破爛衣服。</div>
+<div class="verse"><span class="verse-number">22</span>你要聽從生你的父親；你母親老了，也不可藐視他。</div>
+<div class="verse"><span class="verse-number">23</span>你當買真理；就是智慧、訓誨，和聰明，也都不可賣。</div>
+<div class="verse"><span class="verse-number">24</span>義人的父親必大得快樂；人生智慧的兒子，必因他歡喜。</div>
+<div class="verse"><span class="verse-number">25</span>你要使父母歡喜，使生你的快樂。</div>
+<div class="verse"><span class="verse-number">26</span>我兒，要將你的心歸我；你的眼目也要喜悅我的道路。</div>
+<div class="verse"><span class="verse-number">27</span>妓女是深坑；外女是窄阱。</div>
+<div class="verse"><span class="verse-number">28</span>她埋伏好像強盜；她使人中多有奸詐的。</div>
+<div class="verse"><span class="verse-number">29</span>誰有禍患？誰有憂愁？誰有爭鬥？誰有哀歎〔或作：怨言〕？誰無故受傷？誰眼目紅赤？</div>
+<div class="verse"><span class="verse-number">30</span>就是那流連飲酒、常去尋找調和酒的人。</div>
+<div class="verse"><span class="verse-number">31</span>酒發紅，在杯中閃爍，你不可觀看，雖然下咽舒暢，終久是咬你如蛇，刺你如毒蛇。</div>
+<div class="verse"><span class="verse-number">32</span>併於上節</div>
+<div class="verse"><span class="verse-number">33</span>你眼必看見異怪的事〔異怪的事或作：淫婦〕；你心必發出乖謬的話。</div>
+<div class="verse"><span class="verse-number">34</span>你必像躺在海中，或像臥在桅杆上。</div>
+<div class="verse"><span class="verse-number">35</span>你必說：人打我，我卻未受傷；人鞭打我，我竟不覺得。我幾時清醒，我仍去尋酒。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第二十三章屬於「智慧人的言語」第一集（22:17-24:22），文體上轉為較長篇的訓誨式指導，對比第10章以後的短句格言，本章更具系統性和教導性。本章在以色列社會的背景下，涵蓋了多個常見的生活陷阱：與官長飲宴的謹慎（1-3節）、對財富的正確態度（4-5節）、保護孤兒免受欺壓（10-11節）、孩童的管教（13-14節），以及飲酒的危害（29-35節）。第23節「你當買真理；就是智慧、訓誨，和聰明，也都不可賣」，是本章最深刻的靈修箴言，以商業語言強調真理的絕對價值——它是值得不惜代價購買，卻絕不能出售的。第29-35節以生動的詩意描繪了飲酒成癮的悲慘景況，是聖經中對酒精危害最詳盡的描述之一。本章呼召信徒在各種誘惑中保持清醒的判斷力，並將心歸向神（26節）。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真理是無價的財富，值得不惜代價追求</strong><br>第23節「你當買真理；就是智慧、訓誨，和聰明，也都不可賣」，以商業語言說明真理的絕對性——它值得「買」，即以代價換取，包括時間、精力、甚至社會壓力的承擔；但它絕不可「賣」，不能為了方便、利益或掌聲而妥協真理。信徒在面對「出賣真理」的壓力時，應以這節經文為提醒：有些事情是永遠不能標上價格的。<br><br>
+<strong>2. 不要嫉妒罪人的表面繁榮，敬畏神才有真正的善報</strong><br>第17-18節「你心中不要嫉妒罪人，只要終日敬畏耶和華；因為至終必有善報，你的指望也不至斷絕」，點出了信徒在面對「惡人得志」時的屬靈挑戰。嫉妒是信仰侵蝕的開始，它使人懷疑神的公義，甚至萌生效法罪人的念頭。敬畏神的人必須以永恆的視角看待短暫的不公，相信神的善報必在適當的時候成就。<br><br>
+<strong>3. 要將心歸向神，讓眼目喜悅祂的道路</strong><br>第26節「我兒，要將你的心歸我；你的眼目也要喜悅我的道路」，是整章最溫柔也最根本的呼召。所有的警告與禁令，最終目的是引導人將心全然歸向神。信仰不只是一套規則的遵守，而是心的方向——將心的傾慕、眼目的注視，都轉向神的道路。這種心的委身，是一切屬靈操練的根基與動力。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你當買真理</strong>；<strong>就是智慧</strong>、訓誨，和聰明，也都不可賣。」（箴23:23）</td>
+<td>就像<strong>藝術家保護自己的原創作品</strong>，不輕易授權給有損其意義的用途，你有沒有<strong>曾面對「出賣</strong>真理」的壓力——為了討好他人、維持關係或謀取利益而妥協你<strong>所相信的</strong>？那一刻你是如何選擇的？</td>
+</tr>
+<tr>
+<td>「<strong>你心中不要嫉妒罪</strong>人，<strong>只要終日敬畏耶和</strong>華；」（箴23:17）</td>
+<td>就像<strong>比賽選手看見對手用違規方式得分</strong>，內心可能產生「是否也要仿效」的念頭，你是否<strong>曾在看見不義</strong>之人得到好處時，感到信仰動搖？是什麼幫助你<strong>持守「敬畏神</strong>」的選擇？</td>
+</tr>
+<tr>
+<td>「我兒，<strong>要將你的心歸我</strong>；<strong>你的眼目也要喜悅</strong>我的道路。」（箴23:26）</td>
+<td>就像<strong>羅盤的指針無論被干擾都會自動回</strong>到磁北，一顆歸向神的心在各種誘惑中仍能找回方向，你<strong>目前生命中什</strong>麼事情最容易讓你<strong>的「心的羅盤</strong>」偏離神？你如何<strong>讓眼目重新對</strong>焦在神的道路上？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

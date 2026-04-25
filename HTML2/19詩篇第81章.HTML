@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第81章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第81章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神的渴望：甚願我民肯聽從我以得飽足</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（亞薩的詩，交與伶長。用迦特樂器）你們當向神我們的力量大聲歡呼，向雅各的神發聲歡樂！</div>
+<div class="verse"><span class="verse-number">2</span>唱起詩歌，打手鼓，彈美琴與瑟。</div>
+<div class="verse"><span class="verse-number">3</span>當在月朔並月望我們過節的日期吹角，</div>
+<div class="verse"><span class="verse-number">4</span>因這是為以色列定的律例，是雅各神的典章。</div>
+<div class="verse"><span class="verse-number">5</span>他去攻擊埃及地的時候，在約瑟中間立此為證。我在那裏聽見我所不明白的言語：</div>
+<div class="verse"><span class="verse-number">6</span>神說：我使你的肩得脫重擔，你的手放下筐子。</div>
+<div class="verse"><span class="verse-number">7</span>你在急難中呼求，我就搭救你；我在雷的隱密處應允你，在米利巴水那裏試驗你。（細拉）</div>
+<div class="verse"><span class="verse-number">8</span>我的民哪，你當聽，我要勸戒你；以色列阿，甚願你肯聽從我。</div>
+<div class="verse"><span class="verse-number">9</span>在你當中，不可有別的神；外邦的神，你也不可下拜。</div>
+<div class="verse"><span class="verse-number">10</span>我是耶和華你的神，曾把你從埃及地領上來；你要大大張口，我就給你充滿。</div>
+<div class="verse"><span class="verse-number">11</span>無奈，我的民不聽我的聲音；以色列全不理我。</div>
+<div class="verse"><span class="verse-number">12</span>我便任憑他們心裏剛硬，隨自己的計謀而行。</div>
+<div class="verse"><span class="verse-number">13</span>甚願我的民肯聽從我，以色列肯行我的道，</div>
+<div class="verse"><span class="verse-number">14</span>我便速速治服他們的仇敵，反手攻擊他們的敵人。</div>
+<div class="verse"><span class="verse-number">15</span>恨耶和華的人必來投降，但他的百姓必永久長存。</div>
+<div class="verse"><span class="verse-number">16</span>他也必拿上好的麥子給他們喫，又拿從磐石出的蜂蜜叫他們飽足。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第81篇是亞薩的詩，可能為以色列節期（如住棚節或逾越節）所用的禮拜詩。全篇結構獨特，前半（1-5節）是呼召敬拜，後半（6-16節）是神親自發言，回顧祂的恩典並表達對以色列的期望。
+
+      本篇最感人的段落是第13至16節，神以充滿渴望的語氣說：「甚願我的民肯聽從我，以色列肯行我的道，我便速速治服他們的仇敵……他也必拿上好的麥子給他們喫，又拿從磐石出的蜂蜜叫他們飽足。」這種「若你肯聽……我便……」的條件性應許，揭示了神對祂子民深切的渴望——不是冷淡的無動於衷，而是切望他們轉回、聽從，以便能傾倒更多的祝福。
+
+      第10節「你要大大張口，我就給你充滿」是本篇最著名的應許，以口張開等待充滿作為接受神恩典的意象，表明神的充滿與信徒的開放程度成正比——祂不強迫人接受，卻等待那大大張口的心靈，以極大的豐盛充滿它。這個應許呼召信徒以渴慕、開放的心接近神，而非以細小的口袋去盛裝神無限的豐盛。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神渴望祂的子民聽從是愛最深切的表達</strong><br>「甚願我的民肯聽從我，以色列肯行我的道。」（第13節）「甚願」是希伯來文中最深情的嘆息，表明神的渴望，不是冷淡的要求，而是充滿感情的呼喚。神不強迫人順從，卻深切地渴望人能選擇聽從，因為神知道順從是通向豐盛祝福的道路。這個渴望的神，是聖經啟示最動人的一面——不是遠在天際的冷漠權威，而是切望與子民同行的父。<br><br>
+<strong>2. 大大張口神就充滿揭示接受恩典需要主動的渴慕</strong><br>「你要大大張口，我就給你充滿。」（第10節）神的充滿等候信徒的「大大張口」——不是小口、謹慎地接受，而是以渴慕與信心的大口敞開。「大大張口」意味著對神慷慨供應的信心，以及靈魂的充分渴慕。若信徒以半信半疑的小口去接受神，便只能接受有限的充滿；若以信心的大口等候，便能接受神無限的豐盛。這個應許挑戰信徒在禱告和信仰上放大自己的渴望與期待。<br><br>
+<strong>3. 不聽從神的結果是任憑自己剛硬的心帶來的失落</strong><br>「無奈，我的民不聽我的聲音；以色列全不理我。我便任憑他們心裏剛硬，隨自己的計謀而行。」（第11-12節）「任憑」是神的審判中最令人警醒的形式——不是主動的懲罰，而是讓人按自己的選擇走，讓剛硬的後果自然呈現。這揭示人間最深的危機不是神的懲罰，而是神的放手——讓人嘗到「沒有神引導」的苦果。保持對神聲音的靈敏，是防止這種「被任憑」的最重要屬靈操練。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我是耶和華你的神</strong>，<strong>曾把你從埃及地領</strong>上來；你要大大張口，我就給你充滿。（詩81:10）</td>
+<td>就像<strong>一個杯子的大小決定能盛多少水</strong>，你<strong>對神的期望與</strong>渴慕的「張口程度」，決定了你能接受多少神的充滿——你是否<strong>真的大大張口</strong>地等候神，還是以謹慎的小期待限制了神恩典的流量？</td>
+</tr>
+<tr>
+<td><strong>甚願我的民肯聽從</strong>我，<strong>以色列肯行我的道</strong>，（詩81:13）</td>
+<td>就像<strong>父母看著孩子走向錯誤的方向卻不</strong>得不尊重他的選擇，心中的痛苦比強制介入更深，你是否<strong>感受到神對你</strong>的「甚願」——那種充滿深情的渴望？這份認識如何改變你<strong>對順從神旨意</strong>的態度？</td>
+</tr>
+<tr>
+<td><strong>他也必拿上好的麥</strong><strong>子給他們喫</strong>，又拿從磐石出的蜂蜜叫他們飽足。（詩81:16）</td>
+<td>就像<strong>當孩子願意信任父母的帶領時</strong>，父母能給予遠超孩子想像的美好，你是否<strong>相信神的道路</strong>不只有規矩與義務，更有「上好的麥子與蜂蜜」的豐盛喜樂在等待那些肯聽從的人？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

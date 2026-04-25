@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>士師記第14章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+士師記第14章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">參孫的情慾與神的計畫</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>參孫下到亭拿，在那裏看見一個女子，是非利士人的女兒。</div>
+<div class="verse"><span class="verse-number">2</span>參孫上來稟告他父母說：「我在亭拿看見一個女子，是非利士人的女兒，願你們給我娶來為妻。」</div>
+<div class="verse"><span class="verse-number">3</span>他父母說：「在你弟兄的女兒中，或在本國的民中，豈沒有一個女子，何至你去在未受割禮的非利士人中娶妻呢？」參孫對他父親說：「願你給我娶那女子，因我喜悅她。」</div>
+<div class="verse"><span class="verse-number">4</span>他的父母卻不知道這事是出於耶和華，因為他找機會攻擊非利士人。那時，非利士人轄制以色列人。</div>
+<div class="verse"><span class="verse-number">5</span>參孫跟他父母下亭拿去，到了亭拿的葡萄園，見有一隻少壯獅子向他吼叫。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華的靈大大感動參孫，他雖然手無器械，卻將獅子撕裂，如同撕裂山羊羔一樣。他行這事並沒有告訴父母。</div>
+<div class="verse"><span class="verse-number">7</span>參孫下去與女子說話，就喜悅她；</div>
+<div class="verse"><span class="verse-number">8</span>過了些日子，再下去要娶那女子，轉向道旁要看死獅，見有一群蜂子和蜜在死獅之內，</div>
+<div class="verse"><span class="verse-number">9</span>就用手取蜜，且吃且走；到了父母那裏，給他父母，他們也吃了；只是沒有告訴這蜜是從死獅之內取來的。</div>
+<div class="verse"><span class="verse-number">10</span>他父親下去見女子。參孫在那裏設擺筵宴，因為向來少年人都有這個規矩。</div>
+<div class="verse"><span class="verse-number">11</span>眾人看見參孫，就請了三十個人陪伴他。</div>
+<div class="verse"><span class="verse-number">12</span>參孫對他們說：「我給你們出一個謎語，你們在七日筵宴之內，若能猜出意思告訴我，我就給你們三十件裏衣，三十套衣裳；</div>
+<div class="verse"><span class="verse-number">13</span>你們若不能猜出意思告訴我，你們就給我三十件裏衣，三十套衣裳。」他們說：「請將謎語說給我們聽。」</div>
+<div class="verse"><span class="verse-number">14</span>參孫對他們說：吃的從吃者出來；甜的從強者出來。他們三日不能猜出謎語的意思。</div>
+<div class="verse"><span class="verse-number">15</span>到第七天，他們對參孫的妻說：「你誆哄你丈夫，探出謎語的意思告訴我們，免得我們用火燒你和你父家。你們請了我們來，是要奪我們所有的麼？」</div>
+<div class="verse"><span class="verse-number">16</span>參孫的妻在丈夫面前啼哭說：「你是恨我，不是愛我，你給我本國的人出謎語，卻沒有將意思告訴我。」參孫回答說：「連我父母我都沒有告訴，豈可告訴你呢？」</div>
+<div class="verse"><span class="verse-number">17</span>七日筵宴之內，她在丈夫面前啼哭，到第七天逼着他，他才將謎語的意思告訴他妻，他妻就告訴本國的人。</div>
+<div class="verse"><span class="verse-number">18</span>到第七天，日頭未落以前，那城裏的人對參孫說：有甚麼比蜜還甜呢？有甚麼比獅子還強呢？參孫對他們說：你們若非用我的母牛犢耕地，就猜不出我謎語的意思來。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華的靈大大感動參孫，他就下到亞實基倫，擊殺了三十個人，奪了他們的衣裳，將衣裳給了猜出謎語的人。參孫發怒，就上父家去了。</div>
+<div class="verse"><span class="verse-number">20</span>參孫的妻便歸了參孫的陪伴，就是作過他朋友的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章開始記載參孫成年後的事蹟,顯示他性格中的矛盾:被神大能充滿,卻被情慾轄制。參孫看見一個非利士女子就要娶她,違背神不可與外邦人通婚的命令。父母反對,但聖經說這事出於神,因神要找機會攻擊非利士人。參孫在路上徒手撕裂獅子,後來從死獅中取蜜,都違背拿細耳人的條例。婚宴中他出謎語打賭,妻子被威脅後不斷哭鬧,逼他說出答案。參孫發現被騙,在聖靈感動下擊殺三十個非利士人,奪衣裳償還賭債,憤怒離去。他的妻子隨即被給了別人。本章展現一個複雜的人物:神使用他對抗非利士人,但他的私慾和衝動也為日後的悲劇埋下種子。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神能使用不完美的人成就計畫</strong><br>參孫娶非利士女子明顯違背神的命令,但神卻使用這錯誤的選擇作為攻擊非利士人的機會。這不代表神認可參孫的行為,而是顯明神的主權:祂能將人的錯誤編織進祂的計畫中。神使用不完美、有缺陷的器皿,但這不是我們犯罪的藉口。我們應當追求順服,但也要知道:我們的失敗不能攔阻神的旨意,祂的恩典超越我們的軟弱。<br><br>
+<strong>2. 情慾的軟弱帶來連鎖災難</strong><br>參孫的問題始於「我喜悅她」——純粹的感官吸引。這情慾驅動的選擇導致一連串問題:違背父母、違背拿細耳人條例、被妻子操縱、憤怒殺人。情慾看似無害的小事,實則是毀滅的開端。當我們讓慾望而非神的話語引導決定時,就踏上了災難之路。參孫有神的能力卻沒有自制力,這是最危險的組合。屬靈恩賜不能取代品格的培養。<br><br>
+<strong>3. 與世界聯合必受其傷害</strong><br>參孫以為可以在非利士人中間生活卻不受影響,結果卻被利用、被背叛、被傷害。與不信者的親密關係(婚姻、深交、合夥)會帶來屬靈的妥協和痛苦。非利士妻子對參孫的忠誠在於她的族人,不在於丈夫。我們不能一腳站在神的國度,一腳站在世界,以為兩全其美。神呼召我們分別為聖,不是要限制我們,而是要保護我們。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>參孫對他父親說</strong>:<strong>願你給我娶那女子</strong>,因我喜悅她。他的父母卻不知道這事是出於耶和華,因為他找機會攻擊非利士人。(士師記14:3-4)</td>
+<td>我們的決定是被慾望還是被神引導?就像<strong>衝動購物後才想是否需要</strong>,當我們說「因為我喜歡」時,是否考慮過神的心意?神能使用我們的錯誤,但這不是犯罪的藉口。</td>
+</tr>
+<tr>
+<td><strong>耶和華的靈大大感</strong><strong>動參孫</strong>,他雖然手無器械,卻將獅子撕裂,如同撕裂山羊羔一樣。(士師記14:6)</td>
+<td>我們是否有屬靈恩賜卻缺乏品格?就像<strong>開快車的人沒有駕駛道德</strong>,參孫有神的大能卻沒有自制力,這組合極其危險。我們是否只追求恩賜而忽略品格塑造?</td>
+</tr>
+<tr>
+<td><strong>參孫的妻在丈夫面</strong><strong>前啼哭說</strong>:你是恨我,不是愛我。七日筵宴之內,她在丈夫面前啼哭,到第七天逼著他,他才將謎語的意思告訴他妻。(士師記14:16-17)</td>
+<td>我們是否被錯誤的關係操縱?就像<strong>被情緒勒索逼迫妥協</strong>,當親密關係不斷用眼淚、威脅來控制我們時,這是愛還是操縱?與不信者的深度聯合會帶來什麼後果?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

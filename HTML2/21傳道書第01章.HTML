@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>傳道書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+傳道書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">虛空的虛空：日光之下萬事皆虛空</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>在耶路撒冷作王、大衛的兒子、傳道者的言語。</div>
+<div class="verse"><span class="verse-number">2</span>傳道者說：虛空的虛空，虛空的虛空，凡事都是虛空。</div>
+<div class="verse"><span class="verse-number">3</span>人一切的勞碌，就是他在日光之下的勞碌，有甚麼益處呢？</div>
+<div class="verse"><span class="verse-number">4</span>一代過去，一代又來，地卻永遠長存。</div>
+<div class="verse"><span class="verse-number">5</span>日頭出來，日頭落下，急歸所出之地。</div>
+<div class="verse"><span class="verse-number">6</span>風往南颳，又向北轉，不住的旋轉，而且返回轉行原道。</div>
+<div class="verse"><span class="verse-number">7</span>江河都往海裏流，海卻不滿；江河從何處流，仍歸還何處。</div>
+<div class="verse"><span class="verse-number">8</span>萬事令人厭煩〔或作：萬物滿有困乏〕，人不能說盡。眼看，看不飽；耳聽，聽不足。</div>
+<div class="verse"><span class="verse-number">9</span>已有的事後必再有；已行的事後必再行。日光之下並無新事。</div>
+<div class="verse"><span class="verse-number">10</span>豈有一件事人能指着說這是新的？哪知，在我們以前的世代早已有了。</div>
+<div class="verse"><span class="verse-number">11</span>已過的世代，無人記念；將來的世代，後來的人也不記念。</div>
+<div class="verse"><span class="verse-number">12</span>我傳道者在耶路撒冷作過以色列的王。</div>
+<div class="verse"><span class="verse-number">13</span>我專心用智慧尋求、查究天下所作的一切事，乃知神叫世人所經練的是極重的勞苦。</div>
+<div class="verse"><span class="verse-number">14</span>我見日光之下所作的一切事，都是虛空，都是捕風。</div>
+<div class="verse"><span class="verse-number">15</span>彎曲的，不能變直；缺少的，不能足數。</div>
+<div class="verse"><span class="verse-number">16</span>我心裏議論說：我得了大智慧，勝過我以前在耶路撒冷的眾人，而且我心中多經歷智慧和知識的事。</div>
+<div class="verse"><span class="verse-number">17</span>我又專心察明智慧、狂妄，和愚昧，乃知這也是捕風。</div>
+<div class="verse"><span class="verse-number">18</span>因為多有智慧，就多有愁煩；加增知識的，就加增憂傷。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+傳道書是舊約智慧文學中最獨特、最具哲學深度的書卷之一，其作者自稱「傳道者」（希伯來文 Qohelet，意為「召集者」或「講道者」），傳統上認為是所羅門王所著，或代表所羅門智慧傳統的後繼者。本書的寫作背景是一位擁有財富、智慧、權力的王，在人生的晚年回顧一生，試圖找出生命最深的意義。第一章是全書的序論，以「虛空的虛空，凡事都是虛空」（2節）作為整本書的主題宣告——這句話在全書共出現三十八次，「虛空」（הֶבֶל, hebel，原意為「氣息」或「蒸氣」）指的是短暫、易逝、無法把握的本質。傳道者以自然界的循環（日升日落、風的旋轉、江河入海）說明人的勞碌同樣在一個無休止的循環中進行，卻留不下永恆的痕跡（4-7節）。第18節「多有智慧，就多有愁煩」，是對人類憑理性尋求人生意義之局限性的誠實陳述，也是全書展開探索的起點。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「虛空」是對一切脫離神的追求之準確描述</strong><br>第2節「虛空的虛空，凡事都是虛空」，不是悲觀主義的宣言，而是對人類在「日光之下」——即在脫離神的視角下——追求意義的真實評估。財富、名聲、享樂、學問，若以自身為終極目標，都終究無法滿足靈魂深處的渴望。這句話的目的不是讓人絕望，而是引導人超越「日光之下」，轉向那位能賦予生命永恆意義的神。<br><br>
+<strong>2. 人的渴望超越時間循環，指向永恆的神</strong><br>第4-7節描繪了自然界無休止的循環——日出日落、風轉、江河入海——卻仍不滿足。這個「不滿足」正是人類靈魂的真實寫照：若只活在自然的循環中，生命便缺乏真正的意義。然而神「將永生安置在世人心裏」（3:11），這種對永恆的渴望本身就指向了那位超越時間的造物主，暗示只有在神裡面，人才能找到超越循環的意義。<br><br>
+<strong>3. 人的智慧有其限度，謙卑是尋求神的起點</strong><br>第18節「多有智慧，就多有愁煩；加增知識的，就加增憂傷」，是傳道者的個人見證：他以最大的智慧探索生命的意義，卻發現智慧本身也無法解決生命的根本問題。這並非否定智慧的價值，而是指出智慧若沒有以敬畏神為根基（12:13），就只能看見問題，卻無法給出答案。謙卑承認人智的限度，是真正尋求神的開始。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong><strong>虛空的虛空</strong></strong>，虛空的虛空，凡事都是虛空。」（傳1:2）</td>
+<td>就像<strong>拼命地往桶子裡裝水</strong>，卻發現桶底有洞，努力本身沒有錯，但方向錯了就事倍功半，你<strong>目前最花費時</strong>間和精力去追求的事情，是否真的能讓你<strong>的靈魂感到滿</strong>足？若不是，那個「桶底的洞」是什麼？</td>
+</tr>
+<tr>
+<td>「<strong>已有的事後必再有</strong>；<strong>已行的事後必再行</strong>。日光之下並無新事。」（傳1:9）</td>
+<td>就像<strong>新款手機每年推出</strong>，讓人渴望擁有，但擁有後的滿足感很快就消退，你是否<strong>有過反覆追求</strong>某樣東西，得到後卻發現並不如預期滿足的經歷？那次經歷讓你<strong>對「真正的滿</strong>足」有什麼新的認識？</td>
+</tr>
+<tr>
+<td>「<strong>因為多有智慧</strong>，<strong>就多有愁煩</strong>；加增知識的，就加增憂傷。」（傳1:18）</td>
+<td>就像<strong>學習醫學的人越深入</strong>，越能感受到疾病的複雜與生命的脆弱，知識有時帶來更多的疑問而非答案，你<strong>在信仰或人生</strong>的哪個領域，越思考反而越感到困惑或憂愁？面對這種困惑，你如何<strong>在神面前找到</strong>平安？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

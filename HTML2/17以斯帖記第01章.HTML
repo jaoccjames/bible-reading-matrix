@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以斯帖記第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以斯帖記第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">王后瓦實提抗命，被廢除王位</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>亞哈隨魯作王，從印度直到古實，統管一百二十七省。</div>
+<div class="verse"><span class="verse-number">2</span>亞哈隨魯王在書珊城的宮登基；</div>
+<div class="verse"><span class="verse-number">3</span>在位第三年，為他一切首領臣僕設擺筵席，有波斯和瑪代的權貴，就是各省的貴冑與首領，在他面前。</div>
+<div class="verse"><span class="verse-number">4</span>他把他榮耀之國的豐富和他美好威嚴的尊貴給他們看了許多日，就是一百八十日。</div>
+<div class="verse"><span class="verse-number">5</span>這日子滿了，又為所有住書珊城的大小人民在御園的院子裏設擺筵席七日。</div>
+<div class="verse"><span class="verse-number">6</span>有白色、綠色、藍色的帳子，用細麻繩、紫色繩從銀環內繫在白玉石柱上；有金銀的床榻擺在紅、白、黃、黑玉石鋪的石地上。</div>
+<div class="verse"><span class="verse-number">7</span>用金器皿賜酒，器皿各有不同。御酒甚多，足顯王的厚意。</div>
+<div class="verse"><span class="verse-number">8</span>喝酒有例，不准勉強人，因王吩咐宮裏的一切臣宰，讓人各隨己意。</div>
+<div class="verse"><span class="verse-number">9</span>王后瓦實提在亞哈隨魯王的宮內也為婦女設擺筵席。</div>
+<div class="verse"><span class="verse-number">10</span>第七日，亞哈隨魯王飲酒，心中快樂，就吩咐在他面前侍立的七個太監米戶幔、比斯他、哈波拿、比革他、亞拔他、西達、甲迦，</div>
+<div class="verse"><span class="verse-number">11</span>請王后瓦實提頭戴王后的冠冕到王面前，使各等臣民看她的美貌，因為她容貌甚美。</div>
+<div class="verse"><span class="verse-number">12</span>王后瓦實提卻不肯遵太監所傳的王命而來，所以王甚發怒，心如火燒。</div>
+<div class="verse"><span class="verse-number">13</span>那時，在王左右常見王面、國中坐高位的，有波斯和瑪代的七個大臣，就是甲示拿、示達、押瑪他、他施斯、米力、瑪西拿、米母干，都是達時務的明哲人。按王的常規，辦事必先詢問知例明法的人。王問他們說：</div>
+<div class="verse"><span class="verse-number">14</span>併於上節</div>
+<div class="verse"><span class="verse-number">15</span>「王后瓦實提不遵太監所傳的王命，照例應當怎樣辦理呢？」</div>
+<div class="verse"><span class="verse-number">16</span>米母干在王和眾首領面前回答說：「王后瓦實提這事，不但得罪王，並且有害於王各省的臣民；</div>
+<div class="verse"><span class="verse-number">17</span>因為王后這事必傳到眾婦人的耳中，說：『亞哈隨魯王吩咐王后瓦實提到王面前，她卻不來』，她們就藐視自己的丈夫。</div>
+<div class="verse"><span class="verse-number">18</span>今日波斯和瑪代的眾夫人聽見王后這事，必向王的大臣照樣行；從此必大開藐視和忿怒之端。</div>
+<div class="verse"><span class="verse-number">19</span>王若以為美，就降旨寫在波斯和瑪代人的例中，永不更改，不准瓦實提再到王面前，將她王后的位分賜給比她還好的人。</div>
+<div class="verse"><span class="verse-number">20</span>所降的旨意傳遍通國（國度本來廣大），所有的婦人，無論丈夫貴賤都必尊敬他。」</div>
+<div class="verse"><span class="verse-number">21</span>王和眾首領都以米母干的話為美，王就照這話去行，</div>
+<div class="verse"><span class="verse-number">22</span>發詔書，用各省的文字、各族的方言通知各省，使為丈夫的在家中作主，各說本地的方言。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以斯帖記第1章揭開全書的序幕，時間背景約為主前483年，地點是波斯帝國首都書珊城。亞哈隨魯王（即薛西斯一世）統治龐大帝國，在位第三年大宴群臣，歷時一百八十日，炫耀王國的榮華富貴，隨後又為全城百姓設宴七日。宴會末日，酒酣耳熱的王命令王后瓦實提戴冠出席，讓眾人欣賞她的美貌。瓦實提拒絕，觸怒了王。在大臣的建議下，王將瓦實提廢黜，並頒布詔書要求全國婦人尊敬丈夫。這個看似普通的宮廷事件，實際上為以斯帖後來被選為王后、成為神救贖計畫中的器皿，預備了舞台。全書雖未直接提及神的名字，但神的隱秘引導在每一個歷史偶然中清晰可見，這一章正是神在幕後籌謀的第一步。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神在看似偶然的歷史事件中隱秘掌管</strong><br>瓦實提被廢這件「偶然」的宮廷事件，實際上是神為以斯帖登上王后之位預備道路的第一步。以斯帖記全書不提神的名字，卻處處顯示神的手在操控歷史進程。信徒有時在困惑的環境中看不見神，但回頭看時，往往發現每一個「意外」都是神旨意的拼圖。神的主權不依賴人的宗教行為，祂在一切世俗事件中悄悄運行。<br><br>
+<strong>2. 驕傲和衝動的決定往往帶來難以逆轉的後果</strong><br>亞哈隨魯王在酒酣之際下令展示王后，這出於衝動的命令觸發了一連串無法挽回的事件——廢后、選后、滅族陰謀。他的憤怒也是衝動的，在大臣的鼓動下立即頒布詔書。人在情緒主導下所做的重大決定，往往後患無窮。聖經一再提醒信徒要謹守言行，在衝動之前先停下來尋求智慧。<br><br>
+<strong>3. 地位的喪失可以成為神計畫的開路</strong><br>瓦實提失去王后之位，從人的眼光看是一場悲劇；但從神的計畫看，這個空缺正是以斯帖進入歷史舞台的入口。神能使一人的失去成為另一人使命的開端，也能使看似的損失成為更大救恩計畫的一部分。信徒在遭遇失去或轉變時，可以問神：「這個空缺，是否是祢呼召我進入的開口？」
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他把他榮耀之國的</strong><strong>豐富和他美好威嚴</strong>的尊貴給他們看了許多日，就是一百八十日。（斯1:4）</td>
+<td>就像<strong>有人在社群媒體上不斷展示財富與</strong>地位，炫耀的背後往往是對認可的渴望。你<strong>生命中</strong>是否也有不自覺想「讓人看見」的領域？那份驅動力來自哪裡？</td>
+</tr>
+<tr>
+<td><strong>王后瓦實提卻不肯</strong><strong>遵太監所傳的王命</strong>而來，所以王甚發怒，心如火燒。（斯1:12）</td>
+<td>就像<strong>一個人在憤怒中發送了一封無法收</strong>回的電子郵件，盛怒中的決定往往帶來難以修復的後果。你<strong>上一次在憤怒</strong>中做的決定，事後覺得是明智的嗎？</td>
+</tr>
+<tr>
+<td><strong>不准瓦實提再到王</strong>面前，<strong>將她王后的位分賜</strong>給比她還好的人。（斯1:19）</td>
+<td>就像<strong>一個職位的空缺</strong>，往往成為另一個人展現恩賜的機會，一個人的失去是否可能是神為你<strong>預備的入口</strong>？你<strong>生命中</strong>是否有過這樣「因別人的空缺而蒙召」的經歷？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

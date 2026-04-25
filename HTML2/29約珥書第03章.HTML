@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約珥書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約珥書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">萬國受審判與神的子民得拯救</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「到那日，我使猶大和耶路撒冷被擄之人歸回的時候，</div>
+<div class="verse"><span class="verse-number">2</span>我要聚集萬民，帶他們下到約沙法谷，在那裏施行審判；因為他們將我的百姓，就是我的產業以色列，分散在列國中，又分取我的地土，</div>
+<div class="verse"><span class="verse-number">3</span>且為我的百姓拈鬮，將童子換妓女，賣童女買酒喝。</div>
+<div class="verse"><span class="verse-number">4</span>「推羅、西頓，和非利士四境的人哪，你們與我何干？你們要報復我嗎？若報復我，我必使報應速速歸到你們的頭上。</div>
+<div class="verse"><span class="verse-number">5</span>你們既然奪取我的金銀，又將我可愛的寶物帶入你們宮殿〔或作：廟中〕，</div>
+<div class="verse"><span class="verse-number">6</span>並將猶大人和耶路撒冷人賣給希臘人〔原文作雅完人〕，使他們遠離自己的境界。</div>
+<div class="verse"><span class="verse-number">7</span>我必激動他們離開你們所賣到之地，又必使報應歸到你們的頭上。</div>
+<div class="verse"><span class="verse-number">8</span>我必將你們的兒女賣在猶大人的手中，他們必賣給遠方示巴國的人。這是耶和華說的。」</div>
+<div class="verse"><span class="verse-number">9</span>當在萬民中宣告說：要預備打仗；激動勇士，使一切戰士上前來。</div>
+<div class="verse"><span class="verse-number">10</span>要將犁頭打成刀劍，將鐮刀打成戈矛；軟弱的要說：我有勇力。</div>
+<div class="verse"><span class="verse-number">11</span>四圍的列國啊，你們要速速地來，一同聚集。耶和華啊，求你使你的大能者降臨。</div>
+<div class="verse"><span class="verse-number">12</span>萬民都當興起，上到約沙法谷；因為我必坐在那裏，審判四圍的列國。</div>
+<div class="verse"><span class="verse-number">13</span>開鐮吧！因為莊稼熟了；踐踏吧！因為酒醡滿了。酒池盈溢；他們的罪惡甚大。</div>
+<div class="verse"><span class="verse-number">14</span>許多許多的人在斷定谷，因為耶和華的日子臨近斷定谷。</div>
+<div class="verse"><span class="verse-number">15</span>日月昏暗，星宿無光。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華必從錫安吼叫，從耶路撒冷發聲，天地就震動。耶和華卻要作他百姓的避難所，作以色列人的保障。</div>
+<div class="verse"><span class="verse-number">17</span>你們就知道我是耶和華你們的神，且又住在錫安我的聖山。那時，耶路撒冷必成為聖；外邦人不再從其中經過。</div>
+<div class="verse"><span class="verse-number">18</span>到那日，大山要滴甜酒；小山要流奶子；猶大溪河都有水流。必有泉源從耶和華的殿中流出來，滋潤什亭谷。</div>
+<div class="verse"><span class="verse-number">19</span>埃及必然荒涼，以東變為淒涼的曠野，都因向猶大人所行的強暴，又因在本地流無辜人的血。</div>
+<div class="verse"><span class="verse-number">20</span>但猶大必存到永遠；耶路撒冷必存到萬代。</div>
+<div class="verse"><span class="verse-number">21</span>我未曾報復〔或作：洗除；下同〕流血的罪，現在我要報復，因為耶和華住在錫安。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約珥書第3章是整卷書的末世性高峰，描述「那日」（末日）神對萬國的終極審判。場景是「約沙法谷」（意為「耶和華施行審判的地方」），神聚集萬民，審判他們對待以色列（神的產業）的方式：分取以色列的地、販賣百姓、奪取聖物。特別點名推羅、西頓和非利士（4-8節）要受報應。然後（9-16節）是末世大戰的景象，神呼召萬國軍隊前來：「要將犁頭打成刀劍，將鐮刀打成戈矛」（10節，這與彌迦書4:3的和平異象相反）——這是審判的語境，不是和平的語境。神從錫安「吼叫」，天地震動，然後（17-21節）是以色列的永恆安全：「耶路撒冷必存到萬代」，有泉源從殿中流出，大山滴甜酒，小山流奶子。全書以「因為耶和華住在錫安」作結——神的同在是一切美好的根源。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【對待神子民的方式是末日審判的標準之一】</strong><br>神審判萬國，部分原因是他們對以色列（神的產業）的對待方式——分取土地、販賣百姓。這個原則在末世的框架中表達了一個深刻的真理：對待弱勢者（神的子民和一切被邊緣化的人）的方式，在神眼中具有深刻的道德意義。審判不只是宗教的，也是倫理的和社會的。<br><br>
+<strong>2. 【神「住在錫安」：神的同在是一切真正安全的根基】</strong><br>全書以「耶和華住在錫安」作結——不是「以色列足夠強大」，不是「耶路撒冷城牆夠高」，而是神在其中。真正的安全來源是神的同在，不是人的防衛工事。信徒最終的安全感，不建立在任何外在的保障上，而建立在「神住在我心中」這個事實上。<br><br>
+<strong>3. 【「那些年所吃的我必補還」：神有能力更新一切的失落】</strong><br>第2章的「補還」應許和第3章的豐盛異象（大山滴甜酒、殿中流出的泉源）合在一起，說明神的恢復不只是「恢復原狀」，而是超越原本的豐盛。神對人的心意從來不是「讓你剛好過」，而是「讓你如伊甸園般豐盛」——這是整個救贖歷史的方向。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我要聚集萬民</strong>，<strong>帶他們下到約沙法</strong>谷，在那裏施行審判；因為他們將我的百姓，就是我的產業以色列，分散在列國中，又分取我的地土。（珥3:2）</td>
+<td>審判的標準之一是對神子民和弱勢者的對待。你<strong>日常對待周圍</strong>「弱勢」的人——同事中地位低的、社會邊緣的、信仰群體中話語少的——的方式，若放在「約沙法谷的審判標準」中，你<strong>有多少信心</strong>？就像<strong>一個員工的工作被老闆全程看在眼</strong>裡，你願意<strong>讓神看見你對</strong>弱者的態度嗎？</td>
+</tr>
+<tr>
+<td><strong>耶和華必從錫安吼</strong>叫，<strong>從耶路撒冷發聲</strong>，天地就震動。耶和華卻要作他百姓的避難所，作以色列人的保障。（珥3:16）</td>
+<td>在天地震動的末世動盪中，神是「避難所和保障」。你<strong>現在最依賴的</strong>「保障」是什麼——金融、健康保險、關係網絡？在「天地震動」的時刻，那些保障能支撐多久？就像<strong>大地震時</strong>，只有建在岩石上的房子站得住，你<strong>的「避難所」</strong>是建在神上，還是建在可能動搖的事物上？</td>
+</tr>
+<tr>
+<td><strong>到那日</strong>，<strong>大山要滴甜酒</strong>；小山要流奶子；猶大溪河都有水流。必有泉源從耶和華的殿中流出來，滋潤什亭谷。（珥3:18）</td>
+<td>「從耶和華的殿中流出來的泉源」——生命之水從神的同在流出，滋潤一切。這個異象在啟示錄22章得到最終應驗，也在約翰福音7:38「信我的人，從他腹中要流出活水的江河來」中得到個人性的應驗。你是否<strong>感受到那條「</strong>從神的殿流出的河」，在你<strong>生命中流動並</strong>滋潤你<strong>所觸及的人</strong>？你<strong>的生命有沒有</strong>讓那條河流通？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

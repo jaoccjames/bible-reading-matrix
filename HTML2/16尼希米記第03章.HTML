@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尼希米記第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+尼希米記第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">眾人分段建造，各盡其職同心</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>那時，大祭司以利亞實和他的弟兄眾祭司起來建立羊門，分別為聖，安立門扇，又築城牆到哈米亞樓，直到哈楠業樓，分別為聖。</div>
+<div class="verse"><span class="verse-number">2</span>其次是耶利哥人建造。其次是音利的兒子撒刻建造。</div>
+<div class="verse"><span class="verse-number">3</span>哈西拿的子孫建立魚門，架橫梁、安門扇，和閂鎖。</div>
+<div class="verse"><span class="verse-number">4</span>其次是哈哥斯的孫子、烏利亞的兒子米利末修造。其次是米示薩別的孫子、比利迦的兒子米書蘭修造。其次是巴拿的兒子撒督修造。</div>
+<div class="verse"><span class="verse-number">5</span>其次是提哥亞人修造；但是他們的貴冑不用肩〔原文作頸項〕擔他們主的工作。</div>
+<div class="verse"><span class="verse-number">6</span>巴西亞的兒子耶何耶大與比所玳的兒子米書蘭修造古門，架橫梁，安門扇和閂鎖。</div>
+<div class="verse"><span class="verse-number">7</span>其次是基遍人米拉提，米倫人雅頓與基遍人，並屬河西總督所管的米斯巴人修造。</div>
+<div class="verse"><span class="verse-number">8</span>其次是銀匠哈海雅的兒子烏薛修造。其次是作香的哈拿尼雅修造。這些人修堅耶路撒冷，直到寬牆。</div>
+<div class="verse"><span class="verse-number">9</span>其次是管理耶路撒冷一半、戶珥的兒子利法雅修造。</div>
+<div class="verse"><span class="verse-number">10</span>其次是哈路抹的兒子耶大雅對着自己的房屋修造。其次是哈沙尼的兒子哈突修造。</div>
+<div class="verse"><span class="verse-number">11</span>哈琳的兒子瑪基雅和巴哈摩押的兒子哈述修造一段，並修造爐樓。</div>
+<div class="verse"><span class="verse-number">12</span>其次是管理耶路撒冷那一半、哈羅黑的兒子沙龍和他的女兒們修造。</div>
+<div class="verse"><span class="verse-number">13</span>哈嫩和撒挪亞的居民修造谷門，立門，安門扇和閂鎖，又建築城牆一千肘，直到糞廠門。</div>
+<div class="verse"><span class="verse-number">14</span>管理伯哈基琳、利甲的兒子瑪基雅修造糞廠門，立門，安門扇和閂鎖。</div>
+<div class="verse"><span class="verse-number">15</span>管理米斯巴、各荷西的兒子沙崙修造泉門，立門，蓋門頂，安門扇和閂鎖，又修造靠近王園西羅亞池的牆垣，直到那從大衛城下來的臺階。</div>
+<div class="verse"><span class="verse-number">16</span>其次是管理伯夙一半、押卜的兒子尼希米修造，直到大衛墳地的對面，又到挖成的池子，並勇士的房屋。</div>
+<div class="verse"><span class="verse-number">17</span>其次是利未人巴尼的兒子利宏修造。其次是管理基伊拉一半、哈沙比雅為他所管的本境修造。</div>
+<div class="verse"><span class="verse-number">18</span>其次是利未人弟兄中管理基伊拉那一半、希拿達的兒子巴瓦伊修造。</div>
+<div class="verse"><span class="verse-number">19</span>其次是管理米斯巴、耶書亞的兒子以謝修造一段，對着武庫的上坡、城牆轉彎之處。</div>
+<div class="verse"><span class="verse-number">20</span>其次是薩拜的兒子巴錄竭力修造一段，從城牆轉彎，直到大祭司以利亞實的府門。</div>
+<div class="verse"><span class="verse-number">21</span>其次是哈哥斯的孫子、烏利亞的兒子米利末修造一段，從以利亞實的府門，直到以利亞實府的盡頭。</div>
+<div class="verse"><span class="verse-number">22</span>其次是住平原的祭司修造。</div>
+<div class="verse"><span class="verse-number">23</span>其次是便雅憫與哈述對着自己的房屋修造。其次是亞難尼的孫子、瑪西雅的兒子亞撒利雅在靠近自己的房屋修造。</div>
+<div class="verse"><span class="verse-number">24</span>其次是希拿達的兒子賓內修造一段，從亞撒利雅的房屋直到城牆轉彎，又到城角。</div>
+<div class="verse"><span class="verse-number">25</span>烏賽的兒子巴拉修造對着城牆的轉彎和王上宮凸出來的城樓，靠近護衛院的那一段。其次是巴錄的兒子毘大雅修造。</div>
+<div class="verse"><span class="verse-number">26</span>（尼提寧住在俄斐勒，直到朝東水門的對面和凸出來的城樓。）</div>
+<div class="verse"><span class="verse-number">27</span>其次是提哥亞人又修一段，對着那凸出來的大樓，直到俄斐勒的牆。</div>
+<div class="verse"><span class="verse-number">28</span>從馬門往上，眾祭司各對自己的房屋修造。</div>
+<div class="verse"><span class="verse-number">29</span>其次是音麥的兒子撒督對着自己的房屋修造。其次是守東門、示迦尼的兒子示瑪雅修造。</div>
+<div class="verse"><span class="verse-number">30</span>其次是示利米雅的兒子哈拿尼雅和薩拉的第六子哈嫩又修一段。其次是比利迦的兒子米書蘭對着自己的房屋修造。</div>
+<div class="verse"><span class="verse-number">31</span>其次是銀匠瑪基雅修造到尼提寧和商人的房屋，對着哈米弗甲門，直到城的角樓。</div>
+<div class="verse"><span class="verse-number">32</span>銀匠與商人在城的角樓和羊門中間修造。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+尼希米記第3章是一份詳盡的建造名冊，記錄各家族分段修築耶路撒冷城牆的情形，從羊門出發，環繞全城一圈，共涵蓋三十多個建造段落和眾多參與者。參與者來自各行各業——大祭司與祭司、官員、銀匠、香料商、普通百姓，甚至包括管轄地的官長和他的女兒們。這份名冊不只是工程記錄，更是一份榮耀冊——每個人的名字都被記下，他們的貢獻都被神所記念。值得注意的是，有一段特別提到提哥亞的「貴冑不用肩擔他們主的工作」，暗示並非所有人都同心投入，形成對比。整章描繪出一幅令人動容的圖畫：各盡其職、各守其分、共同完成一件超越個人能力的大工程，正是神家建造的美麗縮影。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的工程需要眾人各司其職，分段承擔</strong><br>城牆的重建不是靠一個英雄完成，而是靠眾多不同身分、職業、地區的人各自負責自己的一段。這說明神國的建造需要每個肢體都投入，沒有「旁觀者」的位置。每個人的貢獻——無論大小、是否顯眼——都構成整體工程不可缺少的一部分。當每個人都盡責地負責自己的「一段」，整個城牆才能合圍完整。<br><br>
+<strong>2. 神記念每一個忠心服事者的名字</strong><br>本章以記名的方式列出每一個建造者，即便是普通的百姓或女兒，都在神的話語中留名。這是深刻的屬靈安慰：神不只看重「台前」的英雄，更記念每一個默默盡責的人。信徒在神的大事工中，無論被人看見與否，都被神記念。這份確信是服事持久的動力。<br><br>
+<strong>3. 「對着自己的房屋修造」是就近承擔責任的原則</strong><br>本章多次出現「對着自己的房屋修造」，顯示建造從最近的地方開始——先負責好自己附近的區域。這是屬靈責任的重要原則：忠心從身邊最近的需要開始，不需要等待「更大的舞台」。服事從家門口的責任出發，才是真實可持續的委身。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>那時，<strong>大祭司以利亞實和</strong><strong>他的弟兄眾祭司起</strong>來建立羊門，分別為聖，安立門扇。（尼3:1）</td>
+<td>就像<strong>接力賽中第一棒跑者的起跑決定整</strong>隊的士氣，領袖帶頭參與的力量是否也影響過你願意<strong>投入某件事工</strong>？你是否<strong>也曾作那個帶</strong>頭起跑的人？</td>
+</tr>
+<tr>
+<td><strong>其次是提哥亞人修</strong>造；<strong>但是他們的貴冑不</strong>用肩擔他們主的工作。（尼3:5）</td>
+<td>就像<strong>團隊中有人只出席不出力</strong>，拒絕承擔責任的人讓整個工程留下缺口。你是否<strong>曾在神的工程</strong>中扮演旁觀者的角色？什麼讓你<strong>猶豫不願投入</strong>？</td>
+</tr>
+<tr>
+<td><strong>其次是哈路抹的兒</strong><strong>子耶大雅對着自己</strong>的房屋修造。（尼3:10）</td>
+<td>就像<strong>清潔自己家門前的路比清理遠處的</strong>地方更直接有效，從最近的責任開始服事是否讓你<strong>想到自己生活</strong>中有哪個「門口的工程」一直被你<strong>忽略</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

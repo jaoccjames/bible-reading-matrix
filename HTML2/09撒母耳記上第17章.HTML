@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記上第17章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記上第17章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大衛戰勝歌利亞</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>非利士人招聚他們的軍旅，要來爭戰；聚集在屬猶大的梭哥，安營在梭哥和亞西加中間的以弗大憫。</div>
+<div class="verse"><span class="verse-number">2</span>掃羅和以色列人也聚集，在以拉谷安營，擺列隊伍，要與非利士人打仗。</div>
+<div class="verse"><span class="verse-number">3</span>非利士人站在這邊山上，以色列人站在那邊山上，當中有谷。</div>
+<div class="verse"><span class="verse-number">4</span>從非利士營中出來一個討戰的人，名叫歌利亞，是迦特人，身高六肘零一虎口；</div>
+<div class="verse"><span class="verse-number">5</span>頭戴銅盔，身穿鎧甲，甲重五千舍客勒；</div>
+<div class="verse"><span class="verse-number">6</span>腿上有銅護膝，兩肩之中背負銅戟；</div>
+<div class="verse"><span class="verse-number">7</span>槍桿粗如織布的機軸，鐵槍頭重六百舍客勒。有一個拿盾牌的人在他前面走。</div>
+<div class="verse"><span class="verse-number">8</span>歌利亞對着以色列的軍隊站立，呼叫說：「你們出來擺列隊伍作甚麼呢？我不是非利士人麼？你們不是掃羅的僕人麼？可以從你們中間揀選一人，使他下到我這裏來。</div>
+<div class="verse"><span class="verse-number">9</span>他若能與我戰鬥，將我殺死，我們就作你們的僕人；我若勝了他，將他殺死，你們就作我們的僕人，服事我們。」</div>
+<div class="verse"><span class="verse-number">10</span>那非利士人又說：「我今日向以色列人的軍隊罵陣。你們叫一個人出來，與我戰鬥。」</div>
+<div class="verse"><span class="verse-number">11</span>掃羅和以色列眾人聽見非利士人的這些話，就驚惶，極其害怕。</div>
+<div class="verse"><span class="verse-number">12</span>大衛是猶大、伯利恆的以法他人耶西的兒子。耶西有八個兒子。當掃羅的時候，耶西已經老邁。</div>
+<div class="verse"><span class="verse-number">13</span>耶西的三個大兒子跟隨掃羅出征。這出征的三個兒子：長子名叫以利押，次子名叫亞比拿達，三子名叫沙瑪。</div>
+<div class="verse"><span class="verse-number">14</span>大衛是最小的；那三個大兒子跟隨掃羅。</div>
+<div class="verse"><span class="verse-number">15</span>大衛有時離開掃羅，回伯利恆放他父親的羊。</div>
+<div class="verse"><span class="verse-number">16</span>那非利士人早晚都出來站着，如此四十日。</div>
+<div class="verse"><span class="verse-number">17</span>一日，耶西對他兒子大衛說：「你拿一伊法烘了的穗子和十個餅，速速地送到營裏去，交給你哥哥們；</div>
+<div class="verse"><span class="verse-number">18</span>再拿這十塊奶餅，送給他們的千夫長，且問你哥哥們好，向他們要一封信來。」</div>
+<div class="verse"><span class="verse-number">19</span>掃羅與大衛的三個哥哥和以色列眾人，在以拉谷與非利士人打仗。</div>
+<div class="verse"><span class="verse-number">20</span>大衛早晨起來，將羊交託一個看守的人，照着他父親所吩咐的話，帶着食物去了。到了輜重營，軍兵剛出到戰場，吶喊要戰。</div>
+<div class="verse"><span class="verse-number">21</span>以色列人和非利士人都擺列隊伍，彼此相對。</div>
+<div class="verse"><span class="verse-number">22</span>大衛把他帶來的食物留在看守物件人的手下，跑到戰場，問他哥哥們安。</div>
+<div class="verse"><span class="verse-number">23</span>與他們說話的時候，那討戰的，就是屬迦特的非利士人歌利亞，從非利士隊中出來，說從前所說的話；大衛都聽見了。</div>
+<div class="verse"><span class="verse-number">24</span>以色列眾人看見那人，就逃跑，極其害怕。</div>
+<div class="verse"><span class="verse-number">25</span>以色列人彼此說：「這上來的人你看見了麼？他上來是要向以色列人罵陣。若有能殺他的，王必賞賜他大財，將自己的女兒給他為妻，並在以色列人中免他父家納糧當差。」</div>
+<div class="verse"><span class="verse-number">26</span>大衛問站在旁邊的人說：「有人殺這非利士人，除掉以色列人的恥辱，怎樣待他呢？這未受割禮的非利士人是誰呢？竟敢向永生神的軍隊罵陣麼？」</div>
+<div class="verse"><span class="verse-number">27</span>百姓照先前的話回答他說：「有人能殺這非利士人，必如此如此待他。」</div>
+<div class="verse"><span class="verse-number">28</span>大衛的長兄以利押聽見大衛與他們所說的話，就向他發怒，說：「你下來作甚麼呢？在曠野的那幾隻羊，你交託了誰呢？我知道你的驕傲和你心裏的惡意，你下來特為要看爭戰！」</div>
+<div class="verse"><span class="verse-number">29</span>大衛說：「我作了甚麼呢？我來豈沒有緣故麼？」</div>
+<div class="verse"><span class="verse-number">30</span>大衛就離開他轉向別人，照先前的話而問；百姓仍照先前的話回答他。</div>
+<div class="verse"><span class="verse-number">31</span>有人聽見大衛所說的話，就告訴了掃羅；掃羅便打發人叫他來。</div>
+<div class="verse"><span class="verse-number">32</span>大衛對掃羅說：「人都不必因那非利士人膽怯。你的僕人要去與那非利士人戰鬥。」</div>
+<div class="verse"><span class="verse-number">33</span>掃羅對大衛說：「你不能去與那非利士人戰鬥；因為你年紀太輕，他自幼就作戰士。」</div>
+<div class="verse"><span class="verse-number">34</span>大衛對掃羅說：「你僕人為父親放羊，有時來了獅子，有時來了熊，從群中啣一隻羊羔去。</div>
+<div class="verse"><span class="verse-number">35</span>我就追趕牠，擊打牠，將羊羔從牠口中救出來。牠起來要害我，我就揪着牠的鬍子，將牠打死。</div>
+<div class="verse"><span class="verse-number">36</span>你僕人曾打死獅子和熊，這未受割禮的非利士人向永生神的軍隊罵陣，也必像獅子和熊一般。」</div>
+<div class="verse"><span class="verse-number">37</span>大衛又說：「耶和華救我脫離獅子和熊的爪，也必救我脫離這非利士人的手。」掃羅對大衛說：「你可以去吧！耶和華必與你同在。」</div>
+<div class="verse"><span class="verse-number">38</span>掃羅就把自己的戰衣給大衛穿上，將銅盔給他戴上，又給他穿上鎧甲。</div>
+<div class="verse"><span class="verse-number">39</span>大衛把刀跨在戰衣外，試試能走不能走；因為素來沒有穿慣，就對掃羅說：「我穿戴這些不能走，因為素來沒有穿慣。」於是摘脫了。</div>
+<div class="verse"><span class="verse-number">40</span>他手中拿杖，又在溪中挑選了五塊光滑石子，放在袋裏，就是牧人帶的囊裏；手中拿着甩石的機弦，就去迎那非利士人。</div>
+<div class="verse"><span class="verse-number">41</span>非利士人也漸漸地迎着大衛來，拿盾牌的走在前頭。</div>
+<div class="verse"><span class="verse-number">42</span>非利士人觀看，見了大衛，就藐視他；因為他年輕，面色光紅，容貌俊美。</div>
+<div class="verse"><span class="verse-number">43</span>非利士人對大衛說：「你拿杖到我這裏來，我豈是狗呢？」非利士人就指着自己的神咒詛大衛。</div>
+<div class="verse"><span class="verse-number">44</span>非利士人又對大衛說：「來吧！我將你的肉給空中的飛鳥、田野的走獸吃。」</div>
+<div class="verse"><span class="verse-number">45</span>大衛對非利士人說：「你來攻擊我，是靠着刀槍和銅戟；我來攻擊你，是靠着萬軍之耶和華的名，就是你所怒罵帶領以色列軍隊的神。</div>
+<div class="verse"><span class="verse-number">46</span>今日耶和華必將你交在我手裏。我必殺你，斬你的頭，又將非利士軍兵的屍首給空中的飛鳥、地上的野獸吃，使普天下的人都知道以色列中有上帝；</div>
+<div class="verse"><span class="verse-number">47</span>又使這眾人知道耶和華使人得勝，不是用刀用槍，因為爭戰的勝敗全在乎耶和華。他必將你們交在我們手裏。」</div>
+<div class="verse"><span class="verse-number">48</span>非利士人起身，迎着大衛前來。大衛急忙迎着非利士人，往戰場跑去。</div>
+<div class="verse"><span class="verse-number">49</span>大衛用手從囊中掏出一塊石子來，用機弦甩去，打中非利士人的額，石子進入額內，他就仆倒，面伏於地。</div>
+<div class="verse"><span class="verse-number">50</span>這樣，大衛用機弦甩石，勝了那非利士人，打死他；大衛手中卻沒有刀。</div>
+<div class="verse"><span class="verse-number">51</span>大衛跑去，站在非利士人身旁，將他的刀從鞘中拔出來，殺死他，割了他的頭。非利士眾人看見他們討戰的勇士死了，就都逃跑。</div>
+<div class="verse"><span class="verse-number">52</span>以色列人和猶大人便起身吶喊，追趕非利士人，直到迦特〔或作：該〕和以革倫的城門。被殺的非利士人倒在沙拉音的路上，直到迦特和以革倫。</div>
+<div class="verse"><span class="verse-number">53</span>以色列人追趕非利士人回來，就奪了他們的營盤。</div>
+<div class="verse"><span class="verse-number">54</span>大衛將那非利士人的頭拿到耶路撒冷，卻將他軍裝放在自己的帳棚裏。</div>
+<div class="verse"><span class="verse-number">55</span>掃羅看見大衛去攻擊非利士人，就問元帥押尼珥說：「押尼珥啊，那少年人是誰的兒子？」押尼珥說：「我敢在王面前起誓，我不知道。」</div>
+<div class="verse"><span class="verse-number">56</span>王說：「你可以問問那幼年人是誰的兒子。」</div>
+<div class="verse"><span class="verse-number">57</span>大衛打死非利士人回來，押尼珥領他到掃羅面前，他手中拿着非利士人的頭。</div>
+<div class="verse"><span class="verse-number">58</span>掃羅問他說：「少年人哪，你是誰的兒子？」大衛說：「我是你僕人伯利恆人耶西的兒子。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載聖經中最著名的故事之一——少年大衛擊敗巨人歌利亞。非利士人與以色列人在以拉谷對峙,歌利亞每天出來挑戰,要求以色列派人與他單挑,四十天來無人敢應戰。大衛原本只是來給哥哥們送糧食,卻聽見歌利亞的辱罵,他無法忍受這未受割禮的人向永生神的軍隊罵陣。儘管大衛年輕且無作戰經驗,他回顧過去在野地放羊時曾靠神打死獅子和熊,相信同樣的神必救他脫離歌利亞的手。大衛拒絕穿掃羅的盔甲,只帶著牧羊用的甩石機弦和五塊石子前往應戰。他宣告爭戰的勝敗全在乎耶和華,一石就打中歌利亞的額頭,將他打死。這場勝利不僅解救了以色列,更彰顯了神的大能,成為後世無數信徒的激勵。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真正的信心建立在過去對神的經歷上</strong><br>大衛敢於面對歌利亞,不是出於血氣之勇,而是因為他在過去已經經歷過神的拯救。當他在曠野牧羊時,曾靠神打死獅子和熊。這些沒人看見的經歷,成為他面對巨人時的信心根基。他不是空談信心,而是有具體的見證支撐。這提醒我們,屬靈生命的成長是累積的,在隱藏處對神的倚靠,預備我們面對公開的挑戰。我們要珍惜每次小的信心操練,因為這些將成為我們面對大風浪時的力量來源。信心不是憑空而來,而是在一次次經歷神的信實中建立起來的。<br><br>
+<strong>2. 用神的方式而非世界的方法爭戰</strong><br>掃羅要大衛穿上他的盔甲,但大衛拒絕了,因為他素來沒有穿慣。大衛選擇用他熟悉的方式——甩石的機弦和石子,這是牧羊人的工具,在戰場上看似可笑,卻是神要使用的器皿。他沒有模仿別人的方法,而是忠於神給他的恩賜和經驗。我們常常以為要用「屬靈」或「專業」的方式才能服事神,卻忘記神要使用的正是我們本來的樣子。不要勉強穿上不合身的盔甲,要發掘神給你獨特的恩賜,用神量給你的方式來事奉祂。<br><br>
+<strong>3. 屬靈爭戰的焦點是神的榮耀而非個人得失</strong><br>大衛憤怒不是因為歌利亞威脅以色列,而是因為他「向永生神的軍隊罵陣」。對大衛而言,這是對神的侮辱,不能容忍。他出戰的動機是為神的名,他宣告要使普天下的人都知道以色列中有神。這與其他士兵形成鮮明對比——他們想的是獎賞和安全,大衛想的是神的榮耀。當我們面對挑戰時,若只想到自己的得失,就容易退縮;但若看見神的榮耀受損,就會有超越自己的勇氣。真正的屬靈爭戰不是為自己,而是為神的國度和榮耀而戰。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>大衛又說</strong>:<strong>耶和華救我脫離獅</strong>子和熊的爪,也必救我脫離這非利士人的手。(撒母耳記上17:37)</td>
+<td>我能否回顧過去神如何帶領我度過困難,用這些經歷來面對現在的挑戰?就像<strong>爬過幾座小山後更有信心挑戰大山</strong>,我是否珍惜每次小的信心操練,知道這些正預備我面對未來更大的試煉?</td>
+</tr>
+<tr>
+<td><strong>大衛把刀跨在戰衣</strong>外,<strong>試試能走不能走</strong>;因為素來沒有穿慣,就對掃羅說:我穿戴這些不能走,因為素來沒有穿慣。於是摘脫了。(撒母耳記上17:39)</td>
+<td>我是否勉強模仿別人的服事方式,還是忠於神給我獨特的恩賜?就像<strong>硬要穿不合腳的鞋跑步只會受傷</strong>,我是否明白神要使用的正是真實的我,而非我假裝成的樣子?</td>
+</tr>
+<tr>
+<td><strong>大衛問站在旁邊的</strong>人說:<strong>有人殺這非利士人</strong>,除掉以色列人的恥辱,怎樣待他呢?這未受割禮的非利士人是誰呢?竟敢向永生神的軍隊罵陣嗎?(撒母耳記上17:26)</td>
+<td>面對挑戰時,我關注的是自己的得失,還是神的榮耀?就像<strong>看到公司被批評時只想自保而不是</strong>維護品牌名聲,我是否因為只想到個人利害而退縮,忘記了為神的名站立的責任?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

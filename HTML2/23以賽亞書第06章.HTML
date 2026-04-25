@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">聖哉聖哉聖哉：以賽亞異象蒙召與潔淨</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當烏西雅王崩的那年，我見主坐在高高的寶座上。他的衣裳垂下，遮滿聖殿。</div>
+<div class="verse"><span class="verse-number">2</span>其上有撒拉弗侍立，各有六個翅膀：用兩個翅膀遮臉，兩個翅膀遮腳，兩個翅膀飛翔；</div>
+<div class="verse"><span class="verse-number">3</span>彼此呼喊說：聖哉！聖哉！聖哉！萬軍之耶和華；他的榮光充滿全地！</div>
+<div class="verse"><span class="verse-number">4</span>因呼喊者的聲音，門檻的根基震動，殿充滿了煙雲。</div>
+<div class="verse"><span class="verse-number">5</span>那時我說：「禍哉！我滅亡了！因為我是嘴唇不潔的人，又住在嘴唇不潔的民中，又因我眼見大君王萬軍之耶和華。」</div>
+<div class="verse"><span class="verse-number">6</span>有一撒拉弗飛到我跟前，手裏拿着紅炭，是用火剪從壇上取下來的，</div>
+<div class="verse"><span class="verse-number">7</span>將炭沾我的口，說：「看哪，這炭沾了你的嘴，你的罪孽便除掉，你的罪惡就赦免了。」</div>
+<div class="verse"><span class="verse-number">8</span>我又聽見主的聲音說：「我可以差遣誰呢？誰肯為我們去呢？」我說：「我在這裏，請差遣我！」</div>
+<div class="verse"><span class="verse-number">9</span>他說：「你去告訴這百姓說：你們聽是要聽見，卻不明白；看是要看見，卻不曉得。</div>
+<div class="verse"><span class="verse-number">10</span>要使這百姓心蒙脂油，耳朵發沉，眼睛昏迷；恐怕眼睛看見，耳朵聽見，心裏明白，回轉過來，便得醫治。」</div>
+<div class="verse"><span class="verse-number">11</span>我就說：「主阿，這到幾時為止呢？」他說：直到城邑荒涼，無人居住，房屋空閒無人，地土極其荒涼。</div>
+<div class="verse"><span class="verse-number">12</span>並且耶和華將人遷到遠方，在這境內撇下的地土很多。</div>
+<div class="verse"><span class="verse-number">13</span>境內剩下的人若還有十分之一，也必被吞滅，像栗樹、橡樹雖被砍伐，樹根子卻仍存留。這聖潔的種類在國中也是如此。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第六章是全書的核心章節之一，記載了以賽亞先知蒙召的異象，發生在「烏西雅王崩的那年」（約740BC）。這一歷史時刻具有重要的意義：烏西雅是一位治國五十二年的偉大君王，他的死亡意味著一個穩定時代的終結，猶大正面對著深重的政治不確定性。就在這個時刻，以賽亞看見了真正的王——「主坐在高高的寶座上」（1節）。本章的結構是經典的「蒙召敘事」：異象（1-4節）→自我認識的崩潰（5節）→潔淨（6-7節）→呼召（8節）→使命（9-13節）。撒拉弗的「聖哉！聖哉！聖哉！」（3節）是舊約中唯一三重重複「聖哉」的呼喊，在希伯來文中三重重複代表最高程度，強調神的絕對聖潔。第8節「我在這裏，請差遣我」是整本聖經中最著名的委身宣言之一——在親眼見到神的聖潔和恩典之後，以賽亞的回應是毫不猶豫的主動委身。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 看見神的聖潔，使人認識自己的罪，這是屬靈成長的開端</strong><br>第5節「禍哉！我滅亡了！因為我是嘴唇不潔的人」，以賽亞在神的榮耀面前不是自我肯定，而是深刻地認識到自己的罪和不潔。這是屬靈眼睛開了的標誌——不是更自信，而是更謙卑。「眼見大君王」所帶來的是破碎，而非驕傲。這種對自身污穢的認識，是神潔淨和使用的前提。許多信徒服事的最大障礙，正是對自身罪性的認識不足，導致沒有真正依靠神的能力。<br><br>
+<strong>2. 神的潔淨是服事的資格，而非自身努力的成果</strong><br>第6-7節撒拉弗用祭壇的紅炭潔淨以賽亞的嘴，宣告「你的罪孽便除掉，你的罪惡就赦免了」。潔淨不是以賽亞自我改進的結果，而是從神的壇上流出的恩典。這個順序極為重要：先有潔淨，後有呼召；先有赦免，後有使命。信徒能夠服事，不是因為自己夠好，而是因為神已經潔淨了我們，使我們有資格被使用。<br><br>
+<strong>3. 「我在這裏，請差遣我」：見到神之後，委身是自然的回應</strong><br>第8節以賽亞的委身不是在沒有看見之前的盲目奉獻，而是在親眼見到神的榮耀、親身經歷神的潔淨之後，自然流露的回應。「我在這裏」宣告了完全的可用性；「請差遣我」表達了主動的意願。這是信仰成熟的美麗特徵：越是認識神的偉大和恩典，越是甘心樂意地將自己放在神的手中等候使用。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「聖哉！聖哉！聖哉！<strong>萬軍之耶和華</strong>；<strong>他的榮光充滿全地</strong>！」（賽6:3）</td>
+<td>就像<strong>站在巨大的星空下或壯觀的山脈前</strong>，人自然會感到自身的渺小和對宇宙的敬畏，你<strong>在哪些時刻最</strong>真實地感受到神的「聖哉聖哉聖哉」？那種聖潔的臨在如何改變了你<strong>的心態和行為</strong>？</td>
+</tr>
+<tr>
+<td>「禍哉！<strong>我滅亡了</strong>！<strong>因為我是嘴唇不潔</strong>的人……又因我眼見大君王萬軍之耶和華。」（賽6:5）</td>
+<td>就像<strong>在明亮的燈光下</strong>，原本看不見的塵埃和污垢都變得清晰可見，神的榮耀不是讓我們更自我良好，而是讓我們看清自己的真實狀態，你<strong>上一次真正感</strong>受到自身罪性和不足是什麼時候？那次認識如何推動你<strong>更深地倚靠神</strong>？</td>
+</tr>
+<tr>
+<td>「<strong>我又聽見主的聲音</strong>說：<strong>我可以差遣誰呢</strong>？誰肯為我們去呢？我說：我在這裏，請差遣我！」（賽6:8）</td>
+<td>就像<strong>消防員在警報響起時立刻站出來說</strong>「我去」，不問任務有多危險，因為這是他們的使命和委身，你<strong>在神的呼召面</strong>前是「我在這裏，請差遣我」的姿態，還是「請差遣別人，我不夠格」的退縮？是什麼讓你<strong>難以做出像以</strong>賽亞那樣的委身？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

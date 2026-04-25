@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒迦利亞書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒迦利亞書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">呼召悔改與異象</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>大利烏王第二年八月，耶和華的話臨到易多的孫子、比利家的兒子先知撒迦利亞，說：</div>
+<div class="verse"><span class="verse-number">2</span>「耶和華曾向你們列祖大大發怒。</div>
+<div class="verse"><span class="verse-number">3</span>所以你要對以色列人說，萬軍之耶和華如此說：你們要轉向我，我就轉向你們。這是萬軍之耶和華說的。</div>
+<div class="verse"><span class="verse-number">4</span>不要效法你們列祖。從前的先知呼叫他們說，萬軍之耶和華如此說：『你們要回頭離開你們的惡道惡行。』他們卻不聽，也不順從我。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">5</span>你們的列祖在那裏呢？那些先知能永遠存活嗎？</div>
+<div class="verse"><span class="verse-number">6</span>只是我的言語和律例，就是所吩咐我僕人眾先知的，豈不臨到你們列祖嗎？他們就回頭，說：『萬軍之耶和華定意按我們的行動作為向我們怎樣行，他已照樣行了。』」</div>
+<div class="verse"><span class="verse-number">7</span>大利烏第二年十一月，就是細罷特月二十四日，耶和華的話臨到易多的孫子、比利家的兒子先知撒迦利亞，說：</div>
+<div class="verse"><span class="verse-number">8</span>「我夜間觀看，見一人騎着紅馬，站在窪地番石榴樹中間。在他身後又有紅馬、黃馬，和白馬。」</div>
+<div class="verse"><span class="verse-number">9</span>我對與我說話的天使說：「主啊，這是甚麼意思？」他說：「我要指示你這是甚麼意思。」</div>
+<div class="verse"><span class="verse-number">10</span>那站在番石榴樹中間的人說：「這是奉耶和華差遣在遍地走來走去的。」</div>
+<div class="verse"><span class="verse-number">11</span>那些騎馬的對站在番石榴樹中間耶和華的使者說：「我們已在遍地走來走去，見全地都安息平靜。」</div>
+<div class="verse"><span class="verse-number">12</span>於是，耶和華的使者說：「萬軍之耶和華啊，你惱恨耶路撒冷和猶大的城邑已經七十年，你不施憐憫要到幾時呢？」</div>
+<div class="verse"><span class="verse-number">13</span>耶和華就用美善的安慰話回答那與我說話的天使。</div>
+<div class="verse"><span class="verse-number">14</span>與我說話的天使對我說：「你要宣告說，萬軍之耶和華如此說：我為耶路撒冷為錫安，心裏極其火熱。</div>
+<div class="verse"><span class="verse-number">15</span>我甚惱怒那安逸的列國，因我從前稍微惱怒我民，他們就加害過分。</div>
+<div class="verse"><span class="verse-number">16</span>所以耶和華如此說：現今我回到耶路撒冷，仍施憐憫，我的殿必重建在其中，準繩必拉在耶路撒冷之上。這是萬軍之耶和華說的。</div>
+<div class="verse"><span class="verse-number">17</span>你要再宣告說，萬軍之耶和華如此說：我的城邑必再豐盛發達。耶和華必再安慰錫安，揀選耶路撒冷。」</div>
+<div class="verse"><span class="verse-number">18</span>我舉目觀看，見有四角。</div>
+<div class="verse"><span class="verse-number">19</span>我就問與我說話的天使說：「這是甚麼意思？」他回答說：「這是打散猶大、以色列，和耶路撒冷的角。」</div>
+<div class="verse"><span class="verse-number">20</span>耶和華又指四個匠人給我看。</div>
+<div class="verse"><span class="verse-number">21</span>我說：「他們來作甚麼呢？」他說：「這是打散猶大的角，使人不敢抬頭；但這些匠人來威嚇列國，打掉他們的角，就是舉起打散猶大地的角。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+撒迦利亞書寫於波斯王大流士第二年（主前520年），當時猶太人從巴比倫被擄歸回約16年，聖殿重建工作因敵對勢力而停擺。撒迦利亞與哈該同期事奉，透過異象與預言激勵百姓完成聖殿重建。第1章開始於神對悔改的呼召，警告百姓不要重蹈列祖覆轍。隨後記錄三個異象：騎馬者的異象顯示神仍眷顧耶路撒冷、四角的異象代表打散以色列的列國、四匠人的異象預言神要審判這些國家。本章揭示神對祂子民深切的愛與憐憫，即使在管教中仍不忘記拯救的應許。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神渴望與祂的百姓恢復關係，悔改是雙向的轉向</strong><br>神說「你們要轉向我，我就轉向你們」，這揭示悔改不只是停止犯罪，更是積極地轉向神。神首先主動呼召，但人必須回應。列祖的失敗在於聽見呼召卻不回應。真正的悔改是全人的轉向——思想、情感、意志都轉離罪惡，轉向神。神的應許是當我們真誠回轉，祂就回轉向我們，恢復關係。<br><br>
+<strong>2. 神的話語與應許永遠長存，必定成就</strong><br>先知與列祖都已過去，但神的話語與律例仍然有效。被擄歸回應驗了先知的警告，證明神的話不會落空。這教導我們，神的話語超越時間與環境，無論世代如何變遷，祂的應許必定成就。我們應當敬畏神的話語，因為祂說話算數。歷史證明神的信實，這成為我們信靠祂的根基。<br><br>
+<strong>3. 神對祂子民的愛充滿熱情，祂必為他們伸冤</strong><br>神說祂為耶路撒冷「心裡極其火熱」，顯示祂對子民的熱切之愛。雖然百姓犯罪被管教，但神的愛從未改變。祂惱怒那些「加害過分」的列國，顯示祂是公義的保護者。神應許重建聖殿、恢復城邑，這不是因為百姓配得，而是因為神的愛與信實。祂的熱情之愛勝過我們的軟弱與失敗。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你們要轉向我</strong>，<strong>我就轉向你們</strong>。這是萬軍之耶和華說的。」（撒迦利亞書 1:3）</td>
+<td>在你<strong>的生活中</strong>，是否有某些領域你<strong>還沒有完全轉</strong>向神？就像<strong>手機需要調整方向才能收到信號</strong>，你<strong>的心</strong>是否完全朝向神、還是仍有部分向著世界？神在等待你<strong>先轉向祂</strong>，你願意<strong>邁出這一步嗎</strong>？</td>
+</tr>
+<tr>
+<td>「<strong>只是我的言語和律</strong>例...<strong>豈不臨到你們列祖</strong>嗎？他們就回頭，說：『萬軍之耶和華定意按我們的行動作為向我們怎樣行，他已照樣行了。』」（撒迦利亞書 1:6）</td>
+<td>當你<strong>讀聖經時</strong>，你是把它當作古老的文獻、還是相信這是永遠長存且必定成就的神的話語？就像<strong>天氣預報員的預測會應驗</strong>，神的應許與警告也必定實現。你如何<strong>回應神透過聖</strong>經對你<strong>說的話</strong>？</td>
+</tr>
+<tr>
+<td>「<strong>萬軍之耶和華如此</strong>說：<strong>我為耶路撒冷為錫</strong>安，心裡極其火熱...現今我回到耶路撒冷，仍施憐憫。」（撒迦利亞書 1:14-16）</td>
+<td>當你<strong>經歷困難或失</strong>敗時，你是否<strong>懷疑神還愛你</strong>？就像<strong>父母即使管教孩子</strong>，內心仍然深愛著他們，神對你<strong>的愛充滿熱情</strong>，從未因你<strong>的軟弱而減少</strong>。你是否<strong>願意接受這份</strong>無條件的愛，並讓它改變你<strong>對自己和未來</strong>的看法？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

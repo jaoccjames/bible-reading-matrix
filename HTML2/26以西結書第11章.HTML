@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">石心換肉心：新心的應許</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>靈將我舉起，帶到耶和華殿向東的東門。誰知，在門口有二十五個人，我見其中有民間的首領押朔的兒子雅撒尼亞和比拿雅的兒子毘拉提。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華對我說：「人子啊，這就是圖謀罪孽的人，在這城中給人設惡謀。</div>
+<div class="verse"><span class="verse-number">3</span>他們說：『蓋房屋的時候尚未臨近；這城是鍋，我們是肉。』</div>
+<div class="verse"><span class="verse-number">4</span>人子阿，因此你當說預言，說預言攻擊他們。」</div>
+<div class="verse"><span class="verse-number">5</span>耶和華的靈降在我身上，對我說：「你當說，耶和華如此說：以色列家啊，你們口中所說的，心裏所想的，我都知道。</div>
+<div class="verse"><span class="verse-number">6</span>你們在這城中殺人增多，使被殺的人充滿街道。</div>
+<div class="verse"><span class="verse-number">7</span>所以主耶和華如此說：你們殺在城中的人就是肉，這城就是鍋；你們卻要從其中被帶出去。</div>
+<div class="verse"><span class="verse-number">8</span>你們怕刀劍，我必使刀劍臨到你們。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">9</span>我必從這城中帶出你們去，交在外邦人的手中，且要在你們中間施行審判。</div>
+<div class="verse"><span class="verse-number">10</span>你們必倒在刀下；我必在以色列的境界審判你們，你們就知道我是耶和華。</div>
+<div class="verse"><span class="verse-number">11</span>這城必不作你們的鍋，你們也不作其中的肉。我必在以色列的境界審判你們，</div>
+<div class="verse"><span class="verse-number">12</span>你們就知道我是耶和華；因為你們沒有遵行我的律例，也沒有順從我的典章，卻隨從你們四圍列國的惡規。」</div>
+<div class="verse"><span class="verse-number">13</span>我正說預言的時候，比拿雅的兒子毘拉提死了。於是我俯伏在地，大聲呼叫說：「哎！主耶和華啊，你要將以色列剩下的人滅絕淨盡嗎？」</div>
+<div class="verse"><span class="verse-number">14</span>耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">15</span>「人子啊，耶路撒冷的居民對你的弟兄、你的本族、你的親屬、以色列全家，就是對大眾說：『你們遠離耶和華吧！這地是賜給我們為業的。』</div>
+<div class="verse"><span class="verse-number">16</span>所以你當說：『耶和華如此說：我雖將以色列全家遠遠遷移到列國中，將他們分散在列邦內，我還要在他們所到的列邦，暫作他們的聖所。』</div>
+<div class="verse"><span class="verse-number">17</span>你當說：『主耶和華如此說：我必從萬民中招聚你們，從分散的列國內聚集你們，又要將以色列地賜給你們。』</div>
+<div class="verse"><span class="verse-number">18</span>他們必到那裏，也必從其中除掉一切可憎可厭的物。</div>
+<div class="verse"><span class="verse-number">19</span>我要使他們有合一的心，也要將新靈放在他們裏面，又從他們肉體中除掉石心，賜給他們肉心，</div>
+<div class="verse"><span class="verse-number">20</span>使他們順從我的律例，謹守遵行我的典章。他們要作我的子民，我要作他們的神。</div>
+<div class="verse"><span class="verse-number">21</span>至於那些心中隨從可憎可厭之物的，我必照他們所行的報應在他們頭上。這是主耶和華說的。」</div>
+<div class="verse"><span class="verse-number">22</span>於是，基路伯展開翅膀，輪子都在他們旁邊；在他們以上有以色列神的榮耀。</div>
+<div class="verse"><span class="verse-number">23</span>耶和華的榮耀從城中上升，停在城東的那座山上。</div>
+<div class="verse"><span class="verse-number">24</span>靈將我舉起，在異象中藉着神的靈將我帶進迦勒底地，到被擄的人那裏；我所見的異象就離我上升去了。</div>
+<div class="verse"><span class="verse-number">25</span>我便將耶和華所指示我的一切事都說給被擄的人聽。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第11章分為兩部分。前半（1-13節）是對耶路撒冷領袖的審判：二十五位圖謀罪孽的首領說「這城是鍋，我們是肉」（意即我們在城中安全），神卻說他們必被帶出去受審判。在以西結說預言的過程中，一位首領毘拉提當場死亡，以西結再次代求。後半（14-25節）是本章最重要的應許：神安慰那些被耶路撒冷人嘲弄的被擄者（說他們「遠離耶和華」），宣告祂在列邦「暫作他們的聖所」，並宣告將來的新心新靈應許（19節）：「我要使他們有合一的心，也要將新靈放在他們裏面，又從他們肉體中除掉石心，賜給他們肉心」——這是整卷書中最深刻的新約預言之一，也是理解第36章更完整表述的基礎。章末，神的榮耀離開耶路撒冷，停在城東山上，以西結被帶回巴比倫向被擄者述說異象。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神的同在不受地點限制，在列邦中仍是「暫作聖所」】</strong><br>被擄者被耶路撒冷人嘲弄，說他們遠離神。但神說：「我還要在他們所到的列邦，暫作他們的聖所。」神的同在不是地理性的，而是關係性的。在任何地方，在任何困境中，神可以是信徒的「聖所」——那個安全、相遇的空間。這對身處異鄉、困境、邊緣的信徒是最深的安慰。<br><br>
+<strong>2. 【從石心到肉心的改變，是神主動賜予的恩典】</strong><br>人憑自己的努力無法改變剛硬的心。神的應許是主動的：「我要…除掉石心，賜給他們肉心。」這是恩典的核心：改變不來自更努力的意志力，而來自神的主動賜予。信徒禱告心靈的柔軟，是在邀請神做那個只有祂能做的改變工作。<br><br>
+<strong>3. 【心中的假神比外在的偶像更難被識別和對付】</strong><br>第14章延伸了這個主題：「已將他們的假神接到心裏」——偶像在心裏，比立在殿中更危險。心中的偶像可以是任何我們在功能上將其置於神之前的事物。認識自己心中的假神，需要誠實的屬靈反省。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我要使他們有合一</strong>的心，<strong>也要將新靈放在他</strong>們裏面，又從他們肉體中除掉石心，賜給他們肉心。（結11:19）</td>
+<td>你<strong>的心</strong>是偏向「石心」（剛硬、難以被神話語觸動）還是「肉心」（柔軟、敏感於神的聲音）？就像<strong>一塊乾硬的泥土和一塊濕潤的泥土</strong>對外力的反應截然不同，你願意<strong>今天禱告求神</strong>「除掉石心，賜給肉心」，讓自己更容易被神塑造嗎？</td>
+</tr>
+<tr>
+<td><strong>我還要在他們所到</strong><strong>的列邦</strong>，暫作他們的聖所。（結11:16下）</td>
+<td>你是否<strong>有時覺得在某</strong>個特定的環境或情況下「遇見神比較困難」——比如不在教會、在壓力大的職場、在家庭衝突中？神在以色列人被擄之地仍是他們的聖所，這如何改變你<strong>對「哪裡可以</strong>遇見神」的理解？</td>
+</tr>
+<tr>
+<td><strong>他們要作我的子民</strong>，<strong>我要作他們的神</strong>。（結11:20下）</td>
+<td>「你<strong>們作我子民</strong>，我作你<strong>們的神」</strong>是聖經的核心關係宣告，從創世記到啟示錄貫穿始終。在你<strong>日常生活的細</strong>節中——工作決策、金錢使用、時間分配——這個宣告具體地改變了什麼？就像<strong>一個國籍改變了你<strong>的身分和義務</strong></strong>，這個關係宣告如何實際影響你<strong>今天的選擇</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

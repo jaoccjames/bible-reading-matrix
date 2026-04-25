@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路得記第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+路得記第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">路得在波阿斯田間拾穗</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>拿俄米的丈夫以利米勒的親族中，有一個人名叫波阿斯，是個大財主。</div>
+<div class="verse"><span class="verse-number">2</span>摩押女子路得對拿俄米說：「容我往田間去，我蒙誰的恩，就在誰的身後拾取麥穗。」拿俄米說：「女兒啊，你只管去。」</div>
+<div class="verse"><span class="verse-number">3</span>路得就去了，來到田間，在收割的人身後拾取麥穗。她恰巧到了以利米勒本族的人波阿斯那塊田裏。</div>
+<div class="verse"><span class="verse-number">4</span>波阿斯正從伯利恆來，對收割的人說：「願耶和華與你們同在！」他們回答說：「願耶和華賜福與你！」</div>
+<div class="verse"><span class="verse-number">5</span>波阿斯問監管收割的僕人說：「那是誰家的女子？」</div>
+<div class="verse"><span class="verse-number">6</span>監管收割的僕人回答說：「是那摩押女子，跟隨拿俄米從摩押地回來的。</div>
+<div class="verse"><span class="verse-number">7</span>她說：『請你容我跟着收割的人拾取打捆剩下的麥穗。』她從早晨直到如今，除了在屋子裏坐一會兒，常在這裏。」</div>
+<div class="verse"><span class="verse-number">8</span>波阿斯對路得說：「女兒啊，聽我說，不要往別人田裏拾取麥穗，也不要離開這裏，要常與我使女們在一處。</div>
+<div class="verse"><span class="verse-number">9</span>我的僕人在那塊田收割，你就跟着他們去。我已經吩咐僕人不可欺負你；你若渴了，就可以到器皿那裏喝僕人打來的水。」</div>
+<div class="verse"><span class="verse-number">10</span>路得就俯伏在地叩拜，對他說：「我既是外邦人，怎麼蒙你的恩，這樣顧恤我呢？」</div>
+<div class="verse"><span class="verse-number">11</span>波阿斯回答說：「自從你丈夫死後，凡你向婆婆所行的，並你離開父母和本地，到素不認識的民中，這些事人全都告訴我了。</div>
+<div class="verse"><span class="verse-number">12</span>願耶和華照你所行的賞賜你。你來投靠耶和華以色列神的翅膀下，願你滿得他的賞賜。」</div>
+<div class="verse"><span class="verse-number">13</span>路得說：「我主啊，願在你眼前蒙恩。我雖然不及你的一個使女，你還用慈愛的話安慰我的心。」</div>
+<div class="verse"><span class="verse-number">14</span>到了吃飯的時候，波阿斯對路得說：「你到這裏來吃餅，將餅蘸在醋裏。」路得就在收割的人旁邊坐下；他們把烘了的穗子遞給她。她吃飽了，還有餘剩的。</div>
+<div class="verse"><span class="verse-number">15</span>她起來又拾取麥穗，波阿斯吩咐僕人說：「她就是在捆中拾取麥穗，也可以容她，不可羞辱她；</div>
+<div class="verse"><span class="verse-number">16</span>並要從捆裏抽出些來，留在地下任她拾取，不可叱嚇她。」</div>
+<div class="verse"><span class="verse-number">17</span>這樣，路得在田間拾取麥穗，直到晚上，將所拾取的打了，約有一伊法大麥。</div>
+<div class="verse"><span class="verse-number">18</span>她就把所拾取的帶進城去給婆婆看，又把她吃飽了所剩的給了婆婆。</div>
+<div class="verse"><span class="verse-number">19</span>婆婆問她說：「你今日在那裏拾取麥穗，在那裏作工呢？願那顧恤你的得福。」路得就告訴婆婆說：「我今日在一個名叫波阿斯的人那裏作工。」</div>
+<div class="verse"><span class="verse-number">20</span>拿俄米對兒婦說：「願那人蒙耶和華賜福，因為他不斷地恩待活人死人。」拿俄米又說：「那是我們本族的人，是一個至近的親屬。」</div>
+<div class="verse"><span class="verse-number">21</span>摩押女子路得說：「他對我說：『你要緊隨我的僕人拾取麥穗，直等他們收完了我的莊稼。』」</div>
+<div class="verse"><span class="verse-number">22</span>拿俄米對兒婦路得說：「女兒啊，你跟着他的使女出去，不叫人遇見你在別人田間，這才為好。」</div>
+<div class="verse"><span class="verse-number">23</span>於是路得與波阿斯的使女常在一處拾取麥穗，直到收完了大麥和小麥。路得仍與婆婆同住。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載路得為了養活婆婆拿俄米,主動到田間拾取麥穗。按照摩西律法,收割時要為窮人和寄居者留下麥穗。路得恰巧來到波阿斯的田裡,波阿斯是拿俄米丈夫的至近親屬,也是個敬虔的財主。他已聽聞路得孝順婆婆的事蹟,主動善待她,不僅允許她拾穗,還吩咐僕人故意留下更多麥穗,並邀請她與工人一同用餐。路得當日收獲約一伊法大麥,遠超一般拾穗者的收穫。本章展現神如何透過人的順服和恩慈,為路得和拿俄米預備供應,也為後續的救贖故事鋪路。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 勤奮工作與神的供應相輔相成</strong><br>路得沒有消極等待,而是主動出去拾穗養活婆婆,她從早工作到晚。神的祝福常臨到那些殷勤工作的人,路得的勤奮使她恰巧來到波阿斯的田間,領受超過所求所想的供應。信心不是被動的等候,而是在順服中採取行動,讓神引導我們的腳步到祂預備的地方。<br><br>
+<strong>2. 神使用恩慈的人成為祝福的管道</strong><br>波阿斯不僅遵守律法的規定,更超越律法的要求,主動關懷路得,為她提供保護和供應。他成為神恩典的器皿,將神的慈愛具體化。神常透過願意施恩的人來成就祂的計劃,我們也當效法波阿斯,用實際行動成為他人的祝福,參與在神的救贖工作中。<br><br>
+<strong>3. 看似偶然的相遇背後是神的引領</strong><br>經文說路得「恰巧」到了波阿斯的田裡,但這絕非偶然,而是神奇妙的安排。在人看來的巧合,往往是神精心的計劃。當我們忠心行走,神會引導我們的腳步到祂預備的地方,遇見祂安排的人,經歷祂豐盛的供應。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>路得就去了</strong>,<strong>來到田間</strong>,在收割的人身後拾取麥穗。她恰巧到了以利米勒本族的人波阿斯那塊田裡。(得2:3)</td>
+<td>你<strong>相信生命中的</strong>巧合其實是神的安排嗎?就像<strong>搭錯車卻遇見貴人</strong>,你能在看似偶然的事件中看見神的引導嗎?</td>
+</tr>
+<tr>
+<td><strong>願耶和華照你所行</strong><strong>的賞賜你</strong>。你來投靠耶和華─以色列神的翅膀下,願你滿得他的賞賜。(得2:12)</td>
+<td>你是否<strong>願意主動付出</strong>而不求回報?就像<strong>幫助別人時不期待好處</strong>,你<strong>相信神會看見</strong>並賞賜你<strong>的善行嗎</strong>?</td>
+</tr>
+<tr>
+<td><strong>波阿斯吩咐僕人說</strong>:<strong>她就是在捆中拾取</strong>麥穗,也可以容她,不可羞辱她;並要從捆裡抽出些來,留在地下任她拾取。(得2:15-16)</td>
+<td>你是否<strong>願意超越要求</strong>去幫助有需要的人?就像<strong>給小費時多給一些鼓勵服務生</strong>,你<strong>的恩慈</strong>能否超越最低標準?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

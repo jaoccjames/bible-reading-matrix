@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米哀歌第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米哀歌第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">絕望深淵中的信心轉折</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我是因耶和華忿怒的杖，遭遇困苦的人。</div>
+<div class="verse"><span class="verse-number">2</span>他引導我，使我行在黑暗中，不行在光明裏。</div>
+<div class="verse"><span class="verse-number">3</span>他真是終日再三反手攻擊我。</div>
+<div class="verse"><span class="verse-number">4</span>他使我的皮肉枯乾；他折斷〔或作：壓傷〕我的骨頭。</div>
+<div class="verse"><span class="verse-number">5</span>他築壘攻擊我，用苦楚〔原文作苦膽〕和艱難圍困我。</div>
+<div class="verse"><span class="verse-number">6</span>他使我住在幽暗之處，像死了許久的人一樣。</div>
+<div class="verse"><span class="verse-number">7</span>他用籬笆圍住我，使我不能出去；他使我的銅鍊沉重。</div>
+<div class="verse"><span class="verse-number">8</span>我哀號求救；他使我的禱告不得上達。</div>
+<div class="verse"><span class="verse-number">9</span>他用鑿過的石頭擋住我的道；他使我的路彎曲。</div>
+<div class="verse"><span class="verse-number">10</span>他向我如熊埋伏，如獅子在隱密處。</div>
+<div class="verse"><span class="verse-number">11</span>他使我轉離正路，將我撕碎，使我淒涼。</div>
+<div class="verse"><span class="verse-number">12</span>他張弓將我當作箭靶子。</div>
+<div class="verse"><span class="verse-number">13</span>他把箭袋中的箭射入我的肺腑。</div>
+<div class="verse"><span class="verse-number">14</span>我成了眾民的笑話；他們終日以我為歌曲。</div>
+<div class="verse"><span class="verse-number">15</span>他用苦楚充滿我，使我飽用茵蔯。</div>
+<div class="verse"><span class="verse-number">16</span>他又用沙石磣斷我的牙，用灰塵將我蒙蔽。</div>
+<div class="verse"><span class="verse-number">17</span>你使我遠離平安，我忘記好處。</div>
+<div class="verse"><span class="verse-number">18</span>我就說：我的力量衰敗；我在耶和華那裏毫無指望！</div>
+<div class="verse"><span class="verse-number">19</span>耶和華啊，求你記念我如茵蔯和苦膽的困苦窘迫。</div>
+<div class="verse"><span class="verse-number">20</span>我心想念這些，就在裏面憂悶。</div>
+<div class="verse"><span class="verse-number">21</span>我想起這事，心裏就有指望。</div>
+<div class="verse"><span class="verse-number">22</span>我們不至消滅，是出於耶和華諸般的慈愛；是因他的憐憫不至斷絕。</div>
+<div class="verse"><span class="verse-number">23</span>每早晨，這都是新的；你的誠實極其廣大！</div>
+<div class="verse"><span class="verse-number">24</span>我心裏說：耶和華是我的分，因此，我要仰望他。</div>
+<div class="verse"><span class="verse-number">25</span>凡等候耶和華，心裏尋求他的，耶和華必施恩給他。</div>
+<div class="verse"><span class="verse-number">26</span>人仰望耶和華，靜默等候他的救恩，這原是好的。</div>
+<div class="verse"><span class="verse-number">27</span>人在幼年負軛，這原是好的。</div>
+<div class="verse"><span class="verse-number">28</span>他當獨坐無言，因為這是耶和華加在他身上的。</div>
+<div class="verse"><span class="verse-number">29</span>他當口貼塵埃，或者有指望。</div>
+<div class="verse"><span class="verse-number">30</span>他當由人打他的腮頰，要滿受凌辱。</div>
+<div class="verse"><span class="verse-number">31</span>因為主必不永遠丟棄人。</div>
+<div class="verse"><span class="verse-number">32</span>主雖使人憂愁，還要照他諸般的慈愛發憐憫。</div>
+<div class="verse"><span class="verse-number">33</span>因他並不甘心使人受苦，使人憂愁。</div>
+<div class="verse"><span class="verse-number">34</span>人將世上被囚的踹〔原文作壓〕在腳下，</div>
+<div class="verse"><span class="verse-number">35</span>或在至高者面前屈枉人，</div>
+<div class="verse"><span class="verse-number">36</span>或在人的訟事上顛倒是非，這都是主看不上的。</div>
+<div class="verse"><span class="verse-number">37</span>除非主命定，誰能說成就成呢？</div>
+<div class="verse"><span class="verse-number">38</span>禍福不都出於至高者的口嗎？</div>
+<div class="verse"><span class="verse-number">39</span>活人因自己的罪受罰，為何發怨言呢？</div>
+<div class="verse"><span class="verse-number">40</span>我們當深深考察自己的行為，再歸向耶和華。</div>
+<div class="verse"><span class="verse-number">41</span>我們當誠心向天上的神舉手禱告。</div>
+<div class="verse"><span class="verse-number">42</span>我們犯罪背逆，你並不赦免。</div>
+<div class="verse"><span class="verse-number">43</span>你自被怒氣遮蔽，追趕我們；你施行殺戮，並不顧惜。</div>
+<div class="verse"><span class="verse-number">44</span>你以黑雲遮蔽自己，以致禱告不得透入。</div>
+<div class="verse"><span class="verse-number">45</span>你使我們在萬民中成為污穢和渣滓。</div>
+<div class="verse"><span class="verse-number">46</span>我們的仇敵都向我們大大張口。</div>
+<div class="verse"><span class="verse-number">47</span>恐懼和陷坑，殘害和毀滅，都臨近我們。</div>
+<div class="verse"><span class="verse-number">48</span>因我眾民遭的毀滅，我就眼淚下流如河。</div>
+<div class="verse"><span class="verse-number">49</span>我的眼多多流淚，總不止息，</div>
+<div class="verse"><span class="verse-number">50</span>直等耶和華垂顧，從天觀看。</div>
+<div class="verse"><span class="verse-number">51</span>因我本城的眾民，我的眼，使我的心傷痛。</div>
+<div class="verse"><span class="verse-number">52</span>無故與我為仇的追逼我，像追雀鳥一樣。</div>
+<div class="verse"><span class="verse-number">53</span>他們使我的命在牢獄中斷絕，並將一塊石頭拋在我身上。</div>
+<div class="verse"><span class="verse-number">54</span>眾水流過我頭，我說：我命斷絕了！</div>
+<div class="verse"><span class="verse-number">55</span>耶和華啊，我從深牢中求告你的名。</div>
+<div class="verse"><span class="verse-number">56</span>你曾聽見我的聲音；我求你解救，你不要掩耳不聽。</div>
+<div class="verse"><span class="verse-number">57</span>我求告你的日子，你臨近我，說：不要懼怕！</div>
+<div class="verse"><span class="verse-number">58</span>主啊，你伸明了我的冤；你救贖了我的命。</div>
+<div class="verse"><span class="verse-number">59</span>耶和華啊，你見了我受的委屈；求你為我伸冤。</div>
+<div class="verse"><span class="verse-number">60</span>他們仇恨我，謀害我，你都看見了。</div>
+<div class="verse"><span class="verse-number">61</span>耶和華啊，你聽見他們辱罵我的話，知道他們向我所設的計，</div>
+<div class="verse"><span class="verse-number">62</span>並那些起來攻擊我的人口中所說的話，以及終日向我所設的計謀。</div>
+<div class="verse"><span class="verse-number">63</span>求你觀看，他們坐下，起來，都以我為歌曲。</div>
+<div class="verse"><span class="verse-number">64</span>耶和華啊，你要按着他們手所作的向他們施行報應。</div>
+<div class="verse"><span class="verse-number">65</span>你要使他們心裏剛硬，使你的咒詛臨到他們。</div>
+<div class="verse"><span class="verse-number">66</span>你要發怒追趕他們，從耶和華的天下除滅他們。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米哀歌第3章是全卷的神學與文學核心，也是整本舊約中最著名的苦難與信仰章節之一。本章以三重字母詩構成（每個希伯來字母各有三節），篇幅最長，情感也最複雜。前18節是黑暗的極致：詩人以第一人稱列出神所加的苦難，彷彿神成了他的仇敵——用銅鍊鎖住、用石頭攔路、像獅子撕裂、把他當箭靶。第18節說：「我的力量衰敗；我在耶和華那裏毫無指望！」這是全章的低谷。然而第19至24節發生了驚天動地的轉折：「我想起這事，心裏就有指望。」詩人「想起」神的慈愛和憐憫，就在哀嘆中重新找到盼望。第22至23節成為無數信徒的生命支柱：「我們不至消滅，是出於耶和華諸般的慈愛……每早晨，這都是新的」。本章也呼籲集體的反省（40節）：「我們當深深考察自己的行為，再歸向耶和華。」是哀歌也是轉化的呼召。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【在最深的絕望中，記念神的慈愛能帶來信心轉折】</strong><br>從「毫無指望」到「心裏就有指望」，轉折點只有一個：「我想起這事」——想起神的慈愛、憐憫和誠實。信心不總是感覺來的，有時是「記念」來的。當感受告訴你「沒有希望」，記憶中神的信實可以抵抗那個聲音。屬靈生命中「記念神的作為」的操練，是在黑暗時刻最重要的屬靈資源。<br><br>
+<strong>2. 【神的慈愛每早晨都是新的，不受昨日的失敗所限】</strong><br>「每早晨，這都是新的」——神的慈愛不是一次性的資源，而是每天更新的供應。昨天的失敗不會耗盡今天神的慈愛；今天的黑暗不代表明天神的憐憫會缺席。這是信仰最實際的安慰：無論昨天發生了什麼，今天的清晨帶來新的慈愛，神的誠實永遠廣大。<br><br>
+<strong>3. 【深入考察自己並歸向神，是苦難的正確回應】</strong><br>第40節：「我們當深深考察自己的行為，再歸向耶和華。」苦難的正確回應不是單純的怨恨或逃避，而是深入的自我反省，加上方向性的歸向神。「深深考察」意味著不是膚淺的懺悔，而是誠實地檢視生命的深處；「再歸向耶和華」是方向性的行動，不是感覺的等待。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我們不至消滅</strong>，<strong>是出於耶和華諸般</strong>的慈愛；是因他的憐憫不至斷絕。每早晨，這都是新的；你的誠實極其廣大！（哀3:22-23）</td>
+<td>你<strong>今天早上起來</strong>，是否感受到「神的慈愛今天是新的」？就像<strong>每天重新充飽電的手機</strong>，神的慈愛不是一次性的電池，而是每天更新的電源。昨天的失敗、疲憊或罪，有沒有讓你<strong>覺得今天的慈</strong>愛已被「耗盡」？你願意<strong>讓今天的清晨</strong>重新成為一個「慈愛更新」的起點嗎？</td>
+</tr>
+<tr>
+<td><strong>我就說</strong>：<strong>我的力量衰敗</strong>；我在耶和華那裏毫無指望！……我想起這事，心裏就有指望。（哀3:18,21）</td>
+<td>你是否<strong>曾有過從「毫</strong>無指望」到「心裏有指望」的轉折？那個轉折點是什麼——一個記憶、一句話、一首詩歌？就像<strong>在漆黑的房間裡「想起」燈的開關</strong>在哪裡，「記念神的慈愛」如何成為你<strong>在黑暗中重新</strong>找到光的動作？</td>
+</tr>
+<tr>
+<td><strong>我們當深深考察自</strong><strong>己的行為</strong>，再歸向耶和華。（哀3:40）</td>
+<td>「深深考察」和「表面懺悔」有什麼不同？就像<strong>車子定期大保養和只是加油有所不</strong>同，你<strong>上一次「深深</strong>考察」自己的行為是什麼時候？你願意<strong>今天花時間認</strong>真問自己：「我的生命有哪些地方需要轉向神？」</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

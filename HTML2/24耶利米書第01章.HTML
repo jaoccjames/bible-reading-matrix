@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">我未將你造在腹中已曉得你：先知的蒙召與神的差遣</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>便雅憫地亞拿突城的祭司中，希勒家的兒子耶利米的話記在下面。</div>
+<div class="verse"><span class="verse-number">2</span>猶大王亞們的兒子約西亞在位十三年，耶和華的話臨到耶利米。</div>
+<div class="verse"><span class="verse-number">3</span>從猶大王約西亞的兒子約雅敬在位的時候，直到猶大王約西亞的兒子西底家在位的末年，就是十一年五月間耶路撒冷人被擄的時候，耶和華的話也常臨到耶利米。</div>
+<div class="verse"><span class="verse-number">4</span>耶利米說，耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">5</span>我未將你造在腹中，我已曉得你；你未出母胎，我已分別你為聖；我已派你作列國的先知。</div>
+<div class="verse"><span class="verse-number">6</span>我就說：主耶和華啊，我不知怎樣說，因為我是年幼的。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華對我說：你不要說我是年幼的，因為我差遣你到誰那裏去，你都要去；我吩咐你說甚麼話，你都要說。</div>
+<div class="verse"><span class="verse-number">8</span>你不要懼怕他們，因為我與你同在，要拯救你。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">9</span>於是耶和華伸手按我的口，對我說：我已將當說的話傳給你。</div>
+<div class="verse"><span class="verse-number">10</span>看哪，我今日立你在列邦列國之上，為要施行拔出、拆毀、毀壞、傾覆，又要建立、栽植。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華的話又臨到我說：「耶利米，你看見甚麼？」我說：「我看見一根杏樹枝。」</div>
+<div class="verse"><span class="verse-number">12</span>耶和華對我說：「你看得不錯；因為我留意保守我的話，使得成就。」</div>
+<div class="verse"><span class="verse-number">13</span>耶和華的話第二次臨到我說：「你看見甚麼？」我說：「我看見一個燒開的鍋，從北而傾。」</div>
+<div class="verse"><span class="verse-number">14</span>耶和華對我說：「必有災禍從北方發出，臨到這地的一切居民。」</div>
+<div class="verse"><span class="verse-number">15</span>耶和華說：「看哪，我要召北方列國的眾族；他們要來，各安座位在耶路撒冷的城門口，周圍攻擊城牆，又要攻擊猶大的一切城邑。</div>
+<div class="verse"><span class="verse-number">16</span>至於這民的一切惡，就是離棄我、向別神燒香、跪拜自己手所造的，我要發出我的判語，攻擊他們。</div>
+<div class="verse"><span class="verse-number">17</span>所以你當束腰，起來將我所吩咐你的一切話告訴他們；不要因他們驚惶，免得我使你在他們面前驚惶。</div>
+<div class="verse"><span class="verse-number">18</span>看哪，我今日使你成為堅城、鐵柱、銅牆，與全地和猶大的君王、首領、祭司，並地上的眾民反對。</div>
+<div class="verse"><span class="verse-number">19</span>他們要攻擊你，卻不能勝你；因為我與你同在，要拯救你。這是耶和華說的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第一章記載了耶利米先知的蒙召異象，時間在猶大王約西亞在位的第十三年（約公元前627年），距離耶路撒冷被巴比倫攻陷（586BC）還有約四十年。耶利米是來自便雅憫地亞拿突城的祭司家族，他的先知職事橫跨猶大最後幾位君王（約西亞、約哈斯、約雅敬、約雅斤、西底家），親歷了猶大國的滅亡和百姓被擄巴比倫的悲劇。本章有兩個核心場景：神對耶利米的呼召（4-10節）和兩個預示性的異象——杏樹枝（11-12節）和燒開的鍋（13-16節）。神的呼召宣告從三個維度肯定耶利米：「我已曉得你」（過去的認識）、「我已分別你為聖」（現在的聖化）、「我已派你作列國的先知」（未來的使命）。耶利米的回應是「我是年幼的」（6節），表達了真實的自我認知——他不是假謙虛，而是真正認識自己的不足。神的回應不是否認他的限制，而是宣告「因為我與你同在」（8節），這個神的同在是克服限制的根本。本章最後的應許「他們要攻擊你，卻不能勝你」（19節），成為耶利米整個艱難先知職事的支柱。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「我未將你造在腹中，我已曉得你」：神的認識先於人的存在</strong><br>第5節的神學宣告有三層遞進：知道（曉得）→分別聖潔→差遣（派你），每一層都在出生之前已成為事實。「我已曉得你」（yada，希伯來文的深度認識）不只是信息上的了解，而是關係性的認識——神在耶利米存在之前就已與他建立了深厚的認識關係。這個宣告對每一個信徒都是真實的：不是你找到了神，而是神早已認識你，並在特定的時間和地點預備了你的使命。<br><br>
+<strong>2. 「你不要說我是年幼的」：神的呼召勝過人的限制</strong><br>第6-7節的對話是呼召神學的核心：耶利米以「年幼」（自我認知的限制）拒絕呼召；神不是否認這個限制，而是重新定義了問題——不是「你有沒有能力」，而是「我差遣你去，我吩咐你說」。服從呼召的條件不是個人能力的充足，而是對差遣者的信靠。信徒面對神的呼召時常說「我不夠格」；神的回應是：「因為我差遣你」，這個「因為」改變了問題的性質。<br><br>
+<strong>3. 「我今日使你成為堅城、鐵柱、銅牆」：神在最軟弱的人身上建立最強的器皿</strong><br>第18節神應許耶利米成為「堅城、鐵柱、銅牆」，這是對第6節「我是年幼的」的神聖回應——最軟弱的人，在神的手中成為最堅固的器皿。這不是耶利米自己的改變，而是神的裝備。信徒的「成為堅城」不來自個人的成長和努力，而來自「我與你同在」（8節）的神聖裝備。承認自己的軟弱是神裝備的起點，而非服事的障礙。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>我未將你造在腹中</strong>，<strong>我已曉得你</strong>；你未出母胎，我已分別你為聖；我已派你作列國的先知。」（耶1:5）</td>
+<td>就像<strong>一幅在畫家心中早已成形的畫</strong>，在畫布上出現之前就已存在，神對你<strong>的認識和計劃</strong>早於你<strong>在世上的存在</strong>，你是否<strong>有時感到自己</strong>的人生是偶然的、沒有方向的？這節話如何改變你<strong>對自己存在的</strong>意義和神對你<strong>認識的深度</strong>？</td>
+</tr>
+<tr>
+<td>「<strong>你不要說我是年幼</strong>的，<strong>因為我差遣你到誰</strong>那裏去，你都要去；我吩咐你說甚麼話，你都要說。」（耶1:7）</td>
+<td>就像<strong>一個新員工雖然經驗不足</strong>，但因為老闆的授權和陪伴而能完成超出能力的任務，神的差遣包含了完成使命所需的一切，你<strong>目前感到「年</strong>幼不足」的使命或責任是什麼？「因為我差遣你<strong>」這個理由</strong>如何改變你<strong>面對那個不足</strong>的方式？</td>
+</tr>
+<tr>
+<td>「<strong>他們要攻擊你</strong>，<strong>卻不能勝你</strong>；因為我與你同在，要拯救你。」（耶1:19）</td>
+<td>就像<strong>一個在法庭上有最好律師辯護的人</strong>，雖然對方的指控聽起來可怕，但案件的結果是確定的，「攻擊不能勝」是神的應許，不是保證沒有攻擊，你<strong>目前面對的最</strong>大「攻擊」是什麼？「我與你<strong>同在」這個確</strong>信如何使那個攻擊的威力相對化？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

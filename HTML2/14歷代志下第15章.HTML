@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志下第15章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志下第15章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">亞撒的立約：盡心尋求，耶和華被尋見</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>神的靈感動俄德的兒子亞撒利雅。</div>
+<div class="verse"><span class="verse-number">2</span>他出來迎接亞撒，對他說：「亞撒和猶大、便雅憫眾人哪，要聽我說：你們若順從耶和華，耶和華必與你們同在；你們若尋求他，就必尋見；你們若離棄他，他必離棄你們。</div>
+<div class="verse"><span class="verse-number">3</span>以色列人不信真神，沒有訓誨的祭司，也沒有律法，已經好久了；</div>
+<div class="verse"><span class="verse-number">4</span>但他們在急難的時候歸向耶和華以色列的神，尋求他，他就被他們尋見。</div>
+<div class="verse"><span class="verse-number">5</span>那時，出入的人不得平安，列國的居民都遭大亂；</div>
+<div class="verse"><span class="verse-number">6</span>這國攻擊那國，這城攻擊那城，互相破壞，因為神用各樣災難擾亂他們。</div>
+<div class="verse"><span class="verse-number">7</span>現在你們要剛強，不要手軟，因你們所行的必得賞賜。」</div>
+<div class="verse"><span class="verse-number">8</span>亞撒聽見這話和俄德兒子先知亞撒利雅的預言，就壯起膽來，在猶大、便雅憫全地，並以法蓮山地所奪的各城，將可憎之物盡都除掉，又在耶和華殿的廊前重新修築耶和華的壇；</div>
+<div class="verse"><span class="verse-number">9</span>又招聚猶大、便雅憫的眾人，並他們中間寄居的以法蓮人、瑪拿西人、西緬人。有許多以色列人歸降亞撒，因見耶和華他的神與他同在。</div>
+<div class="verse"><span class="verse-number">10</span>亞撒十五年三月，他們都聚集在耶路撒冷。</div>
+<div class="verse"><span class="verse-number">11</span>當日他們從所取的擄物中，將牛七百隻、羊七千隻獻給耶和華。</div>
+<div class="verse"><span class="verse-number">12</span>他們就立約，要盡心盡性的尋求耶和華他們列祖的神。</div>
+<div class="verse"><span class="verse-number">13</span>凡不尋求耶和華以色列神的，無論大小、男女，必被治死。</div>
+<div class="verse"><span class="verse-number">14</span>他們就大聲歡呼，吹號吹角，向耶和華起誓。</div>
+<div class="verse"><span class="verse-number">15</span>猶大眾人為所起的誓歡喜；因他們是盡心起誓，盡意尋求耶和華，耶和華就被他們尋見，且賜他們四境平安。</div>
+<div class="verse"><span class="verse-number">16</span>亞撒王貶了他祖母瑪迦太后的位，因她造了可憎的偶像亞舍拉。亞撒砍下她的偶像，搗得粉碎，燒在汲淪溪邊。</div>
+<div class="verse"><span class="verse-number">17</span>只是邱壇還沒有從以色列中廢去，然而亞撒的心一生誠實。</div>
+<div class="verse"><span class="verse-number">18</span>亞撒將他父所分別為聖、與自己所分別為聖的金銀和器皿都奉到神的殿裏。</div>
+<div class="verse"><span class="verse-number">19</span>從這時直到亞撒三十五年，都沒有爭戰的事。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志下第十五章記述亞撒勝利歸來後，先知亞撒利雅受聖靈感動出迎，給他帶來一個核心信息：「你們若順從耶和華，耶和華必與你們同在；你們若尋求他，就必尋見；你們若離棄他，他必離棄你們」（2節）。先知接著以以色列歷史為鑑：長期沒有真神、沒有律法的黑暗時代，是離棄神的結果；但「在急難的時候歸向耶和華……他就被他們尋見」（4節）。
+
+      亞撒受此激勵，進一步深化改革：清除全地可憎之物，修築聖殿的壇，招聚南北各地歸心的百姓（8-10節）。全會眾獻祭、立約，以「盡心盡性尋求耶和華」為誓（12節），甚至以立法規定：「凡不尋求耶和華的，必被治死」（13節）。亞撒更廢除了祖母瑪迦的太后之位，因她造了偶像亞舍拉（16節）——這是一個真正的改革者最難做到的一步：讓信仰的原則凌駕於家族的情感之上。本章以「從這時……都沒有爭戰的事」（19節）作結，印證了尋求神帶來平安的應許。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 先知的話語激發更深的委身</strong><br>亞撒已經打了大勝仗，卻因先知的一句話而更深地投入改革。這說明屬靈的提醒和激勵，是持續成長的重要動力。信徒不應以為「我已經做得夠好了」就停止受教；神往往在我們最得意的時刻，藉著話語呼召我們更進一步。<br><br>
+<strong>2. 真正的立約需要徹底的行動</strong><br>亞撒的立約不只是心裡的決志，而是有具體行動：清除偶像、修壇、廢太后之位。真正的悔改和委身不只是情緒的感動，而是帶來行為和環境的實際改變。不改變任何習慣和環境的「立志」，往往只是一時的感動。<br><br>
+<strong>3. 信仰的原則有時凌駕於家族的感情</strong><br>廢去祖母的太后之位，是亞撒改革中最難做到的一步。真正的信仰委身，有時意味著對至親的愛也要在神的真理面前讓路。這不是無情，而是更深的愛——寧可讓他們難過，也不願意讓他們留在偶像崇拜的錯誤中。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>他說：「<strong>亞撒和猶大</strong>、<strong>便雅憫眾人哪</strong>，……你們若尋求他，就必尋見；你們若離棄他，他必離棄你們。」（代下15:2）</td>
+<td>這句雙向的應許與警告，像是一面鏡子——你<strong>看見什麼</strong>，取決於你<strong>站在哪一側</strong>，就像<strong>一道門</strong>，從哪個方向推就往哪個方向開——你<strong>目前與神的距</strong>離，更像是「在尋求」，還是「在離棄」？你<strong>最近一次「尋</strong>見祂」是什麼時候？</td>
+</tr>
+<tr>
+<td><strong>他們就立約</strong>，<strong>要盡心盡性的尋求</strong>耶和華他們列祖的神……猶大眾人為所起的誓歡喜；因他們是盡心起誓，盡意尋求耶和華，耶和華就被他們尋見，且賜他們四境平安。（代下15:12, 15）</td>
+<td>盡心盡意尋求神帶來四境平安，不是一個交換公式，而是一個生命的次序：當內心的焦點對準，外部的平安就隨之而來，就像<strong>調準焦距的鏡頭</strong>，畫面自然清晰——你<strong>目前生活中最</strong>缺乏「平安」的那個部分，有沒有可能是「尋求」的焦點還沒對準？</td>
+</tr>
+<tr>
+<td><strong>亞撒王貶了他祖母</strong><strong>瑪迦太后的位</strong>，因她造了可憎的偶像亞舍拉。亞撒砍下她的偶像，搗得粉碎，燒在汲淪溪邊。（代下15:16）</td>
+<td>廢太后之位是亞撒改革中最難的一步，因為那牽涉到最親密的家人，就像<strong>一個人要向至親說「你這樣做不對</strong>」，比向陌生人說難上十倍——你有沒有<strong>過為了信仰的</strong>原則，而需要對最親近的人說出一個他們不樂意聽的「不」？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

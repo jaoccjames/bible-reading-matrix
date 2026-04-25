@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記上第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記上第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約櫃被擄榮耀離去</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列人出去與非利士人打仗，安營在以便以謝；非利士人安營在亞弗。</div>
+<div class="verse"><span class="verse-number">2</span>非利士人向以色列人擺陣。兩軍交戰的時候，以色列人敗在非利士人面前；非利士人在戰場上殺了他們的軍兵約有四千人。</div>
+<div class="verse"><span class="verse-number">3</span>百姓回到營裏，以色列的長老說：「耶和華今日為何使我們敗在非利士人面前呢？我們不如將耶和華的約櫃從示羅抬到我們這裏來，好在我們中間救我們脫離敵人的手。」</div>
+<div class="verse"><span class="verse-number">4</span>於是百姓打發人到示羅，從那裏將坐在二基路伯上萬軍之耶和華的約櫃抬來。以利的兩個兒子何弗尼、非尼哈與神的約櫃同來。</div>
+<div class="verse"><span class="verse-number">5</span>耶和華的約櫃到了營中，以色列眾人就大聲歡呼，地便震動。</div>
+<div class="verse"><span class="verse-number">6</span>非利士人聽見歡呼的聲音，就說：「在希伯來人營裏大聲歡呼，是甚麼緣故呢？」隨後就知道耶和華的約櫃到了營中。</div>
+<div class="verse"><span class="verse-number">7</span>非利士人就懼怕起來，說：「有神到了他們營中」；又說：「我們有禍了！向來不曾有這樣的事。</div>
+<div class="verse"><span class="verse-number">8</span>我們有禍了！誰能救我們脫離這些大能之神的手呢？從前在曠野用各樣災殃擊打埃及人的，就是這些神。</div>
+<div class="verse"><span class="verse-number">9</span>非利士人哪，你們要剛強，要作大丈夫，免得作希伯來人的奴僕，如同他們作你們的奴僕一樣。你們要作大丈夫，與他們爭戰。」</div>
+<div class="verse"><span class="verse-number">10</span>非利士人和以色列人打仗，以色列人敗了，各向各家奔逃，被殺的人甚多，以色列的步兵仆倒了三萬。</div>
+<div class="verse"><span class="verse-number">11</span>神的約櫃被擄去，以利的兩個兒子何弗尼、非尼哈也都被殺了。</div>
+<div class="verse"><span class="verse-number">12</span>當日，有一個便雅憫人從陣上逃跑，衣服撕裂，頭蒙灰塵，來到示羅。</div>
+<div class="verse"><span class="verse-number">13</span>到了的時候，以利正在道旁坐在自己的位上觀望，為神的約櫃心裏擔憂。那人進城報信，合城的人就都呼喊起來。</div>
+<div class="verse"><span class="verse-number">14</span>以利聽見呼喊的聲音就問說：「這喧嚷是甚麼緣故呢？」那人急忙來報信給以利。</div>
+<div class="verse"><span class="verse-number">15</span>那時以利九十八歲了，眼目發直，不能看見。</div>
+<div class="verse"><span class="verse-number">16</span>那人對以利說：「我是從陣上來的，今日我從陣上逃回。」以利說：「我兒，事情怎樣？」</div>
+<div class="verse"><span class="verse-number">17</span>報信的回答說：「以色列人在非利士人面前逃跑，民中被殺的甚多！你的兩個兒子何弗尼、非尼哈也都死了，並且神的約櫃被擄去。」</div>
+<div class="verse"><span class="verse-number">18</span>他一提神的約櫃，以利就從他的位上往後跌倒，在門旁折斷頸項而死；因為他年紀老邁，身體沉重。以利作以色列的士師四十年。</div>
+<div class="verse"><span class="verse-number">19</span>以利的兒婦、非尼哈的妻懷孕將到產期，她聽見神的約櫃被擄去，公公和丈夫都死了，就猛然疼痛，曲身生產；</div>
+<div class="verse"><span class="verse-number">20</span>將要死的時候，旁邊站着的婦人們對她說：「不要怕！你生了男孩子了。」她卻不回答，也不放在心上。</div>
+<div class="verse"><span class="verse-number">21</span>她給孩子起名叫以迦博，說：「榮耀離開以色列了！」這是因神的約櫃被擄去，又因她公公和丈夫都死了。</div>
+<div class="verse"><span class="verse-number">22</span>她又說：「榮耀離開以色列，因為神的約櫃被擄去了。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+撒母耳記上第4章記載了以色列歷史上最黑暗的時刻之一——約櫃被擄事件。當時以色列在屬靈上極度軟弱,祭司以利的兩個兒子敗壞聖職,百姓對神失去真正的敬畏。在與非利士人的戰爭中慘敗後,以色列人不是悔改尋求神,反而迷信地將約櫃當作幸運符抬到戰場,以為約櫃本身能帶來勝利。結果不但慘敗,約櫃還被擄走,以利的兩個兒子戰死,以利聽聞消息後跌倒身亡。非尼哈的妻子在臨終前為孩子取名「以迦博」,意為「榮耀離開了」,深刻表達了神的同在離開以色列的悲劇。本章揭示了形式化宗教的危險,以及神不能被人操縱的真理,為後續以色列歷史的轉折奠定了基礎。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 宗教儀式無法取代真實敬拜</strong><br>以色列人將約櫃抬到戰場,以為神聖物品本身能帶來勝利,這是典型的迷信行為。他們忘記了約櫃只是神同在的記號,真正的能力來自與神的活潑關係。當人的心遠離神時,再神聖的儀式也變成空洞的形式。這提醒我們,參加聚會、讀經禱告等外在行為,若沒有發自內心對神的愛與順服,就失去了屬靈意義。神要的是真心的敬拜者,而非宗教儀式的執行者。形式化的信仰不但不能帶來祝福,反而可能招致審判,因為這是對神的褻瀆。<br><br>
+<strong>2. 罪的後果終必臨到</strong><br>以利家長期的罪惡——兒子們褻瀆神的聖職,而以利知情卻不加制止——最終帶來毀滅性的審判。神的寬容不是縱容,祂的忍耐有其界限。本章中,第3章所預言的審判完全應驗:以利的兩個兒子死亡,以利本人也因約櫃被擄的消息而喪命。這顯明神的公義必定彰顯,罪的工價就是死。無論是個人、家庭或國家,若長期活在罪中而不悔改,審判終將臨到。神的慈愛與公義並行,祂給人悔改的機會,但若執迷不悟,後果必須承擔。<br><br>
+<strong>3. 神的榮耀不容被操縱</strong><br>「以迦博」這名字道出了核心悲劇——當人試圖操縱神、利用神達成自己的目的時,神的榮耀就離開了。以色列人把神當作可以召喚的工具,把約櫃當作護身符,完全顛倒了神人關係。神是主,人是僕;神掌主權,人當順服。任何企圖將神變成服務自己目的的手段,都是對神主權的侵犯。真正的信仰是讓神在我們生命中作王,而不是要神照我們的心意行事。當神的榮耀離開,剩下的只是空洞的宗教外殼,毫無能力可言。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我們不如將耶和華</strong><strong>的約櫃從示羅抬到</strong>我們這裡來,好在我們中間救我們脫離敵人的手。(撒上4:3)</td>
+<td>就像<strong>把幸運物帶在身上卻不改變生活習</strong>慣,以色列人抬約櫃上戰場卻心中無神,你是否<strong>也曾把宗教儀</strong>式當作護身符,以為參加聚會、禱告就能自動得祝福,卻忽略了神要的是你<strong>真心的敬拜</strong>?</td>
+</tr>
+<tr>
+<td><strong>他一提神的約櫃</strong>,<strong>以利就從他的位上</strong>往後跌倒,在門旁折斷頸項而死;因為他年紀老邁,身體沉重。(撒上4:18)</td>
+<td>就像<strong>長期忽視健康檢查的紅字最終導致</strong>重病,以利家的罪長期累積,審判終於臨到。你<strong>生命中</strong>是否有長期忽視的罪或問題,以為神會一直寬容,卻不知道後果正在累積?</td>
+</tr>
+<tr>
+<td><strong>她給孩子起名叫以</strong>迦博,說:<strong>榮耀離開以色列了</strong>!這是因神的約櫃被擄去,又因她公公和丈夫都死了。(撒上4:21)</td>
+<td>就像<strong>手機沒電時所有功能都無法使用</strong>,當神的榮耀離開,一切宗教活動都成為空殼。你<strong>的信仰生活</strong>是否只剩下形式而失去了神的同在?你如何<strong>確保神的榮耀</strong>真實運行在你<strong>的生命中</strong>?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

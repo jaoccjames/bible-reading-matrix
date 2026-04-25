@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利未記第19章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+利未記第19章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">你們要聖潔：聖潔涵蓋生活每個層面</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華對摩西說：</div>
+<div class="verse"><span class="verse-number">2</span>「你曉諭以色列全會眾說：你們要聖潔，因為我耶和華你們的神是聖潔的。</div>
+<div class="verse"><span class="verse-number">3</span>你們各人都當孝敬父母，也要守我的安息日。我是耶和華你們的神。</div>
+<div class="verse"><span class="verse-number">4</span>你們不可偏向虛無的神，也不可為自己鑄造神像。我是耶和華你們的神。</div>
+<div class="verse"><span class="verse-number">5</span>「你們獻平安祭給耶和華的時候，要獻得可蒙悅納。</div>
+<div class="verse"><span class="verse-number">6</span>這祭物要在獻的那一天和第二天吃，若有剩到第三天的，就必用火焚燒。</div>
+<div class="verse"><span class="verse-number">7</span>第三天若再吃，這就為可憎惡的，必不蒙悅納。</div>
+<div class="verse"><span class="verse-number">8</span>凡吃的人必擔當他的罪孽；因為他褻瀆了耶和華的聖物，那人必從民中剪除。</div>
+<div class="verse"><span class="verse-number">9</span>「在你們的地收割莊稼，不可割盡田角，也不可拾取所遺落的。</div>
+<div class="verse"><span class="verse-number">10</span>不可摘盡葡萄園的果子，也不可拾取葡萄園所掉的果子；要留給窮人和寄居的。我是耶和華你們的神。</div>
+<div class="verse"><span class="verse-number">11</span>「你們不可偷盜，不可欺騙，也不可彼此說謊。</div>
+<div class="verse"><span class="verse-number">12</span>不可指着我的名起假誓，褻瀆你神的名。我是耶和華。</div>
+<div class="verse"><span class="verse-number">13</span>「不可欺壓你的鄰舍，也不可搶奪他的物。雇工人的工價，不可在你那裏過夜，留到早晨。</div>
+<div class="verse"><span class="verse-number">14</span>不可咒罵聾子，也不可將絆腳石放在瞎子面前，只要敬畏你的上帝。我是耶和華。</div>
+<div class="verse"><span class="verse-number">15</span>「你們施行審判，不可行不義；不可偏護窮人，也不可重看有勢力的人，只要按着公義審判你的鄰舍。</div>
+<div class="verse"><span class="verse-number">16</span>不可在民中往來搬弄是非，也不可與鄰舍為敵，置之於死〔原文作流他的血〕。我是耶和華。</div>
+<div class="verse"><span class="verse-number">17</span>「不可心裏恨你的弟兄；總要指摘你的鄰舍，免得因他擔罪。</div>
+<div class="verse"><span class="verse-number">18</span>不可報仇，也不可埋怨你本國的子民，卻要愛人如己。我是耶和華。</div>
+<div class="verse"><span class="verse-number">19</span>「你們要守我的律例。不可叫你的牲畜與異類配合；不可用兩樣攙雜的種種你的地，也不可用兩樣攙雜的料作衣服穿在身上。</div>
+<div class="verse"><span class="verse-number">20</span>「婢女許配了丈夫，還沒有被贖、得釋放，人若與她行淫，二人要受刑罰，卻不把他們治死，因為婢女還沒有得自由。</div>
+<div class="verse"><span class="verse-number">21</span>那人要把贖愆祭，就是一隻公綿羊牽到會幕門口、耶和華面前。</div>
+<div class="verse"><span class="verse-number">22</span>祭司要用贖愆祭的羊在耶和華面前贖他所犯的罪，他的罪就必蒙赦免。</div>
+<div class="verse"><span class="verse-number">23</span>「你們到了迦南地，栽種各樣結果子的樹木，就要以所結的果子如未受割禮的一樣。三年之久，你們要以這些果子，如未受割禮的，是不可吃的。</div>
+<div class="verse"><span class="verse-number">24</span>但第四年所結的果子全要成為聖，用以讚美耶和華。</div>
+<div class="verse"><span class="verse-number">25</span>第五年，你們要吃那樹上的果子，好叫樹給你們結果子更多。我是耶和華你們的神。</div>
+<div class="verse"><span class="verse-number">26</span>「你們不可吃帶血的物；不可用法術，也不可觀兆。</div>
+<div class="verse"><span class="verse-number">27</span>頭的週圍〔或作：兩鬢〕不可剃，鬍鬚的周圍也不可損壞。</div>
+<div class="verse"><span class="verse-number">28</span>不可為死人用刀劃身，也不可在身上刺花紋。我是耶和華。</div>
+<div class="verse"><span class="verse-number">29</span>「不可辱沒你的女兒，使她為娼妓，恐怕地上的人專向淫亂，地就滿了大惡。</div>
+<div class="verse"><span class="verse-number">30</span>你們要守我的安息日，敬我的聖所。我是耶和華。</div>
+<div class="verse"><span class="verse-number">31</span>「不可偏向那些交鬼的和行巫術的；不可求問他們，以致被他們玷污了。我是耶和華你們的神。</div>
+<div class="verse"><span class="verse-number">32</span>「在白髮的人面前，你要站起來；也要尊敬老人，又要敬畏你的神。我是耶和華。</div>
+<div class="verse"><span class="verse-number">33</span>「若有外人在你們國中和你同居，就不可欺負他。</div>
+<div class="verse"><span class="verse-number">34</span>和你們同居的外人，你們要看他如本地人一樣，並要愛他如己，因為你們在埃及地也作過寄居的。我是耶和華你們的神。</div>
+<div class="verse"><span class="verse-number">35</span>「你們施行審判，不可行不義；在尺、秤、升、斗上也是如此。</div>
+<div class="verse"><span class="verse-number">36</span>要用公道天平、公道法碼、公道升斗、公道秤。我是耶和華你們的神，曾把你們從埃及地領出來的。</div>
+<div class="verse"><span class="verse-number">37</span>你們要謹守遵行我一切的律例典章。我是耶和華。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+利未記第19章是整卷利未記中內容最豐富多元的一章，被許多學者稱為「小十誡」或「聖潔法典的核心」。本章以神對全會眾的呼召開始：「你們要聖潔，因為我耶和華你們的神是聖潔的」，確立了一切律例的神學根基——聖潔的動力來自神的本質，而非人的努力。章節的律例涵蓋範圍極廣，從宗教敬拜（安息日、不拜偶像）到農業道德（留田角給窮人）、商業誠信（公道秤量）、對弱勢的尊重（不欺負聾啞瞎子、不欺壓外人），乃至人際關係（不報仇、不搬弄是非）和愛人如己。多次重複「我是耶和華」的短句，提醒所有律例的根基都是神的屬性和主權，而非社會合約或文化慣例。其中第18節「愛人如己」被耶穌引用為誡命的精髓（馬太福音22:39），顯示本章在整個聖經救恩倫理中的核心地位。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 聖潔不只是宗教行為，更涵蓋日常生活的每一層面</strong><br>本章將宗教儀式（獻祭、守安息日）與農業、商業、司法、家庭等日常生活並列，顯示神對聖潔的定義從不局限於「教會時間」。信徒在職場的誠信、對待弱勢者的態度、日常的言語和行為，都是聖潔與否的試驗場。屬靈生命的成熟，在於讓信仰滲透生活的每個角落，而非只在特定宗教場合才有「神聖感」。<br><br>
+<strong>2. 愛人如己是聖潔生活的實踐核心</strong><br>第18節「愛人如己」不只是一句口號，而是接在一系列具體行為（不報仇、不埋怨、主動指出鄰舍的錯誤）之後所給出的總結原則。真正愛人如己，需要主動為鄰舍的益處行動，包括在適當時候直言相勸，而非沉默姑息。這種愛是需要意志和行動的，不是單靠感情。<br><br>
+<strong>3. 公義對待弱勢是信仰真實性的檢驗</strong><br>本章多次提到對弱勢者（窮人、外人、聾者、瞎者、雇工）的具體保護要求，顯示神的聖潔法典從不脫離社會公義。一個人對神的敬畏，會直接反映在他如何對待生活中那些無法反抗欺壓的人。信仰若只停留在禮拜堂內，而對日常中的不公義視而不見，便是未能真正活出利未記19章的精神。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你們要聖潔</strong>，<strong>因為我耶和華你們</strong>的神是聖潔的。」（利19:2）</td>
+<td>就像<strong>加入一間知名公司後</strong>，員工的言行舉止代表公司的形象，信徒的生命也應當反映神的聖潔性情，你<strong>在日常生活中</strong>，有哪些具體的層面尚未讓神的聖潔滲透進去？</td>
+</tr>
+<tr>
+<td>「<strong>在你們的地收割莊</strong>稼，<strong>不可割盡田角</strong>，……要留給窮人和寄居的。」（利19:9-10）</td>
+<td>就像<strong>外送平台設有無障礙訂餐選項為行</strong>動不便者服務，神要求以色列人在豐收中主動留出給弱勢者的空間，你是否<strong>在自己的資源</strong>管理中，為有需要的人刻意「留出田角」？</td>
+</tr>
+<tr>
+<td>「<strong>不可報仇</strong>，<strong>也不可埋怨你本國</strong>的子民，卻要愛人如己。我是耶和華。」（利19:18）</td>
+<td>就像<strong>兩個拼車的人需要彼此遷就才能讓</strong>旅程順利，不報仇和愛人如己都需要主動放棄自己的感受，你<strong>在生活中最難</strong>「愛人如己」的關係是哪一個，神的命令如何挑戰你<strong>在那段關係中</strong>的回應方式？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

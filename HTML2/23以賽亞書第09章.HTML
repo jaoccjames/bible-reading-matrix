@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">有一嬰孩為我們而生：和平君王帶來無窮光明</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>但那受過痛苦的必不再見幽暗。從前神使西布倫地和拿弗他利地被藐視，末後卻使這沿海的路，約但河外，外邦人的加利利地得着榮耀。</div>
+<div class="verse"><span class="verse-number">2</span>在黑暗中行走的百姓看見了大光；住在死蔭之地的人有光照耀他們。</div>
+<div class="verse"><span class="verse-number">3</span>你使這國民繁多，加增他們的喜樂；他們在你面前歡喜，好像收割的歡喜，像人分擄物那樣的快樂。</div>
+<div class="verse"><span class="verse-number">4</span>因為他們所負的重軛和肩頭上的杖，並欺壓他們人的棍，你都已經折斷，好像在米甸的日子一樣。</div>
+<div class="verse"><span class="verse-number">5</span>戰士在亂殺之間所穿戴的盔甲，並那滾在血中的衣服，都必作為可燒的，當作火柴。</div>
+<div class="verse"><span class="verse-number">6</span>因有一嬰孩為我們而生；有一子賜給我們。政權必擔在他的肩頭上；他名稱為「奇妙、策士、全能的神、永在的父、和平的君」。</div>
+<div class="verse"><span class="verse-number">7</span>他的政權與平安必加增無窮。他必在大衛的寶座上治理他的國，以公平公義使國堅定穩固，從今直到永遠。萬軍之耶和華的熱心必成就這事。</div>
+<div class="verse"><span class="verse-number">8</span>主使一言入於雅各家，落於以色列家。</div>
+<div class="verse"><span class="verse-number">9</span>這眾百姓，就是以法蓮和撒瑪利亞的居民，都要知道；他們憑驕傲自大的心說：</div>
+<div class="verse"><span class="verse-number">10</span>磚牆塌了，我們卻要鑿石頭建築；桑樹砍了，我們卻要換香柏樹。</div>
+<div class="verse"><span class="verse-number">11</span>因此，耶和華要高舉利汛的敵人來攻擊以色列，並要激動以色列的仇敵。</div>
+<div class="verse"><span class="verse-number">12</span>東有亞蘭人，西有非利士人；他們張口要吞喫以色列。雖然如此，耶和華的怒氣還未轉消；他的手仍伸不縮。</div>
+<div class="verse"><span class="verse-number">13</span>這百姓還沒有歸向擊打他們的主，也沒有尋求萬軍之耶和華。</div>
+<div class="verse"><span class="verse-number">14</span>因此，耶和華一日之間必從以色列中剪除頭與尾，棕枝與蘆葦，</div>
+<div class="verse"><span class="verse-number">15</span>長老和尊貴人就是頭，以謊言教人的先知就是尾。</div>
+<div class="verse"><span class="verse-number">16</span>因為，引導這百姓的使他們走錯了路；被引導的都必敗亡。</div>
+<div class="verse"><span class="verse-number">17</span>所以，主必不喜悅他們的少年人，也不憐恤他們的孤兒寡婦；因為，各人是褻瀆的，是行惡的，並且各人的口都說愚妄的話。雖然如此，耶和華的怒氣還未轉消；他的手仍伸不縮。</div>
+<div class="verse"><span class="verse-number">18</span>邪惡像火焚燒，燒滅荊棘和蒺藜，在稠密的樹林中着起來，就成為煙柱，旋轉上騰。</div>
+<div class="verse"><span class="verse-number">19</span>因萬軍之耶和華的烈怒，地都燒遍；百姓成為火柴；無人憐愛弟兄。</div>
+<div class="verse"><span class="verse-number">20</span>有人右邊搶奪，仍受飢餓，左邊吞喫，仍不飽足；各人喫自己膀臂上的肉。</div>
+<div class="verse"><span class="verse-number">21</span>瑪拿西吞喫〔或作：攻擊；下同〕以法蓮；以法蓮吞喫瑪拿西，又一同攻擊猶大。雖然如此，耶和華的怒氣還未轉消；他的手仍伸不縮。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第九章前半（1-7節）是整本聖經中最著名的彌賽亞預言之一，也是每年聖誕節聖樂中最常被引用的段落。這段預言的出現極具戲劇性：緊接在第八章末「盡是艱難、黑暗和幽暗的痛苦」之後，第九章第一句就宣告「受過痛苦的必不再見幽暗」，光明的盼望在黑暗中突然升起。「在黑暗中行走的百姓看見了大光」（2節），是以賽亞書最有名的圖像之一。第6節列出的五個名號——「奇妙、策士、全能的神、永在的父、和平的君」——是舊約最完整的彌賽亞身份宣告，在新約耶穌基督的降生中得到了最終成就。第7節「他的政權與平安必加增無窮……萬軍之耶和華的熱心必成就這事」，強調這個應許的成就不依賴人的努力，而是神自己的熱心所驅動。本章後半（8-21節）則急轉直下，描繪以色列北國因驕傲不悔改而遭受連環審判的景象，以「耶和華的怒氣還未轉消；他的手仍伸不縮」重複出現（12、17、21節）為結構，營造出不斷累積的警告張力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在最深的黑暗中，神已預備了大光</strong><br>第2節「在黑暗中行走的百姓看見了大光」，這不只是對彌賽亞降臨的預言，更是一個普遍的屬靈真理：神慣於在最黑暗的時刻帶入最耀眼的光。以色列在亞述威脅、政治動盪的黑暗中，以賽亞卻看見了加利利的光明——那個後來耶穌開始傳道的地方（太4:15-16）。信徒在最低谷的時期，可以以此為信仰的錨：神的光不是在黑暗消退之後才出現，而是在黑暗最深的時候照進來。<br><br>
+<strong>2. 彌賽亞的五個名號揭示祂的全備性格</strong><br>第6節的五個名號是信徒認識基督的寶貴鑰匙：「奇妙策士」——祂的智慧超越人的理解；「全能的神」——祂有神聖的能力；「永在的父」——祂的愛是父的慈愛，永不止息；「和平的君」——祂帶來的和平是真正的、永久的平安。這五個名號提醒信徒：無論面對哪種需要，基督都完全可以供應——智慧的缺乏、能力的不足、愛的渴望、平安的失喪，祂都能滿足。<br><br>
+<strong>3. 驕傲說「磚牆塌了，我要鑿石頭建築」：拒絕悔改加重審判</strong><br>第10節北國以色列在遭受攻擊後的反應不是回轉向神，而是驕傲地宣告「我要建更好的」——這種以人的努力取代神的轉向，正是第13節「這百姓沒有歸向擊打他們的主，也沒有尋求耶和華」的具體表現。信徒在挫折和審判中，最危險的反應不是哭泣，而是「加倍努力但不悔改」——努力解決症狀，卻不處理根源。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>在黑暗中行走的百</strong><strong>姓看見了大光</strong>；住在死蔭之地的人有光照耀他們。」（賽9:2）</td>
+<td>就像<strong>在漫長的隧道中行走</strong>，最黑暗的時刻往往就在出口之前，而那道出口的光是在隧道最深處才能看見的，你<strong>生命中最黑暗</strong>的時期，是否有過突然「看見大光」的轉折時刻？那道光是什麼？它如何改變了你<strong>繼續前行的動</strong>力？</td>
+</tr>
+<tr>
+<td>「<strong>因有一嬰孩為我們</strong>而生；<strong>有一子賜給我們</strong>。……他名稱為奇妙、策士、全能的神、永在的父、和平的君。」（賽9:6）</td>
+<td>就像<strong>一把鑰匙環上有各種鑰匙</strong>，每一把對應不同的門，基督的五個名號回應人生各種需要，你<strong>目前最需要的</strong>是哪一個面向的基督——奇妙的智慧、全能的力量、父的慈愛，還是和平的君所賜的平安？為什麼是這個？</td>
+</tr>
+<tr>
+<td>「<strong>這百姓還沒有歸向</strong><strong>擊打他們的主</strong>，也沒有尋求萬軍之耶和華。」（賽9:13）</td>
+<td>就像<strong>一個生病的人若只靠止痛藥而不去</strong>看醫生，症狀暫時消失，病根卻越來越深，你<strong>在面對人生的</strong>挫折或試煉時，第一個反應是「加倍努力解決」還是「回到神面前尋求」？你如何<strong>培養「先歸向</strong>神」的習慣？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

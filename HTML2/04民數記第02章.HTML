@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+民數記第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">十二支派有序安營行進</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華曉諭摩西、亞倫說：</div>
+<div class="verse"><span class="verse-number">2</span>「以色列人要各歸自己的纛下，在本族的旗號那裏，對着會幕的四圍安營。</div>
+<div class="verse"><span class="verse-number">3</span>在東邊，向日出之地，照着軍隊安營的是猶大營的纛。有亞米拿達的兒子拿順作猶大人的首領。</div>
+<div class="verse"><span class="verse-number">4</span>他軍隊被數的，共有七萬四千六百名。</div>
+<div class="verse"><span class="verse-number">5</span>挨着他安營的是以薩迦支派。有蘇押的兒子拿坦業作以薩迦人的首領。</div>
+<div class="verse"><span class="verse-number">6</span>他軍隊被數的，共有五萬四千四百名。</div>
+<div class="verse"><span class="verse-number">7</span>又有西布倫支派。希倫的兒子以利押作西布倫人的首領。</div>
+<div class="verse"><span class="verse-number">8</span>他軍隊被數的，共有五萬七千四百名。</div>
+<div class="verse"><span class="verse-number">9</span>凡屬猶大營、按着軍隊被數的，共有十八萬六千四百名，要作第一隊往前行。</div>
+<div class="verse"><span class="verse-number">10</span>「在南邊，按着軍隊是流便營的纛。有示丟珥的兒子以利蓿作流便人的首領。</div>
+<div class="verse"><span class="verse-number">11</span>他軍隊被數的，共有四萬六千五百名。</div>
+<div class="verse"><span class="verse-number">12</span>挨着他安營的是西緬支派。蘇利沙代的兒子示路蔑作西緬人的首領。</div>
+<div class="verse"><span class="verse-number">13</span>他軍隊被數的，共有五萬九千三百名。</div>
+<div class="verse"><span class="verse-number">14</span>又有迦得支派。丟珥的兒子以利雅薩作迦得人的首領。</div>
+<div class="verse"><span class="verse-number">15</span>他軍隊被數的，共有四萬五千六百五十名，</div>
+<div class="verse"><span class="verse-number">16</span>凡屬流便營、按着軍隊被數的，共有十五萬一千四百五十名，要作第二隊往前行。</div>
+<div class="verse"><span class="verse-number">17</span>「隨後，會幕要往前行，有利未營在諸營中間。他們怎樣安營就怎樣往前行，各按本位，各歸本纛。</div>
+<div class="verse"><span class="verse-number">18</span>「在西邊，按着軍隊是以法蓮營的纛。亞米忽的兒子以利沙瑪作以法蓮人的首領。</div>
+<div class="verse"><span class="verse-number">19</span>他軍隊被數的，共有四萬零五百名。</div>
+<div class="verse"><span class="verse-number">20</span>挨着他的是瑪拿西支派。比大蓿的兒子迦瑪列作瑪拿西人的首領。</div>
+<div class="verse"><span class="verse-number">21</span>他軍隊被數的，共有三萬二千二百名。</div>
+<div class="verse"><span class="verse-number">22</span>又有便雅憫支派。基多尼的兒子亞比但作便雅憫人的首領。</div>
+<div class="verse"><span class="verse-number">23</span>他軍隊被數的，共有三萬五千四百名。</div>
+<div class="verse"><span class="verse-number">24</span>凡屬以法蓮營、按着軍隊被數的，共有十萬零八千一百名，要作第三隊往前行。</div>
+<div class="verse"><span class="verse-number">25</span>「在北邊，按着軍隊是但營的纛。亞米沙代的兒子亞希以謝作但人的首領。</div>
+<div class="verse"><span class="verse-number">26</span>他軍隊被數的，共有六萬二千七百名。</div>
+<div class="verse"><span class="verse-number">27</span>挨着他安營的是亞設支派。俄蘭的兒子帕結作亞設人的首領。</div>
+<div class="verse"><span class="verse-number">28</span>他軍隊被數的，共有四萬一千五百名。</div>
+<div class="verse"><span class="verse-number">29</span>又有拿弗他利支派。以南的兒子亞希拉作拿弗他利人的首領。</div>
+<div class="verse"><span class="verse-number">30</span>他軍隊被數的，共有五萬三千四百名。</div>
+<div class="verse"><span class="verse-number">31</span>凡但營被數的，共有十五萬七千六百名，要歸本纛作末隊往前行。」</div>
+<div class="verse"><span class="verse-number">32</span>這些以色列人，照他們的宗族，按他們的軍隊，在諸營中被數的，共有六十萬零三千五百五十名。</div>
+<div class="verse"><span class="verse-number">33</span>惟獨利未人沒有數在以色列人中，是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">34</span>以色列人就這樣行，各人照他們的家室、宗族歸於本纛，安營起行，都是照耶和華所吩咐摩西的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+民數記第二章緊接第一章的人口普查之後，記載耶和華向摩西與亞倫頒布以色列各支派安營與行進的具體秩序。神命令十二支派圍繞會幕四方排列：東方是猶大、以薩迦、西布倫；南方是流便、西緬、迦得；西方是以法蓮、瑪拿西、便雅憫；北方是但、亞設、拿弗他利。每個方位由一個主要支派領頭，形成四大營。行進時，猶大營居首，流便營次之，利未人攜同會幕居中，以法蓮營第三，但營押後。會幕始終在隊伍中央，象徵神的同在是以色列民生命的核心。全章精確記錄每支派人數與位置，彰顯神對祂子民的管治既有秩序又充滿恩典。這種安營方式預示著教會生活中的秩序、責任分工與以神為中心的重要性。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 以神的同在為中心是生命的根本秩序</strong><br>會幕被安置在四營的中央，一切安排都圍繞神的同在而定。這不只是軍事部署，更是一個屬靈真理的宣告：神的子民無論安營還是起行，都要以神的同在為生命的中心軸。今日的信徒同樣被呼召，在生活的一切安排中，讓神居於首位，而非邊緣。<br><br>
+<strong>2. 神的秩序帶來合一與力量</strong><br>各支派各歸本纛、各守崗位，六十萬人在有序的架構中合而為一。神所設立的秩序並非要限制自由，而是要使各人在適當的位置上發揮最大效能。當教會中每個肢體各司其職、各守崗位，整體的力量才能充分彰顯出來。<br><br>
+<strong>3. 順服神的安排是信心的表現</strong><br>以色列人「照耶和華所吩咐摩西的」安營起行，沒有支派爭先搶位或抗拒分配。這種完全順服的態度，正是對神智慧與主權的信任。信仰的操練之一，就是學習接受神在我們生命中的安排，即便那安排不符合我們的期望或喜好。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>以色列人要各歸自</strong><strong>己的纛下</strong>，在本族的旗號那裏，對着會幕的四圍安營。」（民2:2）</td>
+<td>會幕在中央，萬人圍繞，就像<strong>家中的餐桌是家人聚集的核心一樣</strong>。在你<strong>的日常生活中</strong>，神的同在是否真的居於中心位置，還是被推到了邊緣？</td>
+</tr>
+<tr>
+<td>「隨後，<strong>會幕要往前行</strong>，<strong>有利未營在諸營中</strong>間。他們怎樣安營就怎樣往前行，各按本位，各歸本纛。」（民2:17）</td>
+<td>每個支派各守崗位同心前行，就像<strong>划船隊每人按節奏划槳才能直線前</strong>進一樣。你<strong>在神的家中</strong>是否找到了自己的崗位，並願意忠心守在那裏？</td>
+</tr>
+<tr>
+<td>「<strong>以色列人就這樣行</strong>……<strong>都是照耶和華所吩</strong>咐摩西的。」（民2:34）</td>
+<td>以色列人完全遵照神的指示安營，就像<strong>GPS重新規劃路線時選擇跟隨而</strong>非堅持己見一樣。面對神的吩咐，你是順服而行，還是習慣先衡量是否合乎自己的計畫？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第140章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第140章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">求神救我脫離兇惡強暴：神必為困苦人伸冤</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩，交與伶長）耶和華阿，求你拯救我脫離兇惡的人，保護我脫離強暴的人！</div>
+<div class="verse"><span class="verse-number">2</span>他們心中圖謀奸惡，常常聚集要爭戰。</div>
+<div class="verse"><span class="verse-number">3</span>他們使舌頭尖利如蛇，嘴裏有虺蛇的毒氣。（細拉）</div>
+<div class="verse"><span class="verse-number">4</span>耶和華啊，求你拯救我脫離惡人的手，保護我脫離強暴的人！他們圖謀推我跌倒。</div>
+<div class="verse"><span class="verse-number">5</span>驕傲人為我暗設網羅和繩索；他們在路旁鋪下網，設下圈套。（細拉）</div>
+<div class="verse"><span class="verse-number">6</span>我曾對耶和華說：你是我的神。耶和華啊，求你留心聽我懇求的聲音！</div>
+<div class="verse"><span class="verse-number">7</span>主耶和華、我救恩的力量阿，在爭戰的日子，你遮蔽了我的頭。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華啊，求你不要遂惡人的心願；不要成就他們的計謀，恐怕他們自高。（細拉）</div>
+<div class="verse"><span class="verse-number">9</span>至於那些昂首圍困我的人，願他們嘴唇的奸惡陷害〔原文作遮蔽〕自己！</div>
+<div class="verse"><span class="verse-number">10</span>願火炭落在他們身上！願他們被丟在火中，拋在深坑裏，不能再起來。</div>
+<div class="verse"><span class="verse-number">11</span>說惡言的人在地上必堅立不住；禍患必獵取強暴的人，將他打倒。</div>
+<div class="verse"><span class="verse-number">12</span>我知道耶和華必為困苦人伸冤，必為窮乏人辨屈。</div>
+<div class="verse"><span class="verse-number">13</span>義人必要稱讚你的名；正直人必住在你面前。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第140篇是大衛的詩，是一首呼求神保護脫離惡人的詩篇，呈現了大衛在強大仇敵的威脅下向神的真實呼求。本篇以描述仇敵的惡行開篇（1-5節）：心中圖謀奸惡、舌頭尖利如蛇、為我暗設網羅和繩索——這些描述揭示了一種精密的、蓄謀的、多面向的惡意攻擊。面對這樣的威脅，大衛的回應不是以惡報惡，而是呼求神（第6節）、陳述神過去的保護（第7節），然後才是對仇敵的咒詛祈求（第8-11節）。全篇的神學高峰在第12節：「我知道耶和華必為困苦人伸冤，必為窮乏人辨屈」——這個確信使大衛的呼求有了最堅實的根基，不是靠自己的能力報仇，而是信靠那位「必為困苦人伸冤」的神的公義。第13節的收結「義人必要稱讚你的名；正直人必住在你面前」，是在確信神必伸冤的基礎上，以讚美作為信仰最終的回應。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 面對精密策劃的惡意首先向神呼求是信仰最智慧的回應</strong><br>「我曾對耶和華說：你是我的神。耶和華啊，求你留心聽我懇求的聲音！」（第6節）在描述了仇敵的種種惡行之後，大衛的第一個行動不是反擊，而是向神呼求。「你是我的神」——這個信仰宣告確立了呼求的關係基礎；「求你留心聽我懇求的聲音」——在關係確立的前提下提出具體的請求。這種「先確立關係，再提出請求」的禱告模式，是聖經禱告最重要的結構原則之一。<br><br>
+<strong>2. 神必為困苦人伸冤是在不公義中保持信心的神學根基</strong><br>「我知道耶和華必為困苦人伸冤，必為窮乏人辨屈。」（第12節）「我知道」是確信，不是希望或猜測。這個確信使大衛在面對惡人的攻擊時，不需要自己報仇或陷入絕望——他知道有一位公義的神必然介入，為那些在人間沒有辯護者的人伸冤。這個神學確信，是信徒在不公義的處境中保持靈魂平靜最重要的根基。<br><br>
+<strong>3. 義人在神面前的讚美是勝過仇敵最後的宣告</strong><br>「義人必要稱讚你的名；正直人必住在你面前。」（第13節）全篇以讚美收結，揭示在所有的威脅和對抗之後，義人最終的姿態是讚美——不是勝利的驕傲，而是對神公義的感謝。「住在你面前」是最高的祝福——不是住在安全的地方，而是住在神的同在中。這個結尾確立了一個信仰的軌跡：從被惡人威脅，到呼求神，到確信神必伸冤，到最終以讚美住在神面前。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華阿</strong>，<strong>求你拯救我脫離兇</strong>惡的人，保護我脫離強暴的人！（詩140:1）</td>
+<td>就像<strong>遇到超過自己能力範圍的威脅</strong>，立刻尋求最有能力的人幫助，你<strong>在面對那些蓄</strong>意的、精密策劃的惡意時，是否首先的反應是「求耶和華拯救和保護」，而非急著自己想辦法解決或以牙還牙？</td>
+</tr>
+<tr>
+<td><strong>我知道耶和華必為</strong><strong>困苦人伸冤</strong>，必為窮乏人辨屈。（詩140:12）</td>
+<td>就像<strong>知道最終的法院會還你<strong>公道</strong></strong>，你<strong>在面對不公義</strong>時能保持較大的耐心，你是否<strong>有那種「我知</strong>道耶和華必為困苦人伸冤」的確信，讓這個神學根基使你<strong>在不公義的處</strong>境中，以信心等候而非以絕望或憤恨回應？</td>
+</tr>
+<tr>
+<td><strong>義人必要稱讚你的</strong>名；<strong>正直人必住在你面</strong>前。（詩140:13）</td>
+<td>就像<strong>戰爭結束後</strong>，最重要的不是勝利的歡呼，而是回到家人身邊的安心，義人在神公義得勝後的最終姿態是「住在神面前的讚美」，你是否<strong>以「住在神面</strong>前」而非「遠離威脅」作為你<strong>最終渴望的目</strong>的地？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

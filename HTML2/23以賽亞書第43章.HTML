@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第43章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第43章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">你是屬我的：神的救贖宣告與「看哪我要作新事」</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>雅各啊，創造你的耶和華，以色列啊，造成你的那位，現在如此說：你不要害怕！因為我救贖了你。我曾提你的名召你，你是屬我的。</div>
+<div class="verse"><span class="verse-number">2</span>你從水中經過，我必與你同在；你趟過江河，水必不漫過你；你從火中行過，必不被燒，火焰也不着在你身上。</div>
+<div class="verse"><span class="verse-number">3</span>因為我是耶和華你的神，是以色列的聖者你的救主；我已經使埃及作你的贖價，使古實和西巴代替你。</div>
+<div class="verse"><span class="verse-number">4</span>因我看你為寶為尊；又因我愛你，所以我使人代替你，使列邦人替換你的生命。</div>
+<div class="verse"><span class="verse-number">5</span>不要害怕，因我與你同在；我必領你的後裔從東方來，又從西方招聚你。</div>
+<div class="verse"><span class="verse-number">6</span>我要對北方說，交出來！對南方說，不要拘留！將我的眾子從遠方帶來，將我的眾女從地極領回，</div>
+<div class="verse"><span class="verse-number">7</span>就是凡稱為我名下的人，是我為自己的榮耀創造的，是我所作成，所造作的。</div>
+<div class="verse"><span class="verse-number">8</span>你要將有眼而瞎、有耳而聾的民都帶出來！</div>
+<div class="verse"><span class="verse-number">9</span>任憑萬國聚集；任憑眾民會合。其中誰能將此聲明，並將先前的事說給我們聽呢？他們可以帶出見證來，自顯為是；或者他們聽見便說：這是真的。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華說：你們是我的見證，我所揀選的僕人。既是這樣，便可以知道，且信服我，又明白我就是耶和華。在我以前沒有真神〔真：原文作造作的〕；在我以後也必沒有。</div>
+<div class="verse"><span class="verse-number">11</span>惟有我是耶和華；除我以外沒有救主。</div>
+<div class="verse"><span class="verse-number">12</span>我曾指示，我曾拯救，我曾說明，並且在你們中間沒有別神。所以耶和華說：你們是我的見證。我也是神；</div>
+<div class="verse"><span class="verse-number">13</span>自從有日子以來，我就是神；誰也不能救人脫離我手。我要行事誰能阻止呢？</div>
+<div class="verse"><span class="verse-number">14</span>耶和華你們的救贖主、以色列的聖者如此說：因你們的緣故，我已經打發人到巴比倫去；並且我要使迦勒底人如逃民，都坐自己喜樂的船下來。</div>
+<div class="verse"><span class="verse-number">15</span>我是耶和華你們的聖者，是創造以色列的，是你們的君王。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華在滄海中開道，在大水中開路，</div>
+<div class="verse"><span class="verse-number">17</span>使車輛、馬匹、軍兵、勇士都出來，一同躺下，不再起來；他們滅沒，好像熄滅的燈火。</div>
+<div class="verse"><span class="verse-number">18</span>耶和華如此說：你們不要記念從前的事，也不要思想古時的事。</div>
+<div class="verse"><span class="verse-number">19</span>看哪，我要作一件新事；如今要發現，你們豈不知道嗎？我必在曠野開道路，在沙漠開江河。</div>
+<div class="verse"><span class="verse-number">20</span>野地的走獸必尊重我；野狗和鴕鳥也必如此。因我使曠野有水，使沙漠有河，好賜給我的百姓、我的選民喝。</div>
+<div class="verse"><span class="verse-number">21</span>這百姓是我為自己所造的，好述說我的美德。</div>
+<div class="verse"><span class="verse-number">22</span>雅各啊，你並沒有求告我；以色列啊，你倒厭煩我。</div>
+<div class="verse"><span class="verse-number">23</span>你沒有將你的羊帶來給我作燔祭，也沒有用祭物尊敬我；我沒有因供物使你服勞，也沒有因乳香使你厭煩。</div>
+<div class="verse"><span class="verse-number">24</span>你沒有用銀子為我買菖蒲，也沒有用祭物的脂油使我飽足；倒使我因你的罪惡服勞，使我因你的罪孽厭煩。</div>
+<div class="verse"><span class="verse-number">25</span>惟有我為自己的緣故塗抹你的過犯；我也不記念你的罪惡。</div>
+<div class="verse"><span class="verse-number">26</span>你要提醒我，你我可以一同辯論；你可以將你的理陳明，自顯為義。</div>
+<div class="verse"><span class="verse-number">27</span>你的始祖犯罪；你的師傅違背我。</div>
+<div class="verse"><span class="verse-number">28</span>所以，我要辱沒聖所的首領，使雅各成為咒詛，使以色列成為辱罵。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第四十三章是後半部（40-66章）中神對以色列宣告最深情、最個人的一章。本章開篇（1-7節）是全書最溫柔的宣告之一：神以「救贖者」的身份呼喚以色列的名字，宣告「你是屬我的」——這個「屬我的」（לִי אַתָּה，lī 'attāh）在希伯來文中是最直接的所有格宣告，表達了神與以色列之間最親密的占有關係，不是奴役，而是愛。第4節「因我看你為寶為尊；又因我愛你」，是整本舊約中神對人最明確的愛的宣言之一。第18-19節的轉折引人注目：「不要記念從前的事……看哪，我要作一件新事」——神呼召信徒不要被過去的得救經歷所局限，期待祂正在做的新工作。第25節「惟有我為自己的緣故塗抹你的過犯；我也不記念你的罪惡」，是以賽亞書中對赦免最完整的宣告：神赦免不是因為人夠好，而是「為自己的緣故」——出於祂本身的性情和恩典。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「你是屬我的」：身份認同建立在神的宣告而非自我感受</strong><br>第1節「我曾提你的名召你，你是屬我的」，是信徒身份最堅固的根基。「屬我的」不是因為信徒的表現夠好或感受夠強，而是神主動的宣告和揀選。在各種否定和試煉中，信徒最深的身份確信來自於這個宣告：我被神提名召喚，我是屬祂的。這個身份不會因環境的改變而改變。<br><br>
+<strong>2. 「你從火中行過，必不被燒」：同在意味著穿越，而非繞過</strong><br>第2節的應許沒有說「你不會遇到水、江河和火」，而是說「你從其中經過，我必與你同在，你不被淹沒也不被燒」。這是信仰中極其重要的神學平衡：神的同在不是避免所有苦難，而是在苦難中與人同行，使苦難不成為終局。信徒需要接受「穿越火焰」是信仰旅程的一部分，而同在的神使火焰沒有終極的毀滅力量。<br><br>
+<strong>3. 「惟有我為自己的緣故塗抹你的過犯」：赦免的動力在神，不在人</strong><br>第25節的赦免宣告震撼人心：神赦免的緣故是「我自己」——不是因為信徒的悔改夠深、祈求夠多、改變夠好，而是因為神自己的本性和決意。這意味著赦免是最穩固的，因為它的根基在神，不在人的努力。「我也不記念你的罪惡」——被赦免的罪不只是被處理，更是被神主動「不記念」，這是對良心重擔最深刻的釋放。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>我曾提你的名召你</strong>，<strong>你是屬我的</strong>。」（賽43:1）</td>
+<td>就像<strong>一個孤兒被領養後</strong>，新父親親口說「你是我的孩子」——那句話改變了孤兒對自己的一切認識，你<strong>最深層的自我</strong>認同是什麼？「屬我的」這個神的宣告，如何回應你<strong>內心最深的身</strong>份疑問？</td>
+</tr>
+<tr>
+<td>「<strong>你從火中行過</strong>，<strong>必不被燒</strong>，火焰也不着在你身上。」（賽43:2）</td>
+<td>就像<strong>在防火服的保護下穿越火場</strong>，火是真實的，熱度也是真實的，但保護使人能穿越而不被摧毀，你<strong>目前正在「穿</strong>越」哪種「火」？那個火有多真實？你如何<strong>在其中持守「</strong>我必與你<strong>同在</strong>，火焰不會毀滅你<strong>」的確信</strong>？</td>
+</tr>
+<tr>
+<td>「看哪，<strong>我要作一件新事</strong>；<strong>如今要發現</strong>……我必在曠野開道路，在沙漠開江河。」（賽43:19）</td>
+<td>就像<strong>一個人只顧回望過去的美好</strong>，而錯過了眼前已開始發芽的春天，神呼召我們把眼目從「舊事」轉向「新事」，你<strong>目前</strong>是否有過份留戀過去的恩典或傷痛，而忽略了神正在做的新事？如何培養對神「新事」的敏感和期待？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

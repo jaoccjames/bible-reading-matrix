@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀下第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀下第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">乃縵洗浴七次得潔淨，基哈西貪心染痲瘋</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>亞蘭王的元帥乃縵在他主人面前為尊為大，因耶和華曾藉他使亞蘭人得勝；他又是大能的勇士，只是長了大痲瘋。</div>
+<div class="verse"><span class="verse-number">2</span>先前亞蘭人成群的出去，從以色列國擄了一個小女子，這女子就服事乃縵的妻。</div>
+<div class="verse"><span class="verse-number">3</span>她對主母說：「巴不得我主人去見撒瑪利亞的先知，必能治好他的大痲瘋。」</div>
+<div class="verse"><span class="verse-number">4</span>乃縵進去，告訴他主人說，以色列國的女子如此如此說。</div>
+<div class="verse"><span class="verse-number">5</span>亞蘭王說：「你可以去，我也達信於以色列王。」於是乃縵帶銀子十他連得，金子六千舍客勒，衣裳十套，就去了；</div>
+<div class="verse"><span class="verse-number">6</span>且帶信給以色列王，信上說：「我打發臣僕乃縵去見你，你接到這信，就要治好他的大痲瘋。」</div>
+<div class="verse"><span class="verse-number">7</span>以色列王看了信就撕裂衣服，說：「我豈是神，能使人死使人活呢？這人竟打發人來，叫我治好他的大痲瘋。你們看一看，這人何以尋隙攻擊我呢？」</div>
+<div class="verse"><span class="verse-number">8</span>神人以利沙聽見以色列王撕裂衣服，就打發人去見王，說：「你為甚麼撕了衣服呢？可使那人到我這裏來，他就知道以色列中有先知了。」</div>
+<div class="verse"><span class="verse-number">9</span>於是，乃縵帶着車馬到了以利沙的家，站在門前。</div>
+<div class="verse"><span class="verse-number">10</span>以利沙打發一個使者，對乃縵說：「你去在約但河中沐浴七回，你的肉就必復原，而得潔淨。」</div>
+<div class="verse"><span class="verse-number">11</span>乃縵卻發怒走了，說：「我想他必定出來見我，站着求告耶和華他神的名，在患處以上搖手，治好這大痲瘋。</div>
+<div class="verse"><span class="verse-number">12</span>大馬色的河亞罷拿和法珥法豈不比以色列的一切水更好嗎？我在那裏沐浴不得潔淨嗎？」於是氣忿忿的轉身去了。</div>
+<div class="verse"><span class="verse-number">13</span>他的僕人進前來，對他說：「我父啊，先知若吩咐你作一件大事，你豈不作嗎？何況說你去沐浴而得潔淨呢？」</div>
+<div class="verse"><span class="verse-number">14</span>於是乃縵下去，照着神人的話，在約但河裏沐浴七回；他的肉復原，好像小孩子的肉，他就潔淨了。</div>
+<div class="verse"><span class="verse-number">15</span>乃縵帶着一切跟隨他的人，回到神人那裏，站在他面前，說：「如今我知道，除了以色列之外，普天下沒有神。現在求你收點僕人的禮物。」</div>
+<div class="verse"><span class="verse-number">16</span>以利沙說：「我指着所事奉永生的耶和華起誓，我必不受。」乃縵再三的求他，他卻不受。</div>
+<div class="verse"><span class="verse-number">17</span>乃縵說：「你若不肯受，請將兩騾子馱的土賜給僕人。從今以後，僕人必不再將燔祭或平安祭獻與別神，只獻給耶和華。</div>
+<div class="verse"><span class="verse-number">18</span>惟有一件事，願耶和華饒恕你僕人：我主人進臨門廟叩拜的時候，我用手攙他在臨門廟，我也屈身。我在臨門廟屈身的這事，願耶和華饒恕我。」</div>
+<div class="verse"><span class="verse-number">19</span>以利沙對他說：「你可以平平安安的回去！」乃縵就離開他去了；走了不遠，</div>
+<div class="verse"><span class="verse-number">20</span>神人以利沙的僕人基哈西心裏說：「我主人不願從這亞蘭人乃縵手裏受他帶來的禮物，我指着永生的耶和華起誓，我必跑去追上他，向他要些。」</div>
+<div class="verse"><span class="verse-number">21</span>於是基哈西追趕乃縵。乃縵看見有人追趕，就急忙下車迎着他，說：「都平安嗎？」</div>
+<div class="verse"><span class="verse-number">22</span>說：「都平安。我主人打發我來說：『剛才有兩個少年人，是先知門徒，從以法蓮山地來見我，請你賜他們一他連得銀子，兩套衣裳。』」</div>
+<div class="verse"><span class="verse-number">23</span>乃縵說：「請受二他連得」；再三的請受，便將二他連得銀子裝在兩個口袋裏，又將兩套衣裳交給兩個僕人；他們就在基哈西前頭抬着走。</div>
+<div class="verse"><span class="verse-number">24</span>到了山崗，基哈西從他們手中接過來，放在屋裏，打發他們回去。</div>
+<div class="verse"><span class="verse-number">25</span>基哈西進去，站在他主人面前。以利沙問他說：「基哈西你從那裏來？」回答說：「僕人沒有往那裏去。」</div>
+<div class="verse"><span class="verse-number">26</span>以利沙對他說：「那人下車轉回迎你的時候，我的心豈沒有去呢？這豈是受銀子、衣裳、買橄欖園、葡萄園、牛羊、僕婢的時候呢？</div>
+<div class="verse"><span class="verse-number">27</span>因此，乃縵的大痲瘋必沾染你和你的後裔，直到永遠。」基哈西從以利沙面前退出去，就長了大痲瘋，像雪那樣白。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀下第5章是舊約中最精彩的救恩預表故事之一，以亞蘭元帥乃縵的痊癒為主軸，同時呈現了三組人物的屬靈對比。乃縵是亞蘭的大英雄，卻有大痲瘋。一個被擄的以色列小女子向乃縵的妻子提起撒瑪利亞的先知；信息輾轉傳到亞蘭王，乃縵帶着豐厚的禮物前往以色列，卻先去找王而非先知，幾乎引起外交危機。以利沙聽說後，吩咐乃縵去約但河沐浴七次。自尊心極強的乃縵起初憤怒拒絕——他期待的是隆重的治療儀式，而非如此簡單的命令。在僕人的勸說下，他終於謙卑下去依言而行，果然完全潔淨。乃縵歸信，宣告「普天下沒有神，除了以色列之外」。以利沙拒絕接受任何禮物，但僕人基哈西卻私下追上乃縵說謊索取財物，並在以利沙面前否認此事。以利沙以神的知識揭露他的謊言，乃縵的痲瘋因此轉到基哈西和他後裔身上。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 救恩的道路往往簡單得令驕傲的人難以接受</strong><br>乃縵期待先知以隆重的儀式治好他，卻只得到「去約但河沐浴七次」的簡單指示，讓他憤而轉身離去。他的問題不是缺乏能力，而是驕傲使他無法接受「太簡單」的方式。神救恩的道路往往如此——簡單到讓驕傲的人覺得不可能有效。信徒有時因為「太容易了吧」而懷疑神的恩典，其實謙卑接受神的方式，本身就是信心的第一步。<br><br>
+<strong>2. 微小的見證有時能開啟巨大的救恩歷程</strong><br>整個故事的起點是一個無名的被擄小女子，她向主母說了一句話，啟動了乃縵信主的整個旅程。她沒有地位、沒有自由、沒有話語權，但她選擇在有限的處境中為她的神作見證。神使用最微小的聲音，改變了最大的人物。信徒不應低估自己在日常生活中的屬靈影響力，每一個小小的見證都可能成為別人生命改變的起點。<br><br>
+<strong>3. 貪心和欺騙是屬靈服事的致命傷</strong><br>基哈西在以利沙拒受財物之後，私下索取，並對以利沙撒謊。他以為神不知道，卻忘了以利沙所說「那人下車轉回迎你的時候，我的心豈沒有去呢？」神的眼目無所不見，隱藏在服事外衣下的貪心，終將暴露並帶來嚴重的後果。屬靈事奉中的財務和誠信，是絕不能妥協的底線。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>她對主母說</strong>：『<strong>巴不得我主人去見</strong>撒瑪利亞的先知，必能治好他的大痲瘋。』」（王下5:3）</td>
+<td>就像<strong>一個在陌生公司實習的年輕人</strong>，在閒談中提到了一位能解決老闆問題的專家，這無名的小女子一句話改變了乃縵的命運。在你<strong>日常的生活和</strong>關係中，你是否<strong>也願意在適當</strong>的時候，自然地分享神能幫助人的好消息？</td>
+</tr>
+<tr>
+<td>「<strong>乃縵卻發怒走了</strong>……<strong>他的僕人</strong>……說：『我父啊，先知若吩咐你作一件大事，你豈不作嗎？何況說你去沐浴而得潔淨呢？』」（王下5:11-13）</td>
+<td>就像<strong>一個病人因為醫生給的處方太簡單</strong>而拒絕服藥，乃縵的驕傲幾乎讓他錯失神蹟。你是否<strong>也曾因為神的</strong>指示「太簡單」或「不符合期待」，而有過拒絕或懷疑的反應？</td>
+</tr>
+<tr>
+<td>「<strong>以利沙對他說</strong>：『<strong>我的心豈沒有去呢</strong>？……因此，乃縵的大痲瘋必沾染你和你的後裔，直到永遠。』」（王下5:26-27）</td>
+<td>就像<strong>一個在監控下的員工以為沒有人看</strong>見自己的小動作，基哈西忘了神的眼目無所不見。你<strong>在沒有人看見</strong>的地方——財務、誠信、動機——是否也能保持同樣的標準，因為你<strong>知道神的心都</strong>曾在場？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

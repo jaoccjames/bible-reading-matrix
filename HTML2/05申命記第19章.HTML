@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第19章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第19章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">逃城制度與公義見證的原則</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「耶和華你神將列國之民剪除的時候，耶和華你神也將他們的地賜給你，你接着住他們的城邑並他們的房屋，</div>
+<div class="verse"><span class="verse-number">2</span>就要在耶和華你神所賜你為業的地上分定三座城。</div>
+<div class="verse"><span class="verse-number">3</span>要將耶和華你神使你承受為業的地分為三段；又要預備道路，使誤殺人的，都可以逃到那裏去。</div>
+<div class="verse"><span class="verse-number">4</span>「誤殺人的逃到那裏可以存活，定例乃是這樣：凡素無仇恨，無心殺了人的，</div>
+<div class="verse"><span class="verse-number">5</span>就如人與鄰舍同入樹林砍伐樹木，手拿斧子一砍，本想砍下樹木，不料，斧頭脫了把，飛落在鄰舍身上，以致於死，這人逃到那些城的一座城，就可以存活，</div>
+<div class="verse"><span class="verse-number">6</span>免得報血仇的，心中火熱追趕他，因路遠就追上，將他殺死；其實他不該死，因為他與被殺的素無仇恨。</div>
+<div class="verse"><span class="verse-number">7</span>所以我吩咐你說，要分定三座城。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華你神若照他向你列祖所起的誓擴張你的境界，將所應許賜你列祖的地全然給你，</div>
+<div class="verse"><span class="verse-number">9</span>你若謹守遵行我今日所吩咐的這一切誡命，愛耶和華你的神，常常遵行他的道，就要在這三座城之外，再添三座城，</div>
+<div class="verse"><span class="verse-number">10</span>免得無辜之人的血流在耶和華你神所賜你為業的地上，流血的罪就歸於你。</div>
+<div class="verse"><span class="verse-number">11</span>「若有人恨他的鄰舍，埋伏着起來擊殺他，以致於死，便逃到這些城的一座城，</div>
+<div class="verse"><span class="verse-number">12</span>本城的長老就要打發人去，從那裏帶出他來，交在報血仇的手中，將他治死。</div>
+<div class="verse"><span class="verse-number">13</span>你眼不可顧惜他，卻要從以色列中除掉流無辜血的罪，使你可以得福。」</div>
+<div class="verse"><span class="verse-number">14</span>「在耶和華你神所賜你承受為業之地，不可挪移你鄰舍的地界，那是先人所定的。」</div>
+<div class="verse"><span class="verse-number">15</span>「人無論犯甚麼罪，作甚麼惡，不可憑一個人的口作見證，總要憑兩三個人的口作見證才可定案。</div>
+<div class="verse"><span class="verse-number">16</span>若有兇惡的見證人起來，見證某人作惡，</div>
+<div class="verse"><span class="verse-number">17</span>這兩個爭訟的人就要站在耶和華面前，和當時的祭司，並審判官面前，</div>
+<div class="verse"><span class="verse-number">18</span>審判官要細細地查究，若見證人果然是作假見證的，以假見證陷害弟兄，</div>
+<div class="verse"><span class="verse-number">19</span>你們就要待他如同他想要待的弟兄。這樣，就把那惡從你們中間除掉。</div>
+<div class="verse"><span class="verse-number">20</span>別人聽見都要害怕，就不敢在你們中間再行這樣的惡了。</div>
+<div class="verse"><span class="verse-number">21</span>你眼不可顧惜，要以命償命，以眼還眼，以牙還牙，以手還手，以腳還腳。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第十九章建立了兩個重要的法律制度。首先是逃城制度：在迦南地設立三座（後擴為六座）逃城，供無意中殺人者逃往，以避免被「血仇報復者」殺害（19:1-13）。這個制度區分了蓄意謀殺（有仇恨動機）和非蓄意誤殺（無仇恨動機），只有後者才能在逃城中獲得保護。這反映了神律法對人的生命的珍視，以及對「主觀意圖」在法律判斷中的重要性。其次，本章規定不可移動地界的石頭（19:14），這是對私人土地所有權的保護。本章下半部處理見證人制度：需要兩三個見證人才能定罪，且若有人作假見證，他將受到他所圖謀陷害他人的刑罰——「以眼還眼，以牙還牙」（19:21）。這個「同態報應法」在當時實際上是一種「刑罰上限」的規定，防止過度報復，確保懲罰與罪行相稱。整章體現了神對生命保護、真相核實和公義報應的深切關注。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的律法保護無辜者免於不公正的報復</strong><br>逃城制度的設立是神法律制度中「慈悲與公義並存」的典範：公義要求謀殺者受到懲罰，但慈悲也保護誤殺者免受無理報復（申19:4-6）。這提醒我們，神的公義不是簡單的「一刀切」，而是深入考量人的主觀意圖、行為動機和具體情境，這種細緻的公義正是神性情的體現。<br><br>
+<strong>2. 公平的見證制度是保護真相和弱勢者的重要機制</strong><br>需要兩三個見證人才能定罪的規定，以及假見證要受同等刑罰的原則，共同構成了一個鼓勵誠實、阻嚇謊言的法律機制（申19:15-21）。在一個沒有監控攝影和科技鑑定的時代，見證人制度是保護無辜者最重要的防線。誠實的見證在當代同樣是公義社會的基石，也是基督徒在社會中最重要的品格見證。<br><br>
+<strong>3. 報應的原則是公義的尺度，防止以私怨驅動的過度報復</strong><br>「以眼還眼，以牙還牙」（申19:21）常被誤解為鼓勵報復，實際上它是一個限制刑罰過度的原則：懲罰不能超過罪行本身，確保刑罰的比例相稱。這個原則保護加害者免受私刑，也保護受害者能得到公平的申訴。它奠定了人類法律文明中「罪與罰相稱」的重要原則。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你要從約但河那邊</strong>，<strong>在耶和華你神所賜</strong>你為業的地上，分出三座城……使那無心殺人的，可以逃到那裏。」（申19:2-3）</td>
+<td>神為誤入困境的人設立了安全之地，就像<strong>急診室為突發意外提供緊急救援</strong>，你是否<strong>有意識到：在</strong>你<strong>自己或別人陷</strong>入困境時，神也為今日的人預備了屬靈的「逃城」——這是什麼？你是否<strong>曾使用過它</strong>？</td>
+</tr>
+<tr>
+<td>「<strong>必有兩個人或三個</strong><strong>人的口供</strong>，才可定案；不可憑一個人的口供定人的罪。」（申19:15）</td>
+<td>真相需要多方驗證才能站立，就像<strong>重要的醫療診斷需要多個科室會診</strong>才能確定，在日常生活中當你<strong>聽到關於某人</strong>的負面消息，你是否<strong>有查證的習慣</strong>，還是容易直接相信單一的說法？</td>
+</tr>
+<tr>
+<td>「<strong>你眼不可顧惜</strong>，<strong>要以命還命</strong>，以眼還眼，以牙還牙，以手還手，以腳還腳。」（申19:21）</td>
+<td>公義需要比例相稱，不可因私怨而過度報復，就像<strong>交通罰款按違規輕重而定</strong>，而非由警員任意裁量，在你曾<strong>受過委屈的經</strong>歷中，你如何<strong>在追求公義和</strong>防止苦毒之間找到屬靈的平衡？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

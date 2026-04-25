@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第88章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第88章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">詩篇最深的哀歌：在黑暗中不停呼求的靈魂</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（可拉後裔的詩歌，就是以斯拉人希幔的訓誨詩，交與伶長。調用麻哈拉利暗俄）耶和華拯救我的神啊，我晝夜在你面前呼籲。</div>
+<div class="verse"><span class="verse-number">2</span>願我的禱告達到你面前；求你側耳聽我的呼求！</div>
+<div class="verse"><span class="verse-number">3</span>因為我心裏滿了患難；我的性命臨近陰間。</div>
+<div class="verse"><span class="verse-number">4</span>我算和下坑的人同列，如同無力〔或作：沒有幫助〕的人一樣。</div>
+<div class="verse"><span class="verse-number">5</span>我被丟在死人中，好像被殺的人躺在墳墓裏。他們是你不再記念的，與你隔絕了。</div>
+<div class="verse"><span class="verse-number">6</span>你把我放在極深的坑裏，在黑暗地方，在深處。</div>
+<div class="verse"><span class="verse-number">7</span>你的忿怒重壓我身；你用一切的波浪困住我。（細拉）</div>
+<div class="verse"><span class="verse-number">8</span>你把我所認識的隔在遠處，使我為他們所憎惡；我被拘困，不得出來。</div>
+<div class="verse"><span class="verse-number">9</span>我的眼睛因困苦而乾癟。耶和華阿，我天天求告你，向你舉手。</div>
+<div class="verse"><span class="verse-number">10</span>你豈要行奇事給死人看嗎？難道陰魂還能起來稱讚你嗎？（細拉）</div>
+<div class="verse"><span class="verse-number">11</span>豈能在墳墓裏述說你的慈愛嗎？豈能在滅亡中述說你的信實嗎？</div>
+<div class="verse"><span class="verse-number">12</span>你的奇事豈能在幽暗裏被知道嗎？你的公義豈能在忘記之地被知道嗎？</div>
+<div class="verse"><span class="verse-number">13</span>耶和華啊，我呼求你；我早晨的禱告要達到你面前。</div>
+<div class="verse"><span class="verse-number">14</span>耶和華啊，你為何丟棄我？為何掩面不顧我？</div>
+<div class="verse"><span class="verse-number">15</span>我自幼受苦，幾乎死亡；我受你的驚恐，甚至慌張。</div>
+<div class="verse"><span class="verse-number">16</span>你的烈怒漫過我身；你的驚嚇把我剪除。</div>
+<div class="verse"><span class="verse-number">17</span>這些終日如水環繞我，一齊都來圍困我。</div>
+<div class="verse"><span class="verse-number">18</span>你把我的良朋密友隔在遠處，使我所認識的人進入黑暗裏。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第88篇是以斯拉人希幔的訓誨詩，是整部詩篇中最黑暗、最沒有明顯盼望的詩篇。與其他哀歌詩篇不同的是，本篇幾乎沒有轉折——沒有從哀嘆到確信的轉化，沒有讚美的結尾，全篇以「你把我的良朋密友隔在遠處，使我所認識的人進入黑暗裏」這句沉重的話作結。
+
+      然而本篇並非絕望的宣言，而是在最深黑暗中堅持不斷呼求的見證。「耶和華拯救我的神啊，我晝夜在你面前呼籲」（第1節）——即使沒有得到可感受的回應，詩人仍繼續呼求；「我天天求告你，向你舉手」（第9節）；「我早晨的禱告要達到你面前」（第13節）。這種在黑暗中不停止的禱告，是信仰在最艱難處境中最深的見證。
+
+      神學上，本篇的重要性在於它誠實地呈現了信仰者可能長期陷入的極度困苦，且沒有強制給出「美好結局」。詩篇聖典允許這樣的詩篇存在，表明信仰不要求人假裝一切都會立刻好轉，也不要求在最深的黑暗中表演喜樂。誠實地在神面前哀哭，即使沒有立即的轉化，仍是真實信仰關係的一部分。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在最深黑暗中持續呼求是信仰最剛強的見證</strong><br>「耶和華拯救我的神啊，我晝夜在你面前呼籲……我天天求告你，向你舉手……我早晨的禱告要達到你面前。」（第1、9、13節）全篇三次出現的禱告宣告，表明詩人在長期未得回應的黑暗中，仍持續不斷地向神呼求。這種「在黑暗中仍不停止禱告」的信仰，比在光明中的讚美更有力量——因為它不依賴情感的支持，而是純粹出於對神本性的信靠，即使感受不到任何回應。<br><br>
+<strong>2. 誠實地向神陳述最深的痛苦是真實信仰的特權</strong><br>「耶和華啊，你為何丟棄我？為何掩面不顧我？」（第14節）詩人向神發出最直接、最痛苦的質問，沒有修飾，沒有宗教語言的包裝。詩篇的傳統允許這種赤裸的靈魂呼喊——信仰的神不要求信徒在祂面前假裝堅強。向神誠實地陳述最深的痛苦，比以宗教語言掩蓋內心的真實狀態，更能建立深度的信仰關係。神能承受我們最深的哀訴，正如祂能接受我們最高的讚美。<br><br>
+<strong>3. 在沒有轉折的黑暗中信仰聖典仍保留此詩揭示神對痛苦的接納</strong><br>本篇以黑暗結束，沒有通常詩篇的轉折與讚美，卻被列入聖典，揭示一個深刻的神學真理：神接納信徒帶著未解決的痛苦來到祂面前。不是每一個信仰的黑暗都有可見的出口，不是每一個禱告都在今世得到可感受的回應；然而即使在這樣的黑暗中，信仰仍可持守，禱告仍可繼續，因為禱告本身就是信仰最真實的行動——無論它是否帶來立即的改變。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華拯救我的神</strong>啊，<strong>我晝夜在你面前呼</strong>籲。（詩88:1）</td>
+<td>就像<strong>一個人在極度危險中不停地發出求</strong>救信號，即使不確定是否有人接收，你是否<strong>在信仰最黑暗</strong>的時期，仍能保持「晝夜呼籲」的禱告，而非在長期未見回應後選擇沉默或放棄？</td>
+</tr>
+<tr>
+<td><strong>耶和華啊</strong>，<strong>你為何丟棄我</strong>？為何掩面不顧我？（詩88:14）</td>
+<td>就像<strong>向最親密的人說出最真實的委屈</strong>，而非客套地表示一切都好，你是否<strong>敢於在神面前</strong>說出你<strong>內心最深的「</strong>你為何丟棄我」，相信神能承受這份誠實，並且這份誠實本身就是信仰關係的一部分？</td>
+</tr>
+<tr>
+<td><strong>你把我的良朋密友</strong><strong>隔在遠處</strong>，使我所認識的人進入黑暗裏。（詩88:18）</td>
+<td>就像<strong>一個在深夜病房獨自受苦的人</strong>，周圍一片漆黑，全篇以「黑暗」收結，沒有轉折，你是否<strong>相信即使在這</strong>種「連結尾的光都沒有」的黑暗中，神仍與那持續呼求的靈魂同在，接納這份未曾解決的痛苦？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

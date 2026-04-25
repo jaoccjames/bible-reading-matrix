@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第73章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第73章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">進聖所得明白：除神以外別無所慕</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（亞薩的詩）神實在恩待以色列那些清心的人！</div>
+<div class="verse"><span class="verse-number">2</span>至於我，我的腳幾乎失閃；我的腳險些滑跌。</div>
+<div class="verse"><span class="verse-number">3</span>我見惡人和狂傲人享平安就心懷不平。</div>
+<div class="verse"><span class="verse-number">4</span>他們死的時候沒有疼痛；他們的力氣卻也壯實。</div>
+<div class="verse"><span class="verse-number">5</span>他們不像別人受苦，也不像別人遭災。</div>
+<div class="verse"><span class="verse-number">6</span>所以，驕傲如鍊子戴在他們的項上；強暴像衣裳遮住他們的身體。</div>
+<div class="verse"><span class="verse-number">7</span>他們的眼睛因體胖而凸出；他們所得的，過於心裏所想的。</div>
+<div class="verse"><span class="verse-number">8</span>他們譏笑人，憑惡意說欺壓人的話；他們說話自高。</div>
+<div class="verse"><span class="verse-number">9</span>他們的口褻瀆上天；他們的舌毀謗全地。</div>
+<div class="verse"><span class="verse-number">10</span>所以神的民歸到這裏，喝盡了滿杯的苦水。</div>
+<div class="verse"><span class="verse-number">11</span>他們說：神怎能曉得？至高者豈有知識呢？</div>
+<div class="verse"><span class="verse-number">12</span>看哪，這就是惡人；他們既是常享安逸，財寶便加增。</div>
+<div class="verse"><span class="verse-number">13</span>我實在徒然潔淨了我的心，徒然洗手表明無辜。</div>
+<div class="verse"><span class="verse-number">14</span>因為，我終日遭災難；每早晨受懲治。</div>
+<div class="verse"><span class="verse-number">15</span>我若說，我要這樣講，這就是以奸詐待你的眾子。</div>
+<div class="verse"><span class="verse-number">16</span>我思索怎能明白這事，眼看實係為難，</div>
+<div class="verse"><span class="verse-number">17</span>等我進了神的聖所，思想他們的結局。</div>
+<div class="verse"><span class="verse-number">18</span>你實在把他們安在滑地，使他們掉在沉淪之中。</div>
+<div class="verse"><span class="verse-number">19</span>他們轉眼之間成了何等的荒涼！他們被驚恐滅盡了。</div>
+<div class="verse"><span class="verse-number">20</span>人睡醒了，怎樣看夢；主阿，你醒了也必照樣輕看他們的影像。</div>
+<div class="verse"><span class="verse-number">21</span>因而，我心裏發酸，肺腑被刺。</div>
+<div class="verse"><span class="verse-number">22</span>我這樣愚昧無知，在你面前如畜類一般。</div>
+<div class="verse"><span class="verse-number">23</span>然而，我常與你同在；你攙着我的右手。</div>
+<div class="verse"><span class="verse-number">24</span>你要以你的訓言引導我，以後必接我到榮耀裏。</div>
+<div class="verse"><span class="verse-number">25</span>除你以外，在天上我有誰呢？除你以外，在地上我也沒有所愛慕的。</div>
+<div class="verse"><span class="verse-number">26</span>我的肉體和我的心腸衰殘；但神是我心裏的力量，又是我的福分，直到永遠。</div>
+<div class="verse"><span class="verse-number">27</span>遠離你的，必要死亡；凡離棄你行邪淫的，你都滅絕了。</div>
+<div class="verse"><span class="verse-number">28</span>但我親近神是與我有益；我以主耶和華為我的避難所，好叫我述說你一切的作為。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第73篇是亞薩的詩，被許多學者視為詩篇第三卷（第73-89篇）最重要的開篇，也是整部詩篇中屬靈深度最豐富的詩篇之一。本篇呈現一個信仰危機的完整過程：從懷疑（1-14節）、到聖所的轉化（15-17節）、到最終的確信（18-28節）。
+
+      亞薩的危機來自「惡人享平安」的觀察——他看見驕傲惡人生活無憂、財寶加增，而自己卻終日遭難，開始懷疑「潔淨我心是徒然的」。這是人類信仰最普遍的危機之一，與約伯記的主題高度呼應。
+
+      轉化的關鍵在第17節：「等我進了神的聖所，思想他們的結局。」改變亞薩視野的，不是新的論據或哲學論證，而是「進入神的同在」。在神的面前，他看見了更廣闊的視野——惡人的結局是「滑地」（第18節），而他自己的「結局」是「接到榮耀裏」（第24節）。本篇最著名的告白是第25節：「除你以外，在天上我有誰呢？除你以外，在地上我也沒有所愛慕的。」這是信仰最純粹的表白，也是信仰危機後更深確信的果實。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 進入神的聖所是解開信仰困惑最重要的屬靈行動</strong><br>「等我進了神的聖所，思想他們的結局。」（第17節）亞薩的問題在理性層面無法解決，卻在神的同在中得到了解答。「進了神的聖所」——這個行動本身就是改變視角的關鍵。我們所面對的許多信仰困惑，不是靠更多的神學論證或閱讀能解決，而是在親近神的敬拜、禱告與默想中，讓神的視角取代我們有限的視角。進入神的聖所，是信仰困惑最有效的解藥。<br><br>
+<strong>2. 神是心裏的力量與永遠的福分超過一切外在的得失</strong><br>「我的肉體和我的心腸衰殘；但神是我心裏的力量，又是我的福分，直到永遠。」（第26節）在信仰危機的另一面，亞薩找到了比惡人的財寶與健康更寶貴的：神本身是「我心裏的力量」、「我的福分，直到永遠」。外在的一切都可能衰殘，但神在內心給予的力量是不受外在影響的。這種「以神為福分」的認識，使信徒能在外在環境惡劣時，仍擁有從神而來的內在豐盛。<br><br>
+<strong>3. 親近神對信徒是最真實的益處</strong><br>「但我親近神是與我有益；我以主耶和華為我的避難所。」（第28節）全篇在這個宣告中達到高峰。在懷疑「潔淨自己是徒然的」（第13節）之後，亞薩最終的確信是：「親近神是與我有益」。這不是天真的樂觀，而是在危機之後更深刻的確信——親近神的益處，不在於神立刻改變我的處境，而在於神本身就是我的力量、我的福分、我的避難所，這使親近神成為人生最有智慧的選擇。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>等我進了神的聖所</strong>，<strong>思想他們的結局</strong>。（詩73:17）</td>
+<td>就像<strong>在霧中看不清路</strong>，卻爬到高處後視野豁然開朗，你<strong>在面對「惡人</strong>享福、義人受苦」的困惑時，是否有習慣「進入神的同在」——透過敬拜、禱告、默想——讓神的視角取代你<strong>有限的判斷</strong>？</td>
+</tr>
+<tr>
+<td><strong>除你以外</strong>，<strong>在天上我有誰呢</strong>？除你以外，在地上我也沒有所愛慕的。（詩73:25）</td>
+<td>就像<strong>找到了真正的摯友之後</strong>，不再羨慕別人的社交圈，你是否<strong>已達到「除神</strong>以外無所愛慕」的信仰境界，讓這份確信使你<strong>不再以羨慕的</strong>眼光看待惡人的繁榮，也不再以恐懼的眼光看待自己的苦難？</td>
+</tr>
+<tr>
+<td><strong>但我親近神是與我</strong>有益；<strong>我以主耶和華為我</strong>的避難所。（詩73:28）</td>
+<td>就像<strong>長期運動的人知道健身的益處不是</strong>立竿見影，而是長期積累的身體改變，你是否<strong>真的相信「親</strong>近神是與我有益」——即使這益處常常不是立即的、物質的，而是心靈深處的力量與方向？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

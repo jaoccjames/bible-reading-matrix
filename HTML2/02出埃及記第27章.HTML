@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第27章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第27章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">燔祭壇院子與常燃燈的規格</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「你要用皂莢木作壇。這壇要四方的，長五肘，寬五肘，高三肘。</div>
+<div class="verse"><span class="verse-number">2</span>要在壇的四拐角上作四個角，與壇接連一塊，用銅把壇包裹。</div>
+<div class="verse"><span class="verse-number">3</span>要作盆，收去壇上的灰，又作鏟子、盤子、肉鍤子、火鼎；壇上一切的器具都用銅作。</div>
+<div class="verse"><span class="verse-number">4</span>要為壇作一個銅網，在網的四角上作四個銅環，</div>
+<div class="verse"><span class="verse-number">5</span>把網安在壇四面的圍腰板以下，使網從下達到壇的半腰。</div>
+<div class="verse"><span class="verse-number">6</span>又要用皂莢木為壇作杠，用銅包裹。</div>
+<div class="verse"><span class="verse-number">7</span>這杠要穿在壇兩旁的環子內，用以抬壇。</div>
+<div class="verse"><span class="verse-number">8</span>要用板作壇，壇是空的，都照着在山上指示你的樣式作。」</div>
+<div class="verse"><span class="verse-number">9</span>「你要作帳幕的院子。院子的南面要用撚的細麻作帷子，長一百肘。</div>
+<div class="verse"><span class="verse-number">10</span>帷子的柱子要二十根，帶卯的銅座二十個。柱子上的鉤子和杆子都要用銀子作。</div>
+<div class="verse"><span class="verse-number">11</span>北面也當有帷子，長一百肘，帷子的柱子二十根，帶卯的銅座二十個。柱子上的鉤子和杆子都要用銀子作。</div>
+<div class="verse"><span class="verse-number">12</span>院子的西面當有帷子，寬五十肘，帷子的柱子十根，帶卯的座十個。</div>
+<div class="verse"><span class="verse-number">13</span>院子的東面要寬五十肘。</div>
+<div class="verse"><span class="verse-number">14</span>門這邊的帷子要十五肘，帷子的柱子三根，帶卯的座三個。</div>
+<div class="verse"><span class="verse-number">15</span>門那邊的帷子也要十五肘，帷子的柱子三根，帶卯的座三個。</div>
+<div class="verse"><span class="verse-number">16</span>院子的門當有簾子，長二十肘，要拿藍色、紫色、朱紅色線，和撚的細麻，用繡花的手工織成，柱子四根，帶卯的座四個。</div>
+<div class="verse"><span class="verse-number">17</span>院子四圍一切的柱子都要用銀杆連絡，柱子上的鉤子要用銀作，帶卯的座要用銅作。</div>
+<div class="verse"><span class="verse-number">18</span>院子要長一百肘，寬五十肘，高五肘，帷子要用撚的細麻作，帶卯的座要用銅作。</div>
+<div class="verse"><span class="verse-number">19</span>帳幕各樣用處的器具，並帳幕一切的橛子，和院子裏一切的橛子，都要用銅作。」</div>
+<div class="verse"><span class="verse-number">20</span>「你要吩咐以色列人，把那為點燈搗成的清橄欖油拿來給你，使燈常常點着。</div>
+<div class="verse"><span class="verse-number">21</span>在會幕中法櫃前的幔外，亞倫和他的兒子，從晚上到早晨，要在耶和華面前經理這燈。這要作以色列人世世代代永遠的定例。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第27章記載會幕外院設施的詳細規格，包含燔祭壇和院子的建造。燔祭壇以皂莢木製造，長寬各五肘、高三肘，四角有角，覆以銅，壇上所有器具（盆、鏟、盤子、肉鍤子、火鼎）均以銅製造，壇下四分之一處有銅造的網，網四角有四個銅環用於穿杠抬壇，壇是空心的，以板做成。院子由細麻布帷幔圍成，長一百肘、寬五十肘、高五肘，以銀鉤和銀杠掛在銅座的柱子上；院門的幔子以繡花手工製成，較其他帷幔更精緻。本章最後記載燈台用油的規定：吩咐以色列人取純橄欖油供燈燈台，使燈常常點着；亞倫和他的兒子要從晚上到早晨在會幕中燈前經理燈台。這是亞倫後裔世代的永遠定例。燔祭壇是信徒進入敬拜的第一站，也是最重要的神人相遇地點。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 祭壇是人接近神的起點</strong><br>燔祭壇是會幕院子進門後最先遇見的器具，是每個進入的人必須經過的地方。沒有壇上的祭，就無法進一步接近神。這在屬靈上預表：沒有基督的獻祭，人無法進入與神的關係。信徒對十字架的認識與接受，是整個屬靈生命的起點。<br><br>
+<strong>2. 常燃的燈象徵信仰群體持續的敬拜與見證</strong><br>燈台的燈要從晚上到早晨常常點着，永不熄滅，是信仰群體持續敬拜神的象徵。教會在世上的角色是持續發光的燈台，無論環境明暗，信仰的見證不可熄滅。信徒個人的靈命如同一盞燈，需要定期添加「橄欖油」（聖靈的充滿）才能持續燃燒。<br><br>
+<strong>3. 物質的奉獻是屬靈委身的具體表現</strong><br>以色列人要「取」純橄欖油供燈，這是物質的奉獻，為敬拜提供所需的資源。敬拜從來不只是情感或意念的事，需要具體物質資源的奉獻。信徒奉獻時間、金錢、資源，為敬拜群體和神的工作提供所需，是屬靈委身的具體彰顯。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你要用皂莢木作壇</strong>。<strong>這壇要四方的</strong>，長五肘，寬五肘，高三肘。（出27:1）</td>
+<td>就像<strong>醫院的急診入口是每個需要救治者</strong>最先到達的地方，燔祭壇是進入會幕首先遇見的器具。你<strong>對基督十字架</strong>這個「祭壇」的認識，是在你<strong>屬靈生命中真</strong>實居於首位的根基，還是只是一個已知的事實而缺少持續的感恩與倚靠？</td>
+</tr>
+<tr>
+<td><strong>你要吩咐以色列人</strong>，<strong>把那為點燈搗成的</strong>清橄欖油拿來給你，使燈常常點着。（出27:20）</td>
+<td>就像<strong>需要定期充電才能持續使用的設備</strong>，燈台需要不斷添加油才能常燃不滅。你是否<strong>有定期「添油</strong>」的屬靈習慣——禱告、讀經、群體敬拜——讓你<strong>的靈命保持常</strong>燃的狀態？還是時常等到幾乎熄滅時才想到要補充？</td>
+</tr>
+<tr>
+<td><strong>亞倫和他的兒子</strong>，<strong>從晚上到早晨</strong>，要在耶和華面前經理這燈。這要作以色列人世世代代永遠的定例。（出27:21）</td>
+<td>就像<strong>守夜的更夫整夜持守崗位而不半途</strong>離去，亞倫的整夜服事是對神忠心委身的象徵。你<strong>在信仰中</strong>是否有「整夜」的堅持——在漫長、看不見即時結果的服事中，仍然持守忠心？是什麼幫助你<strong>在疲倦和看不</strong>見效果時仍然持守？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

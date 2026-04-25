@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志下第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志下第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">分裂後的站立：倚靠神，守住所託</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>羅波安來到耶路撒冷，招聚猶大家和便雅憫家，共十八萬人，都是挑選的戰士，要與以色列人爭戰，好將國奪回再歸自己。</div>
+<div class="verse"><span class="verse-number">2</span>但耶和華的話臨到神人示瑪雅說：</div>
+<div class="verse"><span class="verse-number">3</span>「你去告訴所羅門的兒子猶大王羅波安和住猶大、便雅憫的以色列眾人說，</div>
+<div class="verse"><span class="verse-number">4</span>耶和華如此說：『你們不可上去與你們的弟兄爭戰，各歸各家去吧！因為這事出於我。』」眾人就聽從耶和華的話歸回，不去與耶羅波安爭戰。</div>
+<div class="verse"><span class="verse-number">5</span>羅波安住在耶路撒冷，在猶大地修築城邑，</div>
+<div class="verse"><span class="verse-number">6</span>為保障修築伯利恆、以坦、提哥亞、</div>
+<div class="verse"><span class="verse-number">7</span>伯夙、梭哥、亞杜蘭、</div>
+<div class="verse"><span class="verse-number">8</span>迦特、瑪利沙、西弗、</div>
+<div class="verse"><span class="verse-number">9</span>亞多萊音、拉吉、亞西加、</div>
+<div class="verse"><span class="verse-number">10</span>瑣拉、亞雅崙、希伯崙。這都是猶大和便雅憫的堅固城。</div>
+<div class="verse"><span class="verse-number">11</span>羅波安又堅固各處的保障，在其中安置軍長，又預備下糧食、油、酒。</div>
+<div class="verse"><span class="verse-number">12</span>他在各城裏預備盾牌和槍，且使城極其堅固。猶大和便雅憫都歸了他。</div>
+<div class="verse"><span class="verse-number">13</span>以色列全地的祭司和利未人都從四方來歸羅波安。</div>
+<div class="verse"><span class="verse-number">14</span>利未人撇下他們的郊野和產業，來到猶大與耶路撒冷，是因耶羅波安和他的兒子拒絕他們，不許他們供祭司職分事奉耶和華。</div>
+<div class="verse"><span class="verse-number">15</span>耶羅波安為邱壇、為鬼魔〔原文作公山羊〕、為自己所鑄造的牛犢設立祭司。</div>
+<div class="verse"><span class="verse-number">16</span>以色列各支派中，凡立定心意尋求耶和華以色列神的，都隨從利未人，來到耶路撒冷祭祀耶和華他們列祖的神。</div>
+<div class="verse"><span class="verse-number">17</span>這樣，就堅固猶大國，使所羅門的兒子羅波安強盛三年，因為他們三年遵行大衛和所羅門的道。</div>
+<div class="verse"><span class="verse-number">18</span>羅波安娶大衛兒子耶利摩的女兒瑪哈拉為妻，又娶耶西兒子以利押的女兒亞比孩為妻。</div>
+<div class="verse"><span class="verse-number">19</span>從她生了幾個兒子，就是耶烏施、示瑪利雅、撒罕。</div>
+<div class="verse"><span class="verse-number">20</span>後來又娶押沙龍的女兒瑪迦〔十三章二節作烏列的女兒米該雅〕，從她生了亞比雅、亞太、細撒、示羅密。</div>
+<div class="verse"><span class="verse-number">21</span>羅波安娶十八個妻，立六十個妾，生二十八個兒子，六十個女兒；他卻愛押沙龍的女兒瑪迦，比愛別的妻妾更甚。</div>
+<div class="verse"><span class="verse-number">22</span>羅波安立瑪迦的兒子亞比雅作太子，在他弟兄中為首，因為想要立他接續作王。</div>
+<div class="verse"><span class="verse-number">23</span>羅波安辦事精明，使他眾子分散在猶大和便雅憫全地各堅固城裏，又賜他們許多糧食，為他們多尋妻子。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志下第十一章記述王國分裂後羅波安的種種舉措。他原想出兵奪回北方失地，但神藉先知示瑪雅阻止，羅波安聽從，收兵回去（1-4節）。隨後他在猶大地修築十五座堅固城，充實軍備糧草（5-12節）。這段安靜耕耘的時期帶來了出人意料的果效：北國耶羅波安驅逐利未人，全北地凡尋求耶和華的人——祭司、利未人，與敬虔百姓——都南下歸附羅波安（13-17節）。本章末記錄了羅波安的後宮與子嗣安排（18-23節）。
+
+      本章的神學亮點在於一個對比：羅波安在軍事上接受神的限制（不可進攻），卻在屬靈上獲得了出乎意料的增強——真正尋求神的人自動來歸。這說明神的管制往往是祝福的前奏；當人願意在神的話語下停下腳步，神往往從意想不到的方向帶來祝福。羅波安「辦事精明，使他眾子分散在猶大各堅固城」（23節），顯示在短暫的謙卑期他確實有所成長。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 接受神的限制是信心最有力的行動</strong><br>羅波安手握十八萬精兵，本可出戰，卻因「這事出於我」一句話而收手。願意放下既有的力量，接受神「不許做」的命令，比任何屬靈的熱情更難、也更寶貴。信仰的成熟常常不在於「我能做什麼」，而在於「我願意在神面前不做什麼」。<br><br>
+<strong>2. 忠心築城是等候中的積極行動</strong><br>羅波安收兵後沒有消極坐等，而是積極修築城邑、充實糧草軍備。等候神的時期，不等於無所作為。信徒在神尚未開路的時候，仍可以忠心地做好眼前的本分——預備自己、建立根基，等候神的時機。<br><br>
+<strong>3. 真正敬虔的人會尋找真正敬拜的地方</strong><br>北國的祭司、利未人和一切尋求耶和華的人，寧可離開產業南下，也要到真正敬拜神的地方。信仰的委身有時需要實際的代價——離開熟悉的環境，選擇一個更能真實尋求神的群體。這個選擇不是輕鬆的，但它反映了心志的優先次序。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>以色列各支派中</strong>，<strong>凡立定心意尋求耶</strong>和華以色列神的，都隨從利未人，來到耶路撒冷祭祀耶和華他們列祖的神。（代下11:16）</td>
+<td>立定心意尋求神的人，不管環境如何都找得到路，就像<strong>候鳥不管飛多遠都知道往哪個方向</strong>去——在你<strong>的生命中</strong>，有沒有一個時刻你<strong>為了</strong>能更真實地尋求神，而甘心放棄了某種熟悉的便利或既有的利益？</td>
+</tr>
+<tr>
+<td><strong>但耶和華的話臨到</strong><strong>神人示瑪雅說</strong>：……你們不可上去與你們的弟兄爭戰，各歸各家去吧！因為這事出於我。眾人就聽從耶和華的話歸回。（代下11:2-4）</td>
+<td>羅波安手握十八萬精兵，卻因神一句話收手，就像<strong>一個即將按下發射鍵的人</strong>，聽見指揮官說「停」，立刻放開手——當神對你<strong>說「停下</strong>，這不是你<strong>當做的」</strong>，你<strong>更傾向於繼續</strong>硬撐，還是願意放手停步？</td>
+</tr>
+<tr>
+<td><strong>羅波安辦事精明</strong>，<strong>使他眾子分散在猶</strong>大和便雅憫全地各堅固城裏，又賜他們許多糧食，為他們多尋妻子。（代下11:23）</td>
+<td>在三年遵行神道的平靜期裡，羅波安展現了務實而有遠見的治理智慧，就像<strong>一個安靜備考的學生</strong>，在沒有外界關注時仍認真充實自己——你<strong>在生命中「平</strong>靜無波」的時期，是如何使用那段時光的？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

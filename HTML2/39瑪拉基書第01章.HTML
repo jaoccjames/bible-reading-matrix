@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>瑪拉基書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+瑪拉基書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">藐視神名的祭司與污穢的供物</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華藉瑪拉基傳給以色列的默示。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華說：「我曾愛你們。」你們卻說：「你在何事上愛我們呢？」耶和華說：「以掃不是雅各的哥哥嗎？我卻愛雅各，</div>
+<div class="verse"><span class="verse-number">3</span>惡以掃，使他的山嶺荒涼，把他的地業交給曠野的野狗。」</div>
+<div class="verse"><span class="verse-number">4</span>以東人說：「我們現在雖被毀壞，卻要重建荒廢之處。」萬軍之耶和華如此說：「任他們建造，我必拆毀；人必稱他們的地為『罪惡之境』；稱他們的民為『耶和華永遠惱怒之民』。」</div>
+<div class="verse"><span class="verse-number">5</span>你們必親眼看見，也必說：「願耶和華在以色列境界之外被尊為大！」</div>
+<div class="verse"><span class="verse-number">6</span>「藐視我名的祭司啊，萬軍之耶和華對你們說：兒子尊敬父親，僕人敬畏主人；我既為父親，尊敬我的在那裏呢？我既為主人，敬畏我的在那裏呢？你們卻說：『我們在何事上藐視你的名呢？』</div>
+<div class="verse"><span class="verse-number">7</span>你們將污穢的食物獻在我的壇上，且說：『我們在何事上污穢你呢？』因你們說，耶和華的桌子是可藐視的。</div>
+<div class="verse"><span class="verse-number">8</span>你們將瞎眼的獻為祭物，這不為惡嗎？將瘸腿的、有病的獻上，這不為惡嗎？你獻給你的省長，他豈喜悅你，豈能看你的情面嗎？這是萬軍之耶和華說的。</div>
+<div class="verse"><span class="verse-number">9</span>「現在我勸你們懇求神，他好施恩與我們。這妄獻的事，既由你們經手，他豈能看你們的情面嗎？這是萬軍之耶和華說的。</div>
+<div class="verse"><span class="verse-number">10</span>甚願你們中間有一人關上殿門，免得你們徒然在我壇上燒火。萬軍之耶和華說：我不喜悅你們，也不從你們手中收納供物。</div>
+<div class="verse"><span class="verse-number">11</span>萬軍之耶和華說：從日出之地到日落之處，我的名在外邦中必尊為大。在各處，人必奉我的名燒香，獻潔淨的供物，因為我的名在外邦中必尊為大。</div>
+<div class="verse"><span class="verse-number">12</span>你們卻褻瀆我的名，說：『耶和華的桌子是污穢的，其上的食物是可藐視的。』</div>
+<div class="verse"><span class="verse-number">13</span>你們又說：『這些事何等煩瑣！』並嗤之以鼻。這是萬軍之耶和華說的。你們把搶奪的、瘸腿的、有病的拿來獻上為祭。我豈能從你們手中收納呢？這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">14</span>行詭詐的在群中有公羊，他許願卻用有殘疾的獻給主，這人是可咒詛的。因為我是大君王，我的名在外邦中是可畏的。這是萬軍之耶和華說的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+瑪拉基書是舊約最後一卷先知書，寫於主前約450年，是波斯時期被擄歸回之後的背景。先知瑪拉基（名意為「我的使者」）面對的是一個屬靈疲憊、宗教表面化的群體：聖殿已重建，祭祀制度恢復，但心已不在其中。全書以「問答」形式展開——神宣告，百姓反問「我們在何事上……？」這種修辭結構揭示了屬靈的麻木與自我辯護。第1章以神的愛的宣告開篇：「我曾愛你們。」百姓卻問「你在何事上愛我們呢？」——連神的愛都要被質疑。章節主要批判祭司群體：他們將瞎眼的、瘸腿的、有病的牲畜獻給神，卻不敢用同樣的東西獻給省長。如果給人面子，為何在神面前卻如此隨意？「甚願有人關上殿門，免得徒然在我壇上燒火」——神寧願殿門關上，也不要這種敷衍的敬拜。章末的應許是：神的名在外邦中終將被尊為大，外邦人的潔淨供物會比這些污穢的更蒙悅納。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【「我曾愛你們」：神的愛是敬拜的起點，而非理所當然的期待】</strong><br>神宣告愛，百姓的第一反應是「你在何事上愛我們呢？」——不是感謝，而是質疑。這種心態把神的愛當成理所當然，甚至認為神沒有充分愛我們。真實的敬拜應當從記念神的愛開始——不是列清單質疑，而是在已有的恩典中重新看見神的愛，讓那份看見轉化為感恩和敬拜。<br><br>
+<strong>2. 【「你獻給省長，他豈喜悅你？」：給人面子卻不給神面子，是最深的屬靈侮辱】</strong><br>瞎眼的、瘸腿的獻給神，卻不敢獻給省長——這揭示了一個殘忍的真相：在他們心中，神的地位低於省長。日常生活中，「能投入最好的我給神，還是給人看見的事上？」是衡量真實敬拜的問題。<br><br>
+<strong>3. 【敷衍的敬拜比不敬拜更具傷害性，神寧願殿門關上】</strong><br>「甚願有人關上殿門，免得徒然燒火」——神的話令人震驚：祂寧願沒有敬拜，也不要有名無實的敷衍。因為敷衍的敬拜不只是無益，而是對神名字的褻瀆，比誠實的不敬拜更具破壞性。真實的敬拜需要全心，哪怕次數少；形式上的敬拜若心不在焉，甚至讓神厭惡。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華說</strong>：「<strong>我曾愛你們</strong>。」你們卻說：「你在何事上愛我們呢？」（瑪1:2上）</td>
+<td>你<strong>最近一次真正</strong>「數算神的恩典」是什麼時候——不是例行的感謝，而是真實地回想神在你<strong>生命中的愛的</strong>具體表達？就像<strong>長期在一起的伴侶容易把對方的付</strong>出視為理所當然，你<strong>對神的愛有沒</strong>有這種「習以為常」的麻木？你<strong>今天願意列出</strong>三件神在過去一年中具體愛你<strong>的事嗎</strong>？</td>
+</tr>
+<tr>
+<td><strong>你將瞎眼的獻為祭</strong>物，<strong>這不為惡嗎</strong>？將瘸腿的、有病的獻上，這不為惡嗎？你獻給你的省長，他豈喜悅你，豈能看你的情面嗎？（瑪1:8）</td>
+<td>你<strong>的時間、精力</strong>和<strong>最好的</strong>狀態，更多投入在「別人看得見」的地方，還是在「神面前」的靈性生活上？就像<strong>準備招待重要客人會拿出最好的餐</strong>具，你<strong>對神的「待客</strong>之道」是拿出你最好的，還是湊合的剩餘？</td>
+</tr>
+<tr>
+<td><strong>萬軍之耶和華說</strong>：<strong>從日出之地到日落</strong>之處，我的名在外邦中必尊為大。在各處，人必奉我的名燒香，獻潔淨的供物，因為我的名在外邦中必尊為大。（瑪1:11）</td>
+<td>神說外邦人的潔淨供物將比以色列污穢的更蒙悅納——敬拜的真誠超過宗教的身分。你<strong>的敬拜有多少</strong>是因為「習慣」（我就是這樣長大的）、有多少是因為「真心」（我真的想敬拜這位神）？就像<strong>一份手寫的情書比一張印刷卡片更</strong>珍貴，在神眼中「真誠的少」勝過「敷衍的多」。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

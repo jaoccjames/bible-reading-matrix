@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第36章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第36章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以掃後裔與以東族譜</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以掃就是以東，他的後代記在下面。</div>
+<div class="verse"><span class="verse-number">2</span>以掃娶迦南的女子為妻，就是赫人以倫的女兒亞大和希未人祭便的孫女、亞拿的女兒阿何利巴瑪，</div>
+<div class="verse"><span class="verse-number">3</span>又娶了以實瑪利的女兒、尼拜約的妹子巴實抹。</div>
+<div class="verse"><span class="verse-number">4</span>亞大給以掃生了以利法；巴實抹生了流珥；</div>
+<div class="verse"><span class="verse-number">5</span>阿何利巴瑪生了耶烏施、雅蘭、可拉。這都是以掃的兒子，是在迦南地生的。</div>
+<div class="verse"><span class="verse-number">6</span>以掃帶着他的妻子、兒女，與家中一切的人口，並他的牛羊、牲畜，和一切貨財，就是他在迦南地所得的，往別處去，離了他兄弟雅各。</div>
+<div class="verse"><span class="verse-number">7</span>因為二人的財物群畜甚多，寄居的地方容不下他們，所以不能同居。</div>
+<div class="verse"><span class="verse-number">8</span>於是以掃住在西珥山裏；以掃就是以東。</div>
+<div class="verse"><span class="verse-number">9</span>以掃是西珥山裏以東人的始祖，他的後代記在下面。</div>
+<div class="verse"><span class="verse-number">10</span>以掃眾子的名字如下。以掃的妻子亞大生以利法；以掃的妻子巴實抹生流珥。</div>
+<div class="verse"><span class="verse-number">11</span>以利法的兒子是提幔、阿抹、洗玻、迦坦、基納斯。</div>
+<div class="verse"><span class="verse-number">12</span>亭納是以掃兒子以利法的妾；她給以利法生了亞瑪力。這是以掃的妻子亞大的子孫。</div>
+<div class="verse"><span class="verse-number">13</span>流珥的兒子是拿哈、謝拉、沙瑪、米撒。這是以掃妻子巴實抹的子孫。</div>
+<div class="verse"><span class="verse-number">14</span>以掃的妻子阿何利巴瑪是祭便的孫女，亞拿的女兒；她給以掃生了耶烏施、雅蘭、可拉。</div>
+<div class="verse"><span class="verse-number">15</span>以掃子孫中作族長的記在下面。以掃的長子以利法的子孫中，有提幔族長、阿抹族長、洗玻族長，基納斯族長、</div>
+<div class="verse"><span class="verse-number">16</span>可拉族長、迦坦族長、亞瑪力族長。這是在以東地從以利法所出的族長，都是亞大的子孫。</div>
+<div class="verse"><span class="verse-number">17</span>以掃的兒子流珥的子孫中，有拿哈族長、謝拉族長、沙瑪族長、米撒族長。這是在以東地從流珥所出的族長，都是以掃妻子巴實抹的子孫。</div>
+<div class="verse"><span class="verse-number">18</span>以掃的妻子阿何利巴瑪的子孫中，有耶烏施族長、雅蘭族長、可拉族長。這是從以掃妻子，亞拿的女兒，阿何利巴瑪子孫中所出的族長。</div>
+<div class="verse"><span class="verse-number">19</span>以上的族長都是以掃的子孫；以掃就是以東。</div>
+<div class="verse"><span class="verse-number">20</span>那地原有的居民何利人西珥的子孫記在下面：就是羅坍、朔巴、祭便、亞拿、</div>
+<div class="verse"><span class="verse-number">21</span>底順、以察、底珊。這是從以東地的何利人西珥子孫中所出的族長。</div>
+<div class="verse"><span class="verse-number">22</span>羅坍的兒子是何利、希幔；羅坍的妹子是亭納。</div>
+<div class="verse"><span class="verse-number">23</span>朔巴的兒子是亞勒文、瑪拿轄、以巴錄、示玻、阿南。</div>
+<div class="verse"><span class="verse-number">24</span>祭便的兒子是亞雅、亞拿（當時在曠野放他父親祭便的驢，遇着溫泉的，就是這亞拿）。</div>
+<div class="verse"><span class="verse-number">25</span>亞拿的兒子是底順；亞拿的女兒是阿何利巴瑪。</div>
+<div class="verse"><span class="verse-number">26</span>底順的兒子是欣但、伊是班、益蘭、基蘭。</div>
+<div class="verse"><span class="verse-number">27</span>以察的兒子是辟罕、撒番、亞干。</div>
+<div class="verse"><span class="verse-number">28</span>底珊的兒子是烏斯、亞蘭。</div>
+<div class="verse"><span class="verse-number">29</span>從何利人所出的族長記在下面：就是羅坍族長、朔巴族長、祭便族長、亞拿族長、</div>
+<div class="verse"><span class="verse-number">30</span>底順族長、以察族長、底珊族長。這是從何利人所出的族長，都在西珥地，按着宗族作族長。</div>
+<div class="verse"><span class="verse-number">31</span>以色列人未有君王治理以先，在以東地作王的記在下面。</div>
+<div class="verse"><span class="verse-number">32</span>比珥的兒子比拉在以東作王，他的京城名叫亭哈巴。</div>
+<div class="verse"><span class="verse-number">33</span>比拉死了，波斯拉人謝拉的兒子約巴接續他作王。</div>
+<div class="verse"><span class="verse-number">34</span>約巴死了，提幔地的人戶珊接續他作王。</div>
+<div class="verse"><span class="verse-number">35</span>戶珊死了，比達的兒子哈達接續他作王；這哈達就是在摩押地殺敗米甸人的，他的京城名叫亞未得。</div>
+<div class="verse"><span class="verse-number">36</span>哈達死了，瑪士利加人桑拉接續他作王。</div>
+<div class="verse"><span class="verse-number">37</span>桑拉死了，大河邊的利河伯人掃羅接續他作王。</div>
+<div class="verse"><span class="verse-number">38</span>掃羅死了，亞革波的兒子巴勒哈南接續他作王。</div>
+<div class="verse"><span class="verse-number">39</span>亞革波的兒子巴勒哈南死了，哈達接續他作王，他的京城名叫巴烏；他的妻子名叫米希他別，是米薩合的孫女，瑪特列的女兒。</div>
+<div class="verse"><span class="verse-number">40</span>從以掃所出的族長，按着他們的宗族、住處、名字記在下面：就是亭納族長、亞勒瓦族長、耶帖族長、</div>
+<div class="verse"><span class="verse-number">41</span>阿何利巴瑪族長、以拉族長、比嫩族長、</div>
+<div class="verse"><span class="verse-number">42</span>基納斯族長、提幔族長、米比薩族長、</div>
+<div class="verse"><span class="verse-number">43</span>瑪基疊族長、以蘭族長。這是以東人在所得為業的地上，按着他們的住處。（所有的族長都是以東人的始祖以掃的後代。）</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章完整記載以掃（以東）的家譜，包括他的妻子、兒子、孫子，以及以東地的族長和君王。以掃因財物甚多與雅各分開，定居在西珥山地，成為以東民族的始祖。本章也記錄了當地原住民何利人的族譜，以及以色列人尚未有君王之前，以東地已有八位君王相繼統治的歷史。這份詳盡的家譜不僅顯示神對以掃後裔的祝福應驗，也為後來以色列與以東的關係埋下伏筆。雖然以掃失去長子名分和祝福，但神仍看顧他的後代，使其成為強盛的民族。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的主權涵蓋萬族萬民</strong><br>雖然以掃不在救恩的主線中，神仍詳細記錄他的後代，顯明神對所有人類的關注。神的計劃超越選民範圍，祂掌管歷史中每個民族的興衰，即使不是蒙揀選的族裔，也在神的主權之下。<br><br>
+<strong>2. 選擇帶來長遠的影響</strong><br>以掃當年為一碗紅豆湯輕看長子名分，導致他的後裔雖然昌盛，卻失去屬靈的產業。人生的每個重大抉擇，都會影響後代的命運。短暫的滿足換來永恆的損失，是我們需要警惕的。<br><br>
+<strong>3. 神的恩典超越人的失敗</strong><br>儘管以掃在屬靈上失敗，神仍按照對亞伯拉罕的應許祝福他，使他的後裔成為大國。這顯示神的信實不因人的軟弱而改變，祂的憐憫仍然臨到願意回轉尋求的人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>以掃帶著他的妻子</strong>、兒女，<strong>與家中一切的人口</strong>，並他的牛羊、牲畜，和一切貨財，就是他在迦南地所得的，往別處去，離了他兄弟雅各。（創36:6）</td>
+<td>就像<strong>換工作搬到新城市意味著離開熟悉</strong>的環境，以掃選擇離開應許之地追求物質豐盛。我是否也在不知不覺中，為了眼前的利益或舒適，遠離了神為我預備的屬靈產業？</td>
+</tr>
+<tr>
+<td><strong>以色列人未有君王</strong><strong>治理以先</strong>，在以東地作王的記在下面。（創36:31）</td>
+<td>就像<strong>鄰居先買房成家而自己還在努力</strong>，以東比以色列更早建立王國，卻未必走在神的心意中。我是否會因為看見別人先成功、先得著而焦慮，忘記神對每個人都有不同的時間表和計劃？</td>
+</tr>
+<tr>
+<td><strong>以掃就是以東</strong>，<strong>他的後代記在下面</strong>。（創36:1）</td>
+<td>就像<strong>族譜記錄家族歷史讓後代知道自己</strong>的根源，聖經詳細記載以掃後裔顯示每個人在神眼中都重要。我是否認識到自己的選擇和信仰不僅影響自己，更會成為傳承給下一代的屬靈產業？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

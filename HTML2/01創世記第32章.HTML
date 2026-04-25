@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第32章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第32章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">雅各與神摔跤</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>雅各仍舊行路，神的使者遇見他。</div>
+<div class="verse"><span class="verse-number">2</span>雅各看見他們就說：「這是神的軍兵」，於是給那地方起名叫瑪哈念〔就是二軍兵的意思〕。</div>
+<div class="verse"><span class="verse-number">3</span>雅各打發人先往西珥地去，就是以東地，見他哥哥以掃，</div>
+<div class="verse"><span class="verse-number">4</span>吩咐他們說：「你們對我主以掃說：『你的僕人雅各這樣說：我在拉班那裏寄居，直到如今。</div>
+<div class="verse"><span class="verse-number">5</span>我有牛、驢、羊群、僕婢，現在打發人來報告我主，為要在你眼前蒙恩。』」</div>
+<div class="verse"><span class="verse-number">6</span>所打發的人回到雅各那裏，說：「我們到了你哥哥以掃那裏，他帶着四百人，正迎着你來。」</div>
+<div class="verse"><span class="verse-number">7</span>雅各就甚懼怕，而且愁煩，便把那與他同在的人口和羊群、牛群、駱駝分作兩隊，</div>
+<div class="verse"><span class="verse-number">8</span>說：「以掃若來擊殺這一隊，剩下的那一隊還可以逃避。」</div>
+<div class="verse"><span class="verse-number">9</span>雅各說：「耶和華我祖亞伯拉罕的神，我父親以撒的神啊，你曾對我說：『回你本地本族去，我要厚待你。』</div>
+<div class="verse"><span class="verse-number">10</span>你向僕人所施的一切慈愛和誠實，我一點也不配得；我先前只拿着我的杖過這約但河，如今我卻成了兩隊了。</div>
+<div class="verse"><span class="verse-number">11</span>求你救我脫離我哥哥以掃的手；因為我怕他來殺我，連妻子帶兒女一同殺了。</div>
+<div class="verse"><span class="verse-number">12</span>你曾說：『我必定厚待你，使你的後裔如同海邊的沙，多得不可勝數。』」</div>
+<div class="verse"><span class="verse-number">13</span>當夜，雅各在那裏住宿，就從他所有的物中拿禮物要送給他哥哥以掃：</div>
+<div class="verse"><span class="verse-number">14</span>母山羊二百隻，公山羊二十隻，母綿羊二百隻，公綿羊二十隻，</div>
+<div class="verse"><span class="verse-number">15</span>奶崽子的駱駝三十隻，各帶着崽子，母牛四十隻，公牛十隻，母驢二十匹，驢駒十匹；</div>
+<div class="verse"><span class="verse-number">16</span>每樣各分一群，交在僕人手下，就對僕人說：「你們要在我前頭過去，使群群相離，有空閒的地方」；</div>
+<div class="verse"><span class="verse-number">17</span>又吩咐儘先走的說：「我哥哥以掃遇見你的時候，問你說：『你是那家的人？要往那裏去？你前頭這些是誰的？』</div>
+<div class="verse"><span class="verse-number">18</span>你就說：『是你僕人雅各的，是送給我主以掃的禮物；他自己也在我們後邊。』」</div>
+<div class="verse"><span class="verse-number">19</span>又吩咐第二、第三，和一切趕群畜的人說：「你們遇見以掃的時候也要這樣對他說；</div>
+<div class="verse"><span class="verse-number">20</span>並且你們要說：『你僕人雅各在我們後邊。』」因雅各心裏說：「我藉着在我前頭去的禮物解他的恨，然後再見他的面，或者他容納我。」</div>
+<div class="verse"><span class="verse-number">21</span>於是禮物先過去了；那夜，雅各在隊中住宿。</div>
+<div class="verse"><span class="verse-number">22</span>他夜間起來，帶着兩個妻子，兩個使女，並十一個兒子，都過了雅博渡口，</div>
+<div class="verse"><span class="verse-number">23</span>先打發他們過河，又打發所有的都過去，</div>
+<div class="verse"><span class="verse-number">24</span>只剩下雅各一人。有一個人來和他摔跤，直到黎明。</div>
+<div class="verse"><span class="verse-number">25</span>那人見自己勝不過他，就將他的大腿窩摸了一把，雅各的大腿窩正在摔跤的時候就扭了。</div>
+<div class="verse"><span class="verse-number">26</span>那人說：「天黎明了，容我去吧！」雅各說：「你不給我祝福，我就不容你去。」</div>
+<div class="verse"><span class="verse-number">27</span>那人說：「你名叫甚麼？」他說：「我名叫雅各。」</div>
+<div class="verse"><span class="verse-number">28</span>那人說：「你的名不要再叫雅各，要叫以色列；因為你與神與人較力，都得了勝。」</div>
+<div class="verse"><span class="verse-number">29</span>雅各問他說：「請將你的名告訴我。」那人說：「何必問我的名？」於是在那裏給雅各祝福。</div>
+<div class="verse"><span class="verse-number">30</span>雅各便給那地方起名叫毘努伊勒〔就是神之面的意思〕，意思說：「我面對面見了神，我的性命仍得保全。」</div>
+<div class="verse"><span class="verse-number">31</span>日頭剛出來的時候，雅各經過毘努伊勒，他的大腿就瘸了。</div>
+<div class="verse"><span class="verse-number">32</span>故此，以色列人不吃大腿窩的筋，直到今日，因為那人摸了雅各大腿窩的筋。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+創世記第32章記載雅各即將面對20年前因欺騙而得罪的哥哥以掃。神的使者先遇見雅各給他鼓勵,但聽聞以掃帶四百人來,雅各極度懼怕。他分隊伍、向神禱告、送大量禮物,盡一切努力化解危機。在雅博渡口,雅各獨自一人時,有一位神秘人與他摔跤直到黎明。雅各緊抓不放求祝福,神將他改名為以色列,意思是與神較力得勝。雅各的大腿窩被摸而瘸腿,但他面對面見了神。本章是雅各生命的轉捩點,從抓取者變為與神摔跤得勝者。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 與神摔跤才能生命改變</strong><br>雅各整夜與神摔跤,緊抓不放直到得著祝福,神將他改名為以色列。真實的屬靈突破不是輕鬆得來,而是在與神激烈的相遇中,願意放下老我、承認軟弱、緊抓神不放。生命的更新需要與神真實較力的時刻。<br><br>
+<strong>2. 神的觸摸帶來永遠記號</strong><br>雅各的大腿窩被摸而瘸腿,這成為他一生的記號。與神深刻相遇會在生命中留下印記,提醒我們不能再靠自己的力量行走,必須倚靠神。軟弱成為恩典的記號,叫我們不敢驕傲。<br><br>
+<strong>3. 面對過去需要神的力量</strong><br>雅各在見以掃前經歷與神摔跤,得著新的身分和能力。我們無法靠自己面對過去的虧欠和恐懼,必須先與神相遇,從祂那裡得著勇氣和力量,才能勇敢面對需要和解的關係。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>只剩下雅各一人</strong>。<strong>有一個人來和他摔</strong>跤,直到黎明。那人說:天黎明了,容我去吧!雅各說:你不給我祝福,我就不容你去。(創32:24,26)</td>
+<td>你<strong>與神的關係</strong>是表面的禮貌還是深入的較力?就像<strong>認真運動會流汗痠痛</strong>,你<strong>的禱告</strong>是例行公事還是緊抓神不放的迫切?</td>
+</tr>
+<tr>
+<td><strong>那人說</strong>:<strong>你的名不要再叫雅</strong>各,要叫以色列;因為你與神與人較力,都得了勝。(創32:28)</td>
+<td>你是否<strong>經歷過生命的</strong>轉化,從舊的模式變成新的身分?就像<strong>毛毛蟲變蝴蝶需要破繭掙扎</strong>,你是否<strong>願意讓神徹底</strong>改變你<strong>的生命</strong>?</td>
+</tr>
+<tr>
+<td><strong>那人見自己勝不過</strong>他,<strong>就將他的大腿窩摸</strong>了一把,雅各的大腿窩正在摔跤的時候就扭了。日頭剛出來的時候,雅各經過毗努伊勒,他的大腿就瘸了。(創32:25,31)</td>
+<td>你<strong>生命中</strong>是否有神留下的記號,提醒你不能再靠自己?就像<strong>受過傷的地方會特別小心</strong>,你<strong>的軟弱</strong>是否成為倚靠神的提醒?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

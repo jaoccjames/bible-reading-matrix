@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約書亞記第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約書亞記第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約櫃領路，約但河水分開神蹟過河</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>約書亞清早起來，和以色列眾人都離開什亭，來到約但河，就住在那裏，等候過河。</div>
+<div class="verse"><span class="verse-number">2</span>過了三天，官長走遍營中，</div>
+<div class="verse"><span class="verse-number">3</span>吩咐百姓說：「你們看見耶和華你們神的約櫃，又見祭司利未人抬着，就要離開所住的地方，跟着約櫃去。</div>
+<div class="verse"><span class="verse-number">4</span>只是你們和約櫃相離要量二千肘，不可與約櫃相近，使你們知道所當走的路，因為這條路你們向來沒有走過。」</div>
+<div class="verse"><span class="verse-number">5</span>約書亞吩咐百姓說：「你們要自潔，因為明天耶和華必在你們中間行奇事。」</div>
+<div class="verse"><span class="verse-number">6</span>約書亞又吩咐祭司說：「你們抬起約櫃，在百姓前頭過去。」於是他們抬起約櫃，在百姓前頭走。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華對約書亞說：「從今日起，我必使你在以色列眾人眼前尊大，使他們知道我怎樣與摩西同在，也必照樣與你同在。</div>
+<div class="verse"><span class="verse-number">8</span>你要吩咐抬約櫃的祭司說：『你們到了約但河的水邊上，就要在約但河水裏站住。』」</div>
+<div class="verse"><span class="verse-number">9</span>約書亞對以色列人說：「你們近前來，聽耶和華你們神的話。」</div>
+<div class="verse"><span class="verse-number">10</span>約書亞說：「看哪，普天下主的約櫃必在你們前頭過去，到約但河裏，因此你們就知道在你們中間有永生神；並且他必在你們面前趕出迦南人、赫人、希未人、比利洗人、革迦撒人、亞摩利人、耶布斯人。</div>
+<div class="verse"><span class="verse-number">11</span>併於上節</div>
+<div class="verse"><span class="verse-number">12</span>你們現在要從以色列支派中揀選十二個人，每支派一人，</div>
+<div class="verse"><span class="verse-number">13</span>等到抬普天下主耶和華約櫃的祭司把腳站在約但河水裏，約但河的水，就是從上往下流的水，必然斷絕，立起成壘。」</div>
+<div class="verse"><span class="verse-number">14</span>百姓離開帳棚要過約但河的時候，抬約櫃的祭司乃在百姓的前頭。</div>
+<div class="verse"><span class="verse-number">15</span>他們到了約但河，腳一入水（原來約但河水在收割的日子漲過兩岸），</div>
+<div class="verse"><span class="verse-number">16</span>那從上往下流的水便在極遠之地、撒拉但旁的亞當城那裏停住，立起成壘；那往亞拉巴的海，就是鹽海，下流的水全然斷絕。於是百姓在耶利哥的對面過去了。</div>
+<div class="verse"><span class="verse-number">17</span>抬耶和華約櫃的祭司在約但河中的乾地上站定，以色列眾人都從乾地上過去，直到國民盡都過了約但河。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約書亞記第3章記載以色列人過約但河的神蹟事件，是整個進入迦南旅程的關鍵起點。以色列人在什亭整頓三天後，官長傳達命令：百姓要跟隨祭司所抬的約櫃前行，但與約櫃保持二千肘的距離，以便遠遠看清前進的方向——因為這是他們從未走過的路。約書亞事先呼召百姓自潔，預備迎接神的奇事。當祭司的腳踏入約但河水時，正值收割季節、河水漲溢兩岸之際，河水卻奇蹟般停住，遠在亞當城附近立起成壘，讓全體以色列人從乾地通過。這神蹟與當年摩西分紅海相呼應，確立了約書亞在眾民眼前的屬靈權威。約櫃象徵神的同在走在最前面，帶領百姓進入未知的應許之地，整個過程彰顯了神的主權、信徒順服的信心，以及神蹟必在信心邁步時方才彰顯的真理。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 讓神走在最前頭，是面對未知路途的關鍵</strong><br>官長吩咐百姓跟隨約櫃，理由是「這條路你們向來沒有走過」。約櫃象徵神的同在，走在最前方引路。這提醒信徒：面對人生中從未走過的新階段——轉換工作、重大決定、人際關係的改變——不是靠自己的經驗與判斷，而是讓神的話語和聖靈引導走在前面，信徒跟隨而行。跟隨的關鍵是保持目光專注在神身上，而非前方的困難。<br><br>
+<strong>2. 信心要先邁步，神蹟才能彰顯</strong><br>河水並非在祭司踏入之前就先分開，而是在腳踏入水中之後才停止流動。這是信心行動的典範：神沒有要求百姓看見道路再行走，而是要求他們先邁出信心的腳步，神蹟隨之而來。信仰生活中，等待「一切就緒」才行動往往是信心不足的表現；真正的信心是在看不清楚的時候，仍願意踏出第一步。<br><br>
+<strong>3. 自潔與準備是迎接神作為的必要態度</strong><br>約書亞在神蹟發生前呼召百姓「自潔」，因為「明天耶和華必在你們中間行奇事」。這說明神的同在與作為，與百姓內在的靈性狀態息息相關。自潔不是賺取神恩典的條件，而是以謙卑敬畏的心預備自己，迎接神的工作。當代信徒同樣需要透過認罪、禱告、安靜在神面前，潔淨內心，以敞開的心靈與神同行。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>只是你們和約櫃相</strong><strong>離要量二千肘</strong>，不可與約櫃相近，使你們知道所當走的路，因為這條路你們向來沒有走過。」（書3:4）</td>
+<td>就像<strong>搬到新城市前無法完全預知街道</strong>，你<strong>在面對人生未</strong>知的新路時，是習慣靠自己的經驗摸索，還是先尋求神的引導再邁步？你如何<strong>讓神走在你前</strong>面？</td>
+</tr>
+<tr>
+<td>「<strong>他們到了約但河</strong>，<strong>腳一入水</strong>……那從上往下流的水便……停住，立起成壘。」（書3:15-16）</td>
+<td>就像<strong>健身需要先汗水才能見效</strong>，以色列人先踏入水中，河水才分開。你<strong>生命中有哪件</strong>你<strong>一直等待「條</strong>件成熟」才肯邁步的事，其實神正在等你<strong>先踏出信心的</strong>那一步？</td>
+</tr>
+<tr>
+<td>「<strong>你們要自潔</strong>，<strong>因為明天耶和華必</strong>在你們中間行奇事。」（書3:5）</td>
+<td>就像<strong>重要的會議前需要事先準備資料才</strong>能發揮作用，你是否<strong>定期透過禱告</strong>與認罪，潔淨內心預備自己，以迎接神在你<strong>生命中更大的</strong>作為？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

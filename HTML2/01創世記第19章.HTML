@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第19章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第19章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">所多瑪的毀滅</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>那兩個天使晚上到了所多瑪；羅得正坐在所多瑪城門口，看見他們，就起來迎接，臉伏於地下拜，</div>
+<div class="verse"><span class="verse-number">2</span>說：「我主啊，請你們到僕人家裏洗洗腳，住一夜，清早起來再走。」他們說：「不！我們要在街上過夜。」</div>
+<div class="verse"><span class="verse-number">3</span>羅得切切的請他們，他們這才進去，到他屋裏。羅得為他們預備筵席，烤無酵餅，他們就吃了。</div>
+<div class="verse"><span class="verse-number">4</span>他們還沒有躺下，所多瑪城裏各處的人，連老帶少，都來圍住那房子，</div>
+<div class="verse"><span class="verse-number">5</span>呼叫羅得說：「今日晚上到你這裏來的人在那裏呢？把他們帶出來，任我們所為。」</div>
+<div class="verse"><span class="verse-number">6</span>羅得出來，把門關上，到眾人那裏，</div>
+<div class="verse"><span class="verse-number">7</span>說：「眾弟兄，請你們不要作這惡事。</div>
+<div class="verse"><span class="verse-number">8</span>我有兩個女兒，還是處女，容我領出來，任憑你們的心願而行；只是這兩個人既然到我舍下，不要向他們作甚麼。」</div>
+<div class="verse"><span class="verse-number">9</span>眾人說：「退去吧！」又說：「這個人來寄居，還想要作官哪！現在我們要害你比害他們更甚。」眾人就向前擁擠羅得，要攻破房門。</div>
+<div class="verse"><span class="verse-number">10</span>只是那二人伸出手來，將羅得拉進屋去，把門關上，</div>
+<div class="verse"><span class="verse-number">11</span>並且使門外的人，無論老少，眼都昏迷；他們摸來摸去，總尋不着房門。</div>
+<div class="verse"><span class="verse-number">12</span>二人對羅得說：「你這裏還有甚麼人麼？無論是女婿是兒女，和這城中一切屬你的人，你都要將他們從這地方帶出去。</div>
+<div class="verse"><span class="verse-number">13</span>我們要毀滅這地方；因為城內罪惡的聲音在耶和華面前甚大，耶和華差我們來，要毀滅這地方。」</div>
+<div class="verse"><span class="verse-number">14</span>羅得就出去，告訴娶了〔或作：將要娶〕他女兒的女婿們說：「你們起來離開這地方，因為耶和華要毀滅這城。」他女婿們卻以為他說的是戲言。</div>
+<div class="verse"><span class="verse-number">15</span>天明了，天使催逼羅得說：「起來！帶着你的妻子和你在這裏的兩個女兒出去，免得你因這城裏的罪惡同被剿滅。」</div>
+<div class="verse"><span class="verse-number">16</span>但羅得遲延不走。二人因為耶和華憐恤羅得，就拉着他的手和他妻子的手，並他兩個女兒的手，把他們領出來，安置在城外；</div>
+<div class="verse"><span class="verse-number">17</span>領他們出來以後，就說：「逃命吧！不可回頭看，也不可在平原站住。要往山上逃跑，免得你被剿滅。」</div>
+<div class="verse"><span class="verse-number">18</span>羅得對他們說：「我主啊，不要如此！</div>
+<div class="verse"><span class="verse-number">19</span>你僕人已經在你眼前蒙恩；你又向我顯出莫大的慈愛，救我的性命。我不能逃到山上去，恐怕這災禍臨到我，我便死了。</div>
+<div class="verse"><span class="verse-number">20</span>看哪，這座城又小又近，容易逃到，這不是一個小的嗎？求你容我逃到那裏，我的性命就得存活。」</div>
+<div class="verse"><span class="verse-number">21</span>天使對他說：「這事我也應允你；我不傾覆你所說的這城。</div>
+<div class="verse"><span class="verse-number">22</span>你要速速的逃到那城；因為你還沒有到那裏，我不能作甚麼。」因此那城名叫瑣珥〔就是小的意思〕。</div>
+<div class="verse"><span class="verse-number">23</span>羅得到了瑣珥，日頭已經出來了。</div>
+<div class="verse"><span class="verse-number">24</span>當時，耶和華將硫磺與火從天上耶和華那裏降與所多瑪和蛾摩拉，</div>
+<div class="verse"><span class="verse-number">25</span>把那些城和全平原，並城裏所有的居民，連地上生長的，都毀滅了。</div>
+<div class="verse"><span class="verse-number">26</span>羅得的妻子在後邊回頭一看，就變成了一根鹽柱。</div>
+<div class="verse"><span class="verse-number">27</span>亞伯拉罕清早起來，到了他從前站在耶和華面前的地方，</div>
+<div class="verse"><span class="verse-number">28</span>向所多瑪和蛾摩拉與平原的全地觀看，不料，那地方煙氣上騰，如同燒窰一般。</div>
+<div class="verse"><span class="verse-number">29</span>當神毀滅平原諸城的時候，他記念亞伯拉罕，正在傾覆羅得所住之城的時候，就打發羅得從傾覆之中出來。</div>
+<div class="verse"><span class="verse-number">30</span>羅得因為怕住在瑣珥，就同他兩個女兒從瑣珥上去，住在山裏；他和兩個女兒住在一個洞裏。</div>
+<div class="verse"><span class="verse-number">31</span>大女兒對小女兒說：「我們的父親老了，地上又無人按着世上的常規進到我們這裏。</div>
+<div class="verse"><span class="verse-number">32</span>來！我們可以叫父親喝酒，與他同寢。這樣，我們好從他存留後裔。」</div>
+<div class="verse"><span class="verse-number">33</span>於是，那夜她們叫父親喝酒，大女兒就進去和她父親同寢；她幾時躺下，幾時起來，父親都不知道。</div>
+<div class="verse"><span class="verse-number">34</span>第二天，大女兒對小女兒說：「我昨夜與父親同寢。今夜我們再叫他喝酒，你可以進去與他同寢。這樣，我們好從父親存留後裔。」</div>
+<div class="verse"><span class="verse-number">35</span>於是，那夜她們又叫父親喝酒，小女兒起來與她父親同寢；她幾時躺下，幾時起來，父親都不知道。</div>
+<div class="verse"><span class="verse-number">36</span>這樣，羅得的兩個女兒都從她父親懷了孕。</div>
+<div class="verse"><span class="verse-number">37</span>大女兒生了兒子，給他起名叫摩押，就是現今摩押人的始祖。</div>
+<div class="verse"><span class="verse-number">38</span>小女兒也生了兒子，給他起名叫便亞米，就是現今亞捫人的始祖。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+創世記第19章記載神審判所多瑪和蛾摩拉的完整過程。兩位天使來到所多瑪,羅得熱情接待他們,卻遭遇全城邪惡之人的圍攻,顯示這城罪惡已到極點。天使催促羅得全家逃離,但他的女婿們不信,羅得自己也遲延不走,最後被天使強拉出城。神降下硫磺與火毀滅所多瑪和蛾摩拉,羅得的妻子因回頭觀看而變成鹽柱。羅得和兩個女兒逃到山洞,女兒們用不當的方法想延續後裔,生下摩押人和亞捫人的祖先。本章顯示神公義的審判必然臨到,也警告信徒不可貪戀罪惡世界。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 罪惡滿盈必遭神審判</strong><br>所多瑪全城從老到少都參與邪惡,顯示罪惡已深入整個社會結構。神是公義的,當罪惡到了無可挽回的地步,審判必然臨到。神的忍耐有限度,人不可以為神的寬容是可以放縱犯罪的理由。<br><br>
+<strong>2. 與世界妥協帶來屬靈危機</strong><br>羅得選擇住在所多瑪,最終失去財產、妻子,女兒的價值觀也被扭曲。與罪惡世界妥協看似得到好處,實際上一點一滴侵蝕我們的信仰和家庭,代價遠超過我們的想像。<br><br>
+<strong>3. 貪戀世界攔阻屬靈逃脫</strong><br>羅得的妻子回頭觀看,顯示她的心仍留戀所多瑪。逃離罪惡需要決心和行動,不能一邊逃離一邊回頭張望。真正的得救不只是身體離開,更是心靈徹底轉向神。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>但羅得遲延不走</strong>。<strong>二人因為耶和華憐</strong>恤羅得,就拉著他的手和他妻子的手,並他兩個女兒的手,把他們領出來。(創19:16)</td>
+<td>你是否<strong>在某些明知該</strong>離開的處境中仍然遲延不走?就像<strong>明知該刪掉的壞習慣APP卻捨不</strong>得,你是否<strong>需要神強力的</strong>拉扯才肯徹底離開?</td>
+</tr>
+<tr>
+<td><strong>領他們出來以後</strong>,就說:<strong>逃命吧</strong>!不可回頭看,也不可在平原站住。要往山上逃跑,免得你被剿滅。(創19:17)</td>
+<td>當你<strong>決心離開罪惡</strong>或不良環境時,你是果斷前行還是不斷回頭張望?就像<strong>戒菸的人還留著打火機做紀念</strong>,你是否<strong>真的切斷與過</strong>去的連結?</td>
+</tr>
+<tr>
+<td><strong>羅得的妻子在後邊</strong><strong>回頭一看</strong>,就變成了一根鹽柱。(創19:26)</td>
+<td>你<strong>的心</strong>是否仍留戀著世界的價值觀和生活方式?就像<strong>減肥時還想著炸雞的美味</strong>,你是否<strong>口裡說跟隨主</strong>,心裡卻捨不得世界?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

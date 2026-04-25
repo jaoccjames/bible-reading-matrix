@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第17章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第17章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">倚靠人與倚靠神的對比</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>猶大的罪是用鐵筆、用金鋼鑽記錄的，銘刻在他們的心版上和壇角上。</div>
+<div class="verse"><span class="verse-number">2</span>他們的兒女記念他們高岡上、青翠樹旁的壇和木偶。</div>
+<div class="verse"><span class="verse-number">3</span>我田野的山哪，我必因你在四境之內所犯的罪，把你的貨物、財寶，並邱壇當掠物交給仇敵；</div>
+<div class="verse"><span class="verse-number">4</span>並且你因自己的罪必失去我所賜給你的產業。我也必使你在你所不認識的地上服事你的仇敵；因為你使我怒中起火，直燒到永遠。</div>
+<div class="verse"><span class="verse-number">5</span>耶和華如此說：倚靠人血肉的膀臂，心中離棄耶和華的，那人有禍了！</div>
+<div class="verse"><span class="verse-number">6</span>因他必像沙漠的杜松，不見福樂來到，卻要住曠野乾旱之處，無人居住的鹼地。</div>
+<div class="verse"><span class="verse-number">7</span>倚靠耶和華、以耶和華為可靠的，那人有福了！</div>
+<div class="verse"><span class="verse-number">8</span>他必像樹栽於水旁，在河邊扎根，炎熱來到，並不懼怕，葉子仍必青翠，在乾旱之年毫無掛慮，而且結果不止。</div>
+<div class="verse"><span class="verse-number">9</span>人心比萬物都詭詐，壞到極處，誰能識透呢？</div>
+<div class="verse"><span class="verse-number">10</span>我耶和華是鑒察人心、試驗人肺腑的，要照各人所行的和他作事的結果報應他。</div>
+<div class="verse"><span class="verse-number">11</span>那不按正道得財的，好像鷓鴣菢不是自己下的蛋；到了中年，那財都必離開他，他終久成為愚頑人。</div>
+<div class="verse"><span class="verse-number">12</span>我們的聖所是榮耀的寶座，從太初安置在高處。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華以色列的盼望啊，凡離棄你的必至蒙羞。耶和華說：離開我的，他們的名字必寫在土裏，因為他們離棄我這活水的泉源。</div>
+<div class="verse"><span class="verse-number">14</span>耶和華啊，求你醫治我，我便痊癒，拯救我，我便得救；因你是我所讚美的。</div>
+<div class="verse"><span class="verse-number">15</span>他們對我說：耶和華的話在哪裏呢？叫這話應驗吧！</div>
+<div class="verse"><span class="verse-number">16</span>至於我，那跟從你作牧人的職分，我並沒有急忙離棄，也沒有想那災殃的日子；這是你知道的。我口中所出的言語都在你面前。</div>
+<div class="verse"><span class="verse-number">17</span>不要使我因你驚恐；當災禍的日子，你是我的避難所。</div>
+<div class="verse"><span class="verse-number">18</span>願那些逼迫我的蒙羞，卻不要使我蒙羞；使他們驚惶，卻不要使我驚惶；使災禍的日子臨到他們，以加倍的毀壞毀壞他們。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華對我如此說：「你去站在平民的門口，就是猶大君王出入的門，又站在耶路撒冷的各門口，</div>
+<div class="verse"><span class="verse-number">20</span>對他們說：『你們這猶大君王和猶大眾人，並耶路撒冷的一切居民，凡從這些門進入的都當聽耶和華的話。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華如此說：你們要謹慎，不要在安息日擔甚麼擔子進入耶路撒冷的各門；</div>
+<div class="verse"><span class="verse-number">22</span>也不要在安息日從家中擔出擔子去。無論何工都不可作，只要以安息日為聖日，正如我所吩咐你們列祖的。』</div>
+<div class="verse"><span class="verse-number">23</span>他們卻不聽從，不側耳而聽，竟硬着頸項不聽，不受教訓。」</div>
+<div class="verse"><span class="verse-number">24</span>耶和華說：「你們若留意聽從我，在安息日不擔甚麼擔子進入這城的各門，只以安息日為聖日，在那日無論何工都不作；</div>
+<div class="verse"><span class="verse-number">25</span>那時就有坐大衛寶座的君王和首領，他們與猶大人，並耶路撒冷的居民，或坐車，或騎馬，進入這城的各門，而且這城必存到永遠。</div>
+<div class="verse"><span class="verse-number">26</span>也必有人從猶大城邑和耶路撒冷四圍的各處，從便雅憫地、高原、山地，並南地而來，都帶燔祭、平安祭、素祭，和乳香，並感謝祭，到耶和華的殿去。</div>
+<div class="verse"><span class="verse-number">27</span>你們若不聽從我，不以安息日為聖日，仍在安息日擔擔子，進入耶路撒冷的各門，我必在各門中點火；這火也必燒毀耶路撒冷的宮殿，不能熄滅。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第17章是一個思想豐富、主題多元的章節，約寫於主前600年前後。本章開篇以「鐵筆金鋼鑽」的意象，描述猶大的罪深刻銘刻在心版上、無法輕易抹去，高岡上的偶像祭壇更成為兒女記念的「傳統」。接下來是本書最著名的對比詩：倚靠人血肉膀臂者「像沙漠的杜松」——乾旱不結果；倚靠耶和華者「像樹栽於水旁」——根深不懼炎熱。第9至10節插入一句深刻的人性診斷：「人心比萬物都詭詐，壞到極處」，緊接着宣告神是鑒察人心的主。第13節以「活水的泉源」比喻神，離開祂的人如名字寫在塵土中，終被抹去。第14至18節是耶利米個人的禱告，求神醫治、拯救，面對嘲笑他的人他不退縮。章末（19-27節）神命令耶利米宣講守安息日的重要，以守與不守安息日，作為國家存亡的條件，再次揭示順服是祝福的關鍵。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【倚靠的對象決定生命的豐盛或乾涸】</strong><br>第5至8節的對比詩是本章核心：倚靠人如沙漠杜松，住在乾旱鹼地；倚靠神如水旁之樹，根深不懼旱熱，果實不止。「倚靠」不是口頭認同，而是生命方向的選擇——遇事求人還是求神？壓力下信自己還是信神？這個日常的選擇，塑造了信仰的深度。長期倚靠神的人，靈命如扎根水源，外在環境雖改變，內在卻有持續的滋養。<br><br>
+<strong>2. 【人心的詭詐需要神的鑒察與更新】</strong><br>「人心比萬物都詭詐，壞到極處，誰能識透呢？」這句話是對人性最誠實的描述。我們常常自我欺騙，以為動機純良，卻隱藏着私慾。神「鑒察人心、試驗人肺腑」，照各人所行的報應。這呼召信徒養成自我反省的習慣，在神面前誠實面對自己的動機，而不是用外在的宗教行為掩蓋內心的問題。<br><br>
+<strong>3. 【安息日是信靠神掌管的具體操練】</strong><br>神命令守安息日，不只是宗教規條，而是信仰宣告：我相信神管理時間，我的生命不靠不停工作來維持。在一個效率至上的文化中，守安息日是對「我必須一直努力才能成功」這種焦慮的反抗，是以行動宣告神是供應者。定期安息，是人在有限中承認神無限的操練。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>倚靠耶和華</strong>、<strong>以耶和華為可靠的</strong>，那人有福了！他必像樹栽於水旁，在河邊扎根，炎熱來到，並不懼怕，葉子仍必青翠，在乾旱之年毫無掛慮，而且結果不止。（耶17:7-8）</td>
+<td>你<strong>在壓力與困難</strong>中，本能地倚靠的是什麼？就像<strong>手機訊號不好時你<strong>會找WiFi</strong></strong>，危機中你<strong>的「第一個求</strong>助對象」是人、方法，還是神？這個習慣正在塑造你<strong>成為哪種樹</strong>？</td>
+</tr>
+<tr>
+<td><strong>人心比萬物都詭詐</strong>，<strong>壞到極處</strong>，誰能識透呢？我耶和華是鑒察人心、試驗人肺腑的，要照各人所行的和他作事的結果報應他。（耶17:9-10）</td>
+<td>你是否<strong>曾做了看似正</strong>確的事，卻發現動機並不純良？就像<strong>用漂亮的包裝紙包住一個有問題的</strong>禮物，你願意<strong>讓神檢視你內</strong>心真實的動機，而不只是看外在的行為嗎？</td>
+</tr>
+<tr>
+<td><strong>耶和華啊</strong>，<strong>求你醫治我</strong>，我便痊癒，拯救我，我便得救；因你是我所讚美的。（耶17:14）</td>
+<td>你<strong>生命中有哪些</strong>「傷口」是靠自己的力量一直無法痊癒的？就像<strong>骨折後需要專業的醫生而不是自己</strong>包紮，你願意<strong>把那些深層的</strong>痛帶到神面前，讓祂來做真正的醫治嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

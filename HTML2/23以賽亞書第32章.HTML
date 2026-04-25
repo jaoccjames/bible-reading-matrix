@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第32章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第32章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">公義的果效是平安：義王的到來與聖靈更新的應許</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>看哪，必有一王憑公義行政；必有首領藉公平掌權。</div>
+<div class="verse"><span class="verse-number">2</span>必有一人像避風所和避暴雨的隱密處，又像河流在乾旱之地，像大磐石的影子在疲乏之地。</div>
+<div class="verse"><span class="verse-number">3</span>那能看的人，眼不再昏迷；能聽的人，耳必得聽聞。</div>
+<div class="verse"><span class="verse-number">4</span>冒失人的心必明白知識；結吧人的舌必說話通快。</div>
+<div class="verse"><span class="verse-number">5</span>愚頑人不再稱為高明；吝嗇人不再稱為大方。</div>
+<div class="verse"><span class="verse-number">6</span>因為愚頑人必說愚頑話，心裏想作罪孽，慣行褻瀆的事，說錯謬的話攻擊耶和華，使飢餓的人無食可吃，使口渴的人無水可喝。</div>
+<div class="verse"><span class="verse-number">7</span>吝嗇人所用的法子是惡的；他圖謀惡計，用謊言毀滅謙卑人；窮乏人講公理的時候，他也是這樣行。</div>
+<div class="verse"><span class="verse-number">8</span>高明人卻謀高明事，在高明事上也必永存。</div>
+<div class="verse"><span class="verse-number">9</span>安逸的婦女啊，起來聽我的聲音！無慮的女子啊，側耳聽我的言語！</div>
+<div class="verse"><span class="verse-number">10</span>無慮的女子啊，再過一年多，必受騷擾；因為無葡萄可摘，無果子〔或作：禾稼〕可收。</div>
+<div class="verse"><span class="verse-number">11</span>安逸的婦女啊，要戰兢；無慮的女子啊，要受騷擾。脫去衣服，赤着身體，腰束麻布。</div>
+<div class="verse"><span class="verse-number">12</span>她們必為美好的田地和多結果的葡萄樹，搥胸哀哭。</div>
+<div class="verse"><span class="verse-number">13</span>荊棘蒺藜必長在我百姓的地上，又長在歡樂的城中和一切快樂的房屋上。</div>
+<div class="verse"><span class="verse-number">14</span>因為宮殿必被撇下，多民的城必被離棄；山崗望樓永為洞穴，作野驢所喜樂的，為羊群的草場。</div>
+<div class="verse"><span class="verse-number">15</span>等到聖靈從上澆灌我們，曠野就變為肥田，肥田看如樹林。</div>
+<div class="verse"><span class="verse-number">16</span>那時，公平要居在曠野；公義要居在肥田。</div>
+<div class="verse"><span class="verse-number">17</span>公義的果效必是平安；公義的效驗必是平穩，直到永遠。</div>
+<div class="verse"><span class="verse-number">18</span>我的百姓必住在平安的居所，安穩的住處，平靜的安歇所。</div>
+<div class="verse"><span class="verse-number">19</span>（但要降冰雹打倒樹林；城必全然拆平。）</div>
+<div class="verse"><span class="verse-number">20</span>你們在各水邊撒種、牧放牛驢的有福了！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第三十二章在整個「禍哉系列」（28-35章）中提供了一個盼望的展望，描繪了末世義王統治和聖靈澆灌後的美好圖景。本章結構分為三段：義王的理想統治（1-8節）、對安逸女子的警告（9-14節）、聖靈澆灌後的更新（15-20節）。第1-2節描繪彌賽亞義王的到來——「必有一王憑公義行政」，他像「避風所」、「河流」、「磐石的影子」，為疲乏和受苦的人提供庇護。這些意象在炎熱乾旱的中東背景下，是對生命和拯救的完美描述。第15-18節是本章最重要的部分，也是整本聖經關於聖靈更新最美的段落之一：「等到聖靈從上澆灌我們，曠野就變為肥田」——聖靈是轉化的動力，使荒蕪變為豐盛。第17節「公義的果效必是平安」，揭示了平安的根源：不是沒有衝突，而是公義帶來的真正平安。這個思路在新約和平的神學中得到延伸——基督以公義成就了我們的和平（弗2:14-17）。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 義王如避風所和磐石的影子：基督的拯救是全方位的庇護</strong><br>第2節以四個自然意象描繪義王對子民的意義：避風所（應對危機）、避暴雨的隱密處（安全感）、河流在乾旱之地（生命的供應）、大磐石的影子（炎熱中的清涼）。這四個意象觸及了人類最基本的需要：安全、庇護、滋養、舒適。在屬靈層面，基督對信徒正是這一切——在不同的生命處境中，提供不同形式的庇護和供應，信徒在任何需要中都可以找到基督的答案。<br><br>
+<strong>2. 「聖靈從上澆灌，曠野變為肥田」：靈命的更新源自聖靈的澆灌</strong><br>第15節「等到聖靈從上澆灌我們」是以賽亞書中最重要的聖靈預言之一，在五旬節（徒2章）得到初步成就。「曠野就變為肥田」——沒有什麼是聖靈無法更新的，最枯燥的靈命、最荒涼的心靈、最乾旱的信仰生活，在聖靈的澆灌下都可以轉化為豐盛。信徒若感到靈命乾涸，不是努力耕作，而是尋求聖靈的澆灌——這是屬靈更新的根本動力。<br><br>
+<strong>3. 「公義的果效必是平安」：真正的平安是公義的果實</strong><br>第17節是以賽亞書中對「平安」最深刻的神學解釋。平安（shalom）不是衝突的消失，而是公義所結出的果子——當公義在群體中彰顯，平安就自然產生。反之，若缺乏公義（對弱勢的不公、謊言的蔓延、道德的腐敗），即使表面平靜，也只是虛假的平安。信徒尋求真正的平安，必須從自身和群體的公義開始。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>必有一人像避風所</strong><strong>和避暴雨的隱密處</strong>，又像河流在乾旱之地，像大磐石的影子在疲乏之地。」（賽32:2）</td>
+<td>就像<strong>沙漠中的綠洲</strong>，旅人遠遠就能看見，往那裡走去的每一步都充滿盼望，基督對你<strong>來說最像哪一</strong>個意象——避風所、河流、還是磐石的影子？在你<strong>目前的生命處</strong>境中，你<strong>最需要哪一種</strong>形式的庇護？</td>
+</tr>
+<tr>
+<td>「<strong>等到聖靈從上澆灌</strong>我們，<strong>曠野就變為肥田</strong>，肥田看如樹林。」（賽32:15）</td>
+<td>就像<strong>乾涸的土地遇到大雨</strong>，原本龜裂的土壤在幾天內就能長出嫩芽，聖靈的澆灌能在最短時間內帶來最大的改變，你<strong>的靈命中有哪</strong>些「曠野」——乾涸、無果子的地方——是你<strong>渴望聖靈澆灌</strong>的？你是否<strong>主動為此向神</strong>禱告？</td>
+</tr>
+<tr>
+<td>「<strong>公義的果效必是平</strong>安；<strong>公義的效驗必是平</strong>穩，直到永遠。」（賽32:17）</td>
+<td>就像<strong>一個健康的生態系統</strong>，當各個部分都運作正常，整體自然達到平衡，公義帶來平安是同樣的道理，你<strong>目前最缺乏平</strong>安的領域（家庭、職場、教會、內心），其根源是否與某種「不公義」有關？如何從公義的角度去尋求那個平安？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

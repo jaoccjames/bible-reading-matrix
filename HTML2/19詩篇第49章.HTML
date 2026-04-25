@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第49章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第49章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">財富無法贖命：唯有神能救贖靈魂</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（可拉後裔的詩，交與伶長）萬民哪，你們都當聽這話！世上一切的居民，</div>
+<div class="verse"><span class="verse-number">2</span>無論上流下流，富足貧窮，都當留心聽！</div>
+<div class="verse"><span class="verse-number">3</span>我口要說智慧的言語；我心要想通達的道理。</div>
+<div class="verse"><span class="verse-number">4</span>我要側耳聽比喻，用琴解謎語。</div>
+<div class="verse"><span class="verse-number">5</span>在患難的日子，奸惡隨我腳跟，四面環繞我，我何必懼怕？</div>
+<div class="verse"><span class="verse-number">6</span>那些倚仗財貨自誇錢財多的人，</div>
+<div class="verse"><span class="verse-number">7</span>一個也無法贖自己的弟兄，也不能替他將贖價給神，</div>
+<div class="verse"><span class="verse-number">8</span>叫他長遠活着，不見朽壞；因為贖他生命的價值極貴，只可永遠罷休。</div>
+<div class="verse"><span class="verse-number">9</span>併於上節</div>
+<div class="verse"><span class="verse-number">10</span>他必見智慧人死，又見愚頑人和畜類人一同滅亡，將他們的財貨留給別人。</div>
+<div class="verse"><span class="verse-number">11</span>他們心裏思想：他們的家室必永存，住宅必留到萬代；他們以自己的名稱自己的地。</div>
+<div class="verse"><span class="verse-number">12</span>但人居尊貴中不能長久，如同死亡的畜類一樣。</div>
+<div class="verse"><span class="verse-number">13</span>他們行的這道本為自己的愚昧；但他們以後的人還佩服他們的話語。（細拉）</div>
+<div class="verse"><span class="verse-number">14</span>他們如同羊群派定下陰間；死亡必作他們的牧者。到了早晨，正直人必管轄他們；他們的美容必被陰間所滅，以致無處可存。</div>
+<div class="verse"><span class="verse-number">15</span>只是神必救贖我的靈魂脫離陰間的權柄，因他必收納我。（細拉）</div>
+<div class="verse"><span class="verse-number">16</span>見人發財、家室增榮的時候，你不要懼怕；</div>
+<div class="verse"><span class="verse-number">17</span>因為，他死的時候甚麼也不能帶去；他的榮耀不能隨他下去。</div>
+<div class="verse"><span class="verse-number">18</span>他活着的時候，雖然自誇為有福（你若利己，人必誇獎你）；</div>
+<div class="verse"><span class="verse-number">19</span>他仍必歸到他歷代的祖宗那裏，永不見光。</div>
+<div class="verse"><span class="verse-number">20</span>人在尊貴中而不醒悟，就如死亡的畜類一樣。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第49篇是可拉後裔所作的智慧詩篇，開篇的呼召對象是「萬民」與「世上一切的居民」，表明本篇的訊息具有普世性，不限於以色列。本篇探討財富與死亡這兩個人類最根本的主題，以清醒的智慧眼光揭示財富的有限性。
+
+      本篇的核心論點是：財富無法贖回靈魂脫離死亡（第7-9節）。無論多麼富有，人都無法用財富換取永生或為死去的弟兄支付贖價。然而，第15節出現了全篇最關鍵的轉折：「只是神必救贖我的靈魂脫離陰間的權柄，因他必收納我。」人所不能做到的，神卻能成就——這是救贖神學的預告。
+
+      本篇以「人在尊貴中而不醒悟，就如死亡的畜類一樣」（第12、20節）的疊句貫穿全篇，揭示真正的愚昧不是貧窮，而是擁有尊貴、財富與地位，卻不醒悟生命的真實本質與永恆的去向。這種「不醒悟」的狀態，是本篇對人類最深的警告。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 財富的有限性揭示人無法自我救贖的真相</strong><br>「一個也無法贖自己的弟兄，也不能替他將贖價給神。」（第7節）財富在人類社會中幾乎可以換取一切，卻唯獨無法換取永生或救贖靈魂。這一洞見揭示了人類最根本的困境：在死亡面前，所有人間的資源都失去效力。這種對財富局限性的清醒認識，並非悲觀主義，而是引導信徒將目光轉向唯一能真正拯救靈魂的那一位——神本身。財富是有用的工具，但若視之為安全感的最終來源，便是最深的屬靈錯誤。<br><br>
+<strong>2. 神能救贖靈魂是財富無法做到之事</strong><br>「只是神必救贖我的靈魂脫離陰間的權柄，因他必收納我。」（第15節）在宣告財富無法贖命之後，這節話是全篇最深的盼望宣告。人所不能做到的——救贖靈魂脫離死亡——神能成就。這個宣告在新約中藉由基督的死與復活得到最完全的成就：耶穌以自己的生命作「贖人的價值」（提前2:6），成就了人類無法自行完成的救贖。信徒在認識財富有限性的同時，也認識神救贖的無限性，這才是真正的屬靈智慧。<br><br>
+<strong>3. 在尊貴中醒悟是防止財富成為偶像的屬靈操練</strong><br>「人在尊貴中而不醒悟，就如死亡的畜類一樣。」（第20節）「不醒悟」表明問題不在於擁有尊貴或財富本身，而在於以為這些是生命的全部而「睡着了」——沒有清醒地看見財富的有限性與靈魂的永恆價值。「醒悟」是刻意地思考人生的真實處境：我的財富能帶我去哪裡？死後我能帶什麼走？唯有神的救贖能給我什麼？這種屬靈的清醒，使信徒即使擁有尊貴與財富，也能以正確的視角使用和持守它們。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>一個也無法贖自己</strong><strong>的弟兄</strong>，也不能替他將贖價給神，（詩49:7）</td>
+<td>就像<strong>在某些最重要的事上</strong>，金錢完全排不上用場——比如真正的友情、健康或平安，你是否<strong>真的認識到財</strong>富的根本局限：它能給你<strong>很多</strong>，卻無法給你<strong>最重要的東西</strong>——靈魂的救贖與永恆的生命？</td>
+</tr>
+<tr>
+<td><strong>只是神必救贖我的</strong><strong>靈魂脫離陰間的權</strong>柄，因他必收納我。（詩49:15）</td>
+<td>就像<strong>在無法自救的險境中</strong>，知道有人必來援救，那份確信帶來深層的平靜，你是否<strong>真的以「神必</strong>救贖我的靈魂」的確信，作為面對死亡與無常的屬靈根基，讓這確信使你<strong>不懼怕終將到</strong>來的死亡？</td>
+</tr>
+<tr>
+<td><strong>人在尊貴中而不醒</strong>悟，<strong>就如死亡的畜類一</strong>樣。（詩49:20）</td>
+<td>就像<strong>一個人手握大量資源卻不知道怎麼</strong>使用，其實比沒有資源更可惜，你<strong>在擁有神所賜</strong>的時間、才能、財富時，是否時常有意識地「醒悟」——思考這些都是暫時的，並以此調整你<strong>對這些恩賜的</strong>態度與使用？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

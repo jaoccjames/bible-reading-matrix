@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第121章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第121章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">上行之詩：我的幫助從耶和華而來不打盹</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（上行之詩）我要向山舉目；我的幫助從何而來？</div>
+<div class="verse"><span class="verse-number">2</span>我的幫助從造天地的耶和華而來。</div>
+<div class="verse"><span class="verse-number">3</span>他必不叫你的腳搖動；保護你的必不打盹！</div>
+<div class="verse"><span class="verse-number">4</span>保護以色列的，也不打盹也不睡覺。</div>
+<div class="verse"><span class="verse-number">5</span>保護你的是耶和華；耶和華在你右邊蔭庇你。</div>
+<div class="verse"><span class="verse-number">6</span>白日，太陽必不傷你；夜間，月亮必不害你。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華要保護你，免受一切的災害；他要保護你的性命。</div>
+<div class="verse"><span class="verse-number">8</span>你出你入，耶和華要保護你，從今時直到永遠。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第121篇是上行之詩系列第二篇，是整部詩篇中最廣為人知、被引用最廣泛的詩篇之一，描繪了神對信徒全方位、全時段的保護。詩人以「我要向山舉目」開篇，然後以自問自答的方式確立了幫助的來源：不是山（可能指在高山上供奉神明的異教聖所），而是「造天地的耶和華」。全篇以「保護」（shamar，守護、看守）為核心詞語，共出現六次，揭示神全方位的守護：保護腳不動搖（第3節）、不打盹不睡覺（第3-4節）、在右邊蔭庇（第5節）、保護免受日月傷害（第6節）、保護免受一切災害（第7節）、出入的守護直到永遠（第8節）。「從今時直到永遠」的收結，使這個保護的應許具有永恆的效力，是信徒在任何處境中最深的盼望根基。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 幫助從造天地的耶和華而來使信心有最大的根基</strong><br>「我的幫助從造天地的耶和華而來。」（第2節）這個回答的力量在於所描述的神的身份——「造天地的」。能創造天地的神，沒有任何問題是超過祂能力的。這種對神能力的確信，使信徒的信心有最大可能的根基——不是依靠某個有限的人間力量，而是依靠那位連天地都是祂所造的神。這個確信將信心的高度拉到最高，也將信仰對象的能力確立到最大。<br><br>
+<strong>2. 神不打盹也不睡覺是信徒隨時蒙保護的確信</strong><br>「保護你的必不打盹！保護以色列的，也不打盹也不睡覺。」（第3-4節）人的保護是有限制的——守衛會疲倦、會分心、會睡著；然而神是不打盹、不睡覺的守護者。「不打盹也不睡覺」意味著沒有任何一個時刻神的眼睛離開了祂所守護的人。在黑夜的驚恐中、在清晨的危機中、在任何被人遺忘的時刻，神的眼睛仍然睜著，祂的守護仍然在場。<br><br>
+<strong>3. 出入的守護直到永遠覆蓋生命的完整旅程</strong><br>「你出你入，耶和華要保護你，從今時直到永遠。」（第8節）「出入」是希伯來文用來表達生活的全部活動——出門和進門，代表生命的每一個行動和每一個時刻。「從今時直到永遠」的時間跨度，使這個保護涵蓋了生命的完整旅程，不只是特定的危機時刻，而是整個生命的每一個階段。這種全面性的保護承諾，是信徒在整個人生旅程中最深的安慰。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我的幫助從造天地</strong><strong>的耶和華而來</strong>。（詩121:2）</td>
+<td>就像<strong>知道來幫助你<strong>的人</strong>是這個領域最頂</strong>尖的專家，你<strong>的安心程度就</strong>完全不同，你是否<strong>真的以「造天</strong>地的耶和華」這個身份認識你<strong>的幫助者</strong>，讓這個認識給你<strong>的信心一個最</strong>大可能的根基？</td>
+</tr>
+<tr>
+<td><strong>保護你的必不打盹</strong>！<strong>保護以色列的</strong>，也不打盹也不睡覺。（詩121:3-4）</td>
+<td>就像<strong>一個知道有可靠安全系統全天候運</strong>作的人，能更安心地入睡，你是否<strong>真的相信神的</strong>守護是全天候、不間斷的，讓這份確信特別在夜間的恐懼和孤獨中，成為你<strong>靈魂安息的根</strong>基？</td>
+</tr>
+<tr>
+<td><strong>你出你入</strong>，<strong>耶和華要保護你</strong>，從今時直到永遠。（詩121:8）</td>
+<td>就像<strong>一份涵蓋所有情況的全面保險</strong>，不留任何空白的免責條款，你是否能以「出入全受保護、從今直到永遠」的確信，在你<strong>生命的每一個</strong>微小的行動中，感受到神同在守護的真實？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

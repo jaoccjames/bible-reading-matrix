@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約拿書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約拿書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約拿的憤怒與神的憐憫</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>這事約拿大大不悅，且甚發怒，</div>
+<div class="verse"><span class="verse-number">2</span>就禱告耶和華說：「耶和華啊，我在本國的時候豈不是這樣說嗎？我知道你是有恩典、有憐憫的神，不輕易發怒，有豐盛的慈愛，並且後悔不降所說的災，所以我急速逃往他施去。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華啊，現在求你取我的命吧！因為我死了比活着還好。」</div>
+<div class="verse"><span class="verse-number">4</span>耶和華說：「你這樣發怒合乎理嗎？」</div>
+<div class="verse"><span class="verse-number">5</span>於是約拿出城，坐在城的東邊，在那裏為自己搭了一座棚，坐在棚的蔭下，要看看那城究竟如何。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華神安排一棵蓖麻，使其發生高過約拿，影兒遮蓋他的頭，救他脫離苦楚；約拿因這棵蓖麻大大喜樂。</div>
+<div class="verse"><span class="verse-number">7</span>次日黎明，神卻安排一條蟲子咬這蓖麻，以致枯槁。</div>
+<div class="verse"><span class="verse-number">8</span>日頭出來的時候，神安排炎熱的東風，日頭曝曬約拿的頭，使他發昏，他就為自己求死，說：「我死了比活着還好！」</div>
+<div class="verse"><span class="verse-number">9</span>神對約拿說：「你因這棵蓖麻發怒合乎理嗎？」他說：「我發怒以至於死，都合乎理！」</div>
+<div class="verse"><span class="verse-number">10</span>耶和華說：「這蓖麻不是你栽種的，也不是你培養的；一夜發生，一夜乾死，你尚且愛惜；</div>
+<div class="verse"><span class="verse-number">11</span>何況這尼尼微大城，其中不能分辨左手右手的有十二萬多人，並有許多牲畜，我豈能不愛惜呢？」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約拿書第4章是全書最深刻的神學章節，揭示了先知最深的內心問題。尼尼微城悔改、得救，約拿卻「大大不悅，且甚發怒」——他的憤怒在第2節揭曉：「我知道你是有恩典、有憐憫的神……所以我急速逃往他施去」。約拿的問題不是不認識神，而是他不想讓神的憐憫臨到以色列的仇敵。他寧願死也不願意看見仇敵得救。神沒有責備他，而是用一棵蓖麻來教導他：蓖麻一夜長出讓約拿歡喜，第二天又一夜枯乾讓他怒到求死。神問：「你因這棵蓖麻發怒合乎理嗎？」約拿說：「合乎理！」神說：「這蓖麻不是你栽種的……你尚且愛惜；何況這尼尼微大城，其中不能分辨左手右手的有十二萬多人，並有許多牲畜，我豈能不愛惜呢？」全書以這個問句結尾，讀者被迫回答：你的心比神的心更小，還是與神的心同寬？
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【知道神的性情，卻不接受神對仇敵的憐憫，是信仰最深的矛盾】</strong><br>約拿知道神「有恩典、有憐憫」——這正是他逃跑的原因！他不想讓神的憐憫給仇敵。這是信仰群體中最普遍的問題之一：接受神憐憫自己，卻不接受神憐憫那些「不配得」的人。神的憐憫若只對我方有效，就不是神的憐憫，而是我的偏袒。<br><br>
+<strong>2. 【神用蓖麻的比喻揭示約拿的心：你愛惜蓖麻，我豈能不愛惜十二萬人？】</strong><br>蓖麻不是約拿種的，他卻深深愛惜；尼尼微人是神創造的，神豈能不愛惜？這個論證的力量在於：你的愛惜是基於「對你有好處」；神的愛惜是基於創造和憐憫，而不是因為那人「配得」。神的愛遠比人的愛更廣、更深、更無條件。<br><br>
+<strong>3. 【仇恨仇敵的先知，和神愛惜仇敵的心，是信仰最大的張力與成長空間】</strong><br>全書以問號結尾——「我豈能不愛惜呢？」——神沒有回答約拿，而是讓讀者自己回答。信徒被邀請進入這個問題：我是否允許神的愛，延伸到那些我認為「不配得」的人身上？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華啊</strong>，<strong>我在本國的時候豈</strong>不是這樣說嗎？我知道你是有恩典、有憐憫的神……所以我急速逃往他施去。（拿4:2）</td>
+<td>約拿因為知道神會憐憫仇敵而逃跑——他不想讓神的恩典給不配的人。你<strong>生命中有沒有</strong>某個人或群體，你<strong>在心裡希望神</strong>的恩典「不要給他們」？就像<strong>一個父親希望家產只給「好孩子」</strong>，你願意<strong>讓神在那個地</strong>方擴充你<strong>的心</strong>，讓祂的愛也延伸到那些你<strong>覺得不配的人</strong>嗎？</td>
+</tr>
+<tr>
+<td><strong>耶和華說</strong>：<strong>這蓖麻不是你栽種</strong>的，也不是你培養的；一夜發生，一夜乾死，你尚且愛惜；何況這尼尼微大城……我豈能不愛惜呢？（拿4:10-11）</td>
+<td>「你<strong>尚且愛惜……</strong>我豈能不愛惜」——神的愛比人的愛更廣。你<strong>最珍愛、最憐</strong>惜的是什麼人或事物？神把那份愛作為對照，說祂對所有人的愛更深。這讓你如何<strong>重新認識神的</strong>愛的廣度——特別是對那些你<strong>以為「神不應</strong>該愛」的人？</td>
+</tr>
+<tr>
+<td><strong>其中不能分辨左手</strong><strong>右手的有十二萬多</strong>人，並有許多牲畜，我豈能不愛惜呢？（拿4:11）</td>
+<td>「十二萬個不能分辨左右手的人」——神的眼睛看見每個無知的靈魂，而不是只看見他們的罪。你<strong>在對某個你認</strong>為「罪孽深重的人或群體」的態度中，有沒有把他們當作「人數」而不是「每一個個別的靈魂」？就像<strong>從飛機上看城市和走在街道上看城</strong>市，神如何讓你<strong>「走下飛機」</strong>，以祂的眼看見個別的靈魂？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

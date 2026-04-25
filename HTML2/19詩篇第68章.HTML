@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第68章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第68章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神興起仇敵散：孤兒之父拯救並升天得勝</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩歌，交與伶長）願神興起，使他的仇敵四散，叫那恨他的人從他面前逃跑。</div>
+<div class="verse"><span class="verse-number">2</span>他們被驅逐，如煙被風吹散；惡人見神之面而消滅，如蠟被火熔化。</div>
+<div class="verse"><span class="verse-number">3</span>惟有義人必然歡喜，在神面前高興快樂。</div>
+<div class="verse"><span class="verse-number">4</span>你們當向神唱詩，歌頌他的名；為那坐車行過曠野的修平大路。他的名是耶和華，要在他面前歡樂！</div>
+<div class="verse"><span class="verse-number">5</span>神在他的聖所作孤兒的父，作寡婦的伸冤者。</div>
+<div class="verse"><span class="verse-number">6</span>神叫孤獨的有家，使被囚的出來享福；惟有悖逆的住在乾燥之地。</div>
+<div class="verse"><span class="verse-number">7</span>神啊，你曾在你百姓前頭出來，在曠野行走。（細拉）</div>
+<div class="verse"><span class="verse-number">8</span>那時，地見神的面而震動，天也落雨；西乃山見以色列神的面也震動。</div>
+<div class="verse"><span class="verse-number">9</span>神阿，你降下大雨；你產業以色列疲乏的時候，你使他堅固。</div>
+<div class="verse"><span class="verse-number">10</span>你的會眾住在其中；神啊，你的恩惠是為困苦人預備的。</div>
+<div class="verse"><span class="verse-number">11</span>主發命令，傳好信息的婦女成了大群。</div>
+<div class="verse"><span class="verse-number">12</span>統兵的君王逃跑了，逃跑了；在家等候的婦女分受所奪的。</div>
+<div class="verse"><span class="verse-number">13</span>你們安臥在羊圈的時候，好像鴿子的翅膀鍍白銀，翎毛鍍黃金一般。</div>
+<div class="verse"><span class="verse-number">14</span>全能者在境內趕散列王的時候，勢如飄雪在撒們。</div>
+<div class="verse"><span class="verse-number">15</span>巴珊山是神的山；巴珊山是多峰多嶺的山。</div>
+<div class="verse"><span class="verse-number">16</span>你們多峰多嶺的山哪，為何斜看神所願居住的山？耶和華必住這山，直到永遠！</div>
+<div class="verse"><span class="verse-number">17</span>神的車輦累萬盈千；主在其中，好像在西乃聖山一樣。</div>
+<div class="verse"><span class="verse-number">18</span>你已經升上高天，擄掠仇敵；你在人間，就是在悖逆的人間，受了供獻，叫耶和華神可以與他們同住。</div>
+<div class="verse"><span class="verse-number">19</span>天天背負我們重擔的主，就是拯救我們的神，是應當稱頌的！（細拉）</div>
+<div class="verse"><span class="verse-number">20</span>神是為我們施行諸般救恩的神；人能脫離死亡是在乎主耶和華。</div>
+<div class="verse"><span class="verse-number">21</span>但神要打破他仇敵的頭，就是那常犯罪之人的髮頂。</div>
+<div class="verse"><span class="verse-number">22</span>主說：我要使眾民從巴珊而歸，使他們從深海而回，</div>
+<div class="verse"><span class="verse-number">23</span>使你打碎仇敵，你的腳踹在血中，使你狗的舌頭從其中得分。</div>
+<div class="verse"><span class="verse-number">24</span>神啊，你是我的神，我的王；人已經看見你行走，進入聖所。</div>
+<div class="verse"><span class="verse-number">25</span>歌唱的行在前，作樂的隨在後，都在擊鼓的童女中間。</div>
+<div class="verse"><span class="verse-number">26</span>從以色列源頭而來的，當在各會中稱頌主神！</div>
+<div class="verse"><span class="verse-number">27</span>在那裏，有統管他們的小便雅憫，有猶大的首領和他們的群眾，有西布倫的首領，有拿弗他利的首領。</div>
+<div class="verse"><span class="verse-number">28</span>以色列的能力是神所賜的；神阿，求你堅固你為我們所成全的事！</div>
+<div class="verse"><span class="verse-number">29</span>因你耶路撒冷的殿，列王必帶貢物獻給你。</div>
+<div class="verse"><span class="verse-number">30</span>求你叱喝蘆葦中的野獸和群公牛，並列邦中的牛犢。把銀塊踹在腳下；神已經趕散好爭戰的列邦。</div>
+<div class="verse"><span class="verse-number">31</span>埃及的公侯要出來朝見神；古實人要急忙舉手禱告。</div>
+<div class="verse"><span class="verse-number">32</span>世上的列國阿，你們要向神歌唱；願你們歌頌主！</div>
+<div class="verse"><span class="verse-number">33</span>歌頌那自古駕行在諸天以上的主。他發出聲音，是極大的聲音。</div>
+<div class="verse"><span class="verse-number">34</span>你們要將能力歸給神。他的威榮在以色列之上；他的能力是在穹蒼。</div>
+<div class="verse"><span class="verse-number">35</span>神啊，你從聖所顯為可畏；以色列的神是那將力量權能賜給他百姓的。神是應當稱頌的！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第68篇是大衛所作，被認為是整部詩篇中最宏大、最複雜的讚美詩之一。本篇可能在約櫃被迎入耶路撒冷（撒下6章）的慶典中使用，以壯麗的詩意描繪神在以色列歷史中的大能作為。全篇以民數記10章35節的呼召「願神興起，使他的仇敵四散」（本篇第1節）開篇，呼應了以色列在曠野行進時的信仰傳統。
+
+      本篇涵蓋神歷史作為的廣闊視野：從曠野的帶領（7-10節）、到得勝的凱旋（11-14節）、到升天的榮耀（18節）、到萬國的讚美（32-35節）。其中第18節「你已經升上高天，擄掠仇敵」被保羅在以弗所書4章8節引用，解釋為基督升天並賜下恩賜給教會，使本篇成為具有重要彌賽亞意義的詩篇。
+
+      本篇第5節「神在他的聖所作孤兒的父，作寡婦的伸冤者」是整部聖經中對神慈愛最溫柔的描述之一，揭示那位宇宙的大君王，同時也是弱勢者最親密的父與辯護者。第19節「天天背負我們重擔的主」則提醒信徒：神的扶持不是偶爾的大事件，而是每一天持續的負擔與陪伴。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神是孤兒之父、寡婦之伸冤者，祂特別看顧弱勢</strong><br>「神在他的聖所作孤兒的父，作寡婦的伸冤者。神叫孤獨的有家，使被囚的出來享福。」（第5-6節）在一個宏大的勝利讚美詩中，這幾節特別描述神對最脆弱者的關懷，揭示神榮耀的一面不只是征服仇敵，更是溫柔地扶持弱小。「孤兒的父」——在人間失去父親保護的，在神那裡找到最完全的父親；「寡婦的伸冤者」——在人間失去丈夫依靠的，在神那裡找到最公義的辯護。這個真理呼召信徒以同樣的眼光看顧社會中最脆弱的群體。<br><br>
+<strong>2. 神天天背負信徒重擔揭示祂持續的供應與陪伴</strong><br>「天天背負我們重擔的主，就是拯救我們的神，是應當稱頌的！」（第19節）神不是在重大事件中偶爾出現的神，而是「天天」——每日持續地——背負信徒重擔的神。「背負」表明神不只是旁觀者，而是主動承擔信徒生命重量的那一位。這個每日的背負，常常是默默的、不張揚的，卻是最真實的神聖陪伴。信徒若能培養對這種「日常神聖陪伴」的感恩意識，生活中的感謝便能從特殊時刻延伸到每一個平凡的日子。<br><br>
+<strong>3. 萬國讚美神是歷史走向的終極目標</strong><br>「世上的列國阿，你們要向神歌唱；願你們歌頌主！」（第32節）本篇的讚美從個人的呼求、到以色列的歷史、最終擴展到萬國的讚美，揭示歷史的終極方向：所有的民族都將認識並讚美那位創造並掌管一切的神。這個宏大的末世視野，使信徒在面對當今世界的混亂時，能以「歷史的終局已定」的眼光保持信心——那位「自古駕行在諸天以上的主」，必將引導歷史走向祂所預定的終點。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>神在他的聖所作孤</strong><strong>兒的父</strong>，作寡婦的伸冤者。（詩68:5）</td>
+<td>就像<strong>一位最有權勢的人</strong>，同時也是最溫柔地照顧弱小的人，你是否<strong>在認識神的偉</strong>大能力之外，也認識祂特別眷顧弱勢者的溫柔？這個認識如何影響你<strong>對社會中孤獨</strong>與弱勢群體的態度？</td>
+</tr>
+<tr>
+<td><strong>天天背負我們重擔</strong>的主，<strong>就是拯救我們的神</strong>，是應當稱頌的！（詩68:19）</td>
+<td>就像<strong>一位父親每天默默地去工作、支付</strong>家中所有費用，而孩子常常渾然不覺，你是否<strong>有意識地感謝</strong>那位天天、默默地背負你<strong>重擔的神</strong>，而非只在神做了大事時才記起祂？</td>
+</tr>
+<tr>
+<td><strong>世上的列國阿</strong>，<strong>你們要向神歌唱</strong>；願你們歌頌主！（詩68:32）</td>
+<td>就像<strong>一場全球性的演唱會</strong>，邀請所有文化與語言的人一同參與，你是否<strong>為「萬國都將</strong>讚美神」的末世盼望而感到振奮，讓這個宏大的視野使你<strong>的信仰超越個</strong>人的舒適圈，渴望見到更多人認識神？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

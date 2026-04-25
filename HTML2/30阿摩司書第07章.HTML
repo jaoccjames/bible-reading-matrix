@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阿摩司書第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+阿摩司書第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">三個異象與先知的使命辯護</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>主耶和華指示我一件事：為王割菜〔或作：草〕之後，菜又發生；剛發生的時候，主造蝗蟲。</div>
+<div class="verse"><span class="verse-number">2</span>蝗蟲喫盡那地的青物，我就說：「主耶和華啊，求你赦免；因為雅各微弱，他怎能站立得住呢？」</div>
+<div class="verse"><span class="verse-number">3</span>耶和華就後悔說：「這災可以免了。」</div>
+<div class="verse"><span class="verse-number">4</span>主耶和華又指示我一件事：他命火來懲罰以色列，火就吞滅深淵，險些將地燒滅。</div>
+<div class="verse"><span class="verse-number">5</span>我就說：「主耶和華啊，求你止息；因為雅各微弱，他怎能站立得住呢？」</div>
+<div class="verse"><span class="verse-number">6</span>耶和華就後悔說：「這災也可免了。」</div>
+<div class="verse"><span class="verse-number">7</span>他又指示我一件事：有一道牆是按準繩建築的，主手拿準繩站在其上。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華對我說：「阿摩司啊，你看見甚麼？」我說：「看見準繩。」主說：「我要吊起準繩在我民以色列中，我必不再寬恕他們。</div>
+<div class="verse"><span class="verse-number">9</span>以撒的邱壇必然淒涼，以色列的聖所必然荒廢。我必興起，用刀攻擊耶羅波安的家。」</div>
+<div class="verse"><span class="verse-number">10</span>伯特利的祭司亞瑪謝打發人到以色列王耶羅波安那裏，說：「阿摩司在以色列家中圖謀背叛你；他所說的一切話，這國擔當不起；</div>
+<div class="verse"><span class="verse-number">11</span>因為阿摩司如此說：『耶羅波安必被刀殺，以色列民定被擄去離開本地。』」</div>
+<div class="verse"><span class="verse-number">12</span>亞瑪謝又對阿摩司說：「你這先見哪，要逃往猶大地去，在那裏餬口，在那裏說預言，</div>
+<div class="verse"><span class="verse-number">13</span>卻不要在伯特利再說預言；因為這裏有王的聖所，有王的宮殿。」</div>
+<div class="verse"><span class="verse-number">14</span>阿摩司對亞瑪謝說：「我原不是先知，也不是先知的門徒〔原文作兒子〕。我是牧人，又是修理桑樹的。</div>
+<div class="verse"><span class="verse-number">15</span>耶和華選召我，使我不跟從羊群，對我說：『你去向我民以色列說預言。』</div>
+<div class="verse"><span class="verse-number">16</span>亞瑪謝啊，現在你要聽耶和華的話。你說：『不要向以色列說預言，也不要向以撒家滴下預言。』</div>
+<div class="verse"><span class="verse-number">17</span>所以耶和華如此說：『你的妻子必在城中作妓女，你的兒女必倒在刀下；你的地必有人用繩子量了分取，你自己必死在污穢之地。以色列民定被擄去離開本地。』」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+阿摩司書第7章包含三個異象和一段戲劇性的衝突場景。第一異象：蝗蟲吞盡青物（阿摩司代求，神後悔不降）；第二異象：火吞滅深淵（阿摩司再次代求，神後悔不降）；第三異象：準繩（神說「我要吊起準繩……我必不再寬恕他們」）——這次阿摩司沒有代求，因為神已決定。準繩是建築測量工具，象徵神以公義標準衡量以色列，以色列的牆完全不符合標準。然後場景戲劇性轉換：伯特利祭司亞瑪謝指控阿摩司圖謀叛亂，要他回猶大去「餬口說預言」。阿摩司的回應經典而有力：「我原不是先知，也不是先知的門徒；我是牧人，又是修理桑樹的——耶和華選召我……去向我民以色列說預言。」這是整本書對先知呼召最清楚的自我解釋：呼召是神主動的，不是職業選擇。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【先知的代求可以影響神的計畫：禱告在神的旨意中有真實的份量】</strong><br>兩次神「後悔」不降災禍，是因為阿摩司代求。這不是說神可以被人左右，而是說神把代禱者的聲音放入決策過程中。這是聖經對代禱能力最直接的肯定之一：禱告者的聲音，在神的旨意中有真實的份量。<br><br>
+<strong>2. 【「準繩」：神以公義標準衡量，不以人的標準衡量】</strong><br>準繩是客觀的、外在的測量標準，不因被測量者的感受而改變。神說「我要吊起準繩」——神的衡量是公義的標準，不是以色列自以為的「我們還好」。信徒需要允許神的準繩進入生命，不只是用自我感覺來衡量屬靈狀態。<br><br>
+<strong>3. 【神的呼召超越社會階層和職業背景】</strong><br>「我原不是先知……我是牧人，又是修理桑樹的」——阿摩司沒有接受過先知訓練，沒有宗教專業資格；神直接從農業工作中呼召他。這打破了「只有特定背景的人才能被神使用」的思維。神呼召任何祂選擇的人，無關乎職業、背景或學歷。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我就說</strong>：「<strong>主耶和華啊</strong>，求你赦免；因為雅各微弱，他怎能站立得住呢？」耶和華就後悔說：「這災可以免了。」（摩7:2-3）</td>
+<td>阿摩司的代求改變了神的計畫——「雅各微弱，他怎能站立得住呢？」這是代求者最有力的論點：不是「我們值得被饒恕」，而是「我們太微弱，求你<strong>憐憫」</strong>。你<strong>在為誰或為什</strong>麼事代求時，有沒有這種「倚靠神的憐憫而非自己的配得」的謙卑立場？</td>
+</tr>
+<tr>
+<td><strong>我要吊起準繩在我</strong><strong>民以色列中</strong>，我必不再寬恕他們。（摩7:8下）</td>
+<td>「準繩」是客觀的測量標準。如果神今天把祂的準繩放在你<strong><strong>的生命</strong>中測量</strong>，你<strong>的「牆」有多</strong>直？就像<strong>建築師的水平儀不因建築物的美觀</strong>而放寬標準，你願意<strong>讓神用祂公義</strong>的準繩衡量你的生命，而不只是用「我感覺還好」的自我評估？</td>
+</tr>
+<tr>
+<td><strong>阿摩司說</strong>：「<strong>我原不是先知</strong>，也不是先知的門徒。我是牧人，又是修理桑樹的。耶和華選召我，使我不跟從羊群，對我說：你去向我民以色列說預言。」（摩7:14-15）</td>
+<td>「我是牧人，耶和華選召我」——神的呼召不需要專業資格或宗教背景。你是否<strong>曾以「我沒受</strong>過神學訓練」或「我只是普通信徒」為由，拒絕回應神放在你<strong>心中的某個呼</strong>召？就像<strong>阿摩司的牧羊技能和神呼召他傳道</strong>完全不相關，神使用你的，可能正是你<strong>以為「不相關</strong>」的部分。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第119章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第119章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">最長詩篇：愛慕神話語為腳前燈路上光</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>行為完全、遵行耶和華律法的，這人便為有福！</div>
+<div class="verse"><span class="verse-number">2</span>遵守他的法度、一心尋求他的，這人便為有福！</div>
+<div class="verse"><span class="verse-number">3</span>這人不作非義的事，但遵行他的道。</div>
+<div class="verse"><span class="verse-number">4</span>耶和華啊，你曾將你的訓詞吩咐我們，為要我們殷勤遵守。</div>
+<div class="verse"><span class="verse-number">5</span>但願我行事堅定，得以遵守你的律例。</div>
+<div class="verse"><span class="verse-number">6</span>我看重你的一切命令，就不至於羞愧。</div>
+<div class="verse"><span class="verse-number">7</span>我學了你公義的判語，就要以正直的心稱謝你。</div>
+<div class="verse"><span class="verse-number">8</span>我必守你的律例；求你總不要丟棄我！</div>
+<div class="verse"><span class="verse-number">9</span>少年人用甚麼潔淨他的行為呢？是要遵行你的話！</div>
+<div class="verse"><span class="verse-number">10</span>我一心尋求了你；求你不要叫我偏離你的命令。</div>
+<div class="verse"><span class="verse-number">11</span>我將你的話藏在心裏，免得我得罪你。</div>
+<div class="verse"><span class="verse-number">12</span>耶和華啊，你是應當稱頌的！求你將你的律例教訓我！</div>
+<div class="verse"><span class="verse-number">13</span>我用嘴唇傳揚你口中的一切典章。</div>
+<div class="verse"><span class="verse-number">14</span>我喜悅你的法度，如同喜悅一切的財物。</div>
+<div class="verse"><span class="verse-number">15</span>我要默想你的訓詞，看重你的道路。</div>
+<div class="verse"><span class="verse-number">16</span>我要在你的律例中自樂；我不忘記你的話。</div>
+<div class="verse"><span class="verse-number">17</span>求你用厚恩待你的僕人，使我存活，我就遵守你的話。</div>
+<div class="verse"><span class="verse-number">18</span>求你開我的眼睛，使我看出你律法中的奇妙。</div>
+<div class="verse"><span class="verse-number">19</span>我是在地上作寄居的；求你不要向我隱瞞你的命令！</div>
+<div class="verse"><span class="verse-number">20</span>我時常切慕你的典章，甚至心碎。</div>
+<div class="verse"><span class="verse-number">21</span>受咒詛、偏離你命令的驕傲人，你已經責備他們。</div>
+<div class="verse"><span class="verse-number">22</span>求你除掉我所受的羞辱和藐視，因我遵守你的法度。</div>
+<div class="verse"><span class="verse-number">23</span>雖有首領坐着妄論我，你僕人卻思想你的律例。</div>
+<div class="verse"><span class="verse-number">24</span>你的法度是我所喜樂的，是我的謀士。</div>
+<div class="verse"><span class="verse-number">25</span>我的性命幾乎歸於塵土；求你照你的話將我救活！</div>
+<div class="verse"><span class="verse-number">26</span>我述說我所行的，你應允了我；求你將你的律例教訓我！</div>
+<div class="verse"><span class="verse-number">27</span>求你使我明白你的訓詞，我就思想你的奇事。</div>
+<div class="verse"><span class="verse-number">28</span>我的心因愁苦而消化；求你照你的話使我堅立！</div>
+<div class="verse"><span class="verse-number">29</span>求你使我離開奸詐的道，開恩將你的律法賜給我！</div>
+<div class="verse"><span class="verse-number">30</span>我揀選了忠信的道，將你的典章擺在我面前。</div>
+<div class="verse"><span class="verse-number">31</span>我持守你的法度；耶和華阿，求你不要叫我羞愧！</div>
+<div class="verse"><span class="verse-number">32</span>你開廣我心的時候，我就往你命令的道上直奔。</div>
+<div class="verse"><span class="verse-number">33</span>耶和華啊，求你將你的律例指教我，我必遵守到底！</div>
+<div class="verse"><span class="verse-number">34</span>求你賜我悟性，我便遵守你的律法，且要一心遵守。</div>
+<div class="verse"><span class="verse-number">35</span>求你叫我遵行你的命令，因為這是我所喜樂的。</div>
+<div class="verse"><span class="verse-number">36</span>求你使我的心趨向你的法度，不趨向非義之財。</div>
+<div class="verse"><span class="verse-number">37</span>求你叫我轉眼不看虛假，又叫我在你的道中生活。</div>
+<div class="verse"><span class="verse-number">38</span>你向敬畏你的人所應許的話，求你向僕人堅定！</div>
+<div class="verse"><span class="verse-number">39</span>求你使我所怕的羞辱遠離我，因你的典章本為美。</div>
+<div class="verse"><span class="verse-number">40</span>我羡慕你的訓詞；求你使我在你的公義上生活！</div>
+<div class="verse"><span class="verse-number">41</span>耶和華啊，願你照你的話，使你的慈愛，就是你的救恩，臨到我身上，</div>
+<div class="verse"><span class="verse-number">42</span>我就有話回答那羞辱我的，因我倚靠你的話。</div>
+<div class="verse"><span class="verse-number">43</span>求你叫真理的話總不離開我口，因我仰望你的典章。</div>
+<div class="verse"><span class="verse-number">44</span>我要常守你的律法，直到永永遠遠。</div>
+<div class="verse"><span class="verse-number">45</span>我要自由而行〔或作：我要行在寬闊之地〕，因我素來考究你的訓詞。</div>
+<div class="verse"><span class="verse-number">46</span>我也要在君王面前論說你的法度，並不至於羞愧。</div>
+<div class="verse"><span class="verse-number">47</span>我要在你的命令中自樂；這命令素來是我所愛的。</div>
+<div class="verse"><span class="verse-number">48</span>我又要遵行〔原文作舉手〕你的命令，這命令素來是我所愛的；我也要思想你的律例。</div>
+<div class="verse"><span class="verse-number">49</span>求你記念向你僕人所應許的話，叫我有盼望。</div>
+<div class="verse"><span class="verse-number">50</span>這話將我救活了；我在患難中，因此得安慰。</div>
+<div class="verse"><span class="verse-number">51</span>驕傲的人甚侮慢我，我卻未曾偏離你的律法。</div>
+<div class="verse"><span class="verse-number">52</span>耶和華啊，我記念你從古以來的典章，就得了安慰。</div>
+<div class="verse"><span class="verse-number">53</span>我見惡人離棄你的律法，就怒氣發作，猶如火燒。</div>
+<div class="verse"><span class="verse-number">54</span>我在世寄居，素來以你的律例為詩歌。</div>
+<div class="verse"><span class="verse-number">55</span>耶和華啊，我夜間記念你的名，遵守你的律法。</div>
+<div class="verse"><span class="verse-number">56</span>我所以如此，是因我守你的訓詞。</div>
+<div class="verse"><span class="verse-number">57</span>耶和華是我的福分；我曾說，我要遵守你的言語。</div>
+<div class="verse"><span class="verse-number">58</span>我一心求過你的恩；願你照你的話憐憫我！</div>
+<div class="verse"><span class="verse-number">59</span>我思想我所行的道，就轉步歸向你的法度。</div>
+<div class="verse"><span class="verse-number">60</span>我急忙遵守你的命令，並不遲延。</div>
+<div class="verse"><span class="verse-number">61</span>惡人的繩索纏繞我，我卻沒有忘記你的律法。</div>
+<div class="verse"><span class="verse-number">62</span>我因你公義的典章，半夜必起來稱謝你。</div>
+<div class="verse"><span class="verse-number">63</span>凡敬畏你、守你訓詞的人，我都與他作伴。</div>
+<div class="verse"><span class="verse-number">64</span>耶和華啊，你的慈愛遍滿大地；求你將你的律例教訓我！</div>
+<div class="verse"><span class="verse-number">65</span>耶和華啊，你向來是照你的話善待僕人。</div>
+<div class="verse"><span class="verse-number">66</span>求你將精明和知識賜給我，因我信了你的命令。</div>
+<div class="verse"><span class="verse-number">67</span>我未受苦以先走迷了路，現在卻遵守你的話。</div>
+<div class="verse"><span class="verse-number">68</span>你本為善，所行的也善；求你將你的律例教訓我！</div>
+<div class="verse"><span class="verse-number">69</span>驕傲人編造謊言攻擊我，我卻要一心守你的訓詞。</div>
+<div class="verse"><span class="verse-number">70</span>他們心蒙脂油，我卻喜愛你的律法。</div>
+<div class="verse"><span class="verse-number">71</span>我受苦是與我有益，為要使我學習你的律例。</div>
+<div class="verse"><span class="verse-number">72</span>你口中的訓言〔或作：律法〕與我有益，勝於千萬的金銀。</div>
+<div class="verse"><span class="verse-number">73</span>你的手製造我，建立我；求你賜我悟性，可以學習你的命令！</div>
+<div class="verse"><span class="verse-number">74</span>敬畏你的人見我就要歡喜，因我仰望你的話。</div>
+<div class="verse"><span class="verse-number">75</span>耶和華啊，我知道你的判語是公義的；你使我受苦是以誠實待我。</div>
+<div class="verse"><span class="verse-number">76</span>求你照着應許僕人的話，以慈愛安慰我。</div>
+<div class="verse"><span class="verse-number">77</span>願你的慈悲臨到我，使我存活，因你的律法是我所喜愛的。</div>
+<div class="verse"><span class="verse-number">78</span>願驕傲人蒙羞，因為他們無理的傾覆我；但我要思想你的訓詞。</div>
+<div class="verse"><span class="verse-number">79</span>願敬畏你的人歸向我，他們就知道你的法度。</div>
+<div class="verse"><span class="verse-number">80</span>願我的心在你的律例上完全，使我不至蒙羞。</div>
+<div class="verse"><span class="verse-number">81</span>我心渴想你的救恩，仰望你的應許。</div>
+<div class="verse"><span class="verse-number">82</span>我因盼望你的應許眼睛失明，說：你何時安慰我？</div>
+<div class="verse"><span class="verse-number">83</span>我好像煙薰的皮袋，卻不忘記你的律例。</div>
+<div class="verse"><span class="verse-number">84</span>你僕人的年日有多少呢？你幾時向逼迫我的人施行審判呢？</div>
+<div class="verse"><span class="verse-number">85</span>不從你律法的驕傲人為我掘了坑。</div>
+<div class="verse"><span class="verse-number">86</span>你的命令盡都誠實；他們無理的逼迫我，求你幫助我！</div>
+<div class="verse"><span class="verse-number">87</span>他們幾乎把我從世上滅絕，但我沒有離棄你的訓詞。</div>
+<div class="verse"><span class="verse-number">88</span>求你照你的慈愛將我救活，我就遵守你口中的法度。</div>
+<div class="verse"><span class="verse-number">89</span>耶和華啊，你的話安定在天，直到永遠。</div>
+<div class="verse"><span class="verse-number">90</span>你的誠實存到萬代；你堅定了地，地就長存。</div>
+<div class="verse"><span class="verse-number">91</span>天地照你的安排存到今日；萬物都是你的僕役。</div>
+<div class="verse"><span class="verse-number">92</span>我若不是喜愛你的律法，早就在苦難中滅絕了！</div>
+<div class="verse"><span class="verse-number">93</span>我永不忘記你的訓詞，因你用這訓詞將我救活了。</div>
+<div class="verse"><span class="verse-number">94</span>我是屬你的，求你救我，因我尋求了你的訓詞。</div>
+<div class="verse"><span class="verse-number">95</span>惡人等待我，要滅絕我，我卻要揣摩你的法度。</div>
+<div class="verse"><span class="verse-number">96</span>我看萬事盡都有限，惟有你的命令極其寬廣。</div>
+<div class="verse"><span class="verse-number">97</span>我何等愛慕你的律法，終日不住的思想。</div>
+<div class="verse"><span class="verse-number">98</span>你的命令常存在我心裏，使我比仇敵有智慧。</div>
+<div class="verse"><span class="verse-number">99</span>我比我的師傅更通達，因我思想你的法度。</div>
+<div class="verse"><span class="verse-number">100</span>我比年老的更明白，因我守了你的訓詞。</div>
+<div class="verse"><span class="verse-number">101</span>我禁止我腳走一切的邪路，為要遵守你的話。</div>
+<div class="verse"><span class="verse-number">102</span>我沒有偏離你的典章，因為你教訓了我。</div>
+<div class="verse"><span class="verse-number">103</span>你的言語在我上膛何等甘美，在我口中比蜜更甜！</div>
+<div class="verse"><span class="verse-number">104</span>我藉着你的訓詞得以明白，所以我恨一切的假道。</div>
+<div class="verse"><span class="verse-number">105</span>你的話是我腳前的燈，是我路上的光。</div>
+<div class="verse"><span class="verse-number">106</span>你公義的典章，我曾起誓遵守，我必按誓而行。</div>
+<div class="verse"><span class="verse-number">107</span>我甚是受苦；耶和華阿，求你照你的話將我救活！</div>
+<div class="verse"><span class="verse-number">108</span>耶和華啊，求你悅納我口中的讚美為供物，又將你的典章教訓我！</div>
+<div class="verse"><span class="verse-number">109</span>我的性命常在危險之中，我卻不忘記你的律法。</div>
+<div class="verse"><span class="verse-number">110</span>惡人為我設下網羅，我卻沒有偏離你的訓詞。</div>
+<div class="verse"><span class="verse-number">111</span>我以你的法度為永遠的產業，因這是我心中所喜愛的。</div>
+<div class="verse"><span class="verse-number">112</span>我的心專向你的律例，永遠遵行，一直到底。</div>
+<div class="verse"><span class="verse-number">113</span>心懷二意的人為我所恨；但你的律法為我所愛。</div>
+<div class="verse"><span class="verse-number">114</span>你是我藏身之處，又是我的盾牌；我甚仰望你的話語。</div>
+<div class="verse"><span class="verse-number">115</span>作惡的人哪，你們離開我吧！我好遵守我神的命令。</div>
+<div class="verse"><span class="verse-number">116</span>求你照你的話扶持我，使我存活，也不叫我因失望而害羞。</div>
+<div class="verse"><span class="verse-number">117</span>求你扶持我，我便得救，時常看重你的律例。</div>
+<div class="verse"><span class="verse-number">118</span>凡偏離你律例的人，你都輕棄他們，因為他們的詭詐必歸虛空。</div>
+<div class="verse"><span class="verse-number">119</span>凡地上的惡人，你除掉他，好像除掉渣滓；因此我愛你的法度。</div>
+<div class="verse"><span class="verse-number">120</span>我因懼怕你，肉就發抖；我也怕你的判語。</div>
+<div class="verse"><span class="verse-number">121</span>我行過公平和公義，求你不要撇下我給欺壓我的人！</div>
+<div class="verse"><span class="verse-number">122</span>求你為僕人作保，使我得好處，不容驕傲人欺壓我！</div>
+<div class="verse"><span class="verse-number">123</span>我因盼望你的救恩和你公義的話眼睛失明。</div>
+<div class="verse"><span class="verse-number">124</span>求你照你的慈愛待僕人，將你的律例教訓我。</div>
+<div class="verse"><span class="verse-number">125</span>我是你的僕人，求你賜我悟性，使我得知你的法度。</div>
+<div class="verse"><span class="verse-number">126</span>這是耶和華降罰的時候，因人廢了你的律法。</div>
+<div class="verse"><span class="verse-number">127</span>所以，我愛你的命令勝於金子，更勝於精金。</div>
+<div class="verse"><span class="verse-number">128</span>你一切的訓詞，在萬事上我都以為正直；我卻恨惡一切假道。</div>
+<div class="verse"><span class="verse-number">129</span>你的法度奇妙，所以我一心謹守。</div>
+<div class="verse"><span class="verse-number">130</span>你的言語一解開，就發出亮光，使愚人通達。</div>
+<div class="verse"><span class="verse-number">131</span>我張口而氣喘，因我切慕你的命令。</div>
+<div class="verse"><span class="verse-number">132</span>求你轉向我，憐憫我，好像你素常待那些愛你名的人。</div>
+<div class="verse"><span class="verse-number">133</span>求你用你的話使我腳步穩當，不許甚麼罪孽轄制我。</div>
+<div class="verse"><span class="verse-number">134</span>求你救我脫離人的欺壓，我要遵守你的訓詞。</div>
+<div class="verse"><span class="verse-number">135</span>求你用臉光照僕人，又將你的律例教訓我。</div>
+<div class="verse"><span class="verse-number">136</span>我的眼淚下流成河，因為他們不守你的律法。</div>
+<div class="verse"><span class="verse-number">137</span>耶和華啊，你是公義的；你的判語也是正直的！</div>
+<div class="verse"><span class="verse-number">138</span>你所命定的法度是憑公義和至誠。</div>
+<div class="verse"><span class="verse-number">139</span>我心焦急，如同火燒，因我敵人忘記你的言語。</div>
+<div class="verse"><span class="verse-number">140</span>你的話極其精煉，所以你的僕人喜愛。</div>
+<div class="verse"><span class="verse-number">141</span>我微小，被人藐視，卻不忘記你的訓詞。</div>
+<div class="verse"><span class="verse-number">142</span>你的公義永遠長存；你的律法盡都真實。</div>
+<div class="verse"><span class="verse-number">143</span>我遭遇患難愁苦，你的命令卻是我所喜愛的。</div>
+<div class="verse"><span class="verse-number">144</span>你的法度永遠是公義的；求你賜我悟性，我就活了。</div>
+<div class="verse"><span class="verse-number">145</span>耶和華阿，我一心呼籲你；求你應允我，我必謹守你的律例！</div>
+<div class="verse"><span class="verse-number">146</span>我向你呼籲，求你救我！我要遵守你的法度。</div>
+<div class="verse"><span class="verse-number">147</span>我趁天未亮呼求；我仰望了你的言語。</div>
+<div class="verse"><span class="verse-number">148</span>我趁夜更未換將眼睜開，為要思想你的話語。</div>
+<div class="verse"><span class="verse-number">149</span>求你照你的慈愛聽我的聲音；耶和華阿，求你照你的典章將我救活！</div>
+<div class="verse"><span class="verse-number">150</span>追求奸惡的人臨近了；他們遠離你的律法。</div>
+<div class="verse"><span class="verse-number">151</span>耶和華啊，你與我相近；你一切的命令盡都真實！</div>
+<div class="verse"><span class="verse-number">152</span>我因學你的法度，久已知道是你永遠立定的。</div>
+<div class="verse"><span class="verse-number">153</span>求你看顧我的苦難，搭救我，因我不忘記你的律法。</div>
+<div class="verse"><span class="verse-number">154</span>求你為我辨屈，救贖我，照你的話將我救活。</div>
+<div class="verse"><span class="verse-number">155</span>救恩遠離惡人，因為他們不尋求你的律例。</div>
+<div class="verse"><span class="verse-number">156</span>耶和華啊，你的慈悲本為大；求你照你的典章將我救活。</div>
+<div class="verse"><span class="verse-number">157</span>逼迫我的，抵擋我的很多，我卻沒有偏離你的法度。</div>
+<div class="verse"><span class="verse-number">158</span>我看見奸惡的人就甚憎惡，因為他們不遵守你的話。</div>
+<div class="verse"><span class="verse-number">159</span>你看我怎樣愛你的訓詞！耶和華阿，求你照你的慈愛將我救活！</div>
+<div class="verse"><span class="verse-number">160</span>你話的總綱是真實；你一切公義的典章是永遠長存。</div>
+<div class="verse"><span class="verse-number">161</span>首領無故的逼迫我，但我的心畏懼你的言語。</div>
+<div class="verse"><span class="verse-number">162</span>我喜愛你的話，好像人得了許多擄物。</div>
+<div class="verse"><span class="verse-number">163</span>謊話是我所恨惡所憎嫌的；惟你的律法是我所愛的。</div>
+<div class="verse"><span class="verse-number">164</span>我因你公義的典章一天七次讚美你。</div>
+<div class="verse"><span class="verse-number">165</span>愛你律法的人有大平安，甚麼都不能使他們絆腳。</div>
+<div class="verse"><span class="verse-number">166</span>耶和華啊，我仰望了你的救恩，遵行了你的命令。</div>
+<div class="verse"><span class="verse-number">167</span>我心裏守了你的法度；這法度我甚喜愛。</div>
+<div class="verse"><span class="verse-number">168</span>我遵守了你的訓詞和法度，因我一切所行的都在你面前。</div>
+<div class="verse"><span class="verse-number">169</span>耶和華啊，願我的呼籲達到你面前，照你的話賜我悟性。</div>
+<div class="verse"><span class="verse-number">170</span>願我的懇求達到你面前，照你的話搭救我。</div>
+<div class="verse"><span class="verse-number">171</span>願我的嘴發出讚美的話，因為你將律例教訓我。</div>
+<div class="verse"><span class="verse-number">172</span>願我的舌頭歌唱你的話，因你一切的命令盡都公義。</div>
+<div class="verse"><span class="verse-number">173</span>願你用手幫助我，因我揀選了你的訓詞。</div>
+<div class="verse"><span class="verse-number">174</span>耶和華啊，我切慕你的救恩！你的律法也是我所喜愛的。</div>
+<div class="verse"><span class="verse-number">175</span>願我的性命存活，得以讚美你！願你的典章幫助我！</div>
+<div class="verse"><span class="verse-number">176</span>我如亡羊走迷了路，求你尋找僕人，因我不忘記你的命令。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第119篇是整部聖經中篇幅最長的章節，共176節，以希伯來文字母詩篇（Acrostic Psalm）的形式寫成——全篇分為22段，每段8節，每段的每一節都以同一個希伯來字母開頭，從第一個字母（Aleph）到最後一個字母（Taw），形成一個完整的字母循環。這個精心的文學設計本身就是一個神學宣告：對神話語的讚美是全面的、有序的、涵蓋一切的。
+
+      本篇幾乎每一節都提到神的話語，使用了八個不同的希伯來詞語描述神的話語：律法（Torah）、法度（edah）、訓詞（piqquim）、命令（mitzvah）、典章（mishpat）、律例（choq）、話（dabar）和言語（imrah）。這種對神話語的多面向描述，展示了神的話語的豐富性與全面性。
+
+      本篇的作者處境複雜——他面對驕傲人的逼迫（第21、51、85節）、對神話語的苦切渴慕（第20節）、在苦難中的呼求（第107節）——然而在所有這些處境中，神的話語始終是他的倚靠、他的安慰、他的指引和他的喜樂。第105節「你的話是我腳前的燈，是我路上的光」是整篇最廣為人知的名句，以燈和光的意象描繪神話語在黑暗人生旅途中的實際作用。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的話語是腳前的燈和路上的光是信仰最實際的指引</strong><br>「你的話是我腳前的燈，是我路上的光。」（第105節）「腳前的燈」照亮下一步，「路上的光」指示遠方的方向——神的話語既給具體的下一步指引，也給整體的人生方向指示。在一個充滿混亂、假新聞和相對主義的世界中，神的話語是唯一可靠的光源。信徒若想在黑暗的時代中走正確的路，必須持續地浸泡在神的話語中，讓它在每一個具體的選擇和整體的人生方向上都給予清明的指引。<br><br>
+<strong>2. 將神的話藏在心裏是防止犯罪最有效的屬靈策略</strong><br>「我將你的話藏在心裏，免得我得罪你。」（第11節）「藏在心裏」是內化的過程，不只是外在的行為規範，而是讓神的話語成為思想和動機的一部分。這種對神話語的內化，使信徒在面對誘惑時，不需要靠意志力的對抗，而是靠已經深入心靈的神的話語自然地引導正確的選擇。這個原則是今日信徒熟記和默想神話語最重要的屬靈動機。<br><br>
+<strong>3. 愛神律法的人有大平安揭示遵守神話語的最深獎賞</strong><br>「愛你律法的人有大平安，甚麼都不能使他們絆腳。」（第165節）「大平安」（shalom gadol）是最全面的祝福——不只是沒有衝突，而是身心靈全面的健全與安好。「甚麼都不能使他們絆腳」表明愛神律法的人不是沒有障礙，而是在障礙面前仍能保持穩定前行。這種平安不是環境的平靜，而是靈魂深處因與神話語和諧同行而產生的根本穩定。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我將你的話藏在心</strong>裏，<strong>免得我得罪你</strong>。（詩119:11）</td>
+<td>就像<strong>知道緊急出口位置的人</strong>，在火災時不需要慌亂尋找，而是本能地走向正確方向，你是否<strong>有意識地將神</strong>的話語「藏在心裏」——透過記憶、默想和實踐——讓它在誘惑臨到時成為最自然的屬靈反射？</td>
+</tr>
+<tr>
+<td><strong>你的話是我腳前的</strong>燈，<strong>是我路上的光</strong>。（詩119:105）</td>
+<td>就像<strong>在黑夜中行路</strong>，沒有燈的人只能站在原地或亂走，你<strong>的日常決策—</strong>—從小事到大事——是否真的以神的話語作為「腳前的燈」，讓每一個選擇都在神話語的照耀下作出，而非只在重大問題時才翻開聖經？</td>
+</tr>
+<tr>
+<td><strong>愛你律法的人有大</strong>平安，<strong>甚麼都不能使他們</strong>絆腳。（詩119:165）</td>
+<td>就像<strong>一棵根深的樹</strong>，風暴可以搖動枝葉，卻無法拔起根基，你<strong>對神律法的愛</strong>是否已到達那種「大平安」的深度——不是沒有風浪，而是在任何風浪中仍能「甚麼都不能使你<strong>絆腳」的靈魂</strong>穩定？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

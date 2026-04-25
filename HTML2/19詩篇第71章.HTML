@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第71章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第71章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">年老不被棄：一生倚靠神從幼年到白髮</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華啊，我投靠你；求你叫我永不羞愧！</div>
+<div class="verse"><span class="verse-number">2</span>求你憑你的公義搭救我，救拔我；側耳聽我，拯救我！</div>
+<div class="verse"><span class="verse-number">3</span>求你作我常住的磐石；你已經命定要救我，因為你是我的巖石，我的山寨。</div>
+<div class="verse"><span class="verse-number">4</span>我的神啊，求你救我脫離惡人的手，脫離不義和殘暴之人的手。</div>
+<div class="verse"><span class="verse-number">5</span>主耶和華啊，你是我所盼望的；從我年幼，你是我所倚靠的。</div>
+<div class="verse"><span class="verse-number">6</span>我從出母胎被你扶持；使我出母腹的是你。我必常常讚美你！</div>
+<div class="verse"><span class="verse-number">7</span>許多人以我為怪，但你是我堅固的避難所。</div>
+<div class="verse"><span class="verse-number">8</span>你的讚美，你的榮耀終日必滿了我的口。</div>
+<div class="verse"><span class="verse-number">9</span>我年老的時候，求你不要丟棄我！我力氣衰弱的時候，求你不要離棄我！</div>
+<div class="verse"><span class="verse-number">10</span>我的仇敵議論我；那些窺探要害我命的彼此商議，</div>
+<div class="verse"><span class="verse-number">11</span>說：神已經離棄他；我們追趕他，捉拿他吧！因為沒有人搭救。</div>
+<div class="verse"><span class="verse-number">12</span>神啊，求你不要遠離我！我的神啊，求你速速幫助我！</div>
+<div class="verse"><span class="verse-number">13</span>願那與我性命為敵的，羞愧被滅；願那謀害我的，受辱蒙羞。</div>
+<div class="verse"><span class="verse-number">14</span>我卻要常常盼望，並要越發讚美你。</div>
+<div class="verse"><span class="verse-number">15</span>我的口終日要述說你的公義和你的救恩，因我不計其數。</div>
+<div class="verse"><span class="verse-number">16</span>我要來說主耶和華大能的事；我單要提說你的公義。</div>
+<div class="verse"><span class="verse-number">17</span>神啊，自我年幼時，你就教訓我；直到如今，我傳揚你奇妙的作為。</div>
+<div class="verse"><span class="verse-number">18</span>神啊，我到年老髮白的時候，求你不要離棄我！等我將你的能力指示下代，將你的大能指示後世的人。</div>
+<div class="verse"><span class="verse-number">19</span>神啊，你的公義甚高；行過大事的神啊，誰能像你！</div>
+<div class="verse"><span class="verse-number">20</span>你是叫我們多經歷重大急難的，必使我們復活，從地的深處救上來。</div>
+<div class="verse"><span class="verse-number">21</span>求你使我越發昌大，又轉來安慰我。</div>
+<div class="verse"><span class="verse-number">22</span>我的神啊，我要鼓瑟稱讚你，稱讚你的誠實！以色列的聖者啊，我要彈琴歌頌你！</div>
+<div class="verse"><span class="verse-number">23</span>我歌頌你的時候，我的嘴唇和你所贖我的靈魂都必歡呼；</div>
+<div class="verse"><span class="verse-number">24</span>並且我的舌頭必終日講論你的公義，因為那些謀害我的人已經蒙羞受辱了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第71篇在希伯來聖經中沒有標明作者，但其語言風格與主題與大衛非常接近，許多學者認為是大衛晚年所作，反映一位老者在面對衰老與仇敵的威脅中，回顧一生並繼續倚靠神的信仰見證。本篇是整部詩篇中最完整描述「一生倚靠神」的詩篇——從出母腹到年老髮白。
+
+      本篇的時間跨度令人印象深刻：從「出母胎」（第6節）、「年幼時」（第17節）、到「年老的時候」（第9節）、「年老髮白的時候」（第18節），詩人在整個生命的弧度中都看見神的引導與扶持。最感人的請求是第9節「我年老的時候，求你不要丟棄我！我力氣衰弱的時候，求你不要離棄我！」——在衰老中對神同在的渴求，是信仰一生的延續。
+
+      第18節的心志尤為珍貴：「神啊，我到年老髮白的時候，求你不要離棄我！等我將你的能力指示下代，將你的大能指示後世的人。」在衰老中，詩人的心志不是只為自己祈求安度晚年，而是盼望在生命的最後階段仍能傳遞信仰遺產給後代，這是一生事奉最美的心志。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 從出母腹到年老白髮的倚靠是一生信仰最真實的見證</strong><br>「從我年幼，你是我所倚靠的。我從出母胎被你扶持；使我出母腹的是你。」（第5-6節）詩人把信仰的根追溯到生命的最初——甚至在出母腹之前，神就已在場。這種對神「全程在場」的確信，使信仰不只是某個人生階段的選擇，而是覆蓋整個生命弧度的關係。信徒若能養成這種「回顧一生看見神足跡」的靈修習慣，便能在晚年以更深的確信和更豐富的感謝走到人生的終點。<br><br>
+<strong>2. 求神在年老衰弱時不離棄是最深切的晚年禱告</strong><br>「我年老的時候，求你不要丟棄我！我力氣衰弱的時候，求你不要離棄我！」（第9節）衰老帶來的不只是體力的衰退，也帶來對被遺棄的恐懼——被社會、被家人、甚至被神遺棄的恐懼。這個禱告誠實地表達了這份恐懼，並將之帶到神面前。神對這個請求的回應，是整部聖經對信徒最溫柔的保證：祂「不輕看被囚的人」，不棄絕老邁的信徒，而是在每一個人生階段都是那「常住的磐石」。<br><br>
+<strong>3. 在晚年傳遞信仰給後代是屬靈生命最珍貴的遺產</strong><br>「神啊，我到年老髮白的時候，求你不要離棄我！等我將你的能力指示下代，將你的大能指示後世的人。」（第18節）詩人在年老時的心志不是退隱自保，而是傳遞——「等我將你的能力指示下代」。這種以傳遞信仰為晚年目標的心志，使老年成為人生中最有意義的階段之一：累積了一生的信仰見證，正是可以傳遞給後代的最珍貴遺產。信仰傳承，是老一代信徒最重要的屬靈使命。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>主耶和華啊</strong>，<strong>你是我所盼望的</strong>；從我年幼，你是我所倚靠的。（詩71:5）</td>
+<td>就像<strong>回顧自己的成長歷程</strong>，發現某人一直默默支持自己卻從未張揚，你是否<strong>曾回顧自己生</strong>命的不同階段，看見神在其中「從幼年就已在場」的足跡，讓這份回顧加深你<strong>對神信實的確</strong>信？</td>
+</tr>
+<tr>
+<td><strong>我年老的時候</strong>，<strong>求你不要丟棄我</strong>！我力氣衰弱的時候，求你不要離棄我！（詩71:9）</td>
+<td>就像<strong>一個曾被親密的人拋棄過的人</strong>，在新關係中也會害怕被遺棄，你<strong>對神「在最弱</strong>小時不離棄」的信靠，是否夠深——讓你<strong>在面對衰老、</strong>疾病、或人生的失落時，仍確信神不會掩面不顧？</td>
+</tr>
+<tr>
+<td><strong>等我將你的能力指</strong><strong>示下代</strong>，將你的大能指示後世的人。（詩71:18）</td>
+<td>就像<strong>一位老匠人傾盡心力將畢生技藝傳</strong>授給下一代，你是否<strong>也有意識地思</strong>考：「我要如何將對神的認識與信仰見證傳給身後的人」，讓這個目標成為你<strong>晚年或當下生</strong>命中重要的方向？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

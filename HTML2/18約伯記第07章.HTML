@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約伯向神申訴：生命如影，盼你垂顧</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>人在世上豈無爭戰嗎？他的日子不像雇工人的日子嗎？</div>
+<div class="verse"><span class="verse-number">2</span>像奴僕切慕黑影，像雇工人盼望工價；</div>
+<div class="verse"><span class="verse-number">3</span>我也照樣經過困苦的日月，夜間的疲乏為我而定。</div>
+<div class="verse"><span class="verse-number">4</span>我躺臥的時候便說：我何時起來，黑夜就過去呢？我盡是反來覆去，直到天亮。</div>
+<div class="verse"><span class="verse-number">5</span>我的肉體以蟲子和塵土為衣；我的皮膚纔收了口又重新破裂。</div>
+<div class="verse"><span class="verse-number">6</span>我的日子比梭更快，都消耗在無指望之中。</div>
+<div class="verse"><span class="verse-number">7</span>求你想念，我的生命不過是一口氣；我的眼睛必不再見福樂。</div>
+<div class="verse"><span class="verse-number">8</span>觀看我的人，他的眼必不再見我；你的眼目要看我，我卻不在了。</div>
+<div class="verse"><span class="verse-number">9</span>雲彩消散而過；照樣，人下陰間也不再上來。</div>
+<div class="verse"><span class="verse-number">10</span>他不再回自己的家；故土也不再認識他。</div>
+<div class="verse"><span class="verse-number">11</span>我不禁止我口；我靈愁苦，要發出言語；我心苦惱，要吐露哀情。</div>
+<div class="verse"><span class="verse-number">12</span>我對神說：我豈是洋海，豈是大魚，你竟防守我呢？</div>
+<div class="verse"><span class="verse-number">13</span>若說：我的床必安慰我，我的榻必解釋我的苦情，</div>
+<div class="verse"><span class="verse-number">14</span>你就用夢驚駭我，用異象恐嚇我，</div>
+<div class="verse"><span class="verse-number">15</span>甚至我寧肯噎死，寧肯死亡，勝似留我這一身的骨頭。</div>
+<div class="verse"><span class="verse-number">16</span>我厭棄性命，不願永活。你任憑我吧，因我的日子都是虛空。</div>
+<div class="verse"><span class="verse-number">17</span>人算甚麼，你竟看他為大，將他放在心上？</div>
+<div class="verse"><span class="verse-number">18</span>每早鑒察他，時刻試驗他？</div>
+<div class="verse"><span class="verse-number">19</span>你到何時纔轉眼不看我，纔任憑我咽下唾沫呢？</div>
+<div class="verse"><span class="verse-number">20</span>鑒察人的主啊，我若有罪，於你何妨？為何以我當你的箭靶子，使我厭棄自己的性命？</div>
+<div class="verse"><span class="verse-number">21</span>為何不赦免我的過犯，除掉我的罪孽？我現今要躺臥在塵土中；你要殷勤的尋找我，我卻不在了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第7章是約伯直接向神申訴的第一段禱告，語氣從對朋友的回應轉向對神的質問。他從人類普遍的苦難狀況出發——人生如僱工，日子充滿疲乏——進而訴說自己的具體痛苦：輾轉難眠、皮膚破裂、日子如梭飛逝。他直接向神發問：「你何時纔轉眼不看我，纔任憑我咽下唾沫呢？」他不理解神為何如此密切關注他——「人算甚麼，你竟看他為大，將他放在心上？每早鑒察他，時刻試驗他？」這句話含有強烈的諷刺：神對人的關注對受苦的約伯而言，竟成了一種折磨。本章結尾是約伯最大膽的申訴：求神赦免他的過犯，因為他很快就會死去，再也找不到他了。這種在苦難中大膽向神說話的姿態，是本書最珍貴的屬靈遺產之一。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 向神提出質疑是信仰的深度表達，不是信仰的缺乏</strong><br>約伯不是對着天空哀嘆，而是直接向神說話——這本身就是信仰的宣告。他相信神存在、神在聽、神能回應，才有向神申訴的意義。苦難中向神的質疑，比冷漠的沉默更接近神，因為它保持了與神的關係。<br><br>
+<strong>2. 神的「注視」可以是恩典，也可以是重壓</strong><br>「每早鑒察他，時刻試驗他」，在詩篇是神美好同在的描述，在約伯口中卻成了無處逃脫的重壓。同一個神的行動，在不同的苦難處境下，感受可以截然不同。信仰不要求我們美化一切感受，但邀請我們在不同的感受中仍持守與神的對話。<br><br>
+<strong>3. 生命的短暫性應引發對神的倚靠而非絕望</strong><br>約伯說「我的日子比梭更快」——生命短暫如梭，轉眼即逝。這種對生命短暫的清醒認識，既是他苦難申訴的基礎（我快要死了，請你現在垂顧），也是信仰中對神倚靠的邀請：既然生命如此短促，更需要每一刻都活在與神的關係中。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>人在世上豈無爭戰</strong>嗎？<strong>他的日子不像雇工</strong>人的日子嗎？（伯7:1）</td>
+<td>就像<strong>上班族盼望下班</strong>，人生的疲乏與掙扎是普世共有的。你<strong>在生命中感受</strong>到「爭戰」最深的是哪一個階段？那段時期如何影響了你<strong>對神和對生命</strong>意義的看法？</td>
+</tr>
+<tr>
+<td><strong>人算甚麼</strong>，<strong>你竟看他為大</strong>，將他放在心上？每早鑒察他，時刻試驗他？（伯7:17-18）</td>
+<td>就像<strong>被老闆持續監視讓人喘不過氣</strong>，神的同在在苦難中有時會讓人感到窒息而非安慰。你有沒有<strong>過「希望神暫</strong>時不要注意我」的感受？那種感受透露了你<strong>對神的什麼看</strong>法？</td>
+</tr>
+<tr>
+<td><strong>為何不赦免我的過</strong>犯，<strong>除掉我的罪孽</strong>？我現今要躺臥在塵土中；你要殷勤的尋找我，我卻不在了。（伯7:21）</td>
+<td>就像<strong>趁著還有機會把話說清楚</strong>，約伯在生命將盡時向神的最後申訴，帶著一種急迫的誠實。如果你能在神面前說出任何一件事，你<strong>最想說的</strong>是什麼？是申訴、感謝、還是懺悔？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

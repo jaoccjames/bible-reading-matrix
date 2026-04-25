@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>但以理書第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+但以理書第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">公綿羊與公山羊的異象</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>伯沙撒王在位第三年，有異象現與我但以理，是在先前所見的異象之後。</div>
+<div class="verse"><span class="verse-number">2</span>我見了異象的時候，我以為在以攔省書珊城〔或作：宮〕中；我見異象又如在烏萊河邊。</div>
+<div class="verse"><span class="verse-number">3</span>我舉目觀看，見有雙角的公綿羊站在河邊，兩角都高。這角高過那角，更高的是後長的。</div>
+<div class="verse"><span class="verse-number">4</span>我見那公綿羊往西、往北、往南牴觸。獸在他面前都站立不住，也沒有能救護脫離他手的；但他任意而行，自高自大。</div>
+<div class="verse"><span class="verse-number">5</span>我正思想的時候，見有一隻公山羊從西而來，遍行全地，腳不沾塵。這山羊兩眼當中有一非常的角。</div>
+<div class="verse"><span class="verse-number">6</span>他往我所看見、站在河邊有雙角的公綿羊那裏去，大發忿怒，向他直闖。</div>
+<div class="verse"><span class="verse-number">7</span>我見公山羊就近公綿羊，向他發烈怒，牴觸他，折斷他的兩角。綿羊在他面前站立不住；他將綿羊觸倒在地，用腳踐踏，沒有能救綿羊脫離他手的。</div>
+<div class="verse"><span class="verse-number">8</span>這山羊極其自高自大，正強盛的時候，那大角折斷了，又在角根上向天的四方〔原文作風〕長出四個非常的角來。</div>
+<div class="verse"><span class="verse-number">9</span>四角之中有一角長出一個小角，向南、向東、向榮美之地，漸漸成為強大。</div>
+<div class="verse"><span class="verse-number">10</span>他漸漸強大，高及天象，將些天象和星宿拋落在地，用腳踐踏。</div>
+<div class="verse"><span class="verse-number">11</span>並且他自高自大，以為高及天象之君；除掉常獻給君的燔祭，毀壞君的聖所。</div>
+<div class="verse"><span class="verse-number">12</span>因罪過的緣故，有軍旅和常獻的燔祭交付他。他將真理拋在地上，任意而行，無不順利。</div>
+<div class="verse"><span class="verse-number">13</span>我聽見有一位聖者說話，又有一位聖者問那說話的聖者說：「這除掉常獻的燔祭和施行毀壞的罪過，將聖所與軍旅〔或作：以色列的軍〕踐踏的異象，要到幾時才應驗呢？」</div>
+<div class="verse"><span class="verse-number">14</span>他對我說：「到二千三百日，聖所就必潔淨。」</div>
+<div class="verse"><span class="verse-number">15</span>我但以理見了這異象，願意明白其中的意思。忽有一位形狀像人的站在我面前。</div>
+<div class="verse"><span class="verse-number">16</span>我又聽見烏萊河兩岸中有人聲呼叫說：「加百列啊，要使此人明白這異象。」</div>
+<div class="verse"><span class="verse-number">17</span>他便來到我所站的地方。他一來，我就驚慌俯伏在地；他對我說：「人子啊，你要明白，因為這是關乎末後的異象。」</div>
+<div class="verse"><span class="verse-number">18</span>他與我說話的時候，我面伏在地沉睡；他就摸我，扶我站起來，</div>
+<div class="verse"><span class="verse-number">19</span>說：「我要指示你惱怒臨完必有的事，因為這是關乎末後的定期。</div>
+<div class="verse"><span class="verse-number">20</span>你所看見雙角的公綿羊，就是瑪代和波斯王。</div>
+<div class="verse"><span class="verse-number">21</span>那公山羊就是希臘王（希臘：原文作雅完；下同）；兩眼當中的大角就是頭一王。</div>
+<div class="verse"><span class="verse-number">22</span>至於那折斷了的角，在其根上又長出四角，這四角就是四國，必從這國裏興起來，只是權勢都不及他。</div>
+<div class="verse"><span class="verse-number">23</span>這四國末時，犯法的人罪惡滿盈，必有一王興起，面貌兇惡，能用雙關的詐語。</div>
+<div class="verse"><span class="verse-number">24</span>他的權柄必大，卻不是因自己的能力；他必行非常的毀滅，事情順利，任意而行；又必毀滅有能力的和聖民。</div>
+<div class="verse"><span class="verse-number">25</span>他用權術成就手中的詭計，心裏自高自大，在人坦然無備的時候，毀滅多人；又要站起來攻擊萬君之君，至終卻非因人手而滅亡。</div>
+<div class="verse"><span class="verse-number">26</span>所說二千三百日的異象是真的，但你要將這異象封住，因為關乎後來許多的日子。」</div>
+<div class="verse"><span class="verse-number">27</span>於是我但以理昏迷不醒，病了數日，然後起來辦理王的事務。我因這異象驚奇，卻無人能明白其中的意思。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+但以理書第8章的異象比第7章更為具體，時在伯沙撒第三年，地點是書珊城。但以理見一隻雙角的公綿羊（代表瑪代波斯），在一隻從西而來的公山羊（希臘）面前被擊敗；山羊的大角（亞歷山大大帝）折斷後，長出四個角（亞歷山大後繼的四個帝國）；四角之中一個小角漸長（一般解釋為安提阿古四世以彼法尼，他在主前175-164年迫害猶太人、褻瀆聖殿）。天使加百列奉命向但以理解明，說明小角的「面貌兇惡，能用雙關的詐語」，最終「非因人手而滅亡」。本章引入了聖經中首次以名字出現的天使「加百列」，以及「末後的定期」等末世語言。二千三百日的解釋引起極大的神學討論。但以理接受啟示後「昏迷不醒，病了數日」——真實的啟示常常壓倒領受者的體力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【先知性的準確性是神話語可信性的見證】</strong><br>這章異象對瑪代波斯、希臘、亞歷山大大帝和其後的帝國分裂的描述，在歷史上得到驚人準確的應驗。神的話語不是模糊的預感，而是精確的啟示。歷史已應驗的預言，是我們對尚未應驗的預言有確信的基礎。神所說的，必然成就。<br><br>
+<strong>2. 【惡者「非因人手而滅亡」：人間的強暴最終由神終止】</strong><br>安提阿古（或末後的反基督者）「至終卻非因人手而滅亡」——不是被更強的人擊敗，而是被神所終止。這個細節說明：人間最強的惡勢力的終結，不在於人的力量，而在於神的主動介入。信徒不必靠自己的力量打敗強大的惡，而是等待神親自出手的那一刻。<br><br>
+<strong>3. 【接受啟示的人需要時間和力量來承受】</strong><br>但以理「昏迷不醒，病了數日」——真實地接受神的啟示，在屬靈和身體上都是沉重的負擔。這個細節提醒信徒：靈命的深度成長往往伴隨着沉重的負擔感。先知和深度的屬靈領袖，不是靠「自然的熱情」維持，而需要神的力量不斷更新。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他對我說</strong>：「<strong>人子啊</strong>，你要明白，因為這是關乎末後的異象。」（但8:17）</td>
+<td>加百列特別要但以理「明白」這是末後的異象——上帝希望祂的子民了解末後的事。你<strong>對末世論有多</strong>少認識，以及這個認識如何影響你<strong>的日常生活態</strong>度？就像<strong>一個知道回程航班時間的旅人</strong>，末後的知識如何讓你<strong>在今天的旅程</strong>中做出更聰明的選擇？</td>
+</tr>
+<tr>
+<td><strong>他的權柄必大</strong>，<strong>卻不是因自己的能</strong>力；他必行非常的毀滅，事情順利，任意而行；又必毀滅有能力的和聖民。（但8:24）</td>
+<td>「非因自己的能力」——強大的惡有時背後有更深的屬靈力量。這如何改變你<strong>面對世界中強</strong>勢惡的方式？就像<strong>要驅趕一群蜜蜂</strong>，打個別的蜂沒有用，要找到蜂巢，面對屬靈層面的強惡，人的力量是不夠的，你如何<strong>在屬靈的層面</strong>而非只在外在層面回應你<strong>面對的強大挑</strong>戰？</td>
+</tr>
+<tr>
+<td><strong>我但以理昏迷不醒</strong>，<strong>病了數日</strong>，然後起來辦理王的事務。我因這異象驚奇，卻無人能明白其中的意思。（但8:27）</td>
+<td>接受神的啟示使但以理「病了數日」。你有沒有<strong>過某種靈命上</strong>的深度經歷，讓你<strong>需要時間「消</strong>化」和恢復？就像<strong>大手術後需要康復期</strong>，某些深度的屬靈相遇也需要時間整合。你<strong>最近有沒有什</strong>麼在靈命上「還沒有完全明白」但需要持續思考的事？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>西番雅書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+西番雅書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">因耶和華歡呼：神在錫安的應許</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>這悖逆、污穢、欺壓的城有禍了！</div>
+<div class="verse"><span class="verse-number">2</span>他不聽從命令，不領受訓誨，不倚靠耶和華，不親近他的神。</div>
+<div class="verse"><span class="verse-number">3</span>他中間的首領是咆哮的獅子；他的審判官是晚上的豺狼，一點食物也不留到早晨。</div>
+<div class="verse"><span class="verse-number">4</span>他的先知是虛浮詭詐的人；他的祭司褻瀆聖所，強解律法。</div>
+<div class="verse"><span class="verse-number">5</span>耶和華在他中間是公義的，斷不作非義的事，每早晨顯明他的公義，無日不然；只是不義的人不知羞恥。</div>
+<div class="verse"><span class="verse-number">6</span>我耶和華已經除滅列國的民；他們的城樓毀壞。我使他們的街道荒涼，以致無人經過；他們的城邑毀滅，以致無人，也無居民。</div>
+<div class="verse"><span class="verse-number">7</span>我說：你只要敬畏我，領受訓誨；如此，你的住處不致照我所擬定的除滅。只是你們從早起來就在一切事上敗壞自己。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華說：你們要等候我，直到我興起擄掠的日子；因為我已定意招聚列國，聚集列邦，將我的惱怒就是我的烈怒都傾在他們身上。我的忿怒如火，必燒滅全地。</div>
+<div class="verse"><span class="verse-number">9</span>那時，我必使萬民用清潔的言語，好求告我耶和華的名，同心合意的事奉我。</div>
+<div class="verse"><span class="verse-number">10</span>祈禱我的，就是我所分散的民〔原文作女子；下同〕，必從古實河外來，給我獻供物。</div>
+<div class="verse"><span class="verse-number">11</span>當那日，你必不因你一切得罪我的事自覺羞愧；因為那時我必從你中間除掉矜誇高傲之輩，你也不再於我的聖山狂傲。</div>
+<div class="verse"><span class="verse-number">12</span>我卻要在你中間留下困苦貧寒的民；他們必投靠我耶和華的名。</div>
+<div class="verse"><span class="verse-number">13</span>以色列所剩下的人必不作罪孽，不說謊言，口中也沒有詭詐的舌頭；而且喫喝躺臥，無人驚嚇。</div>
+<div class="verse"><span class="verse-number">14</span>錫安的民哪，應當歌唱！以色列啊，應當歡呼！耶路撒冷的民哪，應當滿心歡喜快樂！</div>
+<div class="verse"><span class="verse-number">15</span>耶和華已經除去你的刑罰，趕出你的仇敵。以色列的王耶和華在你中間；你必不再懼怕災禍。</div>
+<div class="verse"><span class="verse-number">16</span>當那日，必有話向耶路撒冷說：不要懼怕！錫安哪；不要手軟！</div>
+<div class="verse"><span class="verse-number">17</span>耶和華你的神是施行拯救、大有能力的主。他在你中間必因你歡欣喜樂，默然愛你，且因你喜樂而歡呼。</div>
+<div class="verse"><span class="verse-number">18</span>那些屬你、為無大會愁煩、因你擔當羞辱的，我必聚集他們。</div>
+<div class="verse"><span class="verse-number">19</span>那時，我必罰辦一切苦待你的人，又拯救你瘸腿的，聚集你被趕出的。那些在全地受羞辱的，我必使他們得稱讚，有名聲。</div>
+<div class="verse"><span class="verse-number">20</span>那時，我必領你們進來，聚集你們；我使你們被擄之人歸回的時候，就必使你們在地上的萬民中有名聲，得稱讚。這是耶和華說的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+西番雅書第3章是全卷的高峰，從審判轉入最美麗的恢復應許，包含整個先知書中最溫柔的神學宣告之一。章前半（1-8節）繼續控訴耶路撒冷：「這悖逆、污穢、欺壓的城有禍了！」首領如獅子，審判官如豺狼，先知虛浮，祭司褻瀆——四個階層全面腐敗。神已向她彰顯公義，她卻仍不回頭。章後半（9-20節）是戲劇性的轉折：神宣告要「使萬民用清潔的言語呼告神的名，同心合意事奉神」——包括外邦人的轉化。以色列中「困苦貧寒的民」要被留下，他們「投靠神的名」。然後是全書最著名的兩節（17-18）：「耶和華你的神是施行拯救、大有能力的主。他在你中間必因你歡欣喜樂，默然愛你，且因你喜樂而歡呼。」神因子民而「歡呼」——這是整個舊約中最令人難以置信的屬靈圖像之一。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【「困苦貧寒的民」是末後留下來信靠神的餘民——神看重的是謙卑信靠，不是地位】</strong><br>「我卻要在你中間留下困苦貧寒的民；他們必投靠我耶和華的名」——神最後留下的不是最有地位、最有能力的人，而是那些「困苦貧寒」卻「投靠神名」的人。這宣告了神Kingdom的顛倒價值觀：謙卑信靠超過地位能力，是神最看重的屬靈資產。<br><br>
+<strong>2. 【「神因你喜樂而歡呼」：神對祂子民的喜愛超越人的一切想象】</strong><br>「耶和華你的神……必因你歡欣喜樂，默然愛你，且因你喜樂而歡呼」——神不只是愛你，而是「因你而歡呼」。「歡呼」是最強烈的喜樂表達，通常用於慶典和勝利。神因祂的子民而像慶典中的勝者一樣歡呼——這個圖像超越了宗教的理性框架，進入最親密、最熾熱的愛的表達。<br><br>
+<strong>3. 【「我必聚集，我必救贖，我必領你」：神是恢復行動的主動發起者】</strong><br>19-20節有一系列「我必」：聚集、救贖、得稱讚、有名聲。神是恢復的主動者，不是等待人準備好才行動。信徒的恢復不依賴人自己的努力，而依賴那位「必」字連連的神的主動作為。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華你的神是施</strong><strong>行拯救</strong>、大有能力的主。他在你中間必因你歡欣喜樂，默然愛你，且因你喜樂而歡呼。（番3:17）</td>
+<td>「神因你<strong>喜樂而<strong>歡呼」</strong></strong>——你是否能相信，當你<strong>選擇信靠神、</strong>在困境中仍然跟隨，神在天上「為你歡呼」？就像<strong>一個父親看見孩子第一次學會走路</strong>而高興得歡呼，那種喜樂是真實的。你<strong>今天最需要讓</strong>這個事實進入你<strong>對自己的認識</strong>的哪個地方？</td>
+</tr>
+<tr>
+<td><strong>我卻要在你中間留</strong><strong>下困苦貧寒的民</strong>；他們必投靠我耶和華的名。以色列所剩下的人必不作罪孽，不說謊言，口中也沒有詭詐的舌頭；而且喫喝躺臥，無人驚嚇。（番3:12-13）</td>
+<td>「困苦貧寒的民」是神最後留下的人。你是否<strong>有時因為自己</strong>的「小」——有限的才能、不顯眼的位置、普通的生活——而覺得神不特別在意你？這個應許如何反轉那個感覺：正是那些「困苦貧寒卻投靠神名」的人，才是神眼中最寶貴的？</td>
+</tr>
+<tr>
+<td><strong>錫安的民哪</strong>，<strong>應當歌唱</strong>！以色列啊，應當歡呼！耶路撒冷的民哪，應當滿心歡喜快樂！耶和華已經除去你的刑罰，趕出你的仇敵。（番3:14-15上）</td>
+<td>「應當歌唱……應當歡呼……應當滿心歡喜快樂」——這是命令，不是感受的描述。有時信仰的歡樂需要我們主動「選擇要」，而不是等感覺來了才歌唱。就像<strong>一個在雨中仍選擇跳舞的人</strong>，你<strong>今天可以在什</strong>麼「雖然環境不完美」的處境中，主動選擇「應當歌唱」？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

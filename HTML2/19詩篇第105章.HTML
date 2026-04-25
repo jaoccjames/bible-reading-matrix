@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第105章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第105章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">記念神的約與作為：從亞伯拉罕到出埃及</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們要稱謝耶和華，求告他的名，在萬民中傳揚他的作為！</div>
+<div class="verse"><span class="verse-number">2</span>要向他唱詩歌頌，談論他一切奇妙的作為！</div>
+<div class="verse"><span class="verse-number">3</span>要以他的聖名誇耀！尋求耶和華的人，心中應當歡喜！</div>
+<div class="verse"><span class="verse-number">4</span>要尋求耶和華與他的能力，時常尋求他的面。</div>
+<div class="verse"><span class="verse-number">5</span>他僕人亞伯拉罕的後裔，他所揀選雅各的子孫哪，你們要記念他奇妙的作為和他的奇事，並他口中的判語。</div>
+<div class="verse"><span class="verse-number">6</span>併於上節</div>
+<div class="verse"><span class="verse-number">7</span>他是耶和華我們的神；全地都有他的判斷。</div>
+<div class="verse"><span class="verse-number">8</span>他記念他的約，直到永遠；他所吩咐的話，直到千代，</div>
+<div class="verse"><span class="verse-number">9</span>就是與亞伯拉罕所立的約，向以撒所起的誓。</div>
+<div class="verse"><span class="verse-number">10</span>他又將這約向雅各定為律例，向以色列定為永遠的約，</div>
+<div class="verse"><span class="verse-number">11</span>說：我必將迦南地賜給你，作你產業的分。</div>
+<div class="verse"><span class="verse-number">12</span>當時，他們人丁有限，數目稀少，並且在那地為寄居的。</div>
+<div class="verse"><span class="verse-number">13</span>他們從這邦遊到那邦，從這國行到那國。</div>
+<div class="verse"><span class="verse-number">14</span>他不容甚麼人欺負他們，為他們的緣故責備君王，</div>
+<div class="verse"><span class="verse-number">15</span>說：不可難為我受膏的人，也不可惡待我的先知。</div>
+<div class="verse"><span class="verse-number">16</span>他命饑荒降在那地上，將所倚靠的糧食全行斷絕，</div>
+<div class="verse"><span class="verse-number">17</span>在他們以先打發一個人去，約瑟被賣為奴僕。</div>
+<div class="verse"><span class="verse-number">18</span>人用腳鐐傷他的腳；他被鐵鍊捆拘。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華的話試煉他，直等到他所說的應驗了。</div>
+<div class="verse"><span class="verse-number">20</span>王打發人把他解開，就是治理眾民的，把他釋放，</div>
+<div class="verse"><span class="verse-number">21</span>立他作王家之主，掌管他一切所有的，</div>
+<div class="verse"><span class="verse-number">22</span>使他隨意捆綁他的臣宰，將智慧教導他的長老。</div>
+<div class="verse"><span class="verse-number">23</span>以色列也到了埃及；雅各在含地寄居。</div>
+<div class="verse"><span class="verse-number">24</span>耶和華使他的百姓生養眾多，使他們比敵人強盛，</div>
+<div class="verse"><span class="verse-number">25</span>使敵人的心轉去恨他的百姓，並用詭計待他的僕人。</div>
+<div class="verse"><span class="verse-number">26</span>他打發他的僕人摩西和他所揀選的亞倫，</div>
+<div class="verse"><span class="verse-number">27</span>在敵人中間顯他的神蹟，在含地顯他的奇事。</div>
+<div class="verse"><span class="verse-number">28</span>他命黑暗，就有黑暗；沒有違背他話的。</div>
+<div class="verse"><span class="verse-number">29</span>他叫埃及的水變為血，叫他們的魚死了。</div>
+<div class="verse"><span class="verse-number">30</span>在他們的地上以及王宮的內室，青蛙多多滋生。</div>
+<div class="verse"><span class="verse-number">31</span>他說一聲，蒼蠅就成群而來，並有虱子進入他們四境。</div>
+<div class="verse"><span class="verse-number">32</span>他給他們降下冰雹為雨，在他們的地上降下火焰。</div>
+<div class="verse"><span class="verse-number">33</span>他也擊打他們的葡萄樹和無花果樹，毀壞他們境內的樹木。</div>
+<div class="verse"><span class="verse-number">34</span>他說一聲，就有蝗蟲螞蚱上來，不計其數，</div>
+<div class="verse"><span class="verse-number">35</span>吃盡了他們地上各樣的菜蔬和田地的出產。</div>
+<div class="verse"><span class="verse-number">36</span>他又擊殺他們國內一切的長子，就是他們強壯時頭生的。</div>
+<div class="verse"><span class="verse-number">37</span>他領自己的百姓帶銀子金子出來；他支派中沒有一個軟弱的。</div>
+<div class="verse"><span class="verse-number">38</span>他們出來的時候，埃及人便歡喜；原來埃及人懼怕他們。</div>
+<div class="verse"><span class="verse-number">39</span>他鋪張雲彩當遮蓋，夜間使火光照。</div>
+<div class="verse"><span class="verse-number">40</span>他們一求，他就使鵪鶉飛來，並用天上的糧食叫他們飽足。</div>
+<div class="verse"><span class="verse-number">41</span>他打開磐石，水就湧出；在乾旱之處，水流成河。</div>
+<div class="verse"><span class="verse-number">42</span>這都因他記念他的聖言和他的僕人亞伯拉罕。</div>
+<div class="verse"><span class="verse-number">43</span>他帶領百姓歡樂而出，帶領選民歡呼前往。</div>
+<div class="verse"><span class="verse-number">44</span>他將列國的地賜給他們，他們便承受眾民勞碌得來的，</div>
+<div class="verse"><span class="verse-number">45</span>好使他們遵他的律例，守他的律法。你們要讚美耶和華！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第105篇是一首歷史詩篇，以讚美的語氣回顧從亞伯拉罕到進入迦南的以色列歷史，與詩篇106篇形成姊妹篇——105篇強調神的信實，106篇強調以色列的悖逆。本篇前半部（1-15節）出現在歷代志上16章8至22節，是大衛迎接約櫃進耶路撒冷時所作的感謝詩。
+
+      本篇的神學核心是「神記念祂的約」（第8節），以這個主題串聯整個以色列歷史：從亞伯拉罕的揀選，到約瑟在埃及的試煉，到摩西帶領以色列出埃及，最終到進入迦南。每一個歷史事件，都是神記念約的具體表現。
+
+      第19節「耶和華的話試煉他，直等到他所說的應驗了」是本篇描述約瑟苦難最深刻的神學解釋：約瑟的苦難不是偶然的，而是「耶和華的話試煉他」的過程——在應驗之前的等候，本身就是信仰的試煉和深化。這個洞見使信徒能在自己的苦難等候中，看見神更大計劃的運行。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神記念祂的約直到永遠是歷史最確定的力量</strong><br>「他記念他的約，直到永遠；他所吩咐的話，直到千代。」（第8節）本篇的每一個歷史事件——無論是族長時代的遊歷、約瑟的下獄、還是以色列在埃及的苦難——都被詩人解讀為「神記念祂的約」的大框架中的一部分。人類歷史常常顯得混亂無序，然而在神記念約的視野下，每一個事件都有其意義。信徒面對個人歷史的困惑時，同樣可以以「神記念祂的約」的確信，在混亂中找到方向。<br><br>
+<strong>2. 耶和華的話試煉約瑟揭示苦難等候的屬靈意義</strong><br>「耶和華的話試煉他，直等到他所說的應驗了。」（第19節）約瑟的苦難（被賣為奴、冤枉入獄）在這裡被解釋為「耶和華的話試煉他」的過程。神的話語是真實的，但其應驗需要時間和試煉。在等候中，試煉本身具有塑造性的功能——它在約瑟身上建立了謙卑、忠心、與神同在的品格，使他有足夠的成熟度承受後來的高位與責任。每一個在神的應許中等候的信徒，都在經歷同樣的試煉過程。<br><br>
+<strong>3. 記念神的奇妙作為是維持信仰活力的屬靈習慣</strong><br>「你們要記念他奇妙的作為和他的奇事，並他口中的判語。」（第5節）本篇呼召信徒主動「記念」——這是意志的行動，不是情感的自然流露。記念神過去的作為，能在信仰低潮時維持信心，在等候中提供確信，在感恩中加深讚美。建立定期「記念神作為」的屬靈習慣，是維持信仰活力最有效的方法之一，也是本篇最核心的屬靈呼召。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他記念他的約</strong>，<strong>直到永遠</strong>；他所吩咐的話，直到千代，（詩105:8）</td>
+<td>就像<strong>一份永久有效的合約</strong>，無論時間過了多久都不失效，你是否<strong>真的相信神「</strong>記念祂的約直到永遠」——祂對你<strong>的應許不因時</strong>間流逝或環境改變而遺忘，讓這個確信成為你<strong>在漫長等候中</strong>的錨點？</td>
+</tr>
+<tr>
+<td><strong>耶和華的話試煉他</strong>，<strong>直等到他所說的應</strong>驗了。（詩105:19）</td>
+<td>就像<strong>金屬在高溫中被提純</strong>，雜質去除後反而更純淨珍貴，你是否能以「神的話在試煉我，直到應驗」的視角看待你<strong>目前的等候與</strong>苦難，讓試煉本身成為你<strong>信仰成熟最重</strong>要的塑造過程？</td>
+</tr>
+<tr>
+<td><strong>你們要記念他奇妙</strong><strong>的作為和他的奇事</strong>，並他口中的判語。（詩105:5）</td>
+<td>就像<strong>定期翻閱過去的日記能找回感動與</strong>方向，你是否<strong>有固定「記念</strong>神奇妙作為」的屬靈習慣——寫感恩日記、與人分享見證、在禱告中回顧神的信實——讓記念成為信仰持續燃燒的燃料？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

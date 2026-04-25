@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第48章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第48章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">甚願你聽從我的命令：從苦難的爐中被揀選出來</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>雅各家，稱為以色列名下，從猶大水源出來的，當聽我言！你們指着耶和華的名起誓，提說以色列的神，卻不憑誠實，不憑公義。</div>
+<div class="verse"><span class="verse-number">2</span>他們自稱為聖城的人，所倚靠的是名為萬軍之耶和華以色列的神。</div>
+<div class="verse"><span class="verse-number">3</span>主說：早先的事，我從古時說明，已經出了我的口，也是我所指示的；我忽然行作，事便成就。</div>
+<div class="verse"><span class="verse-number">4</span>因為我素來知道你是頑梗的，你的頸項是鐵的；你的額是銅的。</div>
+<div class="verse"><span class="verse-number">5</span>所以，我從古時將這事給你說明，在未成以先指示你，免得你說：這些事是我的偶像所行的，是我雕刻的偶像和我鑄造的偶像所命定的。</div>
+<div class="verse"><span class="verse-number">6</span>你已經聽見，現在要看見這一切；你不說明嗎？從今以後，我將新事，就是你所不知道的隱密事指示你。</div>
+<div class="verse"><span class="verse-number">7</span>這事是現今造的，並非從古就有；在今日以先，你也未曾聽見，免得你說：這事我早已知道了。</div>
+<div class="verse"><span class="verse-number">8</span>你未曾聽見，未曾知道；你的耳朵從來未曾開通。我原知道你行事極其詭詐，你自從出胎以來，便稱為悖逆的。</div>
+<div class="verse"><span class="verse-number">9</span>我為我的名暫且忍怒，為我的頌讚向你容忍，不將你剪除。</div>
+<div class="verse"><span class="verse-number">10</span>我熬煉你，卻不像熬煉銀子；你在苦難的爐中，我揀選你。</div>
+<div class="verse"><span class="verse-number">11</span>我為自己的緣故必行這事，我焉能使我的名被褻瀆？我必不將我的榮耀歸給假神。</div>
+<div class="verse"><span class="verse-number">12</span>雅各我所選召的以色列阿，當聽我言：我是耶和華，我是首先的，也是末後的。</div>
+<div class="verse"><span class="verse-number">13</span>我手立了地的根基；我右手鋪張諸天；我一招呼便都立住。</div>
+<div class="verse"><span class="verse-number">14</span>你們都當聚集而聽，他們〔或作：偶像〕內中誰說過這些事？耶和華所愛的人必向巴比倫行他所喜悅的事；他的膀臂也要加在迦勒底人身上。</div>
+<div class="verse"><span class="verse-number">15</span>惟有我曾說過，我又選召他，領他來，他的道路就必亨通。</div>
+<div class="verse"><span class="verse-number">16</span>你們要就近我來聽這話：我從起頭並未曾在隱密處說話；自從有這事，我就在那裏。現在，主耶和華差遣我和他的靈來〔或作：耶和華和他的靈差遣我來〕。</div>
+<div class="verse"><span class="verse-number">17</span>耶和華你的救贖主，以色列的聖者如此說：我是耶和華你的神，教訓你，使你得益處，引導你所當行的路。</div>
+<div class="verse"><span class="verse-number">18</span>甚願你素來聽從我的命令！你的平安就如河水；你的公義就如海浪。</div>
+<div class="verse"><span class="verse-number">19</span>你的後裔也必多如海沙；你腹中所生的也必多如沙粒。他的名在我面前必不剪除，也不滅絕。</div>
+<div class="verse"><span class="verse-number">20</span>你們要從巴比倫出來，從迦勒底人中逃脫，以歡呼的聲音傳揚說：耶和華救贖了他的僕人雅各！你們要將這事宣揚到地極。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華引導他們經過沙漠。他們並不乾渴；他為他們使水從磐石而流，分裂磐石，水就湧出。</div>
+<div class="verse"><span class="verse-number">22</span>耶和華說：惡人必不得平安！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第四十八章是以賽亞書後半部第一段（40-48章）的結語，主題是神對頑梗以色列的忍耐與管教，以及對被擄者歸回的呼召。本章有一種「坦誠而略帶嚴肅」的語調：神承認以色列「頑梗」（頸項是鐵的、額是銅的，4節），也承認自己為什麼要提前預言——是為了讓以色列無法把預言的應驗歸功於偶像（5節）。第10節「我熬煉你，卻不像熬煉銀子；你在苦難的爐中，我揀選你」，是以賽亞書對苦難最精煉的神學詮釋：苦難是神的「熬煉爐」，但程度是神有意控制的（「不像熬煉銀子」——銀子在爐中要失去很多，以色列的熬煉是有限度的），目的是「揀選」，而非毀滅。第18節「甚願你素來聽從我的命令！你的平安就如河水；你的公義就如海浪」，是神的深情嘆息——若以色列當初順從，他們本可以得到何等豐盛的平安！這節話揭示了許多錯失的祝福背後有人不聽從的選擇。第22節「惡人必不得平安！」，是章末的嚴肅警告，也是以賽亞書後半部第一段的終結符號。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「在苦難的爐中，我揀選你」：苦難是揀選的爐，而非丟棄的垃圾桶</strong><br>第10節的神學是信仰面對苦難最重要的框架之一。「揀選」（bachar，選揀）——神在苦難的爐中所做的，不是讓人消滅，而是進行甄選和提煉。苦難不是神遺棄的信號，而是神介入的場所。這個圖像不是麻醉人忍受苦難的方式，而是真實地宣告：在每一個信徒最艱難的「熬煉」時刻，神在其中主動地「揀選」和成就工作。<br><br>
+<strong>2. 「甚願你素來聽從我的命令」：順從打開的是平安如河的生命</strong><br>第18節是全書中神最深情的嘆息之一——「甚願你……」充滿了遺憾和渴望。若以色列順從，他們的平安「如河水」、公義「如海浪」——這些是壯闊、持續、充盈的意象。每一個「甚願你……」背後，是一個被拒絕的邀請和被錯失的豐盛。信徒今日的順從，不只是服從，更是打開「平安如河水」的鑰匙。<br><br>
+<strong>3. 「我為我的名暫且忍怒」：神容忍的根基在祂的名，不在人的配得</strong><br>第9節「我為我的名暫且忍怒」——這是神忍耐的底牌：不是因為以色列配得，而是因為神的名和榮耀不能被褻瀆。這個神學對信徒的恩典含義是深遠的：神對我們的忍耐和赦免，其根據在神本身，不在我們的表現。這使得「神是否還愛我」這個問題的答案，從「取決於我今天的表現」，轉向「取決於神的性情和名」——而祂的性情和名是永遠不變的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>我熬煉你</strong>，<strong>卻不像熬煉銀子</strong>；你在苦難的爐中，我揀選你。」（賽48:10）</td>
+<td>就像<strong>金匠在熔爐中精心控制溫度——太</strong>低無法提煉，太高會毀壞金屬——神在我們的苦難中有精準的掌控，你<strong>目前或曾經歷</strong>過的最深苦難，你是否能看見那個「爐子」同時也是神「揀選」你<strong>的地方</strong>？那個認識如何改變你<strong>對苦難的態度</strong>？</td>
+</tr>
+<tr>
+<td>「<strong>甚願你素來聽從我</strong><strong>的命令</strong>！你的平安就如河水；你的公義就如海浪。」（賽48:18）</td>
+<td>就像<strong>一條溪流若被岩石阻擋</strong>，水就積聚而無法前進；清除阻礙，水便暢流，順從神的命令就是清除攔阻平安之流的阻礙，你<strong>目前在哪個「</strong>命令」上最難以順從？那個不順從如何影響了你<strong>的平安和生命</strong>的豐盛？</td>
+</tr>
+<tr>
+<td>「<strong>耶和華救贖了他的</strong><strong>僕人雅各</strong>！你們要將這事宣揚到地極。」（賽48:20）</td>
+<td>就像<strong>一個剛從大病中康復的人</strong>，迫不及待地想把治療他的醫生告訴所有有同樣病的人，得救的喜樂自然流向見證和宣揚，你<strong>對神救贖你的</strong>事蹟，有多少是主動向他人宣揚的？是什麼讓你<strong>有時保持沉默</strong>而非「宣揚到地極」？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

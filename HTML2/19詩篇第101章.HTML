@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第101章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第101章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">君王的誓言：以完全的心行在家中守門剪惡</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩）我要歌唱慈愛和公平；耶和華阿，我要向你歌頌！</div>
+<div class="verse"><span class="verse-number">2</span>我要用智慧行完全的道。你幾時到我這裏來呢？我要存完全的心行在我家中。</div>
+<div class="verse"><span class="verse-number">3</span>邪僻的事，我都不擺在我眼前；悖逆人所作的事，我甚恨惡，不容沾在我身上。</div>
+<div class="verse"><span class="verse-number">4</span>彎曲的心思，我必遠離；一切的惡人〔或作：惡事〕，我不認識。</div>
+<div class="verse"><span class="verse-number">5</span>在暗中讒謗他鄰居的，我必將他滅絕；眼目高傲、心裏驕縱的，我必不容他。</div>
+<div class="verse"><span class="verse-number">6</span>我眼要看國中的誠實人，叫他們與我同住；行為完全的，他要伺候我。</div>
+<div class="verse"><span class="verse-number">7</span>行詭詐的，必不得住在我家裏；說謊話的，必不得立在我眼前。</div>
+<div class="verse"><span class="verse-number">8</span>我每日早晨要滅絕國中所有的惡人，好把一切作孽的從耶和華的城裏剪除。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第101篇是大衛的詩，被稱為「君王的誓言」或「鏡子詩篇」，描繪了一位理想的統治者對自己品格和治國原則的承諾。本篇可能是大衛在登基時所作，作為對神的宣誓：他將以什麼樣的品格治理國家、建立家室。本篇對今日的信徒有直接的應用：雖然不是君王，但我們每個人都在自己的「家中」、自己的「眼前」作出每天的選擇——何事擺在眼前，何人容在身旁，以什麼品格面對每天的生活。第2節「你幾時到我這裏來呢？」的呼求，揭示大衛認識到完全的道需要神的同在才能實現；沒有神，人的誓言都是空洞的。第3節「邪僻的事，我都不擺在我眼前」是對視覺門戶的看守——什麼進入眼目，就影響心靈。這是對資訊時代信徒最直接的挑戰：我們選擇看什麼、接受什麼進入我們的眼目，深深影響我們的靈性狀態。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 以完全的心行在家中是信仰從公開到私下的誠實考驗</strong><br>「我要存完全的心行在我家中。」（第2節）「家中」是最私下的空間，是沒有外人目光的地方。大衛選擇以「完全的心」行在家中——不是只在公眾場合表現良好，而是在最私下的空間也保持品格的完整。信仰真正的考驗，不在教會的崇拜場合，而在沒有人看見的家中、私下的習慣和行為中。公開的品格是容易的，私下的品格才是真實的。<br><br>
+<strong>2. 不讓邪僻之事擺在眼前是視覺門戶最重要的守護</strong><br>「邪僻的事，我都不擺在我眼前。」（第3節）「擺在眼前」是主動的選擇——大衛宣告他不會主動地、刻意地讓邪僻的東西進入他的視野。眼目是靈魂的窗口，什麼進入眼目就影響心靈。在媒體泛濫的時代，這個誓言呼召信徒對自己的視覺輸入有清醒的守護：我選擇看什麼、接受什麼進入我的眼目，是每天最真實的信仰選擇之一。<br><br>
+<strong>3. 看重誠實人親近完全者是人際選擇的屬靈智慧</strong><br>「我眼要看國中的誠實人，叫他們與我同住；行為完全的，他要伺候我。」（第6節）大衛承諾尋找誠實人和完全者作為他的同伴與助手，而非以才能或忠心作為唯一標準。與誠實、完全的人同住，是彼此提升的屬靈機制。信徒的人際圈子——與誰深交、與誰分享生命——深深影響靈命的走向；有意識地尋找並親近品格正直的人，是屬靈成長最重要的人際策略。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我要存完全的心行</strong><strong>在我家中</strong>。（詩101:2）</td>
+<td>就像<strong>一個廚師在家給家人做飯時</strong>，是否也保持與在米其林餐廳同等的用心，你<strong>的信仰品格</strong>是否在「家中」——在最私下、沒有人看見的地方——也保持與公開場合相同的完整，還是有明顯的落差？</td>
+</tr>
+<tr>
+<td><strong>邪僻的事</strong>，<strong>我都不擺在我眼前</strong>；悖逆人所作的事，我甚恨惡，不容沾在我身上。（詩101:3）</td>
+<td>就像<strong>知道油膩食物對健康不好的人</strong>，不會主動在餐桌上擺滿薯條，你是否<strong>在日常媒體和</strong>資訊的選擇上，有意識地「不擺邪僻之事在眼前」，讓這個選擇保護你<strong>的心靈不受污</strong>染？</td>
+</tr>
+<tr>
+<td><strong>我眼要看國中的誠</strong>實人，<strong>叫他們與我同住</strong>；行為完全的，他要伺候我。（詩101:6）</td>
+<td>就像<strong>一個人的品格常常受到他最親密的</strong>朋友圈影響，你是否<strong>有意識地尋找</strong>並親近那些「誠實且行為完全」的人，讓這樣的人際選擇成為你<strong>屬靈成長的推</strong>力？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

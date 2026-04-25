@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第17章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第17章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">兩鷹一樹的比喻與彌賽亞的預言</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">2</span>「人子啊，你要向以色列家出謎語，設比喻，</div>
+<div class="verse"><span class="verse-number">3</span>說主耶和華如此說：有一大鷹，翅膀大，翎毛長，羽毛豐滿，彩色俱備，來到利巴嫩，將香柏樹梢擰去，</div>
+<div class="verse"><span class="verse-number">4</span>就是折去香柏樹儘尖的嫩枝，叼到貿易之地，放在買賣城中；</div>
+<div class="verse"><span class="verse-number">5</span>又將以色列地的枝子栽於肥田裏，插在大水旁，如插柳樹，</div>
+<div class="verse"><span class="verse-number">6</span>就漸漸生長，成為蔓延矮小的葡萄樹。其枝轉向那鷹，其根在鷹以下，於是成了葡萄樹，生出枝子，發出小枝。</div>
+<div class="verse"><span class="verse-number">7</span>「又有一大鷹，翅膀大，羽毛多。這葡萄樹從栽種的畦中向這鷹彎過根來，發出枝子，好得它的澆灌。</div>
+<div class="verse"><span class="verse-number">8</span>這樹栽於肥田多水的旁邊，好生枝子，結果子，成為佳美的葡萄樹。</div>
+<div class="verse"><span class="verse-number">9</span>你要說，主耶和華如此說：這葡萄樹豈能發旺呢？鷹豈不拔出它的根來，芟除它的果子，使它枯乾，使它發的嫩葉都枯乾了嗎？也不用大力和多民，就拔出它的根來。</div>
+<div class="verse"><span class="verse-number">10</span>葡萄樹雖然栽種，豈能發旺呢？一經東風，豈不全然枯乾嗎？必在生長的畦中枯乾了。」</div>
+<div class="verse"><span class="verse-number">11</span>耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">12</span>「你對那悖逆之家說：你們不知道這些事是甚麼意思麼？你要告訴他們說，巴比倫王曾到耶路撒冷，將其中的君王和首領帶到巴比倫自己那裏去。</div>
+<div class="verse"><span class="verse-number">13</span>從以色列的宗室中取一人與他立約，使他發誓，並將國中有勢力的人擄去，</div>
+<div class="verse"><span class="verse-number">14</span>使國低微不能自強，惟因守盟約得以存立。</div>
+<div class="verse"><span class="verse-number">15</span>他卻背叛巴比倫王，打發使者往埃及去，要他們給他馬匹和多民。他豈能亨通呢？行這樣事的人豈能逃脫呢？他背約豈能逃脫呢？</div>
+<div class="verse"><span class="verse-number">16</span>他輕看向王所起的誓，背棄王與他所立的約。主耶和華說：我指着我的永生起誓，他定要死在立他作王、巴比倫王的京都。</div>
+<div class="verse"><span class="verse-number">17</span>敵人築壘造臺，與他打仗的時候，為要剪除多人，法老雖領大軍隊和大群眾，還是不能幫助他。</div>
+<div class="verse"><span class="verse-number">18</span>他輕看誓言，背棄盟約，已經投降，卻又作這一切的事，他必不能逃脫。」</div>
+<div class="verse"><span class="verse-number">19</span>所以主耶和華如此說：「我指着我的永生起誓，他既輕看指我所起的誓，背棄指我所立的約，我必要使這罪歸在他頭上。</div>
+<div class="verse"><span class="verse-number">20</span>我必將我的網撒在他身上，他必在我的網羅中纏住。我必帶他到巴比倫，並要在那裏因他干犯我的罪刑罰他。</div>
+<div class="verse"><span class="verse-number">21</span>他的一切軍隊，凡逃跑的，都必倒在刀下；所剩下的，也必分散四方〔方：原文作風〕。你們就知道說這話的是我耶和華。」</div>
+<div class="verse"><span class="verse-number">22</span>主耶和華如此說：「我要將香柏樹梢擰去栽上，就是從儘尖的嫩枝中折一嫩枝，栽於極高的山上；</div>
+<div class="verse"><span class="verse-number">23</span>在以色列高處的山栽上。它就生枝子，結果子，成為佳美的香柏樹，各類飛鳥都必宿在其下，就是宿在枝子的蔭下。</div>
+<div class="verse"><span class="verse-number">24</span>田野的樹木都必知道我耶和華使高樹矮小，矮樹高大；青樹枯乾，枯樹發旺。我耶和華如此說，也如此行了。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第17章以一個謎語式的比喻開始：兩隻大鷹，一棵葡萄樹。第一鷹（巴比倫）折去香柏樹梢（哥尼雅王），帶到貿易之地（巴比倫），又取以色列地的嫩枝（西底家）栽在肥田旁。但葡萄樹卻轉向第二鷹（埃及）尋求幫助——這象徵西底家背叛巴比倫、尋求埃及幫助。神明確說：他必因背約而受審判，「他輕看誓言，背棄盟約，已經投降，卻又作這一切的事，他必不能逃脫」——即使是向巴比倫所起的誓，在神眼中也是神聖的，背誓就是得罪神。本章以彌賽亞性的盼望收結（22-24節）：神自己要「折去香柏樹梢」，栽在以色列高處的山上，成為佳美的香柏樹，各類飛鳥宿在其下。這個應許超越了政治的圖謀，指向神自己所設立的王，顯示神是歷史最終的主宰。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【背棄誓約是對神的得罪，即使誓約對象是外邦人】</strong><br>西底家向巴比倫王起誓卻背叛，神說這是「輕看指我所起的誓」。起誓不只是人與人之間的協議，而是以神的名為擔保；背誓就是褻瀆神的名。這提醒信徒：所有的承諾都在神的面前，信守承諾不只是誠信問題，而是對神名的尊重。<br><br>
+<strong>2. 【尋求政治勢力代替神是屬靈的「轉向埃及」】</strong><br>葡萄樹從倚靠第一鷹轉向第二鷹——尋求另一個人間強大的保障。這個比喻揭示了一種普遍的屬靈模式：遇到困難時，我們常常去尋找另一種人間的力量，而不是轉向神。「轉向埃及」是每一個信徒面對壓力時的誘惑——找另一個可見的、強大的倚靠，而非那位不可見的神。<br><br>
+<strong>3. 【神自己要設立那棵佳美的香柏樹——彌賽亞的來臨】</strong><br>章末的香柏樹不是人手栽種，而是神自己親手設立，栽在以色列最高處，萬鳥宿其下。這是彌賽亞預言的語言——一位非出於人的計謀、而出於神的計畫的王。信徒的最終盼望不在於政治聯盟，而在於那位神親自所設立的王。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他輕看誓言</strong>，<strong>背棄盟約</strong>，已經投降，卻又作這一切的事，他必不能逃脫。（結17:18）</td>
+<td>你是否<strong>曾因情況改變</strong>而在心裡尋找理由讓自己「合理地」背棄一個承諾？就像<strong>當初說好的事</strong>，後來發現「條件不同了」所以覺得不算——神對西底家的定罪提醒我們，承諾不因外在情況而自動失效。你<strong>目前有沒有一</strong>個你<strong>仍然需要誠實</strong>面對的承諾？</td>
+</tr>
+<tr>
+<td><strong>這葡萄樹從栽種的</strong><strong>畦中向這鷹彎過根</strong>來，發出枝子，好得它的澆灌。（結17:7）</td>
+<td>「轉向另一鷹」是尋找另一個人間保障的比喻。在你<strong>面對的壓力或</strong>困境中，你<strong>最傾向「轉向</strong>」什麼——另一份收入、某個人的認可、某種控制感？就像<strong>植物的根自然朝水源彎去</strong>，你<strong>的根正在朝哪</strong>個方向伸？那是神，還是另一隻「鷹」？</td>
+</tr>
+<tr>
+<td><strong>主耶和華如此說</strong>：<strong>我要將香柏樹梢擰</strong>去栽上，就是從儘尖的嫩枝中折一嫩枝，栽於極高的山上……成為佳美的香柏樹，各類飛鳥都必宿在其下。（結17:22-23）</td>
+<td>這棵神親自栽種的香柏樹，在新約中應驗在耶穌基督身上——所有的人都可以在祂的蔭下安息。你<strong>現在</strong>是否真正「住在」這棵樹的蔭下，還是仍在外面尋找另一個庇蔭？就像<strong>鳥找到了安全的棲處便不再飛來飛</strong>去，你<strong>在基督裡</strong>是否找到了那個安歇之處？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

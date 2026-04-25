@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第43章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第43章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">不聽勸誡逃往埃及</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶利米向眾百姓說完了耶和華他們神的一切話，就是耶和華他們神差遣他去所說的一切話。</div>
+<div class="verse"><span class="verse-number">2</span>何沙雅的兒子亞撒利雅和加利亞的兒子約哈難，並一切狂傲的人，就對耶利米說：「你說謊言！耶和華我們的神並沒有差遣你來說：『你們不可進入埃及，在那裏寄居。』</div>
+<div class="verse"><span class="verse-number">3</span>這是尼利亞的兒子巴錄挑唆你害我們，要將我們交在迦勒底人的手中，使我們有被殺的，有被擄到巴比倫去的。」</div>
+<div class="verse"><span class="verse-number">4</span>於是加利亞的兒子約哈難和一切軍長，並眾百姓，不聽從耶和華的話住在猶大地。</div>
+<div class="verse"><span class="verse-number">5</span>加利亞的兒子約哈難和一切軍長卻將所剩下的猶大人，就是從被趕到各國回來在猶大地寄居的男人、婦女、孩童，和眾公主，並護衛長尼布撒拉旦所留在沙番的孫子亞希甘的兒子基大利那裏的眾人，與先知耶利米，以及尼利亞的兒子巴錄，</div>
+<div class="verse"><span class="verse-number">6</span>併於上節</div>
+<div class="verse"><span class="verse-number">7</span>都帶入埃及地，到了答比匿。這是因他們不聽從耶和華的話。</div>
+<div class="verse"><span class="verse-number">8</span>在答比匿，耶和華的話臨到耶利米說：</div>
+<div class="verse"><span class="verse-number">9</span>「你在猶大人眼前要用手拿幾塊大石頭，藏在砌磚的灰泥中，就是在答比匿法老的宮門那裏，</div>
+<div class="verse"><span class="verse-number">10</span>對他們說：『萬軍之耶和華以色列的神如此說：我必召我的僕人巴比倫王尼布甲尼撒來。在所藏的石頭上我要安置他的寶座；他必將光華的寶帳支搭在其上。</div>
+<div class="verse"><span class="verse-number">11</span>他要來攻擊埃及地，定為死亡的，必至死亡；定為擄掠的，必被擄掠；定為刀殺的，必交刀殺。</div>
+<div class="verse"><span class="verse-number">12</span>我要在埃及神的廟中使火着起，巴比倫王要將廟宇焚燒，神像擄去；他要得〔原文作披上〕埃及地，好像牧人披上外衣，從那裏安然而去。</div>
+<div class="verse"><span class="verse-number">13</span>他必打碎埃及地伯示麥的柱像，用火焚燒埃及神的廟宇。』」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第43章是第42章的直接延續，揭示了人面對不喜歡的神諭時的典型反應：否認其來源，指責傳達者有私心。約哈難和眾軍長不只拒絕耶利米的話，還說「這是巴錄挑唆你陷害我們」——把神的話說成政治陰謀的產物。他們最終無視神的旨意，帶着所有剩下的猶大人，包括耶利米和巴錄，強行進入埃及，到了答比匿。在埃及，神再次透過耶利米傳出信息：在法老宮門前藏石頭，象徵巴比倫王尼布甲尼撒必來到埃及，在那石頭上設立寶座，攻擊並毀滅埃及的偶像廟宇——連埃及這個逃生之地，也不能躲避巴比倫的刀劍。本章是猶大百姓悲劇旅程的縮影：從神的話語到否認，從否認到逃跑，從逃跑到更深的審判之地。耶利米被迫同往，在他本不願去的地方繼續傳遞神的話。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【拒絕神的話往往以「這不是神的話」來合理化】</strong><br>百姓不說「我們不想遵從」，而是說「你說謊、你被巴錄挑唆」——即把問題轉移到傳達者身上。這是人面對不喜歡的真理的典型迴避：攻擊信使，而非面對信息。信徒需要警惕這個模式：當我們批評說神話語的人，而非認真考量那個信息是否屬實，往往是因為那個信息讓我們不舒服，而我們找不到合理的反駁。<br><br>
+<strong>2. 【逃離神旨意的人，仍逃不開神的主權】</strong><br>逃往埃及，以為安全；但神的話說，巴比倫王要來攻打埃及——他們逃去的地方，仍在神審判的手下。人可以逃離神的呼召，卻逃不開神的主權。這不是要信徒活在恐懼中，而是提醒我們：在神的旨意中才有真正的安全，任何以逃跑代替順從的計畫，終將發現問題仍在。<br><br>
+<strong>3. 【先知即使在不願意的處境中仍忠心服事】</strong><br>耶利米不想去埃及，被迫同往，卻在那裏繼續傳遞神的話。他沒有因為環境不是自己選的就停止服事。忠心的服事不以理想的環境為前提，而是在任何被神放置的地方繼續為神發聲。信徒有時也會被帶到不是自己選擇的地方，但使命不因此消失。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>何沙雅的兒子亞撒</strong><strong>利雅和加利亞的兒</strong>子約哈難，並一切狂傲的人，就對耶利米說：「你說謊言！耶和華我們的神並沒有差遣你來說：你們不可進入埃及，在那裏寄居。」（耶43:2）</td>
+<td>你是否<strong>曾因為不喜歡</strong>某個信息，就開始尋找理由說它「不是神的話」？就像<strong>拒絕相信健康報告不好的結果而去</strong>找第二個、第三個醫生，你如何<strong>分辨自己</strong>是「合理地質疑」，還是在「逃避一個讓人不舒服的真相」？</td>
+</tr>
+<tr>
+<td><strong>加利亞的兒子約哈</strong><strong>難和一切軍長</strong>，並眾百姓，不聽從耶和華的話住在猶大地，卻都帶入埃及地，到了答比匿。這是因他們不聽從耶和華的話。（耶43:4,7）</td>
+<td>你<strong>現在的處境中</strong>，有沒有一個你<strong>正在執行但心</strong>裡知道可能不在神旨意中的計畫？就像<strong>出發去一個地方卻知道這條路走不</strong>通，你願意<strong>停下來重新求</strong>問神，還是繼續走，只是希望這次結果不同？</td>
+</tr>
+<tr>
+<td><strong>在答比匿</strong>，<strong>耶和華的話臨到耶</strong>利米說……「我必召我的僕人巴比倫王尼布甲尼撒來。在所藏的石頭上我要安置他的寶座。」（耶43:8,10）</td>
+<td>你是否<strong>有一種想法</strong>，以為只要換了「環境」，問題就會消失？就像<strong>把雜草的頭切掉卻不除根</strong>，根沒除就會再長，你願意<strong>問神：「在這</strong>個處境中我真正需要改變的，是什麼？」</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

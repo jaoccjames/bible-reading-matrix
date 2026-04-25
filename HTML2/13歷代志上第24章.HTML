@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志上第24章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志上第24章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">祭司的班次：掣籤分工，公平事奉</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>亞倫子孫的班次記在下面：亞倫的兒子是拿答、亞比戶、以利亞撒、以他瑪。</div>
+<div class="verse"><span class="verse-number">2</span>拿答、亞比戶死在他們父親之先，沒有留下兒子；故此，以利亞撒、以他瑪供祭司的職分。</div>
+<div class="verse"><span class="verse-number">3</span>以利亞撒的子孫撒督和以他瑪的子孫亞希米勒，同着大衛將他們的族弟兄分成班次。</div>
+<div class="verse"><span class="verse-number">4</span>以利亞撒子孫中為首的比以他瑪子孫中為首的更多，分班如下：以利亞撒的子孫中有十六個族長，以他瑪的子孫中有八個族長；</div>
+<div class="verse"><span class="verse-number">5</span>都掣籤分立，彼此一樣。在聖所和神面前作首領的有以利亞撒的子孫，也有以他瑪的子孫。</div>
+<div class="verse"><span class="verse-number">6</span>作書記的利未人拿坦業的兒子示瑪雅在王和首領，與祭司撒督、亞比亞他的兒子亞希米勒，並祭司利未人的族長面前記錄他們的名字。在以利亞撒的子孫中取一族，在以他瑪的子孫中取一族。</div>
+<div class="verse"><span class="verse-number">7</span>掣籤的時候，第一掣出來的是耶何雅立，第二是耶大雅，</div>
+<div class="verse"><span class="verse-number">8</span>第三是哈琳，第四是梭琳，</div>
+<div class="verse"><span class="verse-number">9</span>第五是瑪基雅，第六是米雅民，</div>
+<div class="verse"><span class="verse-number">10</span>第七是哈歌斯，第八是亞比雅，</div>
+<div class="verse"><span class="verse-number">11</span>第九是耶書亞，第十是示迦尼，</div>
+<div class="verse"><span class="verse-number">12</span>第十一是以利亞實，第十二是雅金，</div>
+<div class="verse"><span class="verse-number">13</span>第十三是胡巴，第十四是耶是比押，</div>
+<div class="verse"><span class="verse-number">14</span>第十五是璧迦，第十六是音麥，</div>
+<div class="verse"><span class="verse-number">15</span>第十七是希悉，第十八是哈闢悉，</div>
+<div class="verse"><span class="verse-number">16</span>第十九是毘他希雅，第二十是以西結，</div>
+<div class="verse"><span class="verse-number">17</span>第二十一是雅斤，第二十二是迦末，</div>
+<div class="verse"><span class="verse-number">18</span>第二十三是第來雅，第二十四是瑪西亞。</div>
+<div class="verse"><span class="verse-number">19</span>這就是他們的班次，要照耶和華以色列的神藉他們祖宗亞倫所吩咐的條例進入耶和華的殿辦理事務。</div>
+<div class="verse"><span class="verse-number">20</span>利未其餘的子孫如下：暗蘭的子孫裏有書巴業；書巴業的子孫裏有耶希底亞。</div>
+<div class="verse"><span class="verse-number">21</span>利哈比雅的子孫裏有長子伊示雅。</div>
+<div class="verse"><span class="verse-number">22</span>以斯哈的子孫裏有示羅摩；示羅摩的子孫裏有雅哈。</div>
+<div class="verse"><span class="verse-number">23</span>希伯倫的子孫裏有長子耶利雅，次子亞瑪利亞，三子雅哈悉，四子耶加面。</div>
+<div class="verse"><span class="verse-number">24</span>烏薛的子孫裏有米迦；米迦的子孫裏有沙密。</div>
+<div class="verse"><span class="verse-number">25</span>米迦的兄弟是伊示雅；伊示雅的子孫裏有撒迦利雅。</div>
+<div class="verse"><span class="verse-number">26</span>米拉利的兒子是抹利、母示、雅西雅；雅西雅的兒子有比挪；</div>
+<div class="verse"><span class="verse-number">27</span>米拉利的子孫裏有雅西雅的兒子比挪、朔含、撒刻、伊比利。</div>
+<div class="verse"><span class="verse-number">28</span>抹利的兒子是以利亞撒；以利亞撒沒有兒子。</div>
+<div class="verse"><span class="verse-number">29</span>基士的子孫裏有耶拉篾。</div>
+<div class="verse"><span class="verse-number">30</span>母示的兒子是末力、以得、耶利摩。按着宗族這都是利未的子孫。</div>
+<div class="verse"><span class="verse-number">31</span>他們在大衛王和撒督，並亞希米勒與祭司利未人的族長面前掣籤，正如他們弟兄亞倫的子孫一般。各族的長者與兄弟沒有分別。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志上第二十四章詳細記述亞倫子孫的二十四個班次安排（1-19節），以及利未其餘子孫的職分（20-31節）。由於以利亞撒的子孫比以他瑪的子孫更多，以十六比八的比例排班，但掣籤的方式確保了公平——「都掣籤分立，彼此一樣」（5節）。每個班次按固定順序輪流進殿供職，從耶何雅立（第一班）到瑪西亞（第二十四班），形成了一個有序的事奉制度。
+
+      掣籤這個細節意義深遠。在人的比例分配之後，最終的順序交給神透過籤來決定——「無論大小，為師的、為徒的，都一同掣籤分了班次」（25:8，對應原則在本章亦然）。這種做法顯示：班次的先後不決定事奉的重要性，每一個班次在神眼中都同樣珍貴。在神的家中，沒有「第一班比第二十四班更重要」的等級觀念——每個人都有其位置，都有其時刻，都有其榮耀。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 公平的制度是群體事奉的基礎</strong><br>拈籤制度確保了事奉機會的公平分配，不因家族大小或地位高低而有差異。好的事奉制度應建立在公平和秩序上，不是靠人際關係或個人偏好決定誰做什麼。信仰群體若能建立透明公正的事奉分配方式，能減少爭競，讓眾人安心在自己的崗位上忠心盡職。<br><br>
+<strong>2. 每個事奉崗位都有其神定的時刻</strong><br>二十四個班次輪流供職，每個班次都有屬於自己的神聖時刻。第二十四班並不比第一班次要的事奉，只是在不同的時間而已。信徒有時會羨慕他人的崗位或時機，卻忘了神為自己所定的「班次」同樣珍貴。接受並珍視神給自己的位置與時刻，是屬靈成熟的標誌。<br><br>
+<strong>3. 從師者到學徒，人人平等地受呼召</strong><br>掣籤時「為師的、為徒的，都一同掣籤」（第二十五章8節對應原則），說明在神的事奉中，資歷深淺不決定被呼召的資格。神呼召的是心，不是年資。年輕的信徒同樣可以被神使用，成熟的信徒也應繼續保持服事的謙卑，不以資歷自高。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>以利亞撒的子孫撒</strong><strong>督和以他瑪的子孫</strong>亞希米勒，同着大衛將他們的族弟兄分成班次。（代上24:3）</td>
+<td>大衛和祭司長一起把事奉者分成有秩序的班次，確保殿務不間斷，就像<strong>一家餐廳把員工安排好早午晚班</strong>，讓服務不中斷——你<strong>在參與的服事</strong>群體中，是否也認真思考過如何建立讓人「能長期持續」的事奉節奏，而不是靠少數人燃燒殆盡？</td>
+</tr>
+<tr>
+<td><strong>都掣籤分立</strong>，<strong>彼此一樣</strong>。在聖所和神面前作首領的有以利亞撒的子孫，也有以他瑪的子孫。（代上24:5）</td>
+<td>掣籤讓順序交給神決定，不因家族人數多就佔據更好的班次，就像<strong>抽籤決定考試座位</strong>，誰也不能靠背景插隊——你<strong>在參與的群體</strong>中，是否有時會用「資源多」或「人脈好」來爭取本該公平分配的機會？</td>
+</tr>
+<tr>
+<td><strong>他們在大衛王和撒</strong>督，<strong>並亞希米勒與祭司</strong>利未人的族長面前掣籤，正如他們弟兄亞倫的子孫一般。各族的長者與兄弟沒有分別。（代上24:31）</td>
+<td>長者與年輕人一起掣籤，地位不決定機會，就像<strong>一個公平的選拔賽讓所有人站在同</strong>一條起跑線上——在你<strong>的信仰群體中</strong>，年輕人是否也能真正平等地被看見、被使用，而不是「等老一輩先選完，才輪到你<strong>們」</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

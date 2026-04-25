@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第20章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第20章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">先知赤身三年作預兆：倚靠埃及的必蒙羞</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>亞述王撒珥根打發他珥探到亞實突的那年，他珥探就攻打亞實突，將城攻取。</div>
+<div class="verse"><span class="verse-number">2</span>那時，耶和華曉諭亞摩斯的兒子以賽亞說：「你去解掉你腰間的麻布，脫下你腳上的鞋。」以賽亞就這樣作，露身赤腳行走。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華說：「我僕人以賽亞怎樣露身赤腳行走三年，作為關乎埃及和古實的預兆奇蹟。</div>
+<div class="verse"><span class="verse-number">4</span>照樣，亞述王也必擄去埃及人，掠去古實人，無論老少，都露身赤腳，現出下體，使埃及蒙羞。</div>
+<div class="verse"><span class="verse-number">5</span>以色列人必因所仰望的古實，所誇耀的埃及，驚惶羞愧。</div>
+<div class="verse"><span class="verse-number">6</span>「那時，這沿海一帶的居民必說：『看哪，我們素所仰望的，就是我們為脫離亞述王逃往求救的，不過是如此！我們怎能逃脫呢？』」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第二十章記載了一件以賽亞先知最令人震驚的象徵性行動：神吩咐他脫下麻衣赤腳行走，持續三年，作為埃及和古實被亞述擄去、羞辱的預兆。這發生在亞述王撒珥根（Sargon II）在公元前711BC攻打亞實突之後，猶大正面臨向亞述臣服還是聯合埃及反抗的重大抉擇。以賽亞以自己的身體作為活的信息——三年的赤身露腳，是對那些計劃倚靠埃及的猶大人最具衝擊力的先知行動：「你們所倚靠的埃及，將會被亞述擄去，就像我現在這樣的赤身露體。」第5-6節描繪了倚靠失落之後的羞愧感——「素所仰望的……不過是如此！」這句話道盡了把希望放在人間強權之後的幻滅感。本章雖然簡短，卻以先知生命的具體犧牲，傳遞了一個不可誤解的信息：倚靠人間的強權，最終必帶來羞愧。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 先知以身體為信息：真實的見證有時需要代價</strong><br>第2-3節以賽亞赤身赤腳行走三年，這不是象徵性的一天，而是三年的持續委身。這種以生命本身作為信息的先知行動，說明了真實的屬靈見證有時需要具體的代價和犧牲，而非只是言語的宣告。信徒的見證，若只停留在言語層面，而缺乏生命本身的印證，其說服力是有限的。以賽亞的行動提醒我們：有時神呼召我們以行動而非只以話語見證。<br><br>
+<strong>2. 「素所仰望的……不過是如此」：一切非神的倚靠終必使人失望</strong><br>第6節這句話描繪了倚靠人間強權最終幻滅的心聲。「素所仰望的」表示長期的信賴；「不過是如此」是深刻失望後的清醒。這個模式在人的生命中不斷重演：倚靠某人、某機構、某成就帶來安全感，然後在某個時刻那個倚靠坍塌，留下「不過如此」的羞愧和空洞。惟有神是不會使人羞愧的倚靠（羅5:5「盼望不至於羞愧」）。<br><br>
+<strong>3. 服從神的奇特呼召需要放下體面的勇氣</strong><br>神呼召以賽亞做的事，在任何文化中都是羞辱自己的：赤身露腳行走三年。以賽亞沒有討價還價，也沒有要求解釋，「以賽亞就這樣作」（2節）。這種對神的呼召無論多奇特都願意順從的態度，是先知最核心的屬靈素質。信徒常常因為「不體面」或「不合理解」而遲疑神的呼召；以賽亞的榜樣提醒我們，真正的順服不待完全明白再行動。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>耶和華曉諭以賽亞</strong>說：『<strong>你去解掉你腰間的</strong>麻布，脫下你腳上的鞋。』以賽亞就這樣作，露身赤腳行走。」（賽20:2）</td>
+<td>就像<strong>一個人接到不合常理的指示</strong>，若相信發出指示的人是可信的，就照做了，以賽亞對神的呼召沒有辯論，只有順從，你有沒有<strong>感受到神呼召</strong>你<strong>做某件「不符</strong>合常規期待」的事？是什麼讓你<strong>猶豫或順從</strong>？</td>
+</tr>
+<tr>
+<td>「<strong>以色列人必因所仰</strong><strong>望的古實</strong>，所誇耀的埃及，驚惶羞愧。」（賽20:5）</td>
+<td>就像<strong>一個孩子在緊急時刻打電話給以為</strong>是朋友的人，卻發現對方關機或拒接，那種驚惶和羞愧是對錯置信任的必然後果，你<strong>目前的「埃及</strong>」是什麼——那個你<strong>在困難時首先</strong>想到要倚靠，而非倚靠神的人或事？</td>
+</tr>
+<tr>
+<td>「看哪，<strong>我們素所仰望的</strong>……<strong>不過是如此</strong>！我們怎能逃脫呢？」（賽20:6）</td>
+<td>就像<strong>依賴某個藥物多年後才發現它只是</strong>安慰劑，那種幻滅的感受既痛苦又解放，你有沒有<strong>過「素所仰望</strong>的，不過如此」的屬靈轉折點？那次幻滅後，你<strong>的倚靠對象轉</strong>向了哪裡？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

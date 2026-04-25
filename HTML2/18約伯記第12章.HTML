@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約伯回應：神掌管萬物，我也知道</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>約伯回答說：</div>
+<div class="verse"><span class="verse-number">2</span>你們真是子民哪，你們死亡，智慧也就滅沒了。</div>
+<div class="verse"><span class="verse-number">3</span>但我也有聰明，與你們一樣，並非不及你們。你們所說的，誰不知道呢？</div>
+<div class="verse"><span class="verse-number">4</span>我這求告神、蒙他應允的人竟成了朋友所譏笑的；公義完全人竟受了人的譏笑。</div>
+<div class="verse"><span class="verse-number">5</span>安逸的人心裏藐視災禍；這災禍常常等待滑腳的人。</div>
+<div class="verse"><span class="verse-number">6</span>強盜的帳棚興旺，惹神的人穩固，神多將財物送到他們手中。</div>
+<div class="verse"><span class="verse-number">7</span>你且問走獸，走獸必指教你；又問空中的飛鳥，飛鳥必告訴你；</div>
+<div class="verse"><span class="verse-number">8</span>或與地說話，地必指教你；海中的魚也必向你說明。</div>
+<div class="verse"><span class="verse-number">9</span>看這一切，誰不知道是耶和華的手作成的呢？</div>
+<div class="verse"><span class="verse-number">10</span>凡活物的生命和人類的氣息都在他手中。</div>
+<div class="verse"><span class="verse-number">11</span>耳朵豈不試驗言語，正如上膛嘗食物嗎？</div>
+<div class="verse"><span class="verse-number">12</span>年老的有智慧；壽高的有知識。</div>
+<div class="verse"><span class="verse-number">13</span>在神有智慧和能力；他有謀略和知識。</div>
+<div class="verse"><span class="verse-number">14</span>他拆毀的，就不能再建造；他捆住人，便不得開釋。</div>
+<div class="verse"><span class="verse-number">15</span>他把水留住，水便枯乾；他再發出水來，水就翻地。</div>
+<div class="verse"><span class="verse-number">16</span>在他有能力和智慧，被誘惑的與誘惑人的都是屬他。</div>
+<div class="verse"><span class="verse-number">17</span>他把謀士剝衣擄去，又使審判官變成愚人。</div>
+<div class="verse"><span class="verse-number">18</span>他放鬆君王的綁，又用帶子捆他們的腰。</div>
+<div class="verse"><span class="verse-number">19</span>他把祭司剝衣擄去，又使有能的人傾敗。</div>
+<div class="verse"><span class="verse-number">20</span>他廢去忠信人的講論，又奪去老人的聰明。</div>
+<div class="verse"><span class="verse-number">21</span>他使君王蒙羞被辱，放鬆有力之人的腰帶。</div>
+<div class="verse"><span class="verse-number">22</span>他將深奧的事從黑暗中彰顯，使死蔭顯為光明。</div>
+<div class="verse"><span class="verse-number">23</span>他使邦國興旺而又毀滅；他使邦國開廣而又擄去。</div>
+<div class="verse"><span class="verse-number">24</span>他將地上民中首領的聰明奪去，使他們在荒廢無路之地漂流；</div>
+<div class="verse"><span class="verse-number">25</span>他們無光，在黑暗中摸索，又使他們東倒西歪，像醉酒的人一樣。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第12章是約伯對三位朋友的全面反駁的開始。他諷刺地說「你們真是子民哪，你們死亡，智慧也就滅沒了」，表明他所知道的不比朋友們少。他提出一個令人不安的觀察：強盜的帳棚興旺，惹神的人反而穩固——這直接挑戰了因果神學的簡單公式。然後他轉向自然界作證：走獸、飛鳥、地、海，都見證神是一切生命的源頭。他詳細描述神對萬國的掌管——興起、毀滅、使智者變愚——以此說明神的主權遠不是三位朋友所描述的「乖乖因果論」那樣簡單。本章是約伯神學的轉折點：他開始以一種更宏大、更複雜的神學視角來回應朋友的因果神學，顯示出他對神深刻而真實的認識。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 現實世界的複雜性挑戰了簡單的因果神學</strong><br>約伯指出強盜興旺、惹神的人穩固，這不是對神義的否定，而是對「善有善報、惡有惡報必立刻應驗」這種過度簡化的挑戰。真實的信仰必須能面對現實世界的複雜性，而不是躲在整齊的神學公式後面。<br><br>
+<strong>2. 整個受造界都見證神的主權和供應</strong><br>「看這一切，誰不知道是耶和華的手作成的呢？」約伯藉自然界的秩序宣告神的主權——這不是輕描淡寫，而是在痛苦中仍能仰視的信仰。受造界的見證是任何人、在任何時代、任何處境都可以依靠的屬靈資源。<br><br>
+<strong>3. 神掌管列國的興衰，歷史在祂的手中</strong><br>約伯描述神如何使謀士赤身、審判官變愚人、拆毀不能再建。這種宏觀的歷史神學視野，讓約伯的苦難不只是個人事件，而是放在神掌管萬有的框架中。苦難中持守這種宏觀視野，是信仰成熟的標誌。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>強盜的帳棚興旺</strong>，<strong>惹神的人穩固</strong>，神多將財物送到他們手中。（伯12:6）</td>
+<td>就像<strong>看到壞人過得好、好人卻受苦</strong>，現實世界不符合因果公式的觀察是許多人信仰動搖的根源。你有沒有<strong>曾看見這樣的</strong>情形讓你<strong>困惑</strong>？你如何<strong>在這困惑中繼</strong>續持守對神公義的信靠？</td>
+</tr>
+<tr>
+<td><strong>看這一切</strong>，<strong>誰不知道是耶和華</strong>的手作成的呢？凡活物的生命和人類的氣息都在他手中。（伯12:9-10）</td>
+<td>就像<strong>呼吸本身是理所當然的禮物</strong>，卻在想起時讓人驚歎，受造界對神主權的見證是否讓你<strong>在日常生活中</strong>也能感受到神的同在？你<strong>最近一次從自</strong>然界得到對神新的認識是什麼時候？</td>
+</tr>
+<tr>
+<td><strong>在神有智慧和能力</strong>；<strong>他有謀略和知識</strong>。他拆毀的，就不能再建造；他捆住人，便不得開釋。（伯12:13-14）</td>
+<td>就像<strong>一個無法被翻轉的決定</strong>，神絕對的主權既是信仰的基礎，也有時讓人感到無從抵抗。你如何<strong>在承認神絕對</strong>主權的同時，保持向神禱告和尋求的動力？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

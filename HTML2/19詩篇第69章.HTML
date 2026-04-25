@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第69章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第69章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">深水淹沒中的呼求：為殿的熱心與讚美的祭</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩，交與伶長。調用百合花）神啊，求你救我！因為眾水要淹沒我。</div>
+<div class="verse"><span class="verse-number">2</span>我陷在深淤泥中，沒有立腳之地；我到了深水中，大水漫過我身。</div>
+<div class="verse"><span class="verse-number">3</span>我因呼求困乏，喉嚨發乾；我因等候神，眼睛失明。</div>
+<div class="verse"><span class="verse-number">4</span>無故恨我的，比我頭髮還多；無理與我為仇、要把我剪除的，甚為強盛。我沒有搶奪的，要叫我償還。</div>
+<div class="verse"><span class="verse-number">5</span>神啊，我的愚昧你原知道；我的罪愆不能隱瞞。</div>
+<div class="verse"><span class="verse-number">6</span>萬軍的主耶和華啊，求你叫那等候你的，不要因我蒙羞！以色列的神啊，求你叫那尋求你的，不要因我受辱！</div>
+<div class="verse"><span class="verse-number">7</span>因我為你的緣故受了辱罵，滿面羞愧。</div>
+<div class="verse"><span class="verse-number">8</span>我的弟兄看我為外路人；我的同胞看我為外邦人。</div>
+<div class="verse"><span class="verse-number">9</span>因我為你的殿心裏焦急，如同火燒，並且辱罵你人的辱罵都落在我身上。</div>
+<div class="verse"><span class="verse-number">10</span>我哭泣，以禁食刻苦我心；這倒算為我的羞辱。</div>
+<div class="verse"><span class="verse-number">11</span>我拿麻布當衣裳，就成了他們的笑談。</div>
+<div class="verse"><span class="verse-number">12</span>坐在城門口的談論我；酒徒也以我為歌曲。</div>
+<div class="verse"><span class="verse-number">13</span>但我在悅納的時候向你耶和華祈禱。神啊，求你按你豐盛的慈愛，憑你拯救的誠實應允我！</div>
+<div class="verse"><span class="verse-number">14</span>求你搭救我出離淤泥，不叫我陷在其中；求你使我脫離那些恨我的人，使我出離深水。</div>
+<div class="verse"><span class="verse-number">15</span>求你不容大水漫過我，不容深淵吞滅我，不容坑坎在我以上合口。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華啊，求你應允我！因為你的慈愛本為美好；求你按你豐盛的慈悲回轉眷顧我！</div>
+<div class="verse"><span class="verse-number">17</span>不要掩面不顧你的僕人；我是在急難之中，求你速速的應允我！</div>
+<div class="verse"><span class="verse-number">18</span>求你親近我，救贖我！求你因我的仇敵把我贖回！</div>
+<div class="verse"><span class="verse-number">19</span>你知道我受的辱罵、欺凌、羞辱；我的敵人都在你面前。</div>
+<div class="verse"><span class="verse-number">20</span>辱罵傷破了我的心，我又滿了憂愁。我指望有人體恤，卻沒有一個；我指望有人安慰，卻找不着一個。</div>
+<div class="verse"><span class="verse-number">21</span>他們拿苦膽給我當食物；我渴了，他們拿醋給我喝。</div>
+<div class="verse"><span class="verse-number">22</span>願他們的筵席在他們面前變為網羅，在他們平安的時候變為機檻。</div>
+<div class="verse"><span class="verse-number">23</span>願他們的眼睛昏矇，不得看見；願你使他們的腰常常戰抖。</div>
+<div class="verse"><span class="verse-number">24</span>求你將你的惱恨倒在他們身上，叫你的烈怒追上他們。</div>
+<div class="verse"><span class="verse-number">25</span>願他們的住處變為荒場；願他們的帳棚無人居住。</div>
+<div class="verse"><span class="verse-number">26</span>因為，你所擊打的，他們就逼迫；你所擊傷的，他們戲說他的愁苦。</div>
+<div class="verse"><span class="verse-number">27</span>願你在他們的罪上加罪，不容他們在你面前稱義。</div>
+<div class="verse"><span class="verse-number">28</span>願他們從生命冊上被塗抹，不得記錄在義人之中。</div>
+<div class="verse"><span class="verse-number">29</span>但我是困苦憂傷的；神啊，願你的救恩將我安置在高處。</div>
+<div class="verse"><span class="verse-number">30</span>我要以詩歌讚美神的名，以感謝稱他為大！</div>
+<div class="verse"><span class="verse-number">31</span>這便叫耶和華喜悅，勝似獻牛，或是獻有角有蹄的公牛。</div>
+<div class="verse"><span class="verse-number">32</span>謙卑的人看見了就喜樂；尋求神的人，願你們的心甦醒。</div>
+<div class="verse"><span class="verse-number">33</span>因為耶和華聽了窮乏人，不藐視被囚的人。</div>
+<div class="verse"><span class="verse-number">34</span>願天和地、洋海和其中一切的動物都讚美他！</div>
+<div class="verse"><span class="verse-number">35</span>因為神要拯救錫安，建造猶大的城邑；他的民要在那裏居住，得以為業。</div>
+<div class="verse"><span class="verse-number">36</span>他僕人的後裔要承受為業；愛他名的人也要住在其中。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第69篇是大衛所作，是詩篇中被新約引用最頻繁的詩篇之一，僅次於詩篇22篇。本篇在多處被應用於耶穌基督：第9節「為你的殿心裏焦急，如同火燒」被約翰福音2章17節引用，描述耶穌潔淨聖殿；第21節「他們拿苦膽給我當食物；我渴了，他們拿醋給我喝」被四福音書引用描述耶穌受難；第25節的咒詛應驗在猶大身上（徒1:20）。
+
+      本篇是一首深重的個人哀歌，大衛在其中面對無故的仇恨、孤立、羞辱，以及心靈的極度疲憊（「我因等候神，眼睛失明」，第3節）。本篇最感人的一節是第20節：「辱罵傷破了我的心，我又滿了憂愁。我指望有人體恤，卻沒有一個；我指望有人安慰，卻找不着一個。」這描述了最深的人際孤立，但緊接著轉向神的讚美（第30節），展現了大衛信仰的驚人韌性。
+
+      第9節「為你的殿心裏焦急，如同火燒」揭示大衛對神居所的熱情，這種「為神的榮耀而心焦」的態度，是真實信仰者與宗教消費者最根本的區別：一個真正愛神的人，會為神的榮耀受損而心痛，而非只為自己的益處向神尋求。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 為神的緣故所受的苦難有其獨特的尊貴</strong><br>「因我為你的緣故受了辱罵，滿面羞愧……因我為你的殿心裏焦急，如同火燒，並且辱罵你人的辱罵都落在我身上。」（第7、9節）大衛所受的苦難有其特殊的來源：不是因為自己的過失，而是因為對神的忠誠。「為你的緣故」使這些苦難具有了更深的意義——它們不是命運的無情打擊，而是信仰代價的一部分。在新約中，耶穌以更完全的方式承受了這種「為神的緣故而受苦」，使本篇的苦難神學在基督裡得到最終的解答。<br><br>
+<strong>2. 指望人的安慰卻落空使信徒轉向更深的神聖安慰</strong><br>「我指望有人體恤，卻沒有一個；我指望有人安慰，卻找不着一個。」（第20節）這是人際關係中最徹底的孤立，然而正是在這個時刻，大衛的靈魂被迫面對一個問題：若沒有任何人的安慰，神的安慰是否足夠？大衛的回應是第30節的讚美：「我要以詩歌讚美神的名。」這種從孤立轉向讚美的過程，不是否認孤立的痛苦，而是在痛苦中發現神是那唯一永遠不缺席的安慰者。<br><br>
+<strong>3. 以讚美的祭勝過外在的獻祭是信仰最純粹的表達</strong><br>「我要以詩歌讚美神的名，以感謝稱他為大！這便叫耶和華喜悅，勝似獻牛，或是獻有角有蹄的公牛。」（第30-31節）在最深的苦難中，大衛選擇了讚美。這種「在困苦中以感謝為祭」的信仰行動，是神最喜悅的敬拜形式——因為它不是在豐盛中的容易讚美，而是在貧乏中選擇讚美，顯示讚美的根源不在環境，而在對神本性的信靠。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>因我為你的殿心裏</strong>焦急，<strong>如同火燒</strong>，並且辱罵你人的辱罵都落在我身上。（詩69:9）</td>
+<td>就像<strong>一個真正熱愛的人</strong>，會因為所愛之物受到傷害而心痛，你<strong>對神的愛</strong>是否達到了「為神的榮耀心焦如火」的深度，還是你<strong>的信仰主要停</strong>留在「神能給我什麼」的層次？</td>
+</tr>
+<tr>
+<td><strong>辱罵傷破了我的心</strong>，<strong>我又滿了憂愁</strong>。我指望有人體恤，卻沒有一個；我指望有人安慰，卻找不着一個。（詩69:20）</td>
+<td>就像<strong>在最需要支持的時刻</strong>，發現身旁竟然空無一人，你是否<strong>曾有過「找不</strong>到一個安慰者」的深度孤立？那時你是如何回應的——是更深地倒在神懷裡，還是在孤立中更加封閉自己？</td>
+</tr>
+<tr>
+<td><strong>我要以詩歌讚美神</strong>的名，<strong>以感謝稱他為大</strong>！這便叫耶和華喜悅，勝似獻牛。（詩69:30-31）</td>
+<td>就像<strong>在最艱難的處境中仍選擇微笑</strong>，需要遠比平常更多的意志與信心，你是否<strong>有過在最深苦</strong>難中仍以「以詩歌讚美」回應的經歷？那次的選擇如何成為你<strong>靈命突破的起</strong>點？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

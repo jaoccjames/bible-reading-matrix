@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記下第24章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記下第24章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">數點百姓</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華又向以色列人發怒，就激動大衛，使他吩咐人去數點以色列人和猶大人。</div>
+<div class="verse"><span class="verse-number">2</span>大衛就吩咐跟隨他的元帥約押說：「你去走遍以色列眾支派，從但直到別是巴，數點百姓，我好知道他們的數目。」</div>
+<div class="verse"><span class="verse-number">3</span>約押對王說：「無論百姓多少，願耶和華你的神再加增百倍，使我主我王親眼得見。我主我王何必喜悅行這事呢？」</div>
+<div class="verse"><span class="verse-number">4</span>但王的命令勝過約押和眾軍長。約押和眾軍長就從王面前出去，數點以色列的百姓。</div>
+<div class="verse"><span class="verse-number">5</span>他們過了約但河，在迦得谷中、城的右邊亞羅珥安營，與雅謝相對，</div>
+<div class="verse"><span class="verse-number">6</span>又到了基列和他停合示地，又到了但雅安，繞到西頓，</div>
+<div class="verse"><span class="verse-number">7</span>來到推羅的保障，並希未人和迦南人的各城，又到猶大南方的別是巴。</div>
+<div class="verse"><span class="verse-number">8</span>他們走遍全地，過了九個月零二十天，就回到耶路撒冷。</div>
+<div class="verse"><span class="verse-number">9</span>約押將百姓的總數奏告於王：以色列拿刀的勇士有八十萬；猶大有五十萬。</div>
+<div class="verse"><span class="verse-number">10</span>大衛數點百姓以後，就心中自責，禱告耶和華說：「我行這事大有罪了。耶和華啊，求你除掉僕人的罪孽，因我所行的甚是愚昧。」</div>
+<div class="verse"><span class="verse-number">11</span>大衛早晨起來，耶和華的話臨到先知迦得，就是大衛的先見，說：</div>
+<div class="verse"><span class="verse-number">12</span>「你去告訴大衛，說耶和華如此說：『我有三樣災，隨你選擇一樣，我好降與你。』」</div>
+<div class="verse"><span class="verse-number">13</span>於是迦得來見大衛，對他說：「你願意國中有七年的饑荒呢？是在你敵人面前逃跑，被追趕三個月呢？是在你國中有三日的瘟疫呢？現在你要揣摩思想，我好回覆那差我來的。」</div>
+<div class="verse"><span class="verse-number">14</span>大衛對迦得說：「我甚為難！我願落在耶和華的手裏，因為他有豐盛的憐憫。我不願落在人的手裏。」</div>
+<div class="verse"><span class="verse-number">15</span>於是，耶和華降瘟疫與以色列人，自早晨到所定的時候；從但直到別是巴，民間死了七萬人。</div>
+<div class="verse"><span class="verse-number">16</span>天使向耶路撒冷伸手要滅城的時候，耶和華後悔，就不降這災了，吩咐滅民的天使說：「彀了！住手吧！」那時耶和華的使者在耶布斯人亞勞拿的禾場那裏。</div>
+<div class="verse"><span class="verse-number">17</span>大衛看見滅民的天使，就禱告耶和華說：「我犯了罪，行了惡；但這群羊作了甚麼呢？願你的手攻擊我和我的父家。」</div>
+<div class="verse"><span class="verse-number">18</span>當日，迦得來見大衛，對他說：「你上去，在耶布斯人亞勞拿的禾場上為耶和華築一座壇。」</div>
+<div class="verse"><span class="verse-number">19</span>大衛就照着迦得奉耶和華名所說的話上去了。</div>
+<div class="verse"><span class="verse-number">20</span>亞勞拿觀看，見王和他臣僕前來，就迎接出去，臉伏於地，向王下拜，</div>
+<div class="verse"><span class="verse-number">21</span>說：「我主我王為何來到僕人這裏呢？」大衛說：「我要買你這禾場，為耶和華築一座壇，使民間的瘟疫止住。」</div>
+<div class="verse"><span class="verse-number">22</span>亞勞拿對大衛說：「我主我王，你喜悅用甚麼，就拿去獻祭。看哪，這裏有牛可以作燔祭，有打糧的器具和套牛的軛可以當柴燒。</div>
+<div class="verse"><span class="verse-number">23</span>王啊，這一切，我亞勞拿都奉給你」；又對王說：「願耶和華你的神悅納你。」</div>
+<div class="verse"><span class="verse-number">24</span>王對亞勞拿說：「不然。我必要按着價值向你買；我不肯用白得之物作燔祭獻給耶和華我的神。」大衛就用五十舍客勒銀子買了那禾場與牛。</div>
+<div class="verse"><span class="verse-number">25</span>大衛在那裏為耶和華築了一座壇，獻燔祭和平安祭。如此，耶和華垂聽國民所求的，瘟疫在以色列人中就止住了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載大衛數點以色列和猶大人數,以及隨之而來的瘟疫。神激動大衛數點百姓,約押雖然勸阻但大衛堅持。數點後大衛心中自責,神降瘟疫懲罰以色列,三日內死了七萬人。當天使要滅耶路撒冷時,神後悔,吩咐天使住手。大衛為百姓代求,神吩咐他在亞勞拿的禾場築壇獻祭。大衛堅持要按價購買,不肯用白得之物獻給神。他獻祭後,瘟疫就止住了。這地後來成為聖殿的所在地。本章結束撒母耳記下,提醒我們不可依靠人數和力量,要單單倚靠神,獻祭要付代價。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 不可倚靠人數</strong><br>大衛數點百姓是要知道自己有多少軍力,顯示他開始倚靠人數而非倚靠神。約押知道這是錯的,但大衛堅持。我們常常也是如此 - 倚靠自己的能力、資源、人脈,而忘記真正的保障是神。教會的大小、財力、人數都不是我們誇口的,神的同在才是。<br><br>
+<strong>2. 領袖的罪影響百姓</strong><br>大衛犯罪,卻有七萬百姓死亡。領袖的罪會影響跟隨的人。這不是說神不公平,而是罪會產生連鎖反應。父母、牧者、領導者的罪會影響家人、會友、下屬。我們在高位時更要謹慎,因為我們的影響力更大,責任也更重。<br><br>
+<strong>3. 獻祭要付代價</strong><br>大衛說「我不肯用白得之物作燔祭獻給耶和華我的神」。真正的獻祭要付代價,不能是隨便的、免費的。神配得我們最好的,不是剩餘的。我們的時間、金錢、才幹,我們願意為神付出多少?還是只給神我們不要的?沒有代價的獻祭不是真獻祭。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>大衛就吩咐跟隨他</strong><strong>的元帥約押說</strong>:「你去走遍以色列眾支派,從但直到別是巴,數點百姓,我好知道他們的數目。」(撒下24:2)</td>
+<td>當我們想知道自己有多少資源時,就像<strong>計算財產、人脈或能力</strong>,我們是為了倚靠這些,還是為了更好地倚靠神?什麼是我們真正的保障?</td>
+</tr>
+<tr>
+<td><strong>大衛對迦得說</strong>:「<strong>我甚為難</strong>!我願落在耶和華的手裡,因為他有豐盛的憐憫。我不願落在人的手裡。」(撒下24:14)</td>
+<td>當我們面對管教時,就像<strong>犯錯後要承擔後果</strong>,我們是逃避、找藉口,還是願意接受神的管教?為什麼神的管教好過人的懲罰?</td>
+</tr>
+<tr>
+<td><strong>王對亞勞拿說</strong>:「不然。<strong>我必要按著價值向</strong>你買;我不肯用白得之物作燔祭獻給耶和華我的神。」(撒下24:24)</td>
+<td>當我們獻給神時,就像<strong>奉獻金錢或時間</strong>,我們是給剩餘的,還是願意付代價給最好的?什麼攔阻我們為神真正付出?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

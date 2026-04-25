@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志上第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志上第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">猶大支派：大衛王室的根源</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列的兒子是流便、西緬、利未、猶大、以薩迦、西布倫、</div>
+<div class="verse"><span class="verse-number">2</span>但、約瑟、便雅憫、拿弗他利、迦得、亞設。</div>
+<div class="verse"><span class="verse-number">3</span>猶大的兒子是珥、俄南、示拉，這三人是迦南人書亞女兒所生的。猶大的長子珥在耶和華眼中看為惡，耶和華就使他死了。</div>
+<div class="verse"><span class="verse-number">4</span>猶大的兒婦他瑪給猶大生法勒斯和謝拉。猶大共有五個兒子。</div>
+<div class="verse"><span class="verse-number">5</span>法勒斯的兒子是希斯崙、哈母勒。</div>
+<div class="verse"><span class="verse-number">6</span>謝拉的兒子是心利、以探、希幔、甲各、大拉〔即達大〕，共五人。</div>
+<div class="verse"><span class="verse-number">7</span>迦米的兒子是亞干，這亞干在當滅的物上犯了罪，連累了以色列人。</div>
+<div class="verse"><span class="verse-number">8</span>以探的兒子是亞撒利雅。</div>
+<div class="verse"><span class="verse-number">9</span>希斯崙所生的兒子是耶拉篾、蘭、基路拜。</div>
+<div class="verse"><span class="verse-number">10</span>蘭生亞米拿達；亞米拿達生拿順。拿順作猶大人的首領。</div>
+<div class="verse"><span class="verse-number">11</span>拿順生撒門；撒門生波阿斯；</div>
+<div class="verse"><span class="verse-number">12</span>波阿斯生俄備得；俄備得生耶西；</div>
+<div class="verse"><span class="verse-number">13</span>耶西生長子以利押，次子亞比拿達，三子示米亞（示米亞即沙瑪，見撒母耳記上十六章九節），</div>
+<div class="verse"><span class="verse-number">14</span>四子拿坦業，五子拉代，</div>
+<div class="verse"><span class="verse-number">15</span>六子阿鮮，七子大衛。</div>
+<div class="verse"><span class="verse-number">16</span>他們的姐妹是洗魯雅和亞比該。洗魯雅的兒子是亞比篩、約押、亞撒黑，共三人。</div>
+<div class="verse"><span class="verse-number">17</span>亞比該生亞瑪撒；亞瑪撒的父親是以實瑪利人益帖。</div>
+<div class="verse"><span class="verse-number">18</span>希斯崙的兒子迦勒娶阿蘇巴和耶略為妻，阿蘇巴的兒子是耶設、朔罷、押墩。</div>
+<div class="verse"><span class="verse-number">19</span>阿蘇巴死了，迦勒又娶以法他，生了戶珥。</div>
+<div class="verse"><span class="verse-number">20</span>戶珥生烏利；烏利生比撒列。</div>
+<div class="verse"><span class="verse-number">21</span>希斯崙正六十歲娶了基列父親瑪吉的女兒，與她同房；瑪吉的女兒生了西割；</div>
+<div class="verse"><span class="verse-number">22</span>西割生睚珥。睚珥在基列地有二十三個城邑。</div>
+<div class="verse"><span class="verse-number">23</span>後來基述人和亞蘭人奪了睚珥的城邑，並基納和其鄉村，共六十個。這都是基列父親瑪吉之子的。</div>
+<div class="verse"><span class="verse-number">24</span>希斯崙在迦勒以法他死後，他的妻亞比雅給他生了亞施戶；亞施戶是提哥亞的父親。</div>
+<div class="verse"><span class="verse-number">25</span>希斯崙的長子耶拉篾生長子蘭，又生布拿、阿連、阿鮮、亞希雅。</div>
+<div class="verse"><span class="verse-number">26</span>耶拉篾又娶一妻名叫亞他拉，是阿南的母親。</div>
+<div class="verse"><span class="verse-number">27</span>耶拉篾長子蘭的兒子是瑪斯、雅憫、以結。</div>
+<div class="verse"><span class="verse-number">28</span>阿南的兒子是沙買、雅大。沙買的兒子是拿答、亞比述。</div>
+<div class="verse"><span class="verse-number">29</span>亞比述的妻名叫亞比孩，亞比孩給他生了亞辦和摩利。</div>
+<div class="verse"><span class="verse-number">30</span>拿答的兒子是西列、亞遍；西列死了沒有兒子。</div>
+<div class="verse"><span class="verse-number">31</span>亞遍的兒子是以示；以示的兒子是示珊；示珊的兒子是亞來。</div>
+<div class="verse"><span class="verse-number">32</span>沙買兄弟雅大的兒子是益帖、約拿單；益帖死了沒有兒子。</div>
+<div class="verse"><span class="verse-number">33</span>約拿單的兒子是比勒、撒薩。這都是耶拉篾的子孫。</div>
+<div class="verse"><span class="verse-number">34</span>示珊沒有兒子，只有女兒。示珊有一個僕人名叫耶哈，是埃及人。</div>
+<div class="verse"><span class="verse-number">35</span>示珊將女兒給了僕人耶哈為妻，給他生了亞太。</div>
+<div class="verse"><span class="verse-number">36</span>亞太生拿單；拿單生撒拔；</div>
+<div class="verse"><span class="verse-number">37</span>撒拔生以弗拉；以弗拉生俄備得；</div>
+<div class="verse"><span class="verse-number">38</span>俄備得生耶戶；耶戶生亞撒利雅；</div>
+<div class="verse"><span class="verse-number">39</span>亞撒利雅生希利斯；希利斯生以利亞薩；</div>
+<div class="verse"><span class="verse-number">40</span>以利亞薩生西斯買；西斯買生沙龍；</div>
+<div class="verse"><span class="verse-number">41</span>沙龍生耶加米雅；耶加米雅生以利沙瑪。</div>
+<div class="verse"><span class="verse-number">42</span>耶拉篾兄弟迦勒的長子米沙，是西弗之祖瑪利沙的兒子，是希伯崙之祖。</div>
+<div class="verse"><span class="verse-number">43</span>希伯崙的兒子是可拉、他普亞、利肯、示瑪。</div>
+<div class="verse"><span class="verse-number">44</span>示瑪生拉含，是約干之祖。利肯生沙買。</div>
+<div class="verse"><span class="verse-number">45</span>沙買的兒子是瑪雲；瑪雲是伯夙之祖。</div>
+<div class="verse"><span class="verse-number">46</span>迦勒的妾以法生哈蘭、摩撒、迦謝；哈蘭生迦卸。</div>
+<div class="verse"><span class="verse-number">47</span>雅代的兒子是利健、約坦、基珊、毘力、以法、沙亞弗。</div>
+<div class="verse"><span class="verse-number">48</span>迦勒的妾瑪迦生示別、特哈拿，</div>
+<div class="verse"><span class="verse-number">49</span>又生麥瑪拿之祖沙亞弗、抹比拿和基比亞之祖示法。迦勒的女兒是押撒。</div>
+<div class="verse"><span class="verse-number">50</span>迦勒的子孫就是以法他的長子、戶珥的兒子，記在下面：基列耶琳之祖朔巴，</div>
+<div class="verse"><span class="verse-number">51</span>伯利恆之祖薩瑪，伯迦得之祖哈勒。</div>
+<div class="verse"><span class="verse-number">52</span>基列耶琳之祖朔巴的子孫是哈羅以和一半米努哈人（米努哈人即瑪拿哈人）。</div>
+<div class="verse"><span class="verse-number">53</span>基列耶琳的諸族是以帖人、布特人、舒瑪人、密來人，又從這些族中生出瑣拉人和以實陶人來。</div>
+<div class="verse"><span class="verse-number">54</span>薩瑪的子孫是伯利恆人、尼陀法人、亞他綠伯約押人、一半瑪拿哈人、瑣利人，</div>
+<div class="verse"><span class="verse-number">55</span>和住雅比斯眾文士家的特拉人、示米押人、蘇甲人。這都是基尼人利甲家之祖哈末所生的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志上第二章聚焦於以色列十二支派的起源（1-2節），隨即深入展開猶大支派的詳細家譜（3-55節）。這並非隨意的安排——猶大支派是大衛王朝的根源，也是彌賽亞應許傳承的主線，因此作者給予最多篇幅。本章涵蓋猶大之子法勒斯、謝拉兩系的後代，並追溯到大衛的直系血脈：從希斯崙、蘭、亞米拿達、拿順、波阿斯、俄備得、耶西，最終到達大衛（15節）。
+
+      值得注意的是，族譜中並不迴避人的失敗：珥因惡被神所殺（3節），亞干因貪慾犯罪「連累了以色列人」（7節）。這種誠實的記錄方式表明，神的救贖計畫不是建立在人的完美上，而是貫穿在罪人的歷史中展開。此外，本章後半段詳列迦勒家族的子孫，顯示猶大支派各家族對土地的建設貢獻，為歸回後的以色列人重建地方身份認同提供了重要依據。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神透過不完美的人成就完美的計畫</strong><br>本章族譜坦然記錄了珥的邪惡、亞干的貪婪，以及他瑪不尋常的身世，卻同樣記錄了波阿斯的信實與大衛的興起。神的救贖線索並未因人的罪而中斷，反而在破碎的歷史中顯明祂超越性的恩典。這提醒信徒，神使用的器皿從來不是完美的，而是願意回轉歸向祂的人。<br><br>
+<strong>2. 個人的罪有連帶的影響</strong><br>第7節特別提到亞干「連累了以色列人」，這是整章中唯一一處帶有神學警語的記載。在密密麻麻的名字中，這句話格外突出。個人的選擇不只影響自己，更會波及整個群體。這一真理在今日的家庭、教會與社群中同樣適用——沒有人的罪是只屬於「個人的事」。<br><br>
+<strong>3. 每個名字在神眼中都有其意義</strong><br>族譜中記載了數十個名字，其中許多在歷史上默默無聞，卻被神記念並收錄在聖經之中。這告訴我們，神不只眷顧英雄豪傑，也記念每一個平凡人的生命。在神的國度裡，每一個人都有其位置與價值，無論世界是否知道他們的名字。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>迦米的兒子是亞干</strong>，<strong>這亞干在當滅的物</strong>上犯了罪，連累了以色列人。（代上2:7）</td>
+<td>一個人的罪能波及整個群體，就像<strong>一顆石頭投入水中</strong>，漣漪會擴散到遠比預期更廣的地方——你是否<strong>曾認真思考</strong>，自己的選擇和行為正在對身邊的人產生什麼樣的影響？</td>
+</tr>
+<tr>
+<td><strong>波阿斯生俄備得</strong>；<strong>俄備得生耶西</strong>；耶西生……七子大衛。（代上2:12-15）</td>
+<td>大衛的出現是幾代人忠實傳承的結果，就像<strong>一棵大樹的高度不只靠自己</strong>，更靠著深根與多年的積累——在你<strong>的生命中</strong>，哪些人的忠信與犧牲正在成為你<strong>今日站立的根</strong>基？</td>
+</tr>
+<tr>
+<td><strong>示珊沒有兒子</strong>，<strong>只有女兒</strong>。示珊有一個僕人名叫耶哈，是埃及人。示珊將女兒給了僕人耶哈為妻。（代上2:34-35）</td>
+<td>神的計畫有時透過最出人意料的安排展開，就像<strong>GPS在原定路線受阻時會重新規</strong>劃路線——當你<strong>的人生計畫遇</strong>到「沒有兒子」的缺口時，你能否<strong>相信神仍在其</strong>中開闢意想不到的出路？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

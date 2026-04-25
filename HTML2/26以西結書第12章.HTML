@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">擄掠的預兆與話語的應驗</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話又臨到我說：</div>
+<div class="verse"><span class="verse-number">2</span>「人子啊，你住在悖逆的家中。他們有眼睛看不見，有耳朵聽不見，因為他們是悖逆之家。</div>
+<div class="verse"><span class="verse-number">3</span>所以人子啊，你要預備擄去使用的物件，在白日當他們眼前從你所住的地方移到別處去；他們雖是悖逆之家，或者可以揣摩思想。</div>
+<div class="verse"><span class="verse-number">4</span>你要在白日當他們眼前帶出你的物件去，好像預備擄去使用的物件。到了晚上，你要在他們眼前親自出去，像被擄的人出去一樣。</div>
+<div class="verse"><span class="verse-number">5</span>你要在他們眼前挖通了牆，從其中將物件帶出去。</div>
+<div class="verse"><span class="verse-number">6</span>到天黑時，你要當他們眼前搭在肩頭上帶出去，並要蒙住臉看不見地，因為我立你作以色列家的預兆。」</div>
+<div class="verse"><span class="verse-number">7</span>我就照着所吩咐的去行，白日帶出我的物件，好像預備擄去使用的物件。到了晚上，我用手挖通了牆。天黑的時候，就當他們眼前搭在肩頭上帶出去。</div>
+<div class="verse"><span class="verse-number">8</span>次日早晨，耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">9</span>「人子啊，以色列家，就是那悖逆之家，豈不是問你說：『你作甚麼呢？』</div>
+<div class="verse"><span class="verse-number">10</span>你要對他們說：『主耶和華如此說：這是關乎耶路撒冷的君王和他周圍以色列全家的預表〔原文作擔子〕。』</div>
+<div class="verse"><span class="verse-number">11</span>你要說：『我作你們的預兆：我怎樣行，他們所遭遇的也必怎樣，他們必被擄去。』</div>
+<div class="verse"><span class="verse-number">12</span>他們中間的君王也必在天黑的時候將物件搭在肩頭上帶出去。他們要挖通了牆，從其中帶出去。他必蒙住臉，眼看不見地。</div>
+<div class="verse"><span class="verse-number">13</span>我必將我的網撒在他身上，他必在我的網羅中纏住。我必帶他到迦勒底人之地的巴比倫；他雖死在那裏，卻看不見那地。</div>
+<div class="verse"><span class="verse-number">14</span>周圍一切幫助他的和他所有的軍隊，我必分散四方〔方：原文作風〕，也要拔刀追趕他們。</div>
+<div class="verse"><span class="verse-number">15</span>我將他們四散在列國、分散在列邦的時候，他們就知道我是耶和華。</div>
+<div class="verse"><span class="verse-number">16</span>我卻要留下他們幾個人得免刀劍、饑荒、瘟疫，使他們在所到的各國中述說他們一切可憎的事，人就知道我是耶和華。」</div>
+<div class="verse"><span class="verse-number">17</span>耶和華的話又臨到我說：</div>
+<div class="verse"><span class="verse-number">18</span>「人子啊，你吃飯必膽戰，喝水必惶惶憂慮。</div>
+<div class="verse"><span class="verse-number">19</span>你要對這地的百姓說：主耶和華論耶路撒冷和以色列地的居民如此說，他們吃飯必憂慮，喝水必驚惶。因其中居住的眾人所行強暴的事，這地必然荒廢，一無所存。</div>
+<div class="verse"><span class="verse-number">20</span>有居民的城邑必變為荒場，地也必變為荒廢；你們就知道我是耶和華。」</div>
+<div class="verse"><span class="verse-number">21</span>耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">22</span>「人子啊，在你們以色列地怎麼有這俗語，說『日子遲延，一切異象都落了空』呢？</div>
+<div class="verse"><span class="verse-number">23</span>你要告訴他們說：『主耶和華如此說：我必使這俗語止息，以色列中不再用這俗語。』你卻要對他們說：『日子臨近，一切的異象必都應驗。』</div>
+<div class="verse"><span class="verse-number">24</span>從此，在以色列家中必不再有虛假的異象和奉承的占卜。</div>
+<div class="verse"><span class="verse-number">25</span>我耶和華說話，所說的必定成就，不再耽延。你們這悖逆之家，我所說的話必趁你們在世的日子成就。這是主耶和華說的。」</div>
+<div class="verse"><span class="verse-number">26</span>耶和華的話又臨到我說：</div>
+<div class="verse"><span class="verse-number">27</span>「人子啊，以色列家的人說：『他所見的異象是關乎後來許多的日子，所說的預言是指着極遠的時候。』</div>
+<div class="verse"><span class="verse-number">28</span>所以你要對他們說：『主耶和華如此說：我的話沒有一句再耽延的，我所說的必定成就。這是主耶和華說的。』」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第12章包含兩個行動預言和一個關於「日子延遲」的神諭。第一個行動預言：神命令以西結在白天當眾人眼前搬出擄去的行李，天黑時挖牆出逃，蒙住眼睛——這象徵西底家王的逃亡（主前586年應驗：西底家逃跑，在耶利哥被捕，眼睛被剜，雖見不到巴比倫卻死在那裏）。第二個是關於憂慮進食：以西結要在發抖和憂慮中吃喝，預表耶路撒冷被圍城時的驚恐。章末神處理了一個流行的俗語：「日子遲延，一切異象都落了空」——即百姓認為先知的預言是遙遠的事，不會在他們這一代應驗。神斷然否定：「日子臨近，一切的異象必都應驗……我所說的必定成就，不再耽延。」神話語的時效性不可被輕忽，「遙遠的預言」的心態是屬靈懈怠的典型形態。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神的話不會因人的懷疑或拖延而失效】</strong><br>百姓說「日子遲延，異象落空」——用時間來消磨對神話語的認真對待。神的回應清楚：「我所說的必定成就，不再耽延。」今日信徒也可能以「末日還很遙遠」或「審判不是現在的事」來放鬆屬靈的警醒。神的話在神定的時間必然成就，不受人的拖延期待影響。<br><br>
+<strong>2. 【神的審判不只打擊百姓，也針對以為「安全」的領袖】</strong><br>西底家王的結局是：「蒙住臉看不見地」地出逃，最終「看不見那地」——這個細節精確應驗（眼睛被剜）。以為自己在「安全鍋中」的領袖，並不比百姓更受保護。任何以地位或身分來保障安全的想法，在神的審判面前都是幻覺。<br><br>
+<strong>3. 【行動預言讓信息看得見、摸得着，使人無法迴避】</strong><br>搬行李、挖牆、天黑出逃——這一切行動讓百姓親眼看見，讓信息不只是語言，而是可見的場景。神有時用難以忽視的方式讓人看清真實。信徒有時也需要將信仰從語言轉化為可見的行動，讓周圍的人能夠「看見」而非只是「聽見」。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>主耶和華如此說</strong>：<strong>我的話沒有一句再</strong>耽延的，我所說的必定成就。這是主耶和華說的。（結12:28）</td>
+<td>你是否<strong>有過把神的某</strong>個應許或警告「放到以後再說」的傾向？就像<strong>知道要體檢卻一直拖延</strong>，「以後再認真」是屬靈懈怠最常用的藉口。你<strong>現在有沒有一</strong>個神已清楚說過、你<strong>一直以「時候</strong>未到」為由拖延的回應？</td>
+</tr>
+<tr>
+<td><strong>他必蒙住臉看不見</strong>地。（結12:12下）</td>
+<td>西底家「蒙住臉」出逃卻最終「看不見那地」——用遮蔽來逃避現實，結果失去了更多。你<strong>生命中有沒有</strong>用「不去看」來迴避某個重要現實的習慣？就像<strong>閉上眼睛不等於危險消失</strong>，你願意<strong>今天「拿掉遮</strong>蔽」，正視那個你<strong>一直在迴避的</strong>現實嗎？</td>
+</tr>
+<tr>
+<td><strong>你要預備擄去使用</strong><strong>的物件</strong>，在白日當他們眼前從你所住的地方移到別處去；他們雖是悖逆之家，或者可以揣摩思想。（結12:3）</td>
+<td>神讓以西結用行動說話，因為語言已不夠有力。你<strong>的信仰見證中</strong>，有沒有讓人「看見」而非只是「聽見」的行動成分？就像<strong>一個行動勝過千言萬語的真實故事</strong>，你<strong>今天可以做什</strong>麼「行動」，讓你<strong>的信仰對周圍</strong>的人變得可見？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">誠實言語與勤勞品格：義人生命的根基</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>喜愛管教的，就是喜愛知識；恨惡責備的，卻是畜類。</div>
+<div class="verse"><span class="verse-number">2</span>善人必蒙耶和華的恩惠；設詭計的人，耶和華必定他的罪。</div>
+<div class="verse"><span class="verse-number">3</span>人靠惡行不能堅立；義人的根必不動搖。</div>
+<div class="verse"><span class="verse-number">4</span>才德的婦人是丈夫的冠冕；貽羞的婦人如同朽爛在她丈夫的骨中。</div>
+<div class="verse"><span class="verse-number">5</span>義人的思念是公平；惡人的計謀是詭詐。</div>
+<div class="verse"><span class="verse-number">6</span>惡人的言論是埋伏流人的血；正直人的口必拯救人。</div>
+<div class="verse"><span class="verse-number">7</span>惡人傾覆，歸於無有；義人的家必站得住。</div>
+<div class="verse"><span class="verse-number">8</span>人必按自己的智慧被稱讚；心中乖謬的，必被藐視。</div>
+<div class="verse"><span class="verse-number">9</span>被人輕賤，卻有僕人，強如自尊，缺少食物。</div>
+<div class="verse"><span class="verse-number">10</span>義人顧惜他牲畜的命；惡人的憐憫也是殘忍。</div>
+<div class="verse"><span class="verse-number">11</span>耕種自己田地的，必得飽食；追隨虛浮的，卻是無知。</div>
+<div class="verse"><span class="verse-number">12</span>惡人想得壞人的網羅；義人的根得以結實。</div>
+<div class="verse"><span class="verse-number">13</span>惡人嘴中的過錯是自己的網羅；但義人必脫離患難。</div>
+<div class="verse"><span class="verse-number">14</span>人因口所結的果子，必飽得美福；人手所作的，必為自己的報應。</div>
+<div class="verse"><span class="verse-number">15</span>愚妄人所行的，在自己眼中看為正直；惟智慧人肯聽人的勸教。</div>
+<div class="verse"><span class="verse-number">16</span>愚妄人的惱怒立時顯露；通達人能忍辱藏羞。</div>
+<div class="verse"><span class="verse-number">17</span>說出真話的，顯明公義；作假見證的，顯出詭詐。</div>
+<div class="verse"><span class="verse-number">18</span>說話浮躁的，如刀刺人；智慧人的舌頭卻為醫人的良藥。</div>
+<div class="verse"><span class="verse-number">19</span>口吐真言，永遠堅立；舌說謊話，只存片時。</div>
+<div class="verse"><span class="verse-number">20</span>圖謀惡事的，心存詭詐；勸人和睦的，便得喜樂。</div>
+<div class="verse"><span class="verse-number">21</span>義人不遭災害；惡人滿受禍患。</div>
+<div class="verse"><span class="verse-number">22</span>說謊言的嘴為耶和華所憎惡；行事誠實的為他所喜悅。</div>
+<div class="verse"><span class="verse-number">23</span>通達人隱藏知識；愚昧人的心彰顯愚昧。</div>
+<div class="verse"><span class="verse-number">24</span>殷勤人的手必掌權；懶惰的人必服苦。</div>
+<div class="verse"><span class="verse-number">25</span>人心憂慮，屈而不伸；一句良言，使心歡樂。</div>
+<div class="verse"><span class="verse-number">26</span>義人引導他的鄰舍；惡人的道叫人失迷。</div>
+<div class="verse"><span class="verse-number">27</span>懶惰的人不烤打獵所得的；殷勤的人卻得寶貴的財物。</div>
+<div class="verse"><span class="verse-number">28</span>在公義的道上有生命；其路之中並無死亡。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第十二章延續格言集的風格，以一系列義人與惡人的對比呈現屬靈智慧的實踐面向。本章的重點圍繞三個主軸：誠實的言語、勤勞的品格，以及謙遜接受教導的態度。第1節以強烈的語氣開場，說明拒絕管教等同於畜類的行為，強調可教導性是人類有別於動物的重要標誌。在歷史與文化背景上，本章反映了以色列農業社會對勤勞的高度重視（11節、24節、27節），並強調言語的力量——說謊的嘴為耶和華所憎惡（22節），而智慧人的舌頭是「醫人的良藥」（18節）。第25節「人心憂慮，屈而不伸；一句良言，使心歡樂」是全章最溫柔的一節，提醒信徒，善意的言語能成為他人在憂慮中的重要支撐。本章以「在公義的道上有生命；其路之中並無死亡」作結（28節），呼應整個箴言書的中心主題：義是通往生命之路。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 喜愛管教是屬靈成熟的重要標誌</strong><br>第1節說「喜愛管教的，就是喜愛知識」，這句話直指屬靈成長的關鍵態度。一個真正渴慕成長的人，不會逃避批評或責備，反而視之為寶貴的成長資源。在屬靈生命中，能否從失敗、受責和挫折中謙卑學習，往往比天賦更能決定一個人的屬靈高度。接受管教，是讓神在生命中繼續動工的重要通道。<br><br>
+<strong>2. 言語能殺人也能醫人，當謹慎選擇</strong><br>第18節「說話浮躁的，如刀刺人；智慧人的舌頭卻為醫人的良藥」，以「刀」與「良藥」的強烈對比，說明言語的雙重力量。在現代生活中，人每天透過各種渠道說出無數的話，每一句話都在或傷害或醫治他人。信徒被呼召成為言語上的「醫治者」，在他人憂慮時說出良言（25節），在真相受攻擊時說出真話（17節），在紛爭中發出和睦的聲音（20節）。<br><br>
+<strong>3. 誠實是神所喜悅、且經得起時間考驗的品格</strong><br>第19節「口吐真言，永遠堅立；舌說謊話，只存片時」，以時間維度說明誠實的長遠價值。謊言或許能帶來短暫的便利，但終究會被揭露；而誠實雖然有時代價高昂，卻能建立持久的信任與美譽。第22節更進一步說明，誠實不只是社會的美德，更是神的心意——神喜悅誠實的心，也必護衛誠實的人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>說話浮躁的</strong>，<strong>如刀刺人</strong>；智慧人的舌頭卻為醫人的良藥。」（箴12:18）</td>
+<td>就像<strong>同樣是一把刀</strong>，在廚師手中能做出美食，在暴力中卻能傷人，你<strong>最近說的話</strong>，有哪些像「刀」一樣刺傷了人，又有哪些像「良藥」一樣幫助了人？你如何<strong>更有意識地選</strong>擇後者？</td>
+</tr>
+<tr>
+<td>「<strong>說謊言的嘴為耶和</strong><strong>華所憎惡</strong>；行事誠實的為他所喜悅。」（箴12:22）</td>
+<td>就像<strong>食品的成分標示若不實</strong>，會破壞消費者對整個品牌的信任，你<strong>在日常生活中</strong>是否有哪些「小小的不誠實」——誇大、隱瞞或模糊真相？這些習慣對你<strong>的關係和信譽</strong>帶來了什麼影響？</td>
+</tr>
+<tr>
+<td>「<strong>人心憂慮</strong>，<strong>屈而不伸</strong>；一句良言，使心歡樂。」（箴12:25）</td>
+<td>就像<strong>一杯熱飲在寒冷的日子能讓人從裡</strong>到外感到溫暖，你<strong>上一次主動說</strong>出一句讓人心歡樂的「良言」是什麼時候？你<strong>身邊現在有誰</strong>正在憂慮，需要聽到你<strong>的一句鼓勵</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

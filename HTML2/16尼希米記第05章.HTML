@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尼希米記第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+尼希米記第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">尼希米廢除高利，以身作則</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>百姓和他們的妻大大呼號，埋怨他們的弟兄猶大人。</div>
+<div class="verse"><span class="verse-number">2</span>有的說：「我們和兒女人口眾多，要去得糧食度命」；</div>
+<div class="verse"><span class="verse-number">3</span>有的說：「我們典了田地、葡萄園、房屋，要得糧食充飢」；</div>
+<div class="verse"><span class="verse-number">4</span>有的說：「我們已經指着田地、葡萄園，借了錢給王納稅。</div>
+<div class="verse"><span class="verse-number">5</span>我們的身體與我們弟兄的身體一樣；我們的兒女與他們的兒女一般。現在我們將要使兒女作人的僕婢，我們的女兒已有為婢的；我們並無力拯救，因為我們的田地、葡萄園已經歸了別人。」</div>
+<div class="verse"><span class="verse-number">6</span>我聽見他們呼號說這些話，便甚發怒。</div>
+<div class="verse"><span class="verse-number">7</span>我心裏籌劃，就斥責貴冑和官長說：「你們各人向弟兄取利！」於是我招聚大會攻擊他們。</div>
+<div class="verse"><span class="verse-number">8</span>我對他們說：「我們盡力贖回我們弟兄，就是賣與外邦的猶大人；你們還要賣弟兄，使我們贖回來嗎？」他們就靜默不語，無話可答。</div>
+<div class="verse"><span class="verse-number">9</span>我又說：「你們所行的不善！你們行事不當敬畏我們的神嗎？不然，難免我們的仇敵外邦人毀謗我們。</div>
+<div class="verse"><span class="verse-number">10</span>我和我的弟兄與僕人也將銀錢糧食借給百姓；我們大家都當免去利息。</div>
+<div class="verse"><span class="verse-number">11</span>如今我勸你們將他們的田地、葡萄園、橄欖園、房屋，並向他們所取的銀錢、糧食、新酒，和油，百分之一的利息都歸還他們。」</div>
+<div class="verse"><span class="verse-number">12</span>眾人說：「我們必歸還，不再向他們索要，必照你的話行。」我就召了祭司來，叫眾人起誓，必照着所應許的而行。</div>
+<div class="verse"><span class="verse-number">13</span>我也抖着胸前的衣襟，說：「凡不成就這應許的，願神照樣抖他離開家產和他勞碌得來的，直到抖空了。」會眾都說：「阿們！」又讚美耶和華。百姓就照着所應許的去行。</div>
+<div class="verse"><span class="verse-number">14</span>自從我奉派作猶大地的省長，就是從亞達薛西王二十年直到三十二年，共十二年之久，我與我弟兄都沒有喫省長的俸祿。</div>
+<div class="verse"><span class="verse-number">15</span>在我以前的省長加重百姓的擔子，每日索要糧食和酒，並銀子四十舍客勒，就是他們的僕人也轄制百姓；但我因敬畏神不這樣行。</div>
+<div class="verse"><span class="verse-number">16</span>並且我恒心修造城牆，並沒有置買田地；我的僕人也都聚集在那裏作工。</div>
+<div class="verse"><span class="verse-number">17</span>除了從四圍外邦中來的猶大人以外，有猶大平民和官長一百五十人在我席上喫飯。</div>
+<div class="verse"><span class="verse-number">18</span>每日預備一隻公牛，六隻肥羊，又預備些飛禽；每十日一次，多預備各樣的酒。雖然如此，我並不要省長的俸祿，因為百姓服役甚重。</div>
+<div class="verse"><span class="verse-number">19</span>我的神啊，求你記念我為這百姓所行的一切事，施恩與我。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+尼希米記第5章揭示一場來自內部的危機，比外敵的威脅更難處理。在建造城牆的繁重工程期間，百姓因飢荒、稅賦和高利貸而陷入嚴重的經濟困境，甚至有人被迫賣兒女為奴。更令人痛心的是，剝削者正是他們的弟兄——猶大的貴冑和官長。尼希米得知後「甚發怒」，但他並非衝動行事，而是先「心裏籌劃」，才召開大會，以道德和屬靈的理由斥責剝削者，並要求歸還所取的財物和利息。眾人認罪承諾，以斯拉召祭司見證起誓。本章下半段記載尼希米十二年省長任期中從未取用省長的俸祿，反而自費供養一百五十名官員和外邦賓客。他以「敬畏神」解釋自己的無私，並以簡單的禱告「求你記念我」作結，顯示他的動力是向神而非向人交帳。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 屬靈領袖必須正視並回應群體內部的不公義</strong><br>尼希米不只對付外敵，也敢於斥責內部的不公義，即使那是有權有勢的貴冑和官長。這顯示真正的屬靈領導力不偏袒，不避難，敢於對準問題的根源。信仰群體中的剝削和不公義同樣是屬靈問題——不敬畏神的人自然不會憐憫弟兄。領袖若只對外宣稱一致，對內卻迴避衝突，群體的屬靈根基必然空洞。<br><br>
+<strong>2. 以身作則是最有力的道德說服</strong><br>尼希米呼籲貴冑放棄私利，自己卻率先十二年不取省長俸祿，自費供養眾人。這讓他的斥責有道德的份量——因為他自己先做到了他所要求的。以身作則的領袖，說話時才有真正的屬靈權柄。信仰不是只用嘴說的，生命的見證往往比言語更有說服力，也更難被否定。<br><br>
+<strong>3. 敬畏神是倫理行為最深層的動機</strong><br>尼希米解釋自己不索取俸祿的原因，只有一句話：「因敬畏神不這樣行」。不是因為律法規定，不是因為要建立名聲，而是因為在神面前有所敬畏。這種以「敬畏神」為核心的道德動機，是最穩固的，因為它不依賴人的目光或賞識，而是立根於與神的關係之中。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我又說</strong>：「<strong>你們所行的不善</strong>！你們行事不當敬畏我們的神嗎？不然，難免我們的仇敵外邦人毀謗我們。」（尼5:9）</td>
+<td>就像<strong>團隊內鬥會被對手利用並損害整體</strong>形象，信仰群體內的不公義不只傷害弟兄，也損害了神的名。你<strong>周圍</strong>是否有需要你<strong>敢於指出的不</strong>公義，但你<strong>因為顧慮關係</strong>而沉默？</td>
+</tr>
+<tr>
+<td><strong>在我以前的省長加</strong><strong>重百姓的擔子</strong>……但我因敬畏神不這樣行。（尼5:15）</td>
+<td>就像<strong>在沒有監視器的地方你<strong>仍然守規矩</strong></strong>，因為你<strong>知道有人在看</strong>，敬畏神是否讓你<strong>在無人知曉的</strong>情況下，仍然做出誠實、無私的選擇？你<strong>有哪些事</strong>是因敬畏神而做的，卻沒有人稱讚你？</td>
+</tr>
+<tr>
+<td><strong>我的神啊</strong>，<strong>求你記念我為這百</strong>姓所行的一切事，施恩與我。（尼5:19）</td>
+<td>就像<strong>寫了一封信卻只給神看</strong>，尼希米的服事動力是向神交帳而非向人。你<strong>在服事中最深</strong>的盼望是得人稱讚，還是聽到神說「記念你<strong>了」</strong>？這個動機如何影響你<strong>服事的方式</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

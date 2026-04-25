@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>士師記第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+士師記第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">底波拉之歌頌讚神</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>那時，底波拉和亞比挪菴的兒子巴拉作歌，說：</div>
+<div class="verse"><span class="verse-number">2</span>因為以色列中有軍長率領，百姓也甘心犧牲自己，你們應當頌讚耶和華！</div>
+<div class="verse"><span class="verse-number">3</span>君王啊，要聽！王子啊，要側耳而聽！我要向耶和華歌唱；我要歌頌耶和華以色列的神。</div>
+<div class="verse"><span class="verse-number">4</span>耶和華啊，你從西珥出來，由以東地行走。那時地震天漏，雲也落雨。</div>
+<div class="verse"><span class="verse-number">5</span>山見耶和華的面就震動，西乃山見耶和華以色列神的面也是如此。</div>
+<div class="verse"><span class="verse-number">6</span>在亞拿之子珊迦的時候，又在雅億的日子，大道無人行走，都是繞道而行。</div>
+<div class="verse"><span class="verse-number">7</span>以色列中的官長停職，直到我底波拉興起，等我興起作以色列的母。</div>
+<div class="verse"><span class="verse-number">8</span>以色列人選擇新神，爭戰的事就臨到城門。那時，以色列四萬人中豈能見籐牌槍矛呢？</div>
+<div class="verse"><span class="verse-number">9</span>我心傾向以色列的首領，他們在民中甘心犧牲自己。你們應當頌讚耶和華！</div>
+<div class="verse"><span class="verse-number">10</span>騎白驢的、坐繡花毯子的、行路的，你們都當傳揚！</div>
+<div class="verse"><span class="verse-number">11</span>在遠離弓箭響聲打水之處，人必述說耶和華公義的作為，就是他治理以色列公義的作為。那時耶和華的民下到城門。</div>
+<div class="verse"><span class="verse-number">12</span>底波拉啊，興起！興起！你當興起，興起，唱歌。亞比挪菴的兒子巴拉啊，你當奮興，擄掠你的敵人。</div>
+<div class="verse"><span class="verse-number">13</span>那時有餘剩的貴冑和百姓一同下來；耶和華降臨，為我攻擊勇士。</div>
+<div class="verse"><span class="verse-number">14</span>有根本在亞瑪力人的地，從以法蓮下來的；便雅憫在民中跟隨你。有掌權的從瑪吉下來；有持杖檢點民數的從西布倫下來；</div>
+<div class="verse"><span class="verse-number">15</span>以薩迦的首領與底波拉同來；以薩迦怎樣，巴拉也怎樣。眾人都跟隨巴拉衝下平原；在流便的溪水旁有心中定大志的。</div>
+<div class="verse"><span class="verse-number">16</span>你為何坐在羊圈內聽群中吹笛的聲音呢？在流便的溪水旁有心中設大謀的。</div>
+<div class="verse"><span class="verse-number">17</span>基列人安居在約但河外。但人為何等在船上？亞設人在海口靜坐，在港口安居。</div>
+<div class="verse"><span class="verse-number">18</span>西布倫人是拚命敢死的；拿弗他利人在田野的高處也是如此。</div>
+<div class="verse"><span class="verse-number">19</span>君王都來爭戰。那時迦南諸王在米吉多水旁的他納爭戰，卻未得擄掠銀錢。</div>
+<div class="verse"><span class="verse-number">20</span>星宿從天上爭戰，從其軌道攻擊西西拉。</div>
+<div class="verse"><span class="verse-number">21</span>基順古河把敵人沖沒；我的靈啊，應當努力前行。</div>
+<div class="verse"><span class="verse-number">22</span>那時壯馬馳驅，踢跳，奔騰。</div>
+<div class="verse"><span class="verse-number">23</span>耶和華的使者說：應當咒詛米羅斯，大大咒詛其中的居民；因為他們不來幫助耶和華，不來幫助耶和華攻擊勇士。</div>
+<div class="verse"><span class="verse-number">24</span>願基尼人希百的妻雅億比眾婦人多得福氣，比住帳棚的婦人更蒙福祉。</div>
+<div class="verse"><span class="verse-number">25</span>西西拉求水，雅億給他奶子，用寶貴的盤子給他奶油。</div>
+<div class="verse"><span class="verse-number">26</span>雅億左手拿着帳棚的橛子，右手拿着匠人的錘子，擊打西西拉，打傷他的頭，把他的鬢角打破穿通。</div>
+<div class="verse"><span class="verse-number">27</span>西西拉在她腳前曲身仆倒，在她腳前曲身倒臥；在那裏曲身，就在那裏死亡。</div>
+<div class="verse"><span class="verse-number">28</span>西西拉的母親從窗戶裏往外觀看，從窗櫺中呼叫說：他的戰車為何耽延不來呢？他的車輪為何行得慢呢？</div>
+<div class="verse"><span class="verse-number">29</span>聰明的宮女安慰她〔原文作回答她〕，她也自言自語地說：</div>
+<div class="verse"><span class="verse-number">30</span>他們莫非得財而分？每人得了一兩個女子？西西拉得了彩衣為擄物，得繡花的彩衣為掠物。這彩衣兩面繡花，乃是披在被擄之人頸項上的。</div>
+<div class="verse"><span class="verse-number">31</span>耶和華啊，願你的仇敵都這樣滅亡！願愛你的人如日頭出現，光輝烈烈！這樣，國中太平四十年。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章是聖經中最古老的詩歌之一,被稱為「底波拉之歌」,以詩歌形式重述第4章的勝利。這首歌充滿生動的意象和情感,不僅慶祝軍事勝利,更歸榮耀給那位親自為以色列爭戰的神。詩歌讚美那些甘心犧牲、勇敢參戰的支派(西布倫、拿弗他利、以法蓮等),也嚴厲批評那些袖手旁觀的支派(流便、基列、但、亞設)。詩歌描述神如何使用大自然爭戰——星宿攻擊西西拉,基順河沖沒敵軍。結尾以西西拉母親的哀歌形成強烈對比,她還在期待兒子凱旋,不知他已死亡。全詩高舉神的大能,呼召百姓全心愛神、為神爭戰。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 將榮耀歸給神而非人</strong><br>底波拉的勝利之歌不是誇耀自己或巴拉,而是不斷呼籲「你們應當頌讚耶和華」。真正的得勝者是神,祂使星宿爭戰、河水沖沒敵軍。當我們經歷成功時,最大的試探就是竊取神的榮耀。真正屬靈的得勝不在於我們的成就,而在於我們是否將榮耀歸給神。謙卑的心認識到:一切美善都來自神,我們不過是器皿。<br><br>
+<strong>2. 參與神工作需要犧牲擺上</strong><br>詩歌稱讚那些「甘心犧牲自己」、「拚命敢死」的支派,卻咒詛袖手旁觀的米羅斯和批評猶豫不決的流便、但、亞設。神的工作需要人的回應和參與,中立就是背叛,旁觀就是虧欠。當神呼召爭戰時,我們不能以自己的利益、安全或舒適為藉口退縮。真實的信仰要求我們甘心擺上、勇敢參與神的工作。<br><br>
+<strong>3. 愛神的人如日頭出現光輝烈烈</strong><br>詩歌結尾宣告:「願愛你的人如日頭出現,光輝烈烈!」這是對屬神之人的美好應許。愛神的人不是黯淡無光,而是如同旭日東升,散發無法掩蓋的榮光。這光輝不是自己製造的,而是反映神的榮耀。當我們真實愛神、為神而活時,生命自然散發基督的馨香,成為世上的光。這是何等榮耀的呼召!
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>因為以色列中有軍</strong><strong>長率領</strong>,百姓也甘心犧牲自己,你們應當頌讚耶和華!(士師記5:2)</td>
+<td>當經歷成功與勝利時,我們是歸榮耀給神還是自誇?就像<strong>團隊得獎卻只記得自己貢獻</strong>,我們是否也在不知不覺中竊取神的榮耀?如何培養將一切歸功於神的心?</td>
+</tr>
+<tr>
+<td><strong>耶和華的使者說</strong>:<strong>應當咒詛米羅斯</strong>,大大咒詛其中的居民;因為他們不來幫助耶和華,不來幫助耶和華攻擊勇士。(士師記5:23)</td>
+<td>當神的工作需要人手時,我們是積極參與還是袖手旁觀?就像<strong>看見有人跌倒卻只是圍觀</strong>,我們是否也常以各種理由不參與神國度的事工?中立真的安全嗎?</td>
+</tr>
+<tr>
+<td><strong>耶和華啊</strong>,<strong>願你的仇敵都這樣</strong>滅亡!願愛你的人如日頭出現,光輝烈烈!(士師記5:31)</td>
+<td>我們的生命是否散發基督的光輝?就像<strong>太陽出來驅散黑暗</strong>,當我們真實愛神時,生命是否自然流露出無法掩藏的榮光?還是與世人沒有分別?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

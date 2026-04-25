@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第116章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第116章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">我愛耶和華：從死亡邊緣蒙救後的感恩頌讚</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我愛耶和華，因為他聽了我的聲音和我的懇求。</div>
+<div class="verse"><span class="verse-number">2</span>他既向我側耳，我一生要求告他。</div>
+<div class="verse"><span class="verse-number">3</span>死亡的繩索纏繞我；陰間的痛苦抓住我；我遭遇患難愁苦。</div>
+<div class="verse"><span class="verse-number">4</span>那時，我便求告耶和華的名，說：耶和華阿，求你救我的靈魂！</div>
+<div class="verse"><span class="verse-number">5</span>耶和華有恩惠，有公義；我們的神以憐憫為懷。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華保護愚人；我落到卑微的地步，他救了我。</div>
+<div class="verse"><span class="verse-number">7</span>我的心哪！你要仍歸安樂，因為耶和華用厚恩待你。</div>
+<div class="verse"><span class="verse-number">8</span>主啊，你救我的命免了死亡，救我的眼免了流淚，救我的腳免了跌倒。</div>
+<div class="verse"><span class="verse-number">9</span>我要在耶和華面前行活人之路。</div>
+<div class="verse"><span class="verse-number">10</span>我因信，所以如此說話；我受了極大的困苦。</div>
+<div class="verse"><span class="verse-number">11</span>我曾急促的說：人都是說謊的！</div>
+<div class="verse"><span class="verse-number">12</span>我拿甚麼報答耶和華向我所賜的一切厚恩？</div>
+<div class="verse"><span class="verse-number">13</span>我要舉起救恩的杯，稱揚耶和華的名。</div>
+<div class="verse"><span class="verse-number">14</span>我要在他眾民面前向耶和華還我的願。</div>
+<div class="verse"><span class="verse-number">15</span>在耶和華眼中，看聖民之死極為寶貴。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華啊，我真是你的僕人；我是你的僕人，是你婢女的兒子。你已經解開我的綁索。</div>
+<div class="verse"><span class="verse-number">17</span>我要以感謝為祭獻給你，又要求告耶和華的名。</div>
+<div class="verse"><span class="verse-number">18</span>我要在他眾民面前，在耶和華殿的院內，在耶路撒冷當中，向耶和華還我的願。你們要讚美耶和華！</div>
+<div class="verse"><span class="verse-number">19</span>見上節</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第116篇是哈利路亞詩篇集中一篇深情的個人感謝詩，以「我愛耶和華」這個最直接的信仰告白開篇——在整部詩篇中，這是唯一以「我愛耶和華」作為開頭的詩篇，帶有最親密的關係色彩。詩人描述了他曾經歷過的生死邊緣（3節），以及神搭救他的奇妙恩典（4-9節），然後以一系列的感謝行動回應（12-18節）。
+
+      本篇被保羅在哥林多後書4章13節引用（「我因信，所以如此說話」），成為新約論及信心與言語關係的重要根基。第15節「在耶和華眼中，看聖民之死極為寶貴」是聖經中對信徒死亡最深刻的神學定義——死亡不是神的漠視，而是祂深切珍視的時刻。
+
+      第12節「我拿什麼報答耶和華向我所賜的一切厚恩？」是全篇的轉折——詩人在問如何回應神的厚恩，而非尋求進一步的索取。這種「思考如何回報」的心態，是感謝從情感到行動的關鍵轉化。他的答案是舉起救恩的杯、公開還願、以感謝為祭——感謝的最高形式是公開的見證和委身。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 愛耶和華因祂聽了我的聲音揭示信仰關係最深的根源</strong><br>「我愛耶和華，因為他聽了我的聲音和我的懇求。」（第1節）詩人愛耶和華的理由，不是抽象的神學信念，而是具體的關係經歷——「他聽了我的聲音」。這種從具體經歷中建立的信仰之愛，是最真實、最持久的信仰動力。信仰不只是理性上的同意，更是在生命最脆弱的時刻，真實地呼求、真實地被聽見、真實地被搭救的關係記憶。這種記憶積累成「我愛耶和華」的最深確信。<br><br>
+<strong>2. 神看聖民之死極為寶貴揭示祂對每一個生命的珍視</strong><br>「在耶和華眼中，看聖民之死極為寶貴。」（第15節）這節話常在安慰喪親者時被引用，揭示神對信徒死亡的獨特評估：「極為寶貴」。在人間，死亡往往被視為失去、終結；然而在神眼中，每一個聖民的死亡都是祂深切珍視的時刻——不是冷漠的放任，而是充滿意義的接納。這個真理使信徒面對死亡時，不是在神的冷漠中消失，而是進入神珍視的懷抱。<br><br>
+<strong>3. 我拿什麼報答神的厚恩揭示感謝從情感到行動的轉化</strong><br>「我拿甚麼報答耶和華向我所賜的一切厚恩？」（第12節）這個問句標誌著信仰從被動接受到主動回應的關鍵時刻。詩人沒有讓感謝停留在情感層面，而是主動尋問「如何回應」。他的答案——舉起救恩的杯、公開還願、以感謝為祭——揭示感謝最真實的形式是行動：不只在心裡感謝，而是以具體的行動和公開的見證表達。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我愛耶和華</strong>，<strong>因為他聽了我的聲</strong>音和我的懇求。（詩116:1）</td>
+<td>就像<strong>一段友誼因為對方在最難的時候出</strong>現而變得刻骨銘心，你<strong>對神的愛</strong>是否建立在真實的「他聽了我的聲音」的具體經歷上，還是只停留在「神應該是慈愛的」的抽象信念？</td>
+</tr>
+<tr>
+<td><strong>在耶和華眼中</strong>，<strong>看聖民之死極為寶</strong>貴。（詩116:15）</td>
+<td>就像<strong>一位父母珍視孩子回家的每一刻</strong>，神看聖民的死亡是「極為寶貴」的，你是否<strong>相信神以這樣</strong>珍視的眼光看待你<strong>的生命與死亡</strong>，讓這個確信使你<strong>面對死亡時不</strong>是孤立的恐懼，而是進入神珍視的接納？</td>
+</tr>
+<tr>
+<td><strong>我拿甚麼報答耶和</strong><strong>華向我所賜的一切</strong>厚恩？（詩116:12）</td>
+<td>就像<strong>收到一份貴重禮物後</strong>，不只是口頭道謝，更想著用什麼方式回禮，你是否<strong>曾認真思考「</strong>我拿什麼報答神的厚恩」，讓這個問題帶出你<strong>信仰的具體行</strong>動——而不只是停留在心裡的感謝？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

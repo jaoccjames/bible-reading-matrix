@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">晨禱：在神聖潔中尋求引導與保護</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩，交與伶長。用吹的樂器）耶和華啊，求你留心聽我的言語，顧念我的心思！</div>
+<div class="verse"><span class="verse-number">2</span>我的王我的神啊，求你垂聽我呼求的聲音！因為我向你祈禱。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華啊，早晨你必聽我的聲音；早晨我必向你陳明我的心意，並要儆醒！</div>
+<div class="verse"><span class="verse-number">4</span>因為你不是喜悅惡事的神，惡人不能與你同居。</div>
+<div class="verse"><span class="verse-number">5</span>狂傲人不能站在你眼前；凡作孽的，都是你所恨惡的。</div>
+<div class="verse"><span class="verse-number">6</span>說謊言的，你必滅絕；好流人血弄詭詐的，都為耶和華所憎惡。</div>
+<div class="verse"><span class="verse-number">7</span>至於我，我必憑你豐盛的慈愛進入你的居所；我必存敬畏你的心向你的聖殿下拜。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華啊，求你因我的仇敵，憑你的公義引領我，使你的道路在我面前正直。</div>
+<div class="verse"><span class="verse-number">9</span>因為，他們的口中沒有誠實；他們的心裏滿有邪惡；他們的喉嚨是敞開的墳墓；他們用舌頭諂媚人。</div>
+<div class="verse"><span class="verse-number">10</span>神啊，求你定他們的罪！願他們因自己的計謀跌倒；願你在他們許多的過犯中把他們逐出，因為他們背叛了你。</div>
+<div class="verse"><span class="verse-number">11</span>凡投靠你的，願他們喜樂，時常歡呼，因為你護庇他們；又願那愛你名的人都靠你歡欣。</div>
+<div class="verse"><span class="verse-number">12</span>因為你必賜福與義人；耶和華啊，你必用恩惠如同盾牌四面護衛他。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第5篇是大衛的晨禱詩歌，標明「用吹的樂器」，反映以色列聖殿敬拜使用各種樂器的傳統。本篇延續第3、4篇的主題，是詩篇中一組早晚禱告詩的組成部分，呈現大衛每日尋求神的靈修生活。
+
+      本篇的核心張力在於神的聖潔與惡人的存在之間的對比。大衛描繪了兩類人的命運：那些狂傲、詭詐、說謊的惡人，以及那些憑神慈愛親近祂、投靠祂的義人。大衛自己站在義人的立場，呼求神引領他走正直的道路，並為他抵擋仇敵。
+
+      本篇在神學上具有重要意義：它清楚揭示神的聖潔本性決定了祂與惡的不相容，而信徒能進入神面前的唯一通道是神「豐盛的慈愛」而非個人的功績。這一神學主題成為整個聖經救恩論的伏筆。大衛每天清晨在神面前「陳明心意並儆醒」的操練，至今仍是信徒靈修生活最佳的典範。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 晨禱是一天屬靈生命的基礎</strong><br>「早晨我必向你陳明我的心意，並要儆醒！」（第3節）大衛將晨禱定為每日的第一優先，他不只禱告，更是「陳明心意」並「儆醒」，表明這是一種主動、清醒、有意識的靈性操練。一天的開始是最重要的定調時刻。選擇以禱告開始，是在宣告當天的一切都在神面前展開，是讓神的話語和旨意優先塑造我們的思想、態度與行動，而非被世界的事務與焦慮所主導。<br><br>
+<strong>2. 靠神慈愛而非自義親近神</strong><br>「至於我，我必憑你豐盛的慈愛進入你的居所。」（第7節）大衛在對比了惡人不能親近神之後，以「至於我」轉折，卻不是靠自己的義，而是「憑神豐盛的慈愛」。這是極重要的神學洞見：人能進入神面前，完全是因為神主動的恩典與慈愛，而非人的道德表現。這種謙卑的認識，使敬拜成為感恩的回應，而非功績的展示，這正是恩典信仰的核心精義。<br><br>
+<strong>3. 神的保護賦予義人喜樂與安全感</strong><br>「耶和華啊，你必用恩惠如同盾牌四面護衛他。」（第12節）本篇以神對義人的全方位保護作結，而這保護所帶來的結果是「喜樂」與「歡呼」（第11節）。真正的屬靈喜樂不只是情感，更源於確信神的保護是全面而真實的。這種確信使信徒能在面對仇敵與惡人時，不陷入恐懼，而是帶著信靠的喜樂繼續前行，因為神的恩惠如盾牌，四面護衛那些愛祂名的人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華啊</strong>，<strong>早晨你必聽我的聲</strong>音；早晨我必向你陳明我的心意，並要儆醒！（詩5:3）</td>
+<td>就像<strong>在重要會議前先確認議程能讓全天</strong>更有效率，你是否<strong>養成了以晨禱</strong>開始每一天的習慣，讓神的話語和旨意在你<strong>的心思意念中</strong>先行定調，而非被日程表或手機通知搶先主導？</td>
+</tr>
+<tr>
+<td><strong>至於我</strong>，<strong>我必憑你豐盛的慈</strong>愛進入你的居所；我必存敬畏你的心向你的聖殿下拜。（詩5:7）</td>
+<td>就像<strong>進入某些場所需要主人的邀請而非</strong>自行闖入，你<strong>在來到神面前</strong>時，是否真正認識自己能親近神是因為神的慈愛而非自己的表現，讓這認識帶出真實的感恩與敬畏？</td>
+</tr>
+<tr>
+<td><strong>因為你必賜福與義</strong>人；<strong>耶和華啊</strong>，你必用恩惠如同盾牌四面護衛他。（詩5:12）</td>
+<td>就像<strong>全方位安全系統能監控建築物的每</strong>一個角落讓住戶放心，你是否<strong>相信神的保護</strong>是全面而完整的，足以讓你<strong>在面對人生各</strong>種威脅時，選擇信靠而非不斷焦慮地自我防衛？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

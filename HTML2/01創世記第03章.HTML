@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">人類墮落與神的救贖應許</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華神所造的，惟有蛇比田野一切的活物更狡猾。蛇對女人說：「神豈是真說，不許你們吃園中所有樹上的果子嗎？」</div>
+<div class="verse"><span class="verse-number">2</span>女人對蛇說：「園中樹上的果子，我們可以吃，</div>
+<div class="verse"><span class="verse-number">3</span>惟有園當中那棵樹上的果子，神曾說：『你們不可吃，也不可摸，免得你們死。』」</div>
+<div class="verse"><span class="verse-number">4</span>蛇對女人說：「你們不一定死；</div>
+<div class="verse"><span class="verse-number">5</span>因為神知道，你們吃的日子眼睛就明亮了，你們便如神能知道善惡。」</div>
+<div class="verse"><span class="verse-number">6</span>於是女人見那棵樹的果子好作食物，也悅人的眼目，且是可喜愛的，能使人有智慧，就摘下果子來吃了，又給她丈夫，她丈夫也吃了。</div>
+<div class="verse"><span class="verse-number">7</span>他們二人的眼睛就明亮了，才知道自己是赤身露體，便拿無花果樹的葉子為自己編作裙子。</div>
+<div class="verse"><span class="verse-number">8</span>天起了涼風，耶和華神在園中行走。那人和他妻子聽見神的聲音，就藏在園裏的樹木中，躲避耶和華神的面。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華神呼喚那人，對他說：「你在那裏？」</div>
+<div class="verse"><span class="verse-number">10</span>他說：「我在園中聽見你的聲音，我就害怕；因為我赤身露體，我便藏了。」</div>
+<div class="verse"><span class="verse-number">11</span>耶和華說：「誰告訴你赤身露體呢？莫非你吃了我吩咐你不可吃的那樹上的果子嗎？」</div>
+<div class="verse"><span class="verse-number">12</span>那人說：「你所賜給我、與我同居的女人，她把那樹上的果子給我，我就吃了。」</div>
+<div class="verse"><span class="verse-number">13</span>耶和華神對女人說：「你作的是甚麼事呢？」女人說：「那蛇引誘我，我就吃了。」</div>
+<div class="verse"><span class="verse-number">14</span>耶和華神對蛇說：「你既作了這事，就必受咒詛，比一切的牲畜野獸更甚。你必用肚子行走，終身吃土。</div>
+<div class="verse"><span class="verse-number">15</span>我又要叫你和女人彼此為仇；你的後裔和女人的後裔也彼此為仇。女人的後裔要傷你的頭；你要傷他的腳跟。」</div>
+<div class="verse"><span class="verse-number">16</span>又對女人說：「我必多多加增你懷胎的苦楚；你生產兒女必多受苦楚。你必戀慕你丈夫；你丈夫必管轄你。」</div>
+<div class="verse"><span class="verse-number">17</span>又對亞當說：「你既聽從妻子的話，吃了我所吩咐你不可吃的那樹上的果子，地必為你的緣故受咒詛；你必終身勞苦，才能從地裏得吃的。</div>
+<div class="verse"><span class="verse-number">18</span>地必給你長出荊棘和蒺藜來；你也要吃田間的菜蔬。</div>
+<div class="verse"><span class="verse-number">19</span>你必汗流滿面才得餬口，直到你歸了土，因為你是從土而出的。你本是塵土，仍要歸於塵土。」</div>
+<div class="verse"><span class="verse-number">20</span>亞當給他妻子起名叫夏娃，因為她是眾生之母。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華神為亞當和他妻子用皮子作衣服給他們穿。</div>
+<div class="verse"><span class="verse-number">22</span>耶和華神說：「那人已經與我們相似，能知道善惡；現在恐怕他伸手又摘生命樹的果子吃，就永遠活着。」</div>
+<div class="verse"><span class="verse-number">23</span>耶和華神便打發他出伊甸園去，耕種他所自出之土。</div>
+<div class="verse"><span class="verse-number">24</span>於是把他趕出去了；又在伊甸園的東邊安設基路伯和四面轉動發火焰的劍，要把守生命樹的道路。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+創世記第3章記載人類歷史上最悲慘的事件:人的墮落。蛇(撒但的化身)引誘夏娃懷疑神的良善,質疑神的話語,誘使她吃了禁果。亞當也跟著吃了,二人違背神的命令,罪就進入世界。他們的眼睛明亮了,卻發現自己赤身露體,開始有羞耻感,並躲避神。神追問他們,他們開始推卸責任。神宣告審判:蛇受咒詛,女人生產受苦,男人勞苦工作,地受咒詛長出荊棘。但在審判中,神也應許救贖:女人的後裔要傷蛇的頭,預言基督將敗壞撒但。神用皮衣遮蓋他們,象徵神的救贖。人被趕出伊甸園,失去與神親密的關係,但救贖的盼望已經種下。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 罪的本質是懷疑神的良善和違背神的話</strong><br>蛇引誘夏娃的策略是質疑神的良善:神是在限制你們,不讓你們像祂一樣。罪的開始總是懷疑神的心意,不相信神的話語是真實可靠的,想要自己作主決定善惡。今天撒但仍用同樣的謊言攻擊我們,使我們懷疑神是否真的愛我們,祂的命令是否真的為我們好。抵擋試探的關鍵是堅信神的良善和祂話語的真實。<br><br>
+<strong>2. 罪帶來羞恥隔絕與死亡的後果</strong><br>吃了禁果後,亞當夏娃立刻感到羞恥,想要遮蓋自己,躲避神。罪破壞了人與神的關係,帶來羞恥感和隔絕感。他們不再能坦然來到神面前,失去了伊甸園的福分,勞苦愁煩進入生活,死亡成為必然。罪的工價就是死,不只是肉體的死亡,更是靈性的死亡,與神隔絕。罪的後果遠超過我們的想像。<br><br>
+<strong>3. 神在審判中已預備救贖的盼望</strong><br>雖然神審判了罪,卻也應許女人的後裔要傷蛇的頭,這是聖經第一個福音的應許,預言基督將擊敗撒但。神為亞當夏娃做皮衣,意味著有動物流血犧牲,預表基督的救贖。神沒有放棄人類,在審判中已開始救贖計劃。即使在最黑暗的時刻,神的恩典仍然存在,為人預備出路。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>蛇對女人說</strong>:<strong>神豈是真說不許你</strong>們吃園中所有樹上的果子嗎?(創3:1)</td>
+<td>你是否<strong>容易懷疑神的</strong>話語和良善?就像<strong>聽信謠言就懷疑真相</strong>,你<strong>會因環境或他</strong>人的話而質疑神嗎?</td>
+</tr>
+<tr>
+<td><strong>於是女人見那棵樹</strong><strong>的果子好作食物</strong>,也悅人的眼目,且是可喜愛的,能使人有智慧,就摘下果子來吃了。(創3:6)</td>
+<td>你是否<strong>因為眼目的情</strong>慾而犯罪?就像<strong>看到打折就衝動購物</strong>,你能抵擋看似美好卻違背神心意的誘惑嗎?</td>
+</tr>
+<tr>
+<td><strong>我又要叫你和女人</strong><strong>彼此為仇</strong>;你的後裔和女人的後裔也彼此為仇。女人的後裔要傷你的頭。(創3:15)</td>
+<td>你是否<strong>知道基督已經</strong>勝過撒但?就像<strong>疫苗已經研發出來就不用怕疾病</strong>,你<strong>知道耶穌已為</strong>你<strong>得勝</strong>,你<strong>可以靠祂勝過</strong>罪嗎?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

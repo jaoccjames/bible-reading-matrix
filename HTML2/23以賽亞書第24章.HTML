@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第24章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第24章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">地被咒詛吞滅：全地的審判與神榮耀的彰顯</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>看哪，耶和華使地空虛，變為荒涼；又翻轉大地，將居民分散。</div>
+<div class="verse"><span class="verse-number">2</span>那時百姓怎樣，祭司也怎樣；僕人怎樣，主人也怎樣；婢女怎樣，主母也怎樣；買物的怎樣，賣物的也怎樣；放債的怎樣，借債的也怎樣；取利的怎樣，出利的也怎樣。</div>
+<div class="verse"><span class="verse-number">3</span>地必全然空虛，盡都荒涼；因為這話是耶和華說的。</div>
+<div class="verse"><span class="verse-number">4</span>地上悲哀衰殘，世界敗落衰殘；地上居高位的人也敗落了。</div>
+<div class="verse"><span class="verse-number">5</span>地被其上的居民污穢；因為他們犯了律法，廢了律例，背了永約。</div>
+<div class="verse"><span class="verse-number">6</span>所以，地被咒詛吞滅；住在其上的顯為有罪。地上的居民被火焚燒，剩下的人稀少。</div>
+<div class="verse"><span class="verse-number">7</span>新酒悲哀，葡萄樹衰殘；心中歡樂的俱都歎息。</div>
+<div class="verse"><span class="verse-number">8</span>擊鼓之樂止息；宴樂人的聲音完畢，彈琴之樂也止息了。</div>
+<div class="verse"><span class="verse-number">9</span>人必不得飲酒唱歌；喝濃酒的，必以為苦。</div>
+<div class="verse"><span class="verse-number">10</span>荒涼的城拆毀了；各家關門閉戶，使人都不得進去。</div>
+<div class="verse"><span class="verse-number">11</span>在街上因酒有悲歎的聲音；一切喜樂變為昏暗；地上的歡樂歸於無有。</div>
+<div class="verse"><span class="verse-number">12</span>城中只有荒涼；城門拆毀淨盡。</div>
+<div class="verse"><span class="verse-number">13</span>在地上的萬民中，必像打過的橄欖樹，又像已摘的葡萄所剩無幾。</div>
+<div class="verse"><span class="verse-number">14</span>這些人要高聲歡呼；他們為耶和華的威嚴，從海那裏揚起聲來。</div>
+<div class="verse"><span class="verse-number">15</span>因此，你們要在東方榮耀耶和華；在眾海島榮耀耶和華以色列神的名。</div>
+<div class="verse"><span class="verse-number">16</span>我們聽見從地極有人歌唱，說：榮耀歸於義人。我卻說：我消滅了！我消滅了，我有禍了！詭詐的行詭詐；詭詐的大行詭詐。</div>
+<div class="verse"><span class="verse-number">17</span>地上的居民哪，恐懼、陷坑、網羅都臨近你。</div>
+<div class="verse"><span class="verse-number">18</span>躲避恐懼聲音的必墜入陷坑；從陷坑上來的必被網羅纏住；因為天上的窗戶都開了，地的根基也震動了。</div>
+<div class="verse"><span class="verse-number">19</span>地全然破壞，盡都崩裂，大大的震動了。</div>
+<div class="verse"><span class="verse-number">20</span>地要東倒西歪，好像醉酒的人；又搖來搖去，好像吊床。罪過在其上沉重，必然塌陷，不能復起。</div>
+<div class="verse"><span class="verse-number">21</span>到那日，耶和華在高處必懲罰高處的眾軍，在地上必懲罰地上的列王。</div>
+<div class="verse"><span class="verse-number">22</span>他們必被聚集，像囚犯被聚在牢獄中，並要囚在監牢裏，多日之後便被討罪〔或作：眷顧〕。</div>
+<div class="verse"><span class="verse-number">23</span>那時，月亮要蒙羞，日頭要慚愧；因為萬軍之耶和華必在錫安山，在耶路撒冷作王；在敬畏他的長老面前，必有榮耀。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第二十四章是以賽亞書「末世啟示錄」（24-27章）的開篇，從針對特定列國的神諭，擴展到對全地的末世審判異象，因此有時被稱為「以賽亞的小啟示錄」。本章描繪的不是某一歷史事件，而是全地性的末世審判圖景——整個被罪污穢的大地（5節）在神的審判下崩潰。第2節「百姓怎樣，祭司也怎樣」，以六對對比說明審判不分地位——神的審判是普遍性、無一例外的。第5節點明了地被咒詛的根本原因：「因為他們犯了律法，廢了律例，背了永約」——「永約」指的是神在挪亞之後與全地所立的盟約（創9章），整個人類都在其中，整個人類也都在背約的咒詛下。本章在毀滅的描繪中（1-20節），突然插入餘民的讚美（14-15節），最後以神「在錫安山、在耶路撒冷作王」的末世榮耀作結（23節），彰顯審判的終極目的是神的榮耀和主權的完全彰顯。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 罪的代價是全地性的：背約導致整個被造世界的受累</strong><br>第5節「地被其上的居民污穢；因為他們犯了律法，廢了律例，背了永約」，揭示了人的罪如何超越個人層面，影響整個被造世界。羅馬書8:20-22同樣宣告「受造之物服在虛空之下……一同歎息、勞苦，直到如今」——人的罪使整個大地承受了咒詛。這呼籲信徒嚴肅看待罪的嚴重性，不只是「個人的錯誤」，而是對宇宙秩序的破壞。<br><br>
+<strong>2. 在審判的廢墟中，餘民仍然高聲讚美：信仰超越環境</strong><br>第14-15節「這些人要高聲歡呼……在眾海島榮耀耶和華以色列神的名」，在全地荒涼（1-13節）的悲愴描述中，突然出現一群高唱讚美的餘民——他們的歡呼不是因為環境好轉，而是因為他們看見了審判背後神的榮耀和主權。這是信仰最深刻的表達：在最黑暗的時代仍然讚美，因為他們的眼目超越了當下看到了永恆。<br><br>
+<strong>3. 審判的終極目的是神作王：神的榮耀必在全地彰顯</strong><br>第23節「萬軍之耶和華必在錫安山、在耶路撒冷作王；在敬畏他的長老面前，必有榮耀」，是全章最輝煌的宣告。在一切的審判和毀滅之後，歷史的終點不是虛空，而是神的王權完全彰顯。「月亮要蒙羞，日頭要慚愧」——宇宙中一切的光輝都在神的榮耀面前黯然失色，就連最亮的星體也要低頭，因為神的榮耀是最終的實相。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>地被其上的居民污</strong>穢；<strong>因為他們犯了律法</strong>，廢了律例，背了永約。」（賽24:5）</td>
+<td>就像<strong>一條河流</strong>，若上游的工廠排放污水，整條河和下游所有依靠它的生態都受到影響，人的罪不只是個人的問題，而是影響整個被造世界的，你<strong>對自己的選擇</strong>和行為如何影響周圍的人和環境，有多深的意識？這種認識如何影響你<strong>對罪的嚴肅態</strong>度？</td>
+</tr>
+<tr>
+<td>「<strong>這些人要高聲歡呼</strong>；<strong>他們為耶和華的威</strong>嚴，從海那裏揚起聲來。」（賽24:14）</td>
+<td>就像<strong>在颱風中心有一塊平靜的區域</strong>，餘民在全地的動盪中仍然讚美，是因為他們活在另一個中心的平靜裡，你<strong>在自己生命最</strong>動盪、最艱難的時刻，是否有過「仍然讚美」的能力？那種超越環境的讚美是如何產生的？</td>
+</tr>
+<tr>
+<td>「<strong>萬軍之耶和華必在</strong><strong>錫安山</strong>……作王；在敬畏他的長老面前，必有榮耀。」（賽24:23）</td>
+<td>就像<strong>一部電影雖然中間過程充滿黑暗和</strong>衝突，但知道結局是美好的，讓人能以不同的眼光看待中間的苦難，你<strong>對「神必作王</strong>、必有榮耀」這個終末實相有多真實的確信？那個確信如何改變你<strong>看待今日苦難</strong>的方式？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

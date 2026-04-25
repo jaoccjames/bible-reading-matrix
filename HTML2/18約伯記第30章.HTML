@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第30章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第30章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約伯描述今日苦況：他們如今戲笑我</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>但如今，比我年少的人戲笑我；其人之父我曾藐視，不肯安在看守我羊群的狗中。</div>
+<div class="verse"><span class="verse-number">2</span>他們壯年的氣力既已衰敗，其手之力與我何益呢？</div>
+<div class="verse"><span class="verse-number">3</span>他們因窮乏飢餓，身體枯瘦，在荒廢淒涼的幽暗中齦乾燥之地，</div>
+<div class="verse"><span class="verse-number">4</span>在草叢之中採鹹草，羅騰〔小樹名，松類〕的根為他們的食物。</div>
+<div class="verse"><span class="verse-number">5</span>他們從人中被趕出；人追喊他們如賊一般，</div>
+<div class="verse"><span class="verse-number">6</span>以致他們住在荒谷之間，在地洞和巖穴中；</div>
+<div class="verse"><span class="verse-number">7</span>在草叢中叫喚，在荊棘下聚集。</div>
+<div class="verse"><span class="verse-number">8</span>這都是愚頑下賤人的兒女；他們被鞭打，趕出境外。</div>
+<div class="verse"><span class="verse-number">9</span>現在這些人以我為歌曲，以我為笑談。</div>
+<div class="verse"><span class="verse-number">10</span>他們厭惡我，躲在旁邊站着，不住的吐唾沫在我臉上。</div>
+<div class="verse"><span class="verse-number">11</span>鬆開他們的繩索苦待我，在我面前脫去轡頭。</div>
+<div class="verse"><span class="verse-number">12</span>這等下流人在我右邊起來，推開我的腳，築成戰路來攻擊我。</div>
+<div class="verse"><span class="verse-number">13</span>這些無人幫助的，毀壞我的道，加增我的災。</div>
+<div class="verse"><span class="verse-number">14</span>他們來如同闖進大破口，在毀壞之間滾在我身上。</div>
+<div class="verse"><span class="verse-number">15</span>驚恐臨到我，驅逐我的尊榮如風；我的福祿如雲過去。</div>
+<div class="verse"><span class="verse-number">16</span>現在我心極其悲傷；困苦的日子將我抓住。</div>
+<div class="verse"><span class="verse-number">17</span>夜間，我裏面的骨頭刺我，疼痛不止，好像齦我。</div>
+<div class="verse"><span class="verse-number">18</span>因神的大力，我的外衣污穢不堪，又如裏衣的領子將我纏住。</div>
+<div class="verse"><span class="verse-number">19</span>神把我扔在淤泥中，我就像塵土和爐灰一般。</div>
+<div class="verse"><span class="verse-number">20</span>主啊，我呼求你，你不應允我；我站起來，你就定睛看我。</div>
+<div class="verse"><span class="verse-number">21</span>你向我變心，待我殘忍，又用大能追逼我，</div>
+<div class="verse"><span class="verse-number">22</span>把我提在風中，使我駕風而行，又使我消滅在烈風中。</div>
+<div class="verse"><span class="verse-number">23</span>我知道要使我臨到死地，到那為眾生所定的陰宅。</div>
+<div class="verse"><span class="verse-number">24</span>然而，人仆倒豈不伸手？遇災難豈不求救呢？</div>
+<div class="verse"><span class="verse-number">25</span>人遭難，我豈不為他哭泣呢？人窮乏，我豈不為他憂愁呢？</div>
+<div class="verse"><span class="verse-number">26</span>我仰望得好處，災禍就到了；我等待光明，黑暗便來了。</div>
+<div class="verse"><span class="verse-number">27</span>我心裏煩擾不安，困苦的日子臨到我身。</div>
+<div class="verse"><span class="verse-number">28</span>我沒有日光就哀哭行去〔或作：我面發黑並非因日曬〕；我在會中站着求救。</div>
+<div class="verse"><span class="verse-number">29</span>我與野狗為弟兄，與鴕鳥為同伴。</div>
+<div class="verse"><span class="verse-number">30</span>我的皮膚黑而脫落；我的骨頭因熱燒焦。</div>
+<div class="verse"><span class="verse-number">31</span>所以，我的琴音變為悲音；我的簫聲變為哭聲。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第30章是約伯「昔日比今日」系列的第二章，與第29章形成強烈對比。昔日他坐在城門受人尊崇，如今連最卑賤的人的兒子也嘲笑他。昔日他是眾人的安慰者，如今苦楚充滿他。昔日他在公義中服事，如今他的皮膚發黑，他向神哭告卻不蒙答應。本章最令人心痛的部分是約伯說：「我向主呼求，你不應允我；我站起來，你也不想到我。你轉成殘忍，向我用力與我作敵。」他感到神不只是沉默，更是主動地攻擊他。本章展示了苦難中最深的孤獨和神棄感，是約伯記中情緒最低落的一章，也是最真實反映極度苦難中靈魂狀態的記錄。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 社會的拋棄和孤立是苦難中最深的傷害之一</strong><br>約伯從受人尊崇的長老，變成連最卑微的人都嘲笑的對象。這種社會地位的崩塌，加上身體的苦楚，形成雙重的壓迫。在苦難中失去社會地位和人際關係，往往比物質的失去更難承受。<br><br>
+<strong>2. 感受到被神拋棄是信仰中真實的黑夜經歷</strong><br>「我向主呼求，你不應允我；你轉成殘忍，向我用力與我作敵」——這種神棄感是真實的人類經歷。聖經沒有要求我們美化這種感受，詩篇22篇（「我的神，我的神，為何離棄我」）也有同樣的呼聲。在黑夜中誠實地向神說出神棄感，本身就是一種禱告。<br><br>
+<strong>3. 今日的苦難不能抹去昔日神恩的真實</strong><br>約伯同時保有對昔日的美好回憶和今日的苦難意識。這兩者都是真實的，信仰不要求我們否認任何一方。神過去的恩典是真實的，今日的苦難也是真實的；在兩者的張力中繼續持守，才是信仰的深度。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>如今那些比我年輕</strong><strong>的人戲笑我</strong>……他們的父親是我所輕看的，不配和我看守羊群的狗齊等。（伯30:1）</td>
+<td>就像<strong>昔日受人尊敬的長者</strong>，如今連路人都不放在眼中，社會地位的崩塌是苦難中最讓人羞辱的一部分。你如何<strong>看待自己的人</strong>格和尊嚴與你<strong>的社會地位的</strong>關係？地位的失去是否會影響你<strong>對自己價值的</strong>認識？</td>
+</tr>
+<tr>
+<td><strong>我向主呼求</strong>，<strong>你不應允我</strong>；我站起來，你也不想到我。（伯30:20）</td>
+<td>就像<strong>打電話到最信任的人那裡卻一直無</strong>人接聽，禱告沒有得到回應的感受是信仰中最艱難的考驗之一。你有沒有<strong>曾有過「呼求</strong>神而不蒙應允」的時期？那段時期如何影響了你<strong>對神的看法</strong>？</td>
+</tr>
+<tr>
+<td><strong>我知道你必將我帶</strong><strong>到死地</strong>，就是一切活人所定聚集的地方。（伯30:23）</td>
+<td>就像<strong>接受了自己終有一死的事實</strong>，坦然面對必死的現實是約伯信仰中的一部分。死亡的意識如何影響你<strong>今日的生活方</strong>式？這種意識讓你<strong>更珍惜當下</strong>，還是讓你<strong>更加焦慮</strong>？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

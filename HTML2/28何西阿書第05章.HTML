@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何西阿書第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+何西阿書第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">審判臨近與神的等候</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>眾祭司啊，要聽我的話！以色列家啊，要留心聽！王家啊，要側耳而聽！審判要臨到你們，因你們在米斯巴如網羅，在他泊山如鋪張的網。</div>
+<div class="verse"><span class="verse-number">2</span>這些悖逆的人肆行殺戮，罪孽極深；我卻斥責他們眾人。</div>
+<div class="verse"><span class="verse-number">3</span>以法蓮為我所知；以色列不能向我隱藏。以法蓮哪，現在你行淫了，以色列被玷污了。</div>
+<div class="verse"><span class="verse-number">4</span>他們所行的使他們不能歸向神；因有淫心在他們裏面，他們也不認識耶和華。</div>
+<div class="verse"><span class="verse-number">5</span>以色列的驕傲當面見證自己。故此，以色列和以法蓮必因自己的罪孽跌倒；猶大也必與他們一同跌倒。</div>
+<div class="verse"><span class="verse-number">6</span>他們必牽着牛羊去尋求耶和華，卻尋不見；他已經轉去離開他們。</div>
+<div class="verse"><span class="verse-number">7</span>他們向耶和華行事詭詐，生了私子。到了月朔，他們與他們的地業必被吞滅。</div>
+<div class="verse"><span class="verse-number">8</span>你們當在基比亞吹角，在拉瑪吹號，在伯亞文吹出大聲，說：便雅憫哪，有仇敵在你後頭！</div>
+<div class="verse"><span class="verse-number">9</span>在責罰的日子，以法蓮必變為荒場；我在以色列支派中，指示將來必成的事。</div>
+<div class="verse"><span class="verse-number">10</span>猶大的首領如同挪移地界的人，我必將忿怒倒在他們身上，如水一般。</div>
+<div class="verse"><span class="verse-number">11</span>以法蓮因樂從人的命令，就受欺壓，被審判壓碎。</div>
+<div class="verse"><span class="verse-number">12</span>我使以法蓮如蟲蛀之物，使猶大家如朽爛之木。</div>
+<div class="verse"><span class="verse-number">13</span>以法蓮見自己有病，猶大見自己有傷，他們就打發人往亞述去見耶雷布王，他卻不能醫治你們，不能治好你們的傷。</div>
+<div class="verse"><span class="verse-number">14</span>我必向以法蓮如獅子，向猶大家如少壯獅子。我必撕裂而去，我要奪去，無人搭救。</div>
+<div class="verse"><span class="verse-number">15</span>我要回到原處，等他們自覺有罪〔或作：承認己罪〕，尋求我面；他們在急難的時候必切切尋求我。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+何西阿書第5章是針對以色列三個群體（祭司、以色列家、王家）的審判宣告，語調急迫，如同警報聲。以法蓮（代指北國）和猶大的罪是「驕傲」（5節）——驕傲使他們無法悔改。第4節說出核心問題：「他們所行的使他們不能歸向神；因有淫心在他們裏面。」最令人心寒的是第6節：「他們必牽着牛羊去尋求耶和華，卻尋不見；他已經轉去離開他們」——帶着祭物去找神，卻發現神已不在那裏，因為他們拋棄了神的約束太久。審判的到來如同獅子的撕裂（14節），神說「我必回到原處，等他們自覺有罪，尋求我面；他們在急難的時候必切切尋求我」——神的等候是主動的，祂在「原處」等待以色列在苦難中悔改轉向。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【帶着祭物尋求神，卻找不着：形式的宗教無法替代真實的關係】</strong><br>「他們必牽着牛羊去尋求耶和華，卻尋不見」——有完整的宗教儀式，卻找不着神。這是宗教形式最大的危機：外表的敬虔可以在神已不在其中的情況下繼續進行。信徒需要定期自問：我的敬拜和靈修習慣，有沒有真實的神的同在，還是只是空洞的儀式在繼續運作？<br><br>
+<strong>2. 【神主動回到「原處」等候悔改的人】</strong><br>「我必回到原處，等他們自覺有罪，尋求我面」——神的等候不是冷漠，而是主動退回一個讓人有空間悔改的位置，然後在那裡等。這顯示神的性情：祂不強迫人回轉，但在人「切切尋求」的時候，祂就在那裏。信仰的悔改是「神等候+人主動尋求」的相遇。<br><br>
+<strong>3. 【急難才讓人「切切尋求」：苦難有時是通往悔改的必要道路】</strong><br>「他們在急難的時候必切切尋求我」——平時追求偶像，急難時才真正尋求神。這是對人性弱點的誠實描述，也是神允許苦難的一個目的：在舒適中遺忘神的人，有時需要急難才能重新轉向。這不是殘忍，而是愛的另一種表達——讓人通過苦難找到他們在舒適中找不到的神。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他們必牽着牛羊去</strong><strong>尋求耶和華</strong>，卻尋不見；他已經轉去離開他們。（何5:6）</td>
+<td>帶着「牛羊」（宗教行為）去找神，卻尋不見——有形式卻無實質。你<strong>現在的靈修生</strong>活，有沒有某種「帶着牛羊去找神卻尋不見」的感受——做着宗教的事，卻感受不到神的同在？就像<strong>對着一個號碼打電話</strong>，卻發現對方已不接聽，你願意<strong>誠實地問自己</strong>：神的同在有沒有在你<strong>的宗教生活中</strong>？</td>
+</tr>
+<tr>
+<td><strong>我必回到原處</strong>，<strong>等他們自覺有罪</strong>，尋求我面；他們在急難的時候必切切尋求我。（何5:15）</td>
+<td>神在「原處」等候——祂沒有消失，只是退到一個讓人有空間悔改的位置。你<strong>現在感受到神</strong>的距離，是因為神「回到原處」等你<strong>轉向</strong>，還是祂仍在你<strong>身邊你卻沒有</strong>察覺？就像<strong>燈塔一直在</strong>，是船偏了航，你願意<strong>問自己：</strong>是神遠了，還是我偏了？</td>
+</tr>
+<tr>
+<td><strong>他們所行的使他們</strong><strong>不能歸向神</strong>；因有淫心在他們裏面，他們也不認識耶和華。（何5:4）</td>
+<td>「所行的使他們不能歸向神」——某些習慣性的行為模式，會系統性地妨礙人歸向神。你<strong>現在的生活習</strong>慣中，有沒有某個「使你不能歸向神」的模式——某個讓你<strong>越來越難以禱</strong>告、讀經、或感受神同在的習慣？就像<strong>一條路若長期不走就會長草</strong>，你<strong>哪條「歸向神</strong>的路」正在因習慣的荒廢而堵塞？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約珥書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約珥書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶和華的大日與聖靈的澆灌</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們要在錫安吹角，在我聖山吹出大聲。國中的居民都要發顫；因為耶和華的日子將到，已經臨近。</div>
+<div class="verse"><span class="verse-number">2</span>那日是黑暗、幽冥、密雲、烏黑的日子，好像晨光鋪滿山嶺。有一隊蝗蟲〔原文作民〕又大又強；從來沒有這樣的，以後直到萬代也必沒有。</div>
+<div class="verse"><span class="verse-number">3</span>牠們前面如火燒滅，後面如火焰燒盡。未到以前，地如伊甸園；過去以後，成了荒涼的曠野；沒有一樣能躲避牠們的。</div>
+<div class="verse"><span class="verse-number">4</span>牠們的形狀如馬，奔跑如馬兵。</div>
+<div class="verse"><span class="verse-number">5</span>在山頂蹦跳的響聲如車輛的響聲，又如火焰燒碎稭的響聲，好像強盛的民擺陣預備打仗。</div>
+<div class="verse"><span class="verse-number">6</span>牠們一來，眾民傷慟，臉都變色。</div>
+<div class="verse"><span class="verse-number">7</span>它們如勇士奔跑，像戰士爬城；各都步行，不亂隊伍。</div>
+<div class="verse"><span class="verse-number">8</span>彼此並不擁擠，向前各行其路，直闖兵器，不偏左右。</div>
+<div class="verse"><span class="verse-number">9</span>它們蹦上城，躥上牆，爬上房屋，進入窗戶如同盜賊。</div>
+<div class="verse"><span class="verse-number">10</span>牠們一來，地震天動，日月昏暗，星宿無光。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華在他軍旅前發聲，他的隊伍甚大；成就他命的是強盛者。因為耶和華的日子大而可畏，誰能當得起呢？</div>
+<div class="verse"><span class="verse-number">12</span>耶和華說：雖然如此，你們應當禁食、哭泣、悲哀，一心歸向我。</div>
+<div class="verse"><span class="verse-number">13</span>你們要撕裂心腸，不撕裂衣服。歸向耶和華你們的神；因為他有恩典，有憐憫，不輕易發怒，有豐盛的慈愛，並且後悔不降所說的災。</div>
+<div class="verse"><span class="verse-number">14</span>或者他轉意後悔，留下餘福，就是留下獻給耶和華你們神的素祭和奠祭，也未可知。</div>
+<div class="verse"><span class="verse-number">15</span>你們要在錫安吹角，分定禁食的日子，宣告嚴肅會。</div>
+<div class="verse"><span class="verse-number">16</span>聚集眾民，使會眾自潔：招聚老者，聚集孩童和吃奶的；使新郎出離洞房，新婦出離內室。</div>
+<div class="verse"><span class="verse-number">17</span>事奉耶和華的祭司要在廊子和祭壇中間哭泣，說：耶和華啊，求你顧惜你的百姓，不要使你的產業受羞辱，列邦管轄他們。為何容列國的人說：「他們的神在那裏」呢？</div>
+<div class="verse"><span class="verse-number">18</span>耶和華就為自己的地發熱心，憐恤他的百姓。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華應允他的百姓說：我必賜給你們五穀、新酒，和油，使你們飽足；我也不再使你們受列國的羞辱；</div>
+<div class="verse"><span class="verse-number">20</span>卻要使北方來的軍隊遠離你們，將他們趕到乾旱荒廢之地：前隊趕入東海，後隊趕入西海；因為他們所行的大惡〔原文作事〕，臭氣上升，腥味騰空。</div>
+<div class="verse"><span class="verse-number">21</span>地土啊，不要懼怕；要歡喜快樂，因為耶和華行了大事。</div>
+<div class="verse"><span class="verse-number">22</span>田野的走獸啊，不要懼怕；因為，曠野的草發生，樹木結果，無花果樹、葡萄樹也都效力。</div>
+<div class="verse"><span class="verse-number">23</span>錫安的民哪，你們要快樂，為耶和華你們的神歡喜；因他賜給你們合宜的秋雨，為你們降下甘霖，就是秋雨、春雨，和先前一樣。</div>
+<div class="verse"><span class="verse-number">24</span>禾場必滿了麥子；酒醡與油醡必有新酒和油盈溢。</div>
+<div class="verse"><span class="verse-number">25</span>我打發到你們中間的大軍隊，就是蝗蟲、蝻子、螞蚱、剪蟲，那些年所吃的，我要補還你們。</div>
+<div class="verse"><span class="verse-number">26</span>你們必多吃而得飽足，就讚美為你們行奇妙事之耶和華你們神的名。我的百姓必永遠不至羞愧。</div>
+<div class="verse"><span class="verse-number">27</span>你們必知道我是在以色列中間，又知道我是耶和華你們的神；在我以外並無別神。我的百姓必永遠不至羞愧。</div>
+<div class="verse"><span class="verse-number">28</span>以後，我要將我的靈澆灌凡有血氣的。你們的兒女要說預言；你們的老年人要作異夢，少年人要見異象。</div>
+<div class="verse"><span class="verse-number">29</span>在那些日子，我要將我的靈澆灌我的僕人和使女。</div>
+<div class="verse"><span class="verse-number">30</span>「在天上地下，我要顯出奇事，有血，有火，有煙柱。</div>
+<div class="verse"><span class="verse-number">31</span>日頭要變為黑暗，月亮要變為血，這都在耶和華大而可畏的日子未到以前。</div>
+<div class="verse"><span class="verse-number">32</span>到那時候，凡求告耶和華名的就必得救；因為照耶和華所說的，在錫安山，耶路撒冷必有逃脫的人，在剩下的人中必有耶和華所召的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約珥書第2章是先知書中最具末世性張力的一章，從緊迫的審判預告（1-11節）到深情的悔改呼召（12-17節），再到神奇妙的恢復應許（18-27節），最後是整個舊約中最重要的聖靈應許（28-32節）。審判部分：蝗蟲大軍如軍隊壓境，「地如伊甸園，過去以後成了荒涼的曠野」；第11節：「耶和華的日子大而可畏，誰能當得起呢？」悔改部分：神不要撕裂衣服的外在表演，而要「撕裂心腸」；「因為他有恩典，有憐憫，不輕易發怒，有豐盛的慈愛，並且後悔不降所說的災」（13節）。恢復應許：神要補還蝗蟲所吃的年份，使百姓飽足。聖靈應許（28-32節）：「我要將我的靈澆灌凡有血氣的。你們的兒女要說預言……」——五旬節時彼得引用這段宣告聖靈澆灌的應驗（徒2:17-21）。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【「撕裂心腸，不撕裂衣服」：神渴望的是內在的真實，不是外在的表演】</strong><br>神對悔改最清楚的要求：不是儀式上的自我傷害（撕衣服），而是內在的真實轉變（撕裂心腸）。這是整個先知書對宗教儀式主義最直接的批判之一：外表的宗教行為若沒有內心的真實，對神來說毫無意義。信徒的禱告、認罪、敬拜，若只是形式，而心沒有真實的回轉，神所看重的那部分是缺席的。<br><br>
+<strong>2. 【神有恩典、憐憫，後悔不降所說的災：禱告改變局面的神學基礎】</strong><br>「或者他轉意後悔，留下餘福」——真實的禱告可以影響神的行動。這是聖經對禱告能改變事情最直接的宣告：神的性情（有恩典、憐憫）使祂在人真實悔改時「後悔不降所說的災」。禱告的力量不是強迫神改變主意，而是與那位有豐盛慈愛的神的性情對齊，讓祂的慈愛有施展的空間。<br><br>
+<strong>3. 【聖靈澆灌：所有年齡、階層、性別都包括在內】</strong><br>「凡有血氣的……兒女……老年人……少年人……僕人……使女」——聖靈的澆灌不分年齡、地位、性別，是普世性的恩賜。五旬節應驗了這個應許，新約教會的屬靈民主化開始了：每個信徒都可以成為聖靈的住所，每個人都可以有先知性的說話，不只是祭司和王。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們要撕裂心腸</strong>，<strong>不撕裂衣服</strong>。歸向耶和華你們的神；因為他有恩典，有憐憫，不輕易發怒，有豐盛的慈愛，並且後悔不降所說的災。（珥2:13）</td>
+<td>「撕裂心腸」和「撕裂衣服」——你<strong>的悔改</strong>是哪種深度？就像<strong>一個人嘴上道歉但心裡沒有改變</strong>，和一個被真實悔恨感動而深深道歉的人，神所關注的是哪一種？你<strong>最近一次的「</strong>悔改」，有多少是「撕裂心腸」的真實，有多少是「撕裂衣服」的形式？</td>
+</tr>
+<tr>
+<td>以後，<strong>我要將我的靈澆灌</strong><strong>凡有血氣的</strong>。你們的兒女要說預言；你們的老年人要作異夢，少年人要見異象。（珥2:28）</td>
+<td>「凡有血氣的」——聖靈的澆灌是給所有人的，不分年齡、地位。你<strong>相信聖靈也給</strong>你<strong>說預言（說出</strong>神的話語，帶出鼓勵和建造）的能力嗎？就像<strong>一個覺得「說預言只是特別靈媒的</strong>事」的人，你有沒有<strong>讓「聖靈澆灌</strong>凡有血氣」這個應許真實地進入你<strong>對自己服事</strong>能力的認識？</td>
+</tr>
+<tr>
+<td><strong>我打發到你們中間</strong><strong>的大軍隊</strong>，就是蝗蟲、蝻子、螞蚱、剪蟲，那些年所吃的，我要補還你們。（珥2:25）</td>
+<td>「那些年所吃的，我要補還你<strong>們」——神可</strong>以補還失去的年份。你<strong>生命中有沒有</strong>某些感覺「被蝗蟲吃掉」的年份——因某些錯誤決定、疾病、困難而失去的時間和機會？就像<strong>一個重新找到方向的人可以在更短</strong>的時間内趕上，你<strong>相信神有</strong>能力「補還」你<strong>生命中那些失</strong>去的嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

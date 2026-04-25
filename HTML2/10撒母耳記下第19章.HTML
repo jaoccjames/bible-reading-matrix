@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記下第19章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記下第19章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大衛復位</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>有人告訴約押說：「王為押沙龍哭泣悲哀。」</div>
+<div class="verse"><span class="verse-number">2</span>眾民聽說王為他兒子憂愁，他們得勝的歡樂卻變成悲哀。</div>
+<div class="verse"><span class="verse-number">3</span>那日眾民暗暗的進城，就如敗陣逃跑、慚愧的民一般。</div>
+<div class="verse"><span class="verse-number">4</span>王蒙着臉，大聲哭號說：「我兒押沙龍啊！押沙龍，我兒，我兒啊！」</div>
+<div class="verse"><span class="verse-number">5</span>約押進去見王，說：「你今日使你一切僕人臉面慚愧了！他們今日救了你的性命和你兒女妻妾的性命，</div>
+<div class="verse"><span class="verse-number">6</span>你卻愛那恨你的人，恨那愛你的人。你今日明明的不以將帥、僕人為念。我今日看明，若押沙龍活着，我們都死亡，你就喜悅了。</div>
+<div class="verse"><span class="verse-number">7</span>現在你當出去，安慰你僕人的心。我指着耶和華起誓：你若不出去，今夜必無一人與你同在一處；這禍患就比你從幼年到如今所遭的更甚！」</div>
+<div class="verse"><span class="verse-number">8</span>於是王起來，坐在城門口。眾民聽說王坐在城門口，就都到王面前。以色列人已經逃跑，各回各家去了。</div>
+<div class="verse"><span class="verse-number">9</span>以色列眾支派的人紛紛議論說：「王曾救我們脫離仇敵的手，又救我們脫離非利士人的手，現在他躲避押沙龍逃走了。</div>
+<div class="verse"><span class="verse-number">10</span>我們膏押沙龍治理我們，他已經陣亡。現在為甚麼不出一言請王回來呢？」</div>
+<div class="verse"><span class="verse-number">11</span>大衛王差人去見祭司撒督和亞比亞他，說：「你們當向猶大長老說：『以色列眾人已經有話請王回宮，你們為甚麼落在他們後頭呢？</div>
+<div class="verse"><span class="verse-number">12</span>你們是我的弟兄，是我的骨肉，為甚麼在人後頭請王回來呢？』</div>
+<div class="verse"><span class="verse-number">13</span>也要對亞瑪撒說：『你不是我的骨肉麼？我若不立你替約押常作元帥，願神重重的降罰與我！』」</div>
+<div class="verse"><span class="verse-number">14</span>如此就挽回猶大眾人的心，如同一人的心。他們便打發人去見王，說：「請王和王的一切臣僕回來。」</div>
+<div class="verse"><span class="verse-number">15</span>王就回來，到了約但河。猶大人來到吉甲，要去迎接王，請他過約但河。</div>
+<div class="verse"><span class="verse-number">16</span>巴戶琳的便雅憫人、基拉的兒子示每急忙與猶大人一同下去迎接大衛王。</div>
+<div class="verse"><span class="verse-number">17</span>跟從示每的有一千便雅憫人，還有掃羅家的僕人洗巴和他十五個兒子，二十個僕人；他們都趟過約但河迎接王。</div>
+<div class="verse"><span class="verse-number">18</span>有擺渡船過去，渡王的家眷，任王使用。王要過約但河的時候，基拉的兒子示每就俯伏在王面前，</div>
+<div class="verse"><span class="verse-number">19</span>對王說：「我主我王出耶路撒冷的時候，僕人行悖逆的事，現在求我主不要因此加罪與僕人，不要記念，也不要放在心上。</div>
+<div class="verse"><span class="verse-number">20</span>僕人明知自己有罪，所以約瑟全家之中，今日我首先下來迎接我主我王。」</div>
+<div class="verse"><span class="verse-number">21</span>洗魯雅的兒子亞比篩說：「示每既咒罵耶和華的受膏者，不應當治死他麼？」</div>
+<div class="verse"><span class="verse-number">22</span>大衛說：「洗魯雅的兒子，我與你們有何關涉，使你們今日與我反對呢？今日在以色列中豈可治死人呢？我豈不知今日我作以色列的王麼？」</div>
+<div class="verse"><span class="verse-number">23</span>於是王對示每說：「你必不死。」王就向他起誓。</div>
+<div class="verse"><span class="verse-number">24</span>掃羅的孫子米非波設也下去迎接王。他自從王去的日子，直到王平平安安的回來，沒有修腳，沒有剃鬍鬚，也沒有洗衣服。</div>
+<div class="verse"><span class="verse-number">25</span>他來到耶路撒冷迎接王的時候，王問他說：「米非波設，你為甚麼沒有與我同去呢？」</div>
+<div class="verse"><span class="verse-number">26</span>他回答說：「我主我王，僕人是瘸腿的。那日我想要備驢騎上，與王同去，無奈我的僕人欺哄了我，</div>
+<div class="verse"><span class="verse-number">27</span>又在我主我王面前讒毀我。然而我主我王如同神的使者一般，你看怎樣好，就怎樣行吧！</div>
+<div class="verse"><span class="verse-number">28</span>因為我祖全家的人，在我主我王面前都算為死人，王卻使僕人在王的席上同人吃飯，我現在向王還能辨理訴冤麼？」</div>
+<div class="verse"><span class="verse-number">29</span>王對他說：「你何必再提你的事呢？我說，你與洗巴均分地土。」</div>
+<div class="verse"><span class="verse-number">30</span>米非波設對王說：「我主我王既平平安安的回宮，就任憑洗巴都取了也可以。」</div>
+<div class="verse"><span class="verse-number">31</span>基列人巴西萊從羅基琳下來，要送王過約但河，就與王一同過了約但河。</div>
+<div class="verse"><span class="verse-number">32</span>巴西萊年紀老邁，已經八十歲了。王住在瑪哈念的時候，他就拿食物來供給王；他原是大富戶。</div>
+<div class="verse"><span class="verse-number">33</span>王對巴西萊說：「你與我同去，我要在耶路撒冷那裏養你的老。」</div>
+<div class="verse"><span class="verse-number">34</span>巴西萊對王說：「我在世的年日還能有多少，使我與王同上耶路撒冷呢？</div>
+<div class="verse"><span class="verse-number">35</span>僕人現在八十歲了，還能嘗出飲食的滋味、辨別美惡麼？還能聽男女歌唱的聲音麼？僕人何必累贅我主我王呢？</div>
+<div class="verse"><span class="verse-number">36</span>僕人只要送王過約但河，王何必賜我這樣的恩典呢？</div>
+<div class="verse"><span class="verse-number">37</span>求你准我回去，好死在我本城，葬在我父母的墓旁。這裏有王的僕人金罕，讓他同我主我王過去，可以隨意待他。」</div>
+<div class="verse"><span class="verse-number">38</span>王說：「金罕可以與我同去，我必照你的心願待他。你向我求甚麼，我都必為你成就。」</div>
+<div class="verse"><span class="verse-number">39</span>於是眾民過約但河，王也過去。王與巴西萊親嘴，為他祝福，巴西萊就回本地去了。</div>
+<div class="verse"><span class="verse-number">40</span>王過去，到了吉甲，金罕也跟他過去。猶大眾民和以色列民的一半也都送王過去。</div>
+<div class="verse"><span class="verse-number">41</span>以色列眾人來見王，對他說：「我們弟兄猶大人為甚麼暗暗送王和王的家眷，並跟隨王的人過約但河？」</div>
+<div class="verse"><span class="verse-number">42</span>猶大眾人回答以色列人說：「因為王與我們是親屬，你們為何因這事發怒呢？我們吃了王的甚麼呢？王賞賜了我們甚麼呢？」</div>
+<div class="verse"><span class="verse-number">43</span>以色列人回答猶大人說：「按支派，我們與王有十分的情分；在大衛身上，我們也比你們更有情分。你們為何藐視我們，請王回來不先與我們商量呢？」但猶大人的話比以色列人的話更硬。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載大衛結束逃亡,重新回到耶路撒冷作王。約押責備大衛過度哀傷押沙龍,提醒他要顧及跟隨他的人的感受。大衛聽從勸告,出來安慰眾人。猶大支派率先迎接大衛回來,其他支派也陸續歡迎。示每來求饒,大衛赦免了他。米非波設說明自己沒有背叛,是被洗巴欺騙,大衛要他們均分地土。巴西萊因年老不願隨王到耶路撒冷,但讓金罕代替。以色列人與猶大人因誰先迎王而爭論,為下一章的叛亂埋下伏筆。本章顯示大衛的寬宏和智慧,以及人心的複雜。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 領袖要顧及他人感受</strong><br>約押責備大衛「你愛那恨你的人,恨那愛你的人」,提醒他不要只顧自己的悲傷,而忽略了為他冒死的人。領袖必須平衡個人情感與群體需要。我們在服事中是否也會只顧自己的感受,而忽略了他人的付出和需要?真正的領袖懂得適時調整自己。<br><br>
+<strong>2. 寬恕的恩典</strong><br>大衛赦免了曾咒罵他的示每,也寬待米非波設。這顯示他寬宏的心胸和對神恩典的理解。我們既蒙神赦免,也當饒恕別人。記仇和報復只會使傷害延續,寬恕才能帶來醫治和恢復。大衛知道「今日我作以色列的王」,得勝的時候更要顯出恩慈。<br><br>
+<strong>3. 知足與智慧</strong><br>巴西萊年老卻知足,不貪圖王宮的享受,只願回鄉安度晚年。米非波設說「王既平安回來,就任憑洗巴都取了也可以」。真正的智慧是知道什麼時候該放手,什麼是真正重要的。我們是否也能如此知足,不被物質和地位所誘惑?
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>約押說</strong>:「<strong>你今日使你一切僕</strong>人臉面慚愧了!他們今日救了你的性命,你卻愛那恨你的人,恨那愛你的人。」(撒下19:5-6)</td>
+<td>當我們只顧自己的感受時,就像<strong>沉浸在悲傷中忽略關心我們的人</strong>,我們是否記得要顧及他人的付出?我們如何平衡個人情感與他人需要?</td>
+</tr>
+<tr>
+<td><strong>大衛說</strong>:「<strong>今日在以色列中豈</strong>可治死人呢?我豈不知今日我作以色列的王嗎?」於是王對示每說:「你必不死。」(撒下19:22-23)</td>
+<td>當我們得勝或成功時,就像<strong>升遷後對待曾經的競爭對手</strong>,我們是選擇報復,還是選擇寬恕?真正的強者如何對待曾傷害自己的人?</td>
+</tr>
+<tr>
+<td><strong>米非波設對王說</strong>:「<strong>我主我王既平平安</strong>安地回宮,就任憑洗巴都取了也可以。」(撒下19:30)</td>
+<td>當我們面對損失時,就像<strong>財產被騙或權益受損</strong>,我們是否能因更大的祝福而知足,不為小事斤斤計較?什麼是我們生命中真正重要的?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

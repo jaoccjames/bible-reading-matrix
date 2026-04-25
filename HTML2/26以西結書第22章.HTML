@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第22章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第22章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶路撒冷的罪單與各階層的敗壞</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話又臨到我說：</div>
+<div class="verse"><span class="verse-number">2</span>「人子啊，你要審問審問這流人血的城嗎？當使他知道他一切可憎的事。</div>
+<div class="verse"><span class="verse-number">3</span>你要說，主耶和華如此說：哎！這城有流人血的事在其中，叫他受報的日期來到，又作偶像玷污自己，陷害自己。</div>
+<div class="verse"><span class="verse-number">4</span>你因流了人的血，就為有罪；你作了偶像，就玷污自己，使你受報之日臨近，報應之年來到。所以我叫你受列國的凌辱和列邦的譏誚。</div>
+<div class="verse"><span class="verse-number">5</span>你這名臭、多亂的城啊，那些離你近、離你遠的都必譏誚你。</div>
+<div class="verse"><span class="verse-number">6</span>「看哪，以色列的首領各逞其能，在你中間流人之血。</div>
+<div class="verse"><span class="verse-number">7</span>在你中間有輕慢父母的，有欺壓寄居的，有虧負孤兒寡婦的。</div>
+<div class="verse"><span class="verse-number">8</span>你藐視了我的聖物，干犯了我的安息日。</div>
+<div class="verse"><span class="verse-number">9</span>在你中間有讒謗人、流人血的；有在山上喫過祭偶像之物的，有行淫亂的。</div>
+<div class="verse"><span class="verse-number">10</span>在你中間有露繼母下體羞辱父親的，有玷辱月經不潔淨之婦人的。</div>
+<div class="verse"><span class="verse-number">11</span>這人與鄰舍的妻行可憎的事；那人貪淫玷污兒婦；還有玷辱同父之姐妹的。</div>
+<div class="verse"><span class="verse-number">12</span>在你中間有為流人血受賄賂的；有向借錢的弟兄取利，向借糧的弟兄多要的。且因貪得無饜，欺壓鄰舍奪取財物，竟忘了我。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">13</span>「看哪，我因你所得不義之財和你中間所流的血，就拍掌歎息。</div>
+<div class="verse"><span class="verse-number">14</span>到了我懲罰你的日子，你的心還能忍受嗎？你的手還能有力嗎？我耶和華說了這話，就必照着行。</div>
+<div class="verse"><span class="verse-number">15</span>我必將你分散在列國，四散在列邦。我也必從你中間除掉你的污穢。</div>
+<div class="verse"><span class="verse-number">16</span>你必在列國人的眼前因自己所行的被褻瀆，你就知道我是耶和華。」</div>
+<div class="verse"><span class="verse-number">17</span>耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">18</span>「人子啊，以色列家在我看為渣滓。他們都是爐中的銅、錫、鐵、鉛，都是銀渣滓。</div>
+<div class="verse"><span class="verse-number">19</span>所以主耶和華如此說：因你們都成為渣滓，我必聚集你們在耶路撒冷中。</div>
+<div class="verse"><span class="verse-number">20</span>人怎樣將銀、銅、鐵、鉛、錫聚在爐中，吹火熔化；照樣，我也要發怒氣和忿怒，將你們聚集放在城中，熔化你們。</div>
+<div class="verse"><span class="verse-number">21</span>我必聚集你們，把我烈怒的火吹在你們身上，你們就在其中熔化。</div>
+<div class="verse"><span class="verse-number">22</span>銀子怎樣熔化在爐中，你們也必照樣熔化在城中，你們就知道我耶和華是將忿怒倒在你們身上了。」</div>
+<div class="verse"><span class="verse-number">23</span>耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">24</span>「人子啊，你要對這地說：你是未得潔淨之地，在惱恨的日子也沒有雨下在你以上。</div>
+<div class="verse"><span class="verse-number">25</span>其中的先知同謀背叛，如咆哮的獅子抓撕掠物。他們吞滅人民，搶奪財寶，使這地多有寡婦。</div>
+<div class="verse"><span class="verse-number">26</span>其中的祭司強解我的律法，褻瀆我的聖物，不分別聖的和俗的，也不使人分辨潔淨的和不潔淨的，又遮眼不顧我的安息日；我也在他們中間被褻慢。</div>
+<div class="verse"><span class="verse-number">27</span>其中的首領彷彿豺狼抓撕掠物，殺人流血，傷害人命，要得不義之財。</div>
+<div class="verse"><span class="verse-number">28</span>其中的先知為百姓用未泡透的灰抹牆，就是為他們見虛假的異象，用謊詐的占卜，說：『主耶和華如此說』，其實耶和華沒有說。</div>
+<div class="verse"><span class="verse-number">29</span>國內眾民一味的欺壓，慣行搶奪，虧負困苦窮乏的，背理欺壓寄居的。</div>
+<div class="verse"><span class="verse-number">30</span>我在他們中間尋找一人重修牆垣，在我面前為這國站在破口防堵，使我不滅絕這國，卻找不着一個。</div>
+<div class="verse"><span class="verse-number">31</span>所以我將惱恨倒在他們身上，用烈怒的火滅了他們，照他們所行的報應在他們頭上。這是主耶和華說的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第22章是對耶路撒冷罪惡最系統的列舉，從不同社會階層分析腐敗的全面性。首先列出城市的罪：流人血、偶像、欺壓寄居者、虧負孤兒寡婦、藐視聖物、干犯安息日、貪婪、行淫、受賄（1-12節）。然後以「爐中熔化金屬」的比喻描述神的審判（17-22節）：以色列成了銀的渣滓，神要在城中如爐般熔化他們。最後（23-31節）以最系統的語言描述各階層的失敗：先知行謊詐、祭司強解律法、首領如豺狼、百姓欺壓窮人。最後一節是本章的高峰：「我在他們中間尋找一人重修牆垣，在我面前為這國站在破口防堵……卻找不着一個。」在整個社會系統性腐敗中，神尋找一個「破口的堵擋者」，卻徒勞無功。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【社會的腐敗從每個階層的失職開始】</strong><br>先知、祭司、首領、百姓，各階層都有其應盡的責任，各階層都以獨特的方式失職。沒有一個群體可以把責任推卸給另一個群體。今日社會的問題往往也是如此：每個人指責「是他們的問題」，但神的眼目看見的是每一個人自己的失職。<br><br>
+<strong>2. 【神在尋找「破口的堵擋者」，每一個信徒都可以是那個人】</strong><br>「尋找一人……卻找不着一個」——這是一個令人痛心的空缺。但這個空缺同時也是一個呼召：今天，神仍然在尋找那個願意站在破口前的人。不是完美的人，而是願意站出來、為群體代禱、呼籲悔改的人。每個信徒都可以回應這個呼召。<br><br>
+<strong>3. 【在爐中被熔化的痛苦，是為了除去渣滓的淨化過程】</strong><br>「爐中熔化」的比喻在聖經中常用於精煉（賽48:10；彼前1:7）。以色列成了渣滓，需要在爐中熔化才能得潔淨。神允許苦難的熔煉，最終目的不是毀滅，而是去除那些使人與神隔絕的「渣滓」。在苦難中仍然信靠神的人，可以在其中看見熔練的恩典。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我在他們中間尋找</strong><strong>一人重修牆垣</strong>，在我面前為這國站在破口防堵，使我不滅絕這國，卻找不着一個。（結22:30）</td>
+<td>「找不着一個」——神在尋找願意站在破口前的人，而你<strong>正在讀這段話</strong>。就像<strong>在緊急救援中</strong>，一個願意站出來的人可以改變結局，你是否<strong>感到神現在也</strong>在邀請你<strong>成為某個「破</strong>口」的堵擋者？在你<strong>的家庭、職場</strong>或社區中，有哪個「破口」正在等待有人站出來？</td>
+</tr>
+<tr>
+<td><strong>其中的先知同謀背</strong>叛，<strong>如咆哮的獅子抓撕</strong>掠物……祭司強解我的律法，褻瀆我的聖物……首領彷彿豺狼抓撕掠物……先知為百姓用未泡透的灰抹牆。（結22:25-28）</td>
+<td>每個階層都有其對神的責任，也有其特有的失職形式。你<strong>在你所處的位</strong>置（家長、老師、員工、領袖）上，有哪種「本階層的特有失職」是你<strong>最容易滑入的</strong>？就像<strong>每種職業都有其特有的職業病</strong>，你<strong>知道你最需要</strong>防範的屬靈職業病是什麼嗎？</td>
+</tr>
+<tr>
+<td><strong>以色列家在我看為</strong>渣滓。<strong>他們都是爐中的銅</strong>、錫、鐵、鉛，都是銀渣滓。（結22:18）</td>
+<td>爐火熔化金屬是為了去除渣滓、留下純金。你<strong>生命中有沒有</strong>一段「在爐中被熔化」的時期，事後回看，那段痛苦去除了你<strong>身上什麼樣的</strong>「渣滓」，使你<strong>變得更純淨、</strong>更接近神？那段經歷讓你<strong>對神的精煉有</strong>什麼不同的理解？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

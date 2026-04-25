@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第146章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第146章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">一生讚美耶和華：不倚靠君王倚靠造天地的神</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們要讚美耶和華！我的心哪，你要讚美耶和華！</div>
+<div class="verse"><span class="verse-number">2</span>我一生要讚美耶和華！我還活的時候要歌頌我的神！</div>
+<div class="verse"><span class="verse-number">3</span>你們不要倚靠君王，不要倚靠世人；他一點不能幫助。</div>
+<div class="verse"><span class="verse-number">4</span>他的氣一斷，就歸回塵土；他所打算的，當日就消滅了。</div>
+<div class="verse"><span class="verse-number">5</span>以雅各的神為幫助、仰望耶和華他神的，這人便為有福！</div>
+<div class="verse"><span class="verse-number">6</span>耶和華造天、地、海，和其中的萬物；他守誠實，直到永遠。</div>
+<div class="verse"><span class="verse-number">7</span>他為受屈的伸冤，賜食物與飢餓的。耶和華釋放被囚的；</div>
+<div class="verse"><span class="verse-number">8</span>耶和華開了瞎子的眼睛；耶和華扶起被壓下的人。耶和華喜愛義人。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華保護寄居的，扶持孤兒和寡婦，卻使惡人的道路彎曲。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華要作王，直到永遠！錫安哪，你的神要作王，直到萬代！你們要讚美耶和華！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第146篇是最後五篇「哈利路亞詩篇」（詩146-150篇）的第一篇，以「你們要讚美耶和華！我的心哪，你要讚美耶和華！」開篇，呈現個人在整個群體讚美中的主動加入。本篇的核心神學張力在第3至5節：不要倚靠君王（有限的人間力量）和要倚靠神（無限的創造者）之間的對比。「你們不要倚靠君王，不要倚靠世人；他一點不能幫助。他的氣一斷，就歸回塵土」（第3-4節）——人的幫助是短暫的、有限的、最終是虛空的；然而「以雅各的神為幫助、仰望耶和華他神的，這人便為有福！」（第5節）。第7至9節列出神具體幫助的對象：受屈者、飢餓者、被囚者、瞎子、被壓下者、義人、寄居者、孤兒和寡婦——這些都是社會最邊緣、最無助的人，卻是神最特別關顧的對象。全篇以「耶和華要作王，直到永遠！」收結，將神的能力從暫時的幫助延伸到永恆的主權。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 一生讚美神而非偶爾讚美是最高的信仰委身</strong><br>「我一生要讚美耶和華！我還活的時候要歌頌我的神！」（第2節）「一生」和「還活的時候」確立了讚美的時間範圍——整個生命。這種「一生讚美」的委身，不依賴特定的處境或感受，而是建立在對神性格的確信上。每一天的讚美，都是「一生讚美」這個長遠志向的具體表現。這種讚美的持久性，比任何單次的感恩行動都更深刻地表達了對神的愛。<br><br>
+<strong>2. 不倚靠君王倚靠造天地之神揭示信仰最清醒的選擇</strong><br>「你們不要倚靠君王，不要倚靠世人……以雅各的神為幫助……這人便為有福！」（第3、5節）這個對比是信仰最核心的選擇：有限的人間力量與無限的創造者之間，選擇倚靠誰？君王和世人的幫助是短暫的、有條件的、最終歸於塵土的；然而「造天地」的神的幫助是永久的、無限的、不受任何外在因素限制的。清醒地認識人間幫助的限制，是更深倚靠神的屬靈前提。<br><br>
+<strong>3. 神特別幫助社會最邊緣的人揭示祂對弱勢的優先關顧</strong><br>「他為受屈的伸冤，賜食物與飢餓的。耶和華釋放被囚的；耶和華開了瞎子的眼睛；耶和華扶起被壓下的人……耶和華保護寄居的，扶持孤兒和寡婦。」（第7-9節）神關顧的對象清單，都是社會最邊緣、最無助的群體。這揭示神的優先順序與人間不同：人間的資源流向有錢有勢的人；神的幫助特別流向最無力的人。這個認識呼召信徒以同樣的眼光看世界，以神的優先順序服事身邊最需要幫助的人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我一生要讚美耶和</strong>華！<strong>我還活的時候要歌</strong>頌我的神！（詩146:2）</td>
+<td>就像<strong>一個音樂家決定把整個音樂生涯獻</strong>給一種音樂，「一生讚美」是最深刻的信仰委身，你是否<strong>有過這種「我</strong>整個生命要讚美神」的委身宣告，讓讚美從偶爾的感恩升華為整個生命持久的方向？</td>
+</tr>
+<tr>
+<td><strong>你們不要倚靠君王</strong>，<strong>不要倚靠世人</strong>……以雅各的神為幫助……這人便為有福！（詩146:3、5）</td>
+<td>就像<strong>知道紙橋無法承受重量</strong>，明智的人會選擇石橋，你是否<strong>做過那個清醒</strong>的選擇——從「倚靠君王和世人」轉向「以神為幫助」，讓這個轉向在你<strong>最需要幫助的</strong>時刻真實地發生？</td>
+</tr>
+<tr>
+<td><strong>耶和華扶持孤兒和</strong>寡婦，<strong>卻使惡人的道路彎</strong>曲。耶和華要作王，直到永遠！（詩146:9-10）</td>
+<td>就像<strong>知道政府的政策優先照顧最弱勢的</strong>公民，你是否<strong>被神「優先幫</strong>助最邊緣者」的心意所感動，讓這個認識塑造你<strong>對身邊弱勢者</strong>的態度和行動？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

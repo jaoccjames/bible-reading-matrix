@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第62章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第62章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">你必稱為我所喜悅的：神以守望者持守禱告直到成就</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我因錫安必不靜默，為耶路撒冷必不息聲，直到他的公義如光輝發出，他的救恩如明燈發亮。</div>
+<div class="verse"><span class="verse-number">2</span>列國必見你的公義；列王必見你的榮耀。你必得新名的稱呼，是耶和華親口所起的。</div>
+<div class="verse"><span class="verse-number">3</span>你在耶和華的手中要作為華冠，在你神的掌上必作為冕旒。</div>
+<div class="verse"><span class="verse-number">4</span>你必不再稱為「撇棄的」；你的地也不再稱為「荒涼的」。你卻要稱為「我所喜悅的」；你的地也必稱為「有夫之婦」。因為耶和華喜悅你，你的地也必歸他。</div>
+<div class="verse"><span class="verse-number">5</span>少年人怎樣娶處女，你的眾民〔民：原文作子〕也要照樣娶你；新郎怎樣喜悅新婦，你的神也要照樣喜悅你。</div>
+<div class="verse"><span class="verse-number">6</span>耶路撒冷啊，我在你城上設立守望的，他們晝夜必不靜默。呼籲耶和華的，你們不要歇息，</div>
+<div class="verse"><span class="verse-number">7</span>也不要使他歇息，直等他建立耶路撒冷，使耶路撒冷在地上成為可讚美的。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華指着自己的右手和大能的膀臂起誓說：我必不再將你的五穀給你仇敵作食物；外邦人也不再喝你勞碌得來的新酒。</div>
+<div class="verse"><span class="verse-number">9</span>惟有那收割的要吃，並讚美耶和華；那聚斂的要在我聖所的院內喝。</div>
+<div class="verse"><span class="verse-number">10</span>你們當從門經過經過，預備百姓的路；修築修築大道，撿去石頭，為萬民豎立大旗，</div>
+<div class="verse"><span class="verse-number">11</span>看哪，耶和華曾宣告到地極，對錫安的居民〔原文作女子〕說：你的拯救者來到。他的賞賜在他那裏；他的報應在他面前。</div>
+<div class="verse"><span class="verse-number">12</span>人必稱他們為「聖民」，為「耶和華的贖民」；你也必稱為「被眷顧、不撇棄的城」。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第六十二章是以賽亞書中關於禱告和守望最感人的章節之一，也是神對自己百姓身份翻轉（從「撇棄的」到「我所喜悅的」）最溫柔的宣告。本章以第1節「我因錫安必不靜默」開始——說話者是神或是先知（兩種解讀都有），都宣告了一種積極主動的不停歇：「直到他的公義如光輝發出」——這是一種持守到底、不妥協的守望。第4節的身份翻轉是本章神學核心：從「撇棄的」（Azuvah）到「我所喜悅的」（Hephzibah），從「荒涼的」到「有夫之婦」（Beulah）——這四個名字的改變，象徵了神救贖所帶來的根本身份更新。在啟示錄21:2「新婦裝扮整齊，等候丈夫」中，這個婚約意象得到終極成就。第6-7節神設立守望者，呼召他們「晝夜不靜默」地為耶路撒冷禱告——這是整本聖經對「守望禱告」最直接的呼召，也是教會持守性禱告的神學根據。第11節「你的拯救者來到」，在新約馬太福音21:5（棕枝主日耶穌騎驢進城）中被引用，預言彌賽亞的到來。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「你必稱為我所喜悅的」：神對信徒身份的重新命名是恩典最深的表達</strong><br>第4節的名字翻轉是以賽亞書中最動人的恩典圖像之一。從「撇棄的」到「我所喜悅的」——不是因為以色列變得更好，而是因為神的愛使祂主動更名。在新約中，每一個信徒都是「被重新命名」的人：從「罪人」到「義人」（羅5:1），從「仇敵」到「兒女」（約1:12）。這個新名字不是我們賺來的，而是神白白給予的，它定義了我們在神面前真實的身份。<br><br>
+<strong>2. 「守望的晝夜不靜默」：持守的代禱是信仰群體最重要的使命之一</strong><br>第6-7節神設立守望者，呼召他們持守禱告「直等他建立耶路撒冷」。「守望者」的使命不是等待神自動行動，而是持續地在神面前守望呼求，協作神的計劃成就。這對教會的代禱使命是強烈的呼召：不以「神知道就好」為藉口停止禱告，而是以持續的守望禱告，積極參與神的計劃。禱告是信徒與神在歷史中協作的方式。<br><br>
+<strong>3. 「新郎喜悅新婦，你的神也要照樣喜悅你」：神對信徒的喜悅是婚約式的深情</strong><br>第5節以新郎對新婦的喜悅來描繪神對以色列（信徒）的喜悅，是聖經中最親密的神人關係圖像。「喜悅」不只是接納，而是帶著熱情的愛慕——就像新郎對新婦那種深情的、充滿期待的喜悅。這個圖像在以弗所書5:25（「基督愛教會，為教會捨己」）和啟示錄19:7（「羔羊的婚宴到了」）中得到完全的展開，告訴信徒：你是神深愛、深喜悅的對象。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你必不再稱為</strong>『<strong>撇棄的</strong>』……你卻要稱為『我所喜悅的』……因為耶和華喜悅你。」（賽62:4）</td>
+<td>就像<strong>一個曾被錯誤標記的商品</strong>，被懂得其價值的鑑賞家重新鑑定，真正的名字被恢復了，神為你<strong>起的名字（「</strong>我所喜悅的」）比任何人對你<strong>的評價更真實</strong>，你<strong>內心深處最常</strong>用哪個「錯誤的名字」稱呼自己？神所起的名字如何糾正那個錯誤的自我認識？</td>
+</tr>
+<tr>
+<td>「<strong>耶路撒冷啊</strong>，<strong>我在你城上設立守</strong>望的，他們晝夜必不靜默。呼籲耶和華的，你們不要歇息。」（賽62:6）</td>
+<td>就像<strong>一個二十四小時不間斷的急救醫療</strong>中心，隨時準備回應緊急需要，守望禱告是教會在屬靈層面二十四小時的「急救站」，你是否<strong>在你的信仰群</strong>體中認真參與「守望禱告」這個使命？是什麼讓你<strong>最難以持守不</strong>停地禱告？</td>
+</tr>
+<tr>
+<td>「<strong>新郎怎樣喜悅新婦</strong>，<strong>你的神也要照樣喜</strong>悅你。」（賽62:5）</td>
+<td>就像<strong>一對新婚夫婦</strong>，彼此的喜悅是具體的、熱切的、充滿期待的，神對你<strong>的喜悅也</strong>是這種深度的愛慕，而非冷漠的接受，你是否<strong>真的相信神「</strong>喜悅你」，就像<strong>新郎喜悅新婦那樣</strong>？什麼讓你<strong>最難以接受這</strong>個真理？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

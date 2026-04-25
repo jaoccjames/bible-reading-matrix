@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神的榮耀離開聖殿</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我觀看，見基路伯頭上的穹蒼之中，顯出藍寶石的形狀，彷彿寶座的形像。</div>
+<div class="verse"><span class="verse-number">2</span>主對那穿細麻衣的人說：「你進去，在旋轉的輪內基路伯以下，從基路伯中間將火炭取滿兩手，撒在城上。」我就見他進去。</div>
+<div class="verse"><span class="verse-number">3</span>那人進去的時候，基路伯站在殿的右邊，雲彩充滿了內院。</div>
+<div class="verse"><span class="verse-number">4</span>耶和華的榮耀從基路伯那裏上升，停在門檻以上；殿內滿了雲彩，院宇也被耶和華榮耀的光輝充滿。</div>
+<div class="verse"><span class="verse-number">5</span>基路伯翅膀的響聲聽到外院，好像全能神說話的聲音。</div>
+<div class="verse"><span class="verse-number">6</span>他吩咐那穿細麻衣的人說：「要從旋轉的輪內基路伯中間取火。」那人就進去站在一個輪子旁邊。</div>
+<div class="verse"><span class="verse-number">7</span>有一個基路伯從基路伯中伸手到基路伯中間的火那裏，取些放在那穿細麻衣的人兩手中，那人就拿出去了。</div>
+<div class="verse"><span class="verse-number">8</span>在基路伯翅膀之下，顯出有人手的樣式。</div>
+<div class="verse"><span class="verse-number">9</span>我又觀看，見基路伯旁邊有四個輪子。這基路伯旁有一個輪子，那基路伯旁有一個輪子，每基路伯都是如此；輪子的顏色〔原文作形狀〕彷彿水蒼玉。</div>
+<div class="verse"><span class="verse-number">10</span>至於四輪的形狀，都是一個樣式，彷彿輪中套輪。</div>
+<div class="verse"><span class="verse-number">11</span>輪行走的時候，向四方都能直行，並不掉轉。頭向何方，他們也隨向何方，行走的時候並不掉轉。</div>
+<div class="verse"><span class="verse-number">12</span>他們全身，連背帶手和翅膀，並輪周圍都滿了眼睛。這四個基路伯的輪子都是如此。</div>
+<div class="verse"><span class="verse-number">13</span>至於這些輪子，我耳中聽見說是旋轉的。</div>
+<div class="verse"><span class="verse-number">14</span>基路伯各有四臉：第一是基路伯的臉，第二是人的臉，第三是獅子的臉，第四是鷹的臉。</div>
+<div class="verse"><span class="verse-number">15</span>基路伯升上去了；這是我在迦巴魯河邊所見的活物。</div>
+<div class="verse"><span class="verse-number">16</span>基路伯行走，輪也在旁邊行走。基路伯展開翅膀，離地上升，輪也不轉離他們旁邊。</div>
+<div class="verse"><span class="verse-number">17</span>那些站住，這些也站住；那些上升，這些也一同上升，因為活物的靈在輪中。</div>
+<div class="verse"><span class="verse-number">18</span>耶和華的榮耀從殿的門檻那裏出去，停在基路伯以上。</div>
+<div class="verse"><span class="verse-number">19</span>基路伯出去的時候，就展開翅膀，在我眼前離地上升。輪也在他們的旁邊，都停在耶和華殿的東門口。在他們以上有以色列神的榮耀。</div>
+<div class="verse"><span class="verse-number">20</span>這是我在迦巴魯河邊所見、以色列神榮耀以下的活物，我就知道他們是基路伯。</div>
+<div class="verse"><span class="verse-number">21</span>各有四個臉面，四個翅膀，翅膀以下有人手的樣式。</div>
+<div class="verse"><span class="verse-number">22</span>至於他們臉的模樣，並身體的形像，是我從前在迦巴魯河邊所看見的。他們俱各直往前行。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第10章是整卷書神學最沉重的一章：神的榮耀開始離開聖殿。本章大量描述基路伯（即第1章的四活物）的形象，重申其莊嚴與神的同在，但核心事件是：「耶和華的榮耀從殿的門檻那裏出去，停在基路伯以上」（18節），然後「基路伯在我眼前離地上升……停在耶和華殿的東門口」（19節）——神的榮耀先到門檻，再到東門，預示着即將完全離去（第11章末基路伯將升到城東山上）。這是舊約中最令人心碎的神學時刻之一：神的同在從其聖殿中撤離，不是因為神的能力減弱，而是因為聖殿被人的罪污穢到神不能在其中居住。本章也重申了神的榮耀車駕的意象——強調神的主權、聖潔和行動自由：神不是被固定在某個地方的神，而是主動且自由的神。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神的同在不是理所當然的，罪污會驅逐神的榮耀】</strong><br>神的榮耀「出去」——這是全書最深重的審判，比刀劍饑荒更深，因為那意味着神的保護與同在的撤離。罪污能使神的同在退去，這提醒信徒：靈命的核心不是宗教的形式，而是保持一個神的靈能居住的心。「你們的身子是聖靈的殿」——這個聖殿需要用同樣的認真態度對待潔淨。<br><br>
+<strong>2. 【神的榮耀是主動且自由的，不受任何地點所困】</strong><br>神不是「住在聖殿裏」的囚徒。神的榮耀可以離去，也可以歸回（第43-48章）。這顯示神的同在是恩典的禮物，不是人可以操控的資源。信徒不能以任何宗教行為「強留」神的同在；只有保持謙卑、潔淨和敞開的心，才能成為神的榮耀樂意居住的地方。<br><br>
+<strong>3. 【榮耀的離去是悄悄漸進的，而非一夜之間】</strong><br>神的榮耀先到門檻，再到東門，然後到城東山——是漸進的撤離，而非突然消失。屬靈的冷卻往往也是這樣：不是一夜之間失去神的同在，而是一步一步地偏離，直到有一天驚覺神的榮耀已在某處停住，不再同行。警覺「榮耀漸漸移向門口」的感知，是屬靈敏銳的重要部分。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華的榮耀從殿</strong><strong>的門檻那裏出去</strong>，停在基路伯以上。（結10:18）</td>
+<td>神的榮耀離去是漸進的——先到門檻，再到東門。你<strong>的靈命中有沒</strong>有過「榮耀漸漸移向門口」的感覺——神的同在不是消失，只是變得越來越遠、越來越隔了一層？就像<strong>感情逐漸疏遠是從很多個小動作開</strong>始的，你<strong>現在和神的關</strong>係是在增溫，還是在漸漸冷卻？</td>
+</tr>
+<tr>
+<td><strong>基路伯升上去了</strong>；<strong>這是我在迦巴魯河</strong>邊所見的活物。（結10:15）</td>
+<td>神的榮耀不是被迫留在任何地方——它是自由的、主動的。這個真理既是警醒（神的同在可以離去），也是盼望（神可以再回來）。你<strong>今天</strong>是否在以某種方式「試圖固定神的同在」——用宗教形式、固定程序代替真實的關係？</td>
+</tr>
+<tr>
+<td><strong>殿內滿了雲彩</strong>，<strong>院宇也被耶和華榮</strong>耀的光輝充滿。（結10:4）</td>
+<td>神的榮耀充滿聖殿——這是以色列最美好的記憶。你有沒有<strong>過那種「神的</strong>同在充滿一切」的時刻？是什麼讓那個時刻成為可能？就像<strong>回想初戀最美的時光</strong>，你願意<strong>思考</strong>是什麼條件造就了那個充滿神的時刻，並尋求再次回到那個地方嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

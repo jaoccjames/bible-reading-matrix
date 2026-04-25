@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第42章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第42章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約伯悔罪、三友受責備、約伯得復興</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>約伯回答耶和華說：</div>
+<div class="verse"><span class="verse-number">2</span>我知道，你萬事都能作；你的旨意不能攔阻。</div>
+<div class="verse"><span class="verse-number">3</span>誰用無知的言語使你的旨意隱藏呢？我所說的是我不明白的；這些事太奇妙，是我不知道的。</div>
+<div class="verse"><span class="verse-number">4</span>求你聽我，我要說話；我問你，求你指示我。</div>
+<div class="verse"><span class="verse-number">5</span>我從前風聞有你，現在親眼看見你。</div>
+<div class="verse"><span class="verse-number">6</span>因此我厭惡自己〔或作：我的言語〕，在塵土和爐灰中懊悔。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華對約伯說話以後，就對提幔人以利法說：「我的怒氣向你和你兩個朋友發作，因為你們議論我不如我的僕人約伯說的是。</div>
+<div class="verse"><span class="verse-number">8</span>現在你們要取七隻公牛，七隻公羊，到我僕人約伯那裏去，為自己獻上燔祭，我的僕人約伯就為你們祈禱。我因悅納他，就不按你們的愚妄辦你們。你們議論我，不如我的僕人約伯說的是。」</div>
+<div class="verse"><span class="verse-number">9</span>於是提幔人以利法、書亞人比勒達、拿瑪人瑣法照着耶和華所吩咐的去行；耶和華就悅納約伯。</div>
+<div class="verse"><span class="verse-number">10</span>約伯為他的朋友祈禱。耶和華就使約伯從苦境〔原文作擄掠〕轉回，並且耶和華賜給他的比他從前所有的加倍。</div>
+<div class="verse"><span class="verse-number">11</span>約伯的弟兄、姐妹，和以先所認識的人都來見他，在他家裏一同喫飯；又論到耶和華所降與他的一切災禍，都為他悲傷安慰他。每人也送他一塊銀子和一個金環。</div>
+<div class="verse"><span class="verse-number">12</span>這樣，耶和華後來賜福給約伯比先前更多。他有一萬四千羊，六千駱駝，一千對牛，一千母驢。</div>
+<div class="verse"><span class="verse-number">13</span>他也有七個兒子，三個女兒。</div>
+<div class="verse"><span class="verse-number">14</span>他給長女起名叫耶米瑪，次女叫基洗亞，三女叫基連哈樸。</div>
+<div class="verse"><span class="verse-number">15</span>在那全地的婦女中找不着像約伯的女兒那樣美貌。她們的父親使她們在弟兄中得產業。</div>
+<div class="verse"><span class="verse-number">16</span>此後，約伯又活了一百四十年，得見他的兒孫，直到四代。</div>
+<div class="verse"><span class="verse-number">17</span>這樣，約伯年紀老邁，日子滿足而死。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第42章是全書最終章，包含三個重要段落。首先，約伯在聽完神的旋風問答後，做出完全不同的回應——他說「我從前風聞有你，現在親眼看見你。因此我厭惡自己，在塵土和爐灰中懊悔」。這不是罪人悔改，而是一個義人在真正遇見神後，自然流露的謙卑。其次，神責備三位朋友「說我不如我的僕人約伯說的是」，並要求他們獻上燔祭，讓約伯為他們代禱。神肯定了約伯在整個過程中的誠實，而非朋友們所說的因果神學。最後，神「使約伯從苦境轉回」，賜給他比以前更多的祝福——財產加倍、又有七子三女，最美麗的女兒遍地無雙，約伯又活了一百四十年，壽終正寢。全書以一個完整的圓結束：神的榮耀、信仰的誠實、和最終的恢復。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「從前風聞有你，現在親眼看見你」是信仰最深的轉化</strong><br>約伯在整本書中的苦難，最終帶來了一個他從未有過的體驗——親眼看見神。他從「關於神的知識」走向「對神的親身認識」。這是苦難最深的屬靈果效：不是問題得到解答，而是認識神的深度前所未有地增加了。<br><br>
+<strong>2. 神肯定約伯的誠實，勝過三友的因果神學</strong><br>「你們議論我，不如我的僕人約伯說的是」——神在最後肯定了約伯，而非三友。約伯在苦難中的申訴、質問、甚至控訴，都是在信仰的框架中誠實地向神說話；三友的整齊理論雖看似虔敬，卻是對神的扭曲。神更喜悅真實的摔跤，勝過虛假的虔誠。<br><br>
+<strong>3. 為傷害你的人代禱，是信仰恢復的最終標誌</strong><br>「約伯為他的朋友祈禱。耶和華就使約伯從苦境轉回。」約伯為三位朋友代禱——這三個曾誤解、審判、壓制他的人。這個代禱不只是寬恕，更是信仰成熟的最終見證：能為傷害你的人代禱，說明你的信仰已不再只是關於自己，而是完全朝向神和他人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我從前風聞有你</strong>，<strong>現在親眼看見你</strong>。因此我厭惡自己，在塵土和爐灰中懊悔。（伯42:5-6）</td>
+<td>就像<strong>聽說一個人很久之後真正見到他</strong>，所有的「聽說」都顯得如此薄弱，從「風聞」到「親眼看見」是信仰最深的轉化。你<strong>的信仰有沒有</strong>這樣的「風聞變親見」的時刻？那次讓你<strong>對神的認識有</strong>什麼根本的改變？</td>
+</tr>
+<tr>
+<td><strong>耶和華說</strong>：「<strong>你們議論我不如我</strong>的僕人約伯說的是。」（伯42:7）</td>
+<td>就像<strong>最後的判決推翻了看似有理的指控</strong>，神肯定約伯的誠實勝過三友的理論。這讓你如何<strong>看待信仰中的</strong>「誠實」和「正確的神學」哪個更重要？你<strong>認為神更喜悅</strong>哪一種禱告——整齊但公式化的讚美，還是真實但混亂的申訴？</td>
+</tr>
+<tr>
+<td><strong>約伯為他的朋友祈</strong>禱。<strong>耶和華就使約伯從</strong>苦境轉回，並且耶和華賜給他的比他從前所有的加倍。（伯42:10）</td>
+<td>就像<strong>轉機有時從為他人禱告開始</strong>，為那些傷害過你<strong>的人代禱不只</strong>是寬恕，更可能是你<strong>自己生命轉機</strong>的起點。你<strong>生命中有沒有</strong>人，你<strong>需要開始為他</strong>們代禱？你願意<strong>讓這個代禱成</strong>為你<strong>「苦境轉回」</strong>的起點嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

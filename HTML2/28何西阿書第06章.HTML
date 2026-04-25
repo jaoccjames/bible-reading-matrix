@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何西阿書第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+何西阿書第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">「我喜愛良善，不喜愛祭祀」</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>來吧，我們歸向耶和華！他撕裂我們，也必醫治；他打傷我們，也必纏裹。</div>
+<div class="verse"><span class="verse-number">2</span>過兩天他必使我們甦醒，第三天他必使我們興起，我們就在他面前得以存活。</div>
+<div class="verse"><span class="verse-number">3</span>我們務要認識耶和華，竭力追求認識他。他出現確如晨光；他必臨到我們像甘雨，像滋潤田地的春雨。</div>
+<div class="verse"><span class="verse-number">4</span>主說：以法蓮哪，我可向你怎樣行呢？猶大啊，我可向你怎樣作呢？因為你們的良善如同早晨的雲霧，又如速散的甘露。</div>
+<div class="verse"><span class="verse-number">5</span>因此，我藉先知砍伐他們，以我口中的話殺戮他們；我施行的審判如光發出。</div>
+<div class="verse"><span class="verse-number">6</span>我喜愛良善〔或作：憐恤〕，不喜愛祭祀；喜愛認識神，勝於燔祭。</div>
+<div class="verse"><span class="verse-number">7</span>他們卻如亞當背約，在境內向我行事詭詐。</div>
+<div class="verse"><span class="verse-number">8</span>基列是作孽之人的城，被血沾染。</div>
+<div class="verse"><span class="verse-number">9</span>強盜成群，怎樣埋伏殺人，祭司結黨，也照樣在示劍的路上殺戮，行了邪惡。</div>
+<div class="verse"><span class="verse-number">10</span>在以色列家，我見了可憎的事；在以法蓮那裏有淫行，以色列被玷污。</div>
+<div class="verse"><span class="verse-number">11</span>猶大阿，我使被擄之民歸回的時候，必有為你所命定的收場。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+何西阿書第6章以以色列的懺悔之詞開始，卻是一首表面的悔改歌：「來吧，我們歸向耶和華！他撕裂我們，也必醫治……第三天他必使我們興起……我們務要認識耶和華，竭力追求認識他。」這些話聽起來美好，但神的回應（4節）揭示問題：「以法蓮哪，我可向你怎樣行呢？……因為你們的良善如同早晨的雲霧，又如速散的甘露」——悔改是短暫的、表面的、像雲霧一樣迅速消散。然後出現全書最著名的一句話（6節）：「我喜愛良善〔或作：憐恤〕，不喜愛祭祀；喜愛認識神，勝於燔祭。」（耶穌兩次引用這節，見太9:13；12:7）。神要的不是儀式的祭物，而是對神真實的認識和從認識流出的憐憫生命。章末是一份社會罪惡清單：詭詐、流血、強盜、姦淫……以色列的生命沒有呼應神所喜愛的。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【「如早晨的雲霧」：表面的悔改無法持久】</strong><br>以色列的悔改話語動人，卻如雲霧短暫。這是「感情性的悔改」——在感動中說出，在壓力消失後消散。真實的悔改有改變行為的根基；表面的悔改只有情感的觸動。信徒需要分辨：我的「悔改」有沒有帶來持續的行為改變，還是每次感動過後，生命很快回到原點？<br><br>
+<strong>2. 【神喜愛「良善/憐恤」超過祭祀，喜愛「認識神」超過燔祭】</strong><br>這是先知書中最核心的神學命題之一：神的首要渴望不是宗教儀式的遵守，而是認識神（關係）和從認識流出的憐憫（品格）。祭祀和燔祭若沒有認識和憐憫的內在，對神來說是空洞的。信仰的核心是關係和品格的成長，不是宗教儀式的完成。<br><br>
+<strong>3. 【「認識神」是生命改變的真實根基】</strong><br>「喜愛認識神，勝於燔祭」——認識神（不只知道關於神，而是真實的相遇和了解）是最高的呼召，也是一切倫理和品格的根源。沒有對神的認識，一切道德要求都會淪為律法主義的枯乾；有了認識，愛神和愛人就成為自然的流露。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>因為你們的良善如</strong><strong>同早晨的雲霧</strong>，又如速散的甘露。（何6:4下）</td>
+<td>你<strong>的信仰委身</strong>是「早晨的雲霧」還是「滋潤全年的雨水」？就像<strong>一段感情只在蜜月期美好</strong>，平淡日子就消退，你<strong>的信仰在沒有</strong>特別感動或壓力時，仍然持守嗎？你願意<strong>誠實地看看：</strong>你<strong>生命中那些「</strong>像雲霧一樣」的承諾是什麼，並思考如何讓它們變成持久的改變？</td>
+</tr>
+<tr>
+<td><strong>我喜愛良善</strong>〔或作：憐恤〕，<strong>不喜愛祭祀</strong>；喜愛認識神，勝於燔祭。（何6:6）</td>
+<td>你<strong>每週的宗教活</strong>動（崇拜、讀經、奉獻）有沒有帶出「良善/憐恤」——對身邊需要的人的實際憐憫和幫助？就像<strong>一個每天上健身房卻不懂得搬運重</strong>物的人，宗教訓練若沒有帶出實際的「憐恤生命」，神說那不是祂最喜愛的。你<strong>的宗教生活有</strong>沒有流出對人的憐憫？</td>
+</tr>
+<tr>
+<td><strong>我們務要認識耶和</strong>華，<strong>竭力追求認識他</strong>。他出現確如晨光；他必臨到我們像甘雨，像滋潤田地的春雨。（何6:3）</td>
+<td>「竭力追求認識他」——認識神不是被動的，而是需要主動竭力追求的。你<strong>現在「竭力追</strong>求認識神」的行動是什麼？就像<strong>追求一段深度的友誼需要投入時間</strong>和專注，你<strong>在認識神這件</strong>事上，有沒有「竭力」的投入，還是只是「隨便維持著」的關係？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶西的枝子：彌賽亞七靈充滿帶來和平國度</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>從耶西的本〔原文作根〕必發一條；從他根生的枝子必結果實。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華的靈必住在他身上，就是使他有智慧和聰明的靈，謀略和能力的靈，知識和敬畏耶和華的靈。</div>
+<div class="verse"><span class="verse-number">3</span>他必以敬畏耶和華為樂；行審判不憑眼見，斷是非也不憑耳聞；</div>
+<div class="verse"><span class="verse-number">4</span>卻要以公義審判貧窮人，以正直判斷世上的謙卑人，以口中的杖擊打世界，以嘴裏的氣殺戮惡人。</div>
+<div class="verse"><span class="verse-number">5</span>公義必當他的腰帶；信實必當他脅下的帶子。</div>
+<div class="verse"><span class="verse-number">6</span>豺狼必與綿羊羔同居，豹子與山羊羔同臥；少壯獅子與牛犢並肥畜同群；小孩子要牽引他們。</div>
+<div class="verse"><span class="verse-number">7</span>牛必與熊同食；牛犢必與小熊同臥；獅子必吃草，與牛一樣。</div>
+<div class="verse"><span class="verse-number">8</span>吃奶的孩子必玩耍在虺蛇的洞口；斷奶的嬰兒必按手在毒蛇的穴上。</div>
+<div class="verse"><span class="verse-number">9</span>在我聖山的遍處，這一切都不傷人，不害物；因為認識耶和華的知識要充滿遍地，好像水充滿洋海一般。</div>
+<div class="verse"><span class="verse-number">10</span>到那日，耶西的根立作萬民的大旗；外邦人必尋求他，他安息之所大有榮耀。</div>
+<div class="verse"><span class="verse-number">11</span>當那日，主必二次伸手救回自己百姓中所餘剩的，就是在亞述、埃及、巴忒羅、古實、以攔、示拿、哈馬，並眾海島所剩下的。</div>
+<div class="verse"><span class="verse-number">12</span>他必向列國豎立大旗，招回以色列被趕散的人，又從地的四方聚集分散的猶大人。</div>
+<div class="verse"><span class="verse-number">13</span>以法蓮的嫉妒就必消散；擾害猶大的必被剪除。以法蓮必不嫉妒猶大，猶大也不擾害以法蓮。</div>
+<div class="verse"><span class="verse-number">14</span>他們要向西飛，撲在非利士人的肩頭上〔肩頭上：或作西界〕，一同擄掠東方人，伸手按住以東和摩押；亞捫人也必順服他們。</div>
+<div class="verse"><span class="verse-number">15</span>耶和華必使埃及海汊枯乾，掄手用暴熱的風使大河分為七條，令人過去不至濕腳。</div>
+<div class="verse"><span class="verse-number">16</span>為主餘剩的百姓，就是從亞述剩下回來的，必有一條大道，如當日以色列從埃及地上來一樣。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第十一章是以賽亞書第一部分（1-12章）的末世盼望高峰，緊接在第十章亞述帝國在神手中被折斷（「長高的必被砍下，高大的必被伐倒」，10:33-34）的宣告之後，第十一章以「從耶西的本必發一條」作為新的開始——在被砍倒的樹根中，仍有生機。「耶西」是大衛的父親，這個名字的使用而非「大衛」，強調了彌賽亞回到最初的根源，從謙遜中興起，而非從王者的榮耀中延續。第2節列出七種聖靈的恩賜（在啟示錄中與「神的七靈」呼應），是新約五旬節聖靈澆灌的預表。第6-9節以和諧共處的野獸圖像描繪末世彌賽亞國度——豺狼與羊羔同居、獅子吃草——這些顛覆自然法則的場景，象徵一個沒有暴力、沒有恐懼、沒有死亡的完全和平的國度，而這個國度的根基是第9節「認識耶和華的知識充滿遍地，好像水充滿洋海一般」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 彌賽亞的七靈恩賜使祂能以公義治理，信徒也在其中分享</strong><br>第2節的七種聖靈恩賜（智慧、聰明、謀略、能力、知識、敬畏耶和華，加上住在他身上的靈），描繪了彌賽亞被聖靈全備充滿的形象。第3節「他必以敬畏耶和華為樂」，揭示了真正屬靈生命的源頭——不是能力或知識，而是對神的敬畏。透過聖靈降臨（五旬節），信徒也分享了這些恩賜；信徒的成長，就是越來越活出彌賽亞性格的過程。<br><br>
+<strong>2. 彌賽亞的審判以公義為標準，特別關顧謙卑和貧窮的人</strong><br>第3-5節強調彌賽亞「不憑眼見，不憑耳聞」審判，而是以公義和信實為標準，特別為「貧窮人」和「世上的謙卑人」伸冤。這與第三章神審問欺壓貧窮人的首領形成鮮明對比：在彌賽亞的國度中，弱勢的人不再被忽視，而是得到完全公正的對待。這呼召信徒在日常生活中，也以彌賽亞的眼光看待弱勢群體。<br><br>
+<strong>3. 和平國度的根基是「認識耶和華的知識充滿遍地」</strong><br>第6-9節的末世和平圖景不是靠政治手段或人的努力達成，而是建立在第9節「認識耶和華的知識要充滿遍地，好像水充滿洋海一般」的基礎上。真正的和平來自人對神的深入認識——認識神的公義、慈愛和主權。這提醒信徒：傳揚神的知識（宣教、教育、見證）不只是個人得救的事，更是推進末世和平國度的方式。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>耶和華的靈必住在</strong><strong>他身上</strong>，就是使他有智慧和聰明的靈，謀略和能力的靈，知識和敬畏耶和華的靈。」（賽11:2）</td>
+<td>就像<strong>一支交響樂團需要指揮協調各部分</strong>的音樂，聖靈的七種恩賜在信徒生命中需要「敬畏耶和華」作為最根本的主旋律，你<strong>在自己的屬靈</strong>生命中，「敬畏耶和華」的分量有多重？它是你<strong>各種恩賜和</strong>能力的基礎，還是只是其中一項偶爾想到的事？</td>
+</tr>
+<tr>
+<td>「<strong>豺狼必與綿羊羔同</strong>居……<strong>因為認識耶和華的</strong>知識要充滿遍地，好像水充滿洋海一般。」（賽11:6,9）</td>
+<td>就像<strong>乾旱的土地一旦被水充滿</strong>，所有的生命都能生長，認識神是所有和平與更新的根源，你<strong>目前對神的認</strong>識在加深還是停滯？你<strong>在引導他人認</strong>識神這件事上，有多少積極的投入？</td>
+</tr>
+<tr>
+<td>「<strong>到那日</strong>，<strong>耶西的根立作萬民</strong>的大旗；外邦人必尋求他，他安息之所大有榮耀。」（賽11:10）</td>
+<td>就像<strong>一個明顯的燈塔能在黑暗中為各方</strong>的船隻提供方向，基督作為萬民的大旗吸引所有尋求者歸向祂，你<strong><strong>的生命</strong></strong>是否也在某種程度上成為他人認識基督的「旗幟」？你<strong>身邊有誰正在</strong>透過你的生命，被吸引去「尋求耶西的根」？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

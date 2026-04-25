@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>但以理書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+但以理書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">尼布甲尼撒的驕傲與七期的管教</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>尼布甲尼撒王曉諭住在全地各方、各國、各族的人說：「願你們大享平安！</div>
+<div class="verse"><span class="verse-number">2</span>我樂意將至高的神向我所行的神蹟奇事宣揚出來。</div>
+<div class="verse"><span class="verse-number">3</span>他的神蹟何其大！他的奇事何其盛！他的國是永遠的；他的權柄存到萬代！</div>
+<div class="verse"><span class="verse-number">4</span>「我尼布甲尼撒安居在宮中，平順在殿內。</div>
+<div class="verse"><span class="verse-number">5</span>我作了一夢，使我懼怕。我在床上的思念，並腦中的異象，使我驚惶。</div>
+<div class="verse"><span class="verse-number">6</span>所以我降旨召巴比倫的一切哲士到我面前，叫他們把夢的講解告訴我。</div>
+<div class="verse"><span class="verse-number">7</span>於是那些術士、用法術的、迦勒底人、觀兆的都進來，我將那夢告訴了他們，他們卻不能把夢的講解告訴我。</div>
+<div class="verse"><span class="verse-number">8</span>末後那照我神的名，稱為伯提沙撒的但以理來到我面前，他裏頭有聖神的靈，我將夢告訴他說：</div>
+<div class="verse"><span class="verse-number">9</span>『術士的領袖伯提沙撒啊，因我知道你裏頭有聖神的靈，甚麼奧祕的事都不能使你為難。現在要把我夢中所見的異象和夢的講解告訴我。』</div>
+<div class="verse"><span class="verse-number">10</span>「我在床上腦中的異象是這樣：我看見地當中有一棵樹，極其高大。</div>
+<div class="verse"><span class="verse-number">11</span>那樹漸長，而且堅固，高得頂天，從地極都能看見，</div>
+<div class="verse"><span class="verse-number">12</span>葉子華美，果子甚多，可作眾生的食物；田野的走獸臥在蔭下，天空的飛鳥宿在枝上；凡有血氣的都從這樹得食。</div>
+<div class="verse"><span class="verse-number">13</span>「我在床上腦中的異象，見有一位守望的聖者從天而降。</div>
+<div class="verse"><span class="verse-number">14</span>大聲呼叫說：『伐倒這樹！砍下枝子！搖掉葉子！拋散果子！使走獸離開樹下，飛鳥躲開樹枝。</div>
+<div class="verse"><span class="verse-number">15</span>樹不卻要留在地內，用鐵圈和銅圈箍住，在田野的青草中讓天露滴濕，使他與地上的獸一同吃草，</div>
+<div class="verse"><span class="verse-number">16</span>使他的心改變，不如人心；給他一個獸心，使他經過七期〔期：或作年；本章同〕。</div>
+<div class="verse"><span class="verse-number">17</span>這是守望者所發的命，聖者所出的令，好叫世人知道至高者在人的國中掌權，要將國賜與誰就賜與誰，或立極卑微的人執掌國權。』</div>
+<div class="verse"><span class="verse-number">18</span>「這是我尼布甲尼撒王所作的夢。伯提沙撒啊，你要說明這夢的講解；因為我國中的一切哲士都不能將夢的講解告訴我，惟獨你能，因你裏頭有聖神的靈。」</div>
+<div class="verse"><span class="verse-number">19</span>於是稱為伯提沙撒的但以理驚訝片時，心意驚惶。王說：「伯提沙撒啊，不要因夢和夢的講解驚惶。」伯提沙撒回答說：「我主啊，願這夢歸與恨惡你的人，講解歸與你的敵人。</div>
+<div class="verse"><span class="verse-number">20</span>你所見的樹漸長，而且堅固，高得頂天，從地極都能看見；</div>
+<div class="verse"><span class="verse-number">21</span>葉子華美，果子甚多，可作眾生的食物；田野的走獸住在其下；天空的飛鳥宿在枝上。</div>
+<div class="verse"><span class="verse-number">22</span>「王啊，這漸長又堅固的樹就是你。你的威勢漸長及天，你的權柄管到地極。</div>
+<div class="verse"><span class="verse-number">23</span>王既看見一位守望的聖者從天而降，說：『將這樹砍伐毀壞，樹不卻要留在地內，用鐵圈和銅圈箍住；在田野的青草中，讓天露滴濕，使他與地上的獸一同吃草，直到經過七期。』</div>
+<div class="verse"><span class="verse-number">24</span>「王啊，講解就是這樣：臨到我主我王的事是出於至高者的命。</div>
+<div class="verse"><span class="verse-number">25</span>你必被趕出離開世人，與野地的獸同居，吃草如牛，被天露滴濕，且要經過七期。等你知道至高者在人的國中掌權，要將國賜與誰就賜與誰。</div>
+<div class="verse"><span class="verse-number">26</span>守望者既吩咐存留樹不，等你知道諸天掌權，以後你的國必定歸你。</div>
+<div class="verse"><span class="verse-number">27</span>王啊，求你悅納我的諫言，以施行公義斷絕罪過，以憐憫窮人除掉罪孽，或者你的平安可以延長。」</div>
+<div class="verse"><span class="verse-number">28</span>這事都臨到尼布甲尼撒王。</div>
+<div class="verse"><span class="verse-number">29</span>過了十二個月，他遊行在巴比倫王宮裏〔原文作上〕。</div>
+<div class="verse"><span class="verse-number">30</span>他說：「這大巴比倫不是我用大能大力建為京都，要顯我威嚴的榮耀嗎？」</div>
+<div class="verse"><span class="verse-number">31</span>這話在王口中尚未說完，有聲音從天降下，說：「尼布甲尼撒王啊，有話對你說，你的國位離開你了。</div>
+<div class="verse"><span class="verse-number">32</span>你必被趕出離開世人，與野地的獸同居，吃草如牛，且要經過七期。等你知道至高者在人的國中掌權，要將國賜與誰就賜與誰。」</div>
+<div class="verse"><span class="verse-number">33</span>當時這話就應驗在尼布甲尼撒的身上，他被趕出離開世人，吃草如牛，身被天露滴濕，頭髮長長，好像鷹毛；指甲長長，如同鳥爪。</div>
+<div class="verse"><span class="verse-number">34</span>日子滿足，我尼布甲尼撒舉目望天，我的聰明復歸於我，我便稱頌至高者，讚美尊敬活到永遠的神。他的權柄是永有的；他的國存到萬代。</div>
+<div class="verse"><span class="verse-number">35</span>世上所有的居民都算為虛無；在天上的萬軍和世上的居民中，他都憑自己的意旨行事。無人能攔住他手，或問他說，你作甚麼呢？</div>
+<div class="verse"><span class="verse-number">36</span>那時，我的聰明復歸於我，為我國的榮耀、威嚴，和光耀也都復歸於我；並且我的謀士和大臣也來朝見我。我又得堅立在國位上，至大的權柄加增於我。</div>
+<div class="verse"><span class="verse-number">37</span>現在我尼布甲尼撒讚美、尊崇、恭敬天上的王；因為他所作的全都誠實，他所行的也都公平。那行動驕傲的，他能降為卑。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+但以理書第4章是最獨特的章節之一——整章幾乎以尼布甲尼撒第一人稱寫成，是一篇外邦王對神的見證。尼布甲尼撒夢見一棵極高大的樹，「田野的走獸臥在蔭下，天空的飛鳥宿在枝上」，但有守望的聖者命令砍倒這樹，只留樹不；讓這人心變如獸心，與野獸同居七期，「等你知道至高者在人的國中掌權」。但以理解夢後，勸王悔改：「以施行公義斷絕罪過，以憐憫窮人除掉罪孽，或者你的平安可以延長。」王沒有聽從，十二個月後在宮中誇耀自己的功業，立刻聲音從天降下，宣告審判成就：他被趕出離開世人，吃草如牛，「身被天露滴濕」達七期。「日子滿足」後，王舉目望天，聰明復歸，他讚美神：「世上所有的居民都算為虛無……他能降為卑。」這是聖經中最著名的外邦王悔改故事。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神給人悔改的機會和時間，審判不是突然降臨的】</strong><br>夢在審判發生前一年給了王，但以理也勸王悔改——神先預警，再審判，中間有悔改的窗口。王有「十二個月」的機會，卻「沒有聽從」。神的審判有其精確的時間表，但在那之前往往有充足的警告。這提醒信徒：聽見警告後的回應，決定了結局。<br><br>
+<strong>2. 【「至高者在人的國中掌權」是尼布甲尼撒學到的核心功課】</strong><br>「等你知道至高者在人的國中掌權，要將國賜與誰就賜與誰」——王的七期管教，一個目的：讓他認識這個真理。神花七年時間教一個人一件事：我掌權，不是你。信徒也常常需要艱難的「七期」，才真正在生命深處承認「神掌權」不只是口頭的教義，而是活生生的現實。<br><br>
+<strong>3. 【驕傲使人在最強盛的時候最脆弱】</strong><br>尼布甲尼撒在最輝煌的時刻說「這大巴比倫不是我用大能大力建為京都……」——話還沒說完，審判就降臨。成功和驕傲的結合是最危險的組合。信徒在最強盛、最成功的時候，反而需要最多的謙卑，因為那正是驕傲最容易滋生的土壤。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>他說：「<strong>這大巴比倫不是我</strong><strong>用大能大力建為京</strong>都，要顯我威嚴的榮耀嗎？」這話在王口中尚未說完，有聲音從天降下，說：「尼布甲尼撒王啊，有話對你說，你的國位離開你了。」（但4:30-31）</td>
+<td>「這話在王口中尚未說完」——驕傲的宣言和審判的降臨幾乎同時。你<strong>最近有沒有某</strong>個「炫耀自己建造的巴比倫」的時刻，把本應歸神的榮耀放在自己身上？就像<strong>一個表演者謝幕時忘記說感謝</strong>，你<strong>在最近的成就</strong>中，有沒有真誠地把榮耀歸給神？</td>
+</tr>
+<tr>
+<td>王啊，<strong>求你悅納我的諫言</strong>，<strong>以施行公義斷絕罪</strong>過，以憐憫窮人除掉罪孽，或者你的平安可以延長。（但4:27）</td>
+<td>但以理給尼布甲尼撒的建議：以公義斷罪，以憐憫窮人除孽。神對掌權者的要求仍然是公義和憐憫。你<strong>在你所有的任</strong>何「掌權」位置上——作父母、主管、老師——有沒有在「公義」和「憐憫窮人」上正在努力活出這兩個原則？</td>
+</tr>
+<tr>
+<td><strong>現在我尼布甲尼撒</strong>讚美、尊崇、<strong>恭敬天上的王</strong>；因為他所作的全都誠實，他所行的也都公平。那行動驕傲的，他能降為卑。（但4:37）</td>
+<td>尼布甲尼撒在七年的羞辱之後，真心讚美神。有時最深的讚美出自最深的跌倒之後。你<strong>自己的生命中</strong>，有沒有一段「被驕傲帶到低處」的經歷，最終使你<strong>對神有了更真</strong>實的依靠和讚美？那段經歷如何成為你<strong>信仰更深根基</strong>的一部分？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

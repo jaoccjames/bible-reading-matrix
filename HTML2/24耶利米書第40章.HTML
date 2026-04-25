@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第40章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第40章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶利米留守廢墟與基大利被立</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶利米鎖在耶路撒冷和猶大被擄到巴比倫的人中，護衛長尼布撒拉旦將他從拉瑪釋放以後，耶和華的話臨到耶利米。</div>
+<div class="verse"><span class="verse-number">2</span>護衛長將耶利米叫來，對他說：「耶和華你的神曾說要降這禍與此地。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華使這禍臨到，照他所說的行了；因為你們得罪耶和華，沒有聽從他的話，所以這事臨到你們。</div>
+<div class="verse"><span class="verse-number">4</span>現在我解開你手上的鍊子，你若看與我同往巴比倫去好，就可以去，我必厚待你；你若看與我同往巴比倫去不好，就不必去。看哪，全地在你面前，你以為那裏美好，那裏合宜，只管上那裏去吧！」</div>
+<div class="verse"><span class="verse-number">5</span>耶利米還沒有回去，護衛長說：「你可以回到沙番的孫子亞希甘的兒子基大利那裏去；現在巴比倫王立他作猶大城邑的省長。你可以在他那裏住在民中，不然，你看那裏合宜就可以上那裏去。」於是護衛長送他糧食和禮物，釋放他去了。</div>
+<div class="verse"><span class="verse-number">6</span>耶利米就到米斯巴見亞希甘的兒子基大利，在他那裏住在境內剩下的民中。</div>
+<div class="verse"><span class="verse-number">7</span>在田野的一切軍長和屬他們的人聽見巴比倫王立了亞希甘的兒子基大利作境內的省長，並將沒有擄到巴比倫的男人、婦女、孩童，和境內極窮的人全交給他。</div>
+<div class="verse"><span class="verse-number">8</span>於是軍長尼探雅的兒子以實瑪利，加利亞的兩個兒子約哈難和約拿單，單戶篾的兒子西萊雅，並尼陀法人以斐的眾子，瑪迦人的兒子耶撒尼亞和屬他們的人，都到米斯巴見基大利。</div>
+<div class="verse"><span class="verse-number">9</span>沙番的孫子亞希甘的兒子基大利向他們和屬他們的人起誓說：「不要怕服事迦勒底人，只管住在這地，服事巴比倫王，就可以得福。</div>
+<div class="verse"><span class="verse-number">10</span>至於我，我要住在米斯巴，伺候那到我們這裏來的迦勒底人；只是你們當積蓄酒、油，和夏天的果子，收在器皿裏，住在你們所佔的城邑中。」</div>
+<div class="verse"><span class="verse-number">11</span>在摩押地和亞捫人中，在以東地和各國的一切猶大人，聽見巴比倫王留下些猶大人，並立沙番的孫子亞希甘的兒子基大利管理他們。</div>
+<div class="verse"><span class="verse-number">12</span>這一切猶大人就從所趕到的各處回來，到猶大地的米斯巴基大利那裏，又積蓄了許多的酒，並夏天的果子。</div>
+<div class="verse"><span class="verse-number">13</span>加利亞的兒子約哈難和在田野的一切軍長來到米斯巴見基大利，</div>
+<div class="verse"><span class="verse-number">14</span>對他說：「亞捫人的王巴利斯打發尼探雅的兒子以實瑪利來要你的命，你知道嗎？」亞希甘的兒子基大利卻不信他們的話。</div>
+<div class="verse"><span class="verse-number">15</span>加利亞的兒子約哈難在米斯巴私下對基大利說：「求你容我去殺尼探雅的兒子以實瑪利，必無人知道。何必讓他要你的命，使聚集到你這裏來的猶大人都分散，以致猶大剩下的人都滅亡呢？」</div>
+<div class="verse"><span class="verse-number">16</span>亞希甘的兒子基大利對加利亞的兒子約哈難說：「你不可行這事，你所論以實瑪利的話是假的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第40章記錄耶路撒冷陷落後的第一階段：護衛長尼布撒拉旦在拉瑪釋放耶利米，並給予他罕見的自由選擇——去巴比倫享受優待，或留在猶大故土。耶利米選擇留下，這個選擇顯示他對故土的委身，以及他以先知身分繼續牧養剩餘百姓的心志。巴比倫任命沙番的孫子亞希甘的兒子基大利為猶大省長，耶利米到米斯巴與他同住。分散在各地的猶大人——摩押、亞捫、以東及各國境內的流亡者——陸續歸回，聚集在基大利周圍，重建社群。然而本章末尾埋下了危險的伏筆：忠心的將領約哈難已警告基大利，有人圖謀暗殺他；基大利卻不相信，拒絕先發制人的建議。這是一個在廢墟上重建的故事，也是一個因輕信而釀成悲劇的前奏。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神的審判之後仍有重建的機會】</strong><br>城破了、百姓被擄了，但神並沒有放棄留在地上的人。分散的猶大人陸續歸回，積蓄糧食，在廢墟中重新建立社群。這提醒信徒：無論過去的失敗多麼徹底，神仍為留下來的人開道路。「被擄」不是故事的結束，廢墟上的重建是神恩典的另一個章節。在個人靈命的「廢墟時期」，神仍在招聚、仍在建立。<br><br>
+<strong>2. 【選擇留守服事，有時比接受優待更有使命價值】</strong><br>耶利米可以去巴比倫享有優待，卻選擇留在廢墟中的故土，與最貧窮、最無助的百姓同在。這是捨棄個人安逸、選擇使命的決定。今日許多信徒面對類似的選擇：是往更舒適、更有保障的地方，還是留在有需要的地方服事？耶利米的選擇提供了一個使命優先於個人利益的榜樣。<br><br>
+<strong>3. 【輕忽警告是管理的重大疏失】</strong><br>基大利被警告有人謀刺，卻選擇不信任那個消息。這種「不願相信壞消息」的心理是人性的常態，在管理上卻可能導致災難。信徒在屬靈生命中也常常面對「不願相信的警告」——無論是關於某個關係、決策或習慣的危險信號。留意並認真對待那些不好聽卻可能是真實的警告，是屬靈智慧的表現。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>護衛長說</strong>：「<strong>你可以回到沙番的</strong>孫子亞希甘的兒子基大利那裏去……你可以在他那裏住在民中，不然，你看那裏合宜就可以上那裏去。」於是護衛長送他糧食和禮物，釋放他去了。（耶40:5）</td>
+<td>你曾<strong>面對過「去更</strong>安逸的地方」與「留在有需要的地方服事」的選擇嗎？就像<strong>一個醫生選擇留在資源不足的偏遠</strong>地區服務，而非去城市的高薪診所，你如何<strong>在「個人發展</strong>」和「使命委身」之間作出平衡？</td>
+</tr>
+<tr>
+<td><strong>沙番的孫子亞希甘</strong><strong>的兒子基大利向他</strong>們和屬他們的人起誓說：「不要怕服事迦勒底人，只管住在這地，服事巴比倫王，就可以得福。」（耶40:9）</td>
+<td>在最艱難的環境中，你是否有能力給周圍的人傳達「不要怕，我們可以在這裡重建」的信心？就像<strong>一個好的船長在暴風中仍能穩定船</strong>員的心，你如何<strong>成為周圍人在</strong>困境中的穩定力量？</td>
+</tr>
+<tr>
+<td><strong>加利亞的兒子約哈</strong><strong>難在米斯巴私下對</strong>基大利說：「求你容我去殺尼探雅的兒子以實瑪利……亞希甘的兒子基大利對加利亞的兒子約哈難說：「你不可行這事，你所論以實瑪利的話是假的。」（耶40:15-16）</td>
+<td>你是否<strong>曾忽視一個重</strong>要的警告，後來後悔了？就像<strong>一再忽略汽車的警示燈最終導致拋</strong>錨，你願意<strong>反思：你目前</strong>生活中有沒有正在被你<strong>忽視的「警示</strong>燈」，需要認真對待？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

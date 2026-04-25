@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第60章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第60章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">興起發光因你的光已來到：耶和華的榮耀照耀你</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>興起，發光！因為你的光已經來到！耶和華的榮耀發現照耀你。</div>
+<div class="verse"><span class="verse-number">2</span>看哪，黑暗遮蓋大地，幽暗遮蓋萬民，耶和華卻要顯現照耀你；他的榮耀要現在你身上。</div>
+<div class="verse"><span class="verse-number">3</span>萬國要來就你的光；君王要來就你發現的光輝。</div>
+<div class="verse"><span class="verse-number">4</span>你舉目向四方觀看；眾人都聚集來到你這裏。你的眾子從遠方而來；你的眾女也被懷抱而來。</div>
+<div class="verse"><span class="verse-number">5</span>那時，你看見就有光榮；你心又跳動又寬暢；因為大海豐盛的貨物必轉來歸你；列國的財寶也必來歸你。</div>
+<div class="verse"><span class="verse-number">6</span>成群的駱駝，並米甸和以法的獨峰駝必遮滿你；示巴的眾人都必來到；要奉上黃金乳香，又要傳說耶和華的讚美。</div>
+<div class="verse"><span class="verse-number">7</span>基達的羊群都必聚集到你這裏，尼拜約的公羊要供你使用，在我壇上必蒙悅納；我必榮耀我榮耀的殿。</div>
+<div class="verse"><span class="verse-number">8</span>那些飛來如雲、又如鴿子向窗戶飛回的是誰呢？</div>
+<div class="verse"><span class="verse-number">9</span>眾海島必等候我，首先是他施的船隻，將你的眾子連他們的金銀從遠方一同帶來，都為耶和華你神的名，又為以色列的聖者，因為他已經榮耀了你。</div>
+<div class="verse"><span class="verse-number">10</span>外邦人必建築你的城牆；他們的王必服事你。我曾發怒擊打你，現今卻施恩憐恤你。</div>
+<div class="verse"><span class="verse-number">11</span>你的城門必時常開放，晝夜不關；使人把列國的財物帶來歸你，並將他們的君王牽引而來。</div>
+<div class="verse"><span class="verse-number">12</span>那一邦那一國不事奉你，就必滅亡，也必全然荒廢。</div>
+<div class="verse"><span class="verse-number">13</span>利巴嫩的榮耀，就是松樹、杉樹、黃楊樹，都必一同歸你，為要修飾我聖所之地；我也要使我腳踏之處得榮耀。</div>
+<div class="verse"><span class="verse-number">14</span>素來苦待你的，他的子孫都必屈身來就你；藐視你的，都要在你腳下跪拜。他們要稱你為「耶和華的城」，為「以色列聖者的錫安」。</div>
+<div class="verse"><span class="verse-number">15</span>你雖然被撇棄被厭惡，甚至無人經過，我卻使你變為永遠的榮華，成為累代的喜樂。</div>
+<div class="verse"><span class="verse-number">16</span>你也必喫萬國的奶，又喫君王的奶。你便知道我耶和華是你的救主，是你的救贖主，雅各的大能者。</div>
+<div class="verse"><span class="verse-number">17</span>我要拿金子代替銅，拿銀子代替鐵，拿銅代替木頭，拿鐵代替石頭；並要以和平為你的官長，以公義為你的監督。</div>
+<div class="verse"><span class="verse-number">18</span>你地上不再聽見強暴的事，境內不再聽見荒涼毀滅的事。你必稱你的牆為「拯救」，稱你的門為「讚美」。</div>
+<div class="verse"><span class="verse-number">19</span>日頭不再作你白晝的光；月亮也不再發光照耀你。耶和華卻要作你永遠的光；你神要為你的榮耀。</div>
+<div class="verse"><span class="verse-number">20</span>你的日頭不再下落；你的月亮也不退縮；因為耶和華必作你永遠的光。你悲哀的日子也完畢了。</div>
+<div class="verse"><span class="verse-number">21</span>你的居民都成為義人，永遠得地為業；是我種的栽子，我手的工作，使我得榮耀。</div>
+<div class="verse"><span class="verse-number">22</span>至小的族要加增千倍；微弱的國必成為強盛。我耶和華要按定期速成這事。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第六十章是整本以賽亞書後半部（40-66章）中最富有末世榮耀的章節之一，以三個字「興起，發光！」（Arise, shine）開始，宣告黑暗世代即將被神的榮耀所替代。本章是以賽亞書「光的神學」的高峰：第1-3節描繪耶和華的榮耀照耀以色列，使萬國和君王歸向這道光；第4-9節描繪列國帶著財寶和子女歸回的末世圖景；第10-16節宣告外邦人將服事神的城；第17-22節是末世完全的和平與榮耀。本章第1節「耶和華的榮耀發現照耀你」，在啟示錄21:23-24中得到完全的應驗：新耶路撒冷「不用日月光照，因有神的榮耀光照它……列國要在這光裡行走」。第19-20節「日頭不再作你白晝的光……耶和華卻要作你永遠的光」，同樣在啟示錄22:5「不再有黑夜……主神要光照他們」中得到回應。本章的末世圖景，從以色列的復興出發，擴展到普世萬民歸向神的宏大場景，是以賽亞書宣教神學最清楚的展現。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「興起，發光！因為你的光已經來到！」：神的光呼召信徒起身發光</strong><br>第1節的雙重命令——「興起」和「發光」——宣告了信徒在神光中的使命：不只是被動地接受光，而是主動地興起發光。「你的光已經來到」是起身的理由——光是已經到來的事實，信徒的回應是起身承接這光，然後向外發光。耶穌在馬太福音5:14-16「你們是世上的光」的呼召，正是這節話的新約展開：信徒的身份是光的承載者，使命是在黑暗中發光。<br><br>
+<strong>2. 「萬國要來就你的光」：神的榮耀在信徒身上，吸引萬民歸向神</strong><br>第3節「萬國要來就你的光；君王要來就你發現的光輝」，宣告了一個令人驚訝的宣教邏輯：不是信徒出去尋找萬國，而是萬國被吸引到光的源頭來。這個吸引力不是人的魅力或計劃，而是「耶和華的榮耀」在信徒身上的彰顯。當信徒的生命真正反映神的榮耀時，那個榮耀本身就有吸引萬民的力量。宣教的根本不是技巧，而是榮耀的彰顯。<br><br>
+<strong>3. 「耶和華必作你永遠的光」：末世的盼望使今日的黑暗相對化</strong><br>第19-20節「日頭不再作你白晝的光……耶和華卻要作你永遠的光」，描繪了一個不再需要自然界光源的末世狀態——神自己的榮耀成為唯一和永遠的光。這個末世盼望對今日在黑暗中的信徒是深刻的安慰：今日的黑暗是暫時的；終有一天，那個永遠的光將完全取代一切的黑暗。信徒在最深的黑暗中，可以以這個末世的光作為信仰的燈塔。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>興起，發光！<strong>因為你的光已經來</strong>到！<strong>耶和華的榮耀發現</strong>照耀你。（賽60:1）</td>
+<td>就像<strong>一個沉睡在黎明中的人</strong>，當陽光照進房間，不是要等他自己努力產生光，而是要他起身張開窗簾，讓光照進來，神的榮耀已經在信徒身上，只等信徒「興起」承接和傳遞，你<strong>目前的信仰生</strong>命中，有哪些「窗簾」遮蓋了神的榮耀在你<strong>身上的彰顯</strong>？</td>
+</tr>
+<tr>
+<td><strong>萬國要來就你的光</strong>；<strong>君王要來就你發現</strong>的光輝。（賽60:3）</td>
+<td>就像<strong>一盞燈塔</strong>，不是它追著船跑，而是船在黑暗中尋找光的方向，你<strong>的生命和信仰</strong>群體，是否真正成為吸引周圍人尋求神的「光」？那個光是從外在的活動計劃，還是從神的榮耀在你<strong>身上真實彰顯</strong>出來的？</td>
+</tr>
+<tr>
+<td><strong>耶和華必作你永遠</strong>的光；<strong>你悲哀的日子也完</strong>畢了。（賽60:20）</td>
+<td>就像<strong>在長達幾個月的極地冬夜之後</strong>，太陽再次升起，那個光明是真實且完全的，今日的黑暗將有終結，神的永遠之光是確定的盼望，你<strong>目前的「悲哀</strong>的日子」是什麼？「你<strong>悲哀的日子也</strong>完畢了」這個應許如何成為你<strong>在當下苦難中</strong>的盼望？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

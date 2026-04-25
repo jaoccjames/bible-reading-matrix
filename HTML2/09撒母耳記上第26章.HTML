@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記上第26章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記上第26章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">再次不殺神受膏者</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>西弗人到基比亞見掃羅，說：「大衛不是在曠野前的哈基拉山藏着麼？」</div>
+<div class="verse"><span class="verse-number">2</span>掃羅就起身，帶領以色列人中挑選的三千精兵下到西弗的曠野，要在那裏尋索大衛。</div>
+<div class="verse"><span class="verse-number">3</span>掃羅在曠野前的哈基拉山，在道路上安營。大衛住在曠野，聽說掃羅到曠野來追尋他，</div>
+<div class="verse"><span class="verse-number">4</span>就打發人去探聽，便知道掃羅果然來到。</div>
+<div class="verse"><span class="verse-number">5</span>大衛起來，到掃羅安營的地方，看見掃羅和他的元帥尼珥的兒子押尼珥睡臥之處；掃羅睡在輜重營裏，百姓安營在他周圍。</div>
+<div class="verse"><span class="verse-number">6</span>大衛對赫人亞希米勒和洗魯雅的兒子約押的兄弟亞比篩說：「誰同我下到掃羅營裏去？」亞比篩說：「我同你下去。」</div>
+<div class="verse"><span class="verse-number">7</span>於是大衛和亞比篩夜間到了百姓那裏，見掃羅睡在輜重營裏；他的槍在頭旁，插在地上。押尼珥和百姓睡在他周圍。</div>
+<div class="verse"><span class="verse-number">8</span>亞比篩對大衛說：「現在神將你的仇敵交在你手裏，求你容我拿槍將他刺透在地，一刺就成，不用再刺。」</div>
+<div class="verse"><span class="verse-number">9</span>大衛對亞比篩說：「不可害死他。有誰伸手害耶和華的受膏者而無罪呢？」</div>
+<div class="verse"><span class="verse-number">10</span>大衛又說：「我指着永生的耶和華起誓，他或被耶和華擊打，或是死期到了，或是出戰陣亡；</div>
+<div class="verse"><span class="verse-number">11</span>我在耶和華面前，萬不敢伸手害耶和華的受膏者。現在你可以將他頭旁的槍和水瓶拿來，我們就走。」</div>
+<div class="verse"><span class="verse-number">12</span>大衛從掃羅的頭旁拿了槍和水瓶，二人就走了，沒有人看見，沒有人知道，也沒有人醒起，都睡着了，因為耶和華使他們沉沉地睡了。</div>
+<div class="verse"><span class="verse-number">13</span>大衛過到那邊去，遠遠的站在山頂上，與他們相離甚遠。</div>
+<div class="verse"><span class="verse-number">14</span>大衛呼叫百姓和尼珥的兒子押尼珥說：「押尼珥阿，你為何不答應呢？」押尼珥說：「你是誰？竟敢呼叫王呢？」</div>
+<div class="verse"><span class="verse-number">15</span>大衛對押尼珥說：「你不是個勇士麼？以色列中誰能比你呢？民中有人進來要害死王你的主，你為何沒有保護王你的主呢？</div>
+<div class="verse"><span class="verse-number">16</span>你這樣是不好的！我指着永生的耶和華起誓，你們都是該死的；因為沒有保護你們的主，就是耶和華的受膏者。現在你看看王頭旁的槍和水瓶在那裏。」</div>
+<div class="verse"><span class="verse-number">17</span>掃羅聽出是大衛的聲音，就說：「我兒大衛，這是你的聲音麼？」大衛說：「主我的王啊，是我的聲音」；</div>
+<div class="verse"><span class="verse-number">18</span>又說：「我作了甚麼？我手裏有甚麼惡事？我主竟追趕僕人呢？</div>
+<div class="verse"><span class="verse-number">19</span>求我主我王聽僕人的話：若是耶和華激發你攻擊我，願耶和華收納祭物；若是人激發你，願他在耶和華面前受咒詛；因為他現今趕逐我，不容我在耶和華的產業上有分，說：『你去事奉別神吧！』</div>
+<div class="verse"><span class="verse-number">20</span>現在求王不要使我的血流在離耶和華遠的地方。以色列王出來是尋找一個虼蚤，如同人在山上獵取一個鷓鴣一般。」</div>
+<div class="verse"><span class="verse-number">21</span>掃羅說：「我有罪了！我兒大衛，你可以回來，因你今日看我的性命為寶貴；我必不再加害於你。我是糊塗人，大大錯了。」</div>
+<div class="verse"><span class="verse-number">22</span>大衛說：「王的槍在這裏，可以吩咐一個僕人過來拿去。</div>
+<div class="verse"><span class="verse-number">23</span>今日耶和華將王交在我手裏，我卻不肯伸手害耶和華的受膏者。耶和華必照各人的公義誠實報應他。</div>
+<div class="verse"><span class="verse-number">24</span>我今日重看你的性命，願耶和華也重看我的性命，並且拯救我脫離一切患難。」</div>
+<div class="verse"><span class="verse-number">25</span>掃羅對大衛說：「我兒大衛，願你得福！你必作大事，也必得勝。」於是大衛起行，掃羅回他的本處去了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章是第24章洞中割袍事件的再現。西弗人再次向掃羅告密大衛的藏身處,掃羅又帶三千精兵來追捕。大衛與亞比篩趁夜潛入掃羅的營地,發現掃羅和眾人都沉睡。亞比篩請求讓他一槍刺死掃羅,但大衛再次拒絕,只拿走掃羅頭旁的槍和水瓶。他們離開後,大衛在遠處呼喊,責備押尼珥沒有盡責保護王,並展示槍和水瓶作為證據。掃羅認出大衛的聲音,承認自己有罪,懇求大衛回來。大衛回應說神必照各人的公義誠實報應。兩人再次分別,但這次大衛意識到掃羅不會真正改變。本章重複強調大衛不肯伸手害神的受膏者,展現他品格的一致性和對神權柄的尊重。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 品格在重複試探中證明</strong><br>大衛第二次有機會殺掃羅,再次拒絕。真正的品格不是一次的選擇,而是在重複的試探中保持一致。當同樣的機會再次出現時,我們的反應顯明內心真實的光景。大衛兩次都選擇尊重神的受膏者,證明這不是偶然,而是他生命的根基。我們的品格在重複的試驗中被塑造和證明,每一次正確的選擇都加強我們屬靈的肌肉。<br><br>
+<strong>2. 真悔改需要生命的改變</strong><br>掃羅再次認罪說「我有罪了」,但之後並未真正改變。真正的悔改不只是口頭承認,而是生命方向的轉變。掃羅的認罪是情緒性的反應,不是真心的悔改。他的生命沒有結出悔改的果子。我們需要省察自己的悔改是否真實,是否有生命的改變為證。神看重的是內心的真實轉變,不是表面的宗教行為或情感的波動。<br><br>
+<strong>3. 將審判權完全交給神</strong><br>大衛說「耶和華必照各人的公義誠實報應他」,完全信靠神的公義。我們常想自己伸冤,因為不確定神是否會處理。但大衛深信神必報應,所以能放手。真正的信心是相信神的公義勝過我們自己的判斷。當我們能說「神必報應」並真心放下時,就是信心成熟的表現。神的時間和方式可能與我們期待的不同,但祂的公義必不失落。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>大衛對亞比篩說</strong>:「<strong>不可害死他</strong>。有誰伸手害耶和華的受膏者而無罪呢?」(撒上26:9)</td>
+<td>大衛第二次面對同樣試探仍堅持原則。就像<strong>減肥者再次拒絕甜食</strong>,當同樣的試探重複出現,你<strong>的選擇</strong>是否一致?什麼幫助你<strong>在重複的試探</strong>中站立得穩?</td>
+</tr>
+<tr>
+<td><strong>掃羅說</strong>:「<strong>我有罪了</strong>!我兒大衛...我是糊塗人,大大錯了。」(撒上26:21)</td>
+<td>掃羅再次認罪,卻沒有真正改變。就像<strong>戒菸者每次都說這是最後一根</strong>,你<strong>的悔改</strong>是真心轉變還是情緒反應?如何分辨真假悔改?</td>
+</tr>
+<tr>
+<td><strong>今日耶和華將王交</strong><strong>在我手裡</strong>,我卻不肯伸手害耶和華的受膏者。耶和華必照各人的公義誠實報應他。(撒上26:23)</td>
+<td>大衛完全相信神的公義必報應。就像<strong>法官判案而非受害者私刑</strong>,面對不公待遇,你能否<strong>真心相信神必</strong>審判而選擇放手?什麼使你<strong>難以交託</strong>?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

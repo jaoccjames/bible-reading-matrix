@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以斯帖記第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以斯帖記第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">末底改高升，為族人求好處</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>亞哈隨魯王使旱地和海島的人民都進貢。</div>
+<div class="verse"><span class="verse-number">2</span>他以權柄能力所行的，並他抬舉末底改使他高升的事，豈不都寫在瑪代和波斯王的歷史上嗎？</div>
+<div class="verse"><span class="verse-number">3</span>猶大人末底改作亞哈隨魯王的宰相，在猶大人中為大，得他眾弟兄的喜悅，為本族的人求好處，向他們說和平的話。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以斯帖記第10章是全書最短的一章，僅三節，卻以精練的語言為整個故事畫下完美的句點。第1節以亞哈隨魯王的權威和廣大帝國作為背景；第2節指出末底改被王抬舉高升的事已記在歷史冊上；第3節則以末底改的最終描述作結：他作了王的宰相，在猶大人中地位崇高，深得弟兄喜悅，並且「為本族的人求好處，向他們說和平的話」。這個結局是對末底改一生的精準總結——他從朝門外的一個無名猶大人，成為帝國最有影響力的人物之一；但他使用影響力的方式，不是謀取私利，而是為本族人求好處，說和平的話。全書雖不提神的名字，但末底改的一生正是神隱秘作為的最清晰見證：一個忠心的人，在神所安排的時機，成為整個民族的祝福。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神賜予的影響力，是為了成為他人的祝福</strong><br>末底改位居宰相之高，卻用這影響力「為本族的人求好處」。這是以斯帖記最後給讀者的屬靈定義：真正的領袖，不是以位置謀取自身的利益，而是以影響力服事他人。信徒所得的才幹、地位、關係和資源，若能效法末底改，用來為身邊的人「求好處」，便是最合乎神心意的使用。<br><br>
+<strong>2. 「說和平的話」是影響力最深層的運用</strong><br>末底改在位置和作為之外，還「向他們說和平的話」。這不只是政策上的保護，更是語言上的關顧——用和平、鼓勵、建立的話語來滋養他所愛護的人。說話是每個人都有的影響力，不需要高位才能使用。信徒每一天都有機會選擇用「和平的話」還是傷害的話語來影響周圍的人。<br><br>
+<strong>3. 忠心的人生在歷史冊上留名，神記念一切</strong><br>末底改的事蹟「寫在瑪代和波斯王的歷史上」，人的歷史記念了他；而以斯帖記本身，則是神記念他的永恆方式。以斯帖記的整個故事告訴我們：神在默默記念每一個忠心在自己崗位上的人。我們不一定能看見「歷史冊」，但神的記念從不失準，也不失時。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他以權柄能力所行</strong>的，<strong>並他抬舉末底改使</strong>他高升的事，豈不都寫在……歷史上嗎？（斯10:2）</td>
+<td>就像<strong>功績被刻在紀念碑上讓後代看見</strong>，神記念每一個忠心的人。如果你<strong>的一生也被記</strong>在「歷史上」，那一章最重要的記錄會是什麼？你<strong>希望後人因你</strong>記念什麼？</td>
+</tr>
+<tr>
+<td><strong>猶大人末底改作亞</strong><strong>哈隨魯王的宰相</strong>，在猶大人中為大，得他眾弟兄的喜悅，為本族的人求好處。（斯10:3）</td>
+<td>就像<strong>一個地方官員選擇把預算用在真正</strong>需要的社區而非個人利益，用影響力服事他人是末底改一生的寫照。你<strong>現在所擁有的</strong>影響力或資源，是更多用來服事自己，還是為他人「求好處」？</td>
+</tr>
+<tr>
+<td><strong>猶大人末底改</strong>……<strong>向他們說和平的話</strong>。（斯10:3）</td>
+<td>就像<strong>一個好老師的話能在學生心中留存</strong>幾十年，說和平的話是每個人都能使用的最深層影響力。你<strong>最近對身邊重</strong>要的人說的話，是建立還是傷害？你願意<strong>從今天開始更</strong>刻意地說和平的話嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

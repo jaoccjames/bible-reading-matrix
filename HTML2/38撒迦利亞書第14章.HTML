@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒迦利亞書第14章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒迦利亞書第14章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶和華作王統治全地</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的日子臨近，你的財物必被搶掠，在你中間分散。</div>
+<div class="verse"><span class="verse-number">2</span>因為我必聚集萬國與耶路撒冷爭戰，城必被攻取，房屋被搶奪，婦女被玷污，城中的民一半被擄去；剩下的民仍在城中，不致剪除。</div>
+<div class="verse"><span class="verse-number">3</span>那時，耶和華必出去與那些國爭戰，好像從前爭戰一樣。</div>
+<div class="verse"><span class="verse-number">4</span>那日，他的腳必站在耶路撒冷前面朝東的橄欖山上。這山必從中間分裂，自東至西成為極大的谷。山的一半向北挪移，一半向南挪移。</div>
+<div class="verse"><span class="verse-number">5</span>你們要從我山的谷中逃跑，因為山谷必延到亞薩。你們逃跑，必如猶大王烏西雅年間的人逃避大地震一樣。耶和華我的神必降臨，有一切聖者同來。</div>
+<div class="verse"><span class="verse-number">6</span>那日，必沒有光，三光必退縮。</div>
+<div class="verse"><span class="verse-number">7</span>那日，必是耶和華所知道的，不是白晝，也不是黑夜，到了晚上纔有光明。</div>
+<div class="verse"><span class="verse-number">8</span>那日，必有活水從耶路撒冷出來，一半往東海流，一半往西海流；冬夏都是如此。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華必作全地的王。那日耶和華必為獨一無二的，他的名也是獨一無二的。</div>
+<div class="verse"><span class="verse-number">10</span>全地，從迦巴直到耶路撒冷南方的臨門，要變為亞拉巴。耶路撒冷必仍居高位，就是從便雅憫門到第一門之處，又到角門，並從哈楠業樓，直到王的酒醡。</div>
+<div class="verse"><span class="verse-number">11</span>人必住在其中，不再有咒詛。耶路撒冷人必安然居住。</div>
+<div class="verse"><span class="verse-number">12</span>耶和華用災殃攻擊那與耶路撒冷爭戰的列國人，必是這樣：他們兩腳站立的時候，肉必消沒，眼在眶中乾癟，舌在口中潰爛。</div>
+<div class="verse"><span class="verse-number">13</span>那日，耶和華必使他們大大擾亂。他們各人彼此揪住，舉手攻擊。</div>
+<div class="verse"><span class="verse-number">14</span>猶大也必在耶路撒冷爭戰。那時四圍各國的財物，就是許多金銀衣服，必被收聚。</div>
+<div class="verse"><span class="verse-number">15</span>那臨到馬匹、騾子、駱駝、驢，和營中一切牲畜的災殃是與那災殃一般。</div>
+<div class="verse"><span class="verse-number">16</span>所有來攻擊耶路撒冷列國中剩下的人，必年年上來敬拜大君王萬軍之耶和華，並守住棚節。</div>
+<div class="verse"><span class="verse-number">17</span>地上萬族中，凡不上耶路撒冷敬拜大君王萬軍之耶和華的，必無雨降在他們的地上。</div>
+<div class="verse"><span class="verse-number">18</span>埃及族若不上來，雨也不降在他們的地上；凡不上來守住棚節的列國人，耶和華也必用這災攻擊他們。</div>
+<div class="verse"><span class="verse-number">19</span>這就是埃及的刑罰和那不上來守住棚節之列國的刑罰。</div>
+<div class="verse"><span class="verse-number">20</span>當那日，馬的鈴鐺上必有「歸耶和華為聖」的這句話。耶和華殿內的鍋必如祭壇前的碗一樣。</div>
+<div class="verse"><span class="verse-number">21</span>凡耶路撒冷和猶大的鍋都必歸萬軍之耶和華為聖。凡獻祭的都必來取這鍋，煮肉在其中。當那日，在萬軍之耶和華的殿中必不再有迦南人。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章是撒迦利亞書的壓軸高峰,描繪末日耶和華作王的榮耀景象。預言從末世大災難開始,萬國聚集攻擊耶路撒冷,城被攻破、百姓被擄。就在最危急時刻,耶和華親自降臨,腳站在橄欖山上,這山從中分裂成谷,百姓得以逃脫。神擊敗列國,建立祂的國度,耶路撒冷成為萬國朝聖敬拜的中心。活水從耶路撒冷流出,帶來生命與更新。全地都歸耶和華為聖,連馬的鈴鐺、廚房的鍋都標記「歸耶和華為聖」。這章綜合舊約多處預言,指向基督再來建立千禧年國度的榮耀盼望。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神必親自介入拯救到底</strong><br>當耶路撒冷面臨絕境、萬國圍攻時,神不是遠觀而是親自降臨,腳站在橄欖山上,為祂的百姓爭戰。這顯明神對屬祂之人的終極承諾:無論環境多黑暗、危機多深重,神必在關鍵時刻介入拯救。祂不會撇下我們,而是親自成為我們的拯救。當我們走到盡頭時,正是神大能彰顯的時刻。<br><br>
+<strong>2. 耶和華必作全地的王</strong><br>本章的核心宣告是「耶和華必作全地的王,那日耶和華必為獨一無二的」。這是整本聖經指向的終極目標:神的主權完全彰顯,萬國萬民都承認祂的王權。目前世界雖充滿悖逆與混亂,但終有一天,每個膝蓋都要跪拜,每個舌頭都要承認耶穌基督是主。這應許給我們盼望:歷史朝著神掌權的方向前進,神的國度必然來臨。<br><br>
+<strong>3. 完全的聖潔與完全的敬拜</strong><br>在神國度裡,連日常用品都標記「歸耶和華為聖」,聖俗之分消失,一切都成為敬拜。這顯明神最終心意:不只是宗教活動歸祂為聖,而是生活每個層面都成為敬拜。萬國年年上來守住棚節,表示持續的、全然的敬拜生活。這提醒我們:真正的聖潔不是把生活分為屬靈與屬世,而是讓神的榮耀充滿生命每個角落。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>那日,<strong>他的腳必站在耶路</strong><strong>撒冷前面朝東的橄</strong>欖山上。耶和華—我的神必降臨,有一切聖者同來。(撒迦利亞書14:4-5)</td>
+<td>當我們面對絕境與困難時,是否相信神必親自介入?就像<strong>救護車在最危急時趕到現場</strong>,我們是否相信神不是遠遠觀看,而是會在關鍵時刻親自降臨拯救?</td>
+</tr>
+<tr>
+<td><strong>耶和華必作全地的</strong>王。<strong>那日耶和華必為獨</strong>一無二的,他的名也是獨一無二的。(撒迦利亞書14:9)</td>
+<td>在生活中,誰才是我們真正的王?就像<strong>手機只能有一個主帳號管理</strong>,我們是否讓神在生命中掌權作王?還是讓工作、金錢、慾望分享祂的王位?</td>
+</tr>
+<tr>
+<td><strong>當那日</strong>,<strong>馬的鈴鐺上必有</strong>「歸耶和華為聖」的這句話。耶和華殿內的鍋必如祭壇前的碗一樣。(撒迦利亞書14:20)</td>
+<td>我們的日常生活是否也歸主為聖?就像<strong>廚房做飯也可以是敬拜行動</strong>,我們是否明白不只在教會才屬靈,工作、家務、休閒都能成為榮耀神的敬拜?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+        ⚠️ <em>Content is user-generated by Claude AI and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

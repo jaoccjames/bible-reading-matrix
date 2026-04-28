@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬可福音第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬可福音第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">登山變像與真正的偉大</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌又對他們說：「我實在告訴你們，站在這裏的，有人在沒嘗死味以前，必要看見神的國大有能力臨到。」</div>
+<div class="verse"><span class="verse-number">2</span>過了六天，耶穌帶着彼得、雅各、約翰暗暗的上了高山，就在他們面前變了形像，</div>
+<div class="verse"><span class="verse-number">3</span>衣服放光，極其潔白，地上漂布的，沒有一個能漂得那樣白。</div>
+<div class="verse"><span class="verse-number">4</span>忽然，有以利亞同摩西向他們顯現，並且和耶穌說話。</div>
+<div class="verse"><span class="verse-number">5</span>彼得對耶穌說：「拉比〔就是夫子〕，我們在這裏真好！可以搭三座棚，一座為你，一座為摩西，一座為以利亞。」</div>
+<div class="verse"><span class="verse-number">6</span>彼得不知道說甚麼纔好，因為他們甚是懼怕。</div>
+<div class="verse"><span class="verse-number">7</span>有一朵雲彩來遮蓋他們；也有聲音從雲彩裏出來，說：「這是我的愛子，你們要聽他。」</div>
+<div class="verse"><span class="verse-number">8</span>門徒忽然周圍一看，不再見一人，只見耶穌同他們在那裏。</div>
+<div class="verse"><span class="verse-number">9</span>下山的時候，耶穌囑咐他們說：「人子還沒有從死裏復活，你們不要將所看見的告訴人。」</div>
+<div class="verse"><span class="verse-number">10</span>門徒將這話存記在心，彼此議論「從死裏復活」是甚麼意思。</div>
+<div class="verse"><span class="verse-number">11</span>他們就問耶穌說：「文士為甚麼說以利亞必須先來？」</div>
+<div class="verse"><span class="verse-number">12</span>耶穌說：「以利亞固然先來復興萬事；經上不是指着人子說，他要受許多的苦被人輕慢呢？</div>
+<div class="verse"><span class="verse-number">13</span>我告訴你們，以利亞已經來了，他們也任意待他，正如經上所指着他的話。」</div>
+<div class="verse"><span class="verse-number">14</span>耶穌到了門徒那裏，看見有許多人圍着他們，又有文士和他們辯論。</div>
+<div class="verse"><span class="verse-number">15</span>眾人一見耶穌，都甚希奇，就跑上去問他的安。</div>
+<div class="verse"><span class="verse-number">16</span>耶穌問他們說：「你們和他們辯論的是甚麼？」</div>
+<div class="verse"><span class="verse-number">17</span>眾人中間有一個人回答說：「夫子，我帶了我的兒子到你這裏來，他被啞吧鬼附着。</div>
+<div class="verse"><span class="verse-number">18</span>無論在那裏，鬼捉弄他，把他摔倒，他就口中流沫，咬牙切齒，身體枯乾。我請過你的門徒把鬼趕出去，他們卻是不能。」</div>
+<div class="verse"><span class="verse-number">19</span>耶穌說：「噯！不信的世代啊，我在你們這裏要到幾時呢？我忍耐你們要到幾時呢？把他帶到我這裏來吧。」</div>
+<div class="verse"><span class="verse-number">20</span>他們就帶了他來。他一見耶穌，鬼便叫他重重的抽瘋，倒在地上，翻來覆去，口中流沫。</div>
+<div class="verse"><span class="verse-number">21</span>耶穌問他父親說：「他得這病有多少日子呢？」回答說：「從小的時候。</div>
+<div class="verse"><span class="verse-number">22</span>鬼屢次把他扔在火裏、水裏，要滅他。你若能作甚麼，求你憐憫我們，幫助我們。」</div>
+<div class="verse"><span class="verse-number">23</span>耶穌對他說：「你若能信，在信的人，凡事都能。」</div>
+<div class="verse"><span class="verse-number">24</span>孩子的父親立時喊着說〔有古卷作：立時流淚的喊着說〕：「我信！但我信不足，求主幫助。」</div>
+<div class="verse"><span class="verse-number">25</span>耶穌看見眾人都跑上來，就斥責那污鬼說：「你這聾啞的鬼，我吩咐你從他裏頭出來，再不要進去！」</div>
+<div class="verse"><span class="verse-number">26</span>那鬼喊叫，使孩子大大的抽了一陣瘋，就出來了。孩子好像死了一般。以致眾人多半說：「他是死了。」</div>
+<div class="verse"><span class="verse-number">27</span>但耶穌拉着他的手，扶他起來，他就站起來了。</div>
+<div class="verse"><span class="verse-number">28</span>耶穌進了屋子，門徒就暗暗的問他說：「我們為甚麼不能趕出他去呢？」</div>
+<div class="verse"><span class="verse-number">29</span>耶穌說：「非用禱告（有古卷在此有：禁食二字），這一類的鬼總不能出來〔或作：不能趕他出來〕。」</div>
+<div class="verse"><span class="verse-number">30</span>他們離開那地方，經過加利利；耶穌不願意人知道。</div>
+<div class="verse"><span class="verse-number">31</span>於是教訓門徒，說：「人子將要被交在人手裏，他們要殺害他；被殺以後，過三天他要復活。」</div>
+<div class="verse"><span class="verse-number">32</span>門徒卻不明白這話，又不敢問他。</div>
+<div class="verse"><span class="verse-number">33</span>他們來到迦百農，耶穌在屋裏問門徒說：「你們在路上議論的是甚麼？」</div>
+<div class="verse"><span class="verse-number">34</span>門徒不作聲，因為他們在路上彼此爭論誰為大。</div>
+<div class="verse"><span class="verse-number">35</span>耶穌坐下，叫十二個門徒來，說：「若有人願意作首先的，他必作眾人末後的，作眾人的用人。」</div>
+<div class="verse"><span class="verse-number">36</span>於是領過一個小孩子來，叫他站在門徒中間，又抱起他來，對他們說：</div>
+<div class="verse"><span class="verse-number">37</span>「凡為我名接待一個像這小孩子的，就是接待我；凡接待我的，不是接待我，乃是接待那差我來的。」</div>
+<div class="verse"><span class="verse-number">38</span>約翰對耶穌說：「夫子，我們看見一個人奉你的名趕鬼，我們就禁止他，因為他不跟從我們。」</div>
+<div class="verse"><span class="verse-number">39</span>耶穌說：「不要禁止他；因為沒有人奉我名行異能，反倒輕易毀謗我。</div>
+<div class="verse"><span class="verse-number">40</span>不敵擋我們的，就是幫助我們的。</div>
+<div class="verse"><span class="verse-number">41</span>凡因你們是屬基督，給你們一杯水喝的，我實在告訴你們，他不能不得賞賜。」</div>
+<div class="verse"><span class="verse-number">42</span>「凡使這信我的一個小子跌倒的，倒不如把大磨石拴在這人的頸項上，扔在海裏。</div>
+<div class="verse"><span class="verse-number">43</span>倘若你一隻手叫你跌倒，就把它砍下來；</div>
+<div class="verse"><span class="verse-number">44</span>你缺了肢體進入永生，強如有兩隻手落到地獄，入那不滅的火裏去。</div>
+<div class="verse"><span class="verse-number">45</span>倘若你一隻腳叫你跌倒，就把它砍下來；</div>
+<div class="verse"><span class="verse-number">46</span>你瘸腿進入永生，強如有兩隻腳被丟在地獄裏。</div>
+<div class="verse"><span class="verse-number">47</span>倘若你一隻眼叫你跌倒，就去掉它；你只有一隻眼進入神的國，強如有兩隻眼被丟在地獄裏。</div>
+<div class="verse"><span class="verse-number">48</span>在那裏，蟲是不死的，火是不滅的。</div>
+<div class="verse"><span class="verse-number">49</span>因為必用火當鹽醃各人。（有古卷在此有：凡祭物必用鹽醃。）</div>
+<div class="verse"><span class="verse-number">50</span>鹽本是好的，若失了味，可用甚麼叫它再鹹呢？你們裏頭應當有鹽，彼此和睦。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+馬可福音第9章以登山變像開場：耶穌帶着彼得、雅各、約翰上高山，在他們面前變了形像，衣服極白放光，摩西和以利亞顯現同祂說話，天父的聲音從雲彩中說「這是我的愛子，你們要聽他」。下山後，眾人圍着門徒辯論，有父親帶着被啞吧鬼附着的兒子求告，門徒無法趕出。耶穌歎息「不信的世代啊」，父親說「我信！但我信不足，求主幫助」，耶穌趕出了鬼。門徒問原因，耶穌說「非用禱告，這一類的鬼總不能出來」。第三次預告受難後，門徒卻在路上爭論誰為大。耶穌坐下，說「若有人願意作首先的，他必作眾人末後的，作眾人的用人」，並以小孩子為例教導謙卑。約翰報告禁止外人奉耶穌名趕鬼，耶穌說「不敵擋我們的，就是幫助我們的」。章末嚴肅警告不要使小子跌倒，寧可斷手剜眼，也不要進入地獄。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【「我信！但我信不足，求主幫助」是最誠實的禱告】</strong><br>孩子父親的這句話是全書最動人的禱告之一。他沒有假裝自己有足夠的信心，也沒有因信心不足就放棄求告。他的誠實打動了耶穌——承認信心不足本身就是信心的行動。神不要求我們信心完全，而是要求我們把不完全的信心帶到祂面前。每一個在疑惑中仍然求告的人，都是在行使信心。<br><br>
+<strong>2. 【禱告是屬靈能力的源頭】</strong><br>門徒無法趕鬼，耶穌指出原因：「非用禱告」。門徒擁有權柄，卻沒有與授權者保持連結。任何屬靈能力都來自與神的連結，而禱告正是這連結的維繫方式。忙碌的事奉若缺乏禱告，就是在用自己的力量做神的工——這必然軟弱無力。事奉越忙，越需要禱告。<br><br>
+<strong>3. 【真正的偉大是甘心作眾人的用人】</strong><br>門徒爭論誰為大，耶穌以小孩子為例顛覆所有的偉大觀念：天國最大的，是願意降低自己、服事眾人的人。小孩子在古代世界地位最低，卻被耶穌舉為典範。真正的偉大不是建立在職位、能力或成就上，而是建立在服事的意願上。服事的心越大，在天國裏就越大。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>孩子的父親立時喊</strong>着說：「我信！<strong>但我信不足</strong>，求主幫助。」（可9:24）</td>
+<td>你有沒有在信心不足的時候，仍然誠實地帶着疑惑來到耶穌面前求助？就像在黑暗中伸出手摸索雖然看不見，仍然是在尋找，你願意帶着不完全的信心繼續向神求告嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>若有人願意作首先</strong>的，他必作眾人末後的，作眾人的用人。」（可9:35）</td>
+<td>你對「偉大」的定義是什麼？就像一個球隊的隊長以身作則做最苦的訓練才能真正帶領全隊，你願意在你的家庭、工作、教會中，以服事他人的方式展現真正的領袖精神嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>非用禱告</strong>，這一類的鬼總不能出來。」（可9:29）</td>
+<td>你的事奉和生活是否建立在足夠的禱告上？就像電器需要插電才能運作，你有沒有讓你每天的行動都連接在禱告的「電源」上，從神的力量出發而非靠自己的能力？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

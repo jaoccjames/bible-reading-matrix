@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>啟示錄第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+啟示錄第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">婦人和龍的爭戰與獸的印記</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>此後，我看見四位天使站在地的四角，執掌地上四方的風，叫風不吹在地上、海上，和樹上。</div>
+<div class="verse"><span class="verse-number">2</span>我又看見另有一位天使，從日出之地上來，拿着永生神的印。他就向那得着權柄能傷害地和海的四位天使大聲喊着說：</div>
+<div class="verse"><span class="verse-number">3</span>「地與海並樹木，你們不可傷害，等我們印了我們神眾僕人的額。」</div>
+<div class="verse"><span class="verse-number">4</span>我聽見以色列人各支派中受印的數目有十四萬四千。</div>
+<div class="verse"><span class="verse-number">5</span>猶大支派中受印的有一萬二千；流便支派中有一萬二千；迦得支派中有一萬二千；</div>
+<div class="verse"><span class="verse-number">6</span>亞設支派中有一萬二千；拿弗他利支派中有一萬二千；瑪拿西支派中有一萬二千；</div>
+<div class="verse"><span class="verse-number">7</span>西緬支派中有一萬二千；利未支派中有一萬二千；以薩迦支派中有一萬二千；</div>
+<div class="verse"><span class="verse-number">8</span>西布倫支派中有一萬二千；約瑟支派中有一萬二千；便雅憫支派中受印的有一萬二千。</div>
+<div class="verse"><span class="verse-number">9</span>此後，我觀看，見有許多的人，沒有人能數過來，是從各國、各族、各民、各方來的，站在寶座和羔羊面前，身穿白衣，手拿棕樹枝，</div>
+<div class="verse"><span class="verse-number">10</span>大聲喊着說：「願救恩歸與坐在寶座上我們的神，也歸與羔羊！」</div>
+<div class="verse"><span class="verse-number">11</span>眾天使都站在寶座和眾長老並四活物的周圍，在寶座前，面伏於地，敬拜神，</div>
+<div class="verse"><span class="verse-number">12</span>說：阿們！頌讚、榮耀、智慧、感謝、尊貴、權柄、大力都歸與我們的神，直到永永遠遠。阿們！</div>
+<div class="verse"><span class="verse-number">13</span>長老中有一位問我說：「這些穿白衣的是誰？是從那裏來的？」</div>
+<div class="verse"><span class="verse-number">14</span>我對他說：「我主，你知道。」他向我說：「這些人是從大患難中出來的，曾用羔羊的血把衣裳洗白淨了。</div>
+<div class="verse"><span class="verse-number">15</span>所以，他們在神寶座前，晝夜在他殿中事奉他。坐寶座的要用帳幕覆庇他們。</div>
+<div class="verse"><span class="verse-number">16</span>他們不再飢，不再渴；日頭和炎熱也必不傷害他們。</div>
+<div class="verse"><span class="verse-number">17</span>因為寶座中的羔羊必牧養他們，領他們到生命水的泉源；神也必擦去他們一切的眼淚。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+啟示錄第12-13章是全書屬靈爭戰的核心，以天上的徵兆開始，論述撒但的怒氣和敵基督勢力的本質。第12章：天上出現大徵兆——日頭所披的婦人和大紅龍；「天上就有爭戰……米迦勒同他的使者與龍爭戰」——天上的屬靈爭戰。龍被摔在地上：「如今我們神的救恩、能力、國度，並他基督的權柄都來到了！因為那在我們神面前晝夜控告我們弟兄的，已經被摔下去了」。得勝的方法：「弟兄勝過他，是因羔羊的血和自己所見證的道；他們雖至於死，也不愛惜性命」——血、見證、不愛性命三要素。第13章：從海中上來的獸（敵基督）和從地中上來的獸（假先知）。「凡有聰明的，可以算計獸的數目；因為這是人的數目，他的數目是六百六十六」——獸的記號。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【得勝的三要素：血、見證、不愛性命】</strong><br>「他們勝過他，是因羔羊的血和自己所見證的道；他們雖至於死，也不愛惜性命」——這是啟示錄中信徒得勝的方程式：靠羔羊的血（救贖的工作）、靠自己的見證（信仰的宣告）、靠不愛惜性命的態度（對死亡的超越）。「不愛惜性命」不是輕視生命，而是讓永恆的價值超越今世生命的保全。<br><br>
+<strong>2. 【撒但被摔下——控告者失去立場】</strong><br>「那在我們神面前晝夜控告我們弟兄的，已經被摔下去了」——撒但在天上的主要工作是「控告」信徒。基督的工作使撒但失去了控告的立場：「他為我們的罪作了挽回祭」。信徒在神面前已沒有可被合法控告之處——這是最深的確信。<br><br>
+<strong>3. 【獸的本質——要求排他的崇拜】</strong><br>那獸「叫地上的人，就是那些名字沒有記在從創世以來被殺之羔羊生命冊上的人，都要拜那獸」——獸的核心行為是要求崇拜，排他性地要求人的效忠。對信徒的呼召是清楚的：絕不向獸低頭，即使面對死亡的代價。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>啟示錄說</strong>：「<strong>弟兄勝過他</strong>，是因羔羊的血和自己所見證的道；他們雖至於死，也不愛惜性命。」（啟12:11）</td>
+<td>在你面對試探、逼迫或需要為信仰付代價的時刻，你有沒有讓「羔羊的血、自己的見證、不愛惜性命」這三個得勝要素成為你的力量來源？就像一個明確知道自己的武器和戰術的戰士更有信心應戰，你有沒有讓啟示錄中得勝的方程式指引你面對屬靈爭戰？</td>
+</tr>
+<tr>
+<td><strong>啟示錄說</strong>：「<strong>如今我們神的救恩</strong>、能力、國度，並他基督的權柄都來到了！因為那在我們神面前晝夜控告我們弟兄的，已經被摔下去了。」（啟12:10）</td>
+<td>你有沒有讓「控告你的已被摔下去，基督的血移除了一切合法的控告」這個確信，在你面對定罪感和自我責備時帶出真正的釋放？就像一場已被宣判無罪的案件不再有效，你有沒有讓撒但對你控告的失效成為你靈魂安息的確信？</td>
+</tr>
+<tr>
+<td><strong>啟示錄說</strong>：「<strong>在這裏</strong>，聖徒的忍耐和信心就可以看出來了。」（啟13:10）</td>
+<td>在你面對各種要求你妥協信仰的壓力——文化的、職場的、人際的——時，你有沒有讓「聖徒的忍耐和信心」成為你選擇的框架？就像一個考試時堅持誠信的學生展示了真正的品格，你有沒有讓你在壓力下的選擇彰顯你作為信徒的忍耐和信心？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

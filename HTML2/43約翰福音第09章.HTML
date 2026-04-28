@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰福音第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰福音第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">生來瞎眼得治癒與真假看見</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌過去的時候，看見一個人生來是瞎眼的。</div>
+<div class="verse"><span class="verse-number">2</span>門徒問耶穌說：「拉比，這人生來是瞎眼的，是誰犯了罪？是這人呢？是他父母呢？」</div>
+<div class="verse"><span class="verse-number">3</span>耶穌回答說：「也不是這人犯了罪，也不是他父母犯了罪，是要在他身上顯出神的作為來。</div>
+<div class="verse"><span class="verse-number">4</span>趁着白日，我們必須作那差我來者的工；黑夜將到，就沒有人能作工了。</div>
+<div class="verse"><span class="verse-number">5</span>我在世上的時候，是世上的光。」</div>
+<div class="verse"><span class="verse-number">6</span>耶穌說了這話，就吐唾沫在地上，用唾沫和泥抹在瞎子的眼睛上，</div>
+<div class="verse"><span class="verse-number">7</span>對他說：「你往西羅亞池子裏去洗（西羅亞繙出來就是奉差遣）。他去一洗，回頭就看見了。</div>
+<div class="verse"><span class="verse-number">8</span>他的鄰舍和那素常見他是討飯的，就說：「這不是那從前坐着討飯的人麼？」</div>
+<div class="verse"><span class="verse-number">9</span>有人說：「是他」；又有人說；「不是，卻是像他。」他自己說：「是我。」</div>
+<div class="verse"><span class="verse-number">10</span>他們對他說：「你的眼睛是怎麼開的呢？」</div>
+<div class="verse"><span class="verse-number">11</span>他回答說：「有一個人，名叫耶穌，他和泥抹我的眼睛，對我說：『你往西羅亞池子去洗。』我去一洗，就看見了。」</div>
+<div class="verse"><span class="verse-number">12</span>他們說：「那個人在那裏？」他說：「我不知道。」</div>
+<div class="verse"><span class="verse-number">13</span>他們把從前瞎眼的人帶到法利賽人那裏。</div>
+<div class="verse"><span class="verse-number">14</span>耶穌和泥開他眼睛的日子是安息日。</div>
+<div class="verse"><span class="verse-number">15</span>法利賽人也問他是怎麼得看見的。瞎子對他們說：「他把泥抹在我的眼睛上，我去一洗，就看見了。」</div>
+<div class="verse"><span class="verse-number">16</span>法利賽人中有的說：「這個人不是從神來的，因為他不守安息日。」又有人說：「一個罪人怎能行這樣的神蹟呢？」他們就起了紛爭。</div>
+<div class="verse"><span class="verse-number">17</span>他們又對瞎子說：「他既然開了你的眼睛，你說他是怎樣的人呢？」他說：「是個先知。」</div>
+<div class="verse"><span class="verse-number">18</span>猶太人不信他從前是瞎眼，後來能看見的，等到叫了他的父母來，</div>
+<div class="verse"><span class="verse-number">19</span>問他們說：「這是你們的兒子麼？你們說他生來是瞎眼的，如今怎麼能看見了呢？」</div>
+<div class="verse"><span class="verse-number">20</span>他父母回答說：「他是我們的兒子，生來就瞎眼，這是我們知道的。</div>
+<div class="verse"><span class="verse-number">21</span>至於他如今怎麼能看見，我們卻不知道；是誰開了他的眼睛，我們也不知道。他已經成了人，你們問他吧，他自己必能說。」</div>
+<div class="verse"><span class="verse-number">22</span>他父母說這話，是怕猶太人；因為猶太人已經商議定了，若有認耶穌是基督的，要把他趕出會堂。</div>
+<div class="verse"><span class="verse-number">23</span>因此他父母說：「他已經成了人，你們問他吧。」</div>
+<div class="verse"><span class="verse-number">24</span>所以法利賽人第二次叫了那從前瞎眼的人來，對他說：「你該將榮耀歸給神，我們知道這人是個罪人。」</div>
+<div class="verse"><span class="verse-number">25</span>他說：「他是個罪人不是，我不知道；有一件事我知道，從前我是眼瞎的，如今能看見了。」</div>
+<div class="verse"><span class="verse-number">26</span>他們就問他說：「他向你作甚麼？是怎麼開了你的眼睛呢？」</div>
+<div class="verse"><span class="verse-number">27</span>他回答說：「我方才告訴你們，你們不聽，為甚麼又要聽呢？莫非你們也要作他的門徒麼？」</div>
+<div class="verse"><span class="verse-number">28</span>他們就罵他說：「你是他的門徒；我們是摩西的門徒。</div>
+<div class="verse"><span class="verse-number">29</span>神對摩西說話是我們知道的；只是這個人，我們不知道他從那裏來！」</div>
+<div class="verse"><span class="verse-number">30</span>那人回答說：「他開了我的眼睛，你們竟不知道他從那裏來，這真是奇怪！</div>
+<div class="verse"><span class="verse-number">31</span>我們知道神不聽罪人，惟有敬奉神、遵行他旨意的，神才聽他。</div>
+<div class="verse"><span class="verse-number">32</span>從創世以來，未曾聽見有人把生來是瞎子的眼睛開了。</div>
+<div class="verse"><span class="verse-number">33</span>這人若不是從神來的，甚麼也不能作。」</div>
+<div class="verse"><span class="verse-number">34</span>他們回答說：「你全然生在罪孽中，還要教訓我們麼？」於是把他趕出去了。</div>
+<div class="verse"><span class="verse-number">35</span>耶穌聽說他們把他趕出去，後來遇見他，就說：「你信神的兒子麼？」</div>
+<div class="verse"><span class="verse-number">36</span>他回答說：「主啊，誰是神的兒子，叫我信他呢？」</div>
+<div class="verse"><span class="verse-number">37</span>耶穌說：「你已經看見他，現在和你說話的就是他。」</div>
+<div class="verse"><span class="verse-number">38</span>他說：「主啊，我信！」就拜耶穌。</div>
+<div class="verse"><span class="verse-number">39</span>耶穌說：「我為審判到這世上來，叫不能看見的，可以看見；能看見的，反瞎了眼。」</div>
+<div class="verse"><span class="verse-number">40</span>同他在那裏的法利賽人聽見這話，就說：「難道我們也瞎了眼麼？」</div>
+<div class="verse"><span class="verse-number">41</span>耶穌對他們說：「你們若瞎了眼，就沒有罪了；但如今你們說『我們能看見』，所以你們的罪還在。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約翰福音第9章圍繞一個生來瞎眼的人得醫治的故事，展開了關於「看見」的深刻神學討論。門徒問這人生來瞎眼是誰的罪，耶穌說不是罪的緣故，「是要在他身上顯出神的作為來」，並宣告「我在世上的時候，是世上的光」。耶穌吐唾沫和泥抹在他眼上，叫他去洗，他洗了就看見了。法利賽人因是安息日而起爭議，問那人如何看見，他說「那使我痊癒的是個先知」。猶太人不信，叫了父母來，父母怕被趕出會堂，推說「你們問他吧」。法利賽人第二次傳他來，他說「有一件事我知道，從前我是眼瞎的，如今能看見了」，越說越犀利：「他若不是從神來的，甚麼也不能作」，被他們趕出去。耶穌尋找他，問「你信神的兒子麼？」他說「主啊，我信！」就拜耶穌。耶穌說「我為審判到這世上來，叫不能看見的可以看見；能看見的，反瞎了眼」，指着自以為能看見的法利賽人說「你們的罪還在」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【苦難可以成為神榮耀彰顯的舞台】</strong><br>「也不是這人犯了罪，也不是他父母犯了罪，是要在他身上顯出神的作為來」——這句話解放了那人和所有在苦難中的人：苦難不一定是對罪的懲罰，有時是神選擇彰顯祂作為的場所。這個生來瞎眼的人，成為了整個故事中最清晰見證耶穌的人。我們的限制和苦難，可能正是神最想要工作的地方。<br><br>
+<strong>2. 【「有一件事我知道」是最有力的見證】</strong><br>那個瞎子面對法利賽人的盤問，沒有神學知識，只有一件確切的事實：「從前我是眼瞎的，如今能看見了。」這是最有力的見證——不是辯論的論點，而是親身的經歷。法利賽人的質疑越多，他的確信越堅定。每一個信徒最有力的見證，就是「我曾是那樣，現在是這樣」——親身的改變是不可辯駁的論據。<br><br>
+<strong>3. 【以為能看見的人，可能是最瞎的】</strong><br>「能看見的，反瞎了眼」——這是深刻的反諷。法利賽人有律法的知識、宗教的地位，自以為能看見，卻對站在他們面前的神的兒子視而不見。屬靈的視力不來自宗教知識的積累，而來自對自己眼瞎的承認。「你們的罪還在」，不是因為他們眼瞎，而是因為他們宣稱「我們能看見」。謙卑承認自己不足，是屬靈看見的起點。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌回答說</strong>：「<strong>也不是這人犯了罪</strong>，也不是他父母犯了罪，是要在他身上顯出神的作為來。」（約9:3）</td>
+<td>你生命中有沒有長期的軟弱、限制或苦難，讓你以為那是神懲罰或遠離你的記號？就像那個生來瞎眼的人成了見證神大能的主角，你願意讓神在你的限制中彰顯祂的作為嗎？</td>
+</tr>
+<tr>
+<td><strong>那人回答說</strong>：「<strong>他是個罪人不是</strong>，我不知道；有一件事我知道，從前我是眼瞎的，如今能看見了。」（約9:25）</td>
+<td>你有沒有準備好分享你自己「從前如何，如今如何」的見證，即使你沒有高深的神學知識？就像親歷者的描述比旁觀者更有說服力，你個人的生命改變就是你最有力的福音見證。</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>我為審判到這世上</strong>來，叫不能看見的，可以看見；能看見的，反瞎了眼。」（約9:39）</td>
+<td>你有沒有在某些屬靈問題上過度自信，以至於關閉了繼續學習和更新的可能？就像自以為知道答案的學生不再認真聽課，你願意時常以謙卑的「我可能還有眼瞎的地方」的態度來到神面前嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

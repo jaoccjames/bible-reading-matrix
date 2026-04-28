@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>彼得前書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+彼得前書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">活石與有君尊的祭司——信徒的身份</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>所以，你們既除去一切的惡毒〔或作陰毒〕、詭詐，並假善、嫉妒，和一切毀謗的話，</div>
+<div class="verse"><span class="verse-number">2</span>就要愛慕那純淨的靈奶，像纔生的嬰孩愛慕奶一樣，叫你們因此漸長，以致得救。</div>
+<div class="verse"><span class="verse-number">3</span>你們若嘗過主恩的滋味，就必如此。</div>
+<div class="verse"><span class="verse-number">4</span>主乃活石，固然是被人所棄的，卻是被神所揀選、所寶貴的。</div>
+<div class="verse"><span class="verse-number">5</span>你們來到主面前，也就像活石，被建造成為靈宮，作聖潔的祭司，藉着耶穌基督奉獻神所悅納的靈祭。</div>
+<div class="verse"><span class="verse-number">6</span>因為經上說：看哪，我把所揀選、所寶貴的房角石安放在錫安；信靠他的人必不至於羞愧。</div>
+<div class="verse"><span class="verse-number">7</span>所以，他在你們信的人就為寶貴，在那不信的人有話說：匠人所棄的石頭已作了房角的頭塊石頭。</div>
+<div class="verse"><span class="verse-number">8</span>又說：作了絆腳的石頭，跌人的磐石。他們既不順從，就在道理上絆跌〔或作：他們絆跌都因不順從道理〕；他們這樣絆跌也是預定的。</div>
+<div class="verse"><span class="verse-number">9</span>惟有你們是被揀選的族類，是有君尊的祭司，是聖潔的國度，是屬神的子民，要叫你們宣揚那召你們出黑暗入奇妙光明者的美德。</div>
+<div class="verse"><span class="verse-number">10</span>你們從前算不得子民，現在卻作了神的子民；從前未曾蒙憐恤，現在卻蒙了憐恤。</div>
+<div class="verse"><span class="verse-number">11</span>親愛的弟兄啊，你們是客旅，是寄居的。我勸你們要禁戒肉體的私慾；這私慾是與靈魂爭戰的。</div>
+<div class="verse"><span class="verse-number">12</span>你們在外邦人中，應當品行端正，叫那些毀謗你們是作惡的，因看見你們的好行為，便在鑒察〔或作：眷顧〕的日子歸榮耀給神。</div>
+<div class="verse"><span class="verse-number">13</span>你們為主的緣故，要順服人的一切制度，或是在上的君王，</div>
+<div class="verse"><span class="verse-number">14</span>或是君王所派罰惡賞善的臣宰。</div>
+<div class="verse"><span class="verse-number">15</span>因為神的旨意原是要你們行善，可以堵住那糊塗無知人的口。</div>
+<div class="verse"><span class="verse-number">16</span>你們雖是自由的，卻不可藉着自由遮蓋惡毒〔或作：陰毒〕，總要作神的僕人。</div>
+<div class="verse"><span class="verse-number">17</span>務要尊敬眾人，親愛教中的弟兄，敬畏神，尊敬君王。</div>
+<div class="verse"><span class="verse-number">18</span>你們作僕人的，凡事要存敬畏的心順服主人；不但順服那善良溫和的，就是那乖僻的也要順服。</div>
+<div class="verse"><span class="verse-number">19</span>倘若人為叫良心對得住神，就忍受冤屈的苦楚，這是可喜愛的。</div>
+<div class="verse"><span class="verse-number">20</span>你們若因犯罪受責打，能忍耐，有甚麼可誇的呢？但你們若因行善受苦，能忍耐，這在神看是可喜愛的。</div>
+<div class="verse"><span class="verse-number">21</span>你們蒙召原是為此；因基督也為你們受過苦，給你們留下榜樣，叫你們跟隨他的腳蹤行。</div>
+<div class="verse"><span class="verse-number">22</span>他並沒有犯罪，口裏也沒有詭詐。</div>
+<div class="verse"><span class="verse-number">23</span>他被罵不還口；受害不說威嚇的話，只將自己交託那按公義審判人的主。</div>
+<div class="verse"><span class="verse-number">24</span>他被掛在木頭上，親身擔當了我們的罪，使我們既然在罪上死，就得以在義上活。因他受的鞭傷，你們便得了醫治。</div>
+<div class="verse"><span class="verse-number">25</span>你們從前好像迷路的羊，如今卻歸到你們靈魂的牧人監督了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+彼得前書第2章從信徒的身份出發，論述在世的生活見證，以基督受苦的榜樣作結。「惟有你們是被揀選的族類，是有君尊的祭司，是聖潔的國度，是屬神的子民，要叫你們宣揚那召你們出黑暗入奇妙光明者的美德」——四重身份宣告。「你們在外邦人中，應當品行端正，叫那些毀謗你們是作惡的，因看見你們的好行為，便在鑒察的日子歸榮耀給神」——品行是最有效的見證。受苦的榜樣：「因基督也為你們受過苦，給你們留下榜樣，叫你們跟隨他的腳蹤行……他被毀謗不還口；受害不說威嚇的話，只將自己交託那按公義審判人的主」。「因他受的鞭傷，你們便得了醫治」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【四重身份的尊貴】</strong><br>「被揀選的族類，有君尊的祭司，聖潔的國度，屬神的子民」——這四個身份說明信徒的地位是尊貴的，不是因為自身的功德，而是因為神的揀選和呼召。「宣揚那召你們出黑暗入奇妙光明者的美德」——身份帶出使命。<br><br>
+<strong>2. 【品行是最有效的傳福音】</strong><br>「叫那些毀謗你們是作惡的，因看見你們的好行為，便在鑒察的日子歸榮耀給神」——持續端正的品格，可以最終使批評者歸榮耀給神。信仰的見證最後靠的是生命的品格，不只是言語。<br><br>
+<strong>3. 【基督的受苦是信徒受苦的框架】</strong><br>「他被毀謗不還口；受害不說威嚇的話，只將自己交託那按公義審判人的主」——基督的應對方式是把自己交託給公義的審判者，而非以惡報惡。這是受苦中最深的智慧：相信終極的公義在神手中，因此可以在當下選擇不報復。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>彼得說</strong>：「<strong>惟有你們是被揀選</strong>的族類，是有君尊的祭司，是聖潔的國度，是屬神的子民，要叫你們宣揚那召你們出黑暗入奇妙光明者的美德。」（彼前2:9）</td>
+<td>你有沒有讓你的四重身份成為你自我認識的核心，讓這個尊貴的身份影響你面對人和生活的方式？就像一個知道自己高貴出身的人言行舉止都不同，你有沒有讓你屬靈的身份改變你面對世界的姿態？</td>
+</tr>
+<tr>
+<td><strong>彼得說</strong>：「<strong>你們在外邦人中</strong>，應當品行端正，叫那些毀謗你們是作惡的，因看見你們的好行為，便在鑒察的日子歸榮耀給神。」（彼前2:12）</td>
+<td>你有沒有讓「好行為」作為你最主要的傳福音策略，讓你持續端正的品格最終使那些批評你的人也歸榮耀給神？就像長期優質的服務最終能改變挑剔客戶的看法，你有沒有讓持續的好品行成為你無聲的最有效見證？</td>
+</tr>
+<tr>
+<td><strong>彼得說</strong>：「<strong>他被毀謗不還口</strong>；受害不說威嚇的話，只將自己交託那按公義審判人的主。」（彼前2:23）</td>
+<td>在你面對不公平的對待和傷害時，你有沒有讓「將自己交託那按公義審判人的主」成為你的出口，而非以惡報惡或積累苦毒？就像知道公義最終在神手中讓人能放下自己的報復心，你有沒有讓對神公義的確信帶出你在被傷害中的平靜？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

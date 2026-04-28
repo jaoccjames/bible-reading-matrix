@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">安息日爭議與褻瀆聖靈</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>那時，耶穌在安息日從麥地經過。他的門徒餓了，就掐起麥穗來吃。</div>
+<div class="verse"><span class="verse-number">2</span>法利賽人看見，就對耶穌說：「看哪，你的門徒作安息日不可作的事了！」</div>
+<div class="verse"><span class="verse-number">3</span>耶穌對他們說：「經上記着大衛和跟從他的人飢餓之時所作的事，你們沒有念過嗎？</div>
+<div class="verse"><span class="verse-number">4</span>他怎麼進了神的殿，吃了陳設餅，這餅不是他和跟從他的人可以吃得，惟獨祭司纔可以吃。</div>
+<div class="verse"><span class="verse-number">5</span>再者，律法上所記的，當安息日，祭司在殿裏犯了安息日還是沒有罪，你們沒有念過嗎？</div>
+<div class="verse"><span class="verse-number">6</span>但我告訴你們，在這裏有一人比殿更大。</div>
+<div class="verse"><span class="verse-number">7</span>『我喜愛憐恤，不喜愛祭祀。』你們若明白這話的意思，就不將無罪的當作有罪的了。</div>
+<div class="verse"><span class="verse-number">8</span>因為人子是安息日的主。」</div>
+<div class="verse"><span class="verse-number">9</span>耶穌離開那地方，進了一個會堂。</div>
+<div class="verse"><span class="verse-number">10</span>那裏有一個人枯乾了一隻手。有人問耶穌說：「安息日治病可以不可以？」意思是要控告他。</div>
+<div class="verse"><span class="verse-number">11</span>耶穌說：「你們中間誰有一隻羊，當安息日掉在坑裏，不把牠抓住，拉上來呢？</div>
+<div class="verse"><span class="verse-number">12</span>人比羊何等貴重呢！所以，在安息日作善事是可以的。」</div>
+<div class="verse"><span class="verse-number">13</span>於是對那人說：「伸出手來！」他把手一伸，手就復了原，和那隻手一樣。</div>
+<div class="verse"><span class="verse-number">14</span>法利賽人出去，商議怎樣可以除滅耶穌。</div>
+<div class="verse"><span class="verse-number">15</span>耶穌知道了，就離開那裏，有許多人跟着他。他把其中有病的人都治好了；</div>
+<div class="verse"><span class="verse-number">16</span>又囑咐他們，不要給他傳名。</div>
+<div class="verse"><span class="verse-number">17</span>這是要應驗先知以賽亞的話，說：</div>
+<div class="verse"><span class="verse-number">18</span>看哪！我的僕人，我所揀選，所親愛，心裏所喜悅的，我要將我的靈賜給他；他必將公理傳給外邦。</div>
+<div class="verse"><span class="verse-number">19</span>他不爭競，不喧嚷；街上也沒有人聽見他的聲音。</div>
+<div class="verse"><span class="verse-number">20</span>壓傷的蘆葦，他不折斷；將殘的燈火，他不吹滅；等他施行公理，叫公理得勝。</div>
+<div class="verse"><span class="verse-number">21</span>外邦人都要仰望他的名。</div>
+<div class="verse"><span class="verse-number">22</span>當下，有人將一個被鬼附着、又瞎又啞的人帶到耶穌那裏，耶穌就醫治他，甚至那啞吧又能說話，又能看見。</div>
+<div class="verse"><span class="verse-number">23</span>眾人都驚奇，說：「這不是大衛的子孫嗎？」</div>
+<div class="verse"><span class="verse-number">24</span>但法利賽人聽見，就說：「這個人趕鬼，無非是靠着鬼王別西卜啊。」</div>
+<div class="verse"><span class="verse-number">25</span>耶穌知道他們的意念，就對他們說：「凡一國自相紛爭，就成為荒場；一城一家自相紛爭，必站立不住；</div>
+<div class="verse"><span class="verse-number">26</span>若撒但趕逐撒但，就是自相紛爭，他的國怎能站得住呢？</div>
+<div class="verse"><span class="verse-number">27</span>我若靠着別西卜趕鬼，你們的子弟趕鬼又靠着誰呢？這樣，他們就要斷定你們的是非。</div>
+<div class="verse"><span class="verse-number">28</span>我若靠着神的靈趕鬼，這就是神的國臨到你們了。</div>
+<div class="verse"><span class="verse-number">29</span>人怎能進壯士家裏，搶奪他的家具呢？除非先捆住那壯士，才可以搶奪他的家財。</div>
+<div class="verse"><span class="verse-number">30</span>不與我相合的，就是敵我的；不同我收聚的，就是分散的。」</div>
+<div class="verse"><span class="verse-number">31</span>所以我告訴你們：人一切的罪和褻瀆的話都可得赦免，惟獨褻瀆聖靈，總不得赦免。</div>
+<div class="verse"><span class="verse-number">32</span>凡說話干犯人子的，還可得赦免；惟獨說話干犯聖靈的，今世來世總不得赦免。」</div>
+<div class="verse"><span class="verse-number">33</span>「你們或以為樹好，果子也好；樹壞，果子也壞；因為看果子就可以知道樹。</div>
+<div class="verse"><span class="verse-number">34</span>毒蛇的種類！你們既是惡人，怎能說出好話來呢？因為心裏所充滿的，口裏就說出來。</div>
+<div class="verse"><span class="verse-number">35</span>善人從他心裏所存的善就發出善來；惡人從他心裏所存的惡就發出惡來。</div>
+<div class="verse"><span class="verse-number">36</span>我又告訴你們，凡人所說的閒話，當審判的日子，必要句句供出來；</div>
+<div class="verse"><span class="verse-number">37</span>因為要憑你的話定你為義，也要憑你的話定你有罪。」</div>
+<div class="verse"><span class="verse-number">38</span>當時，有幾個文士和法利賽人對耶穌說：「夫子，我們願意你顯個神蹟給我們看。」</div>
+<div class="verse"><span class="verse-number">39</span>耶穌回答說：「一個邪惡淫亂的世代求看神蹟，除了先知約拿的神蹟以外，再沒有神蹟給他們看。</div>
+<div class="verse"><span class="verse-number">40</span>約拿三日三夜在大魚肚腹中，人子也要這樣三日三夜在地裏頭。</div>
+<div class="verse"><span class="verse-number">41</span>當審判的時候，尼尼微人要起來定這世代的罪，因為尼尼微人聽了約拿所傳的就悔改了。看哪，在這裏有一人比約拿更大！</div>
+<div class="verse"><span class="verse-number">42</span>當審判的時候，南方的女王要起來定這世代的罪，因為她從地極而來，要聽所羅門的智慧話。看哪！在這裏有一人比所羅門更大。」</div>
+<div class="verse"><span class="verse-number">43</span>「污鬼離了人身，就在無水之地過來過去，尋求安歇之處，卻尋不着。</div>
+<div class="verse"><span class="verse-number">44</span>於是說：『我要回到我所出來的屋裏去。』到了，就看見裏面空閒，打掃乾淨，修飾好了，</div>
+<div class="verse"><span class="verse-number">45</span>便去另帶了七個比自己更惡的鬼來，都進去住在那裏。那人末後的景況比先前更不好了。這邪惡的世代也要如此。」</div>
+<div class="verse"><span class="verse-number">46</span>耶穌還對眾人說話的時候，不料他母親和他弟兄站在外邊，要與他說話。</div>
+<div class="verse"><span class="verse-number">47</span>有人告訴他說：「看哪，你母親和你弟兄站在外邊，要與你說話。」</div>
+<div class="verse"><span class="verse-number">48</span>他卻回答那人說：「誰是我的母親？誰是我的弟兄？」</div>
+<div class="verse"><span class="verse-number">49</span>就伸手指着門徒，說：「看哪，我的母親，我的弟兄。</div>
+<div class="verse"><span class="verse-number">50</span>凡遵行我天父旨意的人，就是我的弟兄姐妹和母親了。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+馬太福音第12章記載耶穌與法利賽人之間的衝突全面升溫，圍繞安息日規定展開。首先是門徒在安息日掐麥穗，法利賽人指控他們違反安息日，耶穌以大衛吃陳設餅的先例及「我喜愛憐恤，不喜愛祭祀」回應，宣告自己是安息日的主。隨後在會堂醫治枯手之人，再度引發衝突，法利賽人開始密謀如何除滅耶穌。耶穌退離那裏，應驗以賽亞關於神僕人「壓傷的蘆葦不折斷」的預言。本章高潮是法利賽人指控耶穌靠鬼王趕鬼，耶穌駁斥其邏輯謬誤，並提出嚴肅警告：褻瀆聖靈是唯一不得赦免的罪。接着以果子認樹的教導批評他們出惡言。法利賽人要求看神蹟，耶穌只給約拿的神蹟——預示祂的死與復活。章末耶穌重新定義家庭關係：凡遵行天父旨意的，才是祂真正的家人。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【憐恤人比守宗教規條更合神心意】</strong><br>耶穌兩度引用「我喜愛憐恤，不喜愛祭祀」，因為法利賽人把宗教規條的遵守放在人的需要之上。安息日是為人設立的，不是人為安息日而設的。神的心意是生命的恢復與人的尊嚴，而不是規條的嚴苛執行。真正的敬虔不是把律法當盾牌來迴避對人的責任，而是用律法的精神來服事人。<br><br>
+<strong>2. 【屬靈眼瞎是最危險的光景】</strong><br>法利賽人親眼看見耶穌用神的靈趕鬼，卻說是靠鬼王。這不只是誤解，而是故意的抵擋。耶穌的嚴肅警告——褻瀆聖靈不得赦免——針對的正是這種明知故意、抵擋聖靈工作的頑梗。「心裏所充滿的，口裏就說出來」，他們的話語暴露了他們內心深處的問題：不是缺乏證據，而是拒絕相信。<br><br>
+<strong>3. 【真正的家人是遵行神旨意的人】</strong><br>耶穌的母親和弟兄在外等候，耶穌卻指着門徒說「看哪，我的母親，我的弟兄」。這不是否定家庭關係，而是宣告一個更深的連結：在基督裏，靈裏的家人關係超越血緣。凡遵行天父旨意的，都是耶穌的家人。教會是以信仰為基礎的家，是比血緣更深的群體連結。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我喜愛憐恤</strong>，<strong>不喜愛祭祀</strong>。你們若明白這話的意思，就不將無罪的當作有罪的了。（太12:7）</td>
+<td>你有沒有因為堅持自己的規條或標準，而忽略了身邊人真實的需要？就像急着趕飛機的人可能無暇幫助摔倒的路人，你願意在規則和憐恤之間，學習耶穌的優先次序嗎？</td>
+</tr>
+<tr>
+<td><strong>善人從他心裏所存</strong><strong>的善就發出善來</strong>；惡人從他心裏所存的惡就發出惡來。（太12:35）</td>
+<td>你日常的言語反映了你內心儲存的是什麼？就像手機裏存的是什麼資料，分享出來的就是什麼內容，你今天的說話是否反映了一顆被神話語塑造的心？</td>
+</tr>
+<tr>
+<td><strong>凡遵行我天父旨意</strong>的人，<strong>就是我的弟兄姐妹</strong>和母親了。（太12:50）</td>
+<td>你是否珍視與弟兄姐妹在基督裏的連結，如同家人一般？就像同一支隊伍的隊員不論認不認識都有深厚的歸屬感，你在教會群體中有沒有建立這種以信仰為基礎的家人情感？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

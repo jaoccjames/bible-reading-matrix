@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">博士來朝與逃往埃及</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當希律王的時候，耶穌生在猶太的伯利恆。有幾個博士從東方來到耶路撒冷，說：</div>
+<div class="verse"><span class="verse-number">2</span>「那生下來作猶太人之王的在那裏？我們在東方看見他的星，特來拜他。」</div>
+<div class="verse"><span class="verse-number">3</span>希律王聽見了，就心裏不安；耶路撒冷合城的人也都不安。</div>
+<div class="verse"><span class="verse-number">4</span>他就召齊了祭司長和民間的文士，問他們說：「基督當生在何處？」</div>
+<div class="verse"><span class="verse-number">5</span>他們回答說：「在猶太的伯利恆。因為有先知記着，說：</div>
+<div class="verse"><span class="verse-number">6</span>猶大地的伯利恆啊，你在猶大諸城中並不是最小的；因為將來有一位君王要從你那裏出來，牧養我以色列民。」</div>
+<div class="verse"><span class="verse-number">7</span>當下，希律暗暗的召了博士來，細問那星是甚麼時候出現的，</div>
+<div class="verse"><span class="verse-number">8</span>就差他們往伯利恆去，說：「你們去仔細尋訪那小孩子，尋到了，就來報信，我也好去拜他。」</div>
+<div class="verse"><span class="verse-number">9</span>他們聽見王的話就去了。在東方所看見的那星忽然在他們前頭行，直行到小孩子的地方，就在上頭停住了。</div>
+<div class="verse"><span class="verse-number">10</span>他們看見那星，就大大的歡喜；</div>
+<div class="verse"><span class="verse-number">11</span>進了房子，看見小孩子和他母親馬利亞，就俯伏拜那小孩子，揭開寶盒，拿黃金、乳香、沒藥為禮物獻給他。</div>
+<div class="verse"><span class="verse-number">12</span>博士因為在夢中被主指示不要回去見希律，就從別的路回本地去了。</div>
+<div class="verse"><span class="verse-number">13</span>他們去後，有主的使者向約瑟夢中顯現，說：「起來！帶着小孩子同他母親逃往埃及，住在那裏，等我吩咐你；因為希律必尋找小孩子，要除滅他。」</div>
+<div class="verse"><span class="verse-number">14</span>約瑟就起來，夜間帶着小孩子和他母親往埃及去，</div>
+<div class="verse"><span class="verse-number">15</span>住在那裏，直到希律死了。這是要應驗主藉先知所說的話，說：「我從埃及召出我的兒子來。」</div>
+<div class="verse"><span class="verse-number">16</span>希律見自己被博士愚弄，就大大發怒，差人將伯利恆城裏並四境所有的男孩，照着他向博士仔細查問的時候，凡兩歲以裏的，都殺盡了。</div>
+<div class="verse"><span class="verse-number">17</span>這就應了先知耶利米的話，說：</div>
+<div class="verse"><span class="verse-number">18</span>在拉瑪聽見號咷大哭的聲音，是拉結哭她兒女，不肯受安慰，因為他們都不在了。</div>
+<div class="verse"><span class="verse-number">19</span>希律死了以後，有主的使者在埃及向約瑟夢中顯現，說：</div>
+<div class="verse"><span class="verse-number">20</span>「起來！帶着小孩子和他母親往以色列地去，因為要害小孩子性命的人已經死了。」</div>
+<div class="verse"><span class="verse-number">21</span>約瑟就起來，把小孩子和他母親帶到以色列地去；</div>
+<div class="verse"><span class="verse-number">22</span>只因聽見亞基老接着他父親希律作了猶太王，就怕往那裏去，又在夢中被主指示，便往加利利境內去了，</div>
+<div class="verse"><span class="verse-number">23</span>到了一座城，名叫拿撒勒，就住在那裏。這是要應驗先知所說，他將稱為拿撒勒人的話了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+馬太福音第2章記載耶穌降生後的兩個重要事件。第一是東方博士來朝拜，他們跟隨星星，從遙遠的東方千里迢迢來到伯利恆，獻上黃金、乳香、沒藥，俯伏敬拜這位嬰孩君王。這一幕展示外邦人對彌賽亞的尋求與敬拜，與猶太宗教領袖的漠然形成強烈對比。第二是希律王的威脅迫使聖家族逃往埃及。希律因懼怕失去王位，竟下令殺盡伯利恆兩歲以下的男孩，成為聖經中最黑暗的暴政之一。本章大量引用舊約預言，馬太透過這些應驗一再強調：耶穌的每一個生命歷程都在神的掌管與計劃之內。逃往埃及又從埃及回來，呼應了以色列民族出埃及的救恩歷史，預示耶穌將成就更大的救贖。本章在救恩歷史中顯明：彌賽亞的降臨雖遭世界的敵對，卻無法阻擋神旨意的成就。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【真誠尋求的人必找到基督】</strong><br>東方博士不是猶太人，沒有完整的啟示，卻憑着一顆真誠尋求的心，不惜長途跋涉來到耶穌面前。相比之下，祭司和文士熟知預言卻無人前往朝拜。神不看人的宗教背景或知識多寡，而看人心尋求的誠摯。凡真心渴慕認識神的人，神必向他們顯現，引導他們找到基督。<br><br>
+<strong>2. 【神保護祂所揀選的人】</strong><br>在希律的殺機面前，神提前透過夢境警告約瑟，帶領聖家族平安逃往埃及。神的保護不是讓信徒免於一切危難，而是在危難中開出一條出路。約瑟一聽到神的指示便立即起身，連夜出發，絕不猶豫。神的看顧臨到那些靈敏回應祂的人，祂的時間永遠精準。<br><br>
+<strong>3. 【世界的敵對無法阻擋神的計劃】</strong><br>希律的陰謀、無辜嬰孩的慘死，看似悲劇，卻都在神預知的計劃之內。馬太一再引用先知的話說「這是要應驗」，提醒讀者：歷史不是失控的偶然，而是神主宰的劇本。黑暗的權勢再強大，也無法阻止神救贖計劃的推進。信徒面對逆境時，可以相信神仍掌管全局。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>進了房子</strong>，<strong>看見小孩子和他母</strong>親馬利亞，就俯伏拜那小孩子，揭開寶盒，拿黃金、乳香、沒藥為禮物獻給他。（太2:11）</td>
+<td>你願意像東方博士一樣，不計代價地尋求並敬拜耶穌嗎？就像為了聽心儀歌手的演唱會甘願排隊數小時，你願意將最好的時間與心力獻給基督嗎？</td>
+</tr>
+<tr>
+<td>起來！<strong>帶着小孩子同他母</strong><strong>親逃往埃及</strong>，住在那裏，等我吩咐你；因為希律必尋找小孩子，要除滅他。（太2:13）</td>
+<td>當神給你清楚的引導時，你能像約瑟一樣立即行動，不等到「方便的時候」嗎？就像火災警報響起時人不會說「等我想好再跑」，你對神的呼召有多及時的回應？</td>
+</tr>
+<tr>
+<td><strong>這是要應驗主藉先</strong><strong>知所說的話</strong>，說：「我從埃及召出我的兒子來。」（太2:15）</td>
+<td>回顧你的生命，你能看見神在你不明白的處境中默默成就祂的計劃嗎？就像拼圖在完成之前看不出全貌，你相信神正把你生命中每一片散亂的拼圖拼成美好的圖案嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

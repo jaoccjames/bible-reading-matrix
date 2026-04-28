@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰福音第18章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰福音第18章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">被捕、彼得不認主與彼拉多的審訊</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌說了這話，就同門徒出去，過了汲淪溪。在那裏有一個園子，他和門徒進去了。</div>
+<div class="verse"><span class="verse-number">2</span>賣耶穌的猶大也知道那地方，因為耶穌和門徒屢次上那裏去聚集。</div>
+<div class="verse"><span class="verse-number">3</span>猶大領了一隊兵，和祭司長並法利賽人的差役，拿着燈籠、火把、兵器，就來到園裏。</div>
+<div class="verse"><span class="verse-number">4</span>耶穌知道將要臨到自己的一切事，就出來對他們說：「你們找誰？」</div>
+<div class="verse"><span class="verse-number">5</span>他們回答說：「找拿撒勒人耶穌。」耶穌說：「我就是。」賣他的猶大也同他們站在那裏。</div>
+<div class="verse"><span class="verse-number">6</span>耶穌一說「我就是」，他們就退後倒在地上。</div>
+<div class="verse"><span class="verse-number">7</span>他又問他們說：「你們找誰？」他們說：「找拿撒勒人耶穌。」</div>
+<div class="verse"><span class="verse-number">8</span>耶穌說：「我已經告訴你們，我就是。你們若找我，就讓這些人去吧。」</div>
+<div class="verse"><span class="verse-number">9</span>這要應驗耶穌從前的話，說：「你所賜給我的人，我沒有失落一個。」</div>
+<div class="verse"><span class="verse-number">10</span>西門彼得帶着一把刀，就拔出來，將大祭司的僕人砍了一刀，削掉他的右耳；那僕人名叫馬勒古。</div>
+<div class="verse"><span class="verse-number">11</span>耶穌就對彼得說：「收刀入鞘吧，我父所給我的那杯，我豈可不喝呢？」</div>
+<div class="verse"><span class="verse-number">12</span>那隊兵和千夫長，並猶太人的差役就拿住耶穌，把他捆綁了，</div>
+<div class="verse"><span class="verse-number">13</span>先帶到亞那面前，因為亞那是本年作大祭司該亞法的岳父。</div>
+<div class="verse"><span class="verse-number">14</span>這該亞法就是從前向猶太人發議論說「一個人替百姓死是有益的」那位。</div>
+<div class="verse"><span class="verse-number">15</span>西門彼得跟着耶穌，還有一個門徒跟着。那門徒是大祭司所認識的，他就同耶穌進了大祭司的院子。</div>
+<div class="verse"><span class="verse-number">16</span>彼得卻站在門外。大祭司所認識的那個門徒出來，和看門的使女說了一聲，就領彼得進去。</div>
+<div class="verse"><span class="verse-number">17</span>那看門的使女對彼得說：「你不也是這人的門徒麼？」他說：「我不是。」</div>
+<div class="verse"><span class="verse-number">18</span>僕人和差役因為天冷，就生了炭火，站在那裏烤火；彼得也同他們站着烤火。</div>
+<div class="verse"><span class="verse-number">19</span>大祭司就以耶穌的門徒和他的教訓盤問他。</div>
+<div class="verse"><span class="verse-number">20</span>耶穌回答說：「我從來是明明的對世人說話。我常在會堂和殿裏，就是猶太人聚集的地方教訓人；我在暗地裏並沒有說甚麼。</div>
+<div class="verse"><span class="verse-number">21</span>你為甚麼問我呢？可以問那聽見的人，我對他們說的是甚麼；我所說的，他們都知道。」</div>
+<div class="verse"><span class="verse-number">22</span>耶穌說了這話，旁邊站着的一個差役用手掌打他，說：「你這樣回答大祭司麼？」</div>
+<div class="verse"><span class="verse-number">23</span>耶穌說：「我若說的不是，你可以指證那不是；我若說的是，你為甚麼打我呢？」</div>
+<div class="verse"><span class="verse-number">24</span>亞那就把耶穌解到大祭司該亞法那裏，仍是捆着解去的。</div>
+<div class="verse"><span class="verse-number">25</span>西門彼得正站着烤火，有人對他說：「你不也是他的門徒麼？」彼得不承認，說：「我不是。」</div>
+<div class="verse"><span class="verse-number">26</span>有大祭司的一個僕人，是彼得削掉耳朵那人的親屬，說：「我不是看見你同他在園子裏麼？」</div>
+<div class="verse"><span class="verse-number">27</span>彼得又不承認。立時雞就叫了。</div>
+<div class="verse"><span class="verse-number">28</span>眾人將耶穌從該亞法那裏往衙門內解去，那時天還早。他們自己卻不進衙門，恐怕染了污穢，不能喫逾越節的筵席。</div>
+<div class="verse"><span class="verse-number">29</span>彼拉多就出來，到他們那裏，說：「你們告這人是為甚麼事呢？」</div>
+<div class="verse"><span class="verse-number">30</span>他們回答說：「這人若不是作惡的，我們就不把他交給你。」</div>
+<div class="verse"><span class="verse-number">31</span>彼拉多說：「你們自己帶他去，按着你們的律法審問他吧。」猶太人說：「我們沒有殺人的權柄。」</div>
+<div class="verse"><span class="verse-number">32</span>這要應驗耶穌所說自己將要怎樣死的話了。</div>
+<div class="verse"><span class="verse-number">33</span>彼拉多又進了衙門，叫耶穌來，對他說：「你是猶太人的王麼？」</div>
+<div class="verse"><span class="verse-number">34</span>耶穌回答說：「這話是你自己說的，還是別人論我對你說的呢？」</div>
+<div class="verse"><span class="verse-number">35</span>彼拉多說：「我豈是猶太人呢？你本國的人和祭司長把你交給我。你作了甚麼事呢？」</div>
+<div class="verse"><span class="verse-number">36</span>耶穌回答說：「我的國不屬這世界；我的國若屬這世界，我的臣僕必要爭戰，使我不至於被交給猶太人。只是我的國不屬這世界。」</div>
+<div class="verse"><span class="verse-number">37</span>彼拉多就對他說：「這樣，你是王麼？」耶穌回答說：「你說我是王。我為此而生，也為此來到世間，特為給真理作見證。凡屬真理的人就聽我的話。」</div>
+<div class="verse"><span class="verse-number">38</span>彼拉多說：「真理是甚麼呢？」說了這話，又出來到猶太人那裏，對他們說：「我查不出他有甚麼罪來。</div>
+<div class="verse"><span class="verse-number">39</span>但你們有個規矩，在逾越節要我給你們釋放一個人，你們要我給你們釋放猶太人的王麼？」</div>
+<div class="verse"><span class="verse-number">40</span>他們又喊着說：「不要這人，要巴拉巴！」這巴拉巴是個強盜。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約翰福音第18章記載耶穌被捕、受審的過程，充滿了約翰獨特的神學視角。耶穌帶門徒到汲淪溪對面的園子，猶大帶一隊兵前來。耶穌知道將要臨到的一切，主動出來問「你們找誰？」當他說「我就是」，他們就退後倒在地上——揭示神的名字「我是」的能力。耶穌保護門徒：「你所賜給我的人，我沒有失落一個。」彼得砍掉馬勒古的耳朵，耶穌說「我父所給我的那杯，我豈可不喝呢？」被帶到亞那和大祭司那裏，彼得在院子裏三次不認主。彼拉多的審訊充滿諷刺：他問「你是猶太人的王麼？」耶穌說「我的國不屬這世界」。彼拉多問「真理是甚麼呢？」——這個問題由一個不願認識真理的人問出，卻是整個受審中最重要的問題。彼拉多宣告「我查不出他有甚麼罪來」，卻屈服於群眾壓力，群眾選擇釋放強盜巴拉巴。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【耶穌主動交出自己，不是被動受擒】</strong><br>「耶穌知道將要臨到自己的一切事，就出來」——不是被抓住，而是主動出去。「我就是」的宣告讓武裝的士兵倒在地上——祂有能力保護自己，卻選擇不用。這與第10章的宣告一致：「沒有人奪我的命去，是我自己捨的。」十字架不是命運的悲劇，而是愛的主動選擇。耶穌的受難是充滿主體性和目的性的行動。<br><br>
+<strong>2. 【彼拉多的問題是每個人都需要回答的】</strong><br>「真理是甚麼呢？」——彼拉多站在真理面前問真理是甚麼，卻轉身出去，不等回答。這是人類最大的悲劇：真理站在面前，卻轉身離去。耶穌在第14章說「我就是……真理」——彼拉多若轉回問耶穌，就能得到答案。許多人也是如此：問着關於生命意義的問題，卻不願停留在那位聲稱自己就是真理的面前。<br><br>
+<strong>3. 【彼得的失敗在院子裏的炭火旁】</strong><br>彼得「站在烤火」——就在拒絕接受試煉的邀請之後，陷入更大的試探。在最需要為主站立的時刻，他說「我不是」。章末「立時雞就叫了」——耶穌的話應驗了。失敗不是結束，彼得的故事在第21章有美麗的恢復。每一個在壓力下失敗的信徒，都可以期待耶穌的恢復恩典。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>我的國不屬這世界</strong>……我為此而生，也為此來到世間，特為給真理作見證。凡屬真理的人就聽我的話。」（約18:36-37）</td>
+<td>你有沒有「凡屬真理的人就聽我的話」——認出耶穌的聲音並跟從？就像天生對音樂有感受力的人會被真正的音樂深深打動，你的心靈有沒有對耶穌的聲音有這樣的敏感和回應？</td>
+</tr>
+<tr>
+<td><strong>彼拉多說</strong>：「<strong>真理是甚麼呢</strong>？」說了這話，又出去……（約18:38）</td>
+<td>你有沒有在面對關於真理和人生意義的問題時，真正停下來尋找答案，而非轉身離去繼續忙碌？就像問了緊急的問題卻沒有等待回答，你有沒有讓自己真正停在耶穌面前，尋找那個終極的回答？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>我父所給我的那杯</strong>，我豈可不喝呢？」（約18:11）</td>
+<td>你在面對你不願意的處境時，有沒有能力說出類似的話——承認這是神給你的，並選擇接受？就像苦藥雖苦卻是治病所需，你願意讓耶穌的順服態度成為你面對人生苦杯的模型嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

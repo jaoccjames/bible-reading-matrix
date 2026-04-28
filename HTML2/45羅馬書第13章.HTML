@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>羅馬書第13章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+羅馬書第13章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">服從政府與愛是律法的總結</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>在上有權柄的，人人當順服他，因為沒有權柄不是出於神的。凡掌權的都是神所命的。</div>
+<div class="verse"><span class="verse-number">2</span>所以，抗拒掌權的就是抗拒神的命；抗拒的必自取刑罰。</div>
+<div class="verse"><span class="verse-number">3</span>作官的原不是叫行善的懼怕，乃是叫作惡的懼怕。你願意不懼怕掌權的嗎？你只要行善，就可得他的稱讚；</div>
+<div class="verse"><span class="verse-number">4</span>因為他是神的用人，是與你有益的。你若作惡，卻當懼怕；因為他不是空空的佩劍，他是神的用人，是伸冤的，刑罰那作惡的。</div>
+<div class="verse"><span class="verse-number">5</span>所以你們必須順服，不但是因為刑罰，也是因為良心。</div>
+<div class="verse"><span class="verse-number">6</span>你們納糧，也為這個緣故；因他們是神的差役，常常特管這事。</div>
+<div class="verse"><span class="verse-number">7</span>凡人所當得的，就給他。當得糧的，給他納糧；當得稅的，給他上稅；當懼怕的，懼怕他；當恭敬的，恭敬他。</div>
+<div class="verse"><span class="verse-number">8</span>凡事都不可虧欠人，惟有彼此相愛，要常以為虧欠；因為愛人的，就完全了律法。</div>
+<div class="verse"><span class="verse-number">9</span>像那不可姦淫，不可殺人，不可偷盜，不可貪婪，或有別的誡命，都包在愛人如己這一句話之內了。</div>
+<div class="verse"><span class="verse-number">10</span>愛是不加害與人的，所以愛就完全了律法。</div>
+<div class="verse"><span class="verse-number">11</span>再者，你們曉得現今就是該趁早睡醒的時候；因為我們得救，現今比初信的時候更近了。</div>
+<div class="verse"><span class="verse-number">12</span>黑夜已深，白晝將近；我們就當脫去暗昧的行為，帶上光明的兵器。</div>
+<div class="verse"><span class="verse-number">13</span>行事為人要端正，好像行在白晝。不可荒宴醉酒，不可好色邪蕩，不可爭競嫉妒；</div>
+<div class="verse"><span class="verse-number">14</span>總要披戴主耶穌基督，不要為肉體安排，去放縱私慾。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+羅馬書第13章論述信徒與世俗政府的關係，並以愛作為一切誡命的總結，最後以末世的緊迫感作結。「在上有權柄的，人人當順服他，因為沒有權柄不是出於神的。凡掌權的都是神所命的」——政府的存在有神學的根基，維持社會秩序是神的安排。信徒納糧納稅、尊敬官員，不是因為政府完美，而是因為政府在神的秩序中有其功能。「凡人所當得的，就給他」——對政府的責任是現實的：稅、關稅、懼怕、恭敬。然後轉向彼此的責任：「惟有彼此相愛，要常以為虧欠」——對彼此的愛是永遠的虧欠，因為愛永遠有更深的空間。「愛人的，就完全了律法」——所有誡命都在「愛人如己」裏面得到實現。最後，末世的緊迫性：「現今比初信的時候更近了；黑夜已深，白晝將近」——信徒要脫去暗昧，披戴主耶穌基督，不放縱私慾。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【政府的權柄出於神，是維持社會秩序的工具】</strong><br>「凡掌權的都是神所命的」——這不是說每個政府的每一個決定都是神的旨意，而是說政府作為維持社會秩序的機制，在神的創造秩序裏有其地位。信徒尊重並順從政府，是承認神透過這個機制維持世界的運作。當政府的命令直接違背神的命令時（如使徒行傳5:29），「順從神，不順從人」的原則優先。<br><br>
+<strong>2. 【愛是唯一永遠的「虧欠」】</strong><br>「惟有彼此相愛，要常以為虧欠」——對愛的欠債永遠不能還清，因為愛的深度是無限的，我們永遠可以給出更多的愛。「愛人的，就完全了律法」——所有誡命（不殺人、不偷盜、不貪婪等）都在愛的原則下得到實現和超越。愛的動機比律法的規條更深更高，因為愛關注的是他人的益處，而非規避懲罰。<br><br>
+<strong>3. 【末世的緊迫感要求清醒的生活】</strong><br>「黑夜已深，白晝將近；我們就當脫去暗昧的行為，帶上光明的兵器」——末世不是用來計算日期的，而是提醒信徒保持清醒和目標感。「總要披戴主耶穌基督，不要為肉體安排，去放縱私慾」——積極地「披戴基督」和消極地「不放縱肉體」是末世信仰生活的雙重要求。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>惟有彼此相愛</strong>，要常以為虧欠；因為愛人的，就完全了律法。」（羅13:8）</td>
+<td>你有沒有把對他人的愛看作是永遠還不清的「虧欠」，讓這個認識激勵你持續地、更深地愛你身邊的人？就像最好的朋友關係是雙方都覺得對方對自己更好，你有沒有讓愛的「虧欠感」驅使你更主動地給予？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>你們曉得現今就是</strong>該趁早睡醒的時候；因為我們得救，現今比初信的時候更近了。」（羅13:11）</td>
+<td>你有沒有讓末世的緊迫感影響你對時間的使用和生活的優先次序？就像知道出差旅程即將結束讓人更珍惜剩下的時間，你有沒有讓「比初信更近了」這個意識，激勵你更加儆醒、更積極地生活？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>在上有權柄的</strong>，人人當順服他，因為沒有權柄不是出於神的。」（羅13:1）</td>
+<td>你有沒有以尊重政府和社會秩序作為你信仰生活的一部分，同時知道在什麼情況下「順從神不順從人」是必要的？就像好公民既尊重法律又在違背良心時勇於表達，你有沒有在順從和勇氣之間找到平衡？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

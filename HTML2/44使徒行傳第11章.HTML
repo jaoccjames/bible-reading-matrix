@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">外邦宣教確認與安提阿教會建立</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>使徒和在猶太的眾弟兄聽說外邦人也領受了神的道。</div>
+<div class="verse"><span class="verse-number">2</span>及至彼得上了耶路撒冷，那些奉割禮的門徒和他爭辯說：</div>
+<div class="verse"><span class="verse-number">3</span>「你進入未受割禮之人的家和他們一同吃飯了。」</div>
+<div class="verse"><span class="verse-number">4</span>彼得就開口把這事挨次給他們講解說：</div>
+<div class="verse"><span class="verse-number">5</span>「我在約帕城裏禱告的時候，魂遊象外，看見異象，有一物降下，好像一塊大布，繫着四角，從天縋下，直來到我跟前。」</div>
+<div class="verse"><span class="verse-number">6</span>我定睛觀看，見內中有地上四足的牲畜和野獸、昆蟲，並天上的飛鳥。</div>
+<div class="verse"><span class="verse-number">7</span>我且聽見有聲音向我說：『彼得，起來，宰了吃！』</div>
+<div class="verse"><span class="verse-number">8</span>我說：『主啊，這是不可的！凡俗而不潔淨的物從來沒有入過我的口。』</div>
+<div class="verse"><span class="verse-number">9</span>第二次，有聲音從天上說：神所潔淨的，你不可當作俗物。</div>
+<div class="verse"><span class="verse-number">10</span>這樣一連三次，就都收回天上去了。</div>
+<div class="verse"><span class="verse-number">11</span>正當那時，有三個人站在我們所住的房門前，是從該撒利亞差來見我的。</div>
+<div class="verse"><span class="verse-number">12</span>聖靈吩咐我和他們同去，不要疑惑〔或作：不要分別等類〕。同着我去的，還有這六位弟兄；我們都進了那人的家，</div>
+<div class="verse"><span class="verse-number">13</span>那人就告訴我們，他如何看見一位天使，站在他屋裏，說：你打發人往約帕去，請那稱呼彼得的西門來；』</div>
+<div class="verse"><span class="verse-number">14</span>他有話告訴你，可以叫你和你的全家得救。</div>
+<div class="verse"><span class="verse-number">15</span>我一開講，聖靈便降在他們身上，正像當初降在我們身上一樣。</div>
+<div class="verse"><span class="verse-number">16</span>我就想起主的話說：『約翰是用水施洗，但你們要受聖靈的洗。』</div>
+<div class="verse"><span class="verse-number">17</span>神既然給他們恩賜，像在我們信主耶穌基督的時候給了我們一樣；我是誰，能攔阻神呢！」</div>
+<div class="verse"><span class="verse-number">18</span>眾人聽見這話，就不言語了，只歸榮耀與神，說：「這樣看來，神也賜恩給外邦人，叫他們悔改得生命了。」</div>
+<div class="verse"><span class="verse-number">19</span>那些因司提反的事遭患難四散的門徒直走到腓尼基和居比路，並安提阿；他們不向別人講道，只向猶太人講。</div>
+<div class="verse"><span class="verse-number">20</span>但內中有居比路和古利奈人，他們到了安提阿也向希利尼人傳講主耶穌〔有古卷作：也向說希利尼話的猶太人傳講主耶穌〕。</div>
+<div class="verse"><span class="verse-number">21</span>主與他們同在，信而歸主的人就很多了。</div>
+<div class="verse"><span class="verse-number">22</span>這風聲傳到耶路撒冷教會人的耳中，他們就打發巴拿巴出去，走到安提阿為止。</div>
+<div class="verse"><span class="verse-number">23</span>他到了那裏，看見神所賜的恩就歡喜，勸勉眾人，立定心志，恒久靠主。</div>
+<div class="verse"><span class="verse-number">24</span>這巴拿巴原是個好人，被聖靈充滿，大有信心。於是有許多人歸服了主。</div>
+<div class="verse"><span class="verse-number">25</span>他又往大數去找掃羅，</div>
+<div class="verse"><span class="verse-number">26</span>找着了，就帶他到安提阿去。他們足有一年的工夫和教會一同聚集，教訓了許多人。門徒稱為「基督徒」是從安提阿起首。</div>
+<div class="verse"><span class="verse-number">27</span>當那些日子，有幾位先知從耶路撒冷下到安提阿。</div>
+<div class="verse"><span class="verse-number">28</span>內中有一位，名叫亞迦布，站起來，藉着聖靈指明天下將有大饑荒（這事到革老丟年間果然有了。）</div>
+<div class="verse"><span class="verse-number">29</span>於是門徒定意照各人的力量捐錢，送去供給住在猶太的弟兄。</div>
+<div class="verse"><span class="verse-number">30</span>他們就這樣行，把捐項託巴拿巴和掃羅送到眾長老那裏。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+使徒行傳第11章記載彼得向耶路撒冷教會解釋他前往哥尼流家的原委，以及安提阿教會的建立。彼得詳細述說整個過程，強調是聖靈的主導和神的行動，「我是誰，能攔阻神呢！」眾人聽見後不再爭辯，「只歸榮耀與神，說：這樣看來，神也賜恩給外邦人，叫他們悔改得生命了。」安提阿教會因分散的信徒宣講而建立，向外邦人傳道結果使許多人信主。耶路撒冷教會派巴拿巴去查看，他去了，「看見神所賜的恩就歡喜，勸勉眾人，立定心志，恒久靠主」。巴拿巴往大數找了掃羅，帶他來安提阿同工一年。「門徒稱為基督徒是從安提阿起首」。先知亞迦布預言大饑荒，門徒定意按各人力量捐錢接濟猶太弟兄，這是最早的跨文化教會援助行動。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【「我是誰，能攔阻神呢！」是對神主權的謙卑承認】</strong><br>彼得面對批評，最終的答案是「我是誰，能攔阻神呢！」這不是強辯，而是把焦點從「我的行為是否合規」轉向「神正在作甚麼」。當神明顯在作工時，人間的成規不應成為攔阻。這種謙卑要求信徒有能力識別神的動作，並跟隨，即使那超出了自己的文化和宗教習慣。<br><br>
+<strong>2. 【安提阿教會的建立模式】</strong><br>安提阿教會的建立完全是從下而上的：分散的普通信徒在日常生活中傳道；主與他們同在，許多人信主；中央教會（耶路撒冷）送巴拿巴去確認並支援。巴拿巴的角色是「看見神所賜的恩就歡喜」——不是評判也不是控制，而是鼓勵和支持。健康的教會領袖識別神的作為並加以支持，而非試圖把所有的事納入自己的掌控。<br><br>
+<strong>3. 【跨越文化的弟兄情誼與互助】</strong><br>門徒知道猶太地將有大饑荒，就定意照各人力量捐錢，讓安提阿的外邦信徒援助猶太的弟兄——恰好是人種、文化和信仰背景差異最大的兩個群體，卻因基督而成為一家人。「門徒稱為基督徒」——他們因跟從基督而有了超越民族和文化的新身份。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>彼得說</strong>：「<strong>我是誰</strong>，能攔阻神呢！」眾人聽見這話，就不言語了，只歸榮耀與神。（徒11:17-18）</td>
+<td>你有沒有讓自己的成見、文化習慣或宗教傳統成為攔阻神作工的障礙？就像舊地圖無法正確反映新開的道路，你有沒有讓神的新作為更新你對祂工作方式的理解？</td>
+</tr>
+<tr>
+<td><strong>使徒行傳說</strong>：「<strong>他到了那裏</strong>，看見神所賜的恩就歡喜，勸勉眾人，立定心志，恒久靠主。」（徒11:23）</td>
+<td>當你看見神在別人生命中的作為時，你的第一個反應是歡喜和鼓勵，還是評判和質疑？就像好的園丁看見植物生長就為它搭架子而非挖起來重新種，你有沒有培養一顆為神在他人生命中工作而真實歡喜的心？</td>
+</tr>
+<tr>
+<td><strong>使徒行傳說</strong>：「<strong>門徒稱為基督徒是</strong>從安提阿起首。」（徒11:26）</td>
+<td>你「基督徒」的身份有沒有成為你最核心的身份，超越你的民族、職業和社會地位？就像被某個國家的政府承認的公民有特定的身份和責任，你有沒有讓「屬基督的人」這個身份塑造你生命的每一個層面？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

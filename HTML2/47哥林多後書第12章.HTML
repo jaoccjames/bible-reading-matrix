@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多後書第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多後書第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">刺在肉體上與恩典夠用</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我自誇固然無益，但我是不得已的。如今我要說到主的顯現和啟示。</div>
+<div class="verse"><span class="verse-number">2</span>我認得一個在基督裏的人，他前十四年被提到第三層天上去；（或在身內，我不知道；或在身外，我也不知道；只有神知道。）</div>
+<div class="verse"><span class="verse-number">3</span>我認得這人；（或在身內，或在身外，我都不知道，只有神知道。）</div>
+<div class="verse"><span class="verse-number">4</span>他被提到樂園裏，聽見隱秘的言語，是人不可說的。</div>
+<div class="verse"><span class="verse-number">5</span>為這人，我要誇口；但是為我自己，除了我的軟弱以外，我並不誇口。</div>
+<div class="verse"><span class="verse-number">6</span>我就是願意誇口也不算狂，因為我必說實話；只是我禁止不說，恐怕有人把我看高了，過於他在我身上所看見所聽見的。</div>
+<div class="verse"><span class="verse-number">7</span>又恐怕我因所得的啟示甚大，就過於自高，所以有一根刺加在我肉體上，就是撒但的差役要攻擊我，免得我過於自高。</div>
+<div class="verse"><span class="verse-number">8</span>為這事，我三次求過主，叫這刺離開我。</div>
+<div class="verse"><span class="verse-number">9</span>他對我說：「我的恩典彀你用的，因為我的能力是在人的軟弱上顯得完全。」所以，我更喜歡誇自己的軟弱，好叫基督的能力覆庇我。</div>
+<div class="verse"><span class="verse-number">10</span>我為基督的緣故，就以軟弱、凌辱、急難、逼迫、困苦為可喜樂的；因我甚麼時候軟弱，甚麼時候就剛強了。</div>
+<div class="verse"><span class="verse-number">11</span>我成了愚妄人，是被你們強逼的。我本該被你們稱許才是。我雖算不了甚麼，卻沒有一件事在那些最大的使徒以下。</div>
+<div class="verse"><span class="verse-number">12</span>我在你們中間，用百般的忍耐，藉着神蹟、奇事、異能，顯出使徒的憑據來。</div>
+<div class="verse"><span class="verse-number">13</span>除了我不累着你們這一件事，你們還有甚麼事不及別的教會呢？這不公之處，求你們饒恕我吧。</div>
+<div class="verse"><span class="verse-number">14</span>如今，我打算第三次到你們那裏去，也必不累着你們；因我所求的是你們，不是你們的財物。兒女不該為父母積財，父母該為兒女積財。</div>
+<div class="verse"><span class="verse-number">15</span>我也甘心樂意為你們的靈魂費財費力。難道我越發愛你們，就越發少得你們的愛嗎？</div>
+<div class="verse"><span class="verse-number">16</span>罷了，我自己並沒有累着你們，你們卻有人說，我是詭詐，用心計牢籠你們。</div>
+<div class="verse"><span class="verse-number">17</span>我所差到你們那裏去的人，我藉着他們一個人佔過你們的便宜嗎？</div>
+<div class="verse"><span class="verse-number">18</span>我勸了提多到你們那裏去；又差那位兄弟與他同去。提多佔過你們的便宜嗎？我們行事，不同是一個心靈〔或作：聖靈〕嗎？不同是一個腳蹤嗎？</div>
+<div class="verse"><span class="verse-number">19</span>你們到如今，還想我們是向你們分訴；我們本是在基督裏當神面前說話。親愛的弟兄啊，一切的事都是為造就你們。</div>
+<div class="verse"><span class="verse-number">20</span>我怕我再來的時候，見你們不合我所想望的，你們見我也不合你們所想望的；又怕有紛爭、嫉妒、惱怒、結黨、毀謗、讒言、狂傲、混亂的事。</div>
+<div class="verse"><span class="verse-number">21</span>且怕我來的時候，我的神叫我在你們面前慚愧，又因許多人從前犯罪，行污穢、姦淫、邪蕩的事不肯悔改，我就憂愁。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+哥林多後書第12章記載保羅被提到第三層天的異象，以及「刺在肉體上」的苦難，以神對他的回答作為整章的神學核心。保羅謙遜地以第三人稱描述自己「在基督裏」被提到第三層天、進入樂園聽見隱秘話語的體驗——「或在身內，或在身外，我不知道，只有神知道」。為了防止他因啟示甚大而過於自高，「有一根刺加在我肉體上，就是撒但的差役要攻擊我，免得我過於自高」。三次求主，主的回答：「我的恩典夠你用的，因為我的能力是在人的軟弱上顯得完全」。保羅的回應：「所以，我更喜歡誇自己的軟弱，好叫基督的能力覆庇我……因我甚麼時候軟弱，甚麼時候就剛強了」——軟弱的悖論。章末保羅表達對哥林多人的關切：他甘心費財費力，「因我所求的是你們，不是你們的財物」，擔心去的時候見到紛爭嫉妒和污穢的事。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【「我的恩典夠你用的」——夠用的恩典】</strong><br>「我的能力是在人的軟弱上顯得完全」——神沒有答應移除那根刺，而是宣告恩典在刺的存在中仍然夠用。這個回答揭示了神對禱告的另一種回應方式：不是改變處境，而是在處境中加添力量。「夠你用的」——不是豐盛有餘，而是恰好足夠。信徒在軟弱中發現恩典的夠用，往往比在剛強中更深地經歷神。<br><br>
+<strong>2. 【喜歡誇自己的軟弱——軟弱的悖論】</strong><br>「所以，我更喜歡誇自己的軟弱，好叫基督的能力覆庇我」——保羅對「恩典夠用」的回應，不是勉強接受，而是「更喜歡」誇自己的軟弱。這個態度來自對屬靈動態的深刻認識：軟弱使人倚靠神，倚靠神使神的能力彰顯。「因我甚麼時候軟弱，甚麼時候就剛強了」——這是信仰生命最深的悖論之一。<br><br>
+<strong>3. 【「我所求的是你們，不是你們的財物」】</strong><br>「因我所求的是你們，不是你們的財物。兒女不該為父母積財，父母該為兒女積財」——真正的牧者關心的是人本身，而非人帶來的資源。保羅「甘心樂意為你們的靈魂費財費力」——是犧牲性的，不是謀利性的。這是牧者心腸與商業心態的根本區別。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>他對我說</strong>：我的恩典夠你用的，因為我的能力是在人的軟弱上顯得完全。所以，我更喜歡誇自己的軟弱，好叫基督的能力覆庇我。」（林後12:9）</td>
+<td>你有沒有在你的軟弱和局限中，讓「我的恩典夠你用的」成為你的確信，而非把軟弱看作是神離棄你的標誌？就像在攀登最後一段路時知道前方有人保護讓人更有勇氣，你有沒有讓神的恩典在你的軟弱處成為你的力量泉源？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>因我甚麼時候軟弱</strong>，甚麼時候就剛強了。」（林後12:10）</td>
+<td>你有沒有在信仰生活中體驗過「在軟弱中得力量」的悖論——在你最無能為力的時候，神的能力最清晰地彰顯？就像一個空的容器比裝滿的容器能盛得更多，你有沒有在承認自己的軟弱中，給神更多的空間工作？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我也甘心樂意為你</strong>們的靈魂費財費力。難道我越發愛你們，就越發少得你們的愛嗎？」（林後12:15）</td>
+<td>你對你所牧養或帶領的人，有沒有「甘心費財費力」的無私心志，而非計算服事的回報？就像父母對孩子的投入不是為了回報，你有沒有讓對他人靈魂的真實關懷成為你服事動力，而非對感謝或認可的期待？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

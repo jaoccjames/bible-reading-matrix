@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+路加福音第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">天使報喜與馬利亞的頌讚</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>提阿非羅大人哪，有好些人提筆作書，述說在我們中間所成就的事，是照傳道的人從起初親眼看見又傳給我們的。</div>
+<div class="verse"><span class="verse-number">2</span>併於上節</div>
+<div class="verse"><span class="verse-number">3</span>這些事我既從起頭都詳細考察了，就定意要按着次序寫給你，</div>
+<div class="verse"><span class="verse-number">4</span>使你知道所學之道都是確實的。</div>
+<div class="verse"><span class="verse-number">5</span>當猶太王希律的時候，亞比雅班裏有一個祭司，名叫撒迦利亞；他妻子是亞倫的後人，名叫以利沙伯。</div>
+<div class="verse"><span class="verse-number">6</span>他們二人在神面前都是義人，遵行主的一切誡命禮儀，沒有可指摘的，</div>
+<div class="verse"><span class="verse-number">7</span>只是沒有孩子；因為以利沙伯不生育，兩個人又年紀老邁了。</div>
+<div class="verse"><span class="verse-number">8</span>撒迦利亞按班次在神面前供祭司的職分，</div>
+<div class="verse"><span class="verse-number">9</span>照祭司的規矩掣籤，得進主殿燒香。</div>
+<div class="verse"><span class="verse-number">10</span>燒香的時候，眾百姓在外面禱告。</div>
+<div class="verse"><span class="verse-number">11</span>有主的使者站在香壇的右邊，向他顯現。</div>
+<div class="verse"><span class="verse-number">12</span>撒迦利亞看見，就驚慌害怕。</div>
+<div class="verse"><span class="verse-number">13</span>天使對他說：「撒迦利亞，不要害怕，因為你的祈禱已經被聽見了。你的妻子以利沙伯要給你生一個兒子，你要給他起名叫約翰。</div>
+<div class="verse"><span class="verse-number">14</span>你必歡喜快樂；有許多人因他出世，也必喜樂。</div>
+<div class="verse"><span class="verse-number">15</span>他在主面前將要為大，淡酒濃酒都不喝，從母腹裏就被聖靈充滿了。</div>
+<div class="verse"><span class="verse-number">16</span>他要使許多以色列人回轉，歸於主他們的神。</div>
+<div class="verse"><span class="verse-number">17</span>他必有以利亞的心志能力，行在主的前面，叫為父的心轉向兒女，叫悖逆的人轉從義人的智慧，又為主預備合用的百姓。」</div>
+<div class="verse"><span class="verse-number">18</span>撒迦利亞對天使說：「我憑着甚麼可知道這事呢？我已經老了，我的妻子也年紀老邁了。」</div>
+<div class="verse"><span class="verse-number">19</span>天使回答說：「我是站在神面前的加百列，奉差而來對你說話，將這好信息報給你。</div>
+<div class="verse"><span class="verse-number">20</span>到了時候，這話必然應驗；只因你不信，你必啞吧，不能說話，直到這事成就的日子。」</div>
+<div class="verse"><span class="verse-number">21</span>百姓等候撒迦利亞，詫異他許久在殿裏。</div>
+<div class="verse"><span class="verse-number">22</span>及至他出來，不能和他們說話，他們就知道他在殿裏見了異象；因為他直向他們打手式，竟成了啞吧。</div>
+<div class="verse"><span class="verse-number">23</span>他供職的日子已滿，就回家去了。</div>
+<div class="verse"><span class="verse-number">24</span>這些日子以後，他的妻子以利沙伯懷了孕，就隱藏了五個月，</div>
+<div class="verse"><span class="verse-number">25</span>說：「主在眷顧我的日子，這樣看待我，要把我在人間的羞恥除掉。」</div>
+<div class="verse"><span class="verse-number">26</span>到了第六個月，天使加百列奉神的差遣往加利利的一座城去（這城名叫拿撒勒），</div>
+<div class="verse"><span class="verse-number">27</span>到一個童女那裏，是已經許配大衛家的一個人，名叫約瑟。童女的名字叫馬利亞；</div>
+<div class="verse"><span class="verse-number">28</span>天使進去，對她說：「蒙大恩的女子，我問你安，主和你同在了！」</div>
+<div class="verse"><span class="verse-number">29</span>馬利亞因這話就很驚慌，又反復思想這樣問安是甚麼意思。</div>
+<div class="verse"><span class="verse-number">30</span>天使對她說：「馬利亞，不要怕！你在神面前已經蒙恩了。</div>
+<div class="verse"><span class="verse-number">31</span>你要懷孕生子，可以給他起名叫耶穌。</div>
+<div class="verse"><span class="verse-number">32</span>他要為大，稱為至高者的兒子；主神要把他祖大衛的位給他。</div>
+<div class="verse"><span class="verse-number">33</span>他要作雅各家的王，直到永遠；他的國也沒有窮盡。」</div>
+<div class="verse"><span class="verse-number">34</span>馬利亞對天使說：「我沒有出嫁，怎麼有這事呢？」</div>
+<div class="verse"><span class="verse-number">35</span>天使回答說：「聖靈要臨到你身上，至高者的能力要蔭庇你，因此所要生的聖者必稱為神的兒子〔或作：所要生的，必稱為聖，稱為神的兒子〕。</div>
+<div class="verse"><span class="verse-number">36</span>況且你的親戚以利沙伯，在年老的時候也懷了男胎，就是那素來稱為不生育的，現在有孕六個月了。</div>
+<div class="verse"><span class="verse-number">37</span>因為出於神的話，沒有一句不帶能力的。」</div>
+<div class="verse"><span class="verse-number">38</span>馬利亞說：「我是主的使女，情願照你的話成就在我身上。」天使就離開她去了。</div>
+<div class="verse"><span class="verse-number">39</span>那時候，馬利亞起身，急忙往山地裏去，來到猶大的一座城；</div>
+<div class="verse"><span class="verse-number">40</span>進了撒迦利亞的家，問以利沙伯安。</div>
+<div class="verse"><span class="verse-number">41</span>以利沙伯一聽馬利亞問安，所懷的胎就在腹裏跳動。以利沙伯且被聖靈充滿，</div>
+<div class="verse"><span class="verse-number">42</span>高聲喊着說：「你在婦女中是有福的！你所懷的胎也是有福的！</div>
+<div class="verse"><span class="verse-number">43</span>我主的母到我這裏來，這是從那裏得的呢？</div>
+<div class="verse"><span class="verse-number">44</span>因為你問安的聲音一入我耳，我腹裏的胎就歡喜跳動。</div>
+<div class="verse"><span class="verse-number">45</span>這相信的女子是有福的！因為主對她所說的話都要應驗。」</div>
+<div class="verse"><span class="verse-number">46</span>馬利亞說：我心尊主為大；</div>
+<div class="verse"><span class="verse-number">47</span>我靈以神我的救主為樂；</div>
+<div class="verse"><span class="verse-number">48</span>因為他顧念他使女的卑微；從今以後，萬代要稱我有福。</div>
+<div class="verse"><span class="verse-number">49</span>那有權能的，為我成就了大事；他的名為聖。</div>
+<div class="verse"><span class="verse-number">50</span>他憐憫敬畏他的人，直到世世代代。</div>
+<div class="verse"><span class="verse-number">51</span>他用膀臂施展大能；那狂傲的人正心裏妄想就被他趕散了。</div>
+<div class="verse"><span class="verse-number">52</span>他叫有權柄的失位，叫卑賤的升高；</div>
+<div class="verse"><span class="verse-number">53</span>叫飢餓的得飽美食，叫富足的空手回去。</div>
+<div class="verse"><span class="verse-number">54</span>他扶助了他的僕人以色列，</div>
+<div class="verse"><span class="verse-number">55</span>為要記念亞伯拉罕和他的後裔，施憐憫直到永遠，正如從前對我們列祖所說的話。</div>
+<div class="verse"><span class="verse-number">56</span>馬利亞和以利沙伯同住，約有三個月，就回家去了。</div>
+<div class="verse"><span class="verse-number">57</span>以利沙伯的產期到了，就生了一個兒子。</div>
+<div class="verse"><span class="verse-number">58</span>鄰里親族聽見主向她大施憐憫，就和她一同歡樂。</div>
+<div class="verse"><span class="verse-number">59</span>到了第八日，他們來要給孩子行割禮，並要照他父親的名字叫他撒迦利亞。</div>
+<div class="verse"><span class="verse-number">60</span>他母親說：「不可！要叫他約翰。」</div>
+<div class="verse"><span class="verse-number">61</span>他們說：「你親族中沒有叫這名字的。」</div>
+<div class="verse"><span class="verse-number">62</span>他們就向他父親打手式，問他要叫這孩子甚麼名字。</div>
+<div class="verse"><span class="verse-number">63</span>他要了一塊寫字的板，就寫上，說：「他的名字是約翰。」他們便都希奇。</div>
+<div class="verse"><span class="verse-number">64</span>撒迦利亞的口立時開了，舌頭也舒展了，就說出話來，稱頌神。</div>
+<div class="verse"><span class="verse-number">65</span>周圍居住的人都懼怕；這一切的事就傳遍了猶太的山地。</div>
+<div class="verse"><span class="verse-number">66</span>凡聽見的人都將這事放在心裏，說：「這個孩子將來怎麼樣呢？」因為有主與他同在。</div>
+<div class="verse"><span class="verse-number">67</span>他父親撒迦利亞被聖靈充滿了，就預言說：</div>
+<div class="verse"><span class="verse-number">68</span>主以色列的神是應當稱頌的！因他眷顧他的百姓，為他們施行救贖，</div>
+<div class="verse"><span class="verse-number">69</span>在他僕人大衛家中，為我們興起了拯救的角，</div>
+<div class="verse"><span class="verse-number">70</span>（正如主藉着從創世以來聖先知的口所說的話，）</div>
+<div class="verse"><span class="verse-number">71</span>拯救我們脫離仇敵和一切恨我們之人的手，</div>
+<div class="verse"><span class="verse-number">72</span>向我們列祖施憐憫，記念他的聖約，</div>
+<div class="verse"><span class="verse-number">73</span>就是他對我們祖宗亞伯拉罕所起的誓，</div>
+<div class="verse"><span class="verse-number">74</span>叫我們既從仇敵手中被救出來，</div>
+<div class="verse"><span class="verse-number">75</span>就可以終身在他面前，坦然無懼的用聖潔、公義事奉他。</div>
+<div class="verse"><span class="verse-number">76</span>孩子啊！你要稱為至高者的先知；因為你要行在主的前面，預備他的道路，</div>
+<div class="verse"><span class="verse-number">77</span>叫他的百姓因罪得赦，就知道救恩。</div>
+<div class="verse"><span class="verse-number">78</span>因我們神憐憫的心腸，叫清晨的日光從高天臨到我們，</div>
+<div class="verse"><span class="verse-number">79</span>要照亮坐在黑暗中死蔭裏的人，把我們的腳引到平安的路上。</div>
+<div class="verse"><span class="verse-number">80</span>那孩子漸漸長大，心靈強健，住在曠野，直到他顯明在以色列人面前的日子。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+路加福音第1章是全書最優美的開篇，路加以史家的嚴謹態度、文學家的優雅筆觸，呈現救恩歷史新紀元的到來。路加明確說明寫作目的：要按次序詳細陳述，使讀者知道所學之道都是確實的。故事從兩個不可能的受孕開始：年老不育的以利沙伯懷孕，先知約翰的誕生；和童女馬利亞懷孕，救主耶穌的降生。天使加百列兩度顯現——向撒迦利亞宣告約翰的誕生；向馬利亞宣告耶穌的降生。撒迦利亞因不信被啞，馬利亞卻以「情願照你的話成就在我身上」回應。馬利亞訪問以利沙伯，以利沙伯腹中的胎受聖靈感動跳動；馬利亞唱出「尊主頌」，讚美神顛覆世界秩序的救恩。約翰誕生，撒迦利亞的口開了，唱出「撒迦利亞頌」，預言約翰的使命。整章充滿讚美、驚奇、以及神話語應驗的確據。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【順服的信心帶出救恩歷史的轉折】</strong><br>馬利亞說「情願照你的話成就在我身上」，是全書最關鍵的一句話。神的救贖計劃需要人的自由回應——不是強迫，而是邀請。馬利亞的順服是在完全不理解情況下的信心：懷孕的神蹟超越她所能想像，社會的後果也令人懼怕，但她選擇信靠神的話語。每一個信徒的順服，都是在不完全理解中對神的信任。<br><br>
+<strong>2. 【尊主頌宣告神顛覆世界秩序的救恩】</strong><br>「他叫有權柄的失位，叫卑賤的升高；叫飢餓的得飽美食，叫富足的空手回去」——馬利亞的頌歌不只是個人感謝，而是對神救恩本質的神學宣告。天國的邏輯顛覆人間的秩序：強者被低，弱者被舉；飢渴的得滿足，驕傲自足的被打發。這提醒信徒：神站在邊緣人和謙卑者一邊。<br><br>
+<strong>3. 【神的應許雖延遲但必應驗】</strong><br>以利沙伯等候多年，撒迦利亞的禱告被聽見了——天使說「你的祈禱已經被聽見了」。這多年的等候不是神的忽視，而是時機的等待。神的時間表不是人的時間表，但祂的話語必然應驗。「清晨的日光從高天臨到我們」的應許，在最長的黑夜之後必然到來。等候神的人，必不羞愧。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>馬利亞說</strong>：「<strong>我是主的使女</strong>，情願照你的話成就在我身上。」（路1:38）</td>
+<td>你有沒有像馬利亞一樣，在不完全理解的情況下，仍然選擇順服神的呼召？就像接受一個新職務不是因為已經準備好，而是因為信任那個委任你的人，你願意帶着不確定的信心說「照你的話成就在我身上」嗎？</td>
+</tr>
+<tr>
+<td><strong>天使對她說</strong>：「<strong>馬利亞</strong>，不要怕！你在神面前已經蒙恩了。」（路1:30）</td>
+<td>你有沒有在神呼召你做某件事時，因為感到不夠格而懼怕？就像從未公開表演的人被邀請上台感到驚慌，你知道神的呼召是以祂的恩典為根基，而非以你的資格為前提嗎？</td>
+</tr>
+<tr>
+<td><strong>馬利亞說</strong>：<strong>我心尊主為大</strong>；我靈以神我的救主為樂。（路1:46-47）</td>
+<td>你有沒有在日常生活中，培養一顆以神為大的心——不只在教會，也在工作、家庭和娛樂中？就像一個人真正愛慕某人時，那個人的事會自然佔據他大部分的思念，你對神的愛有沒有自然地溢出在你的日常中？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

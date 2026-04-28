@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>希伯來書第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+希伯來書第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">更美之約與新約的心版</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我們所講的事，其中第一要緊的，就是我們有這樣的大祭司，已經坐在天上至大者寶座的右邊，</div>
+<div class="verse"><span class="verse-number">2</span>在聖所，就是真帳幕裏，作執事；這帳幕是主所支的，不是人所支的。</div>
+<div class="verse"><span class="verse-number">3</span>凡大祭司都是為獻禮物和祭物設立的，所以這位大祭司也必須有所獻的。</div>
+<div class="verse"><span class="verse-number">4</span>他若在地上，必不得為祭司，因為已經有照律法獻禮物的祭司。</div>
+<div class="verse"><span class="verse-number">5</span>他們供奉的事本是天上事的形狀和影像，正如摩西將要造帳幕的時候，蒙神警戒他，說：『你要謹慎，作各樣的物件都要照着在山上指示你的樣式。』</div>
+<div class="verse"><span class="verse-number">6</span>如今耶穌所得的職任是更美的，正如他作更美之約的中保；這約原是憑更美之應許立的。</div>
+<div class="verse"><span class="verse-number">7</span>那前約若沒有瑕疵，就無處尋求後約了。</div>
+<div class="verse"><span class="verse-number">8</span>所以主指責他的百姓說〔或作：所以主指前約的缺欠說〕：日子將到，我要與以色列家和猶大家另立新約，</div>
+<div class="verse"><span class="verse-number">9</span>不像我拉着他們祖宗的手，領他們出埃及的時候，與他們所立的約。因為他們不恒心守我的約，我也不理他們。這是主說的。</div>
+<div class="verse"><span class="verse-number">10</span>主又說：那些日子以後，我與以色列家所立的約乃是這樣：我要將我的律法放在他們裏面，寫在他們心上；我要作他們的神；他們要作我的子民。</div>
+<div class="verse"><span class="verse-number">11</span>他們不用各人教導自己的鄉鄰和自己的弟兄，說：你該認識主；因為他們從最小的到至大的，都必認識我。</div>
+<div class="verse"><span class="verse-number">12</span>我要寬恕他們的不義，不再記念他們的罪愆。</div>
+<div class="verse"><span class="verse-number">13</span>既說新約。就以前約為舊了；但那漸舊漸衰的，就必快歸無有了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+希伯來書第8章論述基督大祭司在天上真帳幕中的執事，以及更美之約的神學。「我們所講的事，其中第一要緊的，就是我們有這樣的大祭司，已經坐在天上至大者寶座的右邊，在聖所，就是真帳幕裏，作執事；這帳幕是主所支的，不是人所支的」——地上的帳幕是天上真帳幕的影像。「如今耶穌所得的職任是更美的，正如他作更美之約的中保；這約原是憑更美之應許立的」。引用耶利米書31:31-34，神應許立的新約：「我要將我的律法放在他們裏面，寫在他們心上；我要作他們的神；他們要作我的子民。他們不用各人教導自己的鄉鄰和自己的弟兄，說：你該認識主；因為他們從最小的到至大的，都必認識我。我要寬恕他們的不義，不再記念他們的罪愆」——新約的四個特質：律法在心裏、個人認識神、普遍性的認識、完全的赦免。「既說新約。就以前約為舊了；但那漸舊漸衰的，就必快歸無有了」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【地上的影像指向天上的真實】</strong><br>「他們供奉的事本是天上事的形狀和影像」——舊約的禮儀制度（帳幕、祭壇、大祭司）不是終點，而是指向天上真實的影像。基督在天上真帳幕裏執事，才是一切的終極實在。理解舊約的禮儀制度，關鍵是看見它所預表的基督，而非執着於形式本身。<br><br>
+<strong>2. 【新約律法在心裏，不在石版上】</strong><br>「我要將我的律法放在他們裏面，寫在他們心上」——舊約是律法寫在石版上，人靠外力約束；新約是律法寫在心裏，人因內在更新而自願遵行。這是根本性的不同：不是更嚴格的外在規條，而是內心的轉化，使人「喜愛神的律法」（詩119篇）。聖靈的工作是把神的律法寫在信徒的心裏。<br><br>
+<strong>3. 【「不再記念他們的罪愆」——完全的赦免】</strong><br>「我要寬恕他們的不義，不再記念他們的罪愆」——新約赦免的完全性：不只是赦免，而且「不再記念」。神的不再記念不是神的遺忘，而是神決定不再以那個罪追討。這是信仰確據最深的根基：我的罪被神「不再記念」，我可以在神面前以完全赦免的確信站立。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>希伯來書說</strong>：「<strong>我要將我的律法放</strong>在他們裏面，寫在他們心上；我要作他們的神；他們要作我的子民。」（來8:10）</td>
+<td>你有沒有讓新約「律法在心版」的現實成為你信仰生活的核心——讓你對神話語的遵行是發自內心的喜愛，而非外部規條的遵守？就像真正愛上音樂的人練習是出於喜愛而非被迫，你有沒有讓聖靈把神的律法寫在你心上，使遵行成為你的喜悅？</td>
+</tr>
+<tr>
+<td><strong>希伯來書說</strong>：「<strong>如今耶穌所得的職</strong>任是更美的，正如他作更美之約的中保；這約原是憑更美之應許立的。」（來8:6）</td>
+<td>你有沒有充分認識和珍視你所在的「更美之約」的特權——個人認識神、完全的赦免、律法在心——讓這些特權帶出你對神深深的感謝和更積極的信仰回應？就像知道自己享有特別的特權會讓人更珍惜，你有沒有讓新約的特權帶出你更深的敬拜？</td>
+</tr>
+<tr>
+<td><strong>希伯來書說</strong>：「<strong>我要寬恕他們的不</strong>義，不再記念他們的罪愆。」（來8:12）</td>
+<td>你有沒有讓神「不再記念你的罪愆」這個確信，從定罪感中完全釋放你，讓你在神面前以赦免的兒女的身份坦然行事？就像已被法院宣判無罪的人可以自由離開，你有沒有讓神的赦免宣告帶出你真正的靈魂自由？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

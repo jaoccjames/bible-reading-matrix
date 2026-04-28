@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>羅馬書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+羅馬書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">世人皆犯罪與因信稱義</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>這樣說來，猶太人有甚麼長處？割禮有甚麼益處呢？</div>
+<div class="verse"><span class="verse-number">2</span>凡事大有好處：第一是神的聖言交託他們。</div>
+<div class="verse"><span class="verse-number">3</span>即便有不信的，這有何妨呢？難道他們的不信就廢掉神的信嗎？</div>
+<div class="verse"><span class="verse-number">4</span>斷乎不能！不如說，神是真實的，人都是虛謊的。如經上所記：你責備人的時候，顯為公義；被人議論的時候，可以得勝。</div>
+<div class="verse"><span class="verse-number">5</span>我且照着人的常話說，我們的不義若顯出神的義來，我們可以怎麼說呢？神降怒，是他不義麼？</div>
+<div class="verse"><span class="verse-number">6</span>斷乎不是！若是這樣，神怎能審判世界呢？</div>
+<div class="verse"><span class="verse-number">7</span>若神的真實，因我的虛謊越發顯出他的榮耀，為甚麼我還受審判，好像罪人呢？</div>
+<div class="verse"><span class="verse-number">8</span>為甚麼不說，我們可以作惡以成善呢？這是毀謗我們的人說我們有這話。這等人定罪是該當的。</div>
+<div class="verse"><span class="verse-number">9</span>這卻怎麼樣呢？我們比他們強麼？決不是的！因我們已經證明：猶太人和希利尼人都在罪惡之下。</div>
+<div class="verse"><span class="verse-number">10</span>就如經上所記：沒有義人，連一個也沒有。</div>
+<div class="verse"><span class="verse-number">11</span>沒有明白的；沒有尋求神的；</div>
+<div class="verse"><span class="verse-number">12</span>都是偏離正路，一同變為無用。沒有行善的，連一個也沒有。</div>
+<div class="verse"><span class="verse-number">13</span>他們的喉嚨是敞開的墳墓；他們用舌頭弄詭詐，嘴唇裏有虺蛇的毒氣，</div>
+<div class="verse"><span class="verse-number">14</span>滿口是咒罵苦毒。</div>
+<div class="verse"><span class="verse-number">15</span>殺人流血，他們的腳飛跑，</div>
+<div class="verse"><span class="verse-number">16</span>所經過的路便行殘害暴虐的事。</div>
+<div class="verse"><span class="verse-number">17</span>平安的路，他們未曾知道；</div>
+<div class="verse"><span class="verse-number">18</span>他們眼中不怕神。</div>
+<div class="verse"><span class="verse-number">19</span>我們曉得律法上的話都是對律法以下之人說的，好塞住各人的口，叫普世的人都伏在神審判之下。</div>
+<div class="verse"><span class="verse-number">20</span>所以凡有血氣的，沒有一個因行律法能在神面前稱義，因為律法本是叫人知罪。</div>
+<div class="verse"><span class="verse-number">21</span>但如今，神的義在律法以外已經顯明出來，有律法和先知為證：</div>
+<div class="verse"><span class="verse-number">22</span>就是神的義，因信耶穌基督加給一切相信的人，並沒有分別。</div>
+<div class="verse"><span class="verse-number">23</span>因為世人都犯了罪，虧缺了神的榮耀；</div>
+<div class="verse"><span class="verse-number">24</span>如今卻蒙神的恩典，因基督耶穌的救贖，就白白的稱義。</div>
+<div class="verse"><span class="verse-number">25</span>神設立耶穌作挽回祭，是憑着耶穌的血，藉着人的信，要顯明神的義；因為他用忍耐的心寬容人先時所犯的罪，</div>
+<div class="verse"><span class="verse-number">26</span>好在今時顯明他的義，使人知道他自己為義，也稱信耶穌的人為義。</div>
+<div class="verse"><span class="verse-number">27</span>既是這樣，那裏能誇口呢？沒有可誇的了。用何法沒有的呢？是用立功之法嗎？不是，乃用信主之法。</div>
+<div class="verse"><span class="verse-number">28</span>所以〔有古卷作：因為〕我們看定了：人稱義是因着信，不在乎遵行律法。</div>
+<div class="verse"><span class="verse-number">29</span>難道神只作猶太人的神嗎？不也是作外邦人的神嗎？是的，也作外邦人的神。</div>
+<div class="verse"><span class="verse-number">30</span>神既是一位，他就要因信稱那受割禮的為義，也要因信稱那未受割禮的為義。</div>
+<div class="verse"><span class="verse-number">31</span>這樣，我們因信廢了律法麼？斷乎不是！更是堅固律法。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+羅馬書第3章是整本書神學論述的高峰之一，宣告了因信稱義的核心教義。章首保羅先處理「猶太人的優勢」問題：猶太人有神的聖言為優勢，但這不改變他們同樣在罪惡之下的現實。引用詩篇證明「沒有義人，連一個也沒有」，列舉人類全方位的罪性：喉嚨、舌頭、嘴唇、腳、眼——全身都是罪的工具。律法的作用是「叫人知罪」，而非使人稱義。然後，福音的曙光：「但如今，神的義在律法以外已經顯明出來……因為世人都犯了罪，虧缺了神的榮耀；如今卻蒙神的恩典，因基督耶穌的救贖，就白白的稱義。神設立耶穌作挽回祭」。稱義是因着信，不在乎遵行律法，「人稱義是因着信，不在乎遵行律法」。神既是一位，就要因信稱那受割禮的和未受割禮的都為義，信心不廢棄律法，反倒堅固律法。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【「世人都犯了罪，虧缺了神的榮耀」是得救的前提】</strong><br>「沒有義人，連一個也沒有」——這不是悲觀主義，而是診斷的誠實。只有認識自己的病情，才能接受治療。「虧缺了神的榮耀」說明罪的本質：不只是違規，而是未能活出神造人的目的，像破碎的鏡子無法正確反映神的形像。對罪性的認識有多深，對恩典的感謝就有多深。<br><br>
+<strong>2. 【「白白的稱義」是恩典最純粹的定義】</strong><br>「如今卻蒙神的恩典，因基督耶穌的救贖，就白白的稱義」——「白白」（dorean）說明這是禮物，沒有任何代價要求接受者付出。救恩不是交換，不是我的善行換取神的赦免，而是神在沒有任何要求的情況下白白給出。「基督耶穌的救贖」說明這禮物是有代價的——只是代價由基督付出，我們只需接受。<br><br>
+<strong>3. 【信心不廢棄律法，反倒堅固律法】</strong><br>「因信廢了律法麼？斷乎不是！更是堅固律法。」——恩典不是放縱罪的許可證。因信稱義，是說律法無法給我們稱義的地位，但律法所反映的神的標準和性情，在相信的人生命中透過聖靈的工作得以真正成就。恩典不降低道德標準，反而在生命中創造了真正遵行律法的可能。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>因為世人都犯了罪</strong>，虧缺了神的榮耀；如今卻蒙神的恩典，因基督耶穌的救贖，就白白的稱義。」（羅3:23-24）</td>
+<td>你有沒有真正接受「世人都犯了罪」包括你自己，並且同樣接受「白白的稱義」這個禮物？就像承認自己生病才能接受治療，你有沒有讓對自己罪性的認識帶出對恩典的深深感謝？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>所以我們看定了</strong>：人稱義是因着信，不在乎遵行律法。」（羅3:28）</td>
+<td>你有沒有在實際生活中把「因信稱義」和「靠行為換取神的認可」分清楚？就像知道獎學金是賜予的而非掙來的，你有沒有在信仰生活中活出那種自由——不是靠表現換取神的愛，而是因被愛而行出好行為？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>律法本是叫人知罪</strong>。」（羅3:20）</td>
+<td>你有沒有讓律法和神的標準發揮它的正確功用——使你認識自己的需要和對救主的依靠，而非試圖靠遵守律法來稱義？就像體重計的功能是顯示數字而非減重，你有沒有讓律法幫助你認識真實的靈魂狀態？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

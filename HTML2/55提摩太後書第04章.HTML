@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提摩太後書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+提摩太後書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">傳道的呼召與保羅的最後見證</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我在神面前，並在將來審判活人死人的基督耶穌面前，憑着他的顯現和他的國度囑咐你：</div>
+<div class="verse"><span class="verse-number">2</span>務要傳道，無論得時不得時，總要專心；並用百般的忍耐，各樣的教訓，責備人、警戒人、勸勉人。</div>
+<div class="verse"><span class="verse-number">3</span>因為時候要到，人必厭煩純正的道理，耳朵發癢，就隨從自己的情慾，增添好些師傅，</div>
+<div class="verse"><span class="verse-number">4</span>並且掩耳不聽真道，偏向荒渺的言語。</div>
+<div class="verse"><span class="verse-number">5</span>你卻要凡事謹慎，忍受苦難，作傳道的工夫，盡你的職分。</div>
+<div class="verse"><span class="verse-number">6</span>我現在被澆奠，我離世的時候到了。</div>
+<div class="verse"><span class="verse-number">7</span>那美好的仗我已經打過了，當跑的路我已經跑盡了，所信的道我已經守住了。</div>
+<div class="verse"><span class="verse-number">8</span>從此以後，有公義的冠冕為我存留，就是按着公義審判的主到了那日要賜給我的；不但賜給我，也賜給凡愛慕他顯現的人。</div>
+<div class="verse"><span class="verse-number">9</span>你要趕緊的到我這裏來。</div>
+<div class="verse"><span class="verse-number">10</span>因為底馬貪愛現今的世界，就離棄我往帖撒羅尼迦去了，革勒士往加拉太去，提多往撻馬太去，</div>
+<div class="verse"><span class="verse-number">11</span>獨有路加在我這裏。你來的時候，要把馬可帶來，因為他在傳道〔或作：服事我〕的事上於我有益處。</div>
+<div class="verse"><span class="verse-number">12</span>我已經打發推基古往以弗所去。</div>
+<div class="verse"><span class="verse-number">13</span>我在特羅亞留於加布的那件外衣，你來的時候可以帶來，那些書也要帶來，更要緊的是那些皮卷。</div>
+<div class="verse"><span class="verse-number">14</span>銅匠亞力山大多多的害我；主必照他所行的報應他。</div>
+<div class="verse"><span class="verse-number">15</span>你也要防備他，因為他極力敵擋了我們的話。</div>
+<div class="verse"><span class="verse-number">16</span>我初次申訴，沒有人前來幫助，竟都離棄我；但願這罪不歸與他們。</div>
+<div class="verse"><span class="verse-number">17</span>惟有主站在我旁邊，加給我力量，使福音被我盡都傳明，叫外邦人都聽見；我也從獅子口裏被救出來。</div>
+<div class="verse"><span class="verse-number">18</span>主必救我脫離諸般的兇惡，也必救我進他的天國。願榮耀歸給他，直到永永遠遠。阿們。</div>
+<div class="verse"><span class="verse-number">19</span>問百基拉、亞居拉，和阿尼色弗一家的人安。</div>
+<div class="verse"><span class="verse-number">20</span>以拉都在哥林多住下了。特羅非摩病了，我就留他在米利都。</div>
+<div class="verse"><span class="verse-number">21</span>你要趕緊在冬天以前到我這裏來。有友布羅、布田、利奴、革老底亞，和眾弟兄都問你安。</div>
+<div class="verse"><span class="verse-number">22</span>願主與你的靈同在。願恩惠常與你們同在！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+提摩太後書第4章是保羅在生命最後的呼籲和見證，充滿了傳道者的使命感和對永恆的確信。「我在神面前，並在將來審判活人死人的基督耶穌面前，憑着他的顯現和他的國度囑咐你：務要傳道，無論得時不得時，總要專心；並用百般的忍耐，各樣的教訓，責備人、警戒人、勸勉人」——傳道的命令是在神面前的嚴肅委託。末世的現實：「因為時候要到，人必厭煩純正的道理，耳朵發癢，就隨從自己的情慾，增添好些師傅」——耳朵「發癢」的聽眾只想聽中聽的話。「你卻要凡事謹慎，忍受苦難，作傳道的工夫，盡你的職分」。保羅的臨終見證：「我現在被澆奠，我離世的時候到了。那美好的仗我已經打過了，當跑的路我已經跑盡了，所信的道我已經守住了。從此以後，有公義的冠冕為我存留，就是按着公義審判的主到了那日要賜給我的；不但賜給我，也賜給凡愛慕他顯現的人」——一生服事的完美總結。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【「無論得時不得時，總要傳道」】</strong><br>「務要傳道，無論得時不得時，總要專心」——傳道不能等到合適的時機，不能只在順境中傳，也要在逆境中傳。「得時不得時」說明傳道的責任不以環境的配合為前提。「百般的忍耐，各樣的教訓」說明傳道需要多樣的方式和極大的耐心，因為人心的改變是緩慢的。<br><br>
+<strong>2. 【「耳朵發癢」的末世現象】</strong><br>「人必厭煩純正的道理，耳朵發癢，就隨從自己的情慾，增添好些師傅」——「耳朵發癢」是對刺激和新奇的渴望，而非對真理的渴慕。末世的教會危機，不是沒有人傳道，而是聽眾只想聽合自己口味的信息。在這樣的環境下，忠心傳純正道理的人更顯珍貴，也更困難。<br><br>
+<strong>3. 【那美好的仗我已經打過——信仰人生的終章】</strong><br>「那美好的仗我已經打過了，當跑的路我已經跑盡了，所信的道我已經守住了」——三個完成時態的動詞，是一生服事最美的總結。「有公義的冠冕為我存留」——賞賜在那日等候著，不但是保羅的，也是「凡愛慕他顯現的人」的。信仰不只是開始，也要有這樣的完成。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>那美好的仗我已經</strong>打過了，當跑的路我已經跑盡了，所信的道我已經守住了。從此以後，有公義的冠冕為我存留。」（提後4:7-8）</td>
+<td>你有沒有讓「當跑的路跑盡了」成為你信仰生命的目標——不是最快或最耀眼，而是跑完全程、守住所信的道？就像馬拉松的目標是完賽而非創速度紀錄，你有沒有讓信仰的長程目標影響你今天的選擇和堅持？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>務要傳道</strong>，無論得時不得時，總要專心；並用百般的忍耐，各樣的教訓，責備人、警戒人、勸勉人。」（提後4:2）</td>
+<td>你有沒有讓傳道和分享信仰成為你的習慣——不只在環境順利、人們願意聽的時候，也在逆境、不受歡迎的時候？就像消防員不是只在方便的時候才救火，你有沒有讓傳福音的責任感超越對環境的選擇？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>惟有主站在我旁邊</strong>，加給我力量……主必救我脫離諸般的兇惡，也必救我進他的天國。願榮耀歸給他，直到永永遠遠。阿們。」（提後4:17-18）</td>
+<td>在你最孤單、被人離棄或面對最大困難的時刻，你有沒有讓「惟有主站在我旁邊」的確信成為你繼續前行的力量？就像保羅在眾人離棄時仍有主同在，你有沒有讓對主同在的確信使你在孤獨中仍有力量？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

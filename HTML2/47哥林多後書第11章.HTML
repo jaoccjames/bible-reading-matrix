@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多後書第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多後書第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">保羅的苦難清單與軟弱的誇口</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>但願你們寬容我這一點愚妄，其實你們原是寬容我的。</div>
+<div class="verse"><span class="verse-number">2</span>我為你們起的憤恨，原是神那樣的憤恨。因為我曾把你們許配一個丈夫，要把你們如同貞潔的童女，獻給基督。</div>
+<div class="verse"><span class="verse-number">3</span>我只怕你們的心或偏於邪，失去那向基督所存純一清潔的心，就像蛇用詭詐誘惑了夏娃一樣。</div>
+<div class="verse"><span class="verse-number">4</span>假如有人來另傳一個耶穌，不是我們所傳過的；或者你們另受一個靈，不是你們所受過的；或者另得一個福音，不是你們所得過的；你們容讓他也就罷了。</div>
+<div class="verse"><span class="verse-number">5</span>但我想，我一點不在那些最大的使徒以下。</div>
+<div class="verse"><span class="verse-number">6</span>我的言語雖然粗俗，我的知識卻不粗俗。這是我們在凡事上向你們眾人顯明出來的。</div>
+<div class="verse"><span class="verse-number">7</span>我因為白白傳神的福音給你們，就自居卑微，叫你們高升，這算是我犯罪嗎？</div>
+<div class="verse"><span class="verse-number">8</span>我虧負了別的教會，向他們取了工價來給你們效力。</div>
+<div class="verse"><span class="verse-number">9</span>我在你們那裏缺乏的時候，並沒有累着你們一個人；因我所缺乏的，那從馬其頓來的弟兄們都補足了。我向來凡事謹守，後來也必謹守，總不至於累着你們。</div>
+<div class="verse"><span class="verse-number">10</span>既有基督的誠實在我裏面，就無人能在亞該亞一帶地方阻擋我這自誇。</div>
+<div class="verse"><span class="verse-number">11</span>為甚麼呢？是因我不愛你們麼？這有神知道。</div>
+<div class="verse"><span class="verse-number">12</span>我現在所作的，後來還要作，為要斷絕那些尋機會人的機會，使他們在所誇的事上也不過與我們一樣。</div>
+<div class="verse"><span class="verse-number">13</span>那等人是假使徒，行事詭詐，裝作基督使徒的模樣。</div>
+<div class="verse"><span class="verse-number">14</span>這也不足為怪，因為連撒但也裝作光明的天使。</div>
+<div class="verse"><span class="verse-number">15</span>所以他的差役，若裝作仁義的差役，也不算希奇。他們的結局必然照着他們的行為。</div>
+<div class="verse"><span class="verse-number">16</span>我再說，人不可把我看作愚妄的。縱然如此，也要把我當作愚妄人接納，叫我可以略略自誇。</div>
+<div class="verse"><span class="verse-number">17</span>我說的話不是奉主命說的，乃是像愚妄人放膽自誇；</div>
+<div class="verse"><span class="verse-number">18</span>既有好些人憑着血氣自誇，我也要自誇了。</div>
+<div class="verse"><span class="verse-number">19</span>你們既是精明人，就能甘心忍耐愚妄人。</div>
+<div class="verse"><span class="verse-number">20</span>假若有人強你們作奴僕，或侵吞你們，或擄掠你們，或侮慢你們，或打你們的臉，你們都能忍耐他。</div>
+<div class="verse"><span class="verse-number">21</span>我說這話是羞辱自己，好像我們從前是軟弱的。然而，人在何事上勇敢，（我說句愚妄話），我也勇敢。</div>
+<div class="verse"><span class="verse-number">22</span>他們是希伯來人嗎？我也是。他們是以色列人嗎？我也是。他們是亞伯拉罕的後裔嗎？我也是。</div>
+<div class="verse"><span class="verse-number">23</span>他們是基督的僕人嗎？（我說句狂話），我更是。我比他們多受勞苦，多下監牢，受鞭打是過重的，冒死是屢次有的。</div>
+<div class="verse"><span class="verse-number">24</span>被猶太人鞭打五次，每次四十減去一下；</div>
+<div class="verse"><span class="verse-number">25</span>被棍打了三次；被石頭打了一次，遇着船壞三次，一晝一夜在深海裏。</div>
+<div class="verse"><span class="verse-number">26</span>又屢次行遠路，遭江河的危險、盜賊的危險，同族的危險、外邦人的危險、城裏的危險、曠野的危險、海中的危險、假弟兄的危險。</div>
+<div class="verse"><span class="verse-number">27</span>受勞碌、受困苦，多次不得睡，又飢又渴，多次不得食，受寒冷，赤身露體。</div>
+<div class="verse"><span class="verse-number">28</span>除了這外面的事，還有為眾教會掛心的事，天天壓在我身上。</div>
+<div class="verse"><span class="verse-number">29</span>有誰軟弱，我不軟弱呢？有誰跌倒，我不焦急呢？</div>
+<div class="verse"><span class="verse-number">30</span>我若必須自誇，就誇那關乎我軟弱的事便了。</div>
+<div class="verse"><span class="verse-number">31</span>那永遠可稱頌之主耶穌的父神知道我不說謊。</div>
+<div class="verse"><span class="verse-number">32</span>在大馬色亞哩達王手下的提督把守大馬色城，要捉拿我，</div>
+<div class="verse"><span class="verse-number">33</span>我就從窗戶中，在筐子裏，從城牆上被人縋下去，脫離了他的手。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+哥林多後書第11章是保羅最自傳性的章節，他在「愚妄的自誇」中透露了驚人的服事代價，並對假使徒發出嚴重的警告。保羅以「愚妄」自稱，才肯說一些看似自誇的話——他這樣做是為了對比假使徒的自誇，保護哥林多人不被迷惑。對哥林多人的屬靈嫉妒：「我曾把你們許配一個丈夫，要把你們如同貞潔的童女，獻給基督。我只怕你們的心或偏於邪，失去那向基督所存純一清潔的心，就像蛇用詭詐誘惑了夏娃一樣」。警告假使徒：「那等人是假使徒，行事詭詐，裝作基督使徒的模樣。這也不足為怪，因為連撒但也裝作光明的天使」。苦難清單：「多受勞苦，多下監牢，受鞭打是過重的，冒死是屢次有的。被猶太人鞭打五次，每次四十減去一下；被棍打了三次；被石頭打了一次；遇着船壞三次；又屢次行遠路，遭江河的危險、盜賊的危險……假弟兄的危險……受勞碌、受困苦……」「除了這外面的事，還有為眾教會掛心的事，天天壓在我身上」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【對教會屬靈純一的嫉妒】</strong><br>「我只怕你們的心或偏於邪，失去那向基督所存純一清潔的心」——保羅對哥林多人有「神那樣的憤恨」，因他是負責把他們如貞潔童女獻給基督的人。對教會信仰純一的守護，不是控制，而是牧人的愛。任何把信徒從對基督的單純專一引開的教導，都是屬靈的危害。<br><br>
+<strong>2. 【撒但裝作光明天使——分辨的必要】</strong><br>「連撒但也裝作光明的天使」——最危險的假冒不是明顯的邪惡，而是貌似光明的欺騙。「假使徒，行事詭詐，裝作基督使徒的模樣」——分辨真假不能靠外表，而是要看果子、看教義的內容、看與聖經的一致性。真正的使徒和教師有透明的動機和符合福音的信息。<br><br>
+<strong>3. 【苦難是真實使徒的憑據】</strong><br>保羅自誇的是苦難，不是才幹和成就。他列出的苦難清單令人震驚——鞭打、監牢、船難、危險……在這些苦難中仍然服事，才是真實委身的憑據。假使徒誇耀的是能力和地位；真實的使徒誇耀的是苦難和軟弱。「我若必須自誇，就誇那關乎我軟弱的事便了」。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我只怕你們的心或</strong>偏於邪，失去那向基督所存純一清潔的心，就像蛇用詭詐誘惑了夏娃一樣。」（林後11:3）</td>
+<td>你對基督的愛有沒有保持那種「純一清潔」的專注，還是已慢慢被許多其他的吸引和優先次序所分散？就像婚姻中若注意力逐漸轉向他處，關係就會冷淡，你有沒有保護你對基督那份最初的專一？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>那等人是假使徒</strong>，行事詭詐，裝作基督使徒的模樣……連撒但也裝作光明的天使。」（林後11:13-14）</td>
+<td>你有沒有培養分辨真假教導的能力——不被表面的光明和口才吸引，而是以聖經為準則來評估所聽到的教導？就像鑑定真假鑽石需要專業知識，你有沒有在屬靈分辨上裝備自己，使你不輕易被迷惑？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>除了這外面的事</strong>，還有為眾教會掛心的事，天天壓在我身上。有誰軟弱，我不軟弱呢？有誰跌倒，我不焦急呢？」（林後11:28-29）</td>
+<td>你有沒有把對弟兄姐妹靈命的關切，當作你「天天壓在心上」的一部分，讓他人的軟弱成為你的軟弱、他人的跌倒讓你焦急？就像最好的牧者感受羊的需要如同自己的需要，你有沒有讓真實的牧者心腸影響你對信仰群體的投入？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

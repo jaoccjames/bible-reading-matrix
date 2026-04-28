@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>加拉太書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+加拉太書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">律法的咒詛與應許的繼承</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>無知的加拉太人哪，耶穌基督釘十字架，已經活畫在你們眼前，誰又迷惑了你們呢？</div>
+<div class="verse"><span class="verse-number">2</span>我只要問你們這一件：你們受了聖靈，是因行律法呢？是因聽信福音呢？</div>
+<div class="verse"><span class="verse-number">3</span>你們既靠聖靈入門，如今還靠肉身成全嗎？你們是這樣的無知嗎？</div>
+<div class="verse"><span class="verse-number">4</span>你們受苦如此之多，都是徒然的嗎？難道果真是徒然的嗎？</div>
+<div class="verse"><span class="verse-number">5</span>那賜給你們聖靈，又在你們中間行異能的，是因你們行律法呢？是因你們聽信福音呢？</div>
+<div class="verse"><span class="verse-number">6</span>正如「亞伯拉罕信神，這就算為他的義」。</div>
+<div class="verse"><span class="verse-number">7</span>所以，你們要知道：那以信為本的人，就是亞伯拉罕的子孫。</div>
+<div class="verse"><span class="verse-number">8</span>並且聖經既然預先看明，神要叫外邦人因信稱義，就早已傳福音給亞伯拉罕，說：「萬國都必因你得福。」</div>
+<div class="verse"><span class="verse-number">9</span>可見那以信為本的人和有信心的亞伯拉罕一同得福。</div>
+<div class="verse"><span class="verse-number">10</span>凡以行律法為本的，都是被咒詛的；因為經上記着：「凡不常照律法書上所記一切之事去行的，就被咒詛。」</div>
+<div class="verse"><span class="verse-number">11</span>沒有一個人靠着律法在神面前稱義，這是明顯的；因為經上說，「義人必因信得生。」</div>
+<div class="verse"><span class="verse-number">12</span>律法原不本乎信，只說：「行這些事的，就必因此活着。」</div>
+<div class="verse"><span class="verse-number">13</span>基督既為我們受〔原文作成〕了咒詛，就贖出我們脫離律法的咒詛；因為經上記着：「凡掛在木頭上都是被咒詛的。」</div>
+<div class="verse"><span class="verse-number">14</span>這便叫亞伯拉罕的福，因基督耶穌可以臨到外邦人，使我們因信得着所應許的聖靈。</div>
+<div class="verse"><span class="verse-number">15</span>弟兄們，我且照着人的常話說：雖然是人的文約，若已經立定了，就沒有能廢棄或加增的。</div>
+<div class="verse"><span class="verse-number">16</span>所應許的原是向亞伯拉罕和他子孫說的。神並不是說「眾子孫」，指着許多人，乃是說「你那一個子孫」，指着一個人，就是基督。</div>
+<div class="verse"><span class="verse-number">17</span>我是這麼說，神預先所立的約，不能被那四百三十年以後的律法廢掉，叫應許歸於虛空。</div>
+<div class="verse"><span class="verse-number">18</span>因為承受產業，若本乎律法，就不本乎應許；但神是憑着應許把產業賜給亞伯拉罕。</div>
+<div class="verse"><span class="verse-number">19</span>這樣說來，律法是為甚麼有的呢？原是為過犯添上的，等候那蒙應許的子孫來到，並且是藉天使經中保之手設立的。</div>
+<div class="verse"><span class="verse-number">20</span>但中保本不是為一面作的；神卻是一位。</div>
+<div class="verse"><span class="verse-number">21</span>這樣，律法是與神的應許反對嗎？斷乎不是！若曾傳一個能叫人得生的律法，義就誠然本乎律法了。</div>
+<div class="verse"><span class="verse-number">22</span>但聖經把眾人都圈在罪裏，使所應許的福因信耶穌基督，歸給那信的人。</div>
+<div class="verse"><span class="verse-number">23</span>但這因信得救的理還未來以先，我們被看守在律法之下，直圈到那將來的真道顯明出來。</div>
+<div class="verse"><span class="verse-number">24</span>這樣，律法是我們訓蒙的師傅，引我們到基督那裏，使我們因信稱義。</div>
+<div class="verse"><span class="verse-number">25</span>但這因信得救的理既然來到，我們從此就不在師傅的手下了。</div>
+<div class="verse"><span class="verse-number">26</span>所以，你們因信基督耶穌都是神的兒子。</div>
+<div class="verse"><span class="verse-number">27</span>你們受洗歸入基督的，都是披戴基督了。</div>
+<div class="verse"><span class="verse-number">28</span>並不分猶太人、希利尼人，自主的、為奴的，或男或女，因為你們在基督耶穌裏都成為一了。</div>
+<div class="verse"><span class="verse-number">29</span>你們既屬乎基督，就是亞伯拉罕的後裔，是照着應許承受產業的了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+加拉太書第3章是全書神學最密集的章節，以聖靈的接受方式、亞伯拉罕的信心、律法的咒詛和應許的優先性為核心。「你們受了聖靈，是因行律法呢？是因聽信福音呢？」——保羅以加拉太人自己的屬靈體驗開始，讓他們反思：他們當初得到聖靈是因行律法還是因信？「正如亞伯拉罕信神，這就算為他的義」——亞伯拉罕的信心先於割禮和律法，說明因信稱義的原則早於摩西律法就已成立。「凡以行律法為本的，都是被咒詛的；因為經上記着：凡不常照律法書上所記一切之事去行的，就被咒詛」——律法的全面要求使任何人都無法逃脫它的咒詛。「基督既為我們受了咒詛，就贖出我們脫離律法的咒詛」——基督的代替性救贖。神的應許（給亞伯拉罕）早於律法（摩西）四百三十年，所以律法不能廢掉應許。「律法是我們訓蒙的師傅，引我們到基督那裏，使我們因信稱義」——律法的最終功能。「在基督裏……並不分猶太人、希利尼人，自主的、為奴的，或男或女，因為你們在基督耶穌裏都成為一了」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【聖靈的接受是信仰的確證】</strong><br>「你們受了聖靈，是因行律法呢？是因聽信福音呢？」——保羅的論證從加拉太人自己的體驗出發。他們知道自己接受聖靈不是因行律法，而是因信福音。這個簡單的問題打破了一切靠行為稱義的論述：若聖靈是因信而來的，稱義也同樣是因信而來的。<br><br>
+<strong>2. 【基督為我們受了律法的咒詛】</strong><br>「基督既為我們受了咒詛，就贖出我們脫離律法的咒詛」——律法定下了全面的要求（一切都守全），人無法完全遵守，因此都被咒詛。基督在十字架上成了「被咒詛的」（掛在木頭上），承擔了我們所有的咒詛，使我們得以脫離。這是代替性救贖最清晰的表述之一。<br><br>
+<strong>3. 【在基督裏的合一超越一切界限】</strong><br>「並不分猶太人、希利尼人，自主的、為奴的，或男或女，因為你們在基督耶穌裏都成為一了」——在基督裏，一切社會的、民族的、性別的界限都不再是分隔的原因。這不是說差異消失了，而是說這些差異不再決定一個人在神面前的地位和價值。這是最深刻的平等宣告。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>你們受了聖靈</strong>，是因行律法呢？是因聽信福音呢？你們既靠聖靈入門，如今還靠肉身成全嗎？」（加3:2-3）</td>
+<td>你有沒有在信仰的成長上，不知不覺地從「靠聖靈的工作」滑回「靠自己的努力」？就像一個靠氧氣罩入門後卻試圖靠自己呼吸的人，你有沒有讓聖靈的工作從入門到成全始終都是你靈命的動力？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>基督既為我們受了</strong>咒詛，就贖出我們脫離律法的咒詛；因為經上記着：凡掛在木頭上都是被咒詛的。」（加3:13）</td>
+<td>你有沒有真實地接受基督為你承擔了律法的咒詛這個事實，讓它從你心裏移走一切定罪感的重擔？就像一個人的債務被完全清還後可以自由行事，你有沒有讓基督的代贖帶來你靈魂真正的自由？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>在基督耶穌裏</strong>……並不分猶太人、希利尼人，自主的、為奴的，或男或女，因為你們在基督耶穌裏都成為一了。」（加3:28）</td>
+<td>你有沒有讓在基督裏的合一，超越你在教會群體中因文化、教育、社會地位或性別所帶來的分隔？就像一個家庭的成員不論背景都因共同的父而成為一家，你有沒有讓「在基督裏成為一」的現實改變你看待不同人的方式？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

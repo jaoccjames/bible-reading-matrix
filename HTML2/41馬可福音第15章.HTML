@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬可福音第15章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬可福音第15章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">受審、受難與安葬</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>一到早晨，祭司長和長老、文士、全公會的人大家商議，就把耶穌捆綁，解去交給彼拉多。</div>
+<div class="verse"><span class="verse-number">2</span>彼拉多問他說：「你是猶太人的王嗎？」耶穌回答說：「你說的是。」</div>
+<div class="verse"><span class="verse-number">3</span>祭司長告他許多的事。</div>
+<div class="verse"><span class="verse-number">4</span>彼拉多又問他說：「你看，他們告你這麼多的事，你甚麼都不回答麼？」</div>
+<div class="verse"><span class="verse-number">5</span>耶穌仍不回答，以致彼拉多覺得希奇。</div>
+<div class="verse"><span class="verse-number">6</span>每逢這節期，巡撫照眾人所求的，釋放一個囚犯給他們。</div>
+<div class="verse"><span class="verse-number">7</span>有一個人名叫巴拉巴，和作亂的人一同捆綁。他們作亂的時候，曾殺過人。</div>
+<div class="verse"><span class="verse-number">8</span>眾人上去求巡撫，照常例給他們辦。</div>
+<div class="verse"><span class="verse-number">9</span>彼拉多說：「你們要我釋放猶太人的王給你們嗎？」</div>
+<div class="verse"><span class="verse-number">10</span>他原曉得，祭司長是因為嫉妒才把耶穌解了來。</div>
+<div class="verse"><span class="verse-number">11</span>只是祭司長挑唆眾人，寧可釋放巴拉巴給他們。</div>
+<div class="verse"><span class="verse-number">12</span>彼拉多又說：「那麼樣，你們所稱為猶太人的王，我怎麼辦他呢？」</div>
+<div class="verse"><span class="verse-number">13</span>他們又喊着說：「把他釘十字架！」</div>
+<div class="verse"><span class="verse-number">14</span>彼拉多說：「為甚麼呢？他作了甚麼惡事呢？」他們便極力的喊着說：「把他釘十字架！」</div>
+<div class="verse"><span class="verse-number">15</span>彼拉多要叫眾人喜悅，就釋放巴拉巴給他們，將耶穌鞭打了，交給人釘十字架。</div>
+<div class="verse"><span class="verse-number">16</span>兵丁把耶穌帶進衙門院裏，叫齊了全營的兵。</div>
+<div class="verse"><span class="verse-number">17</span>他們給他穿上紫袍，又用荊棘編作冠冕給他戴上，</div>
+<div class="verse"><span class="verse-number">18</span>就慶賀他說：「恭喜，猶太人的王啊！」</div>
+<div class="verse"><span class="verse-number">19</span>又拿一根葦子打他的頭，吐唾沫在他臉上，屈膝拜他。</div>
+<div class="verse"><span class="verse-number">20</span>戲弄完了，就給他脫了紫袍，仍穿上他自己的衣服，帶他出去，要釘十字架。</div>
+<div class="verse"><span class="verse-number">21</span>有一個古利奈人西門，就是亞力山大和魯孚的父親，從鄉下來，經過那地方，他們就勉強他同去，好背着耶穌的十字架。</div>
+<div class="verse"><span class="verse-number">22</span>他們帶耶穌到了各各他地方（各各他繙出來就是髑髏地），</div>
+<div class="verse"><span class="verse-number">23</span>拿沒藥調和的酒給耶穌，他卻不受。</div>
+<div class="verse"><span class="verse-number">24</span>於是將他釘在十字架上，拈鬮分他的衣服，看是誰得甚麼。</div>
+<div class="verse"><span class="verse-number">25</span>釘他在十字架上是巳初的時候。</div>
+<div class="verse"><span class="verse-number">26</span>在上面有他的罪狀，寫的是：「猶太人的王。」</div>
+<div class="verse"><span class="verse-number">27</span>他們又把兩個強盜和他同釘十字架，一個在右邊，一個在左邊。（有古卷在此有</div>
+<div class="verse"><span class="verse-number">28</span>這就應了經上的話說：他被列在罪犯之中。）</div>
+<div class="verse"><span class="verse-number">29</span>從那裏經過的人辱罵他，搖着頭說：「咳！你這拆毀聖殿、三日又建造起來的，</div>
+<div class="verse"><span class="verse-number">30</span>可以救自己，從十字架上下來吧！」</div>
+<div class="verse"><span class="verse-number">31</span>祭司長和文士也是這樣戲弄他，彼此說：「他救了別人，不能救自己。</div>
+<div class="verse"><span class="verse-number">32</span>以色列的王基督，現在可以從十字架上下來，叫我們看見，就信了。」那和他同釘的人也是譏誚他。</div>
+<div class="verse"><span class="verse-number">33</span>從午正到申初，遍地都黑暗了。</div>
+<div class="verse"><span class="verse-number">34</span>申初的時候，耶穌大聲喊着說：「以羅伊！以羅伊！拉馬撒巴各大尼？」（繙出來就是：我的神！我的神！為甚麼離棄我？）</div>
+<div class="verse"><span class="verse-number">35</span>旁邊站着的人，有的聽見就說：「看哪，他叫以利亞呢！」</div>
+<div class="verse"><span class="verse-number">36</span>有一個人跑去，把海絨蘸滿了醋，綁在葦子上，送給他喝，說：「且等着，看以利亞來不來把他取下。」</div>
+<div class="verse"><span class="verse-number">37</span>耶穌大聲喊叫，氣就斷了。</div>
+<div class="verse"><span class="verse-number">38</span>殿裏的幔子從上到下裂為兩半。</div>
+<div class="verse"><span class="verse-number">39</span>對面站着的百夫長看見耶穌這樣喊叫〔有古卷無喊叫二字〕斷氣，就說：「這人真是神的兒子！」</div>
+<div class="verse"><span class="verse-number">40</span>還有些婦女遠遠的觀看；內中有抹大拉的馬利亞，又有小雅各和約西的母親馬利亞，並有撒羅米，</div>
+<div class="verse"><span class="verse-number">41</span>就是耶穌在加利利的時候，跟隨他、服事他的那些人，還有同耶穌上耶路撒冷的好些婦女在那裏觀看。</div>
+<div class="verse"><span class="verse-number">42</span>到了晚上，因為這是預備日，就是安息日的前一日，</div>
+<div class="verse"><span class="verse-number">43</span>有亞利馬太的約瑟前來，他是尊貴的議士，也是等候神國的。他放膽進去見彼拉多，求耶穌的身體；</div>
+<div class="verse"><span class="verse-number">44</span>彼拉多詫異耶穌已經死了，便叫百夫長來，問他耶穌死了久不久。</div>
+<div class="verse"><span class="verse-number">45</span>既從百夫長得知實情，就把耶穌的屍首賜給約瑟。</div>
+<div class="verse"><span class="verse-number">46</span>約瑟買了細麻布，把耶穌取下來，用細麻布裹好，安放在磐石中鑿出來的墳墓裏，又滾過一塊石頭來擋住墓門。</div>
+<div class="verse"><span class="verse-number">47</span>抹大拉的馬利亞和約西的母親馬利亞都看見安放他的地方。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+馬可福音第15章記載耶穌受難的全程，以最簡練的筆觸呈現最深沉的事件。清晨被交給彼拉多，彼拉多明知耶穌無罪，卻被群眾壓力制服，釋放殺人的巴拉巴，將耶穌鞭打後交去釘十字架。兵丁戲弄耶穌，穿紫袍、戴荊棘冠，嘲弄「恭喜，猶太人的王」。西門被迫背耶穌的十字架，到各各他。耶穌被釘，牌子上寫「猶太人的王」。從午正到申初，遍地黑暗。耶穌大聲呼喊「我的神！我的神！為甚麼離棄我？」，然後氣斷。殿裏的幔子從上到下裂為兩半，百夫長說「這人真是神的兒子！」婦女們在遠處見證了一切。晚上，亞利馬太的約瑟放膽向彼拉多求了耶穌的身體，用細麻布裹好，安放在磐石鑿出的墳墓裏，滾石擋門。馬可的敘述節制而有力，以外邦人百夫長的宣告作為全章的神學高峰。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【十字架是神的愛在最深暗處的彰顯】</strong><br>「我的神！我的神！為甚麼離棄我？」——耶穌承受了被神棄絕的苦，這是任何人類都無法完全理解的痛苦。祂這樣喊叫，是因為祂真實地承擔了我們的罪，承受了我們本應受的與神隔絕。在最黑暗的時刻，神的愛以最難以理解的方式彰顯：不是在光輝的奇蹟中，而是在被棄的痛喊聲中。<br><br>
+<strong>2. 【幔子裂開宣告直接進到神面前的通道】</strong><br>耶穌斷氣的瞬間，殿裏的幔子從上到下裂為兩半——這不是偶然，是神的行動。分隔聖所與至聖所的幔子代表人與神之間的隔閡；幔子從上到下裂開，表明這是神的主動拆除，而非人的努力。現在，每一個人都可以透過基督直接來到神面前。這個特權在今天已成習以為常，卻是花了基督寶血換來的。<br><br>
+<strong>3. 【外邦人百夫長的宣告是信心的見證】</strong><br>「對面站着的百夫長，看見耶穌這樣喊叫斷氣，就說：這人真是神的兒子！」這是整卷馬可福音人類對耶穌身份最明確的宣告，卻出自一個外邦的羅馬士兵，在十字架的極度羞辱中。真正認識耶穌的人，往往是在祂的軟弱與苦難中看見祂的榮耀，而不是在神蹟和掌聲中。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>申初的時候</strong>，<strong>耶穌大聲喊着說</strong>：「以羅伊！以羅伊！拉馬撒巴各大尼？」（繙出來就是：我的神！我的神！為甚麼離棄我？）（可15:34）</td>
+<td>耶穌在十字架上被棄絕，是為了讓你永遠不再被神遺棄。在你最孤單、最被棄絕的感受中，你有沒有讓這個事實成為你的安慰——耶穌已親身承擔了你本應受的被棄的痛苦？</td>
+</tr>
+<tr>
+<td><strong>殿裏的幔子從上到</strong><strong>下裂為兩半</strong>。（可15:38）</td>
+<td>你有沒有珍視你能直接來到神面前禱告這個特權？就像普通人突然獲得直接進見最高領導人的資格，你是否把禱告看作是一個用基督寶血換來的珍貴通道？</td>
+</tr>
+<tr>
+<td><strong>對面站着的百夫長</strong><strong>看見耶穌這樣喊叫</strong>斷氣，就說：「這人真是神的兒子！」（可15:39）</td>
+<td>你在哪裏最深刻地認識了耶穌——是在祂的神蹟和榮耀中，還是在祂的苦難和犧牲中？就像一個人在最艱難的時刻所展現的品格才是真實的品格，耶穌十字架的犧牲如何加深了你對祂的認識和愛？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

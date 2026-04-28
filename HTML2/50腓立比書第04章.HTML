@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>腓立比書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+腓立比書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">一切環境中的知足與平安的秘訣</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我所親愛、所想念的弟兄們，你們就是我的喜樂，我的冠冕。我親愛的弟兄，你們應當靠主站立得穩。</div>
+<div class="verse"><span class="verse-number">2</span>我勸友阿爹和循都基，要在主裏同心。</div>
+<div class="verse"><span class="verse-number">3</span>我也求你這真實同負一軛的，幫助這兩個女人，因為她們在福音上曾與我一同勞苦；還有革利免，並其餘和我一同作工的，他們的名字都在生命冊上。</div>
+<div class="verse"><span class="verse-number">4</span>你們要靠主常常喜樂。我再說，你們要喜樂。</div>
+<div class="verse"><span class="verse-number">5</span>當叫眾人知道你們謙讓的心。主已經近了。</div>
+<div class="verse"><span class="verse-number">6</span>應當一無掛慮，只要凡事藉着禱告、祈求，和感謝，將你們所要的告訴神。</div>
+<div class="verse"><span class="verse-number">7</span>神所賜出人意外的平安，必在基督耶穌裏保守你們的心懷意念。</div>
+<div class="verse"><span class="verse-number">8</span>弟兄們，我還有未盡的話：凡是真實的、可敬的、公義的、清潔的、可愛的、有美名的，若有甚麼德行，若有甚麼稱讚，這些事你們都要思念。</div>
+<div class="verse"><span class="verse-number">9</span>你們在我身上所學習的，所領受的，所聽見的，所看見的，這些事你們都要去行，賜平安的神就必與你們同在。</div>
+<div class="verse"><span class="verse-number">10</span>我靠主大大的喜樂，因為你們思念我的心如今又發生；你們向來就思念我，只是沒有機會。</div>
+<div class="verse"><span class="verse-number">11</span>我並不是因缺乏說這話；我無論在甚麼景況都可以知足，這是我已經學會了。</div>
+<div class="verse"><span class="verse-number">12</span>我知道怎樣處卑賤，也知道怎樣處豐富；或飽足，或飢餓；或有餘，或缺乏，隨事隨在，我都得了祕訣。</div>
+<div class="verse"><span class="verse-number">13</span>我靠着那加給我力量的，凡事都能作。</div>
+<div class="verse"><span class="verse-number">14</span>然而，你們和我同受患難原是美事。</div>
+<div class="verse"><span class="verse-number">15</span>腓立比人哪，你們也知道我初傳福音離了馬其頓的時候，論到授受的事，除了你們以外，並沒有別的教會供給我。</div>
+<div class="verse"><span class="verse-number">16</span>就是我在帖撒羅尼迦，你們也一次兩次的打發人供給我的需用。</div>
+<div class="verse"><span class="verse-number">17</span>我並不求甚麼餽送，所求的就是你們的果子漸漸增多，歸在你們的賬上。</div>
+<div class="verse"><span class="verse-number">18</span>但我樣樣都有，並且有餘。我已經充足，因我從以巴弗提受了你們的餽送，當作極美的香氣，為神所收納、所喜悅的祭物。</div>
+<div class="verse"><span class="verse-number">19</span>我的神必照他榮耀的豐富，在基督耶穌裏，使你們一切所需用的都充足。</div>
+<div class="verse"><span class="verse-number">20</span>願榮耀歸給我們的父神，直到永永遠遠。阿們！</div>
+<div class="verse"><span class="verse-number">21</span>請問在基督耶穌裏的各位聖徒安。在我這裏的眾弟兄都問你們安。</div>
+<div class="verse"><span class="verse-number">22</span>眾聖徒都問你們安。在該撒家裏的人特特的問你們安。</div>
+<div class="verse"><span class="verse-number">23</span>願主耶穌基督的恩常在你們心裏！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+腓立比書第4章是全書最溫馨的章節，以喜樂、平安、知足的呼籲作結。保羅呼籲友阿爹和循都基和好，因為「她們在福音上曾與我一同勞苦」。「你們要靠主常常喜樂。我再說，你們要喜樂」——喜樂是命令，不只是感受。「應當一無掛慮，只要凡事藉着禱告、祈求，和感謝，將你們所要的告訴神。神所賜出人意外的平安，必在基督耶穌裏保守你們的心懷意念」——用禱告替換憂慮的方式。思想的塑造：「凡是真實的、可敬的、公義的、清潔的、可愛的、有美名的……這些事你們都要思念」——思想的選擇影響生命的品質。「你們在我身上所學習的……這些事你們都要去行，賜平安的神就必與你們同在」。知足的秘訣：「我並不是因缺乏說這話；我無論在甚麼景況都可以知足，這是我已經學會了。我知道怎樣處卑賤，也知道怎樣處豐富……我靠着那加給我力量的，凡事都能作」。對腓立比人的感謝：「我的神必照他榮耀的豐富，在基督耶穌裏，使你們一切所需用的都充足」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【用禱告替換憂慮】</strong><br>「應當一無掛慮，只要凡事藉着禱告、祈求，和感謝，將你們所要的告訴神」——禱告不只是另外做一件事，而是用它替換憂慮。「感謝」是禱告中的關鍵要素：在求告之前先感謝，是信心的表達，也是心態的轉化。「神所賜出人意外的平安，必……保守你們的心懷意念」——不是說會得到所求的一切，而是說神的平安會像哨兵一樣守護心和思想。<br><br>
+<strong>2. 【知足是學來的，不是天生的】</strong><br>「我無論在甚麼景況都可以知足，這是我已經學會了」——知足是一個需要學習的技能，不是自然的秉性。「學會了」說明是透過生命的經歷——處卑賤、處豐富、飽足、飢餓、有餘、缺乏——慢慢學習的過程。「我靠着那加給我力量的，凡事都能作」——知足的秘訣不是抑制需求，而是在基督裏有超越環境的力量。<br><br>
+<strong>3. 【思念美好的事影響生命品質】</strong><br>「凡是真實的、可敬的、公義的、清潔的、可愛的、有美名的……這些事你們都要思念」——思想的管理是靈命健康的重要部分。我們所思念的，逐漸塑造我們成為的樣子。這個清單是一個主動的篩選標準，不只是被動地避免壞的，而是主動地追求好的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>應當一無掛慮</strong>，只要凡事藉着禱告、祈求，和感謝，將你們所要的告訴神。神所賜出人意外的平安，必在基督耶穌裏保守你們的心懷意念。」（腓4:6-7）</td>
+<td>你有沒有在感到憂慮的時刻，立刻轉向禱告——把憂慮的事具體地帶到神面前，同時帶着感謝？就像在黑暗中即時開燈而非埋怨黑暗，你有沒有把「禱告替換憂慮」練習成你的第一反應？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我無論在甚麼景況</strong>都可以知足，這是我已經學會了……我靠着那加給我力量的，凡事都能作。」（腓4:11,13）</td>
+<td>你現在的生命處境，是你在學習知足的課堂，還是你認為需要先改變處境才能開始好好生活？就像體操選手在任何場地都保持水準，你有沒有讓「靠着加給我力量的」成為你在任何處境中都能知足的根基？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>凡是真實的</strong>、可敬的、公義的、清潔的、可愛的、有美名的，若有甚麼德行，若有甚麼稱讚，這些事你們都要思念。」（腓4:8）</td>
+<td>你有沒有主動管理你的思想輸入——你所閱讀、觀看和思考的內容——讓它更多地符合這個清單，而非任由負面、污穢或虛假的思想佔據你的心？就像選擇健康的飲食需要主動選擇和有時拒絕，你有沒有主動地選擇你思念的對象？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

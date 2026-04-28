@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第22章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第22章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">保羅在台階上的見證</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「諸位父兄請聽，我現在對你們分訴。」</div>
+<div class="verse"><span class="verse-number">2</span>眾人聽他說的是希伯來話，就更加安靜了。</div>
+<div class="verse"><span class="verse-number">3</span>保羅說：「我原是猶太人，生在基利家的大數，長在這城裏，在迦瑪列門下，按着我們祖宗嚴緊的律法受教，熱心事奉神，像你們眾人今日一樣。</div>
+<div class="verse"><span class="verse-number">4</span>我也曾逼迫奉這道的人，直到死地，無論男女都鎖拿下監。</div>
+<div class="verse"><span class="verse-number">5</span>這是大祭司和眾長老都可以給我作見證的。我又領了他們達與弟兄的書信，往大馬色去，要把在那裏奉這道的人鎖拿，帶到耶路撒冷受刑。</div>
+<div class="verse"><span class="verse-number">6</span>我將到大馬色，正走的時候，約在晌午，忽然從天上發大光，四面照着我。</div>
+<div class="verse"><span class="verse-number">7</span>我就仆倒在地，聽見有聲音對我說：『掃羅！掃羅！你為甚麼逼迫我？』</div>
+<div class="verse"><span class="verse-number">8</span>我回答說：『主啊，你是誰？』他說：『我就是你所逼迫的拿撒勒人耶穌。』</div>
+<div class="verse"><span class="verse-number">9</span>與我同行的人看見了那光，卻沒有聽明那位對我說話的聲音。</div>
+<div class="verse"><span class="verse-number">10</span>我說：『主啊，我當作甚麼？』主說：『起來，進大馬色去，在那裏，要將所派你作的一切事告訴你。』</div>
+<div class="verse"><span class="verse-number">11</span>我因那光的榮耀不能看見，同行的人就拉着我手進了大馬色。</div>
+<div class="verse"><span class="verse-number">12</span>那裏有一個人，名叫亞拿尼亞，按着律法是虔誠人，為一切住在那裏的猶太人所稱讚。</div>
+<div class="verse"><span class="verse-number">13</span>他來見我，站在旁邊，對我說：『兄弟掃羅，你可以看見。』我當時往上一看，就看見了他。</div>
+<div class="verse"><span class="verse-number">14</span>他又說：『我們祖宗的神揀選了你，叫你明白他的旨意，又得見那義者，聽他口中所出的聲音。</div>
+<div class="verse"><span class="verse-number">15</span>因為你要將所看見的，所聽見的，對着萬人為他作見證。</div>
+<div class="verse"><span class="verse-number">16</span>現在你為甚麼耽延呢？起來，求告他的名受洗，洗去你的罪。』」</div>
+<div class="verse"><span class="verse-number">17</span>「後來，我回到耶路撒冷，在殿裏禱告的時候，魂遊象外，</div>
+<div class="verse"><span class="verse-number">18</span>看見主向我說：『你趕緊的離開耶路撒冷，不可遲延；因你為我作的見證，這裏的人必不領受。』</div>
+<div class="verse"><span class="verse-number">19</span>我就說：『主啊，他們知道我從前把信你的人收在監裏，又在各會堂裏鞭打他們。</div>
+<div class="verse"><span class="verse-number">20</span>並且你的見證人司提反被害流血的時候，我也站在旁邊歡喜；又看守害死他之人的衣裳。』</div>
+<div class="verse"><span class="verse-number">21</span>主向我說：『你去吧！我要差你遠遠的往外邦人那裏去。』」</div>
+<div class="verse"><span class="verse-number">22</span>眾人聽他說到這句話，就高聲說：「這樣的人，從世上除掉他吧！他是不當活着的。」</div>
+<div class="verse"><span class="verse-number">23</span>眾人喧嚷，摔掉衣裳，把塵土向空中揚起來。</div>
+<div class="verse"><span class="verse-number">24</span>千夫長就吩咐將保羅帶進營樓去，叫人用鞭子拷問他，要知道他們向他這樣喧嚷是為甚麼緣故。</div>
+<div class="verse"><span class="verse-number">25</span>剛用皮條捆上，保羅對旁邊站着的百夫長說：「人是羅馬人，又沒有定罪，你們就鞭打他，有這個例嗎？」</div>
+<div class="verse"><span class="verse-number">26</span>百夫長聽見這話，就去見千夫長，告訴他說：「你要作甚麼？這人是羅馬人。」</div>
+<div class="verse"><span class="verse-number">27</span>千夫長就來問保羅說：「你告訴我，你是羅馬人嗎？」保羅說：「是。」</div>
+<div class="verse"><span class="verse-number">28</span>千夫長說：「我用許多銀子才入了羅馬的民籍。」保羅說：「我生來就是。」</div>
+<div class="verse"><span class="verse-number">29</span>於是那些要拷問保羅的人就離開他去了。千夫長既知道他是羅馬人，又因為捆綁了他，也害怕了。</div>
+<div class="verse"><span class="verse-number">30</span>第二天，千夫長為要知道猶太人控告保羅的實情，便解開他，吩咐祭司長和全公會的人都聚集，將保羅帶下來，叫他站在他們面前。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+使徒行傳第22章記載保羅在台階上向以色列百姓講述自己的歸信見證，這是全書中保羅自傳性講道的第一次。他用希伯來話說話，百姓就更安靜。他強調自己的猶太背景：「生在大數，長在耶路撒冷，在迦瑪列門下受教，熱心事奉神，像你們今日一樣」——以此建立可信度和共同點。接着講述大馬色路上的遭遇：從天上的大光、「你為甚麼逼迫我」的聲音、知道是耶穌、三日失明、亞拿尼亞來醫治和洗禮。然後是在殿裏禱告的異象：主告訴他離開耶路撒冷，因眾人不會接受他的見證；他說明自己曾迫害和殺害基督徒，主卻說「你去吧，我要差你遠遠的往外邦人那裏去」。眾人聽到「外邦人」就大喊要殺他，千夫長要用鞭子拷問，保羅表明自己是羅馬公民，立刻被改以尊重對待。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【個人見證是有力的福音工具】</strong><br>保羅的見證從自己的背景（「我是猶太人……在迦瑪列門下受教」）開始，建立與聽眾的連結，然後講述神如何改變他。沒有人能否認一個人的親身經歷。見證不需要高深的神學，只需要誠實地講述「從前我如何，遇見耶穌後怎樣改變」。每個信徒都有這樣的見證，都有人能被這個見證打動。<br><br>
+<strong>2. 【身份的妥善使用是智慧，不是妥協】</strong><br>保羅表明羅馬公民身份阻止了不公正的鞭打，不是為了逃避苦難，而是使審判過程合法化，也保護了未來的傳道機會。智慧的使用自己所擁有的——教育、社會地位、法律權利——是服事中的一部分。保羅用羅馬公民身份，是為了使他能繼續傳福音，而非為了個人的舒適。<br><br>
+<strong>3. 【「外邦人」成了衝突的引爆點】</strong><br>眾人聽完保羅的見證，在基督的普世救恩——「往外邦人那裏去」——的地方爆發憤怒。這不只是個人問題，而是神學問題：神的救恩是否只給猶太人？這是整本使徒行傳的核心張力。福音的普世性——不分民族、文化、社會地位——從一開始就是最難被接受的部分。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我原是猶太人</strong>，生在基利家的大數，長在這城裏，在迦瑪列門下，按着我們祖宗嚴緊的律法受教，熱心事奉神，像你們眾人今日一樣。」（徒22:3）</td>
+<td>你有沒有學習用你自己的背景和故事，與不同文化或背景的人建立連結，以此打開傳福音的門？就像好的溝通者先找到共同點再引入新的話題，你有沒有善用你的背景，讓它成為傳福音的橋樑？</td>
+</tr>
+<tr>
+<td><strong>主對保羅說</strong>：「<strong>你去吧</strong>！我要差你遠遠的往外邦人那裏去。」（徒22:21）</td>
+<td>你有沒有意識到神的呼召有時會帶你到超出你舒適圈的地方——文化、群體、環境？就像差遣是把人送出去而非讓人留在熟悉的地方，你有沒有預備好接受神把你差往「外邦人那裏」的可能？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我是羅馬人</strong>，又沒有定罪，你們就鞭打他，有這個例嗎？」（徒22:25）</td>
+<td>你有沒有學習智慧地運用你所擁有的——教育、能力、社會地位、法律保護——來保護你的傳道使命，而非只是為個人利益？就像在正確的時機展示護照避免無謂的麻煩，你有沒有把你的資源和優勢用在推進神國的目標上？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

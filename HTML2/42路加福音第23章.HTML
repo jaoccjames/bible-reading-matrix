@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音第23章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+路加福音第23章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">受難、十字架上的禱告與安葬</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>眾人都起來，把耶穌解到彼拉多面前，</div>
+<div class="verse"><span class="verse-number">2</span>就告他說：「我們見這人誘惑國民，禁止納稅給該撒，並說自己是基督，是王。」</div>
+<div class="verse"><span class="verse-number">3</span>彼拉多問耶穌說：「你是猶太人的王嗎？」耶穌回答說：「你說的是。」</div>
+<div class="verse"><span class="verse-number">4</span>彼拉多對祭司長和眾人說：「我查不出這人有甚麼罪來。」</div>
+<div class="verse"><span class="verse-number">5</span>但他們越發極力的說：「他煽惑百姓，在猶太遍地傳道，從加利利起，直到這裏了。」</div>
+<div class="verse"><span class="verse-number">6</span>彼拉多一聽見，就問：「這人是加利利人嗎？」</div>
+<div class="verse"><span class="verse-number">7</span>既曉得耶穌屬希律所管，就把他送到希律那裏去。那時希律正在耶路撒冷。</div>
+<div class="verse"><span class="verse-number">8</span>希律看見耶穌，就很歡喜；因為聽見過他的事，久已想要見他，並且指望看他行一件神蹟。</div>
+<div class="verse"><span class="verse-number">9</span>於是問他許多的話；耶穌卻一言不答。</div>
+<div class="verse"><span class="verse-number">10</span>祭司長和文士都站着，極力的告他。</div>
+<div class="verse"><span class="verse-number">11</span>希律和他的兵丁就藐視耶穌，戲弄他，給他穿上華麗衣服，把他送回彼拉多那裏去。</div>
+<div class="verse"><span class="verse-number">12</span>從前希律和彼拉多彼此有仇，在那一天就成了朋友。</div>
+<div class="verse"><span class="verse-number">13</span>彼拉多傳齊了祭司長和官府並百姓，</div>
+<div class="verse"><span class="verse-number">14</span>就對他們說：「你們解這人到我這裏，說他是誘惑百姓的。看哪，我也曾將你們告他的事，在你們面前審問他，並沒有查出他甚麼罪來；</div>
+<div class="verse"><span class="verse-number">15</span>就是希律也是如此，所以把他送回來。可見他沒有作甚麼該死的事。</div>
+<div class="verse"><span class="verse-number">16</span>故此，我要責打他，把他釋放了。」（有古卷在此有：</div>
+<div class="verse"><span class="verse-number">17</span>每逢這節期，巡撫必須釋放一個囚犯給他們。）</div>
+<div class="verse"><span class="verse-number">18</span>眾人卻一齊喊着說：「除掉這個人！釋放巴拉巴給我們！」</div>
+<div class="verse"><span class="verse-number">19</span>這巴拉巴是因在城裏作亂殺人，下在監裏的。</div>
+<div class="verse"><span class="verse-number">20</span>彼拉多願意釋放耶穌，就又勸解他們。</div>
+<div class="verse"><span class="verse-number">21</span>無奈他們喊着說：「釘他十字架！釘他十字架！」</div>
+<div class="verse"><span class="verse-number">22</span>彼拉多第三次對他們說：「為甚麼呢？這人作了甚麼惡事呢？我並沒有查出他甚麼該死的罪來。所以，我要責打他，把他釋放了。」</div>
+<div class="verse"><span class="verse-number">23</span>他們大聲催逼彼拉多，求他把耶穌釘在十字架上。他們的聲音就得了勝。</div>
+<div class="verse"><span class="verse-number">24</span>彼拉多這纔照他們所求的定案，</div>
+<div class="verse"><span class="verse-number">25</span>把他們所求的那作亂殺人、下在監裏的釋放了，把耶穌交給他們，任憑他們的意思行。</div>
+<div class="verse"><span class="verse-number">26</span>帶耶穌去的時候，有一個古利奈人西門，從鄉下來；他們就抓住他，把十字架擱在他身上，叫他背着跟隨耶穌。</div>
+<div class="verse"><span class="verse-number">27</span>有許多百姓跟隨耶穌，內中有好些婦女；婦女們為他號咷痛哭。</div>
+<div class="verse"><span class="verse-number">28</span>耶穌轉身對她們說：「耶路撒冷的女子，不要為我哭，當為自己和自己的兒女哭。</div>
+<div class="verse"><span class="verse-number">29</span>因為日子要到，人必說：『不生育的，和未曾懷胎的，未曾乳養嬰孩的，有福了！」</div>
+<div class="verse"><span class="verse-number">30</span>那時，人要向大山說：倒在我們身上！向小山說：遮蓋我們！</div>
+<div class="verse"><span class="verse-number">31</span>「這些事既行在有汁水的樹上，那枯乾的樹將來怎麼樣呢？」</div>
+<div class="verse"><span class="verse-number">32</span>又有兩個犯人，和耶穌一同帶來處死。</div>
+<div class="verse"><span class="verse-number">33</span>到了一個地方，名叫「髑髏地」，就在那裏把耶穌釘在十字架上，又釘了兩個犯人：一個在左邊，一個在右邊。</div>
+<div class="verse"><span class="verse-number">34</span>當下耶穌說：「父啊！赦免他們；因為他們所作的，他們不曉得。」兵丁就拈鬮分他的衣服。</div>
+<div class="verse"><span class="verse-number">35</span>百姓站在那裏觀看。官府也嗤笑他，說：「他救了別人；他若是基督，神所揀選的，可以救自己吧！」</div>
+<div class="verse"><span class="verse-number">36</span>兵丁也戲弄他，上前拿醋送給他喝，</div>
+<div class="verse"><span class="verse-number">37</span>說：「你若是猶太人的王，可以救自己吧！」</div>
+<div class="verse"><span class="verse-number">38</span>在耶穌以上有一個牌子（有古卷在此有：用希利尼、羅馬、希伯來的文字）寫着：「這是猶太人的王。」</div>
+<div class="verse"><span class="verse-number">39</span>那同釘的兩個犯人有一個譏誚他，說：「你不是基督嗎？可以救自己和我們吧！」</div>
+<div class="verse"><span class="verse-number">40</span>那一個就應聲責備他，說：「你既是一樣受刑的，還不怕神嗎？</div>
+<div class="verse"><span class="verse-number">41</span>我們是應該的，因我們所受的與我們所作的相稱，但這個人沒有作過一件不好的事。」</div>
+<div class="verse"><span class="verse-number">42</span>就說：「耶穌啊，你得國降臨的時候，求你記念我！」</div>
+<div class="verse"><span class="verse-number">43</span>耶穌對他說：「我實在告訴你，今日你要同我在樂園裏了。」</div>
+<div class="verse"><span class="verse-number">44</span>那時約有午正，遍地都黑暗了，直到申初，</div>
+<div class="verse"><span class="verse-number">45</span>日頭變黑了；殿裏的幔子從當中裂為兩半。</div>
+<div class="verse"><span class="verse-number">46</span>耶穌大聲喊着說：「父啊！我將我的靈魂交在你手裏。」說了這話，氣就斷了。</div>
+<div class="verse"><span class="verse-number">47</span>百夫長看見所成的事，就歸榮耀與神，說：「這真是個義人！」</div>
+<div class="verse"><span class="verse-number">48</span>聚集觀看的眾人見了這所成的事都捶着胸回去了。</div>
+<div class="verse"><span class="verse-number">49</span>還有一切與耶穌熟識的人，和從加利利跟着他來的婦女們，都遠遠的站着看這些事。</div>
+<div class="verse"><span class="verse-number">50</span>有一個人名叫約瑟，是個議士，為人善良公義；</div>
+<div class="verse"><span class="verse-number">51</span>眾人所謀所為，他並沒有附從。他本是猶太、亞利馬太城裏素常盼望神國的人。</div>
+<div class="verse"><span class="verse-number">52</span>這人去見彼拉多，求耶穌的身體，</div>
+<div class="verse"><span class="verse-number">53</span>就取下來，用細麻布裹好，安放在石頭鑿成的墳墓裏；那裏頭從來沒有葬過人。</div>
+<div class="verse"><span class="verse-number">54</span>那日是預備日，安息日也快到了。</div>
+<div class="verse"><span class="verse-number">55</span>那些從加利利和耶穌同來的婦女跟在後面，看見了墳墓和他的身體怎樣安放。</div>
+<div class="verse"><span class="verse-number">56</span>她們就回去，預備了香料香膏。她們在安息日，便遵着誡命安息了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+路加福音第23章記載耶穌受難的完整過程，路加特別保留了幾個獨有的細節。耶穌被帶到彼拉多，彼拉多三次宣告「查不出罪來」卻屈服於群眾，又送到希律那裏，希律「久已想要見他」卻對耶穌的沉默感到失望，戲弄後送回。彼拉多最終交出耶穌，釋放了殺人犯巴拉巴。背十字架途中，耶穌對哭泣的婦女說不要哭，要為自己哭。到了髑髏地，路加記下耶穌在十字架上的第一句話：「父啊！赦免他們，因為他們所作的，他們不曉得。」兩個犯人同釘，其中一個悔改說「耶穌啊，你得國降臨的時候，求你記念我！」耶穌回答「今日你要同我在樂園裏了」。遍地黑暗三小時，殿的幔子裂開，耶穌大聲說「父啊！我將我的靈魂交在你手裏」，氣就斷了。百夫長宣告「這真是個義人！」約瑟求了身體安葬，婦女們看見，安息日前預備香料。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【十字架上的赦免是恩典最極致的彰顯】</strong><br>「父啊！赦免他們，因為他們所作的，他們不曉得」——在最深的痛苦和羞辱中，耶穌的第一句話是赦免。這不是軟弱，而是神愛的最高彰顯：在最不可能的時刻，以最不被人理解的方式，表達對仇敵的赦免。這個赦免是普世的，也是具體的——不只是對那些士兵，也是對我們每一個「不曉得」自己所做的事是何等嚴重的人。<br><br>
+<strong>2. 【臨終的悔改得着今日的應許】</strong><br>那個悔改的犯人說了最簡單的禱告：「耶穌啊，你得國降臨的時候，求你記念我！」沒有過去的功德，沒有時間的餘裕，只有最後一刻的認信。耶穌的回應超過他所求的：「今日你要同我在樂園裏了」。這個「今日」是整本聖經中最激勵人心的應許之一——救恩的門直到最後一刻都是開着的，真正的悔改沒有太晚。<br><br>
+<strong>3. 【以信靠將生命交在父手裏】</strong><br>「父啊！我將我的靈魂交在你手裏」——這是詩篇31篇的引用，是猶太孩子睡前的禱告。耶穌在最後的時刻，以孩子對父的信靠態度將靈魂交托給神。「交在你手裏」是最終極的信靠：不是掙扎着要控制，而是放下，完全交給那雙保護的手。這是信仰最成熟的表達，也是每一個信徒在生命最深處學習的功課。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「父啊！<strong>赦免他們</strong>；因為他們所作的，他們不曉得。」（路23:34）</td>
+<td>面對傷害你的人，你有沒有讓耶穌十字架上的禱告成為你饒恕的樣本？就像模仿老師的筆法需要反復練習，你願意讓「父啊，赦免他們」成為你心裏真實的禱告，而非只是頭腦知道的道理嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌對他說</strong>：「<strong>我實在告訴你</strong>，今日你要同我在樂園裏了。」（路23:43）</td>
+<td>你有沒有把握這樣的「今日」確據——在任何時刻、任何處境中，只要你真心悔改和信靠，救恩對你就是開放的？就像緊急出口的燈永遠亮着，你知道耶穌對悔改的心的回應從不說「太晚了」嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌大聲喊着說</strong>：「父啊！<strong>我將我的靈魂交在</strong>你手裏。」說了這話，氣就斷了。（路23:46）</td>
+<td>在你生命中最失控的時刻，你有沒有能力說「我將這一切交在你手裏」，而不是拼命要掌控局面？就像在最後關頭放手讓急救人員主導，你願意學習在你能力之外的情況中，把一切交托在神的手裏嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

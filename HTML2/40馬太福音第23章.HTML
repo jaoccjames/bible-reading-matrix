@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第23章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第23章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">七禍與耶穌哀嘆耶路撒冷</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>那時，耶穌對眾人和門徒講論，</div>
+<div class="verse"><span class="verse-number">2</span>說：「文士和法利賽人坐在摩西的位上，</div>
+<div class="verse"><span class="verse-number">3</span>凡他們所吩咐你們的，你們都要謹守遵行；但不要效法他們的行為；因為他們能說，不能行。</div>
+<div class="verse"><span class="verse-number">4</span>他們把難擔的重擔捆起來，擱在人的肩上，但自己一個指頭也不肯動。</div>
+<div class="verse"><span class="verse-number">5</span>他們一切所作的事都是要叫人看見，所以將佩戴的經文做寬了，衣裳的繸子做長了，</div>
+<div class="verse"><span class="verse-number">6</span>喜愛筵席上的首座，會堂裏的高位，</div>
+<div class="verse"><span class="verse-number">7</span>又喜愛人在街市上問他安，稱呼他拉比〔拉比就是夫子〕。</div>
+<div class="verse"><span class="verse-number">8</span>但你們不要受拉比的稱呼，因為只有一位是你們的夫子；你們都是弟兄。</div>
+<div class="verse"><span class="verse-number">9</span>也不要稱呼地上的人為父，因為只有一位是你們的父，就是在天上的父。</div>
+<div class="verse"><span class="verse-number">10</span>也不要受師尊的稱呼，因為只有一位是你們的師尊，就是基督。</div>
+<div class="verse"><span class="verse-number">11</span>你們中間誰為大，誰就要作你們的用人。</div>
+<div class="verse"><span class="verse-number">12</span>凡自高的，必降為卑；自卑的，必升為高。</div>
+<div class="verse"><span class="verse-number">13</span>「你們這假冒為善的文士和法利賽人有禍了！因為你們正當人前，把天國的門關了，自己不進去，正要進去的人，你們也不容他們進去。（有古卷在此有</div>
+<div class="verse"><span class="verse-number">14</span>你們這假冒為善的文士和法利賽人有禍了！因為你們侵吞寡婦的家產，假意作很長的禱告，所以要受更重的刑罰。）</div>
+<div class="verse"><span class="verse-number">15</span>「你們這假冒為善的文士和法利賽人有禍了！因為你們走遍洋海陸地，勾引一個人入教，既入了教，卻使他作地獄之子，比你們還加倍。</div>
+<div class="verse"><span class="verse-number">16</span>「你們這瞎眼領路的有禍了！你們說：『凡指着殿起誓的，這算不得甚麼；只是凡指着殿中金子起誓的，他就該謹守。』</div>
+<div class="verse"><span class="verse-number">17</span>你們這無知瞎眼的人哪，甚麼是大的？是金子呢？還是叫金子成聖的殿呢？</div>
+<div class="verse"><span class="verse-number">18</span>你們又說：『凡指着壇起誓的，這算不得甚麼；只是凡指着壇上禮物起誓的，他就該謹守。』</div>
+<div class="verse"><span class="verse-number">19</span>你們這瞎眼的人哪，甚麼是大的？是禮物呢？還是叫禮物成聖的壇呢？</div>
+<div class="verse"><span class="verse-number">20</span>所以，人指着壇起誓，就是指着壇和壇上一切所有的起誓；</div>
+<div class="verse"><span class="verse-number">21</span>人指着殿起誓，就是指着殿和那住在殿裏的起誓；</div>
+<div class="verse"><span class="verse-number">22</span>人指着天起誓，就是指着神的寶座和那坐在上面的起誓。</div>
+<div class="verse"><span class="verse-number">23</span>「你們這假冒為善的文士和法利賽人有禍了！因為你們將薄荷、茴香、芹菜，獻上十分之一，那律法上更重的事，就是公義、憐憫、信實，反倒不行了。這更重的是你們當行的；那也是不可不行的。</div>
+<div class="verse"><span class="verse-number">24</span>你們這瞎眼領路的，蠓蟲你們就濾出來，駱駝你們倒吞下去。</div>
+<div class="verse"><span class="verse-number">25</span>「你們這假冒為善的文士和法利賽人有禍了！因為你們洗淨杯盤的外面，裏面卻盛滿了勒索和放蕩。</div>
+<div class="verse"><span class="verse-number">26</span>你這瞎眼的法利賽人，先洗淨杯盤的裏面，好叫外面也乾淨了。</div>
+<div class="verse"><span class="verse-number">27</span>「你們這假冒為善的文士和法利賽人有禍了！因為你們好像粉飾的墳墓，外面好看，裏面卻裝滿了死人的骨頭和一切的污穢。</div>
+<div class="verse"><span class="verse-number">28</span>你們也是如此，在人前，外面顯出公義來，裏面卻裝滿了假善和不法的事。</div>
+<div class="verse"><span class="verse-number">29</span>「你們這假冒為善的文士和法利賽人有禍了！因為你們建造先知的墳，修飾義人的墓，說：</div>
+<div class="verse"><span class="verse-number">30</span>『若是我們在我們祖宗的時候，必不和他們同流先知的血。』</div>
+<div class="verse"><span class="verse-number">31</span>這就是你們自己證明是殺害先知者的子孫了。</div>
+<div class="verse"><span class="verse-number">32</span>你們去充滿你們祖宗的惡貫吧！</div>
+<div class="verse"><span class="verse-number">33</span>你們這些蛇類、毒蛇之種啊，怎能逃脫地獄的刑罰呢？</div>
+<div class="verse"><span class="verse-number">34</span>所以我差遣先知和智慧人並文士到你們這裏來，有的你們要殺害，要釘十字架；有的你們要在會堂裏鞭打，從這城追逼到那城，</div>
+<div class="verse"><span class="verse-number">35</span>叫世上所流義人的血都歸到你們身上，從義人亞伯的血起，直到你們在殿和壇中間所殺的巴拉加的兒子撒迦利亞的血為止。</div>
+<div class="verse"><span class="verse-number">36</span>我實在告訴你們，這一切的罪都要歸到這世代了。」</div>
+<div class="verse"><span class="verse-number">37</span>「耶路撒冷啊，耶路撒冷啊，你常殺害先知，又用石頭打死那奉差遣到你這裏來的人。我多次願意聚集你的兒女，好像母雞把小雞聚集在翅膀底下，只是你們不願意。</div>
+<div class="verse"><span class="verse-number">38</span>看哪，你們的家成為荒場留給你們。</div>
+<div class="verse"><span class="verse-number">39</span>我告訴你們，從今以後，你們不得再見我，直等到你們說：『奉主名來的是應當稱頌的。』」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+馬太福音第23章是耶穌對宗教虛偽最強烈的批判，以七個「有禍了」對法利賽人和文士發出嚴厲指控。耶穌一方面承認他們的教導權威（坐在摩西的位上），一方面嚴厲批評他們只說不行、只為自己得榮耀。七禍涵蓋：關閉天國之門、製造比自己更壞的信徒、錯亂誓言的輕重、只注重小事的十分之一卻忽略公義憐恤信實、杯外潔淨內部污穢、外表像公義裏面卻滿是假善、為先知建墳卻是殺先知者的後代。每一個「有禍了」都是對宗教形式主義的精準解剖。本章以耶穌對耶路撒冷的哀哭作結：「我多次願意聚集你的兒女，好像母雞把小雞聚集在翅膀底下，只是你們不願意。」這段哀嘆充滿愛與悲傷，展示耶穌對拒絕祂的人仍存溫柔的心腸。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【宗教外表不能掩蓋內心的空洞】</strong><br>七禍的核心是「外表」與「內在」的落差：外面是粉飾的墳墓，裏面裝滿死人骨頭；杯盤外面洗乾淨，裏面盛滿勒索放蕩。宗教形式主義最危險的地方是它製造出「一切都好」的假象，讓人對自己的靈魂狀況缺乏真實的警覺。信仰不是表演，神看的是心裏真實的狀態。<br><br>
+<strong>2. 【責任越大，審判越重】</strong><br>法利賽人坐在摩西的位上，有教導神百姓的責任，卻「把難擔的重擔捆起來擱在人肩上，自己卻一個指頭也不肯動」。領袖的影響力既能造就人，也能絆倒人。耶穌對宗教領袖的審判是雙重的：既因自身的假冒為善，也因使他人誤入歧途。每一個有影響力的人都應以此為鑑。<br><br>
+<strong>3. 【耶穌對失喪的人充滿悲憫】</strong><br>七禍之後的哀嘆顯示：耶穌對那些拒絕祂的人的情感不是憤怒而是哀傷。「好像母雞把小雞聚集在翅膀底下」——這是最溫柔的牧者形象。神的心意是聚集和拯救，不是滅絕和審判。面對拒絕福音的人，信徒當效法耶穌的心腸：不是論斷，而是為他們悲傷，繼續代求。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>你們這假冒為善的</strong>文士和法利賽人有禍了！因為你們好像粉飾的墳墓，外面好看，裏面卻裝滿了死人的骨頭和一切的污穢。」（太23:27）</td>
+<td>你有沒有靈魂的「外好內空」——在別人眼中信仰生活豐富，但私下裏與神的關係卻疏遠？就像外包裝精美但裏面是壞掉的食物，你願意誠實地讓神檢查你內心真實的狀態嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>你們這假冒為善的</strong>文士和法利賽人有禍了！因為你們將薄荷、茴香、芹菜，獻上十分之一，那律法上更重的事，就是公義、憐憫、信實，反倒不行了。」（太23:23）</td>
+<td>你有沒有在小事上很謹慎（如定時讀經、奉獻），卻在大事上（如公義待人、憐憫弱勢）卻有所輕忽？就像每天健身但不注重飲食和睡眠，你的信仰生活有沒有注重那些真正重要的事？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>耶路撒冷啊</strong>，耶路撒冷啊……我多次願意聚集你的兒女，好像母雞把小雞聚集在翅膀底下，只是你們不願意。」（太23:37）</td>
+<td>你生命中有沒有一直抗拒神的呼召的領域？就像孩子不肯讓父母保護而執意跑向危險，你願意放下抵擋，讓耶穌把你聚集在祂翅膀下嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

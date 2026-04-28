@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>彼得前書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+彼得前書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">受苦與愛的服事——末世的生活</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>基督既在肉身受苦，你們也當將這樣的心志作為兵器，因為在肉身受過苦的，就已經與罪斷絕了。</div>
+<div class="verse"><span class="verse-number">2</span>你們存這樣的心，從今以後就可以不從人的情慾，只從神的旨意在世度餘下的光陰。</div>
+<div class="verse"><span class="verse-number">3</span>因為往日隨從外邦人的心意行邪淫、惡慾、醉酒、荒宴、群飲，並可惡拜偶像的事，時候已經彀了。</div>
+<div class="verse"><span class="verse-number">4</span>他們在這些事上，見你們不與他們同奔那放蕩無度的路，就以為怪，毀謗你們。</div>
+<div class="verse"><span class="verse-number">5</span>他們必在那將要審判活人死人的主面前交賬。</div>
+<div class="verse"><span class="verse-number">6</span>為此，就是死人也曾有福音傳給他們，要叫他們的肉體按着人受審判，他們的靈性卻靠神活着。</div>
+<div class="verse"><span class="verse-number">7</span>萬物的結局近了。所以，你們要謹慎自守，儆醒禱告。</div>
+<div class="verse"><span class="verse-number">8</span>最要緊的是彼此切實相愛，因為愛能遮掩許多的罪。</div>
+<div class="verse"><span class="verse-number">9</span>你們要互相款待，不發怨言。</div>
+<div class="verse"><span class="verse-number">10</span>各人要照所得的恩賜彼此服事，作神百般恩賜的好管家。</div>
+<div class="verse"><span class="verse-number">11</span>若有講道的，要按着神的聖言講；若有服事人的，要按着神所賜的力量服事，叫神在凡事上因耶穌基督得榮耀。原來榮耀、權能都是他的，直到永永遠遠。阿們！</div>
+<div class="verse"><span class="verse-number">12</span>親愛的弟兄啊，有火煉的試驗臨到你們，不要以為奇怪（似乎是遭遇非常的事）</div>
+<div class="verse"><span class="verse-number">13</span>倒要歡喜；因為你們是與基督一同受苦，使你們在他榮耀顯現的時候，也可以歡喜快樂。</div>
+<div class="verse"><span class="verse-number">14</span>你們若為基督的名受辱罵，便是有福的；因為神榮耀的靈常住在你們身上。</div>
+<div class="verse"><span class="verse-number">15</span>你們中間卻不可有人因為殺人、偷竊、作惡、好管閒事而受苦。</div>
+<div class="verse"><span class="verse-number">16</span>若為作基督徒受苦，卻不要羞恥，倒要因這名歸榮耀給神。</div>
+<div class="verse"><span class="verse-number">17</span>因為時候到了，審判要從神的家起首。若是先從我們起首，那不信從神福音的人將有何等的結局呢？</div>
+<div class="verse"><span class="verse-number">18</span>若是義人僅僅得救，那不虔敬和犯罪的人將有何地可站呢？</div>
+<div class="verse"><span class="verse-number">19</span>所以那照神旨意受苦的人要一心為善，將自己靈魂交與那信實的造化之主。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+彼得前書第4章以基督的受苦心志為基礎，論述末世的生活方式和「為作基督徒受苦」的榮耀。「基督既在肉身受苦，你們也當將這樣的心志作為兵器」——受苦的心志是屬靈爭戰的武器。「萬物的結局近了。所以，你們要謹慎自守，儆醒禱告。最要緊的是彼此切實相愛，因為愛能遮掩許多的罪」——末世生活的優先次序。「各人要照所得的恩賜彼此服事，作神百般恩賜的好管家」——恩賜是為了彼此服事。「若為作基督徒受苦，卻不要羞恥，倒要因這名歸榮耀給神」——苦難的神學框架。「所以那照神旨意受苦的人要一心為善，將自己靈魂交與那信實的造化之主」——受苦時的態度。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【受苦的心志是屬靈爭戰的武器】</strong><br>「基督既在肉身受苦，你們也當將這樣的心志作為兵器」——接受受苦的可能性（基督的心志），本身就是對試探的最有效防護。當一個人已經預備好承受苦難，試探就失去了最大的籌碼。<br><br>
+<strong>2. 【愛能遮掩許多的罪】</strong><br>「最要緊的是彼此切實相愛，因為愛能遮掩許多的罪」——「最要緊的」說明在末世的諸多責任中，彼此相愛佔首位。「愛能遮掩許多的罪」——愛使人能夠包容、饒恕和修復因罪而破損的關係，使群體不因罪的傷害而分裂。<br><br>
+<strong>3. 【為基督徒身份受苦是榮耀】</strong><br>「若為作基督徒受苦，卻不要羞恥，倒要因這名歸榮耀給神」——信仰的身份和因信受苦是可以榮耀神的。「因這名歸榮耀給神」——受苦可以成為讚美的機會。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>彼得說</strong>：「<strong>最要緊的是彼此切</strong>實相愛，因為愛能遮掩許多的罪。你們要互相款待，不發怨言。」（彼前4:8-9）</td>
+<td>你有沒有讓「彼此切實相愛」成為你的信仰群體生活中最優先的追求，讓愛的包容和饒恕遮蓋彼此的過失，使群體在末世的挑戰中仍然合一？就像一個真正緊密的家庭能夠度過成員的過失而不破裂，你有沒有讓愛成為你群體最強的黏合劑？</td>
+</tr>
+<tr>
+<td><strong>彼得說</strong>：「<strong>各人要照所得的恩</strong>賜彼此服事，作神百般恩賜的好管家。若有講道的……若有服事人的……叫神在凡事上因耶穌基督得榮耀。」（彼前4:10-11）</td>
+<td>你有沒有把你所有的恩賜——才能、時間、資源——都看作是神交託給你去彼此服事的，而非只是個人的資產？就像受任的管家不擁有財產卻負責照顧它，你有沒有讓「好管家」的意識改變你使用恩賜的方式？</td>
+</tr>
+<tr>
+<td><strong>彼得說</strong>：「<strong>若為作基督徒受苦</strong>，卻不要羞恥，倒要因這名歸榮耀給神。」（彼前4:16）</td>
+<td>你有沒有在面對因信仰帶來的輕視或困難時，能夠以榮耀神的心志承受，而非以羞恥的心態逃避或隱藏你的信仰？就像一個運動員以穿着代表國家的球衣為榮耀而非羞恥，你有沒有讓以基督徒身份被辨認成為你的榮耀而非負擔？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

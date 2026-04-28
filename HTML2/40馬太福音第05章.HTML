@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">天國子民的生命標準</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌看見這許多的人，就上了山，既已坐下，門徒到他跟前來，</div>
+<div class="verse"><span class="verse-number">2</span>他就開口教訓他們，說：</div>
+<div class="verse"><span class="verse-number">3</span>虛心的人有福了！因為天國是他們的。</div>
+<div class="verse"><span class="verse-number">4</span>哀慟的人有福了！因為他們必得安慰。</div>
+<div class="verse"><span class="verse-number">5</span>溫柔的人有福了！因為他們必承受地土。</div>
+<div class="verse"><span class="verse-number">6</span>飢渴慕義的人有福了！因為他們必得飽足。</div>
+<div class="verse"><span class="verse-number">7</span>憐恤人的人有福了！因為他們必蒙憐恤。</div>
+<div class="verse"><span class="verse-number">8</span>清心的人有福了！因為他們必得見神。</div>
+<div class="verse"><span class="verse-number">9</span>使人和睦的人有福了！因為他們必稱為神的兒子。</div>
+<div class="verse"><span class="verse-number">10</span>為義受逼迫的人有福了！因為天國是他們的。</div>
+<div class="verse"><span class="verse-number">11</span>「人若因我辱罵你們，逼迫你們，捏造各樣壞話毀謗你們，你們就有福了！</div>
+<div class="verse"><span class="verse-number">12</span>應當歡喜快樂，因為你們在天上的賞賜是大的。在你們以前的先知，人也是這樣逼迫他們。」</div>
+<div class="verse"><span class="verse-number">13</span>「你們是世上的鹽。鹽若失了味，怎能叫它再鹹呢？以後無用，不過丟在外面，被人踐踏了。</div>
+<div class="verse"><span class="verse-number">14</span>你們是世上的光。城造在山上是不能隱藏的。</div>
+<div class="verse"><span class="verse-number">15</span>人點燈，不放在斗底下，是放在燈臺上，就照亮一家的人。</div>
+<div class="verse"><span class="verse-number">16</span>你們的光也當這樣照在人前，叫他們看見你們的好行為，便將榮耀歸給你們在天上的父。」</div>
+<div class="verse"><span class="verse-number">17</span>「莫想我來要廢掉律法和先知。我來不是要廢掉，乃是要成全。</div>
+<div class="verse"><span class="verse-number">18</span>我實在告訴你們，就是到天地都廢去了，律法的一點一畫也不能廢去，都要成全。</div>
+<div class="verse"><span class="verse-number">19</span>所以，無論何人廢掉這誡命中最小的一條，又教訓人這樣作，他在天國要稱為最小的。但無論何人遵行這誡命，又教訓人遵行，他在天國要稱為大的。</div>
+<div class="verse"><span class="verse-number">20</span>我告訴你們，你們的義若不勝於文士和法利賽人的義，斷不能進天國。」</div>
+<div class="verse"><span class="verse-number">21</span>「你們聽見有吩咐古人的話，說：『不可殺人』；又說：『凡殺人的難免受審判。』</div>
+<div class="verse"><span class="verse-number">22</span>只是我告訴你們：凡向弟兄動怒的，難免受審判（有古卷在凡字下添：無緣無故地五字）；凡罵弟兄是拉加的，難免公會的審斷；凡罵弟兄是魔利的，難免地獄的火。</div>
+<div class="verse"><span class="verse-number">23</span>所以，你在祭壇上獻禮物的時候，若想起弟兄向你懷怨，</div>
+<div class="verse"><span class="verse-number">24</span>就把禮物留在壇前，先去同弟兄和好，然後來獻禮物。</div>
+<div class="verse"><span class="verse-number">25</span>你同告你的對頭還在路上，就趕緊與他和息，恐怕他把你送給審判官，審判官交付衙役，你就下在監裏了。</div>
+<div class="verse"><span class="verse-number">26</span>我實在告訴你，若有一文錢沒有還清，你斷不能從那裏出來。」</div>
+<div class="verse"><span class="verse-number">27</span>「你們聽見有話說：『不可姦淫。』</div>
+<div class="verse"><span class="verse-number">28</span>只是我告訴你們，凡看見婦女就動淫念的，這人心裏已經與她犯姦淫了。</div>
+<div class="verse"><span class="verse-number">29</span>若是你的右眼叫你跌倒，就剜出來丟掉，寧可失去百體中的一體，不叫全身丟在地獄裏。</div>
+<div class="verse"><span class="verse-number">30</span>若是右手叫你跌倒，就砍下來丟掉，寧可失去百體中的一體，不叫全身下入地獄。」</div>
+<div class="verse"><span class="verse-number">31</span>「又有話說：『人若休妻，就當給她休書。』</div>
+<div class="verse"><span class="verse-number">32</span>只是我告訴你們，凡休妻的，若不是為淫亂的緣故，就是叫她作淫婦了；人若娶這被休的婦人，也是犯姦淫了。」</div>
+<div class="verse"><span class="verse-number">33</span>「你們又聽見有吩咐古人的話，說：『不可背誓，所起的誓總要向主謹守。』</div>
+<div class="verse"><span class="verse-number">34</span>只是我告訴你們，甚麼誓都不可起。不可指着天起誓，因為天是神的座位；</div>
+<div class="verse"><span class="verse-number">35</span>不可指着地起誓，因為地是他的腳凳；也不可指着耶路撒冷起誓，因為耶路撒冷是大君的京城；</div>
+<div class="verse"><span class="verse-number">36</span>又不可指着你的頭起誓，因為你不能使一根頭髮變黑變白了。</div>
+<div class="verse"><span class="verse-number">37</span>你們的話，是，就說是；不是，就說不是；若再多說，就是出於那惡者〔或作是從惡裏出來的〕。」</div>
+<div class="verse"><span class="verse-number">38</span>「你們聽見有話說：『以眼還眼，以牙還牙。』</div>
+<div class="verse"><span class="verse-number">39</span>只是我告訴你們，不要與惡人作對。有人打你的右臉，連左臉也轉過來由他打；</div>
+<div class="verse"><span class="verse-number">40</span>有人想要告你，要拿你的裏衣，連外衣也由他拿去；</div>
+<div class="verse"><span class="verse-number">41</span>有人強逼你走一里路，你就同他走二里；</div>
+<div class="verse"><span class="verse-number">42</span>有求你的，就給他；有向你借貸的，不可推辭。」</div>
+<div class="verse"><span class="verse-number">43</span>「你們聽見有話說：『當愛你的鄰舍，恨你的仇敵。』</div>
+<div class="verse"><span class="verse-number">44</span>只是我告訴你們，要愛你們的仇敵，為那逼迫你們的禱告。</div>
+<div class="verse"><span class="verse-number">45</span>這樣就可以作你們天父的兒子；因為他叫日頭照好人，也照歹人；降雨給義人，也給不義的人。</div>
+<div class="verse"><span class="verse-number">46</span>你們若單愛那愛你們的人，有甚麼賞賜呢？就是稅吏不也是這樣行麼？</div>
+<div class="verse"><span class="verse-number">47</span>你們若單請你弟兄的安，比人有甚麼長處呢？就是外邦人不也是這樣行麼？</div>
+<div class="verse"><span class="verse-number">48</span>所以，你們要完全，像你們的天父完全一樣。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+馬太福音第5章是登山寶訓的開篇，是耶穌最重要的教導之一。耶穌上山坐下，以拉比講授的姿態向門徒闡明天國子民的生命樣式。本章分為三個部分：首先是八福，以「……的人有福了」的結構宣告天國的價值觀，徹底顛覆世人對「有福」的定義——虛心、哀慟、溫柔、飢渴慕義、憐恤、清心、使人和睦、為義受逼迫的人才是真正有福之人。其次是鹽與光的比喻，指出門徒在世界中的使命與影響力。第三是律法的深化：耶穌以六個「你們聽見……只是我告訴你們」的對比，將律法的要求從外在行為深入到內心動機，涵蓋憤怒、姦淫、離婚、誓言、報復與愛仇敵。耶穌不是廢掉律法，而是揭示律法的真正精神，要求更高的內在義——完全像天父一樣。本章奠定基督徒倫理的最高標準。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【天國的祝福來自降卑而非強大】</strong><br>八福所描述的人——虛心、哀慟、溫柔——在世人眼中都是軟弱的象徵，卻是天國最核心的公民特質。天國的邏輯與世界截然相反：不是靠自己的能力和成就，而是承認自己的有限、飢渴慕義、倚靠神。這挑戰每一個信徒反思：我是在追求世界定義的成功，還是在追求天國的價值？<br><br>
+<strong>2. 【基督徒是世界的鹽與光】</strong><br>鹽的功能是防腐保鮮，光的功能是照亮黑暗。耶穌說門徒「是」鹽和光——這是身份的宣告，不是努力的目標。信徒的好行為不是為了自我表現，而是為了讓人將榮耀歸給天父。這提醒我們：屬靈生命不只是個人的內在修煉，而是有向外的社會影響力與責任。<br><br>
+<strong>3. 【神看內心動機而非外在行為】</strong><br>耶穌六次說「只是我告訴你們」，將律法的標準從行為深入到心志：不只不可殺人，連動怒也要負責；不只不可姦淫，連動淫念也是罪。這讓每一個人在神面前無可推諉——沒有人能靠外在行為達到神的完全。這是恩典的入口：承認自己需要救贖，才能真正接受基督。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>虛心的人有福了</strong>！<strong>因為天國是他們的</strong>。（太5:3）</td>
+<td>你在靈命上有沒有「虛心」——承認自己的不足、完全倚靠神？就像空的杯子才能被倒滿，你是否願意放空自己的驕傲與自足，讓神的恩典充滿你？</td>
+</tr>
+<tr>
+<td><strong>你們的光也當這樣</strong><strong>照在人前</strong>，叫他們看見你們的好行為，便將榮耀歸給你們在天上的父。（太5:16）</td>
+<td>你的生命在職場、家庭、社群中有沒有「發光」，讓人看見並認識神？就像路燈不是為自己而亮，而是為了照亮來往的人，你的信仰生活有沒有向身邊的人發出光來？</td>
+</tr>
+<tr>
+<td><strong>只是我告訴你們</strong>，<strong>要愛你們的仇敵</strong>，為那逼迫你們的禱告。（太5:44）</td>
+<td>在你的生命中，有沒有你真心難以愛的人？就像為競爭對手的成功真誠禱告幾乎違反人的本能，你願意讓神改變你的心，學習愛那些傷害過你的人嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第24章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第24章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">末世預兆與儆醒的呼召</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌出了聖殿，正走的時候，門徒進前來，把殿宇指給他看。</div>
+<div class="verse"><span class="verse-number">2</span>耶穌對他們說：「你們不是看見這殿宇嗎？我實在告訴你們，將來在這裏沒有一塊石頭留在石頭上，不被拆毀了。」</div>
+<div class="verse"><span class="verse-number">3</span>耶穌在橄欖山上坐着，門徒暗暗的來說：「請告訴我們，甚麼時候有這些事？你降臨和世界的末了有甚麼預兆呢？」</div>
+<div class="verse"><span class="verse-number">4</span>耶穌回答說：「你們要謹慎，免得有人迷惑你們。</div>
+<div class="verse"><span class="verse-number">5</span>因為將來有好些人冒我的名來，說：『我是基督』，並且要迷惑許多人。</div>
+<div class="verse"><span class="verse-number">6</span>你們也要聽見打仗和打仗的風聲，總不要驚慌；因為這些事是必須有的，只是末期還沒有到。</div>
+<div class="verse"><span class="verse-number">7</span>民要攻打民，國要攻打國；多處必有饑荒、地震。</div>
+<div class="verse"><span class="verse-number">8</span>這都是災難〔災難：原文作生產之難〕的起頭。</div>
+<div class="verse"><span class="verse-number">9</span>那時，人要把你們陷在患難裏，也要殺害你們；你們又要為我的名被萬民恨惡。</div>
+<div class="verse"><span class="verse-number">10</span>那時，必有許多人跌倒，也要彼此陷害，彼此恨惡；</div>
+<div class="verse"><span class="verse-number">11</span>且有好些假先知起來，迷惑多人。</div>
+<div class="verse"><span class="verse-number">12</span>只因不法的事增多，許多人的愛心才漸漸冷淡了。</div>
+<div class="verse"><span class="verse-number">13</span>惟有忍耐到底的，必然得救。</div>
+<div class="verse"><span class="verse-number">14</span>這天國的福音要傳遍天下，對萬民作見證，然後末期纔來到。」</div>
+<div class="verse"><span class="verse-number">15</span>「你們看見先知但以理所說的『那行毀壞可憎的』站在聖地（讀這經的人須要會意）。</div>
+<div class="verse"><span class="verse-number">16</span>那時，在猶太的，應當逃到山上；</div>
+<div class="verse"><span class="verse-number">17</span>在房上的，不要下來拿家裏的東西；</div>
+<div class="verse"><span class="verse-number">18</span>在田裏的，也不要回去取衣裳。</div>
+<div class="verse"><span class="verse-number">19</span>當那些日子，懷孕的和奶孩子的有禍了。</div>
+<div class="verse"><span class="verse-number">20</span>你們應當祈求，叫你們逃走的時候，不遇見冬天或是安息日。</div>
+<div class="verse"><span class="verse-number">21</span>因為那時必有大災難，從世界的起頭直到如今，沒有這樣的災難，後來也必沒有。</div>
+<div class="verse"><span class="verse-number">22</span>若不減少那日子，凡有血氣的總沒有一個得救的；只是為選民，那日子必減少了。</div>
+<div class="verse"><span class="verse-number">23</span>那時，若有人對你們說：『基督在這裏』，或說：『基督在那裏』，你們不要信！</div>
+<div class="verse"><span class="verse-number">24</span>因為假基督、假先知將要起來，顯大神蹟、大奇事，倘若能行，連選民也就迷惑了。</div>
+<div class="verse"><span class="verse-number">25</span>看哪，我預先告訴你們了。</div>
+<div class="verse"><span class="verse-number">26</span>若有人對你們說：『看哪，基督在曠野裏』，你們不要出去！或說：『看哪，基督在內屋中』，你們不要信！</div>
+<div class="verse"><span class="verse-number">27</span>閃電從東邊發出，直照到西邊。人子降臨，也要這樣。</div>
+<div class="verse"><span class="verse-number">28</span>屍首在那裏，鷹也必聚在那裏。」</div>
+<div class="verse"><span class="verse-number">29</span>「那些日子的災難一過去，日頭就變黑了，月亮也不放光，眾星要從天上墜落，天勢都要震動。</div>
+<div class="verse"><span class="verse-number">30</span>那時，人子的兆頭要顯在天上，地上的萬族都要哀哭。他們要看見人子，有能力，有大榮耀，駕着天上的雲降臨。</div>
+<div class="verse"><span class="verse-number">31</span>他要差遣使者，用號筒的大聲，將他的選民，從四方〔方：原文作風〕，從天這邊到天那邊，都招聚了來。」</div>
+<div class="verse"><span class="verse-number">32</span>「你們可以從無花果樹學個比方：當樹枝發嫩長葉的時候，你們就知道夏天近了。</div>
+<div class="verse"><span class="verse-number">33</span>這樣，你們看見這一切的事，也該知道人子近了，正在門口了。</div>
+<div class="verse"><span class="verse-number">34</span>我實在告訴你們，這世代還沒有過去，這些事都要成就。</div>
+<div class="verse"><span class="verse-number">35</span>天地要廢去，我的話卻不能廢去。」</div>
+<div class="verse"><span class="verse-number">36</span>「那日子，那時辰，沒有人知道，連天上的使者也不知道，子也不知道，惟獨父知道。</div>
+<div class="verse"><span class="verse-number">37</span>挪亞的日子怎樣，人子降臨也要怎樣。</div>
+<div class="verse"><span class="verse-number">38</span>當洪水以前的日子，人照常喫喝嫁娶，直到挪亞進方舟的那日；</div>
+<div class="verse"><span class="verse-number">39</span>不知不覺洪水來了，把他們全都沖去。人子降臨也要這樣。</div>
+<div class="verse"><span class="verse-number">40</span>那時，兩個人在田裏，取去一個，撇下一個。</div>
+<div class="verse"><span class="verse-number">41</span>兩個女人推磨，取去一個，撇下一個。</div>
+<div class="verse"><span class="verse-number">42</span>所以，你們要儆醒，因為不知道你們的主是那一天來到。</div>
+<div class="verse"><span class="verse-number">43</span>家主若知道幾更天有賊來，就必儆醒，不容人挖透房屋；這是你們所知道的。</div>
+<div class="verse"><span class="verse-number">44</span>所以，你們也要預備，因為你們想不到的時候，人子就來了。」</div>
+<div class="verse"><span class="verse-number">45</span>「誰是忠心有見識的僕人，為主人所派，管理家裏的人，按時分糧給他們呢？</div>
+<div class="verse"><span class="verse-number">46</span>主人來到，看見他這樣行，那僕人就有福了。</div>
+<div class="verse"><span class="verse-number">47</span>我實在告訴你們，主人要派他管理一切所有的。</div>
+<div class="verse"><span class="verse-number">48</span>倘若那惡僕心裏說：『我的主人必來得遲』，</div>
+<div class="verse"><span class="verse-number">49</span>就動手打他的同伴，又和酒醉的人一同喫喝。</div>
+<div class="verse"><span class="verse-number">50</span>在想不到的日子，不知道的時辰，那僕人的主人要來，</div>
+<div class="verse"><span class="verse-number">51</span>重重的處治他〔或作：把他腰斬了〕，定他和假冒為善的人同罪；在那裏必要哀哭切齒了。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+馬太福音第24章是橄欖山講論的開篇，是耶穌關於末世預兆和祂再來最詳盡的教導。門徒問耶穌聖殿被毀的時間和祂降臨的預兆，耶穌的回答涵蓋兩個層面：近期的（公元70年耶路撒冷被毀）和末世的（基督再來）。耶穌描述末世的標誌：假基督出現、戰爭饑荒地震、信徒受逼迫、愛心冷淡、天國福音傳遍天下。患難時期將有極大的苦難，假基督和假先知行大神蹟迷惑人，信徒當謹慎分辨。耶穌再來如閃電般清晰可見，不需任何人指引。接着以無花果樹的比方說明預兆的辨認，並強調沒有人知道那日子那時辰。本章以兩個比方結束，強調儆醒等候的必要：忠心的僕人在主不在時仍忠於職守，惡僕卻放縱，結果受重罰。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【末世的預兆是信徒當認識的地圖】</strong><br>耶穌預告了各樣末世的標誌，不是要人恐慌，而是要人有屬靈的清醒。「不要驚慌，因為這些事是必須有的」——面對世局的動盪，信徒有一個穩定的錨點：神在掌管，一切都在祂的計劃中。認識末世預兆不是為了預測日期，而是為了不被欺騙，並在混亂中保持定力。<br><br>
+<strong>2. 【愛心冷淡是末世最大的危機之一】</strong><br>「只因不法的事增多，許多人的愛心才漸漸冷淡了」——這個警告對今日的教會同樣有力。在逼迫、誘惑和屬靈疲憊的環境中，愛心可能在不知不覺中冷卻。「惟有忍耐到底的，必然得救」是對每一個信徒的呼召：在艱難中保持對神、對人的愛，不被環境所吞噬。<br><br>
+<strong>3. 【儆醒等候是每日應有的生命態度】</strong><br>「你們想不到的時候，人子就來了」——這句話不是要製造恐懼，而是邀請信徒以終點為座標，活好每一天。忠心的僕人無論主在不在，都一樣盡職；惡僕只有主人在場才有好表現。信徒的生命應當是，即使沒有人看見、即使得不到獎勵，仍然對神忠心——因為我們活在主再來的盼望中。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>只因不法的事增多</strong>，許多人的愛心才漸漸冷淡了。惟有忍耐到底的，必然得救。」（太24:12-13）</td>
+<td>你有沒有感受到自己的愛心在忙碌或失望中漸漸冷卻？就像長期在冷氣房中體溫會慢慢下降卻不自覺，你願意讓神的愛定期更新你，讓愛心保持溫熱嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>這天國的福音要傳</strong>遍天下，對萬民作見證，然後末期纔來到。」（太24:14）</td>
+<td>你有沒有把參與福音廣傳看作是自己的使命？就像每個接力賽的選手都必須跑好自己的那一棒，你在神賦予你的崗位上，有沒有忠心地傳遞天國的福音？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「所以，<strong>你們也要預備</strong>，因為你們想不到的時候，人子就來了。」（太24:44）</td>
+<td>如果基督今天就再來，你的生命狀態是否預備好了？就像重要考試前的全力準備讓人面對考試時從容不迫，你的日常生活是否以「主隨時可能再來」的心態在活著？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

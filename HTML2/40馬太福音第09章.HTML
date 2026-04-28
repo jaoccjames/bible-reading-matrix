@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">赦罪醫治與呼召罪人</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌上了船，渡過海，來到自己的城裏。</div>
+<div class="verse"><span class="verse-number">2</span>有人用褥子抬着一個癱子到耶穌跟前來。耶穌見他們的信心，就對癱子說：「小子，放心吧！你的罪赦了。」</div>
+<div class="verse"><span class="verse-number">3</span>有幾個文士心裏說：「這個人說僭妄的話了。」</div>
+<div class="verse"><span class="verse-number">4</span>耶穌知道他們的心意，就說：「你們為甚麼心裏懷着惡念呢？</div>
+<div class="verse"><span class="verse-number">5</span>或說：『你的罪赦了』，或說：『你起來行走』，那一樣容易呢？</div>
+<div class="verse"><span class="verse-number">6</span>但要叫你們知道，人子在地上有赦罪的權柄」；就對癱子說：「起來！拿你的褥子回家去吧。」</div>
+<div class="verse"><span class="verse-number">7</span>那人就起來，回家去了。</div>
+<div class="verse"><span class="verse-number">8</span>眾人看見都驚奇，就歸榮耀與神，因為他將這樣的權柄賜給人。</div>
+<div class="verse"><span class="verse-number">9</span>耶穌從那裏往前走，看見一個人名叫馬太，坐在稅關上，就對他說：「你跟從我來。」他就起來跟從了耶穌。</div>
+<div class="verse"><span class="verse-number">10</span>耶穌在屋裏坐席的時候，有好些稅吏和罪人來，與耶穌和他的門徒一同坐席。</div>
+<div class="verse"><span class="verse-number">11</span>法利賽人看見，就對耶穌的門徒說：「你們的先生為甚麼和稅吏並罪人一同喫飯呢？」</div>
+<div class="verse"><span class="verse-number">12</span>耶穌聽見，就說：「康健的人用不着醫生，有病的人纔用得着。</div>
+<div class="verse"><span class="verse-number">13</span>經上說：『我喜愛憐恤，不喜愛祭祀。』這句話的意思，你們且去揣摩。我來本不是召義人，乃是召罪人。」</div>
+<div class="verse"><span class="verse-number">14</span>那時，約翰的門徒來見耶穌，說：「我們和法利賽人常常禁食，你的門徒倒不禁食，這是為甚麼呢？」</div>
+<div class="verse"><span class="verse-number">15</span>耶穌對他們說：「新郎和陪伴之人同在的時候，陪伴之人豈能哀慟呢？但日子將到，新郎要離開他們，那時候他們就要禁食。</div>
+<div class="verse"><span class="verse-number">16</span>沒有人把新布補在舊衣服上；因為所補上的反帶壞了那衣服，破的就更大了。</div>
+<div class="verse"><span class="verse-number">17</span>也沒有人把新酒裝在舊皮袋裏；若是這樣，皮袋就裂開，酒漏出來，連皮袋也壞了。惟獨把新酒裝在新皮袋裏，兩樣就都保全了。」</div>
+<div class="verse"><span class="verse-number">18</span>耶穌說這話的時候，有一個管會堂的來拜他，說：「我女兒剛纔死了，求你去按手在她身上，她就必活了。」</div>
+<div class="verse"><span class="verse-number">19</span>耶穌便起來跟着他去；門徒也跟了去。</div>
+<div class="verse"><span class="verse-number">20</span>有一個女人，患了十二年的血漏，來到耶穌背後，摸他的衣裳繸子；</div>
+<div class="verse"><span class="verse-number">21</span>因為她心裏說：「我只摸他的衣裳，就必痊癒。」</div>
+<div class="verse"><span class="verse-number">22</span>耶穌轉過來，看見她，就說：「女兒，放心！你的信救了你。」從那時候，女人就痊癒了。</div>
+<div class="verse"><span class="verse-number">23</span>耶穌到了管會堂的家裏，看見有吹手，又有許多人亂嚷，</div>
+<div class="verse"><span class="verse-number">24</span>就說：「退去吧！這閨女不是死了，是睡着了。」他們就嗤笑他。</div>
+<div class="verse"><span class="verse-number">25</span>眾人既被攆出，耶穌就進去，拉着閨女的手，閨女便起來了。</div>
+<div class="verse"><span class="verse-number">26</span>於是這風聲傳遍了那地方。</div>
+<div class="verse"><span class="verse-number">27</span>耶穌從那裏往前走，有兩個瞎子跟着他，喊叫說：「大衛的子孫，可憐我們吧！」</div>
+<div class="verse"><span class="verse-number">28</span>耶穌進了房子，瞎子就來到他跟前。耶穌說：「你們信我能作這事嗎？」他們說：「主啊，我們信。」</div>
+<div class="verse"><span class="verse-number">29</span>耶穌就摸他們的眼睛，說：「照着你們的信給你們成全了吧。」</div>
+<div class="verse"><span class="verse-number">30</span>他們的眼睛就開了。耶穌切切的囑咐他們說：「你們要小心，不可叫人知道。」</div>
+<div class="verse"><span class="verse-number">31</span>他們出去，竟把他的名聲傳遍了那地方。</div>
+<div class="verse"><span class="verse-number">32</span>他們出去的時候，有人將鬼所附的一個啞吧帶到耶穌跟前來。</div>
+<div class="verse"><span class="verse-number">33</span>鬼被趕出去，啞吧就說出話來。眾人都希奇，說：「在以色列中，從來沒有見過這樣的事。」</div>
+<div class="verse"><span class="verse-number">34</span>法利賽人卻說：「他是靠着鬼王趕鬼。」</div>
+<div class="verse"><span class="verse-number">35</span>耶穌走遍各城各鄉，在會堂裏教訓人，宣講天國的福音，又醫治各樣的病症。</div>
+<div class="verse"><span class="verse-number">36</span>他看見許多的人，就憐憫他們；因為他們困苦流離，如同羊沒有牧人一般。</div>
+<div class="verse"><span class="verse-number">37</span>於是對門徒說：「要收的莊稼多，作工的人少。</div>
+<div class="verse"><span class="verse-number">38</span>所以，你們當求莊稼的主打發工人出去收他的莊稼。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+馬太福音第9章繼續記載耶穌一連串的神蹟與教導，圍繞「赦罪」與「呼召」兩大主題展開。章首耶穌赦免癱子的罪，引發文士的指控，祂以醫治癱子的神蹟印證赦罪的權柄。接着呼召稅吏馬太，並在其家中與稅吏罪人同席，引來法利賽人批評，耶穌說出：「我來本不是召義人，乃是召罪人。」本章記載多個神蹟：醫治患血漏十二年的女人、使管會堂之女兒復活、醫治兩個瞎子、趕出啞吧身上的鬼。法利賽人卻誣告耶穌靠鬼王趕鬼，顯示宗教領袖的敵意不斷升溫。章末耶穌看見眾人「困苦流離，如同羊沒有牧人」，深感憐憫，呼召門徒為收割的工人禱告。本章以耶穌的憐憫為主線，從個人的赦免到群體的牧養，全面展現祂救主的心腸。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【赦罪是最深層的醫治】</strong><br>耶穌對癱子說的第一句話不是「你好了」，而是「你的罪赦了」。在祂眼中，靈魂的需要比身體的需要更根本。文士們認為這是褻瀆，但耶穌以身體的醫治來印證靈魂赦免的真實。人最深的需要不是健康或成功，而是與神和好。福音的核心永遠是罪得赦免，一切其他的祝福都建立在這個基礎之上。<br><br>
+<strong>2. 【耶穌呼召的是罪人而非義人】</strong><br>馬太是眾人鄙視的稅吏，卻蒙耶穌呼召。耶穌與罪人同席，不是認同他們的罪，而是向他們彰顯憐恤。「康健的人用不着醫生」這句話提醒我們：自以為義的人反而阻礙了恩典的進入。承認自己是罪人、需要救主，才是進入耶穌恩典的第一步。教會不是聖人的展覽館，而是罪人的醫院。<br><br>
+<strong>3. 【耶穌看人如羊沒有牧人心存憐憫】</strong><br>耶穌環顧眾人，不是看見問題或負擔，而是看見困苦流離、需要牧養的羊群，心裏動了憐憫。這是一顆牧者的心。祂的回應不是置之不理，而是呼召門徒為工人禱告。每一個信徒都應培養這樣的眼光——以憐憫的眼睛看待身邊迷失的人，並付諸禱告與行動。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌見他們的信心</strong>，<strong>就對癱子說</strong>：「小子，放心吧！你的罪赦了。」（太9:2）</td>
+<td>你生命中有沒有比身體健康更深的需要——也許是罪疚感、與神的疏離？就像頭痛藥只能治症狀卻無法治病根，你有沒有讓耶穌碰觸你最深的靈魂需要？</td>
+</tr>
+<tr>
+<td><strong>耶穌聽見</strong>，就說：「<strong>康健的人用不着醫</strong>生，有病的人纔用得着。我來本不是召義人，乃是召罪人。」（太9:12）</td>
+<td>你有沒有因為自己「罪太深」或「不夠好」而覺得不配來到耶穌面前？就像越嚴重的病人越需要醫生，你知道耶穌最歡迎的正是承認自己需要幫助的人嗎？</td>
+</tr>
+<tr>
+<td><strong>他看見許多的人</strong>，<strong>就憐憫他們</strong>；因為他們困苦流離，如同羊沒有牧人一般。（太9:36）</td>
+<td>當你看見身邊不信主的人時，你心裡的感受是什麼？就像看見街上迷路的孩子會本能地想幫助，你有沒有被神的憐憫感動，為身邊迷失的人禱告並採取行動？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

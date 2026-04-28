@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>羅馬書第14章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+羅馬書第14章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">接納軟弱的弟兄與不絆倒人</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>信心軟弱的，你們要接納，但不要辯論所疑惑的事。</div>
+<div class="verse"><span class="verse-number">2</span>有人信百物都可吃；但那軟弱的，只吃蔬菜。</div>
+<div class="verse"><span class="verse-number">3</span>吃的人不可輕看不吃的人；不吃的人不可論斷吃的人；因為神已經收納他了。</div>
+<div class="verse"><span class="verse-number">4</span>你是誰，竟論斷別人的僕人呢？他或站住，或跌倒，自有他的主人在；而且他也必要站住，因為主能使他站住。</div>
+<div class="verse"><span class="verse-number">5</span>有人看這日比那日強；有人看日日都是一樣。只是各人心裏要意見堅定。</div>
+<div class="verse"><span class="verse-number">6</span>守日的人是為主守的；吃的人是為主吃的，因他感謝神；不吃的人是為主不吃的，也感謝神。</div>
+<div class="verse"><span class="verse-number">7</span>我們沒有一個人為自己活，也沒有一個人為自己死。</div>
+<div class="verse"><span class="verse-number">8</span>我們若活着，是為主而活；若死了，是為主而死。所以，我們或活或死總是主的人。</div>
+<div class="verse"><span class="verse-number">9</span>因此基督死了又活了，為要作死人並活人的主。</div>
+<div class="verse"><span class="verse-number">10</span>你這個人，為甚麼論斷弟兄呢？又為甚麼輕看弟兄呢？因我們都要站在神的臺前。</div>
+<div class="verse"><span class="verse-number">11</span>經上寫着：主說：我憑着我的永生起誓，萬膝必向我跪拜；萬口必向我承認。</div>
+<div class="verse"><span class="verse-number">12</span>這樣看來，我們各人必要將自己的事在神面前說明。</div>
+<div class="verse"><span class="verse-number">13</span>所以，我們不可再彼此論斷，寧可定意誰也不給弟兄放下絆腳跌人之物。</div>
+<div class="verse"><span class="verse-number">14</span>我憑着主耶穌確知深信，凡物本來沒有不潔淨的；惟獨人以為不潔淨的，在他就不潔淨了。</div>
+<div class="verse"><span class="verse-number">15</span>你若因食物叫弟兄憂愁，就不是按着愛人的道理行。基督已經替他死，你不可因你的食物叫他敗壞。</div>
+<div class="verse"><span class="verse-number">16</span>不可叫你的善被人毀謗；</div>
+<div class="verse"><span class="verse-number">17</span>因為神的國不在乎吃喝，只在乎公義、和平，並聖靈中的喜樂。</div>
+<div class="verse"><span class="verse-number">18</span>在這幾樣上服事基督的，就為神所喜悅，又為人所稱許。</div>
+<div class="verse"><span class="verse-number">19</span>所以，我們務要追求和睦的事與彼此建立德行的事。</div>
+<div class="verse"><span class="verse-number">20</span>不可因食物毀壞神的工程。凡物固然潔淨，但有人因食物叫人跌倒，就是他的罪了。</div>
+<div class="verse"><span class="verse-number">21</span>無論是吃肉，是喝酒，是甚麼別的事，叫弟兄跌倒，一概不作纔好。</div>
+<div class="verse"><span class="verse-number">22</span>你有信心，就當在神面前守着。人在自己以為可行的事上能不自責，就有福了。</div>
+<div class="verse"><span class="verse-number">23</span>若有疑心而吃的，就必有罪，因為他吃不是出於信心。凡不出於信心的都是罪。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+羅馬書第14章處理教會內的「良心軟弱」問題，以寬容和不絆倒人為核心。「信心軟弱的，你們要接納，但不要辯論所疑惑的事」——有人吃一切，有人只吃蔬菜；有人守日，有人日日一樣——保羅呼籲接納，不論斷，因為「神已經收納他了」。「你是誰，竟論斷別人的僕人呢？他或站住，或跌倒，自有他的主人在」——每個信徒最終對神負責，不對其他信徒負責。「我們沒有一個人為自己活……我們或活或死總是主的人」——信仰生活的整體方向是以主為中心，不是以自我為中心。論斷弟兄的問題：「我們都要站在神的臺前」，「我們各人必要將自己的事在神面前說明」——每人自己的賬，不需要替別人報告。不要放下絆腳石：基督已替弟兄死，「你不可因你的食物叫他敗壞」；「神的國不在乎吃喝，只在乎公義、和平，並聖靈中的喜樂」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【在次要問題上接納，不論斷】</strong><br>「信心軟弱的，你們要接納，但不要辯論所疑惑的事」——教會內有不同成熟程度的信徒，在非核心的信仰問題上（如飲食、節日），保羅呼籲寬容和接納。「神已經收納他了」——神接納了他，我們沒有資格拒絕他。在核心教義上堅持，在非核心文化和習慣問題上謙讓，這是成熟教會的標誌。<br><br>
+<strong>2. 【不要成為弟兄跌倒的原因】</strong><br>「不可叫你的善被人毀謗；不可因食物毀壞神的工程」——個人的自由可以合法，但若使用自由讓弟兄跌倒，就失去了使用自由的資格。愛的考量高於個人的權利考量。「叫弟兄跌倒，一概不作才好」——不是說那些事不可以做，而是在特定的情況下，為了愛弟兄，寧可不做。<br><br>
+<strong>3. 【神的國的本質是公義、和平、聖靈的喜樂】</strong><br>「神的國不在乎吃喝，只在乎公義、和平，並聖靈中的喜樂」——這句話為一切次要的爭議提供了正確的框架。教會不應為飲食、節日、文化習俗而分裂；神國的本質是屬靈的，不是外在規條的。把精力放在建立「公義、和平、喜樂」的群體上，比在次要問題上爭論更符合神國的本質。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>你是誰</strong>，竟論斷別人的僕人呢？他或站住，或跌倒，自有他的主人在；而且他也必要站住，因為主能使他站住。」（羅14:4）</td>
+<td>你有沒有在教會或信仰群體中，對他人的靈命決定和信仰習慣有論斷的傾向？就像管好自己的事而不多管別人的是成熟的品格，你有沒有學習把對他人信仰的評判交還給那位真正的主人——神？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>神的國不在乎吃喝</strong>，只在乎公義、和平，並聖靈中的喜樂。在這幾樣上服事基督的，就為神所喜悅，又為人所稱許。」（羅14:17-18）</td>
+<td>你在教會群體中關注的是否是神國真正的核心——公義、和平、聖靈中的喜樂——還是常常在次要的問題上花費精力？就像一個球隊若專注在戰術爭論而非訓練，很難贏得比賽，你有沒有把你的能量放在建立真正重要的屬靈價值上？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我們各人必要將自</strong>己的事在神面前說明。所以，我們不可再彼此論斷，寧可定意誰也不給弟兄放下絆腳跌人之物。」（羅14:12-13）</td>
+<td>你有沒有問過自己「我的行為有沒有使別人更容易跌倒？」，並且願意為了不絆倒弟兄而放棄你個人的某些自由？就像一個有花生過敏朋友的人在朋友在場時不吃花生，你有沒有讓對弟兄的愛影響你在群體中的行為選擇？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

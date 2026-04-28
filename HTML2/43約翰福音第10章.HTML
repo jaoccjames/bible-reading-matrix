@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰福音第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰福音第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">好牧人的比喻與永恆的保守</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「我實實在在的告訴你們，人進羊圈，不從門進去，倒從別處爬進去，那人就是賊，就是強盜。</div>
+<div class="verse"><span class="verse-number">2</span>從門進去的，才是羊的牧人。</div>
+<div class="verse"><span class="verse-number">3</span>看門的就給他開門；羊也聽他的聲音。他按着名叫自己的羊，把羊領出來。</div>
+<div class="verse"><span class="verse-number">4</span>既放出自己的羊來，就在前頭走，羊也跟着他，因為認得他的聲音。</div>
+<div class="verse"><span class="verse-number">5</span>羊不跟着生人；因為不認得他的聲音。必要逃跑。」</div>
+<div class="verse"><span class="verse-number">6</span>耶穌將這比喻告訴他們，但他們不明白所說的是甚麼意思。</div>
+<div class="verse"><span class="verse-number">7</span>所以，耶穌又對他們說：「我實實在在的告訴你們，我就是羊的門。</div>
+<div class="verse"><span class="verse-number">8</span>凡在我以先來的都是賊，是強盜；羊卻不聽他們。</div>
+<div class="verse"><span class="verse-number">9</span>我就是門；凡從我進來的，必然得救，並且出入得草吃。</div>
+<div class="verse"><span class="verse-number">10</span>盜賊來，無非要偷竊，殺害，毀壞；我來了，是要叫羊〔或作：人〕得生命，並且得的更豐盛。</div>
+<div class="verse"><span class="verse-number">11</span>我是好牧人；好牧人為羊捨命。</div>
+<div class="verse"><span class="verse-number">12</span>若是雇工，不是牧人，羊也不是他自己的，他看見狼來，就撇下羊逃走；狼抓住羊，趕散了羊群。</div>
+<div class="verse"><span class="verse-number">13</span>雇工逃走，因他是雇工，並不顧念羊。</div>
+<div class="verse"><span class="verse-number">14</span>我是好牧人；我認識我的羊，我的羊也認識我，</div>
+<div class="verse"><span class="verse-number">15</span>正如父認識我，我也認識父一樣；並且我為羊捨命。</div>
+<div class="verse"><span class="verse-number">16</span>我另外有羊，不是這圈裏的；我必須領他們來，他們也要聽我的聲音，並且要合成一群，歸一個牧人了。</div>
+<div class="verse"><span class="verse-number">17</span>我父愛我；因我將命捨去，好再取回來。</div>
+<div class="verse"><span class="verse-number">18</span>沒有人奪我的命去，是我自己捨的。我有權柄捨了，也有權柄取回來。這是我從我父所受的命令。」</div>
+<div class="verse"><span class="verse-number">19</span>猶太人為這些話又起了紛爭。</div>
+<div class="verse"><span class="verse-number">20</span>內中有好些人說：「他是被鬼附着，而且瘋了，為甚麼聽他呢？」</div>
+<div class="verse"><span class="verse-number">21</span>又有人說：「這不是鬼附之人所說的話。鬼豈能叫瞎子的眼睛開了呢？」</div>
+<div class="verse"><span class="verse-number">22</span>在耶路撒冷有修殿節，是冬天的時候。</div>
+<div class="verse"><span class="verse-number">23</span>耶穌在殿裏所羅門的廊下行走。</div>
+<div class="verse"><span class="verse-number">24</span>猶太人圍着他，說：「你叫我們猶疑不定到幾時呢？你若是基督，就明明的告訴我們。」</div>
+<div class="verse"><span class="verse-number">25</span>耶穌回答說：「我已經告訴你們，你們不信。我奉我父之名所行的事可以為我作見證；</div>
+<div class="verse"><span class="verse-number">26</span>只是你們不信，因為你們不是我的羊。</div>
+<div class="verse"><span class="verse-number">27</span>我的羊聽我的聲音，我也認識他們，他們也跟着我。</div>
+<div class="verse"><span class="verse-number">28</span>我又賜給他們永生；他們永不滅亡，誰也不能從我手裏把他們奪去。</div>
+<div class="verse"><span class="verse-number">29</span>我父把羊賜給我，他比萬有都大，誰也不能從我父手裏把他們奪去。</div>
+<div class="verse"><span class="verse-number">30</span>我與父原為一。」</div>
+<div class="verse"><span class="verse-number">31</span>猶太人又拿起石頭來要打他。</div>
+<div class="verse"><span class="verse-number">32</span>耶穌對他們說：「我從父顯出許多善事給你們看，你們是為那一件拿石頭打我呢？」</div>
+<div class="verse"><span class="verse-number">33</span>猶太人回答說：「我們不是為善事拿石頭打你，是為你說僭妄的話；又為你是個人，反將自己當作神。」</div>
+<div class="verse"><span class="verse-number">34</span>耶穌說：「你們的律法上豈不是寫着『我曾說你們是神』麼？</div>
+<div class="verse"><span class="verse-number">35</span>經上的話是不能廢的；若那些承受神道的人尚且稱為神，</div>
+<div class="verse"><span class="verse-number">36</span>父所分別為聖、又差到世間來的，他自稱是神的兒子，你們還向他說『你說僭妄的話』麼？</div>
+<div class="verse"><span class="verse-number">37</span>我若不行我父的事，你們就不必信我；</div>
+<div class="verse"><span class="verse-number">38</span>我若行了，你們縱然不信我，也當信這些事，叫你們又知道又明白父在我裏面，我也在父裏面。」</div>
+<div class="verse"><span class="verse-number">39</span>他們又要拿他，他卻逃出他們的手走了。</div>
+<div class="verse"><span class="verse-number">40</span>耶穌又往約但河外去，到了約翰起初施洗的地方，就住在那裏。</div>
+<div class="verse"><span class="verse-number">41</span>有許多人來到他那裏。他們說：「約翰一件神蹟沒有行過，但約翰指着這人所說的一切話都是真的。」</div>
+<div class="verse"><span class="verse-number">42</span>在那裏，信耶穌的人就多了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約翰福音第10章緊接第9章，宣告耶穌是好牧人。比喻先說羊圈和牧人：從門進去的才是牧人，羊認得牧人的聲音跟從他。耶穌解釋說「我就是羊的門；凡從我進來的，必然得救，並且出入得草吃」。「盜賊來，無非要偷竊，殺害，毀壞；我來了，是要叫羊得生命，並且得的更豐盛。」「我是好牧人；好牧人為羊捨命」——雇工見狼就逃，好牧人捨命守護。「我認識我的羊，我的羊也認識我，正如父認識我，我也認識父一樣。」耶穌說還有別的羊（外邦人）要領來，合成一群歸一個牧人。修殿節，猶太人問耶穌是否基督，耶穌說「你們不信，因為你們不是我的羊」；「我的羊聽我的聲音，我也認識他們，他們也跟着我；我又賜給他們永生；他們永不滅亡，誰也不能從我手裏把他們奪去。我父……誰也不能從我父手裏把他們奪去。我與父原為一。」
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【耶穌是門：惟一進入豐盛生命的通道】</strong><br>「我就是門；凡從我進來的，必然得救，並且出入得草吃」——門的意象說明了獨一性和保護性。從門進去的得着安全和滋養；不從門進去的是賊和強盜。「我來了，是要叫羊得生命，並且得的更豐盛」——耶穌所賜的生命不只是存在，而是豐盛、充實、有意義的生命。今天許多人尋找豐盛的生命，卻從各處的「破口」進入，耶穌說那些是賊的道路。<br><br>
+<strong>2. 【好牧人捨命，雇工逃跑】</strong><br>好牧人和雇工的對比在於動機和行動：雇工為薪資而牧羊，見危險就逃；好牧人因為愛羊而牧羊，為羊捨命。「我認識我的羊」——這個認識是個人的、深入的，如同父認識子、子認識父。神對每一個信徒的認識不是群體性的，而是個別的、親密的。每一個信徒都是耶穌個別認識、個別呼叫名字的羊。<br><br>
+<strong>3. 【「永不滅亡，誰也不能奪去」是雙重保守】</strong><br>「他們永不滅亡，誰也不能從我手裏把他們奪去」；「誰也不能從我父手裏把他們奪去」——雙手的保護：子的手和父的手。這個保守應許的根基是「我與父原為一」，是神性的保守，不是人力可以撼動的。信徒的確據建立在這個鐵一般的應許上，不是自己的握持，而是神的握持。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>盜賊來</strong>，無非要偷竊，殺害，毀壞；我來了，是要叫羊得生命，並且得的更豐盛。」（約10:10）</td>
+<td>你現在的生命有沒有「豐盛」的特質——不只是存活，而是真實的意義、喜樂和飽足？就像健康不只是不生病而是充滿活力，你有沒有在與耶穌的關係中經歷那種豐盛的生命？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>我是好牧人</strong>；好牧人為羊捨命……我認識我的羊，我的羊也認識我。」（約10:11,14）</td>
+<td>你有沒有培養「認識牧人聲音」的能力——在日常生活中辨別耶穌的引導，與其他的聲音分辨？就像認識家人的聲音在電話裏不需多說，你與耶穌的關係是否親密到讓你能在靈裏辨認祂的聲音？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>我又賜給他們永生</strong>；他們永不滅亡，誰也不能從我手裏把他們奪去。」（約10:28）</td>
+<td>你有沒有讓耶穌「雙手保守」你的確據，成為你生命中的安全感基礎？就像知道被強壯的人保護讓人行路有安全感，你願意把這個「永不滅亡、誰也不能奪去」的應許作為每天生命的確信嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

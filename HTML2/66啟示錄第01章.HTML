@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>啟示錄第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+啟示錄第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">基督的啟示與七教會的使命</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌基督的啟示，就是神賜給他，叫他將必要快成的事指示他的眾僕人。他就差遣使者曉諭他的僕人約翰。</div>
+<div class="verse"><span class="verse-number">2</span>約翰便將神的道和耶穌基督的見證，凡自己所看見的都證明出來。</div>
+<div class="verse"><span class="verse-number">3</span>念這書上預言的和那些聽見又遵守其中所記載的，都是有福的，因為日期近了。</div>
+<div class="verse"><span class="verse-number">4</span>約翰寫信給亞西亞的七個教會。但願從那昔在、今在、以後永在的神，和他寶座前的七靈，</div>
+<div class="verse"><span class="verse-number">5</span>並那誠實作見證的、從死裏首先復活、為世上君王元首的耶穌基督，有恩惠、平安歸與你們！他愛我們，用自己的血使我們脫離〔有古卷作：洗去〕罪惡，</div>
+<div class="verse"><span class="verse-number">6</span>又使我們成為國民，作他父神的祭司。但願榮耀、權能歸給他，直到永永遠遠。阿們！</div>
+<div class="verse"><span class="verse-number">7</span>看哪，他駕雲降臨！眾目要看見他，連刺他的人也要看見他；地上的萬族都要因他哀哭。這話是真實的。阿們！</div>
+<div class="verse"><span class="verse-number">8</span>主神說：「我是阿拉法，我是俄梅戛（阿拉法，俄梅戛：乃希臘字母首末二字），是昔在、今在、以後永在的全能者。」</div>
+<div class="verse"><span class="verse-number">9</span>我約翰就是你們的弟兄，和你們在耶穌的患難、國度、忍耐裏一同有分，為神的道，並為給耶穌作的見證，曾在那名叫拔摩的海島上。</div>
+<div class="verse"><span class="verse-number">10</span>當主日，我被聖靈感動，聽見在我後面有大聲音如吹號，說：</div>
+<div class="verse"><span class="verse-number">11</span>「你所看見的當寫在書上，達與以弗所、士每拿、別迦摩、推雅推喇、撒狄、非拉鐵非、老底嘉、那七個教會。」</div>
+<div class="verse"><span class="verse-number">12</span>我轉過身來，要看是誰發聲與我說話；既轉過來，就看見七個金燈臺。</div>
+<div class="verse"><span class="verse-number">13</span>燈臺中間有一位好像人子，身穿長衣，直垂到腳，胸間束着金帶。</div>
+<div class="verse"><span class="verse-number">14</span>他的頭與髮皆白，如白羊毛，如雪；眼目如同火焰；</div>
+<div class="verse"><span class="verse-number">15</span>腳好像在爐中鍛煉光明的銅；聲音如同眾水的聲音。</div>
+<div class="verse"><span class="verse-number">16</span>他右手拿着七星，從他口中出來一把兩刃的利劍；面貌如同烈日放光。</div>
+<div class="verse"><span class="verse-number">17</span>我一看見，就仆倒在他腳前，像死了一樣。他用右手按着我，說：「不要懼怕！我是首先的，我是末後的，</div>
+<div class="verse"><span class="verse-number">18</span>又是那存活的；我曾死過，現在又活了，直活到永永遠遠；並且拿着死亡和陰間的鑰匙。</div>
+<div class="verse"><span class="verse-number">19</span>所以你要把所看見的，和現在的事，並將來必成的事，都寫出來。</div>
+<div class="verse"><span class="verse-number">20</span>論到你所看見、在我右手中的七星和七個金燈臺的奧祕，那七星就是七個教會的使者，七燈臺就是七個教會。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+啟示錄第1章是全書的序言，記載約翰在拔摩海島上所領受的異象，以及對升天基督的震撼描繪。「耶穌基督的啟示，就是神賜給他，叫他將必要快成的事指示他的眾僕人」——啟示的來源是神，透過基督、天使、到約翰。「念這書上預言的和那些聽見又遵守其中所記載的，都是有福的」——讀啟示錄有特別的福氣。「我是阿拉法，我是俄梅戛，是昔在、今在、以後永在的全能者」——神的永恆性宣告。約翰在主日被聖靈感動，見到升天的基督：「身穿長衣，直垂到腳，胸間束着金帶……眼目如同火焰……腳好像在爐中鍛煉光明的銅……面貌如同烈日放光」——壓倒性的榮耀形象。基督的自我介紹：「我是首先的，我是末後的，又是那存活的；我曾死過，現在又活了，直活到永永遠遠；並且拿着死亡和陰間的鑰匙」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【啟示錄的讀者有特別的福氣】</strong><br>「念這書上預言的和那些聽見又遵守其中所記載的，都是有福的」——「遵守」是蒙福的條件：不只是讀或聽，而是遵守。啟示錄不是神學謎題，而是給信徒在患難中持守信仰的牧養書信。讀而遵守才能領受所應許的福氣。<br><br>
+<strong>2. 【升天基督的榮耀壓倒一切】</strong><br>「我一看見，就仆倒在他腳前，像死了一樣」——約翰是基督最親密的門徒，在地上時見過耶穌的各種形態；但升天得榮耀的基督，連他也只能仆倒。這說明信仰不只是和一位「朋友」的關係，更是面對全能、全榮之主的敬畏。「不要懼怕！」——基督的溫柔在榮耀中仍然存在。<br><br>
+<strong>3. 【「拿着死亡和陰間的鑰匙」】</strong><br>「我曾死過，現在又活了，直活到永永遠遠；並且拿着死亡和陰間的鑰匙」——這是給在迫害中面對死亡威脅的信徒最大的安慰：掌管死亡的不是羅馬皇帝，不是魔鬼，而是那已經勝過死亡的基督。死亡的鑰匙在祂手裏，信徒無需懼怕。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>啟示錄說</strong>：「<strong>我是阿拉法</strong>，我是俄梅戛，是昔在、今在、以後永在的全能者。」（啟1:8）</td>
+<td>你有沒有讓「昔在、今在、以後永在的全能者」這個宣告成為你面對任何不確定未來時的確信根基？就像知道一個永遠可靠的嚮導讓旅行者不懼怕未知的路，你有沒有讓對神永恆性的確信帶出你面對將來的平靜？</td>
+</tr>
+<tr>
+<td><strong>啟示錄說</strong>：「<strong>我曾死過</strong>，現在又活了，直活到永永遠遠；並且拿着死亡和陰間的鑰匙。」（啟1:18）</td>
+<td>你有沒有讓「基督拿着死亡和陰間的鑰匙」這個確信，解除你對死亡和未知的恐懼，讓你能坦然面對生命的終結和不確定？就像知道關鍵的控制權在可靠的手中讓人放心，你有沒有讓基督對死亡的掌管帶出你無所懼怕的信仰姿態？</td>
+</tr>
+<tr>
+<td><strong>啟示錄說</strong>：「<strong>念這書上預言的和</strong>那些聽見又遵守其中所記載的，都是有福的，因為日期近了。」（啟1:3）</td>
+<td>你有沒有不只是閱讀啟示錄，也讓它的信息——對基督的敬畏、在患難中的忍耐、對神國的盼望——真實地進入你的生命和行為？就像醫療指引只有被遵行才能帶來健康，你有沒有讓啟示錄的教訓在你的信仰生活中產生具體的效果？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多前書第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多前書第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">婚姻、獨身與各人的蒙召</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>論到你們信上所提的事，我說男不近女倒好。</div>
+<div class="verse"><span class="verse-number">2</span>但要免淫亂的事，男子當各有自己的妻子；女子也當各有自己的丈夫。</div>
+<div class="verse"><span class="verse-number">3</span>丈夫當用合宜之分待妻子；妻子待丈夫也要如此。</div>
+<div class="verse"><span class="verse-number">4</span>妻子沒有權柄主張自己的身子，乃在丈夫；丈夫也沒有權柄主張自己的身子，乃在妻子。</div>
+<div class="verse"><span class="verse-number">5</span>夫妻不可彼此虧負，除非兩相情願，暫時分房，為要專心禱告方可；以後仍要同房，免得撒但趁着你們情不自禁，引誘你們。</div>
+<div class="verse"><span class="verse-number">6</span>我說這話，原是准你們的，不是命你們的。</div>
+<div class="verse"><span class="verse-number">7</span>我願意眾人像我一樣；只是各人領受神的恩賜，一個是這樣，一個是那樣。</div>
+<div class="verse"><span class="verse-number">8</span>我對着沒有嫁娶的和寡婦說，若他們常像我就好。</div>
+<div class="verse"><span class="verse-number">9</span>倘若自己禁止不住，就可以嫁娶。與其慾火攻心，倒不如嫁娶為妙。</div>
+<div class="verse"><span class="verse-number">10</span>至於那已經嫁娶的，我吩咐他們；其實不是我吩咐，乃是主吩咐說：妻子不可離開丈夫，</div>
+<div class="verse"><span class="verse-number">11</span>若是離開了，不可再嫁，或是仍同丈夫和好。丈夫也不可離棄妻子。</div>
+<div class="verse"><span class="verse-number">12</span>我對其餘的人說（不是主說）：倘若某弟兄有不信的妻子，妻子也情願和他同住，他就不要離棄妻子。</div>
+<div class="verse"><span class="verse-number">13</span>妻子有不信的丈夫，丈夫也情願和她同住，她就不要離棄丈夫。</div>
+<div class="verse"><span class="verse-number">14</span>因為不信的丈夫就因着妻子成了聖潔，並且不信的妻子就因着丈夫〔原文作弟兄〕成了聖潔；不然，你們的兒女就不潔淨，但如今他們是聖潔的了。</div>
+<div class="verse"><span class="verse-number">15</span>倘若那不信的人要離去，就由他離去吧！無論是弟兄，是姐妹，遇着這樣的事都不必拘束。神召我們原是要我們和睦。</div>
+<div class="verse"><span class="verse-number">16</span>你這作妻子的，怎麼知道不能救你的丈夫呢？你這作丈夫的，怎麼知道不能救你的妻子呢？</div>
+<div class="verse"><span class="verse-number">17</span>只要照主所分給各人的，和神所召各人的而行。我吩咐各教會都是這樣。</div>
+<div class="verse"><span class="verse-number">18</span>有人已受割禮蒙召呢，就不要廢割禮；有人未受割禮蒙召呢，就不要受割禮。</div>
+<div class="verse"><span class="verse-number">19</span>受割禮算不得甚麼，不受割禮也算不得甚麼，只要守神的誡命就是了。</div>
+<div class="verse"><span class="verse-number">20</span>各人蒙召的時候是甚麼身分，仍要守住這身分。</div>
+<div class="verse"><span class="verse-number">21</span>你是作奴隸蒙召的嗎？不要因此憂慮；若能以自由，就求自由更好。</div>
+<div class="verse"><span class="verse-number">22</span>因為作奴僕蒙召於主的，就是主所釋放的人；作自由之人蒙召的，就是基督的奴僕。</div>
+<div class="verse"><span class="verse-number">23</span>你們是重價買來的，不要作人的奴僕。</div>
+<div class="verse"><span class="verse-number">24</span>弟兄們，你們各人蒙召的時候是甚麼身分，仍要在神面前守住這身分。</div>
+<div class="verse"><span class="verse-number">25</span>論到童身的人，我沒有主的命令，但我既蒙主憐恤能作忠心的人，就把自己的意見告訴你們。</div>
+<div class="verse"><span class="verse-number">26</span>因現今的艱難，據我看來，人不如守素安常纔好。</div>
+<div class="verse"><span class="verse-number">27</span>你有妻子纏着呢，就不要求脫離；你沒有妻子纏着呢，就不要求妻子。</div>
+<div class="verse"><span class="verse-number">28</span>你若娶妻，並不是犯罪；處女若出嫁，也不是犯罪。然而這等人肉身必受苦難，我卻願意你們免這苦難。</div>
+<div class="verse"><span class="verse-number">29</span>弟兄們，我對你們說，時候減少了。從此以後，那有妻子的，要像沒有妻子；</div>
+<div class="verse"><span class="verse-number">30</span>哀哭的，要像不哀哭；快樂的，要像不快樂；置買的，要像無有所得；</div>
+<div class="verse"><span class="verse-number">31</span>用世物的，要像不用世物，因為這世界的樣子將要過去了。</div>
+<div class="verse"><span class="verse-number">32</span>我願你們無所掛慮。沒有娶妻的，是為主的事掛慮，想怎樣叫主喜悅。</div>
+<div class="verse"><span class="verse-number">33</span>娶了妻的，是為世上的事掛慮，想怎樣叫妻子喜悅。</div>
+<div class="verse"><span class="verse-number">34</span>婦人和處女也有分別。沒有出嫁的，是為主的事掛慮，要身體、靈魂都聖潔；已經出嫁的，是為世上的事掛慮，想怎樣叫丈夫喜悅。</div>
+<div class="verse"><span class="verse-number">35</span>我說這話是為你們的益處，不是要牢籠你們，乃是要叫你們行合宜的事，得以殷勤服事主，沒有分心的事。</div>
+<div class="verse"><span class="verse-number">36</span>若有人以為自己待他的女兒不合宜，女兒也過了年歲，事又當行，他就可隨意辦理，不算有罪，叫二人成親就是了。</div>
+<div class="verse"><span class="verse-number">37</span>倘若人心裏堅定，沒有不得已的事，並且由得自己作主，心裏又決定了留下女兒不出嫁，如此行也好。</div>
+<div class="verse"><span class="verse-number">38</span>這樣看來，叫自己的女兒出嫁是好，不叫她出嫁更是好。</div>
+<div class="verse"><span class="verse-number">39</span>丈夫活着的時候，妻子是被約束的；丈夫若死了，妻子就可以自由，隨意再嫁，只是要嫁這在主裏面的人。</div>
+<div class="verse"><span class="verse-number">40</span>然而按我的意見，若常守節更有福氣。我也想自己是被神的靈感動了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+哥林多前書第7章是保羅對哥林多人關於婚姻和獨身問題的詳細回應，充滿實際的牧養智慧。章首承認「男不近女倒好」，但立即補充「要免淫亂，男子當各有自己的妻子」，婚姻是防止性罪的神聖制度。婚姻中的互相義務：「丈夫當用合宜之分待妻子；妻子待丈夫也要如此」，身體不是自己完全主張的。「我願意眾人像我一樣」（獨身）——保羅的個人選擇。論離婚：主的命令是妻子不可離開丈夫，丈夫不可離棄妻子；若不信的一方要離去，就由他離去，「神召我們原是要我們和睦」。核心原則：「各人蒙召的時候是甚麼身分，仍要守住這身分」——不要因信仰而強烈改變外在處境（割禮問題、奴隸問題）。論獨身：「現今的艱難」使保羅傾向獨身，但這不是命令。「時候減少了」——末世的緊迫感使保羅希望信徒減少對世俗事務的掛慮，專心服事主。結論：娶妻不是罪，獨身更好是為了「殷勤服事主，沒有分心的事」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【婚姻是神聖的制度，有互相義務】</strong><br>「丈夫當用合宜之分待妻子；妻子待丈夫也要如此」——婚姻不是個人的單方面享受，而是互相服事和委身的關係。「妻子沒有權柄主張自己的身子，乃在丈夫；丈夫也沒有權柄主張自己的身子，乃在妻子」——這種互相屬於彼此的關係，強調的是服事對方，而非控制對方。<br><br>
+<strong>2. 【「各人蒙召的時候是甚麼身分，仍要守住」】</strong><br>「你們是重價買來的，不要作人的奴僕」——信仰的自由是內在的，不必依賴外在處境的改變。這個原則不是說永不改變處境，而是說信仰的意義不依賴外在地位，在任何處境中都可以完整地服事神。獨身、已婚、自由人、奴隸——都在神的呼召中有其完整的服事可能。<br><br>
+<strong>3. 【獨身的禮物是為了「沒有分心地服事主」】</strong><br>「殷勤服事主，沒有分心的事」——保羅高看獨身，不是因為婚姻不好，而是因為獨身者有更少的「世上掛慮」，可以把更多精力放在主的事上。獨身是恩賜，不是命令；婚姻也是恩賜，不是缺陷。「各人領受神的恩賜，一個是這樣，一個是那樣」——尊重不同的呼召和恩賜。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>丈夫當用合宜之分</strong>待妻子；妻子待丈夫也要如此。」（林前7:3）</td>
+<td>你有沒有在婚姻中以「互相服事」而非「個人享受」的心態對待你的配偶？就像一段關係中雙方都以對方為先，就自然地彼此滿足，你有沒有讓服事對方的心態成為你婚姻生活的主旋律？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>各人蒙召的時候是</strong>甚麼身分，仍要守住這身分……你們是重價買來的，不要作人的奴僕。」（林前7:20,23）</td>
+<td>你有沒有學習在你當前的處境——單身、已婚、學生、職場人士——全心服事神，而非以為需要先改變處境才能真正事奉？就像一位醫生在手術室裏服事神，一位父母在家中服事神，你有沒有讓你當下的身分成為完整服事的場域？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我說這話是為你們</strong>的益處，不是要牢籠你們，乃是要叫你們行合宜的事，得以殷勤服事主，沒有分心的事。」（林前7:35）</td>
+<td>你有沒有問過自己：在你當前的生命處境中，哪些是「分心的事」，哪些是真正服事主的核心？就像一位奧運選手需要排除一切不必要的干擾才能達到最佳狀態，你有沒有讓「殷勤服事主，沒有分心」成為你生命選擇的指引？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第19章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第19章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">婚姻觀、兒童與富足青年</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌說完了這些話，就離開加利利，來到猶太的境界約但河外。</div>
+<div class="verse"><span class="verse-number">2</span>有許多人跟着他，他就在那裏把他們的病人治好了。</div>
+<div class="verse"><span class="verse-number">3</span>有法利賽人來試探耶穌，說：「人無論甚麼緣故都可以休妻麼？」</div>
+<div class="verse"><span class="verse-number">4</span>耶穌回答說：「那起初造人的，是造男造女，</div>
+<div class="verse"><span class="verse-number">5</span>並且說：『因此，人要離開父母，與妻子連合，二人成為一體。』這經你們沒有念過嗎？</div>
+<div class="verse"><span class="verse-number">6</span>既然如此，夫妻不再是兩個人，乃是一體的了。所以，神配合的，人不可分開。」</div>
+<div class="verse"><span class="verse-number">7</span>法利賽人說：「這樣，摩西為甚麼吩咐給妻子休書，就可以休她呢？」</div>
+<div class="verse"><span class="verse-number">8</span>耶穌說：「摩西因為你們的心硬，所以許你們休妻，但起初並不是這樣。</div>
+<div class="verse"><span class="verse-number">9</span>我告訴你們，凡休妻另娶的，若不是為淫亂的緣故，就是犯姦淫了；有人娶那被休的婦人，也是犯姦淫了。」</div>
+<div class="verse"><span class="verse-number">10</span>門徒對耶穌說：「人和妻子既是這樣，倒不如不娶。」</div>
+<div class="verse"><span class="verse-number">11</span>耶穌說：「這話不是人都能領受的，惟獨賜給誰，誰纔能領受。</div>
+<div class="verse"><span class="verse-number">12</span>因為有生來是閹人，也有被人閹的，並有為天國的緣故自閹的。這話誰能領受就可以領受。」</div>
+<div class="verse"><span class="verse-number">13</span>那時，有人帶着小孩子來見耶穌，要耶穌給他們按手禱告，門徒就責備那些人。</div>
+<div class="verse"><span class="verse-number">14</span>耶穌說：「讓小孩子到我這裏來，不要禁止他們；因為在天國的，正是這樣的人。」</div>
+<div class="verse"><span class="verse-number">15</span>耶穌給他們按手，就離開那地方去了。</div>
+<div class="verse"><span class="verse-number">16</span>有一個人來見耶穌，說：「夫子〔有古卷作：良善的夫子〕，我該作甚麼善事才能得永生？」</div>
+<div class="verse"><span class="verse-number">17</span>耶穌對他說：「你為甚麼以善事問我呢？只有一位是善的〔有古卷作：你為甚麼稱我是良善的？除了神以外，沒有一個良善的〕。你若要進入永生，就當遵守誡命。」</div>
+<div class="verse"><span class="verse-number">18</span>他說：「甚麼誡命？」耶穌說：「就是不可殺人；不可姦淫；不可偷盜；不可作假見證；</div>
+<div class="verse"><span class="verse-number">19</span>當孝敬父母，又當愛人如己。」</div>
+<div class="verse"><span class="verse-number">20</span>那少年人說：「這一切我都遵守了，還缺少甚麼呢？」</div>
+<div class="verse"><span class="verse-number">21</span>耶穌說：「你若願意作完全人，可去變賣你所有的，分給窮人，就必有財寶在天上；你還要來跟從我。」</div>
+<div class="verse"><span class="verse-number">22</span>那少年人聽見這話，就憂憂愁愁的走了，因為他的產業很多。</div>
+<div class="verse"><span class="verse-number">23</span>耶穌對門徒說：「我實在告訴你們，財主進天國是難的。</div>
+<div class="verse"><span class="verse-number">24</span>我又告訴你們，駱駝穿過鍼的眼，比財主進神的國還容易呢！」</div>
+<div class="verse"><span class="verse-number">25</span>門徒聽見這話，就希奇得很，說：「這樣誰能得救呢？」</div>
+<div class="verse"><span class="verse-number">26</span>耶穌看着他們，說：「在人這是不能的，在神凡事都能。」</div>
+<div class="verse"><span class="verse-number">27</span>彼得就對他說：「看哪，我們已經撇下所有的跟從你，將來我們要得甚麼呢？」</div>
+<div class="verse"><span class="verse-number">28</span>耶穌說：「我實在告訴你們，你們這跟從我的人，到復興的時候，人子坐在他榮耀的寶座上，你們也要坐在十二個寶座上，審判以色列十二個支派。</div>
+<div class="verse"><span class="verse-number">29</span>凡為我的名撇下房屋，或是弟兄、姐妹、父親、母親、（有古卷添：妻子）兒女、田地的，必要得着百倍，並且承受永生。</div>
+<div class="verse"><span class="verse-number">30</span>然而，有許多在前的，將要在後；在後的，將要在前。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+馬太福音第19章記載耶穌離開加利利進入猶太地，開始朝耶路撒冷進發。本章圍繞三個主題展開。第一是婚姻：法利賽人試探耶穌論休妻問題，耶穌回到創造的秩序，強調婚姻是神所配合的，人不可分開，指出摩西的休妻條例是因人心剛硬的妥協而非神的本意。第二是兒童：門徒阻攔人把小孩子帶到耶穌面前，耶穌糾正他們，宣告「讓小孩子到我這裏來，因為在天國的，正是這樣的人」。第三是富足的少年官：他問怎樣得永生，遵守誡命卻不能放下財富跟從耶穌，憂愁離去。耶穌由此教導財富是進天國的阻礙，說出「駱駝穿針眼比財主進天國還容易」，並在門徒的驚訝中指出「在人這是不能的，在神凡事都能」，最後承諾凡為祂撇下一切的必得百倍並承受永生。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神對婚姻的心意是一生一世的委身】</strong><br>耶穌回到創世記，指出神的原初設計是一男一女成為一體，這是神的創造秩序而非文化慣例。婚姻的神聖性不在於感情的熱度，而在於神的配合與人的委身。在婚姻受到各種衝擊的今天，耶穌的教導呼籲信徒認真看待婚約，以神的眼光重視並珍惜婚姻關係，並在困難中尋求神的幫助。<br><br>
+<strong>2. 【天國屬於那些單純信靠神的人】</strong><br>耶穌讓小孩子來到祂面前，不是因為小孩子純潔無罪，而是因為孩子的特質——依賴、信任、沒有自足——正是天國公民的屬靈形象。富足少年的問題不是財富本身，而是他無法放下財富來倚靠耶穌。進天國需要的不是自己的成就，而是承認自己需要神，並全然倚靠祂的恩典。<br><br>
+<strong>3. 【在神凡事都能，祂報償那些為祂捨棄的人】</strong><br>「在人這是不能的，在神凡事都能」——當門徒聽見財主難進天國而絕望時，耶穌將眼光轉向神的能力。救恩本是人力難及，但神有能力成就。凡為祂的名捨棄一切的，必得百倍並永生。這是天國的經濟法則：捨棄的是暫時的，得着的是永恆的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「所以，<strong>神配合的</strong>，人不可分開。」（太19:6）</td>
+<td>你如何看待婚姻的神聖性？就像合約有條款有約束力，你是否把婚姻看作是神面前不可輕視的委身，並願意在困難中尋求神的智慧維護這段關係？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>讓小孩子到我這裏</strong>來，不要禁止他們；因為在天國的，正是這樣的人。」（太19:14）</td>
+<td>你有沒有像孩子一樣，單純地信靠耶穌，不依靠自己的能力或資歷？就像孩子完全倚賴父母的供應而不感到羞恥，你能不帶任何條件地把自己交到耶穌手中嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌看着他們</strong>，說：「<strong>在人這是不能的</strong>，在神凡事都能。」（太19:26）</td>
+<td>在你認為不可能改變或得救的處境中，你有沒有把眼光轉向那位「凡事都能」的神？就像以為無法治癒的病症遇到了對症的名醫，你願意把看似不可能的情況帶到神面前，相信祂有能力成就嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>彼得後書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+彼得後書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">假教師的危險與神保護忠心者</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>從前在百姓中有假先知起來，將來在你們中間也必有假師傅，私自引進陷害人的異端，連買他們的主他們也不承認，自取速速的滅亡。</div>
+<div class="verse"><span class="verse-number">2</span>將有許多人隨從他們邪淫的行為，便叫真道因他們的緣故被毀謗。</div>
+<div class="verse"><span class="verse-number">3</span>他們因有貪心，要用捏造的言語在你們身上取利。他們的刑罰，自古以來並不遲延；他們的滅亡也必速速來到〔原文作也不打盹〕。</div>
+<div class="verse"><span class="verse-number">4</span>就是天使犯了罪，神也沒有寬容，曾把他們丟在地獄，交在黑暗坑中，等候審判。</div>
+<div class="verse"><span class="verse-number">5</span>神也沒有寬容上古的世代，曾叫洪水臨到那不敬虔的世代，卻保護了傳義道的挪亞一家八口。</div>
+<div class="verse"><span class="verse-number">6</span>又判定所多瑪、蛾摩拉，將二城傾覆，焚燒成灰，作為後世不敬虔人的鑑戒；</div>
+<div class="verse"><span class="verse-number">7</span>只搭救了那常為惡人淫行憂傷的義人羅得。</div>
+<div class="verse"><span class="verse-number">8</span>因為那義人住在他們中間，看見聽見他們不法的事，他的義心就天天傷痛。</div>
+<div class="verse"><span class="verse-number">9</span>主知道搭救敬虔的人脫離試探，把不義的人留在刑罰之下，等候審判的日子。</div>
+<div class="verse"><span class="verse-number">10</span>那些隨肉身、縱污穢的情慾、輕慢主治之人的，更是如此。他們膽大任性，毀謗在尊位的，也不知懼怕。</div>
+<div class="verse"><span class="verse-number">11</span>就是天使，雖然力量權能更大，還不用毀謗的話在主面前告他們。</div>
+<div class="verse"><span class="verse-number">12</span>但這些人好像沒有靈性，生來就是畜類，以備捉拿宰殺的。他們毀謗所不曉得的事，正在敗壞人的時候，自己必遭遇敗壞。</div>
+<div class="verse"><span class="verse-number">13</span>行的不義，就得了不義的工價。這些人喜愛白晝宴樂，他們已被玷污，又有瑕疵，正與你們一同坐席，就以自己的詭詐為快樂。</div>
+<div class="verse"><span class="verse-number">14</span>他們滿眼是淫色〔原文作淫婦〕，止不住犯罪，引誘那心不堅固的人，心中習慣了貪婪，正是被咒詛的種類。</div>
+<div class="verse"><span class="verse-number">15</span>他們離棄正路，就走差了，隨從比珥之子巴蘭的路。巴蘭就是那貪愛不義之工價的先知，</div>
+<div class="verse"><span class="verse-number">16</span>他卻為自己的過犯受了責備；那不能說話的驢以人言攔阻先知的狂妄。</div>
+<div class="verse"><span class="verse-number">17</span>這些人是無水的井，是狂風催逼的霧氣，有墨黑的幽暗為他們存留。</div>
+<div class="verse"><span class="verse-number">18</span>他們說虛妄矜誇的大話，用肉身的情慾和邪淫的事引誘那些剛才脫離妄行的人。</div>
+<div class="verse"><span class="verse-number">19</span>他們應許人得以自由，自己卻作敗壞的奴僕，因為人被誰制伏就是誰的奴僕。</div>
+<div class="verse"><span class="verse-number">20</span>倘若他們因認識主救主耶穌基督，得以脫離世上的污穢，後來又在其中被纏住、制伏，他們末後的景況就比先前更不好了。</div>
+<div class="verse"><span class="verse-number">21</span>他們曉得義路，竟背棄了傳給他們的聖命，倒不如不曉得為妙。</div>
+<div class="verse"><span class="verse-number">22</span>俗語說得真不錯：狗所吐的，牠轉過來又吃；豬洗淨了又回到泥裏去滾；這話在他們身上正合式。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+彼得後書第2章以強烈的語言警告假教師的危險，並以幾個舊約的例子說明神保護忠心者的規律。「從前在百姓中有假先知起來，將來在你們中間也必有假師傅，私自引進陷害人的異端，連買他們的主他們也不承認」——假教師的特徵。三個舊約的例子：不守本位的天使（受審判）、洪水世代（滅亡）但挪亞（被救）；所多瑪蛾摩拉（被焚）但羅得（被救）。「主知道搭救敬虔的人脫離試探，把不義的人留在刑罰之下，等候審判的日子」——神分辨能力的宣告。假教師的矛盾：「他們應許人得以自由，自己卻作敗壞的奴僕，因為人被誰制伏就是誰的奴僕」——許諾自由卻是奴僕，是假教師最深刻的諷刺。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【假教師的核心標誌：不認主、貪婪、許諾自由】</strong><br>「將陷害人的異端私自引進，連買他們的主也不承認」——不認買贖他們的主，是假教師最根本的背叛。「應許人得以自由，自己卻作敗壞的奴僕」——許諾自由卻帶來捆綁的矛盾，是假教師最深刻的諷刺。<br><br>
+<strong>2. 【神保護忠心者，審判不虔敬者】</strong><br>「主知道搭救敬虔的人脫離試探，把不義的人留在刑罰之下」——保護和審判是同一個神在做的兩件事。挪亞和羅得都是在黑暗環境中保持敬虔的人，神都特別保護了他們。這給在異端橫行的環境中的信徒帶來安慰。<br><br>
+<strong>3. 【認識主後再墜落的嚴重性】</strong><br>「末後的景況就比先前更不好了」——知道義路後再背棄，比從未知道更嚴重。真正的本性改變（重生）和表面的清潔（外在的宗教行為）之間有根本差異。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>彼得說</strong>：「<strong>主知道搭救敬虔的</strong>人脫離試探，把不義的人留在刑罰之下，等候審判的日子。」（彼後2:9）</td>
+<td>在你面對各種屬靈危險和壓力的環境中，你有沒有讓「神知道搭救敬虔的人」這個確信成為你持守的動力？就像挪亞在洪水來臨前已建好了方舟，你有沒有讓對神保護忠心者的確信推動你持續保持敬虔？</td>
+</tr>
+<tr>
+<td><strong>彼得說</strong>：「<strong>他們應許人得以自</strong>由，自己卻作敗壞的奴僕，因為人被誰制伏就是誰的奴僕。」（彼後2:19）</td>
+<td>你有沒有培養辨別「許諾自由但實際是帶人進入奴役的教導」的能力？就像辨別真錢和假錢需要認識真錢的特徵，你有沒有讓對真理的深度認識使你能識破那些許諾自由卻帶來捆綁的謊言？</td>
+</tr>
+<tr>
+<td><strong>彼得說</strong>：「<strong>從前在百姓中有假</strong>先知起來，將來在你們中間也必有假師傅，私自引進陷害人的異端，連買他們的主他們也不承認。」（彼後2:1）</td>
+<td>你有沒有對你所接受的教訓保持清醒的辨別——不是不信任所有的教導，而是以聖經為準則評估所聽到的是否「認主」和符合真道？就像一個精明的投資者不因為有人說「穩賺不賠」就完全信任，你有沒有讓信仰的辨別力保護你不被假教訓所迷惑？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

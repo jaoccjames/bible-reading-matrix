@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰福音第20章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰福音第20章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">復活與多馬的信仰告白</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>七日的第一日清早，天還黑的時候，抹大拉的馬利亞來到墳墓那裏，看見石頭從墳墓挪開了，</div>
+<div class="verse"><span class="verse-number">2</span>就跑來見西門彼得和耶穌所愛的那個門徒，對他們說：「有人把主從墳墓裏挪了去，我們不知道放在那裏。」</div>
+<div class="verse"><span class="verse-number">3</span>彼得和那門徒就出來，往墳墓那裏去。</div>
+<div class="verse"><span class="verse-number">4</span>兩個人同跑，那門徒比彼得跑的更快，先到了墳墓，</div>
+<div class="verse"><span class="verse-number">5</span>低頭往裏看，就見細麻布還放在那裏，只是沒有進去。</div>
+<div class="verse"><span class="verse-number">6</span>西門彼得隨後也到了，進墳墓裏去，就看見細麻布還放在那裏，</div>
+<div class="verse"><span class="verse-number">7</span>又看見耶穌的裹頭巾沒有和細麻布放在一處，是另在一處捲着。</div>
+<div class="verse"><span class="verse-number">8</span>先到墳墓的那門徒也進去，看見就信了。</div>
+<div class="verse"><span class="verse-number">9</span>（因為他們還不明白聖經的意思，就是耶穌必要從死裏復活。）</div>
+<div class="verse"><span class="verse-number">10</span>於是兩個門徒回自己的住處去了。</div>
+<div class="verse"><span class="verse-number">11</span>馬利亞卻站在墳墓外面哭。哭的時候，低頭往墳墓裏看，</div>
+<div class="verse"><span class="verse-number">12</span>就見兩個天使，穿着白衣，在安放耶穌身體的地方坐着，一個在頭，一個在腳。</div>
+<div class="verse"><span class="verse-number">13</span>天使對她說：「婦人，你為甚麼哭？」她說：「因為有人把我主挪了去，我不知道放在那裏。」</div>
+<div class="verse"><span class="verse-number">14</span>說了這話，就轉過身來，看見耶穌站在那裏，卻不知道是耶穌。</div>
+<div class="verse"><span class="verse-number">15</span>耶穌問她說：「婦人，為甚麼哭？你找誰呢？」馬利亞以為是看園的，就對他說：「先生，若是你把他移了去，請告訴我，你把他放在那裏，我便去取他。」</div>
+<div class="verse"><span class="verse-number">16</span>耶穌說：「馬利亞。」馬利亞就轉過來，用希伯來話對他說：「拉波尼！」（拉波尼就是夫子的意思。）</div>
+<div class="verse"><span class="verse-number">17</span>耶穌說：「不要摸我，因我還沒有升上去見我的父。你往我弟兄那裏去，告訴他們說，我要升上去見我的父，也是你們的父，見我的神，也是你們的神。」</div>
+<div class="verse"><span class="verse-number">18</span>抹大拉的馬利亞就去告訴門徒說：「我已經看見了主。」她又將主對她說的這話告訴他們。</div>
+<div class="verse"><span class="verse-number">19</span>那日（就是七日的第一日）晚上，門徒所在的地方，因怕猶太人，門都關了。耶穌來，站在當中，對他們說：「願你們平安！」</div>
+<div class="verse"><span class="verse-number">20</span>說了這話，就把手和肋旁指給他們看。門徒看見主，就喜樂了。</div>
+<div class="verse"><span class="verse-number">21</span>耶穌又對他們說：「願你們平安！父怎樣差遣了我，我也照樣差遣你們。」</div>
+<div class="verse"><span class="verse-number">22</span>說了這話，就向他們吹一口氣，說：「你們受聖靈！</div>
+<div class="verse"><span class="verse-number">23</span>你們赦免誰的罪，誰的罪就赦免了；你們留下誰的罪，誰的罪就留下了。」</div>
+<div class="verse"><span class="verse-number">24</span>那十二個門徒中，有稱為低土馬的多馬；耶穌來的時候，他沒有和他們同在。</div>
+<div class="verse"><span class="verse-number">25</span>那些門徒就對他說：「我們已經看見主了。」多馬卻說：「我非看見他手上的釘痕，用指頭探入那釘痕，又用手探入他的肋旁，我總不信。」</div>
+<div class="verse"><span class="verse-number">26</span>過了八日，門徒又在屋裏，多馬也和他們同在，門都關了。耶穌來，站在當中說：「願你們平安！」</div>
+<div class="verse"><span class="verse-number">27</span>就對多馬說：「伸過你的指頭來，摸〔原文作看〕我的手；伸出你的手來，探入我的肋旁。不要疑惑，總要信。」</div>
+<div class="verse"><span class="verse-number">28</span>多馬說：「我的主！我的神！」</div>
+<div class="verse"><span class="verse-number">29</span>耶穌對他說：「你因看見了我才信；那沒有看見就信的有福了。」</div>
+<div class="verse"><span class="verse-number">30</span>耶穌在門徒面前另外行了許多神蹟，沒有記在這書上。</div>
+<div class="verse"><span class="verse-number">31</span>但記這些事要叫你們信耶穌是基督，是神的兒子，並且叫你們信了他，就可以因他的名得生命。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約翰福音第20章是整卷書的高峰，記載復活的多重顯現。清早抹大拉的馬利亞來到空墳墓，跑去告訴彼得和所愛的門徒。彼得進去看見細麻布，那門徒「看見就信了」——信仰從空墳墓的確據中而來。馬利亞在墳墓外哭，見天使和轉身見耶穌，耶穌叫她「馬利亞！」，她認出來了——復活的主用名字呼喚每個門徒。晚上耶穌向眾門徒顯現，說「願你們平安！」，把手和肋旁指給他們看，門徒「看見主，就喜樂了」。耶穌說「父怎樣差遣了我，我也照樣差遣你們」，吹氣叫他們受聖靈。多馬不信，說要看見摸到才信。八天後，耶穌再次顯現，邀多馬「伸過你的指頭來，摸我的手……不要疑惑，總要信。」多馬說「我的主！我的神！」——這是約翰福音最高的信仰告白。耶穌說「那沒有看見就信的有福了。」章末說明約翰的寫作目的：「記這些事要叫你們信耶穌是基督，是神的兒子，並且叫你們信了他，就可以因他的名得生命。」
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【復活的主用名字呼喚每個信徒】</strong><br>馬利亞在眼淚中見了天使、見了「看園的」，卻沒有認出耶穌；當耶穌叫她「馬利亞！」，她立刻認出來了。一個名字，沒有任何解釋，卻帶出了認識。這說明復活的主與每個信徒的關係是個人的、名字對名字的。第10章說「好牧人按名叫自己的羊」——復活的現實使這個比喻成為真實的經歷：祂認識你的名字，並且呼喚你。<br><br>
+<strong>2. 【「不要疑惑，總要信」對懷疑的回應】</strong><br>多馬的懷疑是誠實的，不是假裝信仰的遮羞布。耶穌沒有責備他的誠實，而是給他看見、給他觸摸的機會，然後說「不要疑惑，總要信」。多馬的回應是整本約翰福音最高的告白：「我的主！我的神！」懷疑如果是引向真理的誠實疑問，就能帶出最深的信仰。問題不是懷疑本身，而是在遇見證據後的選擇。<br><br>
+<strong>3. 【「沒有看見就信的有福了」】</strong><br>「你因看見了我才信；那沒有看見就信的有福了」——耶穌說這句話是對我們說的。我們沒有親眼見到復活的耶穌，卻透過見證、透過聖靈、透過聖經相信了。這種相信不是輕信，而是在可靠的見證和生命體驗上的信心。耶穌說這樣的信心「有福了」——是蒙福的宣告，也是對我們信心的肯定。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>馬利亞</strong>。」馬利亞就轉過來，用希伯來話對他說：「拉波尼！」（約20:16）</td>
+<td>你有沒有感受過復活的主用你的名字呼喚你——在禱告中、在聖言裏、在生命的轉折點上？就像在人群中聽到有人叫自己的名字會立刻轉過去，你有沒有讓耳朵開着，去聽那位認識你名字的主的呼喚？</td>
+</tr>
+<tr>
+<td><strong>耶穌對他說</strong>：「<strong>你因看見了我才信</strong>；那沒有看見就信的有福了。」（約20:29）</td>
+<td>你有沒有因自己「沒有親眼見到」而覺得信仰不夠紮實？就像法庭上的陪審員憑可靠的證詞作出裁決而不需要親臨現場，你願意讓門徒的可靠見證、聖靈的內在見證成為你信心堅實的根基嗎？</td>
+</tr>
+<tr>
+<td><strong>多馬說</strong>：「<strong>我的主</strong>！我的神！」（約20:28）</td>
+<td>你有沒有從對耶穌身份的智識認識，進入「我的主！我的神！」這樣個人的信仰告白？就像從讀書了解某人到真正認識那人的那一刻有質的飛躍，你有沒有讓你對耶穌的信仰成為最個人、最深切的認信？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

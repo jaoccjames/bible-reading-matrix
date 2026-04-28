@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+路加福音第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶穌降生與聖殿的尋找</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當那些日子，該撒亞古士督有旨意下來，叫天下人民都報名上冊。</div>
+<div class="verse"><span class="verse-number">2</span>這是居里扭作敘利亞巡撫的時候，頭一次行報名上冊的事。</div>
+<div class="verse"><span class="verse-number">3</span>眾人各歸各城，報名上冊。</div>
+<div class="verse"><span class="verse-number">4</span>約瑟也從加利利的拿撒勒城上猶太去，到了大衛的城，名叫伯利恆，因他本是大衛一族一家的人，</div>
+<div class="verse"><span class="verse-number">5</span>要和他所聘之妻馬利亞一同報名上冊。那時馬利亞的身孕已經重了。</div>
+<div class="verse"><span class="verse-number">6</span>他們在那裏的時候，馬利亞的產期到了，</div>
+<div class="verse"><span class="verse-number">7</span>就生了頭胎的兒子，用布包起來，放在馬槽裏，因為客店裏沒有地方。</div>
+<div class="verse"><span class="verse-number">8</span>在伯利恆之野地裏有牧羊的人，夜間按着更次看守羊群。</div>
+<div class="verse"><span class="verse-number">9</span>有主的使者站在他們旁邊，主的榮光四面照着他們；牧羊的人就甚懼怕。</div>
+<div class="verse"><span class="verse-number">10</span>那天使對他們說：「不要懼怕！我報給你們大喜的信息，是關乎萬民的；</div>
+<div class="verse"><span class="verse-number">11</span>因今天在大衛的城裏，為你們生了救主，就是主基督。</div>
+<div class="verse"><span class="verse-number">12</span>你們要看見一個嬰孩，包着布，臥在馬槽裏，那就是記號了。」</div>
+<div class="verse"><span class="verse-number">13</span>忽然，有一大隊天兵同那天使讚美神說：</div>
+<div class="verse"><span class="verse-number">14</span>在至高之處榮耀歸與神！在地上平安歸與他所喜悅的人〔有古卷作：喜悅歸與人〕！</div>
+<div class="verse"><span class="verse-number">15</span>眾天使離開他們，升天去了。牧羊的人彼此說：「我們往伯利恆去，看看所成的事，就是主所指示我們的。」</div>
+<div class="verse"><span class="verse-number">16</span>他們急忙去了，就尋見馬利亞和約瑟，又有那嬰孩臥在馬槽裏；</div>
+<div class="verse"><span class="verse-number">17</span>既然看見，就把天使論這孩子的話傳開了。</div>
+<div class="verse"><span class="verse-number">18</span>凡聽見的，就詫異牧羊之人對他們所說的話。</div>
+<div class="verse"><span class="verse-number">19</span>馬利亞卻把這一切的事存在心裏，反復思想。</div>
+<div class="verse"><span class="verse-number">20</span>牧羊的人回去了，因所聽見所看見的一切事，正如天使向他們所說的，就歸榮耀與神，讚美他。</div>
+<div class="verse"><span class="verse-number">21</span>滿了八天，就給孩子行割禮，與他起名叫耶穌；這就是沒有成胎以前，天使所起的名。</div>
+<div class="verse"><span class="verse-number">22</span>按摩西律法滿了潔淨的日子，他們帶着孩子上耶路撒冷去，要把他獻與主。</div>
+<div class="verse"><span class="verse-number">23</span>（正如主的律法上所記：「凡頭生的男子必稱聖歸主；」）</div>
+<div class="verse"><span class="verse-number">24</span>又要照主的律法上所說，或用一對斑鳩，或用兩隻雛鴿獻祭。</div>
+<div class="verse"><span class="verse-number">25</span>在耶路撒冷有一個人，名叫西面；這人又公義又虔誠，素常盼望以色列的安慰者來到，又有聖靈在他身上。</div>
+<div class="verse"><span class="verse-number">26</span>他得了聖靈的啟示，知道自己未死以前，必看見主所立的基督。</div>
+<div class="verse"><span class="verse-number">27</span>他受了聖靈的感動，進入聖殿，正遇見耶穌的父母抱着孩子進來，要照律法的規矩辦理。</div>
+<div class="verse"><span class="verse-number">28</span>西面就用手接過他來，稱頌神說：</div>
+<div class="verse"><span class="verse-number">29</span>主啊！如今可以照你的話，釋放僕人安然去世；</div>
+<div class="verse"><span class="verse-number">30</span>因為我的眼睛已經看見你的救恩，</div>
+<div class="verse"><span class="verse-number">31</span>就是你在萬民面前所預備的：</div>
+<div class="verse"><span class="verse-number">32</span>是照亮外邦人的光，又是你民以色列的榮耀。</div>
+<div class="verse"><span class="verse-number">33</span>孩子的父母因這論耶穌的話就希奇。</div>
+<div class="verse"><span class="verse-number">34</span>西面給他們祝福，又對孩子的母親馬利亞說：「這孩子被立，是要叫以色列中許多人跌倒，許多人興起；又要作毀謗的話柄，叫許多人心裏的意念顯露出來；你自己的心也要被刀刺透。」</div>
+<div class="verse"><span class="verse-number">35</span>併於上節</div>
+<div class="verse"><span class="verse-number">36</span>又有女先知，名叫亞拿，是亞設支派法內力的女兒，年紀已經老邁，從作童女出嫁的時候，同丈夫住了七年就寡居了，</div>
+<div class="verse"><span class="verse-number">37</span>現在已經八十四歲〔或作：就寡居了八十四年〕，並不離開聖殿，禁食祈求，晝夜事奉神。</div>
+<div class="verse"><span class="verse-number">38</span>正當那時，她進前來稱謝神，將孩子的事對一切盼望耶路撒冷得救贖的人講說。</div>
+<div class="verse"><span class="verse-number">39</span>約瑟和馬利亞照主的律法辦完了一切的事，就回加利利，到自己的城拿撒勒去了。</div>
+<div class="verse"><span class="verse-number">40</span>孩子漸漸長大，強健起來，充滿智慧，又有神的恩在他身上。</div>
+<div class="verse"><span class="verse-number">41</span>每年到逾越節，他父母就上耶路撒冷去。</div>
+<div class="verse"><span class="verse-number">42</span>當他十二歲的時候，他們按着節期的規矩上去。</div>
+<div class="verse"><span class="verse-number">43</span>守滿了節期，他們回去，孩童耶穌仍舊在耶路撒冷。他的父母並不知道，</div>
+<div class="verse"><span class="verse-number">44</span>以為他在同行的人中間，走了一天的路程，就在親族和熟識的人中找他，</div>
+<div class="verse"><span class="verse-number">45</span>既找不着，就回耶路撒冷去找他。</div>
+<div class="verse"><span class="verse-number">46</span>過了三天，就遇見他在殿裏，坐在教師中間，一面聽，一面問。</div>
+<div class="verse"><span class="verse-number">47</span>凡聽見他的，都希奇他的聰明和他的應對。</div>
+<div class="verse"><span class="verse-number">48</span>他父母看見就很希奇。他母親對他說：「我兒！為甚麼向我們這樣行呢？看哪！你父親和我傷心來找你！」</div>
+<div class="verse"><span class="verse-number">49</span>耶穌說：「為甚麼找我呢？豈不知我應當以我父的事為念麼〔或作：豈不知我應當在我父的家裏麼〕？」</div>
+<div class="verse"><span class="verse-number">50</span>他所說的這話，他們不明白。</div>
+<div class="verse"><span class="verse-number">51</span>他就同他們下去，回到拿撒勒，並且順從他們。他母親把這一切的事都存在心裏。</div>
+<div class="verse"><span class="verse-number">52</span>耶穌的智慧和身量〔或作：年紀〕，並神和人喜愛他的心，都一齊增長。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+路加福音第2章以最廣為人知的誕生場景開篇。羅馬皇帝的戶籍令，意外成就了彌賽亞在大衛城伯利恆出生的預言。馬利亞生了耶穌，用布包起來，放在馬槽裏——救世主以最卑微的方式進入世界。天使對曠野的牧羊人報告「大喜的信息」，是關乎萬民的：「在大衛的城裏，為你們生了救主，就是主基督」。天兵天使讚美神：「在至高之處榮耀歸與神！在地上平安歸與他所喜悅的人！」牧羊人急忙去，看見後把所見的傳開；馬利亞把這一切存在心裏，反復思想。接着是聖殿的呈獻：西面和亞拿先知認出嬰孩，西面的頌讚預言耶穌是外邦人的光和以色列的榮耀，也預言馬利亞心要被刀刺透。章末是十二歲的耶穌留在聖殿，讓父母焦急三天，在教師中討論發問；被找到後說「我應當以我父的事為念」，然後順從父母，「增長智慧」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神以最卑微的方式進入世界】</strong><br>馬槽、布、牧羊人——耶穌降生的場景沒有任何世俗的榮耀。神選擇讓救世主誕生在一個沒有房間的夜晚，讓第一批聽到消息的是社會邊緣的牧羊人。這顯示天國邏輯的顛覆：最偉大的禮物以最謙卑的方式給出。耶穌整個事工的基調，在誕生的那一刻就已定下——祂是那些在世界中「沒有地方」的人的救主。<br><br>
+<strong>2. 【真正的平安來自神所悅納的關係】</strong><br>天使說「在地上平安歸與他所喜悅的人」——這個平安不是世界給的平靜，而是與神和好的平安。耶穌的降生是這平安的到來：人與神之間的隔閡因「救主」的來到而可以被修復。今天世界追求的平安是缺乏衝突，而天使宣告的平安是深層的靈魂安息——因為與神的關係得到修復。<br><br>
+<strong>3. 【以父的事為念是信仰最深的優先次序】</strong><br>十二歲的耶穌說「我應當以我父的事為念」，這不是任性的叛逆，而是第一次公開宣告祂生命最核心的優先次序。即使是親情，也不能排在對天父使命的委身之上。然而祂立刻「順從他們」——委身於天父的事，並不廢除對地上家庭責任的盡忠。兩者不是競爭，而是在正確的次序中共存。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>那天使對他們說</strong>：「<strong>不要懼怕</strong>！我報給你們大喜的信息，是關乎萬民的；因今天在大衛的城裏，為你們生了救主，就是主基督。」（路2:10-11）</td>
+<td>耶穌的降生對你是真正的「大喜」，還是只是一個每年重複的節日？就像一個長期盼望的好消息真正到來時讓人喜不自勝，你有沒有讓救主降生的事實每天更新你的喜樂？</td>
+</tr>
+<tr>
+<td><strong>馬利亞卻把這一切</strong><strong>的事存在心裏</strong>，反復思想。（路2:19）</td>
+<td>你有沒有培養一個「存在心裏反復思想」的習慣，讓神的作為在你的心裏沉澱？就像細嚼慢嚥比快速吞食更能吸收營養，你願意在讀經後給神的話語留出時間，讓它在你心裏發酵和深化嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>為甚麼找我呢</strong>？豈不知我應當以我父的事為念麼？」（路2:49）</td>
+<td>你的生命中，「父的事」——神給你的使命和呼召——有沒有真正佔據最核心的位置？就像任何志業若不是真正的首要優先，就很容易被其他緊急事務擠掉，你有沒有讓神的優先次序真正決定你如何使用時間和精力？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第25章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第25章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">十童女、才幹與末日審判</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「那時，天國好比十個童女拿着燈出去迎接新郎。</div>
+<div class="verse"><span class="verse-number">2</span>其中有五個是愚拙的，五個是聰明的。</div>
+<div class="verse"><span class="verse-number">3</span>愚拙的拿着燈，卻不預備油；</div>
+<div class="verse"><span class="verse-number">4</span>聰明的拿着燈，又預備油在器皿裏。</div>
+<div class="verse"><span class="verse-number">5</span>新郎遲延的時候，她們都打盹，睡着了。</div>
+<div class="verse"><span class="verse-number">6</span>半夜有人喊着說：『新郎來了，你們出來迎接他！』</div>
+<div class="verse"><span class="verse-number">7</span>那些童女就都起來收拾燈。</div>
+<div class="verse"><span class="verse-number">8</span>愚拙的對聰明的說：『請分點油給我們，因為我們的燈要滅了。』</div>
+<div class="verse"><span class="verse-number">9</span>聰明的回答說：『恐怕不彀你我用的；不如你們自己到賣油的那裏去買吧。』</div>
+<div class="verse"><span class="verse-number">10</span>她們去買的時候，新郎到了。那預備好了的，同他進去坐席，門就關了。</div>
+<div class="verse"><span class="verse-number">11</span>其餘的童女隨後也來了，說：『主啊，主啊，給我們開門！』</div>
+<div class="verse"><span class="verse-number">12</span>他卻回答說：『我實在告訴你們，我不認識你們。』</div>
+<div class="verse"><span class="verse-number">13</span>所以，你們要儆醒；因為那日子，那時辰，你們不知道。」</div>
+<div class="verse"><span class="verse-number">14</span>「天國又好比一個人要往外國去，就叫了僕人來，把他的家業交給他們，</div>
+<div class="verse"><span class="verse-number">15</span>按着各人的才幹給他們銀子：一個給了五千，一個給了二千，一個給了一千，就往外國去了。</div>
+<div class="verse"><span class="verse-number">16</span>那領五千的隨即拿去做買賣，另外賺了五千。</div>
+<div class="verse"><span class="verse-number">17</span>那領二千的也照樣另賺了二千。</div>
+<div class="verse"><span class="verse-number">18</span>但那領一千的去掘開地，把主人的銀子埋藏了。</div>
+<div class="verse"><span class="verse-number">19</span>過了許久，那些僕人的主人來了，和他們算賬。</div>
+<div class="verse"><span class="verse-number">20</span>那領五千銀子的又帶着那另外的五千來，說：『主啊，你交給我五千銀子。請看，我又賺了五千。』</div>
+<div class="verse"><span class="verse-number">21</span>主人說：『好，你這又良善又忠心的僕人，你在不多的事上有忠心，我要把許多事派你管理；可以進來享受你主人的快樂。』</div>
+<div class="verse"><span class="verse-number">22</span>那領二千的也來，說：『主啊，你交給我二千銀子。請看，我又賺了二千。』</div>
+<div class="verse"><span class="verse-number">23</span>主人說：『好，你這又良善又忠心的僕人，你在不多的事上有忠心，我要把許多事派你管理；可以進來享受你主人的快樂。』</div>
+<div class="verse"><span class="verse-number">24</span>那領一千的也來，說：『主啊，我知道你是忍心的人，沒有種的地方要收割，沒有散的地方要聚斂，</div>
+<div class="verse"><span class="verse-number">25</span>我就害怕，去把你的一千銀子埋藏在地裏。請看，你的原銀子在這裏。』</div>
+<div class="verse"><span class="verse-number">26</span>主人回答說：『你這又惡又懶的僕人，你既知道我沒有種的地方要收割，沒有散的地方要聚斂，</div>
+<div class="verse"><span class="verse-number">27</span>就當把我的銀子放給兌換銀錢的人，到我來的時候，可以連本帶利收回。</div>
+<div class="verse"><span class="verse-number">28</span>奪過他這一千來，給那有一萬的。</div>
+<div class="verse"><span class="verse-number">29</span>因為凡有的，還要加給他，叫他有餘；沒有的，連他所有的也要奪過來。</div>
+<div class="verse"><span class="verse-number">30</span>把這無用的僕人丟在外面黑暗裏；在那裏必要哀哭切齒了。』」</div>
+<div class="verse"><span class="verse-number">31</span>「當人子在他榮耀裏，同着眾天使降臨的時候，要坐在他榮耀的寶座上。</div>
+<div class="verse"><span class="verse-number">32</span>萬民都要聚集在他面前。他要把他們分別出來，好像牧羊的分別綿羊山羊一般，</div>
+<div class="verse"><span class="verse-number">33</span>把綿羊安置在右邊，山羊在左邊。</div>
+<div class="verse"><span class="verse-number">34</span>於是王要向那右邊的說：『你們這蒙我父賜福的，可來承受那創世以來為你們所預備的國；</div>
+<div class="verse"><span class="verse-number">35</span>因為我餓了，你們給我吃，渴了，你們給我喝；我作客旅，你們留我住；</div>
+<div class="verse"><span class="verse-number">36</span>我赤身露體，你們給我穿；我病了、你們看顧我；我在監裏，你們來看我。』</div>
+<div class="verse"><span class="verse-number">37</span>義人就回答說：『主啊，我們甚麼時候見你餓了，給你吃，渴了，給你喝？</div>
+<div class="verse"><span class="verse-number">38</span>甚麼時候見你作客旅，留你住，或是赤身露體，給你穿？</div>
+<div class="verse"><span class="verse-number">39</span>又甚麼時候見你病了，或是在監裏，來看你呢？』</div>
+<div class="verse"><span class="verse-number">40</span>王要回答說：『我實在告訴你們，這些事你們既作在我這弟兄中一個最小的身上，就是作在我身上了。』</div>
+<div class="verse"><span class="verse-number">41</span>王又要向那左邊的說：『你們這被咒詛的人，離開我！進入那為魔鬼和他的使者所預備的永火裏去！</div>
+<div class="verse"><span class="verse-number">42</span>因為我餓了，你們不給我吃，渴了，你們不給我喝；</div>
+<div class="verse"><span class="verse-number">43</span>我作客旅，你們不留我住；我赤身露體，你們不給我穿；我病了，我在監裏，你們不來看顧我。』</div>
+<div class="verse"><span class="verse-number">44</span>他們也要回答說：『主啊，我們甚麼時候見你餓了，或渴了，或作客旅，或赤身露體，或病了，或在監裏，不伺候你呢？』</div>
+<div class="verse"><span class="verse-number">45</span>王要回答說：『我實在告訴你們，這些事你們既不作在我這弟兄中一個最小的身上，就是不作在我身上了。』</div>
+<div class="verse"><span class="verse-number">46</span>這些人要往永刑裏去；那些義人要往永生裏去。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+馬太福音第25章是橄欖山講論的終結，以三個比喻揭示末世等候與忠心的主題。十個童女比喻：五個聰明的準備好油等候新郎，五個愚拙的沒有預備，新郎來時愚拙的去買油，門卻關了。這比喻強調屬靈準備不能借用他人，必須自己擁有。才幹比喻：主人出遠門前交銀子給僕人，兩個善加利用得加倍，一個埋起來不用卻被奪去。忠心使用所得的，才能進入主人的快樂。章末的綿羊山羊比喻是全書最感人的末日場景：王以對待「弟兄中最小的」作為審判的標準——給飢渴的人喫喝、接待客旅、探視病人和囚犯。義人不知自己何時服事了基督，王卻說「你們既作在最小的弟兄身上，就是作在我身上了」。這三個比喻共同教導：末世的準備是在日常中實踐的。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【屬靈的預備無法臨時借來】</strong><br>五個愚拙童女向聰明的求分油，卻被告知「恐怕不夠」——屬靈的預備是個人的，無法在緊要時刻靠別人。與神的關係、對祂話語的認識、禱告的習慣，都不能在最後一刻借用他人。信仰的準備是每一天生活的積累，不是危機時才抱佛腳的應急行為。<br><br>
+<strong>2. 【神賦予的才幹必須被積極地使用】</strong><br>埋了銀子的僕人不是作惡，只是不使用，卻被稱為「又惡又懶的」。神賜給每一個人恩賜、時間、機會，這些不是拿來保管的，而是拿來投資在神國裏的。害怕失敗而不行動，是對神的不信任，也是對恩賜的浪費。「凡有的，還要加給他」——使用才幹的人會不斷成長，裹足不前的人連所有的也會失去。<br><br>
+<strong>3. 【服事最微小的人就是服事基督】</strong><br>「你們既作在我這弟兄中一個最小的身上，就是作在我身上了」——這是最震撼的宣告。餵飽饑餓的人、接待陌生人、探望病人囚犯，不是宗教活動，而是在日常中遇見基督。末日的審判標準不是宗教表現，而是對最脆弱之人的回應。這挑戰信徒反思：我如何對待身邊處境最難的人？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>王要回答說</strong>：「<strong>我實在告訴你們</strong>，這些事你們既作在我這弟兄中一個最小的身上，就是作在我身上了。」（太25:40）</td>
+<td>你在日常生活中有沒有把服事最需要幫助的人，看作是服事基督本人？就像為朋友的父母提供照顧和為朋友自己服務一樣重要，你能以這個眼光對待你周圍最脆弱的人嗎？</td>
+</tr>
+<tr>
+<td><strong>主人說</strong>：「好，<strong>你這又良善又忠心</strong>的僕人，你在不多的事上有忠心，我要把許多事派你管理；可以進來享受你主人的快樂。」（太25:21）</td>
+<td>你有沒有忠心使用神賜給你的才幹和恩賜，還是因為害怕失敗而埋藏起來？就像種子埋在地裏不發芽是浪費，你願意冒着失敗的風險，把你的恩賜用在神國的事上嗎？</td>
+</tr>
+<tr>
+<td><strong>那些童女就都起來</strong><strong>收拾燈</strong>。愚拙的對聰明的說：「請分點油給我們，因為我們的燈要滅了。」（太25:7-8）</td>
+<td>你的靈命有沒有足夠的「油」——與神活的關係、對祂話語的認識——可以在任何時刻面對考驗？就像手機電量需要每天充電，你有沒有每天更新你與神的連結？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

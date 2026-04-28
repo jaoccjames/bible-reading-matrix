@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多後書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多後書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">寶貝放在瓦器裏與永恆的盼望</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我們既然蒙憐憫，受了這職分，就不喪膽，</div>
+<div class="verse"><span class="verse-number">2</span>乃將那些暗昧可恥的事棄絕了；不行詭詐，不謬講神的道理，只將真理表明出來，好在神面前把自己薦與各人的良心。</div>
+<div class="verse"><span class="verse-number">3</span>如果我們的福音蒙蔽，就是蒙蔽在滅亡的人身上。</div>
+<div class="verse"><span class="verse-number">4</span>此等不信之人被這世界的神弄瞎了心眼，不叫基督榮耀福音的光照着他們。基督本是神的像。</div>
+<div class="verse"><span class="verse-number">5</span>我們原不是傳自己，乃是傳基督耶穌為主，並且自己因耶穌作你們的僕人。</div>
+<div class="verse"><span class="verse-number">6</span>那吩咐光從黑暗裏照出來的神，已經照在我們心裏，叫我們得知神榮耀的光顯在耶穌基督的面上。</div>
+<div class="verse"><span class="verse-number">7</span>我們有這寶貝放在瓦器裏，要顯明這莫大的能力是出於神，不是出於我們。</div>
+<div class="verse"><span class="verse-number">8</span>我們四面受敵，卻不被困住；心裏作難，卻不至失望；</div>
+<div class="verse"><span class="verse-number">9</span>遭逼迫，卻不被丟棄；打倒了，卻不至死亡。</div>
+<div class="verse"><span class="verse-number">10</span>身上常帶着耶穌的死，使耶穌的生也顯明在我們身上。</div>
+<div class="verse"><span class="verse-number">11</span>因為我們這活着的人是常為耶穌被交於死地，使耶穌的生在我們這必死的身上顯明出來。</div>
+<div class="verse"><span class="verse-number">12</span>這樣看來，死是在我們身上發動，生卻在你們身上發動。</div>
+<div class="verse"><span class="verse-number">13</span>但我們既有信心，正如經上記着說：『我因信，所以如此說話。』我們也信，所以也說話。</div>
+<div class="verse"><span class="verse-number">14</span>自己知道那叫主耶穌復活的，也必叫我們與耶穌一同復活，並且叫我們與你們一同站在他面前。</div>
+<div class="verse"><span class="verse-number">15</span>凡事都是為你們，好叫恩惠因人多越發加增，感謝格外顯多，以致榮耀歸與神。</div>
+<div class="verse"><span class="verse-number">16</span>所以，我們不喪膽。外體雖然毀壞，內心卻一天新似一天。</div>
+<div class="verse"><span class="verse-number">17</span>我們這至暫至輕的苦楚，要為我們成就極重無比、永遠的榮耀。</div>
+<div class="verse"><span class="verse-number">18</span>原來我們不是顧念所見的，乃是顧念所不見的；因為所見的是暫時的，所不見的是永遠的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+哥林多後書第4章是哥林多後書最著名的章節之一，以「寶貝放在瓦器裏」的比喻說明神的能力透過人的軟弱彰顯，並以永恆的視角面對今世的苦楚。「我們有這寶貝放在瓦器裏，要顯明這莫大的能力是出於神，不是出於我們」——福音的寶貝放在脆弱的人身上，正是為了顯明能力屬於神。「我們四面受敵，卻不被困住；心裏作難，卻不至失望；遭逼迫，卻不被丟棄；打倒了，卻不至死亡」——四對悖論描述信仰的不屈韌性。「身上常帶着耶穌的死，使耶穌的生也顯明在我們身上」——苦難中顯現的生命力，是最有力的見證。「外體雖然毀壞，內心卻一天新似一天」——身體的衰敗和靈魂的更新並行。「我們這至暫至輕的苦楚，要為我們成就極重無比、永遠的榮耀」——重量的對比：苦楚是至暫至輕的，榮耀是極重無比、永遠的。「所見的是暫時的，所不見的是永遠的」——永恆的視角。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【寶貝在瓦器裏彰顯能力屬於神】</strong><br>「要顯明這莫大的能力是出於神，不是出於我們」——神選擇使用脆弱和有限的人傳遞無限的福音，是有神學目的的：使榮耀明確地歸給神。若使徒無所不能、沒有缺陷，人可能敬拜使徒而非神。軟弱的器皿使神的能力更加明顯。信徒自身的有限，反而成了神榮耀最清晰的背景。<br><br>
+<strong>2. 【四對悖論是基督徒生命的寫照】</strong><br>「四面受敵，卻不被困住；心裏作難，卻不至失望；遭逼迫，卻不被丟棄；打倒了，卻不至死亡」——每一對悖論都有一個人可以預料的結果，和一個超乎預料的結果。人的預料是被困、失望、被丟棄、死亡；但神的保守帶來的是韌性和持守。這不是說沒有真實的苦難，而是說神的保守在苦難之中真實地運作。<br><br>
+<strong>3. 【永恆的重量對比今世苦楚的輕微】</strong><br>「我們這至暫至輕的苦楚，要為我們成就極重無比、永遠的榮耀」——從永恆的視角，今世的苦楚在時間上（至暫）和重量上（至輕）都與永遠的榮耀不成比例。這不是輕視苦楚，而是把苦楚放在正確的框架裏。「顧念所不見的」——主動選擇以永恆的視角生活，使今世的苦楚不能決定人心的狀態。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我們有這寶貝放在</strong>瓦器裏，要顯明這莫大的能力是出於神，不是出於我們。」（林後4:7）</td>
+<td>你有沒有接受自己的軟弱和有限，讓它成為神能力更清晰彰顯的背景，而非試圖靠自己的能力服事？就像透明的玻璃讓光線通過得更清晰，你有沒有讓你的脆弱成為神榮耀最清澈的通道？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我們這至暫至輕的</strong>苦楚，要為我們成就極重無比、永遠的榮耀。我們本不是顧念所見的，乃是顧念所不見的；因為所見的是暫時的，所不見的是永遠的。」（林後4:17-18）</td>
+<td>你有沒有培養以永恆視角看今世困難的習慣，讓那個「極重無比的榮耀」成為你在苦楚中的力量？就像一個知道比賽終點有獎牌的選手在訓練的痛苦中仍然堅持，你有沒有讓永恆的盼望改變你面對今日苦楚的態度？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>外體雖然毀壞</strong>，內心卻一天新似一天。」（林後4:16）</td>
+<td>你有沒有在身體或處境的衰退中，仍然看見內心靈命每天更新的證據？就像樹木在冬季外表凋零而根系卻更深紮土地，你有沒有讓外在的衰敗成為你更深尋求內在更新的動力？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

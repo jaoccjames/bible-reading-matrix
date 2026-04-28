@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>啟示錄第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+啟示錄第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">哈利路亞與基督的再來得勝</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我又看見另有一位大力的天使從天降下，披着雲彩，頭上有虹，臉面像日頭，兩腳像火柱。</div>
+<div class="verse"><span class="verse-number">2</span>他手裏拿着小書卷，是展開的。他右腳踏海，左腳踏地，</div>
+<div class="verse"><span class="verse-number">3</span>大聲呼喊，好像獅子吼叫。呼喊完了，就有七雷發聲。</div>
+<div class="verse"><span class="verse-number">4</span>七雷發聲之後，我正要寫出來，就聽見從天上有聲音說：「七雷所說的，你要封上，不可寫出來。」</div>
+<div class="verse"><span class="verse-number">5</span>我所看見的那踏海踏地的天使向天舉起右手來，</div>
+<div class="verse"><span class="verse-number">6</span>指着那創造天和天上之物，地和地上之物，海和海中之物，直活到永永遠遠的，起誓說：「不再有時日了〔或作：不再耽延了〕。」</div>
+<div class="verse"><span class="verse-number">7</span>但在第七位天使吹號發聲的時候，神的奧祕就成全了，正如神所傳給他僕人眾先知的佳音。</div>
+<div class="verse"><span class="verse-number">8</span>我先前從天上所聽見的那聲音又吩咐我說：「你去，把那踏海踏地之天使手中展開的小書卷取過來。」</div>
+<div class="verse"><span class="verse-number">9</span>我就走到天使那裏，對他說：「請你把小書卷給我。」他對我說：「你拿着吃盡了，便叫你肚子發苦，然而在你口中要甜如蜜。」</div>
+<div class="verse"><span class="verse-number">10</span>我從天使手中把小書卷接過來，吃盡了，在我口中果然甜如蜜，吃了以後，肚子覺得發苦了。</div>
+<div class="verse"><span class="verse-number">11</span>天使〔原文作他們〕對我說：「你必指着多民、多國、多方、多王再說預言。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+啟示錄第19章是全書的高峰之一，以天上盛大的哈利路亞頌讚開始，以基督的再來和最後的得勝作結。「哈利路亞！因為主我們的神，全能者，作王了。我們要歡喜快樂，將榮耀歸給他；因為羔羊婚娶的時候到了，他的新婦也自己預備好了。就蒙恩得穿光明潔白的細麻衣。（細麻衣就是聖徒所行的義。）」——羔羊的婚宴。「那騎白馬的稱為誠信真實……是公義審判，爭戰。他的眼睛如火焰，他頭上戴着許多冠冕，又有寫着的名字，除了他自己，沒有人知道。他穿着濺了血的衣服；他的名稱為神之道。天上的眾軍……跟着他……他有利劍從他口中出來，可以擊殺列國」——基督再來的壯麗圖畫。「他是萬王之王，萬主之主」。獸和假先知被扔在火湖，眾敵被殺。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【羔羊的婚宴——最終的合一】</strong><br>「羔羊婚娶的時候到了，他的新婦也自己預備好了」——整個歷史的目標是這場婚宴。教會是羔羊的新婦，一切的患難、忍耐和等候，都是在預備這場婚宴。「細麻衣就是聖徒所行的義」——新婦的衣裳是她的義行，說明信仰生活中的每一個忠心行動，都是為這場婚宴所作的預備。<br><br>
+<strong>2. 【騎白馬的基督——公義審判的主】</strong><br>「那騎白馬的……是公義審判，爭戰」——這是聖經中對再來之基督最壯麗的描繪。「濺了血的衣服」代表祂已勝過的十字架犧牲。「萬王之王，萬主之主」——最終所有的權柄和主權都屬於祂。<br><br>
+<strong>3. 【「是的，主耶穌啊，我願你來！」】</strong><br>整章是對基督再來的熱切等候和頌讚。羔羊的婚宴、騎白馬的再來——這一切是整本啟示錄等候的終點。信徒的盼望不是逃離苦難的出路，而是與那位他們所愛的主永遠同在。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>啟示錄說</strong>：「<strong>我們要歡喜快樂</strong>，將榮耀歸給他；因為羔羊婚娶的時候到了，他的新婦也自己預備好了，就蒙恩得穿光明潔白的細麻衣。」（啟19:7-8）</td>
+<td>你有沒有讓「細麻衣就是聖徒所行的義」這個說明，讓你對每天的信仰行動有新的意義——認識到你每一個忠心的行動都是在為那最終的婚宴預備你的衣裳？就像準備婚禮的新娘精心預備每個細節，你有沒有讓信仰生活的每個選擇成為你為羔羊婚宴所作的預備？</td>
+</tr>
+<tr>
+<td><strong>啟示錄說</strong>：「<strong>他是萬王之王</strong>，萬主之主。」（啟19:16）</td>
+<td>你有沒有在你實際的生活優先次序中，讓耶穌基督真正地作「萬王之王、萬主之主」——讓祂的主權超越你的事業、關係、時間和金錢的主權？就像一個國家的最高主權決定了一切下屬制度，你有沒有讓基督的王權真實地滲透你生活的每個層面？</td>
+</tr>
+<tr>
+<td><strong>啟示錄說</strong>：「<strong>哈利路亞</strong>！因為主我們的神，全能者，作王了。」（啟19:6）</td>
+<td>你有沒有學習無論在什麼環境中都能發出「哈利路亞」的讚美——不是因為環境改善了，而是因為「主作王了」這個永恆的真實？就像音樂家在任何環境中都能聽到音樂的美麗，你有沒有讓對神作王這個確信帶出你在任何處境中的讚美？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

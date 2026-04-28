@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第18章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第18章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">哥林多的服事與亞波羅的造就</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>這事以後，保羅離了雅典，來到哥林多。</div>
+<div class="verse"><span class="verse-number">2</span>遇見一個猶太人，名叫亞居拉，他生在本都；因為革老丟命猶太人都離開羅馬，新近帶着妻百基拉，從義大利來。保羅就投奔了他們。</div>
+<div class="verse"><span class="verse-number">3</span>他們本是製造帳棚為業。保羅因與他們同業，就和他們同住作工。</div>
+<div class="verse"><span class="verse-number">4</span>每逢安息日，保羅在會堂裏辯論，勸化猶太人和希利尼人。</div>
+<div class="verse"><span class="verse-number">5</span>西拉和提摩太從馬其頓來的時候，保羅為道迫切，向猶太人證明耶穌是基督。</div>
+<div class="verse"><span class="verse-number">6</span>他們既抗拒、毀謗，保羅就抖着衣裳，說：「你們的罪〔原文作血〕歸到你們自己頭上，與我無干〔原文作我卻乾淨〕。從今以後，我要往外邦人那裏去。」</div>
+<div class="verse"><span class="verse-number">7</span>於是離開那裏，到了一個人的家中；這人名叫提多猶士都，是敬拜神的，他的家靠近會堂。</div>
+<div class="verse"><span class="verse-number">8</span>管會堂的基利司布和全家都信了主，還有許多哥林多人聽了，就相信受洗。</div>
+<div class="verse"><span class="verse-number">9</span>夜間，主在異象中對保羅說：「不要怕，只管講，不要閉口，</div>
+<div class="verse"><span class="verse-number">10</span>有我與你同在，必沒有人下手害你，因為在這城裏我有許多的百姓。」</div>
+<div class="verse"><span class="verse-number">11</span>保羅在那裏住了一年零六個月，將神的道教訓他們。</div>
+<div class="verse"><span class="verse-number">12</span>到迦流作亞該亞方伯的時候，猶太人同心起來攻擊保羅，拉他到公堂，</div>
+<div class="verse"><span class="verse-number">13</span>說：「這個人勸人不按着律法敬拜神。」</div>
+<div class="verse"><span class="verse-number">14</span>保羅剛要開口，迦流就對猶太人說：「你們這些猶太人！如果是為冤枉或奸惡的事，我理當耐性聽你們。</div>
+<div class="verse"><span class="verse-number">15</span>但所爭論的，若是關乎言語、名目，和你們的律法，你們自己去辦吧！這樣的事我不願意審問」；</div>
+<div class="verse"><span class="verse-number">16</span>就把他們攆出公堂。</div>
+<div class="verse"><span class="verse-number">17</span>眾人便揪住管會堂的所提尼，在堂前打他。這些事迦流都不管。</div>
+<div class="verse"><span class="verse-number">18</span>保羅又住了多日，就辭別了弟兄，坐船往敘利亞去；百基拉、亞居拉和他同去。他因為許過願，就在堅革哩剪了頭髮。</div>
+<div class="verse"><span class="verse-number">19</span>到了以弗所，保羅就把他們留在那裏，自己進了會堂，和猶太人辯論。</div>
+<div class="verse"><span class="verse-number">20</span>眾人請他多住些日子，他卻不允，</div>
+<div class="verse"><span class="verse-number">21</span>就辭別他們，說：「神若許我，我還要回到你們這裏」；於是開船離了以弗所。</div>
+<div class="verse"><span class="verse-number">22</span>在該撒利亞下了船，就上耶路撒冷去問教會安，隨後下安提阿去。</div>
+<div class="verse"><span class="verse-number">23</span>住了些日子，又離開那裏，挨次經過加拉太和弗呂家地方，堅固眾門徒。</div>
+<div class="verse"><span class="verse-number">24</span>有一個猶太人，名叫亞波羅，來到以弗所。他生在亞力山大，是有學問〔或作：口才〕的，最能講解聖經。</div>
+<div class="verse"><span class="verse-number">25</span>這人已經在主的道上受了教訓，心裏火熱，將耶穌的事詳細講論教訓人；只是他單曉得約翰的洗禮。</div>
+<div class="verse"><span class="verse-number">26</span>他在會堂裏放膽講道；百基拉，亞居拉聽見，就接他來，將神的道給他講解更加詳細。</div>
+<div class="verse"><span class="verse-number">27</span>他想要往亞該亞去，弟兄們就勉勵他，並寫信請門徒接待他〔或作：弟兄們就寫信勸門徒接待他〕。他到了那裏，多幫助那蒙恩信主的人，</div>
+<div class="verse"><span class="verse-number">28</span>在眾人面前極有能力駁倒猶太人，引聖經證明耶穌是基督。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+使徒行傳第18章記載保羅在哥林多的十八個月服事，以及宣教隊伍的擴大與亞波羅的進深。保羅在哥林多遇見帳棚工匠亞居拉和百基拉，「因與他們同業，就和他們同住作工」——保羅以自己雙手養活自己，以正直的方式取信於人。傳道受到拒絕，保羅要轉往外邦人，「主在異象中對保羅說：不要怕，只管講，不要閉口，有我與你同在，必沒有人下手害你，因為在這城裏我有許多的百姓」——神的鼓勵讓保羅能在哥林多服事長達一年半。被人告上官府，方伯迦流不管這宗教爭端，使宣教工作得保護。回程，百基拉和亞居拉定居以弗所。亞波羅是有學問、能講聖經、心裏火熱的人，「只是他單曉得約翰的洗禮」，百基拉和亞居拉「將神的道給他講解更加詳細」——謙卑接受教導的亞波羅，成為後來哥林多教會的得力教師。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神在最黑暗的城市有「許多的百姓」】</strong><br>「在這城裏我有許多的百姓」——哥林多是當時最道德敗壞的城市之一，神卻說那裏有祂的許多百姓。這給傳道人極大的鼓勵：沒有任何城市、任何群體是「太黑暗、太頑固」以至無人可以得救的。神在每一個地方都有預備好的人。信徒面對最難攻破的環境，也當相信神已在那裏工作。<br><br>
+<strong>2. 【謙卑接受更全面教導是屬靈成長的關鍵】</strong><br>亞波羅「心裏火熱，將耶穌的事詳細講論教訓人」，卻願意接受百基拉和亞居拉的補充教導。他的謙卑使他的服事更加完全有力。一個有才能卻不願意被人指正的人，是危險的；一個有才能又謙卑受教的人，是神所大用的。「以後他到了那裏，多幫助那蒙恩信主的人」——更全面的理解使他的服事更有果效。<br><br>
+<strong>3. 【平信徒的造就事工——百基拉和亞居拉】</strong><br>百基拉和亞居拉是帳棚工匠，不是使徒或傳道人，卻把亞波羅請來「將神的道給他講解更加詳細」。他們沒有因為亞波羅的學問和才能而退縮，而是主動關懷和補全他的理解。平信徒的造就和門徒訓練，不需要等到有神學學位才開始——忠心分享自己所知道的，就是服事。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>主在異象中對保羅</strong>說：「<strong>不要怕</strong>，只管講，不要閉口，有我與你同在，必沒有人下手害你，因為在這城裏我有許多的百姓。」（徒18:9-10）</td>
+<td>你有沒有因為環境的艱難或人的拒絕而對傳福音感到恐懼和退縮？就像知道有強大後援的士兵可以更勇敢地前進，你有沒有讓「有我與你同在」這個應許給你繼續傳講的勇氣？</td>
+</tr>
+<tr>
+<td><strong>使徒行傳說</strong>：「<strong>百基拉</strong>，亞居拉聽見，就接他來，將神的道給他講解更加詳細。」（徒18:26）</td>
+<td>你有沒有像亞波羅一樣，謙卑地接受他人對你信仰理解的補充和糾正？就像精良的武器需要定期校準才能保持準確，你有沒有讓自己保持開放，讓神透過他人幫助你更全面地理解真理？</td>
+</tr>
+<tr>
+<td><strong>使徒行傳說</strong>：「<strong>保羅因與他們同業</strong>，就和他們同住作工。」（徒18:3）</td>
+<td>你有沒有讓你的日常工作成為建立關係和傳福音的平台，而非把工作和信仰分開？就像保羅以作帳棚建立深厚的關係後再傳福音，你有沒有讓你的職場成為見證基督的工場？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

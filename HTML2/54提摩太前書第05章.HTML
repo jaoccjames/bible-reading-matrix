@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提摩太前書第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+提摩太前書第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">對不同人的牧養與寡婦長老的管理</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>不可嚴責老年人，只要勸他如同父親；勸少年人如同弟兄；</div>
+<div class="verse"><span class="verse-number">2</span>勸老年婦女如同母親；勸少年婦女如同姐妹；總要清清潔潔的。</div>
+<div class="verse"><span class="verse-number">3</span>要尊敬那真為寡婦的。</div>
+<div class="verse"><span class="verse-number">4</span>若寡婦有兒女，或有孫子孫女，便叫他們先在自己家中學着行孝，報答親恩，因為這在神面前是可悅納的。</div>
+<div class="verse"><span class="verse-number">5</span>那獨居無靠、真為寡婦的，是仰賴神，晝夜不住的祈求禱告。</div>
+<div class="verse"><span class="verse-number">6</span>但那好宴樂的寡婦，正活着的時候也是死的。</div>
+<div class="verse"><span class="verse-number">7</span>這些事你要囑咐她們，叫她們無可指責。</div>
+<div class="verse"><span class="verse-number">8</span>人若不看顧親屬，就是背了真道，比不信的人還不好，不看顧自己家裏的人，更是如此。</div>
+<div class="verse"><span class="verse-number">9</span>寡婦記在冊子上，必須年紀到六十歲，從來只作一個丈夫的妻子，</div>
+<div class="verse"><span class="verse-number">10</span>又有行善的名聲，就如養育兒女，接待遠人，洗聖徒的腳，救濟遭難的人，竭力行各樣善事。</div>
+<div class="verse"><span class="verse-number">11</span>至於年輕的寡婦，就可以辭她；因為她們的情慾發動，違背基督的時候就想要嫁人。</div>
+<div class="verse"><span class="verse-number">12</span>她們被定罪，是因廢棄了當初所許的願；</div>
+<div class="verse"><span class="verse-number">13</span>並且她們又習慣懶惰，挨家閒遊；不但是懶惰，又說長道短，好管閒事，說些不當說的話。</div>
+<div class="verse"><span class="verse-number">14</span>所以我願意年輕的寡婦嫁人，生養兒女，治理家務，不給敵人辱罵的把柄。</div>
+<div class="verse"><span class="verse-number">15</span>因為已經有轉去隨從撒但的。</div>
+<div class="verse"><span class="verse-number">16</span>信主的婦女，若家中有寡婦，自己就當救濟她們，不可累着教會，好使教會能救濟那真無倚靠的寡婦。</div>
+<div class="verse"><span class="verse-number">17</span>那善於管理教會的長老，當以為配受加倍的敬奉；那勞苦傳道教導人的，更當如此。</div>
+<div class="verse"><span class="verse-number">18</span>因為經上說：「牛在場上踹穀的時候，不可籠住牠的嘴」；又說：「工人得工價是應當的。」</div>
+<div class="verse"><span class="verse-number">19</span>控告長老的呈子，非有兩三個見證就不要收。</div>
+<div class="verse"><span class="verse-number">20</span>犯罪的人，當在眾人面前責備他，叫其餘的人也可以懼怕。</div>
+<div class="verse"><span class="verse-number">21</span>我在神和基督耶穌並蒙揀選的天使面前囑咐你：要遵守這些話，不可存成見，行事也不可有偏心。</div>
+<div class="verse"><span class="verse-number">22</span>給人行按手的禮，不可急促；不要在別人的罪上有分，要保守自己清潔。</div>
+<div class="verse"><span class="verse-number">23</span>因你胃口不清，屢次患病，再不要照常喝水，可以稍微用點酒。</div>
+<div class="verse"><span class="verse-number">24</span>有些人的罪是明顯的，如同先到審判案前；有些人的罪是隨後跟了去的。</div>
+<div class="verse"><span class="verse-number">25</span>這樣，善行也有明顯的，那不明顯的也不能隱藏。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+提摩太前書第5章是保羅最實際的牧養指引，論及如何對待教會中不同年齡和處境的人。對不同人的態度：「不可嚴責老年人，只要勸他如同父親；勸少年人如同弟兄；勸老年婦女如同母親；勸少年婦女如同姐妹；總要清清潔潔的」——用家庭關係類比教會關係，說明適當的距離和尊重。寡婦的照顧：「若寡婦有兒女，或有孫子孫女，便叫他們先在自己家中學着行孝，報答親恩，因為這在神面前是可悅納的」；「人若不看顧親屬，就是背了真道，比不信的人還不好」——家庭責任先於教會責任。長老的管理：「那善於管理教會的長老，當以為配受加倍的敬奉；那勞苦傳道教導人的，更當如此」——勞苦的服事值得配受尊重和供給；「控告長老的呈子，非有兩三個見證就不要收」——保護領袖免受無依據的控告；「給人行按手的禮，不可急促」——謹慎委任。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【家庭關係類比教會關係】</strong><br>「不可嚴責老年人，只要勸他如同父親……」——用父母、兄弟姐妹的關係框架來描述教會中的牧養關係，強調的是尊重、適當的親密和清潔的界線。教會不只是機構，而是家庭，應有家庭的溫度和關係的深度。<br><br>
+<strong>2. 【孝敬父母先於依靠教會】</strong><br>「若寡婦有兒女，或有孫子孫女，便叫他們先在自己家中學着行孝」；「人若不看顧親屬，就是背了真道，比不信的人還不好」——信仰不能成為逃避家庭責任的藉口。家庭責任——贍養父母、照顧親屬——是信仰的基本表達，不可以推到教會。<br><br>
+<strong>3. 【勞苦服事應得雙倍的尊重】</strong><br>「那善於管理教會的長老，當以為配受加倍的敬奉；那勞苦傳道教導人的，更當如此」——保羅用「牛在場上踹穀……工人得工價是應當的」兩個比喻說明：服事者應得到適當的支持和尊重，不是施捨，而是應得的。教會對牧者的支持是信仰的基本責任。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>人若不看顧親屬</strong>，就是背了真道，比不信的人還不好，不看顧自己家裏的人，更是如此。」（提前5:8）</td>
+<td>你有沒有把照顧和關心自己的家庭成員——特別是老年的父母和親屬——看作是你信仰最基本的表現，而非在忙碌的教會事奉中忽略了最近的人？就像好的樹根扎在最近的土地，你有沒有讓你的信仰愛心從最近的家人開始流出？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>那善於管理教會的</strong>長老，當以為配受加倍的敬奉；那勞苦傳道教導人的，更當如此。」（提前5:17）</td>
+<td>你有沒有真正地尊重和支持那些在你的教會中勞苦事奉的牧者和領袖，讓你的尊重不只是口頭的，也在實際的關心和支持中表達出來？就像好的員工尊重真正努力工作的主管，你有沒有讓對牧者的尊重和支持成為你教會生活的自然部分？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>不可嚴責老年人</strong>，只要勸他如同父親；勸少年人如同弟兄；勸老年婦女如同母親；勸少年婦女如同姐妹；總要清清潔潔的。」（提前5:1-2）</td>
+<td>你有沒有在你的信仰群體中，按照各人的年齡和處境，以適當的方式和距離關懷不同的人——尊重長輩、友愛同輩、善待年輕人？就像家庭中對不同的成員有不同但都充滿愛的對待方式，你有沒有讓你的教會關係有這樣的細膩和尊重？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

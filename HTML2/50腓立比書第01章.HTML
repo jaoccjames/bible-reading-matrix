@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>腓立比書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+腓立比書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">為基督活，為基督死</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>基督耶穌的僕人保羅和提摩太寫信給凡住腓立比、在基督耶穌裏的眾聖徒，和諸位監督，諸位執事。</div>
+<div class="verse"><span class="verse-number">2</span>願恩惠、平安從神我們的父並主耶穌基督歸與你們！</div>
+<div class="verse"><span class="verse-number">3</span>我每逢想念你們，就感謝我的神；</div>
+<div class="verse"><span class="verse-number">4</span>每逢為你們眾人祈求的時候，常是歡歡喜喜的祈求。</div>
+<div class="verse"><span class="verse-number">5</span>因為從頭一天直到如今，你們是同心合意的興旺福音。</div>
+<div class="verse"><span class="verse-number">6</span>我深信那在你們心裏動了善工的，必成全這工，直到耶穌基督的日子。</div>
+<div class="verse"><span class="verse-number">7</span>我為你們眾人有這樣的意念，原是應當的；因你們常在我心裏，無論我是在捆鎖之中，是辯明證實福音的時候，你們都與我一同得恩。</div>
+<div class="verse"><span class="verse-number">8</span>我體會基督耶穌的心腸，切切的想念你們眾人；這是神可以給我作見證的。</div>
+<div class="verse"><span class="verse-number">9</span>我所禱告的，就是要你們的愛心在知識和各樣見識上多而又多，</div>
+<div class="verse"><span class="verse-number">10</span>使你們能分別是非〔或作：喜愛那美好的事〕，作誠實無過的人，直到基督的日子；</div>
+<div class="verse"><span class="verse-number">11</span>並靠着耶穌基督結滿了仁義的果子，叫榮耀稱讚歸與神。</div>
+<div class="verse"><span class="verse-number">12</span>弟兄們，我願意你們知道，我所遭遇的事更是叫福音興旺，</div>
+<div class="verse"><span class="verse-number">13</span>以致我受的捆鎖在御營全軍和其餘的人中，已經顯明是為基督的緣故。</div>
+<div class="verse"><span class="verse-number">14</span>並且那在主裏的弟兄多半因我受的捆鎖就篤信不疑，越發放膽傳神的道，無所懼怕。</div>
+<div class="verse"><span class="verse-number">15</span>有的傳基督是出於嫉妒紛爭，也有的是出於好意。</div>
+<div class="verse"><span class="verse-number">16</span>這一等是出於愛心，知道我是為辯明福音設立的；</div>
+<div class="verse"><span class="verse-number">17</span>那一等傳基督是出於結黨，並不誠實，意思要加增我捆鎖的苦楚。</div>
+<div class="verse"><span class="verse-number">18</span>這有何妨呢？或是假意，或是真心，無論怎樣，基督究竟被傳開了。為此，我就歡喜，並且還要歡喜；</div>
+<div class="verse"><span class="verse-number">19</span>因為我知道，這事藉着你們的祈禱和耶穌基督之靈的幫助，終必叫我得救。</div>
+<div class="verse"><span class="verse-number">20</span>照着我所切慕、所盼望的，沒有一事叫我羞愧。只要凡事放膽，無論是生是死，總叫基督在我身上照常顯大。</div>
+<div class="verse"><span class="verse-number">21</span>因我活着就是基督，我死了就有益處。</div>
+<div class="verse"><span class="verse-number">22</span>但我在肉身活着，若成就我工夫的果子，我就不知道該挑選甚麼。</div>
+<div class="verse"><span class="verse-number">23</span>我正在兩難之間，情願離世與基督同在，因為這是好得無比的。</div>
+<div class="verse"><span class="verse-number">24</span>然而，我在肉身活着，為你們更是要緊的。</div>
+<div class="verse"><span class="verse-number">25</span>我既然這樣深信，就知道仍要住在世間，且與你們眾人同住，使你們在所信的道上又長進又喜樂，</div>
+<div class="verse"><span class="verse-number">26</span>叫你們在基督耶穌裏的歡樂，因我再到你們那裏去，就越發加增。</div>
+<div class="verse"><span class="verse-number">27</span>只要你們行事為人與基督的福音相稱，叫我或來見你們，或不在你們那裏，可以聽見你們的景況，知道你們同有一個心志，站立得穩，為所信的福音齊心努力。</div>
+<div class="verse"><span class="verse-number">28</span>凡事不怕敵人的驚嚇，這是證明他們沉淪，你們得救都是出於神。</div>
+<div class="verse"><span class="verse-number">29</span>因為你們蒙恩，不但得以信服基督，並要為他受苦。</div>
+<div class="verse"><span class="verse-number">30</span>你們的爭戰，就與你們在我身上從前所看見、現在所聽見的一樣。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+腓立比書第1章是保羅在監獄中寫給最親密的教會的信，充滿了喜樂和對未來的信心。開篇表達對腓立比人的感謝和禱告，「我深信那在你們心裏動了善工的，必成全這工，直到耶穌基督的日子」——神的工作有祂的保證。保羅說他的被囚反而使福音得着興旺：在御營全軍中顯明是為基督的緣故，使弟兄因此越發放膽傳道。有人傳基督是出於嫉妒紛爭，有人是出於好意——「無論怎樣，基督究竟被傳開了。為此，我就歡喜」。保羅面對生死的態度：「無論是生是死，總叫基督在我身上照常顯大」；「因我活着就是基督，我死了就有益處」。在生與死之間的抉擇：情願離世與基督同在（「好得無比的」），但在肉身活着「為你們更是要緊的」。以腓立比人最終的呼籲：「只要你們行事為人與基督的福音相稱」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【「我活着就是基督，死了就有益處」】</strong><br>這是整本聖經中對基督徒生死觀最精煉的宣告。「活着就是基督」——生命的全部內容和目的是基督，不是任何其他的追求、關係或成就；「死了就有益處」——死亡不是失去，而是與基督同在的更完全。這個生死觀的前提是：「基督在我身上照常顯大」是比生死更重要的考量。<br><br>
+<strong>2. 【不幸的環境反而推進了福音】</strong><br>「我所遭遇的事更是叫福音興旺」——被囚不是失敗，反而使保羅能在御營全軍中作見證，使弟兄越發放膽。「無論怎樣，基督究竟被傳開了。為此，我就歡喜」——保羅的喜樂不建立在環境上，而建立在福音得傳上。當一個人的喜樂根基是神國的推進，環境的改變就無法奪去他的喜樂。<br><br>
+<strong>3. 【「那在你們心裏動了善工的，必成全這工」】</strong><br>「我深信那在你們心裏動了善工的，必成全這工」——神在信徒生命中開始的工作，是神自己負責成全的。這個確信是牧者心安的根基：信徒的靈命成長不完全靠人的努力，而是神動了善工之後祂自己的成全。信徒也可以用這句話給自己信心：神開始在你生命中的工作，祂必成全。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>因我活着就是基督</strong>，我死了就有益處……我正在兩難之間，情願離世與基督同在，因為這是好得無比的。然而，我在肉身活着，為你們更是要緊的。」（腓1:21,23-24）</td>
+<td>你有沒有以「我活着就是基督」這個宣告來評估你的生命——你的時間、精力、資源和優先次序，有沒有真實地反映基督就是你生命全部的內容？就像一個公司的存在理由決定它所有的決策，你有沒有讓「基督」成為你生命每一個選擇的根本依據？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我深信那在你們心</strong>裏動了善工的，必成全這工，直到耶穌基督的日子。」（腓1:6）</td>
+<td>你有沒有讓「神必成全祂所開始的工」這個確信，帶出你面對自己和他人靈命不完全時的耐心和盼望？就像一個工程師知道建築還未完工就不輕易評斷，你有沒有在等候中信靠那位「必成全」的神？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我所遭遇的事更是</strong>叫福音興旺……無論是假意，或是真心，無論怎樣，基督究竟被傳開了。為此，我就歡喜，並且還要歡喜。」（腓1:12,18）</td>
+<td>你有沒有學習在不利的環境中尋找福音推進的可能，讓你的關注點從「我的處境是否舒適」轉向「基督是否在這個處境中被傳開」？就像保羅在監獄裏看見的是宣教機會而非個人的困境，你有沒有以同樣的眼光看你的難處？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

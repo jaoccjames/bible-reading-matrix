@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰福音第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰福音第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">畢士大池邊的醫治與父子關係</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>這事以後，到了猶太人的一個節期，耶穌就上耶路撒冷去。</div>
+<div class="verse"><span class="verse-number">2</span>在耶路撒冷，靠近羊門有一個池子，希伯來話叫作畢士大，旁邊有五個廊子；</div>
+<div class="verse"><span class="verse-number">3</span>裏面躺着瞎眼的、瘸腿的、血氣枯乾的許多病人。（有古卷在此有：等候水動；</div>
+<div class="verse"><span class="verse-number">4</span>因為有天使按時下池子攪動那水，水動之後，誰先下去，無論害甚麼病就痊癒了。）</div>
+<div class="verse"><span class="verse-number">5</span>在那裏有一個人，病了三十八年。</div>
+<div class="verse"><span class="verse-number">6</span>耶穌看見他躺着，知道他病了許久，就問他說：「你要痊癒嗎？」</div>
+<div class="verse"><span class="verse-number">7</span>病人回答說：「先生，水動的時候，沒有人把我放在池子裏；我正去的時候，就有別人比我先下去。」</div>
+<div class="verse"><span class="verse-number">8</span>耶穌對他說：「起來，拿你的褥子走吧！」</div>
+<div class="verse"><span class="verse-number">9</span>那人立刻痊癒，就拿起褥子來走了。</div>
+<div class="verse"><span class="verse-number">10</span>那天是安息日，所以猶太人對那醫好的人說：「今天是安息日，你拿褥子是不可的。」</div>
+<div class="verse"><span class="verse-number">11</span>他卻回答說：「那使我痊癒的，對我說：『拿你的褥子走吧。』」</div>
+<div class="verse"><span class="verse-number">12</span>他們問他說：「對你說『拿褥子走』的是甚麼人？」</div>
+<div class="verse"><span class="verse-number">13</span>那醫好的人不知道是誰；因為那裏的人多，耶穌已經躲開了。</div>
+<div class="verse"><span class="verse-number">14</span>後來耶穌在殿裏遇見他，對他說：「你已經痊癒了，不要再犯罪，恐怕你遭遇的更加利害。」</div>
+<div class="verse"><span class="verse-number">15</span>那人就去告訴猶太人，使他痊癒的是耶穌。</div>
+<div class="verse"><span class="verse-number">16</span>所以猶太人逼迫耶穌，因為他在安息日作了這事。</div>
+<div class="verse"><span class="verse-number">17</span>耶穌就對他們說：「我父作事直到如今，我也作事。」</div>
+<div class="verse"><span class="verse-number">18</span>所以猶太人越發想要殺他；因他不但犯了安息日，並且稱神為他的父，將自己和神當作平等。</div>
+<div class="verse"><span class="verse-number">19</span>耶穌對他們說：「我實實在在的告訴你們，子憑着自己不能作甚麼，惟有看見父所作的，子才能作；父所作的事，子也照樣作。</div>
+<div class="verse"><span class="verse-number">20</span>父愛子，將自己所作的一切事指給他看，還要將比這更大的事指給他看，叫你們希奇。</div>
+<div class="verse"><span class="verse-number">21</span>父怎樣叫死人起來，使他們活着，子也照樣隨自己的意思使人活着。</div>
+<div class="verse"><span class="verse-number">22</span>父不審判甚麼人，乃將審判的事全交與子，</div>
+<div class="verse"><span class="verse-number">23</span>叫人都尊敬子如同尊敬父一樣。不尊敬子的，就是不尊敬差子來的父。</div>
+<div class="verse"><span class="verse-number">24</span>我實實在在的告訴你們，那聽我話、又信差我來者的，就有永生；不至於定罪，是已經出死入生了。</div>
+<div class="verse"><span class="verse-number">25</span>我實實在在的告訴你們，時候將到，現在就是了，死人要聽見神兒子的聲音，聽見的人就要活了。</div>
+<div class="verse"><span class="verse-number">26</span>因為父怎樣在自己有生命，就賜給他兒子也照樣在自己有生命，</div>
+<div class="verse"><span class="verse-number">27</span>並且因為他是人子，就賜給他行審判的權柄。</div>
+<div class="verse"><span class="verse-number">28</span>你們不要把這事看作希奇。時候要到，凡在墳墓裏的，都要聽見他的聲音，就出來：</div>
+<div class="verse"><span class="verse-number">29</span>行善的，復活得生；作惡的，復活定罪。</div>
+<div class="verse"><span class="verse-number">30</span>「我憑着自己不能作甚麼，我怎麼聽見就怎麼審判。我的審判也是公平的；因為我不求自己的意思，只求那差我來者的意思。」</div>
+<div class="verse"><span class="verse-number">31</span>我若為自己作見證，我的見證就不真。</div>
+<div class="verse"><span class="verse-number">32</span>另有一位給我作見證，我也知道他給我作的見證是真的。</div>
+<div class="verse"><span class="verse-number">33</span>你們曾差人到約翰那裏，他為真理作過見證。</div>
+<div class="verse"><span class="verse-number">34</span>其實，我所受的見證不是從人來的；然而，我說這些話，為要叫你們得救。</div>
+<div class="verse"><span class="verse-number">35</span>約翰是點着的明燈，你們情願暫時喜歡他的光。</div>
+<div class="verse"><span class="verse-number">36</span>但我有比約翰更大的見證；因為父交給我要我成就的事，就是我所作的事，這便見證我是父所差來的。</div>
+<div class="verse"><span class="verse-number">37</span>差我來的父也為我作過見證。你們從來沒有聽見他的聲音，也沒有看見他的形像。</div>
+<div class="verse"><span class="verse-number">38</span>你們並沒有他的道存在心裏；因為他所差來的，你們不信。</div>
+<div class="verse"><span class="verse-number">39</span>你們查考聖經〔或作：應當查考聖經〕，因你們以為內中有永生；給我作見證的就是這經。</div>
+<div class="verse"><span class="verse-number">40</span>然而，你們不肯到我這裏來得生命。</div>
+<div class="verse"><span class="verse-number">41</span>「我不受從人來的榮耀。</div>
+<div class="verse"><span class="verse-number">42</span>但我知道，你們心裏沒有神的愛。</div>
+<div class="verse"><span class="verse-number">43</span>我奉我父的名來，你們並不接待我；若有別人奉自己的名來，你們倒要接待他。</div>
+<div class="verse"><span class="verse-number">44</span>你們互相受榮耀，卻不求從獨一之神來的榮耀，怎能信我呢？</div>
+<div class="verse"><span class="verse-number">45</span>不要想我在父面前要告你們；有一位告你們的，就是你們所仰賴的摩西。</div>
+<div class="verse"><span class="verse-number">46</span>你們如果信摩西，也必信我，因為他書上有指着我寫的話。</div>
+<div class="verse"><span class="verse-number">47</span>你們若不信他的書，怎能信我的話呢？」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約翰福音第5章記載耶穌在畢士大池邊醫治病了三十八年的人，引發了關於耶穌身份和權柄的深度討論。畢士大池邊躺着許多病人，等候水動。一個病了三十八年的人，沒有人可以幫他下池。耶穌問「你要痊癒嗎？」他解釋自己沒有幫助，耶穌說「起來，拿你的褥子走吧！」他立刻痊癒了。那天是安息日，猶太人指控他拿褥子，他說「那使我痊癒的」告訴他拿褥子走。後來耶穌在殿裏對他說「你已經痊癒了，不要再犯罪」。那人去告訴猶太人是耶穌醫治了他，他們因此逼迫耶穌。耶穌說「我父作事直到如今，我也作事」，猶太人更要殺他，因為祂自稱與神平等。耶穌隨即展開對父子關係的深度教導：子看父所作而照樣行；父愛子，將萬有交在子手裏；父把審判交給子；「那聽我話、又信差我來者的，就有永生；不至於定罪，是已經出死入生了」。章末論見證：約翰的見證、父的見證、聖經的見證——然而「你們不肯到我這裏來得生命」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【耶穌主動介入那些被遺忘和無助的人】</strong><br>那個病了三十八年的人，有人在那裏、卻沒有人幫助他，一次次錯過機會。耶穌在眾多病人中，走向了他，問了他「你要痊癒嗎？」——不是等他先開口，而是主動介入。神的恩典常常臨到那些看似最沒有希望的人。三十八年的等候對那個人可能是絕望，在神的計劃中卻是等候耶穌介入的時機。<br><br>
+<strong>2. 【信耶穌的話是已經出死入生】</strong><br>「那聽我話、又信差我來者的，就有永生；不至於定罪，是已經出死入生了」——永生不只是將來的事，「已經出死入生」說明這是當下的現實。相信耶穌的人，在神的眼中已經從死亡的領域轉到生命的領域。這個確據是信仰生活的根基：我不是在試圖「努力到達」，而是已經「在裏面」，從這個確據出發活出生命。<br><br>
+<strong>3. 【查考聖經卻不肯到耶穌那裏】</strong><br>「你們查考聖經，因你們以為內中有永生；給我作見證的就是這經。然而，你們不肯到我這裏來得生命」——這是最深刻的控訴。他們勤讀聖經，卻把聖經當作目的本身，而非指向基督的指標。聖經的功能是指向耶穌，把人帶到祂面前；若讀了聖經卻更遠離基督，就是把手段當目的了。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌對他說</strong>：「起來，<strong>拿你的褥子走吧</strong>！」那人立刻痊癒，就拿起褥子來走了。（約5:8-9）</td>
+<td>你有沒有把你長年的限制或軟弱帶到耶穌面前，讓祂說一句話就帶來改變？就像等了三十八年的人沒有放棄，你有沒有把你持續多年的問題繼續帶到耶穌面前，相信祂隨時可以說「起來」？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>那聽我話</strong>、又信差我來者的，就有永生；不至於定罪，是已經出死入生了。」（約5:24）</td>
+<td>你有沒有真實地活在「已經出死入生」的確據中，而非仍在不確定裏苦苦掙扎？就像已被宣判無罪的人不需要繼續在監獄的心態中生活，你願意讓這個確據——我已是在生命一邊的人——改變你面對每天的態度嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>你們查考聖經</strong>，因你們以為內中有永生；給我作見證的就是這經。然而，你們不肯到我這裏來得生命。」（約5:39-40）</td>
+<td>你讀聖經有沒有讓你越來越靠近耶穌，還是只是在積累知識而不讓它轉化你的生命？就像地圖的目的是幫助你到達目的地而非讓你研究地圖本身，你有沒有讓每次讀經都成為與耶穌相遇的機會？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

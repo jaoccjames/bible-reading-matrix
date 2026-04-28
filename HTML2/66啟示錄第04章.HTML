@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>啟示錄第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+啟示錄第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">天上的敬拜與羔羊的獨特資格</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>此後，我觀看，見天上有門開了。我初次聽見好像吹號的聲音，對我說：「你上到這裏來，我要將以後必成的事指示你。」</div>
+<div class="verse"><span class="verse-number">2</span>我立刻被聖靈感動，見有一個寶座安置在天上，又有一位坐在寶座上。</div>
+<div class="verse"><span class="verse-number">3</span>看那坐着的，好像碧玉和紅寶石；又有虹圍着寶座，好像綠寶石。</div>
+<div class="verse"><span class="verse-number">4</span>寶座的周圍又有二十四個座位；其上坐着二十四位長老，身穿白衣，頭上戴着金冠冕。</div>
+<div class="verse"><span class="verse-number">5</span>有閃電、聲音、雷轟從寶座中發出；又有七盞火燈在寶座前點着；這七燈就是神的七靈。</div>
+<div class="verse"><span class="verse-number">6</span>寶座前好像一個玻璃海，如同水晶。寶座中和寶座周圍有四個活物，前後遍體都滿了眼睛。</div>
+<div class="verse"><span class="verse-number">7</span>第一個活物像獅子，第二個像牛犢，第三個臉面像人，第四個像飛鷹。</div>
+<div class="verse"><span class="verse-number">8</span>四活物各有六個翅膀，遍體內外都滿了眼睛。他們晝夜不住的說：聖哉！聖哉！聖哉！主神是昔在、今在、以後永在的全能者。</div>
+<div class="verse"><span class="verse-number">9</span>每逢四活物將榮耀、尊貴、感謝歸給那坐在寶座上、活到永永遠遠者的時候，</div>
+<div class="verse"><span class="verse-number">10</span>那二十四位長老就俯伏在坐寶座的面前敬拜那活到永永遠遠的，又把他們的冠冕放在寶座前，說：</div>
+<div class="verse"><span class="verse-number">11</span>我們的主，我們的神，你是配得榮耀、尊貴、權柄的；因為你創造了萬物，並且萬物是因你的旨意被創造而有的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+啟示錄第4-5章是全書的神學中心，描繪天上的寶座景象和羔羊的凱旋。第4章：約翰被提到天上，見到神的寶座：「好像碧玉和紅寶石……有虹圍着寶座，好像綠寶石」；二十四位長老；四活物晝夜不住地說「聖哉！聖哉！聖哉！主神是昔在、今在、以後永在的全能者！」——天上持續的敬拜。第5章：有書卷封了七印，沒有人配展開；約翰大哭；「看哪，猶大支派中的獅子，大衛的根，他已得勝，能以展開那書卷」——獅子被稱為羔羊；羔羊「像是被殺過的」；天上的新歌：「你曾被殺，用自己的血從各族、各方、各民、各國中買了人來，叫他們歸於神」；全宇宙的頌讚：「但願頌讚、尊貴、榮耀、權勢都歸給坐寶座的和羔羊，直到永永遠遠！」
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【天上的敬拜是地上敬拜的根基】</strong><br>「四活物晝夜不住的說：聖哉！聖哉！聖哉！主神是昔在、今在、以後永在的全能者。」——天上的敬拜是持續不斷的，不依賴任何環境或感受。「二十四位長老把他們的冠冕放在寶座前，說：我們的主，我們的神，你是配得榮耀、尊貴、權柄的」——天上的敬拜是謙卑的、以神為中心的，不是為自己的享受。<br><br>
+<strong>2. 【獅子是羔羊——最大的悖論】</strong><br>「看哪，猶大支派中的獅子……他已得勝」，然後約翰轉身「見……有羔羊站立，像是被殺過的」——約翰聽見說是獅子，看見的是羔羊。基督的得勝不是通過武力（獅子），而是通過犧牲（羔羊）。這個悖論是整本啟示錄的核心神學：神的力量是透過犧牲彰顯的。<br><br>
+<strong>3. 【羔羊用血買來各族各方各民各國的人】</strong><br>「用自己的血從各族、各方、各民、各國中買了人來，叫他們歸於神」——救贖的範圍是普世性的、跨文化的，沒有任何民族在救恩的範圍之外。「又叫他們成為國民，作祭司歸於神，在地上執掌王權」——被買來的人得到的身份：國民、祭司、執掌王權。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>啟示錄說</strong>：「<strong>四活物晝夜不住的</strong>說：聖哉！聖哉！聖哉！主神是昔在、今在、以後永在的全能者。」（啟4:8）</td>
+<td>你有沒有讓天上「晝夜不住」的敬拜成為你地上敬拜的視野——讓你的敬拜不只是每週一次的儀式，而是加入那從永恆延續到永恆的讚美？就像知道自己是宏大交響樂的一部分讓人更認真地演奏自己的音符，你有沒有讓天上的敬拜更新你對敬拜的理解？</td>
+</tr>
+<tr>
+<td><strong>啟示錄說</strong>：「<strong>你配拿書卷</strong>，配揭開七印；因為你曾被殺，用自己的血從各族、各方、各民、各國中買了人來，叫他們歸於神。」（啟5:9）</td>
+<td>你有沒有讓「被殺的羔羊配得」這個真理顛覆你對「偉大」的理解——認識到在神的國度裏，犧牲性的捨己是真正的得勝之路？就像獅子卻是羔羊帶出的震撼，你有沒有讓基督的犧牲之道成為你服事和生命的模型？</td>
+</tr>
+<tr>
+<td><strong>啟示錄說</strong>：「<strong>但願頌讚</strong>、尊貴、榮耀、權勢都歸給坐寶座的和羔羊，直到永永遠遠！」（啟5:13）</td>
+<td>你有沒有加入天上全宇宙的頌讚，讓你的生命和口舌歸榮耀給那坐寶座的和羔羊？就像所有的歌手最終唱向同一個主題，你有沒有讓你的信仰生命指向這個宇宙最終的頌讚？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

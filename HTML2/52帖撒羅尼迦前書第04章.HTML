@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帖撒羅尼迦前書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+帖撒羅尼迦前書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">聖潔的生活與主再來時的復活</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>弟兄們，我還有話說：我們靠着主耶穌求你們，勸你們，你們既然受了我們的教訓，知道該怎樣行可以討神的喜悅，就要照你們現在所行的更加勉勵。</div>
+<div class="verse"><span class="verse-number">2</span>你們原曉得我們憑主耶穌傳給你們甚麼命令。</div>
+<div class="verse"><span class="verse-number">3</span>神的旨意就是要你們成為聖潔，遠避淫行；</div>
+<div class="verse"><span class="verse-number">4</span>要你們各人曉得怎樣用聖潔、尊貴守着自己的身體。</div>
+<div class="verse"><span class="verse-number">5</span>不放縱私慾的邪情，像那不認識神的外邦人。</div>
+<div class="verse"><span class="verse-number">6</span>不要一個人在這事上越分，欺負他的弟兄；因為這一類的事，主必報應，正如我預先對你們說過，又切切囑咐你們的。</div>
+<div class="verse"><span class="verse-number">7</span>神召我們，本不是要我們沾染污穢，乃是要我們成為聖潔。</div>
+<div class="verse"><span class="verse-number">8</span>所以那棄絕的，不是棄絕人，乃是棄絕那賜聖靈給你們的神。</div>
+<div class="verse"><span class="verse-number">9</span>論到弟兄們相愛，不用人寫信給你們；因為你們自己蒙了神的教訓，叫你們彼此相愛。</div>
+<div class="verse"><span class="verse-number">10</span>你們向馬其頓全地的眾弟兄固然是這樣行，但我勸弟兄們要更加勉勵。</div>
+<div class="verse"><span class="verse-number">11</span>又要立志作安靜人，辦自己的事，親手作工，正如我們從前所吩咐你們的，</div>
+<div class="verse"><span class="verse-number">12</span>叫你們可以向外人行事端正，自己也就沒有甚麼缺乏了。</div>
+<div class="verse"><span class="verse-number">13</span>論到睡了的人，我們不願意弟兄們不知道，恐怕你們憂傷，像那些沒有指望的人一樣。</div>
+<div class="verse"><span class="verse-number">14</span>我們若信耶穌死而復活了，那已經在耶穌裏睡了的人，神也必將他與耶穌一同帶來。</div>
+<div class="verse"><span class="verse-number">15</span>我們現在照主的話告訴你們一件事：我們這活着還存留到主降臨的人，斷不能在那已經睡了的人之先。</div>
+<div class="verse"><span class="verse-number">16</span>因為主必親自從天降臨，有呼叫的聲音和天使長的聲音，又有神的號吹響；那在基督裏死了的人必先復活。</div>
+<div class="verse"><span class="verse-number">17</span>以後我們這活着還存留的人必和他們一同被提到雲裏，在空中與主相遇。這樣，我們就要和主永遠同在。</div>
+<div class="verse"><span class="verse-number">18</span>所以，你們當用這些話彼此勸慰。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+帖撒羅尼迦前書第4章處理兩個實際的問題：聖潔的生活倫理和逝去信徒的命運。「神的旨意就是要你們成為聖潔，遠避淫行……神召我們，本不是要我們沾染污穢，乃是要我們成為聖潔。所以那棄絕的，不是棄絕人，乃是棄絕那賜聖靈給你們的神」——拒絕聖潔就是拒絕聖靈和神。關於主再來：「那在基督裏死了的人必先復活，以後我們這活着還存留的人必和他們一同被提到雲裏，在空中與主相遇。這樣，我們就要和主永遠同在」——「永遠同在主」是盼望的終點。「所以，你們當用這些話彼此勸慰」——末世的教義是安慰的根基，不只是神學的好奇。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【聖潔建立在對神的認識上】</strong><br>「不放縱私慾的邪情，像那不認識神的外邦人」——外邦人的問題根源是「不認識神」，不只是道德的軟弱。對神的認識（祂的性情、祂的聖潔、祂的愛）是聖潔生活最深的動力。保羅不是說「你要更努力遵守規條」，而是說「你認識那呼召你的神，因此活出與這認識相稱的生命」。<br><br>
+<strong>2. 【「永遠同在主」是末世盼望的核心】</strong><br>「我們就要和主永遠同在」——保羅在描述主再來的場景後，把整個圖畫的意義歸結在這一句話上。不是被提本身，不是復活本身，而是「永遠同在主」——這才是信仰的終極目的地。永恆不是地點的問題，而是與神同在的關係的問題。<br><br>
+<strong>3. 【末世教義是安慰的真實根基】</strong><br>「所以，你們當用這些話彼此勸慰」——保羅分享主再來和死人復活的真理，不只是為了滿足神學的好奇，而是為了給那些為已逝親友憂傷的人帶來真實的安慰。用真理安慰人，比用情感的同理更深根、更持久。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>神的旨意就是要你</strong>們成為聖潔，遠避淫行……神召我們，本不是要我們沾染污穢，乃是要我們成為聖潔。」（帖前4:3,7）</td>
+<td>你有沒有讓「神呼召你是為了聖潔」這個清楚的認識，成為你追求聖潔的根本動力，而非只是社會的道德壓力或對懲罰的恐懼？就像認識一位偉大人物讓我們自然想要變得更好，你有沒有讓對神聖潔性情的認識推動你的聖潔追求？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>那在基督裏死了的</strong>人必先復活，以後我們這活着還存留的人必和他們一同被提到雲裏，在空中與主相遇。這樣，我們就要和主永遠同在。所以，你們當用這些話彼此勸慰。」（帖前4:16-18）</td>
+<td>你有沒有讓「與主永遠同在」的盼望成為你面對親人離世、自己疾病或死亡恐懼時真實的安慰和力量？就像知道旅途結束後會與思念已久的人重聚讓旅人充滿盼望，你有沒有讓這個確信帶出你面對告別時的盼望和平安？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>論到睡了的人</strong>，我們不願意弟兄們不知道，恐怕你們憂傷，像那些沒有指望的人一樣。」（帖前4:13）</td>
+<td>你有沒有讓關於死後復活和主再來的真理，真實地改變你面對死亡和喪失的態度，使你的哀愁是「有指望的哀愁」而非「沒有指望的哀愁」？就像懂得終點的長跑者在中途的艱苦中仍有方向，你有沒有讓末世的盼望成為你在悲傷中的錨？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

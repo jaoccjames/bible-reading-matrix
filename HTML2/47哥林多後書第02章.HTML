@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多後書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多後書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">赦免與香氣的比喻</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我自己定了主意再到你們那裏去，必須大家沒有憂愁。</div>
+<div class="verse"><span class="verse-number">2</span>倘若我叫你們憂愁，除了我叫那憂愁的人以外，誰能叫我快樂呢？</div>
+<div class="verse"><span class="verse-number">3</span>我曾把這事寫給你們，恐怕我到的時候，應該叫我快樂的那些人，反倒叫我憂愁。我也深信，你們眾人都以我的快樂為自己的快樂。</div>
+<div class="verse"><span class="verse-number">4</span>我先前心裏難過痛苦，多多的流淚，寫信給你們，不是叫你們憂愁，乃是叫你們知道我格外的疼愛你們。</div>
+<div class="verse"><span class="verse-number">5</span>若有叫人憂愁的，他不但叫我憂愁，也是叫你們眾人有幾分憂愁。我說幾分，恐怕說得太重。</div>
+<div class="verse"><span class="verse-number">6</span>這樣的人受了眾人的責罰也就彀了，</div>
+<div class="verse"><span class="verse-number">7</span>倒不如赦免他，安慰他，免得他憂愁太過，甚至沉淪了。</div>
+<div class="verse"><span class="verse-number">8</span>所以我勸你們，要向他顯出堅定不移的愛心來。</div>
+<div class="verse"><span class="verse-number">9</span>為此我先前也寫信給你們，要試驗你們，看你們凡事順從不順從。</div>
+<div class="verse"><span class="verse-number">10</span>你們赦免誰，我也赦免誰。我若有所赦免的，是在基督面前為你們赦免的；</div>
+<div class="verse"><span class="verse-number">11</span>免得撒但趁着機會勝過我們，因我們並非不曉得他的詭計。</div>
+<div class="verse"><span class="verse-number">12</span>我從前為基督的福音到了特羅亞，主也給我開了門。</div>
+<div class="verse"><span class="verse-number">13</span>那時，因為沒有遇見兄弟提多，我心裏不安，便辭別那裏的人往馬其頓去了。</div>
+<div class="verse"><span class="verse-number">14</span>感謝神！常帥領我們在基督裏誇勝，並藉着我們在各處顯揚那因認識基督而有的香氣。</div>
+<div class="verse"><span class="verse-number">15</span>因為我們在神面前，無論在得救的人身上或滅亡的人身上，都有基督馨香之氣。</div>
+<div class="verse"><span class="verse-number">16</span>在這等人，就作了死的香氣叫他死；在那等人，就作了活的香氣叫他活。這事誰能當得起呢？</div>
+<div class="verse"><span class="verse-number">17</span>我們不像那許多人，為利混亂神的道；乃是由於誠實，由於神，在神面前憑着基督講道。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+哥林多後書第2章處理兩個相關的問題：如何回應那個冒犯者，以及福音傳播的本質。保羅說他先前寫了一封嚴厲的信，不是為了叫他們憂愁，而是要試驗他們的順從，也是因為「格外的疼愛你們」。「這樣的人受了眾人的責罰也就彀了，倒不如赦免他，安慰他，免得他憂愁太過，甚至沉淪了」——教會紀律的結果是悔改者應得到接納。「要向他顯出堅定不移的愛心來」。保羅說教會要饒恕，他也饒恕，「免得撒但趁着機會勝過我們」。然後是保羅事工的感謝：「感謝神！常帥領我們在基督裏誇勝，並藉着我們在各處顯揚那因認識基督而有的香氣」——我們是基督的馨香之氣，對得救的人是活的香氣，對滅亡的人是死的香氣。「我們不像那許多人，為利混亂神的道；乃是由於誠實，由於神，在神面前憑着基督講道」——對比真假傳道人。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【悔改後的接納是赦免的完成】</strong><br>「倒不如赦免他，安慰他，免得他憂愁太過，甚至沉淪了」——教會紀律的最終目的是得着人，而非懲罰人。一旦悔改出現，繼續的責罰就成了攔阻，而非幫助。「要向他顯出堅定不移的愛心來」——接納悔改者需要主動和清楚地展示愛，而非讓他繼續處在不確定中。赦免的愛需要行動，不只是態度。<br><br>
+<strong>2. 【不饒恕讓撒但得機會】</strong><br>「免得撒但趁着機會勝過我們，因我們並非不曉得他的詭計」——撒但的一個主要詭計是利用信徒之間的苦毒和不饒恕，製造裂縫，使教會無法合一。「因我們並非不曉得他的詭計」——信徒應對這個詭計有清醒的認識，主動選擇饒恕，使撒但沒有可乘之機。<br><br>
+<strong>3. 【信徒是基督的馨香之氣】</strong><br>「藉着我們在各處顯揚那因認識基督而有的香氣」——信徒的生命和見證是基督的香氣，向周圍的人散發。香氣是無法控制的——它自然地從源頭散發出去；信徒的生命同樣，在與基督深厚的連結中，自然地散發出基督的美善。「誠實……在神面前憑着基督講道」——誠實和神面前的透明是這香氣的本質。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>倒不如赦免他</strong>，安慰他，免得他憂愁太過，甚至沉淪了。所以，我勸你們，要向他顯出堅定不移的愛心來。」（林後2:7-8）</td>
+<td>在你的信仰群體中有沒有需要接納悔改者的情況？你有沒有在其人真正悔改之後，主動而清楚地向他顯出接納的愛，而非繼續讓他在疑惑中徘徊？就像手術後需要復原期和護理，你有沒有在紀律後給予接納和安慰？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>感謝神</strong>！常帥領我們在基督裏誇勝，並藉着我們在各處顯揚那因認識基督而有的香氣。」（林後2:14）</td>
+<td>你的生命有沒有散發出「因認識基督而有的香氣」——讓周圍的人感受到你生命中有一種不屬於世界的美善？就像香氣無需刻意傳播就能被聞到，你有沒有讓你與基督的深度連結自然地影響你的言語和待人方式？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我們不像那許多人</strong>，為利混亂神的道；乃是由於誠實，由於神，在神面前憑着基督講道。」（林後2:17）</td>
+<td>你在分享信仰、服事他人的時候，有沒有讓「誠實、出於神、在神面前」成為你的根本立場，而非讓私利或人的認可影響你所說和所做的？就像真正的醫生以病人健康為出發點而非只考慮收入，你的服事有沒有這樣純粹的動機？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歌羅西書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歌羅西書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">基督是一切智慧知識的藏所</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我願意你們曉得，我為你們和老底嘉人，並一切沒有與我親自見面的人，是何等的盡心竭力；</div>
+<div class="verse"><span class="verse-number">2</span>要叫他們的心得安慰，因愛心互相聯絡，以致豐豐足足在悟性中有充足的信心，使他們真知神的奧祕，就是基督；</div>
+<div class="verse"><span class="verse-number">3</span>所積蓄的一切智慧知識，都在他裏面藏着。</div>
+<div class="verse"><span class="verse-number">4</span>我說這話，免得有人用花言巧語迷惑你們。</div>
+<div class="verse"><span class="verse-number">5</span>我身子雖與你們相離，心卻與你們同在，見你們循規蹈矩，信基督的心也堅固，我就歡喜了。</div>
+<div class="verse"><span class="verse-number">6</span>你們既然接受了主基督耶穌，就當遵他而行，</div>
+<div class="verse"><span class="verse-number">7</span>在他裏面生根建造，信心堅固，正如你們所領的教訓，感謝的心也更增長了。</div>
+<div class="verse"><span class="verse-number">8</span>你們要謹慎，恐怕有人用他的理學和虛空的妄言，不照着基督，乃照人間的遺傳和世上的小學就把你們擄去。</div>
+<div class="verse"><span class="verse-number">9</span>因為神本性一切的豐盛都有形有體的居住在基督裏面，</div>
+<div class="verse"><span class="verse-number">10</span>你們在他裏面也得了豐盛。他是各樣執政掌權者的元首。</div>
+<div class="verse"><span class="verse-number">11</span>你們在他裏面也受了不是人手所行的割禮，乃是基督使你們脫去肉體情慾的割禮。</div>
+<div class="verse"><span class="verse-number">12</span>你們既受洗與他一同埋葬，也就在此與他一同復活，都因信那叫他從死裏復活神的功用。</div>
+<div class="verse"><span class="verse-number">13</span>你們從前在過犯和未受割禮的肉體中死了，神赦免了你們〔或作：我們〕一切過犯，便叫你們與基督一同活過來；</div>
+<div class="verse"><span class="verse-number">14</span>又塗抹了在律例上所寫攻擊我們，有礙於我們的字據，把他撤去，釘在十字架上。</div>
+<div class="verse"><span class="verse-number">15</span>既將一切執政的、掌權的擄來，明顯給眾人看，就仗着十字架誇勝。</div>
+<div class="verse"><span class="verse-number">16</span>所以，不拘在飲食上，或節期、月朔、安息日，都不可讓人論斷你們。</div>
+<div class="verse"><span class="verse-number">17</span>這些原是後事的影兒；那形體卻是基督。</div>
+<div class="verse"><span class="verse-number">18</span>不可讓人因着故意謙虛和敬拜天使，就奪去你們的獎賞。這等人拘泥在所見過的〔有古卷作：這等人窺察所沒有見過的〕，隨着自己的慾心，無故的自高自大，</div>
+<div class="verse"><span class="verse-number">19</span>不持定元首。全身既然靠着他，筋節得以相助聯絡，就因神大得長進。</div>
+<div class="verse"><span class="verse-number">20</span>你們若是與基督同死，脫離了世上的小學，為甚麼仍像在世俗中活着、服從那「不可拿、不可嘗、不可摸」等類的規條呢？</div>
+<div class="verse"><span class="verse-number">21</span>併於上節</div>
+<div class="verse"><span class="verse-number">22</span>這都是照人所吩咐、所教導的。說到這一切，正用的時候就都敗壞了。</div>
+<div class="verse"><span class="verse-number">23</span>這些規條使人徒有智慧之名，用私意崇拜，自表謙卑，苦待己身，其實在克制肉體的情慾上是毫無功效。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歌羅西書第2章直接對抗歌羅西的假教訓，以基督的完全為護衛真理的核心。「在他裏面藏着一切智慧知識的寶藏」——凡聲稱有額外知識的教訓，都是在否認基督已是一切知識的藏所。「你們要謹慎，恐怕有人用他的理學和虛空的妄言，不照着基督，乃照人間的遺傳和世上的小學就把你們擄去」——假教訓的特徵：理學（哲學思辨）、虛空的妄言（沒有實質內容）、人間的遺傳（而非神的啟示）、世上的小學（基礎而初步的）。「因為神本性一切的豐盛都有形有體的居住在基督裏面，你們在他裏面也得了豐盛」——信徒在基督裏已得了一切豐盛，不需要任何附加物。「又塗抹了在律例上所寫攻擊我們，有礙於我們的字據，把他撤去，釘在十字架上」——律法的定罪已在十字架上被消除。警告各種宗教規條：飲食、節期、月朔、安息日，「這些原是後事的影兒；那形體卻是基督」——影兒指向實體，基督就是那實體。苦待己身的規條「在克制肉體的情慾上是毫無功效」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【在基督裏藏着一切智慧知識的寶藏】</strong><br>「在他裏面藏着一切智慧知識的寶藏」——這句話是對所有聲稱有「秘密知識」或「更高啟示」的教訓的根本回應。若一切智慧知識都在基督裏，任何在基督之外或之上的知識都是謊言。認識基督更深，就是得着更多的智慧；追求基督以外的「更高知識」，是被「擄去」的開始。<br><br>
+<strong>2. 【影兒指向形體，形體就是基督】</strong><br>「這些原是後事的影兒；那形體卻是基督」——舊約的禮儀規條（飲食、節期等）是影兒，指向真實的本體基督。當本體到了，影兒就完成了它的使命。繼續執守影兒，是把手段當目的，是對來到的本體的輕視。在基督裏，一切儀式的要求都已在基督的身上得到了它們的終極意義和成就。<br><br>
+<strong>3. 【規條「在克制肉體的情慾上是毫無功效」】</strong><br>「其實在克制肉體的情慾上是毫無功效」——外在的規條，無論多嚴格，都無法改變內心。苦待己身的修煉不能帶來真正的聖潔，因為問題的根源不是外在的行為，而是內心的傾向。只有基督在裏面的更新（第3章的主題），才能帶來真實的改變。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>你們要謹慎</strong>，恐怕有人用他的理學和虛空的妄言……就把你們擄去……因為神本性一切的豐盛都有形有體的居住在基督裏面，你們在他裏面也得了豐盛。」（西2:8-10）</td>
+<td>你有沒有讓「在基督裏已得了豐盛」這個確信，使你對各種聲稱提供額外智慧或靈性知識的新潮教訓保持謹慎？就像知道自己已有充足的食物就不會輕易被外面的「特別優惠」所引誘，你有沒有讓對基督豐盛的確信成為你分辨假教訓的根基？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>又塗抹了在律例上</strong>所寫攻擊我們，有礙於我們的字據，把他撤去，釘在十字架上。」（西2:14）</td>
+<td>你有沒有讓「定罪的字據已被釘在十字架上」這個事實，使你從定罪感和靠行為換取神認可的努力中得到釋放？就像一張已被清零的帳單讓人從債務的重壓中自由，你有沒有讓十字架的完全成就帶出你靈魂的真正自由？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>這些原是後事的影</strong>兒；那形體卻是基督。」（西2:17）</td>
+<td>你有沒有分辨你信仰生活中的「影兒」（宗教習俗、儀式、節期）和「形體」（與基督的真實關係），讓影兒指向形體，而非成為形體的替代？就像手影不等於真實的手，你有沒有讓宗教的形式幫助你更深地認識和親近基督本身？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

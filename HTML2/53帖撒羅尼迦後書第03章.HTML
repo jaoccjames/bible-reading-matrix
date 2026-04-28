@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帖撒羅尼迦後書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+帖撒羅尼迦後書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">代禱的請求與懶惰問題的處理</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>弟兄們，我還有話說：請你們為我們禱告，好叫主的道理快快行開，得着榮耀，正如在你們中間一樣。</div>
+<div class="verse"><span class="verse-number">2</span>也叫我們脫離無理之惡人的手，因為人不都是有信心。</div>
+<div class="verse"><span class="verse-number">3</span>但主是信實的，要堅固你們，保護你們脫離那惡者〔或作脫離兇惡〕。</div>
+<div class="verse"><span class="verse-number">4</span>我們靠主深信，你們現在是遵行我們所吩咐的，後來也必要遵行。</div>
+<div class="verse"><span class="verse-number">5</span>願主引導你們的心，叫你們愛神，並學基督的忍耐。</div>
+<div class="verse"><span class="verse-number">6</span>弟兄們，我們奉主耶穌基督的名吩咐你們，凡有弟兄不按規矩而行，不遵守從我們所受的教訓，就當遠離他。</div>
+<div class="verse"><span class="verse-number">7</span>你們自己原知道應當怎樣效法我們。因為我們在你們中間，未嘗不按規矩而行，</div>
+<div class="verse"><span class="verse-number">8</span>也未嘗白吃人的飯，倒是辛苦勞碌，晝夜作工，免得叫你們一人受累。</div>
+<div class="verse"><span class="verse-number">9</span>這並不是因我們沒有權柄，乃是要給你們作榜樣，叫你們效法我們。</div>
+<div class="verse"><span class="verse-number">10</span>我們在你們那裏的時候，曾吩咐你們說，若有人不肯作工，就不可吃飯。</div>
+<div class="verse"><span class="verse-number">11</span>因我們聽說，在你們中間有人不按規矩而行，甚麼工都不作，反倒專管閒事。</div>
+<div class="verse"><span class="verse-number">12</span>我們靠主耶穌基督吩咐、勸戒這樣的人，要安靜作工，吃自己的飯。</div>
+<div class="verse"><span class="verse-number">13</span>弟兄們，你們行善不可喪志。</div>
+<div class="verse"><span class="verse-number">14</span>若有人不聽從我們這信上的話，要記下他，不和他交往，叫他自覺羞愧。</div>
+<div class="verse"><span class="verse-number">15</span>但不要以他為仇人，要勸他如弟兄。</div>
+<div class="verse"><span class="verse-number">16</span>願賜平安的主隨時隨事親自給你們平安！願主常與你們眾人同在！</div>
+<div class="verse"><span class="verse-number">17</span>我保羅親筆問你們安。凡我的信都以此為記，我的筆跡就是這樣。</div>
+<div class="verse"><span class="verse-number">18</span>願我們主耶穌基督的恩常與你們眾人同在！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+帖撒羅尼迦後書第3章以代禱的互相請求開始，以「不按規矩行事」的人的問題作結。保羅請求他們為自己禱告：「好叫主的道理快快行開，得着榮耀……也叫我們脫離無理之惡人的手」；「但主是信實的，要堅固你們，保護你們脫離那惡者」——神的信實是最終的保護。「願主引導你們的心，叫你們愛神，並學基督的忍耐」——代禱的內容：愛神和學基督的忍耐。然後是嚴肅的警告：「凡有弟兄不按規矩而行，不遵守從我們所受的教訓，就當遠離他」——對懶惰者的處置。保羅以自己作榜樣：「我們……晝夜作工，免得叫你們一人受累」。「若有人不肯作工，就不可吃飯」——清晰的原則。但「不要以他為仇人，要勸他如弟兄」——紀律中有愛的精神。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【主的信實是最終的保護】</strong><br>「但主是信實的，要堅固你們，保護你們脫離那惡者」——保羅把信徒的保護最終建立在主的信實上，而非人的能力。「那惡者」（撒但）是真實存在的威脅，但主的保護比任何威脅都更確定。信徒的安全不建立在自己的謹慎，而建立在那保護他們的主的信實。<br><br>
+<strong>2. 【愛神和學基督的忍耐是代禱的核心】</strong><br>「願主引導你們的心，叫你們愛神，並學基督的忍耐」——這個代禱只有兩個內容：愛神和忍耐。「愛神」是信仰的根本方向；「學基督的忍耐」是信仰的實踐模型。這兩者合在一起，是信仰生命最完整的描述。<br><br>
+<strong>3. 【紀律中有愛——「要勸他如弟兄」】</strong><br>「但不要以他為仇人，要勸他如弟兄」——處理教會懶惰問題的原則是：明確的界線（不和他交往）加上持續的愛（勸他如弟兄）。紀律不是排斥，而是喚醒；愛不等於容忍一切，也不等於絕情斷義；而是在界線和愛心中同時持守。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>但主是信實的</strong>，要堅固你們，保護你們脫離那惡者。」（帖後3:3）</td>
+<td>在你面對各樣屬靈的攻擊和試探時，你有沒有讓「主是信實的，必保護你」成為你的確信，而非只靠自己的謹慎和努力？就像知道有可靠的保鏢在旁讓人放膽前行，你有沒有讓對主信實的確信帶出你在屬靈爭戰中的信心？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>願主引導你們的心</strong>，叫你們愛神，並學基督的忍耐。」（帖後3:5）</td>
+<td>你有沒有把「愛神」和「學基督的忍耐」放在你信仰生命最核心的位置，讓這兩者成為你每天生命最深的追求？就像一個人若真的愛上音樂，他的練習不再是義務而是渴慕，你有沒有讓對神的愛使你的信仰追求從義務變成渴望？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>但不要以他為仇人</strong>，要勸他如弟兄。」（帖後3:15）</td>
+<td>在你的信仰群體中，當需要對某人實施某種界線或距離時，你有沒有同時保持把那人看作弟兄的心——仍然關心他、為他禱告、希望他回轉？就像一個愛孩子卻必須讓孩子承受行為後果的父母，你有沒有讓紀律和愛心在你的群體生活中並行？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+路加福音第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">差遣七十人與好撒瑪利亞人</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>這事以後，主又設立七十個人，差遣他們兩個兩個的在他前面，往自己所要到的各城各地方去，</div>
+<div class="verse"><span class="verse-number">2</span>就對他們說：「要收的莊稼多，作工的人少。所以，你們當求莊稼的主打發工人出去收他的莊稼。</div>
+<div class="verse"><span class="verse-number">3</span>你們去吧！我差你們出去，如同羊羔進入狼群。</div>
+<div class="verse"><span class="verse-number">4</span>不要帶錢囊，不要帶口袋，不要帶鞋；在路上也不要問人的安。</div>
+<div class="verse"><span class="verse-number">5</span>無論進那一家，先要說：『願這一家平安。』</div>
+<div class="verse"><span class="verse-number">6</span>那裏若有當得平安的人〔當得平安的人：原文作平安之子〕，你們所求的平安就必臨到那家；不然，就歸與你們了。</div>
+<div class="verse"><span class="verse-number">7</span>你們要住在那家，吃喝他們所供給的，因為工人得工價是應當的；不要從這家搬到那家。</div>
+<div class="verse"><span class="verse-number">8</span>無論進那一城，人若接待你們，給你們擺上甚麼，你們就吃甚麼。</div>
+<div class="verse"><span class="verse-number">9</span>要醫治那城裏的病人，對他們說：『神的國臨近你們了。』</div>
+<div class="verse"><span class="verse-number">10</span>無論進那一城，人若不接待你們，你們就到街上去，</div>
+<div class="verse"><span class="verse-number">11</span>說：『就是你們城裏的塵土黏在我們的腳上，我們也當着你們擦去。雖然如此，你們該知道神的國臨近了。』</div>
+<div class="verse"><span class="verse-number">12</span>我告訴你們，當審判的日子，所多瑪所受的，比那城還容易受呢！」</div>
+<div class="verse"><span class="verse-number">13</span>「哥拉汛哪，你有禍了！伯賽大啊，你有禍了！因為在你們中間所行的異能若行在推羅、西頓，他們早已披麻蒙灰，坐在地上悔改了。</div>
+<div class="verse"><span class="verse-number">14</span>當審判的日子，推羅、西頓所受的，比你們還容易受呢！</div>
+<div class="verse"><span class="verse-number">15</span>迦百農啊，你已經升到天上〔或作：你將要升到天上嗎〕，將來必推下陰間。」</div>
+<div class="verse"><span class="verse-number">16</span>又對門徒說：「聽從你們的就是聽從我；棄絕你們的就是棄絕我；棄絕我的就是棄絕那差我來的。」</div>
+<div class="verse"><span class="verse-number">17</span>那七十個人歡歡喜喜的回來，說：「主啊！因你的名，就是鬼也服了我們。」</div>
+<div class="verse"><span class="verse-number">18</span>耶穌對他們說：「我曾看見撒但從天上墜落，像閃電一樣。</div>
+<div class="verse"><span class="verse-number">19</span>我已經給你們權柄可以踐踏蛇和蠍子，又勝過仇敵一切的能力，斷沒有甚麼能害你們。</div>
+<div class="verse"><span class="verse-number">20</span>然而，不要因鬼服了你們就歡喜，要因你們的名記錄在天上歡喜。」</div>
+<div class="verse"><span class="verse-number">21</span>正當那時，耶穌被聖靈感動就歡樂，說：「父啊，天地的主，我感謝你！因為你將這些事向聰明通達人就藏起來，向嬰孩就顯出來。父啊！是的，因為你的美意本是如此。</div>
+<div class="verse"><span class="verse-number">22</span>一切所有的都是我父交付我的；除了父，沒有人知道子是誰；除了子和子所願意指示的，沒有人知道父是誰。」</div>
+<div class="verse"><span class="verse-number">23</span>耶穌轉身暗暗的對門徒說：「看見你們所看見的，那眼睛就有福了。</div>
+<div class="verse"><span class="verse-number">24</span>我告訴你們，從前有許多先知和君王要看你們所看的，卻沒有看見，要聽你們所聽的，卻沒有聽見。」</div>
+<div class="verse"><span class="verse-number">25</span>有一個律法師起來試探耶穌，說：「夫子！我該作甚麼纔可以承受永生？」</div>
+<div class="verse"><span class="verse-number">26</span>耶穌對他說：「律法上寫的是甚麼？你念的是怎樣呢？」</div>
+<div class="verse"><span class="verse-number">27</span>他回答說：「你要盡心、盡性、盡力、盡意愛主你的神；又要愛鄰舍如同自己。」</div>
+<div class="verse"><span class="verse-number">28</span>耶穌說：「你回答的是；你這樣行，就必得永生。」</div>
+<div class="verse"><span class="verse-number">29</span>那人要顯明自己有理，就對耶穌說：「誰是我的鄰舍呢？」</div>
+<div class="verse"><span class="verse-number">30</span>耶穌回答說：「有一個人從耶路撒冷下耶利哥去，落在強盜手中。他們剝去他的衣裳，把他打個半死，就丟下他走了。</div>
+<div class="verse"><span class="verse-number">31</span>偶然有一個祭司從這條路下來，看見他就從那邊過去了。</div>
+<div class="verse"><span class="verse-number">32</span>又有一個利未人來到這地方，看見他，也照樣從那邊過去了。</div>
+<div class="verse"><span class="verse-number">33</span>惟有一個撒瑪利亞人行路來到那裏，看見他就動了慈心，</div>
+<div class="verse"><span class="verse-number">34</span>上前用油和酒倒在他的傷處，包裹好了，扶他騎上自己的牲口，帶到店裏去照應他。</div>
+<div class="verse"><span class="verse-number">35</span>第二天拿出二錢銀子來，交給店主，說：『你且照應他；此外所費用的，我回來必還你。』</div>
+<div class="verse"><span class="verse-number">36</span>你想，這三個人那一個是落在強盜手中的鄰舍呢？」</div>
+<div class="verse"><span class="verse-number">37</span>他說：「是憐憫他的。」耶穌說：「你去照樣行吧。」</div>
+<div class="verse"><span class="verse-number">38</span>他們走路的時候，耶穌進了一個村莊。有一個女人，名叫馬大，接他到自己家裏。</div>
+<div class="verse"><span class="verse-number">39</span>她有一個妹子，名叫馬利亞，在耶穌腳前坐着聽他的道。</div>
+<div class="verse"><span class="verse-number">40</span>馬大伺候的事多，心裏忙亂，就進前來，說：「主啊，我的妹子留下我一個人伺候，你不在意嗎？請吩咐她來幫助我。」</div>
+<div class="verse"><span class="verse-number">41</span>耶穌回答說：「馬大！馬大！你為許多的事思慮煩擾，</div>
+<div class="verse"><span class="verse-number">42</span>但是不可少的只有一件；馬利亞已經選擇那上好的福分，是不能奪去的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+路加福音第10章是路加福音中最具代表性的章節之一，包含兩個最著名的故事。章首耶穌差遣七十人出去，兩兩一組，不帶多餘裝備，帶着和平的問候進入各城。他們回來歡喜報告鬼也服了他們，耶穌說更要因名記錄在天上而喜樂，並為這啟示向天父感恩。接着是好撒瑪利亞人的比喻：律法師問「誰是我的鄰舍」，耶穌以祭司、利未人繞道而行、撒瑪利亞人主動施救為對比，問哪個是鄰舍，律法師說「是憐憫他的」，耶穌說「你去照樣行吧」。章末是馬大和馬利亞的對比：馬大伺候許多事而忙亂，馬利亞坐在耶穌腳前聽道。馬大抱怨，耶穌說「馬大！馬大！你為許多的事思慮煩擾，但是不可少的只有一件；馬利亞已經選擇那上好的福分，是不能奪去的。」這兩個故事合在一起，呈現了服事的完整圖像：既要愛鄰舍（好撒瑪利亞人），也要先坐在耶穌腳前（馬利亞）。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【真正的鄰舍是採取行動的憐憫】</strong><br>「誰是我的鄰舍」這個問題，在耶穌的比喻中被反轉成「誰做了鄰舍」。鄰舍不是由地理位置決定，而是由主動的憐憫行動定義。撒瑪利亞人「動了慈心」——這是同情；他「上前」——這是行動；他「照應他」——這是堅持。真正的愛不停留在感情上，而是推動具體的、付代價的行動。「你去照樣行吧」是給每一個讀這比喻的人的直接命令。<br><br>
+<strong>2. 【服事他人的能力來自先坐在耶穌腳前】</strong><br>馬大忙于服事卻忘了先坐在耶穌面前，結果「心裏忙亂」；馬利亞選擇先聽道，耶穌說這是「不可少的只有一件」。這不是說服事不重要，而是說服事的泉源是與耶穌的同在。沒有灌注，就沒有流出；沒有先領受，就沒有什麼可以給出。今天許多忙碌的服事者，正是因為太像馬大而忘記了馬利亞的那份。<br><br>
+<strong>3. 【屬靈喜樂的最深根源是名記在天上】</strong><br>七十人歡喜因鬼服了他們，耶穌說「不要因鬼服了你們就歡喜，要因你們的名記錄在天上歡喜」。事奉的成果是會起起伏伏的，但名記在天上是永不改變的事實。把喜樂建立在事奉的果效上，會隨着果效的波動而起伏；把喜樂建立在與神的關係和得救的確據上，才能有穩定持久的喜樂。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>你去照樣行吧</strong>。」（路10:37）</td>
+<td>在你的生活中，有沒有一個你知道有需要但一直還沒有行動去幫助的人？就像看見路邊跌倒的人若只是同情卻不停車，憐憫就只停留在感情層面，你願意讓神感動你「上前」採取具體的行動？</td>
+</tr>
+<tr>
+<td><strong>耶穌回答說</strong>：「馬大！馬大！<strong>你為許多的事思慮</strong>煩擾，但是不可少的只有一件；馬利亞已經選擇那上好的福分，是不能奪去的。」（路10:41-42）</td>
+<td>你的靈修生活有沒有因為「許多的事思慮煩擾」而受到擠壓？就像充電時間若不斷被打斷電量永遠不夠，你願意像馬利亞一樣，保護你與耶穌同坐的時間，把它看作「不可少的一件事」嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「然而，<strong>不要因鬼服了你們</strong>就歡喜，要因你們的名記錄在天上歡喜。」（路10:20）</td>
+<td>你的喜樂有沒有建立在與神的關係和永恆的確據上，還是主要依賴事奉的成果和他人的肯定？就像股票投資者若把喜樂建立在每天的股價上會極其不穩定，你的靈魂有沒有更穩定、更深根的喜樂泉源？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

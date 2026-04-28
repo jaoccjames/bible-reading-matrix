@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>羅馬書第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+羅馬書第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神的揀選主權與以色列的未來</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我在基督裏說真話，並不謊言，有我良心被聖靈感動，給我作見證；</div>
+<div class="verse"><span class="verse-number">2</span>我是大有憂愁，心裏時常傷痛；</div>
+<div class="verse"><span class="verse-number">3</span>為我弟兄，我骨肉之親，就是自己被咒詛，與基督分離，我也願意。</div>
+<div class="verse"><span class="verse-number">4</span>他們是以色列人；那兒子的名分、榮耀、諸約、律法、禮儀、應許都是他們的。</div>
+<div class="verse"><span class="verse-number">5</span>列祖就是他們的祖宗，按肉體說，基督也是從他們出來的，他是在萬有之上，永遠可稱頌的神。阿們！</div>
+<div class="verse"><span class="verse-number">6</span>這不是說神的話落了空。因為從以色列生的不都是以色列人，</div>
+<div class="verse"><span class="verse-number">7</span>也不因為是亞伯拉罕的後裔就都作他的兒女；惟獨「從以撒生的才要稱為你的後裔。」</div>
+<div class="verse"><span class="verse-number">8</span>這就是說，肉身所生的兒女不是神的兒女，惟獨那應許的兒女才算是後裔。</div>
+<div class="verse"><span class="verse-number">9</span>因為所應許的話是這樣說：「到明年這時候我要來，撒拉必生一個兒子。」</div>
+<div class="verse"><span class="verse-number">10</span>不但如此，還有利百加，既從一個人，就是從我們的祖宗以撒懷了孕，</div>
+<div class="verse"><span class="verse-number">11</span>（雙子還沒有生下來，善惡還沒有作出來，只因要顯明神揀選人的旨意，不在乎人的行為，乃在乎召人的主。）</div>
+<div class="verse"><span class="verse-number">12</span>神就對利百加說：「將來大的要服事小的。」</div>
+<div class="verse"><span class="verse-number">13</span>正如經上所記：雅各是我所愛的；以掃是我所惡的。</div>
+<div class="verse"><span class="verse-number">14</span>這樣，我們可說甚麼呢？難道神有甚麼不公平麼？斷乎沒有！</div>
+<div class="verse"><span class="verse-number">15</span>因他對摩西說：我要憐憫誰就憐憫誰，要恩待誰就恩待誰。</div>
+<div class="verse"><span class="verse-number">16</span>據此看來，這不在乎那定意的，也不在乎那奔跑的，只在乎發憐憫的神。</div>
+<div class="verse"><span class="verse-number">17</span>因為經上有話向法老說：「我將你興起來，特要在你身上彰顯我的權能，並要使我的名傳遍天下。」</div>
+<div class="verse"><span class="verse-number">18</span>如此看來，神要憐憫誰就憐憫誰，要叫誰剛硬就叫誰剛硬。</div>
+<div class="verse"><span class="verse-number">19</span>這樣，你必對我說：「他為甚麼還指責人呢？有誰抗拒他的旨意呢？」</div>
+<div class="verse"><span class="verse-number">20</span>你這個人哪，你是誰，竟敢向神強嘴呢？受造之物豈能對造他的說：「你為甚麼這樣造我呢？</div>
+<div class="verse"><span class="verse-number">21</span>窰匠難道沒有權柄從一團泥裏拿一塊作成貴重的器皿，又拿一塊作成卑賤的器皿嗎？</div>
+<div class="verse"><span class="verse-number">22</span>倘若神要顯明他的忿怒，彰顯他的權能，就多多忍耐寬容那可怒預備遭毀滅的器皿，</div>
+<div class="verse"><span class="verse-number">23</span>又要將他豐盛的榮耀彰顯在那蒙憐憫早預備得榮耀的器皿上。</div>
+<div class="verse"><span class="verse-number">24</span>這器皿就是我們被神所召的，不但是從猶太人中，也是從外邦人中。這有甚麼不可呢？</div>
+<div class="verse"><span class="verse-number">25</span>就像神在何西阿書上說：那本來不是我子民的，我要稱為「我的子民」；本來不是蒙愛的，我要稱為「蒙愛的」。</div>
+<div class="verse"><span class="verse-number">26</span>從前在甚麼地方對他們說：你們不是我的子民，將來就在那裏稱他們為「永生神的兒子」。</div>
+<div class="verse"><span class="verse-number">27</span>以賽亞指着以色列人喊着說：「以色列人雖多如海沙，得救的不過是剩下的餘數；</div>
+<div class="verse"><span class="verse-number">28</span>因為主要在世上施行他的話，叫他的話都成全，速速的完結。」</div>
+<div class="verse"><span class="verse-number">29</span>又如以賽亞先前說過：若不是萬軍之主給我們存留餘種，我們早已像所多瑪，蛾摩拉的樣子了。</div>
+<div class="verse"><span class="verse-number">30</span>這樣，我們可說甚麼呢？那本來不追求義的外邦人反得了義，就是因信而得的義。</div>
+<div class="verse"><span class="verse-number">31</span>但以色列人追求律法的義，反得不着律法的義。</div>
+<div class="verse"><span class="verse-number">32</span>這是甚麼緣故呢？是因為他們不憑着信心求，只憑着行為求，他們正跌在那絆腳石上。</div>
+<div class="verse"><span class="verse-number">33</span>就如經上所記：我在錫安放一塊絆腳的石頭，跌人的磐石；信靠他的人必不至於羞愧。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+羅馬書第9章是羅馬書中最具神學爭議的章節，處理神的揀選主權和以色列的現況。保羅開篇表達對以色列同胞的深切痛苦：「為我弟兄……就是自己被咒詛，與基督分離，我也願意」。以色列擁有何等榮耀的屬靈遺產：兒子名分、榮耀、諸約、律法、禮儀、應許、列祖，基督也是從他們出來的。但「從以色列生的不都是以色列人」——神的拯救是按應許，不是按血統。以雅各和以掃的故事說明揀選在出生前就已定了，不在乎行為。陶匠和泥土的比喻說明神有主權從同一團泥裏「拿一塊作成貴重的器皿，又拿一塊作成卑賤的器皿」，揀選的主权屬於神。以色列不得着義是因為「不憑着信心求，只憑着行為求」；外邦人反得了義，因為「因信而得的義」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【真正的以色列人由應許而非血統定義】</strong><br>「從以色列生的不都是以色列人」——屬靈的繼承不是自動的，而是由信心和應許所定義的。這個原則適用於今天每一個宗教家庭的後代：父母的信仰不能自動傳給下一代，每一代人都需要自己對神的應許作出信心的回應。沒有「信仰基因」，只有個人的信心選擇。<br><br>
+<strong>2. 【神的揀選顯明祂是主，不是人】</strong><br>「神要憐憫誰就憐憫誰」——揀選的主權在神手裏，不在人的功績上。「這不在乎那定意的，也不在乎那奔跑的，只在乎發憐憫的神」——最深刻的謙卑：我得救，不是因為我比別人更好或更努力，而是因為神的憐憫。這個真理既使人謙卑（不能誇口），也使人確信（神的憐憫不因我的軟弱而改變）。<br><br>
+<strong>3. 【宗教熱心若無真知識，是危險的】</strong><br>以色列「追求律法的義，反得不着」，因為不憑信心。外邦人「本來不追求義的，反得了義」，因為信。「熱心事奉神，但不是按着真知識」（第10章）——熱心本身不夠，熱心必須有正確的方向。宗教熱忱若指向錯誤的目標（如靠行為稱義），反而是攔阻，而非助力。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我是大有憂愁</strong>，心裏時常傷痛；為我弟兄……就是自己被咒詛，與基督分離，我也願意。」（羅9:2-3）</td>
+<td>你有沒有為你身邊未信主的家人和朋友有類似保羅的「大有憂愁、心裏傷痛」？就像父母若知道孩子陷在危險中必然焦急，你有沒有讓對失喪者的愛激勵你為他們代禱和傳福音？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>據此看來</strong>，這不在乎那定意的，也不在乎那奔跑的，只在乎發憐憫的神。」（羅9:16）</td>
+<td>你有沒有在信仰中真正接受「得救是因神的憐憫，不是因我的努力或資格」這個真理，讓它帶出深深的感恩和謙卑？就像無功受祿的人不會驕傲而只有感謝，你有沒有讓揀選的恩典帶出你更深的感恩？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>那本來不追求義的</strong>外邦人反得了義，就是因信而得的義。但以色列人追求律法的義，反得不着。」（羅9:30-31）</td>
+<td>你有沒有確認自己的信仰是建立在「因信得着的義」而非「靠行為追求的義」？就像有人誤走了一條不通向目的地的路，你有沒有讓你的信仰方向從「靠努力換取義」轉向「因信領受基督所給的義」？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

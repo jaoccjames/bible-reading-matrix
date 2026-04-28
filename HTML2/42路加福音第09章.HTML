@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+路加福音第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">差遣門徒與登山變像及呼召的代價</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌叫齊了十二個門徒，給他們能力、權柄，制伏一切的鬼，醫治各樣的病，</div>
+<div class="verse"><span class="verse-number">2</span>又差遣他們去宣傳神國的道，醫治病人，</div>
+<div class="verse"><span class="verse-number">3</span>對他們說：「行路的時候，不要帶枴杖和口袋，不要帶食物和銀子，也不要帶兩件褂子。</div>
+<div class="verse"><span class="verse-number">4</span>無論進那一家，就住在那裏，也從那裏起行。</div>
+<div class="verse"><span class="verse-number">5</span>凡不接待你們的，你們離開那城的時候，要把腳上的塵土跺下去，見證他們的不是。」</div>
+<div class="verse"><span class="verse-number">6</span>門徒就出去，走遍各鄉宣傳福音，到處治病。</div>
+<div class="verse"><span class="verse-number">7</span>分封的王希律聽見耶穌所作的一切事，就游移不定；因為有人說：「是約翰從死裏復活；」</div>
+<div class="verse"><span class="verse-number">8</span>又有人說：「是以利亞顯現；」還有人說：「是古時的一個先知又活了。」</div>
+<div class="verse"><span class="verse-number">9</span>希律說：「約翰我已經斬了，這卻是甚麼人？我竟聽見他這樣的事呢？」就想要見他。</div>
+<div class="verse"><span class="verse-number">10</span>使徒回來，將所作的事告訴耶穌，耶穌就帶他們暗暗的離開那裏，往一座城去；那城名叫伯賽大。</div>
+<div class="verse"><span class="verse-number">11</span>但眾人知道了，就跟着他去；耶穌便接待他們，對他們講論神國的道，醫治那些需醫的人。</div>
+<div class="verse"><span class="verse-number">12</span>日頭快要平西，十二個門徒來對他說：「請叫眾人散開，他們好往四面鄉村裏去借宿找吃的，因為我們這裏是野地。」</div>
+<div class="verse"><span class="verse-number">13</span>耶穌說：「你們給他們吃吧！」門徒說：「我們不過有五個餅，兩條魚，若不去為這許多人買食物就不彀。」</div>
+<div class="verse"><span class="verse-number">14</span>那時，人數約有五千。耶穌對門徒說：「叫他們一排一排的坐下，每排大約五十個人。」</div>
+<div class="verse"><span class="verse-number">15</span>門徒就如此行，叫眾人都坐下。</div>
+<div class="verse"><span class="verse-number">16</span>耶穌拿着這五個餅，兩條魚，望着天祝福，擘開，遞給門徒，擺在眾人面前。</div>
+<div class="verse"><span class="verse-number">17</span>他們就吃，並且都吃飽了；把剩下的零碎收拾起來，裝滿了十二籃子。</div>
+<div class="verse"><span class="verse-number">18</span>耶穌自己禱告的時候，門徒也同他在那裏。耶穌問他們說：「眾人說我是誰？」</div>
+<div class="verse"><span class="verse-number">19</span>他們說：「有人說是施洗的約翰；有人說是以利亞；還有人說是古時的一個先知又活了。」</div>
+<div class="verse"><span class="verse-number">20</span>耶穌說：「你們說我是誰？」彼得回答說：「是神所立的基督。」</div>
+<div class="verse"><span class="verse-number">21</span>耶穌切切的囑咐他們，不可將這事告訴人，</div>
+<div class="verse"><span class="verse-number">22</span>又說：「人子必須受許多的苦，被長老、祭司長和文士棄絕，並且被殺，第三日復活。」</div>
+<div class="verse"><span class="verse-number">23</span>耶穌又對眾人說：「若有人要跟從我，就當捨己，天天背起他的十字架來跟從我。</div>
+<div class="verse"><span class="verse-number">24</span>因為，凡要救自己生命〔生命：或作靈魂；下同〕的，必喪掉生命；凡為我喪掉生命的，必救了生命。</div>
+<div class="verse"><span class="verse-number">25</span>人若賺得全世界，卻喪了自己，賠上自己，有甚麼益處呢？</div>
+<div class="verse"><span class="verse-number">26</span>凡把我和我的道當作可恥的，人子在自己的榮耀裏，並天父與聖天使的榮耀裏降臨的時候，也要把那人當作可恥的。</div>
+<div class="verse"><span class="verse-number">27</span>我實在告訴你們，站在這裏的，有人在沒嘗死味以前，必看見神的國。」</div>
+<div class="verse"><span class="verse-number">28</span>說了這話以後約有八天，耶穌帶着彼得、約翰、雅各上山去禱告。</div>
+<div class="verse"><span class="verse-number">29</span>正禱告的時候，他的面貌就改變了，衣服潔白放光。</div>
+<div class="verse"><span class="verse-number">30</span>忽然有摩西、以利亞兩個人同耶穌說話；</div>
+<div class="verse"><span class="verse-number">31</span>他們在榮光裏顯現，談論耶穌去世的事，就是他在耶路撒冷將要成的事。</div>
+<div class="verse"><span class="verse-number">32</span>彼得和他的同伴都打盹，既清醒了，就看見耶穌的榮光，並同他站着的那兩個人。</div>
+<div class="verse"><span class="verse-number">33</span>二人正要和耶穌分離的時候，彼得對耶穌說：「夫子，我們在這裏真好！可以搭三座棚，一座為你，一座為摩西，一座為以利亞。」他卻不知道所說的是甚麼。</div>
+<div class="verse"><span class="verse-number">34</span>說這話的時候，有一朵雲彩來遮蓋他們；他們進入雲彩裏就懼怕。</div>
+<div class="verse"><span class="verse-number">35</span>有聲音從雲彩裏出來，說：「這是我的兒子，我所揀選的〔有古卷作：這是我的愛子〕，你們要聽他。」</div>
+<div class="verse"><span class="verse-number">36</span>聲音住了，只見耶穌一人在那裏。當那些日子，門徒不提所看見的事，一樣也不告訴人。</div>
+<div class="verse"><span class="verse-number">37</span>第二天，他們下了山，就有許多人迎見耶穌。</div>
+<div class="verse"><span class="verse-number">38</span>其中有一人喊叫說：「夫子！求你看顧我的兒子，因為他是我的獨生子。</div>
+<div class="verse"><span class="verse-number">39</span>他被鬼抓住就忽然喊叫；鬼又叫他抽瘋，口中流沫，並且重重的傷害他，難以離開他。</div>
+<div class="verse"><span class="verse-number">40</span>我求過你的門徒，把鬼趕出去，他們卻是不能。」</div>
+<div class="verse"><span class="verse-number">41</span>耶穌說：「噯！這又不信又悖謬的世代啊，我在你們這裏，忍耐你們要到幾時呢？將你的兒子帶到這裏來吧！」</div>
+<div class="verse"><span class="verse-number">42</span>正來的時候，鬼把他摔倒，叫他重重的抽瘋。耶穌就斥責那污鬼，把孩子治好了，交給他父親。</div>
+<div class="verse"><span class="verse-number">43</span>眾人都詫異神的大能〔大能：或作威榮〕。耶穌所作的一切事，眾人正希奇的時候，耶穌對門徒說：</div>
+<div class="verse"><span class="verse-number">44</span>「你們要把這些話存在耳中，因為人子將要被交在人手裏。」</div>
+<div class="verse"><span class="verse-number">45</span>他們不明白這話，意思乃是隱藏的，叫他們不能明白，他們也不敢問這話的意思。</div>
+<div class="verse"><span class="verse-number">46</span>門徒中間起了議論，誰將為大。</div>
+<div class="verse"><span class="verse-number">47</span>耶穌看出他們心中的議論，就領一個小孩子來，叫他站在自己旁邊，</div>
+<div class="verse"><span class="verse-number">48</span>對他們說：「凡為我名接待這小孩子的，就是接待我；凡接待我的，就是接待那差我來的。你們中間最小的，他便為大。」</div>
+<div class="verse"><span class="verse-number">49</span>約翰說：「夫子，我們看見一個人奉你的名趕鬼，我們就禁止他，因為他不與我們一同跟從你。」</div>
+<div class="verse"><span class="verse-number">50</span>耶穌說：「不要禁止他；因為不敵擋你們的，就是幫助你們的。」</div>
+<div class="verse"><span class="verse-number">51</span>耶穌被接上升的日子將到，他就定意向耶路撒冷去，</div>
+<div class="verse"><span class="verse-number">52</span>便打發使者在他前頭走。他們到了撒瑪利亞的一個村莊，要為他預備。</div>
+<div class="verse"><span class="verse-number">53</span>那裏的人不接待他，因他面向耶路撒冷去。</div>
+<div class="verse"><span class="verse-number">54</span>他的門徒雅各、約翰看見了，就說：「主啊，你要我們吩咐火從天上降下來燒滅他們，像以利亞所作的嗎〔有古卷無像以利亞所作的數字〕？」</div>
+<div class="verse"><span class="verse-number">55</span>耶穌轉身責備兩個門徒，說：「你們的心如何，你們並不知道。</div>
+<div class="verse"><span class="verse-number">56</span>人子來不是要滅人的性命〔性命：或作靈魂；下同〕，是要救人的性命。」說着就往別的村莊去了〔有古卷只有五十五節首句，五十六節末句〕。</div>
+<div class="verse"><span class="verse-number">57</span>他們走路的時候，有一人對耶穌說：「你無論往那裏去，我要跟從你。」</div>
+<div class="verse"><span class="verse-number">58</span>耶穌說：「狐狸有洞，天空的飛鳥有窩，只是人子沒有枕頭的地方。」</div>
+<div class="verse"><span class="verse-number">59</span>又對一個人說：「跟從我來！」那人說：「主，容我先回去埋葬我的父親。」</div>
+<div class="verse"><span class="verse-number">60</span>耶穌說：「任憑死人埋葬他們的死人，你只管去傳揚神國的道。」</div>
+<div class="verse"><span class="verse-number">61</span>又有一人說：「主，我要跟從你，但容我先去辭別我家裏的人。」</div>
+<div class="verse"><span class="verse-number">62</span>耶穌說：「手扶着犁向後看的，不配進神的國。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+路加福音第9章記載多個重要事件，是整個轉折前的準備。章首差遣十二使徒，給他們能力和權柄，不帶任何裝備出去傳道醫病，展示完全倚靠神的信心。希律困惑於耶穌的身份。五餅二魚後，耶穌私下問門徒「你們說我是誰？」彼得認信「是神所立的基督」，耶穌預告受難。「若有人要跟從我，就當捨己，天天背起他的十字架來跟從我」——路加加入「天天」，強調每天的委身。登山變像：耶穌「正禱告的時候，他的面貌就改變了」，摩西以利亞談論耶穌在耶路撒冷將要成就的事（「去世」），天父說「你們要聽他」。下山後醫治癲癇孩子，再次預告受難，門徒不明白。門徒爭論誰為大，耶穌以小孩子回應「你們中間最小的，他便為大」。向耶路撒冷進發，撒瑪利亞人不接待，雅各約翰要降火，耶穌責備「人子來不是要滅人的性命，是要救人的性命」。三個跟從者的呼召：對家庭、安全感和猶豫的不同回應，耶穌給出三個挑戰性的回答。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【每天揹十字架是門徒生命的日常操練】</strong><br>路加獨有「天天背起他的十字架」——馬太和馬可只說「背起他的十字架」。這個「天天」極其重要：跟從基督不是一次的決志，而是每天的選擇。每天都有機會選擇自我，也有機會選擇十字架。十字架不是一個痛苦的特殊時期，而是門徒每天的正常生活模式——捨己、服事、為他人考量、在困難中順服神的旨意。<br><br>
+<strong>2. 【禱告是耶穌登山變像的環境】</strong><br>路加特別記錄「正禱告的時候，他的面貌就改變了」——變像發生在禱告中。這不是巧合，而是神學宣告：與父神深度同在的禱告，是靈性榮光顯現的場所。摩西在神面前的帳幕也是以榮光為記。我們的靈命外觀，往往反映我們禱告的深度——深度禱告帶來靈性的轉化，使我們「臉面反映主的榮光，變化成同樣的形狀」。<br><br>
+<strong>3. 【跟從耶穌需要果斷的委身，不能猶豫回頭】</strong><br>三個跟從者的對話提出三種不同的障礙：安全感（「人子沒有枕頭的地方」）、家庭責任（「容我先去埋葬父親」）、留戀舊事（「容我先去辭別家裏的人」）。耶穌的回答都指向同一個原則：跟從祂需要把一切放在祂後面——不是說家庭不重要，而是說耶穌的呼召必須排在第一位。「手扶着犁向後看的，不配進神的國。」
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌又對眾人說</strong>：「<strong>若有人要跟從我</strong>，就當捨己，天天背起他的十字架來跟從我。」（路9:23）</td>
+<td>你今天的生活中，「背十字架」具體是什麼？就像每天的健身訓練不可或缺，你有沒有識別出你每天需要做的那個「捨己」的選擇，並刻意地做出選擇？</td>
+</tr>
+<tr>
+<td><strong>路加記載</strong>：<strong>正禱告的時候</strong>，他的面貌就改變了。（路9:29）</td>
+<td>你的禱告生活有沒有足夠的深度，讓你在禱告中真實地與神相遇，而不只是完成一個宗教義務？就像深水潛水和淺水嬉水是完全不同的體驗，你願意讓你的禱告從表面的例行進入更深的相遇嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>手扶着犁向後看的</strong>，不配進神的國。」（路9:62）</td>
+<td>你在跟從基督的路上有沒有習慣「向後看」——留戀過去的舒適、猶豫於委身的代價？就像農夫扶犁時若頻繁回頭，犁出的溝就會彎曲，你有沒有在信仰上做出果斷清晰的委身，而不是猶豫不決？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

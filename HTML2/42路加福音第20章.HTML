@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音第20章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+路加福音第20章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">權柄爭議與寡婦的奉獻</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>有一天，耶穌在殿裏教訓百姓，講福音的時候，祭司長和文士並長老上前來，</div>
+<div class="verse"><span class="verse-number">2</span>問他說：「你告訴我們，你仗着甚麼權柄作這些事？給你這權柄的是誰呢？」</div>
+<div class="verse"><span class="verse-number">3</span>耶穌回答說：「我也要問你們一句話，你們且告訴我。</div>
+<div class="verse"><span class="verse-number">4</span>約翰的洗禮是從天上來的？是從人間來的呢？」</div>
+<div class="verse"><span class="verse-number">5</span>他們彼此商議說：「我們若說『從天上來』，他必說：『你們為甚麼不信他呢？』</div>
+<div class="verse"><span class="verse-number">6</span>若說『從人間來』，百姓都要用石頭打死我們，因為他們信約翰是先知。」</div>
+<div class="verse"><span class="verse-number">7</span>於是回答說：「不知道是從那裏來的。」</div>
+<div class="verse"><span class="verse-number">8</span>耶穌說：「我也不告訴你們，我仗着甚麼權柄作這些事。」</div>
+<div class="verse"><span class="verse-number">9</span>耶穌就設比喻對百姓說：「有人栽了一個葡萄園，租給園戶，就往外國去住了許久。</div>
+<div class="verse"><span class="verse-number">10</span>到了時候，打發一個僕人到園戶那裏去，叫他們把園中當納的果子交給他；園戶竟打了他，叫他空手回去。</div>
+<div class="verse"><span class="verse-number">11</span>又打發一個僕人去，他們也打了他，並且凌辱他，叫他空手回去。</div>
+<div class="verse"><span class="verse-number">12</span>又打發第三個僕人去，他們也打傷了他，把他推出去了。</div>
+<div class="verse"><span class="verse-number">13</span>園主說：『我怎麼辦呢？我要打發我的愛子去，或者他們尊敬他。』</div>
+<div class="verse"><span class="verse-number">14</span>不料，園戶看見他，就彼此商量說：『這是承受產業的，我們殺他吧，使產業歸於我們！』</div>
+<div class="verse"><span class="verse-number">15</span>於是把他推出葡萄園外，殺了。這樣，葡萄園的主人要怎樣處治他們呢？</div>
+<div class="verse"><span class="verse-number">16</span>他要來除滅這些園戶，將葡萄園轉給別人。」聽見的人說：「這是萬不可的！」</div>
+<div class="verse"><span class="verse-number">17</span>耶穌看着他們說：「經上記着：匠人所棄的石頭已作了房角的頭塊石頭。這是甚麼意思呢？</div>
+<div class="verse"><span class="verse-number">18</span>凡掉在那石頭上的，必要跌碎；那石頭掉在誰的身上，就要把誰砸得稀爛。」</div>
+<div class="verse"><span class="verse-number">19</span>文士和祭司長看出這比喻是指着他們說的，當時就想要下手拿他，只是懼怕百姓。</div>
+<div class="verse"><span class="verse-number">20</span>於是窺探耶穌，打發奸細裝作好人，要在他的話上得把柄，好將他交在巡撫的政權之下。</div>
+<div class="verse"><span class="verse-number">21</span>奸細就問耶穌說：「夫子，我們曉得你所講所傳都是正道，也不取人的外貌，乃是誠誠實實傳神的道。</div>
+<div class="verse"><span class="verse-number">22</span>我們納稅給該撒，可以不可以？」</div>
+<div class="verse"><span class="verse-number">23</span>耶穌看出他們的詭詐，就對他們說：</div>
+<div class="verse"><span class="verse-number">24</span>「拿一個銀錢來給我看。這像和這號是誰的？」他們說：「是該撒的。」</div>
+<div class="verse"><span class="verse-number">25</span>耶穌說：「這樣，該撒的物當歸給該撒，神的物當歸給神。」</div>
+<div class="verse"><span class="verse-number">26</span>他們當着百姓，在這話上得不着把柄，又希奇他的應對，就閉口無言了。</div>
+<div class="verse"><span class="verse-number">27</span>撒都該人常說沒有復活的事。有幾個來問耶穌說：</div>
+<div class="verse"><span class="verse-number">28</span>「夫子！摩西為我們寫着說：『人若有妻無子就死了，他兄弟當娶他的妻，為哥哥生子立後。』</div>
+<div class="verse"><span class="verse-number">29</span>有弟兄七人，第一個娶了妻，沒有孩子死了；</div>
+<div class="verse"><span class="verse-number">30</span>第二個、第三個也娶過她；</div>
+<div class="verse"><span class="verse-number">31</span>那七個人都娶過她，沒有留下孩子就死了。</div>
+<div class="verse"><span class="verse-number">32</span>後來婦人也死了。</div>
+<div class="verse"><span class="verse-number">33</span>這樣，當復活的時候，她是那一個的妻子呢？因為他們七個人都娶過她。」</div>
+<div class="verse"><span class="verse-number">34</span>耶穌說：「這世界的人有娶有嫁；</div>
+<div class="verse"><span class="verse-number">35</span>惟有算為配得那世界，與從死裏復活的人也不娶也不嫁；</div>
+<div class="verse"><span class="verse-number">36</span>因為他們不能再死，和天使一樣；既是復活的人，就為神的兒子。</div>
+<div class="verse"><span class="verse-number">37</span>至於死人復活，摩西在荊棘篇上，稱主是亞伯拉罕的神，以撒的神，雅各的神，就指示明白了。</div>
+<div class="verse"><span class="verse-number">38</span>神原不是死人的神，乃是活人的神；因為在他那裏〔那裏：或作看來〕，人都是活的。」</div>
+<div class="verse"><span class="verse-number">39</span>有幾個文士說：「夫子！你說得好。」</div>
+<div class="verse"><span class="verse-number">40</span>以後他們不敢再問他甚麼。</div>
+<div class="verse"><span class="verse-number">41</span>耶穌對他們說：「人怎麼說基督是大衛的子孫呢？</div>
+<div class="verse"><span class="verse-number">42</span>詩篇上大衛自己說：主對我主說：你坐在我的右邊，</div>
+<div class="verse"><span class="verse-number">43</span>等我使你仇敵作你的腳凳。</div>
+<div class="verse"><span class="verse-number">44</span>大衛既稱他為主，他怎麼又是大衛的子孫呢？」</div>
+<div class="verse"><span class="verse-number">45</span>眾百姓聽的時候，耶穌對門徒說：</div>
+<div class="verse"><span class="verse-number">46</span>「你們要防備文士。他們好穿長衣遊行，喜愛人在街市上問他們安，又喜愛會堂裏的高位，筵席上的首座；</div>
+<div class="verse"><span class="verse-number">47</span>他們侵吞寡婦的家產，假意作很長的禱告。這些人要受更重的刑罰！」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+路加福音第20章記載耶穌在聖殿最後幾天的教導，宗教領袖的圍攻和耶穌的回應。章首宗教領袖質問耶穌的權柄，耶穌以約翰的洗禮問題回應，使他們無話可說，也不再告訴他們祂的權柄從哪來。惡園戶的比喻直指宗教領袖：主人的僕人被打殺，最後差愛子，也被推出園外殺了——耶穌預告祂的死亡和宗教領袖將受的審判。法利賽人和希律黨試探納稅問題，耶穌用銀錢上的像回答「該撒的歸給該撒，神的歸給神」。撒都該人以復活後婚姻問題試探，耶穌說明復活後如天使，且「神不是死人的神，乃是活人的神」。文士讚許耶穌的回答，沒有人敢再問。耶穌反問大衛稱基督為主的問題。章末警告文士「好穿長衣遊行，喜愛街市上問安……假意作很長的禱告」——要受更重刑罰。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【耶穌的真正權柄不依賴人的承認】</strong><br>宗教領袖要求耶穌說明祂的權柄來自哪裏，耶穌以約翰的問題回應，使他們陷入兩難。耶穌不需要他們的認可才能有權柄行事——神的兒子的權柄不需要人間宗教機構的背書。今天的信徒也面對類似的質疑，重要的是：我們行事的確據是神的呼召和話語，而非人的承認。在人不認可的情況下，仍然按神旨意而行，才是真正的信靠。<br><br>
+<strong>2. 【在地上盡公民責任，在神面前盡信仰責任】</strong><br>「該撒的歸給該撒，神的歸給神」——這句話不是在逃避，而是在建立框架：有雙重的責任。地上的公民責任（納稅、遵法）和對神的屬靈責任（效忠、崇拜、順服）並不互相排斥，而是在各自的領域中各盡其分。信仰不應成為逃避社會責任的藉口，但社會責任也不應取代對神的終極效忠。<br><br>
+<strong>3. 【宗教外表最怕的是隱藏的貪婪和驕傲】</strong><br>耶穌警告文士的特點：穿長衣表示地位、喜愛問安表示渴望認可、侵吞寡婦家產是隱藏的貪婪、長篇禱告是宗教的表演。這些行為的共同點是：利用宗教身份謀求個人利益。「這些人要受更重的刑罰！」——因為他們知道得更多，責任就更大。信仰的知識若沒有帶來生命的改變，反而使人更加自義，就成了加重審判的材料。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「這樣，<strong>該撒的物當歸給該</strong>撒，神的物當歸給神。」（路20:25）</td>
+<td>你有沒有在信仰和社會責任之間找到清楚的界線——誠實地盡公民義務，同時對神有完全的效忠？就像一個政府員工在工作時忠於職守，在個人信仰上忠於神，你能在兩者之間保持健康的平衡嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>神原不是死人的神</strong>，乃是活人的神；因為在他那裏，人都是活的。」（路20:38）</td>
+<td>你有沒有真實地相信死後的復活和永生，並讓這個信仰影響你今天的選擇？就像知道有長假期就會提前準備行程，你有沒有因為相信永恆的現實，而在今天作出不同的時間和財富分配？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>你們要防備文士</strong>……侵吞寡婦的家產，假意作很長的禱告。這些人要受更重的刑罰！」（路20:46-47）</td>
+<td>你有沒有誠實地檢視自己，確認自己的宗教行為（禱告、奉獻、服事）是出於真實的愛神，而非謀取地位或別人的認可？就像調試樂器需要誠實地聆聽音調而非以為自己一定是對的，你願意定期讓神校準你的服事動機嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

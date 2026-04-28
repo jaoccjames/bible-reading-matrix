@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰福音第15章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰福音第15章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">葡萄樹與枝子：常在祂裏面</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「我是真葡萄樹，我父是栽培的人。</div>
+<div class="verse"><span class="verse-number">2</span>凡屬我不結果子的枝子，他就剪去；凡結果子的，他就修理乾淨，使枝子結果子更多。</div>
+<div class="verse"><span class="verse-number">3</span>現在你們因我講給你們的道，已經乾淨了。</div>
+<div class="verse"><span class="verse-number">4</span>你們要常在我裏面，我也常在你們裏面。枝子若不常在葡萄樹上，自己就不能結果子；你們若不常在我裏面，也是這樣。</div>
+<div class="verse"><span class="verse-number">5</span>我是葡萄樹，你們是枝子。常在我裏面的，我也常在他裏面，這人就多結果子；因為離了我，你們就不能作甚麼。</div>
+<div class="verse"><span class="verse-number">6</span>人若不常在我裏面，就像枝子丟在外面枯乾，人拾起來，扔在火裏燒了。</div>
+<div class="verse"><span class="verse-number">7</span>你們若常在我裏面，我的話也常在你們裏面，凡你們所願意的，祈求，就給你們成就。</div>
+<div class="verse"><span class="verse-number">8</span>你們多結果子，我父就因此得榮耀，你們也就是我的門徒了。</div>
+<div class="verse"><span class="verse-number">9</span>我愛你們，正如父愛我一樣；你們要常在我的愛裏。</div>
+<div class="verse"><span class="verse-number">10</span>你們若遵守我的命令，就常在我的愛裏，正如我遵守了我父的命令，常在他的愛裏。</div>
+<div class="verse"><span class="verse-number">11</span>「這些事我已經對你們說了，是要叫我的喜樂存在你們心裏，並叫你們的喜樂可以滿足。</div>
+<div class="verse"><span class="verse-number">12</span>你們要彼此相愛，像我愛你們一樣；這就是我的命令。</div>
+<div class="verse"><span class="verse-number">13</span>人為朋友捨命，人的愛心沒有比這個大的。</div>
+<div class="verse"><span class="verse-number">14</span>你們若遵行我所吩咐的，就是我的朋友了。</div>
+<div class="verse"><span class="verse-number">15</span>以後我不再稱你們為僕人，因僕人不知道主人所作的事。我乃稱你們為朋友；因我從我父所聽見的，已經都告訴你們了。</div>
+<div class="verse"><span class="verse-number">16</span>不是你們揀選了我，是我揀選了你們，並且分派你們去結果子，叫你們的果子常存，使你們奉我的名，無論向父求甚麼，他就賜給你們。</div>
+<div class="verse"><span class="verse-number">17</span>我這樣吩咐你們，是要叫你們彼此相愛。」</div>
+<div class="verse"><span class="verse-number">18</span>「世人若恨你們，你們知道〔或作：該知道〕，恨你們以先已經恨我了。</div>
+<div class="verse"><span class="verse-number">19</span>你們若屬世界，世界必愛屬自己的；只因你們不屬世界，乃是我從世界中揀選了你們，所以世界就恨你們。</div>
+<div class="verse"><span class="verse-number">20</span>你們要記念我從前對你們所說的話：『僕人不能大於主人。』他們若逼迫了我，也要逼迫你們；若遵守了我的話，也要遵守你們的話。</div>
+<div class="verse"><span class="verse-number">21</span>但他們因我的名要向你們行這一切的事，因為他們不認識那差我來的。</div>
+<div class="verse"><span class="verse-number">22</span>我若沒有來教訓他們，他們就沒有罪；但如今他們的罪無可推諉了。</div>
+<div class="verse"><span class="verse-number">23</span>恨我的，也恨我的父。</div>
+<div class="verse"><span class="verse-number">24</span>我若沒有在他們中間行過別人未曾行的事，他們就沒有罪；但如今連我與我的父，他們也看見也恨惡了。</div>
+<div class="verse"><span class="verse-number">25</span>這要應驗他們律法上所寫的話，說：『他們無故的恨我。』</div>
+<div class="verse"><span class="verse-number">26</span>但我要從父那裏差保惠師來，就是從父出來真理的聖靈；他來了，就要為我作見證。</div>
+<div class="verse"><span class="verse-number">27</span>你們也要作見證，因為你們從起頭就與我同在。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約翰福音第15章是告別講論中最著名的比喻——葡萄樹和枝子，以及對門徒的深邃教導。「我是真葡萄樹，我父是栽培的人」——父剪去不結果子的枝子，修理結果子的，使枝子結果子更多。核心命令：「你們要常在我裏面，我也常在你們裏面。枝子若不常在葡萄樹上，自己就不能結果子；你們若不常在我裏面，也是這樣。」「常在我裏面的，我也常在他裏面，這人就多結果子；因為離了我，你們就不能作甚麼。」「你們若常在我裏面，我的話也常在你們裏面，凡你們所願意的，祈求，就給你們成就。」耶穌說「以後我不再稱你們為僕人，乃稱你們為朋友」，「不是你們揀選了我，是我揀選了你們」。告誡門徒世界會恨他們，「因為你們不屬世界，乃是我從世界中揀選了你們」，應許真理的聖靈（保惠師）要來為祂作見證，門徒也要作見證。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【常在基督裏是結果子的唯一途徑】</strong><br>「離了我，你們就不能作甚麼」——這句話是對人類自主能力最根本的挑戰。枝子不連接於樹，就沒有生命、沒有果子。靠自己的努力可以製造宗教活動，但無法結出真正的屬靈果子。「常在」不只是偶爾的接觸，而是持續的依附——每天的禱告、讀經、順服、把生命的活水汲取自與基督的關係中。<br><br>
+<strong>2. 【修理是為了多結果子，不是懲罰】</strong><br>「凡結果子的，他就修理乾淨，使枝子結果子更多」——修剪是葡萄農夫的愛心操作，不是憤怒的切除。人生中的患難、逼迫、軟弱，往往是神的修剪，目的是要枝子結出更多更好的果子。信徒面對苦難，可以問的不只是「為甚麼」，更是「神要透過這修剪，在我身上成就甚麼？<br><br>
+<strong>3. 【「朋友」是比「僕人」更深的關係】</strong><br>「以後我不再稱你們為僕人，乃稱你們為朋友；因我從我父所聽見的，已經都告訴你們了」——從僕人到朋友是關係的質的改變。僕人不知道主人的計劃；朋友被分享秘密。耶穌把天父的計劃和心意都告訴了門徒，這是前所未有的親密關係。每一個信徒都被邀請進入這份友誼，不只是宗教義務的履行，而是深刻的生命相交。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>我是葡萄樹</strong>，你們是枝子。常在我裏面的，我也常在他裏面，這人就多結果子；因為離了我，你們就不能作甚麼。」（約15:5）</td>
+<td>你每天是否有意識地讓自己「常在」耶穌裏面——透過禱告、讀神的話、與祂同在？就像枝子沒有主動選擇依附，但信徒有責任刻意保持與基督的連接，你的日常生活有多少是從這個連接中流出的？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>以後我不再稱你們</strong>為僕人……我乃稱你們為朋友；因我從我父所聽見的，已經都告訴你們了。」（約15:15）</td>
+<td>你與耶穌的關係有沒有從「僕人完成義務」進入「朋友深度相交」的層次？就像工作關係和真正的友誼體驗完全不同，你有沒有讓你的信仰生活進入那種朋友式的親密——彼此傾訴、彼此了解、彼此信賴？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>不是你們揀選了我</strong>，是我揀選了你們，並且分派你們去結果子，叫你們的果子常存。」（約15:16）</td>
+<td>你有沒有真實地接受「是我揀選了你」這個事實，讓它成為你生命使命感的根基？就像被學校錄取和被公司雇用讓人有被需要的感覺，你有沒有讓被耶穌揀選這件事改變你對自己存在意義的認識？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

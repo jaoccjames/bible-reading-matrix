@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>加拉太書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+加拉太書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">福音只有一個，不可更改</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>作使徒的保羅（不是由於人，也不是藉着人，乃是藉着耶穌基督，與叫他從死裏復活的父神）</div>
+<div class="verse"><span class="verse-number">2</span>和一切與我同在的眾弟兄，寫信給加拉太的各教會。</div>
+<div class="verse"><span class="verse-number">3</span>願恩惠、平安從父神與我們的主耶穌基督歸與你們！</div>
+<div class="verse"><span class="verse-number">4</span>基督照我們父神的旨意，為我們的罪捨己，要救我們脫離這罪惡的世代。</div>
+<div class="verse"><span class="verse-number">5</span>但願榮耀歸於神，直到永永遠遠。阿們！</div>
+<div class="verse"><span class="verse-number">6</span>我希奇你們這麼快離開那藉着基督之恩召你們的，去從別的福音。</div>
+<div class="verse"><span class="verse-number">7</span>那並不是福音，不過有些人攪擾你們，要把基督的福音更改了。</div>
+<div class="verse"><span class="verse-number">8</span>但無論是我們，是天上來的使者，若傳福音給你們，與我們所傳給你們的不同，他就應當被咒詛。</div>
+<div class="verse"><span class="verse-number">9</span>我們已經說了，現在又說，若有人傳福音給你們，與你們所領受的不同，他就應當被咒詛。</div>
+<div class="verse"><span class="verse-number">10</span>我現在是要得人的心呢？還是要得神的心呢？我豈是討人的喜歡嗎？若仍舊討人的喜歡，我就不是基督的僕人了。</div>
+<div class="verse"><span class="verse-number">11</span>弟兄們，我告訴你們，我素來所傳的福音不是出於人的意思。</div>
+<div class="verse"><span class="verse-number">12</span>因為我不是從人領受的，也不是人教導我的，乃是從耶穌基督啟示來的。</div>
+<div class="verse"><span class="verse-number">13</span>你們聽見我從前在猶太教中所行的事，怎樣極力逼迫殘害神的教會。</div>
+<div class="verse"><span class="verse-number">14</span>我又在猶太教中，比我本國許多同歲的人更有長進，為我祖宗的遺傳更加熱心。</div>
+<div class="verse"><span class="verse-number">15</span>然而，那把我從母腹裏分別出來、又施恩召我的神，</div>
+<div class="verse"><span class="verse-number">16</span>既然樂意將他兒子啟示在我心裏，叫我把他傳在外邦人中，我就沒有與屬血氣的人商量，</div>
+<div class="verse"><span class="verse-number">17</span>也沒有上耶路撒冷去見那些比我先作使徒的，惟獨往亞拉伯去，後又回到大馬色。</div>
+<div class="verse"><span class="verse-number">18</span>過了三年，才上耶路撒冷去見磯法，和他同住了十五天。</div>
+<div class="verse"><span class="verse-number">19</span>至於別的使徒，除了主的兄弟雅各，我都沒有看見。</div>
+<div class="verse"><span class="verse-number">20</span>我寫給你們的不是謊話，這是我在神面前說的。</div>
+<div class="verse"><span class="verse-number">21</span>以後我到了敘利亞和基利家境內。</div>
+<div class="verse"><span class="verse-number">22</span>那時，猶太信基督的各教會都沒有見過我的面。</div>
+<div class="verse"><span class="verse-number">23</span>不過聽說那從前逼迫我們的，現在傳揚他原先所殘害的真道。</div>
+<div class="verse"><span class="verse-number">24</span>他們就為我的緣故，歸榮耀給神。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+加拉太書第1章保羅以罕見的嚴肅語氣開篇，因為加拉太人正被一個假福音迷惑。「我希奇你們這麼快離開那藉着基督之恩召你們的，去從別的福音」——不是另一個福音，而是對真福音的篡改。「若傳福音給你們，與我們所傳給你們的不同，他就應當被咒詛」——保羅用最強烈的語言（可詛可咒）保衛福音的純正性，這句話對天使也同樣有效。「我現在是要得人的心，還是要得神的心？我若仍舊討人的喜歡，我就不是基督的僕人了」——討人喜歡和傳純正福音有時是衝突的。保羅自辯使徒職分的真實性：他的福音「不是出於人的意思」，也不是「人教導的」，「乃是從耶穌基督啟示來的」。他描述從前在猶太教的熱心、從前逼迫教會的過去，然後是神的揀選和呼召——「把我從母腹裏分別出來……要叫我把他傳在外邦人中」——這個使命在他出生前就已定下。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【福音的純正是不可妥協的】</strong><br>「無論是我們，是天上來的使者，若傳福音給你們，與我們所傳給你們的不同，他就應當被咒詛」——保羅把福音的純正性放在最高位置，甚至超過了人際關係和傳道人的聲譽。「那並不是福音」——被篡改的福音不只是不完全的福音，而是根本不是福音。信徒需要對福音的核心有清晰的認識，才能辨別真偽。<br><br>
+<strong>2. 【討人喜歡與忠於基督有時衝突】</strong><br>「我若仍舊討人的喜歡，我就不是基督的僕人了」——服事者必須在「得人的心」和「得神的心」之間作出選擇。討人喜歡可能是最大的試探，因為它帶來即時的認可和舒適；但忠於神的真理，有時必須說令人不舒服的話。<br><br>
+<strong>3. 【神的呼召在人出生前就已定下】</strong><br>「把我從母腹裏分別出來」——保羅的使命不是後天選擇的，而是神在他出生前就預定的。這說明每一個信徒的人生不是偶然的，神在每一個人身上都有特定的計劃。他在先知书中对以赛亚的呼召有同样的描述（赛49:1）——保羅把自己的呼召放在先知傳統的框架中。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>無論是我們</strong>，是天上來的使者，若傳福音給你們，與我們所傳給你們的不同，他就應當被咒詛……我說的不是謊話。」（加1:8）</td>
+<td>你有沒有對你所領受的福音有足夠的認識，能夠辨別真假？就像知道真鈔的特徵才能辨別假鈔，你有沒有認真研讀保羅所傳的純正福音，讓它成為你辨別各種變形教導的準則？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我現在是要得人的</strong>心呢？還是要得神的心呢？我豈是討人的喜歡嗎？若仍舊討人的喜歡，我就不是基督的僕人了。」（加1:10）</td>
+<td>你有沒有在傳福音和服事中面對「討人喜歡」的誘惑，選擇說對方愛聽的話而非真實的真理？就像一個誠實的醫生必須說病人需要聽的而非想聽的，你有沒有讓對神的忠心超越對人認可的渴望？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>那把我從母腹裏分</strong>別出來、又施恩召我的神，既然樂意將他兒子啟示在我心裏，叫我把他傳在外邦人中。」（加1:15-16）</td>
+<td>你有沒有相信神在你出生之前就對你的生命有特定的設計和呼召，讓這個信念給你的生命帶來方向感和意義感？就像知道自己是為特定使命被造的，你有沒有在神的設計中尋找並活出你獨特的呼召？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

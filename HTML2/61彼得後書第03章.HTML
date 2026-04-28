@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>彼得後書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+彼得後書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">主的日子必來到與新天新地的盼望</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>親愛的弟兄啊，我現在寫給你們的是第二封信。這兩封都是提醒你們，激發你們誠實的心，</div>
+<div class="verse"><span class="verse-number">2</span>叫你們記念聖先知預先所說的話和主救主的命令，就是使徒所傳給你們的。</div>
+<div class="verse"><span class="verse-number">3</span>第一要緊的，該知道在末世必有好譏誚的人隨從自己的私慾出來譏誚說：</div>
+<div class="verse"><span class="verse-number">4</span>「主要降臨的應許在那裏呢？因為從列祖睡了以來，萬物與起初創造的時候仍是一樣。」</div>
+<div class="verse"><span class="verse-number">5</span>他們故意忘記，從太古，憑神的命有了天，並從水而出、藉水而成的地。</div>
+<div class="verse"><span class="verse-number">6</span>故此，當時的世界被水淹沒就消滅了。</div>
+<div class="verse"><span class="verse-number">7</span>但現在的天地還是憑着那命存留，直留到不敬虔之人受審判遭沉淪的日子，用火焚燒。</div>
+<div class="verse"><span class="verse-number">8</span>親愛的弟兄啊，有一件事你們不可忘記，就是主看一日如千年，千年如一日。</div>
+<div class="verse"><span class="verse-number">9</span>主所應許的尚未成就，有人以為他是耽延，其實不是耽延，乃是寬容你們，不願有一人沉淪，乃願人人都悔改。</div>
+<div class="verse"><span class="verse-number">10</span>但主的日子要像賊來到一樣。那日，天必大有響聲廢去，有形質的都要被烈火銷化，地和其上的物都要燒盡了。</div>
+<div class="verse"><span class="verse-number">11</span>這一切既然都要如此銷化，你們為人該當怎樣聖潔，怎樣敬虔，</div>
+<div class="verse"><span class="verse-number">12</span>切切仰望神的日子來到。在那日，天被火燒就銷化了，有形質的都要被烈火熔化。</div>
+<div class="verse"><span class="verse-number">13</span>但我們照他的應許，盼望新天新地，有義居在其中。</div>
+<div class="verse"><span class="verse-number">14</span>親愛的弟兄啊，你們既盼望這些事，就當殷勤，使自己沒有玷污，無可指摘，安然見主；</div>
+<div class="verse"><span class="verse-number">15</span>並且要以我主長久忍耐為得救的因由，就如我們所親愛的兄弟保羅，照着所賜給他的智慧寫了信給你們。</div>
+<div class="verse"><span class="verse-number">16</span>他一切的信上也都是講論這事。信中有些難明白的，那無學問、不堅固的人強解，如強解別的經書一樣，就自取沉淪。</div>
+<div class="verse"><span class="verse-number">17</span>親愛的弟兄阿，你們既然預先知道這事，就當防備，恐怕被惡人的錯謬誘惑，就從自己堅固的地步上墜落。</div>
+<div class="verse"><span class="verse-number">18</span>你們卻要在我們主救主耶穌基督的恩典和知識上有長進。願榮耀歸給他，從今直到永遠。阿們！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+彼得後書第3章回應那些嘲笑主再來的人，論述神的時間觀和主日子的確定性，以新天新地的盼望和信徒的責任作結。「末世必有好譏誚的人……譏誚說：主要降臨的應許在哪裏呢？」「主看一日如千年，千年如一日」——神的時間觀不同於人的。「主所應許的尚未成就，有人以為他是耽延，其實不是耽延，乃是寬容你們，不願有一人沉淪，乃願人人都悔改」——等候的原因是神的寬容。「這一切既然都要如此銷化，你們為人該當怎樣聖潔，怎樣敬虔……我們照他的應許，盼望新天新地，有義居在其中。親愛的弟兄啊，你們既盼望這些事，就當殷勤，使自己沒有玷污，無可指摘，安然見主」。「你們卻要在我們主救主耶穌基督的恩典和知識上有長進」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【神等候是因為不願有人沉淪】</strong><br>「主所應許的尚未成就……其實不是耽延，乃是寬容你們，不願有一人沉淪，乃願人人都悔改」——神的「遲延」是愛的表現。每一個「還沒有回來」的日子，都是給更多人悔改機會的恩典時間。<br><br>
+<strong>2. 【末世盼望帶出聖潔的生活】</strong><br>「你們為人該當怎樣聖潔，怎樣敬虔……使自己沒有玷污，無可指摘，安然見主」——末世的確信帶來的不是恐懼，而是動力。知道一切可見的都要被銷化，永恆的品格和關係才是真正持久的。<br><br>
+<strong>3. 【「恩典和知識上有長進」是信仰的結語】</strong><br>「你們卻要在我們主救主耶穌基督的恩典和知識上有長進」——信仰不是靜態的持守，而是動態的成長。「恩典」（領受神的恩典）和「知識」（認識基督）是成長的兩個維度，缺一不可。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>彼得說</strong>：「<strong>主所應許的尚未成</strong>就，有人以為他是耽延，其實不是耽延，乃是寬容你們，不願有一人沉淪，乃願人人都悔改。」（彼後3:9）</td>
+<td>你有沒有讓對「神等候是因為不願一人沉淪」的認識，改變你對傳福音的緊迫感——知道每一天的等候都是神給更多人機會的恩典，你有責任盡力把握？就像一個知道有限時間的人會更珍惜每一個機會，你有沒有讓這個認識推動你更積極地向未信者傳福音？</td>
+</tr>
+<tr>
+<td><strong>彼得說</strong>：「<strong>這一切既然都要如</strong>此銷化，你們為人該當怎樣聖潔，怎樣敬虔……我們照他的應許，盼望新天新地，有義居在其中。」（彼後3:11,13）</td>
+<td>你有沒有讓「新天新地、有義居在其中」的盼望改變你對今世的態度，讓你更看重那些在永恆中有價值的事？就像知道行程終點讓旅客的打包選擇不同，你有沒有讓終末的盼望指引你的今日優先次序？</td>
+</tr>
+<tr>
+<td><strong>彼得說</strong>：「<strong>你們卻要在我們主</strong>救主耶穌基督的恩典和知識上有長進。願榮耀歸給他，從今直到永遠。阿們！」（彼後3:18）</td>
+<td>你有沒有把「在恩典和知識上有長進」作為你信仰生命持續的方向，讓你的信仰不停滯在某個時刻，而是一直向前成長？就像學習永遠沒有終點的學者，你有沒有讓對基督更深的認識和更豐富地領受祂的恩典，成為你信仰生命永遠的追求？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

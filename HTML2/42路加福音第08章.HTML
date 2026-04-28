@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+路加福音第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">撒種比喻與平靜風浪及醫治</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>過了不多日，耶穌周遊各城各鄉傳道，宣講神國的福音。和他同去的有十二個門徒，</div>
+<div class="verse"><span class="verse-number">2</span>還有被惡鬼所附、被疾病所累、已經治好的幾個婦女，內中有稱為抹大拉的馬利亞（曾有七個鬼從她身上趕出來），</div>
+<div class="verse"><span class="verse-number">3</span>又有希律的家宰苦撒的妻子約亞拿，並蘇撒拿，和好些別的婦女，都是用自己的財物供給耶穌和門徒。</div>
+<div class="verse"><span class="verse-number">4</span>當許多人聚集、又有人從各城裏出來見耶穌的時候，耶穌就用比喻說：</div>
+<div class="verse"><span class="verse-number">5</span>「有一個撒種的出去撒種。撒的時候，有落在路旁的，被人踐踏，天上的飛鳥又來吃盡了。</div>
+<div class="verse"><span class="verse-number">6</span>有落在磐石上的，一出來就枯乾了，因為得不着滋潤。</div>
+<div class="verse"><span class="verse-number">7</span>有落在荊棘裏的，荊棘一同生長，把它擠住了。</div>
+<div class="verse"><span class="verse-number">8</span>又有落在好土裏的，生長起來，結實百倍。」耶穌說了這些話，就大聲說：「有耳可聽的，就應當聽！」</div>
+<div class="verse"><span class="verse-number">9</span>門徒問耶穌說：「這比喻是甚麼意思呢？」</div>
+<div class="verse"><span class="verse-number">10</span>他說：「神國的奧祕只叫你們知道；至於別人，就用比喻，叫他們看也看不見，聽也聽不明。」</div>
+<div class="verse"><span class="verse-number">11</span>「這比喻乃是這樣：種子就是神的道。</div>
+<div class="verse"><span class="verse-number">12</span>那些在路旁的，就是人聽了道，隨後魔鬼來，從他們心裏把道奪去，恐怕他們信了得救。</div>
+<div class="verse"><span class="verse-number">13</span>那些在磐石上的，就是人聽道，歡喜領受，但心中沒有根，不過暫時相信，及至遇見試煉就退後了。</div>
+<div class="verse"><span class="verse-number">14</span>那落在荊棘裏的，就是人聽了道，走開以後，被今生的思慮、錢財、宴樂擠住了，便結不出成熟的子粒來。</div>
+<div class="verse"><span class="verse-number">15</span>那落在好土裏的，就是人聽了道，持守在誠實善良的心裏，並且忍耐着結實。」</div>
+<div class="verse"><span class="verse-number">16</span>「沒有人點燈用器皿蓋上，或放在床底下，乃是放在燈臺上，叫進來的人看見亮光。</div>
+<div class="verse"><span class="verse-number">17</span>因為掩藏的事沒有不顯出來的；隱瞞的事沒有不露出來被人知道的。</div>
+<div class="verse"><span class="verse-number">18</span>所以，你們應當小心怎樣聽；因為凡有的，還要加給他；凡沒有的，連他自以為有的，也要奪去。」</div>
+<div class="verse"><span class="verse-number">19</span>耶穌的母親和他弟兄來了，因為人多，不得到他跟前。</div>
+<div class="verse"><span class="verse-number">20</span>有人告訴他說：「你母親和你弟兄站在外邊，要見你。」</div>
+<div class="verse"><span class="verse-number">21</span>耶穌回答說：「聽了神之道而遵行的人就是我的母親，我的弟兄了。」</div>
+<div class="verse"><span class="verse-number">22</span>有一天，耶穌和門徒上了船，對門徒說：「我們可以渡到湖那邊去。」他們就開了船。</div>
+<div class="verse"><span class="verse-number">23</span>正行的時候，耶穌睡着了。湖上忽然起了暴風，船將滿了水，甚是危險。</div>
+<div class="verse"><span class="verse-number">24</span>門徒來叫醒了他，說：「夫子！夫子！我們喪命啦！」耶穌醒了，斥責那狂風大浪；風浪就止住，平靜了。</div>
+<div class="verse"><span class="verse-number">25</span>耶穌對他們說：「你們的信心在那裏呢？」他們又懼怕又希奇，彼此說：「這到底是誰？他吩咐風和水，連風和水也聽從他了。」</div>
+<div class="verse"><span class="verse-number">26</span>他們到了格拉森〔有古卷作：加大拉〕人的地方，就是加利利的對面。</div>
+<div class="verse"><span class="verse-number">27</span>耶穌上了岸，就有城裏一個被鬼附着的人迎面而來。這個人許久不穿衣服，不住房子，只住在墳塋裏。</div>
+<div class="verse"><span class="verse-number">28</span>他見了耶穌，就俯伏在他面前，大聲喊叫，說：「至高神的兒子耶穌，我與你有甚麼相干？求你不要叫我受苦！」</div>
+<div class="verse"><span class="verse-number">29</span>是因耶穌曾吩咐污鬼從那人身上出來。原來這鬼屢次抓住他；他常被人看守，又被鐵鍊和腳鐐捆鎖，他竟把鎖鍊掙斷，被鬼趕到曠野去。</div>
+<div class="verse"><span class="verse-number">30</span>耶穌問他說：「你名叫甚麼？」他說：「我名叫『群』」；這是因為附着他的鬼多。</div>
+<div class="verse"><span class="verse-number">31</span>鬼就央求耶穌，不要吩咐他們到無底坑裏去。</div>
+<div class="verse"><span class="verse-number">32</span>那裏有一大群豬在山上吃食。鬼央求耶穌，准他們進入豬裏去。耶穌准了他們，</div>
+<div class="verse"><span class="verse-number">33</span>鬼就從那人出來，進入豬裏去。於是那群豬闖下山崖，投在湖裏淹死了。</div>
+<div class="verse"><span class="verse-number">34</span>放豬的看見這事就逃跑了，去告訴城裏和鄉下的人。</div>
+<div class="verse"><span class="verse-number">35</span>眾人出來要看是甚麼事；到了耶穌那裏，看見鬼所離開的那人，坐在耶穌腳前，穿着衣服，心裏明白過來，他們就害怕。</div>
+<div class="verse"><span class="verse-number">36</span>看見這事的便將被鬼附着的人怎麼得救告訴他們。</div>
+<div class="verse"><span class="verse-number">37</span>格拉森四圍的人，因為害怕得很，都求耶穌離開他們；耶穌就上船回去了。</div>
+<div class="verse"><span class="verse-number">38</span>鬼所離開的那人懇求和耶穌同在；耶穌卻打發他回去，說：</div>
+<div class="verse"><span class="verse-number">39</span>「你回家去，傳說神為你作了何等大的事。」他就去，滿城裏傳揚耶穌為他作了何等大的事。</div>
+<div class="verse"><span class="verse-number">40</span>耶穌回來的時候，眾人迎接他，因為他們都等候他。</div>
+<div class="verse"><span class="verse-number">41</span>有一個管會堂的，名叫睚魯，來俯伏在耶穌腳前，求耶穌到他家裏去；</div>
+<div class="verse"><span class="verse-number">42</span>因他有一個獨生女兒，約有十二歲，快要死了。耶穌去的時候，眾人擁擠他。</div>
+<div class="verse"><span class="verse-number">43</span>有一個女人，患了十二年的血漏，在醫生手裏花盡了她一切養生的，並沒有一人能醫好她。</div>
+<div class="verse"><span class="verse-number">44</span>她來到耶穌背後，摸他的衣裳繸子，血漏立刻就止住了。</div>
+<div class="verse"><span class="verse-number">45</span>耶穌說：「摸我的是誰？」眾人都不承認。彼得和同行的人都說：「夫子，眾人擁擁擠擠緊靠着你。（有古卷在此有：你還問摸我的是誰麼？）」</div>
+<div class="verse"><span class="verse-number">46</span>耶穌說：「總有人摸我，因我覺得有能力從我身上出去。」</div>
+<div class="verse"><span class="verse-number">47</span>那女人知道不能隱藏，就戰戰兢兢的來俯伏在耶穌腳前，把摸他的緣故和怎樣立刻得好了，當着眾人都說出來。</div>
+<div class="verse"><span class="verse-number">48</span>耶穌對她說：「女兒，你的信救了你；平平安安的去吧！」</div>
+<div class="verse"><span class="verse-number">49</span>還說話的時候，有人從管會堂的家裏來，說：「你的女兒死了，不要勞動夫子。」</div>
+<div class="verse"><span class="verse-number">50</span>耶穌聽見就對他說：「不要怕，只要信！你的女兒就必得救。」</div>
+<div class="verse"><span class="verse-number">51</span>耶穌到了他的家，除了彼得、約翰、雅各，和女兒的父母，不許別人同他進去。</div>
+<div class="verse"><span class="verse-number">52</span>眾人都為這女兒哀哭捶胸。耶穌說：「不要哭！她不是死了，是睡着了。」</div>
+<div class="verse"><span class="verse-number">53</span>他們曉得女兒已經死了，就嗤笑耶穌。</div>
+<div class="verse"><span class="verse-number">54</span>耶穌拉着她的手，呼叫說：「女兒，起來吧！」</div>
+<div class="verse"><span class="verse-number">55</span>她的靈魂便回來，她就立刻起來了。耶穌吩咐給她東西吃。</div>
+<div class="verse"><span class="verse-number">56</span>她的父母驚奇得很；耶穌囑咐他們，不要把所作的事告訴人。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+路加福音第8章以一個重要的細節開場：一群婦女「用自己的財物供給耶穌和門徒」——路加特別記下婦女在耶穌事工中的角色，這在當時社會十分罕見。撒種的比喻及解釋，路加特別強調「好土就是持守在誠實善良的心裏，並且忍耐着結實」，加入「忍耐」的元素。燈臺的比喻說明「掩藏的事必顯出來」，要小心怎樣聽。耶穌的真正家人是「聽了神之道而遵行的人」。接着是平靜風浪：暴風中門徒驚呼「夫子！我們喪命啦！」耶穌斥責風浪後說「你們的信心在那裏呢？」隨後在格拉森趕出群鬼，得救的人坐着穿衣、心裏明白過來，耶穌打發他回家作見證。途中患血漏的婦人「持守信心」摸了耶穌的衣裳，得醫治；耶穌對她說「你的信救了你；平平安安的去吧！」睚魯的女兒已死，耶穌說「不要怕，只要信」，拉她的手說「起來吧！」她就起來了。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【忍耐的信心才能結出成熟的果子】</strong><br>路加在好土的解釋中加入「忍耐着結實」——神的道需要在誠實善良的心裏持守，並且要忍耐。屬靈生命的成長不是急速的，而是在患難、等待、試煉中持守，慢慢成熟結實。許多人在「荊棘地」的階段——被今生的思慮、錢財、宴樂擠住——就停止了成長。忍耐是信心的試煉石，也是成熟的必經之路。<br><br>
+<strong>2. 【要小心怎樣聽，因為「聽」決定一切】</strong><br>「你們應當小心怎樣聽」——路加特別強調這句話。聽道的方式，決定神的道在我們生命中的果效。被動地坐着聽和主動地帶着心去聽，是完全不同的體驗。「凡有的，還要加給他；凡沒有的，連他自以為有的，也要奪去」——積極回應神話語的人，會得到更多的啟示；漠然對待的人，連已有的也會慢慢失去。<br><br>
+<strong>3. 【「不要怕，只要信」是在絕望中的錨】</strong><br>女兒死了的消息傳來，「不要怕，只要信」是耶穌的第一回應。這不是對悲傷的否定，而是在最黑暗的時刻，把睚魯的眼光從死亡的事實移向復活的主。信心不是感情的樂觀，而是對神話語的主動持守。在「已經太遲了」的時候，耶穌說「只要信」，挑戰每一個面對絕境的人：把眼光放在那位勝過死亡的主身上。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>那落在好土裏的</strong>，就是人聽了道，持守在誠實善良的心裏，並且忍耐着結實。」（路8:15）</td>
+<td>你的屬靈生命有沒有「忍耐着結實」的特質——在漫長的等候和試煉中仍然持守？就像農作物需要整個生長季節才能收成，你有沒有心理準備在信仰的漫長過程中不急於求成？</td>
+</tr>
+<tr>
+<td><strong>耶穌對他們說</strong>：「<strong>你們的信心在那裏</strong>呢？」（路8:25）</td>
+<td>在你面對生活中的「暴風」時，你的第一個反應是去找耶穌，還是先恐慌？就像知道家裏有急救箱的人遇到意外時會先想到急救箱，你有沒有把「在患難中尋找耶穌」練成一個本能反應？</td>
+</tr>
+<tr>
+<td><strong>耶穌聽見就對他說</strong>：「<strong>不要怕</strong>，只要信！你的女兒就必得救。」（路8:50）</td>
+<td>在你生命中那些「已經太遲了」的處境裏，你有沒有讓耶穌的話語「不要怕，只要信」成為你重新站立的根基？就像黑暗中的一根蠟燭雖然微弱卻能照亮整個房間，你願意在最絕望的時候，讓一點點的信心支撐你繼續向前嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

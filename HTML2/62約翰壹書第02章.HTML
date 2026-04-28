@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰壹書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰壹書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">愛弟兄是在光中行的標誌</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我小子們哪，我將這些話寫給你們，是要叫你們不犯罪。若有人犯罪，在父那裏我們有一位中保，就是那義者耶穌基督。</div>
+<div class="verse"><span class="verse-number">2</span>他為我們的罪作了挽回祭，不是單為我們的罪，也是為普天下人的罪。</div>
+<div class="verse"><span class="verse-number">3</span>我們若遵守他的誡命，就曉得是認識他。</div>
+<div class="verse"><span class="verse-number">4</span>人若說我認識他，卻不遵守他的誡命，便是說謊話的，真理也不在他心裏了。</div>
+<div class="verse"><span class="verse-number">5</span>凡遵守主道的，愛神的心在他裏面實在是完全的。從此我們知道我們是在主裏面。</div>
+<div class="verse"><span class="verse-number">6</span>人若說他住在主裏面，就該自己照主所行的去行。</div>
+<div class="verse"><span class="verse-number">7</span>親愛的弟兄啊，我寫給你們的，不是一條新命令，乃是你們從起初所受的舊命令；這舊命令就是你們所聽見的道。</div>
+<div class="verse"><span class="verse-number">8</span>再者，我寫給你們的，是一條新命令，在主是真的，在你們也是真的；因為黑暗漸漸過去，真光已經照耀。</div>
+<div class="verse"><span class="verse-number">9</span>人若說自己在光明中，卻恨他的弟兄，他到如今還是在黑暗裏。</div>
+<div class="verse"><span class="verse-number">10</span>愛弟兄的，就是住在光明中，在他並沒有絆跌的緣由。</div>
+<div class="verse"><span class="verse-number">11</span>惟獨恨弟兄的，是在黑暗裏，且在黑暗裏行，也不知道往那裏去，因為黑暗叫他眼睛瞎了。</div>
+<div class="verse"><span class="verse-number">12</span>小子們哪，我寫信給你們，因為你們的罪藉着主名得了赦免。</div>
+<div class="verse"><span class="verse-number">13</span>父老啊，我寫信給你們，因為你們認識那從起初原有的。少年人哪，我寫信給你們，因為你們勝了那惡者。小子們哪，我曾寫信給你們，因為你們認識父。</div>
+<div class="verse"><span class="verse-number">14</span>父老啊，我曾寫信給你們，因為你們認識那從起初原有的。少年人哪，我曾寫信給你們；因為你們剛強，神的道常存在你們心裏；你們也勝了那惡者。</div>
+<div class="verse"><span class="verse-number">15</span>不要愛世界和世界上的事。人若愛世界，愛父的心就不在他裏面了。</div>
+<div class="verse"><span class="verse-number">16</span>因為凡世界上的事，就像肉體的情慾，眼目的情慾，並今生的驕傲，都不是從父來的，乃是從世界來的。</div>
+<div class="verse"><span class="verse-number">17</span>這世界和其上的情慾都要過去，惟獨遵行神旨意的，是永遠常存。</div>
+<div class="verse"><span class="verse-number">18</span>小子們哪，如今是末時了。你們曾聽見說，那敵基督的要來；現在已經有好些敵基督的出來了，從此我們就知道如今是末時了。</div>
+<div class="verse"><span class="verse-number">19</span>他們從我們中間出去，卻不是屬我們的；若是屬我們的，就必仍舊與我們同在；他們出去，顯明都不是屬我們的。</div>
+<div class="verse"><span class="verse-number">20</span>你們從那聖者受了恩膏，並且知道這一切的事〔或作：都有知識〕。</div>
+<div class="verse"><span class="verse-number">21</span>我寫信給你們，不是因你們不知道真理，正是因你們知道，並且知道沒有虛謊是從真理出來的。</div>
+<div class="verse"><span class="verse-number">22</span>誰是說謊話的呢？不是那不認耶穌為基督的嗎？不認父與子的，這就是敵基督的。</div>
+<div class="verse"><span class="verse-number">23</span>凡不認子的，就沒有父；認子的，連父也有了。</div>
+<div class="verse"><span class="verse-number">24</span>論到你們，務要將那從起初所聽見的，常存在心裏。若將從起初所聽見的存在心裏，你們就必住在子裏面，也必住在父裏面。</div>
+<div class="verse"><span class="verse-number">25</span>主所應許我們的就是永生。</div>
+<div class="verse"><span class="verse-number">26</span>我將這些話寫給你們，是指着那引誘你們的人說的。</div>
+<div class="verse"><span class="verse-number">27</span>你們從主所受的恩膏常存在你們心裏，並不用人教訓你們，自有主的恩膏在凡事上教訓你們。這恩膏是真的，不是假的；你們要按這恩膏的教訓住在主裏面。</div>
+<div class="verse"><span class="verse-number">28</span>小子們哪，你們要住在主裏面。這樣，他若顯現，我們就可以坦然無懼；當他來的時候，在他面前也不至於慚愧。</div>
+<div class="verse"><span class="verse-number">29</span>你們若知道他是公義的，就知道凡行公義之人都是他所生的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約翰壹書第2章論述基督是挽回祭、遵守誡命是認識神的憑據、愛弟兄和愛世界的對立，以及敵基督者的識別。「若有人犯罪，在父那裏我們有一位中保，就是那義者耶穌基督。他為我們的罪作了挽回祭，不是單為我們的罪，也是為普天下人的罪」。「我們若遵守他的誡命，就曉得是認識他；人若說我認識他，卻不遵守他的誡命，便是說謊話的」——遵命是認識神的證明。「愛弟兄的，就是住在光明中」；「恨弟兄的，是在黑暗裏」。「不要愛世界和世界上的事……這世界和其上的情慾都要過去，惟獨遵行神旨意的，是永遠常存」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【遵命是認識神的真正憑據】</strong><br>「我們若遵守他的誡命，就曉得是認識他……人若說我認識他，卻不遵守他的誡命，便是說謊話的」——「認識」在約翰神學中是深刻的關係性詞彙。遵守誡命是這個關係性認識的真實表達；沒有遵命，「認識」就成了謊言。<br><br>
+<strong>2. 【愛弟兄是在光明中行的具體標誌】</strong><br>「人若說自己在光明中，卻恨他的弟兄，他到如今還是在黑暗裏」；「愛弟兄的，就是住在光明中」——光明和黑暗不只是抽象的靈性狀態，而是以對弟兄的態度具體衡量的。<br><br>
+<strong>3. 【世界要過去，遵行神旨意的永存】</strong><br>「這世界和其上的情慾都要過去，惟獨遵行神旨意的，是永遠常存」——把生命的資源投入那終究要過去的事，是最大的虧本；投入那永遠常存的，才是最明智的選擇。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>約翰說</strong>：「<strong>我們若遵守他的誡</strong>命，就曉得是認識他。人若說我認識他，卻不遵守他的誡命，便是說謊話的，真理也不在他心裏了。」（約壹2:3-4）</td>
+<td>你有沒有讓「遵守誡命是認識神的真正憑據」這個標準，取代你對自己屬靈狀態的主觀感覺？就像一個公司的健康不由業主的感覺決定，而由財務報表顯示，你有沒有讓你的生命行為——而非宗教感受——成為你認識神深度的更真實指標？</td>
+</tr>
+<tr>
+<td><strong>約翰說</strong>：「<strong>不要愛世界和世界</strong>上的事……這世界和其上的情慾都要過去，惟獨遵行神旨意的，是永遠常存。」（約壹2:15,17）</td>
+<td>你有沒有定期省察你的優先次序，識別哪些是「從父來的」而哪些是「從世界來的」？就像明智的投資者把錢放在增值的而非貶值的資產上，你有沒有把你的生命資源投入那永遠常存的事？</td>
+</tr>
+<tr>
+<td><strong>約翰說</strong>：「<strong>人若說自己在光明</strong>中，卻恨他的弟兄，他到如今還是在黑暗裏。愛弟兄的，就是住在光明中，在他並沒有絆跌的緣由。」（約壹2:9-10）</td>
+<td>你有沒有讓你對弟兄的態度——是愛還是恨，是包容還是排斥——成為你誠實評估自己是否「在光明中行」的標誌？就像溫度計準確反映溫度，你有沒有讓對弟兄的愛成為你屬靈狀態的真實量表？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

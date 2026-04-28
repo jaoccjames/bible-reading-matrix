@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶穌施行神蹟顯主權</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌下了山，有許多人跟着他。</div>
+<div class="verse"><span class="verse-number">2</span>有一個長大痲瘋的來拜他，說：「主若肯，必能叫我潔淨了。」</div>
+<div class="verse"><span class="verse-number">3</span>耶穌伸手摸他，說：「我肯，你潔淨了吧！」他的大痲瘋立刻就潔淨了。</div>
+<div class="verse"><span class="verse-number">4</span>耶穌對他說：「你切不可告訴人，只要去把身體給祭司察看，獻上摩西所吩咐的禮物，對眾人作證據。」</div>
+<div class="verse"><span class="verse-number">5</span>耶穌進了迦百農，有一個百夫長進前來，求他說：</div>
+<div class="verse"><span class="verse-number">6</span>「主啊，我的僕人害癱瘓病，躺在家裏，甚是疼苦。」</div>
+<div class="verse"><span class="verse-number">7</span>耶穌說：「我去醫治他。」</div>
+<div class="verse"><span class="verse-number">8</span>百夫長回答說：「主啊，你到我舍下，我不敢當；只要你說一句話，我的僕人就必好了。</div>
+<div class="verse"><span class="verse-number">9</span>因為我在人的權下，也有兵在我以下；對這個說：『去！』他就去；對那個說：『來！』他就來；對我的僕人說：『你作這事！』他就去作。」</div>
+<div class="verse"><span class="verse-number">10</span>耶穌聽見就希奇，對跟從的人說：「我實在告訴你們，這麼大的信心，就是在以色列中，我也沒有遇見過。</div>
+<div class="verse"><span class="verse-number">11</span>我又告訴你們，從東從西，將有許多人來，在天國裏與亞伯拉罕、以撒、雅各一同坐席；</div>
+<div class="verse"><span class="verse-number">12</span>惟有本國的子民竟被趕到外邊黑暗裏去，在那裏必要哀哭切齒了。」</div>
+<div class="verse"><span class="verse-number">13</span>耶穌對百夫長說：「你回去吧！照你的信心，給你成全了。」那時，他的僕人就好了。</div>
+<div class="verse"><span class="verse-number">14</span>耶穌到了彼得家裏，見彼得的岳母害熱病躺着。</div>
+<div class="verse"><span class="verse-number">15</span>耶穌把他的手一摸，熱就退了；他就起來服事耶穌。</div>
+<div class="verse"><span class="verse-number">16</span>到了晚上，有人帶着許多被鬼附的來到耶穌跟前，他只用一句話就把鬼都趕出去，並且治好了一切有病的人。</div>
+<div class="verse"><span class="verse-number">17</span>這是要應驗先知以賽亞的話，說：他代替我們的軟弱，擔當我們的疾病。</div>
+<div class="verse"><span class="verse-number">18</span>耶穌見許多人圍着他，就吩咐渡到那邊去。</div>
+<div class="verse"><span class="verse-number">19</span>有一個文士來，對他說：「夫子，你無論往那裏去，我要跟從你。」</div>
+<div class="verse"><span class="verse-number">20</span>耶穌說：「狐狸有洞，天空的飛鳥有窩，人子卻沒有枕頭的地方。」</div>
+<div class="verse"><span class="verse-number">21</span>又有一個門徒對耶穌說：「主阿，容我先回去埋葬我的父親。」</div>
+<div class="verse"><span class="verse-number">22</span>耶穌說：「任憑死人埋葬他們的死人；你跟從我吧！」</div>
+<div class="verse"><span class="verse-number">23</span>耶穌上了船，門徒跟着他。</div>
+<div class="verse"><span class="verse-number">24</span>海裏忽然起了暴風，甚至船被波浪掩蓋；耶穌卻睡着了。</div>
+<div class="verse"><span class="verse-number">25</span>門徒來叫醒了他，說：「主啊，救我們，我們喪命啦！」</div>
+<div class="verse"><span class="verse-number">26</span>耶穌說：「你們這小信的人哪，為甚麼膽怯呢？」於是起來，斥責風和海，風和海就大大的平靜了。</div>
+<div class="verse"><span class="verse-number">27</span>眾人希奇，說：「這是怎樣的人？連風和海也聽從他了！」</div>
+<div class="verse"><span class="verse-number">28</span>耶穌既渡到那邊去，來到加大拉人的地方，就有兩個被鬼附的人從墳塋裏出來迎着他，極其兇猛，甚至沒有人能從那條路上經過。</div>
+<div class="verse"><span class="verse-number">29</span>他們喊着說：「神的兒子，我們與你有甚麼相干？時候還沒有到，你就上這裏來叫我們受苦麼？」</div>
+<div class="verse"><span class="verse-number">30</span>離他們很遠，有一大群豬吃食。</div>
+<div class="verse"><span class="verse-number">31</span>鬼就央求耶穌，說：「若把我們趕出去，就打發我們進入豬群吧！」</div>
+<div class="verse"><span class="verse-number">32</span>耶穌說：「去罷！」鬼就出來，進入豬群。全群忽然闖下山崖，投在海裏淹死了。</div>
+<div class="verse"><span class="verse-number">33</span>放豬的就逃跑進城，將這一切事和被鬼附的人所遭遇的都告訴人。</div>
+<div class="verse"><span class="verse-number">34</span>合城的人都出來迎見耶穌，既見了，就央求他離開他們的境界。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+馬太福音第8章是登山寶訓之後，馬太緊接着記載一連串的神蹟，以行動印證耶穌話語的權柄。本章記載了多個醫治與趕鬼的事件：潔淨長大痲瘋的人——耶穌主動伸手觸摸被社會排斥的病人；醫治百夫長的僕人——耶穌稱讚這位外邦羅馬軍官展現出以色列中未曾見過的大信心；醫治彼得的岳母；晚上治好許多被鬼附和有病的人，應驗以賽亞的預言。本章中段插入兩段關於跟從耶穌代價的對話，點明作門徒意味着捨棄安逸與家庭責任的優先性。此後記載耶穌平靜風浪，彰顯祂對自然界的主權；在加大拉地方趕出鬼附的兩人，鬼進入豬群，全群跳崖，當地人卻求耶穌離去。本章展示耶穌的全面主權——對疾病、自然、鬼靈，也對人心。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【耶穌願意接觸並潔淨社會的邊緣人】</strong><br>長大痲瘋的人被猶太律法視為不潔，無人敢靠近，但耶穌主動「伸手摸他」。這個觸摸本身就是宣告：沒有人因為罪、疾病或身份而被神拒絕在外。耶穌的恩典跨越一切社會界限，祂願意接觸那些被世界放棄的人。每一個信徒也當效法這種接納的心，不論對方的背景或狀況。<br><br>
+<strong>2. 【信心的大小決定所領受的】</strong><br>百夫長的信心令耶穌「希奇」——這在福音書中極為罕見。他相信耶穌只需說一句話，不需親自到場，就能醫治。這種信心承認耶穌的話語具有絕對的權柄，超越距離與障礙。耶穌的回應也確認：「照你的信心，給你成全了。」我們對神的信心大小，影響我們所經歷的神的作為。<br><br>
+<strong>3. 【耶穌的主權超越一切風浪】</strong><br>門徒在暴風中極度恐懼，耶穌的責備不只針對風浪，也針對門徒的「小信」。風和海都聽從祂，顯明祂是創造主。人生的風浪在耶穌的主權面前不足為懼。問題不是風浪的大小，而是我們是否相信船上有那位能斥責風浪的主。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌伸手摸他</strong>，說：「我肯，<strong>你潔淨了吧</strong>！」他的大痲瘋立刻就潔淨了。（太8:3）</td>
+<td>你有沒有感覺自己因某些罪或軟弱而被神「嫌棄」？就像久病的人擔心自己讓家人厭煩，你知道耶穌說「我肯」，願意伸手觸摸並潔淨你嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌聽見就希奇</strong>，<strong>對跟從的人說</strong>：「我實在告訴你們，這麼大的信心，就是在以色列中，我也沒有遇見過。」（太8:10）</td>
+<td>你的信心是否相信耶穌的話語有絕對的能力，不需要看見就能相信？就像網購時相信付款後商品必定會送達，你能在禱告後放心交託，不再憂慮嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>你們這小信的人哪</strong>，為甚麼膽怯呢？」於是起來，斥責風和海，風和海就大大的平靜了。（太8:26）</td>
+<td>當你面對人生中的「暴風」時，你更多想到的是危險，還是船上同在的耶穌？就像緊急狀況時第一個想打的電話決定了你信任誰，你面對危機時第一個轉向的是神還是其他人？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

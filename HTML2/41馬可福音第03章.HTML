@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬可福音第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬可福音第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">揀選十二使徒與神的家人</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌又進了會堂，在那裏有一個人枯乾了一隻手。</div>
+<div class="verse"><span class="verse-number">2</span>眾人窺探耶穌，在安息日醫治不醫治，意思是要控告耶穌。</div>
+<div class="verse"><span class="verse-number">3</span>耶穌對那枯乾一隻手的人說：「起來，站在當中。」</div>
+<div class="verse"><span class="verse-number">4</span>又問眾人說：「在安息日行善行惡，救命害命，哪樣是可以的呢？」他們都不作聲。</div>
+<div class="verse"><span class="verse-number">5</span>耶穌怒目周圍看他們，憂愁他們的心剛硬，就對那人說：「伸出手來！」他把手一伸，手就復了原。</div>
+<div class="verse"><span class="verse-number">6</span>法利賽人出去，同希律一黨的人商議怎樣可以除滅耶穌。</div>
+<div class="verse"><span class="verse-number">7</span>耶穌和門徒退到海邊去，有許多人從加利利跟隨他。</div>
+<div class="verse"><span class="verse-number">8</span>還有許多人聽見他所作的大事，就從猶太、耶路撒冷、以土買、約但河外，並推羅、西頓的四方來到他那裏。</div>
+<div class="verse"><span class="verse-number">9</span>他因為人多，就吩咐門徒叫一隻小船伺候着，免得眾人擁擠他。</div>
+<div class="verse"><span class="verse-number">10</span>他治好了許多人，所以凡有災病的，都擠進來要摸他。</div>
+<div class="verse"><span class="verse-number">11</span>污鬼無論何時看見他，就俯伏在他面前，喊着說：「你是神的兒子。」</div>
+<div class="verse"><span class="verse-number">12</span>耶穌再三的囑咐他們，不要把他顯露出來。</div>
+<div class="verse"><span class="verse-number">13</span>耶穌上了山，隨自己的意思叫人來；他們便來到他那裏。</div>
+<div class="verse"><span class="verse-number">14</span>他就設立十二個人，要他們常和自己同在，也要差他們去傳道，</div>
+<div class="verse"><span class="verse-number">15</span>並給他們權柄趕鬼。</div>
+<div class="verse"><span class="verse-number">16</span>這十二個人有西門（耶穌又給他起名叫彼得），</div>
+<div class="verse"><span class="verse-number">17</span>還有西庇太的兒子雅各和雅各的兄弟約翰（又給這兩個人起名叫半尼其，就是雷子的意思），</div>
+<div class="verse"><span class="verse-number">18</span>又有安得烈、腓力、巴多羅買、馬太、多馬、亞勒腓的兒子雅各、和達太，並奮銳黨的西門；</div>
+<div class="verse"><span class="verse-number">19</span>還有賣耶穌的加略人猶大。</div>
+<div class="verse"><span class="verse-number">20</span>耶穌進了一個屋子，眾人又聚集，甚至他連飯也顧不得吃。</div>
+<div class="verse"><span class="verse-number">21</span>耶穌的親屬聽見，就出來要拉住他，因為他們說他癲狂了。</div>
+<div class="verse"><span class="verse-number">22</span>從耶路撒冷下來的文士說：「他是被別西卜附着」；又說：「他是靠着鬼王趕鬼。」</div>
+<div class="verse"><span class="verse-number">23</span>耶穌叫他們來，用比喻對他們說：「撒但怎能趕出撒但呢？</div>
+<div class="verse"><span class="verse-number">24</span>若一國自相紛爭，那國就站立不住；</div>
+<div class="verse"><span class="verse-number">25</span>若一家自相紛爭，那家就站立不住。</div>
+<div class="verse"><span class="verse-number">26</span>若撒但自相攻打紛爭，他就站立不住，必要滅亡。</div>
+<div class="verse"><span class="verse-number">27</span>沒有人能進壯士家裏，搶奪他的家具；必先捆住那壯士，才可以搶奪他的家。。</div>
+<div class="verse"><span class="verse-number">28</span>我實在告訴你們，世人一切的罪和一切褻瀆的話都可得赦免；</div>
+<div class="verse"><span class="verse-number">29</span>凡褻瀆聖靈的，卻永不得赦免，乃要擔當永遠的罪。」</div>
+<div class="verse"><span class="verse-number">30</span>這話是因為他們說：「他是被污鬼附着的。」</div>
+<div class="verse"><span class="verse-number">31</span>當下，耶穌的母親和弟兄來，站在外邊，打發人去叫他。</div>
+<div class="verse"><span class="verse-number">32</span>有許多人在耶穌周圍坐着，他們就告訴他說：「看哪，你母親和你弟兄在外邊找你。」</div>
+<div class="verse"><span class="verse-number">33</span>耶穌回答說：「誰是我的母親？誰是我的弟兄？」</div>
+<div class="verse"><span class="verse-number">34</span>就四面觀看那周圍坐着的人，說：「看哪，我的母親，我的弟兄。</div>
+<div class="verse"><span class="verse-number">35</span>凡遵行神旨意的人就是我的弟兄姐妹和母親了。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+馬可福音第3章記載衝突的升溫與群體的建立，形成強烈的對比。章首在安息日，耶穌在眾人窺探中醫治枯手之人，馬可特別記下耶穌「怒目周圍看他們，憂愁他們的心剛硬」——這是全書中耶穌情感最清晰的一幕：義憤與哀傷並存。法利賽人與希律黨隨即密謀除滅耶穌。耶穌退到海邊，四方的人蜂擁而來。在山上，耶穌「隨自己的意思」揀選十二使徒，使命是與祂同在、差遣傳道、趕鬼。接着是兩重誤解：親屬以為祂癲狂要拉住祂；從耶路撒冷來的文士說祂被鬼王附着。耶穌以「撒但怎能趕出撒但」的邏輯駁斥文士，並嚴肅警告褻瀆聖靈的後果。章末耶穌的母親和弟兄在外求見，耶穌指着門徒說「看哪，我的母親，我的弟兄。凡遵行神旨意的人就是我的弟兄姐妹和母親了」，重新定義屬靈家庭的意義。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【揀選的目的首先是同在，其次才是使命】</strong><br>耶穌設立十二使徒，馬可記下三個目的：「要他們常和自己同在，也要差他們去傳道，並給他們權柄趕鬼。」次序重要：首先是同在，其次是差遣。使命從同在中生發，沒有與基督的同在，使命就失去能源。今天許多基督徒忙於事工卻忽略了與基督的同在，這是本末倒置的危機。<br><br>
+<strong>2. 【心剛硬是最深的屬靈疾病】</strong><br>馬可特別記下耶穌「怒目」看那些人，同時「憂愁他們的心剛硬」——憤怒與哀愁並存。剛硬的心不是缺乏智識，而是拒絕改變的意志。法利賽人眼見神蹟卻密謀殺害耶穌，說明知識和宗教熱誠不能軟化剛硬的心。只有聖靈才能翻轉剛硬的心，這是每個信徒當為自己和他人恆切禱告的事。<br><br>
+<strong>3. 【遵行神旨意是屬靈家庭的連結】</strong><br>「凡遵行神旨意的人就是我的弟兄姐妹和母親了」——這個宣告建立了一個以順服為基礎的共同體。屬靈家庭的紐帶不是血緣，而是對同一位天父旨意的共同委身。教會群體的力量不在制度或文化，而在每一個成員都活在對神旨意的回應中。這也是真正相交的基礎。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌上了山</strong>，<strong>隨自己的意思叫人</strong>來；他們便來到他那裏。他就設立十二個人，要他們常和自己同在，也要差他們去傳道。（可3:13-14）</td>
+<td>你有沒有把「與基督同在」放在「為基督作事」之前？就像實習生需要先在師傅身邊觀察學習才能獨立工作，你的事奉有沒有建立在與耶穌深度同在的基礎上？</td>
+</tr>
+<tr>
+<td><strong>耶穌怒目周圍看他</strong>們，<strong>憂愁他們的心剛硬</strong>，就對那人說：「伸出手來！」（可3:5）</td>
+<td>你有沒有意識到心剛硬是最危險的屬靈狀態？就像動脈硬化讓血液無法流通，你願意每天讓神的話語和聖靈軟化你的心，讓你對神的聲音保持敏感和柔軟嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>凡遵行神旨意的人</strong>就是我的弟兄姐妹和母親了。」（可3:35）</td>
+<td>你在教會群體中有沒有真正體驗到屬靈家人的連結和歸屬感？就像同一個隊伍的隊員在場上有天然的信任和配合，你有沒有把教會弟兄姐妹看作是真正的家人？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

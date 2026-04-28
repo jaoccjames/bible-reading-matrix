@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>希伯來書第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+希伯來書第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">基督超越亞倫與靈命長大成人</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>凡從人間挑選的大祭司，是奉派替人辦理屬神的事，為要獻上禮物和贖罪祭〔或作：要為罪獻上禮物和祭物〕。</div>
+<div class="verse"><span class="verse-number">2</span>他能體諒那愚蒙的和失迷的人，因為他自己也是被軟弱所困。</div>
+<div class="verse"><span class="verse-number">3</span>故此，他理當為百姓和自己獻祭贖罪。</div>
+<div class="verse"><span class="verse-number">4</span>這大祭司的尊榮，沒有人自取。惟要蒙神所召，像亞倫一樣。</div>
+<div class="verse"><span class="verse-number">5</span>如此，基督也不是自取榮耀作大祭司，乃是在乎向他說「你是我的兒子，我今日生你」的那一位；</div>
+<div class="verse"><span class="verse-number">6</span>就如經上又有一處說：「你是照着麥基洗德的等次永遠為祭司。」</div>
+<div class="verse"><span class="verse-number">7</span>基督在肉體的時候，既大聲哀哭，流淚禱告，懇求那能救他免死的主，就因他的虔誠蒙了應允。</div>
+<div class="verse"><span class="verse-number">8</span>他雖然為兒子，還是因所受的苦難學了順從。</div>
+<div class="verse"><span class="verse-number">9</span>他既得以完全，就為凡順從他的人成了永遠得救的根源、</div>
+<div class="verse"><span class="verse-number">10</span>並蒙神照着麥基洗德的等次稱他為大祭司。</div>
+<div class="verse"><span class="verse-number">11</span>論到麥基洗德，我們有好些話，並且難以解明，因為你們聽不進去。</div>
+<div class="verse"><span class="verse-number">12</span>看你們學習的工夫，本該作師傅，誰知還得有人將神聖言小學的開端另教導你們，並且成了那必須吃奶，不能吃乾糧的人。</div>
+<div class="verse"><span class="verse-number">13</span>凡只能吃奶的都不熟練仁義的道理，因為他是嬰孩；</div>
+<div class="verse"><span class="verse-number">14</span>惟獨長大成人的才能吃乾糧；他們的心竅習練得通達，就能分辨好歹了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+希伯來書第5章論述基督作為永遠大祭司的資格，以及信徒靈命成長的必要性。舊約大祭司的兩個條件：從人中選出（能體諒人）和蒙神所召（不是自取）。基督滿足這兩個條件：從神而生（第1:5節），按麥基洗德的等次蒙召（詩110:4）。基督在肉體時的禱告：「既大聲哀哭，流淚禱告……就因他的虔誠蒙了應允。他雖然為兒子，還是因所受的苦難學了順從」——神子的苦難和學習。「他既得以完全，就為凡順從他的人成了永遠得救的根源」——基督的完全是通過受苦達到的。然後是對讀者靈命不成熟的責備：「你們本該作師傅，誰知還得有人將神聖言小學的開端另教導你們，並且成了那必須吃奶、不能吃乾糧的人……惟獨長大成人的才能吃乾糧；他們的心竅習練得通達，就能分辨好歹了」——靈命成熟是能夠分辨的能力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【基督因受苦「學了順從」】</strong><br>「他雖然為兒子，還是因所受的苦難學了順從」——這是聖經中最深刻的神學陳述之一：神的兒子「學習」順從。不是說祂從不順從到學會，而是說順從在具體的苦難中有了新的深度和意義。這也說明苦難在我們屬靈成長中的必要性：我們對神旨意的順從，是在真實的試煉和選擇中被錘鍊和深化的，不能只從理論上「知道」。<br><br>
+<strong>2. 【靈命成熟是能夠分辨的能力】</strong><br>「惟獨長大成人的才能吃乾糧；他們的心竅習練得通達，就能分辨好歹了」——靈命成熟的標誌是「分辨好歹」的能力，而這能力是「習練得通達」——透過操練獲得的。不是偶爾讀道就能分辨，而是持續的靈命操練使人的屬靈感知越來越敏銳。<br><br>
+<strong>3. 【對靈命嬰孩狀態的嚴肅警責】</strong><br>「看你們學習的工夫，本該作師傅，誰知還得有人將神聖言小學的開端另教導你們」——保羅不是輕描淡寫，而是嚴肅地責備讀者的靈命停滯。信仰的時間長久不等於靈命的成熟；若一直停留在基礎，是值得擔憂的。信仰的目標是不斷進深，而非重複相同的初步內容。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>希伯來書說</strong>：「<strong>他雖然為兒子</strong>，還是因所受的苦難學了順從；他既得以完全，就為凡順從他的人成了永遠得救的根源。」（來5:8-9）</td>
+<td>你有沒有讓你生命中的苦難成為「學習順從」的學校，在具體的痛苦選擇中讓你對神旨意的順服變得更深、更真實？就像肌肉只有在阻力中才能增強，你有沒有讓苦難的考驗成為你靈命成長的必要課程？</td>
+</tr>
+<tr>
+<td><strong>希伯來書說</strong>：「<strong>惟獨長大成人的才</strong>能吃乾糧；他們的心竅習練得通達，就能分辨好歹了。」（來5:14）</td>
+<td>你有沒有致力於靈命的「長大成人」——不停留在基礎的初學，而是持續地深化對神的認識和分辨的能力？就像一個認真的學生不滿足於及格，你有沒有讓對屬靈成熟的渴望推動你持續地追求更深的認識和操練？</td>
+</tr>
+<tr>
+<td><strong>希伯來書說</strong>：「<strong>他既大聲哀哭</strong>，流淚禱告，懇求那能救他免死的主，就因他的虔誠蒙了應允。」（來5:7）</td>
+<td>你有沒有讓基督在客西馬尼大聲哀哭、流淚禱告的真實人性，使你在你自己的苦難和眼淚中感到被祂真實地理解？就像只有親歷喪親之痛的人才能真正安慰喪親者，你有沒有讓基督真實的苦難體驗成為你向祂傾訴的勇氣和基礎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

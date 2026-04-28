@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>希伯來書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+希伯來書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">忽略大救恩的危險與感同身受的大祭司</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>所以，我們當越發鄭重所聽見的道理，恐怕我們隨流失去。</div>
+<div class="verse"><span class="verse-number">2</span>那藉着天使所傳的話既是確定的；凡干犯悖逆的都受了該受的報應。</div>
+<div class="verse"><span class="verse-number">3</span>我們若忽略這麼大的救恩，怎能逃罪呢？這救恩起先是主親自講的，後來是聽見的人給我們證實了。</div>
+<div class="verse"><span class="verse-number">4</span>神又按自己的旨意，用神蹟、奇事和百般的異能，並聖靈的恩賜，同他們作見證。</div>
+<div class="verse"><span class="verse-number">5</span>我們所說將來的世界，神原沒有交給天使管轄。</div>
+<div class="verse"><span class="verse-number">6</span>但有人在經上某處證明說：人算甚麼，你竟顧念他？世人算甚麼，你竟眷顧他？</div>
+<div class="verse"><span class="verse-number">7</span>你叫他比天使微小一點〔或作：你叫他暫時比天使小〕，賜他榮耀尊貴為冠冕，並將你手所造的都派他管理，</div>
+<div class="verse"><span class="verse-number">8</span>叫萬物都服在他的腳下。既叫萬物都服他，就沒有剩下一樣不服他的。只是如今我們還不見萬物都服他。</div>
+<div class="verse"><span class="verse-number">9</span>惟獨見那成為比天使小一點的耶穌〔或作：惟獨見耶穌暫時比天使小〕；因為受死的苦，就得了尊貴榮耀為冠冕，叫他因着神的恩，為人人嘗了死味。</div>
+<div class="verse"><span class="verse-number">10</span>原來那為萬物所屬為萬物所本的，要領許多的兒子進榮耀裏去，使救他們的元帥，因受苦難得以完全，本是合宜的。</div>
+<div class="verse"><span class="verse-number">11</span>因那使人成聖的和那些得以成聖的，都是出於一。所以，他稱他們為弟兄也不以為恥，</div>
+<div class="verse"><span class="verse-number">12</span>說：我要將你的名傳與我的弟兄，在會中我要頌揚你；</div>
+<div class="verse"><span class="verse-number">13</span>又說：我要倚賴他；又說：看哪，我與神所給我的兒女。</div>
+<div class="verse"><span class="verse-number">14</span>兒女既同有血肉之體，他也照樣親自成了血肉之體，特要藉着死敗壞那掌死權的，就是魔鬼，</div>
+<div class="verse"><span class="verse-number">15</span>並要釋放那些一生因怕死而為奴僕的人。</div>
+<div class="verse"><span class="verse-number">16</span>他並不救拔天使，乃是救拔亞伯拉罕的後裔。</div>
+<div class="verse"><span class="verse-number">17</span>所以，他凡事該與他的弟兄相同，為要在神的事上成為慈悲忠信的大祭司，為百姓的罪獻上挽回祭。</div>
+<div class="verse"><span class="verse-number">18</span>他自己既然被試探而受苦，就能搭救被試探的人。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+希伯來書第2章提出第一個警告，並論述基督成為人是為了做感同身受的大祭司。「我們當越發鄭重所聽見的道理，恐怕我們隨流失去」——忽略的危險不需要主動拒絕，只需要漠然漂流。「我們若忽略這麼大的救恩，怎能逃罪呢？」——「忽略」是這裏最關鍵的詞：不是主動否認，而是漠然對待。神既然用神蹟、奇事和聖靈的恩賜作見證，這救恩的廣大怎能輕看？基督比天使小一點（道成肉身），是為了「因着神的恩，為人人嘗了死味」。「他也曾凡事受過試探與我們一樣，只是他沒有犯罪」——感同身受的大祭司；「他自己既然被試探而受苦，就能搭救被試探的人」——受苦帶來同理能力。「所以，我們只管坦然無懼的來到施恩的寶座前，為要得憐恤，蒙恩惠，作隨時的幫助」（4:16延伸）。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【「忽略」是最危險的回應】</strong><br>「我們若忽略這麼大的救恩，怎能逃罪呢？」——忽略不是否認，不是反對，只是漠然。許多人不是因為反對福音而滅亡，而是因為對福音的漫不經心——「我知道，但還沒到時候」。「這麼大的救恩」強調它的廣大，與之相對的「忽略」更顯得荒謬和危險。<br><br>
+<strong>2. 【基督因受苦而能搭救被試探的人】</strong><br>「他自己既然被試探而受苦，就能搭救被試探的人」——基督的大祭司職分不只是地位上的，也是經歷上的。他真實地經歷了飢餓、疲倦、悲傷、孤單、試探——這些人性的體驗使他對我們的掙扎有真實的同理。「他也曾凡事受過試探與我們一樣，只是他沒有犯罪」——他知道試探的感受，但沒有屈服，因此也能幫助在試探中的人。<br><br>
+<strong>3. 【坦然無懼地來到施恩寶座】</strong><br>「坦然無懼的來到施恩的寶座前，為要得憐恤，蒙恩惠，作隨時的幫助」——信徒的特權是可以「坦然無懼」地進到神面前。不是帶着懼怕和定罪，而是帶着對「感同身受之大祭司」的信心，確信必得「憐恤和隨時的幫助」。禱告不是求見難以接近的君王，而是去找一位已親身體驗過我們處境的代求者。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>希伯來書說</strong>：「<strong>我們若忽略這麼大</strong>的救恩，怎能逃罪呢？」（來2:3）</td>
+<td>你有沒有對神所賜的「這麼大的救恩」保持足夠的敬重和積極的回應，而非以習以為常的漫不經心對待它？就像一份重大的遺產若不去辦理手續就無法真正繼承，你有沒有讓你對救恩的回應與它的「廣大」成比例？</td>
+</tr>
+<tr>
+<td><strong>希伯來書說</strong>：「<strong>因我們的大祭司並</strong>非不能體恤我們的軟弱。他也曾凡事受過試探與我們一樣，只是他沒有犯罪。所以，我們只管坦然無懼的來到施恩的寶座前，為要得憐恤，蒙恩惠，作隨時的幫助。」（來4:15-16）</td>
+<td>你有沒有真實地把你的軟弱、試探和掙扎帶到那位「感同身受」的大祭司面前，相信你會得到憐恤而非定罪？就像去找一個親身走過同樣道路的輔導員讓人感到被理解，你有沒有讓對基督同理能力的確信，使你更大膽地在禱告中傾倒你的軟弱？</td>
+</tr>
+<tr>
+<td><strong>希伯來書說</strong>：「<strong>他自己既然被試探</strong>而受苦，就能搭救被試探的人。」（來2:18）</td>
+<td>在你面對試探和軟弱的時刻，你有沒有立刻轉向那位「曾被試探而受苦、因此能搭救被試探的人」的基督？就像知道有人在那個困難的處境中走過並勝利，他的幫助就特別有說服力，你有沒有在試探中呼求那位真正能搭救你的主？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

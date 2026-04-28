@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第15章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第15章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶路撒冷大會與宣教的分裂</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>有幾個人從猶太下來，教訓弟兄們說：「你們若不按摩西的規條受割禮，不能得救。」</div>
+<div class="verse"><span class="verse-number">2</span>保羅、巴拿巴與他們大大的紛爭辯論；眾門徒就定規，叫保羅、巴拿巴和本會中幾個人，為所辯論的，上耶路撒冷去見使徒和長老。</div>
+<div class="verse"><span class="verse-number">3</span>於是教會送他們起行。他們經過腓尼基、撒瑪利亞，隨處傳說外邦人歸主的事，叫眾弟兄都甚歡喜。</div>
+<div class="verse"><span class="verse-number">4</span>到了耶路撒冷，教會和使徒並長老都接待他們，他們就述說神同他們所行的一切事。</div>
+<div class="verse"><span class="verse-number">5</span>惟有幾個信徒、是法利賽教門的人，起來說：「必須給外邦人行割禮，吩咐他們遵守摩西的律法。」</div>
+<div class="verse"><span class="verse-number">6</span>使徒和長老聚會商議這事；</div>
+<div class="verse"><span class="verse-number">7</span>辯論已經多了，彼得就起來，說：「諸位弟兄，你們知道神早已在你們中間揀選了我，叫外邦人從我口中得聽福音之道，而且相信。</div>
+<div class="verse"><span class="verse-number">8</span>知道人心的神也為他們作了見證，賜聖靈給他們，正如給我們一樣；</div>
+<div class="verse"><span class="verse-number">9</span>又藉着信潔淨了他們的心，並不分他們我們。</div>
+<div class="verse"><span class="verse-number">10</span>現在為甚麼試探神，要把我們祖宗和我們所不能負的軛放在門徒的頸項上呢？</div>
+<div class="verse"><span class="verse-number">11</span>我們得救乃是因主耶穌的恩，和他們一樣，這是我們所信的。」</div>
+<div class="verse"><span class="verse-number">12</span>眾人都默默無聲，聽巴拿巴和保羅述說神藉他們在外邦人中所行的神蹟奇事。</div>
+<div class="verse"><span class="verse-number">13</span>他們住了聲，雅各就說：「諸位弟兄，請聽我的話。</div>
+<div class="verse"><span class="verse-number">14</span>方才西門述說神當初怎樣眷顧外邦人，從他們中間選取百姓歸於自己的名下；</div>
+<div class="verse"><span class="verse-number">15</span>眾先知的話也與這意思相合。</div>
+<div class="verse"><span class="verse-number">16</span>正如經上所寫的：此後，我要回來，重新修造大衛倒塌的帳幕，把那破壞的重新修造建立起來，</div>
+<div class="verse"><span class="verse-number">17</span>叫餘剩的人，就是凡稱為我名下的外邦人，都尋求主。</div>
+<div class="verse"><span class="verse-number">18</span>這話是從創世以來，顯明這事的主說的。</div>
+<div class="verse"><span class="verse-number">19</span>「所以據我的意見，不可難為那歸服神的外邦人；</div>
+<div class="verse"><span class="verse-number">20</span>只要寫信，吩咐他們禁戒偶像的污穢和姦淫，並勒死的牲畜和血。</div>
+<div class="verse"><span class="verse-number">21</span>因為從古以來，摩西的書在各城有人傳講，每逢安息日，在會堂裏誦讀。」</div>
+<div class="verse"><span class="verse-number">22</span>那時，使徒和長老並全教會定意從他們中間揀選人，差他們和保羅、巴拿巴同往安提阿去；所揀選的就是稱呼巴撒巴的猶大和西拉。這兩個人在弟兄中是作首領的。</div>
+<div class="verse"><span class="verse-number">23</span>於是寫信交付他們，內中說：「使徒和作長老的弟兄們問安提阿、敘利亞、基利家外邦眾弟兄的安。</div>
+<div class="verse"><span class="verse-number">24</span>我們聽說，有幾個人從我們這裏出去，用言語攪擾你們，惑亂你們的心。（有古卷在此有：你們必須受割禮，守摩西的律法。）其實我們並沒有吩咐他們。</div>
+<div class="verse"><span class="verse-number">25</span>所以，我們同心定意，揀選幾個人，差他們同我們所親愛的巴拿巴和保羅往你們那裏去。</div>
+<div class="verse"><span class="verse-number">26</span>這二人是為我主耶穌基督的名不顧性命的。</div>
+<div class="verse"><span class="verse-number">27</span>我們就差了猶大和西拉，他們也要親口訴說這些事。</div>
+<div class="verse"><span class="verse-number">28</span>因為聖靈和我們定意不將別的重擔放在你們身上；惟有幾件事是不可少的，</div>
+<div class="verse"><span class="verse-number">29</span>就是禁戒祭偶像的物和血，並勒死的牲畜和姦淫。這幾件你們若能自己禁戒不犯就好了。願你們平安！」</div>
+<div class="verse"><span class="verse-number">30</span>他們既奉了差遣，就下安提阿去，聚集眾人，交付書信。</div>
+<div class="verse"><span class="verse-number">31</span>眾人念了，因為信上安慰的話就歡喜了。</div>
+<div class="verse"><span class="verse-number">32</span>猶大和西拉也是先知，就用許多話勸勉弟兄，堅固他們。</div>
+<div class="verse"><span class="verse-number">33</span>住了些日子，弟兄們打發他們平平安安的回到差遣他們的人那裏去。〔有古卷在此有：〕</div>
+<div class="verse"><span class="verse-number">34</span>（惟有西拉定意仍住在那裏。）</div>
+<div class="verse"><span class="verse-number">35</span>但保羅和巴拿巴仍住在安提阿，和許多別人一同教訓人，傳主的道。</div>
+<div class="verse"><span class="verse-number">36</span>過了些日子，保羅對巴拿巴說：「我們可以回到從前宣傳主道的各城，看望弟兄們景況如何。」</div>
+<div class="verse"><span class="verse-number">37</span>巴拿巴有意要帶稱呼馬可的約翰同去；</div>
+<div class="verse"><span class="verse-number">38</span>但保羅因為馬可從前在旁非利亞離開他們，不和他們同去作工，就以為不可帶他去。</div>
+<div class="verse"><span class="verse-number">39</span>於是二人起了爭論，甚至彼此分開。巴拿巴帶着馬可，坐船往居比路去；</div>
+<div class="verse"><span class="verse-number">40</span>保羅揀選了西拉，也出去，蒙弟兄們把他交於主的恩中。</div>
+<div class="verse"><span class="verse-number">41</span>他就走遍敘利亞、基利家，堅固眾教會。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+使徒行傳第15章是初代教會歷史上最重要的會議記錄，解決了福音是否需要加上律法的神學爭論，同時也記載了保羅和巴拿巴的個人衝突。有人從猶太來，教訓說「不按摩西規條受割禮不能得救」，保羅巴拿巴大大爭辯，教會定規上耶路撒冷見使徒和長老。彼得發言：神給外邦人聖靈「正如給我們一樣，又藉着信潔淨了他們的心，並不分他們我們。現在為甚麼試探神，要把……祖宗和我們所不能負的軛放在門徒的頸項上呢？」雅各作最終裁決：不可難為外邦人，只要禁戒幾件基本的事。使徒們寫信，「因為聖靈和我們定意，不將別的重擔放在你們身上」。猶大和西拉帶信去，眾人因安慰的話歡喜。此後，保羅提議回訪各教會，巴拿巴要帶馬可，保羅不肯，「於是二人起了爭論，甚至彼此分開」——一個人際衝突導致了兩個宣教隊伍的形成，使宣教工場加倍擴大。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【恩典的福音不可加添人為的條件】</strong><br>「不將別的重擔放在你們身上」——這是耶路撒冷大會最重要的結論。得救是「主耶穌的恩」，不是恩典加律法。任何把人的功績或宗教遵守加在恩典上作為得救條件的，都是扭曲福音。保羅後來在加拉太書中對此有最強烈的護衛：「若有人傳福音給你們，與你們所領受的不同，他就應當被咒詛」（加1:9）。恩典的純粹性是信仰最核心的保守。<br><br>
+<strong>2. 【「聖靈和我們定意」——教會決策的神聖人間協作】</strong><br>「因為聖靈和我們定意」——這是初代教會做決策的描述方式。不是一個人的獨斷，不是多數決的民主，而是在禱告、商議、爭辯、聆聽見證後達成的共識，同時相信聖靈在這個過程中引導。教會治理不是純粹的人間民主，也不是純粹的屬靈個人主義，而是在群體的禱告和討論中尋求聖靈的引導。<br><br>
+<strong>3. 【人際衝突也可以成為神國擴展的工具】</strong><br>保羅和巴拿巴為馬可的問題分開，表面看是失敗，結果是兩個宣教隊伍代替了一個，使宣教工場加倍。神可以在人的衝突和軟弱中成就祂的計劃。這不是說衝突是好的，而是說神能把人的不完全轉化為祂旨意的成就。馬可後來與保羅和好，寫了馬可福音，成為教會的偉大貢獻（提後4:11）。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>彼得說</strong>：「<strong>我們得救乃是因主</strong>耶穌的恩，和他們一樣，這是我們所信的。」（徒15:11）</td>
+<td>你有沒有真正讓「因主耶穌的恩得救」成為你信仰最核心的確信，而非把自己的努力或遵守規條加在這個基礎上？就像相信橋樑能支撐整個體重才能安全過橋，你有沒有完全把得救的信心放在基督的恩典上？</td>
+</tr>
+<tr>
+<td><strong>使徒行傳說</strong>：「<strong>因為聖靈和我們定</strong>意，不將別的重擔放在你們身上。」（徒15:28）</td>
+<td>你有沒有在你的信仰群體中，把不必要的文化習慣或人的規條當成信仰的必要條件加在人身上？就像加了太多調料的食物讓人嚐不到原味，你有沒有讓福音保持它最純粹的形式——單單因信稱義的恩典？</td>
+</tr>
+<tr>
+<td><strong>使徒行傳說</strong>：「<strong>於是二人起了爭論</strong>，甚至彼此分開；巴拿巴帶着馬可……保羅揀選了西拉，也出去……」（徒15:39-40）</td>
+<td>你有沒有在自己或教會的衝突和不完全中，仍然相信神能把這些轉化為祂旨意的成就？就像分叉的河流最終仍然流向大海，你有沒有看見神如何在人的不完全中仍然推進祂的計劃？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

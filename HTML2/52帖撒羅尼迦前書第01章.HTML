@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帖撒羅尼迦前書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+帖撒羅尼迦前書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">信心的見證與再來的等候</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>保羅、西拉、提摩太寫信給帖撒羅尼迦在父神和主耶穌基督裏的教會。願恩惠平安歸與你們！</div>
+<div class="verse"><span class="verse-number">2</span>我們為你們眾人常常感謝神，禱告的時候提到你們，</div>
+<div class="verse"><span class="verse-number">3</span>在神我們的父面前，不住的記念你們因信心所作的工夫，因愛心所受的勞苦，因盼望我們主耶穌基督所存的忍耐。</div>
+<div class="verse"><span class="verse-number">4</span>被神所愛的弟兄阿，我知道你們是蒙揀選的；</div>
+<div class="verse"><span class="verse-number">5</span>因為我們的福音傳到你們那裏，不獨在乎言語，也在乎權能和聖靈，並充足的信心，正如你們知道我們在你們那裏，為你們的緣故是怎樣為人。</div>
+<div class="verse"><span class="verse-number">6</span>並且你們在大難之中，蒙了聖靈所賜的喜樂，領受真道就效法我們，也效法了主；</div>
+<div class="verse"><span class="verse-number">7</span>甚至你們作了馬其頓和亞該亞所有信主之人的榜樣。</div>
+<div class="verse"><span class="verse-number">8</span>因為主的道從你們那裏已經傳揚出來。你們向神的信心不但在馬其頓和亞該亞，就是在各處也都傳開了；所以不用我們說甚麼話。</div>
+<div class="verse"><span class="verse-number">9</span>因為他們自己已經報明我們是怎樣進到你們那裏，你們是怎樣離棄偶像，歸向神，要服事那又真又活的神，</div>
+<div class="verse"><span class="verse-number">10</span>等候他兒子從天降臨，就是他從死裏復活的，那位救我們脫離將來忿怒的耶穌。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+帖撒羅尼迦前書第1章是保羅對帖撒羅尼迦教會的頌讚，以三重恩賜（信心的工夫、愛心的勞苦、盼望的忍耐）開篇。「我知道你們是蒙揀選的；因為我們的福音傳到你們那裏，不獨在乎言語，也在乎權能和聖靈，並充足的信心」——福音的能力不只在話語，也在聖靈大能和生命見證。「你們在大難之中，蒙了聖靈所賜的喜樂，領受真道就效法我們，也效法了主」——效法的鏈條：主→保羅→帖撒羅尼迦人→馬其頓和亞該亞所有信主之人。「因為主的道從你們那裏已經傳揚出來……在各處也都傳開了」——被動的見證：他們的信心和改變已經替自己說話。他們的歸信有三個要素：「離棄偶像，歸向神，要服事那又真又活的神，等候他兒子從天降臨」——離棄、歸向、服事、等候。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【有力量的福音不只在言語】</strong><br>「不獨在乎言語，也在乎權能和聖靈，並充足的信心」——言語是必要的，但言語本身不足以帶來真實的改變。聖靈的能力和傳道者生命的見證，是使福音真正深入人心的關鍵。今天信徒的見證同樣需要這三者：清晰的言語、聖靈的能力（禱告）、真實的生命改變。<br><br>
+<strong>2. 【在大難中的喜樂是最有力的見證】</strong><br>「在大難之中，蒙了聖靈所賜的喜樂，領受真道」——帖撒羅尼迦人的信仰從一開始就在苦難中，他們的喜樂不是環境帶來的，而是聖靈所賜的。這種苦難中的喜樂成了「馬其頓和亞該亞所有信主之人的榜樣」——最有力的傳道不是精彩的話語，而是在患難中仍有的屬靈喜樂。<br><br>
+<strong>3. 【等候主再來是信仰實踐的終極方向】</strong><br>「等候他兒子從天降臨」——帖撒羅尼迦人的信仰有一個明確的終末方向。對主再來的等候不是消極地退出世界，而是積極地在今世「服事那又真又活的神」，同時保持末世的盼望和儆醒。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我們的福音傳到你</strong>們那裏，不獨在乎言語，也在乎權能和聖靈，並充足的信心，正如你們知道我們在你們那裏，為你們的緣故是怎樣為人。」（帖前1:5）</td>
+<td>你的信仰見證有沒有「不獨在言語，也在權能和聖靈」的成分——有真實的生命改變和禱告所帶來的屬靈力量配合你的話語？就像一個名字有真實產品支撐的品牌比只有廣告的更有說服力，你有沒有讓生命的見證支持你的信仰宣告？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>你們在大難之中</strong>，蒙了聖靈所賜的喜樂，領受真道就效法我們，也效法了主。」（帖前1:6）</td>
+<td>你有沒有讓苦難中仍然保有的聖靈喜樂，成為你最強有力的見證——比任何言語更能讓人看見信仰的真實？就像在黑暗中一根蠟燭特別明亮，你在最艱難的時候有沒有讓屬靈的喜樂照亮周圍的人？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>你們怎樣離棄偶像</strong>，歸向神，要服事那又真又活的神，等候他兒子從天降臨。」（帖前1:9-10）</td>
+<td>你的信仰有沒有包含這完整的四個要素——離棄偶像、歸向神、服事神、等候主再來？就像一個完整的旅程包括出發、途中和終點，你有沒有讓每一個要素在你的信仰生活中都有真實的位置？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

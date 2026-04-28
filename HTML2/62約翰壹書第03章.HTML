@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰壹書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰壹書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神的愛所賜的名分與愛的實踐</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你看父賜給我們是何等的慈愛，使我們得稱為神的兒女；我們也真是他的兒女。世人所以不認識我們，是因未曾認識他。</div>
+<div class="verse"><span class="verse-number">2</span>親愛的弟兄啊，我們現在是神的兒女，將來如何，還未顯明；但我們知道，主若顯現，我們必要像他、因為必得見他的真體。</div>
+<div class="verse"><span class="verse-number">3</span>凡向他有這指望的，就潔淨自己，像他潔淨一樣。</div>
+<div class="verse"><span class="verse-number">4</span>凡犯罪的，就是違背律法；違背律法就是罪。</div>
+<div class="verse"><span class="verse-number">5</span>你們知道主曾顯現，是要除掉人的罪；在他並沒有罪。</div>
+<div class="verse"><span class="verse-number">6</span>凡住在他裏面的，就不犯罪；凡犯罪的，是未曾看見他，也未曾認識他。</div>
+<div class="verse"><span class="verse-number">7</span>小子們哪，不要被人誘惑，行義的才是義人，正如主是義的一樣。</div>
+<div class="verse"><span class="verse-number">8</span>犯罪的是屬魔鬼，因為魔鬼從起初就犯罪。神的兒子顯現出來，為要除滅魔鬼的作為。</div>
+<div class="verse"><span class="verse-number">9</span>凡從神生的，就不犯罪，因神的道〔原文作種〕存在他心裏；他也不能犯罪，因為他是由神生的。</div>
+<div class="verse"><span class="verse-number">10</span>從此就顯出誰是神的兒女，誰是魔鬼的兒女。凡不行義的就不屬神，不愛弟兄的也是如此。</div>
+<div class="verse"><span class="verse-number">11</span>我們應當彼此相愛。這就是你們從起初所聽見的命令。</div>
+<div class="verse"><span class="verse-number">12</span>不可像該隱；他是屬那惡者，殺了他的兄弟。為甚麼殺了他呢？因自己的行為是惡的，兄弟的行為是善的。</div>
+<div class="verse"><span class="verse-number">13</span>弟兄們，世人若恨你們，不要以為希奇。</div>
+<div class="verse"><span class="verse-number">14</span>我們因為愛弟兄，就曉得是已經出死入生了。沒有愛心的，仍住在死中。</div>
+<div class="verse"><span class="verse-number">15</span>凡恨他弟兄的，就是殺人的；你們曉得凡殺人的，沒有永生存在他裏面。</div>
+<div class="verse"><span class="verse-number">16</span>主為我們捨命，我們從此就知道何為愛；我們也當為弟兄捨命。</div>
+<div class="verse"><span class="verse-number">17</span>凡有世上財物的，看見弟兄窮乏，卻塞住憐恤的心，愛神的心怎能存在他裏面呢？</div>
+<div class="verse"><span class="verse-number">18</span>小子們哪，我們相愛，不要只在言語和舌頭上，總要在行為和誠實上。</div>
+<div class="verse"><span class="verse-number">19</span>從此就知道我們是屬真理的，並且我們的心在神面前可以安穩。</div>
+<div class="verse"><span class="verse-number">20</span>我們的心若責備我們，神比我們的心大，一切事沒有不知道的。</div>
+<div class="verse"><span class="verse-number">21</span>親愛的弟兄啊，我們的心若不責備我們，就可以向神坦然無懼了。</div>
+<div class="verse"><span class="verse-number">22</span>並且我們一切所求的，就從他得着；因為我們遵守他的命令，行他所喜悅的事。</div>
+<div class="verse"><span class="verse-number">23</span>神的命令就是叫我們信他兒子耶穌基督的名，且照他所賜給我們的命令彼此相愛。</div>
+<div class="verse"><span class="verse-number">24</span>遵守神命令的，就住在神裏面；神也住在他裏面。我們所以知道神住在我們裏面是因他所賜給我們的聖靈。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約翰壹書第3章論述作神兒女的身份、罪的定義，以及愛的實踐和確信。「你看父賜給我們是何等的慈愛，使我們得稱為神的兒女；我們也真是他的兒女」。「我們知道，主若顯現，我們必要像他、因為必得見他的真體。凡向他有這指望的，就潔淨自己，像他潔淨一樣」——末世盼望帶出當前的潔淨。「從此就顯出誰是神的兒女，誰是魔鬼的兒女——愛弟兄是分辨的標誌。「主為我們捨命，我們從此就知道何為愛；我們也當為弟兄捨命。凡有世上財物的，看見弟兄窮乏，卻塞住憐恤的心，愛神的心怎能存在他裏面呢？」——愛的定義是犧牲性的行動。「小子們哪，我們相愛，不要只在言語和舌頭上，總要在行為和誠實上」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【見他的真體使我們像他——末世盼望和當前聖潔】</strong><br>「主若顯現，我們必要像他……凡向他有這指望的，就潔淨自己，像他潔淨一樣」——末世的盼望（見主）帶出當前的行動（潔淨自己）。「像他潔淨一樣」把聖潔的標準設定在基督的潔淨上，這是最高的標準，也是最大的動力。<br><br>
+<strong>2. 【愛的定義是行動，不只是感情】</strong><br>「主為我們捨命，我們從此就知道何為愛；我們也當為弟兄捨命」——愛的最高定義是基督的捨命；愛的具體表達是犧牲。「不要只在言語和舌頭上，總要在行為和誠實上」——言語的愛是廉價的，行動的愛才是真實的。<br><br>
+<strong>3. 【遵命和禱告的連結】</strong><br>「我們一切所求的，就從他得着；因為我們遵守他的命令，行他所喜悅的事」——生命與神對齊的人，他們的所求也自然與神的旨意對齊，因此蒙應允。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>約翰說</strong>：「<strong>我們相愛</strong>，不要只在言語和舌頭上，總要在行為和誠實上。」（約壹3:18）</td>
+<td>你有沒有讓你對弟兄的愛從「口頭的表達」落實到「行動的給予」——包括時間、物質、努力和犧牲？就像一個真正愛家人的人用行動而非話語來證明，你有沒有讓你的愛在具體的行為中得到驗證？</td>
+</tr>
+<tr>
+<td><strong>約翰說</strong>：「<strong>你看父賜給我們是</strong>何等的慈愛，使我們得稱為神的兒女；我們也真是他的兒女。」（約壹3:1）</td>
+<td>你有沒有讓「我真是神的兒女」這個確定的宣告成為你的核心身份，讓它帶出你面對這個世界時的平靜和自信？就像一個清楚自己家世的人在任何處境中都有穩固的身份感，你有沒有讓作神兒女的確信成為你的靈魂錨點？</td>
+</tr>
+<tr>
+<td><strong>約翰說</strong>：「<strong>主為我們捨命</strong>，我們從此就知道何為愛；我們也當為弟兄捨命。凡有世上財物的，看見弟兄窮乏，卻塞住憐恤的心，愛神的心怎能存在他裏面呢？」（約壹3:16-17）</td>
+<td>你有沒有讓基督為你捨命的愛成為你對弟兄的愛的動力和標準，讓你在力所能及的範圍內，以具體的物質幫助和時間投入，表達對弟兄真實的愛？就像一個深受感動的人無法保持原地不動，你有沒有讓基督之愛的深度帶出你服事弟兄的寬度？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

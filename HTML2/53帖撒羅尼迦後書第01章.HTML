@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帖撒羅尼迦後書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+帖撒羅尼迦後書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">在逼迫中的忍耐與公義的審判</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>保羅、西拉、提摩太寫信給帖撒羅尼迦在神我們的父與主耶穌基督裏的教會。</div>
+<div class="verse"><span class="verse-number">2</span>願恩惠、平安從父神和主耶穌基督歸與你們！</div>
+<div class="verse"><span class="verse-number">3</span>弟兄們，我們該為你們常常感謝神，這本是合宜的；因你們的信心格外增長，並且你們眾人彼此相愛的心也都充足。</div>
+<div class="verse"><span class="verse-number">4</span>甚至我們在神的各教會裏為你們誇口，都因你們在所受的一切逼迫患難中，仍舊存忍耐和信心。</div>
+<div class="verse"><span class="verse-number">5</span>這正是神公義判斷的明證，叫你們可算配得神的國；你們就是為這國受苦。</div>
+<div class="verse"><span class="verse-number">6</span>神既是公義的，就必將患難報應那加患難給你們的人；</div>
+<div class="verse"><span class="verse-number">7</span>也必使你們這受患難的人與我們同得平安。那時，主耶穌同他有能力的天使從天上在火焰中顯現，</div>
+<div class="verse"><span class="verse-number">8</span>要報應那不認識神和那不聽從我主耶穌福音的人。</div>
+<div class="verse"><span class="verse-number">9</span>他們要受刑罰，就是永遠沉淪，離開主的面和他權能的榮光。</div>
+<div class="verse"><span class="verse-number">10</span>這正是主降臨、要在他聖徒的身上得榮耀，又在一切信的人身上顯為希奇的那日子。（我們對你們作的見證，你們也信了。）</div>
+<div class="verse"><span class="verse-number">11</span>因此，我們常為你們禱告，願我們的神看你們配得過所蒙的召，又用大能成就你們一切所羡慕的良善和一切因信心所作的工夫；</div>
+<div class="verse"><span class="verse-number">12</span>叫我們主耶穌的名在你們身上得榮耀，你們也在他身上得榮耀，都照着我們的神並主耶穌基督的恩。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+帖撒羅尼迦後書第1章以讚美開始，因帖撒羅尼迦人的信心在逼迫中仍然增長。「你們在所受的一切逼迫患難中，仍舊存忍耐和信心」——逼迫中的忍耐和信心是蒙神悅納的憑據。「這正是神公義判斷的明證，叫你們可算配得神的國；你們就是為這國受苦」——苦難不是神的遺棄，而是配得神國的明證。神的報應：「神既是公義的，就必將患難報應那加患難給你們的人；也必使你們這受患難的人與我們同得平安」——末日的審判是公義的。保羅的代禱：「常為你們禱告，願我們的神看你們配得過所蒙的召，又用大能成就你們一切所羡慕的良善和一切因信心所作的工夫；叫我們主耶穌的名在你們身上得榮耀，你們也在他身上得榮耀」——代禱的目標是神的榮耀在信徒身上和信徒在神裏面的榮耀。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【逼迫中的忍耐是配得神國的憑據】</strong><br>「這正是神公義判斷的明證，叫你們可算配得神的國；你們就是為這國受苦」——苦難在神的框架中有其神學意義：它不是懲罰，而是鍛鍊和確認。在逼迫中持守的信心，証明這信心是真實的，不只是環境順利時的宗教習慣。為神的國受苦，是參與神最大事業最直接的方式。<br><br>
+<strong>2. 【神的公義保證最終的公平】</strong><br>「神既是公義的，就必將患難報應那加患難給你們的人；也必使你們這受患難的人與我們同得平安」——神的公義是信徒在不公正中繼續忍耐的根基。知道神必公正地審判，使人能在受逼迫時選擇寬恕，而非苦毒。<br><br>
+<strong>3. 【代禱求神的榮耀顯在信徒身上】</strong><br>「叫我們主耶穌的名在你們身上得榮耀」——代禱的最高目標不是求信徒的舒適或成功，而是求主的名在他們身上得榮耀。信仰生命的目標不是自我實現，而是主名的榮耀。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>這正是神公義判斷</strong>的明證，叫你們可算配得神的國；你們就是為這國受苦。」（帖後1:5）</td>
+<td>你有沒有讓「為神的國受苦是配得這國的明證」這個認識，改變你面對因信仰而來的苦難的態度？就像士兵知道戰場上的艱苦是服役的一部分而不是懲罰，你有沒有讓對苦難的正確理解帶出持守的力量？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我們常為你們禱告</strong>，願我們的神看你們配得過所蒙的召，又用大能成就你們一切所羡慕的良善。」（帖後1:11）</td>
+<td>你有沒有在你的代禱中，求神使你所愛的人「配得過所蒙的召」——求他們的生命與神的呼召相稱，而非只求他們外在的平安和成功？就像最好的禮物是幫助一個人成為他最好的自己，你有沒有讓這樣的代禱成為你對所愛之人最深的關懷？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>叫我們主耶穌的名</strong>在你們身上得榮耀，你們也在他身上得榮耀，都照着我們的神並主耶穌基督的恩。」（帖後1:12）</td>
+<td>你有沒有把「讓主的名在我身上得榮耀」作為你生命最終的目標，讓它成為你面對每個選擇和每個挑戰時的最高考量？就像一個好的代言人在任何場合都想着不讓品牌受損，你有沒有讓讓主名得榮耀的心志指導你每天的言行？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多前書第14章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多前書第14章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">恩賜的次序與造就的原則</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們要追求愛，也要切慕屬靈的恩賜，其中更要羡慕的，是作先知講道〔原文作：是說預言；下同〕</div>
+<div class="verse"><span class="verse-number">2</span>那說方言的，原不是對人說，乃是對神說，因為沒有人聽出來。然而，他在心靈裏卻是講說各樣的奧祕。</div>
+<div class="verse"><span class="verse-number">3</span>但作先知講道的，是對人說，要造就、安慰、勸勉人。</div>
+<div class="verse"><span class="verse-number">4</span>說方言的，是造就自己；作先知講道的，乃是造就教會。</div>
+<div class="verse"><span class="verse-number">5</span>我願意你們都說方言，更願意你們作先知講道；因為說方言的，若不繙出來，使教會被造就，那作先知講道的，就比他強了。</div>
+<div class="verse"><span class="verse-number">6</span>弟兄們，我到你們那裏去，若只說方言，不用啟示，或知識，或預言，或教訓，給你們講解，我與你們有甚麼益處呢？</div>
+<div class="verse"><span class="verse-number">7</span>就是那有聲無氣的物，或簫，或琴，若發出來的聲音沒有分別，怎能知道所吹所彈的是甚麼呢？</div>
+<div class="verse"><span class="verse-number">8</span>若吹無定的號聲，誰能預備打仗呢？</div>
+<div class="verse"><span class="verse-number">9</span>你們也是如此。舌頭若不說容易明白的話，怎能知道所說的是甚麼呢？這就是向空說話了。</div>
+<div class="verse"><span class="verse-number">10</span>世上的聲音，或者甚多，卻沒有一樣是無意思的。</div>
+<div class="verse"><span class="verse-number">11</span>我若不明白那聲音的意思，這說話的人必以我為化外之人，我也以他為化外之人。</div>
+<div class="verse"><span class="verse-number">12</span>你們也是如此，既是切慕屬靈的恩賜，就當求多得造就教會的恩賜。</div>
+<div class="verse"><span class="verse-number">13</span>所以那說方言的，就當求着能繙出來。</div>
+<div class="verse"><span class="verse-number">14</span>我若用方言禱告，是我的靈禱告，但我的悟性沒有果效。</div>
+<div class="verse"><span class="verse-number">15</span>這卻怎麼樣呢？我要用靈禱告，也要用悟性禱告；我要用靈歌唱，也要用悟性歌唱。</div>
+<div class="verse"><span class="verse-number">16</span>不然，你用靈祝謝，那在座不通方言的人，既然不明白你的話，怎能在你感謝的時候說「阿們」呢？</div>
+<div class="verse"><span class="verse-number">17</span>你感謝的固然是好，無奈不能造就別人。</div>
+<div class="verse"><span class="verse-number">18</span>我感謝神，我說方言比你們眾人還多。</div>
+<div class="verse"><span class="verse-number">19</span>但在教會中，寧可用悟性說五句教導人的話，強如說萬句方言。</div>
+<div class="verse"><span class="verse-number">20</span>弟兄們，在心志上不要作小孩子。然而，在惡事上要作嬰孩，在心志上總要作大人。</div>
+<div class="verse"><span class="verse-number">21</span>律法上記着：主說：我要用外邦人的舌頭和外邦人的嘴唇向這百姓說話；雖然如此，他們還是不聽從我。</div>
+<div class="verse"><span class="verse-number">22</span>這樣看來，說方言不是為信的人作證據，乃是為不信的人；作先知講道不是為不信的人作證據，乃是為信的人。</div>
+<div class="verse"><span class="verse-number">23</span>所以，全教會聚在一處的時候，若都說方言，偶然有不通方言的，或是不信的人進來，豈不說你們癲狂了嗎？</div>
+<div class="verse"><span class="verse-number">24</span>若都作先知講道，偶然有不信的，或是不通方言的人進來，就被眾人勸醒，被眾人審明，</div>
+<div class="verse"><span class="verse-number">25</span>他心裏的隱情顯露出來，就必將臉伏地，敬拜神，說：「神真是在你們中間了。」</div>
+<div class="verse"><span class="verse-number">26</span>弟兄們，這卻怎麼樣呢？你們聚會的時候，各人或有詩歌，或有教訓，或有啟示，或有方言，或有繙出來的話，凡事都當造就人。</div>
+<div class="verse"><span class="verse-number">27</span>若有說方言的，只好兩個人，至多三個人，且要輪流着說，也要一個人繙出來。</div>
+<div class="verse"><span class="verse-number">28</span>若沒有人繙，就當在會中閉口，只對自己和神說就是了。</div>
+<div class="verse"><span class="verse-number">29</span>至於作先知講道的，只好兩個人或是三個人，其餘的就當慎思明辨。</div>
+<div class="verse"><span class="verse-number">30</span>若旁邊坐着的得了啟示，那先說話的就當閉口不言。</div>
+<div class="verse"><span class="verse-number">31</span>因為你們都可以一個一個的作先知講道，叫眾人學道理，叫眾人得勸勉。</div>
+<div class="verse"><span class="verse-number">32</span>先知的靈原是順服先知的；</div>
+<div class="verse"><span class="verse-number">33</span>因為神不是叫人混亂，乃是叫人安靜。</div>
+<div class="verse"><span class="verse-number">34</span>婦女在會中要閉口不言，像在聖徒的眾教會一樣，因為不准她們說話。她們總要順服，正如律法所說的。</div>
+<div class="verse"><span class="verse-number">35</span>她們若要學甚麼，可以在家裏問自己的丈夫，因為婦女在會中說話原是可恥的。</div>
+<div class="verse"><span class="verse-number">36</span>神的道理豈是從你們出來嗎？豈是單臨到你們嗎？</div>
+<div class="verse"><span class="verse-number">37</span>若有人以為自己是先知，或是屬靈的，就該知道，我所寫給你們的是主的命令。</div>
+<div class="verse"><span class="verse-number">38</span>若有不知道的，就由他不知道罷！</div>
+<div class="verse"><span class="verse-number">39</span>所以我弟兄們，你們要切慕作先知講道，也不要禁止說方言。</div>
+<div class="verse"><span class="verse-number">40</span>凡事都要規規矩矩的按着次序行。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+哥林多前書第14章是最詳細論述恩賜使用原則的章節，以「造就教會」為核心標準。「你們要追求愛，也要切慕屬靈的恩賜，其中更要羡慕的，是作先知講道」——愛和恩賜不是對立的，而是連結的；但在群體聚會中，先知講道（可以理解的傳講）比說方言（需要翻譯）更有造就性。「說方言的，是造就自己；作先知講道的，乃是造就教會」——方言有個人靈性的益處，但在公共聚會中，造就教會是優先的。保羅用吹號和彈琴的比喻說明清楚表達的重要性。「在教會中，寧可用悟性說五句教導人的話，強如說萬句方言」——質量和清晰度勝過數量。說方言要有人繙譯，否則在會中閉口；先知講道也要有序——兩三個人，彼此思辨。「凡事都要規規矩矩的按着次序行」——神是叫人安靜，不是叫人混亂。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【在公共聚會中，造就他人是最高標準】</strong><br>「作先知講道的，乃是造就教會」——所有公共聚會中的行為，應以「這能否造就弟兄姐妹」為評估標準。這不是說不能有個人的靈性體驗，而是說在群體中，他人的益處優先。「寧可用悟性說五句教導人的話，強如說萬句方言」——清晰可理解的溝通，比神秘感人的體驗更有造就性。<br><br>
+<strong>2. 【神是叫人安靜，不是叫人混亂】</strong><br>「凡事都要規規矩矩的按着次序行」——靈性的表達不排除秩序；相反，真實的聖靈工作帶來的是安靜、有序、互相尊重的環境。混亂和失控不是屬靈力量的標誌，而是成熟不足的表現。「神不是叫人混亂，乃是叫人安靜」——這個原則適用於各種聚會形式，使各種背景的人都能在清晰有序的環境中遇見神。<br><br>
+<strong>3. 【追求愛的同時切慕恩賜】</strong><br>「你們要追求愛，也要切慕屬靈的恩賜」——第13章和第14章不是對立的，而是互補的。追求愛是基礎，但在愛的基礎上，切慕和使用恩賜服事他人也是必要的。消極地「有愛就夠了，不需要恩賜」是不完整的；積極地「在愛中使用恩賜造就他人」才是完整的圖畫。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>在教會中</strong>，寧可用悟性說五句教導人的話，強如說萬句方言。」（林前14:19）</td>
+<td>你在服事或分享信仰時，有沒有優先考慮聽眾能否明白，而非你的表達是否對自己有意義？就像在餐廳點菜要為客人的口味而非廚師的偏好着想，你有沒有讓你的信仰溝通以對方能接收的方式呈現？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>因為神不是叫人混</strong>亂，乃是叫人安靜……凡事都要規規矩矩的按着次序行。」（林前14:33,40）</td>
+<td>你有沒有在你參與的聚會和服事中，以「造就他人，帶來安靜秩序」為目標，而非以突顯自己的恩賜或體驗為目的？就像一個好的演奏者讓整個樂隊的音樂更美而不只是展示自己，你有沒有讓你的服事讓整個群體受益？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>你們要追求愛</strong>，也要切慕屬靈的恩賜，其中更要羡慕的，是作先知講道。」（林前14:1）</td>
+<td>你有沒有在追求愛的同時，也積極地尋求和使用神賜給你的恩賜服事他人？就像一個有愛心的廚師仍然需要廚藝技能，你有沒有在愛的動機下，同時積極發展你的服事能力，以更有效地造就他人？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>羅馬書第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+羅馬書第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">律法與肉體的掙扎</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>弟兄們，我現在對明白律法的人說，你們豈不曉得律法管人是在活着的時候嗎？</div>
+<div class="verse"><span class="verse-number">2</span>就如女人有了丈夫，丈夫還活着，就被律法約束；丈夫若死了，就脫離了丈夫的律法。</div>
+<div class="verse"><span class="verse-number">3</span>所以丈夫活着，她若歸於別人，便叫淫婦；丈夫若死了，她就脫離了丈夫的律法，雖然歸於別人，也不是淫婦。</div>
+<div class="verse"><span class="verse-number">4</span>我的弟兄們，這樣說來，你們藉着基督的身體，在律法上也是死了，叫你們歸於別人，就是歸於那從死裏復活的，叫我們結果子給神。</div>
+<div class="verse"><span class="verse-number">5</span>因為我們屬肉體的時候，那因律法而生的惡慾就在我們肢體中發動，以致結成死亡的果子。</div>
+<div class="verse"><span class="verse-number">6</span>但我們既然在捆我們的律法上死了，現今就脫離了律法，叫我們服事主，要按着心靈〔心靈：或作聖靈〕的新樣，不按着儀文的舊樣。</div>
+<div class="verse"><span class="verse-number">7</span>這樣，我們可說甚麼呢？律法是罪麼？斷乎不是！只是非因律法，我就不知何為罪。非律法說「不可起貪心」，我就不知何為貪心。</div>
+<div class="verse"><span class="verse-number">8</span>然而罪趁着機會，就藉着誡命叫諸般的貪心在我裏頭發動；因為沒有律法，罪是死的。</div>
+<div class="verse"><span class="verse-number">9</span>我以前沒有律法是活着的；但是誡命來到，罪又活了，我就死了。</div>
+<div class="verse"><span class="verse-number">10</span>那本來叫人活的誡命，反倒叫我死；</div>
+<div class="verse"><span class="verse-number">11</span>因為罪趁着機會，就藉着誡命引誘我，並且殺了我。</div>
+<div class="verse"><span class="verse-number">12</span>這樣看來，律法是聖潔的，誡命也是聖潔、公義、良善的。</div>
+<div class="verse"><span class="verse-number">13</span>既然如此，那良善的是叫我死嗎？斷乎不是！叫我死的乃是罪。但罪藉着那良善的叫我死，就顯出真是罪，叫罪因着誡命更顯出是惡極了。</div>
+<div class="verse"><span class="verse-number">14</span>我們原曉得律法是屬乎靈的，但我是屬乎肉體的，是已經賣給罪了。</div>
+<div class="verse"><span class="verse-number">15</span>因為我所作的，我自己不明白；我所願意的，我並不作；我所恨惡的，我倒去作。</div>
+<div class="verse"><span class="verse-number">16</span>若我所作的，是我所不願意的，我就應承律法是善的。</div>
+<div class="verse"><span class="verse-number">17</span>既是這樣，就不是我作的，乃是住在我裏頭的罪作的。</div>
+<div class="verse"><span class="verse-number">18</span>我也知道在我裏頭，就是我肉體之中，沒有良善。因為，立志為善由得我，只是行出來由不得我。</div>
+<div class="verse"><span class="verse-number">19</span>故此，我所願意的善，我反不作；我所不願意的惡，我倒去作。</div>
+<div class="verse"><span class="verse-number">20</span>若我去作所不願意作的，就不是我作的，乃是住在我裏頭的罪作的。</div>
+<div class="verse"><span class="verse-number">21</span>我覺得有個律，就是我願意為善的時候，便有惡與我同在。</div>
+<div class="verse"><span class="verse-number">22</span>因為按着我裏面的意思〔原文作人〕，我是喜歡神的律；</div>
+<div class="verse"><span class="verse-number">23</span>但我覺得肢體中另有個律和我心中的律交戰，把我擄去，叫我附從那肢體中犯罪的律。</div>
+<div class="verse"><span class="verse-number">24</span>我真是苦啊！誰能救我脫離這取死的身體呢？</div>
+<div class="verse"><span class="verse-number">25</span>感謝神，靠着我們的主耶穌基督就能脫離了。這樣看來，我以內心順服神的律，我肉體卻順服罪的律了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+羅馬書第7章是保羅自傳性最強的章節，描述了在律法與肉體之間的掙扎，這也是整本書中最引起詮釋爭議的段落。保羅用婚姻比喻說明信徒與律法的關係：「我們藉着基督的身體，在律法上也是死了」，不再被舊律法管轄，自由地「歸於那從死裏復活的」基督。律法不是罪，而是「聖潔、公義、良善的」，其功能是使罪顯為罪。保羅進入對自身的深刻剖析：「我所願意的，我並不作；我所恨惡的，我倒去作」，「我以內心順服神的律，我肉體卻順服罪的律」，「我真是苦啊！誰能救我脫離這取死的身體呢？」最後以「感謝神，靠着我們的主耶穌基督就能脫離了」解答——完全的釋放不在於更努力，而在於耶穌基督。章末的承認「我以內心順服神的律，我肉體卻順服罪的律」說明信仰的緊張不會完全消失，但解決之道已在基督裏確立。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【律法的功用是顯明罪，不是消除罪】</strong><br>「非因律法，我就不知何為罪」——律法是診斷工具，不是治療方法。它精確地指出問題所在，但本身沒有能力解決問題。這就是為什麼「靠遵守律法」永遠不能帶來生命的改變：律法顯明問題，卻不能改變人心。真正的改變來自與基督的聯合，和聖靈的工作，這是第8章的主題。<br><br>
+<strong>2. 【「我所願意的善，我反不作」的誠實承認】</strong><br>這段描述是聖經中對人性掙扎最誠實的記錄。「立志為善由得我，只是行出來由不得我」——知道善而做不到，是每個信徒都認識的真實處境。保羅沒有假裝勝利，而是承認肉體的限制。這誠實帶來兩個重要的結果：謙卑（不自以為義）和對基督的倚靠（唯有祂能解脫）。<br><br>
+<strong>3. 【「感謝神，靠着耶穌基督就能脫離了」】</strong><br>從「我真是苦啊！誰能救我？」到「感謝神」——這個轉折揭示了信仰的動態：我們不是靠自己的努力解決肉體的問題，而是靠着基督的恩典和聖靈的能力。「脫離」不是說肉體的掙扎消失，而是說在基督裏有脫離的途徑和力量。信仰生活的關鍵不是更努力，而是更倚靠。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我所願意的善</strong>，我反不作；我所不願意的惡，我倒去作……我真是苦啊！誰能救我脫離這取死的身體呢？感謝神，靠着我們的主耶穌基督就能脫離了。」（羅7:19,24-25）</td>
+<td>你有沒有在信仰的掙扎中，學習從「我要更努力」轉向「感謝神靠着耶穌基督就能脫離」？就像在沼澤中掙扎越多陷得越深，而接受繩子拉起才能得救，你有沒有學習在靈命的困境中更深地倚靠基督？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>律法是聖潔的</strong>，誡命也是聖潔、公義、良善的。」（羅7:12）</td>
+<td>你有沒有學習把律法和神的標準看作是神良善屬性的反映，而非隨意的規條？就像好的法律反映了設計者的良善意圖，你有沒有讓神的誡命成為你更深認識神性情的視窗？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我也知道在我裏頭</strong>，就是我肉體之中，沒有良善。因為，立志為善由得我，只是行出來由不得我。」（羅7:18）</td>
+<td>你有沒有對自己肉體的限制有誠實的認識，而非假裝自己靠意志力可以克服一切？就像有病要尋醫，你有沒有讓對自己能力限制的清醒，帶出你對聖靈能力更大的倚靠？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

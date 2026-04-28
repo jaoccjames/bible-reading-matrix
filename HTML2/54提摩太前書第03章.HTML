@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提摩太前書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+提摩太前書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">監督和執事的資格與教會的柱石</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「人若想要得監督的職分，就是羡慕善工。」這話是可信的。</div>
+<div class="verse"><span class="verse-number">2</span>作監督的，必須無可指責，只作一個婦人的丈夫，有節制，自守，端正，樂意接待遠人，善於教導；</div>
+<div class="verse"><span class="verse-number">3</span>不因酒滋事，不打人，只要溫和，不爭競，不貪財；</div>
+<div class="verse"><span class="verse-number">4</span>好好管理自己的家，使兒女凡事端莊順服〔或作：端端莊莊的使兒女順服〕。</div>
+<div class="verse"><span class="verse-number">5</span>人若不知道管理自己的家，焉能照管神的教會呢？</div>
+<div class="verse"><span class="verse-number">6</span>初入教的不可作監督，恐怕他自高自大，就落在魔鬼所受的刑罰裏。</div>
+<div class="verse"><span class="verse-number">7</span>監督也必須在教外有好名聲，恐怕被人毀謗，落在魔鬼的網羅裏。</div>
+<div class="verse"><span class="verse-number">8</span>作執事的，也是如此：必須端莊，不一口兩舌，不好喝酒，不貪不義之財；</div>
+<div class="verse"><span class="verse-number">9</span>要存清潔的良心，固守真道的奧祕。</div>
+<div class="verse"><span class="verse-number">10</span>這等人也要先受試驗，若沒有可責之處，然後叫他們作執事。</div>
+<div class="verse"><span class="verse-number">11</span>女執事〔原文作女人〕也是如此：必須端莊，不說讒言，有節制，凡事忠心。</div>
+<div class="verse"><span class="verse-number">12</span>執事只要作一個婦人的丈夫，好好管理兒女和自己的家。</div>
+<div class="verse"><span class="verse-number">13</span>因為善作執事的，自己就得到美好的地步，並且在基督耶穌裏的真道上大有膽量。</div>
+<div class="verse"><span class="verse-number">14</span>我指望快到你那裏去，所以先將這些事寫給你。</div>
+<div class="verse"><span class="verse-number">15</span>倘若我耽延日久，你也可以知道在神的家中當怎樣行。這家就是永生神的教會，真理的柱石和根基。</div>
+<div class="verse"><span class="verse-number">16</span>大哉，敬虔的奧祕！無人不以為然：就是神在肉身顯現，被聖靈稱義〔或作：在靈性稱義〕，被天使看見，被傳於外邦，被世人信服，被接在榮耀裏。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+提摩太前書第3章論述監督（主教）和執事的品格要求，以教會是「真理的柱石和根基」作結。「人若想要得監督的職分，就是羡慕善工」——渴慕牧養是好的渴慕。監督的資格：「無可指責，只作一個婦人的丈夫，有節制，自守，端正，樂意接待遠人，善於教導；不因酒滋事，不打人，只要溫和，不爭競，不貪財；好好管理自己的家，使兒女凡事端莊順服。人若不知道管理自己的家，焉能照管神的教會呢？」家庭管理能力是教會管理能力的指標。執事的資格類似，但強調「要先受試驗，若沒有可責之處，然後叫他們作執事」——試驗的必要性。「因為神的家中當怎樣行。這家就是永生神的教會，真理的柱石和根基」——教會的神學身份是真理的守護者。章末以簡潔的神學頌讚作結：「大哉，敬虔的奧祕！……神在肉身顯現，被聖靈稱義，被天使看見，被傳於外邦，被世人信服，被接在榮耀裏」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【家庭管理是教會管理能力的指標】</strong><br>「人若不知道管理自己的家，焉能照管神的教會呢？」——家庭是最小的社群，也是最真實的考驗場所。一個人如何對待妻兒，如何在不公眾的場合作決策，如何在壓力下保持平衡，這些都顯示真實的品格和管理能力。教會不應選擇在公眾場合表現好但家庭生活混亂的人作領袖。<br><br>
+<strong>2. 【品格清單的重點在於「無可指責」】</strong><br>監督和執事的資格清單，核心是「無可指責」——不是「完美無缺」，而是沒有明顯的、可被指摘的道德缺失。這些資格大多是消極的（不貪財、不因酒滋事、不打人），說明領袖最重要的不是有特殊才幹，而是沒有損害性的弱點和習慣。品格先於才幹。<br><br>
+<strong>3. 【教會是真理的柱石和根基】</strong><br>「永生神的教會，真理的柱石和根基」——教會對真理有守護和宣揚的神聖責任。「柱石」支撐、「根基」穩固——教會在真理的傳承和守護上有結構性的功能。若教會失去對真理的持守，它就失去了存在的核心目的。這個神學地位既是尊榮，也是責任。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>人若不知道管理自</strong>己的家，焉能照管神的教會呢？」（提前3:5）</td>
+<td>你有沒有讓你在家庭中的品格和管理方式，和你在教會或公共場合的表現保持一致？就像一家餐廳的廚房比大廳更能真實顯示食物品質，你有沒有讓你私下的家庭生活成為你公眾事奉品格最真實的試驗場？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>這家就是永生神的</strong>教會，真理的柱石和根基。」（提前3:15）</td>
+<td>你有沒有把你所在的教會看作是「真理的柱石和根基」——一個神聖的真理守護機構，而非只是你喜歡的宗教群體或活動場所？就像大學的核心使命是傳遞和創造知識，你有沒有讓對教會神聖使命的認識，提升你對教會生活的投入和尊重？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「大哉，<strong>敬虔的奧祕</strong>！……神在肉身顯現，被聖靈稱義，被天使看見，被傳於外邦，被世人信服，被接在榮耀裏。」（提前3:16）</td>
+<td>你有沒有讓「道成肉身」這個最大的敬虔奧祕，繼續在你心裏帶出驚奇和讚嘆——讓這個信仰的核心不因熟悉而失去震撼力？就像面對壯麗的自然景觀應當讓人驚嘆，你有沒有讓神在肉身顯現這個奧祕繼續更新你對神的敬畏？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

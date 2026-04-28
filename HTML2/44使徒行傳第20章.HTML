@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第20章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第20章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">特羅亞的再訪與米利都的告別講道</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>亂定之後，保羅請門徒來，勸勉他們，就辭別起行，往馬其頓去。</div>
+<div class="verse"><span class="verse-number">2</span>走遍了那一帶地方，用許多話勸勉門徒〔或作：眾人〕，然後來到希臘。</div>
+<div class="verse"><span class="verse-number">3</span>在那裏住了三個月，將要坐船往敘利亞去，猶太人設計要害他，他就定意從馬其頓回去。</div>
+<div class="verse"><span class="verse-number">4</span>同他到亞西亞去的，有庇哩亞人畢羅斯的兒子所巴特，帖撒羅尼迦人亞里達古和西公都，還有特庇人該猶，並提摩太，又有亞西亞人推基古和特羅非摩。</div>
+<div class="verse"><span class="verse-number">5</span>這些人先走，在特羅亞等候我們。</div>
+<div class="verse"><span class="verse-number">6</span>過了除酵的日子，我們從腓立比開船，五天到了特羅亞，和他們相會，在那裏住了七天。</div>
+<div class="verse"><span class="verse-number">7</span>七日的第一日，我們聚會擘餅的時候，保羅因為要次日起行，就與他們講論，直講到半夜。</div>
+<div class="verse"><span class="verse-number">8</span>我們聚會的那座樓上，有好些燈燭。</div>
+<div class="verse"><span class="verse-number">9</span>有一個少年人，名叫猶推古，坐在窗臺上，困倦沉睡。保羅講了多時，少年人睡熟了，就從三層樓上掉下去；扶起他來，已經死了。</div>
+<div class="verse"><span class="verse-number">10</span>保羅下去，伏在他身上，抱着他，說：「你們不要發慌，他的靈魂還在身上。」</div>
+<div class="verse"><span class="verse-number">11</span>保羅又上去，擘餅，吃了，談論許久，直到天亮，這才走了。</div>
+<div class="verse"><span class="verse-number">12</span>有人把那童子活活的領來，得的安慰不小。</div>
+<div class="verse"><span class="verse-number">13</span>我們先上船，開往亞朔去，意思要在那裏接保羅；因為他是這樣安排的，他自己打算要步行。</div>
+<div class="verse"><span class="verse-number">14</span>他既在亞朔與我們相會，我們就接他上船，來到米推利尼。</div>
+<div class="verse"><span class="verse-number">15</span>從那裏開船，次日到了基阿的對面；又次日，在撒摩靠岸；又次日，來到米利都。</div>
+<div class="verse"><span class="verse-number">16</span>乃因保羅早已定意越過以弗所，免得在亞西亞耽延，他急忙前走，巴不得趕五旬節能到耶路撒冷。</div>
+<div class="verse"><span class="verse-number">17</span>保羅從米利都打發人往以弗所去，請教會的長老來。</div>
+<div class="verse"><span class="verse-number">18</span>他們來了，保羅就說：「你們知道，自從我到亞西亞的日子以來，在你們中間始終為人如何，</div>
+<div class="verse"><span class="verse-number">19</span>服事主，凡事謙卑，眼中流淚，又因猶太人的謀害，經歷試煉。</div>
+<div class="verse"><span class="verse-number">20</span>你們也知道，凡與你們有益的，我沒有一樣避諱不說的，或在眾人面前，或在各人家裏，我都教導你們；</div>
+<div class="verse"><span class="verse-number">21</span>又對猶太人和希利尼人證明當向神悔改，信靠我主耶穌基督。</div>
+<div class="verse"><span class="verse-number">22</span>現在我往耶路撒冷去，心甚迫切〔原文作心被捆綁〕，不知道在那裏要遇見甚麼事；</div>
+<div class="verse"><span class="verse-number">23</span>但知道聖靈在各城裏向我指證，說有捆鎖與患難等待我。</div>
+<div class="verse"><span class="verse-number">24</span>我卻不以性命為念，也不看為寶貴，只要行完我的路程，成就我從主耶穌所領受的職事，證明神恩惠的福音。</div>
+<div class="verse"><span class="verse-number">25</span>「我素常在你們中間來往，傳講神國的道；如今我曉得，你們以後都不得再見我的面了。</div>
+<div class="verse"><span class="verse-number">26</span>所以我今日向你們證明，你們中間無論何人死亡，罪不在我身上〔原文作我於眾人的血是潔淨的〕。</div>
+<div class="verse"><span class="verse-number">27</span>因為神的旨意，我並沒有一樣避諱不傳給你們的。</div>
+<div class="verse"><span class="verse-number">28</span>聖靈立你們作全群的監督，你們就當為自己謹慎，也為全群謹慎，牧養神的教會，就是他用自己血所買來的〔或作：救贖的〕。</div>
+<div class="verse"><span class="verse-number">29</span>我知道，我去之後必有兇暴的豺狼進入你們中間，不愛惜羊群。</div>
+<div class="verse"><span class="verse-number">30</span>就是你們中間，也必有人起來說悖謬的話，要引誘門徒跟從他們。</div>
+<div class="verse"><span class="verse-number">31</span>所以你們應當儆醒，記念我三年之久晝夜不住的流淚、勸戒你們各人。</div>
+<div class="verse"><span class="verse-number">32</span>如今我把你們交託神和他恩惠的道；這道能建立你們，叫你們和一切成聖的人同得基業。</div>
+<div class="verse"><span class="verse-number">33</span>我未曾貪圖一個人的金、銀、衣服。</div>
+<div class="verse"><span class="verse-number">34</span>我這兩隻手常供給我和同人的需用，這是你們自己知道的。</div>
+<div class="verse"><span class="verse-number">35</span>我凡事給你們作榜樣，叫你們知道應當這樣勞苦，扶助軟弱的人，又當記念主耶穌的話，說：『施比受更為有福。』」</div>
+<div class="verse"><span class="verse-number">36</span>保羅說完了這話，就跪下同眾人禱告。</div>
+<div class="verse"><span class="verse-number">37</span>眾人痛哭，抱着保羅的頸項，和他親嘴。</div>
+<div class="verse"><span class="verse-number">38</span>叫他們最傷心的，就是他說：「以後不能再見我的面」那句話，於是送他上船去了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+使徒行傳第20章是保羅宣教生涯的感人告別。在特羅亞，保羅「因為要次日起行，就與他們講論，直講到半夜」——有個少年人猶推古在窗臺上困倦墜樓死了，保羅下去「伏在他身上，抱着他」，使他復活，眾人得的安慰不小。前往耶路撒冷的旅程中，在米利都，保羅召集以弗所的長老，發表了整本使徒行傳最長、最感人的告別講道。他回顧三年的服事：「凡事謙卑，眼中流淚」，「凡與你們有益的，我沒有一樣避諱不說的」，「對猶太人和希利尼人證明當向神悔改，信靠我主耶穌基督」。他宣告前往耶路撒冷的心志：「我卻不以性命為念，也不看為寶貴，只要行完我的路程，成就我從主耶穌所領受的職事，證明神恩惠的福音。」他警告將有「兇暴的豺狼」和「說悖謬話的人」出現，囑咐眾人儆醒。「施比受更為有福」是耶穌的話，只在這裏記錄。保羅禱告後，眾人痛哭，難捨離別。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【「我不以性命為念」是使命的終極委身】</strong><br>「我卻不以性命為念，也不看為寶貴，只要行完我的路程，成就我從主耶穌所領受的職事」——這是保羅服事哲學的精華。使命的完成比個人的安全更重要。「不以性命為念」不是輕視生命，而是把生命的主權完全交在使命的手裏。這種態度來自對復活的確信——失去生命不是終點，乃是在另一個領域繼續服事。<br><br>
+<strong>2. 【透明誠實的牧養——「凡與你們有益的，我沒有一樣避諱不說的」】</strong><br>保羅的牧養是「或在眾人面前，或在各人家裏」，是「沒有一樣避諱不說的」——沒有迴避困難的議題，也沒有只傳「舒服的信息」。忠心的牧養包括讓人不舒服的真話，「凡事謙卑，眼中流淚」說明這樣的牧養是帶着愛心和謙卑的，不是冷漠的說教。<br><br>
+<strong>3. 【「施比受更為有福」是耶穌的話】</strong><br>這是耶穌的話在使徒行傳中唯一被直接引用的，不在四福音中，卻在保羅的告別講道中出現。「施」的生活哲學是違反人性自保本能的，卻是基督徒生命最核心的操守之一。保羅以自己的雙手養活自己和同伴，實際活出了這個原則。「這兩隻手常供給我和同人的需用」——講道的人先活出所講的道。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我卻不以性命為念</strong>，也不看為寶貴，只要行完我的路程，成就我從主耶穌所領受的職事，證明神恩惠的福音。」（徒20:24）</td>
+<td>你有沒有像保羅一樣，把「完成主給你的使命」看得比個人的安全和舒適更重要？就像一位好父母可以為孩子的益處犧牲自己的安逸，你願意讓神給你的使命優先於你個人的偏好和安全感嗎？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>凡與你們有益的</strong>，我沒有一樣避諱不說的，或在眾人面前，或在各人家裏，我都教導你們。」（徒20:20）</td>
+<td>你有沒有在你的信仰群體中，有勇氣說那些需要說卻不容易聽的真話？就像負責任的醫生必須告訴病人真實的診斷即使難聽，你有沒有在愛中、在禱告中，對你所牧養和愛護的人說出真實有益的話？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>又當記念主耶穌的</strong>話，說：施比受更為有福。」（徒20:35）</td>
+<td>你的生活模式是傾向於「施」還是「受」？就像健康的水循環需要雨水落下和蒸發上升，你有沒有讓給予成為你生活的主要模式，而非只是偶爾的行為？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

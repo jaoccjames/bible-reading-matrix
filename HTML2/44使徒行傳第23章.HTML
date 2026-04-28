@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第23章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第23章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">公會前的見證與密謀被揭露</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>保羅定睛看着公會的人，說：「弟兄們，我在神面前行事為人都是憑着良心，直到今日。」</div>
+<div class="verse"><span class="verse-number">2</span>大祭司亞拿尼亞就吩咐旁邊站着的人打他的嘴。</div>
+<div class="verse"><span class="verse-number">3</span>保羅對他說：「你這粉飾的牆，神要打你！你坐堂為的是按律法審問我，你竟違背律法，吩咐人打我嗎？」</div>
+<div class="verse"><span class="verse-number">4</span>站在旁邊的人說：「你辱罵神的大祭司嗎？」</div>
+<div class="verse"><span class="verse-number">5</span>保羅說：「弟兄們，我不曉得他是大祭司；經上記着說：『不可毀謗你百姓的官長。』」</div>
+<div class="verse"><span class="verse-number">6</span>保羅看出大眾一半是撒都該人，一半是法利賽人，就在公會中大聲說：「弟兄們，我是法利賽人，也是法利賽人的子孫。我現在受審問，是為盼望死人復活。」</div>
+<div class="verse"><span class="verse-number">7</span>說了這話，法利賽人和撒都該人就爭論起來，會眾分為兩黨。</div>
+<div class="verse"><span class="verse-number">8</span>因為撒都該人說，沒有復活，也沒有天使和鬼魂；法利賽人卻說，兩樣都有。</div>
+<div class="verse"><span class="verse-number">9</span>於是大大的喧嚷起來。有幾個法利賽黨的文士站起來爭辯說：「我們看不出這人有甚麼惡處，倘若有鬼魂或是天使對他說過話，怎麼樣呢？」</div>
+<div class="verse"><span class="verse-number">10</span>那時大起爭吵，千夫長恐怕保羅被他們扯碎了，就吩咐兵丁下去，把他從眾人當中搶出來，帶進營樓去。</div>
+<div class="verse"><span class="verse-number">11</span>當夜，主站在保羅旁邊，說：「放心吧！你怎樣在耶路撒冷為我作見證，也必怎樣在羅馬為我作見證。</div>
+<div class="verse"><span class="verse-number">12</span>到了天亮，猶太人同謀起誓，說：「若不先殺保羅就不吃不喝。」</div>
+<div class="verse"><span class="verse-number">13</span>這樣同心起誓的有四十多人。</div>
+<div class="verse"><span class="verse-number">14</span>他們來見祭司長和長老，說：「我們已經起了一個大誓，若不先殺保羅就不吃甚麼。</div>
+<div class="verse"><span class="verse-number">15</span>現在你們和公會要知會千夫長，叫他帶下保羅到你們這裏來，假作要詳細察考他的事；我們已經預備好了，不等他來到跟前就殺他。」</div>
+<div class="verse"><span class="verse-number">16</span>保羅的外甥聽見他們設下埋伏，就來到營樓裏告訴保羅。</div>
+<div class="verse"><span class="verse-number">17</span>保羅請一個百夫長來，說：「你領這少年人去見千夫長，他有事告訴他。」</div>
+<div class="verse"><span class="verse-number">18</span>於是把他領去見千夫長，說：「被囚的保羅請我到他那裏，求我領這少年人來見你；他有事告訴你。」</div>
+<div class="verse"><span class="verse-number">19</span>千夫長就拉着他的手，走到一旁，私下問他說：「你有甚麼事告訴我呢？」</div>
+<div class="verse"><span class="verse-number">20</span>他說：「猶太人已經約定，要求你明天帶下保羅到公會裏去，假作要詳細查問他的事。</div>
+<div class="verse"><span class="verse-number">21</span>你切不要隨從他們；因為他們有四十多人埋伏，已經起誓說：若不先殺保羅就不吃不喝。現在預備好了，只等你應允。」</div>
+<div class="verse"><span class="verse-number">22</span>於是千夫長打發少年人走，囑咐他說：「不要告訴人你將這事報給我了。」</div>
+<div class="verse"><span class="verse-number">23</span>千夫長便叫了兩個百夫長來，說：「預備步兵二百，馬兵七十，長槍手二百，今夜亥初往該撒利亞去；</div>
+<div class="verse"><span class="verse-number">24</span>也要預備牲口叫保羅騎上，護送到巡撫腓力斯那裏去。」</div>
+<div class="verse"><span class="verse-number">25</span>千夫長又寫了文書，</div>
+<div class="verse"><span class="verse-number">26</span>大略說：「革老丟呂西亞，請巡撫腓力斯大人安。</div>
+<div class="verse"><span class="verse-number">27</span>這人被猶太人拿住，將要殺害，我得知他是羅馬人，就帶兵丁下去救他出來。</div>
+<div class="verse"><span class="verse-number">28</span>因要知道他們告他的緣故，我就帶他下到他們的公會去，</div>
+<div class="verse"><span class="verse-number">29</span>便查知他被告是因他們律法的辯論，並沒有甚麼該死該綁的罪名。</div>
+<div class="verse"><span class="verse-number">30</span>後來有人把要害他的計謀告訴我，我就立時解他到你那裏去，又吩咐告他的人在你面前告他。（有古卷在此有：願你平安！）」</div>
+<div class="verse"><span class="verse-number">31</span>於是，兵丁照所吩咐他們的，將保羅夜裏帶到安提帕底。</div>
+<div class="verse"><span class="verse-number">32</span>第二天，讓馬兵護送，他們就回營樓去。</div>
+<div class="verse"><span class="verse-number">33</span>馬兵來到該撒利亞，把文書呈給巡撫，便叫保羅站在他面前。</div>
+<div class="verse"><span class="verse-number">34</span>巡撫看了文書，問保羅是哪省的人，既曉得他是基利家人，</div>
+<div class="verse"><span class="verse-number">35</span>就說：「等告你的人來到，我要細聽你的事」；便吩咐人把他看守在希律的衙門裏。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+使徒行傳第23章記載保羅在公會面前的自辯，以及他外甥揭露刺殺陰謀的過程。保羅面對公會說「我在神面前行事為人都是憑着良心」，大祭司命人打他的嘴，保羅以「神要打你！」回應，後因不知是大祭司而道歉。保羅機警地利用撒都該人和法利賽人對復活問題的神學分歧，說「我現在受審問，是為盼望死人復活」，讓公會內部大起爭論，保羅被兵丁搶出。當夜，主站在他旁邊說「放心吧！你怎樣在耶路撒冷為我作見證，也必怎樣在羅馬為我作見證」——給保羅最需要的確信和方向。猶太人聚起四十人立誓要殺保羅，保羅的外甥得知密謀，保羅請百夫長帶外甥去見千夫長，使謀殺計劃被揭露。千夫長連夜派大隊人馬送保羅到該撒利亞去見巡撫腓力斯，保全了他的性命和羅馬受審的機會。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 【在患難中神直接的鼓勵與確認】</strong><br>「當夜，主站在保羅旁邊，說：放心吧！」——在最困難的時刻，神親自以話語鼓勵。「你怎樣在耶路撒冷為我作見證，也必怎樣在羅馬為我作見證」——這不只是安慰，更是使命的確認：羅馬是保羅下一站的目標，而神說他必定會到達那裏。在所有人類的保護都有限時，神的確認是最穩固的基礎。<br><br>
+<strong>2. 【機警的智慧服事神的目的】</strong><br>保羅利用公會內部的神學分歧，不是不誠實，而是機警地運用了真理的一個層面（他確實因復活的盼望受審）來分散敵意。耶穌說「要靈巧如蛇，馴良如鴿子」——智慧地應對敵意，是服事者的必要品質，不是詭計。在不能正面突破時，尋找合法的智慧路徑繼續前進，是成熟的服事態度。<br><br>
+<strong>3. 【神透過最普通的人保護僕人】</strong><br>神使用一個少年人——保羅的外甥——揭露了謀殺計劃，保護了保羅的性命。神的保護不只是超自然的，也透過自然的人和事來成就。信徒不需要等待奇蹟才相信神在保護他們；神常常透過最平常的管道——家人的消息、法律的保護、朋友的提醒——來完成祂的旨意。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>主對保羅說</strong>：「<strong>放心吧</strong>！你怎樣在耶路撒冷為我作見證，也必怎樣在羅馬為我作見證。」（徒23:11）</td>
+<td>在你最困難、最不確定的時刻，你有沒有讓神的話語成為你前進的確信，而非只依靠環境的改善？就像黑夜中的指南針在不見星光時仍然可靠，你有沒有讓神給你的確認和方向成為你堅持下去的根基？</td>
+</tr>
+<tr>
+<td><strong>使徒行傳說</strong>：「<strong>保羅就請了一個百</strong>夫長來……那少年人就告訴了千夫長……千夫長就打發少年人走。」（徒23:17-22）</td>
+<td>你有沒有注意到神常常透過普通的人和事來保護和引導你？就像保羅的外甥在關鍵時刻成為保護的工具，你有沒有培養看見「神透過普通管道工作」的眼光，而非只尋求超自然的干預？</td>
+</tr>
+<tr>
+<td><strong>保羅說</strong>：「<strong>我在神面前行事為</strong>人都是憑着良心，直到今日。」（徒23:1）</td>
+<td>你有沒有在沒有人監督的情況下，仍然「憑着良心」行事——在神面前持守誠實和正直？就像無論是否有考試的壓力，一個真正學習的學生都會準備一樣，你有沒有讓「在神面前的良心」而非「在人前的表現」作為你行為的標準？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

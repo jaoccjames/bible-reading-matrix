@@ -156,8 +156,13 @@
   </div>
 
 <script>
-const GITHUB_API = "https://api.github.com/repos/jaoccjames/bible-reading-matrix/contents/HTML2";
-
+// 將原本的 GITHUB_API 替換為以下這兩行
+const GITHUB_USER = "jaoccjames";
+const GITHUB_REPO = "bible-reading-matrix";
+const GITHUB_BRANCH = "main";
+// 這是新的 Tree API 網址，它可以一次抓取完整清單
+const GITHUB_API = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/git/trees/${GITHUB_BRANCH}?recursive=1`;
+  
 const ORDER = [
   {b:'創世記',t:'OT'},{b:'出埃及記',t:'OT'},{b:'利未記',t:'OT'},{b:'民數記',t:'OT'},{b:'申命記',t:'OT'},
   {b:'約書亞記',t:'OT'},{b:'士師記',t:'OT'},{b:'路得記',t:'OT'},
@@ -362,23 +367,46 @@ function goHome(){
 
 els.homeBtn.addEventListener('click', goHome);
 
-async function load(){
+// 修改後的解析邏輯：從 Tree 結構中過濾出 HTML2 資料夾內的檔案
+function buildIndexFromAPI(treeData) {
+  const byBook = new Map();
+  const re = /^HTML2\/\d+(.+?)第(\d+)[章篇]\.HTML$/i; // 注意這裡加入了 HTML2/ 路徑匹配
+  
+  treeData.forEach(item => {
+    // 只處理路徑在 HTML2 資料夾底下的檔案
+    if (item.type === 'blob' && item.path.startsWith('HTML2/')) {
+      const m = item.path.match(re);
+      if (m) {
+        const book = m[1];
+        const chap = parseInt(m[2], 10);
+        if (!byBook.has(book)) byBook.set(book, new Set());
+        byBook.get(book).add(chap);
+      }
+    }
+  });
+  return byBook;
+}
+
+// 修改後的 load 函數
+async function load() {
   showErr('');
   setLoading(true);
 
-  const res = await fetch(GITHUB_API, {
-    headers: { 'Accept': 'application/vnd.github+json' },
-    cache: 'no-store'
-  });
-  if(!res.ok) throw new Error('讀取 GitHub 檔案清單失敗：HTTP ' + res.status);
+  try {
+    const res = await fetch(GITHUB_API, { cache: 'no-store' });
+    if (!res.ok) throw new Error('讀取失敗：' + res.status);
 
-  const items = await res.json();
-  const byBook = buildIndexFromAPI(items);
+    const data = await res.json();
+    // Tree API 的檔案清單是在 data.tree 裡面
+    const byBook = buildIndexFromAPI(data.tree);
 
-  window.__BYBOOK__ = byBook;
-  renderBooks(byBook);
-
-  setLoading(false);
+    window.__BYBOOK__ = byBook;
+    renderBooks(byBook);
+  } catch (err) {
+    showErr('⚠️ ' + err.message);
+  } finally {
+    setLoading(false);
+  }
 }
 
 load().catch(err => {

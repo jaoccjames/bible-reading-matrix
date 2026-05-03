@@ -217,13 +217,13 @@ const BOOK_NUM = {
   '猶大書':'65','啟示錄':'66'
 };
 
-const HTML2_BASE = 'https://jaoccjames.github.io/bible-reading-matrix/HTML2/';
+const HTML3_BASE = 'https://jaoccjames.github.io/bible-reading-matrix/HTML3/';
 
 function chapUrl(book, chap){
   const num = BOOK_NUM[book] || '00';
   const ch  = String(chap).padStart(2, '0');
   const filename = `${num}${book}第${ch}章.HTML`;
-  return HTML2_BASE + encodeURIComponent(filename);
+  return HTML3_BASE + encodeURIComponent(filename);
 }
 
 const CHAPTERS = {
@@ -367,14 +367,14 @@ function goHome(){
 
 els.homeBtn.addEventListener('click', goHome);
 
-// 修改後的解析邏輯：從 Tree 結構中過濾出 HTML2 資料夾內的檔案
+// 修改後的解析邏輯：從 Tree 結構中過濾出 HTML3 資料夾內的檔案
 function buildIndexFromAPI(treeData) {
   const byBook = new Map();
-  const re = /^HTML2\/\d+(.+?)第(\d+)[章篇]\.HTML$/i; // 注意這裡加入了 HTML2/ 路徑匹配
+  const re = /^HTML3\/\d+(.+?)第(\d+)[章篇]\.HTML$/i; // 注意這裡加入了 HTML3/ 路徑匹配
   
   treeData.forEach(item => {
-    // 只處理路徑在 HTML2 資料夾底下的檔案
-    if (item.type === 'blob' && item.path.startsWith('HTML2/')) {
+    // 只處理路徑在 HTML3 資料夾底下的檔案
+    if (item.type === 'blob' && item.path.startsWith('HTML3/')) {
       const m = item.path.match(re);
       if (m) {
         const book = m[1];

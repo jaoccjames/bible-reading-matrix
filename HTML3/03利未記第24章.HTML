@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利未記第24章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+利未記第24章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">燈火陳餅與褻瀆審判：尊神名不容輕忽</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">2</span>「要吩咐以色列人，把那為點燈搗成的清橄欖油拿來給你，使燈常常點着。</div>
+<div class="verse"><span class="verse-number">3</span>在會幕中法櫃的幔子外，亞倫從晚上到早晨必在耶和華面前經理這燈。這要作你們世世代代永遠的定例。</div>
+<div class="verse"><span class="verse-number">4</span>他要在耶和華面前常收拾精金燈臺上的燈。」</div>
+<div class="verse"><span class="verse-number">5</span>「你要取細麵，烤成十二個餅，每餅用麵伊法十分之二。</div>
+<div class="verse"><span class="verse-number">6</span>要把餅擺列兩行〔或作：摞；下同〕，每行六個，在耶和華面前精金的桌子上；</div>
+<div class="verse"><span class="verse-number">7</span>又要把淨乳香放在每行餅上，作為紀念，就是作為火祭獻給耶和華。</div>
+<div class="verse"><span class="verse-number">8</span>每安息日要常擺在耶和華面前；這為以色列人作永遠的約。</div>
+<div class="verse"><span class="verse-number">9</span>這餅是要給亞倫和他子孫的；他們要在聖處吃，為永遠的定例，因為在獻給耶和華的火祭中是至聖的。」</div>
+<div class="verse"><span class="verse-number">10</span>有一個以色列婦人的兒子，他父親是埃及人，一日閒遊在以色列人中。這以色列婦人的兒子和一個以色列人在營裏爭鬥。</div>
+<div class="verse"><span class="verse-number">11</span>這以色列婦人的兒子褻瀆了聖名，並且咒詛，就有人把他送到摩西那裏。（他母親名叫示羅密，是但支派底伯利的女兒。）</div>
+<div class="verse"><span class="verse-number">12</span>他們把那人收在監裏，要得耶和華所指示的話。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">14</span>「把那咒詛聖名的人帶到營外。叫聽見的人都放手在他頭上；全會眾就要用石頭打死他。</div>
+<div class="verse"><span class="verse-number">15</span>你要曉諭以色列人說：凡咒詛神的，必擔當他的罪。</div>
+<div class="verse"><span class="verse-number">16</span>那褻瀆耶和華名的，必被治死；全會眾總要用石頭打死他。不管是寄居的是本地人，他褻瀆耶和華名的時候，必被治死。</div>
+<div class="verse"><span class="verse-number">17</span>打死人的，必被治死；</div>
+<div class="verse"><span class="verse-number">18</span>打死牲畜的，必賠上牲畜，以命償命。</div>
+<div class="verse"><span class="verse-number">19</span>人若使他鄰舍的身體有殘疾，他怎樣行，也要照樣向他行：</div>
+<div class="verse"><span class="verse-number">20</span>以傷還傷，以眼還眼，以牙還牙。他怎樣叫人的身體有殘疾，也要照樣向他行。</div>
+<div class="verse"><span class="verse-number">21</span>打死牲畜的，必賠上牲畜；打死人的，必被治死。</div>
+<div class="verse"><span class="verse-number">22</span>不管是寄居的是本地人，同歸一例。我是耶和華你們的神。」</div>
+<div class="verse"><span class="verse-number">23</span>於是，摩西曉諭以色列人，他們就把那咒詛聖名的人帶到營外，用石頭打死。以色列人就照耶和華所吩咐摩西的行了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+利未記第24章由兩個看似不同的段落組成：一是關於燈台與陳設餅的條例，二是一個涉及褻瀆神名的真實事件及其後的律例宣告。前半部分，神指示以色列人用純橄欖油點燃燈台，使其永不熄滅，又規定每安息日在金桌上陳設十二個餅（代表以色列十二支派），以乳香作紀念。這些聖所中的持續事奉，象徵以色列在神面前的持續敬拜與神對十二支派的恆久記念。後半部分則轉入一個具體案例：一個以色列婦人和埃及人所生的兒子，在爭鬥中咒詛了神的聖名。神透過摩西頒布判決：褻瀆神名者，無論本地人或外人，一律處死。此後進一步宣告公平司法的原則，包括「以眼還眼、以牙還牙」——這並非鼓勵報復，而是確立司法的比例原則，防止過度懲罰或袒護強者。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 持續的事奉比間歇的熱情更有屬靈深度</strong><br>燈台要「常常點着」，陳設餅要「每安息日常擺」，這兩個持續性的要求教導以色列人：對神的委身不能是週期性的情緒，而是持續不斷的生命狀態。屬靈生命的健壯不在於偶爾的靈性高峰體驗，而在於日常持守的紀律——每日禱告、定期讀經、週週聚會，這些看似平凡的習慣，是屬靈生命長久的根基。<br><br>
+<strong>2. 神的名是神的代表，不可輕率對待</strong><br>褻瀆神名者受到最嚴厲的處置，因為神的名代表神的本性和榮耀。隨意使用神的名（無論是咒詛或是無意義的宣稱），都是對神存在和屬性的輕慢。今日信徒有時以「奉主名」作為為自己意願背書的工具，或在社交媒體上輕率地聲稱「神告訴我」，這種對神名的輕率使用，與褻瀆在本質上並無太大差異。<br><br>
+<strong>3. 公義的法則對所有人一視同仁</strong><br>「不管是寄居的是本地人，同歸一例」這一原則，是對「法律面前人人平等」最早期的宣告。神的公義不因身分、出身或背景而有偏頗。在以偏袒強者為常態的古代社會，這是革命性的宣告。今日信徒在職場、家庭和社群中，是否也能以同樣一視同仁的公義態度對待所有人？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>亞倫從晚上到早晨</strong><strong>必在耶和華面前經</strong>理這燈。這要作你們世世代代永遠的定例。」（利24:3）</td>
+<td>就像路燈需要定時維護才能持續為行人照明，屬靈的光要持續發亮也需要定期的補給與維護，你的屬靈生活是否有規律、持續的節奏，還是只在感覺需要的時候才想到要加油？</td>
+</tr>
+<tr>
+<td>「<strong>那褻瀆耶和華名的</strong>，<strong>必被治死</strong>；……不管是寄居的是本地人，他褻瀆耶和華名的時候，必被治死。」（利24:16）</td>
+<td>就像品牌名稱受到法律保護，濫用名稱需要承擔後果，神的名代表祂的榮耀與權威，你是否在日常言語中認真對待神的名，還是有時不假思索地以「神說」或「奉主名」掩蓋自己的想法？</td>
+</tr>
+<tr>
+<td>「<strong>不管是寄居的是本</strong>地人，<strong>同歸一例</strong>。我是耶和華你們的神。」（利24:22）</td>
+<td>就像法庭不能因被告的社會地位而改變判決標準，神的公義對所有人一視同仁，你在與人相處時，是否也能做到不因對方的身分、財富或關係而有雙重標準，以公平的態度對待每一個人？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

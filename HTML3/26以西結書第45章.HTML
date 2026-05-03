@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第45章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第45章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">聖地分配與公義的度量衡</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們拈鬮分地為業，要獻上一分給耶和華為聖供地，長二萬五千肘，寬一萬肘。這分以內，四圍都為聖地。</div>
+<div class="verse"><span class="verse-number">2</span>其中有作為聖所之地，長五百肘，寬五百肘，四面見方。四圍再有五十肘為郊野之地。</div>
+<div class="verse"><span class="verse-number">3</span>要以肘為度量地，長二萬五千肘，寬一萬肘。其中有聖所，是至聖的。</div>
+<div class="verse"><span class="verse-number">4</span>這是全地的一分聖地，要歸與供聖所職事的祭司，就是親近事奉耶和華的，作為他們房屋之地與聖所之聖地。</div>
+<div class="verse"><span class="verse-number">5</span>又有一分，長二萬五千肘，寬一萬肘，要歸與在殿中供職的利未人，作為二十間房屋之業。</div>
+<div class="verse"><span class="verse-number">6</span>也要分定屬城的地業，寬五千肘，長二萬五千肘，挨着那分聖供地，要歸以色列全家。</div>
+<div class="verse"><span class="verse-number">7</span>歸王之地要在聖供地和屬城之地的兩旁，就是聖供地和屬城之地的旁邊，西至西頭，東至東頭，從西到東，其長與每支派的分一樣。</div>
+<div class="verse"><span class="verse-number">8</span>這地在以色列中必歸王為業。我所立的王必不再欺壓我的民，卻要按支派將地分給以色列家。</div>
+<div class="verse"><span class="verse-number">9</span>主耶和華如此說：「以色列的王阿，你們應當知足，要除掉強暴和搶奪的事，施行公平和公義，不再勒索我的民。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">10</span>「你們要用公道天平、公道伊法、公道罷特。</div>
+<div class="verse"><span class="verse-number">11</span>伊法與罷特大小要一樣。罷特可盛賀梅珥十分之一，伊法也可盛賀梅珥十分之一，都以賀梅珥的大小為準。</div>
+<div class="verse"><span class="verse-number">12</span>舍客勒是二十季拉；二十舍客勒，二十五舍客勒，十五舍客勒，為你們的彌那。</div>
+<div class="verse"><span class="verse-number">13</span>「你們當獻的供物乃是這樣：一賀梅珥麥子要獻伊法六分之一；一賀梅珥大麥要獻伊法六分之一。</div>
+<div class="verse"><span class="verse-number">14</span>你們獻所分定的油，按油的罷特，一柯珥油要獻罷特十分之一（原來十罷特就是一賀梅珥）。</div>
+<div class="verse"><span class="verse-number">15</span>從以色列滋潤的草場上每二百羊中，要獻一隻羊羔。這都可作素祭、燔祭、平安祭，為民贖罪。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">16</span>此地的民都要奉上這供物給以色列中的王。</div>
+<div class="verse"><span class="verse-number">17</span>王的本分是在節期、月朔、安息日，就是以色列家一切的節期，奉上燔祭、素祭、奠祭。他要預備贖罪祭、素祭、燔祭，和平安祭，為以色列家贖罪。」</div>
+<div class="verse"><span class="verse-number">18</span>主耶和華如此說：「正月初一日，你要取無殘疾的公牛犢，潔淨聖所。</div>
+<div class="verse"><span class="verse-number">19</span>祭司要取些贖罪祭牲的血，抹在殿的門柱上和壇磴臺的四角上，並內院的門框上。</div>
+<div class="verse"><span class="verse-number">20</span>本月初七日〔七十士譯本作七月初一日〕也要為誤犯罪的和愚蒙犯罪的如此行，為殿贖罪。</div>
+<div class="verse"><span class="verse-number">21</span>「正月十四日，你們要守逾越節，守節七日，要喫無酵餅。</div>
+<div class="verse"><span class="verse-number">22</span>當日，王要為自己和國內的眾民預備一隻公牛作贖罪祭。</div>
+<div class="verse"><span class="verse-number">23</span>這節的七日，每日他要為耶和華預備無殘疾的公牛七隻、公綿羊七隻為燔祭。每日又要預備公山羊一隻為贖罪祭。</div>
+<div class="verse"><span class="verse-number">24</span>他也要預備素祭，就是為一隻公牛同獻一伊法細麵，為一隻公綿羊同獻一伊法細麵，每一伊法細麵加油一欣。</div>
+<div class="verse"><span class="verse-number">25</span>七月十五日守節的時候，七日他都要如此行，照逾越節的贖罪祭、燔祭、素祭，和油的條例一樣。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第45章描述末後地業的分配原則，以及對公義的制度性要求。土地分三部分：聖供地（給祭司和利未人）、城的地業（給眾民）、王的地業（在聖供地兩旁）。這個安排的核心是：神的聖所在中央，一切圍繞神的同在而設計。然後神直接對王說話（9節）：「你們應當知足，要除掉強暴和搶奪的事，施行公平和公義，不再勒索我的民。」之後是對公道度量衡的要求：天平、伊法、罷特、舍客勒都必須公道，不可用欺詐的量器。在屬靈恢復的藍圖中，神對公義制度的要求佔有重要地位——沒有公道，就沒有真正的敬拜秩序。本章也規定逾越節和住棚節的禮儀，強調定期的聖別時刻在新秩序中的角色。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的聖所在中央：一切秩序以神的同在為中心設計</strong><br>分地的布局以神的聖所為中心——不是城市，不是王宮，而是聖所。這個設計宣告：在神設計的社會秩序中，一切的安排都以神的同在和崇拜為核心。信徒的生活優先序，也應以「神的同在」為核心向外展開，而非從邊緣往中心擠。<br><br>
+<strong>2. 公道的度量衡是信仰的社會表達</strong><br>「你們要用公道天平、公道伊法、公道罷特」——在恢復神諭的核心，神要求公正的商業行為。真正的敬拜不只在聖所裡，也表現在市場上使用的天平是否公道。信仰的真實性在日常的交易誠實中得到驗證；不誠實的商業行為是對神聖潔性情的否認。<br><br>
+<strong>3. 對王的要求：知足、不強暴、施行公義</strong><br>「你們應當知足，要除掉強暴和搶奪，施行公平和公義」——神對掌權者的三個核心要求。這些要求超越宗教義務，進入政治和社會的治理領域。信仰對公義的要求，不只是個人的德行，也關乎社會結構的公正；信徒有責任在能力所及的範圍內，推動和支持這樣的公義。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>主耶和華如此說</strong>：「<strong>以色列的王阿</strong>，你們應當知足，要除掉強暴和搶奪的事，施行公平和公義，不再勒索我的民。」（結45:9）</td>
+<td>「應當知足」是對強暴的根本解毒劑——許多強暴來自不知足。你在哪些領域最容易出現「不知足」的傾向，並以此傷害或壓迫他人（哪怕是微小的方式）？就像餓肚子的人更容易搶別人的食物，你的「不知足」在哪裡最明顯，需要神的「知足」來代替？</td>
+</tr>
+<tr>
+<td><strong>你們要用公道天平</strong>、<strong>公道伊法</strong>、公道罷特。（結45:10）</td>
+<td>「公道的天平」象徵日常誠實的商業和社會行為。你在日常的交易——金錢、時間、承諾、信息——中，有沒有某種「不公道的天平」，讓對自己有利的時候用一種標準，對別人有利的時候用另一種標準？就像一個雙面的磅秤，你願意讓神今天校準你的「天平」嗎？</td>
+</tr>
+<tr>
+<td><strong>這是全地的一分聖</strong>地，<strong>要歸與供聖所職事</strong>的祭司……聖地當在其中。（結45:4,3）</td>
+<td>「聖地在中央」——在你生命的版圖上，什麼佔據了真正的中心位置？就像建城市時選擇什麼作為城市的中心，決定了整個城市的文化和發展方向，你的「生命中心」是什麼，正在決定你整個生命版圖的走向？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何西阿書第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+何西阿書第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神對以色列的父愛：如何捨棄你？</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列年幼的時候，我愛他，就從埃及召出我的兒子來。</div>
+<div class="verse"><span class="verse-number">2</span>先知越發招呼他們，他們越發走開，向諸巴力獻祭，給雕刻的偶像燒香。</div>
+<div class="verse"><span class="verse-number">3</span>我原教導以法蓮行走，用膀臂抱着他們，他們卻不知道是我醫治他們。</div>
+<div class="verse"><span class="verse-number">4</span>我用慈繩〔慈：原文作人的〕愛索牽引他們；我待他們如人放鬆牛的兩腮夾板，把糧食放在他們面前。</div>
+<div class="verse"><span class="verse-number">5</span>他們必不歸回埃及地，亞述人卻要作他們的王，因他們不肯歸向我。</div>
+<div class="verse"><span class="verse-number">6</span>刀劍必臨到他們的城邑，毀壞門閂，把人吞滅，都因他們隨從自己的計謀。</div>
+<div class="verse"><span class="verse-number">7</span>我的民偏要背道離開我；眾先知雖然招呼他們歸向至上的主，卻無人尊崇主。</div>
+<div class="verse"><span class="verse-number">8</span>以法蓮哪，我怎能捨棄你？以色列啊，我怎能棄絕你？我怎能使你如押瑪？怎能使你如洗扁？我回心轉意，我的憐愛大大發動。</div>
+<div class="verse"><span class="verse-number">9</span>我必不發猛烈的怒氣，也不再毀滅以法蓮。因我是神，並非世人，是你們中間的聖者；我必不在怒中臨到你們。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華必如獅子吼叫，子民必跟隨他。他一吼叫，他們就從西方急速而來。</div>
+<div class="verse"><span class="verse-number">11</span>他們必如雀鳥從埃及急速而來，又如鴿子從亞述地來到。我必使他們住自己的房屋。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">12</span>以法蓮用謊話，以色列家用詭計圍繞我；猶大卻靠神掌權，向聖者有忠心〔或作：猶大向神，向誠實的聖者猶疑不定〕。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+何西阿書第11章是整卷書情感最豐沛的一章，被許多學者稱為「先知書中最深刻的愛的詩篇」。神以父親的聲音回顧與以色列的關係：「以色列年幼的時候，我愛他，就從埃及召出我的兒子來」（1節，馬太福音引用這節指向耶穌）。神如慈父教導孩子行走、用膀臂抱着他、把糧食放在他面前；以色列卻不知道是神在看顧，而是轉去事奉偶像。第8節是全書情感最高峰：「以法蓮哪，我怎能捨棄你？以色列啊，我怎能棄絕你？……我回心轉意，我的憐愛大大發動。」這是神在宣告應有的審判時，被自己的愛所攔阻的聲音——不是改變了審判的決定，而是神的心腸在其中痛苦地掙扎。第9節宣告神與人的不同：「我是神，並非世人，是你們中間的聖者；我必不在怒中臨到你們」——神的愛超越人的憤怒，這是恩典的根源。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的愛如父親教孩子行走：從嬰孩開始的全程陪伴</strong><br>「我原教導以法蓮行走，用膀臂抱着他們」——父親教孩子走路，是最耐心、最貼近的陪伴，孩子跌倒了父親扶起來，再試，再扶。神與我們的關係也是這種全程的貼近陪伴，不是遙遠的規則製定者，而是彎下腰扶着我們走路的父親。每一個我們的跌倒，都在那雙扶着的手旁邊。<br><br>
+<strong>2. 「我怎能捨棄你？」：神的心腸在審判面前的痛苦掙扎</strong><br>「我的憐愛大大發動」——這是神在宣告應有的審判時，被自己的愛攔住的時刻。神的這種痛苦，顯示了神不是冷漠的審判者，而是一位真實感受到捨棄之痛的慈父。這個神學圖像讓我們知道：即使在我們最叛逆的時候，神的心腸是在痛苦地愛着我們，不是漠然地等待我們滅亡。<br><br>
+<strong>3. 「我是神，並非世人」：神的愛超越人的憤怒極限</strong><br>人在被傷害到某個程度，愛就耗盡了；神說「我是神，並非世人」——神的愛不受人的憤怒極限所限制。這是信仰中最大的安慰：神不像我們一樣，愛到某個臨界點就放棄；祂的愛超越人性的容量，是真正無條件的愛的基礎。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我原教導以法蓮行</strong>走，<strong>用膀臂抱着他們</strong>，他們卻不知道是我醫治他們。（何11:3）</td>
+<td>「他們卻不知道是我醫治他們」——神一直在照顧，人卻一直沒有認出來。你生命中有哪些「其實是神在扶持和醫治，我以為是自己做到的」的事情？就像一個孩子以為是自己學會走路，不知道父親一直在旁邊保護，你願意今天回顧你生命中那些「不知道是神」的時刻，給予感謝嗎？</td>
+</tr>
+<tr>
+<td><strong>以法蓮哪</strong>，<strong>我怎能捨棄你</strong>？以色列啊，我怎能棄絕你？……我回心轉意，我的憐愛大大發動。（何11:8）</td>
+<td>「我怎能捨棄你」——神被自己的愛攔住，無法放棄你。你在最深的失敗和背叛中，有沒有相信「神怎能捨棄我」這個真理？就像一個父親即使孩子讓他心碎，仍然在夜裡為孩子擔心禱告，你願意把你最覺得自己「不配被神繼續愛」的地方，放在「我怎能捨棄你」這個神的宣告中嗎？</td>
+</tr>
+<tr>
+<td><strong>因我是神</strong>，<strong>並非世人</strong>，是你們中間的聖者；我必不在怒中臨到你們。（何11:9下）</td>
+<td>「我是神，並非世人」——神的愛不像人的愛一樣有容量限制。你是否有時把神的愛「人化」——以為神和人一樣，傷太多次就會放棄？就像一個曾被人多次傷害的人，很難相信有人會無條件地愛他，你有沒有把對人的失望投射到神身上，限制了你對神愛的真實接受？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

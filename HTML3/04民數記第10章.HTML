@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+民數記第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">銀號吹響以色列起行</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">2</span>「你要用銀子作兩枝號，都要錘出來的，用以招聚會眾，並叫眾營起行。</div>
+<div class="verse"><span class="verse-number">3</span>吹這號的時候，全會眾要到你那裏，聚集在會幕門口。</div>
+<div class="verse"><span class="verse-number">4</span>若單吹一枝，眾首領，就是以色列軍中的統領，要聚集到你那裏。</div>
+<div class="verse"><span class="verse-number">5</span>吹出大聲的時候，東邊安的營都要起行。</div>
+<div class="verse"><span class="verse-number">6</span>二次吹出大聲的時候，南邊安的營都要起行。他們將起行，必吹出大聲。</div>
+<div class="verse"><span class="verse-number">7</span>但招聚會眾的時候，你們要吹號，卻不要吹出大聲。</div>
+<div class="verse"><span class="verse-number">8</span>亞倫子孫作祭司的要吹這號；這要作你們世世代代永遠的定例。</div>
+<div class="verse"><span class="verse-number">9</span>你們在自己的地，與欺壓你們的敵人打仗，就要用號吹出大聲，便在耶和華你們的神面前得蒙記念，也蒙拯救脫離仇敵。</div>
+<div class="verse"><span class="verse-number">10</span>在你們快樂的日子和節期，並月朔，獻燔祭和平安祭，也要吹號，這都要在你們的神面前作為記念。我是耶和華你們的神。」</div>
+<div class="verse"><span class="verse-number">11</span>第二年二月二十日，雲彩從法櫃的帳幕收上去。</div>
+<div class="verse"><span class="verse-number">12</span>以色列人就按站往前行，離開西乃的曠野，雲彩停住在巴蘭的曠野。</div>
+<div class="verse"><span class="verse-number">13</span>這是他們照耶和華藉摩西所吩咐的，初次往前行。</div>
+<div class="verse"><span class="verse-number">14</span>按着軍隊首先往前行的是猶大營的纛。統領軍隊的是亞米拿達的兒子拿順。</div>
+<div class="verse"><span class="verse-number">15</span>統領以薩迦支派軍隊的是蘇押的兒子拿坦業。</div>
+<div class="verse"><span class="verse-number">16</span>統領西布倫支派軍隊的是希倫的兒子以利押。</div>
+<div class="verse"><span class="verse-number">17</span>帳幕拆卸，革順的子孫和米拉利的子孫就抬着帳幕先往前行。</div>
+<div class="verse"><span class="verse-number">18</span>按着軍隊往前行的是流便營的纛。統領軍隊的是示丟珥的兒子以利蓿。</div>
+<div class="verse"><span class="verse-number">19</span>統領西緬支派軍隊的是蘇利沙代的兒子示路蔑。</div>
+<div class="verse"><span class="verse-number">20</span>統領迦得支派軍隊的是丟珥的兒子以利雅薩。</div>
+<div class="verse"><span class="verse-number">21</span>哥轄人抬着聖物先往前行。他們未到以前，抬帳幕的已經把帳幕支好。</div>
+<div class="verse"><span class="verse-number">22</span>按着軍隊往前行的是以法蓮營的纛，統領軍隊的是亞米忽的兒子以利沙瑪。</div>
+<div class="verse"><span class="verse-number">23</span>統領瑪拿西支派軍隊的是比大蓿的兒子迦瑪列。</div>
+<div class="verse"><span class="verse-number">24</span>統領便雅憫支派軍隊的是基多尼的兒子亞比但。</div>
+<div class="verse"><span class="verse-number">25</span>在諸營末後的是但營的纛，按着軍隊往前行。統領軍隊的是亞米沙代的兒子亞希以謝。</div>
+<div class="verse"><span class="verse-number">26</span>統領亞設支派軍隊的是俄蘭的兒子帕結。</div>
+<div class="verse"><span class="verse-number">27</span>統領拿弗他利支派軍隊的是以南的兒子亞希拉。</div>
+<div class="verse"><span class="verse-number">28</span>以色列人按着軍隊往前行，就是這樣。</div>
+<div class="verse"><span class="verse-number">29</span>摩西對他岳父〔或作：內兄〕米甸人流珥的兒子何巴說：「我們要行路，往耶和華所應許之地去；他曾說：『我要將這地賜給你們。』現在求你和我們同去，我們必厚待你，因為耶和華指着以色列人已經應許給好處。」</div>
+<div class="verse"><span class="verse-number">30</span>何巴回答說：「我不去；我要回本地本族那裏去。」</div>
+<div class="verse"><span class="verse-number">31</span>摩西說：「求你不要離開我們；因為你知道我們要在曠野安營，你可以當作我們的眼目。</div>
+<div class="verse"><span class="verse-number">32</span>你若和我們同去，將來耶和華有甚麼好處待我們，我們也必以甚麼好處待你。」</div>
+<div class="verse"><span class="verse-number">33</span>以色列人離開耶和華的山，往前行了三天的路程；耶和華的約櫃在前頭行了三天的路程，為他們尋找安歇的地方。</div>
+<div class="verse"><span class="verse-number">34</span>他們拔營往前行，日間有耶和華的雲彩在他們以上。</div>
+<div class="verse"><span class="verse-number">35</span>約櫃往前行的時候，摩西就說：「耶和華啊，求你興起！願你的仇敵四散！願恨你的人從你面前逃跑！」</div>
+<div class="verse"><span class="verse-number">36</span>約櫃停住的時候，他就說：「耶和華啊，求你回到以色列的千萬人中！」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+民數記第十章記載了出埃及後第二年二月二十日，以色列人正式離開西乃曠野起行的歷史時刻。本章首先記述神命令摩西製造兩枝銀號，用於招聚會眾、指示起行和節期崇拜，並在爭戰時向神呼求。隨後詳述十二支派按秩序行進的方式：猶大營先行，利未人攜帶帳幕居中，哥轄族帶聖器跟進，各支派依序前行。摩西邀請岳父何巴（米甸人）同行為嚮導，以熟悉曠野地形。約櫃在前引路，為以色列人尋找安歇之地。本章以摩西禱告約櫃起行和停止的禱詞作結：「耶和華啊，求你興起！願你的仇敵四散！」以及「耶和華啊，求你回到以色列的千萬人中！」這段美麗的禱告，彰顯了以色列人在神的同在與帶領下前行的信仰核心。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 有神的帶領，出發才有方向</strong><br>銀號的聲音是神呼召的訊號，約櫃在前引路是神同在的保證。以色列人的起行不是自發的行動，而是回應神的呼召。信仰的旅程同樣如此——我們的每一個重要決定，都應先聆聽神的呼召，而非單憑環境條件或個人判斷出發，確認神在前面才放心前行。<br><br>
+<strong>2. 借重他人的智慧是謙遜的表現</strong><br>摩西雖蒙神直接帶領，仍邀請熟悉曠野的何巴同行，說「你可以當作我們的眼目」。這顯示屬靈的帶領不排除借用實際智慧，謙遜地接受他人的幫助是領袖成熟的標誌，而非軟弱。神的帶領往往也透過身邊有經驗的人傳達出來。<br><br>
+<strong>3. 禱告讓爭戰與安歇都在神的同在中進行</strong><br>約櫃起行時摩西求神興起驅散仇敵，停歇時求神回到子民中間。這個禱告的習慣說明，以色列人的行動與休息都不脫離禱告。信仰不只在靜默時求問，也在行動中禱告；不只在安穩時感謝，也在衝突中呼求，使整個生命都在神的同在中進行。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>吹這號的時候</strong>，<strong>全會眾要到你那裏</strong>，聚集在會幕門口。」（民10:3）</td>
+<td>銀號一響，全民聚集，就像工廠的下班鈴聲使所有人同步回應一樣。在你的生命中，神呼召你的那個「號聲」是甚麼？你是否立即回應，還是等自己方便時才理會？</td>
+</tr>
+<tr>
+<td>「<strong>你可以當作我們的</strong>眼目。」（民10:31）</td>
+<td>摩西雖有神帶領，仍尋求何巴的曠野經驗，就像有GPS仍需要認識當地的嚮導一樣。你是否願意謙遜地接受他人的智慧和幫助，而非堅持凡事獨力承擔？</td>
+</tr>
+<tr>
+<td>「<strong>耶和華啊</strong>，<strong>求你興起</strong>！願你的仇敵四散！」（民10:35）</td>
+<td>約櫃起行時摩西先禱告，而非直接衝前，就像划船前先確認方向才下槳一樣。當你面對挑戰或開始新的旅程，你是否習慣先禱告求神同行，還是行動後才想到神？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

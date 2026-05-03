@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記上第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記上第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約櫃的大能顯明</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>非利士人將神的約櫃從以便以謝抬到亞實突。</div>
+<div class="verse"><span class="verse-number">2</span>非利士人將神的約櫃抬進大袞廟，放在大袞的旁邊。</div>
+<div class="verse"><span class="verse-number">3</span>次日清早，亞實突人起來，見大袞仆倒在耶和華的約櫃前，臉伏於地，就把大袞仍立在原處。</div>
+<div class="verse"><span class="verse-number">4</span>又次日清早起來，見大袞仆倒在耶和華的約櫃前，臉伏於地，並且大袞的頭和兩手都在門檻上折斷，只剩下大袞的殘體。</div>
+<div class="verse"><span class="verse-number">5</span>（因此，大袞的祭司和一切進亞實突大袞廟的人都不踏大袞廟的門檻，直到今日。）</div>
+<div class="verse"><span class="verse-number">6</span>耶和華的手重重加在亞實突人身上，敗壞他們，使他們生痔瘡。亞實突和亞實突的四境都是如此。</div>
+<div class="verse"><span class="verse-number">7</span>亞實突人見這光景，就說：「以色列神的約櫃不可留在我們這裏，因為他的手重重加在我們和我們神大袞的身上」；</div>
+<div class="verse"><span class="verse-number">8</span>就打發人去請非利士的眾首領來聚集，問他們說：「我們向以色列神的約櫃應當怎樣行呢？」他們回答說：「可以將以色列神的約櫃運到迦特去。」於是將以色列神的約櫃運到那裏去。</div>
+<div class="verse"><span class="verse-number">9</span>運到之後，耶和華的手攻擊那城，使那城的人大大驚慌，無論大小都生痔瘡。</div>
+<div class="verse"><span class="verse-number">10</span>他們就把神的約櫃送到以革倫。神的約櫃到了，以革倫人就喊嚷起來說：「他們將以色列神的約櫃運到我們這裏，要害我們和我們的眾民！」</div>
+<div class="verse"><span class="verse-number">11</span>於是打發人去請非利士的眾首領來，說：「願你們將以色列神的約櫃送回原處，免得害了我們和我們的眾民！」原來神的手重重攻擊那城，城中的人有因驚慌而死的；</div>
+<div class="verse"><span class="verse-number">12</span>未曾死的人都生了痔瘡。合城呼號，聲音上達於天。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載非利士人擄獲約櫃後的遭遇,發生於撒母耳記上第4章以色列戰敗之後。非利士人將約櫃視為戰利品,抬入他們的神廟大袞廟,企圖彰顯大袞勝過以色列的神。然而,耶和華親自顯明祂的主權,使偶像大袞兩次仆倒破碎,並且降災於非利士各城,包括亞實突、迦特、以革倫,使他們生痔瘡。這段歷史顯示,即使以色列人因罪被擊敗,神的約櫃仍帶著祂的同在和能力,不容被褻瀆。非利士人從自信到驚恐,最終不得不承認耶和華的權能,渴望將約櫃送回以色列。此章在救恩歷史中彰顯了神的聖潔、主權,以及祂的名不容被羞辱的真理。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的主權超越一切受造物</strong><br>大袞在約櫃前兩次仆倒並破碎,顯明任何偶像、假神或人手所造之物,在真神面前毫無能力。神的主權不受人類戰爭勝負影響,祂的榮耀不容被任何受造物取代。即使以色列人戰敗,神仍坐著為王,祂的同在本身就帶著絕對的權柄。這教導我們,無論環境如何,神的主權永不改變,祂在萬有之上掌權。<br><br>
+<strong>2. 神的聖潔不容褻瀆</strong><br>耶和華降災於非利士各城,使他們生痔瘡,顯明祂的聖潔本質。約櫃代表神的同在,不是可以被褻玩或利用的宗教物品。神的聖潔要求人以敬畏的心接近祂,任何輕慢或不尊重都會帶來審判。非利士人想將約櫃當作戰利品炫耀,卻遭受嚴厲的管教,這提醒我們必須以聖潔的心來到神面前,不可隨意妄為。<br><br>
+<strong>3. 神為自己的名爭戰</strong><br>即使以色列人失敗,神仍主動為自己的名辯護,使外邦人認識祂的真實。神不需要人的幫助來彰顯祂的榮耀,祂自己會在適當時候顯明真理。非利士人從驕傲到恐懼,終於承認耶和華的能力,這顯示神必為祂的名爭戰。我們無需用人的方法為神辯護,只需忠心跟隨,神自己會顯明祂的榮耀和真實。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>次日清早</strong>,<strong>亞實突人起來</strong>,見大袞仆倒在耶和華的約櫃前,臉伏於地,就把大袞仍立在原處。(撒上5:3)</td>
+<td>就像手機App在系統更新後不斷閃退,提醒我們它無法與更高的權限相容,當我們生命中的「大袞」(金錢、名聲、成就)在神面前一再倒下時,我們是否仍堅持把它們重新立起,還是願意承認只有神配得敬拜?</td>
+</tr>
+<tr>
+<td><strong>耶和華的手重重加</strong><strong>在亞實突人身上</strong>,敗壞他們,使他們生痔瘡;亞實突和亞實突的四境都是如此。(撒上5:6)</td>
+<td>就像觸碰高壓電會立即感受到電擊的危險,神的聖潔也不容被褻瀆,我們在生活中是否仍隨意對待神的同在、輕忽敬拜,或是以敬畏的心親近祂,明白祂的聖潔要求我們分別為聖?</td>
+</tr>
+<tr>
+<td><strong>原來神的手重重攻</strong><strong>擊那城</strong>,城中的人有因驚慌而死的;未曾死的人都生了痔瘡。合城呼號,聲音上達於天。(撒上5:11-12)</td>
+<td>就像病毒在人群中快速蔓延,讓每個城市都嚴陣以待,非利士各城因約櫃而遭災,證明神會主動為自己的名爭戰,我們是否相信神不需要我們用錯誤的方法為祂辯護,而是等候祂自己彰顯真理和榮耀?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

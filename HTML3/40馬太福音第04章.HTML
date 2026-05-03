@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶穌受試探與呼召門徒</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當時，耶穌被聖靈引到曠野，受魔鬼的試探。</div>
+<div class="verse"><span class="verse-number">2</span>他禁食四十晝夜，後來就餓了。</div>
+<div class="verse"><span class="verse-number">3</span>那試探人的進前來，對他說：「你若是神的兒子，可以吩咐這些石頭變成食物。」</div>
+<div class="verse"><span class="verse-number">4</span>耶穌卻回答說：「經上記着說：人活着，不是單靠食物，乃是靠神口裏所出的一切話。」</div>
+<div class="verse"><span class="verse-number">5</span>魔鬼就帶他進了聖城，叫他站在殿頂〔頂：原文作翅〕上，</div>
+<div class="verse"><span class="verse-number">6</span>對他說：「你若是神的兒子，可以跳下去，因為經上記着說：主要為你吩咐他的使者用手托着你，免得你的腳碰在石頭上。」</div>
+<div class="verse"><span class="verse-number">7</span>耶穌對他說：「經上又記着說：『不可試探主你的神。』」</div>
+<div class="verse"><span class="verse-number">8</span>魔鬼又帶他上了一座最高的山，將世上的萬國與萬國的榮華都指給他看，</div>
+<div class="verse"><span class="verse-number">9</span>對他說：「你若俯伏拜我，我就把這一切都賜給你。」</div>
+<div class="verse"><span class="verse-number">10</span>耶穌說：「撒但〔撒但就是抵擋的意思，乃魔鬼的別名〕，退去吧！因為經上記着說：當拜主你的神，單要事奉他。」</div>
+<div class="verse"><span class="verse-number">11</span>於是，魔鬼離了耶穌，有天使來伺候他。</div>
+<div class="verse"><span class="verse-number">12</span>耶穌聽見約翰下了監，就退到加利利去；</div>
+<div class="verse"><span class="verse-number">13</span>後又離開拿撒勒，往迦百農去，就住在那裏。那地方靠海，在西布倫和拿弗他利的邊界上。</div>
+<div class="verse"><span class="verse-number">14</span>這是要應驗先知以賽亞的話，</div>
+<div class="verse"><span class="verse-number">15</span>說：西布倫地，拿弗他利地，就是沿海的路，約但河外，外邦人的加利利地，</div>
+<div class="verse"><span class="verse-number">16</span>那坐在黑暗裏的百姓看見了大光；坐在死蔭之地的人有光發現照着他們。</div>
+<div class="verse"><span class="verse-number">17</span>從那時候，耶穌就傳起道來，說：「天國近了，你們應當悔改！」</div>
+<div class="verse"><span class="verse-number">18</span>耶穌在加利利海邊行走，看見弟兄二人，就是那稱呼彼得的西門和他兄弟安得烈，在海裏撒網；他們本是打魚的。</div>
+<div class="verse"><span class="verse-number">19</span>耶穌對他們說：「來跟從我，我要叫你們得人如得魚一樣。」</div>
+<div class="verse"><span class="verse-number">20</span>他們就立刻捨了網，跟從了他。</div>
+<div class="verse"><span class="verse-number">21</span>從那裏往前走，又看見弟兄二人，就是西庇太的兒子雅各和他兄弟約翰，同他們的父親西庇太在船上補網，耶穌就招呼他們，</div>
+<div class="verse"><span class="verse-number">22</span>他們立刻捨了船，別了父親，跟從了耶穌。</div>
+<div class="verse"><span class="verse-number">23</span>耶穌走遍加利利，在各會堂裏教訓人，傳天國的福音，醫治百姓各樣的病症。</div>
+<div class="verse"><span class="verse-number">24</span>他的名聲就傳遍了敘利亞。那裏的人把一切害病的，就是害各樣疾病、各樣疼痛的和被鬼附的、癲癇的、癱瘓的，都帶了來，耶穌就治好了他們。</div>
+<div class="verse"><span class="verse-number">25</span>當下，有許多人從加利利、低加波利、耶路撒冷、猶太、約但河外來跟着他。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第4章記述耶穌受洗後隨即被聖靈引到曠野，經歷四十天的禁食與試探，然後開始在加利利展開公開事工。首先敘述魔鬼三次試探耶穌：要祂將石頭變成餅以滿足肉身需要、跳下聖殿試探神的保護、以及以世界萬國的榮華換取敬拜，耶穌每次皆引用申命記的話語回應，最終勝過試探，魔鬼離去，天使前來服事祂。接著記述耶穌聽聞約翰下監後，離開拿撒勒遷往加利利的迦百農居住，應驗以賽亞書關於在西布倫、拿弗他利地有大光照耀的預言。然後耶穌開始傳講悔改的信息，並在加利利海邊呼召彼得、安德烈、雅各、約翰四位漁夫放下網和船跟從祂。最後記述耶穌走遍加利利各會堂，教導、傳福音、醫治各樣疾病，聲名遠播四方。本章確立耶穌事工的性質與呼召門徒的模式，為加利利廣大事工揭開序幕。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 以神的話語抵擋試探的能力</strong><br>耶穌面對每一個試探，都以「經上記着說」作回應，三次皆然。這告訴我們：勝過試探不靠意志力，而靠對神話語的認識與運用。魔鬼也引用聖經，但耶穌用更準確的理解加以回應。信徒若不熟悉聖經，便容易被扭曲的真理所欺騙。每日讀經、記憶經文，是屬靈爭戰最實際的裝備。<br><br>
+<strong>2. 立刻捨棄一切跟從基督的呼召</strong><br>彼得、安得烈、雅各、約翰聽見耶穌的呼召，「立刻」捨網、捨船、別了父親跟從祂。這個「立刻」令人震撼——沒有猶豫、沒有討價還價、沒有先安頓好家務。跟從基督意味著優先次序的根本重整，將耶穌置於工作、家庭、安全感之上。呼召是恩典，回應則是意志的選擇。<br><br>
+<strong>3. 耶穌的事工全面涵蓋人的需要</strong><br>耶穌走遍加利利，做了三件事：教訓人、傳天國福音、醫治疾病。祂的關懷不是片面的，而是整全的。今日教會的使命也當效法：既要傳講真理，也要關懷人的身心需要，讓天國的實際在生活各層面彰顯。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌卻回答說</strong>：「<strong>經上記着說</strong>：人活着，不是單靠食物，乃是靠神口裏所出的一切話。」（太4:4）</td>
+<td>你是否在生活的壓力與誘惑中，仍把神的話語放在第一位？就像手機每天需要充電才能運作，你有沒有每天透過讀經為靈命「充電」，讓神的話成為你抵擋試探的力量？</td>
+</tr>
+<tr>
+<td><strong>耶穌對他們說</strong>：「<strong>來跟從我</strong>，我要叫你們得人如得魚一樣。」（太4:19）</td>
+<td>耶穌呼召你跟從祂時，你心裡最難放下的是什麼？就像換跑道需要放棄熟悉的薪水和職位，你願意為了跟從基督，放下那些讓你感到安全的東西嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌走遍加利利</strong>，<strong>在各會堂裏教訓人</strong>，傳天國的福音，醫治百姓各樣的病症。（太4:23）</td>
+<td>你在生活中有沒有全面地關心身邊人的需要——不只靈魂，也包括身心？就像好醫生不只開藥方，還關心病人的情緒和生活狀況，你能學習耶穌整全地愛你的鄰舍嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

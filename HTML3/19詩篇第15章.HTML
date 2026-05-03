@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第15章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第15章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">誰能住在神聖山：品格生命的條件</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩）耶和華啊，誰能寄居你的帳幕？誰能住在你的聖山？</div>
+<div class="verse"><span class="verse-number">2</span>就是行為正直、作事公義、心裏說實話的人。</div>
+<div class="verse"><span class="verse-number">3</span>他不以舌頭讒謗人，不惡待朋友，也不隨夥毀謗鄰里。</div>
+<div class="verse"><span class="verse-number">4</span>他眼中藐視匪類，卻尊重那敬畏耶和華的人。他發了誓，雖然自己吃虧也不更改。</div>
+<div class="verse"><span class="verse-number">5</span>他不放債取利，不受賄賂以害無辜。行這些事的人必永不動搖。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第15篇是大衛所作，是一首「入殿問答詩」（Entrance Liturgy），可能用於朝聖者進入聖殿前的問答儀式。全篇以一個問題開始：「誰能寄居你的帳幕？誰能住在你的聖山？」然後以一系列品格與行為特質作為回答。
+
+      「寄居帳幕」與「住在聖山」在以色列敬拜傳統中代表與神最親密的同在，是每位朝聖者的最高渴望。然而本篇的回答不是以祭祀禮儀作標準，而是以道德品格與日常行為作為衡量。這一神學重心揭示：與神同住不只是禮儀上的接近，更是生命品格上的配合。
+
+      本篇所列舉的品格涵蓋言語（不讒謗、不毀謗）、關係（不惡待朋友）、價值觀（藐視匪類、尊重敬畏神的人）、承諾（發誓不更改）、財務（不取利、不受賄賂）等各個生活層面。全篇以「行這些事的人必永不動搖」收尾，揭示品格生命帶來的屬靈穩固，是任何環境變動都無法撼動的根基。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 與神同住要求生命品格與行為的真實轉化</strong><br>本篇以「行為正直、作事公義、心裏說實話」概括了能住在神聖山之人的核心特質。這三個面向涵蓋了外在行為、具體行動與內心態度，揭示神所要求的不只是禮儀上的潔淨，更是整個生命的更新。真正與神親近不能只停留在敬拜的形式，而必須延伸到日常生活的每一個層面。信徒的屬靈操練，應當是讓神的聖潔品格在生活的細節中逐漸成形，這正是「與神同住」最真實的意義。<br><br>
+<strong>2. 言語的誠實與潔淨是品格生命的試金石</strong><br>「不以舌頭讒謗人，不惡待朋友，也不隨夥毀謗鄰里」——言語的使用在本篇佔有重要位置。言語最能反映一個人內心的真實狀態，也最容易在無意中傷害他人而不自知。「隨夥毀謗」更指出一種社交壓力下的群體性惡意，即使不是主動發起，參與其中也是罪。信徒在言語上的操練——拒絕閒言閒語、拒絕隨聲附和的批評，是最能彰顯品格更新的日常領域。<br><br>
+<strong>3. 誠信的承諾即使自己吃虧也堅守是屬靈剛強的表現</strong><br>「他發了誓，雖然自己吃虧也不更改。」（第4節）這句話道出了誠信最嚴格的考驗：當履行承諾對自己不利時，仍然堅守。在現代社會中，當合約有漏洞、當沒人知道時，許多人選擇毀諾。然而神的標準是：你的話就是你的話，不因代價改變。這種誠信不只是人際關係的基礎，更是靈魂與神之約信實的延伸。信徒對人的誠信，映照出他們對神的信實程度。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>就是行為正直</strong>、<strong>作事公義</strong>、心裏說實話的人。（詩15:2）</td>
+<td>就像一個人的真實個性在壓力下才會顯露，而非在順境中，你的行為正直、公義與誠實是否只在有人看見時才出現，還是已經成為你內外一致的生命習慣，即使在沒有人注意的私下場合也一樣？</td>
+</tr>
+<tr>
+<td><strong>他不以舌頭讒謗人</strong>，<strong>不惡待朋友</strong>，也不隨夥毀謗鄰里。（詩15:3）</td>
+<td>就像辦公室的閒聊很容易在不知不覺中變成對某人的批評，而我們常以「只是說說而已」自我合理化，你是否曾認真檢視自己的言語：有多少時候是在隨夥毀謗，卻以「分享」或「倒苦水」包裝？</td>
+</tr>
+<tr>
+<td><strong>他發了誓</strong>，<strong>雖然自己吃虧也不</strong>更改。（詩15:4）</td>
+<td>就像簽下合約後才發現條件對自己不利，但仍選擇履行而非尋找法律漏洞，你上次因為誠信而承受代價是什麼時候？那次的抉擇使你更像住在神聖山上的人，還是讓你選擇了妥協？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

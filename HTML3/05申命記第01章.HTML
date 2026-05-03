@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">摩西回顧曠野漂流的教訓</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以下所記的是摩西在約但河東的曠野、疏弗對面的亞拉巴，就是巴蘭、陀弗、拉班、哈洗錄、底撒哈中間向以色列眾人所說的話。</div>
+<div class="verse"><span class="verse-number">2</span>（從何烈山經過西珥山到加低斯巴尼亞有十一天的路程。）</div>
+<div class="verse"><span class="verse-number">3</span>出埃及第四十年十一月初一日，摩西照耶和華藉着他所吩咐以色列人的話都曉諭他們。</div>
+<div class="verse"><span class="verse-number">4</span>那時，他已經擊殺了住希實本的亞摩利王西宏和住以得來、亞斯他錄的巴珊王噩。</div>
+<div class="verse"><span class="verse-number">5</span>摩西在約但河東的摩押地講律法說：</div>
+<div class="verse"><span class="verse-number">6</span>「耶和華我們的神在何烈山曉諭我們說：你們在這山上住的日子彀了；</div>
+<div class="verse"><span class="verse-number">7</span>要起行轉到亞摩利人的山地和靠近這山地的各處，就是亞拉巴、山地、高原、南地，沿海一帶迦南人的地，並利巴嫩山，又到伯拉大河。</div>
+<div class="verse"><span class="verse-number">8</span>如今我將這地擺在你們面前；你們要進去得這地，就是耶和華向你們列祖亞伯拉罕、以撒、雅各起誓應許賜給他們和他們後裔為業之地。」</div>
+<div class="verse"><span class="verse-number">9</span>「那時，我對你們說：『管理你們的重任，我獨自擔當不起。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華你們的神使你們多起來。看哪，你們今日像天上的星那樣多。</div>
+<div class="verse"><span class="verse-number">11</span>惟願耶和華你們列祖的神使你們比如今更多千倍，照他所應許你們的話賜福與你們。</div>
+<div class="verse"><span class="verse-number">12</span>但你們的麻煩，和管理你們的重任，並你們的爭訟，我獨自一人怎能擔當得起呢？</div>
+<div class="verse"><span class="verse-number">13</span>你們要按着各支派選舉有智慧、有見識、為眾人所認識的，我立他們為你們的首領。』</div>
+<div class="verse"><span class="verse-number">14</span>你們回答我說：『照你所說的行了為妙。』</div>
+<div class="verse"><span class="verse-number">15</span>我便將你們各支派的首領，有智慧、為眾人所認識的，照你們的支派，立他們為官長、千夫長、百夫長、五十夫長、十夫長，管理你們。</div>
+<div class="verse"><span class="verse-number">16</span>「當時，我囑咐你們的審判官說：『你們聽訟，無論是弟兄彼此爭訟，是與同居的外人爭訟，都要按公義判斷。</div>
+<div class="verse"><span class="verse-number">17</span>審判的時候，不可看人的外貌；聽訟不可分貴賤，不可懼怕人，因為審判是屬乎神的。若有難斷的案件，可以呈到我這裏，我就判斷。』</div>
+<div class="verse"><span class="verse-number">18</span>那時，我將你們所當行的事都吩咐你們了。」</div>
+<div class="verse"><span class="verse-number">19</span>「我們照着耶和華我們神所吩咐的從何烈山起行，經過你們所看見那大而可怕的曠野，往亞摩利人的山地去，到了加低斯巴尼亞。</div>
+<div class="verse"><span class="verse-number">20</span>我對你們說：『你們已經到了耶和華我們神所賜給我們的亞摩利人之山地。</div>
+<div class="verse"><span class="verse-number">21</span>看哪，耶和華你的神已將那地擺在你面前，你要照耶和華你列祖的神所說的上去得那地為業；不要懼怕，也不要驚惶。』</div>
+<div class="verse"><span class="verse-number">22</span>你們都就近我來說：『我們要先打發人去，為我們窺探那地，將我們上去該走何道，必進何城，都回報我們。』</div>
+<div class="verse"><span class="verse-number">23</span>這話我以為美，就從你們中間選了十二個人，每支派一人。</div>
+<div class="verse"><span class="verse-number">24</span>於是他們起身上山地去，到以實各谷，窺探那地。</div>
+<div class="verse"><span class="verse-number">25</span>他們手裏拿着那地的果子下來，到我們那裏，回報說：『耶和華我們的神所賜給我們的是美地。』</div>
+<div class="verse"><span class="verse-number">26</span>「你們卻不肯上去，竟違背了耶和華你們神的命令，</div>
+<div class="verse"><span class="verse-number">27</span>在帳棚內發怨言說：『耶和華因為恨我們，所以將我們從埃及地領出來，要交在亞摩利人手中，除滅我們。</div>
+<div class="verse"><span class="verse-number">28</span>我們上那裏去呢？我們的弟兄使我們的心消化，說那地的民比我們又大又高，城邑又廣大又堅固，高得頂天，並且我們在那裏看見亞衲族的人。』</div>
+<div class="verse"><span class="verse-number">29</span>我就對你們說：『不要驚恐，也不要怕他們。</div>
+<div class="verse"><span class="verse-number">30</span>在你們前面行的耶和華你們的神必為你們爭戰，正如他在埃及和曠野，在你們眼前所行的一樣。</div>
+<div class="verse"><span class="verse-number">31</span>你們在曠野所行的路上，也曾見耶和華你們的神撫養你們，如同人撫養兒子一般，直等你們來到這地方。』</div>
+<div class="verse"><span class="verse-number">32</span>你們在這事上卻不信耶和華你們的神。</div>
+<div class="verse"><span class="verse-number">33</span>他在路上，在你們前面行，為你們找安營的地方；夜間在火柱裏，日間在雲柱裏，指示你們所當行的路。」</div>
+<div class="verse"><span class="verse-number">34</span>「耶和華聽見你們這話，就發怒，起誓說：</div>
+<div class="verse"><span class="verse-number">35</span>『這惡世代的人，連一個也不得見我起誓應許賜給你們列祖的美地；</div>
+<div class="verse"><span class="verse-number">36</span>惟有耶孚尼的兒子迦勒必得看見，並且我要將他所踏過的地賜給他和他的子孫，因為他專心跟從我。』</div>
+<div class="verse"><span class="verse-number">37</span>耶和華為你們的緣故也向我發怒，說：『你必不得進入那地。</div>
+<div class="verse"><span class="verse-number">38</span>伺候你、嫩的兒子約書亞，他必得進入那地；你要勉勵他，因為他要使以色列人承受那地為業。</div>
+<div class="verse"><span class="verse-number">39</span>並且你們的婦人孩子，就是你們所說、必被擄掠的，和今日不知善惡的兒女，必進入那地。我要將那地賜給他們，他們必得為業。</div>
+<div class="verse"><span class="verse-number">40</span>至於你們，要轉回，從紅海的路往曠野去。』</div>
+<div class="verse"><span class="verse-number">41</span>「那時，你們回答我說：『我們得罪了耶和華，情願照耶和華我們神一切所吩咐的上去爭戰。』於是你們各人帶着兵器，爭先上山地去了。</div>
+<div class="verse"><span class="verse-number">42</span>耶和華吩咐我說：『你對他們說：不要上去，也不要爭戰；因我不在你們中間，恐怕你們被仇敵殺敗了。』</div>
+<div class="verse"><span class="verse-number">43</span>我就告訴了你們，你們卻不聽從，竟違背耶和華的命令，擅自上山地去了。</div>
+<div class="verse"><span class="verse-number">44</span>住那山地的亞摩利人就出來攻擊你們，追趕你們，如蜂擁一般，在西珥殺退你們，直到何珥瑪。</div>
+<div class="verse"><span class="verse-number">45</span>你們便回來，在耶和華面前哭號；耶和華卻不聽你們的聲音，也不向你們側耳。</div>
+<div class="verse"><span class="verse-number">46</span>於是你們在加低斯住了許多日子。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記是摩西在以色列人進入迦南地之前，於摩押平原向百姓所作的最後一系列講道記錄。第一章是整卷書的開篇，摩西以歷史回顧的方式，帶領百姓重溫出埃及後四十年的曠野旅程。本章的背景設定在出埃及後第四十年的十一月，以色列民族正站在約旦河東岸，準備渡河進入應許之地。摩西首先追述神在何烈山（西乃山）的吩咐，命令百姓起行前往迦南；其次記述摩西設立各級首領分擔管治重任的史實；最後詳述加低斯巴尼亞的探子事件，百姓因不信神的應許而拒絕進入迦南，導致神宣判那一代人在曠野漂流四十年，不得進入應許之地。本章在全書中佔有關鍵地位，它不僅是歷史的陳述，更是摩西向新一代以色列人發出的嚴肅警告，呼召他們以前人的失敗為鑒，以信心和順從來繼承神的應許。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的應許必然成就，信心是承受祝福的關鍵</strong><br>神早在列祖時代便起誓要將迦南地賜給以色列人，到了摩西時代，神仍信實地重申這個應許（申1:8）。然而，以色列百姓在加低斯巴尼亞聽見探子的惡報後，選擇了懼怕而非信靠，最終以不信的代價喪失了進入應許之地的機會。這段歷史提醒我們：神的應許從不落空，但我們能否承受祝福，取決於我們是否以信心回應。懼怕和懷疑是信心的最大敵人，也是攔阻我們進入神預備之地的主要障礙。<br><br>
+<strong>2. 分權共治反映神賜智慧的領導原則</strong><br>面對龐大的民眾，摩西在神的引領下建立分層管理制度，選立有智慧、有見識的人擔任各級首領（申1:13-15）。這不僅是行政智慧，更是屬靈原則的體現：神所設立的領袖應具備品格與能力，並以公義待人，不可徇私枉法（申1:17）。今日教會和家庭的治理同樣需要這種按神旨意建立的健全秩序，以確保群體在公義與愛中成長。<br><br>
+<strong>3. 歷史回顧是屬靈更新的起點</strong><br>摩西並非單純回憶往事，而是透過歷史的剖析，幫助新一代百姓認識自己從何而來、神如何帶領，並從先人的失敗中學習教訓。這種「記念」的功夫在信仰生命中至關重要：當我們回顧神過去的作為，便能在面對新挑戰時重燃信心，不重蹈覆轍，以順服代替悖逆，以信靠代替懼怕。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>如今我將這地擺在</strong><strong>你們面前</strong>；你們要進去得這地，就是耶和華向你們列祖亞伯拉罕、以撒、雅各起誓應許賜給他們和他們後裔為業之地。」（申1:8）</td>
+<td>神的應許就像已預定好的目的地，就像GPS已設定好終點，但你願意踏出信心的步伐前行嗎？你生命中是否有神的應許因為懼怕而遲遲未敢領受？</td>
+</tr>
+<tr>
+<td>「<strong>審判的時候</strong>，<strong>不可看人的外貌</strong>；聽訟不可分貴賤，不可懼怕人，因為審判是屬乎神的。」（申1:17）</td>
+<td>公義的判斷需要勇氣，就像裁判不能因觀眾喝采而改變判決，你在生活中面對壓力時，能否堅持以神的標準而非人的眼光來行事為人？</td>
+</tr>
+<tr>
+<td>「<strong>你們在這事上卻不</strong><strong>信耶和華你們的神</strong>。他在路上，在你們前面行，為你們找安營的地方；夜間在火柱裏，日間在雲柱裏，指示你們所當行的路。」（申1:32-33）</td>
+<td>神從未停止引導，就像網路訊號一直存在，只是我們有時忘了連線，你是否在困難中忽略了神早已為你預備的指引，轉而倚靠自己的判斷而陷入不信？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

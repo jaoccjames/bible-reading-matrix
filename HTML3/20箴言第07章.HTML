@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">愚昧少年的警示：誘惑之路通往死亡</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我兒，你要遵守我的言語，將我的命令存記在心。</div>
+<div class="verse"><span class="verse-number">2</span>遵守我的命令就得存活；保守我的法則〔或作：指教〕，好像保守眼中的瞳人，</div>
+<div class="verse"><span class="verse-number">3</span>繫在你指頭上，刻在你心版上。</div>
+<div class="verse"><span class="verse-number">4</span>對智慧說：你是我的姐妹，稱呼聰明為你的親人，</div>
+<div class="verse"><span class="verse-number">5</span>她就保你遠離淫婦，遠離說諂媚話的外女。</div>
+<div class="verse"><span class="verse-number">6</span>我曾在我房屋的窗戶內，從我窗櫺之間往外觀看：</div>
+<div class="verse"><span class="verse-number">7</span>見愚蒙人內，少年人中，分明有一個無知的少年人，</div>
+<div class="verse"><span class="verse-number">8</span>從街上經過，走近淫婦的巷口，直往通她家的路去，</div>
+<div class="verse"><span class="verse-number">9</span>在黃昏，或晚上，或半夜，或黑暗之中。</div>
+<div class="verse"><span class="verse-number">10</span>看哪，有一個婦人來迎接他，是妓女的打扮，有詭詐的心思。</div>
+<div class="verse"><span class="verse-number">11</span>這婦人喧嚷，不守約束，在家裏停不住腳，</div>
+<div class="verse"><span class="verse-number">12</span>有時在街市上，有時在寬闊處，或在各巷口蹲伏，</div>
+<div class="verse"><span class="verse-number">13</span>拉住那少年人，與他親嘴，臉無羞恥對他說：</div>
+<div class="verse"><span class="verse-number">14</span>平安祭在我這裏，今日纔還了我所許的願。</div>
+<div class="verse"><span class="verse-number">15</span>因此，我出來迎接你，懇切求見你的面，恰巧遇見了你。</div>
+<div class="verse"><span class="verse-number">16</span>我已經用繡花毯子和埃及線織的花紋布鋪了我的床。</div>
+<div class="verse"><span class="verse-number">17</span>我又用沒藥、沉香、桂皮薰了我的榻。</div>
+<div class="verse"><span class="verse-number">18</span>你來，我們可以飽享愛情，直到早晨；我們可以彼此親愛歡樂。</div>
+<div class="verse"><span class="verse-number">19</span>因為我丈夫不在家，出門行遠路；</div>
+<div class="verse"><span class="verse-number">20</span>他手拿銀囊，必到月望纔回家。</div>
+<div class="verse"><span class="verse-number">21</span>淫婦用許多巧言誘他隨從，用諂媚的嘴逼他同行。</div>
+<div class="verse"><span class="verse-number">22</span>少年人立刻跟隨她，好像牛往宰殺之地，又像愚昧人帶鎖鍊去受刑罰，</div>
+<div class="verse"><span class="verse-number">23</span>直等箭穿他的肝，如同雀鳥急入網羅，卻不知是自喪己命。</div>
+<div class="verse"><span class="verse-number">24</span>眾子啊，現在要聽從我，留心聽我口中的話。</div>
+<div class="verse"><span class="verse-number">25</span>你的心不可偏向淫婦的道，不要入她的迷途。</div>
+<div class="verse"><span class="verse-number">26</span>因為，被她傷害仆倒的不少；被她殺戮的而且甚多。</div>
+<div class="verse"><span class="verse-number">27</span>她的家是在陰間之路，下到死亡之宮。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第七章是箴言書前九章中最具戲劇性的一章，以父親在窗口旁觀察的視角，描述一個無知少年如何一步步走入淫婦的陷阱。全章以敘事詩的形式呈現，生動細膩，令人如臨其境。在古以色列社會背景中，巷口與街市是公共生活的中心，也是危險滋生之地；黃昏與黑暗的時刻，象徵道德判斷力的薄弱。淫婦假借宗教儀式（平安祭）和感情話語，包裝她的誘惑，這在當時是實際存在的社會現象。本章神學核心是：誘惑往往借助「合理化」的外衣進入人心，而無知（缺乏神的智慧）使人無從辨識危險。父親的叮囑（1-5節）在故事開始前已說明對策：讓智慧像親姐妹一樣親近，才能在誘惑面前有辨別力。結語（24-27節）清楚宣告，進入誘惑之路的終點是死亡，而非享樂。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 讓智慧成為最親密的同伴才能抵擋誘惑</strong><br>第4節「對智慧說：你是我的姐妹」，是一個深刻的屬靈邀請：不是偶爾想起智慧，而是讓它成為生命中最親密的關係。當智慧真正內化於生命，人在面對誘惑的第一時間就能辨別並拒絕，而非等到已被「巧言誘去」才後悔。親近神的話語、建立敬虔的生活習慣，正是讓智慧成為「姐妹」的具體途徑。<br><br>
+<strong>2. 誘惑總是在人最脆弱的時刻、以最迷人的方式出現</strong><br>本章的少年在「黃昏黑暗中」走近危險地帶，正說明誘惑善於把握人疏於防備的時刻。淫婦的話語充滿甜蜜、宗教外衣與緊迫感，正是誘惑的典型特徵——讓人在短時間內忘卻長遠代價。信徒需要認識自身在何種環境或情緒狀態下最脆弱，並預先做好屬靈的防護。<br><br>
+<strong>3. 罪惡的終點是死亡，表面的歡樂是欺騙</strong><br>「她的家是在陰間之路，下到死亡之宮」是本章最嚴肅的宣告。誘惑所呈現的美麗與歡樂，是一場精心布置的騙局，其終點是靈性、關係與人生的死亡。信徒要學習用「終點思維」來評估每一個抉擇：這條路的盡頭通向哪裏？而不只是看眼前的吸引力。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>對智慧說</strong>：<strong>你是我的姐妹</strong>，稱呼聰明為你的親人，」（箴7:4）</td>
+<td>就像人與親密的朋友出行時，朋友的意見會自然影響決定，你與神的話語之間的關係，是「偶爾想起」還是「形影不離」？你用什麼具體方式讓智慧與你更親近？</td>
+</tr>
+<tr>
+<td>「<strong>少年人立刻跟隨她</strong>，<strong>好像牛往宰殺之地</strong>，……卻不知是自喪己命。」（箴7:22-23）</td>
+<td>就像魚兒看見魚鉤上的餌，只看到食物而看不見鉤，你在生活中有哪些「看起來沒什麼大不了」的習慣或選擇，實際上正在慢慢帶你偏離神的心意？</td>
+</tr>
+<tr>
+<td>「<strong>她的家是在陰間之</strong>路，<strong>下到死亡之宮</strong>。」（箴7:27）</td>
+<td>就像某些路看起來風景優美，卻是通往懸崖的死路，你是否曾用「終點思維」評估過某個正在做或想做的決定？若十年後回頭看，你希望當時做了什麼選擇？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

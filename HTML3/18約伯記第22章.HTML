@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第22章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第22章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以利法第三次發言：你的罪孽甚大</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>提幔人以利法回答說：</div>
+<div class="verse"><span class="verse-number">2</span>人豈能使神有益呢？智慧人但能有益於己。</div>
+<div class="verse"><span class="verse-number">3</span>你為人公義，豈叫全能者喜悅呢？你行為完全，豈能使他得利呢？</div>
+<div class="verse"><span class="verse-number">4</span>豈是因你敬畏他就責備你、審判你嗎？</div>
+<div class="verse"><span class="verse-number">5</span>你的罪惡豈不是大嗎？你的罪孽也沒有窮盡；</div>
+<div class="verse"><span class="verse-number">6</span>因你無故強取弟兄的物為當頭，剝去貧寒人的衣服。</div>
+<div class="verse"><span class="verse-number">7</span>困乏的人，你沒有給他水喝；飢餓的人，你沒有給他食物。</div>
+<div class="verse"><span class="verse-number">8</span>有能力的人就得地土；尊貴的人也住在其中。</div>
+<div class="verse"><span class="verse-number">9</span>你打發寡婦空手回去，折斷孤兒的膀臂。</div>
+<div class="verse"><span class="verse-number">10</span>因此，有網羅環繞你，有恐懼忽然使你驚惶；</div>
+<div class="verse"><span class="verse-number">11</span>或有黑暗蒙蔽你，並有洪水淹沒你。</div>
+<div class="verse"><span class="verse-number">12</span>神豈不是在高天嗎？你看星宿何其高呢！</div>
+<div class="verse"><span class="verse-number">13</span>你說：神知道甚麼？他豈能看透幽暗施行審判呢？</div>
+<div class="verse"><span class="verse-number">14</span>密雲將他遮蓋，使他不能看見；他周遊穹蒼。</div>
+<div class="verse"><span class="verse-number">15</span>你要依從上古的道嗎？這道是惡人所行的。</div>
+<div class="verse"><span class="verse-number">16</span>他們未到死期，忽然除滅；根基毀壞，好像被江河沖去。</div>
+<div class="verse"><span class="verse-number">17</span>他們向神說：離開我們吧！又說：全能者能把我們怎麼樣呢？</div>
+<div class="verse"><span class="verse-number">18</span>哪知神以美物充滿他們的房屋；但惡人所謀定的離我好遠。</div>
+<div class="verse"><span class="verse-number">19</span>義人看見他們的結局就歡喜；無辜的人嗤笑他們，</div>
+<div class="verse"><span class="verse-number">20</span>說：那起來攻擊我們的果然被剪除，其餘的都被火燒滅。</div>
+<div class="verse"><span class="verse-number">21</span>你要認識神，就得平安；福氣也必臨到你。</div>
+<div class="verse"><span class="verse-number">22</span>你當領受他口中的教訓，將他的言語存在心裏。</div>
+<div class="verse"><span class="verse-number">23</span>你若歸向全能者，從你帳棚中遠除不義，就必得建立。</div>
+<div class="verse"><span class="verse-number">24</span>要將你的珍寶丟在塵土裏，將俄斐的黃金丟在溪河石頭之間；</div>
+<div class="verse"><span class="verse-number">25</span>全能者就必為你的珍寶，作你的寶銀。</div>
+<div class="verse"><span class="verse-number">26</span>你就要以全能者為喜樂，向神仰起臉來。</div>
+<div class="verse"><span class="verse-number">27</span>你要禱告他，他就聽你；你也要還你的願。</div>
+<div class="verse"><span class="verse-number">28</span>你定意要作何事，必然給你成就；亮光也必照耀你的路。</div>
+<div class="verse"><span class="verse-number">29</span>人使你降卑，你仍可說：必得高升；謙卑的人，神必然拯救。</div>
+<div class="verse"><span class="verse-number">30</span>人非無辜，神且要搭救他；他因你手中清潔，必蒙拯救。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第22章是以利法的第三次也是最後一次發言，他棄置了所有的溫和，直接列舉約伯具體的罪孽——剝奪弟兄的衣服、不給飢餓者水喝、向孤兒空手回去、攻擊寡婦。這些指控是捏造的，沒有事實根據，是以利法在找不到有力論點時的最後一擊。他認為約伯之所以受苦，必定是因為有這些具體的罪。他仍然以應許作結：若約伯歸向全能者、離棄罪孽，必得復興、也必蒙神垂聽。本章代表了三友神學的最低點——在找不到有力論點時，以捏造的罪名來攻擊受苦者。這也是為什麼神在最後說以利法等人說話不對，需要約伯為他們代禱。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在神學辯論中找不到答案，可能導致對受苦者的誣陷</strong><br>以利法的指控沒有事實根據，卻說得像真的一樣。這是一個警示：當我們的因果神學無法解釋眼前的苦難，我們可能會開始「創造」原因。這種以未經證實的罪名定罪受苦者，是最嚴重的屬靈虐待之一。<br><br>
+<strong>2. 歸向神的呼召是真實的，但不能建立在虛假的指控上</strong><br>以利法最後的勸告——「你當與他和好，就得平安」——從神學上是對的，但他建立這呼召的基礎（虛假的罪名）是謊言。真實的呼召需要真實的根基；用謊言來引人悔改，不是事奉，而是傷害。<br><br>
+<strong>3. 屬靈的誠信要求我們在不了解時說「我不知道」</strong><br>若以利法誠實地說「我不知道你為何受苦」，他就沒有辦法說這麼多話了。然而他選擇了捏造答案，來維持「神學的完整性」。屬靈的誠信有時要求我們承認自己不知道，而不是製造虛假的解釋。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你的罪孽甚大</strong>，<strong>你的罪孽也沒有窮</strong>盡。（伯22:5）</td>
+<td>就像沒有證據就給人定罪，以利法的空口指控是對受苦者最殘忍的傷害。你有沒有曾在不了解情況的前提下，就對某人的苦難找到了「原因」？後來你知道真相後有什麼感受？</td>
+</tr>
+<tr>
+<td><strong>你若歸向全能者</strong>，<strong>你就得建立</strong>，你把不義遠離你的帳棚，就得復興。（伯22:23）</td>
+<td>就像在沒有診斷出正確病因的情況下就開了處方，歸向神的呼召若建立在虛假前提上，可能讓受苦者更困惑和受傷。你如何確保你對他人的屬靈勸勉建立在真實的了解上？</td>
+</tr>
+<tr>
+<td><strong>你求告他</strong>，<strong>他就應允你</strong>；你所許的願，你也可以還清。（伯22:27）</td>
+<td>就像保證行得通的解決方案，約伯的朋友對神的應許確信無疑，但他們是否真正認識神，還是只認識他們自己建構的神學體系？你對神的認識，是建立在個人真實的相遇，還是繼承而來的神學框架？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

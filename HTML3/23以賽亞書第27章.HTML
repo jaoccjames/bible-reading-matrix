@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第27章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第27章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">我耶和華是看守葡萄園的：神悉心守護祂的百姓</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>到那日，耶和華必用他剛硬有力的大刀刑罰鱷魚，就是那快行的蛇，刑罰鱷魚，就是那曲行的蛇，並殺海中的大魚。</div>
+<div class="verse"><span class="verse-number">2</span>當那日，有出酒的葡萄園，你們要指這園唱歌說：</div>
+<div class="verse"><span class="verse-number">3</span>我耶和華是看守葡萄園的；我必時刻澆灌，晝夜看守，免得有人損害。</div>
+<div class="verse"><span class="verse-number">4</span>我心中不存忿怒。惟願荊棘蒺藜與我交戰，我就勇往直前，把他一同焚燒。</div>
+<div class="verse"><span class="verse-number">5</span>不然，讓他持住我的能力，使他與我和好，願他與我和好。</div>
+<div class="verse"><span class="verse-number">6</span>將來雅各要扎根，以色列要發芽開花；他們的果實必充滿世界。</div>
+<div class="verse"><span class="verse-number">7</span>主擊打他們，豈像擊打那些擊打他們的人嗎？他們被殺戮，豈像被他們所殺戮的嗎？</div>
+<div class="verse"><span class="verse-number">8</span>你打發他們去，是相機宜與他們相爭；颳東風的日子，就用暴風將他們逐去。</div>
+<div class="verse"><span class="verse-number">9</span>所以，雅各的罪孽得赦免，他的罪過得除掉的果效，全在乎此：就是他叫祭壇的石頭變為打碎的灰石，以致木偶和日像不再立起。</div>
+<div class="verse"><span class="verse-number">10</span>因為堅固城變為淒涼，成了撇下離棄的居所，像曠野一樣；牛犢必在那裏喫草，在那裏躺臥，並喫盡其中的樹枝。</div>
+<div class="verse"><span class="verse-number">11</span>枝條枯乾，必被折斷；婦女要來點火燒着。因為這百姓蒙昧無知，所以，創造他們的必不憐恤他們；造成他們的也不施恩與他們。</div>
+<div class="verse"><span class="verse-number">12</span>以色列人哪，到那日，耶和華必從大河，直到埃及小河，將你們一一的收集，如同人打樹拾果一樣。</div>
+<div class="verse"><span class="verse-number">13</span>當那日，必大發角聲，在亞述地將要滅亡的，並在埃及地被趕散的，都要來，他們就在耶路撒冷聖山上敬拜耶和華。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第二十七章是「以賽亞的小啟示錄」（24-27章）的終章，以神勝過混沌之惡（「鱷魚」和「海中的大魚」，1節）的末世勝利開篇，然後轉到本章最核心的圖像——神的「葡萄園之歌」（2-6節）。這個「葡萄園之歌」與第五章的「葡萄園哀歌」形成鮮明對比：第五章的葡萄園因結出野葡萄而被神撤去保護，但這裡的葡萄園卻因神的「時刻澆灌、晝夜看守」而將「果實充滿世界」（6節）。神宣告「我心中不存忿怒」（4節），表示忿怒的季節已過，神主動的保守和愛護重新成為主調。第3節「我必時刻澆灌，晝夜看守」，是神守護以色列最溫柔、最主動的宣告，呼應詩篇121:4「保護以色列的，也不打盹，也不睡覺」。本章以被趕散的以色列人從四方歸回、在耶路撒冷聖山敬拜神的末世圖景作結（12-13節），與以賽亞書末世歸回的主題完美呼應。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「我耶和華是看守葡萄園的」：神從審判轉為主動守護</strong><br>第3節是第五章葡萄園哀歌的神學反轉。第五章神因葡萄園結野葡萄而「撤去籬笆」，第二十七章神卻宣告「我必時刻澆灌，晝夜看守」——從撤去保護到主動守衛，這個轉變的根據是神的憐恤和末世的更新。對信徒而言，這是一個深刻的盼望：即使我們曾在罪中使神失望，在悔改和歸回之後，神不是遠離，而是更主動地親近和守護。<br><br>
+<strong>2. 「我心中不存忿怒」：神的忿怒是有期限的，和好是祂的渴望</strong><br>第4-5節「我心中不存忿怒……讓他持住我的能力，使他與我和好，願他與我和好」——神主動表達祂和好的渴望，甚至說「讓他持住我的能力」，意即接受我的拯救。神的本性不是憤怒，而是愛；祂的忿怒服務於聖潔和公義，但祂的渴望是和好而非永久隔絕。這讓信徒在面對神的管教後，不必在罪疚中停留太久，而是大膽回轉，因為「願他與我和好」是神主動說出的邀請。<br><br>
+<strong>3. 「果實必充滿世界」：神的葡萄園得到看守，必結出豐盛的果實</strong><br>第6節「將來雅各要扎根，以色列要發芽開花；他們的果實必充滿世界」，從第3節神的守護，到第6節豐盛的果實——這是屬靈生命的公式：神的澆灌和看守，帶來的是結果子而非枯乾。對信徒而言，靈命的果子不是自我努力的成果，而是神主動看守和澆灌的結果；信徒的責任是保持在葡萄園中、不躲避神的照料，其餘的由神來成就。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>我耶和華是看守葡</strong><strong>萄園的</strong>；我必時刻澆灌，晝夜看守，免得有人損害。」（賽27:3）</td>
+<td>就像一個細心的園丁，不只在晴天澆水，也在夜間和雨後仔細照看每一株植物，神對你的看守是持續的、個人的，不因你的軟弱或失敗而減少，你在信仰生命中，是否感受到神「時刻澆灌、晝夜看守」的臨在？什麼讓你有時感覺這個看守不存在？</td>
+</tr>
+<tr>
+<td>「<strong>我心中不存忿怒</strong>……<strong>願他與我和好</strong>。」（賽27:4-5）</td>
+<td>就像一位父親在孩子犯錯後，雖然心痛和管教是真實的，但他心裡最渴望的仍是與孩子和好，而非永遠的隔絕，你是否有過「以為神還在生氣、不敢靠近」的時刻？這節經文如何改變你對神管教之後的態度？</td>
+</tr>
+<tr>
+<td>「<strong>將來雅各要扎根</strong>，<strong>以色列要發芽開花</strong>；他們的果實必充滿世界。」（賽27:6）</td>
+<td>就像一棵根扎得深的樹，即使枝條曾被修剪，仍能在下一個季節長出更豐盛的果子，你目前的靈命像是扎根深的樹，還是容易被風吹動的嫩苗？你如何更深地「扎根」在神的話語和信仰群體中，讓「果實充滿世界」成為可能？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

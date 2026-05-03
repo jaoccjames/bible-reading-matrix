@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多前書第15章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多前書第15章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">復活的核心信仰與末世的得勝</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>弟兄們，我如今把先前所傳給你們的福音告訴你們知道；這福音你們也領受了，又靠着站立得住，</div>
+<div class="verse"><span class="verse-number">2</span>並且你們若不是徒然相信，能以持守我所傳給你們的，就必因這福音得救。</div>
+<div class="verse"><span class="verse-number">3</span>我當日所領受又傳給你們的：第一，就是基督照聖經所說，為我們的罪死了，</div>
+<div class="verse"><span class="verse-number">4</span>而且埋葬了；又照聖經所說，第三天復活了，</div>
+<div class="verse"><span class="verse-number">5</span>並且顯給磯法看，然後顯給十二使徒看；</div>
+<div class="verse"><span class="verse-number">6</span>後來一時顯給五百多弟兄看，其中一大半到如今還在，卻也有已經睡了的。</div>
+<div class="verse"><span class="verse-number">7</span>以後顯給雅各看，再顯給眾使徒看，</div>
+<div class="verse"><span class="verse-number">8</span>末了也顯給我看；我如同未到產期而生的人一般。</div>
+<div class="verse"><span class="verse-number">9</span>我原是使徒中最小的，不配稱為使徒，因為我從前逼迫神的教會。</div>
+<div class="verse"><span class="verse-number">10</span>然而，我今日成了何等人，是蒙神的恩纔成的，並且他所賜我的恩不是徒然的。我比眾使徒格外勞苦；這原不是我，乃是神的恩與我同在。</div>
+<div class="verse"><span class="verse-number">11</span>不拘是我，是眾使徒，我們如此傳，你們也如此信了。</div>
+<div class="verse"><span class="verse-number">12</span>既傳基督是從死裏復活了，怎麼在你們中間有人說沒有死人復活的事呢？</div>
+<div class="verse"><span class="verse-number">13</span>若沒有死人復活的事，基督也就沒有復活了。</div>
+<div class="verse"><span class="verse-number">14</span>若基督沒有復活，我們所傳的便是枉然，你們所信的也是枉然；</div>
+<div class="verse"><span class="verse-number">15</span>並且明顯我們是為神妄作見證的，因我們見證神是叫基督復活了。若死人真不復活，神也就沒有叫基督復活了。</div>
+<div class="verse"><span class="verse-number">16</span>因為死人若不復活，基督也就沒有復活了。</div>
+<div class="verse"><span class="verse-number">17</span>基督若沒有復活，你們的信便是徒然，你們仍在罪裏。</div>
+<div class="verse"><span class="verse-number">18</span>就是在基督裏睡了的人也滅亡了。</div>
+<div class="verse"><span class="verse-number">19</span>我們若靠基督，只在今生有指望，就算比眾人更可憐。</div>
+<div class="verse"><span class="verse-number">20</span>但基督已經從死裏復活，成為睡了之人初熟的果子。</div>
+<div class="verse"><span class="verse-number">21</span>死既是因一人而來，死人復活也是因一人而來。</div>
+<div class="verse"><span class="verse-number">22</span>在亞當裏眾人都死了；照樣，在基督裏眾人也都要復活。</div>
+<div class="verse"><span class="verse-number">23</span>但各人是按着自己的次序復活：初熟的果子是基督；以後，在他來的時候，是那些屬基督的。</div>
+<div class="verse"><span class="verse-number">24</span>再後，末期到了，那時基督既將一切執政的、掌權的、有能的、都毀滅了，就把國交與父神。</div>
+<div class="verse"><span class="verse-number">25</span>因為基督必要作王，等神把一切仇敵都放在他的腳下。</div>
+<div class="verse"><span class="verse-number">26</span>盡末了所毀滅的仇敵，就是死。</div>
+<div class="verse"><span class="verse-number">27</span>因為經上說：「神叫萬物都服在他的腳下。」既說萬物都服了他，明顯那叫萬物服他的，不在其內了。</div>
+<div class="verse"><span class="verse-number">28</span>萬物既服了他，那時子也要自己服那叫萬物服他的，叫神在萬物之上，為萬物之主。</div>
+<div class="verse"><span class="verse-number">29</span>不然，那些為死人受洗的，將來怎樣呢？若死人總不復活，因何為他們受洗呢？</div>
+<div class="verse"><span class="verse-number">30</span>我們又因何時刻冒險呢？</div>
+<div class="verse"><span class="verse-number">31</span>弟兄們，我在我主基督耶穌裏，指着你們所誇的口極力的說，我是天天冒死。</div>
+<div class="verse"><span class="verse-number">32</span>我若當日像尋常人，在以弗所同野獸戰鬥，那於我有甚麼益處呢？若死人不復活，我們就吃吃喝喝吧！因為明天要死了。</div>
+<div class="verse"><span class="verse-number">33</span>你們不要自欺；濫交是敗壞善行。</div>
+<div class="verse"><span class="verse-number">34</span>你們要醒悟為善，不要犯罪，因為有人不認識神。我說這話是要叫你們羞愧。</div>
+<div class="verse"><span class="verse-number">35</span>或有人問：「死人怎樣復活，帶着甚麼身體來呢？」</div>
+<div class="verse"><span class="verse-number">36</span>無知的人哪，你所種的，若不死就不能生。</div>
+<div class="verse"><span class="verse-number">37</span>並且你所種的不是那將來的形體，不過是子粒，即如麥子，或是別樣的穀。</div>
+<div class="verse"><span class="verse-number">38</span>但神隨自己的意思給他一個形體，並叫各等子粒各有自己的形體。</div>
+<div class="verse"><span class="verse-number">39</span>凡肉體各有不同：人是一樣，獸又是一樣，鳥又是一樣，魚又是一樣。</div>
+<div class="verse"><span class="verse-number">40</span>有天上的形體，也有地上的形體；但天上形體的榮光是一樣，地上形體的榮光又是一樣。</div>
+<div class="verse"><span class="verse-number">41</span>日有日的榮光，月有月的榮光，星有星的榮光；這星和那星的榮光也有分別。</div>
+<div class="verse"><span class="verse-number">42</span>死人復活也是這樣：所種的是必朽壞的，復活的是不朽壞的；</div>
+<div class="verse"><span class="verse-number">43</span>所種的是羞辱的，復活的是榮耀的；所種的是軟弱的，復活的是強壯的；</div>
+<div class="verse"><span class="verse-number">44</span>所種的是血氣的身體，復活的是靈性的身體。若有血氣的身體，也必有靈性的身體。</div>
+<div class="verse"><span class="verse-number">45</span>經上也是這樣記着說：「首先的人亞當成了有靈〔靈：或作血氣〕的活人」；末後的亞當成了叫人活的靈。</div>
+<div class="verse"><span class="verse-number">46</span>但屬靈的不在先，屬血氣的在先，以後纔有屬靈的。</div>
+<div class="verse"><span class="verse-number">47</span>頭一個人是出於地，乃屬土；第二個人是出於天。</div>
+<div class="verse"><span class="verse-number">48</span>那屬土的怎樣，凡屬土的也就怎樣；屬天的怎樣，凡屬天的也就怎樣。</div>
+<div class="verse"><span class="verse-number">49</span>我們既有屬土的形狀，將來也必有屬天的形狀。</div>
+<div class="verse"><span class="verse-number">50</span>弟兄們，我告訴你們說，血肉之體不能承受神的國，必朽壞的不能承受不朽壞的。</div>
+<div class="verse"><span class="verse-number">51</span>我如今把一件奧祕的事告訴你們：我們不是都要睡覺，乃是都要改變，</div>
+<div class="verse"><span class="verse-number">52</span>就在一霎時，眨眼之間，號筒末次吹響的時候。因號筒要響，死人要復活成為不朽壞的，我們也要改變。</div>
+<div class="verse"><span class="verse-number">53</span>這必朽壞的總要變成〔變成：原文作穿；下同〕不朽壞的，這必死的總要變成不死的。</div>
+<div class="verse"><span class="verse-number">54</span>這必朽壞的既變成不朽壞的，這必死的既變成不死的，那時經上所記「死被得勝吞滅」的話就應驗了。</div>
+<div class="verse"><span class="verse-number">55</span>死啊！你得勝的權勢在那裏？死啊！你的毒鉤在那裏？</div>
+<div class="verse"><span class="verse-number">56</span>死的毒鉤就是罪，罪的權勢就是律法。</div>
+<div class="verse"><span class="verse-number">57</span>感謝神，使我們藉着我們的主耶穌基督得勝。</div>
+<div class="verse"><span class="verse-number">58</span>所以，我親愛的弟兄們，你們務要堅固，不可搖動，常常竭力多作主工；因為知道，你們的勞苦在主裏面不是徒然的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第15章是新約中關於基督復活和信徒將來復活最全面的神學論述，是哥林多前書最長的一章，也是基督教復活信仰的核心依據。本章首先重述保羅所傳的福音：基督照聖經所說為我們的罪死了，而且埋葬了，又照聖經所說第三天復活了，並且顯給磯法看然後顯給十二使徒看，後來一時顯給五百多弟兄看，最後顯給保羅看。接著說明若基督沒有復活你們的信便是徒然，你們仍在罪裡，但如今基督已經從死裡復活，成了睡了之人初熟的果子，因為死亡既然藉著一人而來，死人復活也藉著一人而來，在亞當裡眾人都死了，照樣在基督裡眾人也都要復活。然後回應有人問死人怎樣復活、用甚麼身體來的問題，以種子下地為比喻，所種的是必朽壞的，復活的是不朽壞的，所種的是血氣的身體，復活的是靈性的身體，就如我們帶著屬土的形狀，將來也要帶著屬天的形狀。最後說明死亡是那末了所要毀滅的仇敵，死亡得勝的毒鉤在哪裡，感謝神使我們藉著我們的主耶穌基督得勝，所以我們務要堅固不可搖動。本章是基督教復活信仰的奠基文獻。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 復活是基督信仰不可妥協的核心</strong><br>「若基督沒有復活，你們的信便是徒然，你們仍在罪裏」——保羅以最清醒的邏輯指出：復活不是可以協商的附加項目，而是一切的根基。信仰不只是教義的接受，而是建立在一個真實歷史事件——基督的復活——上的確信。有五百多人同時見到復活的基督，這是歷史的見證，不是個人感受。<br><br>
+<strong>2. 復活使一切服事有永恆的意義</strong><br>「你們的勞苦在主裏面不是徒然的」——復活的確信使信徒的工作不是空洞的。若死亡是終點，一切努力都無意義（「若死人不復活，我們就吃吃喝喝吧！因為明天要死了」）；但有復活，就有永恆的結果。每一個在主裏的行動，都在永恆裏有其重量和意義。<br><br>
+<strong>3. 「死啊！你的毒鉤在那裏？」——信仰的最高凱歌</strong><br>「感謝神，使我們藉着我們的主耶穌基督得勝」——基督的復活使死亡失去了最後的控制。「所以……你們務要堅固，不可搖動，常常竭力多作主工」——這個「所以」連接着復活的真理和日常的委身。因為有復活，所以竭力；因為勞苦不徒然，所以堅固不搖動。信仰的確信是服事的最大動力。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>若基督沒有復活</strong>，<strong>你們的信便是徒然</strong>，你們仍在罪裏……但基督已經從死裏復活，成為睡了之人初熟的果子。（林前15:17,20）</td>
+<td>你有沒有認真地以理性和信心面對「耶穌確實從死裏復活了」這個歷史宣告，讓它成為你信仰最堅實的根基？就像一個法律案件最終取決於證據，你有沒有讓復活的歷史見證成為你信仰確定性的核心論據？</td>
+</tr>
+<tr>
+<td>死啊！<strong>你得勝的權勢在那</strong>裏？死啊！<strong>你的毒鉤在那裏</strong>？感謝神，使我們藉着我們的主耶穌基督得勝。（林前15:55,57）</td>
+<td>你有沒有讓「基督已得勝死亡」這個確信，改變你面對困難、苦難和死亡本身的態度？就像知道戰爭已勝利的士兵仍在前線，你有沒有讓復活的確信帶出你在艱難中仍然喜樂和盼望的生命見證？</td>
+</tr>
+<tr>
+<td>所以，<strong>我親愛的弟兄們</strong>，<strong>你們務要堅固</strong>，不可搖動，常常竭力多作主工；因為知道，你們的勞苦在主裏面不是徒然的。（林前15:58）</td>
+<td>你有沒有讓「勞苦在主裏面不是徒然的」這個確信，給你在服事中持續下去的動力，即使眼前看不見果效？就像農夫在播種後相信會有收成所以繼續耕耘，你有沒有讓永恆的確信成為你日常服事的燃料？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

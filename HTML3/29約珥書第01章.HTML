@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約珥書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約珥書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">蝗蟲之災：大地哀號與禁食呼召</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話臨到毘土珥的兒子約珥。</div>
+<div class="verse"><span class="verse-number">2</span>老年人哪，當聽我的話；國中的居民哪，都要側耳而聽。在你們的日子，或你們列祖的日子，曾有這樣的事嗎？</div>
+<div class="verse"><span class="verse-number">3</span>你們要將這事傳與子，子傳與孫，孫傳與後代。</div>
+<div class="verse"><span class="verse-number">4</span>剪蟲剩下的，蝗蟲來吃；蝗蟲剩下的，蝻子來吃；蝻子剩下的，螞蚱來吃。</div>
+<div class="verse"><span class="verse-number">5</span>酒醉的人哪，要清醒哭泣；好酒的人哪，都要為甜酒哀號，因為從你們的口中斷絕了。</div>
+<div class="verse"><span class="verse-number">6</span>有一隊蝗蟲〔原文作民〕又強盛又無數，侵犯我的地；牠的牙齒如獅子的牙齒，大牙如母獅的大牙。</div>
+<div class="verse"><span class="verse-number">7</span>它毀壞我的葡萄樹，剝了我無花果樹的皮，剝盡而丟棄，使枝條露白。</div>
+<div class="verse"><span class="verse-number">8</span>我的民哪，你當哀號，像處女腰束麻布，為幼年的丈夫哀號。</div>
+<div class="verse"><span class="verse-number">9</span>素祭和奠祭從耶和華的殿中斷絕；事奉耶和華的祭司都悲哀。</div>
+<div class="verse"><span class="verse-number">10</span>田荒涼，地悲哀；因為五穀毀壞，新酒乾竭，油也缺乏。</div>
+<div class="verse"><span class="verse-number">11</span>農夫啊，你們要慚愧；修理葡萄園的啊，你們要哀號；因為大麥小麥與田間的莊稼都滅絕了。</div>
+<div class="verse"><span class="verse-number">12</span>葡萄樹枯乾；無花果樹衰殘。石榴樹、棕樹、蘋果樹，連田野一切的樹木也都枯乾；眾人的喜樂盡都消滅。</div>
+<div class="verse"><span class="verse-number">13</span>祭司啊，你們當腰束麻布痛哭；伺候祭壇的啊，你們要哀號；事奉我神的啊，你們要來披上麻布過夜，因為素祭和奠祭從你們神的殿中斷絕了。</div>
+<div class="verse"><span class="verse-number">14</span>你們要分定禁食的日子，宣告嚴肅會，招聚長老和國中的一切居民到耶和華你們神的殿，向耶和華哀求。</div>
+<div class="verse"><span class="verse-number">15</span>哀哉！耶和華的日子臨近了。這日來到，好像毀滅從全能者來到。</div>
+<div class="verse"><span class="verse-number">16</span>糧食不是在我們眼前斷絕了嗎？歡喜快樂不是從我們神的殿中止息了嗎？</div>
+<div class="verse"><span class="verse-number">17</span>穀種在土塊下朽爛；倉也荒涼，廩也破壞；因為五穀枯乾了。</div>
+<div class="verse"><span class="verse-number">18</span>牲畜哀鳴；牛群混亂，因為無草；羊群也受了困苦。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華啊，我向你求告，因為火燒滅曠野的草場；火焰燒盡田野的樹木。</div>
+<div class="verse"><span class="verse-number">20</span>田野的走獸向你發喘；因為溪水乾涸，火也燒滅曠野的草場。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約珥書第1章以一場嚴重的蝗蟲災難作為背景和起點，時代可能在主前九世紀或更晚（確切年代有爭議）。蝗蟲成群如軍隊，四波接連襲擊（剪蟲、蝗蟲、蝻子、螞蚱），葡萄樹毀壞、無花果樹剝皮、田野枯乾、牲畜哀鳴，農夫、酒農、祭司一同悲哀——這場自然災難徹底摧毀了整個農業社會的基礎。先知以此為警示：這是「耶和華的日子」的預表。何西阿呼籲全民緊急回應：「你們要分定禁食的日子，宣告嚴肅會，招聚長老和國中的一切居民到耶和華你們神的殿，向耶和華哀求」（14節）。「哀哉！耶和華的日子臨近了」（15節）——自然災難讓人直面生命的脆弱和對神的依賴。先知以田野的走獸也向神「發喘」作結，形容整個受造界在這場災難中的無助哀鳴。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 災難可以是神呼召人悔改和尋求祂的邀請</strong><br>蝗蟲災難不只是自然事件，而是「耶和華的日子」的預表——神藉自然的警示呼叫人回轉。信徒在面對個人或集體的災難時，除了解決問題，更要問：「神是否在藉此呼召我們尋求祂？」災難的屬靈意義，不在於解釋「神為什麼這樣做」，而在於在其中聽見「神要我回轉」的呼召。<br><br>
+<strong>2. 宣告禁食和嚴肅會：危機呼召集體的屬靈回應</strong><br>先知不只是告訴人「要禱告」，而是呼召群體性的行動：禁食、嚴肅會、招聚老老少少。個人的禱告固然重要，但群體面對危機時的集體屬靈回應，有其更大的力量。今日信仰群體面對社會、政治、自然的危機，是否有這種「宣告嚴肅會」的屬靈回應能力？<br><br>
+<strong>3. 從「歡喜快樂止息」到看見靈命的真實缺乏</strong><br>「歡喜快樂不是從我們神的殿中止息了嗎？」——平日的宗教歡樂消失時，讓人看見那歡樂本來有多依賴物質的豐盛，而非神的同在。災難剝去了虛假的喜樂，讓人看見真實的靈命狀態。在某種意義上，這是恩典——讓人在失去中發現了什麼是真實的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們要分定禁食的</strong>日子，<strong>宣告嚴肅會</strong>，招聚長老和國中的一切居民到耶和華你們神的殿，向耶和華哀求。（珥1:14）</td>
+<td>你所在的信仰群體，有沒有習慣在重大危機中宣告「嚴肅會」——集體禁食、禱告、認罪？就像一個組織在危機中召開緊急全員會議，你的群體在面對重大挑戰時，有沒有相稱的屬靈集體回應，還是只是個人各自禱告？</td>
+</tr>
+<tr>
+<td>哀哉！<strong>耶和華的日子臨近</strong>了。<strong>這日來到</strong>，好像毀滅從全能者來到。（珥1:15）</td>
+<td>「耶和華的日子臨近了」——先知把自然災難放在末世審判的框架中。你面對個人或社會的危機時，有沒有習慣從「屬靈的維度」去解讀它，看見其中可能的屬靈意義？就像醫生不只看症狀也問病因，你面對危機時，除了解決問題，也在問「神在其中說什麼」嗎？</td>
+</tr>
+<tr>
+<td><strong>剪蟲剩下的</strong>，<strong>蝗蟲來吃</strong>；蝗蟲剩下的，蝻子來吃；蝻子剩下的，螞蚱來吃。（珥1:4）</td>
+<td>四波接連而來，每一波吃掉前一波剩下的——災難可以層層累積。你生命中有沒有過一個問題解決了，另一個問題更大地出現的感受？就像在一個舊問題後面排着隊的新問題，你在那種「連鎖打擊」中，如何維持對神的信靠而不是被絕望所吞沒？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

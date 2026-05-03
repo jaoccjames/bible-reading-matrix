@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>猶大書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+猶大書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">為真道竭力爭辯與在神的愛中保守</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌基督的僕人，雅各的弟兄猶大，寫信給那被召、在父神裏蒙愛、為耶穌基督保守的人。</div>
+<div class="verse"><span class="verse-number">2</span>願憐恤、平安、慈愛多多的加給你們。</div>
+<div class="verse"><span class="verse-number">3</span>親愛的弟兄啊，我想盡心寫信給你們，論我們同得救恩的時候，就不得不寫信勸你們，要為從前一次交付聖徒的真道竭力的爭辯。</div>
+<div class="verse"><span class="verse-number">4</span>因為有些人偷着進來，就是自古被定受刑罰的，是不虔誠的，將我們神的恩變作放縱情慾的機會，並且不認獨一的主宰、我們〔或作和我們〕主耶穌基督。</div>
+<div class="verse"><span class="verse-number">5</span>從前主救了他的百姓出埃及地，後來就把那些不信的滅絕了。這一切的事，你們雖然都知道，我卻仍要提醒你們。</div>
+<div class="verse"><span class="verse-number">6</span>又有不守本位、離開自己住處的天使，主用鎖鍊把他們永遠拘留在黑暗裏，等候大日的審判。</div>
+<div class="verse"><span class="verse-number">7</span>又如所多瑪、蛾摩拉和周圍城邑的人，也照他們一味的行淫，隨從逆性的情慾，就受永火的刑罰，作為鑒戒。</div>
+<div class="verse"><span class="verse-number">8</span>這些作夢的人也像他們污穢身體，輕慢主治的，毀謗在尊位的。</div>
+<div class="verse"><span class="verse-number">9</span>天使長米迦勒為摩西的屍首與魔鬼爭辯的時候，尚且不敢用毀謗的話罪責他，只說：「主責備你吧！」</div>
+<div class="verse"><span class="verse-number">10</span>但這些人毀謗他們所不知道的。他們本性所知道的事與那沒有靈性的畜類一樣，在這事上竟敗壞了自己。</div>
+<div class="verse"><span class="verse-number">11</span>他們有禍了！因為走了該隱的道路，又為利往巴蘭的錯謬裏直奔，並在可拉的背叛中滅亡了。</div>
+<div class="verse"><span class="verse-number">12</span>這樣的人在你們的愛席上與你們同吃的時候，正是礁石〔或作：玷污〕。他們作牧人，只知餵養自己，無所懼怕；是沒有雨的雲彩，被風飄蕩；是秋天沒有果子的樹，死而又死，連根被拔出來；</div>
+<div class="verse"><span class="verse-number">13</span>是海裏的狂浪，湧出自己可恥的沫子來；是流蕩的星，有墨黑的幽暗為他們永遠存留。</div>
+<div class="verse"><span class="verse-number">14</span>亞當的七世孫以諾曾預言這些人說：「看哪，主帶着他的千萬聖者降臨，</div>
+<div class="verse"><span class="verse-number">15</span>要在眾人身上行審判，證實那一切不敬虔的人所妄行一切不敬虔的事，又證實不敬虔之罪人所說頂撞他的剛愎話。」</div>
+<div class="verse"><span class="verse-number">16</span>這些人是私下議論，常發怨言的，隨從自己的情慾而行，口中說誇大的話，為得便宜諂媚人。</div>
+<div class="verse"><span class="verse-number">17</span>親愛的弟兄啊，你們要記念我們主耶穌基督之使徒從前所說的話。</div>
+<div class="verse"><span class="verse-number">18</span>他們曾對你們說過，末世必有好譏誚的人隨從自己不敬虔的私慾而行。</div>
+<div class="verse"><span class="verse-number">19</span>這就是那些引人結黨、屬乎血氣、沒有聖靈的人。</div>
+<div class="verse"><span class="verse-number">20</span>親愛的弟兄啊，你們卻要在至聖的真道上造就自己，在聖靈裏禱告，</div>
+<div class="verse"><span class="verse-number">21</span>保守自己常在神的愛中，仰望我們主耶穌基督的憐憫，直到永生。</div>
+<div class="verse"><span class="verse-number">22</span>有些人存疑心，你們要憐憫他們；</div>
+<div class="verse"><span class="verse-number">23</span>有些人你們要從火中搶出來，搭救他們；有些人你們要存懼怕的心憐憫他們，連那被情慾沾染的衣服也當厭惡。</div>
+<div class="verse"><span class="verse-number">24</span>那能保守你們不失腳、叫你們無瑕無疵、歡歡喜喜站在他榮耀之前的我們的救主獨一的神，</div>
+<div class="verse"><span class="verse-number">25</span>願榮耀、威嚴、能力、權柄，因我們的主耶穌基督歸與他，從萬古以前並現今，直到永永遠遠。阿們。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+猶大書是新約中最後一卷普通書信，傳統上認為作者是主耶穌的兄弟猶大，約在主後65至80年間寫成，目的是警告那些已經滲透教會的假師傅，呼召信徒要為已傳給聖徒的信仰竭力爭辯。本書雖然短小，但語氣嚴厲，對假師傅的描述極為尖銳。本書以問安開篇，說他本來殷切地想論我們同得救恩的事，但如今不得不寫信勸你們，要為從前一次交付聖徒的真道竭力爭辯，因為有些人偷著進來，將我們神的恩變作放縱情慾的機會，並且不認獨一的主宰我們主耶穌基督。接著以所多瑪和蛾摩拉、埃及的以色列人、不守本位的天使為例，說明神對那些不信順從的人的審判。然後詳細描述這些人的特徵：夢中污穢肉體、輕慢主治的、毀謗尊位的，在愛筵上放縱自己、牧養自己，無水的雲彩被風飄蕩、秋天沒有果子的樹。接著呼召信徒在至聖的真道上造就自己，在聖靈裡禱告，保守自己常在神的愛中，等候我們主耶穌基督施憐憫直到永生。最後以榮耀頌作結：那能保守你們不跌倒、叫你們無瑕無疵歡歡喜喜站在祂榮耀之前的獨一的神，願榮耀威嚴、能力權柄藉耶穌基督歸於祂，阿們。本章以竭力爭辯真道和謹守信仰純正為核心。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真道是一次交付的，需要積極守護</strong><br>「為從前一次交付聖徒的真道竭力的爭辯」——「一次交付」說明信仰的核心內容是確定的，不是開放性地被每一代重新定義的；「竭力的爭辯」說明守護真道不是消極的，而是需要積極的努力。假教師的進入是「偷着」的，真道的守護也需要主動的儆醒。<br><br>
+<strong>2. 四個主動的靈命行動</strong><br>「在至聖的真道上造就自己，在聖靈裏禱告，保守自己常在神的愛中，仰望我們主耶穌基督的憐憫」——面對假教師的威脅，積極的建造是最好的防禦。「造就、禱告、保守、仰望」——四個動詞都是主動的，說明靈命的健康需要信徒的積極參與。<br><br>
+<strong>3. 因人而異的憐憫</strong><br>「有些人存疑心，你們要憐憫他們；有些人你們要從火中搶出來，搭救他們；有些人你們要存懼怕的心憐憫他們」——對不同屬靈狀態的人，需要不同的回應：對疑惑者要憐憫；對危險中的要緊急搭救；對被污染的要謹慎憐憫。成熟的牧養包括這種辨別的能力。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>親愛的弟兄啊</strong>，<strong>我想盡心寫信給你</strong>們，論我們同得救恩的時候，就不得不寫信勸你們，要為從前一次交付聖徒的真道竭力的爭辯。（猶3）</td>
+<td>你有沒有把「為真道竭力爭辯」作為你信仰責任的一部分，積極地學習聖經教義，使你有能力辨別和護衛純正的真理？就像一個守衛知道要守護的邊界才能有效防衛，你有沒有讓對真道的深入認識使你能保護自己和他人免受假教訓的侵害？</td>
+</tr>
+<tr>
+<td><strong>親愛的弟兄啊</strong>，<strong>你們卻要在至聖的</strong>真道上造就自己，在聖靈裏禱告，保守自己常在神的愛中，仰望我們主耶穌基督的憐憫，直到永生。（猶20-21）</td>
+<td>你有沒有讓這四個主動的靈命行動——造就自己、在聖靈裏禱告、保守在神的愛中、仰望基督的憐憫——成為你信仰生命積極的日常實踐？就像健康的身體需要主動的照顧和鍛鍊，你有沒有讓靈命的健康成為你每天主動追求的目標？</td>
+</tr>
+<tr>
+<td><strong>那能保守你們不失</strong>腳、<strong>叫你們無瑕無疵</strong>、歡歡喜喜站在他榮耀之前的我們的救主獨一的神，願榮耀、威嚴、能力、權柄……歸與他，從萬古以前並現今，直到永永遠遠。阿們。（猶24-25）</td>
+<td>你有沒有讓「神能保守你不失腳」這個確信，成為你在艱難信仰路程中最深的安慰和依靠？就像知道有一個可靠的繩索保護讓攀岩者可以更大膽地攀登，你有沒有讓對神保守能力的確信帶出你更大膽的信仰行動？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

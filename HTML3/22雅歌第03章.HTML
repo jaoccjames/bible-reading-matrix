@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雅歌第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+雅歌第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">夜間尋找心所愛的：渴慕尋求終得相遇</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>［新娘］我夜間躺臥在床上，尋找我心所愛的；我尋找他，卻尋不見。</div>
+<div class="verse"><span class="verse-number">2</span>我說：我要起來，遊行城中，在街市上，在寬闊處，尋找我心所愛的。我尋找他，卻尋不見。</div>
+<div class="verse"><span class="verse-number">3</span>城中巡邏看守的人遇見我；我問他們：你們看見我心所愛的沒有？</div>
+<div class="verse"><span class="verse-number">4</span>我剛離開他們就遇見我心所愛的。我拉住他，不容他走，領他入我母家，到懷我者的內室。</div>
+<div class="verse"><span class="verse-number">5</span>耶路撒冷的眾女子啊，我指着羚羊或田野的母鹿囑咐你們：不要驚動、不要叫醒我所親愛的，等他自己情願〔不要叫醒云云：或作不要激動愛情，等他自發〕。</div>
+<div class="verse"><span class="verse-number">6</span>［伴唱］那從曠野上來、形狀如煙柱、以沒藥和乳香並商人各樣香粉薰的是誰呢？</div>
+<div class="verse"><span class="verse-number">7</span>看哪，是所羅門的轎；四圍有六十個勇士，都是以色列中的勇士；</div>
+<div class="verse"><span class="verse-number">8</span>手都持刀，善於爭戰，腰間佩刀，防備夜間有驚慌。</div>
+<div class="verse"><span class="verse-number">9</span>所羅門王用利巴嫩木為自己製造一乘華轎。</div>
+<div class="verse"><span class="verse-number">10</span>轎柱是用銀作的，轎底是用金作的；坐墊是紫色的，其中所鋪的乃耶路撒冷眾女子的愛情。</div>
+<div class="verse"><span class="verse-number">11</span>錫安的眾女子啊，你們出去觀看所羅門王！頭戴冠冕，就是在他婚筵的日子、心中喜樂的時候，他母親給他戴上的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+雅歌第三章分為兩個截然不同的部分：前半（1-5節）是新娘深夜出城尋找良人的生動敘述，充滿了焦急、渴望和最終的重逢喜悅；後半（6-11節）則轉向宏大的婚禮行列場景，描繪所羅門王華麗的婚轎和婚禮的盛況。第1-4節是全書最具戲劇張力的段落之一：新娘在夜間的床上輾轉尋找良人不得，索性起身出城，在街市和寬闊處主動搜尋，直到遇見而「拉住他，不容他走」——這種主動、執著、不放手的愛的追尋，生動地描繪了深情之愛的本質。在屬靈詮釋中，這段「夜間尋找」被傳統解釋為靈魂在信仰乾枯時期尋求神的經歷，如詩篇63篇所描述的屬靈渴慕。第6-11節的婚禮行列以王者的尊榮描繪新郎來迎接新娘，最終以「婚筵的日子、心中喜樂」作結，呼應了啟示錄21章「羔羊的婚禮」的末世盼望意象。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在屬靈乾枯的夜間，主動尋找是最重要的回應</strong><br>第1-2節新娘在床上尋不見，就起來主動出城尋找——這種不滿足於「不在身邊」的積極態度，是深情之愛的標誌。在屬靈乾枯的時期（「夜間」），許多信徒選擇被動地等待感覺回來；然而雅歌呼籲的是主動的尋求——增加靈修時間、在禱告中呼求、在信仰群體中尋找。第3-4節的結局是「遇見」並「拉住不容他走」，說明主動尋求的人必然遇見神。<br><br>
+<strong>2. 拉住不容走：真正的委身是緊緊抓住不放</strong><br>第4節「我拉住他，不容他走，領他入我母家」，描繪了愛的執著與保守。在屬靈層面，這是信徒在禱告、靈修和崇拜中抓住神的渴望——雅各在雅博渡口「不讓你走，除非你賜福給我」（創32:26）的姿態，是同樣的屬靈執著。真正的信仰不是輕易鬆手，而是在黑暗中仍然緊緊抓住。<br><br>
+<strong>3. 王者以榮耀來迎娶：基督以祂的一切榮耀迎接教會</strong><br>第6-11節以華麗的婚禮行列描繪所羅門王的威儀，最終以婚筵的「心中喜樂」作結。在屬靈詮釋中，這預表了基督再來迎接教會的終末盼望——那位「比所羅門更大的」（太12:42）將以祂的榮耀來迎接祂所愛的子民，那將是歷史上最盛大的婚筵（啟19:7-9）。這盼望使信徒在等待中充滿期待。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>我夜間躺臥在床上</strong>，<strong>尋找我心所愛的</strong>；我尋找他，卻尋不見。」（雅3:1）</td>
+<td>就像在黑暗中找不到電燈開關，即使知道電燈就在某處，焦急的尋找仍讓人不安，你在信仰生命中是否有過屬靈「夜間」——感受不到神、禱告沒有回應、靈命乾枯的時期？那時你的回應是躺著等待，還是起來主動尋找？</td>
+</tr>
+<tr>
+<td>「<strong>我剛離開他們就遇</strong><strong>見我心所愛的</strong>。我拉住他，不容他走。」（雅3:4）</td>
+<td>就像孩子緊緊抓住父母的手，不管在人群中多麼混亂都不肯放，你在與神的關係中是否有這種「不容他走」的執著？在禱告或靈修時，你更傾向於輕易結束，還是願意繼續等候、緊緊抓住？</td>
+</tr>
+<tr>
+<td>「<strong>在他婚筵的日子</strong>、<strong>心中喜樂的時候</strong>。」（雅3:11）</td>
+<td>就像婚禮是一段漫長準備和等待之後的美好盼望實現，信仰生命也在「等待婚筵到來」的盼望中充滿動力，你對「神與人同在」這個終末盼望有多真實的期待？這個盼望如何影響你今天的生活方式和選擇？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

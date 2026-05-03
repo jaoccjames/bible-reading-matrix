@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哈該書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哈該書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">先顧自己房屋的代價</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>大利烏王第二年六月初一日，耶和華的話藉先知哈該向猶大省長撒拉鐵的兒子所羅巴伯和約撒答的兒子大祭司約書亞說：</div>
+<div class="verse"><span class="verse-number">2</span>萬軍之耶和華如此說：「這百姓說，建造耶和華殿的時候尚未來到。」</div>
+<div class="verse"><span class="verse-number">3</span>那時耶和華的話臨到先知哈該說：</div>
+<div class="verse"><span class="verse-number">4</span>「這殿仍然荒涼，你們自己還住天花板的房屋嗎？</div>
+<div class="verse"><span class="verse-number">5</span>現在萬軍之耶和華如此說：你們要省察自己的行為。</div>
+<div class="verse"><span class="verse-number">6</span>你們撒的種多，收的卻少；你們吃，卻不得飽；喝，卻不得足；穿衣服，卻不得暖；得工錢的，將工錢裝在破漏的囊中。」</div>
+<div class="verse"><span class="verse-number">7</span>萬軍之耶和華如此說：「你們要省察自己的行為。</div>
+<div class="verse"><span class="verse-number">8</span>你們要上山取木料，建造這殿，我就因此喜樂，且得榮耀。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">9</span>你們盼望多得，所得的卻少；你們收到家中，我就吹去。這是為甚麼呢？因為我的殿荒涼，你們各人卻顧〔原文作奔〕自己的房屋。這是萬軍之耶和華說的。</div>
+<div class="verse"><span class="verse-number">10</span>所以為你們的緣故，天就不降甘露，地也不出土產。</div>
+<div class="verse"><span class="verse-number">11</span>我命乾旱臨到地土、山崗、五穀、新酒，和油，並地上的出產、人民、牲畜，以及人手一切勞碌得來的。」</div>
+<div class="verse"><span class="verse-number">12</span>那時，撒拉鐵的兒子所羅巴伯和約撒答的兒子大祭司約書亞，並剩下的百姓，都聽從耶和華他們神的話和先知哈該奉耶和華他們神差來所說的話；百姓也在耶和華面前存敬畏的心。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華的使者哈該奉耶和華差遣對百姓說：「耶和華說：我與你們同在。」</div>
+<div class="verse"><span class="verse-number">14</span>耶和華激動猶大省長撒拉鐵的兒子所羅巴伯和約撒答的兒子大祭司約書亞，並剩下之百姓的心，他們就來為萬軍之耶和華他們神的殿作工。</div>
+<div class="verse"><span class="verse-number">15</span>這是在大利烏王第二年六月二十四日。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+哈該書是被擄歸回時代（主前520年）的先知書，是整個先知書中最短也最直接的信息之一。波斯王大利烏二年，猶大歸回者在所羅巴伯和大祭司約書亞的帶領下定居耶路撒冷，但聖殿仍是廢墟——因為百姓說「建造耶和華殿的時候尚未來到」（2節）。哈該直接問：你們卻住在「天花板的房屋」？你們省察過自己的行為嗎？接着以一系列的「撒種多收穫少，吃不飽，喝不足，穿不暖，工錢裝在破漏的囊中」——描述他們生活中各方面的缺乏。神的診斷清楚：「你們盼望多得，所得的卻少……因為我的殿荒涼，你們各人卻顧自己的房屋」（9節）。百姓在先知呼召下做出了立即的回應：他們敬畏神，聽從了呼召，神也藉哈該宣告：「耶和華說：我與你們同在。」
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 優先次序顛倒是一切缺乏的根本原因</strong><br>百姓住在精美的房屋，神的殿卻是廢墟。他們的生活缺乏，不是因為努力不夠，而是因為優先次序顛倒了——把神的事放在後面，把自己的事放在前面。神說：「因我的殿荒涼，你們各人卻顧自己的房屋」——這個診斷直接點出缺乏的根源。<br><br>
+<strong>2. 「省察自己的行為」：定期的靈命檢視是屬靈健康的必要實踐</strong><br>「你們要省察自己的行為」——被重複說了兩次（5、7節）。這個呼召不只是認罪，而是一個系統性的自我評估：我的生命投入和優先次序，是否與我宣稱的信仰相符？「省察」是主動的、誠實的、需要勇氣的靈命操練。<br><br>
+<strong>3. 立即的順從帶來神同在的確認</strong><br>百姓「聽從耶和華他們神的話，在耶和華面前存敬畏的心，就來為神的殿作工」，神隨即宣告「我與你們同在」。順從之後的神的同在宣告，不是偶然——在屬靈方向對齊之後，神的同在確認隨之而來。信徒在優先次序調整之後，往往會經歷一種「對的感覺」，那正是神同在的確認。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>這殿仍然荒涼</strong>，<strong>你們自己還住天花</strong>板的房屋嗎？……因為我的殿荒涼，你們各人卻顧自己的房屋。（該1:4,9下）</td>
+<td>「神的殿荒涼，各人卻顧自己的房屋」——在你目前的生活中，你為「自己的房屋」（個人目標、舒適、財務）投入多少時間和資源，為「神的殿」（教會、靈性、服事）又投入多少？就像一個整天忙於自己卻從不陪伴家人的人，你的時間分配表透露了你真實的優先次序是什麼？</td>
+</tr>
+<tr>
+<td><strong>現在萬軍之耶和華</strong><strong>如此說</strong>：你們要省察自己的行為。（該1:5）</td>
+<td>「省察自己的行為」——不是模糊的「我還不錯」，而是誠實的自我評估。如果你今天認真省察過去一個月的時間、金錢和精力分配，你會發現什麼？就像財務審計讓人清楚看見自己的實際花費，靈命的「審計」讓你看見真正的優先次序。你願意今天做一次誠實的省察嗎？</td>
+</tr>
+<tr>
+<td><strong>耶和華的使者哈該</strong><strong>奉耶和華差遣對百</strong>姓說：「耶和華說：我與你們同在。」（該1:13）</td>
+<td>在百姓調整優先次序、開始「為神的殿作工」之後，神宣告「我與你們同在」。你有沒有過這樣的經歷：在某個屬靈的調整或順從之後，感受到一種「終於對了」的神的同在確認？就像走對了方向之後，路變得更順，你願意為了更清楚地感受神的同在，今天做出一個優先次序的調整嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

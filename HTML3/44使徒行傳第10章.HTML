@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">哥尼流的異象與福音進入外邦</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>在該撒利亞有一個人，名叫哥尼流，是「義大利營」的百夫長。</div>
+<div class="verse"><span class="verse-number">2</span>他是個虔誠人，他和全家都敬畏神，多多賙濟百姓，常常禱告神。</div>
+<div class="verse"><span class="verse-number">3</span>有一天，約在申初，他在異象中明明看見神的一個使者進去，到他那裏，說：「哥尼流。」</div>
+<div class="verse"><span class="verse-number">4</span>哥尼流定睛看他，驚怕說：「主啊，甚麼事呢？」天使說：「你的禱告和你的賙濟達到神面前，已蒙記念了。</div>
+<div class="verse"><span class="verse-number">5</span>現在你當打發人往約帕去，請那稱呼彼得的西門來。</div>
+<div class="verse"><span class="verse-number">6</span>他住在海邊一個硝皮匠西門的家裏，房子在海邊上。」</div>
+<div class="verse"><span class="verse-number">7</span>向他說話的天使去後，哥尼流叫了兩個家人和常伺候他的一個虔誠兵來，</div>
+<div class="verse"><span class="verse-number">8</span>把這事都述說給他們聽，就打發他們往約帕去。</div>
+<div class="verse"><span class="verse-number">9</span>第二天，他們行路將近那城。彼得約在午正，上房頂去禱告，</div>
+<div class="verse"><span class="verse-number">10</span>覺得餓了，想要吃。那家的人正預備飯的時候，彼得魂遊象外，</div>
+<div class="verse"><span class="verse-number">11</span>看見天開了，有一物降下，好像一塊大布，繫着四角，縋在地上，</div>
+<div class="verse"><span class="verse-number">12</span>裏面有地上各樣四足的走獸和昆蟲，並天上的飛鳥；</div>
+<div class="verse"><span class="verse-number">13</span>又有聲音向他說：「彼得，起來，宰了吃！」</div>
+<div class="verse"><span class="verse-number">14</span>彼得卻說：「主啊，這是不可的！凡俗物和不潔淨的物，我從來沒有吃過。」</div>
+<div class="verse"><span class="verse-number">15</span>第二次有聲音向他說：「神所潔淨的，你不可當作俗物。」</div>
+<div class="verse"><span class="verse-number">16</span>這樣一連三次，那物隨即收回天上去了。</div>
+<div class="verse"><span class="verse-number">17</span>彼得心裏正在猜疑之間，不知所看見的異象是甚麼意思。哥尼流所差來的人已經訪問到西門的家，站在門外，</div>
+<div class="verse"><span class="verse-number">18</span>喊着問：「有稱呼彼得的西門住在這裏沒有？」</div>
+<div class="verse"><span class="verse-number">19</span>彼得還思想那異象的時候，聖靈向他說：「有三個人來找你。」</div>
+<div class="verse"><span class="verse-number">20</span>起來，下去，和他們同往，不要疑惑，因為是我差他們來的。」</div>
+<div class="verse"><span class="verse-number">21</span>於是彼得下去見那些人，說：「我就是你們所找的人。你們來是為甚麼緣故？」</div>
+<div class="verse"><span class="verse-number">22</span>他們說：「百夫長哥尼流是個義人，敬畏神，為猶太通國所稱讚。他蒙一位聖天使指示，叫他請你到他家裏去，聽你的話。」</div>
+<div class="verse"><span class="verse-number">23</span>彼得就請他們進去，住了一宿。次日，起身和他們同去，還有約帕的幾個弟兄同着他去；</div>
+<div class="verse"><span class="verse-number">24</span>又次日，他們進入該撒利亞，哥尼流已經請了他的親屬密友等候他們。</div>
+<div class="verse"><span class="verse-number">25</span>彼得一進去，哥尼流就迎接他，俯伏在他腳前拜他。</div>
+<div class="verse"><span class="verse-number">26</span>彼得卻拉他，說：「你起來，我也是人。」</div>
+<div class="verse"><span class="verse-number">27</span>彼得和他說着話進去，見有好些人在那裏聚集，</div>
+<div class="verse"><span class="verse-number">28</span>就對他們說：「你們知道，猶太人和別國的人親近來往本是不合例的，但神已經指示我，無論甚麼人都不可看作俗而不潔淨的。</div>
+<div class="verse"><span class="verse-number">29</span>所以我被請的時候，就不推辭而來。現在請問：你們叫我來有甚麼意思呢？」</div>
+<div class="verse"><span class="verse-number">30</span>哥尼流說：「前四天，這個時候，我在家中守着申初的禱告，忽然有一個人穿着光明的衣裳，站在我面前，</div>
+<div class="verse"><span class="verse-number">31</span>說：『哥尼流，你的禱告已蒙垂聽，你的賙濟達到神面前已蒙記念了。</div>
+<div class="verse"><span class="verse-number">32</span>你當打發人往約帕去，請那稱呼彼得的西門來，他住在海邊一個硝皮匠西門的家裏。』</div>
+<div class="verse"><span class="verse-number">33</span>所以我立時打發人去請你。你來了很好；現今我們都在神面前，要聽主所吩咐你的一切話。」</div>
+<div class="verse"><span class="verse-number">34</span>彼得就開口說：「我真看出神是不偏待人。</div>
+<div class="verse"><span class="verse-number">35</span>原來，各國中那敬畏主、行義的人都為主所悅納。</div>
+<div class="verse"><span class="verse-number">36</span>神藉着耶穌基督（他是萬有的主）傳和平的福音，將這道賜給以色列人。</div>
+<div class="verse"><span class="verse-number">37</span>這話在約翰宣傳洗禮以後，從加利利起，傳遍了猶太。</div>
+<div class="verse"><span class="verse-number">38</span>神怎樣以聖靈和能力膏拿撒勒人耶穌，這都是你們知道的。他周流四方，行善事，醫好凡被魔鬼壓制的人，因為神與他同在。</div>
+<div class="verse"><span class="verse-number">39</span>他在猶太人之地，並耶路撒冷所行的一切事，有我們作見證。他們竟把他掛在木頭上殺了。</div>
+<div class="verse"><span class="verse-number">40</span>第三日，神叫他復活，顯現出來；</div>
+<div class="verse"><span class="verse-number">41</span>不是顯現給眾人看，乃是顯現給神預先所揀選為他作見證的人看，就是我們這些在他從死裏復活以後和他同吃同喝的人。</div>
+<div class="verse"><span class="verse-number">42</span>他吩咐我們傳道給眾人，證明他是神所立定的，要作審判活人、死人的主。</div>
+<div class="verse"><span class="verse-number">43</span>眾先知也為他作見證說：『凡信他的人必因他的名得蒙赦罪。』」</div>
+<div class="verse"><span class="verse-number">44</span>彼得還說這話的時候，聖靈降在一切聽道的人身上。</div>
+<div class="verse"><span class="verse-number">45</span>那些奉割禮、和彼得同來的信徒，見聖靈的恩賜也澆在外邦人身上，就都希奇；</div>
+<div class="verse"><span class="verse-number">46</span>因聽見他們說方言，稱讚神為大。</div>
+<div class="verse"><span class="verse-number">47</span>於是彼得說：「這些人既受了聖靈，與我們一樣，誰能禁止用水給他們施洗呢？」</div>
+<div class="verse"><span class="verse-number">48</span>就吩咐奉耶穌基督的名給他們施洗。他們又請彼得住了幾天。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第10章記述哥尼流和彼得各自所見的異象，以及哥尼流這個外邦人家庭信主並領受聖靈的事件，是使徒行傳中福音正式進入外邦世界的歷史性轉折。本章首先描述凱撒利亞有一個虔誠敬畏神的百夫長哥尼流，有天使顯現說你的禱告和你的周濟達到神面前，你打發人往約帕去請彼得來。彼得在屋頂禱告時，看見天開了，有一塊大布縋下來裡面裝著各樣活物和飛鳥，有聲音說起來殺了喫，彼得說沒有喫過俗而不潔的東西，聲音說神所潔淨的你不可當作俗物，這樣做了三次。聖靈說起來跟哥尼流差來的人去，彼得就去，進入哥尼流家，對眾人傳講耶穌的事：祂到處行善、被釘死、神叫祂復活、凡信祂的人必因祂的名得蒙赦罪。彼得還在說話時，聖靈降在一切聽道的人身上，信奉割禮的信徒見外邦人也說方言稱讚神甚都希奇，彼得說這些人受了聖靈誰能禁止用水給他們施洗呢，就吩咐奉耶穌基督的名給他們施洗。本章是使徒行傳中最重大的神學轉折，確立福音的普世性與聖靈主導外邦宣教的原則。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的恩典不偏待人</strong><br>「我真看出神是不偏待人。原來，各國中那敬畏主、行義的人都為主所悅納」——彼得從這個異象中得到的神學啟示是神的普世性救恩。宗教的排他性偏見被神自己打破：神不是某個民族的私產，而是萬國萬民的主。這個真理今天仍然在挑戰各種文化和宗教的優越感。<br><br>
+<strong>2. 個人的偏見是宣教最大的攔阻之一</strong><br>彼得需要「那塊大布」的異象三次，才勉強克服了他對外邦人的偏見。很多時候，阻礙福音傳播的不是外在的阻力，而是信徒內心的文化和社會偏見——「我不可能和那種人有來往」。神需要打破這個偏見，才能讓彼得成為突破性宣教的工具。每一個宣教士都需要省察：我有沒有任何群體是我認為「福音不適合他們」的？<br><br>
+<strong>3. 聖靈的降臨先於人為的儀式</strong><br>「彼得還說這話的時候，聖靈降在一切聽道的人身上」——在彼得說完話、在任何邀請祈禱或儀式之前，聖靈就主動降下了。神的主動性永遠先於人的程序。這事件在猶太信徒中引起了震撼，因為他們親眼看見外邦人和他們一樣受了聖靈。神的恩典不受人為界限的約束。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>彼得就開口說</strong>：「<strong>我真看出神是不偏</strong>待人。原來，各國中那敬畏主、行義的人都為主所悅納。」（徒10:34-35）</td>
+<td>你有沒有對某些群體或民族有根深蒂固的偏見，讓你認為他們「不太可能」或「不值得」接受福音？就像彼得需要三次的異象才能克服偏見，你願意讓神更新你的心，使你能以平等的愛看待所有的人嗎？</td>
+</tr>
+<tr>
+<td><strong>天使說</strong>：「<strong>你的禱告和你的賙</strong>濟達到神面前，已蒙記念了。」（徒10:4）</td>
+<td>你有沒有相信你的禱告和你對他人的慷慨，都「達到神面前，已蒙記念了」？就像存款需要時間才能看見複利，你有沒有在不見即時回應的情況下，仍然持續地禱告和行善？</td>
+</tr>
+<tr>
+<td><strong>這些人既受了聖靈</strong>，<strong>與我們一樣</strong>，誰能禁止用水給他們施洗呢？（徒10:47）</td>
+<td>你有沒有在教會生活中對哪些「不同背景的人」有條件性的接納？就像自動解鎖的門和需要密碼才能進入的門是不同的歡迎程度，你的教會群體對所有背景的人有沒有真實的、無條件的接納？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

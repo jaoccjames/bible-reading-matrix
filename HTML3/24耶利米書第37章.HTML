@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第37章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第37章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶利米被囚與西底家的暗問</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>約西亞的兒子西底家代替約雅敬的兒子哥尼雅為王，是巴比倫王尼布甲尼撒立在猶大地作王的。</div>
+<div class="verse"><span class="verse-number">2</span>但西底家和他的臣僕，並國中的百姓，都不聽從耶和華藉先知耶利米所說的話。</div>
+<div class="verse"><span class="verse-number">3</span>西底家王打發示利米雅的兒子猶甲和祭司瑪西雅的兒子西番雅去見先知耶利米，說：「求你為我們禱告耶和華我們的神。」</div>
+<div class="verse"><span class="verse-number">4</span>那時耶利米在民中出入，因為他們還沒有把他囚在監裏。</div>
+<div class="verse"><span class="verse-number">5</span>法老的軍隊已經從埃及出來，那圍困耶路撒冷的迦勒底人聽見他們的風聲，就拔營離開耶路撒冷去了。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華的話臨到先知耶利米說：</div>
+<div class="verse"><span class="verse-number">7</span>「耶和華以色列的神如此說：猶大王打發你們來求問我，你們要如此對他說：『那出來幫助你們法老的軍隊必回埃及本國去。</div>
+<div class="verse"><span class="verse-number">8</span>迦勒底人必再來攻打這城，並要攻取，用火焚燒。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華如此說：你們不要自欺說「迦勒底人必定離開我們」，因為他們必不離開。</div>
+<div class="verse"><span class="verse-number">10</span>你們即便殺敗了與你們爭戰的迦勒底全軍，但剩下受傷的人也必各人從帳棚裏起來，用火焚燒這城。』」</div>
+<div class="verse"><span class="verse-number">11</span>迦勒底的軍隊因怕法老的軍隊，拔營離開耶路撒冷的時候，</div>
+<div class="verse"><span class="verse-number">12</span>耶利米就雜在民中出離耶路撒冷，要往便雅憫地去，在那裏得自己的地業。</div>
+<div class="verse"><span class="verse-number">13</span>他到了便雅憫門那裏，有守門官名叫伊利雅，是哈拿尼亞的孫子、示利米雅的兒子，他就拿住先知耶利米，說：「你是投降迦勒底人哪！」</div>
+<div class="verse"><span class="verse-number">14</span>耶利米說：「你這是謊話，我並不是投降迦勒底人。」伊利雅不聽他的話，就拿住他，解到首領那裏。</div>
+<div class="verse"><span class="verse-number">15</span>首領惱怒耶利米，就打了他，將他囚在文士約拿單的房屋中，因為他們以這房屋當作監牢。</div>
+<div class="verse"><span class="verse-number">16</span>耶利米來到獄中，進入牢房，在那裏囚了多日。</div>
+<div class="verse"><span class="verse-number">17</span>西底家王打發人提出他來，在自己的宮內私下問他說：「從耶和華有甚麼話臨到沒有？」耶利米說：「有！」又說：「你必交在巴比倫王手中。」</div>
+<div class="verse"><span class="verse-number">18</span>耶利米又對西底家王說：「我在甚麼事上得罪你，或你的臣僕，或這百姓，你竟將我囚在監裏呢？</div>
+<div class="verse"><span class="verse-number">19</span>對你們預言巴比倫王必不來攻擊你們和這地的先知，現今在那裏呢？</div>
+<div class="verse"><span class="verse-number">20</span>主我的王啊，求你現在垂聽，准我在你面前的懇求：不要使我回到文士約拿單的房屋中，免得我死在那裏。」</div>
+<div class="verse"><span class="verse-number">21</span>於是，西底家王下令，他們就把耶利米交在護衛兵的院中，每天從餅舖街取一個餅給他，直到城中的餅用盡了。這樣，耶利米仍在護衛兵的院中。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第37章場景轉入西底家王時代（主前588年前後），巴比倫已圍困耶路撒冷。西底家王在外交上不聽從神的話（2節），卻在私下暗中求問耶利米禱告，顯示他的矛盾與懦弱。法老軍隊北上，巴比倫軍隊暫時撤退，百姓鬆了一口氣，但耶利米傳達神的明確信息：不要自欺，迦勒底人必回來，城必被攻取。就在迦勒底軍隊撤退的空檔，耶利米趁機出城前往便雅憫地辦理地業事務，卻在城門被守門官以「投降迦勒底人」的罪名拘捕，關入地牢，遭到毆打。西底家王聽見後暗中接見他，仍問「有沒有耶和華的話」——耶利米直言：「你必交在巴比倫王手中」，同時為自己的冤屈辯護。王終讓步，將他移至護衛院，每天給餅——這是較寬鬆的拘禁。本章揭示耶利米在政治高壓下對真道的持守，以及西底家在懦弱與真理之間的徘徊。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真先知在壓力下仍說真話，不因現況而改口</strong><br>法老軍隊來了，圍城暫解，人心大振——這正是調整預言的「好時機」。但耶利米沒有改變立場：「不要自欺，迦勒底人必回來。」真正的忠信不因環境有利就改口，也不因環境不利就妥協。信徒有時面對壓力，說出對方想聽的版本；耶利米的榜樣是：環境的改變不是神話語的改變，忠心傳達比被人喜悅更重要。<br><br>
+<strong>2. 遭受不公正時，仍可清楚而有尊嚴地陳明真相</strong><br>耶利米被以莫須有的罪名拘捕後，他沒有沉默，也沒有憤怒爆發，而是清楚地問：「我得罪你在何事？那些說巴比倫不來的假先知，現在在哪裏？」這是有智慧、有尊嚴的辯護，指出事實，讓真相說話。信徒面對不公義時，可以清楚陳明事實，不需要以激烈的方式回應，也不需要沉默接受。<br><br>
+<strong>3. 懼怕人超過懼怕神，使人無法作出正確的決定</strong><br>西底家私下知道耶利米的話是真的（他暗中求問），卻公開不敢支持，因為懼怕臣僕的眼光。這種「私信公不信」的狀態是靈性最危險的一種：心中承認真理，行為卻順從人的壓力。信徒若只在私下尊重神的話，而在公開場合隨從人群，就走入了西底家的陷阱。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華如此說</strong>：<strong>你們不要自欺說</strong>「迦勒底人必定離開我們」，因為他們必不離開。（耶37:9）</td>
+<td>你生命中是否有一個你正在「自欺」的領域——以為問題已經過去，但其實只是暫時緩解？就像颱風暫時轉向不代表危機解除，你願意誠實面對那個你正在告訴自己「沒事了」的處境，帶着它認真禱告嗎？</td>
+</tr>
+<tr>
+<td><strong>耶利米說</strong>：「有！」又說：「<strong>你必交在巴比倫王</strong>手中。」（耶37:17下）</td>
+<td>當被要求說出真相可能帶來不利後果，你如何決定是否說？就像醫生必須告訴病人不好的診斷，即使病人不想聽，你願意在最需要真話的地方，選擇說出那個讓人不舒服但必要的真相嗎？</td>
+</tr>
+<tr>
+<td><strong>對你們預言巴比倫</strong><strong>王必不來攻擊你們</strong>和這地的先知，現今在那裏呢？（耶37:19）</td>
+<td>你是否曾因為某個信息「讓人感覺好」就接受它，後來卻發現它是錯的？就像某些太過美好的投資廣告——保證獲利、零風險——你如何培養對「讓人很舒服的信息」的健康質疑，以避免被虛假的安慰所誤導？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

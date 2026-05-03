@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第28章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第28章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">順服的祝福與悖逆的咒詛</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「你若留意聽從耶和華你神的話，謹守遵行他的一切誡命，就是我今日所吩咐你的，他必使你超乎天下萬民之上。</div>
+<div class="verse"><span class="verse-number">2</span>你若聽從耶和華你神的話，這以下的福必追隨你，臨到你身上：</div>
+<div class="verse"><span class="verse-number">3</span>你在城裏必蒙福，在田間也必蒙福。</div>
+<div class="verse"><span class="verse-number">4</span>你身所生的，地所產的，牲畜所下的，以及牛犢、羊羔，都必蒙福。</div>
+<div class="verse"><span class="verse-number">5</span>你的筐子和你的摶麵盆都必蒙福。</div>
+<div class="verse"><span class="verse-number">6</span>你出也蒙福，入也蒙福。</div>
+<div class="verse"><span class="verse-number">7</span>「仇敵起來攻擊你，耶和華必使他們在你面前被你殺敗；他們從一條路來攻擊你，必從七條路逃跑。</div>
+<div class="verse"><span class="verse-number">8</span>在你倉房裏，並你手所辦的一切事上，耶和華所命的福必臨到你。耶和華你神也要在所給你的地上賜福與你。</div>
+<div class="verse"><span class="verse-number">9</span>你若謹守耶和華你神的誡命，遵行他的道，他必照着向你所起的誓立你作為自己的聖民。</div>
+<div class="verse"><span class="verse-number">10</span>天下萬民見你歸在耶和華的名下，就要懼怕你。</div>
+<div class="verse"><span class="verse-number">11</span>你在耶和華向你列祖起誓應許賜你的地上，他必使你身所生的，牲畜所下的，地所產的，都綽綽有餘。</div>
+<div class="verse"><span class="verse-number">12</span>耶和華必為你開天上的府庫，按時降雨在你的地上。在你手裏所辦的一切事上賜福與你。你必借給許多國民，卻不至向他們借貸。</div>
+<div class="verse"><span class="verse-number">13</span>你若聽從耶和華你神的誡命，就是我今日所吩咐你的，謹守遵行，不偏左右，也不隨從事奉別神，耶和華就必使你作首不作尾，但居上不居下。」</div>
+<div class="verse"><span class="verse-number">14</span>併於上節</div>
+<div class="verse"><span class="verse-number">15</span>「你若不聽從耶和華你神的話，不謹守遵行他的一切誡命律例，就是我今日所吩咐你的，這以下的咒詛都必追隨你，臨到你身上：</div>
+<div class="verse"><span class="verse-number">16</span>你在城裏必受咒詛，在田間也必受咒詛。</div>
+<div class="verse"><span class="verse-number">17</span>你的筐子和你的摶麵盆都必受咒詛。</div>
+<div class="verse"><span class="verse-number">18</span>你身所生的，地所產的，以及牛犢、羊羔，都必受咒詛。</div>
+<div class="verse"><span class="verse-number">19</span>你出也受咒詛，入也受咒詛。</div>
+<div class="verse"><span class="verse-number">20</span>耶和華因你行惡離棄他，必在你手裏所辦的一切事上，使咒詛、擾亂、責罰臨到你，直到你被毀滅，速速地滅亡。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華必使瘟疫貼在你身上，直到他將你從所進去得為業的地上滅絕。</div>
+<div class="verse"><span class="verse-number">22</span>耶和華要用癆病、熱病、火症、瘧疾、刀劍、旱風〔或作：乾旱〕、霉爛攻擊你。這都要追趕你，直到你滅亡。</div>
+<div class="verse"><span class="verse-number">23</span>你頭上的天要變為銅，腳下的地要變為鐵。</div>
+<div class="verse"><span class="verse-number">24</span>耶和華要使那降在你地上的雨變為塵沙，從天臨在你身上，直到你滅亡。</div>
+<div class="verse"><span class="verse-number">25</span>「耶和華必使你敗在仇敵面前，你從一條路去攻擊他們，必從七條路逃跑。你必在天下萬國中拋來拋去。</div>
+<div class="verse"><span class="verse-number">26</span>你的屍首必給空中的飛鳥和地上的走獸作食物，並無人鬨趕。</div>
+<div class="verse"><span class="verse-number">27</span>耶和華必用埃及人的瘡並痔瘡、牛皮癬與疥攻擊你，使你不能醫治。</div>
+<div class="verse"><span class="verse-number">28</span>耶和華必用癲狂、眼瞎、心驚攻擊你。</div>
+<div class="verse"><span class="verse-number">29</span>你必在午間摸索，好像瞎子在暗中摸索一樣。你所行的必不亨通，時常遭遇欺壓、搶奪，無人搭救。</div>
+<div class="verse"><span class="verse-number">30</span>你聘定了妻，別人必與她同房；你建造房屋，不得住在其內；你栽種葡萄園，也不得用其中的果子。</div>
+<div class="verse"><span class="verse-number">31</span>你的牛在你眼前宰了，你必不得吃牠的肉；你的驢在你眼前被搶奪，不得歸還；你的羊歸了仇敵，無人搭救。</div>
+<div class="verse"><span class="verse-number">32</span>你的兒女必歸與別國的民；你的眼目終日切望，甚至失明，你手中無力拯救。</div>
+<div class="verse"><span class="verse-number">33</span>你的土產和你勞碌得來的，必被你所不認識的國民吃盡。你時常被欺負，受壓制，</div>
+<div class="verse"><span class="verse-number">34</span>甚至你因眼中所看見的，必致瘋狂。</div>
+<div class="verse"><span class="verse-number">35</span>耶和華必攻擊你，使你膝上腿上，從腳掌到頭頂，長毒瘡無法醫治。</div>
+<div class="verse"><span class="verse-number">36</span>「耶和華必將你和你所立的王領到你和你列祖素不認識的國去；在那裏你必事奉木頭石頭的神。</div>
+<div class="verse"><span class="verse-number">37</span>你在耶和華領你到的各國中，要令人驚駭、笑談、譏誚。</div>
+<div class="verse"><span class="verse-number">38</span>你帶到田間的種子雖多，收進來的卻少，因為被蝗蟲吃了。</div>
+<div class="verse"><span class="verse-number">39</span>你栽種、修理葡萄園，卻不得收葡萄，也不得喝葡萄酒，因為被蟲子吃了。</div>
+<div class="verse"><span class="verse-number">40</span>你全境有橄欖樹，卻不得其油抹身，因為樹上的橄欖不熟自落了。</div>
+<div class="verse"><span class="verse-number">41</span>你生兒養女，卻不算是你的，因為必被擄去。</div>
+<div class="verse"><span class="verse-number">42</span>你所有的樹木和你地裏的出產必被蝗蟲所吃。</div>
+<div class="verse"><span class="verse-number">43</span>在你中間寄居的，必漸漸上升，比你高而又高；你必漸漸下降，低而又低。</div>
+<div class="verse"><span class="verse-number">44</span>他必借給你，你卻不能借給他；他必作首，你必作尾。</div>
+<div class="verse"><span class="verse-number">45</span>這一切咒詛必追隨你，趕上你，直到你滅亡；因為你不聽從耶和華你神的話，不遵守他所吩咐的誡命律例。</div>
+<div class="verse"><span class="verse-number">46</span>這些咒詛必在你和你後裔的身上成為異蹟奇事，直到永遠！</div>
+<div class="verse"><span class="verse-number">47</span>「因為你富有的時候，不歡心樂意地事奉耶和華你的神，</div>
+<div class="verse"><span class="verse-number">48</span>所以你必在飢餓、乾渴、赤露、缺乏之中事奉耶和華所打發來攻擊你的仇敵。他必把鐵軛加在你的頸項上，直到將你滅絕。</div>
+<div class="verse"><span class="verse-number">49</span>「耶和華要從遠方、地極帶一國的民，如鷹飛來攻擊你。這民的言語，你不懂得。</div>
+<div class="verse"><span class="verse-number">50</span>這民的面貌兇惡，不顧恤年老的，也不恩待年少的。</div>
+<div class="verse"><span class="verse-number">51</span>他們必吃你牲畜所下的和你地土所產的，直到你滅亡。你的五穀、新酒，和油，以及牛犢、羊羔，都不給你留下，直到將你滅絕。</div>
+<div class="verse"><span class="verse-number">52</span>他們必將你困在你各城裏，直到你所倚靠、高大堅固的城牆都被攻塌。他們必將你困在耶和華你神所賜你遍地的各城裏。</div>
+<div class="verse"><span class="verse-number">53</span>你在仇敵圍困窘迫之中，必吃你本身所生的，就是耶和華你神所賜給你的兒女之肉。</div>
+<div class="verse"><span class="verse-number">54</span>你們中間，柔弱嬌嫩的人必惡眼看他弟兄和他懷中的妻，並他餘剩的兒女；</div>
+<div class="verse"><span class="verse-number">55</span>甚至在你受仇敵圍困窘迫的城中，他要吃兒女的肉，不肯分一點給他的親人，因為他一無所剩。</div>
+<div class="verse"><span class="verse-number">56</span>你們中間，柔弱嬌嫩的婦人，是因嬌嫩柔弱不肯把腳踏地的，必惡眼看她懷中的丈夫和她的兒女。</div>
+<div class="verse"><span class="verse-number">57</span>她兩腿中間出來的嬰孩與她所要生的兒女，她因缺乏一切就要在你受仇敵圍困窘迫的城中將他們暗暗的吃了。</div>
+<div class="verse"><span class="verse-number">58</span>「這書上所寫律法的一切話是叫你敬畏耶和華你神可榮可畏的名。你若不謹守遵行，耶和華就必將奇災，就是至大至長的災，至重至久的病，加在你和你後裔的身上，</div>
+<div class="verse"><span class="verse-number">59</span>併於上節</div>
+<div class="verse"><span class="verse-number">60</span>也必使你所懼怕、埃及人的病都臨到你，貼在你身上，</div>
+<div class="verse"><span class="verse-number">61</span>又必將沒有寫在這律法書上的各樣疾病、災殃降在你身上，直到你滅亡。</div>
+<div class="verse"><span class="verse-number">62</span>你們先前雖然像天上的星那樣多，卻因不聽從耶和華你神的話，所剩的人數就稀少了。</div>
+<div class="verse"><span class="verse-number">63</span>先前耶和華怎樣喜悅善待你們，使你們眾多，也要照樣喜悅毀滅你們，使你們滅亡；並且你們從所要進去得的地上必被拔除。</div>
+<div class="verse"><span class="verse-number">64</span>耶和華必使你們分散在萬民中，從地這邊到地那邊，你必在那裏事奉你和你列祖素不認識、木頭石頭的神。</div>
+<div class="verse"><span class="verse-number">65</span>在那些國中，你必不得安逸，也不得落腳之地；耶和華卻使你在那裏心中跳動，眼目失明，精神消耗。</div>
+<div class="verse"><span class="verse-number">66</span>你的性命必懸懸無定；你晝夜恐懼，自料性命難保。</div>
+<div class="verse"><span class="verse-number">67</span>你因心裏所恐懼的，眼中所看見的，早晨必說，巴不得到晚上才好；晚上必說，巴不得到早晨才好。</div>
+<div class="verse"><span class="verse-number">68</span>耶和華必使你坐船回埃及去，走我曾告訴你不得再見的路；在那裏你必賣己身與仇敵作奴婢，卻無人買。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第二十八章是全書篇幅最長的章節，也是聖經中最詳盡的「約的祝福與咒詛」清單。本章結構清晰：前14節宣告順服帶來的廣泛祝福，後面68節則以壓倒性的篇幅描述悖逆帶來的可怕咒詛。祝福的清單涵蓋人丁興旺、農業豐收、城市繁榮、戰場得勝，以及在列邦中得尊榮（28:1-14）。咒詛的清單則以驚人的細節描述疾病、乾旱、饑荒、敵人的攻擊、土地的荒廢、亡國和流亡，最終甚至描述到以色列人在圍城中因極度飢餓而人相殘食（28:53-57），以及最終被帶回埃及乘船販賣為奴的景況（28:68）。祝福與咒詛的篇幅比例（14:68節）是刻意的：以色列歷史上確實更多地走向悖逆與咒詛，這章成為後來歷史事件（北國被亞述滅亡、南國被巴比倫擄去）的預言性背景。整章核心神學：遵守神的約有具體的結果，無論好壞，神的話語都不落空。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 全面的順服帶來全面的祝福，這是神約的原則</strong><br>「你若留意聽從耶和華你神的話……這一切福就必追上你，臨到你身上」（申28:1-2）。神的祝福是全面性的——城裏城外、出入行動、肉體靈魂都涵蓋其中。這提醒我們：屬靈的順服不是生活某一個角落的事，而是整個生命的取向。當我們在各個層面都向神敞開、順服，神的祝福就自然地在各個層面流淌。<br><br>
+<strong>2. 悖逆的後果也是全面且逐步加深的</strong><br>咒詛的描述以循序漸進的方式呈現：從輕微的困擾，到嚴重的疾病，到失去一切，到最終的亡國流亡（申28:15-68）。這說明背離神的代價不是即刻顯現的，而是逐步積累的，往往等到已難以逆轉時才完全顯現。信仰的偏離也是如此——往往是從微小的妥協開始，逐漸走向更深的墮落。<br><br>
+<strong>3. 神的話語必然應驗，祝福或咒詛都不落空</strong><br>本章的預言在以色列後來的歷史中幾乎逐字應驗——北國的亡國、南國的被擄、圍城的慘況都在歷史中得到印證。這一方面是嚴肅的警告，另一方面也是信仰的確據：神的話語不是空洞的許諾，而是歷史的主宰所發出的必然應驗的宣告。祂所應許的祝福也同樣確實可靠。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你若留意聽從耶和</strong><strong>華你神的話</strong>，謹守遵行他的一切誡命……這一切福就必追上你，臨到你身上。」（申28:1-2）</td>
+<td>全面的順服帶來無需追求的祝福，就像按正確方式種植的農作物自然會在收割季節豐收，在你目前的生命狀況中，神的祝福是「追上你」還是被你對某些事的不順服而攔阻了？</td>
+</tr>
+<tr>
+<td>「<strong>耶和華要使你在仇</strong><strong>敵面前被他們殺敗</strong>……你必在地上各國中拋來拋去，正如風吹糠秕一樣。」（申28:25）</td>
+<td>悖逆的後果如同失去方向的漂泊，就像斷了錨的船在風浪中不知飄向何處，回顧你生命中曾經離神最遠的時期，那段時間的感受與「如風吹糠秕」的描述有多像？那段經歷如何成為你今日信仰的提醒？</td>
+</tr>
+<tr>
+<td>「<strong>你所看見這一切大</strong><strong>而可畏的事</strong>，都是因你不聽從耶和華你神的話所致。」（申28:45）</td>
+<td>許多生命的困境可以追溯到對神話語的輕忽，就像不遵守使用說明書導致機器損壞，你生命中是否有某個持續的困難，在禱告中你是否曾問過神：「這是否與我在某方面對祢的不順服有關？」</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

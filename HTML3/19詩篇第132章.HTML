@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第132章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第132章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大衛為神尋居所：錫安是神永遠的安息之所</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（上行之詩）耶和華啊，求你記念大衛所受的一切苦難！</div>
+<div class="verse"><span class="verse-number">2</span>他怎樣向耶和華起誓，向雅各的大能者許願，</div>
+<div class="verse"><span class="verse-number">3</span>說：我必不進我的帳幕，也不上我的床榻；</div>
+<div class="verse"><span class="verse-number">4</span>我不容我的眼睛睡覺，也不容我的眼目打盹；</div>
+<div class="verse"><span class="verse-number">5</span>直等我為耶和華尋得所在，為雅各的大能者尋得居所。</div>
+<div class="verse"><span class="verse-number">6</span>我們聽說約櫃在以法他，我們在基列耶琳就尋見了。</div>
+<div class="verse"><span class="verse-number">7</span>我們要進他的居所，在他腳凳前下拜。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華啊，求你興起，和你有能力的約櫃同入安息之所！</div>
+<div class="verse"><span class="verse-number">9</span>願你的祭司披上公義！願你的聖民歡呼！</div>
+<div class="verse"><span class="verse-number">10</span>求你因你僕人大衛的緣故，不要厭棄你的受膏者！</div>
+<div class="verse"><span class="verse-number">11</span>耶和華向大衛、憑誠實起了誓，必不反覆，說：我要使你所生的坐在你的寶座上。</div>
+<div class="verse"><span class="verse-number">12</span>你的眾子若守我的約和我所教訓他們的法度，他們的子孫必永遠坐在你的寶座上。</div>
+<div class="verse"><span class="verse-number">13</span>因為耶和華揀選了錫安，願意當作自己的居所，</div>
+<div class="verse"><span class="verse-number">14</span>說：這是我永遠安息之所；我要住在這裏，因為是我所願意的。</div>
+<div class="verse"><span class="verse-number">15</span>我要使其中的糧食豐滿，使其中的窮人飽足。</div>
+<div class="verse"><span class="verse-number">16</span>我要使祭司披上救恩，聖民大聲歡呼！</div>
+<div class="verse"><span class="verse-number">17</span>我要叫大衛的角在那裏發生；我為我的受膏者預備明燈。</div>
+<div class="verse"><span class="verse-number">18</span>我要使他的仇敵披上羞恥；但他的冠冕要在頭上發光。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第132篇是上行之詩系列中篇幅最長的一篇，以大衛為神尋找居所的熱情開篇，然後轉向神對大衛之約的應許。全篇呈現兩個相互對應的誓言：大衛向神所立的誓（2-5節）和神向大衛所立的誓（11-18節）。大衛的誓言是要找到神的居所（帶著約櫃進入耶路撒冷）；神的誓言是要保持大衛的後裔在寶座上，並以錫安為永遠的居所。第13至14節是全篇最重要的神學宣告：「因為耶和華揀選了錫安，願意當作自己的居所，說：這是我永遠安息之所；我要住在這裏，因為是我所願意的。」「我所願意的」揭示神揀選的主動性和情感性——不是被迫，而是出於願意。這個「神願意居住在錫安中的百姓」的宣告，在新約中延伸為神願意居住在信徒的生命中（約14:23）。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 大衛為神尋找居所的熱情是事奉最深的屬靈動機</strong><br>「他怎樣向耶和華起誓……說：我必不進我的帳幕……直等我為耶和華尋得所在，為雅各的大能者尋得居所。」（第2-5節）大衛在自己還沒有安息之前，先為神尋找安息之所——這種「先為神，後為自己」的心志，是事奉最深的屬靈動機。把神的居所（神的榮耀）放在個人的舒適之前，是大衛信仰最美的表達，也是所有服事者最重要的內心動力測試。<br><br>
+<strong>2. 神揀選錫安為永遠居所是主動恩選的彰顯</strong><br>「因為耶和華揀選了錫安，願意當作自己的居所，說：這是我永遠安息之所；我要住在這裏，因為是我所願意的。」（第13-14節）「揀選」和「願意」是本節最重要的詞語——神的揀選不是被動的接受，而是主動的願意。「我所願意的」揭示神揀選的情感性：祂不只是冷靜地決定，而是帶著渴望和喜悅地揀選。這個神主動願意居住在信徒生命中的真理，是整個恩選神學最溫柔的一面。<br><br>
+<strong>3. 神對大衛立約確立信仰群體承受福分的聖約根基</strong><br>「耶和華向大衛、憑誠實起了誓，必不反覆，說：我要使你所生的坐在你的寶座上。」（第11節）神的誓言以「憑誠實」和「必不反覆」為特徵，表明這個約是無條件的、永久的、建立在神自己信實的本性上的。在新約中，這個對大衛後裔寶座的應許，在基督的永恆國度中達到最完全的成就——那位「應許的後裔」坐在神右邊，建立了不可動搖的永遠之約。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他怎樣向耶和華起</strong>誓……說：<strong>我必不進我的帳幕</strong>……直等我為耶和華尋得所在。（詩132:2-5）</td>
+<td>就像一個真心愛護某人的人，在自己安頓好之前，先確保對方有舒適的地方，大衛「先為神尋居所」的優先順序，是否也啟發你思考：在你生命的安排中，神的優先位置是否真的排在你個人舒適之前？</td>
+</tr>
+<tr>
+<td><strong>因為耶和華揀選了</strong>錫安，<strong>願意當作自己的居</strong>所，說：這是我永遠安息之所。（詩132:13-14）</td>
+<td>就像知道一位重要的人「願意」待在你家中，那份被選擇的感覺遠比被勉強邀請更珍貴，你是否真的認識到神是「願意」居住在信徒生命中的——不是被迫，而是充滿渴望地揀選，讓這份被神主動揀選的確信成為你信仰最深的安慰？</td>
+</tr>
+<tr>
+<td><strong>耶和華向大衛憑誠</strong><strong>實起了誓</strong>，必不反覆，說：我要使你所生的坐在你的寶座上。（詩132:11）</td>
+<td>就像一份有最可信賴的人簽署的契約，其可靠性不依賴任何外在條件，你是否真的以「神憑誠實起誓必不反覆」的確信建立你的信仰根基，讓這份不可改變的約，成為你在任何困惑和動盪中仍能站立的磐石？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

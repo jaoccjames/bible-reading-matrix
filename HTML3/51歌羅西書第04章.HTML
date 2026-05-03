@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歌羅西書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歌羅西書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">禱告、智慧行事與問安結語</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們作主人的，要公公平平的待僕人，因為知道你們也有一位主在天上。</div>
+<div class="verse"><span class="verse-number">2</span>你們要恒切禱告，在此儆醒感恩。</div>
+<div class="verse"><span class="verse-number">3</span>也要為我們禱告，求神給我們開傳道的門，能以講基督的奧祕（我為此被捆鎖），</div>
+<div class="verse"><span class="verse-number">4</span>叫我按着所該說的話將這奧祕發明出來。</div>
+<div class="verse"><span class="verse-number">5</span>你們要愛惜光陰，用智慧與外人交往。</div>
+<div class="verse"><span class="verse-number">6</span>你們的言語要常常帶着和氣，好像用鹽調和，就可知道該怎樣回答各人。</div>
+<div class="verse"><span class="verse-number">7</span>有我親愛的兄弟推基古要將我一切的事都告訴你們。他是忠心的執事，和我一同作主的僕人，</div>
+<div class="verse"><span class="verse-number">8</span>我特意打發他到你們那裏去，好叫你們知道我們的光景，又叫他安慰你們的心。</div>
+<div class="verse"><span class="verse-number">9</span>我又打發一位親愛忠心的兄弟阿尼西母同去；他也是你們那裏的人。他們要把這裏一切的事都告訴你們。</div>
+<div class="verse"><span class="verse-number">10</span>與我一同坐監的亞里達古問你們安。巴拿巴的表弟馬可也問你們安。（說到這馬可，你們已經受了吩咐；他若到了你們那裏，你們就接待他。）</div>
+<div class="verse"><span class="verse-number">11</span>耶數又稱為猶士都，也問你們安。奉割禮的人中，只有這三個人是為神的國與我一同作工的，也是叫我心裏得安慰的。</div>
+<div class="verse"><span class="verse-number">12</span>有你們那裏的人，作基督耶穌僕人的以巴弗問你們安。他在禱告之間，常為你們竭力的祈求，願你們在神一切的旨意上得以完全，信心充足，能站立得穩。</div>
+<div class="verse"><span class="verse-number">13</span>他為你們和老底嘉並希拉波立的弟兄多多的勞苦，這是我可以給他作見證的。</div>
+<div class="verse"><span class="verse-number">14</span>所親愛的醫生路加和底馬問你們安。</div>
+<div class="verse"><span class="verse-number">15</span>請問老底嘉的弟兄和寧法，並他家裏的教會安。</div>
+<div class="verse"><span class="verse-number">16</span>你們念了這書信，便交給老底嘉的教會，叫他們也念；你們也要念從老底嘉來的書信。</div>
+<div class="verse"><span class="verse-number">17</span>要對亞基布說：「務要謹慎，盡你從主所受的職分。」</div>
+<div class="verse"><span class="verse-number">18</span>我保羅親筆問你們安。你們要記念我的捆鎖。願恩惠常與你們同在！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第4章是歌羅西書的結尾，保羅給出幾個禱告的請求、問安的名單，並以具體的叮囑收結。本章首先勸主人也要以公義待僕人，知道自己在天上也有一位主。接著呼籲他們要恆切禱告、在此警醒感恩，也請他們為保羅禱告，求神給他開傳道的門，能以說明基督的奧秘，好叫他按著所當盡的職分把這奧秘說明出來。然後教導他們用智慧與外人相處，說話要有恩典好像用鹽調和，要知道該怎樣回答各人。接著說明推基古將把保羅的情況告訴他們；阿尼西母也是他們當中的人，一同前往。然後依次問候多位信徒：亞里達古、馬可、以巴弗、路加、底馬，以及老底嘉教會的寧法和他家裡的教會，並吩咐他們把這書信與老底嘉教會的書信互相傳讀。最後說明阿基布要儆醒把所受於主的職分盡完，並以保羅親筆的問安和務要記念我的捆鎖作結。本章以問安與叮囑呈現早期教會的網絡連結，也展示保羅在囚禁中仍心繫各地教會的牧者情懷。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 恒切禱告配合儆醒感恩</strong><br>「你們要恒切禱告，在此儆醒感恩」——禱告有三個元素：恒切（持續）、儆醒（警覺）、感恩（感謝）。恒切說明禱告不是偶爾的宗教義務；儆醒說明禱告需要清醒的靈、不能走神；感恩說明禱告不只是求取，而是在感謝中求取。這三者並行，才是完整的禱告生活。<br><br>
+<strong>2. 「言語要常常帶着和氣，好像用鹽調和」</strong><br>「你們的言語要常常帶着和氣，好像用鹽調和」——與外人的言語應有兩個品質：和氣（可愛、吸引人）和鹽（有意義、有內容、有保存力）。「就可知道該怎樣回答各人」——也就是說，適當的言語是對不同人情況的回應，不是千篇一律的宗教話語。智慧的見證包括聆聽和理解對方，才能給出恰當的回應。<br><br>
+<strong>3. 「務要謹慎，盡你從主所受的職分」</strong><br>保羅特別對亞基布說「務要謹慎，盡你從主所受的職分」——這句話對每一個有服事職分的人都同樣適用。「謹慎」是持續的警覺；「盡」是完全的盡職；「從主所受的」說明職分的來源是主，要向主負責。服事的責任不在於讓人滿意，而在於把從主所受的完全履行。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們要恒切禱告</strong>，<strong>在此儆醒感恩</strong>。也要為我們禱告，求神給我們開傳道的門，能以講基督的奧祕。（西4:2-3）</td>
+<td>你有沒有把為傳道者「開傳道的門」的代禱，納入你的恒切禱告中？就像戰場上的後勤補給和通信和前線士兵同樣重要，你有沒有讓你的禱告為正在傳福音的人打通屬靈的道路？</td>
+</tr>
+<tr>
+<td><strong>你們的言語要常常</strong><strong>帶着和氣</strong>，好像用鹽調和，就可知道該怎樣回答各人。（西4:6）</td>
+<td>你和非信徒的日常交談，有沒有同時具備「和氣」（真誠友善、吸引人）和「鹽的味道」（有意義、有內容），使你的見證既可親又有實質？就像好廚師知道鹽要用對分量，你有沒有培養與外人交往中的屬靈智慧——既不過於宗教腔，也不完全沒有信仰的見證？</td>
+</tr>
+<tr>
+<td><strong>你們要愛惜光陰</strong>，<strong>用智慧與外人交往</strong>。（西4:5）</td>
+<td>你有沒有讓「愛惜光陰」的意識，使你在與非信徒的交往中更有目的性——既真實地關心他們，也智慧地尋找分享信仰的時機？就像一個好的銷售員在了解客戶需要的基礎上自然而然地提出解決方案，你有沒有在真實關心中，敏感地把握與人分享信仰的機會？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

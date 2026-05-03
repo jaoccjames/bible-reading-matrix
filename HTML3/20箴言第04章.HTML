@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">保守你心：智慧之道與生命的果效</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>眾子啊，要聽父親的教訓，留心得知聰明。</div>
+<div class="verse"><span class="verse-number">2</span>因我所給你們的是好教訓；不可離棄我的法則〔或作：指教〕。</div>
+<div class="verse"><span class="verse-number">3</span>我在父親面前為孝子，在母親眼中為獨一的嬌兒。</div>
+<div class="verse"><span class="verse-number">4</span>父親教訓我說：你心要存記我的言語，遵守我的命令，便得存活。</div>
+<div class="verse"><span class="verse-number">5</span>要得智慧，要得聰明，不可忘記，也不可偏離我口中的言語。</div>
+<div class="verse"><span class="verse-number">6</span>不可離棄智慧，智慧就護衛你；要愛她，她就保守你。</div>
+<div class="verse"><span class="verse-number">7</span>智慧為首；所以，要得智慧。在你一切所得之內必得聰明〔或作：用你一切所得的去換聰明〕。</div>
+<div class="verse"><span class="verse-number">8</span>高舉智慧，她就使你高升；懷抱智慧，她就使你尊榮。</div>
+<div class="verse"><span class="verse-number">9</span>她必將華冠加在你頭上，把榮冕交給你。</div>
+<div class="verse"><span class="verse-number">10</span>我兒，你要聽受我的言語，就必延年益壽。</div>
+<div class="verse"><span class="verse-number">11</span>我已指教你走智慧的道，引導你行正直的路。</div>
+<div class="verse"><span class="verse-number">12</span>你行走，腳步必不致狹窄；你奔跑，也不致跌倒。</div>
+<div class="verse"><span class="verse-number">13</span>要持定訓誨，不可放鬆；必當謹守，因為她是你的生命。</div>
+<div class="verse"><span class="verse-number">14</span>不可行惡人的路；不要走壞人的道。</div>
+<div class="verse"><span class="verse-number">15</span>要躲避，不可經過；要轉身而去。</div>
+<div class="verse"><span class="verse-number">16</span>這等人若不行惡，不得睡覺；不使人跌倒，睡臥不安；</div>
+<div class="verse"><span class="verse-number">17</span>因為他們以奸惡喫餅，以強暴喝酒。</div>
+<div class="verse"><span class="verse-number">18</span>但義人的路好像黎明的光，越照越明，直到日午。</div>
+<div class="verse"><span class="verse-number">19</span>惡人的道好像幽暗，自己不知因甚麼跌倒。</div>
+<div class="verse"><span class="verse-number">20</span>我兒，要留心聽我的言詞，側耳聽我的話語，</div>
+<div class="verse"><span class="verse-number">21</span>都不可離你的眼目，要存記在你心中。</div>
+<div class="verse"><span class="verse-number">22</span>因為得着它的，就得了生命，又得了醫全體的良藥。</div>
+<div class="verse"><span class="verse-number">23</span>你要保守你心，勝過保守一切〔或作：你要切切保守你心〕，因為一生的果效是由心發出。</div>
+<div class="verse"><span class="verse-number">24</span>你要除掉邪僻的口，棄絕乖謬的嘴。</div>
+<div class="verse"><span class="verse-number">25</span>你的眼目要向前正看；你的眼睛〔原文作皮〕當向前直觀。</div>
+<div class="verse"><span class="verse-number">26</span>要修平你腳下的路，堅定你一切的道。</div>
+<div class="verse"><span class="verse-number">27</span>不可偏向左右；要使你的腳離開邪惡。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第四章延續了父親教導兒子的傳統，並在本章中有一個獨特之處：父親分享了自己從祖父母輩所受的智慧傳承，形成了一種「智慧代代相傳」的畫面。這在古以色列文化中極為重要，長輩的訓誨被視為珍貴的屬靈遺產。本章在結構上可分為三個單元：第一段（1-9節）強調智慧的首要地位與代代相傳的重要性；第二段（10-19節）對比義人與惡人的路——義人之路如越來越亮的晨光，惡人之路如幽暗使人跌倒；第三段（20-27節）以「保守你心」為核心，強調心是一切生命果效的源頭，並呼籲信徒在言語、眼目、腳步上保持正直。本章在整本箴言書中是呼召信徒全面委身於神智慧之道的關鍵章節，從內心到外在行為都當受神話語的塑造與保守。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 智慧是生命中最值得優先追求的事</strong><br>第7節宣告「智慧為首」，意味著在人生所有追求中，獲得神的智慧應當置於最優先的位置。智慧不只是知識的累積，而是以神的眼光看人生、做決定的能力。父親以自身受益的經歷勸勉兒子，說明智慧的價值是經得起時間考驗的。今日的信徒同樣需要在各樣優先事項中，將追求屬靈智慧放在第一位。<br><br>
+<strong>2. 義人的路如黎明之光，越走越明亮</strong><br>第18-19節以光明與黑暗的對比，生動描繪了義人與惡人路途的差異。義人所行的道雖或有起步的艱難，卻如黎明之光漸漸增亮；惡人的道雖或表面光鮮，卻終究如黑暗使人跌倒而不自知。這一屬靈原則鼓勵信徒在義路上持續前行，即使初時看不見明顯的改變，光明終將愈來愈清晰。<br><br>
+<strong>3. 保守內心是一切屬靈生命的根本</strong><br>第23節「你要保守你心，勝過保守一切，因為一生的果效是由心發出」，是箴言書中最具影響力的格言之一。心是一切思想、言語、行動的源頭，若心不潔淨、不對準神，生命的各個層面都會受到影響。信徒的屬靈操練，根本在於以神的話語更新內心，讓心思意念持續對焦於神的真理。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>智慧為首</strong>；所以，<strong>要得智慧</strong>。在你一切所得之內必得聰明。」（箴4:7）</td>
+<td>就像手機儲存空間有限，人必須選擇保留哪些應用程式，你的生活中有哪些事情佔據了大量時間與精力？追求神的智慧在你的優先順序中排在第幾位？</td>
+</tr>
+<tr>
+<td>「<strong>但義人的路好像黎</strong><strong>明的光</strong>，越照越明，直到日午。」（箴4:18）</td>
+<td>就像長跑選手在前幾公里看不到終點，卻仍按步伐前進，你在屬靈成長的路上是否曾有過「看不見進步」的時期？是什麼讓你選擇繼續走下去？</td>
+</tr>
+<tr>
+<td>「<strong>你要保守你心</strong>，<strong>勝過保守一切</strong>，因為一生的果效是由心發出。」（箴4:23）</td>
+<td>就像水源若受到汙染，流出的水無論經過多少管道都難以純淨，你目前用什麼來「餵養」你的內心——閱讀、娛樂、人際關係？這些是使你的心更接近神，還是漸漸偏離？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

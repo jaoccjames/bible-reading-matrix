@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尼希米記第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+尼希米記第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">掣籤遷居聖城，各按崗位守分</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>百姓的首領住在耶路撒冷。其餘的百姓掣籤，每十人中使一人來住在聖城耶路撒冷，那九人住在別的城邑。</div>
+<div class="verse"><span class="verse-number">2</span>凡甘心樂意住在耶路撒冷的，百姓都為他們祝福。</div>
+<div class="verse"><span class="verse-number">3</span>以色列人、祭司、利未人、尼提寧，和所羅門僕人的後裔都住在猶大城邑，各在自己的地業中。本省的首領住在耶路撒冷的記在下面：</div>
+<div class="verse"><span class="verse-number">4</span>其中有些猶大人和便雅憫人。猶大人中有法勒斯的子孫、烏西雅的兒子亞他雅。烏西雅是撒迦利雅的兒子；撒迦利雅是亞瑪利雅的兒子；亞瑪利雅是示法提雅的兒子；示法提雅是瑪勒列的兒子。</div>
+<div class="verse"><span class="verse-number">5</span>又有巴錄的兒子瑪西雅。巴錄是谷何西的兒子；谷何西是哈賽雅的兒子；哈賽雅是亞大雅的兒子；亞大雅是約雅立的兒子；約雅立是撒迦利雅的兒子；撒迦利雅是示羅尼的兒子。</div>
+<div class="verse"><span class="verse-number">6</span>住在耶路撒冷、法勒斯的子孫共四百六十八名，都是勇士。</div>
+<div class="verse"><span class="verse-number">7</span>便雅憫人中有米書蘭的兒子撒路。米書蘭是約葉的兒子；約葉是毘大雅的兒子；毘大雅是哥賴雅的兒子；哥賴雅是瑪西雅的兒子；瑪西雅是以鐵的兒子；以鐵是耶篩亞的兒子。</div>
+<div class="verse"><span class="verse-number">8</span>其次有迦拜、撒來的子孫，共九百二十八名。</div>
+<div class="verse"><span class="verse-number">9</span>細基利的兒子約珥是他們的長官。哈西努亞的兒子猶大是耶路撒冷的副官。</div>
+<div class="verse"><span class="verse-number">10</span>祭司中有雅斤，又有約雅立的兒子耶大雅；</div>
+<div class="verse"><span class="verse-number">11</span>還有管理神殿的西萊雅。西萊雅是希勒家的兒子；希勒家是米書蘭的兒子；米書蘭是撒督的兒子；撒督是米拉約的兒子；米拉約是亞希突的兒子。</div>
+<div class="verse"><span class="verse-number">12</span>還有他們的弟兄在殿裏供職的，共八百二十二名；又有耶羅罕的兒子亞大雅。耶羅罕是毘拉利的兒子；毘拉利是暗洗的兒子；暗洗是撒迦利亞的兒子；撒迦利亞是巴施戶珥的兒子；巴施戶珥是瑪基雅的兒子。</div>
+<div class="verse"><span class="verse-number">13</span>還有他的弟兄作族長的，二百四十二名；又有亞薩列的兒子亞瑪帥。亞薩列是亞哈賽的兒子；亞哈賽是米實利末的兒子；米實利末是音麥的兒子。</div>
+<div class="verse"><span class="verse-number">14</span>還有他們弟兄、大能的勇士共一百二十八名。哈基多琳的兒子撒巴第業是他們的長官。</div>
+<div class="verse"><span class="verse-number">15</span>利未人中有哈述的兒子示瑪雅。哈述是押利甘的兒子；押利甘是哈沙比雅的兒子；哈沙比雅是布尼的兒子。</div>
+<div class="verse"><span class="verse-number">16</span>又有利未人的族長沙比太和約撒拔管理神殿的外事。</div>
+<div class="verse"><span class="verse-number">17</span>祈禱的時候，為稱謝領首的是米迦的兒子瑪他尼。米迦是撒底的兒子；撒底是亞薩的兒子；又有瑪他尼弟兄中的八布迦為副。還有沙母亞的兒子押大。沙母亞是加拉的兒子；加拉是耶杜頓的兒子。</div>
+<div class="verse"><span class="verse-number">18</span>在聖城的利未人共二百八十四名。</div>
+<div class="verse"><span class="verse-number">19</span>守門的是亞谷和達們，並守門的弟兄，共一百七十二名。</div>
+<div class="verse"><span class="verse-number">20</span>其餘的以色列人、祭司、利未人都住在猶大的一切城邑，各在自己的地業中。</div>
+<div class="verse"><span class="verse-number">21</span>尼提寧卻住在俄斐勒；西哈和基斯帕管理他們。</div>
+<div class="verse"><span class="verse-number">22</span>在耶路撒冷、利未人的長官，管理神殿事務的是歌唱者亞薩的子孫、巴尼的兒子烏西。巴尼是哈沙比雅的兒子；哈沙比雅是瑪他尼的兒子；瑪他尼是米迦的兒子。</div>
+<div class="verse"><span class="verse-number">23</span>王為歌唱的出命令，每日供給他們必有一定之糧。</div>
+<div class="verse"><span class="verse-number">24</span>猶大兒子謝拉的子孫、米示薩別的兒子毘他希雅輔助王辦理猶大民的事。</div>
+<div class="verse"><span class="verse-number">25</span>至於莊村和屬莊村的田地，有猶大人住在基列亞巴和屬基列亞巴的鄉村；底本和屬底本的鄉村；葉甲薛和屬葉甲薛的莊村；</div>
+<div class="verse"><span class="verse-number">26</span>耶書亞、摩拉大、伯帕列、</div>
+<div class="verse"><span class="verse-number">27</span>哈薩書亞、別是巴，和屬別是巴的鄉村；</div>
+<div class="verse"><span class="verse-number">28</span>洗革拉、米哥拿，和屬米哥拿的鄉村；</div>
+<div class="verse"><span class="verse-number">29</span>音臨門、瑣拉、耶末、</div>
+<div class="verse"><span class="verse-number">30</span>撒挪亞、亞杜蘭，和屬這兩處的莊村；拉吉和屬拉吉的田地；亞西加和屬亞西加的鄉村。他們所住的地方是從別是巴直到欣嫩谷。</div>
+<div class="verse"><span class="verse-number">31</span>便雅憫人從迦巴起，住在密抹、亞雅、伯特利和屬伯特利的鄉村。</div>
+<div class="verse"><span class="verse-number">32</span>亞拿突、挪伯、亞難雅、</div>
+<div class="verse"><span class="verse-number">33</span>夏瑣、拉瑪、基他音、</div>
+<div class="verse"><span class="verse-number">34</span>哈疊、洗編、尼八拉、</div>
+<div class="verse"><span class="verse-number">35</span>羅德、阿挪、匠人之谷。</div>
+<div class="verse"><span class="verse-number">36</span>利未人中有幾班曾住在猶大地歸於便雅憫的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+尼希米記第11章記載城牆完工、立約之後，百姓如何重新安置在耶路撒冷和各城邑的過程。城牆雖已重建，但城內人口稀少，首要任務是充實聖城的居民。百姓以掣籤方式決定誰搬進耶路撒冷，每十人中抽一人遷居，其餘九人繼續住在本城。凡甘心樂意自願遷居者，眾人為他們祝福。這份名冊列出居住在耶路撒冷的各族——百姓、祭司（含管理聖殿者）、利未人（含領頌讚的）、守門的、尼提寧——以及分布在猶大各城邑的百姓地業。本章看似枯燥的安置記錄，實則是一幅城市重建的全景圖：每個人都被分配到神所安排的位置，各按崗位承擔責任，共同構成一個有秩序、有功能的信仰群體。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 甘心樂意的自我犧牲是建造群體的珍貴貢獻</strong><br>遷居聖城意味著離開原有的土地和生活基礎，是一項真實的犧牲。凡甘心樂意這樣做的人，百姓都為他們祝福——這表明群體的認可和感謝是對這份犧牲的承認。在神的工程中，甘心樂意地放下個人的便利來成就群體的需要，是一種高尚的屬靈品格，值得被記念和讚揚。<br><br>
+<strong>2. 每個崗位都有其不可缺少的價值</strong><br>名冊中記錄了各式各樣的崗位：管理聖殿的、在殿裏供職的、領頌讚的、守門的、管外事的……每一個崗位都被鄭重記載。神的家需要各式各樣的恩賜和職責，沒有哪個崗位是多餘的，也沒有哪個崗位高人一等。忠心在自己崗位上的人，在神的記念冊中都有其名字。<br><br>
+<strong>3. 各在其位是屬靈秩序的基礎</strong><br>本章強調百姓「各在自己的地業中」，各族各按其位安居。這種有序的安置，確保整個群體能夠正常運作，不因人員空缺或混亂而失能。屬靈群體的健康需要每個成員清楚自己的位置和責任，既不越界搶奪他人的崗位，也不輕易棄守自己的本分。秩序本身就是一種屬靈美德。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>其餘的百姓掣籤</strong>，<strong>每十人中使一人來</strong>住在聖城耶路撒冷，那九人住在別的城邑。（尼11:1）</td>
+<td>就像團隊輪班制確保每個崗位都有人負責，公平分擔責任讓神的工程得以持續。你是否也願意接受「掣籤」的結果，即使安排不符合你的偏好？</td>
+</tr>
+<tr>
+<td><strong>凡甘心樂意住在耶</strong><strong>路撒冷的</strong>，百姓都為他們祝福。（尼11:2）</td>
+<td>就像有人自願留守夜班讓同事能早回家，甘心自我犧牲的人值得被群體感謝和祝福。你生命中是否有過這種甘心的擺上，還是你常常等待別人先站出來？</td>
+</tr>
+<tr>
+<td><strong>以色列人</strong>、祭司、<strong>利未人</strong>……都住在猶大城邑，各在自己的地業中。（尼11:3）</td>
+<td>就像交響樂團中每個樂手都在自己的位置上演奏，整體才能和諧，各在其位是否讓你思考：你現在是否清楚自己在神家中的位置？你是否安心待在神為你安排的地業中？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

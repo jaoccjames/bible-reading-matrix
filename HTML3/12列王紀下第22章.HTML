@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀下第22章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀下第22章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約西亞修殿發現律法書，聽道撕衣謙卑尋問神</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>約西亞登基的時候年八歲，在耶路撒冷作王三十一年。他母親名叫耶底大，是波斯加人亞大雅的女兒。</div>
+<div class="verse"><span class="verse-number">2</span>約西亞行耶和華眼中看為正的事，行他祖大衛一切所行的，不偏左右。</div>
+<div class="verse"><span class="verse-number">3</span>約西亞王十八年，王差遣米書蘭的孫子、亞薩利的兒子書記沙番上耶和華殿去，吩咐他說：</div>
+<div class="verse"><span class="verse-number">4</span>「你去見大祭司希勒家，使他將奉到耶和華殿的銀子，就是守門的從民中收聚的銀子，數算數算，</div>
+<div class="verse"><span class="verse-number">5</span>交給耶和華殿裏辦事的人，使他們轉交耶和華殿裏作工的人，好修理殿的破壞之處，</div>
+<div class="verse"><span class="verse-number">6</span>就是轉交木匠和工人，並瓦匠，又買木料和鑿成的石頭修理殿宇，</div>
+<div class="verse"><span class="verse-number">7</span>將銀子交在辦事的人手裏，不與他們算賬，因為他們辦事誠實。」</div>
+<div class="verse"><span class="verse-number">8</span>大祭司希勒家對書記沙番說：「我在耶和華殿裏得了律法書。」希勒家將書遞給沙番，沙番就看了。</div>
+<div class="verse"><span class="verse-number">9</span>書記沙番到王那裏，回覆王說：「你的僕人已將殿裏的銀子倒出數算，交給耶和華殿裏辦事的人了。」</div>
+<div class="verse"><span class="verse-number">10</span>書記沙番又對王說：「祭司希勒家遞給我一卷書。」沙番就在王面前讀那書。</div>
+<div class="verse"><span class="verse-number">11</span>王聽見律法書上的話，便撕裂衣服，</div>
+<div class="verse"><span class="verse-number">12</span>吩咐祭司希勒家與沙番的兒子亞希甘、米該亞的兒子亞革波、書記沙番和王的臣僕亞撒雅，說：</div>
+<div class="verse"><span class="verse-number">13</span>「你們去為我、為民、為猶大眾人，以這書上的話求問耶和華；因為我們列祖沒有聽從這書上的言語，沒有遵着書上所吩咐我們的去行，耶和華就向我們大發烈怒。」</div>
+<div class="verse"><span class="verse-number">14</span>於是，祭司希勒家和亞希甘、亞革波、沙番、亞撒雅都去見女先知戶勒大。戶勒大是掌管禮服沙龍的妻；沙龍是哈珥哈斯的孫子、特瓦的兒子。戶勒大住在耶路撒冷第二區。他們請問於她。</div>
+<div class="verse"><span class="verse-number">15</span>她對他們說：「耶和華以色列的神如此說：『你們可以回覆那差遣你們來見我的人說，</div>
+<div class="verse"><span class="verse-number">16</span>耶和華如此說：我必照着猶大王所讀那書上的一切話，降禍與這地和其上的居民。</div>
+<div class="verse"><span class="verse-number">17</span>因為他們離棄我，向別神燒香，用他們手所作的惹我發怒，所以我的忿怒必向這地發作，總不止息。』</div>
+<div class="verse"><span class="verse-number">18</span>然而，差遣你們來求問耶和華的猶大王，你們要這樣回覆他說：『耶和華以色列的神如此說：至於你所聽見的話，</div>
+<div class="verse"><span class="verse-number">19</span>就是聽見我指着這地和其上的居民所說、要使這地變為荒場、民受咒詛的話，你便心裏敬服，在我面前自卑，撕裂衣服，向我哭泣，因此我應允了你。這是我耶和華說的。</div>
+<div class="verse"><span class="verse-number">20</span>我必使你平平安安的歸到墳墓到你列祖那裏；我要降與這地的一切災禍，你也不至親眼看見。』」他們就回覆王去了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀下第22章記述猶大最後一位敬虔改革之王約西亞的開始。他八歲登基，三十一年的統治以最高評語開場——「行耶和華眼中看為正的事，行他祖大衛一切所行的，不偏左右」。在位第十八年，他命人整修聖殿，收集百姓奉獻的銀子用於修殿工程。在整修過程中，大祭司希勒家發現了一卷律法書——很可能是摩西的律法，長期在瑪拿西的惡政下被遺忘。書記沙番將書念給約西亞聽，王聽見律法書上的話，立即「撕裂衣服」——這是真誠悔改和敬畏的表達。他命人求問耶和華，差人去見女先知戶勒大。戶勒大的預言一分為二：猶大必遭滅亡，因列祖離棄神；但約西亞因心裡敬服神、在神面前自卑，必平平安安地歸到墳墓，不至於親眼看見那災禍。本章展示了面對神話語的正確回應：聽見、悔改、謙卑尋問，並願意承擔行動。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的話語在被遺忘的地方重新被發現，仍有全新的能力</strong><br>律法書被埋沒在損壞的聖殿中多少年，一旦被找到並被宣讀，立即震撼了王的心，引發了整個民族的更新。神的話語不因被忽視而失去力量；它一旦重新被聆聽，仍能刺透人心。對許多信徒而言，也許神的話語早已在手邊，但長期沒有被認真聆聽；當我們重新打開、認真閱讀，那份震撼和更新的能力仍在。<br><br>
+<strong>2. 對神話語的正確回應是謙卑悔改，而非辯護或迴避</strong><br>約西亞聽見律法書上的話，立即撕裂衣服——他沒有辯護說「但我們比先王好多了」，也沒有迴避說「這不是我們的錯」，而是誠實地承認自己的民族所虧欠神的，並立即行動尋求神的旨意。這種「聽見就受感動、受感動就行動」的回應，是屬靈成熟的標誌。<br><br>
+<strong>3. 個人的謙卑可以在群體的審判中為自己爭取憐憫</strong><br>戶勒大的預言清楚分開了對猶大整體的審判（必降禍）和對約西亞個人的應許（平安歸去）。整體的審判因瑪拿西的罪已成定局，但約西亞個人因謙卑敬服，得以在有生之年不親眼目睹那災禍。個人的謙卑和敬畏，即使無法改變群體的命運，仍然能在神的公義中為自己贏得憐憫。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>王聽見律法書上的</strong>話，<strong>便撕裂衣服</strong>。」（王下22:11）</td>
+<td>就像一個人讀到一封揭示了自己嚴重錯誤的信件，立刻意識到問題的嚴重性而當場震撼，約西亞聽見律法書的話，立刻以撕裂衣服表達他的震動和悔改。上一次你讀神的話語時，有沒有什麼讓你真正震動或不安的經文？你怎樣回應它？</td>
+</tr>
+<tr>
+<td>「<strong>大祭司希勒家對書</strong><strong>記沙番說</strong>：『我在耶和華殿裏得了律法書。』」（王下22:8）</td>
+<td>就像一個人在整理多年積灰的書架時，找到了一本改變生命的書，希勒家在修殿中重新發現了律法書。你有沒有經歷過一次「重新發現」——重新閱讀了某段神的話語，讓它從熟悉的文字變成活的信息，震撼了你的心？</td>
+</tr>
+<tr>
+<td>「<strong>你便心裏敬服</strong>，<strong>在我面前自卑</strong>，撕裂衣服，向我哭泣，因此我應允了你。」（王下22:19）</td>
+<td>就像一個人在群體的風暴中因個人的謙卑而得到庇護，約西亞的謙卑使他在猶大整體的審判中得到了個人的憐憫。你相信你個人在神面前的謙卑和委身，在任何處境中都具有真實的分量，神都看見嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

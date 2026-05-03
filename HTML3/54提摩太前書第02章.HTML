@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提摩太前書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+提摩太前書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">禱告的呼籲與教會生活的秩序</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我勸你，第一要為萬人懇求、禱告、代求、祝謝；</div>
+<div class="verse"><span class="verse-number">2</span>為君王和一切在位的，也該如此，使我們可以敬虔、端正、平安無事的度日。</div>
+<div class="verse"><span class="verse-number">3</span>這是好的，在神我們救主面前可蒙悅納。</div>
+<div class="verse"><span class="verse-number">4</span>他願意萬人得救，明白真道。</div>
+<div class="verse"><span class="verse-number">5</span>因為只有一位神，在神和人中間，只有一位中保，乃是降世為人的基督耶穌；</div>
+<div class="verse"><span class="verse-number">6</span>他捨自己作萬人的贖價，到了時候，這事必證明出來。</div>
+<div class="verse"><span class="verse-number">7</span>我為此奉派作傳道的，作使徒，作外邦人的師傅，教導他們相信，學習真道。我說的是真話，並不是謊言。</div>
+<div class="verse"><span class="verse-number">8</span>我願男人無忿怒，無爭論〔或作：疑惑〕，舉起聖潔的手，隨處禱告。</div>
+<div class="verse"><span class="verse-number">9</span>又願女人廉恥、自守，以正派衣裳為妝飾，不以編髮、黃金、珍珠，和貴價的衣裳為妝飾；</div>
+<div class="verse"><span class="verse-number">10</span>只要有善行，這纔與自稱是敬神的女人相宜。</div>
+<div class="verse"><span class="verse-number">11</span>女人要沉靜學道，一味的順服。</div>
+<div class="verse"><span class="verse-number">12</span>我不許女人講道，也不許她轄管男人，只要沉靜。</div>
+<div class="verse"><span class="verse-number">13</span>因為先造的是亞當，後造的是夏娃；</div>
+<div class="verse"><span class="verse-number">14</span>且不是亞當被引誘，乃是女人被引誘，陷在罪裏。</div>
+<div class="verse"><span class="verse-number">15</span>然而，女人若常存信心、愛心，又聖潔自守，就必在生產上得救。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第2章記述保羅就教會中的公眾禱告和男女在聚會中的角色給予教導，包括為萬人代禱的呼召，以及關於婦女在教會中安靜的指示，是新約中討論教會禮拜秩序的重要段落。本章首先勸導眾人要為萬人禱告，為君王和一切在位的也要禱告，使我們可以敬虔端正、平安無事地度日，因為神願意萬人得救、明白真道，因為只有一位神，在神和人中間只有一位中保，就是降世為人的基督耶穌，祂捨自己作萬人的贖價。接著說明要男人無忿怒、無爭論地舉起聖潔的手隨處禱告。然後就婦女在聚會中的外表給出教導，要她們妝扮端正、廉恥、自守，只要有善行。接著說婦女要沉靜學道、一味地順服，不可講道、不可轄管男人、只要沉靜，因為先造的是亞當後造的是夏娃，且不是亞當被引誘乃是女人被引誘陷在罪裡。然而女人若常存信心、愛心，又聖潔自守，就必在生產上得救。本章為教會禮拜秩序提供神學依據，歷代對其解釋與應用有廣泛的神學討論。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 為萬人代禱反映神的普世心意</strong><br>「第一要為萬人懇求……他願意萬人得救，明白真道」——教會禱告的廣度應與神心意的廣度相符：萬人。包括仇敵、統治者、社會邊緣人——任何神的救贖計劃所涵蓋的人，都在代禱的範圍之內。「第一」說明這是教會最優先的責任，不是可選的附加項。<br><br>
+<strong>2. 唯一的中保——基督耶穌</strong><br>「只有一位中保，乃是降世為人的基督耶穌；他捨自己作萬人的贖價」——中保的唯一性是排他性宣告，也是包容性邀請：只有一條路，但這條路對萬人開放。「捨自己作贖價」說明中保的工作是犧牲性的，不只是調解性的。這個真理同時強調傳福音的必要性（只有一位中保）和可能性（對萬人都有效）。<br><br>
+<strong>3. 聖潔的手——禱告的前提是生命的清潔</strong><br>「無忿怒，無爭論，舉起聖潔的手，隨處禱告」——有效的禱告需要「聖潔的手」，也就是清潔的生命。忿怒和爭論（與他人的關係）以及不聖潔（與神的關係），都是禱告的攔阻。真正的禱告生活需要生命清潔和人際和睦的配合。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我勸你</strong>，<strong>第一要為萬人懇求</strong>……因為神願意萬人得救，明白真道。（提前2:1,4）</td>
+<td>你有沒有在你的禱告生活中，真實地「為萬人」代禱——包括那些你認為不太可能信主的人、你不喜歡的人、乃至政府官員？就像一個愛孩子的父母希望孩子所有的朋友都好，你有沒有讓對神普世心意的認識擴大你代禱的範圍？</td>
+</tr>
+<tr>
+<td><strong>因為只有一位神</strong>，<strong>在神和人中間</strong>，只有一位中保，乃是降世為人的基督耶穌；他捨自己作萬人的贖價。（提前2:5-6）</td>
+<td>你有沒有讓「只有一位中保」的確信，激勵你更積極地向周圍人傳福音，因為只有通過基督這條唯一的路才能到達神那裏？就像知道救人的唯一方式讓急救者更有緊迫感，你有沒有讓唯一中保的確信帶出你傳福音的熱切？</td>
+</tr>
+<tr>
+<td><strong>我願男人無忿怒</strong>，<strong>無爭論</strong>，舉起聖潔的手，隨處禱告。（提前2:8）</td>
+<td>你有沒有在禱告之前，先省察自己有沒有未和解的衝突和未饒恕的人，讓你的手在神面前真正是「聖潔的」？就像清潔的管道讓水流暢通，你有沒有讓和睦與聖潔成為你禱告有效的前提？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

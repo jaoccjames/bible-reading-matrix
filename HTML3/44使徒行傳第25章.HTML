@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第25章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第25章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">在非斯都和亞基帕王面前</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>非斯都到了任，過了三天，就從該撒利亞上耶路撒冷去。</div>
+<div class="verse"><span class="verse-number">2</span>祭司長和猶太人的首領向他控告保羅，</div>
+<div class="verse"><span class="verse-number">3</span>又央告他，求他的情，將保羅提到耶路撒冷來，他們要在路上埋伏殺害他。</div>
+<div class="verse"><span class="verse-number">4</span>非斯都卻回答說：「保羅押在該撒利亞，我自己快要往那裏去」；</div>
+<div class="verse"><span class="verse-number">5</span>又說：「你們中間有權勢的人與我一同下去，那人若有甚麼不是，就可以告他。」</div>
+<div class="verse"><span class="verse-number">6</span>非斯都在他們那裏住了不過十天八天，就下該撒利亞去；第二天坐堂，吩咐將保羅提上來。</div>
+<div class="verse"><span class="verse-number">7</span>保羅來了，那些從耶路撒冷下來的猶太人周圍站着，將許多重大的事控告他，都是不能證實的。</div>
+<div class="verse"><span class="verse-number">8</span>保羅分訴說：「無論猶太人的律法，或是聖殿，或是該撒，我都沒有干犯。」</div>
+<div class="verse"><span class="verse-number">9</span>但非斯都要討猶太人的喜歡，就問保羅說：「你願意上耶路撒冷去，在那裏聽我審斷這事嗎？」</div>
+<div class="verse"><span class="verse-number">10</span>保羅說：「我站在該撒的堂前，這就是我應當受審的地方。我向猶太人並沒有行過甚麼不義的事，這也是你明明知道的。</div>
+<div class="verse"><span class="verse-number">11</span>我若行了不義的事，犯了甚麼該死的罪，就是死，我也不辭。他們所告我的事若都不實，就沒有人可以把我交給他們。我要上告於該撒。」</div>
+<div class="verse"><span class="verse-number">12</span>非斯都和議會商量了，就說：「你既上告於該撒，可以往該撒那裏去。」</div>
+<div class="verse"><span class="verse-number">13</span>過了些日子，亞基帕王和百尼基氏來到該撒利亞，問非斯都安。</div>
+<div class="verse"><span class="verse-number">14</span>在那裏住了多日，非斯都將保羅的事告訴王，說：「這裏有一個人，是腓力斯留在監裏的。</div>
+<div class="verse"><span class="verse-number">15</span>我在耶路撒冷的時候，祭司長和猶太的長老將他的事稟報了我，求我定他的罪。</div>
+<div class="verse"><span class="verse-number">16</span>我對他們說，無論甚麼人，被告還沒有和原告對質，未得機會分訴所告他的事，就先定他的罪，這不是羅馬人的條例。</div>
+<div class="verse"><span class="verse-number">17</span>及至他們都來到這裏，我就不耽延，第二天便坐堂，吩咐把那人提上來。</div>
+<div class="verse"><span class="verse-number">18</span>告他的人站着告他；所告的，並沒有我所逆料的那等惡事。</div>
+<div class="verse"><span class="verse-number">19</span>不過是有幾樣辯論，為他們自己敬鬼神的事，又為一個人名叫耶穌，是已經死了，保羅卻說他是活着的。</div>
+<div class="verse"><span class="verse-number">20</span>這些事當怎樣究問，我心裏作難，所以問他說：『你願意上耶路撒冷去，在那裏為這些事聽審嗎？』</div>
+<div class="verse"><span class="verse-number">21</span>但保羅求我留下他，要聽皇上審斷，我就吩咐把他留下，等我解他到該撒那裏去。」</div>
+<div class="verse"><span class="verse-number">22</span>亞基帕對非斯都說：「我自己也願聽這人辯論。」非斯都說：「明天你可以聽。」</div>
+<div class="verse"><span class="verse-number">23</span>第二天，亞基帕和百尼基大張威勢而來，同着眾千夫長和城裏的尊貴人進了公廳。非斯都吩咐一聲，就有人將保羅帶進來。</div>
+<div class="verse"><span class="verse-number">24</span>非斯都說：「亞基帕王和在這裏的諸位阿，你們看這人，就是一切猶太人，在耶路撒冷和這裏，曾向我懇求、呼叫說：『不可容他再活着。』」</div>
+<div class="verse"><span class="verse-number">25</span>但我查明他沒有犯甚麼該死的罪，並且他自己上告於皇帝，所以我定意把他解去。</div>
+<div class="verse"><span class="verse-number">26</span>論到這人，我沒有確實的事可以奏明主上。因此，我帶他到你們面前，也特意帶他到你亞基帕王面前，為要在查問之後有所陳奏。</div>
+<div class="verse"><span class="verse-number">27</span>據我看來，解送囚犯，不指明他的罪案是不合理的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第25章記述新巡撫非斯都接任後重新審問保羅，猶太人的圖謀落空，保羅上訴凱撒，以及亞基帕王來聆聽保羅辯護的背景說明。本章首先記述非斯都上任三天後往耶路撒冷去，祭司長和猶太人的首領控告保羅，請求非斯都把保羅押到耶路撒冷，他們打算在路上殺他，非斯都拒絕，說可以讓有能力的人往該撒利亞控告他。非斯都回到該撒利亞坐堂審問，猶太人圍著保羅指控，卻拿不出憑據，保羅說他無論在猶太人的律法、聖殿或凱撒上都沒有犯罪。非斯都想討好猶太人，問保羅願不願意上耶路撒冷受審，保羅說他站在凱撒的審判台前是應當的，若有犯死罪的事他不辭死，若他們所告的事都是虛空的沒有人能把他交給他們，他要上訴於凱撒。非斯都和議員商議後說你既上訴於凱撒，可以往凱撒那裡去。亞基帕王和百尼基來問候非斯都，非斯都把保羅的事告訴他，亞基帕想聽保羅，非斯都說此人的事無可定罪，但上訴於凱撒，要有些事情陳明，所以安排了聆聽。本章展示羅馬法律制度如何成為神保護保羅的工具。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 上告凱撒是神帶保羅到羅馬的方式</strong><br>「我要上告於該撒！」——這不是衝動的決定，而是在神的主權下，保羅智慧地使用合法權利。主應許他「必在羅馬為我作見證」，現在羅馬法律的程序成了那個應許成就的途徑。神常常透過人間的法律、制度和機會來成就祂的計劃，信徒要有眼光看見並善加使用。<br><br>
+<strong>2. 外邦人客觀地看見猶太人的控告缺乏實質</strong><br>非斯都說猶太人的指控「無非是幾樣辯論……為一個人名叫耶穌，是已經死了，保羅卻說他是活着的」——一個羅馬巡撫在沒有信仰立場的情況下，把整個爭議精確地描述為復活問題。外邦人能清楚看見的，就是信仰的核心：耶穌的死和復活。這也說明耶穌的復活不只是神學問題，而是歷史問題——是真實發生的事件，值得在最嚴格的法庭上被辯護。<br><br>
+<strong>3. 神在威勢和謙卑的場合中都有機會</strong><br>「亞基帕和百尼基大張威勢而來」，目的是聆訊一個囚犯——這個對比本身就是諷刺。而那位「大張威勢」的王，卻即將聽保羅傳講基督。神的使者有時是囚犯，世俗的榮耀者有時是需要福音的人。外表的威勢和內在的靈魂需要，是完全不同的兩件事。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我站在該撒的堂前</strong>，<strong>這就是我應當受審</strong>的地方……我要上告於該撒。（徒25:10-11）</td>
+<td>你有沒有學習智慧地使用你所擁有的合法資源和機會，推進神給你的使命？就像保羅用羅馬公民權利到達羅馬，你有沒有看見神如何透過你的教育、職業和社會位置，為你的見證開路？</td>
+</tr>
+<tr>
+<td><strong>非斯都說</strong>：「<strong>不過是有幾樣辯論</strong>，為他們自己敬鬼神的事，又為一個人名叫耶穌，是已經死了，保羅卻說他是活着的。」（徒25:19）</td>
+<td>你有沒有常常思考耶穌復活的歷史真實性，讓這個信念成為你信仰的堅實基礎？就像所有的法律判決最終都要回到事實問題，你有沒有讓「耶穌確實從死裏復活了」這個事實，成為你最確信的信念？</td>
+</tr>
+<tr>
+<td><strong>亞基帕王和百尼基</strong><strong>大張威勢而來</strong>……保羅被帶進來。（徒25:23）</td>
+<td>你有沒有在面對比你有更大權力和威勢的人時，仍然有信心分享你的信仰？就像保羅在王面前毫無懼色，你有沒有讓對神的敬畏超越對人的恐懼，使你可以在任何人面前作見證？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

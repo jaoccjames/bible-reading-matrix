@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>但以理書第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+但以理書第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">但以理的代禱與七十個七的啟示</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>瑪代族亞哈隨魯的兒子大利烏立為迦勒底國的王元年，</div>
+<div class="verse"><span class="verse-number">2</span>就是他在位第一年，我但以理從書上得知耶和華的話臨到先知耶利米，論耶路撒冷荒涼的年數，七十年為滿。</div>
+<div class="verse"><span class="verse-number">3</span>我便禁食，披麻蒙灰，定意向主神祈禱懇求。</div>
+<div class="verse"><span class="verse-number">4</span>我向耶和華我的神祈禱、認罪，說：「主啊，大而可畏的神，向愛主、守主誡命的人守約施慈愛。</div>
+<div class="verse"><span class="verse-number">5</span>我們犯罪作孽，行惡叛逆，偏離你的誡命典章，</div>
+<div class="verse"><span class="verse-number">6</span>沒有聽從你僕人眾先知奉你名向我們君王、首領、列祖，和國中一切百姓所說的話。</div>
+<div class="verse"><span class="verse-number">7</span>主啊，你是公義的，我們是臉上蒙羞的；因我們猶大人和耶路撒冷的居民，並以色列眾人，或在近處，或在遠處，被你趕到各國的人，都得罪了你，正如今日一樣。</div>
+<div class="verse"><span class="verse-number">8</span>主啊，我們和我們的君王、首領、列祖因得罪了你，就都臉上蒙羞。</div>
+<div class="verse"><span class="verse-number">9</span>主我們的神是憐憫饒恕人的，我們卻違背了他，</div>
+<div class="verse"><span class="verse-number">10</span>也沒有聽從耶和華我們神的話，沒有遵行他藉僕人眾先知向我們所陳明的律法。</div>
+<div class="verse"><span class="verse-number">11</span>以色列眾人都犯了你的律法，偏行，不聽從你的話；因此，在你僕人摩西律法上所寫的咒詛和誓言都傾在我們身上，因我們得罪了神。</div>
+<div class="verse"><span class="verse-number">12</span>他使大災禍臨到我們，成就了警戒我們和審判我們官長的話；原來在普天之下未曾行過像在耶路撒冷所行的。</div>
+<div class="verse"><span class="verse-number">13</span>這一切災禍臨到我們身上是照摩西律法上所寫的，我們卻沒有求耶和華我們神的恩典，使我們回頭離開罪孽，明白你的真理。</div>
+<div class="verse"><span class="verse-number">14</span>所以耶和華留意使這災禍臨到我們身上，因為耶和華我們的神在他所行的事上都是公義；我們並沒有聽從他的話。</div>
+<div class="verse"><span class="verse-number">15</span>主我們的神啊，你曾用大能的手領你的子民出埃及地，使自己得了名，正如今日一樣。我們犯了罪，作了惡。</div>
+<div class="verse"><span class="verse-number">16</span>主啊，求你按你的大仁大義，使你的怒氣和忿怒轉離你的城耶路撒冷，就是你的聖山。耶路撒冷和你的子民，因我們的罪惡和我們列祖的罪孽被四圍的人羞辱。</div>
+<div class="verse"><span class="verse-number">17</span>我們的神啊，現在求你垂聽僕人的祈禱懇求，為自己使臉光照你荒涼的聖所。</div>
+<div class="verse"><span class="verse-number">18</span>我的神啊，求你側耳而聽，睜眼而看，眷顧我們荒涼之地和稱為你名下的城。我們在你面前懇求，原不是因自己的義，乃因你的大憐憫。</div>
+<div class="verse"><span class="verse-number">19</span>求主垂聽，求主赦免，求主應允而行，為你自己不要遲延。我的神啊，因這城和這民都是稱為你名下的。」</div>
+<div class="verse"><span class="verse-number">20</span>我說話，禱告，承認我的罪和本國之民以色列的罪，為我神的聖山，在耶和華我神面前懇求。</div>
+<div class="verse"><span class="verse-number">21</span>我正禱告的時候，先前在異象中所見的那位加百列，奉命迅速飛來，約在獻晚祭的時候，按手在我身上。</div>
+<div class="verse"><span class="verse-number">22</span>他指教我說：「但以理啊，現在我出來要使你有智慧，有聰明。</div>
+<div class="verse"><span class="verse-number">23</span>你初懇求的時候，就發出命令，我來告訴你，因你大蒙眷愛；所以你要思想明白這以下的事和異象。</div>
+<div class="verse"><span class="verse-number">24</span>「為你本國之民和你聖城，已經定了七十個七。要止住罪過，除淨罪惡，贖盡罪孽，引進〔或作：彰顯〕永義，封住異象和預言，並膏至聖者〔者：或作所〕。</div>
+<div class="verse"><span class="verse-number">25</span>你當知道，當明白，從出令重新建造耶路撒冷，直到有受膏君的時候，必有七個七和六十二個七。正在艱難的時候，耶路撒冷城連街帶濠都必重新建造。</div>
+<div class="verse"><span class="verse-number">26</span>過了六十二個七，那〔或作：有〕受膏者必被剪除，一無所有；必有一王的民來毀滅這城和聖所，至終必如洪水沖沒。必有爭戰，一直到底，荒涼的事已經定了。</div>
+<div class="verse"><span class="verse-number">27</span>一七之內，他必與許多人堅定盟約；一七之半，他必使祭祀與供獻止息。那行毀壞可憎的〔或作：使地荒涼的〕如飛而來，並且有忿怒傾在那行毀壞的身上〔或作：傾在那荒涼之地〕，直到所定的結局。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+但以理書第9章是整卷書中最深刻的禱告章節，也是聖經中最著名的代禱之一。但以理從耶利米書中讀到七十年的預言，就「禁食，披麻蒙灰」，在神面前認罪代禱。這篇禱告的特點是：但以理說「我們」而非「他們」——他將百姓的罪視為自己的罪；他承認神的公義，承認以色列的羞辱是理所當然的，卻懇求神「為你自己」施恩，「不是因自己的義，乃因你的大憐憫」。禱告仍在繼續時，加百列「奉命迅速飛來」，帶來「七十個七」的啟示——是整個末世預言中最複雜、最具爭議性、也最重要的預言之一，關乎彌賽亞的到來和末後的大艱難。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 讀神的話引發禱告：聖經閱讀是禱告最深的動力</strong><br>但以理「從書上得知耶利米的話」，就立刻「定意向主神祈禱懇求」——讀經直接引發代禱。神的話不只是知識，而是禱告的啟動器。信徒的禱告生命若缺乏神話語的供應，就容易流於空洞；神的話激發我們為神在歷史中的計畫禱告，使禱告與神的心意對齊。<br><br>
+<strong>2. 真正的代禱是「我們」而非「他們」的認同</strong><br>但以理本人是忠心無辜的，卻說「我們犯罪作孽……我們沒有聽從你的話」——他認同百姓的罪，為他人的罪在神面前認罪。這是代禱最深的形式：不是站在罪人之外請求神饒恕他們，而是站在他們之中，以「我們」的身份在神面前謙卑。<br><br>
+<strong>3. 禱告的根基不是人的義，而是神的大憐憫</strong><br>「我們在你面前懇求，原不是因自己的義，乃因你的大憐憫」——這是禱告最正確的出發點。不是因為我夠好所以神應該聽我，而是因為神夠憐憫所以我可以求祂。這個出發點使禱告既謙卑又大膽：謙卑在於不倚靠自己的配得，大膽在於完全倚靠神的恩典。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我便禁食</strong>，<strong>披麻蒙灰</strong>，定意向主神祈禱懇求。（但9:3）</td>
+<td>但以理讀耶利米書引發了禱告。你最近讀聖經時，有沒有被某一段經文激發去為某人或某事代禱？就像接到一封信讓你想立刻回電話，神的話有沒有讓你「定意禱告」——停下手邊的事，認真進入禱告？你願意今天讓讀到的聖經成為你禱告的起點嗎？</td>
+</tr>
+<tr>
+<td><strong>我們在你面前懇求</strong>，<strong>原不是因自己的義</strong>，乃因你的大憐憫。（但9:18下）</td>
+<td>「不是因自己的義，乃因你的大憐憫」——這是禱告中最誠實也最有力的立場。你的禱告是建立在「我夠好，神應當聽」，還是「我不配，但神夠憐憫」？就像兩個人向法官求情，一個是因為「我是個好人」，另一個是因為「法官是個好人」，你禱告的根基建立在哪一個？</td>
+</tr>
+<tr>
+<td><strong>我說話</strong>，禱告，<strong>承認我的罪和本國</strong>之民以色列的罪……我正禱告的時候……加百列，奉命迅速飛來。（但9:20-21）</td>
+<td>「正禱告的時候……加百列飛來」——神的回應在禱告仍在進行時就已發出。你是否有過「禱告還沒說完，事情就已開始改變」的經歷？就像打電話還在等接通，對方已經知道你打來了，你的禱告有沒有讓你相信神在聆聽，甚至在你還沒說完時就已經回應？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

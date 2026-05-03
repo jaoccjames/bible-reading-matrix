@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尼希米記第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+尼希米記第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">城牆完工後安排守衛登記名冊</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>城牆修完，我安了門扇，守門的、歌唱的，和利未人都已派定。</div>
+<div class="verse"><span class="verse-number">2</span>我就派我的弟兄哈拿尼和營樓的宰官哈拿尼雅管理耶路撒冷；因為哈拿尼雅是忠信的，又敬畏神過於眾人。</div>
+<div class="verse"><span class="verse-number">3</span>我吩咐他們說：「等到太陽上升纔可開耶路撒冷的城門；人尚看守的時候就要關門上閂；也當派耶路撒冷的居民各按班次看守自己房屋對面之處。」</div>
+<div class="verse"><span class="verse-number">4</span>城是廣大，其中的民卻稀少，房屋還沒有建造。</div>
+<div class="verse"><span class="verse-number">5</span>我的神感動我心，招聚貴冑、官長，和百姓，要照家譜計算。我找着第一次上來之人的家譜，其上寫着：</div>
+<div class="verse"><span class="verse-number">6</span>巴比倫王尼布甲尼撒從前擄去猶大省的人，現在他們的子孫從被擄到之地回耶路撒冷和猶大，各歸本城。</div>
+<div class="verse"><span class="verse-number">7</span>他們是同着所羅巴伯、耶書亞、尼希米、亞撒利雅、拉米、拿哈瑪尼、末底改、必珊、米斯毘列、比革瓦伊、尼宏、巴拿回來的。</div>
+<div class="verse"><span class="verse-number">8</span>以色列人民的數目記在下面：巴錄的子孫二千一百七十二名；</div>
+<div class="verse"><span class="verse-number">9</span>示法提雅的子孫三百七十二名；</div>
+<div class="verse"><span class="verse-number">10</span>亞拉的子孫六百五十二名；</div>
+<div class="verse"><span class="verse-number">11</span>巴哈摩押的後裔，就是耶書亞和約押的子孫二千八百一十八名；</div>
+<div class="verse"><span class="verse-number">12</span>以攔的子孫一千二百五十四名；</div>
+<div class="verse"><span class="verse-number">13</span>薩土的子孫八百四十五名；</div>
+<div class="verse"><span class="verse-number">14</span>薩改的子孫七百六十名；</div>
+<div class="verse"><span class="verse-number">15</span>賓內的子孫六百四十八名；</div>
+<div class="verse"><span class="verse-number">16</span>比拜的子孫六百二十八名；</div>
+<div class="verse"><span class="verse-number">17</span>押甲的子孫二千三百二十二名；</div>
+<div class="verse"><span class="verse-number">18</span>亞多尼干的子孫六百六十七名；</div>
+<div class="verse"><span class="verse-number">19</span>比革瓦伊的子孫二千零六十七名；</div>
+<div class="verse"><span class="verse-number">20</span>亞丁的子孫六百五十五名；</div>
+<div class="verse"><span class="verse-number">21</span>亞特的後裔，就是希西家的子孫九十八名；</div>
+<div class="verse"><span class="verse-number">22</span>哈順的子孫三百二十八名；</div>
+<div class="verse"><span class="verse-number">23</span>比賽的子孫三百二十四名；</div>
+<div class="verse"><span class="verse-number">24</span>哈拉的子孫一百一十二名；</div>
+<div class="verse"><span class="verse-number">25</span>基遍人九十五名；</div>
+<div class="verse"><span class="verse-number">26</span>伯利恆人和尼陀法人共一百八十八名；</div>
+<div class="verse"><span class="verse-number">27</span>亞拿突人一百二十八名；</div>
+<div class="verse"><span class="verse-number">28</span>伯亞斯瑪弗人四十二名；</div>
+<div class="verse"><span class="verse-number">29</span>基列耶琳人、基非拉人、比錄人共七百四十三名；</div>
+<div class="verse"><span class="verse-number">30</span>拉瑪人和迦巴人共六百二十一名；</div>
+<div class="verse"><span class="verse-number">31</span>默瑪人一百二十二名；</div>
+<div class="verse"><span class="verse-number">32</span>伯特利人和艾人共一百二十三名；</div>
+<div class="verse"><span class="verse-number">33</span>別的尼波人五十二名；</div>
+<div class="verse"><span class="verse-number">34</span>別的以攔子孫一千二百五十四名；</div>
+<div class="verse"><span class="verse-number">35</span>哈琳的子孫三百二十名；</div>
+<div class="verse"><span class="verse-number">36</span>耶利哥人三百四十五名；</div>
+<div class="verse"><span class="verse-number">37</span>羅德人、哈第人、阿挪人共七百二十一名；</div>
+<div class="verse"><span class="verse-number">38</span>西拿人三千九百三十名。</div>
+<div class="verse"><span class="verse-number">39</span>祭司：耶書亞家，耶大雅的子孫九百七十三名；</div>
+<div class="verse"><span class="verse-number">40</span>音麥的子孫一千零五十二名；</div>
+<div class="verse"><span class="verse-number">41</span>巴施戶珥的子孫一千二百四十七名；</div>
+<div class="verse"><span class="verse-number">42</span>哈琳的子孫一千零一十七名。</div>
+<div class="verse"><span class="verse-number">43</span>利未人：何達威的後裔，就是耶書亞和甲篾的子孫七十四名。</div>
+<div class="verse"><span class="verse-number">44</span>歌唱的：亞薩的子孫一百四十八名。</div>
+<div class="verse"><span class="verse-number">45</span>守門的：沙龍的子孫、亞特的子孫、達們的子孫、亞谷的子孫、哈底大的子孫、朔拜的子孫，共一百三十八名。</div>
+<div class="verse"><span class="verse-number">46</span>尼提寧〔就是殿役〕：西哈的子孫、哈蘇巴的子孫、答巴俄的子孫、</div>
+<div class="verse"><span class="verse-number">47</span>基綠的子孫、西亞的子孫、巴頓的子孫、</div>
+<div class="verse"><span class="verse-number">48</span>利巴拿的子孫、哈迦巴的子孫、薩買的子孫、</div>
+<div class="verse"><span class="verse-number">49</span>哈難的子孫、吉德的子孫、迦哈的子孫、</div>
+<div class="verse"><span class="verse-number">50</span>利亞雅的子孫、利汛的子孫、尼哥大的子孫、</div>
+<div class="verse"><span class="verse-number">51</span>迦散的子孫、烏撒的子孫、巴西亞的子孫、</div>
+<div class="verse"><span class="verse-number">52</span>比賽的子孫、米烏寧的子孫、尼普心的子孫、</div>
+<div class="verse"><span class="verse-number">53</span>巴卜的子孫、哈古巴的子孫、哈忽的子孫、</div>
+<div class="verse"><span class="verse-number">54</span>巴洗律的子孫、米希大的子孫、哈沙的子孫、</div>
+<div class="verse"><span class="verse-number">55</span>巴柯的子孫、西西拉的子孫、答瑪的子孫、</div>
+<div class="verse"><span class="verse-number">56</span>尼細亞的子孫、哈提法的子孫。</div>
+<div class="verse"><span class="verse-number">57</span>所羅門僕人的後裔，就是瑣太的子孫、瑣斐列的子孫、比路大的子孫、</div>
+<div class="verse"><span class="verse-number">58</span>雅拉的子孫、達昆的子孫、吉德的子孫、</div>
+<div class="verse"><span class="verse-number">59</span>示法提雅的子孫、哈替的子孫、玻黑列哈斯巴音的子孫、亞們的子孫。</div>
+<div class="verse"><span class="verse-number">60</span>尼提寧和所羅門僕人的後裔共三百九十二名。</div>
+<div class="verse"><span class="verse-number">61</span>從特米拉、特哈薩、基綠、亞頓、音麥上來的，不能指明他們的宗族譜系是以色列人不是；</div>
+<div class="verse"><span class="verse-number">62</span>他們是第萊雅的子孫、多比雅的子孫、尼哥大的子孫，共六百四十二名。</div>
+<div class="verse"><span class="verse-number">63</span>祭司中，哈巴雅的子孫、哈哥斯的子孫、巴西萊的子孫；因為他們的先祖娶了基列人巴西萊的女兒為妻，所以起名叫巴西萊。</div>
+<div class="verse"><span class="verse-number">64</span>這三家的人在族譜之中尋查自己的譜系，卻尋不着，因此算為不潔，不准供祭司的職任。</div>
+<div class="verse"><span class="verse-number">65</span>省長對他們說：「不可喫至聖的物，直到有用烏陵和土明決疑的祭司興起來。」</div>
+<div class="verse"><span class="verse-number">66</span>會眾共有四萬二千三百六十名。</div>
+<div class="verse"><span class="verse-number">67</span>此外，還有他們的僕婢七千三百三十七名，又有歌唱的男女二百四十五名。</div>
+<div class="verse"><span class="verse-number">68</span>他們有馬七百三十六匹，騾子二百四十五匹，</div>
+<div class="verse"><span class="verse-number">69</span>駱駝四百三十五隻，驢六千七百二十匹。</div>
+<div class="verse"><span class="verse-number">70</span>有些族長為工程捐助。省長捐入庫中的金子一千達利克，碗五十個，祭司的禮服五百三十件。</div>
+<div class="verse"><span class="verse-number">71</span>又有族長捐入工程庫的金子二萬達利克，銀子二千二百彌拿。</div>
+<div class="verse"><span class="verse-number">72</span>其餘百姓所捐的金子二萬達利克，銀子二千彌拿，祭司的禮服六十七件。</div>
+<div class="verse"><span class="verse-number">73</span>於是祭司、利未人、守門的、歌唱的、民中的一些人、尼提寧，並以色列眾人，各住在自己的城裏。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+尼希米記第7章記載城牆完工後，尼希米進行的兩項重要後續工作：一是建立城市的安全管理制度，任命忠信敬畏神的人負責守衛；二是在神的感動下，招聚百姓查閱第一批歸回者的家譜，以便管理和重新安置人口。本章的名冊內容幾乎與以斯拉記第2章相同，但有若干數字差異，可能反映不同時期或抄本的記錄。城牆雖已完工，但城內人口稀少，仍需充實。名冊的重新查閱顯示尼希米是一個有全盤思考的領袖——他明白城牆的重建只是第一步，城市的恢復需要人口的聚集和制度的建立。本章也強調「忠信」和「敬畏神」是用人的核心標準，為下文靈性更新的預備奠定基礎。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 忠信與敬畏神是屬靈領袖選用人才的核心標準</strong><br>尼希米選派哈拿尼雅管理耶路撒冷，理由清晰：「他是忠信的，又敬畏神過於眾人」。這兩個標準——忠信（可靠誠實）和敬畏神（以神為中心的動機）——至今仍是評估屬靈領袖資格最核心的依據。才幹和學識固然重要，但沒有忠信和敬畏神的根基，才幹可能帶來傷害而非建造。<br><br>
+<strong>2. 神感動人心是屬靈建造的驅動力</strong><br>尼希米查閱家譜、重新登記百姓，起因是「我的神感動我心」。他不是靠自己的行政敏感，也不是因人的催促，而是回應神在心中的感動而行動。這顯示靈性復興的每一個步驟都有神的主動參與——神不只在宣告中說話，也在領袖心中引導他做出正確的行政和屬靈決定。<br><br>
+<strong>3. 外在建造完成後，仍需內在的充實與鞏固</strong><br>城牆修完是一個里程碑，但尼希米知道這不是終點。城內人口稀少，需要充實；百姓的屬靈狀況需要更新。本章是從物質建造向屬靈建造的過渡。信徒或教會在完成一件工程後，也需要問：接下來需要怎樣的內在充實和人員培育，才能讓這外在的成就持久發揮功效？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我就派</strong>……<strong>哈拿尼雅管理耶路</strong>撒冷；因為哈拿尼雅是忠信的，又敬畏神過於眾人。（尼7:2）</td>
+<td>就像招聘重要職位時，最終考量的是品格而非技能，忠信與敬畏神是否也是你選擇信任和委以重任的人的核心標準？你周圍有哪些人符合這兩個標準？</td>
+</tr>
+<tr>
+<td><strong>我的神感動我心</strong>，<strong>招聚貴冑</strong>、官長，和百姓，要照家譜計算。（尼7:5）</td>
+<td>就像手機的導航需要先知道你現在在哪裡，才能規劃路線，神感動你心做某件事時，你是否能分辨那是來自神的引導？你如何辨別這類屬靈的感動？</td>
+</tr>
+<tr>
+<td><strong>城是廣大</strong>，<strong>其中的民卻稀少</strong>，房屋還沒有建造。（尼7:4）</td>
+<td>就像蓋好了一棟大樓卻沒有住戶，外在的架構完成後若沒有內在的充實，依然是空殼。你服事的群體中，是否也有這樣「廣大但稀少」的缺口，需要被填補？你能做什麼？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

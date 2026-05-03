@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多前書第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多前書第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">什一奉獻原則與問安結語</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>論到為聖徒捐錢，我從前怎樣吩咐加拉太的眾教會，你們也當怎樣行。</div>
+<div class="verse"><span class="verse-number">2</span>每逢七日的第一日，各人要照自己的進項抽出來留着，免得我來的時候現湊。</div>
+<div class="verse"><span class="verse-number">3</span>及至我來到了，你們寫信舉薦誰，我就打發他們，把你們的捐資送到耶路撒冷去。</div>
+<div class="verse"><span class="verse-number">4</span>若我也該去，他們可以和我同去。</div>
+<div class="verse"><span class="verse-number">5</span>我要從馬其頓經過；既經過了，就要到你們那裏去，</div>
+<div class="verse"><span class="verse-number">6</span>或者和你們同住幾時，或者也過冬。無論我往那裏去，你們就可以給我送行。</div>
+<div class="verse"><span class="verse-number">7</span>我如今不願意路過見你們；主若許我，我就指望和你們同住幾時。</div>
+<div class="verse"><span class="verse-number">8</span>但我要仍舊住在以弗所，直等到五旬節；</div>
+<div class="verse"><span class="verse-number">9</span>因為有寬大又有功效的門為我開了，並且反對的人也多。</div>
+<div class="verse"><span class="verse-number">10</span>若是提摩太來到，你們要留心，叫他在你們那裏無所懼怕；因為他勞力作主的工，像我一樣。</div>
+<div class="verse"><span class="verse-number">11</span>所以，無論誰都不可藐視他，只要送他平安前行，叫他到我這裏來，因我指望他和弟兄們同來。</div>
+<div class="verse"><span class="verse-number">12</span>至於兄弟亞波羅，我再三的勸他同弟兄們到你們那裏去；但這時他決不願意去，幾時有了機會他必去。</div>
+<div class="verse"><span class="verse-number">13</span>你們務要儆醒，在真道上站立得穩，要作大丈夫，要剛強。</div>
+<div class="verse"><span class="verse-number">14</span>凡你們所作的都要憑愛心而作。</div>
+<div class="verse"><span class="verse-number">15</span>弟兄們，你們曉得司提反一家，是亞該亞初結的果子，並且他們專以服事聖徒為念。</div>
+<div class="verse"><span class="verse-number">16</span>我勸你們順服這樣的人，並一切同工同勞的人。</div>
+<div class="verse"><span class="verse-number">17</span>司提反和福徒拿都，並亞該古到這裏來，我很喜歡；因為你們待我有不及之處，他們補上了。</div>
+<div class="verse"><span class="verse-number">18</span>他們叫我和你們心裏都快活。這樣的人，你們務要敬重。</div>
+<div class="verse"><span class="verse-number">19</span>亞西亞的眾教會問你們安。亞居拉和百基拉並在他們家裏的教會，因主多多的問你們安。</div>
+<div class="verse"><span class="verse-number">20</span>眾弟兄都問你們安。你們要親嘴問安，彼此務要聖潔。</div>
+<div class="verse"><span class="verse-number">21</span>我保羅親筆問安。</div>
+<div class="verse"><span class="verse-number">22</span>若有人不愛主，這人可詛可咒。主必要來！</div>
+<div class="verse"><span class="verse-number">23</span>願主耶穌基督的恩常與你們眾人同在！</div>
+<div class="verse"><span class="verse-number">24</span>我在基督耶穌裏的愛與你們眾人同在。阿們！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第16章是哥林多前書的結語，包含為耶路撒冷聖徒奉獻的指示、保羅的行程計畫、對幾位同工的囑咐和推薦，以及最後的問候和祝福。本章首先說明論到為聖徒捐錢，就當照保羅對加拉太各教會所吩咐的去行，每逢七日的第一日你們各人要照自己的進項抽出來留著，免得保羅來的時候現湊，等他來了要他們送他起行往他所要去的地方，他打算經過馬其頓後來到哥林多，或者在哥林多過冬。接著說明他要在以弗所住到五旬節，因為有寬大又有功效的門為他開了，並且反對的人也多。然後囑咐他們若提摩太到了要厚待他，讓他安然回去，又說他聽亞波羅去的心願而以勸他，但現在沒有心去，等機會再去。接著說明你們務要警醒，在信仰上作大丈夫，要剛強，凡你們所做的都要憑愛心而做。然後推薦司提反一家，說他們以自己獻身服事聖徒，要順服這樣的人。最後以亞居拉和百基拉並在他們家裡聚會的教會的問安作結，用自己親手問候他們，說若有人不愛主可詛可咒，主必要來，我主來啊。本章以個人溫情的收結展示使徒與教會之間緊密的連結。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 奉獻是系統性的、按比例的、定期的</strong><br>「各人要照自己的進項抽出來留着」——不是隨機的，而是「按進項」（有比例）、「每逢七日的第一日」（定期）、「抽出來留着」（事先計劃）。這個指引顯示奉獻是信仰生活的一部分，不是情緒衝動的行為，而是蓄意的、有計劃的委身。「照各人的進項」說明是比例，不是固定金額。<br><br>
+<strong>2. 「儆醒、站立、剛強、憑愛心」是信仰生活的四個命令</strong><br>「你們務要儆醒，在真道上站立得穩，要作大丈夫，要剛強。凡你們所作的都要憑愛心而作」——這四個命令涵蓋了信仰生活的全貌：儆醒（屬靈的清醒）、站立（在真理上的堅持）、剛強（面對對抗時的勇氣）、憑愛心（一切行動的動機）。第16章的最後一句話把整封信的主題（愛）帶回到結尾。<br><br>
+<strong>3. 「若有人不愛主，這人可詛可咒」——愛主是信仰的本質</strong><br>「若有人不愛主，這人可詛可咒」——最強烈的語言，用在愛主這件事上。信仰的本質不是遵守規條或有正確的神學，而是愛主。「主必要來！」——信仰最終的盼望和動力。愛主驅動着整個信仰生活，等候主再來賦予了生命的終極方向。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>每逢七日的第一日</strong>，<strong>各人要照自己的進</strong>項抽出來留着，免得我來的時候現湊。（林前16:2）</td>
+<td>你有沒有讓奉獻成為你信仰生活有計劃的一部分——按比例、定期地把一部分獻給神？就像一個有計劃的財務管理者在月初就分配各項支出，你有沒有讓奉獻在你的財務計劃中有固定的位置？</td>
+</tr>
+<tr>
+<td><strong>你們務要儆醒</strong>，<strong>在真道上站立得穩</strong>，要作大丈夫，要剛強。凡你們所作的都要憑愛心而作。（林前16:13-14）</td>
+<td>這四個命令——儆醒、站立、剛強、憑愛心——在你的信仰生活中哪個是最需要加強的？就像一位教練幫助運動員識別最薄弱的環節來集中訓練，你願意在這四個方面中最弱的那個上，有意識地投入更多努力嗎？</td>
+</tr>
+<tr>
+<td><strong>若有人不愛主</strong>，<strong>這人可詛可咒</strong>。主必要來！（林前16:22）</td>
+<td>「愛主」對你而言是一個描述你心靈狀態的準確詞語，還是一個你希望是真實的宗教稱號？就像愛的真實性體現在日常的行動和選擇而非只在口頭的宣告，你有沒有讓你對主的愛在日常生活中以具體的方式體現出來？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

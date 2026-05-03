@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">領袖失職社會崩潰：神審問壓制貧窮的人</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>主萬軍之耶和華從耶路撒冷和猶大，除掉眾人所倚靠的，所仗賴的，就是所倚靠的糧，所仗賴的水；</div>
+<div class="verse"><span class="verse-number">2</span>除掉勇士和戰士，審判官和先知，占卜的和長老，</div>
+<div class="verse"><span class="verse-number">3</span>五十夫長和尊貴人，謀士和有巧藝的，以及妙行法術的。</div>
+<div class="verse"><span class="verse-number">4</span>主說：我必使孩童作他們的首領，使嬰孩轄管他們。</div>
+<div class="verse"><span class="verse-number">5</span>百姓要彼此欺壓；各人受鄰舍的欺壓。少年人必侮慢老年人；卑賤人必侮慢尊貴人。</div>
+<div class="verse"><span class="verse-number">6</span>人在父家拉住弟兄，說：你有衣服，可以作我們的官長。這敗落的事歸在你手下吧！</div>
+<div class="verse"><span class="verse-number">7</span>那時，他必揚聲說：我不作醫治你們的人；因我家中沒有糧食，也沒有衣服，你們不可立我作百姓的官長。</div>
+<div class="verse"><span class="verse-number">8</span>耶路撒冷敗落，猶大傾倒；因為他們的舌頭和行為與耶和華反對，惹了他榮光的眼目。</div>
+<div class="verse"><span class="verse-number">9</span>他們的面色證明自己的不正；他們述說自己的罪惡，並不隱瞞，好像所多瑪一樣。他們有禍了！因為作惡自害。</div>
+<div class="verse"><span class="verse-number">10</span>你們要論義人說：他必享福樂，因為要喫自己行為所結的果子。</div>
+<div class="verse"><span class="verse-number">11</span>惡人有禍了！他必遭災難！因為要照自己手所行的受報應。</div>
+<div class="verse"><span class="verse-number">12</span>至於我的百姓，孩童欺壓他們，婦女轄管他們。我的百姓阿，引導你的使你走錯，並毀壞你所行的道路。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華起來辯論，站着審判眾民。</div>
+<div class="verse"><span class="verse-number">14</span>耶和華必審問他民中的長老和首領，說：喫盡葡萄園果子的就是你們；向貧窮人所奪的都在你們家中。</div>
+<div class="verse"><span class="verse-number">15</span>主萬軍之耶和華說：你們為何壓制我的百姓，搓磨貧窮人的臉呢？</div>
+<div class="verse"><span class="verse-number">16</span>耶和華又說：因為錫安的女子狂傲，行走挺項，賣弄眼目，俏步徐行，腳下玎璫，</div>
+<div class="verse"><span class="verse-number">17</span>所以，主必使錫安的女子頭長禿瘡；耶和華又使她們赤露下體。</div>
+<div class="verse"><span class="verse-number">18</span>到那日，主必除掉她們華美的腳釧、髮網、月牙圈、</div>
+<div class="verse"><span class="verse-number">19</span>耳環、手鐲、蒙臉的帕子、</div>
+<div class="verse"><span class="verse-number">20</span>華冠、足鍊、華帶、香盒、符囊、</div>
+<div class="verse"><span class="verse-number">21</span>戒指、鼻環、</div>
+<div class="verse"><span class="verse-number">22</span>吉服、外套、雲肩、荷包、</div>
+<div class="verse"><span class="verse-number">23</span>手鏡、細麻衣、裹頭巾、蒙身的帕子。</div>
+<div class="verse"><span class="verse-number">24</span>必有臭爛代替馨香，繩子代替腰帶，光禿代替美髮，麻衣繫腰代替華服，烙傷代替美容。</div>
+<div class="verse"><span class="verse-number">25</span>你的男丁必倒在刀下；你的勇士必死在陣上。</div>
+<div class="verse"><span class="verse-number">26</span>錫安〔原文作他〕的城門必悲傷、哀號；他必荒涼坐在地上。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第三章繼承第一章對社會罪惡的批判，以更具體、更嚴酷的語言描繪了神對猶大領袖失職的審判。本章的歷史背景是公元前八世紀下半葉的猶大社會——貧富懸殊加劇、上層階級剝削百姓、宗教與政治腐敗並行。第1-7節描繪審判的方式：神除去一切有能力的領袖（勇士、審判官、謀士），使「孩童作首領」，社會秩序因此崩潰。這是以「混亂」作為審判——當沒有公義的領袖時，弱肉強食的自然法則就取代了神所設立的秩序。第10-11節是本章罕有的正面宣告，以「義人行為所結的果子」對比「惡人手所行的報應」，揭示了宇宙中道德行為的因果原則。第14-15節是全章最沉重的指控：神直接審問首領，質問他們為何奪取貧窮人所有、壓制弱勢——「搓磨貧窮人的臉」這個生動的動詞，描繪了剝削的殘酷。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 領袖的公義是社會穩定的靈性根基</strong><br>第1-8節描繪了當神除去有智慧、有公義的領袖時，社會陷入的混亂——少年侮慢長老、卑賤人侮慢尊貴、人人相互欺壓。這說明公義的領導不只是政治問題，更是屬靈問題：神所設立的秩序需要按神心意領導的人來維繫。對信徒而言，無論擔任何種領袖角色（父母、教師、教會領袖、職場主管），都有責任以公義和憐憫引導所交付給他們的人。<br><br>
+<strong>2. 神親自審問領袖對弱勢群體的態度</strong><br>第14-15節神直接召問長老和首領，指控他們侵占貧窮人所有。這揭示了一個重要的神學真理：神特別關注弱勢群體的命運，並將領袖對待弱勢的方式視為最重要的審判標準之一。耶穌在馬太福音25章「綿羊與山羊」的比喻中，同樣以對「弟兄中最小的」的態度作為判斷的核心，這一神學主題貫穿全本聖經。<br><br>
+<strong>3. 外在的美麗若建立在不義之上，審判將剝去一切裝飾</strong><br>第16-24節長篇描繪錫安女子的各種裝飾品，然後宣告審判將用「臭爛代替馨香，繩子代替腰帶，光禿代替美髮」。這不是說裝飾本身是罪，而是指出：當一個社會在壓迫窮人（14-15節）的同時以奢華自誇，那種外在的美麗是建立在不義之上的，必然面對神的審判。真正的美麗是內在的品格，不是外在的裝飾。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你們要論義人說</strong>：<strong>他必享福樂</strong>，因為要喫自己行為所結的果子。惡人有禍了！……因為要照自己手所行的受報應。」（賽3:10-11）</td>
+<td>就像農夫播下的種子決定了秋天的收成，播小麥就得小麥，播荊棘就得荊棘，你目前的言語、選擇和行為，正在播下什麼樣的種子？那些種子在你的家庭、職場和教會中，將結出什麼樣的果子？</td>
+</tr>
+<tr>
+<td>「<strong>耶和華必審問他民</strong><strong>中的長老和首領</strong>，說：……向貧窮人所奪的都在你們家中。」（賽3:14）</td>
+<td>就像公司高層若從員工薪資中剋扣，最終必面對勞資仲裁，神對領袖的要求是對弱勢的公平，你在任何領袖角色中（家庭、職場、教會），是否認真思考過神對你如何對待弱勢群體的問責？</td>
+</tr>
+<tr>
+<td>「<strong>你們為何壓制我的</strong>百姓，<strong>搓磨貧窮人的臉呢</strong>？」（賽3:15）</td>
+<td>就像用砂紙磨擦臉龐一樣，剝削是一種讓人尊嚴受損的殘酷，神對此深感憤慨，你身邊是否有人正在被「搓磨」——在職場、社區或制度中受到不公的對待？你有沒有能力和責任為他們發聲或提供幫助？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

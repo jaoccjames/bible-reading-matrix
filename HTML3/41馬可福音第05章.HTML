@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬可福音第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬可福音第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">趕鬼醫治與睚魯女兒復活</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>他們來到海那邊格拉森人的地方。</div>
+<div class="verse"><span class="verse-number">2</span>耶穌一下船，就有一個被污鬼附着的人從墳塋裏出來迎着他。</div>
+<div class="verse"><span class="verse-number">3</span>那人常住在墳塋裏，沒有人能捆住他，就是用鐵鍊也不能；</div>
+<div class="verse"><span class="verse-number">4</span>因為人屢次用腳鐐和鐵鍊捆鎖他，鐵鍊竟被他掙斷了，腳鐐也被他弄碎了；總沒有人能制伏他。</div>
+<div class="verse"><span class="verse-number">5</span>他晝夜常在墳塋裏和山中喊叫，又用石頭砍自己。</div>
+<div class="verse"><span class="verse-number">6</span>他遠遠的看見耶穌，就跑過去拜他，</div>
+<div class="verse"><span class="verse-number">7</span>大聲呼叫說：「至高神的兒子耶穌，我與你有甚麼相干？我指着神懇求你，不要叫我受苦！」</div>
+<div class="verse"><span class="verse-number">8</span>是因耶穌曾吩咐他說：「污鬼啊，從這人身上出來吧！」</div>
+<div class="verse"><span class="verse-number">9</span>耶穌問他說：「你名叫甚麼？」回答說：「我名叫『群』，因為我們多的緣故」；</div>
+<div class="verse"><span class="verse-number">10</span>就再三的求耶穌，不要叫他們離開那地方。</div>
+<div class="verse"><span class="verse-number">11</span>在那裏山坡上，有一大群豬吃食；</div>
+<div class="verse"><span class="verse-number">12</span>鬼就央求耶穌說：「求你打發我們往豬群裏，附着豬去。」</div>
+<div class="verse"><span class="verse-number">13</span>耶穌准了他們，污鬼就出來，進入豬裏去。於是那群豬闖下山崖，投在海裏，淹死了。豬的數目約有二千。</div>
+<div class="verse"><span class="verse-number">14</span>放豬的就逃跑了，去告訴城裏和鄉下的人。眾人就來，要看是甚麼事。</div>
+<div class="verse"><span class="verse-number">15</span>他們來到耶穌那裏，看見那被鬼附着的人，就是從前被群鬼所附的，坐着，穿上衣服，心裏明白過來，他們就害怕。</div>
+<div class="verse"><span class="verse-number">16</span>看見這事的，便將鬼附之人所遇見的和那群豬的事都告訴了眾人；</div>
+<div class="verse"><span class="verse-number">17</span>眾人就央求耶穌離開他們的境界。</div>
+<div class="verse"><span class="verse-number">18</span>耶穌上船的時候，那從前被鬼附着的人懇求和耶穌同在。</div>
+<div class="verse"><span class="verse-number">19</span>耶穌不許，卻對他說：「你回家去，到你的親屬那裏，將主為你所作的是何等大的事，是怎樣憐憫你，都告訴他們。」</div>
+<div class="verse"><span class="verse-number">20</span>那人就走了，在低加波利傳揚耶穌為他作了何等大的事，眾人就都希奇。</div>
+<div class="verse"><span class="verse-number">21</span>耶穌坐船又渡到那邊去，就有許多人到他那裏聚集；他正在海邊上。</div>
+<div class="verse"><span class="verse-number">22</span>有一個管會堂的人，名叫睚魯，來見耶穌，就俯伏在他腳前，</div>
+<div class="verse"><span class="verse-number">23</span>再三的求他，說：「我的小女兒快要死了，求你去按手在她身上，使她痊癒，得以活了。」</div>
+<div class="verse"><span class="verse-number">24</span>耶穌就和他同去。有許多人跟隨擁擠他。</div>
+<div class="verse"><span class="verse-number">25</span>有一個女人，患了十二年的血漏，</div>
+<div class="verse"><span class="verse-number">26</span>在好些醫生手裏受了許多的苦，又花盡了她所有的，一點也不見好，病勢反倒更重了。</div>
+<div class="verse"><span class="verse-number">27</span>她聽見耶穌的事，就從後頭來，雜在眾人中間，摸耶穌的衣裳，</div>
+<div class="verse"><span class="verse-number">28</span>意思說：「我只摸他的衣裳，就必痊癒。」</div>
+<div class="verse"><span class="verse-number">29</span>於是她血漏的源頭立刻乾了；她便覺得身上的災病好了。</div>
+<div class="verse"><span class="verse-number">30</span>耶穌頓時心裏覺得有能力從自己身上出去，就在眾人中間轉過來，說：「誰摸我的衣裳？」</div>
+<div class="verse"><span class="verse-number">31</span>門徒對他說：「你看眾人擁擠你，還說『誰摸我』嗎？」</div>
+<div class="verse"><span class="verse-number">32</span>耶穌周圍觀看，要見作這事的女人。</div>
+<div class="verse"><span class="verse-number">33</span>那女人知道在自己身上所成的事，就恐懼戰兢，來俯伏在耶穌跟前，將實情全告訴他。</div>
+<div class="verse"><span class="verse-number">34</span>耶穌對她說：「女兒，你的信救了你，平平安安的回去吧！你的災病痊癒了。」</div>
+<div class="verse"><span class="verse-number">35</span>還說話的時候，有人從管會堂的家裏來，說：「你的女兒死了，何必還勞動先生呢？」</div>
+<div class="verse"><span class="verse-number">36</span>耶穌聽見所說的話，就對管會堂的說：「不要怕，只要信！」</div>
+<div class="verse"><span class="verse-number">37</span>於是帶着彼得、雅各、和雅各的兄弟約翰同去，不許別人跟隨他。</div>
+<div class="verse"><span class="verse-number">38</span>他們來到管會堂的家裏；耶穌看見那裏亂嚷，並有人大大的哭泣哀號，</div>
+<div class="verse"><span class="verse-number">39</span>進到裏面，就對他們說：「為甚麼亂嚷哭泣呢？孩子不是死了，是睡着了。」</div>
+<div class="verse"><span class="verse-number">40</span>他們就嗤笑耶穌。耶穌把他們都攆出去，就帶着孩子的父母，和跟隨的人進了孩子所在的地方，</div>
+<div class="verse"><span class="verse-number">41</span>就拉着孩子的手，對她說：「大利大，古米！」（繙出來就是說：「閨女，我吩咐你起來！」）</div>
+<div class="verse"><span class="verse-number">42</span>那閨女立時起來走。他們就大大的驚奇；閨女已經十二歲了。</div>
+<div class="verse"><span class="verse-number">43</span>耶穌切切的囑咐他們，不要叫人知道這事，又吩咐給她東西吃。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第5章集中記述三個重大神蹟：趕逐格拉森的群鬼、醫治患血漏的婦人、使睚魯女兒復活，展示耶穌勝過鬼魔、疾病與死亡的全面權柄。耶穌渡海到格拉森人的地方，一個住在墳塋中被群鬼附著的人迎面跑來，那人日夜在墳塋和山間喊叫、用石頭砍自己，任何鐵鍊都無法鎖住他。鬼魔見耶穌便向祂跪拜，哀求不要叫他們受苦，自稱名叫群因為數目甚多，求耶穌讓他們進入附近的豬群，耶穌准許後污鬼進入豬，豬群約兩千頭闖入海裡淹死。那人得救，安靜坐著穿好衣服，當地人懼怕求耶穌離開，耶穌吩咐那人回家把主所做的告訴親屬。渡海回來後，管會堂的睚魯來求耶穌醫治快死的女兒，途中一個患血漏十二年的女人摸了耶穌衣裳的繸子立即痊癒，耶穌感覺有能力出去問是誰摸了祂，婦人害怕俯伏承認，耶穌說她的信救了她。然後有人來報告睚魯的女兒已死，耶穌進入屋子拉著女孩的手說她起來，女孩立即起來行走，眾人大為驚奇。本章三個神蹟串連，呈現耶穌超越一切限制的救贖能力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 耶穌使絕望的人得真自由</strong><br>被群鬼附的人是極端處境的象徵：無法被人制伏、無法自救、住在死亡之地。但他一見耶穌就俯伏，耶穌就趕出群鬼。得救後，他坐着、穿好衣服、心裏明白過來——這是全人的恢復。耶穌讓他回去作見證，說明得救的人最有力的見證場所是在自己最熟悉的人中間。得自由的人有責任把自由帶給還被捆綁的人。<br><br>
+<strong>2. 在眾多人中，信心的一摸被耶穌看見</strong><br>許多人擁擠耶穌，但那婦人的「摸」是不同的——她帶着信心、帶着盼望，知道只需摸到衣裳就必痊癒。耶穌頓時感到能力出去，在眾多人中尋找這一個人。神不會在群眾中遺漏一個真正信靠祂的心。這個婦人的信心沒有依靠誰的介紹或特殊資格，只是單純的信心與行動。<br><br>
+<strong>3. 「不要怕，只要信」是絕望中的錨</strong><br>當消息傳來「你的女兒死了，何必還勞動先生呢？」，情況看似已無可救藥。耶穌的回應是「不要怕，只要信」——不是對情況的否認，而是呼召把眼光從死亡的事實移向復活的主。信心不是否認困難，而是在困難面前仍然選擇相信神的話語。睚魯的堅持帶來了女兒的復活。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌對她說</strong>：「女兒，<strong>你的信救了你</strong>，平平安安的回去吧！你的災病痊癒了。」（可5:34）</td>
+<td>你有沒有像那個婦人一樣，帶着一份簡單卻堅定的信心，悄悄地來到耶穌面前，相信只要觸碰到祂就能得醫治？就像在最後關頭伸手抓住救生索，你願意把你最深的需要帶到耶穌面前嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌聽見所說的話</strong>，<strong>就對管會堂的說</strong>：「不要怕，只要信！」（可5:36）</td>
+<td>當你面對「已經太遲了、沒有希望了」的處境時，你能聽到耶穌說「不要怕，只要信」嗎？就像在最後宣判之前等待最高法院的裁決，你願意在人認為已無可能的時候，仍然把信心放在耶穌身上嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌不許</strong>，<strong>卻對他說</strong>：「你回家去，到你的親屬那裏，將主為你所作的是何等大的事，是怎樣憐憫你，都告訴他們。」（可5:19）</td>
+<td>你有沒有把神在你生命中所作的事，主動告訴你的家人和親近的人？就像從病中康復的人迫不及待地告訴關心他的人，你有沒有讓自己的見證成為身邊人認識神的橋樑？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

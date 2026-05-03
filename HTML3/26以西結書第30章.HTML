@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第30章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第30章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶和華的日子臨到埃及</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話又臨到我說：</div>
+<div class="verse"><span class="verse-number">2</span>「人子啊，你要發預言說，主耶和華如此說：哀哉這日！你們應當哭號。</div>
+<div class="verse"><span class="verse-number">3</span>因為耶和華的日子臨近，就是密雲之日，列國受罰之期。</div>
+<div class="verse"><span class="verse-number">4</span>必有刀劍臨到埃及；在埃及被殺之人仆倒的時候，古實人就有痛苦，人民必被擄掠，基址必被拆毀。</div>
+<div class="verse"><span class="verse-number">5</span>古實人、弗人〔或作：呂彼亞人〕、路德人、雜族的人民，並古巴人，以及同盟之地的人都要與埃及人一同倒在刀下。」</div>
+<div class="verse"><span class="verse-number">6</span>耶和華如此說：扶助埃及的也必傾倒。埃及因勢力而有的驕傲必降低微；其中的人民，從色弗尼塔起〔見二十九章十節〕必倒在刀下。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">7</span>埃及地在荒涼的國中必成為荒涼；埃及城在荒廢的城中也變為荒廢。</div>
+<div class="verse"><span class="verse-number">8</span>我在埃及中使火着起；幫助埃及的，都被滅絕。那時，他們就知道我是耶和華。</div>
+<div class="verse"><span class="verse-number">9</span>「到那日，必有使者坐船，從我面前出去，使安逸無慮的古實人驚懼；必有痛苦臨到他們，好像埃及遭災的日子一樣。看哪，這事臨近了！</div>
+<div class="verse"><span class="verse-number">10</span>主耶和華如此說：我必藉巴比倫王尼布甲尼撒的手，除滅埃及眾人。</div>
+<div class="verse"><span class="verse-number">11</span>他和隨從他的人，就是列國中強暴的，必進來毀滅這地。他們必拔刀攻擊埃及，使遍地有被殺的人。</div>
+<div class="verse"><span class="verse-number">12</span>我必使江河乾涸，將地賣在惡人的手中；我必藉外邦人的手，使這地和其中所有的變為淒涼。這是我耶和華說的。</div>
+<div class="verse"><span class="verse-number">13</span>主耶和華如此說：我必毀滅偶像，從挪弗除滅神像；必不再有君王出自埃及地。我要使埃及地的人懼怕。</div>
+<div class="verse"><span class="verse-number">14</span>我必使巴忒羅荒涼，在瑣安中使火着起，向挪施行審判。</div>
+<div class="verse"><span class="verse-number">15</span>我必將我的忿怒倒在埃及的保障上，就是訓上，並要剪除挪的眾人。</div>
+<div class="verse"><span class="verse-number">16</span>我必在埃及中使火𤏲起；訓必大大痛苦；挪必被攻破；挪弗白日〔或作：終日〕見仇敵。</div>
+<div class="verse"><span class="verse-number">17</span>亞文和比伯實的少年人必倒在刀下；這些城的人必被擄掠。</div>
+<div class="verse"><span class="verse-number">18</span>我在答比匿折斷埃及的諸軛，使他因勢力而有的驕傲在其中止息。那時，日光必退去；至於這城，必有密雲遮蔽，其中的女子必被擄掠。</div>
+<div class="verse"><span class="verse-number">19</span>我必這樣向埃及施行審判，他們就知道我是耶和華。」</div>
+<div class="verse"><span class="verse-number">20</span>十一年正月初七日，耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">21</span>「人子啊，我已打折埃及王法老的膀臂；沒有敷藥，也沒有用布纏好，使他有力持刀。</div>
+<div class="verse"><span class="verse-number">22</span>所以主耶和華如此說：看哪，我與埃及王法老為敵，必將他有力的膀臂和已打折的膀臂全行打斷，使刀從他手中墜落。</div>
+<div class="verse"><span class="verse-number">23</span>我必將埃及人分散在列國，四散在列邦。</div>
+<div class="verse"><span class="verse-number">24</span>我必使巴比倫王的膀臂有力，將我的刀交在他手中；卻要打斷法老的膀臂，他就在巴比倫王面前唉哼，如同受死傷的人一樣。</div>
+<div class="verse"><span class="verse-number">25</span>我必扶持巴比倫王的膀臂，法老的膀臂卻要下垂；我將我的刀交在巴比倫王手中，他必舉刀攻擊埃及地，他們就知道我是耶和華。</div>
+<div class="verse"><span class="verse-number">26</span>我必將埃及人分散在列國，四散在列邦；他們就知道我是耶和華。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第30章延續對埃及的審判神諭，以「耶和華的日子」這個末世性語言框架描述埃及的傾覆。「密雲之日，列國受罰之期」——這個「日子」不只是軍事事件，而是神的審判在歷史中的特定顯現時刻。本章列出了埃及的盟邦和城邑將一同受罰：古實、弗、路德、古巴……各城邑也逐一被審判，挪、挪弗等著名城市都將被毀。中段（20-26節）的神諭是關於法老的「膀臂」：已被打折的舊傷沒有包紮好（象徵605年迦基米施戰役的失敗），神要再打折另一臂，並要扶持巴比倫王的膀臂——歷史的強弱對比，由神決定。全章以「他們就知道我是耶和華」結束，再次強調神審判的最終目的是讓人認識神。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「耶和華的日子」提醒信徒歷史有神的時刻性介入</strong><br>「密雲之日，列國受罰之期」——歷史不只是一系列的政治和軍事事件，而是神有意義地介入的時刻構成的。信徒讀歷史、讀新聞，需要培養一種「辨認神時刻性介入」的眼光：在哪些大事件中，神的手特別明顯？當然，這種辨認需要謙遜，因為人的判斷容易出錯，但這種屬靈的眼光本身是信仰的操練。<br><br>
+<strong>2. 打折的膀臂沒有包紮好，使人無力持刀</strong><br>法老已打折的膀臂「沒有敷藥，也沒有用布纏好」（21節）——受傷後不正確地處理，使人失去持刀的力量。這是個人的屬靈比喻：過去的傷若沒有得到真實的醫治（不是壓抑，而是面對和療癒），就會持續削弱人的能力。逃避傷口不等於痊癒，真正的醫治需要「敷藥和纏裹」。<br><br>
+<strong>3. 神扶持一個膀臂，必然對應地削弱另一個膀臂</strong><br>神扶持巴比倫的膀臂，法老的膀臂隨之下垂——在歷史的競爭中，神的選擇決定強弱。信徒在競爭和比較中，有時感到被人超越或被削弱，需要問的不只是「我怎樣才能更強」，而是「神在這局面中要成就什麼」。神的扶持和削弱，都在更大的計畫之中。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>因為耶和華的日子</strong>臨近，<strong>就是密雲之日</strong>，列國受罰之期。（結30:3）</td>
+<td>你是否有培養辨認歷史中「耶和華的日子」——神特別作工的時刻——的習慣？就像學習辨認天氣的人能看見別人看不見的雲層，在世界的大事件中看見神的手，需要對神的話語和性情有深度的認識。你如何在日常新聞中保持這種屬靈的眼光？</td>
+</tr>
+<tr>
+<td><strong>我已打折埃及王法</strong><strong>老的膀臂</strong>；沒有敷藥，也沒有用布纏好，使他有力持刀。（結30:21）</td>
+<td>你生命中有沒有過去的「打折的膀臂」——某個創傷或失敗——你沒有真正讓它得到醫治，只是試圖繼續使用那條受傷的臂？就像帶傷打球最終會讓傷情惡化，那個未得醫治的地方是否在慢慢削弱你的屬靈力量？你願意今天讓神來「敷藥和纏裹」那個傷嗎？</td>
+</tr>
+<tr>
+<td><strong>我必扶持巴比倫王</strong><strong>的膀臂</strong>，法老的膀臂卻要下垂……他們就知道我是耶和華。（結30:25）</td>
+<td>神可以扶持一個看似弱小的力量，使之壓過看似強大的對手。你現在面對的某個「法老式」的強大壓力或對立，是否讓你忘記了那位「扶持膀臂的神」？就像在拔河中有人突然加入你這邊，神的扶持可以瞬間改變局面，你今天願意以信心請求神扶持你的膀臂嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

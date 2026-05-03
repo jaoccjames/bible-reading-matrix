@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>那鴻書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+那鴻書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶和華忌邪施報的神性宣言</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>論尼尼微的默示，就是伊勒歌斯人那鴻所得的默示。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華是忌邪施報的神。耶和華施報大有忿怒；向他的敵人施報，向他的仇敵懷怒。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華不輕易發怒，大有能力，萬不以有罪的為無罪。他乘旋風和暴風而來，雲彩為他腳下的塵土。</div>
+<div class="verse"><span class="verse-number">4</span>他斥責海，使海乾了，使一切江河乾涸。巴珊和迦密的樹林衰殘；利巴嫩的花草也衰殘了。</div>
+<div class="verse"><span class="verse-number">5</span>大山因他震動；小山也都消化。大地在他面前突起；世界和住在其間的也都如此。</div>
+<div class="verse"><span class="verse-number">6</span>他發忿恨，誰能立得住呢？他發烈怒，誰能當得起呢？他的忿怒如火傾倒；磐石因他崩裂。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華本為善，在患難的日子為人的保障，並且認得那些投靠他的人。</div>
+<div class="verse"><span class="verse-number">8</span>但他必以漲溢的洪水淹沒尼尼微，又驅逐仇敵進入黑暗。</div>
+<div class="verse"><span class="verse-number">9</span>尼尼微人哪，設何謀攻擊耶和華呢？他必將你們滅絕淨盡；災難不再興起。</div>
+<div class="verse"><span class="verse-number">10</span>你們像叢雜的荊棘，像喝醉了的人，又如枯乾的碎稭全然燒滅。</div>
+<div class="verse"><span class="verse-number">11</span>有一人從你那裏出來，圖謀邪惡，設惡計攻擊耶和華。</div>
+<div class="verse"><span class="verse-number">12</span>耶和華如此說：尼尼微雖然勢力充足，人數繁多，也被剪除，歸於無有。猶大阿，我雖然使你受苦，卻不再使你受苦。</div>
+<div class="verse"><span class="verse-number">13</span>現在我必從你頸項上折斷他的軛，扭開他的繩索。</div>
+<div class="verse"><span class="verse-number">14</span>耶和華已經出令，指着尼尼微說：你名下的人必不留後；我必從你神的廟中除滅雕刻的偶像和鑄造的偶像；我必因你鄙陋，使你歸於墳墓。</div>
+<div class="verse"><span class="verse-number">15</span>看哪，有報好信傳平安之人的腳登山，說：猶大啊，可以守你的節期，還你所許的願吧！因為那惡人不再從你中間經過，他已滅絕淨盡了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+那鴻書第1章是全書的神學序幕，論及尼尼微（亞述帝國首都）的覆滅預言，時在主前約650年（尼尼微實際於主前612年被瑪代和巴比倫聯軍所滅）。本章以對神性情最完整的描述之一開始：「耶和華是忌邪施報的神……不輕易發怒，大有能力，萬不以有罪的為無罪」——這是神的公義和忍耐的完整宣告。神「乘旋風和暴風而來，雲彩為他腳下的塵土」，大山消化、小山震動——神的降臨使整個創造界震動。第7節是全章的溫柔插句：「耶和華本為善，在患難的日子為人的保障，並且認得那些投靠他的人。」審判的神同時是那些投靠祂的人的保障。章末宣告對猶大的安慰：「惡人不再從你中間經過，他已滅絕淨盡了。」那鴻書和約拿書形成有趣的對比：約拿不願向尼尼微宣告神的憐憫，那鴻宣告尼尼微終究的審判。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的公義和神的忍耐是同一性情的兩面，不是矛盾的</strong><br>「不輕易發怒，大有能力，萬不以有罪的為無罪」——神的忍耐不等於漠視罪，神的公義不等於急於審判。兩者是同一位神的完整性情：祂忍耐地給機會，也公義地追究罪。這讓信徒既有悔改的空間，也對罪有真實的敬畏。<br><br>
+<strong>2. 在審判的宣告中，神的保障應許特別指向投靠祂的人</strong><br>「耶和華本為善，在患難的日子為人的保障，並且認得那些投靠他的人」——在審判風暴中，投靠神的人有保障。神的審判降臨時，問題不是「審判會不會來」，而是「我是否投靠在那個唯一的保障中」。<br><br>
+<strong>3. 強大的帝國在神面前不過是飛逝的浮雲</strong><br>尼尼微曾是世界最強大的帝國，那鴻的預言在百年後精確應驗。任何人間帝國的強大，在神的時間表中只是短暫的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華本為善</strong>，<strong>在患難的日子為人</strong>的保障，並且認得那些投靠他的人。（鴻1:7）</td>
+<td>在審判的章節中插入「保障」的應許——神的善在最黑暗的時刻仍是真實的。你生命中最大的「患難的日子」是什麼時候？在那段時間，你有沒有經歷神成為「保障」的具體時刻？就像暴風雨中最穩固的地方，你現在的「患難的日子」最需要的是什麼樣的「保障」？</td>
+</tr>
+<tr>
+<td><strong>耶和華不輕易發怒</strong>，<strong>大有能力</strong>，萬不以有罪的為無罪。（鴻1:3上）</td>
+<td>「不輕易發怒」和「萬不以有罪的為無罪」是同一個神的兩個性情。你在信仰中，有沒有過於強調其中一個而忽略另一個的傾向？就像一個父親，既不急於懲罰，也不姑息罪行，你如何在自己的生命中整合對神這兩個面向的理解？</td>
+</tr>
+<tr>
+<td>看哪，<strong>有報好信傳平安之</strong><strong>人的腳登山</strong>……因為那惡人不再從你中間經過，他已滅絕淨盡了。（鴻1:15）</td>
+<td>「報好信傳平安之人的腳登山」——在審判的宣告末尾，是好消息的宣告。你現在有沒有「等候好消息」的心情，在某個長期受壓迫的處境中，期待那個「惡人不再從你中間經過」的時刻？就像在長途跋涉後聽到前方有平坦的道路，那個消息如何改變你繼續前行的力量？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

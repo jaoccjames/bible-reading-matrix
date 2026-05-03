@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第41章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第41章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">新聖殿的內殿量度與裝飾</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>他帶我到殿那裏量牆柱：這面厚六肘，那面厚六肘，寬窄與會幕相同。</div>
+<div class="verse"><span class="verse-number">2</span>門口寬十肘。門兩旁，這邊五肘，那邊五肘。他量殿長四十肘，寬二十肘。</div>
+<div class="verse"><span class="verse-number">3</span>他到內殿量牆柱，各厚二肘。門口寬六肘，門兩旁各寬七肘。</div>
+<div class="verse"><span class="verse-number">4</span>他量內殿，長二十肘，寬二十肘。他對我說：「這是至聖所。」</div>
+<div class="verse"><span class="verse-number">5</span>他又量殿牆，厚六肘；圍着殿有旁屋，各寬四肘。</div>
+<div class="verse"><span class="verse-number">6</span>旁屋有三層，層疊而上，每層排列三十間。旁屋的梁木擱在殿牆坎上，免得插入殿牆。</div>
+<div class="verse"><span class="verse-number">7</span>這圍殿的旁屋越高越寬；因旁屋圍殿懸疊而上，所以越上越寬，從下一層，由中一層，到上一層。</div>
+<div class="verse"><span class="verse-number">8</span>我又見圍着殿有高月臺。旁屋的根基，高足一竿，就是六大肘。</div>
+<div class="verse"><span class="verse-number">9</span>旁屋的外牆厚五肘。旁屋之外還有餘地。</div>
+<div class="verse"><span class="verse-number">10</span>在旁屋與對面的房屋中間有空地，寬二十肘。</div>
+<div class="verse"><span class="verse-number">11</span>旁屋的門都向餘地：一門向北，一門向南。周圍的餘地寬五肘。</div>
+<div class="verse"><span class="verse-number">12</span>在西面空地之後有房子，寬七十肘，長九十肘，牆四圍厚五肘。</div>
+<div class="verse"><span class="verse-number">13</span>這樣，他量殿，長一百肘，又量空地和那房子並牆，共長一百肘。</div>
+<div class="verse"><span class="verse-number">14</span>殿的前面和兩旁的空地，寬一百肘。</div>
+<div class="verse"><span class="verse-number">15</span>他量空地後面的那房子，並兩旁的樓廊，共長一百肘。</div>
+<div class="verse"><span class="verse-number">16</span>內殿、院廊、門檻、嚴緊的窗櫺，並對着門檻的三層樓廊，從地到窗櫺（窗櫺都有蔽子），</div>
+<div class="verse"><span class="verse-number">17</span>直到門以上，就是到內殿和外殿內外四圍牆壁，都按尺寸用木板遮蔽。</div>
+<div class="verse"><span class="verse-number">18</span>牆上雕刻基路伯和棕樹。每二基路伯中間有一棵棕樹，每基路伯有二臉。</div>
+<div class="verse"><span class="verse-number">19</span>這邊有人臉向着棕樹，那邊有獅子臉向着棕樹，殿內周圍都是如此。</div>
+<div class="verse"><span class="verse-number">20</span>從地至門以上，都有基路伯和棕樹。殿牆就是這樣。</div>
+<div class="verse"><span class="verse-number">21</span>殿的門柱是方的。至聖所的前面，形狀和殿的形狀一樣。</div>
+<div class="verse"><span class="verse-number">22</span>壇是木頭作的，高三肘，長二肘。壇角和壇面，並四旁，都是木頭作的。他對我說：「這是耶和華面前的桌子。」</div>
+<div class="verse"><span class="verse-number">23</span>殿和至聖所的門各有兩扇。</div>
+<div class="verse"><span class="verse-number">24</span>每扇分兩扇，這兩扇是摺疊的。這邊門分兩扇，那邊門也分兩扇。</div>
+<div class="verse"><span class="verse-number">25</span>殿的門扇上雕刻基路伯和棕樹，與刻在牆上的一般。在外頭廊前有木檻。</div>
+<div class="verse"><span class="verse-number">26</span>廊這邊那邊都有嚴緊的窗櫺和棕樹；殿的旁屋和檻就是這樣。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第41章繼續量度新聖殿的詳細結構，進入殿內部：外殿（廊子）、內殿、至聖所——這是舊約聖殿結構的經典三層。量度顯示新聖殿的對稱性和精確性，各部分都有精確的尺寸。本章最重要的建築細節是殿牆上的裝飾：「牆上雕刻基路伯和棕樹。每二基路伯中間有一棵棕樹，每基路伯有二臉——人臉和獅子臉」。這個裝飾模式在整個殿的四周重複，在神學上非常有意義：基路伯（代表神的同在和聖潔的守衛）與棕樹（代表生命、榮耀和繁茂）交替出現，說明在新秩序中，神的聖潔和人的生命豐盛是和諧並存的。至聖所的前面有「木壇」，被稱為「耶和華面前的桌子」——在新聖殿中，神和人的相交以聖潔和秩序為基礎。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「耶和華面前的桌子」：神渴望與人同席共餐的關係</strong><br>「這是耶和華面前的桌子」——在最神聖的地方，有一張桌子。桌子是相交、共餐的地方；神在祂的面前設一張桌子，邀請人前來。這個意象貫穿聖經：從出埃及記的陳設餅桌，到啟示錄的羔羊婚宴，神的設計是與人「坐在桌子旁」的親密。信仰不只是宗教的遵守，而是應邀來到神桌子旁的關係。<br><br>
+<strong>2. 基路伯與棕樹的交替：聖潔與生命豐盛是一體的</strong><br>基路伯（神的聖潔守衛）和棕樹（生命繁茂）交替雕刻在殿牆上——聖潔不是生命的對立，而是生命最豐盛的條件。神的聖潔不是要「去掉生命」，而是讓生命在最正確的秩序中達到最豐盛。信徒追求聖潔，不是追求枯乾，而是追求真正的生命力。<br><br>
+<strong>3. 從外院到至聖所：親近神是逐層加深的旅程</strong><br>外院→外殿→內殿→至聖所，從外到內是越來越深入神同在的過程。在新約中，信徒透過基督已可進入那最內層的同在（來10:19-22）。但這個進入仍然是一個旅程——不是一次到達，而是不斷深入。信徒的靈命成長，可以理解為從「外院」走向「至聖所」的逐層深入。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>壇是木頭作的</strong>……<strong>他對我說</strong>：「這是耶和華面前的桌子。」（結41:22）</td>
+<td>神在至聖所前設一張「桌子」——祂渴望的是相交，不只是敬拜的距離。你現在與神的關係，更像「在遠處敬拜」，還是「在桌子旁同席」？就像家宴和餐廳是不同的關係深度，你和神的互動有多少是「正式的宗教禮節」，有多少是「桌子旁的親密對話」？</td>
+</tr>
+<tr>
+<td><strong>牆上雕刻基路伯和</strong>棕樹。<strong>每二基路伯中間有</strong>一棵棕樹。（結41:18）</td>
+<td>基路伯（聖潔）和棕樹（生命豐盛）交替出現——聖潔和豐盛是彼此相連的，不是對立的。你是否有時把「追求聖潔」和「享受生命」看作是兩個不同方向的拉扯？就像一棵健康的樹根部越深，枝葉越茂盛，你的聖潔追求如何增加你的生命力，而非減少它？</td>
+</tr>
+<tr>
+<td><strong>他到內殿量牆柱</strong>，<strong>各厚二肘</strong>。門口寬六肘……他對我說：「這是至聖所。」（結41:3-4）</td>
+<td>從外院到至聖所，每一層都有更嚴格的限制和更深的同在。你的靈命旅程目前在哪一個「層」？是剛進入「外院」（初步的信仰接觸），在「外殿」（穩定的信仰生活），還是在「內殿」深化中？你渴望更深進入神的同在，下一步是什麼？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

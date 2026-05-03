@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>士師記第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+士師記第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶弗他的輕率許願悲劇</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>基列人耶弗他是個大能的勇士，是妓女的兒子。耶弗他是基列所生的。</div>
+<div class="verse"><span class="verse-number">2</span>基列的妻也生了幾個兒子：他妻所生的兒子長大了，就趕逐耶弗他，說：「你不可在我們父家承受產業，因為你是妓女的兒子。」</div>
+<div class="verse"><span class="verse-number">3</span>耶弗他就逃避他的弟兄，去住在陀伯地，有些匪徒到他那裏聚集，與他一同出入。</div>
+<div class="verse"><span class="verse-number">4</span>過了些日子，亞捫人攻打以色列。</div>
+<div class="verse"><span class="verse-number">5</span>亞捫人攻打以色列的時候，基列的長老到陀伯地去，要叫耶弗他回來；</div>
+<div class="verse"><span class="verse-number">6</span>對耶弗他說：「請你來作我們的元帥，我們好與亞捫人爭戰。」</div>
+<div class="verse"><span class="verse-number">7</span>耶弗他回答基列的長老說：「從前你們不是恨我、趕逐我出離父家麼？現在你們遭遇急難為何到我這裏來呢？」</div>
+<div class="verse"><span class="verse-number">8</span>基列的長老回答耶弗他說：「現在我們到你這裏來，是要你同我們去，與亞捫人爭戰；你可以作基列一切居民的領袖。」</div>
+<div class="verse"><span class="verse-number">9</span>耶弗他對基列的長老說：「你們叫我回去，與亞捫人爭戰，耶和華把他交給我，我可以作你們的領袖麼？」</div>
+<div class="verse"><span class="verse-number">10</span>基列的長老回答耶弗他說：「有耶和華在你我中間作見證，我們必定照你的話行。」</div>
+<div class="verse"><span class="verse-number">11</span>於是耶弗他同基列的長老回去，百姓就立耶弗他作領袖、作元帥。耶弗他在米斯巴將自己的一切話陳明在耶和華面前。</div>
+<div class="verse"><span class="verse-number">12</span>耶弗他打發使者去見亞捫人的王，說：「你與我有甚麼相干，竟來到我國中攻打我呢？」</div>
+<div class="verse"><span class="verse-number">13</span>亞捫人的王回答耶弗他的使者說：「因為以色列人從埃及上來的時候佔據我的地，從亞嫩河到雅博河，直到約但河。現在你要好好的將這地歸還吧！」</div>
+<div class="verse"><span class="verse-number">14</span>耶弗他又打發使者去見亞捫人的王，</div>
+<div class="verse"><span class="verse-number">15</span>對他說：「耶弗他如此說，以色列人並沒有佔據摩押地和亞捫人的地。</div>
+<div class="verse"><span class="verse-number">16</span>以色列人從埃及上來乃是經過曠野到紅海，來到加低斯，</div>
+<div class="verse"><span class="verse-number">17</span>就打發使者去見以東王，說：『求你容我從你的地經過。』以東王卻不應允。又照樣打發使者去見摩押王，他也不允准。以色列人就住在加低斯。</div>
+<div class="verse"><span class="verse-number">18</span>他們又經過曠野，繞着以東和摩押地，從摩押地的東邊過來，在亞嫩河邊安營，並沒有入摩押的境內，因為亞嫩河是摩押的邊界。</div>
+<div class="verse"><span class="verse-number">19</span>以色列人打發使者去見亞摩利王西宏，就是希實本的王，對他說：『求你容我們從你的地經過，往我們自己的地方去。』</div>
+<div class="verse"><span class="verse-number">20</span>西宏卻不信服以色列人，不容他們經過他的境界，乃招聚他的眾民在雅雜安營，與以色列人爭戰。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華以色列的神將西宏和他的眾民都交在以色列人手中，以色列人就擊殺他們，得了亞摩利人的全地：</div>
+<div class="verse"><span class="verse-number">22</span>從亞嫩河到雅博河，從曠野直到約但河。</div>
+<div class="verse"><span class="verse-number">23</span>耶和華以色列的神在他百姓以色列面前趕出亞摩利人，你竟要得他們的地麼？</div>
+<div class="verse"><span class="verse-number">24</span>你的神基抹所賜你的地你不是得為業麼？耶和華我們的神在我們面前所趕出的人，我們就得他的地。</div>
+<div class="verse"><span class="verse-number">25</span>難道你比摩押王西撥的兒子巴勒還強麼？他曾與以色列人爭競，或是與他們爭戰麼？</div>
+<div class="verse"><span class="verse-number">26</span>以色列人住希實本和屬希實本的鄉村，亞羅珥和屬亞羅珥的鄉村，並沿亞嫩河的一切城邑，已經有三百年了；在這三百年之內，你們為甚麼沒有取回這些地方呢？</div>
+<div class="verse"><span class="verse-number">27</span>原來我沒有得罪你，你卻攻打我，惡待我。願審判人的耶和華今日在以色列人和亞捫人中間判斷是非。」</div>
+<div class="verse"><span class="verse-number">28</span>但亞捫人的王不肯聽耶弗他打發人說的話。</div>
+<div class="verse"><span class="verse-number">29</span>耶和華的靈降在耶弗他身上，他就經過基列和瑪拿西，來到基列的米斯巴，又從米斯巴來到亞捫人那裏。</div>
+<div class="verse"><span class="verse-number">30</span>耶弗他就向耶和華許願，說：「你若將亞捫人交在我手中，</div>
+<div class="verse"><span class="verse-number">31</span>我從亞捫人那裏平平安安回來的時候，無論甚麼人，先從我家門出來迎接我，就必歸你，我也必將他獻上為燔祭。」</div>
+<div class="verse"><span class="verse-number">32</span>於是耶弗他往亞捫人那裏去，與他們爭戰；耶和華將他們交在他手中，</div>
+<div class="verse"><span class="verse-number">33</span>他就大大殺敗他們，從亞羅珥到米匿，直到亞備勒基拉明，攻取了二十座城。這樣亞捫人就被以色列人制伏了。</div>
+<div class="verse"><span class="verse-number">34</span>耶弗他回米斯巴到了自己的家，不料，他女兒拿着鼓跳舞出來迎接他，是他獨生的，此外無兒無女。</div>
+<div class="verse"><span class="verse-number">35</span>耶弗他看見她，就撕裂衣服，說：「哀哉！我的女兒啊，你使我甚是愁苦，叫我作難了；因為我已經向耶和華開口許願，不能挽回。」</div>
+<div class="verse"><span class="verse-number">36</span>他女兒回答說：「父啊，你既向耶和華開口，就當照你口中所說的向我行，因耶和華已經在仇敵亞捫人身上為你報仇」；</div>
+<div class="verse"><span class="verse-number">37</span>又對父親說：「有一件事求你允准：容我去兩個月，與同伴在山上，好哀哭我終為處女。」</div>
+<div class="verse"><span class="verse-number">38</span>耶弗他說：「你去吧！」就容她去兩個月。她便和同伴去了，在山上為她終為處女哀哭。</div>
+<div class="verse"><span class="verse-number">39</span>兩月已滿，她回到父親那裏，父親就照所許的願向她行了。女兒終身沒有親近男子。</div>
+<div class="verse"><span class="verse-number">40</span>此後以色列中有個規矩，每年以色列的女子去為基列人耶弗他的女兒哀哭四天。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載士師耶弗他的悲劇故事。耶弗他是妓女的兒子,被同父異母的兄弟趕出家門,淪為匪徒首領。當亞捫人攻打以色列時,長老們請他回來作領袖。耶弗他先嘗試外交途徑,用詳盡的歷史論證駁斥亞捫王的領土要求,但對方不聽。聖靈降在耶弗他身上,他出去爭戰。然而,在得勝前他向神許了一個輕率的願:將首先出來迎接他的獻為燔祭。悲劇的是,出來迎接他的竟是他的獨生女兒。雖然女兒願意順服,耶弗他仍要承受終生的痛苦。本章展現一個複雜的人物:有智慧、有勇氣、被神使用,卻也因輕率的誓言付出慘痛代價。這提醒我們:即使被神使用的人,若不謹慎言語,仍會帶來無法挽回的後果。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神使用被拒絕和邊緣化的人</strong><br>耶弗他是妓女的兒子,被家族排斥,成為社會邊緣人。但神揀選他、使用他拯救以色列。神的揀選不看人的出身或過去,而看內心和信心。許多被人輕看、拒絕的人,卻被神大大使用。我們的背景、傷痛或失敗不能限制神在我們身上的計畫。神專門使用世人眼中不配的人,顯明祂的恩典和大能。<br><br>
+<strong>2. 輕率的許願帶來無法挽回的後果</strong><br>耶弗他在聖靈降臨後仍然許了愚昧的願,導致獨生女兒的悲劇。神從未要求這樣的許願,這完全是耶弗他的衝動。言語有極大的能力,輕率的誓言會綑綁我們,帶來終生的痛苦。聖經教導我們不可冒失開口,話語要謹慎。我們不需要用誓言來證明信心或換取神的幫助,神要的是順服而非魯莽的承諾。<br><br>
+<strong>3. 被神使用不等於完全無誤</strong><br>耶弗他有聖靈降臨、打了勝仗、列在希伯來書的信心榜,但他仍犯了嚴重錯誤。被神使用不代表所做的一切都對,屬靈恩賜不等於屬靈成熟。我們要分辨:神可以使用不完美的器皿,但這不代表他們的所有行為都值得效法。我們需要的是神的話語作為標準,而非盲目跟隨屬靈領袖的每個決定。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>基列人耶弗他是個</strong><strong>大能的勇士</strong>,是妓女的兒子。基列的妻所生的兒子長大了,就趕逐耶弗他。(士師記11:1-2)</td>
+<td>我們是否因過去或出身而自卑?就像種子不管來自哪裡,只要有好土都能成長,神是否在乎我們的背景,還是看重我們願意被祂使用的心?被拒絕能否成為神使用的起點?</td>
+</tr>
+<tr>
+<td><strong>耶弗他就向耶和華</strong>許願,說:<strong>你若將亞捫人交在</strong>我手中,我從亞捫人那裡平平安安回來的時候,無論甚麼人,先從我家門出來迎接我,就必歸你,我也必將他獻上為燔祭。(士師記11:30-31)</td>
+<td>我們是否曾衝動地對神許願?就像情急之下做出無法兌現的承諾,我們是否也在壓力下向神亂許願?神真的需要我們的誓言嗎?還是只要我們單純的順服?</td>
+</tr>
+<tr>
+<td><strong>耶弗他看見她</strong>,<strong>就撕裂衣服</strong>,說:哀哉!我的女兒啊,你使我甚是愁苦,叫我作難了;因為我已經向耶和華開口許願,不能挽回。(士師記11:35)</td>
+<td>我們是否明白言語的力量與後果?就像發出的訊息無法收回,我們的話語、承諾、誓言都有重量,我們是否謹慎開口?如何避免衝動的言語帶來無法挽回的後果?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

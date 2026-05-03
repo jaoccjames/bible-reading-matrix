@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以斯帖記第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以斯帖記第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">王夜讀史書，哈曼反為末底改揚名</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>那夜王睡不着覺，就吩咐人取歷史來，念給他聽。</div>
+<div class="verse"><span class="verse-number">2</span>正遇見書上寫着說：王的太監中有兩個守門的，辟探和提列，想要下手害亞哈隨魯王，末底改將這事告訴王后。</div>
+<div class="verse"><span class="verse-number">3</span>王說：「末底改行了這事，賜他甚麼尊榮爵位沒有？」伺候王的臣僕回答說：「沒有賜他甚麼。」</div>
+<div class="verse"><span class="verse-number">4</span>王說：「誰在院子裏？」（那時哈曼正進王宮的外院，要求王將末底改挂在他所預備的木架上。）</div>
+<div class="verse"><span class="verse-number">5</span>臣僕說：「哈曼站在院內。」王說：「叫他進來。」</div>
+<div class="verse"><span class="verse-number">6</span>哈曼就進去。王問他說：「王所喜悅尊榮的人，當如何待他呢？」哈曼心裏說：「王所喜悅尊榮的，不是我是誰呢？」</div>
+<div class="verse"><span class="verse-number">7</span>哈曼就回答說：「王所喜悅尊榮的人，</div>
+<div class="verse"><span class="verse-number">8</span>當將王常穿的朝服和戴冠的御馬，</div>
+<div class="verse"><span class="verse-number">9</span>都交給王極尊貴的一個大臣，命他將衣服給王所喜悅尊榮的人穿上，使他騎上馬，走遍城裏的街市，在他面前宣告說：王所喜悅尊榮的人，就如此待他。」</div>
+<div class="verse"><span class="verse-number">10</span>王對哈曼說：「你速速將這衣服和馬，照你所說的，向坐在朝門的猶大人末底改去行。凡你所說的，一樣不可缺。」</div>
+<div class="verse"><span class="verse-number">11</span>於是哈曼將朝服給末底改穿上，使他騎上馬，走遍城裏的街市，在他面前宣告說：「王所喜悅尊榮的人，就如此待他。」</div>
+<div class="verse"><span class="verse-number">12</span>末底改仍回到朝門，哈曼卻憂憂悶悶的蒙着頭，急忙回家去了，</div>
+<div class="verse"><span class="verse-number">13</span>將所遇的一切事詳細說給他的妻細利斯和他的眾朋友聽。他的智慧人和他的妻細利斯對他說：「你在末底改面前始而敗落，他如果是猶大人，你必不能勝他，終必在他面前敗落。」</div>
+<div class="verse"><span class="verse-number">14</span>他們還與哈曼說話的時候，王的太監來催哈曼快去赴以斯帖所預備的筵席。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以斯帖記第6章是全書戲劇性轉折的核心場景，充滿了神在幕後精密安排的痕跡。那夜，就在哈曼準備翌日求王殺害末底改的前一晚，王偏偏睡不着覺，偏偏要人讀歷史，偏偏讀到了末底改揭發暗殺陰謀的那一頁，而末底改偏偏從未得到獎賞。與此同時，哈曼偏偏在此刻進宮，一進宮王就問他：「王所喜悅尊榮的人，當如何待他？」哈曼以為說的是自己，滿心歡喜地描述最高榮耀的待遇，結果卻被命令親手給末底改披上榮耀。這一連串的「巧合」，是全書神的隱秘主權最清晰的體現——沒有一件「偶然」是真的偶然。哈曼親手尊榮他最恨的人，成為驕傲走向敗落的最生動預兆。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神掌管所有「偶然」，在幕後精密安排</strong><br>王的失眠、歷史書的翻開、恰好讀到那一段、哈曼恰好在此刻進宮——每一個「剛好」都是神精密編排的拼圖。以斯帖記在這一章最清楚地展示神的隱秘主權：祂不需要宣告，不需要插手干預，只需要讓「偶然」的時機對齊，歷史就開始翻轉。信徒可以相信，即使在最黑暗的等候期，神仍在幕後安排一切。<br><br>
+<strong>2. 神記念每一個忠心的行為，在最合時的時機兌現</strong><br>末底改的忠心在第2章被記錄卻沒有立即的獎賞，時隔多年，就在他最需要的關鍵時刻，這份記錄被翻出，成為扭轉局面的契機。神的記念從不失時，也不失準。信徒的善行和忠心，即使長時間沒有得到承認，神都記在祂的冊上，必在合宜的時間顯明。<br><br>
+<strong>3. 驕傲自高的人最終會被羞辱</strong><br>哈曼滿心以為自己是最受寵愛的人，卻被命令親手尊榮他的仇敵。他所設計給末底改的羞辱，反而轉為對自己的先期羞辱。聖經多次宣告「驕傲在敗壞以先」，哈曼的故事是最戲劇性的詮釋。神能使人的驕傲算謀成為自我敗落的工具。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>那夜王睡不着覺</strong>，<strong>就吩咐人取歷史來</strong>，念給他聽。正遇見書上寫着說……末底改將這事告訴王后。（斯6:1-2）</td>
+<td>就像一封遲到多年的信在最關鍵時刻送達，神掌管的「偶然」是否讓你想起生命中某個「剛好」的時機，現在回想起來其實是神的安排？那次經歷如何加深你對神主權的信靠？</td>
+</tr>
+<tr>
+<td><strong>哈曼心裏說</strong>：「<strong>王所喜悅尊榮的</strong>，不是我是誰呢？」（斯6:6）</td>
+<td>就像考試前已在腦海中慶祝拿滿分，驕傲讓人在得知結果前就假設最好的結局屬於自己。你有沒有因為驕傲而誤讀了一個情境，後來才發現自己完全錯了？</td>
+</tr>
+<tr>
+<td><strong>你在末底改面前始</strong><strong>而敗落</strong>，他如果是猶大人，你必不能勝他，終必在他面前敗落。（斯6:13）</td>
+<td>就像連對手的顧問都知道這場比賽你贏不了，神所護衛的人，再大的仇敵也無法真正勝過他。你在生命中是否有一個「末底改」式的確信——神的保護讓你有底氣面對強大的對手？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

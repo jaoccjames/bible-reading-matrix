@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第43章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第43章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">帶便雅憫再赴埃及</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>那地的饑荒甚大。</div>
+<div class="verse"><span class="verse-number">2</span>他們從埃及帶來的糧食吃盡了，他們的父親就對他們說：「你們再去給我糴些糧來。」</div>
+<div class="verse"><span class="verse-number">3</span>猶大對他說：「那人諄諄地誥誡我們說：『你們的兄弟若不與你們同來，你們就不得見我的面。』</div>
+<div class="verse"><span class="verse-number">4</span>你若打發我們的兄弟與我們同去，我們就下去給你糴糧；</div>
+<div class="verse"><span class="verse-number">5</span>你若不打發他去，我們就不下去，因為那人對我們說：『你們的兄弟若不與你們同來，你們就不得見我的面。』」</div>
+<div class="verse"><span class="verse-number">6</span>以色列說：「你們為甚麼這樣害我，告訴那人你們還有兄弟呢？」</div>
+<div class="verse"><span class="verse-number">7</span>他們回答說：「那人詳細問到我們和我們的親屬，說：『你們的父親還在嗎？你們還有兄弟嗎？』我們就按着他所問的告訴他，焉能知道他要說『必須把你們的兄弟帶下來』呢？」</div>
+<div class="verse"><span class="verse-number">8</span>猶大又對他父親以色列說：「你打發童子與我同去，我們就起身下去，好叫我們和你，並我們的婦人孩子，都得存活，不至於死。</div>
+<div class="verse"><span class="verse-number">9</span>我為他作保；你可以從我手中追討，我若不帶他回來交在你面前，我情願永遠擔罪。</div>
+<div class="verse"><span class="verse-number">10</span>我們若沒有耽擱，如今第二次都回來了。」</div>
+<div class="verse"><span class="verse-number">11</span>他們的父親以色列說：「若必須如此，你們就當這樣行：可以將這地土產中最好的乳香、蜂蜜、香料、沒藥、榧子、杏仁都取一點，收在器具裏，帶下去送給那人作禮物，</div>
+<div class="verse"><span class="verse-number">12</span>又要手裏加倍地帶銀子，並將歸還在你們口袋內的銀子仍帶在手裏；那或者是錯了。</div>
+<div class="verse"><span class="verse-number">13</span>也帶着你們的兄弟，起身去見那人。</div>
+<div class="verse"><span class="verse-number">14</span>但願全能的神使你們在那人面前蒙憐憫，釋放你們的那弟兄和便雅憫回來。我若喪了兒子，就喪了吧！」</div>
+<div class="verse"><span class="verse-number">15</span>於是，他們拿着那禮物，又手裏加倍的帶銀子，並且帶着便雅憫，起身下到埃及，站在約瑟面前。</div>
+<div class="verse"><span class="verse-number">16</span>約瑟見便雅憫和他們同來，就對家宰說：「將這些人領到屋裏。要宰殺牲畜，預備筵席，因為晌午這些人同我吃飯。」</div>
+<div class="verse"><span class="verse-number">17</span>家宰就遵着約瑟的命去行，領他們進約瑟的屋裏。</div>
+<div class="verse"><span class="verse-number">18</span>他們因為被領到約瑟的屋裏，就害怕，說：「領我們到這裏來，必是因為頭次歸還在我們口袋裏的銀子，找我們的錯縫，下手害我們，強取我們為奴僕，搶奪我們的驢。」</div>
+<div class="verse"><span class="verse-number">19</span>他們就挨近約瑟的家宰，在屋門口和他說話，</div>
+<div class="verse"><span class="verse-number">20</span>說：「我主啊，我們頭次下來實在是要糴糧。</div>
+<div class="verse"><span class="verse-number">21</span>後來到了住宿的地方，我們打開口袋，不料，各人的銀子，分量足數，仍在各人的口袋內，現在我們手裏又帶回來了。</div>
+<div class="verse"><span class="verse-number">22</span>另外又帶下銀子來糴糧。不知道先前誰把銀子放在我們的口袋裏。」</div>
+<div class="verse"><span class="verse-number">23</span>家宰說：「你們可以放心，不要害怕，是你們的神和你們父親的神賜給你們財寶在你們的口袋裏；你們的銀子，我早已收了。」他就把西緬帶出來，交給他們。</div>
+<div class="verse"><span class="verse-number">24</span>家宰就領他們進約瑟的屋裏，給他們水洗腳，又給他們草料餵驢。</div>
+<div class="verse"><span class="verse-number">25</span>他們就預備那禮物，等候約瑟晌午來，因為他們聽見要在那裏吃飯。</div>
+<div class="verse"><span class="verse-number">26</span>約瑟來到家裏，他們就把手中的禮物拿進屋去給他，又俯伏在地，向他下拜。</div>
+<div class="verse"><span class="verse-number">27</span>約瑟問他們好，又問：「你們的父親，就是你們所說的那老人家平安嗎？他還在嗎？」</div>
+<div class="verse"><span class="verse-number">28</span>他們回答說：「你僕人我們的父親平安；他還在。」於是他們低頭下拜。</div>
+<div class="verse"><span class="verse-number">29</span>約瑟舉目看見他同母的兄弟便雅憫，就說：「你們向我所說那頂小的兄弟就是這位嗎？」又說：「小兒啊，願神賜恩給你！」</div>
+<div class="verse"><span class="verse-number">30</span>約瑟愛弟之情發動，就急忙尋找可哭之地，進入自己的屋裏，哭了一場。</div>
+<div class="verse"><span class="verse-number">31</span>他洗了臉出來，勉強隱忍，吩咐人擺飯。</div>
+<div class="verse"><span class="verse-number">32</span>他們就為約瑟單擺了一席，為那些人又擺了一席，也為和約瑟同吃飯的埃及人另擺了一席，因為埃及人不可和希伯來人一同吃飯；那原是埃及人所厭惡的。</div>
+<div class="verse"><span class="verse-number">33</span>約瑟使眾弟兄在他面前排列坐席，都按着長幼的次序，眾弟兄就彼此詫異。</div>
+<div class="verse"><span class="verse-number">34</span>約瑟把他面前的食物分出來，送給他們；但便雅憫所得的比別人多五倍。他們就飲酒，和約瑟一同宴樂。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載饑荒持續，糧食吃盡後雅各被迫同意讓便雅憫與哥哥們同去埃及。猶大挺身而出為便雅憫作保，承諾必定帶他安全回來。雅各最終放手，將一切交託給全能的神，帶著禮物和雙倍銀子讓兒子們再次下埃及。約瑟見到同母弟弟便雅憫時情緒激動，吩咐家宰預備豐盛筵席款待他們。哥哥們原本因銀子歸還的事驚恐不安，但家宰安撫他們說這是神的賜福。約瑟見到便雅憫後忍不住進屋痛哭，之後勉強隱忍情緒與兄弟們同席。他刻意按長幼次序安排座位並給便雅憫五倍的食物，試驗哥哥們是否仍像過去一樣嫉妒偏愛。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 完全信靠需要放手的勇氣</strong><br>雅各說「我若喪了兒子，就喪了吧」展現信心的突破，將最愛的便雅憫交託神。真正的信靠不是沒有掙扎，而是在掙扎後選擇放手，承認自己無法掌控一切，將結果交給神。這種放手往往是神工作的開始。<br><br>
+<strong>2. 承擔責任是成熟的標記</strong><br>猶大主動為便雅憫作保，願意承擔一切後果，顯示他從當年賣約瑟的人轉變為願意犧牲的保護者。真正的悔改會帶來生命的改變，從逃避責任到勇於承擔，從自私自利到願意為他人付代價。<br><br>
+<strong>3. 神的恩典超越人的虧欠</strong><br>約瑟不僅沒有報復，反而預備豐盛筵席接待曾傷害他的人。家宰說「是你們的神賜給你們財寶」點出恩典的本質：我們不配卻白白領受。神的恩典不是忽略罪惡，而是在罪人悔改後以愛取代審判。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>但願全能的神使你</strong><strong>們在那人面前蒙憐</strong>憫。我若喪了兒子，就喪了吧！（創43:14）</td>
+<td>就像父母送孩子出國留學必須放手信任，雅各將最愛的交託神顯示信心的突破。我對於生命中最珍貴的人事物（家人、健康、事業），是緊抓控制想靠自己保護，還是能真正放手交託給神？</td>
+</tr>
+<tr>
+<td><strong>猶大又對他父親以</strong><strong>色列說</strong>：我為他作保；你可以從我手中追討，我若不帶他回來，我情願永遠擔罪。（創43:9）</td>
+<td>就像擔任連帶保證人需承擔全部責任，猶大願為便雅憫付出一切代價。當我的團隊或家人遇到困難時，我是袖手旁觀找藉口撇清，還是願意挺身而出承擔責任，即使可能犧牲自己的利益？</td>
+</tr>
+<tr>
+<td><strong>家宰說</strong>：<strong>你們可以放心</strong>，不要害怕，是你們的神賜給你們財寶在你們的口袋裡。（創43:23）</td>
+<td>就像意外獲得退稅發現是合法權益而非錯誤，神的恩典往往超乎想像。當我領受超過期待的祝福時，我是心虛不安覺得不配，還是能以感恩的心坦然領受，知道這是神的恩典與供應？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

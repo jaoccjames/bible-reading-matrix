@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第23章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第23章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶和華是我的牧者：生命全程的看顧</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩）耶和華是我的牧者，我必不至缺乏。</div>
+<div class="verse"><span class="verse-number">2</span>他使我躺臥在青草地上，領我在可安歇的水邊。</div>
+<div class="verse"><span class="verse-number">3</span>他使我的靈魂甦醒，為自己的名引導我走義路。</div>
+<div class="verse"><span class="verse-number">4</span>我雖然行過死蔭的幽谷，也不怕遭害，因為你與我同在；你的杖，你的竿，都安慰我。</div>
+<div class="verse"><span class="verse-number">5</span>在我敵人面前，你為我擺設筵席；你用油膏了我的頭，使我的福杯滿溢。</div>
+<div class="verse"><span class="verse-number">6</span>我一生一世必有恩惠慈愛隨着我；我且要住在耶和華的殿中，直到永遠。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第23篇是整部聖經中最廣為人知、最被珍愛的詩篇，大衛所作，可能寫於晚年回顧一生時，以牧羊人的經歷比喻神對他生命的引導與看顧。大衛本身就是牧羊人出身（撒上16:11），因此這個比喻對他而言是極為親切的親身經歷。
+
+      全篇僅六節，卻涵蓋了人生的完整旅程：青草地的安息（2節）、死蔭幽谷的黑暗（4節）、仇敵環繞時的筵席（5節），以及永恆的應許（6節）。神以「牧者」的形象呈現，而大衛以「羊」的姿態自居，這種信仰的謙卑是整篇的靈魂。
+
+      詩篇第23篇在整個詩篇22至24篇的排列中居中，形成一組三聯篇：第22篇是「十字架詩篇」（牧者的死），第23篇是「牧杖詩篇」（牧者的生），第24篇是「冠冕詩篇」（牧者的榮）。在新約中，耶穌自稱「好牧人」（約10:11），使本篇的應許在基督裡得到最完全的成就，也使「耶和華是我的牧者」成為每位信徒最深的生命宣告。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神是供應一切的牧者，信徒必不缺乏</strong><br>「耶和華是我的牧者，我必不至缺乏。」全篇最關鍵的宣告在第1節。「必不至缺乏」不是承諾信徒永遠得到一切所欲，而是宣告有神為牧者，真正需要的都必得供應。牧者知道羊群何時需要休息（青草地），何時需要滋養（可安歇的水邊），何時需要引導（義路），何時需要同在（幽谷）。當「耶和華是我的牧者」成為信徒真實的信仰宣告，所有的焦慮與匱乏感便有了最深的回應——因為那位供應一切的牧者正在看顧。<br><br>
+<strong>2. 死蔭幽谷中神的同在勝過一切恐懼</strong><br>「我雖然行過死蔭的幽谷，也不怕遭害，因為你與我同在。」（第4節）本篇沒有迴避人生必然經歷的黑暗——死蔭的幽谷是真實的，不是假設的。然而大衛宣告：在幽谷中改變的不是環境，而是同在的確信。「因為你與我同在」是恐懼消散的唯一根源。「杖」是保護，「竿」是引導，神以這兩種方式在幽谷中的同在，給了信徒在最艱難處境中仍能前行的勇氣。神的同在不是讓信徒繞過幽谷，而是陪伴信徒走過幽谷。<br><br>
+<strong>3. 神的恩惠慈愛一生跟隨是信徒永恆的確信</strong><br>「我一生一世必有恩惠慈愛隨着我；我且要住在耶和華的殿中，直到永遠。」（第6節）本篇以這個宏大的確信作結：不只是今天、這個季節，而是「一生一世」；不只是今生，而是「直到永遠」。「恩惠慈愛」（hesed，神聖的盟約之愛）是神信實本性的核心，它「跟隨」信徒，如同牧者跟隨羊群。這個宣告使信徒在面對未知的未來時，有了最深的定錨：神的愛不會因為環境改變而撤回，它一生一世地隨行。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華是我的牧者</strong>，<strong>我必不至缺乏</strong>。（詩23:1）</td>
+<td>就像信任有口碑的旅行社安排行程，就算不知道每個細節也能安心出發，「耶和華是我的牧者」這個宣告，是否真的成為你面對生活不確定性時的根基，讓你從焦慮轉為安心交託？</td>
+</tr>
+<tr>
+<td><strong>我雖然行過死蔭的</strong>幽谷，<strong>也不怕遭害</strong>，因為你與我同在；你的杖，你的竿，都安慰我。（詩23:4）</td>
+<td>就像在漆黑的隧道中，知道身旁有人握著手，黑暗本身並不因此消失，但恐懼卻大大減少，你目前人生的「死蔭幽谷」是什麼？你是否真實地感受到神與你同在的安慰，還是只知道這個道理卻感覺不到？</td>
+</tr>
+<tr>
+<td><strong>我一生一世必有恩</strong><strong>惠慈愛隨着我</strong>；我且要住在耶和華的殿中，直到永遠。（詩23:6）</td>
+<td>就像訂閱了永久有效的保險，無論發生什麼都有保障，「一生一世必有恩惠慈愛隨着我」的確信，是否真的讓你在面對未知的未來時，能以信心取代焦慮，以盼望取代恐懼？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

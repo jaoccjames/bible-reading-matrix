@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提多書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+提多書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">各年齡層的教導與恩典的教訓</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>但你所講的總要合乎那純正的道理。</div>
+<div class="verse"><span class="verse-number">2</span>勸老年人要有節制、端莊、自守，在信心、愛心、忍耐上都要純全無疵。</div>
+<div class="verse"><span class="verse-number">3</span>又勸老年婦人，舉止行動要恭敬，不說讒言，不給酒作奴僕，用善道教訓人，</div>
+<div class="verse"><span class="verse-number">4</span>好指教少年婦人，愛丈夫，愛兒女，</div>
+<div class="verse"><span class="verse-number">5</span>謹守，貞潔，料理家務，待人有恩，順服自己的丈夫，免得神的道理被毀謗。</div>
+<div class="verse"><span class="verse-number">6</span>又勸少年人要謹守。</div>
+<div class="verse"><span class="verse-number">7</span>你自己凡事要顯出善行的榜樣，在教訓上要正直、端莊，</div>
+<div class="verse"><span class="verse-number">8</span>言語純全，無可指責，叫那反對的人，既無處可說我們的不是，便自覺羞愧。</div>
+<div class="verse"><span class="verse-number">9</span>勸僕人要順服自己的主人，凡事討他的喜歡，不可頂撞他，</div>
+<div class="verse"><span class="verse-number">10</span>不可私拿東西，要顯為忠誠，以致凡事尊榮我們救主神的道。</div>
+<div class="verse"><span class="verse-number">11</span>因為神救眾人的恩典已經顯明出來，</div>
+<div class="verse"><span class="verse-number">12</span>教訓我們除去不敬虔的心和世俗的情慾，在今世自守、公義、敬虔度日，</div>
+<div class="verse"><span class="verse-number">13</span>等候所盼望的福，並等候至大的神和〔或無「和」字〕我們救主耶穌基督的榮耀顯現。</div>
+<div class="verse"><span class="verse-number">14</span>他為我們捨了自己，要贖我們脫離一切罪惡，又潔淨我們，特作自己的子民，熱心為善。</div>
+<div class="verse"><span class="verse-number">15</span>這些事你要講明，勸戒人，用各等權柄責備人，不可叫人輕看你。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第2章就不同年齡層和社會身份的信徒給出具體的行為指引，並以基督的恩典作為成聖生活的神學根基，呈現敬虔生活的動力來自救恩的確信。本章首先就各個群體給出教導：老年男人要有節制、端莊、自守，在信心、愛心、忍耐上都要純全；老年婦女也如此，舉止要恭敬、不說讒言、不喝醉酒、要用善道教訓人，好指教少年婦人愛丈夫愛兒女，謹守貞潔、料理家務、待丈夫順服，免得神的道被毀謗；要勸少年人謹守，你自己凡事要以善工為榜樣，在教訓上要正直端莊，言語純全無可指責；就僕人教導要順服自己的主人，凡事討他的喜悅，要顯為忠誠，叫我們救主神的道受人尊重。接著說明行善的神學根基：因為神救眾人的恩典已經顯明出來，教訓我們除去不敬虔的心和世俗的情慾，在今世過謹慎、公義、敬虔的生活，等候所盼望的福，並等候至大的神和我們救主耶穌基督的榮耀顯現，祂為我們捨了自己，要贖我們脫離一切罪惡，又潔淨我們特作自己的子民，熱心為善。本章以救恩激勵成聖，呈現福音與生活的緊密聯繫。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 恩典是道德改變的最深動力</strong><br>「神救眾人的恩典已經顯明出來，教訓我們除去不敬虔的心……在今世自守、公義、敬虔度日」——道德改變的根源是神的恩典，而非人的意志。恩典不只是救恩的工具，也是道德生命的老師（「教訓我們」）。因着恩典，我們學習除去不敬虔、自守、公義、敬虔——這是由外而內的恩典驅動的生命更新。<br><br>
+<strong>2. 「熱心為善」是被贖之民的標誌</strong><br>「他為我們捨了自己，要贖我們脫離一切罪惡，又潔淨我們，特作自己的子民，熱心為善」——救贖的目的不只是脫離罪惡，還有「特作自己的子民，熱心為善」。基督徒的行善不是賺取救恩，而是蒙救贖的回應和標誌。「熱心」說明這不是勉強的義務，而是出於感恩的熱情。<br><br>
+<strong>3. 不同年齡層的教導反映整全的牧養</strong><br>保羅對老年男女、少年婦人、少年人、僕人給出具體的指引，反映了牧養必須照顧到每一個群體的特殊需要。沒有一個群體可以在教會中被忽視。對每個群體的期望都不同，但共同的主題是：在各自的身份和處境中，活出使「神的道不被毀謗」甚至「使神的道得尊榮」的生命。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>因為神救眾人的恩</strong><strong>典已經顯明出來</strong>，教訓我們除去不敬虔的心和世俗的情慾，在今世自守、公義、敬虔度日。（多2:11-12）</td>
+<td>你有沒有讓神的恩典不只是你得救的根基，也是你每天道德更新的動力——讓恩典「教訓你」除去不敬虔，而非靠意志力強撐？就像一個深受感動於老師犧牲的學生自然想認真學習，你有沒有讓對恩典的深深感謝成為你追求聖潔最自然的動力？</td>
+</tr>
+<tr>
+<td><strong>他為我們捨了自己</strong>，<strong>要贖我們脫離一切</strong>罪惡，又潔淨我們，特作自己的子民，熱心為善。（多2:14）</td>
+<td>你有沒有把「熱心為善」看作是你作為被贖之民最自然的生命標誌，而非額外的宗教義務？就像健康的心臟自然跳動，被基督寶血救贖的人自然地、熱切地在生活中行善，你有沒有讓這個熱心在你的日常生活中真實地流露？</td>
+</tr>
+<tr>
+<td><strong>你要以宣讀</strong>、勸勉、<strong>教導為念</strong>，直等到我來。你自己凡事要顯出善行的榜樣，在教訓上要正直、端莊，言語純全，無可指責，叫那反對的人，既無處可說我們的不是，便自覺羞愧。（多2:7-8）</td>
+<td>你有沒有讓你的生命本身成為你話語的最有力佐證——在言語上純全、在行為上端正，使那些想批評你信仰的人找不到可指摘的地方？就像最好的公司形象建立在產品質量而非廣告話術，你有沒有讓生命的見證比言語更雄辯？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

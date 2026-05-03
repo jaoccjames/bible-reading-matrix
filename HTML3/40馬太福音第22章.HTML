@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第22章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第22章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">婚宴比喻與最大誡命</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌又用比喻對他們說：</div>
+<div class="verse"><span class="verse-number">2</span>「天國好比一個王為他兒子擺設娶親的筵席，</div>
+<div class="verse"><span class="verse-number">3</span>就打發僕人去，請那些被召的人來赴席，他們卻不肯來。</div>
+<div class="verse"><span class="verse-number">4</span>王又打發別的僕人，說：『你們告訴那被召的人，我的筵席已經預備好了，牛和肥畜已經宰了，各樣都齊備，請你們來赴席。』</div>
+<div class="verse"><span class="verse-number">5</span>那些人不理就走了；一個到自己田裏去；一個作買賣去；</div>
+<div class="verse"><span class="verse-number">6</span>其餘的拿住僕人，凌辱他們，把他們殺了。</div>
+<div class="verse"><span class="verse-number">7</span>王就大怒，發兵除滅那些兇手，燒毀他們的城。</div>
+<div class="verse"><span class="verse-number">8</span>於是對僕人說：『喜筵已經齊備，只是所召的人不配。</div>
+<div class="verse"><span class="verse-number">9</span>所以你們要往岔路口上去，凡遇見的，都召來赴席。』</div>
+<div class="verse"><span class="verse-number">10</span>那些僕人就出去，到大路上，凡遇見的，不論善惡都召聚了來，筵席上就坐滿了客。</div>
+<div class="verse"><span class="verse-number">11</span>王進來觀看賓客，見那裏有一個沒有穿禮服的，</div>
+<div class="verse"><span class="verse-number">12</span>就對他說：『朋友，你到這裏來怎麼不穿禮服呢？』那人無言可答。</div>
+<div class="verse"><span class="verse-number">13</span>於是王對使喚的人說：『捆起他的手腳來，把他丟在外邊的黑暗裏；在那裏必要哀哭切齒了。』</div>
+<div class="verse"><span class="verse-number">14</span>因為被召的人多，選上的人少。」</div>
+<div class="verse"><span class="verse-number">15</span>當時，法利賽人出去商議，怎樣就着耶穌的話陷害他，</div>
+<div class="verse"><span class="verse-number">16</span>就打發他們的門徒同希律黨的人去見耶穌，說：「夫子，我們知道你是誠實人，並且誠誠實實傳神的道，甚麼人你都不徇情面，因為你不看人的外貌。</div>
+<div class="verse"><span class="verse-number">17</span>請告訴我們，你的意見如何？納稅給該撒可以不可以？」</div>
+<div class="verse"><span class="verse-number">18</span>耶穌看出他們的惡意，就說：「假冒為善的人哪，為甚麼試探我？</div>
+<div class="verse"><span class="verse-number">19</span>拿一個上稅的錢給我看！」他們就拿一個銀錢來給他。</div>
+<div class="verse"><span class="verse-number">20</span>耶穌說：「這像和這號是誰的？」</div>
+<div class="verse"><span class="verse-number">21</span>他們說：「是該撒的。」耶穌說：「這樣，該撒的物當歸給該撒；神的物當歸給神。」</div>
+<div class="verse"><span class="verse-number">22</span>他們聽見就希奇，離開他走了。</div>
+<div class="verse"><span class="verse-number">23</span>撒都該人常說沒有復活的事。那天，他們來問耶穌說：</div>
+<div class="verse"><span class="verse-number">24</span>「夫子，摩西說：『人若死了，沒有孩子，他兄弟當娶他的妻，為哥哥生子立後。』</div>
+<div class="verse"><span class="verse-number">25</span>從前，在我們這裏有弟兄七人，第一個娶了妻，死了，沒有孩子，撇下妻子給兄弟。</div>
+<div class="verse"><span class="verse-number">26</span>第二、第三、直到第七個，都是如此。</div>
+<div class="verse"><span class="verse-number">27</span>末後，婦人也死了。</div>
+<div class="verse"><span class="verse-number">28</span>這樣，當復活的時候，她是七個人中那一個的妻子呢？因為他們都娶過她。」</div>
+<div class="verse"><span class="verse-number">29</span>耶穌回答說：「你們錯了；因為不明白聖經，也不曉得神的大能。</div>
+<div class="verse"><span class="verse-number">30</span>當復活的時候，人也不娶也不嫁，乃像天上的使者一樣。</div>
+<div class="verse"><span class="verse-number">31</span>論到死人復活，神在經上向你們所說的，你們沒有念過嗎？</div>
+<div class="verse"><span class="verse-number">32</span>他說：『我是亞伯拉罕的神，以撒的神，雅各的神。』神不是死人的神，乃是活人的神。」</div>
+<div class="verse"><span class="verse-number">33</span>眾人聽見這話，就希奇他的教訓。</div>
+<div class="verse"><span class="verse-number">34</span>法利賽人聽見耶穌堵住了撒都該人的口，他們就聚集。</div>
+<div class="verse"><span class="verse-number">35</span>內中有一個人是律法師，要試探耶穌，就問他說：</div>
+<div class="verse"><span class="verse-number">36</span>「夫子，律法上的誡命，那一條是最大的呢？」</div>
+<div class="verse"><span class="verse-number">37</span>耶穌對他說：「你要盡心、盡性、盡意愛主你的神。</div>
+<div class="verse"><span class="verse-number">38</span>這是誡命中的第一，且是最大的。</div>
+<div class="verse"><span class="verse-number">39</span>其次也相倣，就是要愛人如己。</div>
+<div class="verse"><span class="verse-number">40</span>這兩條誡命是律法和先知一切道理的總綱。」</div>
+<div class="verse"><span class="verse-number">41</span>法利賽人聚集的時候，耶穌問他們說：</div>
+<div class="verse"><span class="verse-number">42</span>「論到基督，你們的意見如何？他是誰的子孫呢？」他們回答說：「是大衛的子孫。」</div>
+<div class="verse"><span class="verse-number">43</span>耶穌說：「這樣，大衛被聖靈感動，怎麼還稱他為主，說：</div>
+<div class="verse"><span class="verse-number">44</span>主對我主說：你坐在我的右邊，等我把你仇敵放在你的腳下。</div>
+<div class="verse"><span class="verse-number">45</span>大衛既稱他為主，他怎麼又是大衛的子孫呢？」</div>
+<div class="verse"><span class="verse-number">46</span>他們沒有一個人能回答一言。從那日以後，也沒有人敢再問他甚麼。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第22章集中記述宗教領袖們連番向耶穌提出難題，試圖在言語上捉拿祂，耶穌一一化解並反過來使他們啞口無言。本章首先講婚宴比喻，說天國好比王為兒子擺設婚宴，受邀者藉故不來甚至殺害僕人，王便滅掉那些凶手，差僕人往通衢大道招聚眾人，但有人沒有穿禮服而被趕出，說明許多人被召選上的人卻少。接著法利賽人設計問耶穌納稅給凱撒是否可以，耶穌要他們看錢幣上是誰的像，說凱撒的物當歸給凱撒、神的物當歸給神，眾人聽見都希奇。然後撒都該人問復活後婚姻的問題，耶穌指出他們不明白聖經，復活後不嫁不娶，神是活人的神不是死人的神。接著一個律法師問哪條誡命最大，耶穌回答盡心盡性盡意愛主是最大的，其次是愛人如己，這兩條是全部律法的總綱。最後耶穌反問基督是誰的子孫，法利賽人從此不敢再問祂什麼。本章展示耶穌超凡的智慧與教導權柄。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 蒙召者須以合宜的心回應神的邀請</strong><br>婚宴比喻中，被召的人有不同的拒絕方式——有人忙於田地買賣，有人甚至殺害使者。最後雖廣邀各路人，卻有人不穿禮服被趕出。這兩層拒絕提醒我們：神的邀請是恩典，但我們需要以真實的回轉和委身來回應，而非僅僅出現在外表上。「被召的人多，選上的人少」是嚴肅的警醒。<br><br>
+<strong>2. 信仰與社會責任並行不悖</strong><br>「該撒的歸該撒，神的歸神」並非逃避政治責任，而是建立了雙重效忠的框架。信徒活在世界中，當盡公民責任；同時，生命、靈魂和終極效忠屬於神。兩者不是衝突，而是在不同領域各盡本分。信仰不應成為逃避社會責任的藉口，社會責任也不應取代對神的效忠。<br><br>
+<strong>3. 愛神愛人是信仰一切行為的根源</strong><br>耶穌用兩條誡命總結律法的全部：全心愛神，並愛人如己。這不是減少誡命，而是揭示誡命的根本動力。所有的宗教行為——讀經、禱告、奉獻、服事——若缺少了愛神愛人的根源，就淪為空洞的形式。信仰的核心是關係，不是規條。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>你要盡心</strong>、盡性、盡意愛主你的神。這是誡命中的第一，且是最大的。其次也相倣，就是要愛人如己。」（太22:37-39）</td>
+<td>你每天的信仰行為——禱告、讀經、奉獻——背後的動力是愛神還是責任感？就像工作是為了薪水還是因為熱愛完全是兩種感受，你的信仰生活是從愛出發，還是從義務出發？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「這樣，<strong>該撒的物當歸給該</strong>撒；神的物當歸給神。」（太22:21）</td>
+<td>你有沒有在日常生活的每個領域——工作、家庭、社會——都活出信仰的見證？就像一個人的品格在各種場合都一致，你作為基督徒的身份有沒有在職場和公共生活中同樣彰顯出來？</td>
+</tr>
+<tr>
+<td><strong>耶穌回答說</strong>：「<strong>你們錯了</strong>；因為不明白聖經，也不曉得神的大能。」（太22:29）</td>
+<td>你對聖經的認識是否足以讓你在面對質疑時能給出有根據的回答？就像律師熟悉法律條文才能為人辯護，你有沒有持續深入地認識神的話語，讓它成為你信仰的根基？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

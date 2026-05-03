@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志上第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志上第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大衛王室：王朝興衰與被擄後裔</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>大衛在希伯崙所生的兒子記在下面：長子暗嫩是耶斯列人亞希暖生的。次子但以利是迦密人亞比該生的。</div>
+<div class="verse"><span class="verse-number">2</span>三子押沙龍是基述王達買的女兒瑪迦生的。四子亞多尼雅是哈及生的。</div>
+<div class="verse"><span class="verse-number">3</span>五子示法提雅是亞比他生的。六子以特念是大衛的妻以格拉生的。</div>
+<div class="verse"><span class="verse-number">4</span>這六人都是大衛在希伯崙生的。大衛在希伯崙作王七年零六個月，在耶路撒冷作王三十三年。</div>
+<div class="verse"><span class="verse-number">5</span>大衛在耶路撒冷所生的兒子是示米亞、朔罷、拿單、所羅門。這四人是亞米利的女兒拔書亞生的。</div>
+<div class="verse"><span class="verse-number">6</span>還有益轄、以利沙瑪、以利法列、</div>
+<div class="verse"><span class="verse-number">7</span>挪迦、尼斐、雅非亞、</div>
+<div class="verse"><span class="verse-number">8</span>以利沙瑪、以利雅大、以利法列，共九人。</div>
+<div class="verse"><span class="verse-number">9</span>這都是大衛的兒子，還有他們的妹子她瑪，妃嬪的兒子不在其內。</div>
+<div class="verse"><span class="verse-number">10</span>所羅門的兒子是羅波安；羅波安的兒子是亞比雅；亞比雅的兒子是亞撒；亞撒的兒子是約沙法；</div>
+<div class="verse"><span class="verse-number">11</span>約沙法的兒子是約蘭；約蘭的兒子是亞哈謝；亞哈謝的兒子是約阿施；</div>
+<div class="verse"><span class="verse-number">12</span>約阿施的兒子是亞瑪謝；亞瑪謝的兒子是亞撒利雅；亞撒利雅的兒子是約坦；</div>
+<div class="verse"><span class="verse-number">13</span>約坦的兒子是亞哈斯；亞哈斯的兒子是希西家；希西家的兒子是瑪拿西；</div>
+<div class="verse"><span class="verse-number">14</span>瑪拿西的兒子是亞們；亞們的兒子是約西亞；</div>
+<div class="verse"><span class="verse-number">15</span>約西亞的長子是約哈難，次子是約雅敬，三子是西底家，四子是沙龍。</div>
+<div class="verse"><span class="verse-number">16</span>約雅敬的兒子是耶哥尼雅和西底家。</div>
+<div class="verse"><span class="verse-number">17</span>耶哥尼雅被擄。他的兒子是撒拉鐵、</div>
+<div class="verse"><span class="verse-number">18</span>瑪基蘭、毘大雅、示拿薩、耶加米、何沙瑪、尼大比雅。</div>
+<div class="verse"><span class="verse-number">19</span>毘大雅的兒子是所羅巴伯、示每。所羅巴伯的兒子是米書蘭、哈拿尼雅，他們的妹子名叫示羅密。</div>
+<div class="verse"><span class="verse-number">20</span>米書蘭的兒子是哈舒巴、阿黑、比利家、哈撒底、于沙希悉，共五人。</div>
+<div class="verse"><span class="verse-number">21</span>哈拿尼雅的兒子是毘拉提、耶篩亞。還有利法雅的眾子，亞珥難的眾子，俄巴底亞的眾子，示迦尼的眾子。</div>
+<div class="verse"><span class="verse-number">22</span>示迦尼的兒子是示瑪雅；示瑪雅的兒子是哈突、以甲、巴利亞、尼利雅、沙法，共六人。</div>
+<div class="verse"><span class="verse-number">23</span>尼利雅的兒子是以利約乃、希西家、亞斯利干，共三人。</div>
+<div class="verse"><span class="verse-number">24</span>以利約乃的兒子是何大雅、以利亞實、毘萊雅、阿谷、約哈難、第萊雅、阿拿尼，共七人。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志上第三章是整卷書族譜部分的核心，專門記錄大衛王朝的世系。全章分為三個部分：大衛在希伯崙所生的六個兒子（1-4節）、大衛在耶路撒冷所生的十三個兒子（5-9節），以及從所羅門到被擄時期的歷代猶大王（10-16節），最後延伸至被擄後的後裔，一直記錄到所羅巴伯及其子孫（17-24節）。
+
+      這份王室族譜對歸回後的以色列人具有深刻的神學意義。儘管巴比倫的鐵蹄踐踏了耶路撒冷，王朝看似終結，但族譜的延續表明神的應許並未落空——祂曾應許大衛，他的後裔將永遠存在。所羅巴伯是被擄歸回的重要領袖，他的名字出現在族譜中，象徵著新的希望。對新約讀者而言，這條王室血脈最終指向耶穌基督，祂是大衛的後裔，也是神應許的最終成就。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的應許在歷史跌宕中屹立不搖</strong><br>從大衛到耶哥尼雅被擄，猶大王朝歷經興衰、叛亂、外邦入侵，一度幾乎斷絕。然而族譜在被擄之後仍繼續延伸，所羅巴伯等名字的出現，說明神對大衛的應許——「你的家和你的國必在我面前永遠堅立」——依然有效。這鼓勵信徒在最黑暗的處境中，仍然相信神的話語必然成就。<br><br>
+<strong>2. 犯罪的後果影響深遠，但神的恩典更長久</strong><br>王室族譜中有忠心的王（亞撒、約沙法、希西家），也有悖逆的王（瑪拿西、亞哈斯），更有導致亡國的王（約雅敬、西底家）。歷史清楚地呈現：罪的代價是真實且沉重的，被擄是悖逆的直接後果。但同樣真實的是，神的恩典沒有因此終止，族譜仍在繼續，盼望仍在延伸。<br><br>
+<strong>3. 神在歷史終點預備了更大的盼望</strong><br>本章族譜以所羅巴伯及其後裔結尾，看似平淡，卻在新約中與彌賽亞的降生相連。歷代志的讀者知道，這條血脈不只是歷史紀錄，更是應許的傳遞鏈。信徒的人生同樣如此——眼前的一章也許看似平凡，但在神更大的故事中，每一段都有其不可或缺的位置。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>大衛在希伯崙作王</strong><strong>七年零六個月</strong>，在耶路撒冷作王三十三年。（代上3:4）</td>
+<td>大衛的王權從希伯崙的局部開始，逐步擴展到耶路撒冷的全國，就像剛開始學一項技能時只能在小範圍練習，隨著忠心才逐漸獲得更大的舞台——你現在所在的「希伯崙」，是否正是神訓練你進入更大使命的起點？</td>
+</tr>
+<tr>
+<td><strong>耶哥尼雅被擄</strong>。<strong>他的兒子是撒拉鐵</strong>……（代上3:17）</td>
+<td>即使在被擄這個最黑暗的節點，族譜仍然繼續記錄後裔，就像手機在信號最弱時仍保持連線——當人生遭遇最難熬的中斷時，你是否相信神的計畫並沒有被「擄走」，仍在暗中延續？</td>
+</tr>
+<tr>
+<td><strong>毘大雅的兒子是所</strong><strong>羅巴伯</strong>、示每。（代上3:19）</td>
+<td>所羅巴伯在被擄後成為歸回的領袖，重建聖殿，就像一顆在冰雪中埋藏整個冬天的種子，春天一來便破土而出——在你生命中曾被「埋藏」的恩賜或呼召，是否正等待著神為你打開的那個春天？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

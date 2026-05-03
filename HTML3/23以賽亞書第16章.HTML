@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">摩押的驕傲與先知的哀慟：謙卑求庇護的呼召</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們當將羊羔奉給那地掌權的，從西拉往曠野，送到錫安城〔原文作女子〕的山。</div>
+<div class="verse"><span class="verse-number">2</span>摩押的居民〔原文作女子〕在亞嫩渡口，必像遊飛的鳥，如拆窩的雛。</div>
+<div class="verse"><span class="verse-number">3</span>求你獻謀略，行公平，使你的影子在午間如黑夜，隱藏被趕散的人，不可顯露逃民。</div>
+<div class="verse"><span class="verse-number">4</span>求你容我這被趕散的人和你同居。至於摩押，求你作他的隱密處，脫離滅命者的面。勒索人的歸於無有，毀滅的事止息了，欺壓人的從國中除滅了，</div>
+<div class="verse"><span class="verse-number">5</span>必有寶座因慈愛堅立；必有一位誠誠實實坐在其上，在大衛帳幕中施行審判，尋求公平，速行公義。</div>
+<div class="verse"><span class="verse-number">6</span>我們聽說摩押人驕傲，是極其驕傲；聽說他狂妄、驕傲、忿怒；他誇大的話是虛空的。</div>
+<div class="verse"><span class="verse-number">7</span>因此，摩押人必為摩押哀號；人人都要哀號。你們摩押人要為吉珥哈列設的葡萄餅哀歎，極其憂傷。</div>
+<div class="verse"><span class="verse-number">8</span>因為希實本的田地和西比瑪的葡萄樹都衰殘了。列國的君主折斷其上美好的枝子；這枝子長到雅謝延到曠野，嫩枝向外探出，直探過鹽海。</div>
+<div class="verse"><span class="verse-number">9</span>因此，我要為西比瑪的葡萄樹哀哭，與雅謝人哀哭一樣。希實本、以利亞利阿，我要以眼淚澆灌你；因為有交戰吶喊的聲音臨到你夏天的果子，並你收割的莊稼。</div>
+<div class="verse"><span class="verse-number">10</span>從肥美的田中奪去了歡喜快樂；在葡萄園裏必無歌唱，也無歡呼的聲音。踹酒的在酒醡中不得踹出酒來；我使他歡呼的聲音止息。</div>
+<div class="verse"><span class="verse-number">11</span>因此，我心腹為摩押哀鳴如琴；我心腸為吉珥哈列設也是如此。</div>
+<div class="verse"><span class="verse-number">12</span>摩押人朝見的時候，在高處疲乏，又到他聖所祈禱，也不蒙應允。</div>
+<div class="verse"><span class="verse-number">13</span>這是耶和華從前論摩押的話。</div>
+<div class="verse"><span class="verse-number">14</span>但現在耶和華說：「三年之內，照雇工的年數，摩押的榮耀與他的群眾必被藐視，餘剩的人甚少無幾。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第十六章繼續論摩押，是第十五章哀歌的延續和神學深化。本章呈現了一個戲劇性的轉折：面對即將臨到的審判，摩押有機會選擇謙卑求助於以色列的神（1-5節），還是繼續在驕傲中滅亡（6-14節）。第1節「將羊羔奉給那地掌權的」，是呼籲摩押向錫安進貢、表達順服的意象，也隱含著彌賽亞之路的預表。第3-4節描繪了一個美好的可能：若摩押願意謙卑，「隱藏被趕散的人」、為逃民提供庇護，神的救贖之路就向他們敞開。第5節插入了一個美麗的彌賽亞應許：「必有寶座因慈愛堅立；必有一位誠誠實實坐在其上，在大衛帳幕中施行審判」——這是審判信息中的恩典之光，指向那位以慈愛治理的公義之君。然而第6節急轉：「我們聽說摩押人驕傲，是極其驕傲」——摩押選擇了驕傲，拒絕謙卑，結果是哀歌繼續（7-14節）。本章揭示了神的心意：即使在宣告審判之際，神仍留有悔改和得救的門。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在審判臨到之前，神總是留有悔改和謙卑的機會</strong><br>第1-4節摩押面對即將到來的審判，仍有機會謙卑求助，尋找神的庇護。這個模式在聖經中反覆出現：神在施行審判前，總是差遣先知、給予機會，邀請人回轉。尼尼微城在約拿宣告審判後，因全城悔改而得蒙憐憫（拿3章）。神的審判不是機械性的、不可改變的，而是呼召回轉的邀請。信徒在面對自身罪惡的後果時，永遠不要認為「太晚了」，悔改的門始終開著。<br><br>
+<strong>2. 驕傲使人錯過神所預備的出路</strong><br>第6節「摩押人驕傲，是極其驕傲」——正是這種驕傲，使摩押無法謙卑地求助、接受神的庇護。驕傲是最能阻礙神恩典流入的屬靈障礙：它讓人認為自己不需要幫助，認為求助是羞恥的。然而第3-4節的邀請清楚地說明，謙卑尋求庇護的人必得到遮蔽。信徒當察驗自己是否有不願在人前或在神面前承認需要的驕傲。<br><br>
+<strong>3. 先知為仇敵的毀滅哀鳴：這是神自己心腸的反映</strong><br>第11節「我心腹為摩押哀鳴如琴；我心腸為吉珥哈列設也是如此」，以賽亞的哀慟不只是情感的表達，更是神對祂所造之人的憐憫的反映。神在宣告審判的同時，為那些將要受審判的人悲傷。信徒當以這種心腸看待周圍未信之人——不是冷淡的旁觀，而是帶著真實悲憫的使命感。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>必有寶座因慈愛堅</strong>立；<strong>必有一位誠誠實實</strong>坐在其上，……尋求公平，速行公義。」（賽16:5）</td>
+<td>就像在腐敗和混亂的政治環境中，人們最渴望一位既慈愛又公義的領袖，你對彌賽亞「以慈愛和誠信施行公義」的盼望有多真實？這個應許如何影響你在現實世界的政治和社會環境中持守盼望？</td>
+</tr>
+<tr>
+<td>「<strong>我們聽說摩押人驕</strong>傲，<strong>是極其驕傲</strong>；……他誇大的話是虛空的。」（賽16:6）</td>
+<td>就像一個溺水的人因為顧及面子而不肯大聲呼救，驕傲往往讓人在最需要幫助的時候選擇沉默，你在哪些方面的驕傲，使你難以謙卑地求助——無論是向神、向他人，或向輔導者？</td>
+</tr>
+<tr>
+<td>「<strong>我心腹為摩押哀鳴</strong>如琴；<strong>我心腸為吉珥哈列</strong>設也是如此。」（賽16:11）</td>
+<td>就像一位老師在學生即將走向錯誤人生決定時，心中那種焦急和悲憫，先知的哀鳴反映了神自己對迷失之人的感受，你身邊有沒有那個讓你「心如琴鳴」的人——為他們的屬靈狀況感到深深牽掛？那份牽掛如何化為實際的行動？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

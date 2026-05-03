@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神創造天地與人類</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>起初神創造天地。</div>
+<div class="verse"><span class="verse-number">2</span>地是空虛混沌，淵面黑暗；神的靈運行在水面上。</div>
+<div class="verse"><span class="verse-number">3</span>神說：「要有光」，就有了光。</div>
+<div class="verse"><span class="verse-number">4</span>神看光是好的，就把光暗分開了。</div>
+<div class="verse"><span class="verse-number">5</span>神稱光為「晝」，稱暗為「夜」。有晚上，有早晨，這是頭一日。</div>
+<div class="verse"><span class="verse-number">6</span>神說：「諸水之間要有空氣，將水分為上下。」</div>
+<div class="verse"><span class="verse-number">7</span>神就造出空氣，將空氣以下的水、空氣以上的水分開了。事就這樣成了。</div>
+<div class="verse"><span class="verse-number">8</span>神稱空氣為「天」。有晚上，有早晨，是第二日。</div>
+<div class="verse"><span class="verse-number">9</span>神說：「天下的水要聚在一處，使旱地露出來。」事就這樣成了。</div>
+<div class="verse"><span class="verse-number">10</span>神稱旱地為「地」，稱水的聚處為「海」。神看着是好的。</div>
+<div class="verse"><span class="verse-number">11</span>神說：「地要發生青草和結種子的菜蔬，並結果子的樹木，各從其類，果子都包着核。」事就這樣成了。</div>
+<div class="verse"><span class="verse-number">12</span>於是地發生了青草和結種子的菜蔬，各從其類；並結果子的樹木，各從其類；果子都包着核。神看着是好的。</div>
+<div class="verse"><span class="verse-number">13</span>有晚上，有早晨，是第三日。</div>
+<div class="verse"><span class="verse-number">14</span>神說：「天上要有光體，可以分晝夜，作記號，定節令、日子、年歲，</div>
+<div class="verse"><span class="verse-number">15</span>並要發光在天空，普照在地上。」事就這樣成了。</div>
+<div class="verse"><span class="verse-number">16</span>於是神造了兩個大光，大的管晝，小的管夜，又造眾星，</div>
+<div class="verse"><span class="verse-number">17</span>就把這些光擺列在天空，普照在地上，</div>
+<div class="verse"><span class="verse-number">18</span>管理晝夜，分別明暗。神看着是好的。</div>
+<div class="verse"><span class="verse-number">19</span>有晚上，有早晨，是第四日。</div>
+<div class="verse"><span class="verse-number">20</span>神說：「水要多多滋生有生命的物；要有雀鳥飛在地面以上，天空之中。」</div>
+<div class="verse"><span class="verse-number">21</span>神就造出大魚和水中所滋生各樣有生命的動物，各從其類；又造出各樣飛鳥，各從其類。神看着是好的。</div>
+<div class="verse"><span class="verse-number">22</span>神就賜福給這一切，說：「滋生繁多，充滿海中的水；雀鳥也要多生在地上。」</div>
+<div class="verse"><span class="verse-number">23</span>有晚上，有早晨，是第五日。</div>
+<div class="verse"><span class="verse-number">24</span>神說：「地要生出活物來，各從其類；牲畜、昆蟲、野獸，各從其類。」事就這樣成了。</div>
+<div class="verse"><span class="verse-number">25</span>於是神造出野獸，各從其類；牲畜，各從其類；地上一切昆蟲，各從其類。神看着是好的。</div>
+<div class="verse"><span class="verse-number">26</span>神說：「我們要照着我們的形像、按着我們的樣式造人，使他們管理海裏的魚、空中的鳥、地上的牲畜和全地，並地上所爬的一切昆蟲。」</div>
+<div class="verse"><span class="verse-number">27</span>神就照着自己的形像造人，乃是照着他的形像造男造女。</div>
+<div class="verse"><span class="verse-number">28</span>神就賜福給他們，又對他們說：「要生養眾多，遍滿地面，治理這地，也要管理海裏的魚、空中的鳥，和地上各樣行動的活物。」</div>
+<div class="verse"><span class="verse-number">29</span>神說：「看哪，我將遍地上一切結種子的菜蔬和一切樹上所結有核的果子，全賜給你們作食物。</div>
+<div class="verse"><span class="verse-number">30</span>至於地上的走獸和空中的飛鳥，並各樣爬在地上有生命的物，我將青草賜給牠們作食物。」事就這樣成了。</div>
+<div class="verse"><span class="verse-number">31</span>神看着一切所造的都甚好。有晚上，有早晨，是第六日。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+創世記第1章是整本聖經的開端,記載神用六日創造天地萬物的過程。這是一首莊嚴的創造詩篇,以重複的結構呈現神有序的創造:神說、事就成了、神看著是好的。六日的創造從混沌到秩序,從無生命到有生命,從低等到高等,最後在第六日創造人類,將神的形像賜給人,並賦予管理全地的使命。本章不是科學教科書,而是神學性的宣告:萬有的創造者是獨一的真神,祂以話語創造,顯明祂的全能和主權。人是按神形像所造,擁有特殊的尊榮和責任,要代表神治理受造界。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神藉話語創造萬有彰顯祂的全能</strong><br>神說「要有光」就有了光,神說話萬有就成就。創造不是神與混沌搏鬥的結果,而是祂話語權柄的彰顯。這位創造主掌管一切,祂的話語帶著能力,說有就有,命立就立。這也是我們信心的根基:神既能從無造有,就能在我們看似無望的處境中創造新的可能,祂的應許必定成就。<br><br>
+<strong>2. 人按神的形像受造擁有獨特尊榮</strong><br>在所有受造物中,唯有人是按神的形像和樣式所造。這使人擁有理性、道德、靈性和創造力,能與神建立關係,反映神的屬性。人的價值不在於成就或外表,而在於神的形像。每個人都有神聖的尊嚴,值得尊重和愛護。同時,這形像也提醒我們要活出神的性情,彰顯祂的榮耀。<br><br>
+<strong>3. 神賦予人管理受造界的使命和責任</strong><br>神創造人後,賜福給他們,要他們生養眾多、遍滿地面、治理全地、管理萬物。這是神給人的文化使命,要人作祂的代表管理受造界。管理不是剝削,而是負責任的治理,像神一樣愛護、保護、發展受造物。我們在工作、家庭、社會中的職責,都是在履行這神聖的託付。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>起初,<strong>神創造天地</strong>。(創1:1)</td>
+<td>你相信萬有都是神創造的嗎?就像看到精美建築就知道有設計師,你能在大自然中看見創造主的智慧嗎?</td>
+</tr>
+<tr>
+<td>神說:<strong>我們要照著我們的</strong>形像、<strong>按著我們的樣式造</strong>人。(創1:26)</td>
+<td>你是否看重自己和他人的神聖價值?就像名畫因畫家而珍貴,你知道每個人都按神形像而造,都有無比尊榮嗎?</td>
+</tr>
+<tr>
+<td><strong>神就賜福給他們</strong>,<strong>又對他們說</strong>:要生養眾多,遍滿地面,治理這地,也要管理海裡的魚、空中的鳥,和地上各樣行動的活物。(創1:28)</td>
+<td>你如何看待你的工作和責任?就像管家要為主人管理產業,你知道工作是神給你的神聖使命嗎?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

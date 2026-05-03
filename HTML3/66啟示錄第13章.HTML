@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>啟示錄第13章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+啟示錄第13章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">獸與假先知的統治與聖徒的忍耐</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我又看見一個獸從海中上來，有十角七頭，在十角上戴着十個冠冕，七頭上有褻瀆的名號。</div>
+<div class="verse"><span class="verse-number">2</span>我所看見的獸，形狀像豹，腳像熊的腳，口像獅子的口。那龍將自己的能力、座位、和大權柄都給了牠。</div>
+<div class="verse"><span class="verse-number">3</span>我看見獸的七頭中，有一個似乎受了死傷，那死傷卻醫好了。全地的人都希奇，跟從那獸，</div>
+<div class="verse"><span class="verse-number">4</span>又拜那龍，因為牠將自己的權柄給了獸，也拜獸，說：「誰能比這獸，誰能與牠交戰呢？」</div>
+<div class="verse"><span class="verse-number">5</span>又賜給牠說誇大褻瀆話的口，又有權柄賜給牠，可以任意而行四十二個月。</div>
+<div class="verse"><span class="verse-number">6</span>獸就開口向神說褻瀆的話，褻瀆神的名並他的帳幕，以及那些住在天上的。</div>
+<div class="verse"><span class="verse-number">7</span>又任憑牠與聖徒爭戰，並且得勝；也把權柄賜給牠，制伏各族、各民、各方、各國。</div>
+<div class="verse"><span class="verse-number">8</span>凡住在地上、名字從創世以來沒有記在被殺之羔羊生命冊上的人，都要拜牠。</div>
+<div class="verse"><span class="verse-number">9</span>凡有耳的，就應當聽！</div>
+<div class="verse"><span class="verse-number">10</span>擄掠人的，必被擄掠；用刀殺人的，必被刀殺。聖徒的忍耐和信心就是在此。</div>
+<div class="verse"><span class="verse-number">11</span>我又看見另有一個獸從地中上來，有兩角如同羊羔，說話好像龍。</div>
+<div class="verse"><span class="verse-number">12</span>牠在頭一個獸面前，施行頭一個獸所有的權柄，並且叫地和住在地上的人拜那死傷醫好的頭一個獸。</div>
+<div class="verse"><span class="verse-number">13</span>又行大奇事，甚至在人面前，叫火從天降在地上。</div>
+<div class="verse"><span class="verse-number">14</span>它因賜給牠權柄在獸面前能行奇事，就迷惑住在地上的人，說：「要給那受刀傷還活着的獸作個像。」</div>
+<div class="verse"><span class="verse-number">15</span>又有權柄賜給牠，叫獸像有生氣，並且能說話，又叫所有不拜獸像的人都被殺害。</div>
+<div class="verse"><span class="verse-number">16</span>它又叫眾人，無論大小、貧富、自主的、為奴的，都在右手上或是在額上受一個印記。</div>
+<div class="verse"><span class="verse-number">17</span>除了那受印記、有了獸名或有獸名數目的，都不得作買賣。</div>
+<div class="verse"><span class="verse-number">18</span>在這裏有智慧：凡有聰明的，可以算計獸的數目；因為這是人的數目，它的數目是六百六十六。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第13章記述從海中上來的獸和從地中上來的獸，是啟示錄末世論中對敵基督勢力描述最集中的一章，引入六六六這個著名的末世符號。本章首先記述約翰看見一隻獸從海中上來，有七頭十角，角上戴著十個冠冕，那獸的形狀像豹，腳像熊的腳，口像獅子的口，龍將自己的能力座位和大權柄都給了牠，全地的人都希奇跟從那獸，又拜那龍因為牠把權柄給了那獸。那獸有口說誇大褻瀆的話並得權柄繼續四十二個月，又叫牠與聖徒爭戰並且得勝，凡名字沒有記在被殺之羔羊生命冊上的人都要拜牠。接著約翰看見另有一隻獸從地中上來，有兩個角如同羊羔說話好像龍，牠在頭一個獸面前施展頭一個獸一切的權柄，並叫住在地上的人拜那死傷痊癒的頭一個獸，又行大奇事叫火從天降在地上迷惑住在地上的人，又叫眾人無論大小貧富自主的為奴的都在右手上或是在額上受一個印記，那印記就是那獸的名或是那獸名的數目，那數目就是六百六十六。本章以兩隻獸的異象描繪末世敵對神的政治與宗教勢力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 聖徒的忍耐和信心是在壓迫中的得勝</strong><br>「聖徒的忍耐和信心就是在此」——當獸得勝時，聖徒的回應不是以武力反抗，而是忍耐和信心。這揭示了天國的邏輯：表面的失敗（被迫害）和真正的得勝（持守信仰）在末世的爭戰中共存。信心的得勝不總是可見的外在勝利，有時是在壓迫中持守的無聲見證。<br><br>
+<strong>2. 獸的印記——效忠的標誌</strong><br>「在右手上或是在額上受一個印記……除了那受印記的都不得作買賣」——獸的印記代表對獸的效忠和崇拜；沒有印記就面對經濟制裁。這個圖像在歷史中多次呈現：政治宗教勢力要求人的效忠，否則就面對邊緣化。信徒面對的問題是：我的效忠屬於誰？<br><br>
+<strong>3. 666——人的不完全</strong><br>「這是人的數目，他的數目是六百六十六」——完全的神聖數字是七，六是差一的不完全。666代表人試圖達到神聖但永遠差一截的本質。敵基督是人類驕傲的極致，卻仍然只是人，沒有神的完全。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>在這裏</strong>，<strong>聖徒的忍耐和信心</strong>就是在此。（啟13:10）</td>
+<td>在你面對各種要求你妥協信仰的壓力——文化的、職場的、人際的——時，你有沒有讓「聖徒的忍耐和信心」成為你選擇的框架？就像在考試時堅持誠信的學生展示了真正的品格，你有沒有讓你在壓力下的選擇彰顯你作為信徒的忍耐和信心？</td>
+</tr>
+<tr>
+<td><strong>牠又叫眾人</strong>，<strong>無論大小</strong>、貧富、自主的、為奴的，都在右手上或是在額上受一個印記。除了那受印記、有了獸名或有獸名數目的，都不得作買賣。（啟13:16-17）</td>
+<td>你有沒有讓「我的效忠屬於誰」這個問題成為你面對各種要求時的核心問題——拒絕讓任何政治、文化或經濟勢力成為你信仰效忠的對象？就像一個清楚主從關係的人不會讓次要的主人替代主要的主人，你有沒有讓對基督的效忠超越對一切世俗勢力的效忠？</td>
+</tr>
+<tr>
+<td><strong>那龍將自己的能力</strong>、座位、<strong>和大權柄都給了牠</strong>……全地的人都希奇，跟從那獸。（啟13:2-3）</td>
+<td>你有沒有對「全地的人都跟從」這種多數服從的邏輯保持清醒——認識到多數人做的事不等於正確的事，特別是在信仰效忠的問題上？就像古人在沙漠中看見海市蜃樓的幻象並不代表水真的在那裏，你有沒有讓信仰的辨別力使你不被世俗潮流所裹挾？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

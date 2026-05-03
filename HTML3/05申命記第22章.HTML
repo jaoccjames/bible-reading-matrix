@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第22章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第22章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">鄰舍責任與婚姻純潔的規定</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「你若看見弟兄的牛或羊失迷了路，不可佯為不見，總要把他牽回來交給你的弟兄。</div>
+<div class="verse"><span class="verse-number">2</span>你弟兄若離你遠，或是你不認識他，就要牽到你家去，留在你那裏，等你弟兄來尋找就還給他。</div>
+<div class="verse"><span class="verse-number">3</span>你的弟兄無論失落甚麼，或是驢，或是衣服，你若遇見，都要這樣行，不可佯為不見。</div>
+<div class="verse"><span class="verse-number">4</span>你若看見弟兄的牛或驢跌倒在路上，不可佯為不見，總要幫助他拉起來。</div>
+<div class="verse"><span class="verse-number">5</span>「婦女不可穿戴男子所穿戴的，男子也不可穿婦女的衣服，因為這樣行都是耶和華你神所憎惡的。</div>
+<div class="verse"><span class="verse-number">6</span>「你若路上遇見鳥窩，或在樹上或在地上，裏頭有雛或有蛋，母鳥伏在雛上或在蛋上，你不可連母帶雛一併取去。</div>
+<div class="verse"><span class="verse-number">7</span>總要放母，只可取雛；這樣你就可以享福，日子得以長久。</div>
+<div class="verse"><span class="verse-number">8</span>「你若建造房屋，要在房上的四圍安欄杆，免得有人從房上掉下來，流血的罪就歸於你家。</div>
+<div class="verse"><span class="verse-number">9</span>「不可把兩樣種子種在你的葡萄園裏，免得你撒種所結的和葡萄園的果子都要充公。</div>
+<div class="verse"><span class="verse-number">10</span>不可並用牛、驢耕地。</div>
+<div class="verse"><span class="verse-number">11</span>不可穿羊毛、細麻兩樣攙雜料作的衣服。</div>
+<div class="verse"><span class="verse-number">12</span>「你要在所披的外衣上四圍作繸子。」</div>
+<div class="verse"><span class="verse-number">13</span>「人若娶妻，與她同房之後恨惡她，</div>
+<div class="verse"><span class="verse-number">14</span>信口說她，將醜名加在她身上，說：『我娶了這女子，與她同房，見她沒有貞潔的憑據』；</div>
+<div class="verse"><span class="verse-number">15</span>女子的父母就要把女子貞潔的憑據拿出來，帶到本城門長老那裏。</div>
+<div class="verse"><span class="verse-number">16</span>女子的父親要對長老說：『我將我的女兒給這人為妻，他恨惡她，</div>
+<div class="verse"><span class="verse-number">17</span>信口說她，說：我見你的女兒沒有貞潔的憑據；其實這就是我女兒貞潔的憑據。』父母就把那布鋪在本城的長老面前。</div>
+<div class="verse"><span class="verse-number">18</span>本城的長老要拿住那人，懲治他，</div>
+<div class="verse"><span class="verse-number">19</span>並要罰他一百舍客勒銀子，給女子的父親，因為他將醜名加在以色列的一個處女身上。女子仍作他的妻，終身不可休她。</div>
+<div class="verse"><span class="verse-number">20</span>但這事若是真的，女子沒有貞潔的憑據，</div>
+<div class="verse"><span class="verse-number">21</span>就要將女子帶到她父家的門口，本城的人要用石頭將她打死；因為她在父家行了淫亂，在以色列中作了醜事。這樣，就把那惡從你們中間除掉。</div>
+<div class="verse"><span class="verse-number">22</span>「若遇見人與有丈夫的婦人行淫，就要將姦夫淫婦一併治死。這樣，就把那惡從以色列中除掉。</div>
+<div class="verse"><span class="verse-number">23</span>「若有處女已經許配丈夫，有人在城裏遇見她，與她行淫，</div>
+<div class="verse"><span class="verse-number">24</span>你們就要把這二人帶到本城門，用石頭打死，女子是因為雖在城裏卻沒有喊叫；男子是因為玷污別人的妻。這樣，就把那惡從你們中間除掉。</div>
+<div class="verse"><span class="verse-number">25</span>「若有男子在田野遇見已經許配人的女子，強與她行淫，只要將那男子治死。</div>
+<div class="verse"><span class="verse-number">26</span>但不可辦女子；她本沒有該死的罪，這事就類乎人起來攻擊鄰舍，將他殺了一樣。</div>
+<div class="verse"><span class="verse-number">27</span>因為男子是在田野遇見那已經許配人的女子，女子喊叫，並無人救她。</div>
+<div class="verse"><span class="verse-number">28</span>「若有男子遇見沒有許配人的處女，抓住她，與她行淫，被人看見，</div>
+<div class="verse"><span class="verse-number">29</span>這男子就要拿五十舍客勒銀子給女子的父親；因他玷污了這女子，就要娶她為妻，終身不可休她。</div>
+<div class="verse"><span class="verse-number">30</span>「人不可娶繼母為妻；不可掀開他父親的衣襟。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第二十二章是申命記律法中涉及範疇最廣的一章，從對鄰舍財物的責任，到對自然秩序的尊重，再到婚姻與性道德的詳細規定。本章首先規定看見鄰舍迷失的牛羊或驢，要主動幫助帶回（22:1-4），體現了積極的鄰舍責任，不是「各掃門前雪」而是主動關心他人的利益。接着是幾條對自然秩序的尊重：不可穿異性衣服（22:5）、見鳥巢不可連母帶雛一起取（22:6-7）、建房要在屋頂設欄杆防人跌落（22:8）。本章後半部詳細規定了婚姻純潔方面的律例，包括處女的貞節問題（22:13-21）、姦淫罪（22:22）、在城中的強姦罪（22:23-24）和在田間的強姦罪（22:25-27）等。這些規定在古代近東文化中對女性的保護具有相當進步的意義，尤其是對城中強姦案的處理，保護了受害女性免受「她也有份」的不公正指控。整章反映了神對鄰舍、自然和婚姻的全面關懷。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 積極的鄰舍責任：不置之不理，要主動幫助</strong><br>「你弟兄的牛或羊失迷了……不可佯為不見，總要拉回來，交給你弟兄」（申22:1）。這個律例要求的不只是不偷竊，而是積極地幫助鄰舍守護財物。真正的鄰舍愛不是消極的「不傷害」，而是積極的「主動關心」。今日的鄰舍精神同樣包含這種主動性：看見他人的需要，不是路過，而是伸出手。<br><br>
+<strong>2. 對自然秩序的尊重是對創造主的敬重</strong><br>見鳥巢不可連母帶雛一起取（22:6-7），這個規定體現了神對生態持續性的關懷——讓母鳥繼續繁殖，才能保持生物的延續。創造神學的原則是：人類是自然的管家而非主人，有責任在使用自然資源時保持節制，讓後代仍有機會享用神所創造的豐富。<br><br>
+<strong>3. 婚姻的純潔是社會和諧的基礎，需要法律的保護</strong><br>本章對婚姻和性道德的詳細規定，反映了神對家庭神聖性的高度重視。婚姻不只是個人的選擇，也是社區和社會秩序的基礎。任何對婚姻純潔的破壞——無論是欺騙、姦淫或強暴——都要受到嚴肅的法律對待。這些規定在保護受害者（尤其是女性）的尊嚴方面，在古代文化中具有相當進步的意義。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你弟兄的牛或羊失</strong>迷了，<strong>你若看見</strong>，不可佯為不見，總要拉回來，交給你弟兄。」（申22:1）</td>
+<td>積極的鄰舍愛不是不傷害，而是主動幫助，就像好的同事不只是不搶功勞，還會主動協助解決問題，你最近一次看見他人有需要卻選擇「佯為不見」是什麼時候？是什麼讓你那樣選擇？</td>
+</tr>
+<tr>
+<td>「<strong>你若路上遇見鳥窩</strong>……<strong>不可連母帶雛一併</strong>取去；總要放母，只可取雛，這樣你就可以享福，壽命得以長久。」（申22:6-7）</td>
+<td>對自然的節制使用讓後代仍能享受，就像可持續漁業保護魚群讓下一代也能捕魚，在你的日常生活中，有哪些對自然資源的使用習慣需要調整，讓你的孩子和後代仍能享有？</td>
+</tr>
+<tr>
+<td>「<strong>你若強姦了她</strong>，<strong>就要將那男子拉到</strong>城外，用石頭打死他，因為他強姦了那已許配人的女子，你們要這樣從你們中間除去這惡。」（申22:25,27）</td>
+<td>神的律法保護受害者免受不公義的指控，就像良好的法律制度讓受害者有公平申訴的空間，你如何在自己的圈子中成為一個讓受傷害的人感到安全和被保護的人？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

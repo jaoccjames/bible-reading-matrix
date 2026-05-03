@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第29章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+民數記第29章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">七月節期特別燔祭條例</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「七月初一日，你們當有聖會；甚麼勞碌的工都不可作，是你們當守為吹角的日子。</div>
+<div class="verse"><span class="verse-number">2</span>你們要將公牛犢一隻，公綿羊一隻，沒有殘疾、一歲的公羊羔七隻，作為馨香的燔祭獻給耶和華。</div>
+<div class="verse"><span class="verse-number">3</span>同獻的素祭用調油的細麵；為一隻公牛要獻伊法十分之三；為一隻公羊要獻伊法十分之二；</div>
+<div class="verse"><span class="verse-number">4</span>為那七隻羊羔，每隻要獻伊法十分之一。</div>
+<div class="verse"><span class="verse-number">5</span>又獻一隻公山羊作贖罪祭，為你們贖罪。</div>
+<div class="verse"><span class="verse-number">6</span>這些是在月朔的燔祭和同獻的素祭，並常獻的燔祭與同獻的素祭，以及照例同獻的奠祭以外，都作為馨香的火祭獻給耶和華。」</div>
+<div class="verse"><span class="verse-number">7</span>「七月初十日，你們當有聖會；要刻苦己心，甚麼工都不可作。</div>
+<div class="verse"><span class="verse-number">8</span>只要將公牛犢一隻，公綿羊一隻，一歲的公羊羔七隻，都要沒有殘疾的，作為馨香的燔祭獻給耶和華。</div>
+<div class="verse"><span class="verse-number">9</span>同獻的素祭用調油的細麵：為一隻公牛要獻伊法十分之三；為一隻公羊要獻伊法十分之二；</div>
+<div class="verse"><span class="verse-number">10</span>為那七隻羊羔，每隻要獻伊法十分之一。</div>
+<div class="verse"><span class="verse-number">11</span>又獻一隻公山羊為贖罪祭。這是在贖罪祭和常獻的燔祭，與同獻的素祭並同獻的奠祭以外。」</div>
+<div class="verse"><span class="verse-number">12</span>「七月十五日，你們當有聖會；甚麼勞碌的工都不可作，要向耶和華守節七日。</div>
+<div class="verse"><span class="verse-number">13</span>又要將公牛犢十三隻，公綿羊兩隻，一歲的公羊羔十四隻，都要沒有殘疾的，用火獻給耶和華為馨香的燔祭。</div>
+<div class="verse"><span class="verse-number">14</span>同獻的素祭用調油的細麵；為那十三隻公牛，每只要獻伊法十分之三；為那兩隻公羊，每只要獻伊法十分之二；</div>
+<div class="verse"><span class="verse-number">15</span>為那十四隻羊羔，每隻要獻伊法十分之一。</div>
+<div class="verse"><span class="verse-number">16</span>並獻一隻公山羊為贖罪祭，這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。</div>
+<div class="verse"><span class="verse-number">17</span>「第二日要獻公牛犢十二隻，公綿羊兩隻，沒有殘疾、一歲的公羊羔十四隻；</div>
+<div class="verse"><span class="verse-number">18</span>並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。</div>
+<div class="verse"><span class="verse-number">19</span>又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。</div>
+<div class="verse"><span class="verse-number">20</span>「第三日要獻公牛十一只，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；</div>
+<div class="verse"><span class="verse-number">21</span>並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。</div>
+<div class="verse"><span class="verse-number">22</span>又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。</div>
+<div class="verse"><span class="verse-number">23</span>「第四日要獻公牛十隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；</div>
+<div class="verse"><span class="verse-number">24</span>並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。</div>
+<div class="verse"><span class="verse-number">25</span>又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。</div>
+<div class="verse"><span class="verse-number">26</span>「第五日要獻公牛九隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；</div>
+<div class="verse"><span class="verse-number">27</span>並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。</div>
+<div class="verse"><span class="verse-number">28</span>又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。</div>
+<div class="verse"><span class="verse-number">29</span>「第六日要獻公牛八隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；</div>
+<div class="verse"><span class="verse-number">30</span>並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。</div>
+<div class="verse"><span class="verse-number">31</span>又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。</div>
+<div class="verse"><span class="verse-number">32</span>「第七日要獻公牛七隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；</div>
+<div class="verse"><span class="verse-number">33</span>並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。</div>
+<div class="verse"><span class="verse-number">34</span>又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。</div>
+<div class="verse"><span class="verse-number">35</span>「第八日你們當有嚴肅會；甚麼勞碌的工都不可作；</div>
+<div class="verse"><span class="verse-number">36</span>只要將公牛一隻，公羊一隻，沒有殘疾、一歲的公羊羔七隻作火祭，獻給耶和華為馨香的燔祭；</div>
+<div class="verse"><span class="verse-number">37</span>並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。</div>
+<div class="verse"><span class="verse-number">38</span>又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。</div>
+<div class="verse"><span class="verse-number">39</span>「這些祭要在你們的節期獻給耶和華，都在所許的願並甘心所獻的以外，作為你們的燔祭、素祭、奠祭，和平安祭。」</div>
+<div class="verse"><span class="verse-number">40</span>於是，摩西照耶和華所吩咐他的一切話告訴以色列人。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+民數記第29章繼續規定七月（提斯利月）各節期的祭物，這是以色列宗教曆中最密集的節期月份，包含三個重要的節日：七月初一日的吹角節、七月初十日的贖罪日（要「刻苦己心」）、以及七月十五日開始為期七日的住棚節，外加第八天的「嚴肅會」。
+住棚節七日的獻祭展現了民數記中最獨特的遞減模式：公牛從第一天的十三隻，每天遞減一隻，到第七天是七隻；最後的「嚴肅會」則是一隻公牛。這種遞減有多種解讀，但整體顯示了節期的完整性和設計的精心。本章以「摩西照耶和華所吩咐他的一切話告訴以色列人」作結，顯示摩西忠心地完成了傳遞神命令的使命。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 贖罪日的刻苦己心——年度最深的謙卑與反省</strong><br>七月初十日的贖罪日是唯一要求「刻苦己心」的節日，以色列人要禁食和悔罪，同時有最豐盛的祭物獻上。這一節日的精神不是自我懲罰，而是在神面前深度的自我反省和對罪的嚴肅認識。信仰成熟包括定期進行真實的自我反省，不是表面的道歉，而是在神面前謙卑地承認需要被赦免和更新。<br><br>
+<strong>2. 吹角節的呼召——清醒和呼召信徒聚集</strong><br>七月初一日的吹角節，號角聲是一種呼召——讓四散的人歸聚，使沉睡的心靈醒覺。在新約中，這個節日的預表被解讀為末世號角的先聲，呼召神的子民預備自己。每一個「號角聲」式的提醒，無論是講道、危機還是友人的話語，都可以是神呼召我們清醒和歸回的時刻。<br><br>
+<strong>3. 住棚節的喜樂——記念曠野飄流，感謝神的供應</strong><br>住棚節是最長的節日，充滿歡慶，但也要住在棚子裏記念曠野的飄流歲月。喜樂不是忘記艱難，而是在記念艱難之後更深地感恩神的帶領和供應。最真實的感恩，往往建立在對「我們曾在哪裏、神如何帶我們到今天」的清晰記憶上。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>七月初十日</strong>，<strong>你們當有聖會</strong>；要刻苦己心，甚麼工都不可作。」（民29:7）</td>
+<td>就像一個組織定期進行深度的「問責審核」，而非只有表面的日常匯報，贖罪日的刻苦己心是年度最深的自我反省——在你的信仰生活中，是否有定期的、認真的自我省察時刻，不只是隨口說「對不起」，而是在神面前深度地面對自己的光景？</td>
+</tr>
+<tr>
+<td>「<strong>七月初一日</strong>，<strong>你們當有聖會</strong>；甚麼勞碌的工都不可作，是你們當守為吹角的日子。」（民29:1）</td>
+<td>就像工廠的緊急警報讓所有人停下手邊的工作，先確認狀況，吹角節的號角是一種呼召停下來，聚集、清醒的信號——在你忙碌的日子中，哪些事件或時刻成了你的「號角聲」，讓你從日常的忙碌中停下來重新聚焦於神？</td>
+</tr>
+<tr>
+<td>「<strong>七月十五日</strong>，<strong>你們當有聖會</strong>……要向耶和華守節七日。」（民29:12）</td>
+<td>就像一家人在豐收後，用整整一週來慶祝、感恩、歡聚，住棚節是七天的喜樂感恩節期——在你個人或群體的信仰生活中，你是否有意識地留出足夠的時間「慶祝神的恩典」，而非總是匆匆地感謝一句就繼續忙碌？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

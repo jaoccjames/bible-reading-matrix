@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">違約的咒詛與先知受迫害</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話臨到耶利米說：</div>
+<div class="verse"><span class="verse-number">2</span>「當聽這約的話，告訴猶大人和耶路撒冷的居民，</div>
+<div class="verse"><span class="verse-number">3</span>對他們說，耶和華以色列的神如此說：不聽從這約之話的人必受咒詛。</div>
+<div class="verse"><span class="verse-number">4</span>這約是我將你們列祖從埃及地領出來、脫離鐵爐的那日所吩咐他們的，說：『你們要聽從我的話，照我一切所吩咐的去行。』這樣，你們就作我的子民，我也作你們的神；</div>
+<div class="verse"><span class="verse-number">5</span>我好堅定向你們列祖所起的誓，給他們流奶與蜜之地，正如今日一樣。」我就回答說：「耶和華阿，阿們！」</div>
+<div class="verse"><span class="verse-number">6</span>耶和華對我說：「你要在猶大城邑中和耶路撒冷街市上，宣告這一切話說：你們當聽從遵行這約的話。</div>
+<div class="verse"><span class="verse-number">7</span>因為我將你們列祖從埃及地領出來的那日，直到今日，都是從早起來，切切誥誡他們說：『你們當聽從我的話。』</div>
+<div class="verse"><span class="verse-number">8</span>他們卻不聽從，不側耳而聽，竟隨從自己頑梗的惡心去行。所以我使這約中一切咒詛的話臨到他們身上；這約是我吩咐他們行的，他們卻不去行。」</div>
+<div class="verse"><span class="verse-number">9</span>耶和華對我說：「在猶大人和耶路撒冷居民中有同謀背叛的事。</div>
+<div class="verse"><span class="verse-number">10</span>他們轉去效法他們的先祖，不肯聽我的話，犯罪作孽，又隨從別神，事奉他。以色列家和猶大家背了我與他們列祖所立的約。」</div>
+<div class="verse"><span class="verse-number">11</span>所以耶和華如此說：「我必使災禍臨到他們，是他們不能逃脫的。他們必向我哀求，我卻不聽。</div>
+<div class="verse"><span class="verse-number">12</span>那時，猶大城邑的人和耶路撒冷的居民要去哀求他們燒香所供奉的神；只是遭難的時候，這些神毫不拯救他們。</div>
+<div class="verse"><span class="verse-number">13</span>猶大啊，你神的數目與你城的數目相等；你為那可恥的巴力所築燒香的壇也與耶路撒冷街道的數目相等。</div>
+<div class="verse"><span class="verse-number">14</span>「所以你不要為這百姓祈禱，不要為他們呼求禱告；因為他們遭難向我哀求的時候，我必不應允。</div>
+<div class="verse"><span class="verse-number">15</span>我所親愛的，既行許多淫亂，聖肉也離了你，你在我殿中作甚麼呢？你作惡就喜樂。</div>
+<div class="verse"><span class="verse-number">16</span>從前耶和華給你起名叫青橄欖樹，又華美又結好果子；如今他用鬨嚷之聲，點火在其上，枝子也被折斷。</div>
+<div class="verse"><span class="verse-number">17</span>原來栽培你的萬軍之耶和華已經說，要降禍攻擊你，是因以色列家和猶大家行惡，向巴力燒香，惹我發怒，是自作自受。」</div>
+<div class="verse"><span class="verse-number">18</span>耶和華指示我，我就知道；你將他們所行的給我指明。</div>
+<div class="verse"><span class="verse-number">19</span>我卻像柔順的羊羔被牽到宰殺之地；我並不知道他們設計謀害我，說：我們把樹連果子都滅了吧！將他從活人之地剪除，使他的名不再被記念。</div>
+<div class="verse"><span class="verse-number">20</span>按公義判斷、察驗人肺腑心腸的萬軍之耶和華啊，我卻要見你在他們身上報仇，因我將我的案件向你稟明了。</div>
+<div class="verse"><span class="verse-number">21</span>所以，耶和華論到尋索你命的亞拿突人如此說：「他們說：你不要奉耶和華的名說預言，免得你死在我們手中。</div>
+<div class="verse"><span class="verse-number">22</span>所以萬軍之耶和華如此說：看哪，我必刑罰他們；他們的少年人必被刀劍殺死，他們的兒女必因饑荒滅亡，</div>
+<div class="verse"><span class="verse-number">23</span>並且沒有餘剩的人留給他們；因為在追討之年，我必使災禍臨到亞拿突人。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第11章背景約在約西亞王改革（主前621年）前後，當時神命令耶利米宣講西奈之約的重要性。以色列列祖從埃及地被領出之日起，神就立約要他們聽從遵行，並許諾賜給流奶與蜜之地；然而歷代以來，百姓一再悖逆，隨從自己頑梗的惡心，事奉別神。本章記載神對這世代的嚴厲審判——他們的神像數目與城市相等，顯示偶像崇拜已蔓延至每一角落。神宣告，當災禍臨到時，他必不聆聽他們的哀求，因為他們背約在先。本章後半轉入個人性的張力：亞拿突人（耶利米的家鄉人）設計謀害他，要他停止傳講。耶利米如同無辜的羊羔被牽往宰殺，卻將案件交託給公義的神，展現出先知在苦難中持守使命的信心。本章是理解耶利米「哀歌」的重要背景。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 遵守盟約是信仰的根基</strong><br>神與以色列的約不是形式，而是關係的核心。從埃及出來之日，神就切切誥誡百姓聽從他的話；聽從帶來祝福，背約招來咒詛。這原則今日仍然有效：與神的關係建立在對話語的回應上。不是偶爾禱告或在危急才尋求神，而是持守在約的關係中，每日順從。我們若只在患難時才呼求，平日卻背道而行，就失去了約的意義。<br><br>
+<strong>2. 偶像崇拜蠶食靈性生命</strong><br>猶大的神像數目與城市相等、巴力壇數目與街道相等，顯示偶像已全面滲透社會。遭難時，這些神「毫不拯救他們」。偶像的本質是自我欺騙：人以為可以同時事奉真神與其他倚靠，結果卻是兩頭落空。今日的偶像可能是成就、關係或安全感；當危機來臨，這些「神」無力拯救，信徒必須在平時就認清它們的虛空。<br><br>
+<strong>3. 委身使命者必承受代價</strong><br>耶利米因忠心傳講而遭鄉人謀害，卻像柔順的羊羔，不自我防衛，而是將案件交託公義的神。這展現了委身於呼召的代價：忠實傳達真理，不必然帶來掌聲，反而可能招來逼迫。但神是公義的審判者，祂鑒察肺腑心腸，必為忠心的僕人伸冤。信徒面對因信仰而來的壓力時，可效法耶利米，將結果交付神手。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他們卻不聽從</strong>，<strong>不側耳而聽</strong>，竟隨從自己頑梗的惡心去行。所以我使這約中一切咒詛的話臨到他們身上；這約是我吩咐他們行的，他們卻不去行。（耶11:8）</td>
+<td>你是否有「明知故犯」的屬靈習慣，持續在某個領域忽略神的話？就像明明知道某食物對健康有害卻持續食用，你生命中有哪些頑固的「惡心」需要對神坦誠悔改？</td>
+</tr>
+<tr>
+<td>那時，<strong>猶大城邑的人和耶</strong><strong>路撒冷的居民要去</strong>哀求他們燒香所供奉的神；只是遭難的時候，這些神毫不拯救他們。（耶11:12）</td>
+<td>你平時最倚靠的是什麼來解決問題？就像習慣依賴某個App管理生活，危機時卻發現它當機了，你的倚靠是建立在真正能拯救的神身上，還是隨時可能失效的「替代品」？</td>
+</tr>
+<tr>
+<td><strong>按公義判斷</strong>、<strong>察驗人肺腑心腸的</strong>萬軍之耶和華啊，我卻要見你在他們身上報仇，因我將我的案件向你稟明了。（耶11:20）</td>
+<td>當你因做對的事而受到不公平的對待，你如何處理內心的委屈？就像在公正的仲裁者面前提出申訴，你能把自己的「案件」完全交託給神，讓他來裁決，而不是自己報復嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

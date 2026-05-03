@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第29章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第29章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">摩押之約與更新立約的呼召</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>這是耶和華在摩押地吩咐摩西與以色列人立約的話，是在他和他們於何烈山所立的約之外。</div>
+<div class="verse"><span class="verse-number">2</span>摩西召了以色列眾人來，對他們說：「耶和華在埃及地，在你們眼前向法老和他眾臣僕，並他全地所行的一切事，你們都看見了，</div>
+<div class="verse"><span class="verse-number">3</span>就是你親眼看見的大試驗和神蹟，並那些大奇事。</div>
+<div class="verse"><span class="verse-number">4</span>但耶和華到今日沒有使你們心能明白，眼能看見，耳能聽見。</div>
+<div class="verse"><span class="verse-number">5</span>我領你們在曠野四十年，你們身上的衣服並沒有穿破，腳上的鞋也沒有穿壞。</div>
+<div class="verse"><span class="verse-number">6</span>你們沒有吃餅，也沒有喝清酒濃酒。這要使你們知道，耶和華是你們的神。</div>
+<div class="verse"><span class="verse-number">7</span>你們來到這地方，希實本王西宏、巴珊王噩都出來與我們交戰，我們就擊殺了他們，</div>
+<div class="verse"><span class="verse-number">8</span>取了他們的地給流便支派、迦得支派，和瑪拿西半支派為業。</div>
+<div class="verse"><span class="verse-number">9</span>所以你們要謹守遵行這約的話，好叫你們在一切所行的事上亨通。</div>
+<div class="verse"><span class="verse-number">10</span>「今日，你們的首領、族長〔原文作支派〕、長老、官長、以色列的男丁，你們的妻子兒女，和營中寄居的，以及為你們劈柴挑水的人，都站在耶和華你們的神面前，</div>
+<div class="verse"><span class="verse-number">11</span>併於上節</div>
+<div class="verse"><span class="verse-number">12</span>為要你順從耶和華你神今日與你所立的約，向你所起的誓。</div>
+<div class="verse"><span class="verse-number">13</span>這樣，他要照他向你所應許的話，又向你列祖亞伯拉罕、以撒、雅各所起的誓，今日立你作他的子民，他作你的神。</div>
+<div class="verse"><span class="verse-number">14</span>我不但與你們立這約，起這誓，</div>
+<div class="verse"><span class="verse-number">15</span>凡與我們一同站在耶和華我們神面前的，並今日不在我們這裏的人，我也與他們立這約，起這誓。</div>
+<div class="verse"><span class="verse-number">16</span>「我們曾住過埃及地，也從列國經過；這是你們知道的。</div>
+<div class="verse"><span class="verse-number">17</span>你們也看見他們中間可憎之物，並他們木、石、金、銀的偶像。</div>
+<div class="verse"><span class="verse-number">18</span>惟恐你們中間，或男或女，或族長或支派長，今日心裏偏離耶和華我們的神，去事奉那些國的神；又怕你們中間有惡根生出苦菜和茵蔯來，</div>
+<div class="verse"><span class="verse-number">19</span>聽見這咒詛的話，心裏仍是自誇說：『我雖然行事心裏頑梗，連累眾人，卻還是平安。』</div>
+<div class="verse"><span class="verse-number">20</span>耶和華必不饒恕他；耶和華的怒氣與憤恨要向他發作，如煙冒出，將這書上所寫的一切咒詛都加在他身上。耶和華又要從天下塗抹他的名，</div>
+<div class="verse"><span class="verse-number">21</span>也必照着寫在律法書上、約中的一切咒詛將他從以色列眾支派中分別出來，使他受禍。</div>
+<div class="verse"><span class="verse-number">22</span>你們的後代，就是以後興起來的子孫，和遠方來的外人，看見這地的災殃，並耶和華所降與這地的疾病，</div>
+<div class="verse"><span class="verse-number">23</span>又看見遍地有硫磺，有鹽鹵，有火跡，沒有耕種，沒有出產，連草都不生長，好像耶和華在忿怒中所傾覆的所多瑪、蛾摩拉、押瑪、洗扁一樣，</div>
+<div class="verse"><span class="verse-number">24</span>所看見的人，連萬國人，都必問說：『耶和華為何向此地這樣行呢？這樣大發烈怒是甚麼意思呢？』</div>
+<div class="verse"><span class="verse-number">25</span>人必回答說：『是因這地的人離棄了耶和華他們列祖的神，領他們出埃及地的時候與他們所立的約，</div>
+<div class="verse"><span class="verse-number">26</span>去事奉敬拜素不認識的別神，是耶和華所未曾給他們安排的。</div>
+<div class="verse"><span class="verse-number">27</span>所以耶和華的怒氣向這地發作，將這書上所寫的一切咒詛都降在這地上。</div>
+<div class="verse"><span class="verse-number">28</span>耶和華在怒氣、忿怒、大惱恨中將他們從本地拔出來，扔在別的地上，像今日一樣。』</div>
+<div class="verse"><span class="verse-number">29</span>「隱秘的事是屬耶和華我們神的；惟有明顯的事是永遠屬我們和我們子孫的，好叫我們遵行這律法上的一切話。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第二十九章開啟了申命記的第三個講道（29-30章），記述摩西在摩押平原與以色列人再立一約——這是對何烈山之約的更新和補充。摩西首先再次回顧神在埃及所行的一切神蹟（29:2-8），以及曠野四十年神奇妙的供應——衣服沒有穿破，腳也沒有腫（29:5）。但摩西隨即指出，儘管以色列人親眼看見了這一切，「耶和華卻沒有給你們能明白的心、能看見的眼、能聽見的耳，直到今日」（29:4）——屬靈的理解需要神的賜予，不是人自然而然就有的。本章強調這次立約涵蓋所有在場的人，以及那些「不在這裏的人」（29:15），說明約的效力具有代際性，適用於每一代的以色列人。本章也嚴肅警告：若有人以為可以隱藏地悖逆神而不受審判（「我雖然行那頑梗的心所命令我的，仍可以平安」），神必不赦免他（29:19）。本章以一個神學宣言作結：「隱秘的事是屬耶和華我們神的；惟有明顯的事是永遠屬我們和我們子孫的，好叫我們遵行這律法上的一切話」（29:29）。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 屬靈的理解是神所賜的恩典，不是自然的能力</strong><br>「耶和華卻沒有給你們能明白的心、能看見的眼、能聽見的耳，直到今日」（申29:4）。以色列人親眼看見了神的大能，卻仍然沒有真正理解，說明屬靈的認識不是肉眼的觀察所能帶來的，而是神開眼的恩典。今日能理解福音、能感動人心悔改的，不是傳道者的才能，而是聖靈的工作。<br><br>
+<strong>2. 約的更新是神主動維持與人關係的表現</strong><br>在何烈山之約之外，神在摩押平原再立一約（申29:1），說明神願意在歷史的不同時刻反覆與人重新確認關係。這種「不斷更新」的模式貫穿聖經，最終在新約的基督耶穌中得到最完全的體現。神的心意從未改變：祂願意每一代人都與祂立約、親近祂、活在祂的關係中。<br><br>
+<strong>3. 隱秘的自以為是，是最危險的屬靈陷阱</strong><br>「隱秘的事是屬耶和華我們神的」（申29:29）。那位以為可以「暗中悖逆而仍平安」的人（29:19），不明白神的眼目洞察一切隱秘。這節話也提醒我們：不是所有的事情都需要我們明白，神自有祂的主權和計畫。信徒的本分是在「明顯的事」——神已啟示的旨意——上忠心遵行，而非追索神尚未顯明的事。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>耶和華卻沒有給你</strong><strong>們能明白的心</strong>、能看見的眼、能聽見的耳，直到今日。」（申29:4）</td>
+<td>屬靈的理解是神所賜的，不是人天然就有的能力，就像看懂一幅畫需要藝術鑑賞力的培養，不是只靠眼睛看，你是否有在祈求神開你的心眼，讓你能真正理解祂的話語？你有什麼具體的方式來培養這種屬靈的敏感度？</td>
+</tr>
+<tr>
+<td>「<strong>我雖然行那頑梗的</strong><strong>心所命令我的</strong>，仍可以平安——耶和華必不肯赦免他。」（申29:19-20）</td>
+<td>認為可以不負責任地悖逆而仍平安是危險的自欺，就像開車闖紅燈每次都沒被抓並不代表闖紅燈是安全的，你是否有某種「這個就算了、神不會在意」的心態，需要誠實面對並在神面前悔改？</td>
+</tr>
+<tr>
+<td>「<strong>隱秘的事是屬耶和</strong><strong>華我們神的</strong>；惟有明顯的事是永遠屬我們和我們子孫的，好叫我們遵行這律法上的一切話。」（申29:29）</td>
+<td>信徒的本分是忠心行在神已啟示的旨意中，就像員工不需要知道公司所有戰略，只需把份內的工作做好，在你等候神回應某些禱告時，你是否也在認真遵行神已明確吩咐你的事，而非只是等待祂回應你的要求？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

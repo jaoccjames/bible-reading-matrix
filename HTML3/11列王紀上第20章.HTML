@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀上第20章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀上第20章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以色列勝亞蘭兩戰，亞哈擅自放走便哈達</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>亞蘭王便哈達聚集他的全軍，率領三十二個王，帶着車馬上來圍攻撒瑪利亞；</div>
+<div class="verse"><span class="verse-number">2</span>又差遣使者進城見以色列王亞哈，對他說：「便哈達如此說：</div>
+<div class="verse"><span class="verse-number">3</span>你的金銀都要歸我，你妻子兒女中最美的也要歸我。」</div>
+<div class="verse"><span class="verse-number">4</span>以色列王回答說：「我主我王啊，可以依着你的話，我與我所有的都歸你。」</div>
+<div class="verse"><span class="verse-number">5</span>使者又來說：「便哈達如此說：我已差遣人去見你，要你將你的金銀、妻子、兒女都給我。</div>
+<div class="verse"><span class="verse-number">6</span>但明日約在這時候，我還要差遣臣僕到你那裏，搜查你的家和你僕人的家，將你眼中一切所喜愛的都拿了去。」</div>
+<div class="verse"><span class="verse-number">7</span>以色列王召了國中的長老來，對他們說：「請你們看看，這人是怎樣的謀害我，他先差遣人到我這裏來，要我的妻子、兒女，和金銀，我並沒有推辭他。」</div>
+<div class="verse"><span class="verse-number">8</span>長老和百姓對王說：「不要聽從他，也不要應允他。」</div>
+<div class="verse"><span class="verse-number">9</span>故此，以色列王對便哈達的使者說：「你們告訴我主我王說：王頭一次差遣人向僕人所要的，僕人都依從；但這次所要的，我不能依從。」使者就去回覆便哈達。</div>
+<div class="verse"><span class="verse-number">10</span>便哈達又差遣人去見亞哈說：「撒瑪利亞的塵土若彀跟從我的人每人捧一捧的，願神明重重的降罰與我！」</div>
+<div class="verse"><span class="verse-number">11</span>以色列王說：「你告訴他說，才頂盔貫甲的，休要像摘盔卸甲的誇口。」</div>
+<div class="verse"><span class="verse-number">12</span>便哈達和諸王正在帳幕裏喝酒，聽見這話，就對他臣僕說：「擺隊吧！」他們就擺隊攻城。</div>
+<div class="verse"><span class="verse-number">13</span>有一個先知來見以色列王亞哈，說：「耶和華如此說：『這一大群人你看見了麼？今日我必將他們交在你手裏，你就知道我是耶和華。』」</div>
+<div class="verse"><span class="verse-number">14</span>亞哈說：「藉着誰呢？」他回答說：「耶和華說，藉着跟從省長的少年人。」亞哈說：「要誰率領呢？」他說：「要你親自率領。」</div>
+<div class="verse"><span class="verse-number">15</span>於是亞哈數點跟從省長的少年人，共有二百三十二名，後又數點以色列的眾兵，共有七千名。</div>
+<div class="verse"><span class="verse-number">16</span>午間，他們就出城；便哈達和幫助他的三十二個王正在帳幕裏痛飲。</div>
+<div class="verse"><span class="verse-number">17</span>跟從省長的少年人先出城；便哈達差遣人去探望，他們回報說：「有人從撒瑪利亞出來了。」</div>
+<div class="verse"><span class="verse-number">18</span>他說：「他們若為講和出來，要活捉他們；若為打仗出來，也要活捉他們。」</div>
+<div class="verse"><span class="verse-number">19</span>跟從省長的少年人出城，軍兵跟隨他們；</div>
+<div class="verse"><span class="verse-number">20</span>各人遇見敵人就殺。亞蘭人逃跑，以色列人追趕他們；亞蘭王便哈達騎着馬和馬兵一同逃跑。</div>
+<div class="verse"><span class="verse-number">21</span>以色列王出城攻打車馬，大大擊殺亞蘭人。</div>
+<div class="verse"><span class="verse-number">22</span>那先知來見以色列王，對他說：「你當自強，留心怎樣防備；因為到明年這時候，亞蘭王必上來攻擊你。」</div>
+<div class="verse"><span class="verse-number">23</span>亞蘭王的臣僕對亞蘭王說：「以色列人的神是山神，所以他們勝過我們；但在平原與他們打仗，我們必定得勝。</div>
+<div class="verse"><span class="verse-number">24</span>王當這樣行：把諸王革去，派軍長代替他們，</div>
+<div class="verse"><span class="verse-number">25</span>又照着王喪失軍兵之數，再招募一軍，馬補馬，車補車，我們在平原與他們打仗，必定得勝。」王便聽臣僕的話去行。</div>
+<div class="verse"><span class="verse-number">26</span>次年，便哈達果然點齊亞蘭人上亞弗去，要與以色列人打仗。</div>
+<div class="verse"><span class="verse-number">27</span>以色列人也點齊軍兵，預備食物，迎着亞蘭人出去，對着他們安營，好像兩小群山羊羔；亞蘭人卻滿了地面。</div>
+<div class="verse"><span class="verse-number">28</span>有神人來見以色列王，說：「耶和華如此說：『亞蘭人既說我耶和華是山神，不是平原的神，所以我必將這一大群人都交在你手中，你們就知道我是耶和華。』」</div>
+<div class="verse"><span class="verse-number">29</span>以色列人與亞蘭人相對安營七日，到第七日兩軍交戰；那一日以色列人殺了亞蘭人步兵十萬，</div>
+<div class="verse"><span class="verse-number">30</span>其餘的逃入亞弗城；城牆塌倒，壓死剩下的二萬七千人。便哈達也逃入城，藏在嚴密的屋子裏。</div>
+<div class="verse"><span class="verse-number">31</span>他的臣僕對他說：「我們聽說以色列王都是仁慈的王，現在我們不如腰束麻布，頭套繩索，出去投降以色列王，或者他存留王的性命。」</div>
+<div class="verse"><span class="verse-number">32</span>於是他們腰束麻布，頭套繩索，去見以色列王，說：「王的僕人便哈達說，求王存留我的性命。」亞哈說：「他還活着麼？他是我的兄弟。」</div>
+<div class="verse"><span class="verse-number">33</span>這些人留心探出他的口氣來，便急忙就着他的話說：「便哈達是王的兄弟！」王說：「你們去請他來。」便哈達出來見王，王就請他上車。</div>
+<div class="verse"><span class="verse-number">34</span>便哈達對王說：「我父從你父那裏所奪的城邑，我必歸還。你可以在大馬色立街市，像我父在撒瑪利亞所立的一樣。」亞哈說：「我照此立約，放你回去」，就與他立約，放他去了。</div>
+<div class="verse"><span class="verse-number">35</span>有先知的一個門徒奉耶和華的命對他的同伴說：「你打我吧！」那人不肯打他。</div>
+<div class="verse"><span class="verse-number">36</span>他就對那人說：「你既不聽從耶和華的話，你一離開我，必有獅子咬死你。」那人一離開他，果然遇見獅子，把他咬死了。</div>
+<div class="verse"><span class="verse-number">37</span>先知的門徒又遇見一個人，對他說：「你打我吧！」那人就打他，將他打傷。</div>
+<div class="verse"><span class="verse-number">38</span>他就去了，用頭巾蒙眼，改換面目，在路旁等候王。</div>
+<div class="verse"><span class="verse-number">39</span>王從那裏經過，他向王呼叫說：「僕人在陣上的時候，有人帶了一個人來，對我說：『你看守這人，若把他失了，你的性命必代替他的性命；不然，你必交出一他連得銀子來。』</div>
+<div class="verse"><span class="verse-number">40</span>僕人正在忙亂之間，那人就不見了。」以色列王對他說：「你自己定妥了，必照樣判斷你。」</div>
+<div class="verse"><span class="verse-number">41</span>他急忙除掉蒙眼的頭巾，以色列王就認出他是一個先知。</div>
+<div class="verse"><span class="verse-number">42</span>他對王說：「耶和華如此說：『因你將我定要滅絕的人放去，你的命就必代替他的命，你的民也必代替他的民。』」</div>
+<div class="verse"><span class="verse-number">43</span>於是以色列王悶悶不樂的回到撒瑪利亞，進了他的宮。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀上第20章記述亞哈王在神的幫助下兩度擊敗亞蘭王便哈達，卻因錯誤的「仁慈」而自招審判的故事。便哈達率三十二王圍困撒瑪利亞，先知告訴亞哈神必將敵人交在他手中，使他知道「我是耶和華」。以色列人以少勝多，大敗亞蘭軍。次年，亞蘭人以「以色列的神是山神而非平原的神」為由再度出兵，神再次應許必將大軍交在以色列手中，以顯示祂是全地之神。第二場戰役以色列大獲全勝，便哈達躲藏於嚴密的屋子裡，其臣僕建議腰束麻布向亞哈求降，亞哈竟稱便哈達為「兄弟」並釋放了他。這個決定違背了神對被詛咒之人的命令。神藉先知設計一個比喻讓亞哈親口宣判自己：因你放走了神要滅絕的人，你的命必代替他的命。亞哈「悶悶不樂地回到撒瑪利亞」。本章在軍事勝利的外表下，揭示了「自作聰明的憐憫」如何成為屬靈的失敗。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的得勝是為了讓人「知道我是耶和華」</strong><br>神兩次應許將敵人交在以色列人手中，每次都說明目的：「你就知道我是耶和華」。神的神蹟和幫助不只是為了以色列的軍事利益，更是為了在歷史中顯明祂的主權和神性。信徒在經歷神的幫助時，應當記住：每一次神的干預，都有一個超越個人利益的目的——讓人和世界認識神。感恩應當深化對神的認識，而非只停留在實際利益上。<br><br>
+<strong>2. 神沒有限制的主權，不受地理或環境的限制</strong><br>亞蘭人以「以色列的神是山神，不是平原的神」作為再次出兵的理由。神偏偏選擇在平原上再次給以色列大勝，彰顯祂是全地之神，不受任何地理界限的約束。這提醒信徒：神不是「只在教堂裡的神」，也不是「只在某種情況下才顯靈的神」。神的主權涵蓋生命的每一個領域，無論是職場、家庭、政治，或任何看似「神不管」的地方。<br><br>
+<strong>3. 擅自「仁慈」，悖逆神的命令，是驕傲的偽善</strong><br>亞哈放走便哈達，表面上是仁慈的外交智慧，實質上是以人的情感和政治考量凌駕神的命令。真正的順服不是挑選自己喜歡的神的命令來遵行，而是在所有情況下都以神的話語為最高準則。以「好意」或「更好的結果」為由修改神的命令，是屬靈驕傲的一種形式。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>有神人來見以色列</strong>王，說：<strong>耶和華如此說</strong>：『亞蘭人……所以我必將這一大群人都交在你手中，你們就知道我是耶和華。』」（王上20:28）</td>
+<td>就像一場精心設計的演示，目的是讓觀眾親眼見到結果，神的得勝是為了讓人認識祂。你在自己生命中神的幫助和得勝裡，有沒有深化了對神的真實認識，還是只停留在感謝神「幫了我的忙」？</td>
+</tr>
+<tr>
+<td>「<strong>亞哈說</strong>：『<strong>他還活着麼</strong>？他是我的兄弟。』……就請他上車。」（王上20:32-33）</td>
+<td>就像一個法官因為被告是熟人而輕判，亞哈以政治情感取代了神的命令。你有沒有曾經以「這樣更好」或「這樣更仁慈」為理由，擅自修改了神明確的吩咐？這種「自作聰明的好意」後來帶來了什麼後果？</td>
+</tr>
+<tr>
+<td>「<strong>耶和華說</strong>：『<strong>因你將我定要滅絕</strong>的人放去，你的命就必代替他的命。』亞哈悶悶不樂的回到撒瑪利亞。」（王上20:42-43）</td>
+<td>就像一個人在做了一個自以為聰明的決定後，卻被指出其中的致命錯誤，亞哈的不樂是後悔還是頑固仍不認罪？當神的話語指出你某個決定的問題時，你的反應是真心悔改還是「悶悶不樂」地繼續走自己的路？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

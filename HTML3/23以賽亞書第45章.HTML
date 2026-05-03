@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第45章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第45章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">地極的人都當仰望我就必得救：神掌管歷史與獨一救主</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我耶和華所膏的古列；我攙扶他的右手，使列國降伏在他面前。我也要放鬆列王的腰帶，使城門在他面前敞開，不得關閉。我對他如此說：</div>
+<div class="verse"><span class="verse-number">2</span>我必在你前面行，修平崎嶇之地。我必打破銅門，砍斷鐵閂。</div>
+<div class="verse"><span class="verse-number">3</span>我要將暗中的寶物和隱密的財寶賜給你，使你知道提名召你的，就是我耶和華、以色列的神。</div>
+<div class="verse"><span class="verse-number">4</span>因我僕人雅各，我所揀選以色列的緣故，我就提名召你；你雖不認識我，我也加給你名號。</div>
+<div class="verse"><span class="verse-number">5</span>我是耶和華，在我以外並沒有別神；除了我以外再沒有神。你雖不認識我，我必給你束腰。</div>
+<div class="verse"><span class="verse-number">6</span>從日出之地到日落之處使人都知道除了我以外，沒有別神。我是耶和華；在我以外並沒有別神。</div>
+<div class="verse"><span class="verse-number">7</span>我造光，又造暗；我施平安，又降災禍；造作這一切的是我耶和華。</div>
+<div class="verse"><span class="verse-number">8</span>諸天哪，自上而滴，穹蒼降下公義；地面開裂，產出救恩，使公義一同發生；這都是我耶和華所造的。</div>
+<div class="verse"><span class="verse-number">9</span>禍哉，那與造他的主爭論的！他不過是地上瓦片中的一塊瓦片。泥土豈可對摶弄他的說：你作甚麼呢？所作的物豈可說：你沒有手呢？</div>
+<div class="verse"><span class="verse-number">10</span>禍哉，那對父親說：你生的是甚麼呢？或對母親〔原文作婦人〕說：你產的是甚麼呢？</div>
+<div class="verse"><span class="verse-number">11</span>耶和華以色列的聖者，就是造就以色列的如此說：將來的事，你們可以問我；至於我的眾子，並我手的工作，你們可以求我命定〔原文作吩咐我〕。</div>
+<div class="verse"><span class="verse-number">12</span>我造地，又造人在地上。我親手鋪張諸天；天上萬象也是我所命定的。</div>
+<div class="verse"><span class="verse-number">13</span>我憑公義興起古列〔原文作他〕，又要修直他一切道路。他必建造我的城，釋放我被擄的民；不是為工價，也不是為賞賜。這是萬軍之耶和華說的。</div>
+<div class="verse"><span class="verse-number">14</span>耶和華如此說：埃及勞碌得來的和古實的貨物必歸你；身量高大的西巴人必投降你，也要屬你。他們必帶着鎖鍊過來隨從你，又向你下拜，祈求你說：神真在你們中間，此外再沒有別神；再沒有別的神。</div>
+<div class="verse"><span class="verse-number">15</span>救主以色列的神啊，你實在是自隱的神。</div>
+<div class="verse"><span class="verse-number">16</span>凡製造偶像的都必抱愧蒙羞，都要一同歸於慚愧。</div>
+<div class="verse"><span class="verse-number">17</span>惟有以色列必蒙耶和華的拯救，得永遠的救恩。你們必不蒙羞，也不抱愧，直到永世無盡。</div>
+<div class="verse"><span class="verse-number">18</span>創造諸天的耶和華，製造成全大地的神，他創造堅定大地，並非使地荒涼，是要給人居住。他如此說：我是耶和華，再沒有別神。</div>
+<div class="verse"><span class="verse-number">19</span>我沒有在隱密黑暗之地說話；我沒有對雅各的後裔說：你們尋求我是徒然的。我耶和華所講的是公義，所說的是正直。</div>
+<div class="verse"><span class="verse-number">20</span>你們從列國逃脫的人，要一同聚集前來。那些抬着雕刻木偶、禱告不能救人之神的，毫無知識。</div>
+<div class="verse"><span class="verse-number">21</span>你們要述說陳明你們的理，讓他們彼此商議。誰從古時指明？誰從上古述說？不是我耶和華嗎？除了我以外，再沒有神；我是公義的神，又是救主；除了我以外，再沒有別神。</div>
+<div class="verse"><span class="verse-number">22</span>地極的人都當仰望我，就必得救；因為我是神，再沒有別神。</div>
+<div class="verse"><span class="verse-number">23</span>我指着自己起誓，我口所出的話是憑公義，並不反回：萬膝必向我跪拜；萬口必憑我起誓。</div>
+<div class="verse"><span class="verse-number">24</span>人論我說，公義、能力，惟獨在乎耶和華；人都必歸向他。凡向他發怒的必至蒙羞。</div>
+<div class="verse"><span class="verse-number">25</span>以色列的後裔都必因耶和華得稱為義，並要誇耀。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第四十五章繼續第四十四章末尾對波斯王古列的神學詮釋，同時擴展到神獨一救主的普世宣告。本章神學核心是：神的主權不限於以色列，而是延伸到全地極。第1節「我耶和華所膏的古列」，「膏立」（anoint）是以色列王和大祭司蒙召的用語，但以賽亞在此用於一位外邦君王——這是驚人的神學突破，宣告神可以使用祂所揀選的任何人，不論其信仰背景（「你雖不認識我」，4節）。第7節「我造光，又造暗；我施平安，又降災禍」，是神對宇宙一切事物完全主權的宣告，包括看似矛盾的「平安」和「災禍」——一切都在神的掌管下。第22節「地極的人都當仰望我，就必得救」，是以賽亞書後半部對普世救恩最清晰的宣告，在新約保羅的宣教神學中成為核心根據（羅10:13引用相關主題）。第23節「萬膝必向我跪拜；萬口必憑我起誓」，在腓立比書2:10-11中被引用，應用於末世對基督的尊崇。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神可以使用不認識祂的人：神的主權超越人的信仰邊界</strong><br>第4-5節「你雖不認識我，我也加給你名號……我必給你束腰」，揭示了神掌管歷史的方式超越了人的信仰邊界。古列不是以色列人，甚至不敬拜耶和華，但神使用他來實現以色列的歸回。這對信徒有重要的神學啟示：神可以使用任何人、任何環境、任何看似不屬神的力量來推進祂的計劃。信徒不必擔憂：「若環境、人物、條件都不屬靈，神的旨意還能成就嗎？」——可以。<br><br>
+<strong>2. 「地極的人都當仰望我，就必得救」：救恩的門向所有人敞開</strong><br>第22節是以賽亞書後半部最重要的普世福音宣告。「地極的人」——沒有種族、文化、宗教背景的限制，所有人都在邀請範圍內。「仰望我」——動作極其簡單，不需要宗教儀式，只需要轉向和仰望。「就必得救」——這是確定的應許，不是「可能得救」。這節話呼召信徒以同樣寬廣的眼光看待福音的對象，不設邊界，不作排除。<br><br>
+<strong>3. 「我造光，又造暗；我施平安，又降災禍」：神的主權涵蓋一切</strong><br>第7節是一個讓人深思的神學宣告。神掌管的不只是「好的事」，也包括「看似壞的事」——黑暗和災禍。這不是說神是邪惡的根源，而是說在神的主權下，沒有任何事件是在祂控制之外的。對信徒的屬靈意義是：在最大的患難中，仍然可以確信：這不是在神的主權之外發生的，神知道，神掌管，神必在其中工作。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你雖不認識我</strong>，<strong>我也加給你名號</strong>……我必給你束腰。」（賽45:4-5）</td>
+<td>就像一位導演能在不同類型的演員中找到適合某個角色的人，神揀選並使用人，不受對方信仰邊界的限制，回顧你的人生，是否有神使用「意想不到的人或環境」來推進祂在你生命中的計劃？那次經歷如何擴展了你對神主權的認識？</td>
+</tr>
+<tr>
+<td>「<strong>地極的人都當仰望</strong>我，<strong>就必得救</strong>；因為我是神，再沒有別神。」（賽45:22）</td>
+<td>就像一個大學的開放日對所有人敞開，不限學歷或背景，只要前來就能了解，神的救恩向所有人敞開的邀請同樣無條件，你身邊有誰是「地極的人」——感覺最遠離神、最不像會信主的人？這節話如何鼓勵你為他們禱告和作見證？</td>
+</tr>
+<tr>
+<td>「<strong>我造光</strong>，<strong>又造暗</strong>；我施平安，又降災禍；造作這一切的是我耶和華。」（賽45:7）</td>
+<td>就像一位高明的醫師，有時需要施以讓人痛苦的手術才能達到痊癒，神的主權涵蓋平安與災禍，都在更大的善旨中，你目前面對的最大「黑暗或災禍」，你能否在其中看見神的主權與目的？那個信念如何改變你面對困難的方式？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

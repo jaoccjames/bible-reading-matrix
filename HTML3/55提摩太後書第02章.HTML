@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提摩太後書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+提摩太後書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">忠心的精兵與按正意分解真理</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我兒啊，你要在基督耶穌的恩典上剛強起來。</div>
+<div class="verse"><span class="verse-number">2</span>你在許多見證人面前聽見我所教訓的，也要交託那忠心能教導別人的人。</div>
+<div class="verse"><span class="verse-number">3</span>你要和我同受苦難，好像基督耶穌的精兵。</div>
+<div class="verse"><span class="verse-number">4</span>凡在軍中當兵的，不將世務纏身，好叫那招他當兵的人喜悅。</div>
+<div class="verse"><span class="verse-number">5</span>人若在場上比武，非按規矩，就不能得冠冕。</div>
+<div class="verse"><span class="verse-number">6</span>勞力的農夫，理當先得糧食。</div>
+<div class="verse"><span class="verse-number">7</span>我所說的話你要思想，因為凡事主必給你聰明。</div>
+<div class="verse"><span class="verse-number">8</span>你要記念耶穌基督乃是大衛的後裔，他從死裏復活，正合乎我所傳的福音。</div>
+<div class="verse"><span class="verse-number">9</span>我為這福音受苦難，甚至被捆綁，像犯人一樣。然而神的道卻不被捆綁。</div>
+<div class="verse"><span class="verse-number">10</span>所以我為選民凡事忍耐，叫他們也可以得着那在基督耶穌裏的救恩和永遠的榮耀。</div>
+<div class="verse"><span class="verse-number">11</span>有可信的話說：我們若與基督同死，也必與他同活；</div>
+<div class="verse"><span class="verse-number">12</span>我們若能忍耐，也必和他一同作王；我們若不認他，他也必不認我們；</div>
+<div class="verse"><span class="verse-number">13</span>我們縱然失信，他仍是可信的，因為他不能背乎自己。</div>
+<div class="verse"><span class="verse-number">14</span>你要使眾人回想這些事，在主面前囑咐他們：不可為言語爭辯；這是沒有益處的，只能敗壞聽見的人。</div>
+<div class="verse"><span class="verse-number">15</span>你當竭力在神面前得蒙喜悅，作無愧的工人，按着正意分解真理的道。</div>
+<div class="verse"><span class="verse-number">16</span>但要遠避世俗的虛談，因為這等人必進到更不敬虔的地步。</div>
+<div class="verse"><span class="verse-number">17</span>他們的話如同毒瘡，越爛越大；其中有許米乃和腓理徒，</div>
+<div class="verse"><span class="verse-number">18</span>他們偏離了真道，說復活的事已過，就敗壞好些人的信心。</div>
+<div class="verse"><span class="verse-number">19</span>然而，神堅固的根基立住了；上面有這印記說：「主認識誰是他的人」；又說：「凡稱呼主名的人總要離開不義。」</div>
+<div class="verse"><span class="verse-number">20</span>在大戶人家，不但有金器銀器，也有木器瓦器；有作為貴重的，有作為卑賤的。</div>
+<div class="verse"><span class="verse-number">21</span>人若自潔，脫離卑賤的事，就必作貴重的器皿，成為聖潔，合乎主用，預備行各樣的善事。</div>
+<div class="verse"><span class="verse-number">22</span>你要逃避少年的私慾，同那清心禱告主的人追求公義、信德、仁愛、和平。</div>
+<div class="verse"><span class="verse-number">23</span>惟有那愚拙無學問的辯論，總要棄絕，因為知道這等事是起爭競的。</div>
+<div class="verse"><span class="verse-number">24</span>然而主的僕人不可爭競，只要溫溫和和的待眾人，善於教導，存心忍耐，</div>
+<div class="verse"><span class="verse-number">25</span>用溫柔勸戒那抵擋的人；或者神給他們悔改的心，可以明白真道，</div>
+<div class="verse"><span class="verse-number">26</span>叫他們這已經被魔鬼任意擄去的，可以醒悟，脫離他的網羅。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第2章呼召提摩太要在基督的恩典上剛強，並以幾個比喻說明忠心服事的態度，同時警告要避開無益的爭辯，做個無愧的工人。本章首先呼召提摩太要在基督耶穌的恩典上剛強，並把所聽到的道交託那忠心能教導別人的人，要和我們一同受苦好像基督耶穌的精兵，因為當兵的人不將世務纏身，好叫那招他當兵的人喜悅；而且在較力的場中也要照規矩才能得冠冕，勞力的農夫理當先得糧食。然後說他為福音受苦至於被捆綁，然而神的道卻不被捆綁，他為選民的緣故凡事忍耐，引用一首詩歌：我們若與祂同死也必與祂同活，我們若能忍耐也必與祂一同作王，若我們不認祂祂也必不認我們，我們縱然失信祂仍是可信的，因為祂不能背乎自己。接著勸提摩太要警戒人不可為言語爭辯，要用正意分解真理的道，要作無愧的工人；又要遠離少年人的私慾，追求公義、信心、仁愛、和平，要避免無益的爭辯。本章以忠心服事的比喻和無愧工人的呼召為核心，是牧者培育的重要指南。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 精兵不將世務纏身</strong><br>「凡在軍中當兵的，不將世務纏身，好叫那招他當兵的人喜悅」——信仰的委身需要專注。「世務」不是說世上的事都是壞的，而是說若讓世上的追求——財富、地位、認可——纏住了，就無法全力完成使命。每個信徒都是「主的精兵」，都需要問：什麼事情在纏住我，使我無法全力服事？<br><br>
+<strong>2. 「按着正意分解真理的道」</strong><br>「作無愧的工人，按着正意分解真理的道」——傳道和教導需要「正意分解」，不是隨意解釋，不是按自己喜歡的方式處理，而是按照文本本身的意思忠實地開啟。這是聖經教導者最核心的責任：讓神的話語說它自己要說的，而非讓它說我想聽的。<br><br>
+<strong>3. 我們縱然失信，他仍是可信的</strong><br>「我們縱然失信，他仍是可信的，因為他不能背乎自己」——神的信實不依賴我們的忠心。這不是說失信是可以的，而是說在我們的軟弱和失敗中，神的性情是不改變的。這個真理既是責任（我們應當忠信，因為祂是信實的），也是安慰（我的失信不能改變神的本質）。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你當竭力在神面前</strong><strong>得蒙喜悅</strong>，作無愧的工人，按着正意分解真理的道。（提後2:15）</td>
+<td>你有沒有在讀聖經、分享信仰和教導他人的時候，努力「按正意」理解和傳遞神的話，而非讓自己的偏好或已有的結論決定解釋？就像翻譯要忠實於原文而非依照譯者的喜好，你有沒有讓對神話語的尊重帶出你「按正意分解」的謹慎？</td>
+</tr>
+<tr>
+<td><strong>主的僕人不可爭競</strong>，<strong>只要溫溫和和的待</strong>眾人，善於教導，存心忍耐，用溫柔勸戒那抵擋的人。（提後2:24-25）</td>
+<td>你有沒有在面對不同意見或對抗的情況時，能夠保持「溫溫和和」，以耐心和溫柔而非爭辯和強迫來傳達真理？就像水能繞過石頭的柔軟比岩石對岩石的硬撞更有效果，你有沒有讓溫柔成為你傳遞真理最有效的方式？</td>
+</tr>
+<tr>
+<td><strong>我們縱然失信</strong>，<strong>他仍是可信的</strong>，因為他不能背乎自己。（提後2:13）</td>
+<td>在你的信仰軟弱和失敗時，你有沒有讓「祂仍是可信的」成為你回轉的動力，而非讓失信帶來的羞愧使你遠離神？就像一個可靠的父親不因孩子的失誤就改變對孩子的身份認定，你有沒有讓對神信實性情的確信帶出你回轉的勇氣？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

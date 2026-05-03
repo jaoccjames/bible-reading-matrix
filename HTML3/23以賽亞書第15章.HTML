@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第15章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第15章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">論摩押的哀歌：一夜之間城邑傾倒的悲鳴</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>論摩押的默示：一夜之間，摩押的亞珥變為荒廢，歸於無有；一夜之間，摩押的基珥變為荒廢，歸於無有。</div>
+<div class="verse"><span class="verse-number">2</span>他們上巴益，又往底本，到高處去哭泣。摩押人因尼波和米底巴哀號，各人頭上光禿，鬍鬚剃淨。</div>
+<div class="verse"><span class="verse-number">3</span>他們在街市上都腰束麻布，在房頂上和寬闊處俱各哀號，眼淚汪汪。</div>
+<div class="verse"><span class="verse-number">4</span>希實本和以利亞利悲哀的聲音達到雅雜，所以摩押帶兵器的高聲喊嚷，人心戰兢。</div>
+<div class="verse"><span class="verse-number">5</span>我心為摩押悲哀；他的貴冑〔或作：逃民〕逃到瑣珥，到伊基拉施利施亞。他們上魯希坡，隨走隨哭；在何羅念的路上，因毀滅舉起哀聲。</div>
+<div class="verse"><span class="verse-number">6</span>因為寧林的水成為乾涸，青草枯乾，嫩草滅沒，青綠之物，一無所有。</div>
+<div class="verse"><span class="verse-number">7</span>因此，摩押人所得的財物和所積蓄的都要運過柳樹河。</div>
+<div class="verse"><span class="verse-number">8</span>哀聲遍聞摩押的四境；哀號的聲音達到以基蓮；哀號的聲音達到比珥以琳。</div>
+<div class="verse"><span class="verse-number">9</span>底們的水充滿了血；我還要加增底們的災難，叫獅子來追上摩押逃脫的民和那地上所餘剩的人。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第十五章是一首論摩押的哀歌，與第十六章共同構成對摩押的預言（這首哀歌在耶利米書48章也有類似內容出現）。摩押是以色列東邊的鄰國，是羅得的後裔，與以色列有複雜的族裔和歷史關係——路得記中的路得就是摩押人。本章以哀歌的形式描繪摩押的毀滅，城市在一夜之間倒塌（1節），百姓失聲痛哭（2-4節），先知自己也為此悲哀（5節「我心為摩押悲哀」）。值得注意的是，第5節以賽亞說「我心為摩押悲哀」——這顯示先知對仇敵的審判並非幸災樂禍，而是帶著真實的悲憫。這種對受審判之民的憐憫，反映了神自己的心腸——神「不願意任何人滅亡」（彼後3:9），審判是迫不得已的，而非樂見的。全章以「底們的水充滿了血」（9節）作結，描繪了審判的慘烈景象。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「一夜之間」：驕傲的強盛可以在一夜之間傾覆</strong><br>第1節「一夜之間，摩押的亞珥變為荒廢……一夜之間，摩押的基珥變為荒廢」，兩次重複「一夜之間」，強調了人間安全感的脆弱性。摩押是一個繁榮的國家，城池堅固，資源豐富，然而神的審判可以在一夜之間將其傾覆。這呼應了路加福音12章中那個以糧倉自誇的財主，「今夜必要你的靈魂」——一切世間的倚靠都可以在一夜之間消失。<br><br>
+<strong>2. 先知為仇敵的審判悲哀：神的審判中有神的憐憫</strong><br>第5節「我心為摩押悲哀」是本章最感人的一句話。以賽亞並非一個因宣判仇敵而滿意的先知，而是在神的審判信息中，同樣帶著神的憐憫之心。這是先知心腸的標誌：傳遞審判的信息，卻同時為受審判的人心中悲傷。耶穌在進耶路撒冷前為城哭泣（路19:41），也是同樣的心腸——神的心不以罪人的傾倒為樂，而是以他們的回轉為喜悅。<br><br>
+<strong>3. 哀聲「遍聞」：罪惡的後果從不局限於個人，而是波及整個群體</strong><br>第8節「哀聲遍聞摩押的四境」，審判不只臨到首惡，而是波及整個民族。這揭示了一個重要的社會神學：個人的選擇和群體的罪，其後果往往超過個人的範圍，影響整個社群。領袖的罪惡帶來群體的哀聲，這呼召每一個有影響力的人思考自己的選擇對周圍人的責任。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>一夜之間</strong>，<strong>摩押的亞珥變為荒</strong>廢，歸於無有；一夜之間，摩押的基珥變為荒廢，歸於無有。」（賽15:1）</td>
+<td>就像精心建造的沙堡在潮水來臨時瞬間消失，無論建得多高，人間一切未建立在神之上的穩固都只是暫時的，你目前最視為「穩固安全」的是什麼——健康、財務、工作、關係？若那個東西「一夜之間」改變，你的生命根基是否仍然穩固？</td>
+</tr>
+<tr>
+<td>「<strong>我心為摩押悲哀</strong>。」（賽15:5）</td>
+<td>就像醫生為無法救治的病人悲傷，不是因為失敗，而是因為真正在乎那個人的生命，以賽亞的悲哀反映了神自己的心腸，你對那些尚未認識神、將面臨屬靈後果的人，有多少真實的悲憫？那種悲憫是否驅使你用任何方式關懷或傳遞神的恩典給他們？</td>
+</tr>
+<tr>
+<td>「<strong>哀聲遍聞摩押的四</strong>境；<strong>哀號的聲音達到以</strong>基蓮……」（賽15:8）</td>
+<td>就像一塊石頭投入水中，波紋會擴散到整個水面，一個社群中的罪惡和審判，往往影響遠超過直接肇事者，你是否有意識到自己的選擇和行為，可能如「漣漪」般影響到更多的人？那種意識如何促使你更認真地思考自己的決定？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

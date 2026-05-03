@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第22章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第22章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">美名勝過大財：教養孩童走當行的道</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>美名勝過大財；恩寵強如金銀。</div>
+<div class="verse"><span class="verse-number">2</span>富戶窮人在世相遇，都為耶和華所造。</div>
+<div class="verse"><span class="verse-number">3</span>通達人見禍藏躲；愚蒙人前往受害。</div>
+<div class="verse"><span class="verse-number">4</span>敬畏耶和華心存謙卑，就得富有、尊榮、生命為賞賜。</div>
+<div class="verse"><span class="verse-number">5</span>乖僻人的路上有荊棘和網羅；保守自己生命的，必要遠離。</div>
+<div class="verse"><span class="verse-number">6</span>教養孩童，使他走當行的道，就是到老他也不偏離。</div>
+<div class="verse"><span class="verse-number">7</span>富戶管轄窮人；欠債的是債主的僕人。</div>
+<div class="verse"><span class="verse-number">8</span>撒罪孽的，必收災禍；他逞怒的杖也必廢掉。</div>
+<div class="verse"><span class="verse-number">9</span>眼目慈善的，就必蒙福，因他將食物分給窮人。</div>
+<div class="verse"><span class="verse-number">10</span>趕出褻慢人，爭端就消除；紛爭和羞辱也必止息。</div>
+<div class="verse"><span class="verse-number">11</span>喜愛清心的人因他嘴上的恩言，王必與他為友。</div>
+<div class="verse"><span class="verse-number">12</span>耶和華的眼目眷顧聰明人，卻傾敗奸詐人的言語。</div>
+<div class="verse"><span class="verse-number">13</span>懶惰人說：外頭有獅子；我在街上就必被殺。</div>
+<div class="verse"><span class="verse-number">14</span>淫婦的口為深坑；耶和華所憎惡的，必陷在其中。</div>
+<div class="verse"><span class="verse-number">15</span>愚蒙迷住孩童的心，用管教的杖可以遠遠趕除。</div>
+<div class="verse"><span class="verse-number">16</span>欺壓貧窮為要利己的，並送禮與富戶的，都必缺乏。</div>
+<div class="verse"><span class="verse-number">17</span>你須側耳聽受智慧人的言語，留心領會我的知識。</div>
+<div class="verse"><span class="verse-number">18</span>你若心中存記，嘴上咬定，這便為美。</div>
+<div class="verse"><span class="verse-number">19</span>我今日以此特特指教你，為要使你倚靠耶和華。</div>
+<div class="verse"><span class="verse-number">20</span>謀略和知識的美事，我豈沒有寫給你嗎？</div>
+<div class="verse"><span class="verse-number">21</span>要使你知道真言的實理，你好將真言回覆那打發你來的人。</div>
+<div class="verse"><span class="verse-number">22</span>貧窮人，你不可因他貧窮就搶奪他的物，也不可在城門口欺壓困苦人；</div>
+<div class="verse"><span class="verse-number">23</span>因耶和華必為他辨屈；搶奪他的，耶和華必奪取那人的命。</div>
+<div class="verse"><span class="verse-number">24</span>好生氣的人，不可與他結交；暴怒的人，不可與他來往；</div>
+<div class="verse"><span class="verse-number">25</span>恐怕你效法他的行為，自己就陷在網羅裏。</div>
+<div class="verse"><span class="verse-number">26</span>不要與人擊掌，不要為欠債的作保。</div>
+<div class="verse"><span class="verse-number">27</span>你若沒有甚麼償還，何必使人奪去你睡臥的床呢？</div>
+<div class="verse"><span class="verse-number">28</span>你先祖所立的地界，你不可挪移。</div>
+<div class="verse"><span class="verse-number">29</span>你看見辦事殷勤的人嗎？他必站在君王面前，必不站在下賤人面前。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第二十二章是所羅門格言集的末章（10-22:16為第二大段落的結尾），從第17節開始則進入「智慧人的言語」第一集（22:17-24:22），風格轉為較長的訓誨文體，類似古埃及智慧文學。本章前半部分（1-16節）延續格言的對句風格，涵蓋美名的價值、孩童的教養、貧窮者的尊嚴，以及殷勤的重要性。第6節「教養孩童，使他走當行的道，就是到老他也不偏離」，是箴言書中最廣為引用的教育格言，強調早年信仰與品格的塑造具有終身的影響力。在古以色列社會中，孩童的教育是家庭的核心責任，父母是神所設立的屬靈教師。第1節「美名勝過大財；恩寵強如金銀」開篇即宣告，品格與聲譽的價值超越物質財富，呼應了整個箴言書對真正豐盛的定義。第4節「敬畏耶和華心存謙卑，就得富有、尊榮、生命為賞賜」，則將謙卑與敬畏神連結為一切祝福的根源。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 美好的品格與名聲是比財富更寶貴的遺產</strong><br>第1節「美名勝過大財；恩寵強如金銀」，宣告了箴言書的核心價值觀：一個人最重要的資產不是財富，而是品格所建立的美名。美名的建立需要數十年誠實、慷慨與公義的積累，卻可以在一夕之間因不智的選擇而受損。信徒當以長遠的眼光看待品格的建造，將它視為比任何物質財富都更值得投資的人生目標。<br><br>
+<strong>2. 及早教養孩童，在信仰中奠定終身的根基</strong><br>第6節「教養孩童，使他走當行的道，就是到老他也不偏離」，強調了早年品格教育與信仰培育的深遠影響。「當行的道」不只是一般的人生道路，更指符合神旨意的屬靈方向。這提醒信徒，對孩童最大的投資不是物質財富，而是用神的話語、敬虔的榜樣和有愛的管教，在他們心中栽下信仰的根苗，讓它在成長歲月中深扎，到老仍能結實纍纍。<br><br>
+<strong>3. 敬畏神與謙卑並行，是一切祝福的根源</strong><br>第4節「敬畏耶和華心存謙卑，就得富有、尊榮、生命為賞賜」，將敬畏與謙卑列為同一品格的兩面，並宣告它們帶來的真實豐盛。這裡的富有、尊榮、生命，不只指物質層面，更是整全生命的豐盛——在神面前、在人面前都有真實的價值與尊嚴。這種豐盛不是憑努力掙來的，而是敬虔生命的自然果效。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>美名勝過大財</strong>；<strong>恩寵強如金銀</strong>。」（箴22:1）</td>
+<td>就像一個商標的品牌價值，往往遠超過其產品本身的成本，你的「名聲」在家人、朋友和同事眼中代表什麼？你有沒有曾為了短期利益而犧牲長期品格的時刻？</td>
+</tr>
+<tr>
+<td>「<strong>教養孩童</strong>，<strong>使他走當行的道</strong>，就是到老他也不偏離。」（箴22:6）</td>
+<td>就像在泥土還柔軟的時候塑造陶器比較容易，幼年的信仰塑造對一生有深遠影響，你在自己或下一代的信仰培育上，目前投入了哪些具體的努力？你最希望在他們心中栽下什麼樣的根？</td>
+</tr>
+<tr>
+<td>「<strong>敬畏耶和華心存謙</strong>卑，<strong>就得富有</strong>、尊榮、生命為賞賜。」（箴22:4）</td>
+<td>就像植物在適合的土壤和陽光中自然結出豐盛的果子，不需要強求，你生命中的「土壤」——你與神的關係、你的謙卑程度——目前是否有利於讓真正的祝福自然生長？你需要在哪方面作出調整？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

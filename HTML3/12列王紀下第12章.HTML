@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀下第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀下第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約阿施修殿有成，晚年賄賂敵人被臣所殺</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶戶第七年，約阿施登基，在耶路撒冷作王四十年。他母親名叫西比亞，是別是巴人。</div>
+<div class="verse"><span class="verse-number">2</span>約阿施在祭司耶何耶大教訓他的時候，就行耶和華眼中看為正的事；</div>
+<div class="verse"><span class="verse-number">3</span>只是邱壇還沒有廢去，百姓仍在那裏獻祭燒香。</div>
+<div class="verse"><span class="verse-number">4</span>約阿施對眾祭司說：「凡奉到耶和華殿分別為聖之物所值通用的銀子，或各人當納的身價，或樂意奉到耶和華殿的銀子，</div>
+<div class="verse"><span class="verse-number">5</span>你們當從所認識的人收了來，修理殿的一切破壞之處。」</div>
+<div class="verse"><span class="verse-number">6</span>無奈到了約阿施王二十三年，祭司仍未修理殿的破壞之處。</div>
+<div class="verse"><span class="verse-number">7</span>所以約阿施王召了大祭司耶何耶大和眾祭司來，對他們說：「你們怎麼不修理殿的破壞之處呢？從今以後，你們不要從所認識的人再收銀子，要將所收的交出來，修理殿的破壞之處。」</div>
+<div class="verse"><span class="verse-number">8</span>眾祭司答應不再收百姓的銀子，也不修理殿的破壞之處。</div>
+<div class="verse"><span class="verse-number">9</span>祭司耶何耶大取了一個櫃子，在櫃蓋上鑽了一個窟窿，放於壇旁，在進耶和華殿的右邊；守門的祭司將奉到耶和華殿的一切銀子投在櫃裏。</div>
+<div class="verse"><span class="verse-number">10</span>他們見櫃裏的銀子多了，便叫王的書記和大祭司上來，將耶和華殿裏的銀子數算包起來。</div>
+<div class="verse"><span class="verse-number">11</span>把所平的銀子交給督工的，就是耶和華殿裏辦事的人；他們把銀子轉交修理耶和華殿的木匠和工人，</div>
+<div class="verse"><span class="verse-number">12</span>並瓦匠、石匠，又買木料和鑿成的石頭，修理耶和華殿的破壞之處，以及修理殿的各樣使用。</div>
+<div class="verse"><span class="verse-number">13</span>但那奉到耶和華殿的銀子，沒有用以作耶和華殿裏的銀杯、蠟剪、碗、號，和別樣的金銀器皿，</div>
+<div class="verse"><span class="verse-number">14</span>乃將那銀子交給督工的人修理耶和華的殿；</div>
+<div class="verse"><span class="verse-number">15</span>且將銀子交給辦事的人轉交作工的人，不與他們算賬，因為他們辦事誠實。</div>
+<div class="verse"><span class="verse-number">16</span>惟有贖愆祭、贖罪祭的銀子沒有奉到耶和華的殿，都歸祭司。</div>
+<div class="verse"><span class="verse-number">17</span>那時，亞蘭王哈薛上來攻打迦特，攻取了，就定意上來攻打耶路撒冷。</div>
+<div class="verse"><span class="verse-number">18</span>猶大王約阿施將他列祖猶大王約沙法、約蘭、亞哈謝所分別為聖的物和自己所分別為聖的物，並耶和華殿與王宮府庫裏所有的金子都送給亞蘭王哈薛；哈薛就不上耶路撒冷來了。</div>
+<div class="verse"><span class="verse-number">19</span>約阿施其餘的事，凡他所行的都寫在猶大列王記上。</div>
+<div class="verse"><span class="verse-number">20</span>約阿施的臣僕起來背叛，在下悉拉的米羅宮那裏將他殺了。</div>
+<div class="verse"><span class="verse-number">21</span>殺他的那臣僕就是示米押的兒子約撒甲和朔默的兒子約薩拔。眾人將他葬在大衛城他列祖的墳地裏。他兒子亞瑪謝接續他作王。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀下第12章記述猶大王約阿施在位四十年間的主要事蹟，呈現了他生命的高低起伏。在祭司耶何耶大的指導下，約阿施積極籌措聖殿修繕的資金，設立奉獻箱讓百姓投入捐款，再以誠實的方式管理和使用這些資金，委任督工和工匠認真修繕殿宇。整個過程被稱讚為「辦事誠實」——這是少見的政府工程清廉記錄。然而本章也記述了約阿施的屬靈軟弱：當亞蘭王哈薛攻打耶路撒冷時，約阿施用聖殿和王宮府庫的財物賄賂敵人，以金銀換取暫時的和平，而非依靠神。最終，在耶何耶大去世後，約阿施走向衰落，被自己的臣僕所殺。本章清楚說明了屬靈導師的重要性——有耶何耶大在時，約阿施行正；耶何耶大去後，約阿施失去了方向。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 屬靈導師的同在是信徒持守正道的重要因素</strong><br>「約阿施在祭司耶何耶大教訓他的時候，就行耶和華眼中看為正的事」——這句話既是稱讚，也是警告。一個只在屬靈導師的監督下才行正的人，並非擁有真正內化的信仰。信徒應當在導師的幫助下成長，目標是將屬靈的原則內化為自己的生命，而非依賴外在的監督。當導師離去，信仰的深度才真正被考驗。<br><br>
+<strong>2. 財物管理的誠實是屬靈信任的展現</strong><br>奉獻的資金被「辦事誠實」的人管理，這是對神和會眾信任的具體回應。財物的誠實管理不只是行政的效率，更是屬靈信任關係的表達。教會和個人在財物上的誠實，是信仰真實性最可見的見證之一。<br><br>
+<strong>3. 以金銀換取暫時的和平，是放棄倚靠神的表現</strong><br>約阿施面對哈薛的威脅時，沒有尋求神，而是以聖殿的財寶賄賂敵人。這是用「看得見的金銀」代替「看不見的神的保護」。信徒在面對威脅時，若第一個反應是以妥協換取和平，而非尋求神的旨意，就是在重複約阿施的錯誤。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>約阿施在祭司耶何</strong><strong>耶大教訓他的時候</strong>，就行耶和華眼中看為正的事。」（王下12:2）</td>
+<td>就像一個學生在優秀老師的帶領下表現出色，但老師離開後卻失去方向，約阿施的信仰帶有強烈的「外依賴性」。你的信仰根基，是真正內化在心，還是主要依賴某位導師或環境的維繫？</td>
+</tr>
+<tr>
+<td>「<strong>且將銀子交給辦事</strong><strong>的人轉交作工的人</strong>，不與他們算賬，因為他們辦事誠實。」（王下12:15）</td>
+<td>就像一家以信任為基礎的公司，不需要繁瑣的核查流程，因為每個人都誠實負責，聖殿修繕的誠實管理建立了真正的信任。在你的工作和服事中，別人是否也能這樣「不與你算賬」，因為你的誠實已建立了可靠的信任？</td>
+</tr>
+<tr>
+<td>「<strong>猶大王約阿施將</strong>……<strong>耶和華殿與王宮府</strong>庫裏所有的金子都送給亞蘭王哈薛；哈薛就不上耶路撒冷來了。」（王下12:18）</td>
+<td>就像一個人為了避免衝突而把珍貴的東西拱手相讓，約阿施用神聖的財寶換取暫時的和平。你在生命中有沒有以「妥協換取和平」的方式，把本應奉獻給神的事物讓給了威脅你的事物？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

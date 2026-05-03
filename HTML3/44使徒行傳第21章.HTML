@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第21章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第21章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">保羅在耶路撒冷被捕</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我們離別了眾人，就開船一直行到哥士。第二天到了羅底，從那裏到帕大喇，</div>
+<div class="verse"><span class="verse-number">2</span>遇見一隻船要往腓尼基去，就上船起行。</div>
+<div class="verse"><span class="verse-number">3</span>望見居比路，就從南邊行過，往敘利亞去，我們就在推羅上岸，因為船要在那裏卸貨。</div>
+<div class="verse"><span class="verse-number">4</span>找着了門徒，就在那裏住了七天。他們被聖靈感動，對保羅說：「不要上耶路撒冷去。」</div>
+<div class="verse"><span class="verse-number">5</span>過了這幾天，我們就起身前行。他們眾人同妻子兒女，送我們到城外，我們都跪在岸上禱告，彼此辭別。</div>
+<div class="verse"><span class="verse-number">6</span>我們上了船，他們就回家去了。</div>
+<div class="verse"><span class="verse-number">7</span>我們從推羅行盡了水路，來到多利買，就問那裏的弟兄安，和他們同住了一天。</div>
+<div class="verse"><span class="verse-number">8</span>第二天，我們離開那裏，來到該撒利亞，就進了傳福音的腓利家裏，和他同住。他是那七個執事裏的一個。</div>
+<div class="verse"><span class="verse-number">9</span>他有四個女兒，都是處女，是說預言的。</div>
+<div class="verse"><span class="verse-number">10</span>我們在那裏多住了幾天，有一個先知，名叫亞迦布，從猶太下來，</div>
+<div class="verse"><span class="verse-number">11</span>到了我們這裏，就拿保羅的腰帶捆上自己的手腳，說：「聖靈說：猶太人在耶路撒冷，要如此捆綁這腰帶的主人，把他交在外邦人手裏。」</div>
+<div class="verse"><span class="verse-number">12</span>我們和那本地的人聽見這話，都苦勸保羅不要上耶路撒冷去。</div>
+<div class="verse"><span class="verse-number">13</span>保羅說：「你們為甚麼這樣痛哭，使我心碎呢？我為主耶穌的名，不但被人捆綁，就是死在耶路撒冷也是願意的。」</div>
+<div class="verse"><span class="verse-number">14</span>保羅既不聽勸，我們便住了口，只說：「願主的旨意成就，」便了。</div>
+<div class="verse"><span class="verse-number">15</span>過了幾日，我們收拾行李上耶路撒冷去。</div>
+<div class="verse"><span class="verse-number">16</span>有該撒利亞的幾個門徒和我們同去，帶我們到一個久為〔久為：或作老〕門徒的家裏，叫我們與他同住；他名叫拿孫，是居比路人。</div>
+<div class="verse"><span class="verse-number">17</span>到了耶路撒冷，弟兄們歡歡喜喜的接待我們。</div>
+<div class="verse"><span class="verse-number">18</span>第二天，保羅同我們去見雅各；長老們也都在那裏。</div>
+<div class="verse"><span class="verse-number">19</span>保羅問了他們安，便將神用他傳教，在外邦人中間所行之事，一一的述說了。</div>
+<div class="verse"><span class="verse-number">20</span>他們聽見，就歸榮耀與神，對保羅說：「兄台，你看猶太人中信主的有多少萬，並且都為律法熱心。</div>
+<div class="verse"><span class="verse-number">21</span>他們聽見人說：你教訓一切在外邦的猶太人離棄摩西，對他們說：不要給孩子行割禮，也不要遵行條規。</div>
+<div class="verse"><span class="verse-number">22</span>眾人必聽見你來了，這可怎麼辦呢？</div>
+<div class="verse"><span class="verse-number">23</span>你就照着我們的話行吧？我們這裏有四個人，都有願在身。</div>
+<div class="verse"><span class="verse-number">24</span>你帶他們去，與他們一同行潔淨的禮，替他們拿出規費，叫他們得以剃頭。這樣，眾人就可知道，先前所聽見你的事都是虛的；並可知道，你自己為人，循規蹈矩，遵行律法。</div>
+<div class="verse"><span class="verse-number">25</span>至於信主的外邦人，我們已經寫信擬定，叫他們謹忌那祭偶像之物，和血，並勒死的牲畜，與姦淫。」</div>
+<div class="verse"><span class="verse-number">26</span>於是保羅帶着那四個人，第二天與他們一同行了潔淨的禮，進了殿，報明潔淨的日期滿足，只等祭司為他們各人獻祭。</div>
+<div class="verse"><span class="verse-number">27</span>那七日將完，從亞西亞來的猶太人看見保羅在殿裏，就聳動了眾人，下手拿他，</div>
+<div class="verse"><span class="verse-number">28</span>喊叫說：「以色列人來幫助，這就是在各處教訓眾人蹧踐我們百姓和律法，並這地方的。他又帶着希利尼人進殿，污穢了這聖地。」</div>
+<div class="verse"><span class="verse-number">29</span>（這話是因他們曾看見以弗所人特羅非摩同保羅在城裏，以為保羅帶他進了殿。）</div>
+<div class="verse"><span class="verse-number">30</span>合城都震動，百姓一齊跑來，拿住保羅，拉他出殿，殿門立刻都關了。</div>
+<div class="verse"><span class="verse-number">31</span>他們正想要殺他，有人報信給營裏的千夫長說：「耶路撒冷合城都亂了。」</div>
+<div class="verse"><span class="verse-number">32</span>千夫長立時帶着兵丁和幾個百夫長，跑下去到他們那裏。他們見了千夫長和兵丁，就止住不打保羅。</div>
+<div class="verse"><span class="verse-number">33</span>於是千夫長上前拿住他，吩咐用兩條鐵鍊捆鎖；又問他是甚麼人，作的是甚麼事。</div>
+<div class="verse"><span class="verse-number">34</span>眾人有喊叫這個的，有喊叫那個的；千夫長因為這樣亂嚷，得不着實情，就吩咐人將保羅帶進營樓去。</div>
+<div class="verse"><span class="verse-number">35</span>到了臺階上，眾人擠得兇猛，兵丁只得將保羅抬起來。</div>
+<div class="verse"><span class="verse-number">36</span>眾人跟在後面，喊着說：「除掉他！」</div>
+<div class="verse"><span class="verse-number">37</span>將要帶他進營樓，保羅對千夫長說：「我對你說句話可以不可以？」他說「：你懂得希利尼話嗎？」</div>
+<div class="verse"><span class="verse-number">38</span>你莫非是從前作亂、帶領四千兇徒往曠野去的那埃及人嗎？</div>
+<div class="verse"><span class="verse-number">39</span>保羅說：「我本是猶太人，生在基利家的大數，並不是無名小城的人。求你准我對百姓說話。」</div>
+<div class="verse"><span class="verse-number">40</span>千夫長准了。保羅就站在臺階上，向百姓擺手，他們都靜默無聲，保羅便用希伯來話對他們說：</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第21章記述保羅堅定地往耶路撒冷去，沿途信徒多次勸阻，最後在耶路撒冷被群眾誤會而遭拘押，是使徒行傳受難敘事的開始。本章首先記述保羅和同伴沿途南行，在推羅門徒受聖靈感動勸保羅不要上耶路撒冷，保羅仍堅持。在凱撒利亞，先知亞迦布拿起保羅的腰帶捆上自己的手腳，說聖靈指明耶路撒冷的猶太人必照樣捆綁保羅交在外邦人手裡，眾人痛哭勸阻，保羅說他不但準備被捆綁，也準備在耶路撒冷為主的名死，眾人見勸不住便說願主的旨意成就。到了耶路撒冷，雅各和眾長老接待保羅，建議他行一個潔淨的儀式，讓猶太信徒看見他並非叫人離棄摩西的律法，保羅照著行了。到了快滿七日，從亞西亞來的猶太人看見保羅在殿裡，就嗾使眾人說他帶領外邦人污穢聖殿，全城大亂，他們拿住保羅，拖出殿外，千夫長帶兵趕到，他們停止毆打，千夫長把保羅拿住用兩條鐵鏈鎖住。保羅求千夫長讓他向百姓說話，千夫長允許，保羅站在台階上向眾人招手，預備他在台階上的辯護演說。本章是保羅受難敘事的開端，也呈現他堅定赴難的使徒心志。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「願主的旨意成就」是最成熟的順服</strong><br>眾人勸保羅不要上耶路撒冷，他說「我為主的名，就是死也願意」，眾人「就不再勸他，只說：願主的旨意成就」。這個轉變從「阻止神的僕人」到「接受神的旨意」，是群體成熟的表現。有時候，真正的關心和愛護，不是繼續阻攔，而是放手讓人走在神的呼召裏，同時以禱告支持他們。<br><br>
+<strong>2. 保羅在衝突中仍尋求傳道機會</strong><br>被捕、被鐵鍊鎖着、百姓喊「除掉他」的混亂中，保羅請求千夫長讓他說話，要對這些想殺他的人傳福音。這是保羅使命感最深刻的體現——在最危險的時刻，他的第一念頭不是自保，而是如何把握這個向眾人見證的機會。台階上的場景成了他最大的講道台。<br><br>
+<strong>3. 文化的智慧和福音的堅持並不矛盾</strong><br>保羅接受雅各建議，按猶太習俗行潔淨禮，是文化上的謙遜；但他對耶穌福音的核心絕不妥協。「向猶太人如猶太人」（林前9:20），是傳福音策略的靈活，不是信仰立場的軟弱。在文化形式上的妥協，有時反而能打開傳福音的門。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們為甚麼這樣痛</strong>哭，<strong>使我心碎呢</strong>？我為主耶穌的名，不但被人捆綁，就是死在耶路撒冷也是願意的。（徒21:13）</td>
+<td>你有沒有像保羅一樣，在面對使命的代價時，仍然選擇說「我願意」，而非讓恐懼和他人的勸阻改變你的方向？就像一個知道手術有風險卻仍然接受治療的病人，你願意讓對神旨意的順服超越對個人安全的考量嗎？</td>
+</tr>
+<tr>
+<td><strong>眾人都說</strong>：「<strong>願主的旨意成就</strong>，便了。」（徒21:14）</td>
+<td>你有沒有學習放開你所愛的人，讓他們按着神的呼召走，即使那條路充滿危險？就像父母要學習放手讓孩子走自己的路，你有沒有在真正關心的同時，把那人和他的使命交在神手裏？</td>
+</tr>
+<tr>
+<td><strong>求你准我對百姓說</strong>話。（徒21:39）</td>
+<td>在你面對困難和壓力的時候，你的第一念頭是傳福音的機會，還是自我保護？就像急救員在危機中仍然保持使命感，你有沒有讓你的使命感在任何處境中都優先於自我利益？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

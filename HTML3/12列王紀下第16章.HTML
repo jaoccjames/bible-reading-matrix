@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀下第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀下第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">亞哈斯求助亞述引狼入室，以外邦壇取代耶和華壇</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>利瑪利的兒子比加十七年，猶大王約坦的兒子亞哈斯登基。</div>
+<div class="verse"><span class="verse-number">2</span>他登基的時候年二十歲，在耶路撒冷作王十六年；不像他祖大衛行耶和華他神眼中看為正的事，</div>
+<div class="verse"><span class="verse-number">3</span>卻效法以色列諸王所行的，又照着耶和華從以色列人面前趕出的外邦人所行可憎的事，使他的兒子經火，</div>
+<div class="verse"><span class="verse-number">4</span>並在邱壇上、山崗上、各青翠樹下獻祭燒香。</div>
+<div class="verse"><span class="verse-number">5</span>亞蘭王利汛和以色列王利瑪利的兒子比加上來攻打耶路撒冷，圍困亞哈斯，卻不能勝他。</div>
+<div class="verse"><span class="verse-number">6</span>當時亞蘭王利汛收回以拉他歸與亞蘭，將猶大人從以拉他趕出去。亞蘭人〔有作以東人的〕就來到以拉他，住在那裏，直到今日。</div>
+<div class="verse"><span class="verse-number">7</span>亞哈斯差遣使者去見亞述王提革拉毘尼色，說：「我是你的僕人、你的兒子。現在亞蘭王和以色列王攻擊我，求你來救我脫離他們的手。」</div>
+<div class="verse"><span class="verse-number">8</span>亞哈斯將耶和華殿裏和王宮府庫裏所有的金銀都送給亞述王為禮物。</div>
+<div class="verse"><span class="verse-number">9</span>亞述王應允了他，就上去攻打大馬色，將城攻取，殺了利汛，把居民擄到吉珥。</div>
+<div class="verse"><span class="verse-number">10</span>亞哈斯王上大馬色去迎接亞述王提革拉毘尼色，在大馬色看見一座壇，就照壇的規模樣式作法畫了圖樣，送到祭司烏利亞那裏。</div>
+<div class="verse"><span class="verse-number">11</span>祭司烏利亞照着亞哈斯王從大馬色送來的圖樣，在亞哈斯王沒有從大馬色回來之先，建築一座壇。</div>
+<div class="verse"><span class="verse-number">12</span>王從大馬色回來看見壇，就近前來，在壇上獻祭；</div>
+<div class="verse"><span class="verse-number">13</span>燒燔祭、素祭、澆奠祭，將平安祭牲的血灑在壇上，</div>
+<div class="verse"><span class="verse-number">14</span>又將耶和華面前的銅壇從耶和華殿和新壇的中間搬到新壇的北邊。</div>
+<div class="verse"><span class="verse-number">15</span>亞哈斯王吩咐祭司烏利亞說：「早晨的燔祭、晚上的素祭、王的燔祭素祭、國內眾民的燔祭素祭奠祭，都要燒在大壇上。燔祭牲和平安祭牲的血也要灑在這壇上，只是銅壇我要用以求問耶和華。」</div>
+<div class="verse"><span class="verse-number">16</span>祭司烏利亞就照着亞哈斯王所吩咐的行了。</div>
+<div class="verse"><span class="verse-number">17</span>亞哈斯王打掉盆座四面鑲着的心子，把盆從座上挪下來，又將銅海從馱海的銅牛上搬下來，放在鋪石地；</div>
+<div class="verse"><span class="verse-number">18</span>又因亞述王的緣故，將耶和華殿為安息日所蓋的廊子和王從外入殿的廊子挪移，圍繞耶和華的殿。</div>
+<div class="verse"><span class="verse-number">19</span>亞哈斯其餘所行的事都寫在猶大列王記上。</div>
+<div class="verse"><span class="verse-number">20</span>亞哈斯與他列祖同睡，葬在大衛城他列祖的墳地裏。他兒子希西家接續他作王。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀下第16章記述猶大最不敬虔的王之一亞哈斯的統治，以一系列屬靈妥協為特色。他不效法大衛，反而效法以色列諸王，甚至使兒子經火獻祭，引進外邦宗教。當亞蘭王和以色列王聯合攻打他時，他沒有求問耶和華（先知以賽亞曾有明確的神諭叫他不要懼怕），反而自稱「你的僕人、你的兒子」，以聖殿財寶向亞述王求援，開啟了猶大向亞述稱臣的悲劇。亞述王雖然解了他的困境，但亞哈斯卻深陷於外邦影響之中——他在大馬色看見一座亞蘭祭壇，立即命人照樣在耶路撒冷建造，並把原有的耶和華銅壇挪到旁邊，自己只用新壇獻祭，將銅壇留作「求問耶和華」之用。這象徵着他把外邦的宗教形式放在首位，而讓神的壇降為次要。整個故事是一個屬靈優先次序被顛倒的典型。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在危機中求助外邦強權代替求告神，是屬靈的背叛</strong><br>亞哈斯在被攻擊時，自稱是亞述王的「僕人、兒子」，卻不願承認自己是耶和華的僕人兒子。這種向強國俯伏的姿態，是靈命深度的真實呈現——他更信任看得見的亞述武力，甚於看不見的神。信徒在危機中所求助的對象，最真實地反映了他真正倚靠的是什麼。<br><br>
+<strong>2. 以外邦的文化形式替換神的命令，是宗教同化的開端</strong><br>亞哈斯將大馬色的外邦壇複製到耶路撒冷，並以此取代原有的神的壇成為主壇。這種「看起來更時髦、更有吸引力」的外邦宗教形式，逐步取代了神所命定的敬拜方式。今日也有類似的現象：以流行文化的形式或世俗的智慧取代神的話語，把神的標準降為次要，把人的喜好放在首位。<br><br>
+<strong>3. 神的壇被降為「求問之用」是屬靈優先次序顛倒的警示</strong><br>亞哈斯把銅壇留下「我要用以求問耶和華」，表面上他仍保留了求問神的形式，實際上神已被邊緣化——只在他需要的時候才去問，日常的敬拜早已換成了外邦的形式。這是一個危險的屬靈模式：把神降為「顧問」而非「主」，只在危急時才求告，平時的生命由自己或外邦的標準主導。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>亞哈斯差遣使者去</strong><strong>見亞述王</strong>……說：『我是你的僕人、你的兒子……求你來救我。』亞哈斯將耶和華殿裏……所有的金銀都送給亞述王為禮物。」（王下16:7-8）</td>
+<td>就像一個人在困難時把家中最珍貴的財物送給鄰居以換取保護，卻忘了向最有能力幫助他的父親求助，亞哈斯以聖殿財寶換取外邦保護。你在最困難的時刻，是否也傾向先尋求人的幫助，而把向神求告放在最後？</td>
+</tr>
+<tr>
+<td>「<strong>亞哈斯王</strong>……<strong>在大馬色看見一座</strong>壇，就照壇的規模樣式作法畫了圖樣……建築一座壇……又將耶和華面前的銅壇從……搬到新壇的北邊。」（王下16:10-14）</td>
+<td>就像一個人把客廳的中心位置讓給一件新潮的裝飾品，把原本核心的家庭照片移到角落，亞哈斯把外邦壇放在中央，把神的壇移到旁邊。你生命中有沒有什麼東西悄悄取代了神的中心位置，而神卻被移到了一邊？</td>
+</tr>
+<tr>
+<td>「<strong>只是銅壇我要用以</strong><strong>求問耶和華</strong>。」（王下16:15）</td>
+<td>就像一個人只在年終才向長輩打電話，平時完全不聯絡，亞哈斯把神留作「備用的求問工具」。你與神的關係是日常的親密同行，還是只在需要求問時才想起祂？這個區別對你的生命有何影響？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第46章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第46章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">節期敬拜的規定與王的角色</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>主耶和華如此說：「內院朝東的門，在辦理事務的六日內必須關閉；惟有安息日和月朔必須敞開。</div>
+<div class="verse"><span class="verse-number">2</span>王要從這門的廊進入，站在門框旁邊。祭司要為他預備燔祭和平安祭，他就要在門檻那裏敬拜，然後出去。這門直到晚上不可關閉。</div>
+<div class="verse"><span class="verse-number">3</span>在安息日和月朔，國內的居民要在這門口，耶和華面前敬拜。</div>
+<div class="verse"><span class="verse-number">4</span>安息日，王所獻與耶和華的燔祭要用無殘疾的羊羔六隻，無殘疾的公綿羊一隻；</div>
+<div class="verse"><span class="verse-number">5</span>同獻的素祭要為公綿羊獻一伊法細麵，為羊羔照他的力量而獻，一伊法細麵加油一欣。</div>
+<div class="verse"><span class="verse-number">6</span>當月朔，要獻無殘疾的公牛犢一隻，羊羔六隻，公綿羊一隻，都要無殘疾的。</div>
+<div class="verse"><span class="verse-number">7</span>他也要預備素祭，為公牛獻一伊法細麵，為公綿羊獻一伊法細麵，為羊羔照他的力量而獻，一伊法細麵加油一欣。</div>
+<div class="verse"><span class="verse-number">8</span>王進入的時候必由這門的廊而入，也必由此而出。</div>
+<div class="verse"><span class="verse-number">9</span>「在各節期，國內居民朝見耶和華的時候，從北門進入敬拜的，必由南門而出；從南門進入的，必由北門而出。不可從所入的門而出，必要直往前行，由對門而出。</div>
+<div class="verse"><span class="verse-number">10</span>民進入，王也要在民中進入；民出去，王也要一同出去。</div>
+<div class="verse"><span class="verse-number">11</span>「在節期和聖會的日子同獻的素祭，要為一隻公牛獻一伊法細麵，為一隻公綿羊獻一伊法細麵，為羊羔照他的力量而獻，一伊法細麵加油一欣。</div>
+<div class="verse"><span class="verse-number">12</span>王預備甘心獻的燔祭或平安祭，就是向耶和華甘心獻的，當有人為他開朝東的門。他就預備燔祭和平安祭，與安息日預備的一樣，獻畢就出去。他出去之後，當有人將門關閉。」</div>
+<div class="verse"><span class="verse-number">13</span>「每日，你要預備無殘疾一歲的羊羔一隻，獻與耶和華為燔祭；要每早晨預備。</div>
+<div class="verse"><span class="verse-number">14</span>每早晨也要預備同獻的素祭，細麵一伊法六分之一，並油一欣三分之一，調和細麵。這素祭要常獻與耶和華為永遠的定例。</div>
+<div class="verse"><span class="verse-number">15</span>每早晨要這樣預備羊羔、素祭，並油為常獻的燔祭。」</div>
+<div class="verse"><span class="verse-number">16</span>主耶和華如此說：「王若將產業賜給他的兒子，就成了他兒子的產業，那是他們承受為業的。</div>
+<div class="verse"><span class="verse-number">17</span>倘若王將一分產業賜給他的臣僕，就成了他臣僕的產業；到自由之年仍要歸與王。至於王的產業，必歸與他的兒子。</div>
+<div class="verse"><span class="verse-number">18</span>王不可奪取民的產業，以至驅逐他們離開所承受的；他要從自己的地業中，將產業賜給他兒子，免得我的民分散，各人離開所承受的。」</div>
+<div class="verse"><span class="verse-number">19</span>那帶我的，將我從門旁進入之處、領進為祭司預備的聖屋，是朝北的，見後頭西邊有一塊地。</div>
+<div class="verse"><span class="verse-number">20</span>他對我說：「這是祭司煮贖愆祭、贖罪祭，烤素祭之地，免得帶到外院，使民成聖。」</div>
+<div class="verse"><span class="verse-number">21</span>他又帶我到外院，使我經過院子的四拐角，見每拐角各有一個院子。</div>
+<div class="verse"><span class="verse-number">22</span>院子四拐角的院子，周圍有牆，每院長四十肘，寬三十肘。四拐角院子的尺寸都是一樣，</div>
+<div class="verse"><span class="verse-number">23</span>其中周圍有一排房子，房子內有煮肉的地方。</div>
+<div class="verse"><span class="verse-number">24</span>他對我說：「這都是煮肉的房子，殿內的僕役要在這裏煮民的祭物。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第46章規定新聖殿中的敬拜秩序，包含安息日、月朔、各節期的獻祭規定，以及王的角色與地位。王在敬拜中有特殊但有限的角色：他從東門廊進入，站在門框旁，在門檻敬拜，「隨民進，隨民出」——王在敬拜中不比百姓有特殊的接近神的通道。這個設計平等化了敬拜的地位：在神面前，王和民都是受造者。規定中也提到每早晨的「常獻燔祭」——無論節期與否，每天都有獻給神的燔祭，象徵持續的敬拜節奏。章末處理王的產業問題：王可將產業賜給兒子為永業，但不可奪取民的產業，免得百姓分散。在神的秩序中，統治者的特權有其明確的邊界。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在神面前，王與民同進同出：真正的平等在敬拜中顯現</strong><br>「王也要在民中進入；民出去，王也要一同出去」——敬拜的空間是平等化的，沒有VIP通道。在神面前，地位和身分不賦予任何人更接近神的特權。信徒在信仰群體中應當彼此以神面前的平等相待，不因外在地位而賦予任何人更高的屬靈地位。<br><br>
+<strong>2. 每早晨的常獻燔祭：敬拜是日常的節奏，不只是節期的行動</strong><br>「每日要預備……每早晨要這樣預備……常獻的燔祭」——敬拜不只在節期，而是每天早晨的節奏。信仰的真實性不在於節慶時的熱情，而在於日常的持守。每早晨與神同在，是信仰生命最重要的基礎操練。<br><br>
+<strong>3. 統治者的特權有明確邊界：權柄不賦予侵犯他人產業的權利</strong><br>「王不可奪取民的產業，以至驅逐他們離開所承受的」——在神的秩序中，任何形式的權柄都有清楚的邊界。這是政治神學的核心原則：權力的擁有不等於可以任意使用；任何以「我是老大」為理由的掠奪，都違背了神設立權柄的本意。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>民進入</strong>，<strong>王也要在民中進入</strong>；民出去，王也要一同出去。（結46:10）</td>
+<td>在神面前，沒有人比別人更「近神」。你在信仰群體中，是否有時以某人的社會地位或才能，給予他在屬靈上不相稱的「特殊地位」？就像教會裡有人因為捐款多就覺得他的意見更重要，你如何在信仰群體中真正活出「王與民同進同出」的平等？</td>
+</tr>
+<tr>
+<td><strong>每早晨</strong>，<strong>你要預備無殘疾一</strong>歲的羊羔一隻，獻與耶和華為燔祭；要每早晨預備。（結46:13）</td>
+<td>「每早晨預備」——日常的敬拜節奏是信仰最真實的根基。你目前早晨的生活節奏，有沒有固定的「每早晨預備」——一個讓你在開始一天之前先與神同在的時刻？就像每天早晨吃早餐是讓身體有力氣的根基，你的靈命每天有沒有得到那頓「早晨的糧食」？</td>
+</tr>
+<tr>
+<td><strong>王不可奪取民的產</strong>業，<strong>以至驅逐他們離開</strong>所承受的；他要從自己的地業中，將產業賜給他兒子。（結46:18上）</td>
+<td>「不可奪取民的產業」——任何形式的權柄都有邊界。在你所擁有的任何「影響力」或「權柄」（家長、主管、老師）中，有沒有某個地方你已越過了界，用你的「權柄」實際上是在「奪取」他人應有的空間或尊嚴？就像一個大樹的根若擴張太廣，會擠壓旁邊小樹的生長，你願意今天省察你的影響力有沒有越了界？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

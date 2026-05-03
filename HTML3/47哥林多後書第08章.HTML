@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多後書第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多後書第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">慷慨奉獻的原則與基督的貧窮</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>弟兄們，我把神賜給馬其頓眾教會的恩告訴你們，</div>
+<div class="verse"><span class="verse-number">2</span>就是他們在患難中受大試煉的時候，仍有滿足的快樂，在極窮之間還格外顯出他們樂捐的厚恩。</div>
+<div class="verse"><span class="verse-number">3</span>我可以證明，他們是按着力量，而且也過了力量，自己甘心樂意的捐助，</div>
+<div class="verse"><span class="verse-number">4</span>再三的求我們，准他們在這供給聖徒的恩情上有分；</div>
+<div class="verse"><span class="verse-number">5</span>並且他們所作的，不但照我們所想望的，更照神的旨意先把自己獻給主，又歸附了我們。</div>
+<div class="verse"><span class="verse-number">6</span>因此我勸提多，既然在你們中間開辦這慈惠的事，就當辦成了。</div>
+<div class="verse"><span class="verse-number">7</span>你們既然在信心、口才、知識、熱心，和待我們的愛心上，都格外顯出滿足來，就當在這慈惠的事上也格外顯出滿足來。</div>
+<div class="verse"><span class="verse-number">8</span>我說這話，不是吩咐你們，乃是藉着別人的熱心試驗你們愛心的實在。</div>
+<div class="verse"><span class="verse-number">9</span>你們知道我們主耶穌基督的恩典：他本來富足，卻為你們成了貧窮，叫你們因他的貧窮，可以成為富足。</div>
+<div class="verse"><span class="verse-number">10</span>我在這事上把我的意見告訴你們，是與你們有益；因為你們下手辦這事，而且起此心意，已經有一年了，</div>
+<div class="verse"><span class="verse-number">11</span>如今就當辦成這事。既有願作的心，也當照你們所有的去辦成。</div>
+<div class="verse"><span class="verse-number">12</span>因為人若有願作的心，必蒙悅納，乃是照他所有的，並不是照他所無的。</div>
+<div class="verse"><span class="verse-number">13</span>我原不是要別人輕省，你們受累，</div>
+<div class="verse"><span class="verse-number">14</span>乃要均平，就是要你們的富餘，現在可以補他們的不足，使他們的富餘，將來也可以補你們的不足，這就均平了。</div>
+<div class="verse"><span class="verse-number">15</span>如經上所記：多收的也沒有餘；少收的也沒有缺。</div>
+<div class="verse"><span class="verse-number">16</span>多謝神，感動提多的心，叫他待你們殷勤，像我一樣。</div>
+<div class="verse"><span class="verse-number">17</span>他固然是聽了我的勸，但自己更是熱心，情願往你們那裏去。</div>
+<div class="verse"><span class="verse-number">18</span>我們還打發一位兄弟和他同去，這人在福音上得了眾教會的稱讚。</div>
+<div class="verse"><span class="verse-number">19</span>不但這樣，他也被眾教會挑選，和我們同行，把所託與我們的這捐貲送到了，可以榮耀主，又表明我們樂意的心。</div>
+<div class="verse"><span class="verse-number">20</span>這就免得有人因我們收的捐銀很多，就挑我們的不是。</div>
+<div class="verse"><span class="verse-number">21</span>我們留心行光明的事，不但在主面前，就在人面前也是這樣。</div>
+<div class="verse"><span class="verse-number">22</span>我們又打發一位兄弟同去；這人的熱心，我們在許多事上屢次試驗過。現在他因為深信你們，就更加熱心了。</div>
+<div class="verse"><span class="verse-number">23</span>論到提多，他是我的同伴，一同為你們勞碌的。論到那兩位兄弟，他們是眾教會的使者，是基督的榮耀。</div>
+<div class="verse"><span class="verse-number">24</span>所以，你們務要在眾教會面前顯明你們愛心的憑據，並我所誇獎你們的憑據。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第8章和第9章是保羅關於為耶路撒冷窮苦信徒奉獻的勸勉，是新約中關於慷慨奉獻原則最詳盡的論述。第8章首先以馬其頓教會的慷慨奉獻為榜樣，說明他們在大患難中受了許多苦，但仍按著力量甚至過了力量，自己甘心樂意地捐助，並說明他們先把自己獻給主，又照著神旨意把自己獻給保羅。接著保羅勸提多去哥林多完成收集奉獻的工作，並引用主耶穌基督的榜樣：祂本來富足卻為我們成了貧窮，叫我們因祂的貧窮可以成為富足。然後提出均平的奉獻原則：現在你們的有餘可以補他們的不足，以後他們的有餘也可以補你們的不足，就如有多收的沒有多餘、少收的也沒有缺乏。最後說明提多和另外兩位弟兄一同前去，請哥林多人向他們表明愛心並讓眾教會見到他們的熱心。本章以具體行動呈現基督徒慷慨的神學根基，以基督的自我犧牲為奉獻精神的最終典範。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 奉獻的動機是先把自己獻給主</strong><br>「他們所作的，不但照我們所想望的，更照神的旨意先把自己獻給主，又歸附了我們」——馬其頓人慷慨奉獻的根源，是他們先把整個生命獻給了主。奉獻金錢是這個全人委身的自然流露，不是分開的義務。真正的奉獻源自一個已獻給主的心，而非源自對規條的遵守。<br><br>
+<strong>2. 基督的自貧是奉獻最深的動機</strong><br>「他本來富足，卻為你們成了貧窮，叫你們因他的貧窮，可以成為富足」——基督的道成肉身和十字架是終極的「捐助」：放棄了天上的榮耀，成為人，為我們的罪死。這個無比的恩典，是每一次慷慨奉獻的動力。我給出的任何東西，都比不上祂為我放棄的。<br><br>
+<strong>3. 比例原則——照你所有的</strong><br>「乃是照他所有的，並不是照他所無的」——神不要求人給出他沒有的；奉獻是「照進項」（林前16:2），是比例的問題，不是固定數額的問題。「均平」不是共產主義，而是整個教會共同體中，富餘的補貧乏者的不足，使所有人都有足夠的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們知道我們主耶</strong><strong>穌基督的恩典</strong>：他本來富足，卻為你們成了貧窮，叫你們因他的貧窮，可以成為富足。（林後8:9）</td>
+<td>基督「本富足卻成了貧窮」這個事實，有沒有真實地激勵你在奉獻上的慷慨？就像被恩待得越多就越願意回報，你有沒有讓對基督犧牲的深度領悟，成為你在金錢和時間上慷慨給出的最深動力？</td>
+</tr>
+<tr>
+<td><strong>他們是按着力量</strong>，<strong>而且也過了力量</strong>，自己甘心樂意的捐助……更照神的旨意先把自己獻給主。（林後8:3,5）</td>
+<td>你的奉獻是從「先把自己獻給主」這個根基流出的，還是主要是在履行宗教義務？就像一個全心投入某人的伴侶會自然地為對方犧牲，你有沒有讓全人的委身成為你所有奉獻的根源？</td>
+</tr>
+<tr>
+<td><strong>因為人若有願作的</strong>心，<strong>必蒙悅納</strong>，乃是照他所有的，並不是照他所無的。（林後8:12）</td>
+<td>你有沒有讓「照你所有的」這個原則，使你不因自己的有限而不奉獻，也不因對比他人而自慚？就像每個孩子帶着力所能及的禮物給父母，都同樣珍貴，你有沒有在你的能力範圍內，慷慨地給出你所有的？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

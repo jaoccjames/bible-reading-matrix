@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第20章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第20章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以色列歷史的悖逆與歸回的盼望</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>第七年五月初十日，有以色列的幾個長老來求問耶和華，坐在我面前。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">3</span>「人子阿，你要告訴以色列的長老說，主耶和華如此說：你們來是求問我嗎？主耶和華說：我指着我的永生起誓，我必不被你們求問。</div>
+<div class="verse"><span class="verse-number">4</span>人子啊，你要審問審問他們嗎？你當使他們知道他們列祖那些可憎的事，</div>
+<div class="verse"><span class="verse-number">5</span>對他們說，主耶和華如此說：當日我揀選以色列，向雅各家的後裔起誓，在埃及地將自己向他們顯現，說：我是耶和華你們的神。</div>
+<div class="verse"><span class="verse-number">6</span>那日我向他們起誓，必領他們出埃及地，到我為他們察看的流奶與蜜之地；那地在萬國中是有榮耀的。</div>
+<div class="verse"><span class="verse-number">7</span>我對他們說，你們各人要拋棄眼所喜愛那可憎之物，不可因埃及的偶像玷污自己。我是耶和華你們的神。</div>
+<div class="verse"><span class="verse-number">8</span>他們卻悖逆我，不肯聽從我，不拋棄他們眼所喜愛那可憎之物，不離棄埃及的偶像。「我就說，我要將我的忿怒傾在他們身上，在埃及地向他們成就我怒中所定的。</div>
+<div class="verse"><span class="verse-number">9</span>我卻為我名的緣故沒有這樣行，免得我名在他們所住的列國人眼前被褻瀆；我領他們出埃及地，在這列國人的眼前將自己向他們顯現。</div>
+<div class="verse"><span class="verse-number">10</span>這樣，我就使他們出埃及地，領他們到曠野，</div>
+<div class="verse"><span class="verse-number">11</span>將我的律例賜給他們，將我的典章指示他們；人若遵行就必因此活着。</div>
+<div class="verse"><span class="verse-number">12</span>又將我的安息日賜給他們，好在我與他們中間為證據，使他們知道我耶和華是叫他們成為聖的。</div>
+<div class="verse"><span class="verse-number">13</span>以色列家卻在曠野悖逆我，不順從我的律例，厭棄我的典章（人若遵行就必因此活着），大大干犯我的安息日。「我就說，要在曠野將我的忿怒傾在他們身上，滅絕他們。</div>
+<div class="verse"><span class="verse-number">14</span>我卻為我名的緣故，沒有這樣行，免得我的名在我領他們出埃及的列國人眼前被褻瀆。</div>
+<div class="verse"><span class="verse-number">15</span>並且我在曠野向他們起誓，必不領他們進入我所賜給他們流奶與蜜之地（那地在萬國中是有榮耀的）；</div>
+<div class="verse"><span class="verse-number">16</span>因為他們厭棄我的典章，不順從我的律例，干犯我的安息日，他們的心隨從自己的偶像。</div>
+<div class="verse"><span class="verse-number">17</span>雖然如此，我眼仍顧惜他們，不毀滅他們，不在曠野將他們滅絕淨盡。</div>
+<div class="verse"><span class="verse-number">18</span>「我在曠野對他們的兒女說：不要遵行你們父親的律例，不要謹守他們的惡規，也不要因他們的偶像玷污自己。</div>
+<div class="verse"><span class="verse-number">19</span>我是耶和華你們的神，你們要順從我的律例，謹守遵行我的典章，</div>
+<div class="verse"><span class="verse-number">20</span>且以我的安息日為聖。這日在我與你們中間為證據，使你們知道我是耶和華你們的神。</div>
+<div class="verse"><span class="verse-number">21</span>只是他們的兒女悖逆我，不順從我的律例，也不謹守遵行我的典章（人若遵行就必因此活着），干犯我的安息日。「我就說，要將我的忿怒傾在他們身上，在曠野向他們成就我怒中所定的。</div>
+<div class="verse"><span class="verse-number">22</span>雖然如此，我卻為我名的緣故縮手沒有這樣行，免得我的名在我領他們出埃及的列國人眼前被褻瀆。</div>
+<div class="verse"><span class="verse-number">23</span>並且我在曠野向他們起誓，必將他們分散在列國，四散在列邦；</div>
+<div class="verse"><span class="verse-number">24</span>因為他們不遵行我的典章，竟厭棄我的律例，干犯我的安息日，眼目仰望他們父親的偶像。</div>
+<div class="verse"><span class="verse-number">25</span>我也任他們遵行不美的律例，謹守不能使人活着的惡規。</div>
+<div class="verse"><span class="verse-number">26</span>因他們將一切頭生的經火，我就任憑他們在這供獻的事上玷污自己，好叫他們淒涼，使他們知道我是耶和華。</div>
+<div class="verse"><span class="verse-number">27</span>「人子啊，你要告訴以色列家說，主耶和華如此說：你們的列祖在得罪我的事上褻瀆我；</div>
+<div class="verse"><span class="verse-number">28</span>因為我領他們到了我起誓應許賜給他們的地，他們看見各高山、各茂密樹，就在那裏獻祭，奉上惹我發怒的供物，也在那裏焚燒馨香的祭牲，並澆上奠祭。</div>
+<div class="verse"><span class="verse-number">29</span>我就對他們說：你們所上的那高處叫甚麼呢？（那高處的名字叫巴麻直到今日。）</div>
+<div class="verse"><span class="verse-number">30</span>所以你要對以色列家說，主耶和華如此說：你們仍照你們列祖所行的玷污自己嗎？仍照他們可憎的事行邪淫嗎？</div>
+<div class="verse"><span class="verse-number">31</span>你們奉上供物使你們兒子經火的時候，仍將一切偶像玷污自己，直到今日嗎？以色列家啊，我豈被你們求問嗎？主耶和華說：我指着我的永生起誓，我必不被你們求問。</div>
+<div class="verse"><span class="verse-number">32</span>「你們說：我們要像外邦人和列國的宗族一樣，去事奉木頭與石頭。你們所起的這心意萬不能成就。」</div>
+<div class="verse"><span class="verse-number">33</span>主耶和華說：「我指着我的永生起誓，我總要作王，用大能的手和伸出來的膀臂，並傾出來的忿怒，治理你們。</div>
+<div class="verse"><span class="verse-number">34</span>我必用大能的手和伸出來的膀臂，並傾出來的忿怒，將你們從萬民中領出來，從分散的列國內聚集你們。</div>
+<div class="verse"><span class="verse-number">35</span>我必帶你們到外邦人的曠野，在那裏當面刑罰你們。</div>
+<div class="verse"><span class="verse-number">36</span>我怎樣在埃及地的曠野刑罰你們的列祖，也必照樣刑罰你們。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">37</span>我必使你們從杖下經過，使你們被約拘束。</div>
+<div class="verse"><span class="verse-number">38</span>我必從你們中間除淨叛逆和得罪我的人，將他們從所寄居的地方領出來，他們卻不得入以色列地。你們就知道我是耶和華。</div>
+<div class="verse"><span class="verse-number">39</span>「以色列家啊，至於你們，主耶和華如此說：從此以後若不聽從我，就任憑你們去事奉偶像，只是不可再因你們的供物和偶像褻瀆我的聖名。</div>
+<div class="verse"><span class="verse-number">40</span>「主耶和華說：在我的聖山，就是以色列高處的山，所有以色列的全家都要事奉我。我要在那裏悅納你們，向你們要供物和初熟的土產，並一切的聖物。</div>
+<div class="verse"><span class="verse-number">41</span>我從萬民中領你們出來，從分散的列國內聚集你們，那時我必悅納你們好像馨香之祭，要在外邦人眼前在你們身上顯為聖。</div>
+<div class="verse"><span class="verse-number">42</span>我領你們進入以色列地，就是我起誓應許賜給你們列祖之地，那時你們就知道我是耶和華。</div>
+<div class="verse"><span class="verse-number">43</span>你們在那裏要追念玷污自己的行動作為，又要因所作的一切惡事厭惡自己。</div>
+<div class="verse"><span class="verse-number">44</span>主耶和華說：以色列家啊，我為我名的緣故，不照着你們的惡行和你們的壞事待你們；你們就知道我是耶和華。」</div>
+<div class="verse"><span class="verse-number">45</span>耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">46</span>「人子啊，你要面向南方，向南滴下預言攻擊南方田野的樹林。</div>
+<div class="verse"><span class="verse-number">47</span>對南方的樹林說，要聽耶和華的話。主耶和華如此說：我必使火在你中間着起，燒滅你中間的一切青樹和枯樹，猛烈的火焰必不熄滅。從南到北，人的臉面都被燒焦。</div>
+<div class="verse"><span class="verse-number">48</span>凡有血氣的都必知道是我耶和華使火着起，這火必不熄滅。」</div>
+<div class="verse"><span class="verse-number">49</span>於是我說：「哎！主耶和華阿，人都指着我說：他豈不是說比喻的嗎？」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第20章是神對以色列歷史最全面的回顧，場景是長老來求問時，神卻拒絕被求問，轉而歷數以色列自出埃及以來三個世代的悖逆模式：在埃及（7-8節）、在曠野第一代（11-17節）、在曠野第二代（18-26節）、在迦南地（27-29節）。每個時代都有相同的模式：神宣告律例→百姓悖逆→神說要傾倒忿怒→「卻為我名的緣故沒有這樣行」。這個反覆的「為我名的緣故」揭示：神對以色列的忍耐，是為了祂自己名聲在列國中的緣故，而非因為以色列配得。這是恩典最深刻的顯現：神的信實不建立在以色列的配得上，而建立在神自己的性情。章末（32-44節）宣告恢復的應許：神必親自作王，聚集被擄的人，帶他們回來，使他們在以色列地事奉祂，並且「你們就知道我是耶和華」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「為我名的緣故」：神的信實建立在祂自己的性情，而非人的配得</strong><br>神屢次說「我卻為我名的緣故沒有這樣行」——如果以色列的存活靠的是他們自己的配得，他們早就滅絕了。神的保守不是因為人值得被保守，而是因為神的名的完整性。這對信徒是最深的安慰：神對我們的信實，不取決於我們的表現，而取決於祂自己不變的性情。<br><br>
+<strong>2. 歷史的反省是防止重蹈覆轍的屬靈操練</strong><br>神讓以西結向長老歷數列祖的可憎之事，不是為了羞辱他們，而是為了讓當代人看清楚悖逆的模式。個人和群體若不正視歷史中重複的失敗模式，就會繼續重蹈覆轍。「記念」過去的失敗，是預防未來的智慧。<br><br>
+<strong>3. 神的最終目標是讓人在本地事奉祂、知道祂</strong><br>「我領你們進入以色列地……那時你們就知道我是耶和華」——神所有的作為都指向這個目標：讓人真正認識祂。審判、被擄、恢復，全都是在這個終極目標之下的歷史進程。信徒的生命中每一個處境，都是神讓我們「知道祂」的一個課堂。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我卻為我名的緣故</strong><strong>沒有這樣行</strong>，免得我名在他們所住的列國人眼前被褻瀆。（結20:9）</td>
+<td>「為我名的緣故」——神對你的保守，不是因為你配得，而是因為祂的名的完整性。這如何改變你對神恩典的理解？就像一個有信用的保證人，不是因為借款人值得信任而擔保，而是因為自己的聲譽，你是否讓「神的名」成為你最穩固的信靠根基，而不是你自己的表現？</td>
+</tr>
+<tr>
+<td><strong>你們要將所犯的一</strong><strong>切罪過盡行拋棄</strong>，自作一個新心和新靈。以色列家啊，你們何必死亡呢？（結20:31）</td>
+<td>「自作一個新心和新靈」——這裡的責任在人的一方，雖然最終的新心是神所賜（36:26）。這兩者的張力——神賜新心，但人也需要「拋棄罪過」——如何在你的屬靈生活中同時體現？就像減肥需要同時改變飲食（人的責任）和身體的代謝（自然過程），你在靈命更新中，神的工作和你的配合各佔什麼位置？</td>
+</tr>
+<tr>
+<td><strong>主耶和華說</strong>：<strong>我指着我的永生起</strong>誓，我總要作王，用大能的手和伸出來的膀臂，並傾出來的忿怒，治理你們。（結20:33）</td>
+<td>「我總要作王」——神的主權不以人的接受為前提。在你的生命中，有沒有某個你仍然自己「作王」的領域，沒有讓神真正掌管？就像一個公司有名義上的董事長，但實際決策都由另一人主導，你的生命有多少領域是真正由神作王，有多少仍是你自己在主導？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

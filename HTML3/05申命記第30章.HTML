@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第30章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第30章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">悔改歸回的應許與生死的抉擇</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「我所陳明在你面前的這一切咒詛都臨到你身上；你在耶和華你神追趕你到的萬國中必心裏追念祝福的話；</div>
+<div class="verse"><span class="verse-number">2</span>你和你的子孫若盡心盡性歸向耶和華你的神，照着我今日一切所吩咐的聽從他的話；</div>
+<div class="verse"><span class="verse-number">3</span>那時，耶和華你的神必憐恤你，救回你這被擄的子民；耶和華你的神要回轉過來，從分散你到的萬民中將你招聚回來。</div>
+<div class="verse"><span class="verse-number">4</span>你被趕散的人，就是在天涯的，耶和華你的神也必從那裏將你招聚回來。</div>
+<div class="verse"><span class="verse-number">5</span>耶和華你的神必領你進入你列祖所得的地，使你可以得着；又必善待你，使你的人數比你列祖眾多。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華你神必將你心裏和你後裔心裏的污穢除掉，好叫你盡心盡性愛耶和華你的神，使你可以存活。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華你的神必將這一切咒詛加在你仇敵和恨惡你、逼迫你的人身上。</div>
+<div class="verse"><span class="verse-number">8</span>你必歸回，聽從耶和華的話，遵行他的一切誡命，就是我今日所吩咐你的。</div>
+<div class="verse"><span class="verse-number">9</span>你若聽從耶和華你神的話，謹守這律法書上所寫的誡命律例，又盡心盡性歸向耶和華你的神，他必使你手裏所辦的一切事，並你身所生的，牲畜所下的，地土所產的都綽綽有餘；因為耶和華必再喜悅你，降福與你，像從前喜悅你列祖一樣</div>
+<div class="verse"><span class="verse-number">10</span>併於上節</div>
+<div class="verse"><span class="verse-number">11</span>「我今日所吩咐你的誡命不是你難行的，也不是離你遠的；</div>
+<div class="verse"><span class="verse-number">12</span>不是在天上，使你說：『誰替我們上天取下來，使我們聽見可以遵行呢？』</div>
+<div class="verse"><span class="verse-number">13</span>也不是在海外，使你說：『誰替我們過海取了來，使我們聽見可以遵行呢？』</div>
+<div class="verse"><span class="verse-number">14</span>這話卻離你甚近，就在你口中，在你心裏，使你可以遵行。</div>
+<div class="verse"><span class="verse-number">15</span>「看哪，我今日將生與福，死與禍，陳明在你面前。</div>
+<div class="verse"><span class="verse-number">16</span>吩咐你愛耶和華你的神，遵行他的道，謹守他的誡命、律例、典章，使你可以存活，人數增多，耶和華你神就必在你所要進去得為業的地上賜福與你。</div>
+<div class="verse"><span class="verse-number">17</span>倘若你心裏偏離，不肯聽從，卻被勾引去敬拜事奉別神，</div>
+<div class="verse"><span class="verse-number">18</span>我今日明明告訴你們，你們必要滅亡；在你過約但河、進去得為業的地上，你的日子必不長久。</div>
+<div class="verse"><span class="verse-number">19</span>我今日呼天喚地向你作見證；我將生死、禍福陳明在你面前，所以你要揀選生命，使你和你的後裔都得存活；</div>
+<div class="verse"><span class="verse-number">20</span>且愛耶和華你的神，聽從他的話，專靠他；因為他是你的生命，你的日子長久也在乎他。這樣，你就可以在耶和華向你列祖亞伯拉罕、以撒、雅各起誓應許所賜的地上居住。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第三十章是申命記神學中最充滿盼望與慈愛的一章，緊接在第二十八、二十九章嚴肅的咒詛警告之後，如春雨一般滋潤人心。本章宣告：即使以色列人因悖逆而遭受了所有的咒詛、被分散到列國之中，只要他們「歸心向耶和華你的神，向他聽從」（30:2），神就必從分散之地召聚他們歸回（30:3-5）。這個歸回的應許不只是地理上的，更是心靈上的：「耶和華你神必為你行割禮，並你後裔的心，叫你盡心盡性愛耶和華你的神，可以存活」（30:6）——這是一個關於「心的更新」的預言，新約學者將此與以西結書36章（我要把石心換為肉心）並列，視為新約聖靈更新工作的預表。本章的高峰是第19節：「我今日呼天喚地向你作見證，我將生死禍福陳明在你面前，所以你要揀選生命，使你和你的後裔都得存活。」這是聖經中最有力的「自由意志邀請」之一，呼召人在神面前作出決定性的選擇。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 悔改歸回的門永遠開著，神的慈愛超越人的失敗</strong><br>「日後你遭遇一切患難……你若歸心向耶和華你的神……耶和華你的神就必憐憫你，使你歸回，再從萬民中將你招聚回來」（申30:1-3）。這段話說明：沒有哪種失敗大到讓神關上悔改的門。即使以色列人走到了分散列國的最深谷底，神仍然在說：「回來，我在等你。」這是舊約中最接近路加福音浪子比喻的場景。<br><br>
+<strong>2. 心的割禮：真正的信仰更新必須由神來完成</strong><br>「耶和華你神必為你行割禮，並你後裔的心」（申30:6）。外在的割禮是以色列人的記號，但真正的更新必須在心裏發生，而這心的更新是神親自要做的工。這個預言指向新約聖靈更新的工作：外在的宗教行為可以是人為的，但生命深處的真實改變只有神能做到。今日信徒所求的不只是行為的改善，而是心靈的更新。<br><br>
+<strong>3. 揀選生命是每個人面對神最嚴肅的呼召</strong><br>「我將生死禍福陳明在你面前……所以你要揀選生命」（申30:19）。神不強迫人選擇，但祂清楚地陳明了選擇的後果，並主動呼籲人「揀選生命」。這段話揭示了神的心意：祂不願一人沉淪，祂渴望每個人都揀選生命之路。信仰的決定不是中性的——拒絕揀選生命，本身就是選擇了另一條路。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你若歸心向耶和華</strong><strong>你的神</strong>，向他聽從……耶和華你的神就必憐憫你，使你歸回。」（申30:2-3）</td>
+<td>神對悔改回轉的人永遠敞開大門，就像父母總是為離家的孩子留著一盞燈，在你生命中有沒有一個你已經漸漸遠離神的領域？神此刻如何在這段話中呼召你歸回？</td>
+</tr>
+<tr>
+<td>「<strong>耶和華你神必為你</strong><strong>行割禮</strong>，並你後裔的心，叫你盡心盡性愛耶和華你的神，可以存活。」（申30:6）</td>
+<td>真正的心靈更新是神的工作，就像心臟手術需要外科醫生而非病人自己動刀，你是否曾有某個根深蒂固的問題或習慣，是靠自己力量怎麼也改變不了的？你是否曾把它完全交給神，讓祂做「心的割禮」？</td>
+</tr>
+<tr>
+<td>「<strong>我今日呼天喚地向</strong><strong>你作見證</strong>，我將生死禍福陳明在你面前，所以你要揀選生命，使你和你的後裔都得存活。」（申30:19）</td>
+<td>選擇愛神就是選擇生命，就像選擇健康的飲食習慣是主動選擇長期的活力，在你目前的生命中，有哪一個重要的「生死選擇」——職業、關係、生活方式——你還沒有從「揀選生命」的角度去思考和決定？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

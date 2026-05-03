@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尼希米記第13章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+尼希米記第13章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">尼希米再度整頓，持守信仰純正</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當日，人念摩西的律法書給百姓聽，遇見書上寫着說，亞捫人和摩押人永不可入神的會；</div>
+<div class="verse"><span class="verse-number">2</span>因為他們沒有拿食物和水來迎接以色列人，且雇了巴蘭咒詛他們，但我們的神使那咒詛變為祝福。</div>
+<div class="verse"><span class="verse-number">3</span>以色列民聽見這律法，就與一切閑雜人絕交。</div>
+<div class="verse"><span class="verse-number">4</span>先是蒙派管理我們神殿中庫房的祭司以利亞實與多比雅結親，</div>
+<div class="verse"><span class="verse-number">5</span>便為他預備一間大屋子，就是從前收存素祭、乳香、器皿，和照命令供給利未人、歌唱的、守門的五穀、新酒，和油的十分之一，並歸祭司舉祭的屋子。</div>
+<div class="verse"><span class="verse-number">6</span>那時我不在耶路撒冷；因為巴比倫王亞達薛西三十二年，我回到王那裏。過了多日，我向王告假。</div>
+<div class="verse"><span class="verse-number">7</span>我來到耶路撒冷，就知道以利亞實為多比雅在神殿的院內預備屋子的那件惡事。</div>
+<div class="verse"><span class="verse-number">8</span>我甚惱怒，就把多比雅的一切家具從屋裏都拋出去，</div>
+<div class="verse"><span class="verse-number">9</span>吩咐人潔淨這屋子，遂將神殿的器皿和素祭、乳香又搬進去。</div>
+<div class="verse"><span class="verse-number">10</span>我見利未人所當得的分無人供給他們，甚至供職的利未人與歌唱的俱各奔回自己的田地去了。</div>
+<div class="verse"><span class="verse-number">11</span>我就斥責官長說：「為何離棄神的殿呢？」我便招聚利未人，使他們照舊供職。</div>
+<div class="verse"><span class="verse-number">12</span>猶大眾人就把五穀、新酒，和油的十分之一送入庫房。</div>
+<div class="verse"><span class="verse-number">13</span>我派祭司示利米雅、文士撒督，和利未人毘大雅作庫官管理庫房；副官是哈難。哈難是撒刻的兒子；撒刻是瑪他尼的兒子。這些人都是忠信的，他們的職分是將所供給的分給他們的弟兄。</div>
+<div class="verse"><span class="verse-number">14</span>我的神啊，求你因這事記念我，不要塗抹我為神的殿與其中的禮節所行的善。</div>
+<div class="verse"><span class="verse-number">15</span>那些日子，我在猶大見有人在安息日醡酒〔原文作踹酒醡〕，搬運禾捆馱在驢上，又把酒、葡萄、無花果，和各樣的擔子在安息日擔入耶路撒冷，我就在他們賣食物的那日警戒他們。</div>
+<div class="verse"><span class="verse-number">16</span>又有推羅人住在耶路撒冷；他們把魚和各樣貨物運進來，在安息日賣給猶大人。</div>
+<div class="verse"><span class="verse-number">17</span>我就斥責猶大的貴冑說：「你們怎麼行這惡事犯了安息日呢？</div>
+<div class="verse"><span class="verse-number">18</span>從前你們列祖豈不是這樣行，以致我們神使一切災禍臨到我們和這城嗎？現在你們還犯安息日，使忿怒越發臨到以色列！」</div>
+<div class="verse"><span class="verse-number">19</span>在安息日的前一日，耶路撒冷城門有黑影的時候，我就吩咐人將門關鎖，不過安息日不准開放。我又派我幾個僕人管理城門，免得有人在安息日擔甚麼擔子進城。</div>
+<div class="verse"><span class="verse-number">20</span>於是商人和販賣各樣貨物的，一兩次住宿在耶路撒冷城外。</div>
+<div class="verse"><span class="verse-number">21</span>我就警戒他們說：「你們為何在城外住宿呢？若再這樣，我必下手拿辦你們。」從此以後，他們在安息日不再來了。</div>
+<div class="verse"><span class="verse-number">22</span>我吩咐利未人潔淨自己，來守城門，使安息日為聖。我的神啊，求你因這事記念我，照你的大慈愛憐恤我。</div>
+<div class="verse"><span class="verse-number">23</span>那些日子，我也見猶大人娶了亞實突、亞捫、摩押的女子為妻。</div>
+<div class="verse"><span class="verse-number">24</span>他們的兒女說話，一半是亞實突的話，不會說猶大的話，所說的是照着各族的方言。</div>
+<div class="verse"><span class="verse-number">25</span>我就斥責他們，咒詛他們，打了他們幾個人，拔下他們的頭髮，叫他們指着神起誓，必不將自己的女兒嫁給外邦人的兒子，也不為自己和兒子娶他們的女兒。</div>
+<div class="verse"><span class="verse-number">26</span>我又說：「以色列王所羅門不是在這樣的事上犯罪嗎？在多國中並沒有一王像他，且蒙他神所愛，神立他作以色列全國的王；然而連他也被外邦女子引誘犯罪。</div>
+<div class="verse"><span class="verse-number">27</span>如此，我豈聽你們行這大惡，娶外邦女子干犯我們的神呢？」</div>
+<div class="verse"><span class="verse-number">28</span>大祭司以利亞實的孫子、耶何耶大的一個兒子是和倫人參巴拉的女婿，我就從我這裏把他趕出去。</div>
+<div class="verse"><span class="verse-number">29</span>我的神啊，求你記念他們的罪；因為他們玷污了祭司的職任，違背你與祭司利未人所立的約。</div>
+<div class="verse"><span class="verse-number">30</span>這樣，我潔淨他們，使他們離絕一切外邦人，派定祭司和利未人的班次，使他們各盡其職。</div>
+<div class="verse"><span class="verse-number">31</span>我又派百姓按定期獻柴和初熟的土產。我的神啊，求你記念我，施恩與我。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+尼希米記第13章是全書的終章，記載尼希米從波斯返回耶路撒冷後，發現百姓在他缺席期間已再度偏離，需要進行新一輪的整頓。問題涵蓋三個領域：一是聖殿的污染——仇敵多比雅竟住進了聖殿的庫房；二是安息日的廢弛——百姓在安息日經商交易；三是通婚的問題再度出現——猶大人又與外邦人通婚，下一代已不會說猶大話。尼希米逐一採取強力行動：把多比雅的東西全部拋出、潔淨聖殿；關閉城門守住安息日；斥責並要求百姓立誓不再通婚。全書以四次向神的簡短禱告——「求你記念我」——作結。這個不尋常的結局顯示：屬靈更新是需要反覆進行的持久工作，沒有「一勞永逸」；人的心容易偏離，需要不斷回轉，而尼希米的盼望最終只寄託在神的記念上。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 屬靈更新需要持續的警醒，不能一勞永逸</strong><br>尼希米離開一段時間，百姓就再度偏離。這說明屬靈的更新不是一次性的成就，而是需要持續的看顧和整頓。人心容易在安逸中鬆懈，在沒有責任感的環境下退步。信仰群體需要有負責的領袖持續牧養，個人也需要有自我的屬靈操練和群體的彼此監督，才能在時間中維持對神的委身。<br><br>
+<strong>2. 屬靈污染若不即時清除，會蔓延至群體的核心</strong><br>仇敵多比雅竟住進了聖殿的庫房，這是因為有人（祭司以利亞實）在位置上失職，為敵人開了門。尼希米的回應是「甚惱怒」並立刻清除。屬靈污染的危險在於它往往從內部、從信任的人開始；一旦進入，若不及時清除，就會侵占原本屬於神的空間。對神家的守護需要清醒和勇氣，即使那意味著處理自己人的問題。<br><br>
+<strong>3. 「求你記念我」是將功績和需要都交託神的謙遜信仰</strong><br>尼希米在整頓後四次向神說「求你記念我」，而不是誇耀自己的功績或要求神立即賜福。這短短的禱告包含了深刻的謙遜——他知道自己的一切服事最終要在神面前交帳，也知道自己需要神的恩典才能持守。這份向神完全倚靠的態度，是尼希米一生服事的精髓，也是尼希米記最後留給讀者的屬靈遺產。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我甚惱怒</strong>，<strong>就把多比雅的一切</strong>家具從屋裏都拋出去，吩咐人潔淨這屋子，遂將神殿的器皿和素祭、乳香又搬進去。（尼13:8-9）</td>
+<td>就像發現家裡有蟲害，不能只噴一下就算，必須徹底清除，當你發現自己的心靈或群體中有屬靈污染潛入時，你是否有勇氣「把它全部拋出去」，還是選擇容忍共存？</td>
+</tr>
+<tr>
+<td><strong>我就斥責官長說</strong>：「<strong>為何離棄神的殿呢</strong>？」我便招聚利未人，使他們照舊供職。（尼13:11）</td>
+<td>就像一個運作中的系統若沒有人維護就會逐漸失靈，神的家需要人持續委身供應。你是否有「離棄神的殿」的趨勢——疏於禱告、奉獻、聚會、服事？是什麼讓你漸漸退縮？</td>
+</tr>
+<tr>
+<td><strong>我的神啊</strong>，<strong>求你記念我</strong>，照你的大慈愛憐恤我。（尼13:22）</td>
+<td>就像寫完一份報告後只盼望上司看見並給予肯定，「求你記念我」是尼希米一切服事的最終歸宿。你服事神的動力是渴望人的稱讚，還是渴望在神面前被記念？這個答案如何影響你的選擇？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

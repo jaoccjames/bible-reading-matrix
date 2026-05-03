@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>傳道書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+傳道書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">享樂財富皆虛空：神的恩賜是當下的喜樂</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我心裏說：「來吧，我以喜樂試試你，你好享福！」誰知，這也是虛空。</div>
+<div class="verse"><span class="verse-number">2</span>我指嬉笑說：「這是狂妄。」論喜樂說：「有何功效呢？」</div>
+<div class="verse"><span class="verse-number">3</span>我心裏察究，如何用酒使我肉體舒暢，我心卻仍以智慧引導我；又如何持住愚昧，等我看明世人，在天下一生當行何事為美。</div>
+<div class="verse"><span class="verse-number">4</span>我為自己動大工程，建造房屋，栽種葡萄園，</div>
+<div class="verse"><span class="verse-number">5</span>修造園囿，在其中栽種各樣果木樹；</div>
+<div class="verse"><span class="verse-number">6</span>挖造水池，用以澆灌嫩小的樹木。</div>
+<div class="verse"><span class="verse-number">7</span>我買了僕婢，也有生在家中的僕婢；又有許多牛群羊群，勝過以前在耶路撒冷眾人所有的。</div>
+<div class="verse"><span class="verse-number">8</span>我又為自己積蓄金銀和君王的財寶，並各省的財寶；又得唱歌的男女和世人所喜愛的物，並許多的妃嬪。</div>
+<div class="verse"><span class="verse-number">9</span>這樣，我就日見昌盛，勝過以前在耶路撒冷的眾人。我的智慧仍然存留。</div>
+<div class="verse"><span class="verse-number">10</span>凡我眼所求的，我沒有留下不給他的；我心所樂的，我沒有禁止不享受的；因我的心為我一切所勞碌的快樂，這就是我從勞碌中所得的分。</div>
+<div class="verse"><span class="verse-number">11</span>後來，我察看我手所經營的一切事和我勞碌所成的功。誰知都是虛空，都是捕風；在日光之下毫無益處。</div>
+<div class="verse"><span class="verse-number">12</span>我轉念觀看智慧、狂妄，和愚昧。在王以後而來的人還能作甚麼呢？也不過行早先所行的就是了。</div>
+<div class="verse"><span class="verse-number">13</span>我便看出智慧勝過愚昧，如同光明勝過黑暗。</div>
+<div class="verse"><span class="verse-number">14</span>智慧人的眼目光明〔光明：原文作在他頭上〕，愚昧人在黑暗裏行。我卻看明有一件事，這兩等人都必遇見。</div>
+<div class="verse"><span class="verse-number">15</span>我就心裏說：「愚昧人所遇見的，我也必遇見，我為何更有智慧呢？」我心裏說，這也是虛空。</div>
+<div class="verse"><span class="verse-number">16</span>智慧人和愚昧人一樣，永遠無人記念，因為日後都被忘記；可歎智慧人死亡，與愚昧人無異。</div>
+<div class="verse"><span class="verse-number">17</span>我所以恨惡生命；因為在日光之下所行的事我都以為煩惱，都是虛空，都是捕風。</div>
+<div class="verse"><span class="verse-number">18</span>我恨惡一切的勞碌，就是我在日光之下的勞碌，因為我得來的必留給我以後的人。</div>
+<div class="verse"><span class="verse-number">19</span>那人是智慧是愚昧，誰能知道？他竟要管理我勞碌所得的，就是我在日光之下用智慧所得的。這也是虛空。</div>
+<div class="verse"><span class="verse-number">20</span>故此，我轉想我在日光之下所勞碌的一切工作，心便絕望。</div>
+<div class="verse"><span class="verse-number">21</span>因為有人用智慧、知識、靈巧所勞碌得來的，卻要留給未曾勞碌的人為分。這也是虛空，也是大患。</div>
+<div class="verse"><span class="verse-number">22</span>人在日光之下勞碌累心，在他一切的勞碌上得着甚麼呢？</div>
+<div class="verse"><span class="verse-number">23</span>因為他日日憂慮，他的勞苦成為愁煩，連夜間心也不安。這也是虛空。</div>
+<div class="verse"><span class="verse-number">24</span>人莫強如喫喝，且在勞碌中享福，我看這也是出於神的手。</div>
+<div class="verse"><span class="verse-number">25</span>論到喫用、享福，誰能勝過我呢？</div>
+<div class="verse"><span class="verse-number">26</span>神喜悅誰，就給誰智慧、知識，和喜樂；惟有罪人，神使他勞苦，叫他將所收聚的、所堆積的歸給神所喜悅的人。這也是虛空，也是捕風。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+傳道書第二章是傳道者個人「人生實驗」的詳細報告。他以王者的資源，系統性地測試了享樂（1-3節）、建設成就（4-6節）、財富積累（7-8節）等各種可能的生命滿足途徑，最終得出「都是虛空，都是捕風」（11節）的結論。這一章的歷史背景與所羅門王的生平高度吻合——所羅門建造了耶路撒冷聖殿、王宮，積累了無與倫比的財富，也有無數的妻妾（王上11:3），卻在生命的某一時刻發現這一切都無法填滿靈魂的空虛。第13-16節以智慧與愚昧的對比說明：即便智慧優於愚昧，但智慧人也難逃死亡，這使「為智慧而活」也顯得虛空。然而第24節是一個關鍵的轉折：傳道者不是陷入虛無主義，而是指向「在勞碌中享福乃是出於神的手」——當下的喜樂是神的恩賜，不需要從永恆的意義來建立，只需在神面前謙卑接受。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 以享樂為人生目標，最終帶來的是更深的空虛</strong><br>第1-11節詳述傳道者以享樂、成就和財富填滿生命的嘗試，卻在第11節坦然承認：「都是虛空，都是捕風；在日光之下毫無益處。」享樂本身不是罪惡，但若以它為人生的終極目的，它就成為一個永遠無法填滿的空洞。這是一個來自「過來人」的誠實見證，提醒信徒不要被現代消費文化引誘，以為更多的體驗、更大的成就能帶來真正的滿足。<br><br>
+<strong>2. 死亡使一切人間的成就相對化，促使人思考永恆</strong><br>第16節「智慧人和愚昧人一樣，永遠無人記念，因為日後都被忘記」，死亡的平等性使傳道者陷入危機。然而這種對死亡的誠實凝視，並非終點，而是引導人超越「日光之下」去思考更深的問題：生命的意義是否能建立在死亡無法帶走的事物上？這正是基督信仰的切入點——在復活的應許中，人的生命獲得了超越死亡的意義。<br><br>
+<strong>3. 當下的喜樂是神的恩賜，信心使人能在平凡中感恩</strong><br>第24節「人莫強如喫喝，且在勞碌中享福，我看這也是出於神的手」，是傳道書重要的神學轉折。傳道者不是悲觀地否定生命中的一切，而是指向一種由信仰支撐的當下滿足：以感恩的心接受每日的飲食與工作，視之為神的恩賜。這種「當下喜樂」的能力，不依賴累積更多，而源於對神慷慨的信靠與感謝。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「後來，<strong>我察看我手所經營</strong><strong>的一切事和我勞碌</strong>所成的功。誰知都是虛空，都是捕風；在日光之下毫無益處。」（傳2:11）</td>
+<td>就像跑步機讓人跑得很用力卻沒有真正前進，努力本身若沒有正確的方向就是徒勞，你目前生命中最大的努力和投入，其背後的動機和目標是什麼？那個方向能否給你帶來真正的滿足？</td>
+</tr>
+<tr>
+<td>「<strong>智慧人和愚昧人一</strong>樣，<strong>永遠無人記念</strong>，因為日後都被忘記。」（傳2:16）</td>
+<td>就像沙灘上的腳印，無論留下的人多麼努力，浪潮終究會將它們抹平，你有沒有思考過「被記念」的渴望？若一切都會被遺忘，是什麼讓你仍然感到生命有意義、有方向？</td>
+</tr>
+<tr>
+<td>「<strong>人莫強如喫喝</strong>，<strong>且在勞碌中享福</strong>，我看這也是出於神的手。」（傳2:24）</td>
+<td>就像一頓簡單的家常飯，若帶著感恩的心享用，往往比豪華大餐更令人滿足，你上一次真正地感謝神「當下的恩賜」是什麼時候？你的生活中有哪些日常的喜樂，是你還未充分感恩的？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

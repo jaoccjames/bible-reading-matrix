@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第28章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第28章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">承認離棄罪過必蒙憐恤：義人膽壯如獅子</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>惡人雖無人追趕也逃跑；義人卻膽壯像獅子。</div>
+<div class="verse"><span class="verse-number">2</span>邦國因有罪過，君王就多更換；因有聰明知識的人，國必長存。</div>
+<div class="verse"><span class="verse-number">3</span>窮人欺壓貧民，好像暴雨沖沒糧食。</div>
+<div class="verse"><span class="verse-number">4</span>違棄律法的，誇獎惡人；遵守律法的，卻與惡人相爭。</div>
+<div class="verse"><span class="verse-number">5</span>壞人不明白公義；惟有尋求耶和華的，無不明白。</div>
+<div class="verse"><span class="verse-number">6</span>行為純正的窮乏人勝過行事乖僻的富足人。</div>
+<div class="verse"><span class="verse-number">7</span>謹守律法的，是智慧之子；與貪食人作伴的，卻羞辱其父。</div>
+<div class="verse"><span class="verse-number">8</span>人以厚利加增財物，是給那憐憫窮人者積蓄的。</div>
+<div class="verse"><span class="verse-number">9</span>轉耳不聽律法的，他的祈禱也為可憎。</div>
+<div class="verse"><span class="verse-number">10</span>誘惑正直人行惡道的，必掉在自己的坑裏；惟有完全人必承受福分。</div>
+<div class="verse"><span class="verse-number">11</span>富足人自以為有智慧，但聰明的貧窮人能將他查透。</div>
+<div class="verse"><span class="verse-number">12</span>義人得志，有大榮耀；惡人興起，人就躲藏。</div>
+<div class="verse"><span class="verse-number">13</span>遮掩自己罪過的，必不亨通；承認離棄罪過的，必蒙憐恤。</div>
+<div class="verse"><span class="verse-number">14</span>常存敬畏的，便為有福；心存剛硬的，必陷在禍患裏。</div>
+<div class="verse"><span class="verse-number">15</span>暴虐的君王轄制貧民，好像吼叫的獅子、覓食的熊。</div>
+<div class="verse"><span class="verse-number">16</span>無知的君多行暴虐；以貪財為可恨的，必年長日久。</div>
+<div class="verse"><span class="verse-number">17</span>背負流人血之罪的，必往坑裏奔跑，誰也不可攔阻他。</div>
+<div class="verse"><span class="verse-number">18</span>行動正直的，必蒙拯救；行事彎曲的，立時跌倒。</div>
+<div class="verse"><span class="verse-number">19</span>耕種自己田地的，必得飽食；追隨虛浮的，足受窮乏。</div>
+<div class="verse"><span class="verse-number">20</span>誠實人必多得福；想要急速發財的，不免受罰。</div>
+<div class="verse"><span class="verse-number">21</span>看人的情面乃為不好；人因一塊餅枉法也為不好。</div>
+<div class="verse"><span class="verse-number">22</span>人有惡眼想要急速發財，卻不知窮乏必臨到他身。</div>
+<div class="verse"><span class="verse-number">23</span>責備人的，後來蒙人喜悅，多於那用舌頭諂媚人的。</div>
+<div class="verse"><span class="verse-number">24</span>偷竊父母的，說：「這不是罪」，此人就是與強盜同類。</div>
+<div class="verse"><span class="verse-number">25</span>心中貪婪的，挑起爭端；倚靠耶和華的，必得豐裕。</div>
+<div class="verse"><span class="verse-number">26</span>心中自是的，便是愚昧人；憑智慧行事的，必蒙拯救。</div>
+<div class="verse"><span class="verse-number">27</span>賙濟貧窮的，不致缺乏；佯為不見的，必多受咒詛。</div>
+<div class="verse"><span class="verse-number">28</span>惡人興起，人就躲藏；惡人敗亡，義人增多。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第二十八章以義人與惡人的對比為核心，在二十八節的篇幅中密集展開了關於良心、誠實、公義與認罪的屬靈教導。本章的開篇對比最具衝擊力：惡人雖無人追趕卻逃跑，義人卻膽壯如獅子（1節）——良心潔淨帶來真正的勇氣，良心不安則使人惶惶不可終日。在古以色列的法律與社會背景中，本章對貧富的態度（6節、11節）、對王的管治期望（15-16節），以及對憐憫窮人的強調（27節）均有重要的社會倫理意涵。第13節「遮掩自己罪過的，必不亨通；承認離棄罪過的，必蒙憐恤」，是整本箴言書中對認罪悔改最直接的呼召，與約翰一書1:9的新約教導遙相呼應。第25節「倚靠耶和華的，必得豐裕」是本章的信仰核心——真正的豐裕不來自貪婪，而來自對神的倚靠。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 認罪離棄罪過是蒙神憐恤的唯一通道</strong><br>第13節「遮掩自己罪過的，必不亨通；承認離棄罪過的，必蒙憐恤」，以強烈的對比揭示了人與神和好的唯一途徑。遮掩罪過的人或許能在人前維持外觀，卻在神面前無所遁形，也失去了被更新的機會；承認並離棄罪過的人，雖然面對真實的自我，卻能進入神憐恤的範圍。真正的「亨通」不是事業的順利，而是靈魂在神面前的通達。<br><br>
+<strong>2. 義人的膽壯來自良心的清白，而非環境的安全</strong><br>第1節「惡人雖無人追趕也逃跑；義人卻膽壯像獅子」，點出了良心與勇氣之間的深刻連結。惡人即使處於安全環境，內心的罪疚感使他始終處於逃跑的狀態；義人即使面對威脅，因為良心清白、倚靠神，能夠站立如獅子。屬靈的膽壯根植於與神的正確關係，而非來自外在的優勢。<br><br>
+<strong>3. 倚靠神是真正豐裕的根源，貪婪卻引向匱乏</strong><br>第25節「心中貪婪的，挑起爭端；倚靠耶和華的，必得豐裕」，以強烈的對比說明豐裕的兩條截然不同的道路。貪婪不只帶來物質上的問題，更引發關係的破裂與爭端；而倚靠神的人，卻能在知足中領受神所供應的豐裕。這一信念挑戰了人以為「得更多」才能「有更多」的線性邏輯，指向一個更深的屬靈現實：真正的豐裕來自與神的關係，而非來自資源的積累。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>遮掩自己罪過的</strong>，<strong>必不亨通</strong>；承認離棄罪過的，必蒙憐恤。」（箴28:13）</td>
+<td>就像身體的傷口若不清潔消毒，表面結痂可能掩蓋了內部的感染，遮掩罪過讓問題繼續惡化，你目前生命中有沒有一個「遮掩」而非「承認離棄」的罪或錯誤？是什麼讓你難以真正承認和放下它？</td>
+</tr>
+<tr>
+<td>「<strong>惡人雖無人追趕也</strong>逃跑；<strong>義人卻膽壯像獅子</strong>。」（箴28:1）</td>
+<td>就像在考試前作弊的人即使沒被抓到，也會在老師的目光下感到不安，而誠實作答的人則能坦然面對，你的良心目前是讓你感到「膽壯」還是「逃跑」的狀態？是什麼讓你的良心不安，又是什麼能讓你重新站立？</td>
+</tr>
+<tr>
+<td>「<strong>賙濟貧窮的</strong>，<strong>不致缺乏</strong>；佯為不見的，必多受咒詛。」（箴28:27）</td>
+<td>就像種樹的人要等待多年才能享受果蔭，慷慨施予的回報往往超越看得見的時間線，你有沒有因「怕缺乏」而在應當給予時選擇了「佯為不見」？現在你身邊有什麼具體的需要等待你的回應？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

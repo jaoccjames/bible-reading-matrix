@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第51章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第51章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大衛的悔罪詩：求神造清潔的心與更新的靈</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛與拔示巴同室以後，先知拿單來見他。他作這詩，交與伶長）神啊，求你按你的慈愛憐恤我！按你豐盛的慈悲塗抹我的過犯！</div>
+<div class="verse"><span class="verse-number">2</span>求你將我的罪孽洗除淨盡，並潔除我的罪！</div>
+<div class="verse"><span class="verse-number">3</span>因為我知道我的過犯；我的罪常在我面前。</div>
+<div class="verse"><span class="verse-number">4</span>我向你犯罪，惟獨得罪了你；在你眼前行了這惡，以致你責備我的時候顯為公義，判斷我的時候顯為清正。</div>
+<div class="verse"><span class="verse-number">5</span>我是在罪孽裏生的，在我母親懷胎的時候就有了罪。</div>
+<div class="verse"><span class="verse-number">6</span>你所喜愛的是內裏誠實；你在我隱密處，必使我得智慧。</div>
+<div class="verse"><span class="verse-number">7</span>求你用牛膝草潔淨我，我就乾淨；求你洗滌我，我就比雪更白。</div>
+<div class="verse"><span class="verse-number">8</span>求你使我得聽歡喜快樂的聲音，使你所壓傷的骨頭可以踊躍。</div>
+<div class="verse"><span class="verse-number">9</span>求你掩面不看我的罪，塗抹我一切的罪孽。</div>
+<div class="verse"><span class="verse-number">10</span>神啊，求你為我造清潔的心，使我裏面重新有正直〔或作：堅定〕的靈。</div>
+<div class="verse"><span class="verse-number">11</span>不要丟棄我，使我離開你的面；不要從我收回你的聖靈。</div>
+<div class="verse"><span class="verse-number">12</span>求你使我仍得救恩之樂，賜我樂意的靈扶持我，</div>
+<div class="verse"><span class="verse-number">13</span>我就把你的道指教有過犯的人，罪人必歸順你。</div>
+<div class="verse"><span class="verse-number">14</span>神啊，你是拯救我的神；求你救我脫離流人血的罪！我的舌頭就高聲歌唱你的公義。</div>
+<div class="verse"><span class="verse-number">15</span>主啊，求你使我嘴唇張開，我的口便傳揚讚美你的話！</div>
+<div class="verse"><span class="verse-number">16</span>你本不喜愛祭物，若喜愛，我就獻上；燔祭，你也不喜悅。</div>
+<div class="verse"><span class="verse-number">17</span>神所要的祭就是憂傷的靈；神阿，憂傷痛悔的心，你必不輕看。</div>
+<div class="verse"><span class="verse-number">18</span>求你隨你的美意善待錫安，建造耶路撒冷的城牆。</div>
+<div class="verse"><span class="verse-number">19</span>那時，你必喜愛公義的祭和燔祭並全牲的燔祭；那時，人必將公牛獻在你壇上。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第51篇是聖經中最重要的悔罪詩篇，也是七篇悔罪詩篇的核心之作。標題明確記載其歷史背景：大衛與拔示巴同室犯姦淫、設計殺死烏利亞之後，先知拿單奉神命前來責備大衛，使他認罪悔改（撒下11-12章）。大衛在神的面前寫下這首最深刻的悔罪之詩。
+
+      本篇呈現認罪悔改的完整歷程：認罪（1-6節）、求潔淨（7-9節）、求心靈更新（10-12節）、委身見證（13-15節）、神所要的真祭（16-17節）、為群體祈求（18-19節）。全篇最著名的節次是第10節「神啊，求你為我造清潔的心」——「造」（bara）是希伯來文中用於「從無到有的創造」的詞，表明心靈的更新是神的創造行動，超越人能自行改造的能力。
+
+      本篇在神學上具有極重要的地位：它揭示了悔改不只是行為的改變，更是心靈的重造；認罪的對象最終是神（第4節），因為一切罪最根本都是得罪神；而神所要的祭是「憂傷痛悔的心」（第17節），而非外在的宗教形式。本篇影響了整個基督教的認罪神學，至今仍是無數信徒在悔改時最深的靈魂呼求。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 認罪最終是向神的認罪，因祂是一切公義的根源</strong><br>「我向你犯罪，惟獨得罪了你；在你眼前行了這惡。」（第4節）大衛的罪明顯傷害了拔示巴和烏利亞，然而他宣告「惟獨得罪了你」。這不是否認對人的傷害，而是揭示罪的最深本質：所有的罪最終都是對神旨意和神聖潔本性的違背。真正的認罪，必須觸及這個最深的維度——不只是「我做錯了」，而是「我違背了你，神」。這種以神為中心的認罪，是悔改最深的形式，也是關係修復最根本的起點。<br><br>
+<strong>2. 心靈的更新需要神從無到有的創造能力</strong><br>「神啊，求你為我造清潔的心，使我裏面重新有正直的靈。」（第10節）「造」（bara）在創世記1章用於神的創造行動。大衛深知自己不能靠意志力或努力「改造」自己的心，唯有神能從無到有地為他造出新的心。這是恩典神學最深的告白：人的心靈敗壞超過人自身能修復的程度，唯有神的創造性工作能帶來真正的更新。這種對神更新能力的倚賴，是信仰生命持續成長最重要的謙卑態度。<br><br>
+<strong>3. 憂傷痛悔的心是神所要的祭，而非外在的宗教儀式</strong><br>「神所要的祭就是憂傷的靈；神阿，憂傷痛悔的心，你必不輕看。」（第17節）在認罪的過程中，神不要外在的補償或儀式，而要靈魂真實的破碎與悔痛。這種「憂傷的靈」不是表演給人看的情緒，而是靈魂在神面前真實地面對自己的罪的回應。神「必不輕看」憂傷痛悔的心——這是最深的保證：沒有任何一顆真誠悔改的心，會在神面前被拒絕。這個應許是無數罪人最深的安慰與回頭的勇氣。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我向你犯罪</strong>，<strong>惟獨得罪了你</strong>；在你眼前行了這惡，以致你責備我的時候顯為公義。（詩51:4）</td>
+<td>就像法律違規最終是對制訂法律的政府的違背，而非只是對其他人的冒犯，你在認罪時是否觸及那個最深的維度——不只說「我做錯了」，而是真正地承認「我得罪了你，神」，讓認罪成為真實的關係修復？</td>
+</tr>
+<tr>
+<td>神啊，<strong>求你為我造清潔的</strong>心，<strong>使我裏面重新有正</strong>直的靈。（詩51:10）</td>
+<td>就像一個老舊的鍋子再怎麼清洗也去不掉深層的鏽蝕，需要工匠重新鑄造，你是否認識到自己心靈的更新超過你自己能做到的程度，讓你真實地呼求神從無到有地為你造新心，而非只靠意志力改變行為？</td>
+</tr>
+<tr>
+<td><strong>神所要的祭就是憂</strong><strong>傷的靈</strong>；神阿，憂傷痛悔的心，你必不輕看。（詩51:17）</td>
+<td>就像一位摯友在你真心道歉時，能感受到那份誠意而不計較禮物的輕重，你是否相信神對你「憂傷痛悔的心」有最深的珍視，讓這確信給你勇氣帶著破碎的心回到神面前，而非等到「準備好了」才認罪？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰福音第19章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰福音第19章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">受難、十字架與「成了！」</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當下彼拉多將耶穌鞭打了。</div>
+<div class="verse"><span class="verse-number">2</span>兵丁用荊棘編作冠冕戴在他頭上，給他穿上紫袍，</div>
+<div class="verse"><span class="verse-number">3</span>又挨近他，說：「恭喜，猶太人的王啊！」他們就用手掌打他。</div>
+<div class="verse"><span class="verse-number">4</span>彼拉多又出來對眾人說：「我帶他出來見你們，叫你們知道我查不出他有甚麼罪來。」</div>
+<div class="verse"><span class="verse-number">5</span>耶穌出來，戴着荊棘冠冕，穿着紫袍。彼拉多對他們說：「你們看這個人！」</div>
+<div class="verse"><span class="verse-number">6</span>祭司長和差役看見他，就喊着說：「釘他十字架！釘他十字架！」彼拉多說：「你們自己把他釘十字架吧！我查不出他有甚麼罪來。」</div>
+<div class="verse"><span class="verse-number">7</span>猶太人回答說：「我們有律法，按那律法，他是該死的，因他以自己為神的兒子。」</div>
+<div class="verse"><span class="verse-number">8</span>彼拉多聽見這話，越發害怕，</div>
+<div class="verse"><span class="verse-number">9</span>又進衙門，對耶穌說：「你是那裏來的？」耶穌卻不回答。</div>
+<div class="verse"><span class="verse-number">10</span>彼拉多說：「你不對我說話麼？你豈不知我有權柄釋放你，也有權柄把你釘十字架麼？」</div>
+<div class="verse"><span class="verse-number">11</span>耶穌回答說：「若不是從上頭賜給你的，你就毫無權柄辦我。所以，把我交給你的那人罪更重了。」</div>
+<div class="verse"><span class="verse-number">12</span>從此，彼拉多想要釋放耶穌，無奈猶太人喊着說：「你若釋放這個人，就不是該撒的忠臣〔原文作朋友〕。凡以自己為王的，就是背叛該撒了。」</div>
+<div class="verse"><span class="verse-number">13</span>彼拉多聽見這話，就帶耶穌出來，到了一個地方，名叫「鋪華石處」，希伯來話叫厄巴大，就在那裏坐堂。</div>
+<div class="verse"><span class="verse-number">14</span>那日是預備逾越節的日子，約有午正。彼拉多對猶太人說：「看哪，這是你們的王！」</div>
+<div class="verse"><span class="verse-number">15</span>他們喊着說：「除掉他！除掉他！釘他在十字架上！」彼拉多說：「我可以把你們的王釘十字架麼？」祭司長回答說：「除了該撒，我們沒有王。」</div>
+<div class="verse"><span class="verse-number">16</span>於是彼拉多將耶穌交給他們去釘十字架。</div>
+<div class="verse"><span class="verse-number">17</span>他們就把耶穌帶了去。耶穌背着自己的十字架出來，到了一個地方，名叫「髑髏地」，希伯來話叫各各他。</div>
+<div class="verse"><span class="verse-number">18</span>他們就在那裏釘他在十字架上，還有兩個人和他一同釘着，一邊一個，耶穌在中間。</div>
+<div class="verse"><span class="verse-number">19</span>彼拉多又用牌子寫了一個名號，安在十字架上，寫的是：「猶太人的王，拿撒勒人耶穌。」</div>
+<div class="verse"><span class="verse-number">20</span>有許多猶太人念這名號；因為耶穌被釘十字架的地方與城相近，並且是用希伯來、羅馬、希利尼三樣文字寫的。</div>
+<div class="verse"><span class="verse-number">21</span>猶太人的祭司長就對彼拉多說：「不要寫『猶太人的王』，要寫『他自己說：我是猶太人的王。』」</div>
+<div class="verse"><span class="verse-number">22</span>彼拉多說：「我所寫的，我已經寫上了。」</div>
+<div class="verse"><span class="verse-number">23</span>兵丁既然將耶穌釘在十字架上，就拿他的衣服分為四分，每兵一分；又拿他的裏衣，這件裏衣原來沒有縫兒，是上下一片織成的。</div>
+<div class="verse"><span class="verse-number">24</span>他們就彼此說：「我們不要撕開，只要拈鬮，看誰得着。」這要應驗經上的話說：他們分了我的外衣，為我的裏衣拈鬮。兵丁果然作了這事。</div>
+<div class="verse"><span class="verse-number">25</span>站在耶穌十字架旁邊的，有他母親與他母親的姐妹，並革羅罷的妻子馬利亞，和抹大拉的馬利亞。</div>
+<div class="verse"><span class="verse-number">26</span>耶穌見母親和他所愛的那門徒站在旁邊，就對他母親說：「母親〔原文作婦人〕，看，你的兒子！」</div>
+<div class="verse"><span class="verse-number">27</span>又對那門徒說：「看，你的母親！」從此，那門徒就接她到自己家裏去了。</div>
+<div class="verse"><span class="verse-number">28</span>這事以後，耶穌知道各樣的事已經成了，為要使經上的話應驗，就說：「我渴了。」</div>
+<div class="verse"><span class="verse-number">29</span>有一個器皿盛滿了醋，放在那裏；他們就拿海絨蘸滿了醋，綁在牛膝草上，送到他口。</div>
+<div class="verse"><span class="verse-number">30</span>耶穌嘗〔原文作受〕了那醋，就說：「成了！」便低下頭，將靈魂交付神了。</div>
+<div class="verse"><span class="verse-number">31</span>猶太人因這日是預備日，又因那安息日是個大日，就求彼拉多叫人打斷他們的腿，把他們拿去，免得屍首當安息日留在十字架上。</div>
+<div class="verse"><span class="verse-number">32</span>於是兵丁來，把頭一個人的腿，並與耶穌同釘第二個人的腿，都打斷了。</div>
+<div class="verse"><span class="verse-number">33</span>只是來到耶穌那裏，見他已經死了，就不打斷他的腿。</div>
+<div class="verse"><span class="verse-number">34</span>惟有一個兵拿槍扎他的肋旁，隨即有血和水流出來。</div>
+<div class="verse"><span class="verse-number">35</span>看見這事的那人就作見證，他的見證也是真的，並且他知道自己所說的是真的，叫你們也可以信。</div>
+<div class="verse"><span class="verse-number">36</span>這些事成了，為要應驗經上的話說：「他的骨頭一根也不可折斷。」</div>
+<div class="verse"><span class="verse-number">37</span>經上又有一句說：「他們要仰望自己所扎的人。」</div>
+<div class="verse"><span class="verse-number">38</span>這些事以後，有亞利馬太人約瑟，是耶穌的門徒，只因怕猶太人，就暗暗的作門徒。他來求彼拉多，要把耶穌的身體領去。彼拉多允准，他就把耶穌的身體領去了。</div>
+<div class="verse"><span class="verse-number">39</span>又有尼哥底母，就是先前夜裏去見耶穌的，帶着沒藥和沉香，約有一百斤前來。</div>
+<div class="verse"><span class="verse-number">40</span>他們就照猶太人殯葬的規矩，把耶穌的身體用細麻布加上香料裹好了。</div>
+<div class="verse"><span class="verse-number">41</span>在耶穌釘十字架的地方有一個園子，園子裏有一座新墳墓，是從來沒有葬過人的。</div>
+<div class="verse"><span class="verse-number">42</span>只因是猶太人的預備日，又因那墳墓近，他們就把耶穌安放在那裏。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第19章記述耶穌被鞭打、被釘十字架及死亡，以及安葬的過程，是約翰福音受難敘事的核心，全章充滿應驗舊約預言的神學意識。本章首先記述彼拉多下令鞭打耶穌，兵丁給祂戴荊棘冠冕穿紫袍戲弄，彼拉多出來說你們看這個人，祭司長喊叫釘十字架，彼拉多三次聲稱找不到祂的罪，但猶太人說你若釋放這個人就不是凱撒的忠臣，彼拉多就將耶穌交給他們去釘十字架。他們把耶穌帶出讓祂自己背著十字架出城到各各他，將祂釘在十字架上，彼拉多寫了一個牌子說猶太人的王拿撒勒人耶穌，用三種語言寫的，祭司長要求改寫，彼拉多說我所寫的我已寫了。兵丁抽籤分耶穌的衣服應驗詩篇的預言。耶穌把母親托給約翰照顧。耶穌說我渴了，兵丁拿海絨蘸醋遞給祂，耶穌說成了，低下頭將靈魂交付神了。猶太人求彼拉多打斷腿，兵丁到耶穌那裡見祂已死就沒有打，卻用槍扎祂的肋旁，應驗了不折斷骨頭並人要仰望所刺之人的預言。最後約瑟和尼哥底母求得屍體，用香料和布裹好安放在園子裡的新墓。本章以精確的應驗預言呈現受難事件的神聖計劃性。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「成了！」是救贖工作完成的宣告</strong><br>「成了！」（希臘文 tetelestai，完成時態）——不是「終了了」的絕望，而是「完成了」的凱歌。這是商業用語，表示債務已全額清償。耶穌一生的使命、所有預言的應驗、神拯救計劃的成就，在這一刻全部完成。「成了」是信徒得救的確據：沒有任何事需要補加，沒有任何人類的善行可以添加在這個完整的救贖上。<br><br>
+<strong>2. 十字架上的從容是最高尚的愛</strong><br>在最劇烈的痛苦中，耶穌看見母親和所愛的門徒，把母親托付給那門徒。在自己最需要關懷的時刻，祂的心仍然在顧念別人。這個細節展示的不是感人的親情，而是愛的本質：在自己最缺乏的時候，仍然為他人而活。這是耶穌「愛他們到底」的最後一個具體表達。<br><br>
+<strong>3. 彼拉多的「我所寫的，我已經寫上了」是神的護理</strong><br>「猶太人的王，拿撒勒人耶穌」用三種語言宣告——這個牌子在不知情的情況下成了最廣泛的傳福音。宗教領袖要求修改，彼拉多說「我所寫的，我已經寫上了」——在人間的頑固中，神的旨意透過不情願的人得到成就。神的計劃不需要人人同意才能成就。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌嘗了那醋</strong>，就說：「成了！」<strong>便低下頭</strong>，將靈魂交付神了。（約19:30）</td>
+<td>「成了！」這個宣告有沒有真實地進入你的心，讓你從靠行為換取神恩典的努力中得釋放？就像繳清的賬單讓人徹底放下，你有沒有讓基督十字架「成了」的完整性成為你靈魂安息的根基？</td>
+</tr>
+<tr>
+<td><strong>耶穌見母親和他所</strong><strong>愛的那門徒站在旁</strong>邊，就對他母親說：「母親，看，你的兒子！」（約19:26）</td>
+<td>在你自己最掙扎的時候，你有沒有仍然顧念周圍的人的需要？就像急救員在災難現場仍然訓練有素地照顧每一個傷者，你願意讓耶穌這種即使在苦難中仍然顧念他人的愛，塑造你的生命嗎？</td>
+</tr>
+<tr>
+<td><strong>彼拉多對猶太人說</strong>：「看哪，<strong>這是你們的王</strong>！」（約19:14）</td>
+<td>耶穌是你真正的王嗎——不只是名義上的主，而是在你的決策、時間、金錢和關係上都有主權的王？就像一個國家宣稱尊重某法律但實際行為完全相反，你的生活方式有沒有真正讓耶穌作王？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

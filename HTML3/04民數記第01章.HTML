@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+民數記第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神命數點以色列軍民</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列人出埃及地後，第二年二月初一日，耶和華在西乃的曠野、會幕中曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">2</span>「你要按以色列全會眾的家室、宗族、人名的數目計算所有的男丁。</div>
+<div class="verse"><span class="verse-number">3</span>凡以色列中，從二十歲以外，能出去打仗的，你和亞倫要照他們的軍隊數點。</div>
+<div class="verse"><span class="verse-number">4</span>每支派中必有一人作本支派的族長，幫助你們。</div>
+<div class="verse"><span class="verse-number">5</span>他們的名字：屬流便的，有示丟珥的兒子以利蓿；</div>
+<div class="verse"><span class="verse-number">6</span>屬西緬的，有蘇利沙代的兒子示路蔑；</div>
+<div class="verse"><span class="verse-number">7</span>屬猶大的，有亞米拿達的兒子拿順；</div>
+<div class="verse"><span class="verse-number">8</span>屬以薩迦的，有蘇押的兒子拿坦業；</div>
+<div class="verse"><span class="verse-number">9</span>屬西布倫的，有希倫的兒子以利押；</div>
+<div class="verse"><span class="verse-number">10</span>約瑟子孫、屬以法蓮的，有亞米忽的兒子以利沙瑪；屬瑪拿西的，有比大蓿的兒子迦瑪列；</div>
+<div class="verse"><span class="verse-number">11</span>屬便雅憫的，有基多尼的兒子亞比但；</div>
+<div class="verse"><span class="verse-number">12</span>屬但的，有亞米沙代的兒子亞希以謝；</div>
+<div class="verse"><span class="verse-number">13</span>屬亞設的，有俄蘭的兒子帕結；</div>
+<div class="verse"><span class="verse-number">14</span>屬迦得的，有丟珥的兒子以利雅薩；</div>
+<div class="verse"><span class="verse-number">15</span>屬拿弗他利的，有以南的兒子亞希拉。</div>
+<div class="verse"><span class="verse-number">16</span>這都是從會中選召的，各作本支派的首領，都是以色列軍中的統領。」</div>
+<div class="verse"><span class="verse-number">17</span>於是，摩西、亞倫帶着這些按名指定的人，</div>
+<div class="verse"><span class="verse-number">18</span>當二月初一日招聚全會眾。會眾就照他們的家室、宗族、人名的數目，從二十歲以外的，都述說自己的家譜。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華怎樣吩咐摩西，他就怎樣在西乃的曠野數點他們。</div>
+<div class="verse"><span class="verse-number">20</span>以色列的長子，流便子孫的後代，照着家室、宗族、人名的數目，從二十歲以外，凡能出去打仗、被數的男丁，共有四萬六千五百名。</div>
+<div class="verse"><span class="verse-number">21</span>併於上節</div>
+<div class="verse"><span class="verse-number">22</span>西緬子孫的後代，照着家室、宗族、人名的數目，從二十歲以外，凡能出去打仗、被數的男丁，共有五萬九千三百名。</div>
+<div class="verse"><span class="verse-number">23</span>併於上節</div>
+<div class="verse"><span class="verse-number">24</span>迦得子孫的後代，照着家室、宗族、人名的數目，從二十歲以外，凡能出去打仗、被數的，共有四萬五千六百五十名。</div>
+<div class="verse"><span class="verse-number">25</span>併於上節</div>
+<div class="verse"><span class="verse-number">26</span>猶大子孫的後代，照着家室、宗族、人名的數目，從二十歲以外，凡能出去打仗、被數的，共有七萬四千六百名。</div>
+<div class="verse"><span class="verse-number">27</span>併於上節</div>
+<div class="verse"><span class="verse-number">28</span>以薩迦子孫的後代，照着家室、宗族、人名的數目，從二十歲以外，凡能出去打仗、被數的，共有五萬四千四百名。</div>
+<div class="verse"><span class="verse-number">29</span>併於上節</div>
+<div class="verse"><span class="verse-number">30</span>西布倫子孫的後代，照着家室、宗族、人名的數目，從二十歲以外，凡能出去打仗、被數的，共有五萬七千四百名。</div>
+<div class="verse"><span class="verse-number">31</span>併於上節</div>
+<div class="verse"><span class="verse-number">32</span>約瑟子孫屬以法蓮子孫的後代，照着家室、宗族、人名的數目，從二十歲以外，凡能出去打仗、被數的，共有四萬零五百名。</div>
+<div class="verse"><span class="verse-number">33</span>併於上節</div>
+<div class="verse"><span class="verse-number">34</span>瑪拿西子孫的後代，照着家室、宗族、人名的數目，從二十歲以外，凡能出去打仗、被數的，共有三萬二千二百名。</div>
+<div class="verse"><span class="verse-number">35</span>併於上節</div>
+<div class="verse"><span class="verse-number">36</span>便雅憫子孫的後代，照着家室、宗族、人名的數目，從二十歲以外，凡能出去打仗、被數的，共有三萬五千四百名。</div>
+<div class="verse"><span class="verse-number">37</span>併於上節</div>
+<div class="verse"><span class="verse-number">38</span>但子孫的後代，照着家室、宗族、人名的數目，從二十歲以外，凡能出去打仗、被數的，共有六萬二千七百名。</div>
+<div class="verse"><span class="verse-number">39</span>併於上節</div>
+<div class="verse"><span class="verse-number">40</span>亞設子孫的後代，照着家室、宗族、人名的數目，從二十歲以外，凡能出去打仗、被數的，共有四萬一千五百名。</div>
+<div class="verse"><span class="verse-number">41</span>併於上節</div>
+<div class="verse"><span class="verse-number">42</span>拿弗他利子孫的後代，照着家室、宗族、人名的數目，從二十歲以外，凡能出去打仗、被數的，共有五萬三千四百名。</div>
+<div class="verse"><span class="verse-number">43</span>併於上節</div>
+<div class="verse"><span class="verse-number">44</span>這些就是被數點的，是摩西、亞倫，和以色列中十二個首領所數點的；這十二個人各作各宗族的代表。</div>
+<div class="verse"><span class="verse-number">45</span>這樣，凡以色列人中被數的，照着宗族，從二十歲以外，能出去打仗、被數的，共有六十萬零三千五百五十名。</div>
+<div class="verse"><span class="verse-number">46</span>併於上節</div>
+<div class="verse"><span class="verse-number">47</span>利未人卻沒有按着支派數在其中，</div>
+<div class="verse"><span class="verse-number">48</span>因為耶和華曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">49</span>「惟獨利未支派你不可數點，也不可在以色列人中計算他們的總數。</div>
+<div class="verse"><span class="verse-number">50</span>只要派利未人管法櫃的帳幕和其中的器具，並屬乎帳幕的；他們要抬〔或作：搬運〕帳幕和其中的器具，並要辦理帳幕的事，在帳幕的四圍安營。</div>
+<div class="verse"><span class="verse-number">51</span>帳幕將往前行的時候，利未人要拆卸；將支搭的時候，利未人要豎起。近前來的外人必被治死。</div>
+<div class="verse"><span class="verse-number">52</span>以色列人支搭帳棚，要照他們的軍隊，各歸本營，各歸本纛。</div>
+<div class="verse"><span class="verse-number">53</span>但利未人要在法櫃帳幕的四圍安營，免得忿怒臨到以色列會眾；利未人並要謹守法櫃的帳幕。」</div>
+<div class="verse"><span class="verse-number">54</span>以色列人就這樣行。凡耶和華所吩咐摩西的，他們就照樣行了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+民數記第一章記載了以色列人出埃及後第二年二月初一日，耶和華在西乃曠野的會幕中吩咐摩西進行人口普查。這是以色列民族建立有組織的神治社群之關鍵一步。在領受律法（利未記）之後，神立即為祂的子民進行軍事統計，為即將踏上的應許之地征途做好準備。本章詳細記載了十二支派（利未支派除外）二十歲以上能出征男丁的數目，總計六十萬零三千五百五十人。每支派均設立族長協助摩西、亞倫主持普查。利未支派因承擔聖幕的看守與搬運職責，被神特別分別出來，不列入軍事統計。這次人口普查不僅是行政管理的需要，更顯示神是一位有秩序、有計畫帶領祂子民的神，也預示著以色列即將從西乃出發，走向應許之地的旅程。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的計畫需要有秩序的預備</strong><br>耶和華命令摩西數點以色列人，並非出於行政習慣，而是出於神有條不紊的帶領計畫。神在帶領祂的子民邁向應許之地之前，先確保每個人都被計算在內、各就各位。這教導我們，神不是隨意帶領祂的百姓，而是以智慧和秩序預備我們走上祂為我們安排的道路。信仰的旅程需要預備，而這預備本身就是神恩典的一部分。<br><br>
+<strong>2. 每個人在神的計畫中都有名有份</strong><br>普查按「家室、宗族、人名」逐一登記，顯示神認識並重視每一個人。在六十多萬人中，沒有一個是被忽略的。這反映了神對每位信徒的個別關顧，祂不以群體取代個人，而是在整體計畫中賦予每個人獨特的位置與呼召，確認每人都是神國度行動中不可或缺的一員。<br><br>
+<strong>3. 神分別利未人，職責各異，各盡其職</strong><br>利未人不被列入軍事普查，因為他們被神分別出來專門服侍聖幕。神的家需要不同恩賜和呼召的人分工合作：有人上戰場，有人守聖所。這教導我們，在神的國度中，每種呼召都同等重要，靈性的事奉與實際的行動同樣是神計畫不可缺少的部分。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你要按以色列全會</strong><strong>眾的家室</strong>、宗族、人名的數目計算所有的男丁。」（民1:2）</td>
+<td>神按名認識每一個人，就像手機通訊錄中每個聯絡人都有名字和身份一樣。你是否相信自己在神的計畫中是被認識、被記念的那一位，而不只是人群中的一個數字？</td>
+</tr>
+<tr>
+<td>「<strong>耶和華怎樣吩咐摩</strong>西，<strong>他就怎樣在西乃的</strong>曠野數點他們。」（民1:19）</td>
+<td>摩西完全遵照神的吩咐行事，就像遵循導航指示才不會迷路一樣。在你的生命旅程中，當神的指引與你自己的想法不同時，你願意順服還是習慣自行其是？</td>
+</tr>
+<tr>
+<td>「<strong>只要派利未人管法</strong><strong>櫃的帳幕和其中的</strong>器具……在帳幕的四圍安營。」（民1:50）</td>
+<td>利未人被分別出來專心守護聖所，就像專職的維修人員使建築物正常運作一樣。你是否也在神的群體中找到了自己獨特的崗位，並忠心地守護它？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

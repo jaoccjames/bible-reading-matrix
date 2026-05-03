@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>彌迦書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+彌迦書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">撒瑪利亞的審判與彌迦的哀歌</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當猶大王約坦、亞哈斯、希西家在位的時候，摩利沙人彌迦得耶和華的默示，論撒瑪利亞和耶路撒冷。</div>
+<div class="verse"><span class="verse-number">2</span>萬民哪，你們都要聽！地和其上所有的，也都要側耳而聽！主耶和華從他的聖殿要見證你們的不是。</div>
+<div class="verse"><span class="verse-number">3</span>看哪，耶和華出了他的居所，降臨步行地的高處。</div>
+<div class="verse"><span class="verse-number">4</span>眾山在他以下必消化，諸谷必崩裂，如蠟化在火中，如水沖下山坡。</div>
+<div class="verse"><span class="verse-number">5</span>這都因雅各的罪過，以色列家的罪惡。雅各的罪過在那裏呢？豈不是在撒瑪利亞嗎？猶大的邱壇在那裏呢？豈不是在耶路撒冷嗎？</div>
+<div class="verse"><span class="verse-number">6</span>所以我必使撒瑪利亞變為田野的亂堆，又作為種葡萄之處；也必將他的石頭倒在谷中，露出根基來。</div>
+<div class="verse"><span class="verse-number">7</span>他一切雕刻的偶像必被打碎；他所得的財物必被火燒；所有的偶像我必毀滅；因為是從妓女雇價所聚來的，後必歸為妓女的雇價。</div>
+<div class="verse"><span class="verse-number">8</span>先知說：因此我必大聲哀號，赤腳露體而行；又要呼號如野狗，哀鳴如鴕鳥。</div>
+<div class="verse"><span class="verse-number">9</span>因為撒瑪利亞的傷痕無法醫治，延及猶大和耶路撒冷我民的城門。</div>
+<div class="verse"><span class="verse-number">10</span>不要在迦特報告這事，總不要哭泣；我在伯亞弗拉滾於灰塵之中。</div>
+<div class="verse"><span class="verse-number">11</span>沙斐的居民哪，你們要赤身蒙羞過去。撒南的居民不敢出來。伯以薛人的哀哭使你們無處可站。</div>
+<div class="verse"><span class="verse-number">12</span>瑪律的居民心甚憂急，切望得好處，因為災禍從耶和華那裏臨到耶路撒冷的城門。</div>
+<div class="verse"><span class="verse-number">13</span>拉吉的居民哪，要用快馬套車；錫安民〔原文作女子〕的罪由你而起；以色列人的罪過在你那裏顯出。</div>
+<div class="verse"><span class="verse-number">14</span>猶大啊，你要將禮物送給摩利設迦特。亞革悉的眾族必用詭詐待以色列諸王。</div>
+<div class="verse"><span class="verse-number">15</span>瑪利沙的居民哪，我必使那奪取你的來到你這裏；以色列的尊貴人〔原文作榮耀〕必到亞杜蘭。</div>
+<div class="verse"><span class="verse-number">16</span>猶大啊，要為你所喜愛的兒女剪除你的頭髮，使頭光禿，要大大的光禿，如同禿鷹，因為他們都被擄去離開你。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+彌迦書第1章記載主前8世紀先知彌迦在猶大王約坦、亞哈斯、希西家時代的預言，他來自摩利沙，是個農村先知，代表社會底層的聲音。本章以宏大的末世異象開篇：神從聖殿出來，踐踏山嶺，萬山消化，以全地為見證人。接着神宣告審判的對象：撒瑪利亞（北國偶像崇拜的中心）和耶路撒冷（南國的首都）。撒瑪利亞必成廢墟，偶像被毀，因為她的財物是從偶像崇拜（「妓女的雇價」）而來。先知本人以極深的悲慟回應：哀號、赤腳露體、哀鳴如野狗鴕鳥——這是以西結式的先知代入式哀慟。章末是一系列地名的文字遊戲（在原文中）：各城邑的名字本身就含着審判的諷刺。傷口從北國蔓延到猶大和耶路撒冷的城門，說明屬靈的腐敗是有傳染性的。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神從聖殿出來：神的同在不只是安慰，也是審判的來源</strong><br>「耶和華出了他的居所，降臨步行地的高處」——神不是遠在天邊的旁觀者，祂主動出來介入歷史。這同一個神，對悖逆者是融山化嶺的烈火，對投靠者是保障。神的臨在是雙面的：對謙卑信靠者是救恩，對驕傲悖逆者是審判。信仰中的「神與我同在」不可只理解為安慰，也包括責任和敬畏。<br><br>
+<strong>2. 先知的哀哭是真實同情的表達，不是冷漠的宣判</strong><br>彌迦「大聲哀號，赤腳露體而行，呼號如野狗，哀鳴如鴕鳥」——他在傳遞審判信息的同時，真實地為百姓哀痛。這顯示真正的先知心腸：傳達審判不是冷漠的義務，而是伴隨着真實的悲傷。任何傳遞神話語的人，都需要這種「為所傳對象而痛的心腸」。<br><br>
+<strong>3. 屬靈的腐敗從偶像崇拜開始，有感染性地蔓延</strong><br>審判從撒瑪利亞延及猶大，從北國蔓延到南國——罪惡不停留在某個地方，有感染性。以色列向偶像崇拜妥協，最終影響到全國。信仰群體中的妥協若不被糾正，會像病毒一樣擴散，影響周圍的人。對罪的容忍和妥協，往往帶來比預期更大的屬靈代價。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>看哪，<strong>耶和華出了他的居</strong>所，<strong>降臨步行地的高處</strong>。（彌1:3）</td>
+<td>「神從聖殿出來」讓人知道神不只安坐在遠方。你平時對神的感知，是「神在遠處看着」還是「神在我生活中主動介入」？就像一個有時差遙控的家長和一個在場親身管教的父親是完全不同的關係，你對神同在的理解如何影響你日常的道德決定？</td>
+</tr>
+<tr>
+<td><strong>先知說</strong>：<strong>因此我必大聲哀號</strong>，赤腳露體而行；又要呼號如野狗，哀鳴如鴕鳥。（彌1:8）</td>
+<td>彌迦為即將受審判的百姓真實地哀哭。你在服事或禱告中，是否有這種「為所愛之人的受苦而哀哭」的能力？就像一個父母看見孩子走向危險時那種揪心的感受，你有沒有讓神的心腸——為失喪者而痛——真正成為你禱告的動力？</td>
+</tr>
+<tr>
+<td><strong>因為撒瑪利亞的傷</strong><strong>痕無法醫治</strong>，延及猶大和耶路撒冷我民的城門。（彌1:9）</td>
+<td>屬靈的腐敗有感染性。你所在的信仰群體中，有沒有某種「從別處傳來」的屬靈妥協正在悄悄蔓延？就像一個人帶着病毒進入群體，不自知地傳播，你如何成為一個帶着健康屬靈狀態進入群體的人，而非傳播妥協的人？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

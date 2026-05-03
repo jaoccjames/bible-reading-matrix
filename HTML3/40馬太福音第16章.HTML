@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">彼得的認信與背十字架</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>法利賽人和撒都該人來試探耶穌，請他從天上顯個神蹟給他們看。</div>
+<div class="verse"><span class="verse-number">2</span>耶穌回答說：「晚上天發紅，你們就說：『天必要晴。』</div>
+<div class="verse"><span class="verse-number">3</span>早晨天發紅，又發黑，你們就說：『今日必有風雨。』你們知道分辨天上的氣色，倒不能分辨這時候的神蹟。</div>
+<div class="verse"><span class="verse-number">4</span>一個邪惡淫亂的世代求神蹟，除了約拿的神蹟以外，再沒有神蹟給他看。」耶穌就離開他們去了。</div>
+<div class="verse"><span class="verse-number">5</span>門徒渡到那邊去，忘了帶餅。</div>
+<div class="verse"><span class="verse-number">6</span>耶穌對他們說：「你們要謹慎，防備法利賽人和撒都該人的酵。」</div>
+<div class="verse"><span class="verse-number">7</span>門徒彼此議論說：「這是因為我們沒有帶餅吧。」</div>
+<div class="verse"><span class="verse-number">8</span>耶穌看出來，就說：「你們這小信的人，為甚麼因為沒有餅彼此議論呢？</div>
+<div class="verse"><span class="verse-number">9</span>你們還不明白嗎？不記得那五個餅分給五千人、又收拾了多少籃子的零碎嗎？</div>
+<div class="verse"><span class="verse-number">10</span>也不記得那七個餅分給四千人、又收拾了多少筐子的零碎嗎？</div>
+<div class="verse"><span class="verse-number">11</span>我對你們說：『要防備法利賽人和撒都該人的酵』，這話不是指着餅說的，你們怎麼不明白呢？」</div>
+<div class="verse"><span class="verse-number">12</span>門徒這才曉得他說的不是叫他們防備餅的酵，乃是防備法利賽人和撒都該人的教訓。</div>
+<div class="verse"><span class="verse-number">13</span>耶穌到了該撒利亞腓立比的境內，就問門徒說：「人說我〔有古卷無我字〕人子是誰？」</div>
+<div class="verse"><span class="verse-number">14</span>他們說：「有人說是施洗的約翰；有人說是以利亞；又有人說是耶利米或是先知裏的一位。」</div>
+<div class="verse"><span class="verse-number">15</span>耶穌說：「你們說我是誰？」</div>
+<div class="verse"><span class="verse-number">16</span>西門彼得回答說：「你是基督，是永生神的兒子。」</div>
+<div class="verse"><span class="verse-number">17</span>耶穌對他說：「西門巴約拿，你是有福的！因為這不是屬血肉的指示你的，乃是我在天上的父指示的。</div>
+<div class="verse"><span class="verse-number">18</span>我還告訴你，你是彼得，我要把我的教會建造在這磐石上；陰間的權柄〔權柄：原文作門〕，不能勝過他。</div>
+<div class="verse"><span class="verse-number">19</span>我要把天國的鑰匙給你，凡你在地上所捆綁的，在天上也要捆綁；凡你在地上所釋放的，在天上也要釋放。」</div>
+<div class="verse"><span class="verse-number">20</span>當下，耶穌囑咐門徒，不可對人說他是基督。</div>
+<div class="verse"><span class="verse-number">21</span>從此，耶穌才指示門徒，他必須上耶路撒冷去，受長老、祭司長、文士許多的苦，並且被殺，第三日復活。</div>
+<div class="verse"><span class="verse-number">22</span>彼得就拉着他，勸他說：「主啊，萬不可如此！這事必不臨到你身上。」</div>
+<div class="verse"><span class="verse-number">23</span>耶穌轉過來，對彼得說：「撒但，退我後邊去吧！你是絆我腳的；因為你不體貼神的意思，只體貼人的意思。」</div>
+<div class="verse"><span class="verse-number">24</span>於是耶穌對門徒說：「若有人要跟從我，就當捨己，背起他的十字架來跟從我。</div>
+<div class="verse"><span class="verse-number">25</span>因為，凡要救自己生命〔生命：或作靈魂；下同〕的，必喪掉生命；凡為我喪掉生命的，必得着生命。</div>
+<div class="verse"><span class="verse-number">26</span>人若賺得全世界，賠上自己的生命，有甚麼益處呢？人還能拿甚麼換生命呢？</div>
+<div class="verse"><span class="verse-number">27</span>人子要在他父的榮耀裏同着眾使者降臨；那時候，他要照各人的行為報應各人。</div>
+<div class="verse"><span class="verse-number">28</span>我實在告訴你們，站在這裏的，有人在沒嘗死味以前必看見人子降臨在他的國裏。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第16章是馬太福音的轉折點，包含彼得宣認耶穌為基督的關鍵場景，以及耶穌首次明確預告自己的受死與復活。本章首先記述法利賽人和撒都該人前來試探耶穌，要求看天上的神蹟，耶穌斥責他們是奸惡淫亂的世代，只有約拿的神蹟可給他們看，並警告門徒防備他們的酵。然後在該撒利亞腓立比，耶穌詢問門徒人們說祂是誰，得到各種答案後，問他們自己說祂是誰，彼得宣認祂是基督、是永生神的兒子。耶穌稱讚彼得，宣告要將教會建在這磐石上，地獄的門不能勝過她，並把天國的鑰匙給彼得。接著耶穌開始清楚預告自己將往耶路撒冷受苦、被殺、第三天復活，彼得勸阻，耶穌嚴斥他說撒但退去，他是絆腳石，體貼人的事不體貼神的事。最後耶穌宣告凡要跟從祂的必須捨己、背起十字架，失喪生命的將得著生命，人子將在榮耀中來施行審判。本章標誌耶穌事工的重大轉折。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 正確認識耶穌是信仰的基礎</strong><br>彼得的認信「你是基督，是永生神的兒子」不是他自己推理得出的，而是天父的啟示。教會建立在這個認信上，而非建立在彼得這個人身上。今天每一個信徒也需要對耶穌有這個個人的認信——不只是知道關於祂的事，而是認識祂本人。這個問題耶穌今天仍然在問：「你說我是誰？」<br><br>
+<strong>2. 跟從基督意味着捨己背十字架</strong><br>彼得剛得到稱讚，立刻因試圖阻止耶穌受苦而被斥責為「撒但」。這個強烈的對比說明：即使最真誠的信徒，也可能在不知不覺中「體貼人的意思」而非「體貼神的意思」。跟從基督不是得到人生的保險，而是進入一條捨己的路。背十字架不是人生的苦難，而是主動選擇的犧牲。<br><br>
+<strong>3. 生命的真正計算是永恆而非眼前</strong><br>「人若賺得全世界，賠上自己的生命，有甚麼益處呢？」這個問題挑戰世俗的成功定義。短暫的財富、名聲、地位，在永恆的尺度下微不足道。信徒當學習以天國的眼光評估每一個生命抉擇：這個選擇在永恆的視角下是否值得？「為我喪掉生命的，必得着生命」——這是天國的經濟學。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>西門彼得回答說</strong>：「<strong>你是基督</strong>，是永生神的兒子。」（太16:16）</td>
+<td>對你來說，耶穌是誰？是一位歷史人物、道德楷模，還是你個人的救主與生命的主？就像知道一個人的名字和真正認識這個人是完全不同的事，你對耶穌的認識是個人的、活的，還是只停留在頭腦的知識層面？</td>
+</tr>
+<tr>
+<td><strong>若有人要跟從我</strong>，<strong>就當捨己</strong>，背起他的十字架來跟從我。（太16:24）</td>
+<td>在你生命中，「捨己」的十字架具體是什麼？就像登山者放棄不必要的重量才能攀登高峰，你願意放下哪些阻礙你跟從基督的東西——可能是習慣、關係、或自我中心的計劃？</td>
+</tr>
+<tr>
+<td><strong>人若賺得全世界</strong>，<strong>賠上自己的生命</strong>，有甚麼益處呢？（太16:26）</td>
+<td>你在生命中最重視的是什麼？就像退休後才發現一生追求的都不如和家人在一起有意義，你現在有沒有在永恆的尺度下評估你每天的選擇和優先次序？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第15章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第15章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">先知的哀歌與神的更新呼召</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華對我說：「雖有摩西和撒母耳站在我面前代求，我的心也不顧惜這百姓。你將他們從我眼前趕出，叫他們去吧！</div>
+<div class="verse"><span class="verse-number">2</span>他們問你說：『我們往那裏去呢？』你便告訴他們，耶和華如此說：定為死亡的，必至死亡；定為刀殺的，必交刀殺；定為饑荒的，必遭饑荒；定為擄掠的，必被擄掠。」</div>
+<div class="verse"><span class="verse-number">3</span>耶和華說：「我命定四樣害他們，就是刀劍殺戮、狗類撕裂、空中的飛鳥，和地上的野獸吞喫毀滅；</div>
+<div class="verse"><span class="verse-number">4</span>又必使他們在天下萬國中拋來拋去，都因猶大王希西家的兒子瑪拿西在耶路撒冷所行的事。」</div>
+<div class="verse"><span class="verse-number">5</span>耶路撒冷啊，誰可憐你呢？誰為你悲傷呢？誰轉身問你的安呢？</div>
+<div class="verse"><span class="verse-number">6</span>耶和華說：你棄絕了我，轉身退後；因此我伸手攻擊你，毀壞你。我後悔甚不耐煩。</div>
+<div class="verse"><span class="verse-number">7</span>我在境內各城門口〔或作：我在這地邊界的關口〕，用簸箕簸了我的百姓，使他們喪掉兒女。我毀滅他們，他們仍不轉離所行的道。</div>
+<div class="verse"><span class="verse-number">8</span>他們的寡婦在我面前比海沙更多；我使滅命的午間來，攻擊少年人的母親，使痛苦驚嚇忽然臨到她身上。</div>
+<div class="verse"><span class="verse-number">9</span>生過七子的婦人力衰氣絕；尚在白晝，日頭忽落；她抱愧蒙羞。其餘的人，我必在他們敵人跟前，交與刀劍。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">10</span>我的母親哪，我有禍了！因你生我作為遍地相爭相競的人。我素來沒有借貸與人，人也沒有借貸與我，人人卻都咒罵我。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華說：「我必要堅固你，使你得好處。災禍苦難臨到的時候，我必要使仇敵央求你。</div>
+<div class="verse"><span class="verse-number">12</span>（人豈能將銅與鐵，就是北方的鐵折斷呢？）</div>
+<div class="verse"><span class="verse-number">13</span>「我必因你在四境之內所犯的一切罪，把你的貨物財寶當掠物，白白地交給仇敵。</div>
+<div class="verse"><span class="verse-number">14</span>我也必使仇敵帶這掠物到你所不認識的地去，因我怒中起的火要將你們焚燒。」</div>
+<div class="verse"><span class="verse-number">15</span>耶和華啊，你是知道的；求你記念我，眷顧我，向逼迫我的人為我報仇；不要向他們忍怒取我的命，要知道我為你的緣故受了凌辱。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華萬軍之神啊，我得着你的言語，就當食物吃了；你的言語是我心中的歡喜快樂，因我是稱為你名下的人。</div>
+<div class="verse"><span class="verse-number">17</span>我沒有坐在宴樂人的會中，也沒有歡樂；我因你的感動〔原文作手〕獨自靜坐，因你使我滿心憤恨。</div>
+<div class="verse"><span class="verse-number">18</span>我的痛苦為何長久不止呢？我的傷痕為何無法醫治、不能痊癒呢？難道你待我有詭詐，像流乾的河道嗎？</div>
+<div class="verse"><span class="verse-number">19</span>耶和華如此說：你若歸回，我就將你再帶來，使你站在我面前；你若將寶貴的和下賤的分別出來，你就可以當作我的口。他們必歸向你，你卻不可歸向他們。</div>
+<div class="verse"><span class="verse-number">20</span>我必使你向這百姓成為堅固的銅牆；他們必攻擊你，卻不能勝你；因我與你同在，要拯救你，搭救你。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">21</span>我必搭救你脫離惡人的手，救贖你脫離強暴人的手。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第15章緊接旱災與假先知的審判，神對猶大的審判態度更加確定：即使是摩西與撒母耳這兩位以色列歷史上最偉大的代禱者也無法挽回（1節），猶大的命運——死亡、刀劍、饑荒、擄掠——已成定局，起因追溯至希西家之子瑪拿西王在位時深重的罪孽。然而本章最珍貴的部分是耶利米個人的「懺悔錄」（10-18節）：他哀嘆自己的出生，抱怨眾人咒罵他，質問神是否如「流乾的河道」般不可信靠。這種深度的內心掙扎令人動容。神的回應（19-21節）是整卷書最關鍵的轉捩點之一：「你若歸回，我就將你再帶來……你若將寶貴的和下賤的分別出來，你就可以當作我的口。」神不因耶利米的失落責備他，卻呼召他歸回、更新、繼續承擔使命，並應許與他同在，使他成為「堅固的銅牆」，不被攻破。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的話是靈魂的食物與喜樂</strong><br>第16節是本章最美麗的告白：「我得着你的言語，就當食物吃了；你的言語是我心中的歡喜快樂。」在重重壓力與孤立中，耶利米的力量來源不是環境改善，而是神的話本身。這提示信徒：讀經研經不只是宗教功課，而是靈魂的滋養。當生命陷入困頓，神的話是真實的力量泉源，能在最艱難的時刻帶來喜樂。<br><br>
+<strong>2. 真誠的靈魂掙扎不必隱藏</strong><br>耶利米在第18節直接質問神：「難道你待我有詭詐，像流乾的河道嗎？」這是極其大膽的禱告，卻沒有受到神的嚴厲責備。神接納這種誠實的靈魂哀鳴。信仰不要求我們壓抑懷疑或偽裝快樂，而是邀請我們以真實的心來到神面前。神能承受我們的質疑，祂的愛大過我們的失落與困惑。<br><br>
+<strong>3. 歸回神是更新力量的起點</strong><br>神對耶利米的回應「你若歸回，我就將你再帶來」，顯示即使先知跌倒，神仍不放棄他。「歸回」是條件，也是邀請：不是完美的表現，而是朝向神的轉身。神應許使他成為「堅固的銅牆」，這力量不來自耶利米自身的勇氣，而來自神的同在。當我們精疲力竭，歸回神是恢復使命力量的唯一途徑。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華萬軍之神啊</strong>，<strong>我得着你的言語</strong>，就當食物吃了；你的言語是我心中的歡喜快樂，因我是稱為你名下的人。（耶15:16）</td>
+<td>神的話在你生命中是什麼位置——是偶爾翻閱的參考書，還是每日滋養靈魂的食物？就像長期不進食身體會虛弱，你是否感覺靈命因缺少「讀經」這頓飯而逐漸無力？</td>
+</tr>
+<tr>
+<td><strong>我的痛苦為何長久</strong><strong>不止呢</strong>？我的傷痕為何無法醫治、不能痊癒呢？難道你待我有詭詐，像流乾的河道嗎？（耶15:18）</td>
+<td>你是否有過對神「失望」的時刻，感覺禱告沒有回應、苦難沒有盡頭？就像訂了外賣等了很久卻遲遲不到，開始懷疑是否下錯單了，你能把這種失落誠實地帶到神面前，而不是默默離開嗎？</td>
+</tr>
+<tr>
+<td><strong>耶和華如此說</strong>：<strong>你若歸回</strong>，我就將你再帶來，使你站在我面前；你若將寶貴的和下賤的分別出來，你就可以當作我的口。（耶15:19）</td>
+<td>當你因疲憊或失落而想放棄信仰的道路時，神的呼召是「歸回」，不是批評。就像手機需要重新連上充電器才能恢復電量，你今天願意做那個轉身回到神面前的動作嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

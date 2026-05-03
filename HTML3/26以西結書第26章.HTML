@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第26章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第26章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">推羅城的審判預言</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>第十一年十一月初一日，耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">2</span>「人子啊，因推羅向耶路撒冷說：『阿哈，那作眾民之門的已經破壞，向我開放；他既變為荒場，我必豐盛。』</div>
+<div class="verse"><span class="verse-number">3</span>所以，主耶和華如此說：推羅啊，我必與你為敵，使許多國民上來攻擊你，如同海使波浪湧上來一樣。</div>
+<div class="verse"><span class="verse-number">4</span>他們必破壞推羅的牆垣，拆毀她的城樓。我也要刮淨塵土，使她成為淨光的磐石。</div>
+<div class="verse"><span class="verse-number">5</span>他必在海中作曬網的地方，也必成為列國的擄物。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">6</span>屬推羅城邑的居民〔城邑的居民原文作田間的眾女；八節同〕必被刀劍殺滅，他們就知道我是耶和華。」</div>
+<div class="verse"><span class="verse-number">7</span>主耶和華如此說：「我必使諸王之王的巴比倫王尼布甲尼撒率領馬匹車輛、馬兵、軍隊，和許多人民從北方來攻擊你推羅。</div>
+<div class="verse"><span class="verse-number">8</span>他必用刀劍殺滅屬你城邑的居民，也必造臺築壘舉盾牌攻擊你。</div>
+<div class="verse"><span class="verse-number">9</span>他必安設撞城錘攻破你的牆垣，用鐵器拆毀你的城樓。</div>
+<div class="verse"><span class="verse-number">10</span>因他的馬匹眾多，塵土揚起遮蔽你。他進入你的城門，好像人進入已有破口之城。那時，你的牆垣必因騎馬的和戰車、輜重車的響聲震動。</div>
+<div class="verse"><span class="verse-number">11</span>他的馬蹄必踐踏你一切的街道，他必用刀殺戮你的居民；你堅固的柱子〔或作：柱像〕必倒在地上。</div>
+<div class="verse"><span class="verse-number">12</span>人必以你的財寶為擄物，以你的貨財為掠物，破壞你的牆垣，拆毀你華美的房屋，將你的石頭、木頭、塵土都拋在水中。</div>
+<div class="verse"><span class="verse-number">13</span>我必使你唱歌的聲音止息，人也不再聽見你彈琴的聲音。</div>
+<div class="verse"><span class="verse-number">14</span>我必使你成為淨光的磐石，作曬網的地方；你不得再被建造，因為這是主耶和華說的。」</div>
+<div class="verse"><span class="verse-number">15</span>主耶和華對推羅如此說：「在你中間行殺戮，受傷之人唉哼的時候，因你傾倒的響聲，海島豈不都震動嗎？</div>
+<div class="verse"><span class="verse-number">16</span>那時靠海的君王必都下位，除去朝服，脫下花衣，披上戰兢，坐在地上，時刻發抖，為你驚駭。</div>
+<div class="verse"><span class="verse-number">17</span>他們必為你作起哀歌說：你這有名之城，素為航海之人居住，在海上為最堅固的；平日你和居民使一切住在那裏的人無不驚恐；現在何竟毀滅了？</div>
+<div class="verse"><span class="verse-number">18</span>如今在你這傾覆的日子，海島都必戰兢；海中的群島見你歸於無有就都驚惶。」</div>
+<div class="verse"><span class="verse-number">19</span>主耶和華如此說：「推羅啊，我使你變為荒涼，如無人居住的城邑；又使深水漫過你，大水淹沒你。</div>
+<div class="verse"><span class="verse-number">20</span>那時，我要叫你下入陰府，與古時的人一同在地的深處、久已荒涼之地居住，使你不再有居民。我也要在活人之地顯榮耀〔我也云云：或作在活人之地不再有榮耀〕。</div>
+<div class="verse"><span class="verse-number">21</span>我必叫你令人驚恐，不再存留於世；人雖尋找你，卻永尋不見。這是主耶和華說的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第26章開始「論推羅的神諭」（26-28章），推羅是腓尼基的著名海港城市，以貿易繁榮聞名古代世界。推羅幸災樂禍地看見耶路撒冷（作眾民之門）被毀，以為從此可以佔據更多貿易，神因此宣告審判她。神預言巴比倫王尼布甲尼撒將率軍來攻，城牆和城樓將被摧毀，財寶被搶，歌聲止息，城市成為曬網的淨光磐石。本章末以「海島震動」和「諸王哀嘆」的壯觀場景描繪推羅倒塌對整個地中海貿易世界的衝擊。歷史上，推羅確實被巴比倫長期圍攻（約13年），後來亞歷山大大帝最終於主前332年完全毀滅了島上的推羅，其廢墟沉入海中，成了「曬網的地方」，正如以西結的預言。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 以他人的苦難圖利，是招致神審判的根源</strong><br>推羅說「耶路撒冷破壞了，向我開放，我必豐盛」——典型的趁火打劫心態。這不只是商業上的機會主義，而是對神子民苦難的冷漠剝削。信徒應反思：當別人遭難時，我的第一反應是同情還是機會計算？<br><br>
+<strong>2. 繁榮本身不能保障安全，一切地上的榮耀都是暫時的</strong><br>推羅的富有和繁榮在古代是無與倫比的，卻一夜之間成為曬網的磐石。地上的繁榮多麼真實，就有多麼脆弱。信徒不是要輕視物質，而是不把物質安全等同於真正的安全。<br><br>
+<strong>3. 神在歷史中的應許是可驗證的</strong><br>以西結書中對推羅的預言細節（城牆被拆、石頭拋入海、成為曬網地）後來一一應驗，讓讀者看見神話語的可靠性。這個歷史驗證是信仰的佐證，使信徒對尚未應驗的應許也有更深的確信。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>因推羅向耶路撒冷</strong>說：「阿哈，<strong>那作眾民之門的已</strong>經破壞，向我開放；他既變為荒場，我必豐盛。」（結26:2）</td>
+<td>你是否有時對別人的失敗感到暗暗「鬆了口氣」，因為那意味着對你的機會？就像競爭對手倒閉時心裡那一絲輕鬆，這種心態和推羅的「阿哈」有多大分別？你願意今天為那些正在失落中的人真心祝福，而非計算你的得益嗎？</td>
+</tr>
+<tr>
+<td><strong>我也要刮淨塵土</strong>，<strong>使她成為淨光的磐</strong>石……他必在海中作曬網的地方。（結26:4-5上）</td>
+<td>繁華的推羅最終成了曬網的磐石。你現在最引以為傲的成就或資產，若有一天消失，會留下什麼？就像豪華的宴席散場後只剩下殘局，你的生命有沒有在財富和成就之外，積累了不能被奪去的事物？</td>
+</tr>
+<tr>
+<td><strong>我必叫你令人驚恐</strong>，<strong>不再存留於世</strong>；人雖尋找你，卻永尋不見。這是主耶和華說的。（結26:21）</td>
+<td>推羅曾是「有何城如推羅」的傳奇，最終卻是「人雖尋找也不得見」的虛無。什麼樣的生命投資，不會以「不再存留」作結？就像建在沙上的房子和建在岩石上的房子，你今天在為一個什麼樣的「遺產」建造？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

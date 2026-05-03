@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第48章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第48章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以色列各支派地業的分配</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>眾支派按名所得之地記在下面：從北頭，由希特倫往哈馬口，到大馬色地界上的哈薩以難。北邊靠着哈馬地（各支派的地都有東西的邊界），是但的一分。</div>
+<div class="verse"><span class="verse-number">2</span>挨着但的地界，從東到西，是亞設的一分。</div>
+<div class="verse"><span class="verse-number">3</span>挨着亞設的地界，從東到西，是拿弗他利的一分。</div>
+<div class="verse"><span class="verse-number">4</span>挨着拿弗他利的地界，從東到西，是瑪拿西的一分。</div>
+<div class="verse"><span class="verse-number">5</span>挨着瑪拿西的地界，從東到西，是以法蓮的一分。</div>
+<div class="verse"><span class="verse-number">6</span>挨着以法蓮的地界，從東到西，是流便的一分。</div>
+<div class="verse"><span class="verse-number">7</span>挨着流便的地界，從東到西，是猶大的一分。</div>
+<div class="verse"><span class="verse-number">8</span>挨着猶大的地界，從東到西，必有你們所當獻的供地，寬二萬五千肘。從東界到西界，長短與各分之地相同，聖地當在其中。</div>
+<div class="verse"><span class="verse-number">9</span>你們獻與耶和華的供地要長二萬五千肘，寬一萬肘。</div>
+<div class="verse"><span class="verse-number">10</span>這聖供地要歸與祭司，北長二萬五千肘，西寬一萬肘，東寬一萬肘，南長二萬五千肘。耶和華的聖地當在其中。</div>
+<div class="verse"><span class="verse-number">11</span>這地要歸與撒督的子孫中成為聖的祭司，就是那守我所吩咐的。當以色列人走迷的時候，他們不像那些利未人走迷了。</div>
+<div class="verse"><span class="verse-number">12</span>這要歸與他們為供地，是全地中至聖的。供地挨着利未人的地界。</div>
+<div class="verse"><span class="verse-number">13</span>利未人所得的地要長二萬五千肘，寬一萬肘，與祭司的地界相等，都長二萬五千肘，寬一萬肘。</div>
+<div class="verse"><span class="verse-number">14</span>這地不可賣，不可換，初熟之物也不可歸與別人，因為是歸耶和華為聖的。</div>
+<div class="verse"><span class="verse-number">15</span>這二萬五千肘前面所剩下五千肘寬之地要作俗用，作為造城蓋房郊野之地。城要在當中。</div>
+<div class="verse"><span class="verse-number">16</span>城的尺寸乃是如此：北面四千五百肘，南面四千五百肘，東面四千五百肘，西面四千五百肘。</div>
+<div class="verse"><span class="verse-number">17</span>城必有郊野，向北二百五十肘，向南二百五十肘，向東二百五十肘，向西二百五十肘。</div>
+<div class="verse"><span class="verse-number">18</span>靠着聖供地的餘地，東長一萬肘，西長一萬肘，要與聖供地相等；其中的土產要作城內工人的食物。</div>
+<div class="verse"><span class="verse-number">19</span>所有以色列支派中，在城內作工的，都要耕種這地。</div>
+<div class="verse"><span class="verse-number">20</span>你們所獻的聖供地連歸城之地，是四方的：長二萬五千肘，寬二萬五千肘。</div>
+<div class="verse"><span class="verse-number">21</span>聖供地連歸城之地，兩邊的餘地要歸與王。供地東邊，南北二萬五千肘，東至東界，西邊南北二萬五千肘，西至西界，與各分之地相同，都要歸王。聖供地和殿的聖地要在其中，</div>
+<div class="verse"><span class="verse-number">22</span>並且利未人之地，與歸城之地的東西兩邊延長之地（這兩地在王地中間），就是在猶大和便雅憫兩界中間，要歸與王。</div>
+<div class="verse"><span class="verse-number">23</span>論到其餘的支派，從東到西，是便雅憫的一分。</div>
+<div class="verse"><span class="verse-number">24</span>挨着便雅憫的地界，從東到西，是西緬的一分。</div>
+<div class="verse"><span class="verse-number">25</span>挨着西緬的地界，從東到西，是以薩迦的一分。</div>
+<div class="verse"><span class="verse-number">26</span>挨着以薩迦的地界，從東到西，是西布倫的一分。</div>
+<div class="verse"><span class="verse-number">27</span>挨着西布倫的地界，從東到西，是迦得的一分。</div>
+<div class="verse"><span class="verse-number">28</span>迦得地的南界是從他瑪到米利巴加低斯的水，延到埃及小河，直到大海。</div>
+<div class="verse"><span class="verse-number">29</span>這就是你們要拈鬮分給以色列支派為業之地，乃是他們各支派所得之分。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">30</span>城的北面四千五百肘。出城之處如下；</div>
+<div class="verse"><span class="verse-number">31</span>城的各門要按以色列支派的名字。北面有三門，一為流便門，一為猶大門，一為利未門；</div>
+<div class="verse"><span class="verse-number">32</span>東面四千五百肘，有三門，一為約瑟門，一為便雅憫門，一為但門；</div>
+<div class="verse"><span class="verse-number">33</span>南面四千五百肘，有三門，一為西緬門，一為以薩迦門，一為西布倫門；</div>
+<div class="verse"><span class="verse-number">34</span>西面四千五百肘，有三門，一為迦得門，一為亞設門，一為拿弗他利門。</div>
+<div class="verse"><span class="verse-number">35</span>城四圍共一萬八千肘。從此以後，這城的名字必稱為「耶和華的所在」。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第48章是整卷書的終篇，記載十二支派在以色列地的分配，從北到南依序排列：但、亞設、拿弗他利、瑪拿西、以法蓮、流便、猶大（在聖供地北邊），聖供地（祭司、利未人、城市、王的地業），便雅憫、西緬、以薩迦、西布倫、迦得（在聖供地南邊）。整個分配以對稱的秩序為原則，神公平地將地賜給每一個支派，且包括寄居的外人（47:22）。最後描述新城市的十二個城門，每個城門以一個支派命名——三面各三門，象徵完全的包容。全書以一句話作結：「從此以後，這城的名字必稱為『耶和華的所在』。」Yahweh-Shammah——耶和華在那裡。這是整卷書、也是整個流亡期盼望的最終答案：不是土地的恢復、不是政治的重建，而是神的同在重返，成為城市最深的身分認同。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「耶和華的所在」：神的同在是最終、最深的盼望與應許</strong><br>以西結書以「耶和華的所在」作結——不是「以色列的強大」、不是「王朝的復興」，而是神在那裡。這是整卷書、整個被擄旅程的終極答案：人最深的渴望不是環境的改善，而是神的同在。信仰最終的嚮往，是在任何處境中都可以說：「耶和華在這裡。」<br><br>
+<strong>2. 地業的公平分配：神的秩序中每一個人都有份</strong><br>十二支派，每人一分，連外人也包括在內——神的恩典不遺漏任何人。在神的新秩序中，沒有人因出身、過去或身分而被遺留在分配之外。這是對所有感覺「被遺忘」或「不配有份」的人的直接應許：在神的版圖中，你有你的分。<br><br>
+<strong>3. 十二城門：所有支派都有進入神城的通道</strong><br>城的十二個城門，每個以一個支派命名——每一個支派都有自己的入口。沒有人被城門擋在外面。這個意象在啟示錄21章得到最終的應驗：那城有十二門，門上有十二使徒的名字，城永遠不關閉，因為神的光在其中。向萬人開放的城門，是神恩典最美麗的建築表達。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>從此以後</strong>，<strong>這城的名字必稱為</strong>「耶和華的所在」。（結48:35下）</td>
+<td>「耶和華的所在」——你現在所在的地方，可以稱為「耶和華的所在」嗎？不是說那裡完美，而是說神的同在是那裡最真實的定義。就像一個家的核心不是建築物而是住在裡面的人，你的生命有沒有成為可以真實地被稱為「耶和華的所在」的地方？</td>
+</tr>
+<tr>
+<td><strong>要拈鬮分這地為業</strong>，<strong>歸與自己和你們中</strong>間寄居的外人，就是在你們中間生養兒女的外人。你們要看他們如同以色列人中所生的一樣。（結47:22）</td>
+<td>「外人如同本族」——神的恢復秩序中包容了外人。在你的信仰群體中，有沒有某些人因為「不是自己人」——文化、背景、語言、社會地位——而實際上被對待得比「本族」差？就像家裡有訪客卻用破舊的碗，你如何讓你的群體真正活出「外人如同本族」？</td>
+</tr>
+<tr>
+<td><strong>城四圍共一萬八千</strong>肘。<strong>從此以後</strong>，這城的名字必稱為「耶和華的所在」。（結48:35）</td>
+<td>以西結書從神的榮耀離去（第10-11章）到神的榮耀歸回、城被稱為「耶和華的所在」——這是一段漫長的旅程。你個人的信仰旅程，也許有過神似乎「離去」的時刻。回顧那段旅程，你現在處於哪個位置？你有沒有期望你的生命，終有一天可以被稱為「耶和華的所在」？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

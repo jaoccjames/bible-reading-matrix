@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音第21章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+路加福音第21章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">末世預兆與寡婦的奉獻</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌抬頭觀看，見財主把捐項投在庫裏，</div>
+<div class="verse"><span class="verse-number">2</span>又見一個窮寡婦投了兩個小錢，</div>
+<div class="verse"><span class="verse-number">3</span>就說：「我實在告訴你們，這窮寡婦所投的比眾人還多；</div>
+<div class="verse"><span class="verse-number">4</span>因為眾人都是自己有餘，拿出來投在捐項裏，但這寡婦是自己不足，把她一切養生的都投上了。」</div>
+<div class="verse"><span class="verse-number">5</span>有人談論聖殿是用美石和供物妝飾的；</div>
+<div class="verse"><span class="verse-number">6</span>耶穌就說：「論到你們所看見的這一切，將來日子到了，在這裏沒有一塊石頭留在石頭上，不被拆毀了。」</div>
+<div class="verse"><span class="verse-number">7</span>他們問他說：「夫子！甚麼時候有這事呢？這事將到的時候有甚麼預兆呢？」</div>
+<div class="verse"><span class="verse-number">8</span>耶穌說：「你們要謹慎，不要受迷惑；因為將來有好些人冒我的名來，說：『我是基督，』又說：『時候近了』，你們不要跟從他們！</div>
+<div class="verse"><span class="verse-number">9</span>你們聽見打仗和擾亂的事，不要驚惶；因為這些事必須先有，只是末期不能立時就到。</div>
+<div class="verse"><span class="verse-number">10</span>當時，耶穌對他們說：「民要攻打民，國要攻打國；</div>
+<div class="verse"><span class="verse-number">11</span>地要大大震動，多處必有饑荒、瘟疫，又有可怕的異象和大神蹟從天上顯現。</div>
+<div class="verse"><span class="verse-number">12</span>但這一切的事以先，人要下手拿住你們，逼迫你們，把你們交給會堂，並且收在監裏，又為我的名拉你們到君王諸侯面前。</div>
+<div class="verse"><span class="verse-number">13</span>但這些事終必為你們的見證。</div>
+<div class="verse"><span class="verse-number">14</span>所以，你們當立定心意，不要預先思想怎樣分訴；</div>
+<div class="verse"><span class="verse-number">15</span>因為我必賜你們口才、智慧，是你們一切敵人所敵不住、駁不倒的。</div>
+<div class="verse"><span class="verse-number">16</span>連你們的父母、弟兄、親族、朋友也要把你們交官；你們也有被他們害死的。</div>
+<div class="verse"><span class="verse-number">17</span>你們要為我的名被眾人恨惡，</div>
+<div class="verse"><span class="verse-number">18</span>然而，你們連一根頭髮也必不損壞。</div>
+<div class="verse"><span class="verse-number">19</span>你們常存忍耐，就必保全靈魂〔或作：必得生命〕。」</div>
+<div class="verse"><span class="verse-number">20</span>「你們看見耶路撒冷被兵圍困，就可知道它成荒場的日子近了。</div>
+<div class="verse"><span class="verse-number">21</span>那時，在猶太的應當逃到山上；在城裏的應當出來；在鄉下的不要進城；</div>
+<div class="verse"><span class="verse-number">22</span>因為這是報應的日子，使經上所寫的都得應驗。</div>
+<div class="verse"><span class="verse-number">23</span>當那些日子，懷孕的和奶孩子的有禍了！因為將有大災難降在這地方，也有震怒臨到這百姓。</div>
+<div class="verse"><span class="verse-number">24</span>他們要倒在刀下，又被擄到各國去。耶路撒冷要被外邦人踐踏，直到外邦人的日期滿了。」</div>
+<div class="verse"><span class="verse-number">25</span>「日、月、星辰要顯出異兆，地上的邦國也有困苦；因海中波浪的響聲，就慌慌不定。</div>
+<div class="verse"><span class="verse-number">26</span>天勢都要震動，人想起那將要臨到世界的事，就都嚇得魂不附體。</div>
+<div class="verse"><span class="verse-number">27</span>那時，他們要看見人子有能力，有大榮耀駕雲降臨。</div>
+<div class="verse"><span class="verse-number">28</span>一有這些事，你們就當挺身昂首，因為你們得贖的日子近了。」</div>
+<div class="verse"><span class="verse-number">29</span>耶穌又設比喻對他們說：「你們看無花果樹和各樣的樹；它發芽的時候，你們一看見，自然曉得夏天近了。</div>
+<div class="verse"><span class="verse-number">30</span>併於上節</div>
+<div class="verse"><span class="verse-number">31</span>這樣，你們看見這些事漸漸的成就，也該曉得神的國近了。</div>
+<div class="verse"><span class="verse-number">32</span>我實在告訴你們，這世代還沒有過去，這些事都要成就。</div>
+<div class="verse"><span class="verse-number">33</span>天地要廢去，我的話卻不能廢去。」</div>
+<div class="verse"><span class="verse-number">34</span>「你們要謹慎，恐怕因貪食、醉酒，並今生的思慮累住你們的心，那日子就如同網羅忽然臨到你們；</div>
+<div class="verse"><span class="verse-number">35</span>因為那日子要這樣臨到全地上一切居住的人。</div>
+<div class="verse"><span class="verse-number">36</span>你們要時時儆醒，常常祈求，使你們能逃避這一切要來的事，得以站立在人子面前。」</div>
+<div class="verse"><span class="verse-number">37</span>耶穌每日在殿裏教訓人，每夜出城在一座山，名叫橄欖山住宿。</div>
+<div class="verse"><span class="verse-number">38</span>眾百姓清早上聖殿，到耶穌那裏，要聽他講道。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第21章記述耶穌稱讚寡婦的奉獻、預言聖殿被毀與末世徵兆，是路加福音的橄欖山講論，以末世警醒的呼召作結。本章首先記述耶穌看見富人和一個窮寡婦投奉獻，說寡婦投的比所有人都多，因她把自己一切養生的都投上了。接著有人談論聖殿的裝飾，耶穌預言這殿將被拆毀到一塊石頭也不留在石頭上。門徒問何時有這事和什麼兆頭，耶穌說不要被人迷惑，將有戰爭、地震、饑荒、瘟疫、天象異兆，這一切是生產之難的起頭。接著預告門徒將在會堂、監獄前受逼迫，被交官府，連父母兄弟親族也要出賣他們，但他們連頭髮也不會毫無損傷，以忍耐才能保全靈魂。然後描述耶路撒冷被大軍圍困時要逃往山上，外邦人將踐踏耶路撒冷直到外邦人的時候滿了。接著描述日月星辰的異兆，人子要有能力有大榮耀駕雲降臨，這些事情一發生就仰起頭來因為你們的救贖近了。最後以無花果樹的比喻勉勵辨認時代的徵兆，警告不可放縱自己，要時常警醒禱告，得以逃避這一切將要來的事，站立在人子面前。本章以現實的歷史預言與末世盼望並陳。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真正的奉獻衡量的是犧牲而非絕對數量</strong><br>寡婦的兩個小錢在神眼中比眾人的所有都多，因為那是「她一切養生的」。神的計算尺是犧牲的比例，不是絕對的數量。富人拿出有餘的，不痛不癢；寡婦拿出生活所需，是真正的信靠和委身。這挑戰信徒重新思考：我的奉獻（時間、金錢、精力）是從「餘裕」中拿出，還是真的觸碰到我的核心？<br><br>
+<strong>2. 儆醒和禱告是末世信徒的雙重盔甲</strong><br>「時時儆醒，常常祈求」——路加特別強調這兩個平行的命令。末世的危險不只來自外部的逼迫，更來自內部的沉淪——貪食、醉酒、今生的思慮，這些讓心變得「累住」。儆醒是屬靈的清醒狀態，祈求是與神保持連結的行動。兩者缺一不可：儆醒而不祈求，容易靠自己的力量；祈求而不儆醒，容易在不知不覺中軟化。<br><br>
+<strong>3. 末世的信徒是挺身昂首的人，不是驚恐退縮的人</strong><br>「一有這些事，你們就當挺身昂首，因為你們得贖的日子近了。」——耶穌關於末世的教導不是要嚇唬人，而是要裝備人。當末世的徵兆出現，信徒的反應應該是盼望而非恐懼，是期待而非退縮。這種盼望建立在「天地要廢去，我的話卻不能廢去」的確據上。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>我實在告訴你們</strong>，這窮寡婦所投的比眾人還多；因為眾人都是自己有餘，拿出來投在捐項裏，但這寡婦是自己不足，把她一切養生的都投上了。」（路21:3-4）</td>
+<td>你的奉獻——時間、金錢、才能——有沒有真的觸碰到你的核心，讓你感到有所犧牲？就像寡婦的兩個小錢雖小卻是她的全部，你願意讓神衡量你給出的比例，而非絕對數量嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>你們要時時儆醒</strong>，常常祈求，使你們能逃避這一切要來的事，得以站立在人子面前。」（路21:36）</td>
+<td>你有沒有把「時時儆醒、常常祈求」作為日常的屬靈操練？就像消防員隨時保持備勤狀態而非等到火災才準備，你願意讓靈命的儆醒和禱告成為你每天的常態嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>天地要廢去</strong>，我的話卻不能廢去。」（路21:33）</td>
+<td>你的信仰是建立在那些必然要廢去的東西上，還是建立在耶穌那不能廢去的話語上？就像建房子選擇磐石而非沙地，你有沒有讓神的話語成為你生命最不可撼動的根基？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

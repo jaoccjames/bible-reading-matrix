@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第19章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第19章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以弗所的聖靈充滿與亞底米風波</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>亞波羅在哥林多的時候，保羅經過了上邊一帶地方，就來到以弗所；在那裏遇見幾個門徒，</div>
+<div class="verse"><span class="verse-number">2</span>問他們說：「你們信的時候受了聖靈沒有？」他們回答說：「沒有，也未曾聽見有聖靈賜下來。」</div>
+<div class="verse"><span class="verse-number">3</span>保羅說：「這樣，你們受的是甚麼洗呢？」他們說：「是約翰的洗。」</div>
+<div class="verse"><span class="verse-number">4</span>保羅說：「約翰所行的是悔改的洗，告訴百姓當信那在他以後要來的，就是耶穌。」</div>
+<div class="verse"><span class="verse-number">5</span>他們聽見這話，就奉主耶穌的名受洗。</div>
+<div class="verse"><span class="verse-number">6</span>保羅按手在他們頭上，聖靈便降在他們身上，他們就說方言，又說預言〔或作：又講道〕</div>
+<div class="verse"><span class="verse-number">7</span>一共約有十二個人。</div>
+<div class="verse"><span class="verse-number">8</span>保羅進會堂，放膽講道，一連三個月，辯論神國的事，勸化眾人。</div>
+<div class="verse"><span class="verse-number">9</span>後來，有些人心裏剛硬不信，在眾人面前毀謗這道，保羅就離開他們，也叫門徒與他們分離，便在推喇奴的學房天天辯論。</div>
+<div class="verse"><span class="verse-number">10</span>這樣有兩年之久，叫一切住在亞西亞的，無論是猶太人，是希利尼人，都聽見主的道。</div>
+<div class="verse"><span class="verse-number">11</span>神藉保羅的手行了些非常的奇事；</div>
+<div class="verse"><span class="verse-number">12</span>甚至有人從保羅身上拿手巾或圍裙放在病人身上，病就退了，惡鬼也出去了。</div>
+<div class="verse"><span class="verse-number">13</span>那時，有幾個遊行各處、念咒趕鬼的猶太人，向那被惡鬼附的人擅自稱主耶穌的名，說：「我奉保羅所傳的耶穌敕令你們出來！」</div>
+<div class="verse"><span class="verse-number">14</span>作這事的，有猶太祭司長士基瓦的七個兒子。</div>
+<div class="verse"><span class="verse-number">15</span>惡鬼回答他們說：「耶穌我認識，保羅我也知道。你們卻是誰呢？」</div>
+<div class="verse"><span class="verse-number">16</span>惡鬼所附的人就跳在他們身上，勝了其中二人，制伏他們，叫他們赤着身子受了傷，從那房子裏逃出去了。</div>
+<div class="verse"><span class="verse-number">17</span>凡住在以弗所的，無論是猶太人，是希利尼人，都知道這事，也都懼怕；主耶穌的名從此就尊大了。</div>
+<div class="verse"><span class="verse-number">18</span>那已經信的，多有人來承認訴說自己所行的事。</div>
+<div class="verse"><span class="verse-number">19</span>平素行邪術的，也有許多人把書拿來，堆積在眾人面前焚燒。他們算計書價，便知道共合五萬塊錢。</div>
+<div class="verse"><span class="verse-number">20</span>主的道大大興旺，而且得勝，就是這樣。</div>
+<div class="verse"><span class="verse-number">21</span>這些事完了，保羅心裏定意經過了馬其頓、亞該亞，就往耶路撒冷去；又說：「我到了那裏以後，也必須往羅馬去看看。」</div>
+<div class="verse"><span class="verse-number">22</span>於是從幫助他的人中打發提摩太、以拉都二人往馬其頓去，自己暫時等在亞西亞。</div>
+<div class="verse"><span class="verse-number">23</span>那時，因為這道起的擾亂不小。</div>
+<div class="verse"><span class="verse-number">24</span>有一個銀匠，名叫底米丟，是製造亞底米神銀龕的，他使這樣手藝人生意發達。</div>
+<div class="verse"><span class="verse-number">25</span>他聚集他們和同行的工人，說：「眾位，你們知道我們是倚靠這生意發財。</div>
+<div class="verse"><span class="verse-number">26</span>這保羅不但在以弗所，也幾乎在亞西亞全地，引誘迷惑許多人，說：『人手所作的，不是神。』這是你們所看見所聽見的。</div>
+<div class="verse"><span class="verse-number">27</span>這樣，不獨我們這事業被人藐視，就是大女神亞底米的廟也要被人輕忽，連亞西亞全地和普天下所敬拜的大女神之威榮也要銷滅了。」</div>
+<div class="verse"><span class="verse-number">28</span>眾人聽見，就怒氣填胸，喊着說：「大哉，以弗所人的亞底米啊！」</div>
+<div class="verse"><span class="verse-number">29</span>滿城都轟動起來。眾人拿住與保羅同行的馬其頓人該猶和亞里達古，齊心擁進戲園裏去。</div>
+<div class="verse"><span class="verse-number">30</span>保羅想要進去，到百姓那裏，門徒卻不許他去。</div>
+<div class="verse"><span class="verse-number">31</span>還有亞西亞幾位首領，是保羅的朋友，打發人來勸他，不要冒險到戲園裏去。</div>
+<div class="verse"><span class="verse-number">32</span>聚集的人紛紛亂亂，有喊叫這個的，有喊叫那個的，大半不知道是為甚麼聚集。</div>
+<div class="verse"><span class="verse-number">33</span>有人把亞力山大從眾人中帶出來，猶太人推他往前，亞力山大就擺手，要向百姓分訴；</div>
+<div class="verse"><span class="verse-number">34</span>只因他們認出他是猶太人，就大家同聲喊着說：「大哉！以弗所人的亞底米啊。」如此約有兩小時。</div>
+<div class="verse"><span class="verse-number">35</span>那城裏的書記安撫了眾人，就說：「以弗所人哪，誰不知道以弗所人的城是看守大亞底米的廟和從丟斯那裏落下來的像呢？</div>
+<div class="verse"><span class="verse-number">36</span>這事既是駁不倒的，你們就當安靜，不可造次。</div>
+<div class="verse"><span class="verse-number">37</span>你們把這些人帶來，他們並沒有偷竊廟中之物，也沒有謗讟我們的女神。</div>
+<div class="verse"><span class="verse-number">38</span>若是底米丟和他同行的人有控告人的事，自有放告的日子〔或作：自有公堂〕，也有方伯可以彼此對告。</div>
+<div class="verse"><span class="verse-number">39</span>你們若問別的事，就可以照常例聚集斷定。</div>
+<div class="verse"><span class="verse-number">40</span>今日的擾亂本是無緣無故，我們難免被查問。論到這樣聚眾，我們也說不出所以然來。」</div>
+<div class="verse"><span class="verse-number">41</span>說了這話，便叫眾人散去。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第19章記述保羅在以弗所長達三年的事工，包括十二個門徒受洗、神蹟事工、驅鬼失敗的例子，以及因神殿手工業受衝擊而引發的大騷亂，是保羅事工高峰期的重要記錄。本章首先記述保羅到了以弗所，遇見只受過約翰之洗的門徒，問他們受洗時是否受了聖靈，他們說連有沒有聖靈也不知道，保羅為他們施洗並按手，聖靈就降在他們身上，他們說方言並說預言。保羅在推喇奴的學房天天辯論兩年，亞西亞所有的人都聽見了主的道。神藉保羅行了非常的神蹟，有人把布和圍裙帶去按在病人身上，病就退了。有幾個猶太人試著奉耶穌的名趕鬼，惡鬼說耶穌我認識保羅我也知道你們算甚麼，那人就跳在他們身上，他們赤著身子受傷逃走，許多行邪術的人把書拿出來當眾燒了。然後製造銀神龕的工匠底米丟，因保羅傳道使手工業受損，鼓動工匠眾人騷亂，大家一同喊叫以弗所人的大女神亞底米，書記平息眾人後眾人才散。本章展示福音的能力如何衝擊了文化、宗教與經濟的既有秩序。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真正認識神和人，才有屬靈的權柄</strong><br>「耶穌我認識，保羅我也知道，你們卻是誰呢？」——惡鬼的話揭示：屬靈的權柄來自真實的關係，不能靠借用他人的名義。士基瓦的兒子試圖「奉保羅所傳的耶穌」——間接的、借來的信仰，在真實的屬靈對抗中毫無力量。只有「我認識主，主也認識我」的真實關係，才有真正的屬靈能力。信仰不能是二手的。<br><br>
+<strong>2. 燒毀邪術書籍——悔改的具體行動</strong><br>「平素行邪術的，也有許多人把書拿來，堆積在眾人面前焚燒」——五萬塊錢的代價，是真實悔改的外在表現。他們沒有把書賣掉（那樣可以換回損失），而是燒毀，使這些書不再傷害他人。真實的悔改往往要求對過去的具體處理——不只是宣告，而是付代價的行動。「主的道大大興旺，而且得勝」跟在這個行動之後，說明徹底悔改帶出教會的興旺。<br><br>
+<strong>3. 世俗利益與神國的必然衝突</strong><br>底米丟的騷亂清楚說明：當福音真正影響一個社會，一定會衝擊既有的經濟和文化利益。「這保羅……說：人手所作的，不是神」直接威脅了偶像製造業。真實的信仰必然在某些方面「干擾」世界的秩序——這是福音的力量，而非社會的不穩定。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>惡鬼回答他們說</strong>：「<strong>耶穌我認識</strong>，保羅我也知道。你們卻是誰呢？」（徒19:15）</td>
+<td>你與耶穌的關係是你自己真實的、一手的認識，還是主要依賴別人的信仰在維持？就像只聽說過某位醫生但從未親自就醫，你有沒有讓你對耶穌的認識進入真實的個人交流和委身？</td>
+</tr>
+<tr>
+<td><strong>主的道大大興旺</strong>，<strong>而且得勝</strong>，就是這樣。（徒19:20）</td>
+<td>你有沒有在你生命中那些需要「燒毀邪術書」的地方——過去的習慣、毀壞的關係、不符合信仰的媒體——採取具體的行動，讓主的道在你生命中得勝？就像清除雜草需要連根拔起而非只是修剪，你有沒有對過去的錯誤進行徹底的處理？</td>
+</tr>
+<tr>
+<td><strong>底米丟說</strong>：「<strong>這保羅不但在以弗</strong>所，也幾乎在亞西亞全地，引誘迷惑許多人，說：『人手所作的，不是神。』」（徒19:26）</td>
+<td>你的信仰有沒有真實地挑戰你所在文化中的偶像——對金錢、成功、形象的偶像崇拜？就像好的藥物必然有副作用，真實的信仰必然會在你生命中製造一些「摩擦」，你有沒有允許福音在你的生活選擇中帶出真實的改變？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

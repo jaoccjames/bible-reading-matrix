@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第20章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第20章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">十誡的頒布</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>神吩咐這一切的話說：</div>
+<div class="verse"><span class="verse-number">2</span>「我是耶和華你的神，曾將你從埃及地為奴之家領出來。</div>
+<div class="verse"><span class="verse-number">3</span>「除了我以外，你不可有別的神。</div>
+<div class="verse"><span class="verse-number">4</span>「不可為自己雕刻偶像，也不可作甚麼形像彷彿上天、下地，和地底下、水中的百物。</div>
+<div class="verse"><span class="verse-number">5</span>不可跪拜那些像，也不可事奉它，因為我耶和華你的神是忌邪的神。恨我的，我必追討他的罪，自父及子，直到三四代；</div>
+<div class="verse"><span class="verse-number">6</span>愛我、守我誡命的，我必向他們發慈愛，直到千代。</div>
+<div class="verse"><span class="verse-number">7</span>「不可妄稱耶和華你神的名；因為妄稱耶和華名的，耶和華必不以他為無罪。</div>
+<div class="verse"><span class="verse-number">8</span>「當記念安息日，守為聖日。</div>
+<div class="verse"><span class="verse-number">9</span>六日要勞碌作你一切的工，</div>
+<div class="verse"><span class="verse-number">10</span>但第七日是向耶和華你神當守的安息日。這一日你和你的兒女、僕婢、牲畜，並你城裏寄居的客旅，無論何工都不可作；</div>
+<div class="verse"><span class="verse-number">11</span>因為六日之內，耶和華造天、地、海，和其中的萬物，第七日便安息，所以耶和華賜福與安息日，定為聖日。</div>
+<div class="verse"><span class="verse-number">12</span>「當孝敬父母，使你的日子在耶和華你神所賜你的地上得以長久。</div>
+<div class="verse"><span class="verse-number">13</span>「不可殺人。</div>
+<div class="verse"><span class="verse-number">14</span>「不可姦淫。</div>
+<div class="verse"><span class="verse-number">15</span>「不可偷盜。</div>
+<div class="verse"><span class="verse-number">16</span>「不可作假見證陷害人。</div>
+<div class="verse"><span class="verse-number">17</span>「不可貪戀人的房屋；也不可貪戀人的妻子、僕婢、牛驢，並他一切所有的。」</div>
+<div class="verse"><span class="verse-number">18</span>眾百姓見雷轟、閃電、角聲、山上冒煙，就都發顫，遠遠的站立，</div>
+<div class="verse"><span class="verse-number">19</span>對摩西說：「求你和我們說話，我們必聽；不要神和我們說話，恐怕我們死亡。」</div>
+<div class="verse"><span class="verse-number">20</span>摩西對百姓說：「不要懼怕；因為神降臨是要試驗你們，叫你們時常敬畏他，不至犯罪。」</div>
+<div class="verse"><span class="verse-number">21</span>於是百姓遠遠的站立；摩西就挨近神所在的幽暗之中。</div>
+<div class="verse"><span class="verse-number">22</span>耶和華對摩西說：「你要向以色列人這樣說：『你們自己看見我從天上和你們說話了。</div>
+<div class="verse"><span class="verse-number">23</span>你們不可作甚麼神像與我相配，不可為自己作金銀的神像。</div>
+<div class="verse"><span class="verse-number">24</span>你要為我築土壇，在上面以牛羊獻為燔祭和平安祭。凡記下我名的地方，我必到那裏賜福給你。</div>
+<div class="verse"><span class="verse-number">25</span>你若為我築一座石壇，不可用鑿成的石頭，因你在上頭一動家具，就把壇污穢了。</div>
+<div class="verse"><span class="verse-number">26</span>你上我的壇，不可用臺階，免得露出你的下體來。』」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第20章是整本聖經中最著名的章節之一，記載神在西奈山頒布十誡。神以「我是耶和華你的神，曾將你從埃及地、為奴之家領出來」作為十誡的引言，奠定命令的恩典基礎：誡命是回應救恩的生活準則，不是獲取救恩的條件。前四誡規範人與神的關係：不可有別的神、不可製造和敬拜偶像、不可妄稱神的名、要守安息日為聖。後六誡規範人與人的關係：孝敬父母、不可殺人、不可姦淫、不可偷盜、不可作假見證、不可貪婪。百姓見到雷轟、閃電、角聲、山上冒煙，就遠遠地站立，請求摩西代為傳話，免得神直接對他們說話而死。神告訴摩西，百姓的恐懼是好的，是敬畏的開始，神試驗他們，要他們不犯罪。本章末吩咐不可製造神的形像，建壇獻祭的規矩也一並交代。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 誡命是恩典之後的生活呼召，不是獲救的條件</strong><br>十誡以「我是將你從為奴之家領出來的神」為引言，清楚表明誡命的基礎是已成就的救恩。神先救人，然後才給誡命。這顛覆了以律法換取神喜悅的宗教邏輯，建立了以感恩回應為動力的倫理生活。信徒遵守神的命令，不是為了賺取神的愛，而是回應已領受的愛。<br><br>
+<strong>2. 愛神的具體表現是整全地委身，不拜任何偶像</strong><br>前四誡的核心是「你要全心愛耶和華你的神」。偶像不只是金石的雕像，更是任何取代神在心中首位的事物：金錢、名聲、關係、安全感。信徒應定期審視自己心中的偶像，警覺地保守對神的全然委身。<br><br>
+<strong>3. 愛人的具體表現是尊重他人的生命、尊嚴與財產</strong><br>後六誡從孝親到不可貪婪，構成了愛鄰舍的具體倫理框架。「愛鄰舍如同自己」不是抽象的情感，而是在具體關係中尊重他人的生命（不殺人）、尊嚴（不姦淫、不作假見證）和財產（不偷盜、不貪婪）。信徒的信仰誠信從這些具體的倫理實踐中得到彰顯。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我是耶和華你的神</strong>，<strong>曾將你從埃及地</strong>、為奴之家領出來。除了我以外，你不可有別的神。（出20:2-3）</td>
+<td>就像接受了別人的重大恩惠後自然地想要回報而非置之不理，神以已成就的救恩為十誡的開篇，表明遵守誡命是回應恩典而非賺取恩典。你對神誡命的態度更像是回應愛，還是履行義務？這種動機的差異如何影響你的屬靈生活？</td>
+</tr>
+<tr>
+<td><strong>不可為自己雕刻偶</strong>像，<strong>也不可作甚麼形像</strong>彷彿上天、下地，和地底下、水中的百物。（出20:4）</td>
+<td>就像智慧型手機佔據了越來越多的時間與注意力，逐漸成為生活中不可缺的依賴，現代的偶像往往是生活中神以外最讓我們感到安全和滿足的事物。你生命中有哪些可能正在取代神首位的東西？如何察覺並調整？</td>
+</tr>
+<tr>
+<td><strong>當孝敬父母</strong>，<strong>使你的日子在耶和</strong>華你神所賜你的地上得以長久。（出20:12）</td>
+<td>就像良好的家庭關係為人提供最初的安全感與身份認同，孝敬父母是後六誡中唯一附有應許的誡命。你如何在現實的家庭張力中，以尊重而非僅服從的方式孝敬父母？信仰如何幫助你處理與父母之間的複雜關係？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

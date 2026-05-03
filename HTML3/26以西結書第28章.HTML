@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第28章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第28章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">推羅王的驕傲與墮落天使的影射</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話又臨到我說：</div>
+<div class="verse"><span class="verse-number">2</span>「人子啊，你對推羅君王說，主耶和華如此說：因你心裏高傲，說：我是神；我在海中坐神之位。你雖然居心自比神，也不過是人，並不是神！</div>
+<div class="verse"><span class="verse-number">3</span>看哪，你比但以理更有智慧，甚麼祕事都不能向你隱藏。</div>
+<div class="verse"><span class="verse-number">4</span>你靠自己的智慧聰明得了金銀財寶，收入庫中。</div>
+<div class="verse"><span class="verse-number">5</span>你靠自己的大智慧和貿易增添資財，又因資財心裏高傲。</div>
+<div class="verse"><span class="verse-number">6</span>所以主耶和華如此說：因你居心自比神，</div>
+<div class="verse"><span class="verse-number">7</span>我必使外邦人，就是列國中的強暴人臨到你這裏；他們必拔刀砍壞你用智慧得來的美物，褻瀆你的榮光。</div>
+<div class="verse"><span class="verse-number">8</span>他們必使你下坑；你必死在海中，與被殺的人一樣。</div>
+<div class="verse"><span class="verse-number">9</span>在殺你的人面前你還能說「我是神」嗎？其實你在殺害你的人手中，不過是人，並不是神。</div>
+<div class="verse"><span class="verse-number">10</span>你必死在外邦人手中，與未受割禮〔或作：不潔；下同〕的人一樣，因為這是主耶和華說的。」</div>
+<div class="verse"><span class="verse-number">11</span>耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">12</span>「人子啊，你為推羅王作起哀歌，說主耶和華如此說：你無所不備，智慧充足，全然美麗。</div>
+<div class="verse"><span class="verse-number">13</span>你曾在伊甸神的園中，佩戴各樣寶石，就是紅寶石、紅璧璽、金鋼石、水蒼玉、紅瑪瑙、碧玉、藍寶石、綠寶石、紅玉，和黃金；又有精美的鼓笛在你那裏，都是在你受造之日預備齊全的。</div>
+<div class="verse"><span class="verse-number">14</span>你是那受膏遮掩約櫃的基路伯；我將你安置在神的聖山上；你在發光如火的寶石中間往來。</div>
+<div class="verse"><span class="verse-number">15</span>你從受造之日所行的都完全，後來在你中間又察出不義。</div>
+<div class="verse"><span class="verse-number">16</span>因你貿易很多，就被強暴的事充滿，以致犯罪，所以我因你褻瀆聖地，就從神的山驅逐你。遮掩約櫃的基路伯阿，我已將你從發光如火的寶石中除滅。</div>
+<div class="verse"><span class="verse-number">17</span>你因美麗心中高傲，又因榮光敗壞智慧，我已將你摔倒在地，使你倒在君王面前，好叫他們目睹眼見。</div>
+<div class="verse"><span class="verse-number">18</span>你因罪孽眾多，貿易不公，就褻瀆你那裏的聖所。故此，我使火從你中間發出，燒滅你，使你在所有觀看的人眼前變為地上的爐灰。</div>
+<div class="verse"><span class="verse-number">19</span>各國民中，凡認識你的，都必為你驚奇。你令人驚恐，不再存留於世，直到永遠。」</div>
+<div class="verse"><span class="verse-number">20</span>耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">21</span>「人子啊，你要向西頓預言攻擊他，</div>
+<div class="verse"><span class="verse-number">22</span>說主耶和華如此說：西頓哪，我與你為敵，我必在你中間得榮耀。我在你中間施行審判、顯為聖的時候，人就知道我是耶和華。</div>
+<div class="verse"><span class="verse-number">23</span>我必使瘟疫進入西頓，使血流在他街上。被殺的必在其中仆倒，四圍有刀劍臨到他，人就知道我是耶和華。」</div>
+<div class="verse"><span class="verse-number">24</span>「四圍恨惡以色列家的人，必不再向他們作刺人的荊棘，傷人的蒺藜，人就知道我是主耶和華。」</div>
+<div class="verse"><span class="verse-number">25</span>主耶和華如此說：「我將分散在萬民中的以色列家招聚回來，向他們在列邦人眼前顯為聖的時候，他們就在我賜給我僕人雅各之地，仍然居住。</div>
+<div class="verse"><span class="verse-number">26</span>他們要在這地上安然居住。我向四圍恨惡他們的眾人施行審判以後，他們要蓋造房屋，栽種葡萄園，安然居住，就知道我是耶和華他們的神。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第28章包含兩個相關的神諭。第一個（1-10節）：對推羅王的審判，因其宣稱「我是神」——以智慧和財富造成的驕傲讓他自比為神，神宣告他不過是人，在殺害者面前無法自稱為神。第二個（11-19節）更為深刻：神諭超越了歷史上的推羅王，進入了一個「曾在伊甸神的園中」、「受膏遮掩約櫃的基路伯」、「受造之日完全、後來察出不義」的存有。這段文字被許多解經家理解為對撒但原初狀態和墮落的描述：「你因美麗心中高傲，又因榮光敗壞智慧」。無論如何解釋，本章清楚傳遞的主題是：驕傲是一切墮落的起源；以美麗和智慧為傲，最終導致被神從聖山驅逐。章末（20-26節）宣告西頓的審判和以色列的歸回。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 以智慧和財富自比神，是驕傲的極致形式</strong><br>推羅王「因資財心裏高傲」，最終宣稱「我是神」。財富和智慧是神的禮物，但當人以此自高，認為自己不需要神、可以自主一切，就走上了最危險的驕傲。今日「我靠自己」的成功文化，在某種程度上也包含着同樣的誘惑：以能力和成就建立起不需要神的自我形象。<br><br>
+<strong>2. 「因美麗心中高傲」：蒙神賜予的美好，可以成為驕傲的陷阱</strong><br>「你因美麗心中高傲，又因榮光敗壞智慧」——神所賜予的美麗、才智、榮光，本是祝福，卻成了墮落的契機。這是一個深刻的屬靈提醒：我們所擁有的任何美好，若以此生發驕傲而不是感恩，就已經開始了「敗壞智慧」的過程。感恩是防止蒙賜之物成為驕傲陷阱的防護。<br><br>
+<strong>3. 驕傲導致從聖潔之地被驅逐，是一切屬靈墮落的模式</strong><br>從受造之日的「完全」到被驅逐，中間的轉折只有一件事：「察出不義」，根源是「美麗使心中高傲」。這個模式（蒙賜→驕傲→墮落→被逐）是屬靈生命最需要警惕的陷阱。謙卑是在每一個蒙賜之後的第一個正確回應。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你靠自己的大智慧</strong><strong>和貿易增添資財</strong>，又因資財心裏高傲。（結28:5）</td>
+<td>你的成功和能力讓你對神的依賴增加了，還是減少了？就像一個人越有錢就越覺得「我自己搞定就好」，越有能力就越少禱告，你的「資財」是讓你更倚靠神，還是讓你覺得更不需要神？</td>
+</tr>
+<tr>
+<td><strong>你從受造之日所行</strong><strong>的都完全</strong>，後來在你中間又察出不義。（結28:15）</td>
+<td>從完全到不義，是一個過程而非一夜之間的決定。你的屬靈生命中，有沒有什麼正在進行的「漸變」——某個你現在覺得還好，但若繼續發展下去會帶你離神越來越遠的傾向？就像水的溫度緩緩上升，你是否察覺那個正在發生的漸變？</td>
+</tr>
+<tr>
+<td><strong>你因美麗心中高傲</strong>，<strong>又因榮光敗壞智慧</strong>；我已將你摔倒在地。（結28:17上）</td>
+<td>神所賜的美麗和榮光，可以成為驕傲的土壤。你有沒有注意到自己在某些被人稱讚或認可的領域，開始有一種「理所當然」的優越感？就像一朵花因為太美而忘記它離不開根，你如何在被欣賞的時刻，保持對那位使你美麗的神的謙卑？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

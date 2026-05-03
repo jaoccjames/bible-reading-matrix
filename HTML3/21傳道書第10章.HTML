@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>傳道書第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+傳道書第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">一點愚昧敗壞智慧：言語工作皆需謹慎</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>死蒼蠅使作香的膏油發出臭氣；這樣，一點愚昧也能敗壞智慧和尊榮。</div>
+<div class="verse"><span class="verse-number">2</span>智慧人的心居右；愚昧人的心居左。</div>
+<div class="verse"><span class="verse-number">3</span>並且愚昧人行路顯出無知，對眾人說，他是愚昧人。</div>
+<div class="verse"><span class="verse-number">4</span>掌權者的心若向你發怒，不要離開你的本位，因為柔和能免大過。</div>
+<div class="verse"><span class="verse-number">5</span>我見日光之下有一件禍患，似乎出於掌權的錯誤，</div>
+<div class="verse"><span class="verse-number">6</span>就是愚昧人立在高位；富足人坐在低位。</div>
+<div class="verse"><span class="verse-number">7</span>我見過僕人騎馬，王子像僕人在地上步行。</div>
+<div class="verse"><span class="verse-number">8</span>挖陷坑的，自己必掉在其中；拆牆垣的，必為蛇所咬。</div>
+<div class="verse"><span class="verse-number">9</span>鑿開〔或作：挪移〕石頭的，必受損傷；劈開木頭的，必遭危險。</div>
+<div class="verse"><span class="verse-number">10</span>鐵器鈍了，若不將刃磨快，就必多費氣力；但得智慧指教，便有益處。</div>
+<div class="verse"><span class="verse-number">11</span>未行法術以先，蛇若咬人，後行法術也是無益。</div>
+<div class="verse"><span class="verse-number">12</span>智慧人的口說出恩言；愚昧人的嘴吞滅自己。</div>
+<div class="verse"><span class="verse-number">13</span>他口中的言語起頭是愚昧；他話的末尾是奸惡的狂妄。</div>
+<div class="verse"><span class="verse-number">14</span>愚昧人多有言語，人卻不知將來有甚麼事；他身後的事誰能告訴他呢？</div>
+<div class="verse"><span class="verse-number">15</span>凡愚昧人，他的勞碌使自己困乏，因為連進城的路，他也不知道。</div>
+<div class="verse"><span class="verse-number">16</span>邦國阿，你的王若是孩童，你的群臣早晨宴樂，你就有禍了！</div>
+<div class="verse"><span class="verse-number">17</span>邦國阿，你的王若是貴冑之子，你的群臣按時喫喝，為要補力，不為酒醉，你就有福了！</div>
+<div class="verse"><span class="verse-number">18</span>因人懶惰，房頂塌下；因人手懶，房屋滴漏。</div>
+<div class="verse"><span class="verse-number">19</span>設擺筵席是為喜笑。酒能使人快活；錢能叫萬事應心。</div>
+<div class="verse"><span class="verse-number">20</span>你不可咒詛君王，也不可心懷此念；在你臥房也不可咒詛富戶。因為空中的鳥必傳揚這聲音，有翅膀的也必述說這事。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+傳道書第十章是全書中最接近箴言書風格的章節，以一系列對比鮮明的格言探討智慧與愚昧在日常生活中的表現。本章開篇以「死蒼蠅使作香的膏油發出臭氣」（1節）作為全章的主題比喻——即使是微小的愚昧，也能毀壞長期積累的智慧與名譽。這一比喻極具說服力，因為古代近東的香膏製作非常昂貴，一隻落入的死蒼蠅足以讓整瓶珍貴的香膏報廢。第4節「柔和能免大過」，呼籲在權威壓力下保持溫和的重要性，在古代以色列的政治文化背景中，這是極為實際的生存智慧。第10節以磨刀的比喻說明預備與智慧的重要——工具若不磨利，勞力就要加倍，智慧的指教使人事半功倍。第12節「智慧人的口說出恩言；愚昧人的嘴吞滅自己」，呼應箴言書對言語力量的廣泛論述，是本章言語主題的核心。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 微小的愚昧能毀壞長期建立的智慧名聲，當持守謹慎</strong><br>第1節「死蒼蠅使作香的膏油發出臭氣；這樣，一點愚昧也能敗壞智慧和尊榮」，以強烈的感官比喻說明品格的脆弱性。一個人可能多年建立了智慧與美名，卻因一次衝動的決定、一句不當的話或一個不謹慎的行動，而讓積累毀於一旦。信徒在屬靈操練上，不應只注重大事的正確，更要在日常的小事、言語的細節和態度的選擇上持守謹慎。<br><br>
+<strong>2. 柔和的態度是在壓力下保護自己和關係的智慧</strong><br>第4節「掌權者的心若向你發怒，不要離開你的本位，因為柔和能免大過」，呼籲在面對權威或衝突時保持溫和。「柔和」不是軟弱或妥協，而是在高壓下不做出衝動的反應，保持冷靜、留在崗位、以溫柔的回應化解張力。這是屬靈成熟的標誌，也是聖靈果子「溫柔」在實際處境中的彰顯。<br><br>
+<strong>3. 及時預備和磨利工具，使工作事半功倍</strong><br>第10節「鐵器鈍了，若不將刃磨快，就必多費氣力；但得智慧指教，便有益處」，以磨刀的比喻說明預備與裝備的重要性。在屬靈生命中，這提醒信徒不要只顧忙碌地「做事」，而忽略了定期「磨刀」——更新靈修、接受教導、反思改進——這些預備工作使一切服事和努力都更有果效。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>死蒼蠅使作香的膏</strong><strong>油發出臭氣</strong>；這樣，一點愚昧也能敗壞智慧和尊榮。」（傳10:1）</td>
+<td>就像一個人花了數年建立的信任，可能因為一次說謊而瞬間崩塌，小事上的疏忽往往造成最大的損害，你在日常生活中是否有某些「小小的愚昧」習慣，可能正在慢慢侵蝕你的智慧形象或他人對你的信任？</td>
+</tr>
+<tr>
+<td>「<strong>掌權者的心若向你</strong>發怒，<strong>不要離開你的本位</strong>，因為柔和能免大過。」（傳10:4）</td>
+<td>就像消防員在火場中若驚慌逃跑反而更危險，而鎮定處理才能有效滅火，你在面對批評、壓力或他人憤怒時，通常的第一反應是什麼？你如何練習以「柔和」代替防禦或逃避？</td>
+</tr>
+<tr>
+<td>「<strong>鐵器鈍了</strong>，<strong>若不將刃磨快</strong>，就必多費氣力；但得智慧指教，便有益處。」（傳10:10）</td>
+<td>就像刀刃需要定期磨利才能保持效用，屬靈生命也需要定期更新才不會鈍化，你目前的「刀刃」狀態如何？靈修、讀經、接受教導和反思，在你的生活中佔據了多少優先位置？你需要在哪方面「磨快」自己？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

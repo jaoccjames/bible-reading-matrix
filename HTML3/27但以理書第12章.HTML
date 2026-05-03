@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>但以理書第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+但以理書第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">末後的復活、智慧人的榮耀與等候</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「那時，保佑你本國之民的天使長〔原文作大君〕米迦勒必站起來，並且有大艱難，從有國以來直到此時，沒有這樣的。你本國的民中，凡名錄在冊上的，必得拯救。</div>
+<div class="verse"><span class="verse-number">2</span>睡在塵埃中的，必有多人復醒。其中有得永生的，有受羞辱永遠被憎惡的。</div>
+<div class="verse"><span class="verse-number">3</span>智慧人必發光如同天上的光；那使多人歸義的，必發光如星，直到永永遠遠。</div>
+<div class="verse"><span class="verse-number">4</span>但以理啊，你要隱藏這話，封閉這書，直到末時。必有多人來往奔跑〔或作：切心研究〕，知識就必增長。」</div>
+<div class="verse"><span class="verse-number">5</span>我但以理觀看，見另有兩個人站立：一個在河這邊，一個在河那邊。</div>
+<div class="verse"><span class="verse-number">6</span>有一個問那站在河水以上、穿細麻衣的說：「這奇異的事到幾時纔應驗呢？」</div>
+<div class="verse"><span class="verse-number">7</span>我聽見那站在河水以上、穿細麻衣的，向天舉起左右手，指着活到永遠的主起誓說：「要到一載、二載、半載，打破聖民權力的時候，這一切事就都應驗了。」</div>
+<div class="verse"><span class="verse-number">8</span>我聽見這話，卻不明白，就說：「我主啊，這些事的結局是怎樣呢？」</div>
+<div class="verse"><span class="verse-number">9</span>他說：「但以理啊，你只管去；因為這話已經隱藏封閉，直到末時。</div>
+<div class="verse"><span class="verse-number">10</span>必有許多人使自己清淨潔白，且被熬煉；但惡人仍必行惡，一切惡人都不明白，惟獨智慧人能明白。</div>
+<div class="verse"><span class="verse-number">11</span>從除掉常獻的燔祭，並設立那行毀壞可憎之物的時候，必有一千二百九十日。</div>
+<div class="verse"><span class="verse-number">12</span>等到一千三百三十五日的，那人便為有福。</div>
+<div class="verse"><span class="verse-number">13</span>「你且去等候結局，因為你必安歇。到了末期，你必起來，享受你的福分。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+但以理書第12章是全書的終篇，也是舊約中對死人復活最清楚的宣告之一。天使長米迦勒「必站起來」，有「從有國以來直到此時沒有這樣的大艱難」——但在冊上的人「必得拯救」。第2節是舊約中論復活最清楚的：「睡在塵埃中的，必有多人復醒。其中有得永生的，有受羞辱永遠被憎惡的。」第3節是對「使多人歸義的」的應許：「必發光如星，直到永永遠遠。」本章的末世時間表（一載二載半載、一千二百九十日、一千三百三十五日）引起極大的神學討論，但核心信息是清楚的：但以理不需要「明白一切」，只需要忠心等候——「你必安歇。到了末期，你必起來，享受你的福分。」全書以這個安慰性的應許作結，是給每一個在艱難中等候的信徒最美麗的保證。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 死人的復活：信仰的盼望延伸到死亡之後</strong><br>「睡在塵埃中的，必有多人復醒，有得永生的」——舊約中最清楚的復活宣告，說明信仰的盼望不在此生，而延伸到死亡之後。信徒的盼望不是「讓此生過得好一些」，而是「永遠的生命在死後等候」。這個確信使信徒可以在地上的苦難中不失去盼望，因為最好的還在後頭。<br><br>
+<strong>2. 「使多人歸義的，必發光如星」：忠心帶人歸神有永恆的榮耀</strong><br>「那使多人歸義的，必發光如星，直到永永遠遠」——帶領人認識神、歸向神的工作，在永恆中有特別的榮耀。每一個信徒幫助別人踏上信仰旅程的行動，在永恆中都有超過我們想象的分量。這提醒信徒：傳福音、帶人歸義、門訓等工作，是最有永恆價值的投資。<br><br>
+<strong>3. 「你必安歇……你必起來，享受你的福分」：等候是信仰的終極姿態</strong><br>神給但以理的最後一句話：「你且去等候結局，因為你必安歇。到了末期，你必起來，享受你的福分。」不是「你必明白一切」，而是「你必安歇」和「你必起來」。信仰的終極姿態不是理解所有的神學，而是在不完全的理解中，仍然安心等候那位已應許的神所定的結局。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>睡在塵埃中的</strong>，<strong>必有多人復醒</strong>。其中有得永生的，有受羞辱永遠被憎惡的。（但12:2）</td>
+<td>復活是信仰最根本的盼望之一。你對「死人復活」這個真理，在你日常的生命和決定中，有多真實？就像一個知道自己會完全康復的病人，可以忍受現在的治療，「必有多人復醒，得永生」的確信如何改變你對此生苦難和損失的態度？</td>
+</tr>
+<tr>
+<td><strong>那使多人歸義的</strong>，<strong>必發光如星</strong>，直到永永遠遠。（但12:3下）</td>
+<td>「使多人歸義」——幫助人認識神、走向神，有永遠的星光般的榮耀。你上一次主動「使人歸義」——分享信仰、帶人來到神面前——是什麼時候？就像種一棵樹，使它結許多果子，你願意今天思考：我現在最可以幫助哪個人「走向神」，做一個「使人歸義」的具體行動？</td>
+</tr>
+<tr>
+<td><strong>你且去等候結局</strong>，<strong>因為你必安歇</strong>。到了末期，你必起來，享受你的福分。（但12:13）</td>
+<td>神給但以理最後的話：「安歇」和「起來享受福分」——不是要求他理解一切，只是要他等候。你目前有沒有某個你想「搞清楚」但神似乎要你先「去等候」的問題？就像拼圖的最後幾塊要等全部放上才能看清楚圖案，你願意把那個「還不明白的」放在「神必使我在末期起來享受福分」的信任中，先安心等候嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

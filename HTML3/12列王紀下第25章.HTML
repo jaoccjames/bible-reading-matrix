@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀下第25章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀下第25章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶路撒冷聖殿被毀百姓被擄，約雅斤獄中蒙恩顯希望</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>西底家背叛巴比倫王。他作王第九年十月初十日，巴比倫王尼布甲尼撒率領全軍來攻擊耶路撒冷，對城安營，四圍築壘攻城。</div>
+<div class="verse"><span class="verse-number">2</span>於是城被圍困，直到西底家王十一年。</div>
+<div class="verse"><span class="verse-number">3</span>四月初九日，城裏有大饑荒，甚至百姓都沒有糧食。</div>
+<div class="verse"><span class="verse-number">4</span>城被攻破，一切兵丁就在夜間從靠近王園兩城中間的門逃跑。迦勒底人正在四圍攻城，王就向亞拉巴逃走。</div>
+<div class="verse"><span class="verse-number">5</span>迦勒底的軍隊追趕王，在耶利哥的平原追上他；他的全軍都離開他四散了。</div>
+<div class="verse"><span class="verse-number">6</span>迦勒底人就拿住王，帶他到利比拉巴比倫王那裏審判他。</div>
+<div class="verse"><span class="verse-number">7</span>在西底家眼前殺了他的眾子，並且剜了西底家的眼睛，用銅鍊鎖着他，帶到巴比倫去。</div>
+<div class="verse"><span class="verse-number">8</span>巴比倫王尼布甲尼撒十九年五月初七日，巴比倫王的臣僕、護衛長尼布撒拉旦來到耶路撒冷，</div>
+<div class="verse"><span class="verse-number">9</span>用火焚燒耶和華的殿和王宮，又焚燒耶路撒冷的房屋，就是各大戶家的房屋。</div>
+<div class="verse"><span class="verse-number">10</span>跟從護衛長迦勒底的全軍就拆毀耶路撒冷四圍的城牆。</div>
+<div class="verse"><span class="verse-number">11</span>那時護衛長尼布撒拉旦將城裏所剩下的百姓，並已經投降巴比倫王的人，以及大眾所剩下的人，都擄去了。</div>
+<div class="verse"><span class="verse-number">12</span>但護衛長留下些民中最窮的，使他們修理葡萄園，耕種田地。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華殿的銅柱，並耶和華殿的盆座和銅海，迦勒底人都打碎了，將那銅運到巴比倫去了，</div>
+<div class="verse"><span class="verse-number">14</span>又帶去鍋、鏟子、蠟剪、調羹，並所用的一切銅器，</div>
+<div class="verse"><span class="verse-number">15</span>火鼎、碗，無論金的銀的，護衛長也都帶去了。</div>
+<div class="verse"><span class="verse-number">16</span>所羅門為耶和華殿所造的兩根銅柱、一個銅海，和幾個盆座，這一切的銅，多得無法可稱。</div>
+<div class="verse"><span class="verse-number">17</span>這一根柱子高十八肘，柱上有銅頂，高三肘；銅頂的周圍有網子和石榴，都是銅的。那一根柱子，照此一樣，也有網子。</div>
+<div class="verse"><span class="verse-number">18</span>護衛長拿住大祭司西萊雅、副祭司西番亞，和三個把門的，</div>
+<div class="verse"><span class="verse-number">19</span>又從城中拿住一個管理兵丁的官〔或作：太監〕，並在城裏所遇常見王面的五個人和檢點國民軍長的書記，以及城裏遇見的國民六十個人。</div>
+<div class="verse"><span class="verse-number">20</span>護衛長尼布撒拉旦將這些人帶到利比拉巴比倫王那裏。</div>
+<div class="verse"><span class="verse-number">21</span>巴比倫王就把他們擊殺在哈馬地的利比拉。這樣，猶大人被擄去離開本地。</div>
+<div class="verse"><span class="verse-number">22</span>至於猶大國剩下的民，就是巴比倫王尼布甲尼撒所剩下的，巴比倫王立了沙番的孫子、亞希甘的兒子基大利作他們的省長。</div>
+<div class="verse"><span class="verse-number">23</span>眾軍長和屬他們的人聽見巴比倫王立了基大利作省長，於是軍長尼探雅的兒子以實瑪利、加利亞的兒子約哈難、尼陀法人單戶蔑的兒子西萊雅、瑪迦人的兒子雅撒尼亞，和屬他們的人都到米斯巴見基大利。</div>
+<div class="verse"><span class="verse-number">24</span>基大利向他們和屬他們的人起誓說：「你們不必懼怕迦勒底臣僕，只管住在這地服事巴比倫王，就可以得福。」</div>
+<div class="verse"><span class="verse-number">25</span>七月間，宗室以利沙瑪的孫子、尼探雅的兒子以實瑪利帶着十個人來，殺了基大利和同他在米斯巴的猶大人與迦勒底人。</div>
+<div class="verse"><span class="verse-number">26</span>於是眾民，無論大小，連眾軍長；因為懼怕迦勒底人，都起身往埃及去了。</div>
+<div class="verse"><span class="verse-number">27</span>猶大王約雅斤被擄後三十七年，巴比倫王以未米羅達元年十二月二十七日，使猶大王約雅斤抬頭，提他出監；</div>
+<div class="verse"><span class="verse-number">28</span>又對他說恩言，使他的位高過與他一同在巴比倫眾王的位，</div>
+<div class="verse"><span class="verse-number">29</span>給他脫了囚服。他終身常在巴比倫王面前喫飯。</div>
+<div class="verse"><span class="verse-number">30</span>王賜他所需用的食物，日日賜他一分，終身都是這樣。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀下第25章是整本列王紀最沉重也最具神學意義的終章，記述南國猶大最後的滅亡。西底家背叛巴比倫後，尼布甲尼撒率軍圍城兩年，城內大饑荒。城破之日，西底家企圖逃跑，在耶利哥平原被追上，眾子當他面被殺，他自己被剜眼睛、用銅鍊鎖着帶到巴比倫——他最後看見的是兒子們的死亡。聖殿被焚燒，城牆被拆毀，殿中的銅器、金器全被奪去。剩餘的精英和祭司被帶到利比拉殺死，大批民眾被擄走。巴比倫立基大利為省長，基大利後來也被暗殺，剩餘的人逃往埃及。從輝煌的大衛王朝到此刻的一片廢墟，列王紀走完了它漫長而悲壯的歷史旅程。然而，全書最後以一線希望作結：被擄三十七年後，巴比倫王以未米羅達提起了約雅斤的頭，使他從監獄出來，以恩言待他，賜他終身的食物。這微弱的恩典，預示了神對大衛家族的應許並未終結。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 罪惡積累的終局是失去神的同在，比外部的災難更深刻</strong><br>聖殿被焚毀、城牆被拆毀、金器被奪走——這些是可見的喪失，但更深的喪失是：神的同在離開了祂的居所。列王紀的整個歷史告訴我們：一個民族真正的力量不在城牆、軍隊或財富，而在與神同在的關係。失去神的同在，一切都將崩塌；保有神的同在，即使在廢墟中也有盼望。<br><br>
+<strong>2. 神在歷史的最黑暗處仍留下一線恩典的火花</strong><br>全書以約雅斤被提出監獄、蒙恩款待作結，這個小小的轉機在整片廢墟中顯得格外珍貴。這不是偶然，而是作者有意的神學宣告：即使在審判的最低點，神對大衛家族的應許並未終結，將來的恢復（最終在基督裡實現）仍有盼望。信徒在最黑暗的時刻，也能尋找那一線神的恩典，作為盼望的依據。<br><br>
+<strong>3. 每一個悖逆的選擇，都在漫長的歷史中帶來真實的後果</strong><br>列王紀全書是一部關於選擇和後果的屬靈歷史——從所羅門的智慧求告到偶像崇拜，從耶羅波安的金牛犢到以色列被擄，從瑪拿西的惡政到猶大的滅亡。每一個關鍵的選擇都在幾代之後顯現其影響。這整部歷史督促信徒在每一個當下的選擇中保持屬靈的清醒，因為今日的選擇塑造明日的歷史。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>城被攻破</strong>……<strong>城裏有大饑荒</strong>，甚至百姓都沒有糧食……巴比倫王尼布甲尼撒十九年五月……用火焚燒耶和華的殿。」（王下25:2-4,8-9）</td>
+<td>就像一個長期忽視健康而最終病倒的人，他的身體崩潰是早已種下的必然結果，猶大的滅亡是幾百年屬靈積累的終局。回顧自己的屬靈生命，你有沒有看見某些長期的模式，若不改變，將帶來嚴重的長遠後果？</td>
+</tr>
+<tr>
+<td>「<strong>猶大王約雅斤被擄</strong><strong>後三十七年</strong>……巴比倫王……使猶大王約雅斤抬頭，提他出監；又對他說恩言，使他的位高過眾王。」（王下25:27-28）</td>
+<td>就像在最長的冬夜後出現的第一線曙光，約雅斤在廢墟中得蒙恩待，是整本列王紀末尾神留下的一絲盼望。在你人生最黑暗的「被擄時期」中，你能否也找到神留給你的那一線恩典的記號，使你不放棄盼望？</td>
+</tr>
+<tr>
+<td>「<strong>王賜他所需用的食</strong>物，<strong>日日賜他一分</strong>，終身都是這樣。」（王下25:30）</td>
+<td>就像水源流動才能灌溉，神對約雅斤的供應是日日持續的——不是一次性的，而是終身的每日一分。你每天倚靠神的程度如何？你是否也在領受神「日日的一分」——祂每天為你所預備的恩典和力量？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

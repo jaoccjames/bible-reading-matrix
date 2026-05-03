@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約翰施洗與耶穌受洗</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>那時，有施洗的約翰出來，在猶太的曠野傳道，說：</div>
+<div class="verse"><span class="verse-number">2</span>「天國近了，你們應當悔改！」</div>
+<div class="verse"><span class="verse-number">3</span>這人就是先知以賽亞所說的。他說：「在曠野有人聲喊着說：預備主的道，修直他的路！」</div>
+<div class="verse"><span class="verse-number">4</span>這約翰身穿駱駝毛的衣服，腰束皮帶，吃的是蝗蟲、野蜜。</div>
+<div class="verse"><span class="verse-number">5</span>那時，耶路撒冷和猶太全地，並約但河一帶地方的人，都出去到約翰那裏，</div>
+<div class="verse"><span class="verse-number">6</span>承認他們的罪，在約但河裏受他的洗。</div>
+<div class="verse"><span class="verse-number">7</span>約翰看見許多法利賽人和撒都該人也來受洗，就對他們說：「毒蛇的種類！誰指示你們逃避將來的忿怒呢？</div>
+<div class="verse"><span class="verse-number">8</span>你們要結出果子來，與悔改的心相稱。</div>
+<div class="verse"><span class="verse-number">9</span>不要自己心裏說：『有亞伯拉罕為我們的祖宗。』我告訴你們，神能從這些石頭中給亞伯拉罕興起子孫來。</div>
+<div class="verse"><span class="verse-number">10</span>現在斧子已經放在樹根上，凡不結好果子的樹就砍下來，丟在火裏。</div>
+<div class="verse"><span class="verse-number">11</span>我是用水給你們施洗，叫你們悔改。但那在我以後來的，能力比我更大，我就是給他提鞋也不配。他要用聖靈與火給你們施洗。</div>
+<div class="verse"><span class="verse-number">12</span>他手裏拿着簸箕，要揚淨他的場，把麥子收在倉裏，把糠用不滅的火燒盡了。」</div>
+<div class="verse"><span class="verse-number">13</span>當下耶穌從加利利來到約但河，見了約翰，要受他的洗。</div>
+<div class="verse"><span class="verse-number">14</span>約翰想要攔住他，說：「我當受你的洗，你反倒上我這裏來嗎？」</div>
+<div class="verse"><span class="verse-number">15</span>耶穌回答說：「你暫且許我，因為我們理當這樣盡諸般的義〔或作：禮〕。」於是約翰許了他。</div>
+<div class="verse"><span class="verse-number">16</span>耶穌受了洗，隨即從水裏上來。天忽然為他開了，他就看見神的靈彷彿鴿子降下，落在他身上。</div>
+<div class="verse"><span class="verse-number">17</span>從天上有聲音說：「這是我的愛子，我所喜悅的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第3章標誌著耶穌公開事工的序幕，場景從耶穌的童年跨越約三十年，轉至約翰在猶太曠野的傳道活動。施洗約翰出現，宣講悔改的信息，呼召人們預備迎接彌賽亞的來臨，其衣著與生活方式令人聯想起先知以利亞。首先記述大批猶太人出來接受約翰的洗禮，但約翰嚴厲警告前來的法利賽人和撒都該人，要求他們拿出悔改的果子，不可倚靠亞伯拉罕後裔的身份自恃。接著約翰宣告自己只以水施洗，但那在他後來的將以聖靈與火施洗，其能力遠超過自己。最後耶穌從加利利來到約旦河，接受約翰的洗禮，天開了，聖靈彷彿鴿子降在耶穌身上，天上有聲音說這是我的愛子我所喜悅的。本章是耶穌受洗與三位一體顯現的關鍵場景，正式確立耶穌彌賽亞身份，為祂進入曠野受試探與開展公開事工做好準備。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 悔改是進入天國的必要門檻</strong><br>約翰的核心信息只有一句：「天國近了，你們應當悔改！」悔改不是表面的宗教行為，而是心意的根本轉變，並要結出與悔改相稱的果子。約翰對法利賽人的警告至今仍有力量：宗教身份不能代替真實的悔改。神所喜悅的，是一顆真正轉向祂、生命有所改變的心。<br><br>
+<strong>2. 耶穌謙卑認同罪人的處境</strong><br>耶穌自己沒有罪，卻選擇接受施洗約翰為罪人施行的洗禮，主動認同人類的有限與軟弱。這個謙卑的姿態預示祂整個救贖事工的核心：祂不是站在罪人之外指責，而是進入人的處境，與人同行。耶穌的謙卑邀請每一個信徒效法：在服事中放下身段，主動與人認同。<br><br>
+<strong>3. 三位一體的神共同見證耶穌的身份</strong><br>耶穌受洗時，聖靈降臨、天父說話，三個位格同時顯現，這是全聖經最清晰的三一神啟示之一。天父宣告：「這是我的愛子，我所喜悅的。」在耶穌任何事工開始之前，神先確立祂的身份與被愛的關係。這告訴信徒：我們的事奉不是要贏得神的愛，而是從被愛的確據出發。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>天國近了</strong>，<strong>你們應當悔改</strong>！（太3:2）</td>
+<td>你的悔改是真實的心意轉變，還是只是表面的宗教行為？就像節食不能只靠說說卻不改變飲食習慣，你的生命有沒有結出真實悔改的果子？</td>
+</tr>
+<tr>
+<td><strong>耶穌回答說</strong>：「<strong>你暫且許我</strong>，因為我們理當這樣盡諸般的義。」（太3:15）</td>
+<td>你願意像耶穌一樣放下身段，謙卑地認同那些比你「地位低」的人嗎？就像主管願意親自去前線做最基層的工作，你能在服事中放下優越感，真正與人同在嗎？</td>
+</tr>
+<tr>
+<td><strong>從天上有聲音說</strong>：「<strong>這是我的愛子</strong>，我所喜悅的。」（太3:17）</td>
+<td>你知道神對你的愛與喜悅，是在你「表現好」之前就已確立的嗎？就像父母對剛出生嬰孩的愛不等嬰孩有成就才給予，你能從神無條件的愛出發，自由地活出信仰嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第15章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第15章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以利法再次發言：惡人一生劬勞</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>提幔人以利法回答說：</div>
+<div class="verse"><span class="verse-number">2</span>智慧人豈可用虛空的知識回答，用東風充滿肚腹呢？</div>
+<div class="verse"><span class="verse-number">3</span>他豈可用無益的話和無濟於事的言語理論呢？</div>
+<div class="verse"><span class="verse-number">4</span>你是廢棄敬畏的意，在神面前阻止敬虔的心。</div>
+<div class="verse"><span class="verse-number">5</span>你的罪孽指教你的口；你選用詭詐人的舌頭。</div>
+<div class="verse"><span class="verse-number">6</span>你自己的口定你有罪，並非是我；你自己的嘴見證你的不是。</div>
+<div class="verse"><span class="verse-number">7</span>你豈是頭一個被生的人嗎？你受造在諸山之先嗎？</div>
+<div class="verse"><span class="verse-number">8</span>你曾聽見神的密旨嗎？你還將智慧獨自得盡嗎？</div>
+<div class="verse"><span class="verse-number">9</span>你知道甚麼是我們不知道的呢？你明白甚麼是我們不明白的呢？</div>
+<div class="verse"><span class="verse-number">10</span>我們這裏有白髮的和年紀老邁的，比你父親還老。</div>
+<div class="verse"><span class="verse-number">11</span>神用溫和的話安慰你，你以為太小嗎？</div>
+<div class="verse"><span class="verse-number">12</span>你的心為何將你逼去？你的眼為何冒出火星，</div>
+<div class="verse"><span class="verse-number">13</span>使你的靈反對神，也任你的口發這言語？</div>
+<div class="verse"><span class="verse-number">14</span>人是甚麼，竟算為潔淨呢？婦人所生的是甚麼，竟算為義呢？</div>
+<div class="verse"><span class="verse-number">15</span>神不信靠他的眾聖者；在他眼前，天也不潔淨，</div>
+<div class="verse"><span class="verse-number">16</span>何況那污穢可憎、喝罪孽如水的世人呢！</div>
+<div class="verse"><span class="verse-number">17</span>我指示你，你要聽；我要述說所看見的，</div>
+<div class="verse"><span class="verse-number">18</span>就是智慧人從列祖所受，傳說而不隱瞞的。</div>
+<div class="verse"><span class="verse-number">19</span>（這地惟獨賜給他們，並沒有外人從他們中間經過。）</div>
+<div class="verse"><span class="verse-number">20</span>惡人一生之日劬勞痛苦；強暴人一生的年數也是如此。</div>
+<div class="verse"><span class="verse-number">21</span>驚嚇的聲音常在他耳中；在平安時，搶奪的必臨到他那裏。</div>
+<div class="verse"><span class="verse-number">22</span>他不信自己能從黑暗中轉回；他被刀劍等候。</div>
+<div class="verse"><span class="verse-number">23</span>他漂流在外求食，說：那裏有食物呢？他知道黑暗的日子在他手邊預備好了。</div>
+<div class="verse"><span class="verse-number">24</span>急難困苦叫他害怕，而且勝了他，好像君王預備上陣一樣。</div>
+<div class="verse"><span class="verse-number">25</span>他伸手攻擊神，以驕傲攻擊全能者，</div>
+<div class="verse"><span class="verse-number">26</span>挺着頸項，用盾牌的厚凸面向全能者直闖；</div>
+<div class="verse"><span class="verse-number">27</span>是因他的臉蒙上脂油，腰積成肥肉。</div>
+<div class="verse"><span class="verse-number">28</span>他曾住在荒涼城邑，無人居住、將成亂堆的房屋。</div>
+<div class="verse"><span class="verse-number">29</span>他不得富足，財物不得常存，產業在地上也不加增。</div>
+<div class="verse"><span class="verse-number">30</span>他不得出離黑暗。火焰要將他的枝子燒乾；因神口中的氣，他要滅亡〔原文作走去〕。</div>
+<div class="verse"><span class="verse-number">31</span>他不用倚靠虛假欺哄自己，因虛假必成為他的報應。</div>
+<div class="verse"><span class="verse-number">32</span>他的日期未到之先，這事必成就；他的枝子不得青綠。</div>
+<div class="verse"><span class="verse-number">33</span>他必像葡萄樹的葡萄，未熟而落；又像橄欖樹的花，一開而謝。</div>
+<div class="verse"><span class="verse-number">34</span>原來不敬虔之輩必無生育；受賄賂之人的帳棚必被火燒。</div>
+<div class="verse"><span class="verse-number">35</span>他們所懷的是毒害，所生的是罪孽；心裏所預備的是詭詐。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第15章記載以利法的第二輪發言，語氣比第一次更為嚴厲。他指責約伯：你的話廢棄了敬畏神，你以虛空的知識和東風充滿肚腹。他質問約伯：你是第一個被生的人嗎？你參與過神的密旨嗎？暗指約伯自以為擁有超越傳統的洞見是傲慢的表現。他提醒約伯：連天也在神面前不潔淨，何況人？隨後他詳細描述惡人的結局——終必滅亡、驚嚇不離、財物消滅——作為隱含的警告。以利法在第二輪中完全拋棄了第一輪的溫和，轉為直接指控。這顯示當受苦者拒絕接受朋友的「診斷」時，朋友可能從安慰者轉變為審判者。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 當我們的神學被挑戰，我們容易從同情轉向指控</strong><br>以利法第一次發言還算溫和，但約伯的反駁讓他惱怒，第二次直接攻擊約伯廢棄敬畏、言語如狂風。這揭示了一個屬靈的危機：當我們的神學框架受到挑戰，我們的第一反應往往是捍衛框架，而非真正傾聽挑戰者。<br><br>
+<strong>2. 「人在神面前本就不潔淨」是真理，但不能用來結束對話</strong><br>「人是甚麼，竟算為潔淨呢？婦人所生的是甚麼，竟算為義呢？」這是真實的謙卑教義，但以利法用它來否定約伯提出任何問題的權利，這是對真理的誤用。承認人的罪性，不應成為壓制真實苦難的藉口。<br><br>
+<strong>3. 傳統智慧需要在具體情境中以謙卑和愛心應用</strong><br>以利法強調「列祖的智慧」，以傳統壓制約伯的質疑。傳統智慧有其價值，但當它被用來壓制受苦者而非服事受苦者，就已偏離了它原本的目的。智慧不在於掌握更多知識，而在於知道何時說話、如何說話。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你是廢棄敬畏的意</strong>，<strong>在神面前阻止敬虔</strong>的心。你的罪孽指教你的口；你選用詭詐人的舌頭。（伯15:4-5）</td>
+<td>就像被人說「你這樣想法就是不敬虔」讓人陷入兩難，用「敬虔」來壓制真誠的疑問是信仰群體常見的傷害。你有沒有曾因為表達疑問而被人指為不敬虔？那次經歷讓你對信仰群體有什麼感受？</td>
+</tr>
+<tr>
+<td><strong>人是甚麼</strong>，<strong>竟算為潔淨呢</strong>？婦人所生的是甚麼，竟算為義呢？（伯15:14）</td>
+<td>就像承認自己的渺小並不意味著不能向神說話，人在神面前的不潔應引發謙卑，而非閉嘴。你認為「人是渺小的」這個真理，應該如何影響我們與神對話的方式？</td>
+</tr>
+<tr>
+<td><strong>惡人一生之日劬勞</strong>痛苦；<strong>強暴人一生的年數</strong>也是如此。（伯15:20）</td>
+<td>就像預測別人的結局是危險的，以利法用惡人的命運來暗指約伯是一種信仰上的傷害。你有沒有曾在他人受苦時，急於找出「這是因為什麼」的解釋？那種衝動背後藏著什麼？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

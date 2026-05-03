@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>加拉太書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+加拉太書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">從奴僕到兒子的身份轉變</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我說那承受產業的，雖然是全業的主人，但為孩童的時候卻與奴僕毫無分別，</div>
+<div class="verse"><span class="verse-number">2</span>乃在師傅和管家的手下，直等他父親預定的時候來到。</div>
+<div class="verse"><span class="verse-number">3</span>我們為孩童的時候，受管於世俗小學之下，也是如此。</div>
+<div class="verse"><span class="verse-number">4</span>及至時候滿足，神就差遣他的兒子，為女子所生，且生在律法以下，</div>
+<div class="verse"><span class="verse-number">5</span>要把律法以下的人贖出來，叫我們得着兒子的名分。</div>
+<div class="verse"><span class="verse-number">6</span>你們既為兒子，神就差他兒子的靈進入你們〔原文作我們〕的心，呼叫：「阿爸！父！」</div>
+<div class="verse"><span class="verse-number">7</span>可見，從此以後，你不是奴僕，乃是兒子了；既是兒子，就靠着神為後嗣。</div>
+<div class="verse"><span class="verse-number">8</span>但從前你們不認識神的時候，是給那些本來不是神的作奴僕；</div>
+<div class="verse"><span class="verse-number">9</span>現在你們既然認識神，更可說是被神所認識的，怎麼還要歸回那懦弱無用的小學，情願再給他作奴僕呢？</div>
+<div class="verse"><span class="verse-number">10</span>你們謹守日子、月分、節期、年分。</div>
+<div class="verse"><span class="verse-number">11</span>我為你們害怕、惟恐我在你們身上是枉費了工夫。</div>
+<div class="verse"><span class="verse-number">12</span>弟兄們，我勸你們要像我一樣，因為我也像你們一樣。你們一點沒有虧負我。</div>
+<div class="verse"><span class="verse-number">13</span>你們知道我頭一次傳福音給你們，是因為身體有疾病。</div>
+<div class="verse"><span class="verse-number">14</span>你們為我身體的緣故受試煉，沒有輕看我，也沒有厭棄我，反倒接待我，如同神的使者，如同基督耶穌。</div>
+<div class="verse"><span class="verse-number">15</span>你們當日所誇的福氣在那裏呢？那時你們若能行，就是把自己的眼睛剜出來給我，也都情願。這是我可以給你們作見證的。</div>
+<div class="verse"><span class="verse-number">16</span>如今我將真理告訴你們，就成了你們的仇敵嗎？</div>
+<div class="verse"><span class="verse-number">17</span>那些人熱心待你們，卻不是好意，是要離間你們〔原文作把你們關在外面〕，叫你們熱心待他們。</div>
+<div class="verse"><span class="verse-number">18</span>在善事上，常用熱心待人原是好的，卻不單我與你們同在的時候纔這樣。</div>
+<div class="verse"><span class="verse-number">19</span>我小子啊，我為你們再受生產之苦，直等到基督成形在你們心裏。</div>
+<div class="verse"><span class="verse-number">20</span>我巴不得現今在你們那裏，改換口氣，因我為你們心裏作難。</div>
+<div class="verse"><span class="verse-number">21</span>你們這願意在律法以下的人，請告訴我，你們豈沒有聽見律法嗎？</div>
+<div class="verse"><span class="verse-number">22</span>因為律法上記着，亞伯拉罕有兩個兒子，一個是使女生的，一個是自主之婦人生的。</div>
+<div class="verse"><span class="verse-number">23</span>然而，那使女所生的是按着血氣生的；那自主之婦人所生的是憑着應許生的。</div>
+<div class="verse"><span class="verse-number">24</span>這都是比方：那兩個婦人就是兩約。一約是出於西乃山，生子為奴，乃是夏甲。</div>
+<div class="verse"><span class="verse-number">25</span>這夏甲二字是指着亞拉伯的西乃山，與現在的耶路撒冷同類，因耶路撒冷和她的兒女都是為奴的。</div>
+<div class="verse"><span class="verse-number">26</span>但那在上的耶路撒冷是自主的，她是我們的母。</div>
+<div class="verse"><span class="verse-number">27</span>因為經上記着：不懷孕、不生養的，你要歡樂；未曾經過產難的，你要高聲歡呼；因為沒有丈夫的，比有丈夫的兒女更多。</div>
+<div class="verse"><span class="verse-number">28</span>弟兄們，我們是憑着應許作兒女，如同以撒一樣。</div>
+<div class="verse"><span class="verse-number">29</span>當時，那按着血氣生的逼迫了那按着聖靈生的，現在也是這樣。</div>
+<div class="verse"><span class="verse-number">30</span>然而經上是怎麼說的呢？是說：「把使女和她兒子趕出去！因為使女的兒子不可與自主婦人的兒子一同承受產業。」</div>
+<div class="verse"><span class="verse-number">31</span>弟兄們，這樣看來，我們不是使女的兒女，乃是自主婦人的兒女了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第4章延續律法與恩典的對比，以嗣子的比喻、保羅的個人感情，以及撒拉和夏甲的寓言，多方面呼籲加拉太人不要退回律法的捆綁。本章首先以嗣子的比喻說明：嗣子雖然承受一切，在還是孩子的時候和奴僕沒有什麼分別；我們在時候未到以前受世俗小學的管制，到了時候神差遣祂的兒子生在律法以下，要把律法以下的人贖出來，叫我們得著兒子的名分。接著說明他們既然是兒子，神就差聖靈進入他們的心，呼叫阿爸父，他們不再是奴僕，而是兒子，既是兒子就靠著神為後嗣。然後保羅表達對加拉太人的個人憂慮，說他們從前因為保羅肉體的軟弱有機會歡迎他，現在他怎麼成了他們的仇人？他恐怕為他們枉費工夫。最後以撒拉和夏甲的寓言說明兩個約的對比：夏甲對應現在的耶路撒冷律法的約；撒拉對應天上的耶路撒冷應許的約，我們是自由婦人的兒女，應當趕出使女和她的兒子。本章以多重論證呼籲加拉太人珍惜在基督裡的自由。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「阿爸！父！」——兒子的親密稱謂</strong><br>「神就差他兒子的靈進入你們的心，呼叫：阿爸！父！」——「阿爸」是亞蘭語最親密的父親稱呼，類似「爸爸」。聖靈在信徒心裏所引發的，不是奴僕的懼怕，而是兒子的親密呼叫。信仰不是奴僕式的義務履行，而是孩子與慈父的親密關係。這個關係的親密程度，是聖靈的工作和印記。<br><br>
+<strong>2. 從奴僕到兒子，從奴僕到後嗣</strong><br>「你不是奴僕，乃是兒子了；既是兒子，就靠着神為後嗣」——這個身份的轉變是根本性的。奴僕沒有繼承權，只有工作義務；兒子有繼承父業的權利。回到律法規條之下，就是主動從「兒子」的地位退回到「奴僕」的地位，保羅說這是荒唐的。<br><br>
+<strong>3. 直等到基督成形在你們心裏</strong><br>「我為你們再受生產之苦，直等到基督成形在你們心裏」——牧養的最終目的不是行為的整齊，而是基督的形像在每一個信徒生命中成形。「生產之苦」說明這個過程的痛苦和投入。真正的牧養是願意為信徒的靈命成長承擔代價的生命傳遞。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們既為兒子</strong>，<strong>神就差他兒子的靈</strong>進入你們的心，呼叫：阿爸！父！可見，從此以後，你不是奴僕，乃是兒子了；既是兒子，就靠着神為後嗣。（加4:6-7）</td>
+<td>你有沒有真實地活在「神的兒子」的身份裏，以「阿爸！父！」的親密和信任來到神面前，而非以奴僕的恐懼和距離？就像一個孩子在父親面前自在地說話和一個僕人在主人面前戰兢是完全不同的，你有沒有讓神的父愛帶出你靈魂深處的安息？</td>
+</tr>
+<tr>
+<td><strong>我小子啊</strong>，<strong>我為你們再受生產</strong>之苦，直等到基督成形在你們心裏。（加4:19）</td>
+<td>你有沒有在服事中把「基督成形在他人心裏」作為終極的目標，願意為此「再受生產之苦」——承擔代價、耐心等候、持續投入？就像最好的父母為孩子的成長甘心受苦，你有沒有讓對他人靈命成長的愛，驅使你以這種深度投入？</td>
+</tr>
+<tr>
+<td><strong>及至時候滿足</strong>，<strong>神就差遣他的兒子</strong>，為女子所生，且生在律法以下，要把律法以下的人贖出來，叫我們得着兒子的名分。（加4:4-5）</td>
+<td>「時候滿足」——神有祂完美的時間表。你有沒有在等候中學習相信神的時機是完美的，而非因祂「遲延」而焦慮或灰心？就像知道廚師說「再等五分鐘」就讓人安心等候，你有沒有讓對神時機的信靠成為你面對未知等候的平安？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀上第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀上第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">示巴女王來訪傾倒，所羅門財富智慧舉世無雙</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>示巴女王聽見所羅門因耶和華之名所得的名聲，就來要用難解的話試問所羅門。</div>
+<div class="verse"><span class="verse-number">2</span>跟隨她到耶路撒冷的人甚多，又有駱駝馱着香料、寶石，和許多金子。她來見了所羅門王，就把心裏所有的對所羅門都說出來。</div>
+<div class="verse"><span class="verse-number">3</span>所羅門王將她所問的都答上了，沒有一句不明白、不能答的。</div>
+<div class="verse"><span class="verse-number">4</span>示巴女王見所羅門大有智慧，和他所建造的宮室，</div>
+<div class="verse"><span class="verse-number">5</span>席上的珍饈美味，群臣分列而坐，僕人兩旁侍立，以及他們的衣服裝飾和酒政的衣服裝飾，又見他上耶和華殿的臺階〔或作：他在耶和華殿裏所獻的燔祭〕，就詫異得神不守舍；</div>
+<div class="verse"><span class="verse-number">6</span>對王說：「我在本國裏所聽見論到你的事和你的智慧實在是真的！</div>
+<div class="verse"><span class="verse-number">7</span>我先不信那些話，及至我來親眼見了纔知道人所告訴我的還不到一半。你的智慧和你的福分越過我所聽見的風聲。</div>
+<div class="verse"><span class="verse-number">8</span>你的臣子、你的僕人常侍立在你面前聽你智慧的話是有福的！</div>
+<div class="verse"><span class="verse-number">9</span>耶和華你的神是應當稱頌的！他喜悅你，使你坐以色列的國位；因為他永遠愛以色列，所以立你作王，使你秉公行義。」</div>
+<div class="verse"><span class="verse-number">10</span>於是，示巴女王將一百二十他連得金子和寶石，與極多的香料，送給所羅門王。她送給王的香料，以後奉來的不再有這樣多。</div>
+<div class="verse"><span class="verse-number">11</span>希蘭的船隻從俄斐運了金子來，又從俄斐運了許多檀香木〔或作：烏木；下同〕和寶石來。</div>
+<div class="verse"><span class="verse-number">12</span>王用檀香木為耶和華殿和王宮作欄杆，又為歌唱的人作琴瑟。以後再沒有這樣的檀香木進國來，也沒有人看見過，直到如今。</div>
+<div class="verse"><span class="verse-number">13</span>示巴女王一切所要所求的，所羅門王都送給她，另外照自己的厚意餽送她。於是女王和她臣僕轉回本國去了。</div>
+<div class="verse"><span class="verse-number">14</span>所羅門每年所得的金子共有六百六十六他連得。</div>
+<div class="verse"><span class="verse-number">15</span>另外還有商人和雜族的諸王，與國中的省長所進的金子（雜族在歷代下九章十四節作亞拉伯）。</div>
+<div class="verse"><span class="verse-number">16</span>所羅門王用錘出來的金子打成擋牌二百面，每面用金子六百舍客勒；</div>
+<div class="verse"><span class="verse-number">17</span>又用錘出來的金子打成盾牌三百面，每面用金子三彌那，都放在利巴嫩林宮裏。</div>
+<div class="verse"><span class="verse-number">18</span>王用象牙製造一個寶座，用精金包裹。</div>
+<div class="verse"><span class="verse-number">19</span>寶座有六層臺階，座的後背是圓的，兩旁有扶手，靠近扶手有兩個獅子站立。</div>
+<div class="verse"><span class="verse-number">20</span>六層臺階上有十二個獅子站立，每層有兩個：左邊一個，右邊一個；在列國中沒有這樣作的。</div>
+<div class="verse"><span class="verse-number">21</span>所羅門王一切的飲器都是金子的。利巴嫩林宮裏的一切器皿都是精金的。所羅門年間，銀子算不了甚麼。</div>
+<div class="verse"><span class="verse-number">22</span>因為王有他施船隻與希蘭的船隻一同航海，三年一次，裝載金銀、象牙、猿猴、孔雀回來。</div>
+<div class="verse"><span class="verse-number">23</span>所羅門王的財寶與智慧勝過天下的列王。</div>
+<div class="verse"><span class="verse-number">24</span>普天下的王都求見所羅門，要聽神賜給他智慧的話。</div>
+<div class="verse"><span class="verse-number">25</span>他們各帶貢物，就是金器、銀器、衣服、軍械、香料、騾馬，每年有一定之例。</div>
+<div class="verse"><span class="verse-number">26</span>所羅門聚集戰車馬兵，有戰車一千四百輛，馬兵一萬二千名，安置在屯車的城邑和耶路撒冷，就是王那裏。</div>
+<div class="verse"><span class="verse-number">27</span>王在耶路撒冷使銀子多如石頭，香柏木多如高原的桑樹。</div>
+<div class="verse"><span class="verse-number">28</span>所羅門的馬是從埃及帶來的，是王的商人一群一群按着定價買來的。</div>
+<div class="verse"><span class="verse-number">29</span>從埃及買來的車，每輛價銀六百舍客勒，馬每匹一百五十舍客勒。赫人諸王和亞蘭諸王所買的車馬，也是按這價值經他們手買來的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀上第10章描繪所羅門王國的全盛頂點——示巴女王的訪問與王國的空前繁華。示巴女王聽聞所羅門的盛名，帶着龐大的隊伍和豐厚的禮物，從遠方前來親眼驗證。親眼目睹所羅門的智慧答辯、宏偉宮殿、精緻宴會和完善制度後，她震驚不已，感嘆「人所告訴我的還不到一半」，並稱頌耶和華的美善。本章繼而以大量的數字記錄所羅門的財富：每年六百六十六他連得金子、象牙寶座、金器銀器、戰車馬匹……王國的繁榮達到以色列歷史的巔峰。「銀子多如石頭，香柏木多如高原的桑樹」描繪了一個令人難以置信的豐盛景象。然而細心的讀者會注意到，本章末尾開始出現日後申命記所警戒的危機信號——大量的馬匹（從埃及購入）和積累的財富，這些正是摩西律法警告以色列王不可過度追求的事物，埋下了靈性衰落的伏筆。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真實的智慧與成就，能使旁觀者自然稱頌神</strong><br>示巴女王在親身見證所羅門的智慧和成就後，脫口而出「耶和華你的神是應當稱頌的」。她沒有稱讚所羅門個人，而是將榮耀歸給神。這說明真正從神而來的恩賜和成就，本身就是指向神的見證。信徒若讓神的智慧在生命中彰顯，周圍的人自然會被吸引，並因此認識那位賜予一切的神。<br><br>
+<strong>2. 豐盛是神的恩賜，但也可能成為屬靈危機的溫床</strong><br>所羅門的繁榮達到前所未有的高峰，但本章末尾出現的大量馬匹採購正是申命記17:16所警誡的。繁榮本身不是罪，但繁榮帶來的自足感和對神的依賴減退，卻是屬靈衰落的常見根源。信徒在蒙神豐盛祝福時，更需要保持靈性的謙遜和對神的倚靠，而非視豐盛為理所當然。<br><br>
+<strong>3. 旁觀者的見證往往比當事人更客觀</strong><br>示巴女王以外人的眼光，清楚看見並稱頌神在所羅門身上的作為。有時候，我們生命中神所行的奇事，局外人比我們自己看得更清楚。信徒應當學習以「示巴女王」的眼光回顧自己的生命——停下來，誠實地看見神在你身上所行的一切，並讓感恩充滿你的心。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你的智慧和你的福</strong><strong>分越過我所聽見的</strong>風聲……你的臣子……是有福的！」（王上10:7-8）</td>
+<td>就像一位久聞其名的導師，在親自見面後發現現實比傳聞更精彩，示巴女王的見證說明所羅門的智慧真實超越了名聲。你生命中與神同行的真實深度，是否也超越你對外人展示的那個「宗教形象」？</td>
+</tr>
+<tr>
+<td>「<strong>普天下的王都求見</strong><strong>所羅門</strong>，要聽神賜給他智慧的話。」（王上10:24）</td>
+<td>就像一位出色的老師自然吸引學生主動登門求教，所羅門的智慧使列王主動來訪。你的信仰生命和屬靈智慧，是否也讓周圍的人感到有值得靠近、想要聆聽的吸引力？</td>
+</tr>
+<tr>
+<td>「<strong>所羅門的馬是從埃</strong><strong>及帶來的</strong>……」（王上10:28）</td>
+<td>就像一個人在事業高峰時開始做出一些「小小妥協」的財務決策，所羅門從埃及大量購馬正是律法所警誡的。你在生命最豐盛的時期，有沒有察覺某些看似無害的妥協正悄悄在生命中積累？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

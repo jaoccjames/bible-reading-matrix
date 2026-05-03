@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>西番雅書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+西番雅書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶和華的大日：全面審判的警告</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當猶大王亞們的兒子約西亞在位的時候，耶和華的話臨到希西家的玄孫，亞瑪利雅的曾孫，基大利的孫子，古示的兒子西番雅。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華說：我必從地上除滅萬類。</div>
+<div class="verse"><span class="verse-number">3</span>我必除滅人和牲畜，與空中的鳥、海裏的魚，以及絆腳石和惡人；我必將人從地上剪除。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">4</span>我必伸手攻擊猶大和耶路撒冷的一切居民，也必從這地方剪除所剩下的巴力，並基瑪林的名和祭司，</div>
+<div class="verse"><span class="verse-number">5</span>與那些在房頂上敬拜天上萬象的，並那些敬拜耶和華指着他起誓，又指着瑪勒堪起誓的，</div>
+<div class="verse"><span class="verse-number">6</span>與那些轉去不跟從耶和華的，和不尋求耶和華也不訪問他的。</div>
+<div class="verse"><span class="verse-number">7</span>你要在主耶和華面前靜默無聲，因為耶和華的日子快到。耶和華已經預備祭物，將他的客分別為聖。</div>
+<div class="verse"><span class="verse-number">8</span>到了我耶和華獻祭的日子，必懲罰首領和王子，並一切穿外邦衣服的。</div>
+<div class="verse"><span class="verse-number">9</span>到那日，我必懲罰一切跳過門檻、將強暴和詭詐得來之物充滿主人房屋的。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華說：當那日，從魚門必發出悲哀的聲音，從二城發出哀號的聲音，從山間發出大破裂的響聲。</div>
+<div class="verse"><span class="verse-number">11</span>瑪革提施的居民哪，你們要哀號，因為迦南的商民都滅亡了！凡搬運銀子的都被剪除。</div>
+<div class="verse"><span class="verse-number">12</span>那時，我必用燈巡查耶路撒冷；我必懲罰那些如酒在渣滓上澄清的；他們心裏說：耶和華必不降福，也不降禍。</div>
+<div class="verse"><span class="verse-number">13</span>他們的財寶必成為掠物；他們的房屋必變為荒場。他們必建造房屋，卻不得住在其內；栽種葡萄園，卻不得喝所出的酒。</div>
+<div class="verse"><span class="verse-number">14</span>耶和華的大日臨近，臨近而且甚快，乃是耶和華日子的風聲；勇士必痛痛的哭號。</div>
+<div class="verse"><span class="verse-number">15</span>那日是忿怒的日子，是急難困苦的日子，是荒廢淒涼的日子，是黑暗幽冥、密雲烏黑的日子，</div>
+<div class="verse"><span class="verse-number">16</span>是吹角吶喊的日子，要攻擊堅固城和高大的城樓。</div>
+<div class="verse"><span class="verse-number">17</span>我必使災禍臨到人身上，使他們行走如同瞎眼的，因為得罪了我。他們的血必倒出如灰塵；他們的肉必拋棄如糞土。</div>
+<div class="verse"><span class="verse-number">18</span>當耶和華發怒的日子，他們的金銀不能救他們；他的忿怒如火必燒滅全地，毀滅這地的一切居民，而且大大毀滅。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+西番雅書是約西亞王（主前640-609年）時代的先知書，處在以色列歷史上最重要的宗教改革（主前621年）之前後。西番雅自我介紹時特別追溯其希西家的家族血脈——他可能是王室後裔，這使他與權力核心接近，也使他的警告更有力量。第1章以震驚的宣告開篇：「我必從地上除滅萬類」——比任何之前的先知都更全面的審判宣告，甚至涉及天地萬物。針對以色列的審判是因偶像崇拜（巴力、天上萬象、瑪勒堪），以及那些「如酒在渣滓上澄清」的人——心裡說「神必不降福，也不降禍」的屬靈麻木者（第12節）。「耶和華的大日」（末世審判的典型用語）被描述為密雲、黑暗、吹角吶喊的日子。章末宣告財富無法在神忿怒的日子救人。本章是理解新約末世論語言的重要背景。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「如酒在渣滓上澄清」：屬靈的麻木比明顯的叛逆更危險</strong><br>第12節的人「心裡說耶和華必不降福，也不降禍」——不是積極地拒絕神，而是認為神與自己的生活無關。這種「神不在乎」的麻木，是最難被察覺也最普遍的屬靈問題。就像酒在渣滓上靜靜澄清，表面看似平靜，實際上停止了流動。信仰若停止流動，就開始腐壞。<br><br>
+<strong>2. 「耶和華的大日」：末世的認知改變人今天的優先次序</strong><br>「那日是忿怒的日子……黑暗幽冥……吹角吶喊的日子」——末世審判的真實性，理應影響信徒今天的生活選擇。若末日是真實的，那麼今天的道德選擇就不只是個人喜好，而是有永恆意義的回應。末世論不是讓人逃避現實，而是讓人在現實中有正確的輕重緩急。<br><br>
+<strong>3. 財富在審判日無法拯救：終極的安全不建立在財富上</strong><br>「當耶和華發怒的日子，他們的金銀不能救他們」——這與以西結書7:19平行。在最終的危機面前，所有財富積累的保障機制都失效。這不是要信徒輕視財富，而是清楚地看見財富的邊界：它能在許多處境中幫助人，但不能提供終極的拯救。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>那時，<strong>我必用燈巡查耶路</strong>撒冷；<strong>我必懲罰那些如酒</strong>在渣滓上澄清的；他們心裏說：耶和華必不降福，也不降禍。（番1:12）</td>
+<td>「耶和華必不降福，也不降禍」是最普遍的屬靈麻木——覺得神與我的日常生活關係不大。在你日常的工作、決策、關係中，神的存在有多真實？就像一個人知道有鄰居，卻從不思考他們的存在，你對神的「知道」有多少轉化為日常的「意識到神在這裡」？</td>
+</tr>
+<tr>
+<td><strong>耶和華的大日臨近</strong>，<strong>臨近而且甚快</strong>，乃是耶和華日子的風聲；勇士必痛痛的哭號。（番1:14）</td>
+<td>「耶和華的大日臨近」——終末的真實性影響你今天的生活方式嗎？就像一個知道租約即將到期的租客，開始認真思考接下來要去哪裡，末世的現實讓你對今天的哪些事情有不同的輕重緩急感？</td>
+</tr>
+<tr>
+<td><strong>當耶和華發怒的日</strong>子，<strong>他們的金銀不能救</strong>他們；他的忿怒如火必燒滅全地，毀滅這地的一切居民，而且大大毀滅。（番1:18）</td>
+<td>「金銀不能救他們」——你的生活中有沒有某種你深深倚靠的「保障」，在終極危機面前是脆弱的？就像強大的防火牆在斷電後立刻失效，你最終的「安全感根基」是建立在可以瞬間被移去的東西上，還是建立在不能動搖的神上？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第35章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第35章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以東的審判：永懷仇恨的代價</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話又臨到我說：</div>
+<div class="verse"><span class="verse-number">2</span>「人子啊，你要面向西珥山發預言，攻擊他，</div>
+<div class="verse"><span class="verse-number">3</span>對他說，主耶和華如此說：西珥山哪，我與你為敵，必向你伸手攻擊你，使你荒涼，令人驚駭。</div>
+<div class="verse"><span class="verse-number">4</span>我必使你的城邑變為荒場，成為淒涼。你就知道我是耶和華。</div>
+<div class="verse"><span class="verse-number">5</span>因為你永懷仇恨，在以色列人遭災、罪孽到了盡頭的時候，將他們交與刀劍，</div>
+<div class="verse"><span class="verse-number">6</span>所以主耶和華說：我指着我的永生起誓，我必使你遭遇流血的報應，罪〔原文作血；本節同〕必追趕你；你既不恨惡殺人流血，所以這罪必追趕你。</div>
+<div class="verse"><span class="verse-number">7</span>我必使西珥山荒涼，令人驚駭，來往經過的人我必剪除。</div>
+<div class="verse"><span class="verse-number">8</span>我必使西珥山滿有被殺的人。被刀殺的，必倒在你小山和山谷，並一切的溪水中。</div>
+<div class="verse"><span class="verse-number">9</span>我必使你永遠荒涼，使你的城邑無人居住，你的民就知道我是耶和華。</div>
+<div class="verse"><span class="verse-number">10</span>「因為你曾說：『這二國這二邦必歸於我，我必得為業』（其實耶和華仍在那裏），</div>
+<div class="verse"><span class="verse-number">11</span>所以主耶和華說：我指着我的永生起誓，我必照你的怒氣和你從仇恨中向他們所發的嫉妒待你。我審判你的時候，必將自己顯明在他們中間。</div>
+<div class="verse"><span class="verse-number">12</span>你也必知道我耶和華聽見了你的一切毀謗，就是你攻擊以色列山的話，說：『這些山荒涼，是歸我們吞滅的。』</div>
+<div class="verse"><span class="verse-number">13</span>你們也用口向我誇大，增添與我反對的話，我都聽見了。</div>
+<div class="verse"><span class="verse-number">14</span>主耶和華如此說：全地歡樂的時候，我必使你荒涼。</div>
+<div class="verse"><span class="verse-number">15</span>你怎樣因以色列家的地業荒涼而喜樂，我必照你所行的待你。西珥山哪，你和以東全地必都荒涼。你們就知道我是耶和華。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第35章是對西珥山（以東）的審判神諭，緊接第34章的牧人盼望，作為對比性的插入。以東（以掃的後裔）是以色列的兄弟之邦，卻在以色列受難時「永懷仇恨」，趁機加害，甚至宣稱要得以色列和猶大的地業。神指出以東的三重罪：一、在以色列「罪孽到了盡頭」的脆弱時刻落井下石（5節）；二、宣稱「這二國這二邦必歸於我」（10節），意圖吞並神的產業；三、「用口向我誇大，增添與我反對的話」（13節）。神的回應是以東的永久荒涼，並以「耶和華仍在那裏」（10節）宣告：即使以色列地看似荒廢，神的主權從未離開。以東以為「神不在」，可以趁虛而入，卻不知道神始終在那裏。本章為下一章以色列山的恢復神諭作了對比性的鋪墊。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 永懷仇恨是使人最終自我毀滅的靈性毒藥</strong><br>以東「永懷仇恨」——不是一時的憤怒，而是代代相傳的仇恨。這種仇恨使以東在以色列受難時不能抑制落井下石的衝動，最終招致神的審判。長期懷怒不只是道德問題，而是自我毀滅的過程：仇恨扭曲判斷，破壞關係，最終讓懷仇者也成為審判的對象。<br><br>
+<strong>2. 以為「神不在」就可以趁機得益，是最大的屬靈誤判</strong><br>以東看見以色列的地荒涼，就說「這地是我的了」，卻不知「耶和華仍在那裏」。以為神暫時離開就是永久消失，是歷史中重複出現的屬靈誤判。即使在最深的審判期，神從未真正離去，只是以不同的方式同在。任何以為「神不看見」或「神不在乎」的行動，都建立在錯誤的神學基礎上。<br><br>
+<strong>3. 對兄弟的仇恨與對神的敵對是一體的</strong><br>以東對以色列的仇恨被描述為「增添與我（神）反對的話」——傷害神的子民就是傷害神自己。約翰一書同樣說「恨弟兄的，就是在黑暗裏，也在黑暗裏行走」。對人的仇恨不是單純的人際問題，在信仰的框架中，它直接影響我們與神的關係。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>因為你永懷仇恨</strong>，<strong>在以色列人遭災</strong>、罪孽到了盡頭的時候，將他們交與刀劍。（結35:5）</td>
+<td>「永懷仇恨」——不放下仇恨，有沒有在你生命中造成什麼影響？就像一個沉重的包袱你一直背着，以為它傷害的是別人，其實最傷的是你自己。你是否有一個「永懷仇恨」的對象，你願意今天在神面前開始那個「放下」的過程嗎？</td>
+</tr>
+<tr>
+<td>「<strong>這二國這二邦必歸</strong>於我，<strong>我必得為業</strong>」（其實耶和華仍在那裏）。（結35:10）</td>
+<td>以東以為「神不在」，所以可以行動。你是否有時在某個「以為神不在看」的地方，做出了不同於平時的選擇？就像知道沒有監視器才做某些事，「其實耶和華仍在那裏」這句話，如何改變你在那些「沒人看見的地方」的行為？</td>
+</tr>
+<tr>
+<td><strong>你怎樣因以色列家</strong><strong>的地業荒涼而喜樂</strong>，我必照你所行的待你。（結35:15上）</td>
+<td>「因別人的苦難而喜樂」是一種深藏的罪性。你有沒有對某個你不喜歡的人或群體，在他們受難時有一絲「活該」或「終於」的感覺？就像看見競爭對手失敗時內心的微妙感受，你願意讓神的憐憫進入那個地方，讓你為他們的苦難感到真實的悲傷？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

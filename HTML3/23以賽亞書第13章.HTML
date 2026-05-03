@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第13章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第13章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">論巴比倫：耶和華的日子臨到驕傲的強國</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>亞摩斯的兒子以賽亞得默示，論巴比倫。</div>
+<div class="verse"><span class="verse-number">2</span>應當在淨光的山豎立大旗，向群眾揚聲招手，使他們進入貴冑的門。</div>
+<div class="verse"><span class="verse-number">3</span>我吩咐我所挑出來的人；我招呼我的勇士，就是那矜誇高傲之輩，為要成就我怒中所定的。</div>
+<div class="verse"><span class="verse-number">4</span>山間有多人的聲音，好像是大國人民。有許多國的民聚集鬨嚷的聲音；這是萬軍之耶和華點齊軍隊，預備打仗。</div>
+<div class="verse"><span class="verse-number">5</span>他們從遠方來，從天邊來，就是耶和華並他惱恨的兵器要毀滅這全地。</div>
+<div class="verse"><span class="verse-number">6</span>你們要哀號，因為耶和華的日子臨近了！這日來到，好像毀滅從全能者來到。</div>
+<div class="verse"><span class="verse-number">7</span>所以，人手都必軟弱；人心都必消化。</div>
+<div class="verse"><span class="verse-number">8</span>他們必驚惶悲痛；愁苦必將他們抓住。他們疼痛，好像產難的婦人一樣，彼此驚奇相看，臉如火焰。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華的日子臨到，必有殘忍、忿恨、烈怒，使這地荒涼，從其中除滅罪人。</div>
+<div class="verse"><span class="verse-number">10</span>天上的眾星群宿都不發光；日頭一出就變黑暗；月亮也不放光。</div>
+<div class="verse"><span class="verse-number">11</span>我必因邪惡刑罰世界，因罪孽刑罰惡人，使驕傲人的狂妄止息，制伏強暴人的狂傲。</div>
+<div class="verse"><span class="verse-number">12</span>我必使人比精金還少，使人比俄斐純金更少。</div>
+<div class="verse"><span class="verse-number">13</span>我萬軍之耶和華在忿恨中發烈怒的日子，必使天震動，使地搖撼，離其本位。</div>
+<div class="verse"><span class="verse-number">14</span>人必像被追趕的鹿，像無人收聚的羊，各歸回本族，各逃到本土。</div>
+<div class="verse"><span class="verse-number">15</span>凡被仇敵追上的必被刺死；凡被捉住的必被刀殺。</div>
+<div class="verse"><span class="verse-number">16</span>他們的嬰孩必在他們眼前摔碎；他們的房屋必被搶奪；他們的妻子必被玷污。</div>
+<div class="verse"><span class="verse-number">17</span>我必激動瑪代人來攻擊他們。瑪代人不注重銀子，也不喜愛金子。</div>
+<div class="verse"><span class="verse-number">18</span>他們必用弓擊碎少年人，不憐憫婦人所生的，眼也不顧惜孩子。</div>
+<div class="verse"><span class="verse-number">19</span>巴比倫素來為列國的榮耀，為迦勒底人所矜誇的華美，必像神所傾覆的所多瑪、蛾摩拉一樣。</div>
+<div class="verse"><span class="verse-number">20</span>其內必永無人煙，世世代代無人居住。亞拉伯人也不在那裏支搭帳棚；牧羊的人也不使羊群臥在那裏。</div>
+<div class="verse"><span class="verse-number">21</span>只有曠野的走獸臥在那裏；咆哮的獸滿了房屋。鴕鳥住在那裏；野山羊在那裏跳舞。</div>
+<div class="verse"><span class="verse-number">22</span>豺狼必在他宮中呼號；野狗必在他華美殿內吼叫。巴比倫受罰的時候臨近；他的日子必不長久。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第十三章開啟了以賽亞書第二部分（13-27章）的「列國神諭」，是一系列針對周邊列國的預言集。第十三章論的是巴比倫，這在以賽亞時代（740-680BC）極具前瞻性——那時亞述才是主要強權，巴比倫要到公元前612年才取代亞述成為霸主，並在605-586BC間征服猶大並摧毀耶路撒冷。以賽亞的預言越過當時的歷史現實，直指一個更遠的未來。本章以「耶和華的日子」（6、9節）這個先知書核心概念貫穿，描繪了神的審判臨到人間最強大帝國的震撼景象。「巴比倫素來為列國的榮耀，為迦勒底人所矜誇的華美」（19節），這個被全古代世界讚歎的文明中心，以賽亞卻宣告它「必像神所傾覆的所多瑪、蛾摩拉一樣」——在神的審判面前，一切人間的榮耀都是暫時的。本章在神學上揭示：神是歷史的主宰，沒有任何帝國能在罪惡和驕傲中永遠存立。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神是歷史的主宰，能興起和除去地上最強大的勢力</strong><br>第3-5節描繪神召集軍隊來毀滅巴比倫的場景——神不是被動地旁觀歷史，而是主動地指揮和引導歷史的走向。巴比倫當時是不可撼動的世界強權，然而以賽亞的預言宣告這個帝國終將覆滅。這對信徒是一個重要的提醒：無論哪個時代有多強大的「巴比倫」——無論是政治帝國、文化霸權還是個人生命中的強大對手——神的主權高過一切人間的勢力。<br><br>
+<strong>2. 「耶和華的日子」：神的公義審判終究臨到，驕傲必然傾倒</strong><br>第6、9節「耶和華的日子」是先知書中的重要末世概念，指神以公義介入歷史、施行審判的時刻。第11節「使驕傲人的狂妄止息，制伏強暴人的狂傲」，揭示了驕傲是神審判最主要針對的罪——因為驕傲正是把人的地位置於神之上。巴比倫以自己的榮耀自誇（19節），卻不知道這榮耀是借來的、短暫的。信徒當以此為鏡，察驗自己是否將神所賜的恩典當作自我誇耀的資本。<br><br>
+<strong>3. 最強大的文明中心也會在罪惡中傾倒，世界的榮耀是短暫的</strong><br>第19-22節巴比倫從「列國的榮耀」變為曠野走獸的棲身之所，這種戲劇性的對比是人間一切榮耀短暫性的最有力宣告。在啟示錄17-18章，「巴比倫」成為一切違背神的世界體系的象徵，最終都必傾倒。信徒活在這個世界中，當辨別哪些是永恆的、哪些是短暫的，不讓世界的榮耀迷惑自己真正的價值觀和委身對象。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你們要哀號</strong>，<strong>因為耶和華的日子</strong>臨近了！這日來到，好像毀滅從全能者來到。」（賽13:6）</td>
+<td>就像天空出現黑雲並非終點，而是提醒人應當回到屋內尋找遮蔽，「耶和華的日子」不是要讓人絕望，而是呼召人在審判來臨前尋求神的保護，你對神的審判的認識，是否讓你對自己的生命有所警覺和調整？</td>
+</tr>
+<tr>
+<td>「<strong>我必因邪惡刑罰世</strong>界，<strong>因罪孽刑罰惡人</strong>，使驕傲人的狂妄止息，制伏強暴人的狂傲。」（賽13:11）</td>
+<td>就像一棵不願彎腰的大樹在風暴中最容易被折斷，驕傲讓人在神的審判中最脆弱，你在哪些方面最容易陷入驕傲——才能、成就、知識，或是比他人更多的屬靈恩賜？你如何在那些領域刻意保持謙卑？</td>
+</tr>
+<tr>
+<td>「<strong>巴比倫素來為列國</strong><strong>的榮耀</strong>……必像神所傾覆的所多瑪、蛾摩拉一樣。」（賽13:19）</td>
+<td>就像沙地上最精美的沙堡，無論建造得多精巧，潮水一來就消失無蹤，你目前最在意維護的「榮耀」是什麼——地位、名聲、財富、能力？若有一天那些像「巴比倫」一樣傾倒，你的身份認同和生命的意義還建立在哪裡？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雅各書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+雅各書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">不按外貌待人與信心行為的辯證</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我的弟兄們，你們信奉我們榮耀的主耶穌基督，便不可按着外貌待人。</div>
+<div class="verse"><span class="verse-number">2</span>若有一個人帶着金戒指，穿着華美衣服，進你們的會堂去；又有一個窮人穿着骯髒衣服也進去；</div>
+<div class="verse"><span class="verse-number">3</span>你們就重看那穿華美衣服的人，說：「請坐在這好位上」；又對那窮人說：「你站在那裏」，或「坐在我腳凳下邊。」</div>
+<div class="verse"><span class="verse-number">4</span>這豈不是你們偏心待人，用惡意斷定人嗎？</div>
+<div class="verse"><span class="verse-number">5</span>我親愛的弟兄們，請聽，神豈不是揀選了世上的貧窮人，叫他們在信上富足，並承受他所應許給那些愛他之人的國嗎？</div>
+<div class="verse"><span class="verse-number">6</span>你們反倒羞辱貧窮人。那富足人豈不是欺壓你們，拉你們到公堂去嗎？</div>
+<div class="verse"><span class="verse-number">7</span>他們不是褻瀆你們所敬奉〔所敬奉：或作被稱〕的尊名嗎？</div>
+<div class="verse"><span class="verse-number">8</span>經上記着說：「要愛人如己。」你們若全守這至尊的律法，才是好的。</div>
+<div class="verse"><span class="verse-number">9</span>但你們若按外貌待人，便是犯罪，被律法定為犯法的。</div>
+<div class="verse"><span class="verse-number">10</span>因為凡遵守全律法的，只在一條上跌倒，他就是犯了眾條。</div>
+<div class="verse"><span class="verse-number">11</span>原來那說「不可姦淫」的，也說「不可殺人」；你就是不姦淫，卻殺人，仍是成了犯律法的。</div>
+<div class="verse"><span class="verse-number">12</span>你們既然要按使人自由的律法受審判，就該照這律法說話行事。</div>
+<div class="verse"><span class="verse-number">13</span>因為那不憐憫人的，也要受無憐憫的審判；憐憫原是向審判誇勝。</div>
+<div class="verse"><span class="verse-number">14</span>我的弟兄們，若有人說自己有信心，卻沒有行為，有甚麼益處呢？這信心能救他麼？</div>
+<div class="verse"><span class="verse-number">15</span>若是弟兄或是姐妹，赤身露體，又缺了日用的飲食；</div>
+<div class="verse"><span class="verse-number">16</span>你們中間有人對他們說：「平平安安的去吧！願你們穿得暖，吃得飽」；卻不給他們身體所需用的，這有甚麼益處呢？</div>
+<div class="verse"><span class="verse-number">17</span>這樣，信心若沒有行為就是死的。</div>
+<div class="verse"><span class="verse-number">18</span>必有人說：「你有信心，我有行為；你將你沒有行為的信心指給我看，我便藉着我的行為，將我的信心指給你看。」</div>
+<div class="verse"><span class="verse-number">19</span>你信神只有一位，你信的不錯；鬼魔也信，卻是戰驚。</div>
+<div class="verse"><span class="verse-number">20</span>虛浮的人哪，你願意知道沒有行為的信心是死的嗎？</div>
+<div class="verse"><span class="verse-number">21</span>我們的祖宗亞伯拉罕把他兒子以撒獻在壇上，豈不是因行為稱義嗎？</div>
+<div class="verse"><span class="verse-number">22</span>可見信心是與他的行為並行，而且信心因着行為才得成全。</div>
+<div class="verse"><span class="verse-number">23</span>這就應驗經上所說：「亞伯拉罕信神，這就算為他的義。」他又得稱為神的朋友。</div>
+<div class="verse"><span class="verse-number">24</span>這樣看來，人稱義是因着行為，不是單因着信。</div>
+<div class="verse"><span class="verse-number">25</span>妓女喇合接待使者，又放他們從別的路上出去，不也是一樣因行為稱義嗎？</div>
+<div class="verse"><span class="verse-number">26</span>身體沒有靈魂是死的，信心沒有行為也是死的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第2章是雅各書神學論辯的核心，就偏待人和信心與行為的關係給出詳盡的論述，並以亞伯拉罕和妓女喇合的行動信心為例，宣告沒有行為的信心是死的。本章首先說不可按著外貌待人，若有人戴著金戒指穿著華麗衣服進會堂，給他好位置；又有一個窮人穿著骯髒衣服進來，就叫他站在那裡或坐在腳凳下邊，這豈不是偏心待人用惡意斷定人嗎。接著說你們要愛人如己就是全了律法，然而你們偏待人就是犯罪，因為犯律法的一條就是犯了眾條。然後進入著名的信心與行為的論述：若有弟兄或姊妹赤身露體又缺了日用飲食，你們對他們說平平安安地去罷卻不給他們身體所需用的，這有甚麼益處呢，信心若沒有行為就是死的。接著說你有信心我有行為，我是憑行為將信心顯出來；你信神只有一位，你信的不錯，鬼魔也信卻是戰驚。以亞伯拉罕獻以撒和喇合接待探子為例，說明信心要和行為並行，信心因著行為才得成全，人稱義是因著行為不是單因著信。本章論証了信心與行為不可分離的關係，強調活的信心必然結出行動的果實。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在教會裏按外貌待人是違反信仰的</strong><br>「你們若按外貌待人，便是犯罪」——在基督裏，貧富的界線不應決定一個人的待遇和尊重。神揀選「世上的貧窮人」的邏輯，完全顛覆了人按財富和地位待人的習慣。教會若複製社會的階層制度，就是拒絕了天國的邏輯。<br><br>
+<strong>2. 信心沒有行為是死的</strong><br>「信心若沒有行為就是死的」——雅各不是在說靠行為得救，而是說真實的信心必然帶出行為。鬼魔也「信」神的存在，卻沒有任何改變的行為。亞伯拉罕的獻以撒和喇合的接待探子，都是信心的具體行動。行為是信心的生命證明。<br><br>
+<strong>3. 憐憫向審判誇勝</strong><br>「因為那不憐憫人的，也要受無憐憫的審判；憐憫原是向審判誇勝」——我們給出的憐憫，反映我們領受的憐憫有多深。「憐憫向審判誇勝」——在最終的審判日，實踐了憐憫的人，有比律法更大的能力為自己說話。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我的弟兄們</strong>，<strong>你們信奉我們榮耀</strong>的主耶穌基督，便不可按着外貌待人。（雅2:1）</td>
+<td>你有沒有誠實地省察自己在教會和日常生活中，有沒有按照財富、外貌、社會地位對人有不同的對待，並讓雅各的話糾正這個傾向？就像一個公正的法官不因被告的身份而有不同的標準，你有沒有讓信仰改變你待人的尺度？</td>
+</tr>
+<tr>
+<td>這樣，<strong>信心若沒有行為就</strong><strong>是死的</strong>……身體沒有靈魂是死的，信心沒有行為也是死的。（雅2:17,26）</td>
+<td>你有沒有讓你的信心在具體的行動和選擇中留下可見的果子，使你的信仰不只是頭腦的同意而是生命的活出？就像一棵樹的健康最終體現在果子上，你有沒有讓你信仰的真實性在具體善行中得到驗證？</td>
+</tr>
+<tr>
+<td><strong>憐憫原是向審判誇</strong>勝。（雅2:13）</td>
+<td>你有沒有讓「憐憫向審判誇勝」成為你積極行憐憫的動力？就像知道一個品質在最終評估中最重要讓人特別培養它，你有沒有讓憐憫成為你最積極追求的信仰品格？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

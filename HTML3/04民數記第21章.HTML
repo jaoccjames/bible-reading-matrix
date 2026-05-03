@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第21章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+民數記第21章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">銅蛇醫治曠野征服亞摩利</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>住南地的迦南人亞拉得王，聽說以色列人從亞他林路來，就和以色列人爭戰，擄了他們幾個人。</div>
+<div class="verse"><span class="verse-number">2</span>以色列人向耶和華發願說：「你若將這民交付我手，我就把他們的城邑盡行毀滅。」</div>
+<div class="verse"><span class="verse-number">3</span>耶和華應允了以色列人，把迦南人交付他們，他們就把迦南人和迦南人的城邑盡行毀滅。那地方的名便叫何珥瑪〔就是毀滅的意思〕。</div>
+<div class="verse"><span class="verse-number">4</span>他們從何珥山起行，往紅海那條路走，要繞過以東地。百姓因這路難行，心中甚是煩躁，</div>
+<div class="verse"><span class="verse-number">5</span>就怨讟神和摩西說：「你們為甚麼把我們從埃及領出來、使我們死在曠野呢？這裏沒有糧，沒有水，我們的心厭惡這淡薄的食物。」</div>
+<div class="verse"><span class="verse-number">6</span>於是耶和華使火蛇進入百姓中間，蛇就咬他們。以色列人中死了許多。</div>
+<div class="verse"><span class="verse-number">7</span>百姓到摩西那裏，說：「我們怨讟耶和華和你，有罪了。求你禱告耶和華，叫這些蛇離開我們。」於是摩西為百姓禱告。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華對摩西說：「你製造一條火蛇，掛在杆子上；凡被咬的，一望這蛇，就必得活。」</div>
+<div class="verse"><span class="verse-number">9</span>摩西便製造一條銅蛇，掛在杆子上；凡被蛇咬的，一望這銅蛇就活了。</div>
+<div class="verse"><span class="verse-number">10</span>以色列人起行，安營在阿伯。</div>
+<div class="verse"><span class="verse-number">11</span>又從阿伯起行，安營在以耶亞巴琳，與摩押相對的曠野，向日出之地。</div>
+<div class="verse"><span class="verse-number">12</span>從那裏起行，安營在撒烈谷。</div>
+<div class="verse"><span class="verse-number">13</span>從那裏起行，安營在亞嫩河那邊。這亞嫩河是在曠野，從亞摩利的境界流出來的；原來亞嫩河是摩押的邊界，在摩押和亞摩利人搭界的地方。</div>
+<div class="verse"><span class="verse-number">14</span>所以耶和華的戰記上說：「蘇法的哇哈伯與亞嫩河谷，</div>
+<div class="verse"><span class="verse-number">15</span>並向亞珥城眾谷的下坡，是靠近摩押的境界。」</div>
+<div class="verse"><span class="verse-number">16</span>以色列人從那裏起行，到了比珥〔就是井的意思〕。從前耶和華吩咐摩西說：「招聚百姓，我好給他們水喝」，說的就是這井。</div>
+<div class="verse"><span class="verse-number">17</span>當時，以色列人唱歌說：井啊，湧上水來！你們要向這井歌唱。</div>
+<div class="verse"><span class="verse-number">18</span>這井是首領和民中的尊貴人用圭用杖所挖所掘的。以色列人從曠野往瑪他拿去，</div>
+<div class="verse"><span class="verse-number">19</span>從瑪他拿到拿哈列，從拿哈列到巴末，</div>
+<div class="verse"><span class="verse-number">20</span>從巴末到摩押地谷，又到那下望曠野之毘斯迦的山頂。</div>
+<div class="verse"><span class="verse-number">21</span>以色列人差遣使者去見亞摩利人的王西宏，說：</div>
+<div class="verse"><span class="verse-number">22</span>「求你容我們從你的地經過；我們不偏入田間和葡萄園，也不喝井裏的水，只走大道〔原文作王道〕，直到過了你的境界。」</div>
+<div class="verse"><span class="verse-number">23</span>西宏不容以色列人從他的境界經過，就招聚他的眾民出到曠野，要攻擊以色列人，到了雅雜與以色列人爭戰。</div>
+<div class="verse"><span class="verse-number">24</span>以色列人用刀殺了他，得了他的地，從亞嫩河到雅博河，直到亞捫人的境界，因為亞捫人的境界多有堅壘。</div>
+<div class="verse"><span class="verse-number">25</span>以色列人奪取這一切的城邑，也住亞摩利人的城邑，就是希實本與希實本的一切鄉村。</div>
+<div class="verse"><span class="verse-number">26</span>這希實本是亞摩利王西宏的京城；西宏曾與摩押的先王爭戰，從他手中奪取了全地，直到亞嫩河。</div>
+<div class="verse"><span class="verse-number">27</span>所以那些作詩歌的說：你們來到希實本；願西宏的城被修造，被建立。</div>
+<div class="verse"><span class="verse-number">28</span>因為有火從希實本發出，有火焰出於西宏的城，燒盡摩押的亞珥和亞嫩河邱壇的祭司〔祭司原文作主〕。</div>
+<div class="verse"><span class="verse-number">29</span>摩押啊，你有禍了！基抹的民哪，你們滅亡了！基抹的男子逃奔，女子被擄，交付亞摩利的王西宏。</div>
+<div class="verse"><span class="verse-number">30</span>我們射了他們；希實本直到底本盡皆毀滅。我們使地變成荒場，直到挪法；這挪法直延到米底巴。</div>
+<div class="verse"><span class="verse-number">31</span>這樣，以色列人就住在亞摩利人之地。</div>
+<div class="verse"><span class="verse-number">32</span>摩西打發人去窺探雅謝，以色列人就佔了雅謝的鎮市，趕出那裏的亞摩利人。</div>
+<div class="verse"><span class="verse-number">33</span>以色列人轉回，向巴珊去。巴珊王噩和他的眾民都出來，在以得來與他們交戰。</div>
+<div class="verse"><span class="verse-number">34</span>耶和華對摩西說：「不要怕他！因我已將他和他的眾民，並他的地，都交在你手中；你要待他像從前待住希實本的亞摩利王西宏一般。」</div>
+<div class="verse"><span class="verse-number">35</span>於是他們殺了他和他的眾子，並他的眾民，沒有留下一個，就得了他的地。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+民數記第21章呈現了曠野旅程末期的幾個關鍵事件。首先是亞拉得王攻打以色列人，以色列人向耶和華許願，神應允，他們大敗仇敵，並以「何珥瑪」（毀滅之意）命名那地，預示進迦南征戰的模式。
+繞過以東時，百姓心中再次煩躁，怨讟神和摩西。神使火蛇咬他們，許多人因此死亡。百姓悔改求告，神命摩西製造銅蛇掛在杆子上，凡被咬的望一眼就得活。這一事件成為耶穌在約翰福音3:14的比喻根基：「摩西在曠野怎樣舉蛇，人子也必照樣被舉起來，叫一切信他的都得永生。」本章後半記述以色列人繞過摩押，唱井歌，並先後擊敗亞摩利王西宏和巴珊王噩，奪取他們的土地，為日後的分地鋪墊。這是以色列軍事勝利的開始，顯示應許之地的征服已在眼前。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 仰望得活——信仰不是積功德，而是仰望</strong><br>神的解決方案不是讓被蛇咬的人用藥、禱告、或積德，而是「仰望銅蛇」就得活。這一簡單的行動是純粹的信心：相信神所應許的，抬頭望向神所預備的。耶穌引用這個圖像指向自己，說明救恩的方式是相同的——不是靠努力，而是仰望那被舉起的耶穌基督。信仰的本質是仰望，而非積累。<br><br>
+<strong>2. 認罪與轉向——埋怨後的真實悔改</strong><br>百姓說「我們怨讟耶和華和你，有罪了」，這是誠實的承認，沒有找藉口。神的回應是立刻提供救治的方法。真正的悔改包含清楚地承認罪的性質（怨讟神和摩西），並轉向神尋求幫助。認罪的具體性和轉向的真實性，是蒙神回應的前提。<br><br>
+<strong>3. 井水的詩歌——感恩使人唱歌</strong><br>「比珥的井」邊，以色列人唱歌：「井啊，湧上水來！」這是曠野歌聲難得的喜樂時刻，在經歷了蛇患和悔改之後，神供應了水，百姓以歌聲回應。感恩能把悲傷轉化為讚美。信仰生活中每一個「神供應了水」的時刻，都值得用具體的感謝和讚美來記念。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華對摩西說</strong>：「<strong>你製造一條火蛇</strong>，掛在杆子上；凡被咬的，一望這蛇，就必得活。」摩西便製造一條銅蛇，掛在杆子上；凡被蛇咬的，一望這銅蛇就活了。（民21:8-9）</td>
+<td>就像一種解毒劑只需要吞下就能作用，不需要先積功績，銅蛇的醫治只需要「仰望」這一個動作——在你的信仰理解中，得救和被醫治是更像「努力達到標準」，還是像「仰望神所預備的」？這個區別對你有什麼實際影響？</td>
+</tr>
+<tr>
+<td><strong>百姓到摩西那裏</strong>，說：「<strong>我們怨讟耶和華和</strong>你，有罪了。求你禱告耶和華，叫這些蛇離開我們。」（民21:7）</td>
+<td>就像一個人在付出了痛苦的代價後，終於願意誠實地說「是我錯了」，百姓在蛇患後清楚認罪——你是否有過某種「需要付出代價才願意認罪」的經歷？神對那次誠實悔改的回應，給了你什麼樣的印象？</td>
+</tr>
+<tr>
+<td><strong>以色列人唱歌說</strong>：井啊，<strong>湧上水來</strong>！你們要向這井歌唱。（民21:17）</td>
+<td>就像在久旱之後終於下雨，人不由自主地想歡呼，以色列人在曠野得了水就唱起歌來——你上一次因為神的供應而由衷地歌唱或讚美，是什麼時候？是什麼讓我們有時失去了這種因神的恩典而歌唱的自然反應？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

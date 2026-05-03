@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以斯帖記第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以斯帖記第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">哈曼惱恨末底改，謀滅猶大人</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>這事以後，亞哈隨魯王抬舉亞甲族哈米大他的兒子哈曼，使他高升，叫他的爵位超過與他同事的一切臣宰。</div>
+<div class="verse"><span class="verse-number">2</span>在朝門的一切臣僕都跪拜哈曼，因為王如此吩咐；惟獨末底改不跪不拜。</div>
+<div class="verse"><span class="verse-number">3</span>在朝門的臣僕問末底改說：「你為何違背王的命令呢？」</div>
+<div class="verse"><span class="verse-number">4</span>他們天天勸他，他還是不聽，他們就告訴哈曼，要看末底改的事站得住站不住，因他已經告訴他們自己是猶大人。</div>
+<div class="verse"><span class="verse-number">5</span>哈曼見末底改不跪不拜，他就怒氣填胸。</div>
+<div class="verse"><span class="verse-number">6</span>他們已將末底改的本族告訴哈曼；他以為下手害末底改一人是小事，就要滅絕亞哈隨魯王通國所有的猶大人，就是末底改的本族。</div>
+<div class="verse"><span class="verse-number">7</span>亞哈隨魯王十二年正月，就是尼散月，人在哈曼面前，按日日月月掣普珥，就是掣籤，要定何月何日為吉，擇定了十二月，就是亞達月。</div>
+<div class="verse"><span class="verse-number">8</span>哈曼對亞哈隨魯王說：「有一種民散居在王國各省的民中；他們的律例與萬民的律例不同，也不守王的律例，所以容留他們與王無益。</div>
+<div class="verse"><span class="verse-number">9</span>王若以為美，請下旨意滅絕他們；我就捐一萬他連得銀子交給掌管國帑的人，納入王的府庫。」</div>
+<div class="verse"><span class="verse-number">10</span>於是王從自己手上摘下戒指給猶大人的仇敵亞甲族哈米大他的兒子哈曼。</div>
+<div class="verse"><span class="verse-number">11</span>王對哈曼說：「這銀子仍賜給你，這民也交給你，你可以隨意待他們。」</div>
+<div class="verse"><span class="verse-number">12</span>正月十三日，就召了王的書記來，照着哈曼一切所吩咐的，用各省的文字、各族的方言，奉亞哈隨魯王的名寫旨意，傳與總督和各省的省長，並各族的首領；又用王的戒指蓋印，</div>
+<div class="verse"><span class="verse-number">13</span>交給驛卒傳到王的各省，吩咐將猶大人，無論老少婦女孩子，在一日之間，十二月，就是亞達月十三日，全然剪除，殺戮滅絕，並奪他們的財為掠物。</div>
+<div class="verse"><span class="verse-number">14</span>抄錄這旨意，頒行各省，宣告各族，使他們預備等候那日。</div>
+<div class="verse"><span class="verse-number">15</span>驛卒奉王命急忙起行，旨意也傳遍書珊城。王同哈曼坐下飲酒，書珊城的民卻都慌亂。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以斯帖記第3章引入全書最大的危機。哈曼是亞甲族人，亞甲族與以色列有世代為仇的歷史淵源（源自便雅憫支派對亞甲王亞甲的衝突）。亞哈隨魯王抬舉哈曼，眾臣皆跪拜，惟獨末底改拒絕，原因在於他的猶大人身分——他只向神跪拜。哈曼對末底改一人的輕蔑感到盛怒，但他的報復不止於末底改一人，而是要藉此滅絕帝國境內所有的猶大人。他向王進讒言，誣稱猶大人律例特別、不守王令，並以巨額財富賄賂換取王的許可。王輕易地將戒指賜給哈曼，授予他生殺大權。一紙殺令就此頒佈，定在亞達月十三日滅絕所有猶大人。這章以王與哈曼飲酒作結，對照城中百姓的慌亂，呈現出強烈的張力與危機感。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 對人的不妥協有時意味著對神的忠誠</strong><br>末底改拒絕向哈曼跪拜，這個看似微小的行為，觸發了一場全族滅絕的危機。他的不妥協源於他的信仰身分——他是猶大人，只向神跪拜。忠於神的原則有時代價極高，甚至牽連他人。但末底改的堅持最終成為全故事轉機的起點。信仰上的不妥協，不是頑固，而是對神主權的宣告，即使那意味著承擔風險。<br><br>
+<strong>2. 驕傲的憤怒往往導致失去比例的毀滅性回應</strong><br>哈曼因一人不跪而憤怒，卻要謀殺全族。這種失去比例的報復，是驕傲心理的典型表現——自我感覺被輕視，便要以毀滅性的方式重建自尊。驕傲使人的判斷失去理性，使傷害急速擴大。聖經多次警告驕傲的危險，哈曼是其中最鮮明的反面教材之一。<br><br>
+<strong>3. 邪惡的計謀有神定好的時限</strong><br>哈曼用掣籤（普珥）來決定滅絕的日子，意圖透過占卜為自己的惡謀尋找「吉日」。然而這個時間差（從正月到十二月），恰好給了以斯帖和末底改行動的時間。邪惡的計畫雖然精密，但神掌管時間，在人看來是命運的安排，其實是神為救贖留出的空間。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>在朝門的一切臣僕</strong><strong>都跪拜哈曼</strong>……惟獨末底改不跪不拜。（斯3:2）</td>
+<td>就像在群體壓力下仍堅持自己的立場，需要極大的勇氣，你有沒有曾因為信仰原則而在眾人都「跪拜」的時候選擇站立？那一刻你付出了什麼代價？</td>
+</tr>
+<tr>
+<td><strong>哈曼見末底改不跪</strong>不拜，<strong>他就怒氣填胸</strong>。他以為下手害末底改一人是小事，就要滅絕……所有的猶大人。（斯3:5-6）</td>
+<td>就像一顆小石子引發山崩，驕傲的憤怒會讓人對傷害的回應完全失去比例。你有否在被輕視時，反應遠超過實際的傷害？是什麼在你內心被觸動了？</td>
+</tr>
+<tr>
+<td><strong>驛卒奉王命急忙起</strong>行，<strong>旨意也傳遍書珊城</strong>。王同哈曼坐下飲酒，書珊城的民卻都慌亂。（斯3:15）</td>
+<td>就像決策者輕描淡寫的一個簽字，卻使千萬人的命運改變，掌權者的漠然是否也讓你思考：當我的決定可能傷害他人時，我是否保持足夠的敏感與慎重？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

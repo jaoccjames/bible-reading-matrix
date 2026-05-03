@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第46章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第46章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">雅各全家下埃及</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列帶着一切所有的，起身來到別是巴，就獻祭給他父親以撒的神。</div>
+<div class="verse"><span class="verse-number">2</span>夜間，神在異象中對以色列說：「雅各！雅各！」他說：「我在這裏。」</div>
+<div class="verse"><span class="verse-number">3</span>神說：「我是神，就是你父親的神。你下埃及去不要害怕，因為我必使你在那裏成為大族。</div>
+<div class="verse"><span class="verse-number">4</span>我要和你同下埃及去，也必定帶你上來；約瑟必給你送終〔原文作將手按在你的眼睛上〕。」</div>
+<div class="verse"><span class="verse-number">5</span>雅各就從別是巴起行。以色列的兒子們使他們的父親雅各和他們的妻子、兒女都坐在法老為雅各送來的車上。</div>
+<div class="verse"><span class="verse-number">6</span>他們又帶着迦南地所得的牲畜、貨財來到埃及。雅各和他的一切子孫都一同來了。</div>
+<div class="verse"><span class="verse-number">7</span>雅各把他的兒子、孫子、女兒、孫女，並他的子子孫孫，一同帶到埃及。</div>
+<div class="verse"><span class="verse-number">8</span>來到埃及的以色列人，名字記在下面。雅各和他的兒孫：雅各的長子是流便。</div>
+<div class="verse"><span class="verse-number">9</span>流便的兒子是哈諾、法路、希斯倫、迦米。</div>
+<div class="verse"><span class="verse-number">10</span>西緬的兒子是耶母利、雅憫、阿轄、雅斤、瑣轄，還有迦南女子所生的掃羅。</div>
+<div class="verse"><span class="verse-number">11</span>利未的兒子是革順、哥轄、米拉利。</div>
+<div class="verse"><span class="verse-number">12</span>猶大的兒子是珥，俄南、示拉、法勒斯、謝拉；惟有珥與俄南死在迦南地。法勒斯的兒子是希斯倫、哈母勒。</div>
+<div class="verse"><span class="verse-number">13</span>以薩迦的兒子是陀拉、普瓦、約伯、伸崙。</div>
+<div class="verse"><span class="verse-number">14</span>西布倫的兒子是西烈、以倫、雅利。</div>
+<div class="verse"><span class="verse-number">15</span>這是利亞在巴旦亞蘭給雅各所生的兒子，還有女兒底拿。兒孫共有三十三人。</div>
+<div class="verse"><span class="verse-number">16</span>迦得的兒子是洗非芸、哈基、書尼、以斯本、以利、亞羅底、亞列利。</div>
+<div class="verse"><span class="verse-number">17</span>亞設的兒子是音拿、亦施瓦、亦施韋、比利亞，還有他們的妹子西拉。比利亞的兒子是希別、瑪結。</div>
+<div class="verse"><span class="verse-number">18</span>這是拉班給他女兒利亞的婢女悉帕從雅各所生的兒孫，共有十六人。</div>
+<div class="verse"><span class="verse-number">19</span>雅各之妻拉結的兒子是約瑟和便雅憫。</div>
+<div class="verse"><span class="verse-number">20</span>約瑟在埃及地生了瑪拿西和以法蓮，就是安城的祭司波提非拉的女兒亞西納給約瑟生的。</div>
+<div class="verse"><span class="verse-number">21</span>便雅憫的兒子是比拉、比結、亞實別、基拉、乃幔、以希、羅實、母平、戶平、亞勒。</div>
+<div class="verse"><span class="verse-number">22</span>這是拉結給雅各所生的兒孫，共有十四人。</div>
+<div class="verse"><span class="verse-number">23</span>但的兒子是戶伸。</div>
+<div class="verse"><span class="verse-number">24</span>拿弗他利的兒子是雅薛、沽尼、耶色、示冷。</div>
+<div class="verse"><span class="verse-number">25</span>這是拉班給他女兒拉結的婢女辟拉從雅各所生的兒孫，共有七人。</div>
+<div class="verse"><span class="verse-number">26</span>那與雅各同到埃及的，除了他兒婦之外，凡從他所生的，共有六十六人。</div>
+<div class="verse"><span class="verse-number">27</span>還有約瑟在埃及所生的兩個兒子。雅各家來到埃及的共有七十人。</div>
+<div class="verse"><span class="verse-number">28</span>雅各打發猶大先去見約瑟，請派人引路往歌珊去；於是他們來到歌珊地。</div>
+<div class="verse"><span class="verse-number">29</span>約瑟套車往歌珊去，迎接他父親以色列，及至見了面，就伏在父親的頸項上，哭了許久。</div>
+<div class="verse"><span class="verse-number">30</span>以色列對約瑟說：「我既得見你的面，知道你還在，就是死我也甘心。」</div>
+<div class="verse"><span class="verse-number">31</span>約瑟對他的弟兄和他父的全家說：「我要上去告訴法老，對他說：『我的弟兄和我父的全家從前在迦南地，現今都到我這裏來了。</div>
+<div class="verse"><span class="verse-number">32</span>他們本是牧羊的人，以養牲畜為業；他們把羊群牛群和一切所有的都帶來了。』</div>
+<div class="verse"><span class="verse-number">33</span>等法老召你們的時候，問你們說：『你們以何事為業？』</div>
+<div class="verse"><span class="verse-number">34</span>你們要說：『你的僕人從幼年直到如今，都以養牲畜為業，連我們的祖宗也都以此為業。』這樣，你們可以住在歌珊地，因為凡牧羊的都被埃及人所厭惡。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載雅各全家下埃及的歷史性時刻。雅各在別是巴獻祭尋求神的引導，神在夜間異象中向他顯現，應許與他同下埃及並使他成為大族，也預言約瑟將為他送終。雅各帶著全家七十人（包括約瑟一家）來到埃及。本章詳細記載雅各十二個兒子的後裔名單，這份家譜不僅標誌以色列民族的形成，也為日後出埃及的故事奠定基礎。雅各與約瑟在歌珊地相見，父子擁抱痛哭，雅各說「我既得見你的面，就是死我也甘心」。約瑟提前指示家人如何回答法老的詢問，好讓他們能定居歌珊地，既靠近約瑟又能保持牧羊生活，避免與埃及文化同化。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 重大決定前需要尋求神的引導</strong><br>雅各在啟程前先獻祭尋求神，神也主動向他顯現賜下應許。人生的重大抉擇不應只憑感覺或環境，而要在禱告中尋求神的心意與印證。神的同在使我們在未知中有平安，祂的應許成為前行的力量。<br><br>
+<strong>2. 神的應許超越環境的限制</strong><br>雅各雖然離開應許之地下埃及，神卻應許要與他同去並使他成為大族。神的計畫不受地理位置限制，祂能在任何環境中成就旨意。離開舒適圈不代表離開神的祝福，順服帶領就是走在應許中。<br><br>
+<strong>3. 家族傳承需要刻意的保護</strong><br>約瑟刻意安排家人住歌珊地，既能供應他們又能保持身分。屬靈產業的傳承需要智慧的策略，在世界中卻不被世界同化。我們要學習在融入文化的同時保守信仰的獨特性，為下一代建立屬靈的界線與空間。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>神說：<strong>我是神</strong>，<strong>就是你父親的神</strong>。你下埃及去不要害怕，因為我必使你在那裡成為大族。（創46:3）</td>
+<td>就像轉換跑道前得到mentor肯定消除疑慮，神的應許堅固雅各信心。當我面對重大改變（如搬遷、轉職、婚姻）感到害怕時，我是只看環境的不確定，還是尋求並抓住神的應許與同在？</td>
+</tr>
+<tr>
+<td><strong>我要和你同下埃及</strong>去，<strong>也必定帶你上來</strong>。（創46:4）</td>
+<td>就像父母陪孩子做手術承諾全程同在，神應許與雅各同去同回。在人生的低谷或未知旅程中，我是否真實經歷神的同在，相信祂不僅陪我走進困境，也必帶領我走出來？</td>
+</tr>
+<tr>
+<td><strong>以色列對約瑟說</strong>：<strong>我既得見你的面</strong>，知道你還在，就是死我也甘心。（創46:30）</td>
+<td>就像見到失聯親人讓人生了無遺憾，約瑟活著成為雅各最大安慰。我生命中最渴望的是什麼？是財富、成就、健康，還是與所愛的人關係恢復、看見神的作為與同在？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

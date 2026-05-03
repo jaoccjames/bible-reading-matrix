@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">剃髮三分與耶路撒冷的審判</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「人子啊，你要拿一把快刀，當作剃頭刀，用這刀剃你的頭髮和你的鬍鬚，用天平將鬚髮平分。</div>
+<div class="verse"><span class="verse-number">2</span>圍困城的日子滿了，你要將三分之一在城中用火焚燒，將三分之一在城的四圍用刀砍碎，將三分之一任風吹散；我也要拔刀追趕。</div>
+<div class="verse"><span class="verse-number">3</span>你要從其中取幾根包在衣襟裏，</div>
+<div class="verse"><span class="verse-number">4</span>再從這幾根中取些扔在火中焚燒，從裏面必有火出來燒入以色列全家。</div>
+<div class="verse"><span class="verse-number">5</span>主耶和華如此說：這就是耶路撒冷。我曾將她安置在列邦之中；列國都在她的四圍。</div>
+<div class="verse"><span class="verse-number">6</span>她行惡，違背我的典章，過於列國；干犯我的律例，過於四圍的列邦，因為她棄掉我的典章。至於我的律例，她並沒有遵行。</div>
+<div class="verse"><span class="verse-number">7</span>所以主耶和華如此說：因為你們紛爭過於四圍的列國，也不遵行我的律例，不謹守我的典章，並以遵從四圍列國的惡規尚不滿意，</div>
+<div class="verse"><span class="verse-number">8</span>所以主耶和華如此說：看哪，我與你反對，必在列國的眼前，在你中間，施行審判；</div>
+<div class="verse"><span class="verse-number">9</span>並且因你一切可憎的事，我要在你中間行我所未曾行的，以後我也不再照着行。</div>
+<div class="verse"><span class="verse-number">10</span>在你中間父親要喫兒子，兒子要喫父親。我必向你施行審判，我必將你所剩下的分散四方〔方：原文作風〕。」</div>
+<div class="verse"><span class="verse-number">11</span>主耶和華說：「我指着我的永生起誓，因你用一切可憎的物、可厭的事玷污了我的聖所，故此，我定要使你人數減少，我眼必不顧惜你，也不可憐你。</div>
+<div class="verse"><span class="verse-number">12</span>你的民三分之一必遭瘟疫而死，在你中間必因饑荒消滅；三分之一必在你四圍倒在刀下；我必將三分之一分散四方〔方：原文作風〕，並要拔刀追趕他們。</div>
+<div class="verse"><span class="verse-number">13</span>「我要這樣成就怒中所定的；我向他們發的忿怒止息了，自己就得着安慰。我在他們身上成就怒中所定的那時，他們就知道我耶和華所說的是出於熱心；</div>
+<div class="verse"><span class="verse-number">14</span>並且我必使你在四圍的列國中，在經過的眾人眼前，成了荒涼和羞辱。</div>
+<div class="verse"><span class="verse-number">15</span>這樣，我必以怒氣和忿怒，並烈怒的責備，向你施行審判。那時，你就在四圍的列國中成為羞辱、譏刺、警戒、驚駭。這是我耶和華說的。</div>
+<div class="verse"><span class="verse-number">16</span>那時，我要將滅人、使人饑荒的惡箭，就是射去滅人的，射在你們身上，並要加增你們的饑荒，斷絕你們所倚靠的糧食；</div>
+<div class="verse"><span class="verse-number">17</span>又要使饑荒和惡獸到你那裏，叫你喪子，瘟疫和流血的事也必盛行在你那裏；我也要使刀劍臨到你。這是我耶和華說的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第5章延續行動預言的系列，以剃頭髮的象徵宣告耶路撒冷三分之一的命運：焚燒（瘟疫饑荒）、刀砍（刀劍）、風吹（分散列國），另留少數包在衣襟，但最終連這些也被火燒——象徵幾乎沒有真正的倖存者。神明確說明審判的原因：耶路撒冷蒙受了列邦中最高的地位（神將她安置在列邦中央），卻在罪惡上超過所有列國，違背神的典章比外邦還嚴重——蒙受更大的光，卻有更大的墮落，就要承受更大的審判。這是「特殊地位帶來特殊責任」的嚴肅宣告。審判的範圍包含瘟疫、饑荒、刀劍、惡獸，並且連父親喫兒子、兒子喫父親的慘況都要發生——這是圍城飢荒最黑暗的人性崩潰。審判的目的在第13節揭示：「他們就知道我耶和華所說的是出於熱心」——一切是為了讓人認識神的真實。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 蒙受更大的恩典，就承擔更大的責任</strong><br>耶路撒冷被置於列邦中央，蒙受最高的地位與神的啟示，卻「行惡過於列國」。這顯示恩典不是免責的依據，而是責任的來源。「多給誰，就向誰多取」（路12:48）是神公義原則的顯現。信徒蒙受的恩典越多——神的話語、信仰傳承、屬靈資源——對相稱的生命表現就有越高的要求。<br><br>
+<strong>2. 神的審判有時是為讓人最終認識祂的真實</strong><br>「他們就知道我耶和華所說的是出於熱心」（13節）——審判不是神的宣洩，而是一種讓人認識真相的極端教育。當一切溫柔的提醒都無效，嚴厲的審判反而成為最後讓人「知道」的途徑。神的烈怒背後是熱心——一種深切在乎的愛的另一面。<br><br>
+<strong>3. 與列國相似的罪，在神的子民身上有更嚴格的標準</strong><br>神的百姓「以遵從四圍列國的惡規尚不滿意」——不只是隨波逐流，而是主動效法甚至超越。信徒在世界的標準和神的標準之間的選擇，從來都不是中立的——效法世界不只是個人的失敗，更是對蒙召地位的背棄。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>她行惡</strong>，<strong>違背我的典章</strong>，過於列國；干犯我的律例，過於四圍的列邦，因為她棄掉我的典章。（結5:6）</td>
+<td>你是否有時以「大家都這樣做」來合理化某個不符合信仰標準的行為？就像以「大家都超速」來正當化自己的超速，神對祂子民的標準不是「和世界一樣」，而是更高的呼召。你生命中有哪個地方，你的標準其實已悄悄降到「和大家一樣」，而忘了你被呼召活出更高的標準？</td>
+</tr>
+<tr>
+<td><strong>我必使你在四圍的</strong><strong>列國中</strong>，在經過的眾人眼前，成了荒涼和羞辱。（結5:14）</td>
+<td>見證的失落是最沉重的代價之一。一個曾經彰顯神榮耀的群體，若因罪惡而成為列國的「笑柄」，這對神的名有何影響？你所在的信仰群體，在周圍人眼中是「令人想認識神的見證」，還是讓人對信仰更失望的存在？</td>
+</tr>
+<tr>
+<td><strong>我要這樣成就怒中</strong><strong>所定的</strong>；我向他們發的忿怒止息了，自己就得着安慰。（結5:13上）</td>
+<td>神「得着安慰」是一個深刻的擬人化描述——祂在意祂話語的成就，在意祂子民的狀態。這顯示神不是冷漠的旁觀者。你是否相信神真的「在意」你的生命走向？就像一個真正在意孩子的父母比冷漠的父母更可能管教孩子，神的管教正是祂「在意」的證明。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

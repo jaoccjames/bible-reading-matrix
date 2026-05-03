@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>啟示錄第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+啟示錄第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">羔羊與十四萬四千人及收割的異象</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>羔羊揭開第七印的時候，天上寂靜約有二刻。</div>
+<div class="verse"><span class="verse-number">2</span>我看見那站在神面前的七位天使，有七枝號賜給他們。</div>
+<div class="verse"><span class="verse-number">3</span>另有一位天使拿着金香爐來，站在祭壇旁邊。有許多香賜給他，要和眾聖徒的祈禱一同獻在寶座前的金壇上。</div>
+<div class="verse"><span class="verse-number">4</span>那香的煙和眾聖徒的祈禱從天使的手中一同升到神面前。</div>
+<div class="verse"><span class="verse-number">5</span>天使拿着香爐，盛滿了壇上的火，倒在地上；隨有雷轟、大聲、閃電、地震。</div>
+<div class="verse"><span class="verse-number">6</span>拿着七枝號的七位天使就預備要吹。</div>
+<div class="verse"><span class="verse-number">7</span>第一位天使吹號，就有雹子與火攙着血丟在地上；地的三分之一和樹的三分之一被燒了，一切的青草也被燒了。</div>
+<div class="verse"><span class="verse-number">8</span>第二位天使吹號，就有彷彿火燒着的大山扔在海中；海的三分之一變成血，</div>
+<div class="verse"><span class="verse-number">9</span>海中的活物死了三分之一，船隻也壞了三分之一。</div>
+<div class="verse"><span class="verse-number">10</span>第三位天使吹號，就有燒着的大星，好像火把從天上落下來，落在江河的三分之一和眾水的泉源上。</div>
+<div class="verse"><span class="verse-number">11</span>這星名叫「茵蔯」。眾水的三分之一變為茵蔯；因水變苦，就死了許多人。</div>
+<div class="verse"><span class="verse-number">12</span>第四位天使吹號，日頭的三分之一，月亮的三分之一、星辰的三分之一都被擊打，以致日月星的三分之一黑暗了，白晝的三分之一沒有光，黑夜也是這樣。</div>
+<div class="verse"><span class="verse-number">13</span>我又看見一個鷹飛在空中，並聽見牠大聲說：「三位天使要吹那其餘的號。你們住在地上的民，禍哉！禍哉！禍哉！」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第8章記述第七印的開啟，天上靜默半小時，然後七位天使各得一號，前四號吹響帶來對地、海、河流和天體的逐一審判，展示末世審判的宇宙性規模。本章首先記述羔羊揭開第七印，天上靜默約有半小時，七位天使各拿著一個號，另有一位天使拿著金香爐站在祭壇旁，有許多香賜給他，要與眾聖徒的祈禱一同獻在寶座前的金壇上，那香的煙與聖徒的禱告從天使手中升到神面前，天使拿著香爐盛滿了壇上的火拋在地上，就有雷轟閃電地震。接著那七位天使就預備吹號，第一位吹號有雹子與火攙著血拋在地上，地上三分之一的樹和一切青草都燒盡了；第二位吹號有一個燒著的大火山扔在海中，海的三分之一變成血，海中三分之一有生命的被殺；第三位吹號有一個大星從天落下，落在三分之一的河上，三分之一的水變苦，因水苦死的人很多；第四位吹號日頭月亮星辰各有三分之一被打著變黑暗，晝夜各有三分之一沒有光。然後約翰看見一隻鷹飛在空中大聲說禍哉禍哉禍哉，因為還有三位天使要吹的三號更大的審判要來到。本章以四號的審判展示末世審判逐步擴大的規模。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 跟隨羔羊無論往哪裏去</strong><br>「十四萬四千人……跟隨羔羊，無論往哪裏去」——「無論往哪裏去」是最全面的委身宣告：不只是在方便時跟隨，而是毫無保留地跟隨，到任何地方，無論代價是什麼。這是對信徒最高的呼召標準。<br><br>
+<strong>2. 「在主裏面而死的人有福了」</strong><br>「從今以後，在主裏面而死的人有福了！他們息了自己的勞苦……他們的善行也隨着他們」——在逼迫的時代，為信仰而死是真實的可能，基督宣告這樣的死是「有福的」。「息了自己的勞苦」——所有在地上的掙扎和疲倦都終結了。「善行也隨着他們」——在地上的忠心服事，有永恆的紀錄和賞賜。<br><br>
+<strong>3. 永遠的福音要傳給全地</strong><br>「有永遠的福音，要傳給住在地上的人，就是各國、各族、各方、各民」——即使在末世的審判前，仍有最後的機會讓人悔改。「應當敬畏神，將榮耀歸給他」——福音的核心始終是呼召人回到對神的敬畏和榮耀。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>從今以後</strong>，<strong>在主裏面而死的人</strong>有福了！聖靈說：是的，他們息了自己的勞苦，做工的果效也隨着他們。（啟14:13）</td>
+<td>你有沒有讓「在主裏面而死的人有福了」這個宣告改變你面對死亡的態度——讓你把為主忠心地度過的每一天都看作是「善行隨着進入永恆」的積累？就像一個清楚遺囑的人對自己的財產分配感到安穩，你有沒有讓對「做工果效跟着進入永恆」的確信帶出你今日服事的意義感？</td>
+</tr>
+<tr>
+<td><strong>跟隨羔羊</strong>、<strong>無論往哪裏去</strong>。他們從人間被買來，作初熟的果子歸與神和羔羊。在他們口中沒有謊言，他們是沒有瑕疵的。（啟14:4-5）</td>
+<td>你有沒有讓「跟隨羔羊無論往哪裏去」成為你信仰委身的真實表達——不只是在方便的情況下跟隨，而是無論祂帶你去哪裏，都毫無保留地跟隨？就像最忠心的夥伴不問目的地就願意同行，你有沒有讓這種無條件的跟隨成為你信仰生命的姿態？</td>
+</tr>
+<tr>
+<td><strong>你們應當敬畏神</strong>，<strong>將榮耀歸給他</strong>，因他施行審判的時候已經到了；應當敬拜那創造天地海和眾水泉源的。（啟14:7）</td>
+<td>你有沒有在日常生活中讓「敬畏神、歸榮耀給神」成為你一切行動的出發點，而非在末世臨近才倉促回頭？就像最好的考試準備是每天的學習而非臨時抱佛腳，你有沒有讓日常的敬畏和歸榮耀成為你的信仰常態？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

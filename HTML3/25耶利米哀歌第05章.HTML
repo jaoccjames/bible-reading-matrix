@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米哀歌第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米哀歌第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">集體認罪與仰望永恆之神</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華啊，求你記念我們所遭遇的事，觀看我們所受的凌辱。</div>
+<div class="verse"><span class="verse-number">2</span>我們的產業歸與外邦人；我們的房屋歸與外路人。</div>
+<div class="verse"><span class="verse-number">3</span>我們是無父的孤兒；我們的母親好像寡婦。</div>
+<div class="verse"><span class="verse-number">4</span>我們出錢纔得水喝；我們的柴是人賣給我們的。</div>
+<div class="verse"><span class="verse-number">5</span>追趕我們的，到了我們的頸項上；我們疲乏不得歇息。</div>
+<div class="verse"><span class="verse-number">6</span>我們投降埃及人和亞述人，為要得糧吃飽。</div>
+<div class="verse"><span class="verse-number">7</span>我們列祖犯罪，而今不在了；我們擔當他們的罪孽。</div>
+<div class="verse"><span class="verse-number">8</span>奴僕轄制我們，無人救我們脫離他們的手。</div>
+<div class="verse"><span class="verse-number">9</span>因為曠野的刀劍，我們冒着險才得糧食。</div>
+<div class="verse"><span class="verse-number">10</span>因飢餓燥熱，我們的皮膚就黑如爐。</div>
+<div class="verse"><span class="verse-number">11</span>敵人在錫安玷污婦人，在猶大的城邑玷污處女。</div>
+<div class="verse"><span class="verse-number">12</span>他們吊起首領的手，也不尊敬老人的面。</div>
+<div class="verse"><span class="verse-number">13</span>少年人扛磨石，孩童背木柴，都絆跌了。</div>
+<div class="verse"><span class="verse-number">14</span>老年人在城門口斷絕；少年人不再作樂。</div>
+<div class="verse"><span class="verse-number">15</span>我們心中的快樂止息，跳舞變為悲哀。</div>
+<div class="verse"><span class="verse-number">16</span>冠冕從我們的頭上落下；我們犯罪了，我們有禍了！</div>
+<div class="verse"><span class="verse-number">17</span>這些事我們心裏發昏，我們的眼睛昏花。</div>
+<div class="verse"><span class="verse-number">18</span>錫安山荒涼，野狗〔或作：狐狸〕行在其上。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華啊，你存到永遠；你的寶座存到萬代。</div>
+<div class="verse"><span class="verse-number">20</span>你為何永遠忘記我們？為何許久離棄我們？</div>
+<div class="verse"><span class="verse-number">21</span>耶和華啊，求你使我們向你回轉，我們便得回轉。求你復新我們的日子，像古時一樣。</div>
+<div class="verse"><span class="verse-number">22</span>你竟全然棄絕我們，向我們大發烈怒？</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米哀歌第5章是全卷的終篇，形式上改為集體禱告，失去了前四章的字母詩結構，彷彿詩歌的形式本身也在哀慟中瓦解。全章是一篇社群的呼求：我們失去了產業、房屋、成了孤兒寡婦，出錢買水、冒險取糧、受外邦人轄制、婦女受辱、長老失去尊榮、少年負重、快樂止息。第7節有一個深刻的代際省思：「我們列祖犯罪，而今不在了；我們擔當他們的罪孽」——苦難的根源部分來自先人的罪，現在的人承擔代價。然而第19節是全卷最崇高的神學宣告：「耶和華啊，你存到永遠；你的寶座存到萬代。」在一切都廢墟之中，唯有神的永恆是不變的。最後兩節提出一個開放性的問題——甚至可以說是挑戰性的問題：「你為何永遠忘記我們？」以及那最後的疑問「你竟全然棄絕我們，向我們大發烈怒？」全卷以問句結束，沒有給出整齊的答案，保留了真實的信仰張力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 集體的認罪與代禱是群體信仰的重要功課</strong><br>本章整章是「我們」的禱告，而非個人的呼求。「我們犯罪了，我們有禍了！」是集體的認罪。信仰群體的恢復，往往始於集體的認罪——不只是個人各自認罪，而是作為一個群體在神面前承認共同的失敗。教會、家庭、民族，都有集體的屬靈責任；共同的禱告和認罪，是群體靈命恢復的關鍵路徑。<br><br>
+<strong>2. 神的永恆是一切廢墟中最穩固的根基</strong><br>「耶和華啊，你存到永遠；你的寶座存到萬代」——當一切都可能失去，當城市成廢墟、冠冕落下、快樂止息，有一件事不變：神的永恆存在。信仰的最深根基不是感受、不是環境、不是教會的建築或制度，而是那位永遠存在的神。在最深的失落中，「神仍然存在」這個事實本身，就是最大的盼望。<br><br>
+<strong>3. 真實的信仰允許向神提出最難的問題</strong><br>哀歌以問句結束：「你為何永遠忘記我們？……你竟全然棄絕我們？」這是最沉重的控訴，卻出現在禱告中——說明這是向神說的，而不是背棄神的宣言。真實的信仰有空間承接最難的問題，甚至向神發出最尖銳的質疑。神夠大，可以承受我們的困惑和憤怒；把最難的問題帶到禱告中，本身就是信仰的行動。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華啊</strong>，<strong>你存到永遠</strong>；你的寶座存到萬代。（哀5:19）</td>
+<td>當你生命中的一切似乎都在動搖——關係、健康、計畫——有沒有一個「不會動搖」的根基支撐着你？就像在大地震中，建在岩石上的建築比建在沙上的更能撐住，你的信仰根基是建立在「神永遠存在」這個事實上，還是建立在感受、情況、或人的支持上？</td>
+</tr>
+<tr>
+<td><strong>耶和華啊</strong>，<strong>求你使我們向你回</strong>轉，我們便得回轉。求你復新我們的日子，像古時一樣。（哀5:21）</td>
+<td>「使我們向你回轉，我們便得回轉」——這個禱告承認連「回轉」本身都需要神的幫助。你是否曾有過「我想改變，但我做不到」的掙扎？就像想戒掉壞習慣卻靠意志力屢屢失敗，你願意把「我需要你幫我回轉」這個禱告帶到神面前，讓祂的恩典成為你改變的動力嗎？</td>
+</tr>
+<tr>
+<td><strong>我們犯罪了</strong>，<strong>我們有禍了</strong>！冠冕從我們的頭上落下。（哀5:16）</td>
+<td>「我們犯罪了」——這是集體的認罪，不只是別人的問題，也是「我們」的責任。你所屬的群體——家庭、教會、社會——有沒有共同的罪需要集體認罪？就像一個家庭需要家人一起承認問題才能開始修復，你願意為你所屬的群體，帶着認罪的心向神禱告嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

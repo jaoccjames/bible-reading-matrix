@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第41章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第41章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">眷顧貧窮有福了：知己背叛中的信靠</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩，交與伶長）眷顧貧窮的有福了！他遭難的日子，耶和華必搭救他。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華必保全他，使他存活；他必在地上享福。求你不要把他交給仇敵，遂其所願。</div>
+<div class="verse"><span class="verse-number">3</span>他病重在榻，耶和華必扶持他；他在病中，你必給他鋪床。</div>
+<div class="verse"><span class="verse-number">4</span>我曾說：耶和華啊，求你憐恤我，醫治我！因為我得罪了你。</div>
+<div class="verse"><span class="verse-number">5</span>我的仇敵用惡言議論我說：他幾時死，他的名才滅亡呢？</div>
+<div class="verse"><span class="verse-number">6</span>他來看我就說假話；他心存奸惡，走到外邊才說出來。</div>
+<div class="verse"><span class="verse-number">7</span>一切恨我的，都交頭接耳的議論我；他們設計要害我。</div>
+<div class="verse"><span class="verse-number">8</span>他們說：有怪病貼在他身上；他已躺臥，必不能再起來。</div>
+<div class="verse"><span class="verse-number">9</span>連我知己的朋友，我所倚靠、吃過我飯的也用腳踢我。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華阿，求你憐恤我，使我起來，好報復他們！</div>
+<div class="verse"><span class="verse-number">11</span>因我的仇敵不得向我誇勝，我從此便知道你喜愛我。</div>
+<div class="verse"><span class="verse-number">12</span>你因我純正就扶持我，使我永遠站在你的面前。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華以色列的神是應當稱頌的，從亙古直到永遠。阿們！阿們！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第41篇是詩篇第一卷（第1-41篇）的結束篇，以頌讚神的感謝詞（第13節）作結，成為第一卷的終止式。本篇大衛所作，標明「交與伶長」。根據本篇的內容，大衛似乎正在病中，遭受仇敵的落井下石與知己的背叛。
+
+      本篇第1節以智慧的格言開篇：「眷顧貧窮的有福了！」這個宣告不只是社會倫理的陳述，更是屬靈原則的揭示——那些關心弱勢者的人，在自己遭難時也將得到神的保護。這種「施與收」的屬靈原則，為全篇對神保護的信心提供了神學基礎。
+
+      第9節「連我知己的朋友，我所倚靠、吃過我飯的也用腳踢我」在新約中被耶穌引用（約13:18），指向猶大的背叛，使本篇具有深刻的彌賽亞預言意義。本篇也是詩篇第一卷（詩1-41篇）的結尾，以「耶和華以色列的神是應當稱頌的，從亙古直到永遠。阿們！阿們！」的頌讚作結，呼應詩篇編輯的神學設計——每一卷均以頌讚收結。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 眷顧貧窮者蒙神保護是屬靈原則的真實應許</strong><br>「眷顧貧窮的有福了！他遭難的日子，耶和華必搭救他。」（第1節）大衛以自身的處境印證了這個屬靈原則：那些在自己有能力時關心弱勢者的人，在他們自己遭難時，同一位神也必為他們伸手。這不是商業性的交換，而是神公義品格的一致彰顯——祂憐憫貧窮人，也憐憫那些效法祂憐憫他人的人。這一真理呼召信徒把關心弱勢者不只視為道德義務，更視為與神同行最真實的表達。<br><br>
+<strong>2. 知己的背叛是人生最深的傷痛之一</strong><br>「連我知己的朋友，我所倚靠、吃過我飯的也用腳踢我。」（第9節）「知己的朋友」、「吃過我飯的」，這兩個短語揭示了傷痛的深度——不是陌生人的攻擊，而是最親密者的背叛。耶穌引用這節話描述猶大，表明即使是神的兒子也經歷了這種人際關係中最深的傷害。當我們遭受知己的背叛時，我們的苦難與基督所受的苦難有了深刻的連結，而祂的勝過也成為我們最真實的盼望。<br><br>
+<strong>3. 在疾病與背叛中神的保護使信仰屹立不搖</strong><br>「你因我純正就扶持我，使我永遠站在你的面前。」（第12節）大衛在病痛、仇敵攻擊與知己背叛的三重苦難中，仍然宣告神的扶持使他能永遠站在神面前。「純正」不是宣稱完美無瑕，而是在神面前誠實、無詭詐的心。這種在苦難中仍以「純正」回應的信仰，是神扶持的基礎。即使在最深的人際傷痛中，與神的關係仍能保持，這是信仰最深的安慰與力量。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>眷顧貧窮的有福了</strong>！<strong>他遭難的日子</strong>，耶和華必搭救他。（詩41:1）</td>
+<td>就像在別人需要時伸出援手，往往在自己需要時也有人出現，你是否真的以「眷顧貧窮」作為生命實踐的優先，而不只是等到自己有「足夠餘裕」時才去幫助人——因為那個「足夠餘裕」的時刻可能永遠不會到來？</td>
+</tr>
+<tr>
+<td><strong>連我知己的朋友</strong>，<strong>我所倚靠</strong>、吃過我飯的也用腳踢我。（詩41:9）</td>
+<td>就像最信任的人的背叛，比陌生人的傷害更加深入骨髓，你是否曾經歷過「吃過我飯的人用腳踢我」這種最深的背叛？在那份傷痛中，你的信仰如何幫助你面對並走出來？</td>
+</tr>
+<tr>
+<td><strong>你因我純正就扶持</strong>我，<strong>使我永遠站在你的</strong>面前。（詩41:12）</td>
+<td>就像在激流中緊握一根固定的繩索，無論水流多猛都不會被沖走，即使在最多重苦難同時發生時，你是否仍以「純正的心」回應神，讓這種誠實成為神扶持你、使你站立的根基？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

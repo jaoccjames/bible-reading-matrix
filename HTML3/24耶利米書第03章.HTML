@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">背道的兒女回來吧：神呼召悔改與牧者按心意賜予</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>有話說：『人若休妻，妻離他而去，作了別人的妻，前夫豈能再收回她來？』若收回她來，那地豈不是大大玷污了嗎？但你和許多親愛的行邪淫，還可以歸向我。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">2</span>你向淨光的高處舉目觀看，你在何處沒有淫行呢？你坐在道旁等候，好像亞拉伯人在曠野埋伏一樣，並且你的淫行邪惡玷污了全地。</div>
+<div class="verse"><span class="verse-number">3</span>因此甘霖停止，春〔原文作晚〕雨不降。你還是有娼妓之臉，不顧羞恥。</div>
+<div class="verse"><span class="verse-number">4</span>從今以後，你豈不向我呼叫說：我父啊，你是我幼年的恩主。</div>
+<div class="verse"><span class="verse-number">5</span>耶和華豈永遠懷怒，存留到底嗎？看哪，你又發惡言又行壞事，隨自己的私意而行〔或作：你雖這樣說，還是行惡放縱慾心〕。</div>
+<div class="verse"><span class="verse-number">6</span>約西亞王在位的時候，耶和華又對我說：「背道的以色列所行的，你看見沒有？她上各高山，在各青翠樹下行淫。</div>
+<div class="verse"><span class="verse-number">7</span>她行這些事以後，我說她必歸向我，她卻不歸向我。她奸詐的妹妹猶大也看見了。</div>
+<div class="verse"><span class="verse-number">8</span>背道的以色列行淫，我為這緣故給她休書休她；我看見她奸詐的妹妹猶大，還不懼怕，也去行淫。</div>
+<div class="verse"><span class="verse-number">9</span>因以色列輕忽了她的淫亂，和石頭木頭行淫，地就被玷污了。</div>
+<div class="verse"><span class="verse-number">10</span>雖有這一切的事，她奸詐的妹妹猶大還不一心歸向我，不過是假意歸我。這是耶和華說的。」</div>
+<div class="verse"><span class="verse-number">11</span>耶和華對我說：「背道的以色列比奸詐的猶大還顯為義。</div>
+<div class="verse"><span class="verse-number">12</span>你去向北方宣告說：耶和華說：背道的以色列啊，回來吧！我必不怒目看你們；因為我是慈愛的，我必不永遠存怒。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">13</span>只要承認你的罪孽，就是你違背耶和華你的神，在各青翠樹下向別神東奔西跑，沒有聽從我的話。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">14</span>耶和華說：背道的兒女啊，回來吧！因為我作你們的丈夫，並且我必將你們從一城取一人，從一族取兩人，帶到錫安。</div>
+<div class="verse"><span class="verse-number">15</span>我也必將合我心的牧者賜給你們。他們必以知識和智慧牧養你們。」</div>
+<div class="verse"><span class="verse-number">16</span>耶和華說：「你們在國中生養眾多；當那些日子，人必不再提說耶和華的約櫃，不追想，不記念，不覺缺少，也不再製造。</div>
+<div class="verse"><span class="verse-number">17</span>那時，人必稱耶路撒冷為耶和華的寶座；萬國必到耶路撒冷，在耶和華立名的地方聚集。他們必不再隨從自己頑梗的惡心行事。</div>
+<div class="verse"><span class="verse-number">18</span>當那些日子，猶大家要和以色列家同行，從北方之地一同來到我賜給你們列祖為業之地。」</div>
+<div class="verse"><span class="verse-number">19</span>我說：我怎樣將你安置在兒女之中，賜給你美地，就是萬國中肥美的產業。我又說：你們必稱我為父，也不再轉去不跟從我。</div>
+<div class="verse"><span class="verse-number">20</span>以色列家，你們向我行詭詐，真像妻子行詭詐離開她丈夫一樣。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">21</span>在淨光的高處聽見人聲，就是以色列人哭泣懇求之聲，乃因他們走彎曲之道，忘記耶和華他們的神。</div>
+<div class="verse"><span class="verse-number">22</span>你們這背道的兒女啊，回來吧！我要醫治你們背道的病。看哪，我們來到你這裏，因你是耶和華我們的神。</div>
+<div class="verse"><span class="verse-number">23</span>仰望從小山或從大山的喧嚷中得幫助，真是枉然的。以色列得救，誠然在乎耶和華我們的神。</div>
+<div class="verse"><span class="verse-number">24</span>從我們幼年以來，那可恥的偶像將我們列祖所勞碌得來的羊群、牛群，和他們的兒女都吞喫了。</div>
+<div class="verse"><span class="verse-number">25</span>我們在羞恥中躺臥吧！願慚愧將我們遮蓋；因為從立國〔原文作幼年〕以來，我們和我們的列祖常常得罪耶和華我們的神，沒有聽從耶和華我們神的話。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第三章延續第二章的法庭控訴主題，但本章有更明顯的呼召悔改的正面轉向。本章以申命記24:1-4的婚姻律法（休妻後不能再娶回）作為神學背景（1節），以此指出以色列的「靈性通姦」比人間的婚姻背叛更嚴重——按照當時的律法，以色列本不可能被神收回；但神的恩典超越律法的要求，仍然發出「你還可以歸向我」的邀請。本章以北國（以色列）和南國（猶大）為對比：以色列已被神休棄（公元前722年被亞述所滅），猶大看見了北方的後果卻仍不悔改（甚至更虛假），反而「假意歸我」（10節）。第12節「回來吧！我必不怒目看你們；因為我是慈愛的，我必不永遠存怒」，是耶利米書中最溫柔的呼召——使用了希伯來文的「回來！回來！」（shub，悔改的標準用詞），表達了神對回轉之人的態度：不是怒目而視，而是慈愛接納。第15節「我也必將合我心的牧者賜給你們」，是耶利米書中重要的牧者應許，在以西結書34章和約翰福音10章中都有呼應，指向彌賽亞成為「好牧人」的終極成就。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「背道的兒女啊，回來吧！」：神呼召悔改的邀請超越律法的限制</strong><br>第1節以律法（休妻後不能收回）來設定問題，然後神的恩典打破了這個框架：「你和許多親愛的行邪淫，還可以歸向我」。神的恩典超越了律法的限制，祂的接納超越了理性上的「不可能」。這在新約中的最完整表達是路加福音15章的浪子比喻——父親不等兒子說完認罪的話就已奔向他。信徒在最深的失敗後，仍然可以聽見「回來吧！」的呼召。<br><br>
+<strong>2. 「我必不永遠存怒」：神的憤怒有期限，祂的慈愛是永恆的</strong><br>第12節「我必不怒目看你們；因為我是慈愛的，我必不永遠存怒」，呼應了以賽亞書54:8「我的怒氣漲溢，頃刻之間向你掩面，卻要以永遠的慈愛憐恤你」。神的憤怒是真實的，但它是有限度的；神的慈愛是根本性的，是祂的本質。這個真理對在罪疚和羞恥中的信徒是最大的解放：神不會永遠站在對立面，祂的最終意願是以慈愛接納悔改的人。<br><br>
+<strong>3. 「我要醫治你們背道的病」：悔改帶來的是醫治，而非審判</strong><br>第22節「你們這背道的兒女啊，回來吧！我要醫治你們背道的病」——神對回轉者的回應是「醫治」，而非「懲罰」。「背道」被定義為一種「病」，是需要醫治的屬靈疾病，不只是需要懲罰的罪行。這個圖像揭示了神的角色：不只是審判者，更是醫治者。信徒在信仰的跌倒和背道後，最需要的不是更多的自我懲罰，而是接受神那能醫治「背道之病」的恩典。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>背道的以色列啊</strong>，<strong>回來吧</strong>！我必不怒目看你們；因為我是慈愛的，我必不永遠存怒。」（耶3:12）</td>
+<td>就像一個等在門口的父親，孩子還在遠方他就看見了，「回來吧！」是神最常說的邀請，祂站在慈愛中等候，而非在憤怒中評判，你上一次真正「回來」——不是表面的、假意的，而是真實的悔改歸向神——是什麼時候？什麼讓你有時難以接受「神必不怒目看你」的確信？</td>
+</tr>
+<tr>
+<td>「<strong>我也必將合我心的</strong><strong>牧者賜給你們</strong>。他們必以知識和智慧牧養你們。」（耶3:15）</td>
+<td>就像一個好的嚮導，不只帶你到達目的地，還讓你在旅途中真正明白所經歷的一切，神應許賜「合祂心」的牧者，你所接受的屬靈帶領，是否幫助你「以知識和智慧」認識神？你如何分辨真正「合神心意」的屬靈引導？</td>
+</tr>
+<tr>
+<td>「<strong>你們這背道的兒女</strong>啊，<strong>回來吧</strong>！我要醫治你們背道的病。」（耶3:22）</td>
+<td>就像一個病人若不去醫院，醫生就無法為他看診，「回來」是接受醫治的第一步，神已準備好醫治，只等信徒的回轉，你目前生命中有哪些「背道的病症」——疏離神、冷淡、不順服——是你知道需要醫治卻還沒有帶到神面前的？是什麼阻礙你「回來」？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

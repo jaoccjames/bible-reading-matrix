@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>加拉太書第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+加拉太書第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">互相擔當與種甚麼收甚麼</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>弟兄們，若有人偶然被過犯所勝，你們屬靈的人就當用溫柔的心把他挽回過來；又當自己小心，恐怕也被引誘。</div>
+<div class="verse"><span class="verse-number">2</span>你們各人的重擔要互相擔當，如此，就完全了基督的律法。</div>
+<div class="verse"><span class="verse-number">3</span>人若無有，自己還以為有，就是自欺了。</div>
+<div class="verse"><span class="verse-number">4</span>各人應當察驗自己的行為；這樣，他所誇的就專在自己，不在別人了，</div>
+<div class="verse"><span class="verse-number">5</span>因為各人必擔當自己的擔子。</div>
+<div class="verse"><span class="verse-number">6</span>在道理上受教的，當把一切需用的供給施教的人。</div>
+<div class="verse"><span class="verse-number">7</span>不要自欺，神是輕慢不得的。人種的是甚麼，收的也是甚麼。</div>
+<div class="verse"><span class="verse-number">8</span>順着情慾撒種的，必從情慾收敗壞；順着聖靈撒種的，必從聖靈收永生。</div>
+<div class="verse"><span class="verse-number">9</span>我們行善，不可喪志；若不灰心，到了時候就要收成。</div>
+<div class="verse"><span class="verse-number">10</span>所以，有了機會就當向眾人行善，向信徒一家的人更當這樣。</div>
+<div class="verse"><span class="verse-number">11</span>請看我親手寫給你們的字是何等的大呢！</div>
+<div class="verse"><span class="verse-number">12</span>凡希圖外貌體面的人都勉強你們受割禮，無非是怕自己為基督的十字架受逼迫。</div>
+<div class="verse"><span class="verse-number">13</span>他們那些受割禮的，連自己也不守律法；他們願意你們受割禮，不過要藉着你們的肉體誇口。</div>
+<div class="verse"><span class="verse-number">14</span>但我斷不以別的誇口，只誇我們主耶穌基督的十字架；因這十字架，就我而論，世界已經釘在十字架上；就世界而論，我已經釘在十字架上。</div>
+<div class="verse"><span class="verse-number">15</span>受割禮不受割禮都無關緊要，要緊的就是作新造的人。</div>
+<div class="verse"><span class="verse-number">16</span>凡照此理而行的，願平安、憐憫加給他們，和神的以色列民。</div>
+<div class="verse"><span class="verse-number">17</span>從今以後，人都不要攪擾我，因為我身上帶着耶穌的印記。</div>
+<div class="verse"><span class="verse-number">18</span>弟兄們，願我主耶穌基督的恩常在你們心裏。阿們！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第6章是加拉太書的結尾，保羅提出幾個具體的實踐原則，最後親筆寫下結語，以十字架的誇口作全書終結。本章首先勸勉有聖靈的人對那些偶然被過犯勝過的人，用溫柔的心把他挽回過來，各人要擔當自己的擔子，又要彼此擔當重擔，這樣就完全了基督的律法。接著提醒人不可欺哄神，因為種什麼便收什麼：順著情慾種的必從情慾收敗壞，順著聖靈種的必從聖靈收永生，行善不可喪志，因為到了時候就要收成。然後說明有機會就當向眾人行善，向信徒一家的人更當這樣。接著保羅親筆寫下幾句大字，說明那些強迫外邦人受割禮的人不過是怕被迫害、想在外貌上討好人，保羅卻斷不以別的事誇口，只誇主耶穌基督的十字架，因這十字架世界對保羅釘死了，保羅對世界也釘死了。然後宣告要緊的是作新造的人，凡照此理而行的人願平安憐憫加給他們。最後請求眾人不要再叫他受困難，因為他身上帶著耶穌的印記。本章以十字架的誇口為整部書信帶出最有力的結語。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 以溫柔挽回，而非定罪批判</strong><br>「若有人偶然被過犯所勝，你們屬靈的人就當用溫柔的心把他挽回過來；又當自己小心，恐怕也被引誘」——挽回跌倒者需要「溫柔的心」而非定罪的態度；需要「自己小心」而非自義的驕傲。屬靈的人在看見弟兄跌倒時，第一個反應應是主動去挽回，而非等人來請求，也非袖手旁觀。<br><br>
+<strong>2. 種甚麼收甚麼——不可更改的法則</strong><br>「順着情慾撒種的，必從情慾收敗壞；順着聖靈撒種的，必從聖靈收永生」——每一個選擇都是撒種，每一個模式都有其必然的收成。這個法則不是即時生效的（「到了時候就要收成」），但它是確定的。今天的習慣和選擇，是在種下將來生命的收成。<br><br>
+<strong>3. 只誇十字架——人生的終極立場</strong><br>「我斷不以別的誇口，只誇我們主耶穌基督的十字架」——保羅在書信的最後定下了一生服事的最終立場：十字架是他唯一的誇口。宗教身份（割禮）、民族背景、道德成就——這些都不是誇口的根基。「要緊的就是作新造的人」——這是唯一真正重要的事。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們各人的重擔要</strong><strong>互相擔當</strong>，如此，就完全了基督的律法。（加6:2）</td>
+<td>你有沒有在你的信仰群體中，主動地承擔弟兄姐妹的重擔——他們的憂愁、挑戰和難處——而非只在他們的喜樂中同樂？就像抬擔架需要至少兩個人，你有沒有讓「互相擔當」成為你與信仰群體深度連結的具體表達？</td>
+</tr>
+<tr>
+<td><strong>人種的是甚麼</strong>，<strong>收的也是甚麼</strong>。順着情慾撒種的，必從情慾收敗壞；順着聖靈撒種的，必從聖靈收永生。（加6:7-8）</td>
+<td>你有沒有以「我今天的選擇在撒什麼種」的意識來評估你的習慣和行為模式？就像農夫選擇種子是最重要的決定，你有沒有讓「順着聖靈撒種」成為你每天最核心的生命取向？</td>
+</tr>
+<tr>
+<td><strong>但我斷不以別的誇</strong>口，<strong>只誇我們主耶穌基</strong>督的十字架；因這十字架，就我而論，世界已經釘在十字架上；就世界而論，我已經釘在十字架上。（加6:14）</td>
+<td>你的信仰最終的誇口是什麼？就像一個人的話語裏反覆出現的主題揭示他真正最在乎的，你有沒有讓十字架——而非你的成就、恩賜或宗教身份——成為你信仰最終、最深的立足點？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

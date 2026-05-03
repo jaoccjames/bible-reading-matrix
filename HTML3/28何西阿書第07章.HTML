@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何西阿書第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+何西阿書第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">沒有翻過的餅與鴿子的愚蠢</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我想醫治以色列的時候，以法蓮的罪孽和撒瑪利亞的罪惡就顯露出來。他們行事虛謊，內有賊人入室偷竊，外有強盜成群騷擾。</div>
+<div class="verse"><span class="verse-number">2</span>他們心裏並不思想我記念他們的一切惡；他們所行的現在纏繞他們，都在我面前。</div>
+<div class="verse"><span class="verse-number">3</span>他們行惡使君王歡喜，說謊使首領喜樂。</div>
+<div class="verse"><span class="verse-number">4</span>他們都是行淫的，像火爐被烤餅的燒熱，從摶麵到發麵的時候，暫不使火着旺。</div>
+<div class="verse"><span class="verse-number">5</span>在我們王宴樂的日子，首領因酒的烈性成病；王與褻慢人拉手。</div>
+<div class="verse"><span class="verse-number">6</span>首領埋伏的時候，心中熱如火爐，就如烤餅的整夜睡臥，到了早晨火氣炎炎。</div>
+<div class="verse"><span class="verse-number">7</span>眾民也熱如火爐，燒滅他們的官長。他們的君王都仆倒而死；他們中間無一人求告我。</div>
+<div class="verse"><span class="verse-number">8</span>以法蓮與列邦人攙雜；以法蓮是沒有翻過的餅。</div>
+<div class="verse"><span class="verse-number">9</span>外邦人吞喫他勞力得來的，他卻不知道；頭髮斑白，他也不覺得。</div>
+<div class="verse"><span class="verse-number">10</span>以色列的驕傲當面見證自己，雖遭遇這一切，他們仍不歸向耶和華他們的神，也不尋求他。</div>
+<div class="verse"><span class="verse-number">11</span>以法蓮好像鴿子愚蠢無知；他們求告埃及，投奔亞述。</div>
+<div class="verse"><span class="verse-number">12</span>他們去的時候，我必將我的網撒在他們身上；我要打下他們，如同空中的鳥。我必按他們會眾所聽見的懲罰他們。</div>
+<div class="verse"><span class="verse-number">13</span>他們因離棄我，必定有禍；因違背我，必被毀滅。我雖要救贖他們，他們卻向我說謊。</div>
+<div class="verse"><span class="verse-number">14</span>他們並不誠心哀求我，乃在床上呼號；他們為求五穀新酒聚集，仍然悖逆我。</div>
+<div class="verse"><span class="verse-number">15</span>我雖教導他們，堅固他們的膀臂，他們竟圖謀抗拒我。</div>
+<div class="verse"><span class="verse-number">16</span>他們歸向，卻不歸向至上者；他們如同翻背的弓。他們的首領必因舌頭的狂傲倒在刀下；這在埃及地必作人的譏笑。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+何西阿書第7章以兩個生動的比喻描繪以色列的屬靈問題。第一個比喻（1-7節）：以色列的首領和君王「如火爐」——怒火在心中燒熱，表面冷靜，等待時機就爆發，君王們因此「仆倒而死」，彼此謀算，「他們中間無一人求告我」。第二個比喻（8-10節）：「以法蓮是沒有翻過的餅」——只烤了一面，看起來差不多，實際上一面焦了一面是生的，毫無用處。這象徵以色列半心半意、既不徹底委身於神也不徹底離棄祂的屬靈狀態。第三個比喻（11-16節）：「以法蓮好像鴿子愚蠢無知；他們求告埃及，投奔亞述」——在列強之間左搖右擺地尋求政治保護，卻不轉向那位真正能幫助他們的神。章末最令人心酸：「我雖要救贖他們，他們卻向我說謊」——神渴望救他們，他們表面求告，實際卻虛謊。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「沒有翻過的餅」：半心半意是信仰最大的危機之一</strong><br>一面焦一面生——看起來是個餅，實際上兩面都沒完成。這是中間狀態的危險：不是完全委身於神，也不是徹底離棄神，而是停留在一個讓兩面都沒完成的中間位置。耶穌說的「不冷不熱」（啟3:16）是同樣的診斷。半心半意的信仰在急難時沒有根基，在繁榮時沒有見證。<br><br>
+<strong>2. 「好像鴿子愚蠢無知」：在人間力量之間尋找安全感是屬靈的幼稚</strong><br>以法蓮在埃及和亞述之間左右搖擺，尋找最強的政治靠山，卻不轉向神。這種「在各種人間力量之間尋求安全感」是屬靈的愚蠢，就像鴿子在危險中亂飛，最終被網羅捉住。信徒有時也這樣：在危機中試遍各種人間辦法，最後才（或一直沒有）想到真正的幫助來源。<br><br>
+<strong>3. 「我雖要救贖他們，他們卻向我說謊」：神的渴望被人的虛謊所攔阻</strong><br>神渴望救贖，人卻以口頭的尋求回應，心卻不真實。這讓神的救贖被攔阻——不是因為神不能救，而是因為人的虛謊使救贖無法進入。虛謊的禱告和虛假的委身，是攔阻神工作最有效的障礙之一。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>以法蓮是沒有翻過</strong>的餅。（何7:8下）</td>
+<td>「沒有翻過的餅」——一面焦一面生，兩面都沒完成。你的屬靈生命有沒有某個「沒翻過面」的地方——某個你一直避免讓神進入、讓那個面持續是「生的」的領域？就像一塊餅需要兩面都烤才算完成，你的信仰有沒有讓神進入你生命中那個「還是生的」的一面？</td>
+</tr>
+<tr>
+<td><strong>以法蓮好像鴿子愚</strong><strong>蠢無知</strong>；他們求告埃及，投奔亞述。（何7:11）</td>
+<td>在壓力下你的「埃及和亞述」是什麼——你最習慣去的「人間安全感」？就像遇到困難就去找某個特定的人、某種娛樂、某個習慣來逃避，你有沒有在「求告埃及、投奔亞述」的迴圈中，而不是先轉向那位真正的幫助？</td>
+</tr>
+<tr>
+<td><strong>我雖要救贖他們</strong>，<strong>他們卻向我說謊</strong>。（何7:13下）</td>
+<td>「向神說謊」——用口頭的委身掩蓋心裡的另一個方向。你有沒有某個「對神說謊」的地方——用正確的宗教語言描述你的狀態，卻知道實際上你的心在別的地方？就像和好但其實心裡沒有真正原諒，你願意今天放下那個「謊言」，在神面前誠實地說出你真實的狀態嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

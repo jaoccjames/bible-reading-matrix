@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬可福音第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬可福音第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">惡園戶比喻與愛神愛人</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌就用比喻對他們說：「有人栽了一個葡萄園，周圍圈上籬笆，挖了一個壓酒池，蓋了一座樓，租給園戶，就往外國去了。</div>
+<div class="verse"><span class="verse-number">2</span>到了時候，打發一個僕人到園戶那裏，要從園戶收葡萄園的果子。</div>
+<div class="verse"><span class="verse-number">3</span>園戶拿住他，打了他，叫他空手回去。</div>
+<div class="verse"><span class="verse-number">4</span>再打發一個僕人到他們那裏。他們打傷他的頭，並且凌辱他。</div>
+<div class="verse"><span class="verse-number">5</span>又打發一個僕人去，他們就殺了他。後又打發好些僕人去，有被他們打的，有被他們殺的。</div>
+<div class="verse"><span class="verse-number">6</span>園主還有一位是他的愛子，末後又打發他去，意思說：『他們必尊敬我的兒子。』</div>
+<div class="verse"><span class="verse-number">7</span>不料，那些園戶彼此說：『這是承受產業的。來吧，我們殺他，產業就歸我們了！』</div>
+<div class="verse"><span class="verse-number">8</span>於是拿住他，殺了他，把他丟在園外。</div>
+<div class="verse"><span class="verse-number">9</span>這樣，葡萄園的主人要怎樣辦呢？他要來除滅那些園戶，將葡萄園轉給別人。</div>
+<div class="verse"><span class="verse-number">10</span>經上寫着說：匠人所棄的石頭，已作了房角的頭塊石頭。</div>
+<div class="verse"><span class="verse-number">11</span>這是主所作的，在我們眼中看為希奇。這經你們沒有念過嗎？」</div>
+<div class="verse"><span class="verse-number">12</span>他們看出這比喻是指着他們說的，就想要捉拿他，只是懼怕百姓，於是離開他走了。</div>
+<div class="verse"><span class="verse-number">13</span>後來，他們打發幾個法利賽人和幾個希律黨的人到耶穌那裏，要就着他的話陷害他。</div>
+<div class="verse"><span class="verse-number">14</span>他們來了，就對他說：「夫子，我們知道你是誠實的，甚麼人你都不徇情面；因為你不看人的外貌，乃是誠誠實實傳神的道。納稅給該撒可以不可以？</div>
+<div class="verse"><span class="verse-number">15</span>我們該納不該納？」耶穌知道他們的假意，就對他們說：「你們為甚麼試探我？拿一個銀錢來給我看！」</div>
+<div class="verse"><span class="verse-number">16</span>他們就拿了來。耶穌說：「這像和這號是誰的？」他們說：「是該撒的。」</div>
+<div class="verse"><span class="verse-number">17</span>耶穌說：「該撒的物當歸給該撒，神的物當歸給神。」他們就很希奇他。</div>
+<div class="verse"><span class="verse-number">18</span>撒都該人常說沒有復活的事。他們來問耶穌說：</div>
+<div class="verse"><span class="verse-number">19</span>「夫子，摩西為我們寫着說：『人若死了，撇下妻子，沒有孩子，他兄弟當娶他的妻，為哥哥生子立後。』</div>
+<div class="verse"><span class="verse-number">20</span>有弟兄七人，第一個娶了妻，死了，沒有留下孩子。</div>
+<div class="verse"><span class="verse-number">21</span>第二個娶了她，也死了，沒有留下孩子。第三個也是這樣。</div>
+<div class="verse"><span class="verse-number">22</span>那七個人都沒有留下孩子；末了，那婦人也死了。</div>
+<div class="verse"><span class="verse-number">23</span>當復活的時候，她是那一個的妻子呢？因為他們七個人都娶過她。」</div>
+<div class="verse"><span class="verse-number">24</span>耶穌說：「你們所以錯了，豈不是因為不明白聖經，不曉得神的大能嗎？</div>
+<div class="verse"><span class="verse-number">25</span>人從死裏復活，也不娶也不嫁，乃像天上的使者一樣。</div>
+<div class="verse"><span class="verse-number">26</span>論到死人復活，你們沒有念過摩西的書荊棘篇上所載的嗎？神對摩西說：『我是亞伯拉罕的神，以撒的神，雅各的神。』</div>
+<div class="verse"><span class="verse-number">27</span>神不是死人的神，乃是活人的神。你們是大錯了。」</div>
+<div class="verse"><span class="verse-number">28</span>有一個文士來，聽見他們辯論，曉得耶穌回答的好，就問他說：「誡命中哪是第一要緊的呢？」</div>
+<div class="verse"><span class="verse-number">29</span>耶穌回答說：「第一要緊的就是說：『以色列啊，你要聽，主我們神是獨一的主。</div>
+<div class="verse"><span class="verse-number">30</span>你要盡心、盡性、盡意、盡力愛主你的神。』</div>
+<div class="verse"><span class="verse-number">31</span>其次就是說：『要愛人如己。』再沒有比這兩條誡命更大的了。」</div>
+<div class="verse"><span class="verse-number">32</span>那文士對耶穌說：「夫子說，神是一位，實在不錯；除了他以外，再沒有別的神；</div>
+<div class="verse"><span class="verse-number">33</span>並且盡心、盡智、盡力愛他，又愛人如己，就比一切燔祭和各樣祭祀好的多。」</div>
+<div class="verse"><span class="verse-number">34</span>耶穌見他回答的有智慧，就對他說：「你離神的國不遠了。」從此以後，沒有人敢再問他甚麼。</div>
+<div class="verse"><span class="verse-number">35</span>耶穌在殿裏教訓人，就問他們說：「文士怎麼說基督是大衛的子孫呢？</div>
+<div class="verse"><span class="verse-number">36</span>大衛被聖靈感動，說：主對我主說，你坐在我的右邊，等我使你仇敵作你的腳凳。</div>
+<div class="verse"><span class="verse-number">37</span>大衛既自己稱他為主，他怎麼又是大衛的子孫呢？」眾人都喜歡聽他。</div>
+<div class="verse"><span class="verse-number">38</span>耶穌在教訓之間，說：「你們要防備文士；他們好穿長衣遊行，喜愛人在街市上問他們的安，</div>
+<div class="verse"><span class="verse-number">39</span>又喜愛會堂裏的高位，筵席上的首座。</div>
+<div class="verse"><span class="verse-number">40</span>他們侵吞寡婦的家產，假意作很長的禱告。這些人要受更重的刑罰！」</div>
+<div class="verse"><span class="verse-number">41</span>耶穌對銀庫坐着，看眾人怎樣投錢入庫。有好些財主往裏投了若干的錢。</div>
+<div class="verse"><span class="verse-number">42</span>有一個窮寡婦來，往裏投了兩個小錢，就是一個大錢。</div>
+<div class="verse"><span class="verse-number">43</span>耶穌叫門徒來，說：「我實在告訴你們，這窮寡婦投入庫裏的，比眾人所投的更多。</div>
+<div class="verse"><span class="verse-number">44</span>因為，他們都是自己有餘，拿出來投在裏頭；但這寡婦是自己不足，把她一切養生的都投上了。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第12章記述耶穌在聖殿裡連番回應宗教領袖的試探，並主動提出基督身份的問題，另有稱讚寡婦奉獻的事蹟。本章首先講兇惡園戶的比喻，葡萄園主人差了幾批僕人都被園戶虐待或殺死，最後差自己的愛子，他們就殺了他，說明神必把葡萄園轉給別人。接著法利賽人和希律黨人來問納稅給凱撒的問題，耶穌要他們看錢幣上的像，說凱撒的物歸凱撒、神的物歸神，眾人甚希奇。然後撒都該人問復活後婚姻的問題，耶穌指出他們不明白聖經也不曉得神的能力，復活後不嫁不娶，神是活人的神。接著一個文士問哪條誡命是最大的，耶穌回答是愛神愛人，文士稱讚，耶穌說他距離神的國不遠了。然後耶穌反問基督怎能是大衛的子孫又是大衛稱為主的，眾人聽得歡喜，並警告門徒不要效法喜愛人稱謂的文士。最後耶穌坐在銀庫對面看眾人投錢，稱讚一個窮寡婦投了兩個小錢，說她把一切所有的都投上了遠超過眾人。本章在衝突與教導中展示耶穌的智慧與對卑微者的重視。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的耐心是終有盡頭的</strong><br>惡園戶一次又一次拒絕並傷害主人差遣的僕人，最終連愛子也殺了。神對以色列的呼召和先知，一再被拒絕，最終差遣了愛子。這個比喻警告：神的忍耐不是無限的，一再拒絕神使者的人終將面對嚴肅的後果。今天的人對福音的每次拒絕，都是在做一個有後果的選擇。<br><br>
+<strong>2. 愛神愛人是信仰最大的誡命</strong><br>耶穌以兩條誡命總結律法的全部：「盡心盡性盡意盡力愛主你的神」和「要愛人如己」。那文士的回應得到耶穌的稱許。「離神的國不遠」的評語，暗示真正的問題不在於知識，而在於是否真實地做到。知道最大的誡命是信仰的起點，讓它轉化生命才是目標。<br><br>
+<strong>3. 神看的是委身的比例，不是給予的數量</strong><br>窮寡婦的兩個小錢，在神眼中比財主的大筆奉獻更多——因為那是她「一切養生的」。神不以絕對數量衡量奉獻，而以我們保留了多少來衡量委身的深度。這個原則適用於時間、才能、金錢和精力的奉獻：我給出的是我剩餘的，還是我最珍貴的？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌回答說</strong>：「<strong>第一要緊的就是說</strong>：……你要盡心、盡性、盡意、盡力愛主你的神。其次就是說：要愛人如己。」（可12:29-31）</td>
+<td>你對神的愛是「盡心盡性盡意盡力」的全人委身，還是在其他優先次序之後剩餘的？就像全馬選手和休閒跑步者同樣在跑，但投入程度天差地別，你的信仰生活有沒有全力以赴的委身？</td>
+</tr>
+<tr>
+<td><strong>耶穌叫門徒來</strong>，說：「<strong>我實在告訴你們</strong>，這窮寡婦投入庫裏的，比眾人所投的更多。因為……她是自己不足，把她一切養生的都投上了。」（可12:43-44）</td>
+<td>你的奉獻——不論是時間、才能還是金錢——是從你的餘裕中拿出，還是真的觸碰到你的核心需要？就像真正的朋友在你最需要時給予，而非只在方便時給予，你願意問神：祂希望你更深地委身在哪個方面？</td>
+</tr>
+<tr>
+<td><strong>耶穌見他回答的有</strong>智慧，<strong>就對他說</strong>：「你離神的國不遠了。」（可12:34）</td>
+<td>你有沒有停留在「知道」愛神愛人，卻還沒有真正「活出」愛神愛人？就像知道怎麼游泳和真的能游泳是不同的事，你願意讓對最大誡命的理解，真實地進入你日常待人處事的方式中嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第39章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第39章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">歌革的覆滅與以色列的歸回</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「人子啊，你要向歌革發預言攻擊他，說主耶和華如此說：羅施、米設、土巴的王歌革啊，我與你為敵。</div>
+<div class="verse"><span class="verse-number">2</span>我必調轉你，領你前往，使你從北方的極處上來，帶你到以色列的山上。</div>
+<div class="verse"><span class="verse-number">3</span>我必從你左手打落你的弓，從你右手打掉你的箭。</div>
+<div class="verse"><span class="verse-number">4</span>你和你的軍隊，並同着你的列國人，都必倒在以色列的山上。我必將你給各類的鷙鳥和田野的走獸作食物。</div>
+<div class="verse"><span class="verse-number">5</span>你必倒在田野，因為我曾說過。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">6</span>我要降火在瑪各和海島安然居住的人身上，他們就知道我是耶和華。</div>
+<div class="verse"><span class="verse-number">7</span>「我要在我民以色列中顯出我的聖名，也不容我的聖名再被褻瀆，列國人就知道我是耶和華以色列中的聖者。</div>
+<div class="verse"><span class="verse-number">8</span>主耶和華說：這日事情臨近，也必成就，乃是我所說的日子。</div>
+<div class="verse"><span class="verse-number">9</span>「住以色列城邑的人必出去撿器械，就是大小盾牌、弓箭、梃杖、槍矛，都當柴燒火，直燒七年，</div>
+<div class="verse"><span class="verse-number">10</span>甚至他們不必從田野撿柴，也不必從樹林伐木；因為他們要用器械燒火，並且搶奪那搶奪他們的人，擄掠那擄掠他們的人。這是主耶和華說的。」</div>
+<div class="verse"><span class="verse-number">11</span>「當那日，我必將以色列地的谷，就是海東人所經過的谷，賜給歌革為墳地，使經過的人到此停步。在那裏人必葬埋歌革和他的群眾，就稱那地為哈們歌革谷。</div>
+<div class="verse"><span class="verse-number">12</span>以色列家的人必用七個月葬埋他們，為要潔淨全地。</div>
+<div class="verse"><span class="verse-number">13</span>全地的居民都必葬埋他們。當我得榮耀的日子，這事必叫他們得名聲。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">14</span>他們必分派人時常巡查遍地，與過路的人一同葬埋那剩在地面上的屍首，好潔淨全地。過了七個月，他們還要巡查。</div>
+<div class="verse"><span class="verse-number">15</span>巡查遍地的人要經過全地，見有人的骸骨，就在旁邊立一標記，等葬埋的人來將骸骨葬在哈們歌革谷。</div>
+<div class="verse"><span class="verse-number">16</span>他們必這樣潔淨那地，並有一城名叫哈摩那。</div>
+<div class="verse"><span class="verse-number">17</span>「人子啊，主耶和華如此說：你要對各類的飛鳥和田野的走獸說：你們聚集來吧，要從四方聚到我為你們獻祭之地，就是在以色列山上獻大祭之地，好叫你們吃肉、喝血。</div>
+<div class="verse"><span class="verse-number">18</span>你們必吃勇士的肉，喝地上首領的血，就如吃公綿羊、羊羔、公山羊、公牛，都是巴珊的肥畜。</div>
+<div class="verse"><span class="verse-number">19</span>你們吃我為你們所獻的祭，必吃飽了脂油，喝醉了血。</div>
+<div class="verse"><span class="verse-number">20</span>你們必在我席上飽吃馬匹和坐車的人，並勇士和一切的戰士。這是主耶和華說的。」</div>
+<div class="verse"><span class="verse-number">21</span>「我必顯我的榮耀在列國中；萬民就必看見我所行的審判與我在他們身上所加的手。</div>
+<div class="verse"><span class="verse-number">22</span>這樣，從那日以後，以色列家必知道我是耶和華他們的神。</div>
+<div class="verse"><span class="verse-number">23</span>列國人也必知道以色列家被擄掠是因他們的罪孽。他們得罪我，我就掩面不顧，將他們交在敵人手中，他們便都倒在刀下。</div>
+<div class="verse"><span class="verse-number">24</span>我是照他們的污穢和罪過待他們，並且我掩面不顧他們。」</div>
+<div class="verse"><span class="verse-number">25</span>主耶和華如此說：「我要使雅各被擄的人歸回，要憐憫以色列全家，又為我的聖名發熱心。</div>
+<div class="verse"><span class="verse-number">26</span>他們在本地安然居住，無人驚嚇，是我將他們從萬民中領回，從仇敵之地召來。我在許多國的民眼前，在他們身上顯為聖的時候，他們要擔當自己的羞辱和干犯我的一切罪。</div>
+<div class="verse"><span class="verse-number">27</span>併於上節</div>
+<div class="verse"><span class="verse-number">28</span>因我使他們被擄到外邦人中，後又聚集他們歸回本地，他們就知道我是耶和華他們的神；我必不再留他們一人在外邦。</div>
+<div class="verse"><span class="verse-number">29</span>我也不再掩面不顧他們，因我已將我的靈澆灌以色列家。這是主耶和華說的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第39章是歌革瑪各神諭的終章。神宣告歌革的軍隊將在以色列山上全數覆滅——弓箭從手中打落，屍首成為鷙鳥和走獸的食物。之後以色列人要七年燒毀武器、七個月埋葬屍骨，以潔淨全地。神邀請所有的飛鳥走獸來參加「神的大祭」——吃勇士的肉、喝首領的血，這是一場壯觀的末世性審判宴席。神的目的是顯現祂的榮耀在列國中，讓萬民知道以色列被擄是因他們的罪，而不是神失去了能力。章末（25-29節）是全章的屬靈高峰：神要使雅各被擄的人歸回，為祂的聖名發熱心，以色列必再知道神是耶和華他們的神，「我也不再掩面不顧他們，因我已將我的靈澆灌以色列家」——以聖靈的澆灌作為恢復的最終印記。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神「掩面不顧」是審判；「不再掩面」是恢復的最大標誌</strong><br>「我也不再掩面不顧他們，因我已將我的靈澆灌以色列家」——神的面光（同在）是最大的福，神的掩面是最深的審判。聖靈的澆灌是神臉再次轉向祂子民的表現。對信徒而言，感受不到神的同在，是最深的屬靈苦難；重新感受神的臉光，是最大的屬靈恩賜。<br><br>
+<strong>2. 神榮耀的顯現讓萬民明白歷史的真實詮釋</strong><br>「列國人也必知道以色列家被擄掠是因他們的罪孽，他們得罪我，我就掩面不顧」（23節）——外邦人以為以色列被擄是神失敗了，神要讓他們知道真實的解讀：是以色列的罪，不是神的無能。神的名聲和歷史的詮釋是一件事。信徒在生命中面對苦難，讓神的解讀超越人的評斷，是信仰的核心掙扎。<br><br>
+<strong>3. 完全的恢復需要七個月/七年的潔淨過程</strong><br>埋葬屍骨七個月、燒武器七年——恢復不是即時的，而是有一個「潔淨的過程」。這個細節提示信徒：真正的恢復不只是狀況改變，還需要一段時間的清理和潔淨。靈命的恢復往往也是如此：轉折發生了，但完整的潔淨和重建需要時間，這是神設計的，而不是失敗的標誌。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我也不再掩面不顧</strong>他們，<strong>因我已將我的靈澆</strong>灌以色列家。這是主耶和華說的。（結39:29）</td>
+<td>「不再掩面」——神的同在重返。你目前感受到的神的同在程度如何？就像太陽被烏雲遮住不代表太陽消失，神的同在有時讓我們感受不到，但不代表祂掩面了。你有沒有某個讓神的臉「轉向」你的渴望，你願意今天以禱告邀請神的靈更新地「澆灌」你嗎？</td>
+</tr>
+<tr>
+<td><strong>列國人也必知道以</strong><strong>色列家被擄掠是因</strong>他們的罪孽……我就掩面不顧，將他們交在敵人手中。（結39:23）</td>
+<td>別人對你的苦難，可能有許多解讀。神的解讀往往和外人的解讀不同。你生命中是否有某個苦難，外人的解讀讓你感到受傷或誤解？就像歷史需要正確的詮釋才有意義，你願意讓神的解讀成為你生命故事的主要敘述，即使那需要時間才能被看清楚？</td>
+</tr>
+<tr>
+<td><strong>我必顯我的榮耀在</strong><strong>列國中</strong>；萬民就必看見我所行的審判與我在他們身上所加的手。（結39:21）</td>
+<td>「萬民必看見」——神在歷史中的作為最終會被看見和知道。當你在漫長的等候中感到神的作為不被人認識，甚至被誤解時，「萬民必看見」這個應許如何給你在當下的委屈中帶來堅持的力量？就像等待一場誤解最終被澄清，你願意把你的「歷史故事」交給那位終將使萬民看見真實的神嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

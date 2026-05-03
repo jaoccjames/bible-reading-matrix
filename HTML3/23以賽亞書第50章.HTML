@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第50章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第50章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">主每早晨提醒我的耳朵：僕人順服受苦的信心之歌</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華如此說：我休你們的母親，休書在那裏呢？我將你們賣給我那一個債主呢？你們被賣，是因你們的罪孽；你們的母親被休，是因你們的過犯。</div>
+<div class="verse"><span class="verse-number">2</span>我來的時候，為何無人等候呢？我呼喚的時候，為何無人答應呢？我的膀臂豈是縮短、不能救贖嗎？我豈無拯救之力嗎？看哪，我一斥責，海就乾了；我使江河變為曠野；其中的魚因無水腥臭，乾渴而死。</div>
+<div class="verse"><span class="verse-number">3</span>我使諸天以黑暗為衣服，以麻布為遮蓋。</div>
+<div class="verse"><span class="verse-number">4</span>主耶和華賜我受教者的舌頭，使我知道怎樣用言語扶助疲乏的人。主每早晨提醒，提醒我的耳朵，使我能聽，像受教者一樣。</div>
+<div class="verse"><span class="verse-number">5</span>主耶和華開通我的耳朵；我並沒有違背，也沒有退後。</div>
+<div class="verse"><span class="verse-number">6</span>人打我的背，我任他打；人拔我腮頰的鬍鬚，我由他拔；人辱我，吐我，我並不掩面。</div>
+<div class="verse"><span class="verse-number">7</span>主耶和華必幫助我，所以我不抱愧。我硬着臉面好像堅石；我也知道我必不至蒙羞。</div>
+<div class="verse"><span class="verse-number">8</span>稱我為義的與我相近；誰與我爭論，可以與我一同站立；誰與我作對，可以就近我來。</div>
+<div class="verse"><span class="verse-number">9</span>主耶和華要幫助我；誰能定我有罪呢？他們都像衣服漸漸舊了，為蛀蟲所咬。</div>
+<div class="verse"><span class="verse-number">10</span>你們中間誰是敬畏耶和華、聽從他僕人之話的？這人行在暗中，沒有亮光。當倚靠耶和華的名，仗賴自己的神。</div>
+<div class="verse"><span class="verse-number">11</span>凡你們點火，用火把圍繞自己的可以行在你們的火焰裏，並你們所點的火把中。這是我手所定的；你們必躺在悲慘之中。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第五十章包含了「僕人之歌」第三首（4-9節），是四首僕人之歌中最個人化、最充滿信心宣告的一首。前三節（1-3節）神先澄清了以色列被擄的原因——不是神的無能，而是以色列自己的罪孽。這個澄清清除了對神的誤解，為後續的安慰和呼召鋪路。第4-9節的「僕人之歌」，以第一人稱描繪了一位每早晨聆聽神、順服神的僕人，即使面對極大的羞辱和苦難（打背、拔鬚、吐唾沫）仍然不退縮——因為「主耶和華必幫助我」（7、9節）。這首歌在新約中是認識基督受難最重要的背景之一：馬太福音26:67、27:26-30的審判和受難場景，幾乎逐字對應第6節「人打我的背，我任他打；人拔我腮頰的鬍鬚，我由他拔；人辱我，吐我，我並不掩面」。第10-11節以對比結束：敬畏神、在暗中仍倚靠神的人（10節）與自己點火、憑人的光行走的人（11節），二者的結局截然不同。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「主每早晨提醒我的耳朵，使我能聽」：屬靈生命從每日聆聽開始</strong><br>第4節是僕人靈命更新的祕訣：不是一次性的啟示，而是「主每早晨提醒……使我能聽」——每天的、持續的、主動的開耳聆聽。「像受教者一樣」揭示了這位僕人的靈命態度：永遠是學習者，而非已畢業的高材生。信徒靈命衰退往往始於不再「每早晨」靜靜等候神，開始以昨日的靈命過今日的生活。每天更新的聆聽，是信仰生命保持敏銳的根本。<br><br>
+<strong>2. 「主耶和華必幫助我，所以我不抱愧」：確信神的幫助使人在羞辱中站立</strong><br>第7節「主耶和華必幫助我，所以我不抱愧。我硬着臉面好像堅石」，是這首詩最核心的信仰宣言。僕人面對極大的羞辱（打、拔、辱、吐），卻能以「堅石」的心態站立——不是因為他無感，而是因為他確信神的幫助比人的羞辱更真實、更有力量。這種在羞辱中的尊嚴，不是來自驕傲，而是來自確信：我的立場由神來定，而非由人來評判。<br><br>
+<strong>3. 在黑暗中倚靠神的名，而非自己點火照亮</strong><br>第10-11節的對比極具屬靈意義：在黑暗中「倚靠耶和華的名」（10節）與自己「點火」照亮（11節）。自己點火是人不願在黑暗中等候神的解決方案——用自己製造的光代替神的光。但這種光最終「使你們必躺在悲慘之中」，因為人造的光無法照亮神只能以祂的光照亮的地方。信徒在不確定和黑暗中，當抵抗自己點火的衝動，選擇在黑暗中等候和倚靠神。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>主每早晨提醒</strong>，<strong>提醒我的耳朵</strong>，使我能聽，像受教者一樣。」（賽50:4）</td>
+<td>就像一個音樂學生每天清晨練習音階，不是因為有表演，而是要保持耳朵對音樂的敏銳，每日清晨聆聽神的提醒是屬靈敏銳的根本，你目前的生活中，是否有「每早晨」讓神提醒耳朵的習慣？若沒有，是什麼讓你最難以建立這個習慣？</td>
+</tr>
+<tr>
+<td>「<strong>主耶和華必幫助我</strong>，<strong>所以我不抱愧</strong>。我硬着臉面好像堅石；我也知道我必不至蒙羞。」（賽50:7）</td>
+<td>就像一個運動員在主場比賽，即使觀眾喝倒彩，仍然憑著訓練和信心完成賽事，而非被噓聲打倒，確信神的幫助使人在羞辱中站立，你最近面對的最大羞辱或批評是什麼？「主耶和華必幫助我」這個確信，如何幫助你在那種處境中保持立場？</td>
+</tr>
+<tr>
+<td>「<strong>這人行在暗中</strong>，<strong>沒有亮光</strong>。當倚靠耶和華的名，仗賴自己的神。」（賽50:10）</td>
+<td>就像在停電的夜晚，有人會點蠟燭照亮一小範圍，有人會靜靜等待電力恢復，前者雖然眼前看得見，卻仍在整體的黑暗中，你在信仰的黑暗時刻，最常用的「自己點火」的方法是什麼——是過度計劃、尋求人的認可，還是其他？你如何學習在黑暗中倚靠神的名？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

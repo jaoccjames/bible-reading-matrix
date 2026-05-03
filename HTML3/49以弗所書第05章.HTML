@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以弗所書第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以弗所書第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">光明的兒女與家庭關係</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>所以，你們該效法神，好像蒙慈愛的兒女一樣。</div>
+<div class="verse"><span class="verse-number">2</span>也要憑愛心行事，正如基督愛我們，為我們捨了自己，當作馨香的供物和祭物，獻與神。</div>
+<div class="verse"><span class="verse-number">3</span>至於淫亂並一切污穢，或是貪婪，在你們中間連題都不可，方合聖徒的體統。</div>
+<div class="verse"><span class="verse-number">4</span>淫詞、妄語，和戲笑的話都不相宜；總要說感謝的話。</div>
+<div class="verse"><span class="verse-number">5</span>因為你們確實的知道，無論是淫亂的，是污穢的，是有貪心的，在基督和神的國裏都是無分的。有貪心的，就與拜偶像的一樣。</div>
+<div class="verse"><span class="verse-number">6</span>不要被人虛浮的話欺哄；因這些事，神的忿怒必臨到那悖逆之子。</div>
+<div class="verse"><span class="verse-number">7</span>所以，你們不要與他們同夥。</div>
+<div class="verse"><span class="verse-number">8</span>從前你們是暗昧的，但如今在主裏面是光明的，行事為人就當像光明的子女。</div>
+<div class="verse"><span class="verse-number">9</span>光明所結的果子就是一切良善、公義、誠實。</div>
+<div class="verse"><span class="verse-number">10</span>總要察驗何為主所喜悅的事。</div>
+<div class="verse"><span class="verse-number">11</span>那暗昧無益的事，不要與人同行，倒要責備行這事的人；</div>
+<div class="verse"><span class="verse-number">12</span>因為他們暗中所行的，就是題起來也是可恥的。</div>
+<div class="verse"><span class="verse-number">13</span>凡事受了責備，就被光顯明出來，因為一切能顯明的就是光。</div>
+<div class="verse"><span class="verse-number">14</span>所以主說：你這睡着的人當醒過來，從死裏復活！基督就要光照你了。</div>
+<div class="verse"><span class="verse-number">15</span>你們要謹慎行事，不要像愚昧人，當像智慧人。</div>
+<div class="verse"><span class="verse-number">16</span>要愛惜光陰，因為現今的世代邪惡。</div>
+<div class="verse"><span class="verse-number">17</span>不要作糊塗人，要明白主的旨意如何。</div>
+<div class="verse"><span class="verse-number">18</span>不要醉酒，酒能使人放蕩；乃要被聖靈充滿。</div>
+<div class="verse"><span class="verse-number">19</span>當用詩章、頌詞、靈歌、彼此對說，口唱心和的讚美主。</div>
+<div class="verse"><span class="verse-number">20</span>凡事要奉我們主耶穌基督的名常常感謝父神。</div>
+<div class="verse"><span class="verse-number">21</span>又當存敬畏基督的心，彼此順服。</div>
+<div class="verse"><span class="verse-number">22</span>你們作妻子的，當順服自己的丈夫，如同順服主。</div>
+<div class="verse"><span class="verse-number">23</span>因為丈夫是妻子的頭，如同基督是教會的頭；他又是教會全體的救主。</div>
+<div class="verse"><span class="verse-number">24</span>教會怎樣順服基督，妻子也要怎樣凡事順服丈夫。</div>
+<div class="verse"><span class="verse-number">25</span>你們作丈夫的，要愛你們的妻子，正如基督愛教會，為教會捨己。</div>
+<div class="verse"><span class="verse-number">26</span>要用水藉着道把教會洗淨，成為聖潔，</div>
+<div class="verse"><span class="verse-number">27</span>可以獻給自己，作個榮耀的教會，毫無玷污、皺紋等類的病，乃是聖潔沒有瑕疵的。</div>
+<div class="verse"><span class="verse-number">28</span>丈夫也當照樣愛妻子，如同愛自己的身子；愛妻子便是愛自己了。</div>
+<div class="verse"><span class="verse-number">29</span>從來沒有人恨惡自己的身子，總是保養顧惜，正像基督待教會一樣，</div>
+<div class="verse"><span class="verse-number">30</span>因我們是他身上的肢體（有古卷在此有：就是他的骨他的肉）。</div>
+<div class="verse"><span class="verse-number">31</span>為這個緣故，人要離開父母，與妻子連合，二人成為一體。</div>
+<div class="verse"><span class="verse-number">32</span>這是極大的奧祕，但我是指着基督和教會說的。</div>
+<div class="verse"><span class="verse-number">33</span>然而，你們各人都當愛妻子，如同愛自己一樣。妻子也當敬重她的丈夫。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第5章繼續倫理的教導，先論光明與黑暗的對比，再就丈夫與妻子的關係作出深刻的神學論述，以基督與教會的關係為婚姻的模型。本章首先呼籲信徒效法神，在愛中行事，像基督愛我們為我們捨己。接著列出不可在信徒中提及的行為：淫亂、一切污穢、貪婪，也不可說無益的話，反要說感謝的話。然後以光明和黑暗作對比：信徒從前是暗昧的，如今在主裡是光明的，要行事為人與光明相稱，光明所結的果子就是一切良善、公義、誠實，要試驗何為主所喜悅的事。接著呼籲信徒不要做糊塗人，要明白主的旨意，不要醉酒，乃要被聖靈充滿，以感謝的心唱詩讚美主。最後就婚姻關係作出論述：妻子要順服丈夫，如同順服主，因為丈夫是妻子的頭如同基督是教會的頭；丈夫要愛妻子如同基督愛教會為她捨己，這奧秘是指基督和教會說的。本章以基督與教會的關係重新定義了婚姻的神聖意義，是新約婚姻神學的核心文獻。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 被聖靈充滿對比醉酒</strong><br>「不要醉酒，酒能使人放蕩；乃要被聖靈充滿」——兩者都是「被充滿」的狀態，一個是被外物控制和影響，一個是被聖靈引導和掌管。被聖靈充滿的果子是：詩章、頌詞、靈歌；感謝；彼此順服——是對外建造他人的，而非自我放縱的。被聖靈充滿是需要尋求的，是一種持續的更新，不是一次性的體驗。<br><br>
+<strong>2. 婚姻是基督與教會關係的映射</strong><br>「這是極大的奧祕，但我是指着基督和教會說的」——婚姻不只是人間的制度，而是反映基督與教會這個最深的關係。丈夫愛妻子如同基督愛教會（捨己、滋養、保護），妻子順服丈夫如同教會順服基督——這個秩序是出於愛和信任，不是壓制。婚姻的聖潔建立在這個神聖的對應關係上。<br><br>
+<strong>3. 「凡事要察驗何為主所喜悅的事」</strong><br>「總要察驗何為主所喜悅的事」——不是問「這是否被禁止」，而是問「這是否讓主喜悅」。這個主動尋求的態度，把信仰從規條的遵守提升到關係性的追求。「要愛惜光陰，因為現今的世代邪惡」——時間的管理和善用，是光明子女的責任。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們作丈夫的</strong>，<strong>要愛你們的妻子</strong>，正如基督愛教會，為教會捨己。（弗5:25）</td>
+<td>你在婚姻中的愛有沒有以基督愛教會的模型為標準——犧牲性的、主動的、以對方的益處為先？就像一個模型定義了要建造的樣式，你有沒有讓基督對教會的愛，定義你在婚姻中愛的方式和深度？</td>
+</tr>
+<tr>
+<td><strong>不要醉酒</strong>，<strong>酒能使人放蕩</strong>；乃要被聖靈充滿。（弗5:18）</td>
+<td>你有沒有積極地尋求聖靈的充滿——透過敬拜、禱告、讀聖言和服事——讓聖靈來掌管和引導你的生命？就像一個容器若不被有益的東西充滿就容易被有害的東西佔據，你有沒有讓聖靈充滿成為你每天積極尋求的狀態？</td>
+</tr>
+<tr>
+<td><strong>你們要謹慎行事</strong>，<strong>不要像愚昧人</strong>，當像智慧人。要愛惜光陰，因為現今的世代邪惡。（弗5:15-16）</td>
+<td>你有沒有把時間的使用看作是信仰的一部分，有意識地在今世邪惡的時代「愛惜光陰」？就像在限時比賽中每一分鐘都珍貴，你有沒有讓對末世的認識，讓你更有意義地使用每一天？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第44章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第44章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">關閉的東門與祭司的聖潔規定</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>他又帶我回到聖地朝東的外門；那門關閉了。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華對我說：「這門必須關閉，不可敞開，誰也不可由其中進入；因為耶和華以色列的神已經由其中進入，所以必須關閉。</div>
+<div class="verse"><span class="verse-number">3</span>至於王，他必按王的位分，坐在其內，在耶和華面前喫餅。他必由這門的廊而入，也必由此而出。」</div>
+<div class="verse"><span class="verse-number">4</span>他又帶我由北門來到殿前。我觀看，見耶和華的榮光充滿耶和華的殿，我就俯伏在地。</div>
+<div class="verse"><span class="verse-number">5</span>耶和華對我說：「人子啊，我對你所說耶和華殿中的一切典章法則，你要放在心上，用眼看，用耳聽，並要留心殿宇和聖地一切出入之處。</div>
+<div class="verse"><span class="verse-number">6</span>你要對那悖逆的以色列家說，主耶和華如此說：以色列家阿，你們行一切可憎的事，當彀了吧！</div>
+<div class="verse"><span class="verse-number">7</span>你們把我的食物，就是脂油和血獻上的時候，將身心未受割禮的外邦人領進我的聖地，玷污了我的殿；又背了我的約，在你們一切可憎的事上，加上這一層。</div>
+<div class="verse"><span class="verse-number">8</span>你們也沒有看守我的聖物，卻派別人在聖地替你們看守我所吩咐你們的。</div>
+<div class="verse"><span class="verse-number">9</span>「主耶和華如此說：以色列中的外邦人，就是身心未受割禮的，都不可入我的聖地。」</div>
+<div class="verse"><span class="verse-number">10</span>「當以色列人走迷的時候，有利未人遠離我，就是走迷離開我、隨從他們的偶像，他們必擔當自己的罪孽。</div>
+<div class="verse"><span class="verse-number">11</span>然而他們必在我的聖地當僕役，照管殿門，在殿中供職；必為民宰殺燔祭牲和平安祭牲，必站在民前伺候他們。</div>
+<div class="verse"><span class="verse-number">12</span>因為這些利未人曾在偶像前伺候這民，成了以色列家罪孽的絆腳石，所以我向他們起誓：他們必擔當自己的罪孽。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">13</span>他們不可親近我，給我供祭司的職分，也不可挨近我的一件聖物，就是至聖的物；他們卻要擔當自己的羞辱和所行可憎之事的報應。</div>
+<div class="verse"><span class="verse-number">14</span>然而我要使他們看守殿宇，辦理其中的一切事，並作其內一切當作之工。」</div>
+<div class="verse"><span class="verse-number">15</span>「以色列人走迷離開我的時候，祭司利未人撒督的子孫仍看守我的聖所。他們必親近我，事奉我，並且侍立在我面前，將脂油與血獻給我。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">16</span>他們必進入我的聖所，就近我的桌前事奉我，守我所吩咐的。</div>
+<div class="verse"><span class="verse-number">17</span>他們進內院門必穿細麻衣。在內院門和殿內供職的時候不可穿羊毛衣服。</div>
+<div class="verse"><span class="verse-number">18</span>他們頭上要戴細麻布裹頭巾，腰穿細麻布褲子；不可穿使身體出汗的衣服。</div>
+<div class="verse"><span class="verse-number">19</span>他們出到外院的民那裏，當脫下供職的衣服，放在聖屋內，穿上別的衣服，免得因聖衣使民成聖。</div>
+<div class="verse"><span class="verse-number">20</span>不可剃頭，也不可容髮綹長長，只可剪髮。</div>
+<div class="verse"><span class="verse-number">21</span>祭司進內院的時候都不可喝酒。</div>
+<div class="verse"><span class="verse-number">22</span>不可娶寡婦和被休的婦人為妻，只可娶以色列後裔中的處女，或是祭司遺留的寡婦。</div>
+<div class="verse"><span class="verse-number">23</span>他們要使我的民知道聖俗的分別，又使他們分辨潔淨的和不潔淨的。</div>
+<div class="verse"><span class="verse-number">24</span>有爭訟的事，他們應當站立判斷，要按我的典章判斷。在我一切的節期必守我的律法、條例，也必以我的安息日為聖日。</div>
+<div class="verse"><span class="verse-number">25</span>他們不可挨近死屍沾染自己，只可為父親、母親、兒子、女兒、弟兄，和未嫁人的姐妹沾染自己。</div>
+<div class="verse"><span class="verse-number">26</span>祭司潔淨之後，必再計算七日。</div>
+<div class="verse"><span class="verse-number">27</span>當他進內院，進聖所，在聖所中事奉的日子，要為自己獻贖罪祭。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">28</span>「祭司必有產業，我是他們的產業。不可在以色列中給他們基業；我是他們的基業。</div>
+<div class="verse"><span class="verse-number">29</span>素祭、贖罪祭，和贖愆祭他們都可以吃，以色列中一切永獻的物都要歸他們。</div>
+<div class="verse"><span class="verse-number">30</span>首先初熟之物和一切所獻的供物都要歸給祭司。你們也要用初熟的麥子磨麵給祭司；這樣，福氣就必臨到你們的家了。</div>
+<div class="verse"><span class="verse-number">31</span>無論是鳥是獸，凡自死的，或是撕裂的，祭司都不可喫。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第44章包含兩個重要主題。第一個（1-3節）：東門必須永遠關閉，因「耶和華以色列的神已經由其中進入」——神的榮耀從東門歸回後，這扇門就成聖閉鎖，唯有王可以在其廊中坐下在神面前喫餅。神的通過使一個地方永久神聖化。第二個（4-31節）：神規定新聖殿中祭司的資格和行為準則，分兩類：曾隨百姓拜偶像的利未人，降為殿內僕役；堅守崗位的撒督子孫祭司，得以繼續服事、親近神。祭司的聖潔規定包含：穿細麻衣、不剃頭也不留長髮、進院不飲酒、只娶以色列貞女或祭司遺孀、分辨聖俗、審判守典章。核心一句：「我是他們的產業」——祭司不像其他支派有地業，神自己就是他們的分。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的通過使一個地方永久神聖：與神相遇留下永恆的印記</strong><br>神的榮耀通過東門，那門就永遠關閉——神的通過本身使那裏成為神聖的。與神真實的相遇，在人的生命中也留下永恆的印記。一個真實遇見神的人，不可能完全「回到從前」——那個相遇改變了他，就像東門因神的通過而永遠不同。<br><br>
+<strong>2. 「我是他們的產業」：最深的滿足來自神本身而非神的賜予</strong><br>祭司沒有地業，「我是他們的產業」——神是他們的一切。這是信仰最深的境界：不是以神換取產業，而是以神本身為產業。今日信徒常常以「從神那裏得到的」來衡量信仰——神的賜予、神的祝福、神的保護；更深的層次是：以神本身，而非神的賜予，作為生命最深的滿足。<br><br>
+<strong>3. 忠心有其報賞，失職有其後果</strong><br>曾隨百姓拜偶像的利未人降為殿內僕役；堅守的撒督子孫得以親近神。忠心不是沒有意義的——在神的記念中，每個人的選擇都有對應的結果。這提醒信徒：在沒有人看見的時刻保持忠心，不是沒有意義的；神的記念是公義且完整的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華對我說</strong>：「<strong>這門必須關閉</strong>，不可敞開，誰也不可由其中進入；因為耶和華以色列的神已經由其中進入，所以必須關閉。」（結44:2）</td>
+<td>「神的通過使那門永久關閉」——神在你生命中的某次真實相遇，有沒有讓你生命中某扇「門」永久改變了方向？就像一個人遇見真愛後無法再以同樣的眼光看待其他關係，你與神的真實相遇，有沒有「關閉」了某些以前開着的門、或「打開」了某些以前關着的門？</td>
+</tr>
+<tr>
+<td><strong>祭司必有產業</strong>，<strong>我是他們的產業</strong>。不可在以色列中給他們基業；我是他們的基業。（結44:28）</td>
+<td>「我是他們的產業」——如果今天所有的外在資源都被移去，只剩下神本身，那對你意味着什麼？就像測試一個人真正愛一份工作，是看他即使不領薪水是否仍願意做，你對神的渴慕有多少是「渴慕神本身」，有多少是「渴慕神所給的」？</td>
+</tr>
+<tr>
+<td><strong>當以色列人走迷離</strong><strong>開我的時候</strong>，祭司利未人撒督的子孫仍看守我的聖所。他們必親近我，事奉我，並且侍立在我面前。（結44:15）</td>
+<td>「走迷的時代，仍看守聖所」——在周圍的人都偏離的時候，是什麼讓某些人仍然堅守？就像在大家都「走迷」的社會氣候中，有人仍然保持清醒，那個堅守的根基是什麼？你在周圍的屬靈氣候偏離時，你的根基夠深嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

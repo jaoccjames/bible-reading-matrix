@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>士師記第20章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+士師記第20章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以色列全軍攻打便雅憫</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>於是以色列從但到別是巴，以及住基列地的眾人都出來，如同一人，聚集在米斯巴耶和華面前。</div>
+<div class="verse"><span class="verse-number">2</span>以色列民的首領，就是各支派的軍長，都站在神百姓的會中；拿刀的步兵共有四十萬。</div>
+<div class="verse"><span class="verse-number">3</span>以色列人上到米斯巴，便雅憫人都聽見了。以色列人說：「請你將這件惡事的情由對我們說明。」</div>
+<div class="verse"><span class="verse-number">4</span>那利未人，就是被害之婦人的丈夫，回答說：「我和我的妾到了便雅憫的基比亞住宿。</div>
+<div class="verse"><span class="verse-number">5</span>基比亞人夜間起來，圍了我住的房子，想要殺我，又將我的妾強姦致死。</div>
+<div class="verse"><span class="verse-number">6</span>我就把我妾的屍身切成塊子，使人拿着傳送以色列得為業的全地，因為基比亞人在以色列中行了兇淫醜惡的事。</div>
+<div class="verse"><span class="verse-number">7</span>你們以色列人都當籌劃商議。」</div>
+<div class="verse"><span class="verse-number">8</span>眾民都起來如同一人，說：「我們連一人都不回自己帳棚、自己房屋去。</div>
+<div class="verse"><span class="verse-number">9</span>我們向基比亞人必這樣行，照所掣的籤去攻擊他們。</div>
+<div class="verse"><span class="verse-number">10</span>我們要在以色列各支派中，一百人挑取十人，一千人挑取百人，一萬人挑取千人，為民運糧，等大眾到了便雅憫的基比亞，就照基比亞人在以色列中所行的醜事征伐他們。」</div>
+<div class="verse"><span class="verse-number">11</span>於是以色列眾人彼此連合如同一人，聚集攻擊那城。</div>
+<div class="verse"><span class="verse-number">12</span>以色列眾支派打發人去，問便雅憫支派的各家說：「你們中間怎麼作了這樣的惡事呢？</div>
+<div class="verse"><span class="verse-number">13</span>現在你們要將基比亞的那些匪徒交出來，我們好治死他們，從以色列中除掉這惡。」便雅憫人卻不肯聽從他們弟兄以色列人的話。</div>
+<div class="verse"><span class="verse-number">14</span>便雅憫人從他們的各城裏出來，聚集到了基比亞，要與以色列人打仗。</div>
+<div class="verse"><span class="verse-number">15</span>那時，便雅憫人從各城裏點出拿刀的，共有二萬六千；另外還有基比亞人點出七百精兵。</div>
+<div class="verse"><span class="verse-number">16</span>在眾軍之中有揀選的七百精兵，都是左手便利的，能用機弦甩石打人，毫髮不差。</div>
+<div class="verse"><span class="verse-number">17</span>便雅憫人之外，點出以色列人拿刀的，共有四十萬，都是戰士。</div>
+<div class="verse"><span class="verse-number">18</span>以色列人就起來，到伯特利去求問神說：「我們中間誰當首先上去與便雅憫人爭戰呢？」耶和華說：「猶大當先上去。」</div>
+<div class="verse"><span class="verse-number">19</span>以色列人早晨起來，對着基比亞安營。</div>
+<div class="verse"><span class="verse-number">20</span>以色列人出來，要與便雅憫人打仗，就在基比亞前擺陣。</div>
+<div class="verse"><span class="verse-number">21</span>便雅憫人就從基比亞出來，當日殺死以色列人二萬二千。</div>
+<div class="verse"><span class="verse-number">22</span>以色列人彼此奮勇，仍在頭一日擺陣的地方又擺陣。</div>
+<div class="verse"><span class="verse-number">23</span>未擺陣之先，以色列人上去，在耶和華面前哭號，直到晚上，求問耶和華說：「我們再去與我們弟兄便雅憫人打仗可以不可以？」耶和華說：「可以上去攻擊他們。」</div>
+<div class="verse"><span class="verse-number">24</span>第二日，以色列人就上前攻擊便雅憫人。</div>
+<div class="verse"><span class="verse-number">25</span>便雅憫人也在這日從基比亞出來，與以色列人接戰，又殺死他們一萬八千，都是拿刀的。</div>
+<div class="verse"><span class="verse-number">26</span>以色列眾人就上到伯特利，坐在耶和華面前哭號，當日禁食直到晚上；又在耶和華面前獻燔祭和平安祭。</div>
+<div class="verse"><span class="verse-number">27</span>那時，神的約櫃在那裏；亞倫的孫子、以利亞撒的兒子非尼哈侍立在約櫃前。以色列人問耶和華說：「我們當再出去與我們弟兄便雅憫人打仗呢？還是罷兵呢？」耶和華說：「你們當上去，因為明日我必將他們交在你們手中。」</div>
+<div class="verse"><span class="verse-number">28</span>併於上節</div>
+<div class="verse"><span class="verse-number">29</span>以色列人在基比亞的四圍設下伏兵。</div>
+<div class="verse"><span class="verse-number">30</span>第三日，以色列人又上去攻擊便雅憫人，在基比亞前擺陣，與前兩次一樣。</div>
+<div class="verse"><span class="verse-number">31</span>便雅憫人也出來迎敵，就被引誘離城；在田間兩條路上，一通伯特利，一通基比亞，像前兩次，動手殺死以色列人約有三十個。</div>
+<div class="verse"><span class="verse-number">32</span>便雅憫人說：「他們仍舊敗在我們面前。」但以色列人說：「我們不如逃跑，引誘他們離開城到路上來。」</div>
+<div class="verse"><span class="verse-number">33</span>以色列眾人都起來，在巴力他瑪擺陣，以色列的伏兵從馬利迦巴埋伏的地方衝上前去。</div>
+<div class="verse"><span class="verse-number">34</span>有以色列人中的一萬精兵，來到基比亞前接戰，勢派甚是兇猛；便雅憫人卻不知道災禍臨近了。</div>
+<div class="verse"><span class="verse-number">35</span>耶和華使以色列人殺敗便雅憫人。那日，以色列人殺死便雅憫人二萬五千一百，都是拿刀的。</div>
+<div class="verse"><span class="verse-number">36</span>於是便雅憫人知道自己敗了。先是以色列人；因為靠着在基比亞前所設的伏兵，就在便雅憫人面前詐敗。</div>
+<div class="verse"><span class="verse-number">37</span>伏兵急忙闖進基比亞，用刀殺死全城的人。</div>
+<div class="verse"><span class="verse-number">38</span>以色列人預先同伏兵約定在城內放火，以煙氣上騰為號。</div>
+<div class="verse"><span class="verse-number">39</span>以色列人臨退陣的時候，便雅憫人動手殺死以色列人，約有三十個，就說：「他們仍像前次被我們殺敗了。」</div>
+<div class="verse"><span class="verse-number">40</span>當煙氣如柱從城中上騰的時候，便雅憫人回頭觀看，見全城的煙氣沖天。</div>
+<div class="verse"><span class="verse-number">41</span>以色列人又轉身回來，便雅憫人就甚驚惶，因為看見災禍臨到自己了。</div>
+<div class="verse"><span class="verse-number">42</span>他們在以色列人面前轉身往曠野逃跑；以色列人在後面追殺。那從各城裏出來的，也都夾攻殺滅他們。</div>
+<div class="verse"><span class="verse-number">43</span>以色列人圍繞便雅憫人，追趕他們，在他們歇腳之處、對着日出之地的基比亞踐踏他們。</div>
+<div class="verse"><span class="verse-number">44</span>便雅憫人死了的有一萬八千，都是勇士。</div>
+<div class="verse"><span class="verse-number">45</span>其餘的人轉身向曠野逃跑，往臨門磐去。以色列人在道路上殺了他們五千人，如拾取遺穗一樣，追到基頓又殺了他們二千人。</div>
+<div class="verse"><span class="verse-number">46</span>那日便雅憫死了的共有二萬五千人，都是拿刀的勇士。</div>
+<div class="verse"><span class="verse-number">47</span>只剩下六百人，轉身向曠野逃跑，到了臨門磐，就在那裏住了四個月。</div>
+<div class="verse"><span class="verse-number">48</span>以色列人又轉到便雅憫地，將各城的人和牲畜，並一切所遇見的，都用刀殺盡，又放火燒了一切城邑。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載以色列歷史上最黑暗的內戰事件。起因於便雅憫支派基比亞城的惡行(第19章),利未人的妾被姦殺,引發全以色列的公憤。十一個支派聚集米斯巴,要求便雅憫支派交出兇手,但便雅憫人拒絕,選擇保護自己的同胞,導致同胞相殘的悲劇。本章詳細記錄三次戰役:前兩次以色列慘敗,第三次設伏兵得勝,幾乎滅絕便雅憫支派。這場內戰顯示士師時代末期「各人任意而行」的混亂狀態,以及罪惡不除帶來的毀滅性後果。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 對罪的態度決定群體的命運</strong><br>便雅憫人選擇包庇罪惡而非懲治罪人,導致整個支派幾乎滅絕。這顯示當我們在罪惡面前選擇沉默或袒護,不僅個人受害,整個群體都會承受嚴重後果。對罪的妥協最終會帶來更大的毀滅。<br><br>
+<strong>2. 尋求神的引導需要真實的謙卑</strong><br>以色列人雖然求問神,卻在前兩次戰役中慘敗,直到第三次真正禁食哭號、獻祭悔改,才得到勝利。這說明尋求神不能只是形式,必須帶著破碎痛悔的心,真正降服於神的旨意,而非只想得到神的認可來做自己想做的事。<br><br>
+<strong>3. 罪惡的連鎖反應造成全面性的毀壞</strong><br>從一個城的惡行,演變成支派的包庇,最後導致整個民族的內戰,死傷數萬人。這顯示罪惡若不及時處理,會像癌細胞擴散,最終帶來無可挽回的破壞。及早對付罪,才能避免更大的傷害。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>便雅憫人卻不肯聽</strong><strong>從他們弟兄以色列</strong>人的話。(士20:13)</td>
+<td>當你發現自己或身邊的人犯錯時,你會選擇包庇還是勸誡?就像看到朋友闖紅燈卻不提醒,這種「和諧」最終會害了誰?</td>
+</tr>
+<tr>
+<td><strong>以色列眾人就上到</strong><strong>伯特利</strong>,坐在耶和華面前哭號,當日禁食直到晚上;又在耶和華面前獻燔祭和平安祭。(士20:26)</td>
+<td>你向神禱告時,是真心尋求祂的心意,還是只想要祂同意你的計畫?就像考試前才臨時抱佛腳,這樣的禱告能得到真正的幫助嗎?</td>
+</tr>
+<tr>
+<td><strong>那日便雅憫死了的</strong><strong>共有二萬五千人</strong>,都是拿刀的勇士。(士20:46)</td>
+<td>你是否意識到小罪不處理會演變成大災難?就像房屋漏水不修最後整棟倒塌,你在生命中的哪些「小問題」需要立即處理?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

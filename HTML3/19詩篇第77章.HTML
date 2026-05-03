@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第77章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第77章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">從煩躁質疑到追念古時：神的腳蹤無人知道</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（亞薩的詩，照耶杜頓的作法，交與伶長）我要向神發聲呼求；我向神發聲，他必留心聽我。</div>
+<div class="verse"><span class="verse-number">2</span>我在患難之日尋求主；我在夜間不住的舉手禱告；我的心不肯受安慰。</div>
+<div class="verse"><span class="verse-number">3</span>我想念神，就煩燥不安；我沉吟悲傷，心便發昏。（細拉）</div>
+<div class="verse"><span class="verse-number">4</span>你叫我不能閉眼；我煩亂不安，甚至不能說話。</div>
+<div class="verse"><span class="verse-number">5</span>我追想古時之日，上古之年。</div>
+<div class="verse"><span class="verse-number">6</span>我想起我夜間的歌曲，捫心自問；我心裏也仔細省察。</div>
+<div class="verse"><span class="verse-number">7</span>難道主要永遠丟棄我，不再施恩嗎？</div>
+<div class="verse"><span class="verse-number">8</span>難道他的慈愛永遠窮盡，他的應許世世廢棄嗎？</div>
+<div class="verse"><span class="verse-number">9</span>難道神忘記開恩，因發怒就止住他的慈悲嗎？（細拉）</div>
+<div class="verse"><span class="verse-number">10</span>我便說：這是我的懦弱，但我要追念至高者顯出右手之年代。</div>
+<div class="verse"><span class="verse-number">11</span>我要提說耶和華所行的；我要記念你古時的奇事。</div>
+<div class="verse"><span class="verse-number">12</span>我也要思想你的經營，默念你的作為。</div>
+<div class="verse"><span class="verse-number">13</span>神啊，你的作為是潔淨的；有何神大如神呢？</div>
+<div class="verse"><span class="verse-number">14</span>你是行奇事的神；你曾在列邦中彰顯你的能力。</div>
+<div class="verse"><span class="verse-number">15</span>你曾用你的膀臂贖了你的民，就是雅各和約瑟的子孫。（細拉）</div>
+<div class="verse"><span class="verse-number">16</span>神啊，諸水見你，一見就都驚惶；深淵也都戰抖。</div>
+<div class="verse"><span class="verse-number">17</span>雲中倒出水來；天空發出響聲；你的箭也飛行四方。</div>
+<div class="verse"><span class="verse-number">18</span>你的雷聲在旋風中；電光照亮世界；大地戰抖震動。</div>
+<div class="verse"><span class="verse-number">19</span>你的道在海中；你的路在大水中；你的腳蹤無人知道。</div>
+<div class="verse"><span class="verse-number">20</span>你曾藉摩西和亞倫的手引導你的百姓，好像羊群一般。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第77篇是亞薩的詩，與詩篇42篇有相似的靈魂掙扎結構——從深夜的煩躁不安到最終的信心宣告，展現了一個信仰者在黑暗中真實的屬靈旅程。本篇分為兩個截然不同的部分：前半（1-9節）是痛苦的質問，後半（10-20節）是藉著記念神古時作為而得的確信。
+
+      前半部以五個「難道」式的質疑呈現信心的最低谷：「難道主要永遠丟棄我？難道他的慈愛永遠窮盡？難道神忘記開恩？」這些問題在邏輯上是不可能的，但在情感上卻是真實的——痛苦讓人覺得以前所知道的神似乎不再存在。
+
+      轉折在第10節：「這是我的懦弱，但我要追念至高者顯出右手之年代。」詩人意識到自己的問題不在神，而在自己的「懦弱」（或「軟弱」），並主動選擇「追念」——從當下的痛苦轉向歷史的記念。第19節「你的腳蹤無人知道」是全篇最深刻的神學洞見：神在歷史中的行動，有時不留下可見的腳印，並不表示祂不在，而是祂的路徑超過人所能追蹤的。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 深夜的煩躁質問是真實信仰者都可能有的屬靈經歷</strong><br>「我在夜間不住的舉手禱告；我的心不肯受安慰。」（第2節）「我想念神，就煩躁不安」（第3節）——這種「想到神反而更煩躁」的矛盾體驗，是信仰困惑最真實的描寫。信仰成熟不是永遠不煩躁，而是即使煩躁仍繼續呼求。詩人「在夜間不住舉手禱告」，意味著他沒有放棄與神的連結，即使那連結此刻令他痛苦，仍選擇繼續留在禱告中。<br><br>
+<strong>2. 主動轉向記念神古時作為是突破信仰低谷的屬靈動作</strong><br>「我要提說耶和華所行的；我要記念你古時的奇事。我也要思想你的經營，默念你的作為。」（第11-12節）從質疑到確信的轉捩點，是詩人的主動選擇：「我要……記念……思想……默念」。這是意志的行動，不是情感的自然轉化。在信仰低谷中，情感很難自動回到確信；但意志可以選擇把思想的焦點從眼前的黑暗轉向歷史的光明。這種「主動記念」的操練，是突破信仰低谷最有效的屬靈行動。<br><br>
+<strong>3. 神的腳蹤無人知道揭示祂超越人理解的引導方式</strong><br>「你的道在海中；你的路在大水中；你的腳蹤無人知道。」（第19節）這句話揭示了神引導的神秘性：祂在海中行走——水面上不留足印。神引導以色列出埃及時，祂的「路」在大水中，不留腳蹤，卻帶領百姓到達彼岸。信徒的生命常常感覺不到神的足跡，卻在回頭看時，才看見那條看不見的線，一直在引導著他們。「腳蹤無人知道」不是神缺席的證明，而是祂超越我們理解的引導方式的揭示。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我在患難之日尋求</strong>主；<strong>我在夜間不住的舉</strong>手禱告；我的心不肯受安慰。（詩77:2）</td>
+<td>就像一個人在失眠的深夜輾轉反側，你是否曾有過那種「不能閉眼、煩亂不安」的靈魂黑夜？在那樣的時刻，你是「舉手繼續禱告」還是選擇乾脆放棄，讓沉默取代與神的連結？</td>
+</tr>
+<tr>
+<td><strong>我要提說耶和華所</strong>行的；<strong>我要記念你古時的</strong>奇事。（詩77:11）</td>
+<td>就像在最沮喪的時候翻看過去的照片和記憶，讓那些美好的時光成為繼續前行的動力，你在信仰的低谷中，是否有意識地選擇「主動記念神古時的作為」，讓歷史的信實成為當下的確信？</td>
+</tr>
+<tr>
+<td><strong>你的道在海中</strong>；<strong>你的路在大水中</strong>；你的腳蹤無人知道。（詩77:19）</td>
+<td>就像在厚厚的積雪上走路，腳印很快被風雪覆蓋，旁觀者看不出有人走過，但走路的人自己卻知道，你是否相信即使感受不到神的腳蹤，祂仍在引導你——只是祂的路徑在大水中，超過你目前所能看見的？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

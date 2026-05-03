@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">亞拿尼亞事件與使徒被捕再釋放</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>有一個人，名叫亞拿尼亞，同他的妻子撒非喇賣了田產，</div>
+<div class="verse"><span class="verse-number">2</span>把價銀私自留下幾分，他的妻子也知道，其餘的幾分拿來放在使徒腳前。</div>
+<div class="verse"><span class="verse-number">3</span>彼得說：「亞拿尼亞！為甚麼撒但充滿了你的心，叫你欺哄聖靈，把田地的價銀私自留下幾分呢？</div>
+<div class="verse"><span class="verse-number">4</span>田地還沒有賣，不是你自己的麼？既賣了，價銀不是你作主麼？你怎麼心裏起這意念呢？你不是欺哄人，是欺哄神了。」</div>
+<div class="verse"><span class="verse-number">5</span>亞拿尼亞聽見這話，就仆倒，斷了氣；聽見的人都甚懼怕。</div>
+<div class="verse"><span class="verse-number">6</span>有些少年人起來，把他包裹，抬出去埋葬了。</div>
+<div class="verse"><span class="verse-number">7</span>約過了三小時，他的妻子進來，還不知道這事。</div>
+<div class="verse"><span class="verse-number">8</span>彼得對她說：「你告訴我，你們賣田地的價銀就是這些嗎？」她說：「就是這些。」</div>
+<div class="verse"><span class="verse-number">9</span>彼得說：「你們為甚麼同心試探主的靈呢？埋葬你丈夫之人的腳已到門口，他們也要把你抬出去。」</div>
+<div class="verse"><span class="verse-number">10</span>婦人立刻仆倒在彼得腳前，斷了氣。那些少年人進來，見她已經死了，就抬出去，埋在她丈夫旁邊。</div>
+<div class="verse"><span class="verse-number">11</span>全教會和聽見這事的人都甚懼怕。</div>
+<div class="verse"><span class="verse-number">12</span>主藉使徒的手在民間行了許多神蹟奇事；他們〔或作：信的人〕都同心合意的在所羅門的廊下。</div>
+<div class="verse"><span class="verse-number">13</span>其餘的人沒有一個敢貼近他們，百姓卻尊重他們。</div>
+<div class="verse"><span class="verse-number">14</span>信而歸主的人越發增添，連男帶女很多。</div>
+<div class="verse"><span class="verse-number">15</span>甚至有人將病人抬到街上，放在床上或褥子上，指望彼得過來的時候，或者得他的影兒照在甚麼人身上。</div>
+<div class="verse"><span class="verse-number">16</span>還有許多人帶着病人和被污鬼纏磨的，從耶路撒冷四圍的城邑來，全都得了醫治。</div>
+<div class="verse"><span class="verse-number">17</span>大祭司和他的一切同人，就是撒都該教門的人，都起來，滿心忌恨，</div>
+<div class="verse"><span class="verse-number">18</span>就下手拿住使徒，收在外監。</div>
+<div class="verse"><span class="verse-number">19</span>但主的使者夜間開了監門，領他們出來，</div>
+<div class="verse"><span class="verse-number">20</span>說：「你們去站在殿裏，把這生命的道都講給百姓聽。」</div>
+<div class="verse"><span class="verse-number">21</span>使徒聽了這話，天將亮的時候就進殿裏去教訓人。大祭司和他的同人來了，叫齊公會的人，和以色列族的眾長老，就差人到監裏去，要把使徒提出來。</div>
+<div class="verse"><span class="verse-number">22</span>但差役到了，不見他們在監裏，就回來稟報說：</div>
+<div class="verse"><span class="verse-number">23</span>「我們看見監牢關得極妥當，看守的人也站在門外；及至開了門，裏面一個人都不見。」</div>
+<div class="verse"><span class="verse-number">24</span>守殿官和祭司長聽見這話，心裏犯難，不知這事將來如何。</div>
+<div class="verse"><span class="verse-number">25</span>有一個人來稟報說：「你們收在監裏的人，現在站在殿裏教訓百姓。」</div>
+<div class="verse"><span class="verse-number">26</span>於是守殿官和差役去帶使徒來，並沒有用強暴，因為怕百姓用石頭打他們。</div>
+<div class="verse"><span class="verse-number">27</span>帶到了，便叫使徒站在公會前；大祭司問他們說：</div>
+<div class="verse"><span class="verse-number">28</span>「我們不是嚴嚴的禁止你們，不可奉這名教訓人嗎？你們倒把你們的道理充滿了耶路撒冷，想要叫這人的血歸到我們身上！」</div>
+<div class="verse"><span class="verse-number">29</span>彼得和眾使徒回答說：「順從神，不順從人，是應當的。</div>
+<div class="verse"><span class="verse-number">30</span>你們掛在木頭上殺害的耶穌，我們祖宗的神已經叫他復活。</div>
+<div class="verse"><span class="verse-number">31</span>神且用右手將他高舉〔或作：他就是神高舉在自己的右邊〕，叫他作君王，作救主，將悔改的心和赦罪的恩賜給以色列人。</div>
+<div class="verse"><span class="verse-number">32</span>我們為這事作見證；神賜給順從之人的聖靈也為這事作見證。」</div>
+<div class="verse"><span class="verse-number">33</span>公會的人聽見就極其惱怒，想要殺他們。</div>
+<div class="verse"><span class="verse-number">34</span>但有一個法利賽人，名叫迦瑪列，是眾百姓所敬重的教法師，在公會中站起來，吩咐人把使徒暫且帶到外面去，</div>
+<div class="verse"><span class="verse-number">35</span>就對眾人說：「以色列人哪，論到這些人，你們應當小心怎樣辦理。</div>
+<div class="verse"><span class="verse-number">36</span>從前丟大起來，自誇為大；附從他的人約有四百，他被殺後，附從他的全都散了，歸於無有。</div>
+<div class="verse"><span class="verse-number">37</span>此後，報名上冊的時候，又有加利利的猶大起來，引誘些百姓跟從他；他也滅亡，附從他的人也都四散了。</div>
+<div class="verse"><span class="verse-number">38</span>現在，我勸你們不要管這些人，任憑他們吧！他們所謀的、所行的，若是出於人，必要敗壞；</div>
+<div class="verse"><span class="verse-number">39</span>若是出於神，你們就不能敗壞他們，恐怕你們倒是攻擊神了。」</div>
+<div class="verse"><span class="verse-number">40</span>公會的人聽從了他，便叫使徒來，把他們打了，又吩咐他們不可奉耶穌的名講道，就把他們釋放了。</div>
+<div class="verse"><span class="verse-number">41</span>他們離開公會，心裏歡喜，因被算是配為這名受辱。</div>
+<div class="verse"><span class="verse-number">42</span>他們就每日在殿裏、在家裏、不住的教訓人，傳耶穌是基督。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第5章記述亞拿尼亞和撒非喇欺哄聖靈的審判、使徒行神蹟被捕再次受審，以及迦瑪列的忠告，是初代教會在內外壓力下保持聖潔與見證的關鍵章節。本章首先描述亞拿尼亞和他的妻子撒非喇賣了田產，私自留下幾分，把其餘的放在使徒腳前，彼得說你為何讓撒但充滿你的心，你不是欺哄人是欺哄神，亞拿尼亞立刻倒地斷氣，約過三小時撒非喇也因同樣的謊言倒地斷氣，眾人大懼怕。接著使徒們在所羅門廊大行神蹟奇事，信的人日日增多，從周圍城鎮帶來病人和被污鬼纏磨的人都得醫治。大祭司和撒都該人大起嫉妒，把使徒下在監裡，夜間主的使者打開獄門帶他們出來叫他們去講生命的道，他們黎明進殿繼續教訓人。大祭司說吩咐你們不可奉那名教訓人，你們倒把你們的道理充滿了耶路撒冷，彼得說順從神不順從人是應當的。法利賽人迦瑪列起來說倘若這謀略是出於人必自敗壞，若是出於神你們就不能敗壞，議會准奏，鞭打使徒後釋放，他們不住地傳耶穌是基督的福音。本章以教會內部的聖潔與外部的逼迫呈現初代教會的屬靈真實。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 欺哄神比欺哄人更嚴重</strong><br>「你不是欺哄人，是欺哄神了」——亞拿尼亞的問題不是少奉獻，而是欺騙：假裝是全部卻實際上留下了一部分。他有權留着，「田地還沒有賣，不是你自己的麼？」問題在於假冒虔誠。神對教會聖潔的要求，使每一個信徒要問：我的奉獻、服事和敬虔，有多少是真實的，有多少是表演？在神面前的誠實比任何宗教行為更重要。<br><br>
+<strong>2. 「順從神，不順從人，是應當的」</strong><br>面對公會的威脅，彼得的回答已成為基督徒公民不服從最著名的神學聲明。不是所有的不服從都是合理的，但當人的命令直接違背神的命令時，「順從神」的優先性必須壓倒「順從人」。這個原則在迫害下的教會、在法律禁止傳福音的地方、在任何要求信徒放棄信仰的情況下，都是清晰的指引。<br><br>
+<strong>3. 為主受辱是榮耀，不是羞恥</strong><br>「他們離開公會，心裏歡喜，因被算是配為這名受辱」——這是基督徒苦難觀最美的例子。被打了、受辱了，卻歡喜——不是馬沙主義，而是因為意識到參與了基督所受的苦，這是一種莫大的榮幸。「配為這名受辱」——連受苦的資格都是神賜的恩典。這個態度挑戰信徒：我有沒有準備好為主的名受辱，並且以此為榮？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>亞拿尼亞</strong>，<strong>為甚麼撒但充滿了</strong>你的心……你不是欺哄人，是欺哄神了。（徒5:3-4）</td>
+<td>你的奉獻、服事和敬虔操練，有多少是真實對神的，有多少是為了給人看的？就像單獨一人時的行為才是真正的品格，你願意讓神的眼光（而非人的眼光）成為你信仰行為的標準嗎？</td>
+</tr>
+<tr>
+<td><strong>彼得和眾使徒回答</strong>說：「<strong>順從神</strong>，不順從人，是應當的。」（徒5:29）</td>
+<td>在人的要求和神的命令衝突時，你有沒有清楚的優先次序，並且有行動的勇氣？就像公司政策和法律衝突時有明確的優先次序，你有沒有在你生活的各個場域，對「順從神優先於順從人」有清晰的認識和預備？</td>
+</tr>
+<tr>
+<td><strong>他們離開公會</strong>，<strong>心裏歡喜</strong>，因被算是配為這名受辱。（徒5:41）</td>
+<td>你有沒有在面對因信仰帶來的羞辱、嘲笑或代價時，能從中找到喜樂？就像獲得某個榮譽必然帶來某種代價，你願意把「為主受辱」看作是特殊的尊榮，而非需要逃避的羞恥嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

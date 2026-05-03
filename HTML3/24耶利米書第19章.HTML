@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第19章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第19章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">打碎瓦瓶的審判預言</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華如此說：「你去買窰匠的瓦瓶，又帶百姓中的長老和祭司中的長老，</div>
+<div class="verse"><span class="verse-number">2</span>出去到欣嫩子谷、哈珥西〔就是瓦片的意思〕的門口那裏，宣告我所吩咐你的話，</div>
+<div class="verse"><span class="verse-number">3</span>說：『猶大君王和耶路撒冷的居民哪，當聽耶和華的話。萬軍之耶和華以色列的神如此說：我必使災禍臨到這地方，凡聽見的人都必耳鳴；</div>
+<div class="verse"><span class="verse-number">4</span>因為他們和他們列祖，並猶大君王離棄我，將這地方看為平常，在這裏向素不認識的別神燒香，又使這地方滿了無辜人的血，</div>
+<div class="verse"><span class="verse-number">5</span>又建築巴力的邱壇，好在火中焚燒自己的兒子，作為燔祭獻給巴力。這不是我所吩咐的，不是我所提說的，也不是我心所起的意。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華說：因此，日子將到，這地方不再稱為陀斐特和欣嫩子谷，反倒稱為殺戮谷。</div>
+<div class="verse"><span class="verse-number">7</span>我必在這地方使猶大和耶路撒冷的計謀落空，也必使他們在仇敵面前倒於刀下，並尋索其命的人手下。他們的屍首，我必給空中的飛鳥和地上的野獸作食物。</div>
+<div class="verse"><span class="verse-number">8</span>我必使這城令人驚駭嗤笑；凡經過的人，必因這城所遭的災驚駭嗤笑。</div>
+<div class="verse"><span class="verse-number">9</span>我必使他們在圍困窘迫之中，就是仇敵和尋索其命的人窘迫他們的時候，各人喫自己兒女的肉和朋友的肉。』</div>
+<div class="verse"><span class="verse-number">10</span>「你要在同去的人眼前打碎那瓶，</div>
+<div class="verse"><span class="verse-number">11</span>對他們說：『萬軍之耶和華如此說：我要照樣打碎這民和這城，正如人打碎窰匠的瓦器，以致不能再囫圇。並且人要在陀斐特葬埋屍首，甚致無處可葬。</div>
+<div class="verse"><span class="verse-number">12</span>耶和華說：我必向這地方和其中的居民如此行，使這城與陀斐特一樣。</div>
+<div class="verse"><span class="verse-number">13</span>耶路撒冷的房屋和猶大君王的宮殿是已經被玷污的，就是他們在其上向天上的萬象燒香、向別神澆奠祭的宮殿房屋，都必與陀斐特一樣。』」</div>
+<div class="verse"><span class="verse-number">14</span>耶利米從陀斐特，就是耶和華差他去說預言的地方回來，站在耶和華殿的院中，對眾人說：</div>
+<div class="verse"><span class="verse-number">15</span>「萬軍之耶和華以色列的神如此說：我必使我所說的一切災禍臨到這城和屬城的一切城邑，因為他們硬着頸項不聽我的話。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第19章是第18章窰匠比喻的行動延伸。神吩咐耶利米買一個窰匠的瓦瓶，帶領百姓和祭司長老，來到耶路撒冷南邊的欣嫩子谷——即「陀斐特」，以色列人在此燒香拜偶像、甚至將兒女焚燒獻給巴力。這個地點的揀選富有深意：在最污穢罪惡發生之處，宣告審判的臨到。先知在眾目睽睽下當場打碎瓦瓶，以具體的行動象徵神對耶路撒冷的審判：「我必照樣打碎這民和這城，正如人打碎窰匠的瓦器，以致不能再囫圇。」打碎的瓦器是無法復原的，顯示審判的嚴重性。罪的根源被清楚列明：離棄神、拜偶像、在此地流無辜人的血、甚至以兒女獻為燔祭。審判的結果是這城「令人驚駭嗤笑」，欣嫩子谷將改名為「殺戮谷」。耶利米之後返回聖殿院中，再次宣告同樣的信息，展現先知在強大壓力下的持守。本章是理解耶路撒冷陷落的神學背景的重要一章。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 持續悖逆會導致不可逆轉的破碎</strong><br>打碎的瓦器「不能再囫圇」，象徵審判到了某個臨界點，就不可挽回。第18章的窰匠可以重塑泥器，但第19章的瓦器已燒成，打碎就是打碎。這提醒信徒：悔改要趁早，不能一直等待「最後機會」。罪若不斷累積，心會越來越硬，悔改的能力也會逐漸喪失，最終進入無法被塑造的狀態。<br><br>
+<strong>2. 神厭惡傷害無辜者的罪行</strong><br>猶大人在欣嫩子谷焚燒兒女，這是神明確說「不是我所吩咐的，不是我心所起的意」的事。神對傷害弱勢、無辜者的罪，有特別的憤怒。今日社會同樣存在各種以利益之名犧牲弱者的行為。信徒有責任抵制並對抗這類不公義，因為神的性情是保護無辜的。<br><br>
+<strong>3. 忠心傳道需要勇氣面對反彈</strong><br>耶利米在眾人面前打碎瓦瓶，然後回到聖殿再次宣告信息，面對百姓的敵意毫不退縮。傳遞神的話有時需要「打碎常規」的勇氣——以行動、以言語、以生命的見證，讓真理清楚可見。信徒受呼召傳遞的信息若是真實的，就不應因聽眾的不悅而沉默。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>萬軍之耶和華以色</strong><strong>列的神如此說</strong>：我必使災禍臨到這地方，凡聽見的人都必耳鳴。（耶19:3）</td>
+<td>你是否曾因害怕別人的反應而沉默，沒有說出應該說的真話？就像在大聲的環境中需要提高音量才能被聽見，有時神要求我們以更清楚、更大膽的方式傳遞祂的信息，你準備好了嗎？</td>
+</tr>
+<tr>
+<td><strong>萬軍之耶和華如此</strong>說：<strong>我要照樣打碎這民</strong>和這城，正如人打碎窰匠的瓦器，以致不能再囫圇。（耶19:11）</td>
+<td>你是否察覺自己生命中有某個領域，因長期忽視神的提醒而越來越「硬化」？就像黏土一旦燒成瓦器就難以重塑，你願意趁心還柔軟的時候，讓神進來處理那個問題嗎？</td>
+</tr>
+<tr>
+<td><strong>萬軍之耶和華以色</strong><strong>列的神如此說</strong>：我必使我所說的一切災禍臨到這城和屬城的一切城邑，因為他們硬着頸項不聽我的話。（耶19:15）</td>
+<td>「硬着頸項」是人對神話語的頑固抵抗。你生命中是否有某個神曾多次提醒你，你卻一直不肯改變的事？就像反覆忽略手機的電量警告最終關機，你願意今天就回應神那個等待已久的提醒嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

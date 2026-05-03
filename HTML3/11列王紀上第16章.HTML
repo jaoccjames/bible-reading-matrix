@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀上第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀上第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">北國王位血腥更迭，亞哈娶耶洗別拜巴力</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話臨到哈拿尼的兒子耶戶，責備巴沙說：</div>
+<div class="verse"><span class="verse-number">2</span>「我既從塵埃中提拔你，立你作我民以色列的君，你竟行耶羅波安所行的道，使我民以色列陷在罪裏，惹我發怒，</div>
+<div class="verse"><span class="verse-number">3</span>我必除盡你和你的家，使你的家像尼八的兒子耶羅波安的家一樣。</div>
+<div class="verse"><span class="verse-number">4</span>凡屬巴沙的人，死在城中的必被狗吃，死在田野的必被空中的鳥吃。」</div>
+<div class="verse"><span class="verse-number">5</span>巴沙其餘的事，凡他所行的和他的勇力，都寫在以色列諸王記上。</div>
+<div class="verse"><span class="verse-number">6</span>巴沙與他列祖同睡，葬在得撒。他兒子以拉接續他作王。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華的話臨到哈拿尼的兒子先知耶戶，責備巴沙和他的家，因他行耶和華眼中看為惡的一切事，以他手所作的惹耶和華發怒，像耶羅波安的家一樣，又因他殺了耶羅波安的全家。</div>
+<div class="verse"><span class="verse-number">8</span>猶大王亞撒二十六年，巴沙的兒子以拉在得撒登基作以色列王共二年。</div>
+<div class="verse"><span class="verse-number">9</span>有管理他一半戰車的臣子心利背叛他。當他在得撒家宰亞雜家裏喝醉的時候，</div>
+<div class="verse"><span class="verse-number">10</span>心利就進去殺了他，篡了他的位。這是猶大王亞撒二十七年的事。</div>
+<div class="verse"><span class="verse-number">11</span>心利一坐王位就殺了巴沙的全家，連他的親屬、朋友也沒有留下一個男丁。</div>
+<div class="verse"><span class="verse-number">12</span>心利這樣滅絕巴沙的全家，正如耶和華藉先知耶戶責備巴沙的話。</div>
+<div class="verse"><span class="verse-number">13</span>這是因巴沙和他兒子以拉的一切罪，就是他們使以色列人陷在罪裏的那罪，以虛無的神惹耶和華以色列神的怒氣。</div>
+<div class="verse"><span class="verse-number">14</span>以拉其餘的事，凡他所行的，都寫在以色列諸王記上。</div>
+<div class="verse"><span class="verse-number">15</span>猶大王亞撒二十七年，心利在得撒作王七日。那時民正安營圍攻非利士的基比頓。</div>
+<div class="verse"><span class="verse-number">16</span>民在營中聽說心利背叛，又殺了王，故此以色列眾人當日在營中立元帥暗利作以色列王。</div>
+<div class="verse"><span class="verse-number">17</span>暗利率領以色列眾人，從基比頓上去，圍困得撒。</div>
+<div class="verse"><span class="verse-number">18</span>心利見城破失，就進了王宮的衛所，放火焚燒宮殿，自焚而死。</div>
+<div class="verse"><span class="verse-number">19</span>這是因他犯罪，行耶和華眼中看為惡的事，行耶羅波安所行的，犯他使以色列人陷在罪裏的那罪。</div>
+<div class="verse"><span class="verse-number">20</span>心利其餘的事和他背叛的情形都寫在以色列諸王記上。</div>
+<div class="verse"><span class="verse-number">21</span>那時，以色列民分為兩半：一半隨從基納的兒子提比尼，要立他作王；一半隨從暗利。</div>
+<div class="verse"><span class="verse-number">22</span>但隨從暗利的民勝過隨從基納的兒子提比尼的民。提比尼死了，暗利就作了王。</div>
+<div class="verse"><span class="verse-number">23</span>猶大王亞撒三十一年，暗利登基作以色列王共十二年；在得撒作王六年。</div>
+<div class="verse"><span class="verse-number">24</span>暗利用二他連得銀子向撒瑪買了撒瑪利亞山，在山上造城，就按着山的原主撒瑪的名，給所造的城起名叫撒瑪利亞。</div>
+<div class="verse"><span class="verse-number">25</span>暗利行耶和華眼中看為惡的事，比他以前的列王作惡更甚。</div>
+<div class="verse"><span class="verse-number">26</span>因他行了尼八的兒子耶羅波安所行的，犯他使以色列人陷在罪裏的那罪，以虛無的神惹耶和華以色列神的怒氣。</div>
+<div class="verse"><span class="verse-number">27</span>暗利其餘的事和他所顯出的勇力都寫在以色列諸王記上。</div>
+<div class="verse"><span class="verse-number">28</span>暗利與他列祖同睡，葬在撒瑪利亞。他兒子亞哈接續他作王。</div>
+<div class="verse"><span class="verse-number">29</span>猶大王亞撒三十八年，暗利的兒子亞哈登基作了以色列王。暗利的兒子亞哈在撒瑪利亞作以色列王二十二年。</div>
+<div class="verse"><span class="verse-number">30</span>暗利的兒子亞哈行耶和華眼中看為惡的事，比他以前的列王更甚，</div>
+<div class="verse"><span class="verse-number">31</span>犯了尼八的兒子耶羅波安所犯的罪；他還以為輕，又娶了西頓王謁巴力的女兒耶洗別為妻，去事奉敬拜巴力，</div>
+<div class="verse"><span class="verse-number">32</span>在撒瑪利亞建造巴力的廟，在廟裏為巴力築壇。</div>
+<div class="verse"><span class="verse-number">33</span>亞哈又作亞舍拉，他所行的惹耶和華以色列神的怒氣，比他以前的以色列諸王更甚。</div>
+<div class="verse"><span class="verse-number">34</span>亞哈在位的時候，有伯特利人希伊勒重修耶利哥城；立根基的時候，喪了長子亞比蘭；安門的時候，喪了幼子西割，正如耶和華藉嫩的兒子約書亞所說的話。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀上第16章以快節奏記述以色列北國連串的王位動盪，是列王紀中政治最動盪的一章。先知耶戶宣告對巴沙家的審判；巴沙去世，其子以拉繼位，在位不足兩年便被心利趁喝醉之際所殺；心利篡位只有七天，暗利率軍攻打，心利在宮殿放火自焚；以色列民一分為二，最終暗利獲勝。暗利在位十二年，建立了撒瑪利亞為首都，卻行惡比前列王更甚。暗利去世後，其子亞哈繼位，走向更深的屬靈墮落——他娶了西頓王之女耶洗別，在撒瑪利亞建巴力廟、築壇敬拜巴力，引入前所未有的外邦偶像崇拜。本章在一片血腥的政治更迭中，各王的評語幾乎清一色是「行耶和華眼中看為惡的事」，而且每況愈下，成為下一個更壞的王的對比。章末以伯特利人重建耶利哥城、喪失二子作結，應驗了約書亞的預言，顯示神的話語在歷史中精確成就。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 罪惡的循環會愈演愈烈，若無屬靈的介入</strong><br>本章各王的行惡程度節節上升：巴沙惡、以拉更惡、暗利比以前列王「更甚」、亞哈又比暗利「更甚」。沒有一個王選擇打破這個向下的螺旋。罪惡若缺乏悔改和屬靈的更新，往往形成向下的循環，一代比一代更深陷其中。在個人生命和社會層面皆然。信徒每一代人都需要主動選擇打破罪惡的習性和模式，而非隨波逐流。<br><br>
+<strong>2. 外邦的連結往往帶入屬靈的污染</strong><br>亞哈娶了耶洗別，帶來了巴力的廟和壇，開啟了以色列最黑暗的宗教倒退時期。婚姻和深度的社會連結，往往是屬靈影響力進入的管道。信徒在選擇人生最親密的伴侶和關係時，必須認真考慮對方的信仰是否與自己對神的委身一致，因為這種連結將深刻影響一生的屬靈方向。<br><br>
+<strong>3. 神的話語在歷史事件中精確應驗</strong><br>章末以約書亞記6:26的預言在伯特利人重建耶利哥城一事上得到應驗作結，提醒讀者：在一片混亂的歷史動盪中，神的話語始終如一地成就著。信徒可以在自己所處的混亂時代中，抓住這一真理作為信心的錨——神所說的話，必在祂的時間成就，一字不差。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>暗利的兒子亞哈行</strong><strong>耶和華眼中看為惡</strong>的事，比他以前的列王更甚。」（王上16:30）</td>
+<td>就像一條向下傾斜的滑道，一旦開始滑行便愈來愈快，北國的屬靈狀況一代比一代更壞。你在自己的生命或群體中，有沒有發現某些向下的趨勢？你願意主動介入、打破這個向下的循環嗎？</td>
+</tr>
+<tr>
+<td>「<strong>他還以為輕</strong>，<strong>又娶了西頓王謁巴</strong>力的女兒耶洗別為妻，去事奉敬拜巴力。」（王上16:31）</td>
+<td>就像引進一種外來的入侵物種，往往會改變整個生態系統，亞哈娶耶洗別為以色列帶入了最強烈的屬靈污染。你生命中最親密的關係，是在引領你更靠近神，還是悄悄地把你帶離神？</td>
+</tr>
+<tr>
+<td>「<strong>有伯特利人希伊勒</strong><strong>重修耶利哥城</strong>……正如耶和華藉嫩的兒子約書亞所說的話。」（王上16:34）</td>
+<td>就像一份幾百年前立下的預言，在完全不同的歷史場景中精確應驗，這提醒我們神的話語超越時間。你對神那些「看似遙遠」的應許和警告，是否也有同等的敬重，相信它們終必成就？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

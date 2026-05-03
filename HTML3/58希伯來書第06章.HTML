@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>希伯來書第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+希伯來書第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">靈魂的錨與神應許的不更改</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>所以，我們應當離開基督道理的開端，竭力進到完全的地步，不必再立根基，就如那懊悔死行，信靠神、</div>
+<div class="verse"><span class="verse-number">2</span>各樣洗禮、按手之禮、死人復活，以及永遠審判各等教訓。</div>
+<div class="verse"><span class="verse-number">3</span>神若許我們，我們必如此行。</div>
+<div class="verse"><span class="verse-number">4</span>論到那些已經蒙了光照、嘗過天恩的滋味、又於聖靈有分，</div>
+<div class="verse"><span class="verse-number">5</span>並嘗過神善道的滋味、覺悟來世權能的人，</div>
+<div class="verse"><span class="verse-number">6</span>若是離棄道理，就不能叫他們從新懊悔了。因為他們把神的兒子重釘十字架，明明的羞辱他。</div>
+<div class="verse"><span class="verse-number">7</span>就如一塊田地，喫過屢次下的雨水，生長菜蔬，合乎耕種的人用，就從神得福；</div>
+<div class="verse"><span class="verse-number">8</span>若長荊棘和蒺藜，必被廢棄，近於咒詛，結局就是焚燒。</div>
+<div class="verse"><span class="verse-number">9</span>親愛的弟兄們，我們雖是這樣說，卻深信你們的行為強過這些，而且近乎得救。</div>
+<div class="verse"><span class="verse-number">10</span>因為神並非不公義，竟忘記你們所作的工和你們為他名所顯的愛心，就是先前伺候聖徒，如今還是伺候。</div>
+<div class="verse"><span class="verse-number">11</span>我們願你們各人都顯出這樣的殷勤，使你們有滿足的指望，一直到底。</div>
+<div class="verse"><span class="verse-number">12</span>並且不懈怠，總要效法那些憑信心和忍耐承受應許的人。</div>
+<div class="verse"><span class="verse-number">13</span>當初神應許亞伯拉罕的時候，因為沒有比自己更大可以指着起誓的，就指着自己起誓，說：</div>
+<div class="verse"><span class="verse-number">14</span>「論福，我必賜大福給你；論子孫，我必叫你的子孫多起來。」</div>
+<div class="verse"><span class="verse-number">15</span>這樣，亞伯拉罕既恒久忍耐，就得了所應許的。</div>
+<div class="verse"><span class="verse-number">16</span>人都是指着比自己大的起誓，並且以起誓為實據，了結各樣的爭論。</div>
+<div class="verse"><span class="verse-number">17</span>照樣，神願意為那承受應許的人格外顯明他的旨意是不更改的，就起誓為證。</div>
+<div class="verse"><span class="verse-number">18</span>藉這兩件不更改的事，神決不能說謊，好叫我們這逃往避難所、持定擺在我們前頭指望的人可以大得勉勵。</div>
+<div class="verse"><span class="verse-number">19</span>我們有這指望，如同靈魂的錨，又堅固又牢靠，且通入幔內。</div>
+<div class="verse"><span class="verse-number">20</span>作先鋒的耶穌，既照着麥基洗德的等次成了永遠的大祭司，就為我們進入幔內。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第6章包含希伯來書最嚴肅的警告段落，討論已蒙光照者若背道是否還有回頭的可能，同時以神的應許和誓言作為信徒盼望的確據，整章在警告與安慰之間保持張力。本章首先說要離開基督道理的開端，竭力進到完全的地步，不必再立根基，這若是神許可我們必如此行。然後提出著名的警告：因為那些已經蒙了光照，嘗過天恩的滋味，又於聖靈有分，並嘗過神善道的滋味，覺悟來世權能的人，若是離棄道理，就不能叫他們重新懊悔了，因為他們把神的兒子重釘十字架，明明地羞辱祂。接著以地的比喻說明好壞的分別：喝了雨水生長菜蔬的地是有益的，長荊棘的地是無益的，快遭咒詛後來被火燒。然後轉為安慰：雖然這樣說，卻深信你們的行為強過這些，是屬乎得救的，因神並非不公義竟忘記你們的工夫和你們為祂的名所顯的愛心。接著以亞伯拉罕長久忍耐而得到神的應許為例，說神因自己不能指著比自己更大的起誓就指著自己起誓，我們這些逃往避難所持定那盼望的人，可以大得勉勵，這盼望如同靈魂的錨，入到幔內，耶穌已照著麥基洗德的等次成了永遠的大祭司。本章在嚴肅警告中仍保有堅定的盼望。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「靈魂的錨」——指望的神學意義</strong><br>「我們有這指望，如同靈魂的錨，又堅固又牢靠，且通入幔內」——錨的功能是在風浪中防止船漂移。基督徒的盼望（指望）是靈魂的錨：在生命的風浪中，這個錨通入至聖所（天上的神面前），把我們的靈魂固定在那裏。外在的風浪無法搖動有這個錨的靈魂。<br><br>
+<strong>2. 神應許的雙重確認</strong><br>「藉這兩件不更改的事（應許和起誓），神決不能說謊，好叫我們……可以大得勉勵」——神的應許本身已是確定的（神不說謊），但神還加上了起誓，是為了「我們這些人」大得勉勵。神的加倍確認是出於對我們軟弱信心的憐憫，使我們在等候中有更穩固的確信。<br><br>
+<strong>3. 神記念每一個因愛所作的行動</strong><br>「神並非不公義，竟忘記你們所作的工和你們為他名所顯的愛心，就是先前伺候聖徒，如今還是伺候」——在一切警告和鼓勵中，有一個溫柔的確信：神不忘記。每一個因愛所作的服事，每一個為主名所受的苦，神都記念。這不是說我們靠行為賺救恩，而是說神是公義的，祂不讓任何出於愛的行動白白流失。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我們有這指望</strong>，<strong>如同靈魂的錨</strong>，又堅固又牢靠，且通入幔內。（來6:19）</td>
+<td>在生命最動盪的風浪中，你有沒有讓對神應許和基督永遠大祭司職分的確信，成為你靈魂不被搖動的錨？就像在暴風雨中一艘有深入海底的錨的船能保持位置，你有沒有讓你的盼望通入那至聖所，固定在神那裏？</td>
+</tr>
+<tr>
+<td><strong>神並非不公義</strong>，<strong>竟忘記你們所作的</strong>工和你們為他名所顯的愛心，就是先前伺候聖徒，如今還是伺候。（來6:10）</td>
+<td>你有沒有在沒有人看見和認可的服事中，仍然確信「神不忘記」，讓這個確信使你繼續甘心服事，而非因得不到認可就失去動力？就像知道最公正的評審看見一切讓人更坦然地盡力，你有沒有讓神記念的確信帶出你更自由的服事？</td>
+</tr>
+<tr>
+<td><strong>我們願你們各人都</strong><strong>顯出這樣的殷勤</strong>，使你們有滿足的指望，一直到底。並且不懈怠，總要效法那些憑信心和忍耐承受應許的人。（來6:11-12）</td>
+<td>你有沒有讓「滿足的指望，一直到底」成為你信仰生命的長程目標，讓今天的殷勤和忍耐成為你最終得着應許的道路？就像一個知道終點線有奬牌的長跑者在中途絕不放棄，你有沒有讓對最終應許的確信帶出你在信仰路程中持續的殷勤？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>彌迦書第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+彌迦書第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">仰望耶和華必再起來</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>哀哉！我〔或指：以色列〕好像夏天的果子已被收盡，又像摘了葡萄所剩下的，沒有一挂可吃的；我心羡慕初熟的無花果。</div>
+<div class="verse"><span class="verse-number">2</span>地上虔誠人滅盡；世間沒有正直人；各人埋伏，要殺人流血，都用網羅獵取弟兄。</div>
+<div class="verse"><span class="verse-number">3</span>他們雙手作惡；君王徇情面，審判官要賄賂；位分大的吐出惡意，都彼此結聯行惡。</div>
+<div class="verse"><span class="verse-number">4</span>他們最好的，不過是蒺藜；最正直的，不過是荊棘籬笆。你守望者說，降罰的日子已經來到。他們必擾亂不安。</div>
+<div class="verse"><span class="verse-number">5</span>不要倚賴鄰舍；不要信靠密友。要守住你的口；不要向你懷中的妻提說。</div>
+<div class="verse"><span class="verse-number">6</span>因為，兒子藐視父親；女兒抗拒母親；媳婦抗拒婆婆；人的仇敵就是自己家裏的人。</div>
+<div class="verse"><span class="verse-number">7</span>至於我，我要仰望耶和華，要等候那救我的神；我的神必應允我。</div>
+<div class="verse"><span class="verse-number">8</span>我的仇敵啊，不要向我誇耀。我雖跌倒，卻要起來；我雖坐在黑暗裏，耶和華卻作我的光。</div>
+<div class="verse"><span class="verse-number">9</span>我要忍受耶和華的惱怒；因我得罪了他，直等他為我辨屈，為我伸冤。他必領我到光明中；我必得見他的公義。</div>
+<div class="verse"><span class="verse-number">10</span>那時我的仇敵，就是曾對我說「耶和華你神在那裏」的，他一看見這事就被羞愧遮蓋。我必親眼見他遭報；他必被踐踏，如同街上的泥土。</div>
+<div class="verse"><span class="verse-number">11</span>以色列啊，日子必到，你的牆垣必重修；到那日，你的境界必開展〔或作：命令必傳到遠方〕。</div>
+<div class="verse"><span class="verse-number">12</span>當那日，人必從亞述，從埃及的城邑，從埃及到大河，從這海到那海，從這山到那山，都歸到你這裏。</div>
+<div class="verse"><span class="verse-number">13</span>然而，這地因居民的緣故，又因他們行事的結果，必然荒涼。</div>
+<div class="verse"><span class="verse-number">14</span>求耶和華在迦密山的樹林中，用你的杖牧放你獨居的民，就是你產業的羊群。求你容他們在巴珊和基列得食物，像古時一樣。</div>
+<div class="verse"><span class="verse-number">15</span>耶和華說：我要把奇事顯給他們看，好像出埃及地的時候一樣。</div>
+<div class="verse"><span class="verse-number">16</span>列國看見這事，就必為自己的勢力慚愧；他們必用手摀口，掩耳不聽。</div>
+<div class="verse"><span class="verse-number">17</span>他們必餂土如蛇，又如土中腹行的物，戰戰兢兢的出他們的營寨。他們必戰懼投降耶和華，也必因我們的神而懼怕。</div>
+<div class="verse"><span class="verse-number">18</span>神啊，有何神像你，赦免罪孽，饒恕你產業之餘民的罪過，不永遠懷怒，喜愛施恩？</div>
+<div class="verse"><span class="verse-number">19</span>必再憐憫我們，將我們的罪孽踏在腳下，又將我們的一切罪投於深海。</div>
+<div class="verse"><span class="verse-number">20</span>你必按古時起誓應許我們列祖的話，向雅各發誠實，向亞伯拉罕施慈愛。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+彌迦書第7章是全書的終章，以先知個人的哀嘆開始：「地上虔誠人滅盡；世間沒有正直人」——四圍充滿背叛、欺騙、家庭裂解，連最親密的關係也不可信賴。然而從第7節開始，先知以堅定的信心宣告轉折：「至於我，我要仰望耶和華，要等候那救我的神；我的神必應允我。」第8-10節是整個舊約中最美的信心宣言之一：「我雖跌倒，卻要起來；我雖坐在黑暗裡，耶和華卻作我的光。我要忍受耶和華的惱怒，因我得罪了他，直等他為我辨屈，為我伸冤。」這是在最黑暗中仍然信靠神公義的信仰姿態。章末以全書最崇高的神學高峰結束：「神啊，有何神像你，赦免罪孽……不永遠懷怒，喜愛施恩？必再憐憫我們，將我們的罪孽踏在腳下，又將我們的一切罪投於深海。」
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「我雖跌倒，卻要起來」：跌倒不是終點，起來才是信心的回應</strong><br>「我雖跌倒，卻要起來」——這不是否認跌倒，而是在跌倒中宣告不躺在那裡。信仰不是免於跌倒，而是在跌倒後的起身。最能顯示信仰深度的，不是順境中的讚美，而是在逆境和失敗中仍然「要起來」的那個決志。<br><br>
+<strong>2. 「我要忍受耶和華的惱怒，因我得罪了他」：誠實面對自己的責任，是信仰成熟的標誌</strong><br>彌迦沒有抱怨神的懲罰不公，而是說「我得罪了他」——承認苦難與自己的罪有關，並且在其中等候神的恢復。這不是自我懲罰，而是成熟的屬靈清醒：承認問題的根源，同時相信神的公義最終會為我伸冤。<br><br>
+<strong>3. 「將我們的罪投於深海」：神的赦免是主動的、徹底的、不可逆的</strong><br>「將我們的一切罪投於深海」——不是輕輕放下，而是投入深海，永不再被找到。神的赦免不是「算了」，而是主動地把罪扔進最深最遠的地方。這是整個舊約最美麗的赦免圖像之一，也是彌迦書最後留給讀者的信息：神喜愛施恩，罪可以被投入深海。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我的仇敵啊</strong>，<strong>不要向我誇耀</strong>。我雖跌倒，卻要起來；我雖坐在黑暗裏，耶和華卻作我的光。（彌7:8）</td>
+<td>你生命中最近一次「跌倒」是什麼？在那個跌倒之後，你更像「就躺在那裡」，還是「雖跌倒卻要起來」？就像一個剛學走路的孩子跌倒後爬起來繼續走，「起來」的動作需要什麼——是信心、是悔改、是幫助、還是三者都需要？</td>
+</tr>
+<tr>
+<td><strong>至於我</strong>，<strong>我要仰望耶和華</strong>，要等候那救我的神；我的神必應允我。（彌7:7）</td>
+<td>「至於我，我要仰望」——在最黑暗的現實中做出主動的信心宣告。你目前最需要「仰望」的是什麼處境？就像在烏雲密佈的天空中仍知道太陽在那裡，你的「仰望」是感受的等待，還是信心的決志？今天你可以怎麼把「仰望」從心態轉化為一個具體的行動？</td>
+</tr>
+<tr>
+<td>神啊，<strong>有何神像你</strong>，<strong>赦免罪孽</strong>……必再憐憫我們，將我們的罪孽踏在腳下，又將我們的一切罪投於深海。（彌7:18-19）</td>
+<td>「投於深海」——神的赦免是完全的、不可逆的。你有沒有某個已被神赦免、卻仍在你心中「浮上水面」、讓你持續被定罪的罪或失敗？就像被投入深海的東西若被撈上來，是人類自己的行為，不是神的計畫，你願意讓那個「沉下去的罪」真的沉在海底，不再把它撈回來嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

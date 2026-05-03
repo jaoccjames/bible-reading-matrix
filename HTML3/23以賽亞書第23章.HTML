@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第23章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第23章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">論推羅：商業帝國的興衰與神的主權</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>論推羅的默示：他施的船隻都要哀號；因為推羅變為荒場，甚至沒有房屋，沒有可進之路。這消息是從基提地得來的。</div>
+<div class="verse"><span class="verse-number">2</span>沿海的居民，就是素來靠航海西頓的商家得豐盛的，你們當靜默無言。</div>
+<div class="verse"><span class="verse-number">3</span>在大水之上，西曷的糧食、尼羅河的莊稼是推羅的進項；他作列國的大碼頭。</div>
+<div class="verse"><span class="verse-number">4</span>西頓哪，你當慚愧；因為大海說，就是海中的保障說：我沒有劬勞，也沒有生產，沒有養育男子，也沒有撫養童女。</div>
+<div class="verse"><span class="verse-number">5</span>這風聲傳到埃及；埃及人為推羅的風聲極其疼痛。</div>
+<div class="verse"><span class="verse-number">6</span>推羅人哪，你們當過到他施去；沿海的居民哪，你們都當哀號。</div>
+<div class="verse"><span class="verse-number">7</span>這是你們歡樂的城，從上古而有的嗎？其中的居民往遠方寄居。</div>
+<div class="verse"><span class="verse-number">8</span>推羅本是賜冠冕的。他的商家是王子；他的買賣人是世上的尊貴人。遭遇如此是誰定的呢？</div>
+<div class="verse"><span class="verse-number">9</span>是萬軍之耶和華所定的！為要污辱一切高傲的榮耀，使地上一切的尊貴人被藐視。</div>
+<div class="verse"><span class="verse-number">10</span>他施的民〔原文作女〕哪，可以流行你的地，好像尼羅河；不再有腰帶拘緊你。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華已經向海伸手，震動列國。至於迦南，他已經吩咐拆毀其中的保障。</div>
+<div class="verse"><span class="verse-number">12</span>他又說：受欺壓西頓的居民〔原文作處女〕哪，你必不得再歡樂。起來！過到基提去；就是在那裏也不得安歇。</div>
+<div class="verse"><span class="verse-number">13</span>（看哪，迦勒底人之地向來沒有這民，這國是亞述人為住曠野的人所立的。現在他們建築戍樓，拆毀推羅的宮殿，使她成為荒涼。）</div>
+<div class="verse"><span class="verse-number">14</span>他施的船隻都要哀號，因為你們的保障變為荒場。</div>
+<div class="verse"><span class="verse-number">15</span>到那時，推羅必被忘記七十年，照着一王的年日。七十年後，推羅的景況必像妓女所唱的歌：</div>
+<div class="verse"><span class="verse-number">16</span>你這被忘記的妓女啊，拿琴周流城內，巧彈多唱，使人再想念你。</div>
+<div class="verse"><span class="verse-number">17</span>七十年後，耶和華必眷顧推羅，他就仍得利息〔原文作雇價；下同〕，與地上的萬國交易〔原文作行淫〕。</div>
+<div class="verse"><span class="verse-number">18</span>他的貨財和利息要歸耶和華為聖，必不積儹存留；因為她的貨財必為住在耶和華面前的人所得，使他們喫飽，穿耐久的衣服。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第二十三章是「列國神諭」系列（13-23章）的最後一篇，針對地中海東岸最重要的商業城邦——推羅（和其姊妹城西頓）。推羅是古代世界最著名的航海商業城市，憑藉精良的造船技術和廣闊的貿易網絡，成為「賜冠冕的城」（8節），其商賈以「王子」和「世上的尊貴人」著稱（8節）。以賽亞宣告這個商業帝國也將覆滅，並在第8-9節揭示原因：「是萬軍之耶和華所定的！為要污辱一切高傲的榮耀，使地上一切的尊貴人被藐視」——推羅的罪是驕傲，以財富和商業成就作為自我尊榮的資本。然而本章結尾留下了盼望：七十年後神要眷顧推羅，而且她的財富最終「要歸耶和華為聖」（18節），為神的子民所用——暗示世界的資源有可能被轉化為神國度的用途。這是「列國神諭」最美的結語：一切的財富和榮耀，最終的歸宿是歸向神。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 財富和商業成就若成為驕傲的根源，也在神審判的範圍內</strong><br>第8-9節「推羅本是賜冠冕的……遭遇如此是誰定的呢？是萬軍之耶和華所定的！為要污辱一切高傲的榮耀」，揭示了神審判推羅的核心原因：不是商業本身，而是商業帝國衍生的驕傲。財富和成功本身不是罪，但當人以財富建立自我尊榮、自以為「賜冠冕的城」而不倚靠神時，就引來神的審判。信徒在事業和財務祝福中當謹慎，不讓成功成為驕傲的溫床。<br><br>
+<strong>2. 神的眷顧可以在「被忘記的七十年」後再臨</strong><br>第15-17節「推羅必被忘記七十年……七十年後，耶和華必眷顧推羅」，呈現了神對列國眷顧的可能性——即使在審判之後，神的目的仍在推進。「七十年」在聖經中常與完整的審判週期相關（參耶利米書的巴比倫被擄七十年），說明神的審判是有計劃的，也是有終結的。對信徒而言，在生命的「被忘記時期」，仍可相信神的眷顧終將再臨。<br><br>
+<strong>3. 世界的財富最終可以「歸耶和華為聖」，為神的子民所用</strong><br>第18節「他的貨財和利息要歸耶和華為聖……使他們喫飽，穿耐久的衣服」，是一個令人驚訝的末世宣告：推羅的財富——曾被驕傲地積累的商業成果——最終將歸向神的百姓，用於神國度的目的。這個神學主題在新約中延續：世界的財富可以被信徒用於神國度的拓展，「不義之財」也可以被轉化為結交永恆朋友的資源（路16:9）。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>遭遇如此是誰定的</strong>呢？<strong>是萬軍之耶和華所</strong>定的！為要污辱一切高傲的榮耀。」（賽23:8-9）</td>
+<td>就像一個靠自己努力爬到山頂的人，若忘記山本身是神創造的、力氣是神賦予的，那個山頂的驕傲就是建在虛空上的，你在事業、才能或成就上是否有過這種「推羅式的驕傲」——把神所賜的恩典當作自己的榮耀？神如何提醒你記得一切的來源？</td>
+</tr>
+<tr>
+<td>「<strong>七十年後</strong>，<strong>耶和華必眷顧推羅</strong>，他就仍得利息。」（賽23:17）</td>
+<td>就像一段因誤解而中斷的友誼，在時間和事件的洗滌後，有機會以更成熟的方式重建，神的眷顧不因審判而永遠消失，你是否相信在你生命中的「被忘記時期」，神的眷顧仍然在計劃之中？那個信心如何幫助你在等候中不絕望？</td>
+</tr>
+<tr>
+<td>「<strong>他的貨財和利息要</strong><strong>歸耶和華為聖</strong>……使他們喫飽，穿耐久的衣服。」（賽23:18）</td>
+<td>就像河流從源頭流出，最終灌溉田地、滋養生命，財富若通過神的手流通，就能從積蓄變為祝福，你對自己擁有的財富和資源，是否有意識地想過如何讓它們「歸耶和華為聖」，成為神國度和弟兄姊妹的供應？你目前在這方面有什麼具體的實踐？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

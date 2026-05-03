@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰福音第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰福音第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">五餅二魚與生命的糧</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>這事以後，耶穌渡過加利利海，就是提比哩亞海。</div>
+<div class="verse"><span class="verse-number">2</span>有許多人因為看見他在病人身上所行的神蹟，就跟隨他。</div>
+<div class="verse"><span class="verse-number">3</span>耶穌上了山，和門徒一同坐在那裏。</div>
+<div class="verse"><span class="verse-number">4</span>那時猶太人的逾越節近了。</div>
+<div class="verse"><span class="verse-number">5</span>耶穌舉目看見許多人來，就對腓力說：「我們從那裏買餅叫這些人吃呢？」</div>
+<div class="verse"><span class="verse-number">6</span>（他說這話是要試驗腓力；他自己原知道要怎樣行。）</div>
+<div class="verse"><span class="verse-number">7</span>腓力回答說：「就是二十兩銀子的餅，叫他們各人吃一點也是不彀的。」</div>
+<div class="verse"><span class="verse-number">8</span>有一個門徒，就是西門彼得的兄弟安得烈，對耶穌說：</div>
+<div class="verse"><span class="verse-number">9</span>「在這裏有一個孩童，帶着五個大麥餅、兩條魚，只是分給這許多人還算甚麼呢？」</div>
+<div class="verse"><span class="verse-number">10</span>耶穌說：「你們叫眾人坐下。」原來那地方的草多，眾人就坐下，數目約有五千。</div>
+<div class="verse"><span class="verse-number">11</span>耶穌拿起餅來，祝謝了，就分給那坐着的人；分魚也是這樣，都隨着他們所要的。</div>
+<div class="verse"><span class="verse-number">12</span>他們吃飽了，耶穌對門徒說：「把剩下的零碎收拾起來，免得有蹧蹋的。」</div>
+<div class="verse"><span class="verse-number">13</span>他們便將那五個大麥餅的零碎，就是眾人吃了剩下的，收拾起來，裝滿了十二個籃子。</div>
+<div class="verse"><span class="verse-number">14</span>眾人看見耶穌所行的神蹟，就說：「這真是那要到世間來的先知！」</div>
+<div class="verse"><span class="verse-number">15</span>耶穌既知道眾人要來強逼他作王，就獨自又退到山上去了。</div>
+<div class="verse"><span class="verse-number">16</span>到了晚上，他的門徒下海邊去，</div>
+<div class="verse"><span class="verse-number">17</span>上了船，要過海往迦百農去。天已經黑了，耶穌還沒有來到他們那裏。</div>
+<div class="verse"><span class="verse-number">18</span>忽然狂風大作，海就翻騰起來。</div>
+<div class="verse"><span class="verse-number">19</span>門徒搖櫓，約行了十里多路，看見耶穌在海面上走，漸漸近了船，他們就害怕。</div>
+<div class="verse"><span class="verse-number">20</span>耶穌對他們說：「是我，不要怕！」</div>
+<div class="verse"><span class="verse-number">21</span>門徒就喜歡接他上船，船立時到了他們所要去的地方。</div>
+<div class="verse"><span class="verse-number">22</span>第二日，站在海那邊的眾人知道那裏沒有別的船，只有一隻小船，又知道耶穌沒有同他的門徒上船，乃是門徒自己去的。</div>
+<div class="verse"><span class="verse-number">23</span>然而，有幾隻小船從提比哩亞來，靠近主祝謝後分餅給人吃的地方。</div>
+<div class="verse"><span class="verse-number">24</span>眾人見耶穌和門徒都不在那裏，就上了船，往迦百農去找耶穌。</div>
+<div class="verse"><span class="verse-number">25</span>既在海那邊找着了，就對他說：「拉比，是幾時到這裏來的？」</div>
+<div class="verse"><span class="verse-number">26</span>耶穌回答說：「我實實在在的告訴你們，你們找我，並不是因見了神蹟，乃是因吃餅得飽。</div>
+<div class="verse"><span class="verse-number">27</span>不要為那必壞的食物勞力，要為那存到永生的食物勞力，就是人子要賜給你們的，因為人子是父神所印證的。」</div>
+<div class="verse"><span class="verse-number">28</span>眾人問他說：「我們當行甚麼，才算作神的工呢？」</div>
+<div class="verse"><span class="verse-number">29</span>耶穌回答說：「信神所差來的，這就是作神的工。」</div>
+<div class="verse"><span class="verse-number">30</span>他們又說：「你行甚麼神蹟，叫我們看見就信你；你到底作甚麼事呢？</div>
+<div class="verse"><span class="verse-number">31</span>我們的祖宗在曠野吃過嗎哪，如經上寫着說：『他從天上賜下糧來給他們吃。』」</div>
+<div class="verse"><span class="verse-number">32</span>耶穌說：「我實實在在的告訴你們，那從天上來的糧不是摩西賜給你們的，乃是我父將天上來的真糧賜給你們。</div>
+<div class="verse"><span class="verse-number">33</span>因為神的糧就是那從天上降下來、賜生命給世界的。」</div>
+<div class="verse"><span class="verse-number">34</span>他們說：「主啊，常將這糧賜給我們！」</div>
+<div class="verse"><span class="verse-number">35</span>耶穌說：「我就是生命的糧。到我這裏來的，必定不餓；信我的，永遠不渴。</div>
+<div class="verse"><span class="verse-number">36</span>只是我對你們說過，你們已經看見我，還是不信。</div>
+<div class="verse"><span class="verse-number">37</span>凡父所賜給我的人必到我這裏來；到我這裏來的，我總不丟棄他。</div>
+<div class="verse"><span class="verse-number">38</span>因為我從天上降下來，不是要按自己的意思行，乃是要按那差我來者的意思行。</div>
+<div class="verse"><span class="verse-number">39</span>差我來者的意思就是：他所賜給我的，叫我一個也不失落，在末日卻叫他復活。</div>
+<div class="verse"><span class="verse-number">40</span>因為我父的意思是叫一切見子而信的人得永生，並且在末日我要叫他復活。」</div>
+<div class="verse"><span class="verse-number">41</span>猶太人因為耶穌說「我是從天上降下來的糧」，就私下議論他，</div>
+<div class="verse"><span class="verse-number">42</span>說：「這不是約瑟的兒子耶穌麼？他的父母我們豈不認得麼？他如今怎麼說『我是從天上降下來的』呢？」</div>
+<div class="verse"><span class="verse-number">43</span>耶穌回答說：「你們不要大家議論。</div>
+<div class="verse"><span class="verse-number">44</span>若不是差我來的父吸引人，就沒有能到我這裏來的；到我這裏來的，在末日我要叫他復活。</div>
+<div class="verse"><span class="verse-number">45</span>在先知書上寫着說：『他們都要蒙神的教訓。』凡聽見父之教訓又學習的，就到我這裏來。</div>
+<div class="verse"><span class="verse-number">46</span>這不是說有人看見過父；惟獨從神來的，他看見過父。</div>
+<div class="verse"><span class="verse-number">47</span>我實實在在的告訴你們，信的人有永生。</div>
+<div class="verse"><span class="verse-number">48</span>我就是生命的糧。</div>
+<div class="verse"><span class="verse-number">49</span>你們的祖宗在曠野吃過嗎哪，還是死了。</div>
+<div class="verse"><span class="verse-number">50</span>這是從天上降下來的糧，叫人吃了就不死。</div>
+<div class="verse"><span class="verse-number">51</span>我是從天上降下來生命的糧；人若吃這糧，就必永遠活着。我所要賜的糧就是我的肉，為世人之生命所賜的。」</div>
+<div class="verse"><span class="verse-number">52</span>因此，猶太人彼此爭論說：「這個人怎能把他的肉給我們吃呢？」</div>
+<div class="verse"><span class="verse-number">53</span>耶穌說：「我實實在在的告訴你們，你們若不吃人子的肉，不喝人子的血，就沒有生命在你們裏面。</div>
+<div class="verse"><span class="verse-number">54</span>吃我肉、喝我血的人就有永生，在末日我要叫他復活。</div>
+<div class="verse"><span class="verse-number">55</span>我的肉真是可吃的，我的血真是可喝的。</div>
+<div class="verse"><span class="verse-number">56</span>吃我肉、喝我血的人常在我裏面，我也常在他裏面。</div>
+<div class="verse"><span class="verse-number">57</span>永活的父怎樣差我來，我又因父活着；照樣，吃我肉的人也要因我活着。</div>
+<div class="verse"><span class="verse-number">58</span>這就是從天上降下來的糧。吃這糧的人就永遠活着，不像你們的祖宗吃過嗎哪還是死了。」</div>
+<div class="verse"><span class="verse-number">59</span>這些話是耶穌在迦百農會堂裏教訓人說的。</div>
+<div class="verse"><span class="verse-number">60</span>他的門徒中有好些人聽見了，就說：「這話甚難，誰能聽呢？」</div>
+<div class="verse"><span class="verse-number">61</span>耶穌心裏知道門徒為這話議論，就對他們說：「這話是叫你們厭棄〔原文作跌倒〕麼？</div>
+<div class="verse"><span class="verse-number">62</span>倘或你們看見人子升到他原來所在之處，怎麼樣呢？</div>
+<div class="verse"><span class="verse-number">63</span>叫人活着的乃是靈，肉體是無益的。我對你們所說的話就是靈，就是生命。</div>
+<div class="verse"><span class="verse-number">64</span>只是你們中間有不信的人。」耶穌從起頭就知道誰不信他，誰要賣他。</div>
+<div class="verse"><span class="verse-number">65</span>耶穌又說：「所以我對你們說過，若不是蒙我父的恩賜，沒有人能到我這裏來。」</div>
+<div class="verse"><span class="verse-number">66</span>從此，他門徒中多有退去的，不再和他同行。</div>
+<div class="verse"><span class="verse-number">67</span>耶穌就對那十二個門徒說：「你們也要去麼？」</div>
+<div class="verse"><span class="verse-number">68</span>西門彼得回答說：「主啊，你有永生之道，我們還歸從誰呢？</div>
+<div class="verse"><span class="verse-number">69</span>我們已經信了，又知道你是神的聖者。」</div>
+<div class="verse"><span class="verse-number">70</span>耶穌說：「我不是揀選了你們十二個門徒麼？但你們中間有一個是魔鬼。」</div>
+<div class="verse"><span class="verse-number">71</span>耶穌這話是指着加略人西門的兒子猶大說的；他本是十二個門徒裏的一個，後來要賣耶穌的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第6章記述五餅二魚的神蹟、水面行走，以及著名的生命之糧演講，是約翰福音中篇幅最長、神學最豐富的一章。本章首先描述加利利海邊大批群眾跟隨耶穌，耶穌藉五個大麥餅兩條魚分給坐下的約五千人，人人吃飽，還剩下十二籃零碎。眾人要強迫立祂為王，耶穌就退到山上獨自去了。夜間門徒上船過海，風浪大起，耶穌在水面上走來，門徒驚恐，祂說不要怕，他們就到了目的地。次日眾人在迦百農找到耶穌，耶穌說他們尋祂是因吃餅得飽，要勞力得那存到永生的食物。接著發展出生命之糧的長篇教導：我就是生命之糧，到我這裡來的必不飢餓，信我的永遠不渴；凡看見子而信的人必得永生，我在末日要叫他復活；我是從天上降下來生命的糧，喫我肉喝我血的人有永生。許多門徒聽了說這話甚難，從此不再跟從祂，耶穌問十二門徒是否也要離去，彼得說主啊你有永生之道我們還歸從誰呢。本章展示耶穌作為生命供應者的身份，也呈現信與不信的根本分野。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 耶穌是靈魂真正的糧，而非物質的供應者</strong><br>眾人找耶穌是因為吃餅得飽，耶穌說「不要為那必壞的食物勞力，要為那存到永生的食物勞力」。五餅二魚的神蹟是指向更大真理的符號：耶穌自己才是生命的糧。人可以被物質暫時填飽，卻無法被它真正滿足。靈魂的飢渴只有耶穌能夠滿足。「信神所差來的，這就是作神的工」——神所要的不是宗教行為，而是信心。<br><br>
+<strong>2. 「我總不丟棄他」是永恆的保守應許</strong><br>「凡父所賜給我的人必到我這裏來；到我這裏來的，我總不丟棄他」——「總不」在希臘文是最強的否定：絕對不會、永遠不會。這個應許的根基不是我們的忠心，而是父的賜予和子的守護。信徒的確據不是自己能堅持，而是那位「總不丟棄」的主。這使信仰的根基極其穩固，不受我們的軟弱所動搖。<br><br>
+<strong>3. 「你們也要去麼？」是每個門徒的問題</strong><br>當好些門徒因難以接受的教導而退去，耶穌沒有降低要求，而是讓問題更清晰：「你們也要去麼？」彼得的回答是整個約翰福音中最美的信仰宣告之一：「主啊，你有永生之道，我們還歸從誰呢？」跟從耶穌不是因為容易理解，而是因為只有祂有永生之道。面對難以接受的教導，信徒同樣要問：我還歸從誰呢？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>我就是生命的糧</strong>。到我這裏來的，必定不餓；信我的，永遠不渴。」（約6:35）</td>
+<td>你的靈魂有沒有每天到耶穌這裏來「吃糧」，還是只靠週日的聚會維持？就像身體若一週只吃一餐必然虛弱，你的靈命是否有每天領受耶穌——透過禱告、讀經和默想——的日常習慣？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>凡父所賜給我的人</strong>必到我這裏來；到我這裏來的，我總不丟棄他。」（約6:37）</td>
+<td>你有沒有真實地相信耶穌「總不丟棄」你，即使在你最軟弱和失敗的時候？就像最牢固的安全帶在最危險的時候才顯出它的價值，你願意讓這個應許成為你面對所有困難的根基嗎？</td>
+</tr>
+<tr>
+<td><strong>西門彼得回答說</strong>：「主啊，<strong>你有永生之道</strong>，我們還歸從誰呢？我們已經信了，又知道你是神的聖者。」（約6:68-69）</td>
+<td>當信仰中出現讓你難以接受的真理或艱難的呼召時，你的選擇是退去還是像彼得一樣說「我們還歸從誰呢」？就像在嚴格但真正有能力的醫生和輕鬆但沒有能力的醫生之間做選擇，你願意堅守那個有永生之道的主嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

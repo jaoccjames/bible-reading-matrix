@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>彌迦書第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+彌迦書第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">伯利恆的君王與餘民的使命</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>成群的民〔原文作女子〕哪，現在你要聚集成隊；因為仇敵圍攻我們，要用杖擊打以色列審判者的臉。</div>
+<div class="verse"><span class="verse-number">2</span>伯利恆、以法他阿，你在猶大諸城中為小，將來必有一位從你那裏出來，在以色列中為我作掌權的；他的根源從亙古，從太初就有。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華必將以色列人交付敵人，直等那生產的婦人生下子來。那時掌權者〔原文作他〕其餘的弟兄必歸到以色列人那裏。</div>
+<div class="verse"><span class="verse-number">4</span>他必起來，倚靠耶和華的大能，並耶和華他神之名的威嚴，牧養他的羊群。他們要安然居住；因為他必日見尊大，直到地極。</div>
+<div class="verse"><span class="verse-number">5</span>這位必作我們的平安。當亞述人進入我們的地境，踐踏宮殿的時候，我們就立起七個牧者，八個首領攻擊他。</div>
+<div class="verse"><span class="verse-number">6</span>他們必用刀劍毀壞亞述地和寧錄地的關口。亞述人進入我們的地境踐踏的時候，他必拯救我們。</div>
+<div class="verse"><span class="verse-number">7</span>雅各餘剩的人必在多國的民中，如從耶和華那裏降下的露水，又如甘霖降在草上；不仗賴人力，也不等候世人之功。</div>
+<div class="verse"><span class="verse-number">8</span>雅各餘剩的人必在多國多民中，如林間百獸中的獅子，又如少壯獅子在羊群中。他若經過就必踐踏撕裂，無人搭救。</div>
+<div class="verse"><span class="verse-number">9</span>願你的手舉起，高過敵人！願你的仇敵都被剪除！</div>
+<div class="verse"><span class="verse-number">10</span>耶和華說：到那日，我必從你中間剪除馬匹，毀壞車輛，</div>
+<div class="verse"><span class="verse-number">11</span>也必從你國中除滅城邑，拆毀一切的保障，</div>
+<div class="verse"><span class="verse-number">12</span>又必除掉你手中的邪術；你那裏也不再有占卜的。</div>
+<div class="verse"><span class="verse-number">13</span>我必從你中間除滅雕刻的偶像和柱像，你就不再跪拜自己手所造的。</div>
+<div class="verse"><span class="verse-number">14</span>我必從你中間拔出木偶，又毀滅你的城邑。</div>
+<div class="verse"><span class="verse-number">15</span>我也必在怒氣和忿怒中向那不聽從的列國施報。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+彌迦書第5章包含整本舊約最著名的彌賽亞預言之一：「伯利恆、以法他阿，你在猶大諸城中為小，將來必有一位從你那裏出來，在以色列中為我作掌權的；他的根源從亙古，從太初就有」（2節）。這節經文在馬太福音2:6被直接引用，作為耶穌出生地的預言。彌賽亞的特徵：從小地方出來，根源從太初，倚靠神的大能牧養羊群，使人安然居住，日見尊大直到地極，並且「這位必作我們的平安」。章後半描述餘民的雙重使命：如甘露滋潤萬民（7節），也如獅子在列國中（8節）——柔軟的服事和堅定的見證並存。章末宣告神要從以色列中除去倚靠的器械：馬匹、車輛、城邑、偶像、邪術，因為真正的倚靠只能建立在神自己身上。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 從小地方出來的君王：神常在人看為不重要的地方作最大的事</strong><br>伯利恆「在猶大諸城中為小」——神揀選最小的地方來的人作最大的掌權者。這是神一貫的工作方式：揀選軟弱的叫有能力的慚愧，揀選卑賤的叫世上有地位的無地自容（林前1:27-28）。信徒不應輕看自己的「小」，也不應輕看他人或他處的「小」——那可能正是神作最大事情的地方。<br><br>
+<strong>2. 「這位必作我們的平安」：真正的平安來自一個「位」，不只是一個狀態</strong><br>和平不是抽象的概念，而是一個「位」——彌賽亞本身就是平安。真正的平安不是環境的靜止，而是與那位「作我們的平安」的人的關係。在任何動盪中，信徒的平安根基不在情況的改變，而在那位「從太初就有」的君王。<br><br>
+<strong>3. 如露水、如獅子：餘民的使命是柔軟滋養與堅定見證的結合</strong><br>餘民「如從耶和華降下的露水」——無聲地滋潤，不仗賴人力；也「如少壯獅子在羊群中」——在列國中有神的能力。這是信仰群體在世界中的雙重姿態：以謙卑和服事滋潤周圍，同時以神的能力和信念堅立見證。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>伯利恆</strong>、<strong>以法他阿</strong>，你在猶大諸城中為小，將來必有一位從你那裏出來，在以色列中為我作掌權的；他的根源從亙古，從太初就有。（彌5:2）</td>
+<td>「在猶大諸城中為小」——神從最不起眼的地方啟動最大的計畫。你是否有時因為自己的「小」（小的地位、小的資源、小的影響力）而覺得神用不上你？就像伯利恆不知道自己是彌賽亞出生地，你可能也不知道神正在你看為「渺小」的地方作大事，你願意對神的「小中見大」保持開放嗎？</td>
+</tr>
+<tr>
+<td><strong>這位必作我們的平</strong>安。（彌5:5上）</td>
+<td>「這位必作我們的平安」——平安是一個人，而非一種感覺或狀況。當你尋求平安時，你在尋找的是感覺的改善、環境的改變，還是那位「作我們平安」的主？就像失眠的人需要的不只是安靜的環境，而是能放下一切的心，你今天可以如何更具體地「轉向那位」，讓祂成為你的平安？</td>
+</tr>
+<tr>
+<td><strong>雅各餘剩的人必在</strong><strong>多國的民中</strong>，如從耶和華那裏降下的露水，又如甘霖降在草上；不仗賴人力，也不等候世人之功。（彌5:7）</td>
+<td>「如露水降下……不仗賴人力」——無聲的滋潤，不依賴人的推廣和認可。你對自己信仰見證的評估，有多少建立在「別人有沒有看見、認可」上，有多少建立在「我有沒有忠心地成為那滋潤的露水」上？就像露水不需要廣告就滋潤了草，你願意做那種「不仗賴人力」的見證者嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

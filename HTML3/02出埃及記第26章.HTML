@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第26章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第26章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">會幕帷幕框架的建造規格</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「你要用十幅幔子作帳幕。這些幔子要用撚的細麻和藍色、紫色、朱紅色線製造，並用巧匠的手工繡上基路伯。</div>
+<div class="verse"><span class="verse-number">2</span>每幅幔子要長二十八肘，寬四肘，幔子都要一樣的尺寸。</div>
+<div class="verse"><span class="verse-number">3</span>這五幅幔子要幅幅相連；那五幅幔子也要幅幅相連。</div>
+<div class="verse"><span class="verse-number">4</span>在這相連的幔子末幅邊上要作藍色的鈕扣；在那相連的幔子末幅邊上也要照樣作。</div>
+<div class="verse"><span class="verse-number">5</span>要在這相連的幔子上作五十個鈕扣；在那相連的幔子上也作五十個鈕扣，都要兩兩相對。</div>
+<div class="verse"><span class="verse-number">6</span>又要作五十個金鉤，用鉤使幔子相連，這才成了一個帳幕。</div>
+<div class="verse"><span class="verse-number">7</span>「你要用山羊毛織十一幅幔子，作為帳幕以上的罩棚。</div>
+<div class="verse"><span class="verse-number">8</span>每幅幔子要長三十肘，寬四肘；十一幅幔子都要一樣的尺寸。</div>
+<div class="verse"><span class="verse-number">9</span>要把五幅幔子連成一幅，又把六幅幔子連成一幅，這第六幅幔子要在罩棚的前面摺上去。</div>
+<div class="verse"><span class="verse-number">10</span>在這相連的幔子末幅邊上要作五十個鈕扣；在那相連的幔子末幅邊上也作五十個鈕扣。</div>
+<div class="verse"><span class="verse-number">11</span>又要作五十個銅鉤，鉤在鈕扣中，使罩棚連成一個。</div>
+<div class="verse"><span class="verse-number">12</span>罩棚的幔子所餘那垂下來的半幅幔子，要垂在帳幕的後頭。</div>
+<div class="verse"><span class="verse-number">13</span>罩棚的幔子所餘長的，這邊一肘，那邊一肘，要垂在帳幕的兩旁，遮蓋帳幕。</div>
+<div class="verse"><span class="verse-number">14</span>又要用染紅的公羊皮作罩棚的蓋；再用海狗皮作一層罩棚上的頂蓋。</div>
+<div class="verse"><span class="verse-number">15</span>「你要用皂莢木作帳幕的豎板。</div>
+<div class="verse"><span class="verse-number">16</span>每塊要長十肘，寬一肘半；</div>
+<div class="verse"><span class="verse-number">17</span>每塊必有兩榫相對。帳幕一切的板都要這樣作。</div>
+<div class="verse"><span class="verse-number">18</span>帳幕的南面要作板二十塊。</div>
+<div class="verse"><span class="verse-number">19</span>在這二十塊板底下要作四十個帶卯的銀座，兩卯接這塊板上的兩榫，兩卯接那塊板上的兩榫。</div>
+<div class="verse"><span class="verse-number">20</span>帳幕第二面，就是北面，也要作板二十塊</div>
+<div class="verse"><span class="verse-number">21</span>和帶卯的銀座四十個；這板底下有兩卯，那板底下也有兩卯。</div>
+<div class="verse"><span class="verse-number">22</span>帳幕的後面，就是西面，要作板六塊。</div>
+<div class="verse"><span class="verse-number">23</span>帳幕後面的拐角要作板兩塊。</div>
+<div class="verse"><span class="verse-number">24</span>板的下半截要雙的，上半截要整的，直頂到第一個環子；兩塊都要這樣作兩個拐角。</div>
+<div class="verse"><span class="verse-number">25</span>必有八塊板和十六個帶卯的銀座；這板底下有兩卯，那板底下也有兩卯。</div>
+<div class="verse"><span class="verse-number">26</span>「你要用皂莢木作閂：為帳幕這面的板作五閂，</div>
+<div class="verse"><span class="verse-number">27</span>為帳幕那面的板作五閂，又為帳幕後面的板作五閂。</div>
+<div class="verse"><span class="verse-number">28</span>板腰間的中閂要從這一頭通到那一頭。</div>
+<div class="verse"><span class="verse-number">29</span>板要用金子包裹，又要作板上的金環套閂；閂也要用金子包裹。</div>
+<div class="verse"><span class="verse-number">30</span>要照着在山上指示你的樣式立起帳幕。</div>
+<div class="verse"><span class="verse-number">31</span>「你要用藍色、紫色、朱紅色線，和撚的細麻織幔子，以巧匠的手工繡上基路伯。</div>
+<div class="verse"><span class="verse-number">32</span>要把幔子掛在四根包金的皂莢木柱子上，柱子上當有金鉤，柱子安在四個帶卯的銀座上。</div>
+<div class="verse"><span class="verse-number">33</span>要使幔子垂在鉤子下，把法櫃抬進幔子內；這幔子要將聖所和至聖所隔開。</div>
+<div class="verse"><span class="verse-number">34</span>又要把施恩座安在至聖所內的法櫃上，</div>
+<div class="verse"><span class="verse-number">35</span>把桌子安在幔子外帳幕的北面；把燈臺安在帳幕的南面，彼此相對。</div>
+<div class="verse"><span class="verse-number">36</span>「你要拿藍色、紫色、朱紅色線，和撚的細麻，用繡花的手工織帳幕的門簾。</div>
+<div class="verse"><span class="verse-number">37</span>要用皂莢木為簾子作五根柱子，用金子包裹。柱子上當有金鉤；又要為柱子用銅鑄造五個帶卯的座。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第26章記載會幕本體的詳細建造規格，包含幔子、蓋頂和框架的精確指示。幔子由十幅幔子組成，每幅長二十八肘、寬四肘，以藍色、紫色、朱紅色線及撚的細麻製成，上有精工刺繡的基路伯；五幅連在一起，另五幅連在一起，以金鉤鉤在一起，形成整幅帳幕。另有山羊毛的幔子十一幅，覆蓋其上，再有公羊皮（紅色）和海狗皮加蓋。框架以皂莢木製成，木板高十肘、寬一肘半，底座是銀卯，以橫閂串連加固。至聖所和聖所之間以精工刺繡的幔子隔開，懸掛在四根皂莢木柱上；帳幕門前掛藍紫朱紅幔子，以五根皂莢木柱懸掛。整個建造符合神所示的樣式，每個細節都有屬靈意義。本章展示了神對敬拜場所的精確關注，以及不同層次聖潔空間的神學設計。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 敬拜神需要按照神所啟示的方式，不可隨意</strong><br>每個細節都是「照我所示你的樣式」，神對敬拜方式有其旨意，不是人可以隨意自訂的。這不是獨裁，而是神作為敬拜對象所擁有的主動權。信徒當謙遜地在聖經的啟示中尋求敬拜的方式，而非單純依照個人喜好或文化潮流設計信仰形式。<br><br>
+<strong>2. 至聖所的幔子象徵神聖潔本質與人之間的隔離</strong><br>幔子將至聖所與聖所分隔，只有大祭司每年一次可以進入，這象徵人的罪使人與神聖潔隔絕。馬太福音記載耶穌死時聖殿的幔子從上到下裂開（太27:51），宣告基督的死開啟了進入神面前的新路。信徒當珍惜這進入神同在的途徑，視之為無比珍貴的恩典。<br><br>
+<strong>3. 美麗的敬拜空間反映信仰群體的心靈狀態</strong><br>精工刺繡的幔子、金鉤、銀座，顯示以色列人竭盡所能以最美的材料建造敬拜空間。敬拜的美麗本質上反映了以色列人心中對神的珍視。信徒的敬拜（無論形式為何）當反映心中對神的尊貴認知，「美麗」不只是外在的裝飾，更是內在珍視的外在彰顯。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>要照着在山上指示</strong><strong>你的樣式立起帳幕</strong>。（出26:30）</td>
+<td>就像建築師根據工程圖紙施工而非即興發揮，神對會幕的建造有精確的樣式要遵循。你在敬拜與信仰生活中，是否尋求以神啟示的方式親近神，還是傾向憑自己的喜好和感覺來決定如何與神交往？</td>
+</tr>
+<tr>
+<td><strong>要使幔子垂在鉤子</strong>下，<strong>把法櫃抬進幔子內</strong>；這幔子要將聖所和至聖所隔開。（出26:33）</td>
+<td>就像不同安全級別的區域有不同的進入許可，至聖所的幔子象徵人的罪使人與神的聖潔隔離。你是否真實地感受過自己的罪與神聖潔之間的距離？基督的救贖撕裂了這道幔子，這對你禱告和進到神面前的方式有何具體影響？</td>
+</tr>
+<tr>
+<td>「<strong>你要拿藍色</strong>、紫色、<strong>朱紅色線</strong>，和撚的細麻，用繡花的手工織帳幕的門簾。（出26:36）</td>
+<td>就像藝術家以最精湛的技藝創作最重要的作品，以色列人以最精細的工藝建造敬拜神的場所。你在敬拜神、服事神的方面，是否也是以最好的心意和努力？還是傾向將剩餘的時間、精力和資源給神？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

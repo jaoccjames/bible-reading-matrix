@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何西阿書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+何西阿書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神的忿怒與最終的重新聘娶</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們要稱你們的弟兄為阿米〔就是我民的意思〕，稱你們的姐妹為路哈瑪〔就是蒙憐憫的意思〕。</div>
+<div class="verse"><span class="verse-number">2</span>你們要與你們的母親大大爭辯；因為她不是我的妻子，我也不是她的丈夫。叫她除掉臉上的淫像和胸間的淫態，</div>
+<div class="verse"><span class="verse-number">3</span>免得我剝她的衣服，使她赤體，與才生的時候一樣，使她如曠野，如乾旱之地，因渴而死。</div>
+<div class="verse"><span class="verse-number">4</span>我必不憐憫她的兒女，因為他們是從淫亂而生的。</div>
+<div class="verse"><span class="verse-number">5</span>他們的母親行了淫亂，懷他們的母作了可羞恥的事，因為她說：我要隨從所愛的；我的餅、水、羊毛、麻、油、酒都是他們給的。</div>
+<div class="verse"><span class="verse-number">6</span>因此，我必用荊棘堵塞她的道，築牆擋住她，使她找不着路。</div>
+<div class="verse"><span class="verse-number">7</span>她必追隨所愛的，卻追不上；她必尋找他們，卻尋不見，便說：我要歸回前夫，因我那時的光景比如今還好。</div>
+<div class="verse"><span class="verse-number">8</span>她不知道是我給她五穀、新酒，和油，又加增她的金銀；她卻以此供奉〔或作：製造〕巴力。</div>
+<div class="verse"><span class="verse-number">9</span>因此到了收割的日子，出酒的時候，我必將我的五穀新酒收回，也必將她應當遮體的羊毛和麻奪回來。</div>
+<div class="verse"><span class="verse-number">10</span>如今我必在她所愛的眼前顯露她的醜態；必無人能救她脫離我的手。</div>
+<div class="verse"><span class="verse-number">11</span>我也必使她的宴樂、節期、月朔、安息日，並她的一切大會都止息了。</div>
+<div class="verse"><span class="verse-number">12</span>我也必毀壞她的葡萄樹和無花果樹，就是她說「這是我所愛的給我為賞賜」的。我必使這些樹變為荒林，為田野的走獸所吃。</div>
+<div class="verse"><span class="verse-number">13</span>我必追討她素日給諸巴力燒香的罪；那時她佩帶耳環和別樣妝飾，隨從她所愛的，卻忘記我。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">14</span>後來我必勸導她，領她到曠野，對她說安慰的話。</div>
+<div class="verse"><span class="verse-number">15</span>她從那裏出來，我必賜她葡萄園，又賜她亞割谷作為指望的門。她必在那裏應聲〔或作：歌唱〕，與幼年的日子一樣，與從埃及地上來的時候相同。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華說：「那日你必稱呼我伊施〔就是我夫的意思〕，不再稱呼我巴力〔就是我主的意思〕；</div>
+<div class="verse"><span class="verse-number">17</span>因為我必從我民的口中除掉諸巴力的名號，這名號不再提起。</div>
+<div class="verse"><span class="verse-number">18</span>當那日，我必為我的民，與田野的走獸和空中的飛鳥，並地上的昆蟲立約；又必在國中折斷弓刀，止息爭戰，使他們安然躺臥。</div>
+<div class="verse"><span class="verse-number">19</span>我必聘你永遠歸我為妻，以仁義、公平、慈愛、憐憫聘你歸我；</div>
+<div class="verse"><span class="verse-number">20</span>也以誠實聘你歸我，你就必認識我耶和華。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華說：那日我必應允，我必應允天，天必應允地；</div>
+<div class="verse"><span class="verse-number">22</span>地必應允五穀、新酒，和油，這些必應允耶斯列民〔耶斯列就是神栽種的意思〕。</div>
+<div class="verse"><span class="verse-number">23</span>我必將他種在這地。素不蒙憐憫的，我必憐憫；本非我民的，我必對他說：你是我的民；他必說：你是我的神。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+何西阿書第2章是全書神學最豐富的一章，以婚姻破裂和恢復的完整弧線，呈現神與以色列關係的全貌。章首（1-13節）是神對不忠之妻（以色列）的控訴與審判：她追求情人（偶像），以為五穀新酒是情人給的，不知道其實是神的供應。神要阻斷她追情人的路，使她一無所有，懲罰她燒香給諸巴力。然後，在第14節發生震撼的轉折：「後來我必勸導她，領她到曠野，對她說安慰的話」——神的忿怒轉為追求！在曠野（正是關係最開始、最純粹的地方），神要重新贏回她的心，並重新聘娶她：「我必聘你永遠歸我為妻，以仁義、公平、慈愛、憐憫聘你歸我；也以誠實聘你歸我，你就必認識我耶和華。」這是整本先知書最美麗的恢復應許之一。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 人以為是從「情人」得到的，其實都是神的供應</strong><br>「她不知道是我給她五穀、新酒，和油」——以色列以為從偶像（情人）得到豐盛，其實神才是一切的供應者。人常常把生命中的美好（健康、財富、才能、關係）歸功於自己的努力或其他偶像，而不認識那位真正的供應者。「認識神是供應者」是信仰最基本的知識，也是最容易在繁榮中遺忘的真理。<br><br>
+<strong>2. 曠野是神重新贏回心的地方</strong><br>「我必勸導她，領她到曠野，對她說安慰的話」——神用曠野而非宮殿來恢復關係。曠野是去掉一切干擾、赤裸裸地面對神的地方；是出埃及時神與以色列最親密的蜜月期。有時神允許人進入生命的「曠野」（失去、困難、安靜），正是為了在那個去掉所有干擾的空間，重新對我們說安慰的話，恢復那個最初的關係。<br><br>
+<strong>3. 神的聘禮：仁義、公平、慈愛、憐憫、誠實</strong><br>「我必聘你永遠歸我為妻，以仁義、公平、慈愛、憐憫聘你歸我；也以誠實聘你歸我」——神用祂自己的性情作聘禮。這是信仰中最美麗的宣告：神不是要求人以道德表現來贏得祂的愛，而是主動以祂的性情（仁義、公平、慈愛）來「聘娶」我們，讓我們得以「認識祂」。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>她不知道是我給她</strong>五穀、新酒，和油，<strong>又加增她的金銀</strong>；她卻以此供奉諸巴力。（何2:8）</td>
+<td>你生命中最珍視的美好——才能、健康、人際關係、財富——你是否認識到這一切真正的供應者是誰？就像一個孩子以為餐桌上的食物是從超市「自己長出來的」，不知道是父母辛苦提供的，你有沒有在感謝神和把榮耀歸給祂上，與你所享受的祝福相稱？</td>
+</tr>
+<tr>
+<td><strong>後來我必勸導她</strong>，<strong>領她到曠野</strong>，對她說安慰的話。（何2:14）</td>
+<td>神用「曠野」來恢復關係。你生命中有沒有一段「曠野時期」——一個去掉了日常熱鬧和干擾的時期——在那裡你更清楚地聽見神對你說安慰的話？就像在安靜的房間裡才能聽見微細的聲音，你現在的生活有沒有留下足夠的「曠野空間」，讓神可以對你說話？</td>
+</tr>
+<tr>
+<td><strong>我必聘你永遠歸我</strong>為妻，<strong>以仁義</strong>、公平、慈愛、憐憫聘你歸我；也以誠實聘你歸我，你就必認識我耶和華。（何2:19-20）</td>
+<td>神以「仁義、公平、慈愛、憐憫、誠實」作聘禮——這是祂的性情，也是祂對你的應許。你與神的關係，是否更像一場「我要表現得好才被接受」的試用期，還是一段「神已主動以祂的性情聘娶了我」的婚約？這兩種理解如何影響你每天與神互動的姿態？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

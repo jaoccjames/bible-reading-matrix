@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第21章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第21章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">民事法則與人身保護條例</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「你在百姓面前所要立的典章是這樣：</div>
+<div class="verse"><span class="verse-number">2</span>你若買希伯來人作奴僕，他必服事你六年；第七年他可以自由，白白地出去。</div>
+<div class="verse"><span class="verse-number">3</span>他若孤身來就可以孤身去；他若有妻，他的妻就可以同他出去。</div>
+<div class="verse"><span class="verse-number">4</span>他主人若給他妻子，妻子給他生了兒子或女兒，妻子和兒女要歸主人，他要獨自出去。</div>
+<div class="verse"><span class="verse-number">5</span>倘或奴僕明說：『我愛我的主人和我的妻子兒女，不願意自由出去。』</div>
+<div class="verse"><span class="verse-number">6</span>他的主人就要帶他到審判官〔或作：神；下同〕那裏，又要帶他到門前，靠着門框，用錐子穿他的耳朵，他就永遠服事主人。</div>
+<div class="verse"><span class="verse-number">7</span>「人若賣女兒作婢女，婢女不可像男僕那樣出去。</div>
+<div class="verse"><span class="verse-number">8</span>主人選定她歸自己，若不喜歡她，就要許她贖身；主人既然用詭詐待她，就沒有權柄賣給外邦人。</div>
+<div class="verse"><span class="verse-number">9</span>主人若選定她給自己的兒子，就當待她如同女兒。</div>
+<div class="verse"><span class="verse-number">10</span>若另娶一個，那女子的吃食、衣服，並好合的事，仍不可減少。</div>
+<div class="verse"><span class="verse-number">11</span>若不向她行這三樣，她就可以不用錢贖，白白的出去。」</div>
+<div class="verse"><span class="verse-number">12</span>「打人以致打死的，必要把他治死。</div>
+<div class="verse"><span class="verse-number">13</span>人若不是埋伏着殺人，乃是神交在他手中，我就設下一個地方，他可以往那裏逃跑。</div>
+<div class="verse"><span class="verse-number">14</span>人若任意用詭計殺了他的鄰舍，就是逃到我的壇那裏，也當捉去把他治死。</div>
+<div class="verse"><span class="verse-number">15</span>「打父母的，必要把他治死。</div>
+<div class="verse"><span class="verse-number">16</span>「拐帶人口，或是把人賣了，或是留在他手下，必要把他治死。</div>
+<div class="verse"><span class="verse-number">17</span>「咒罵父母的，必要把他治死。</div>
+<div class="verse"><span class="verse-number">18</span>「人若彼此相爭，這個用石頭或是拳頭打那個，尚且不至於死，不過躺臥在床，</div>
+<div class="verse"><span class="verse-number">19</span>若再能起來扶杖而出，那打他的可算無罪；但要將他耽誤的工夫用錢賠補，並要將他全然醫好。</div>
+<div class="verse"><span class="verse-number">20</span>「人若用棍子打奴僕或婢女，立時死在他的手下，他必要受刑。</div>
+<div class="verse"><span class="verse-number">21</span>若過一兩天才死，就可以不受刑，因為是用錢買的。</div>
+<div class="verse"><span class="verse-number">22</span>「人若彼此爭鬥，傷害有孕的婦人，甚至墜胎，隨後卻無別害，那傷害她的，總要按婦人的丈夫所要的，照審判官所斷的，受罰。</div>
+<div class="verse"><span class="verse-number">23</span>若有別害，就要以命償命，</div>
+<div class="verse"><span class="verse-number">24</span>以眼還眼，以牙還牙，以手還手，以腳還腳，</div>
+<div class="verse"><span class="verse-number">25</span>以烙還烙，以傷還傷，以打還打。</div>
+<div class="verse"><span class="verse-number">26</span>「人若打壞了他奴僕或是婢女的一隻眼，就要因他的眼放他去得以自由。</div>
+<div class="verse"><span class="verse-number">27</span>若打掉了他奴僕或是婢女的一個牙，就要因他的牙放他去得以自由。」</div>
+<div class="verse"><span class="verse-number">28</span>「牛若觸死男人或是女人，總要用石頭打死那牛，卻不可吃牠的肉；牛的主人可算無罪。</div>
+<div class="verse"><span class="verse-number">29</span>倘若那牛素來是觸人的，有人報告了牛主，他竟不把牛拴着，以致把男人或是女人觸死，就要用石頭打死那牛，牛主也必治死。</div>
+<div class="verse"><span class="verse-number">30</span>若罰他贖命的價銀，他必照所罰的贖他的命。</div>
+<div class="verse"><span class="verse-number">31</span>牛無論觸了人的兒子或是女兒，必照這例辦理。</div>
+<div class="verse"><span class="verse-number">32</span>牛若觸了奴僕或是婢女，必將銀子三十舍客勒給他們的主人，也要用石頭把牛打死。</div>
+<div class="verse"><span class="verse-number">33</span>「人若敞着井口，或挖井不遮蓋，有牛或驢掉在裏頭，</div>
+<div class="verse"><span class="verse-number">34</span>井主要拿錢賠還本主人，死牲畜要歸自己。</div>
+<div class="verse"><span class="verse-number">35</span>「這人的牛若傷了那人的牛，以致於死，他們要賣了活牛，平分價值，也要平分死牛。</div>
+<div class="verse"><span class="verse-number">36</span>人若知道這牛素來是觸人的，主人竟不把牛拴着，他必要以牛還牛，死牛要歸自己。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第21章開始記載「典章」（民事條例），這是在西奈山頒布十誡之後，具體規範以色列社會生活的詳細法律。本章主要涵蓋：奴隸制度的規範（希伯來奴僕六年後可自由離去，若不願離去可終身服事；女兒被賣為奴的保護條例）、故意與非故意殺人的區別處理（蓄意謀殺者逃城也難逃法網；非故意者可逃往神那裏）、傷害父母的懲處、奴隸傷亡的補償規定，以及眼還眼、牙還牙的等量報復原則，以及公牛抵死人的處理。這些法律在古代近東背景下，相對於漢摩拉比法典等，展現了對弱勢者（包括奴隸、女性）更高程度的保護，奠定了以色列社會公義的基礎。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的律法保護社會中最脆弱的人</strong><br>本章對奴隸、女性和受害者的保護規定，在古代近東是先進的。神的律法不只是形式上的條例，而是體現神對每個人尊嚴的關顧，尤其是對弱勢的保護。信徒當效法神對弱勢的關顧，在自身的生活圈中積極維護社會公義，關心那些無法為自己發聲的人。<br><br>
+<strong>2. 生命的神聖性是一切法律的最高原則</strong><br>蓄意殺人與非故意殺人有截然不同的處理，反映了對人的動機與生命的嚴肅對待。人命有其絕對的神聖性，因為人是按神的形象所造。信徒當在各種關乎生命的議題上持守對生命神聖性的堅定立場。<br><br>
+<strong>3. 真正的公義是按比例的、有原則的</strong><br>「眼還眼、牙還牙」在現代常被誤解為復仇的許可，事實上它是限制過度報復的原則，確保懲罰與傷害相稱。神的公義不是情緒性的報仇，而是有原則的等量對待。信徒在面對傷害時，既不壓抑公義的訴求，也不讓怒氣演變成過度的報復。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>倘或奴僕明說</strong>：「<strong>我愛我的主人和我</strong>的妻子兒女，不願意自由出去。」（出21:5）</td>
+<td>就像有人因為深愛一份工作和同事而主動放棄更高薪的跳槽機會，這個奴僕選擇留下是因愛而非義務。你對神的委身更多是出於愛的選擇還是感到義務或害怕後果？如何讓愛成為你信仰委身的真正動力？</td>
+</tr>
+<tr>
+<td><strong>人若任意用詭計殺</strong><strong>了他的鄰舍</strong>，就是逃到我的壇那裏，也當捉去把他治死。（出21:14）</td>
+<td>就像法律區別蓄意犯罪與過失事故的懲罰力度，神的律法對蓄意謀殺有嚴厲的界線，連逃到壇前也不能免除。你如何在信仰中理解公義與憐憫之間的張力？是否有些罪是憐憫不能輕易越過的？</td>
+</tr>
+<tr>
+<td><strong>以眼還眼</strong>，<strong>以牙還牙</strong>，以手還手，以腳還腳。（出21:24）</td>
+<td>就像重量限制是防止橋樑因過重而崩塌的安全設計，「以眼還眼」是限制復仇過度的原則，而非鼓勵報復。在你受傷的關係中，你傾向於過度報復還是無原則地壓抑公義？你如何找到其中的平衡？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米哀歌第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米哀歌第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">錫安淪落的哀歌</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>先前滿有人民的城，現在何竟獨坐！先前在列國中為大的，現在竟如寡婦；先前在諸省中為王后的，現在成為進貢的。</div>
+<div class="verse"><span class="verse-number">2</span>她夜間痛哭，淚流滿腮；在一切所親愛的中間沒有一個安慰她的。她的朋友都以詭詐待她，成為她的仇敵。</div>
+<div class="verse"><span class="verse-number">3</span>猶大因遭遇苦難，又因多服勞苦就遷到外邦。她住在列國中，尋不着安息；追逼她的都在狹窄之地將她追上。</div>
+<div class="verse"><span class="verse-number">4</span>錫安的路徑因無人來守聖節就悲傷；她的城門淒涼；她的祭司歎息；她的處女受艱難，自己也愁苦。</div>
+<div class="verse"><span class="verse-number">5</span>她的敵人為首；她的仇敵亨通；因耶和華為她許多的罪過使她受苦；她的孩童被敵人擄去。</div>
+<div class="verse"><span class="verse-number">6</span>錫安城〔原文作女子；下同〕的威榮全都失去。她的首領像找不着草場的鹿；在追趕的人前無力行走。</div>
+<div class="verse"><span class="verse-number">7</span>耶路撒冷在困苦窘迫之時，就追想古時一切的樂境。她百姓落在敵人手中，無人救濟；敵人看見，就因她的荒涼嗤笑。</div>
+<div class="verse"><span class="verse-number">8</span>耶路撒冷大大犯罪，所以成為不潔之物；素來尊敬她的，見她赤露就都藐視她；她自己也歎息退後。</div>
+<div class="verse"><span class="verse-number">9</span>她的污穢是在衣襟上；她不思想自己的結局，所以非常的敗落，無人安慰她。她說：耶和華啊，求你看我的苦難，因為仇敵誇大。</div>
+<div class="verse"><span class="verse-number">10</span>敵人伸手，奪取她的美物；她眼見外邦人進入她的聖所，論這外邦人，你曾吩咐不可入你的會中。</div>
+<div class="verse"><span class="verse-number">11</span>她的民都歎息，尋求食物；他們用美物換糧食，要救性命。他們說：耶和華啊，求你觀看，因為我甚是卑賤。</div>
+<div class="verse"><span class="verse-number">12</span>你們一切過路的人哪，這事你們不介意嗎？你們要觀看：有像這臨到我的痛苦沒有，就是耶和華在他發烈怒的日子使我所受的苦？</div>
+<div class="verse"><span class="verse-number">13</span>他從高天使火進入我的骨頭，克制了我；他鋪下網羅，絆我的腳，使我轉回；他使我終日淒涼發昏。</div>
+<div class="verse"><span class="verse-number">14</span>我罪過的軛是他手所綁的，猶如軛繩縛在我頸項上；他使我的力量衰敗。主將我交在我所不能敵擋的人手中。</div>
+<div class="verse"><span class="verse-number">15</span>主輕棄我中間的一切勇士，招聚多人〔原文作大會〕攻擊我，要壓碎我的少年人。主將猶大居民踹下，像在酒醡中一樣。</div>
+<div class="verse"><span class="verse-number">16</span>我因這些事哭泣；我眼淚汪汪；因為那當安慰我、救我性命的，離我甚遠。我的兒女孤苦，因為仇敵得了勝。</div>
+<div class="verse"><span class="verse-number">17</span>錫安舉手，無人安慰。耶和華論雅各已經出令，使四圍的人作他仇敵；耶路撒冷在他們中間像不潔之物。</div>
+<div class="verse"><span class="verse-number">18</span>耶和華是公義的！他這樣待我，是因我違背他的命令。眾民哪，請聽我的話，看我的痛苦；我的處女和少年人都被擄去。</div>
+<div class="verse"><span class="verse-number">19</span>我招呼我所親愛的，他們卻愚弄我。我的祭司和長老正尋求食物、救性命的時候，就在城中絕氣。</div>
+<div class="verse"><span class="verse-number">20</span>耶和華啊，求你觀看，因為我在急難中。我心腸擾亂；我心在我裏面翻轉，因我大大悖逆。在外，刀劍使人喪子；在家，猶如死亡。</div>
+<div class="verse"><span class="verse-number">21</span>聽見我歎息的有人；安慰我的卻無人！我的仇敵都聽見我所遭的患難；因你作這事，他們都喜樂。你必使你報告的日子來到，他們就像我一樣。</div>
+<div class="verse"><span class="verse-number">22</span>願他們的惡行都呈在你面前；你怎樣因我的一切罪過待我，求你照樣待他們；因我歎息甚多，心中發昏。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米哀歌第1章是整卷書的開篇，寫於主前586年耶路撒冷被巴比倫摧毀之後。本章以字母詩形式寫成（每節以希伯來字母依序開頭），表達了極深的哀慟與秩序之美的張力。曾是萬民之都的耶路撒冷，如今孤坐如寡婦；昔日王后之城，今成進貢之地。全城百姓被擄，聖殿被侵，街道無人，祭司歎息，處女受苦。本章以兩個聲音交替呈現：詩人旁觀描述城的淒涼（第三人稱），以及城本身親口申訴（第一人稱），使哀慟既客觀又個人化。核心神學貫穿全章：這場災難不是歷史偶然，而是因以色列犯罪違約所招致的神的審判（18節「耶和華是公義的！他這樣待我，是因我違背他的命令」）。承認神的公義，是哀歌文學中最重要的屬靈動作，也是在痛苦中保持信仰的起點。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 哀痛是真實信仰的一部分，可以向神傾訴</strong><br>哀歌文學承認痛苦是真實的，不迴避、不美化。耶路撒冷的哀號「耶和華啊，求你觀看」（9、11、20節）是在最深的破碎中仍然轉向神的禱告。真實的信仰不要求我們假裝一切都好，而是邀請我們把最深的傷帶到神面前，讓哀哭成為禱告的一種形式。眼淚和禱告可以同時存在。<br><br>
+<strong>2. 承認罪與承認神的公義是恢復的第一步</strong><br>第18節是全章的神學轉折點：「耶和華是公義的！他這樣待我，是因我違背他的命令。」在極度的痛苦中，仍能承認神的公義，而不是怨恨神，這是信仰最成熟的表達之一。不將苦難全歸咎於外在因素，而能誠實面對自己的責任，是靈命恢復的起點。<br><br>
+<strong>3. 失去曾有的美好，使人更深地體會神恩典的珍貴</strong><br>城中的人「追想古時一切的樂境」（7節），在喪失中方知昔日的美好。苦難常常是使人重新認識「恩典是禮物而非理所當然」的功課。當我們所倚靠的一切被移去，才更清楚看見什麼是真正不可失去的。信徒在順境中培養感恩之心，在逆境中藉失去學習珍惜。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>她夜間痛哭</strong>，<strong>淚流滿腮</strong>；在一切所親愛的中間沒有一個安慰她的。她的朋友都以詭詐待她，成為她的仇敵。（哀1:2）</td>
+<td>你是否有過那種「四面都是人，卻沒有一個能真正安慰你」的孤獨？就像手機通訊錄滿滿，卻在最脆弱的深夜不知道可以打給誰，你願意把那份孤獨帶到神面前，讓祂成為那個「安慰你的」嗎？</td>
+</tr>
+<tr>
+<td><strong>耶和華是公義的</strong>！<strong>他這樣待我</strong>，是因我違背他的命令。眾民哪，請聽我的話，看我的痛苦；我的處女和少年人都被擄去。（哀1:18）</td>
+<td>當你在痛苦中，你的第一反應是怨恨別人、怪罪環境，還是也願意誠實地面對自己的責任？就像在交通意外後，先停下來確認自己有沒有違規，你能在苦難中說出「神是公義的」，同時誠實承認自己的部分嗎？</td>
+</tr>
+<tr>
+<td><strong>耶路撒冷在困苦窘</strong><strong>迫之時</strong>，就追想古時一切的樂境。（哀1:7上）</td>
+<td>失去之後才懂得珍惜，是人性普遍的軟弱。你目前擁有的哪些「尋常的恩典」——健康、家人、平安的生活——其實是你常常視為理所當然的？就像停電後才發現電燈的珍貴，你今天可以感謝神哪一件你平時從未特意感謝的事？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

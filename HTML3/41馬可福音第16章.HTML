@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬可福音第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬可福音第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">復活顯現與大使命</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>過了安息日，抹大拉的馬利亞和雅各的母親馬利亞並撒羅米，買了香膏要去膏耶穌的身體。</div>
+<div class="verse"><span class="verse-number">2</span>七日的第一日清早，出太陽的時候，她們來到墳墓那裏，</div>
+<div class="verse"><span class="verse-number">3</span>彼此說：「誰給我們把石頭從墓門滾開呢？」</div>
+<div class="verse"><span class="verse-number">4</span>那石頭原來很大，她們抬頭一看，卻見石頭已經滾開了。</div>
+<div class="verse"><span class="verse-number">5</span>她們進了墳墓，看見一個少年人坐在右邊，穿着白袍，就甚驚恐。</div>
+<div class="verse"><span class="verse-number">6</span>那少年人對她們說：「不要驚恐！你們尋找那釘十字架的拿撒勒人耶穌，他已經復活了，不在這裏。請看安放他的地方。</div>
+<div class="verse"><span class="verse-number">7</span>你們可以去告訴他的門徒和彼得，說：『他在你們以先往加利利去。在那裏你們要見他，正如他從前所告訴你們的。』」</div>
+<div class="verse"><span class="verse-number">8</span>她們就出來，從墳墓那裏逃跑，又發抖又驚奇，甚麼也不告訴人，因為她們害怕。</div>
+<div class="verse"><span class="verse-number">9</span>在七日的第一日清早，耶穌復活了，就先向抹大拉的馬利亞顯現（耶穌從她身上曾趕出七個鬼）。</div>
+<div class="verse"><span class="verse-number">10</span>她去告訴那向來跟隨耶穌的人；那時他們正哀慟哭泣。</div>
+<div class="verse"><span class="verse-number">11</span>他們聽見耶穌活了，被馬利亞看見，卻是不信。</div>
+<div class="verse"><span class="verse-number">12</span>這事以後，門徒中間有兩個人往鄉下去。走路的時候，耶穌變了形像，向他們顯現。</div>
+<div class="verse"><span class="verse-number">13</span>他們就去告訴其餘的門徒；其餘的門徒也是不信。</div>
+<div class="verse"><span class="verse-number">14</span>後來，十一個門徒坐席的時候，耶穌向他們顯現，責備他們不信，心裏剛硬，因為他們不信那些在他復活以後看見他的人。</div>
+<div class="verse"><span class="verse-number">15</span>他又對他們說：「你們往普天下去，傳福音給萬民〔萬民：原文作凡受造的〕聽。</div>
+<div class="verse"><span class="verse-number">16</span>信而受洗的，必然得救；不信的，必被定罪。</div>
+<div class="verse"><span class="verse-number">17</span>信的人必有神蹟隨着他們，就是奉我的名趕鬼；說新方言；</div>
+<div class="verse"><span class="verse-number">18</span>手能拿蛇；若喝了甚麼毒物，也必不受害；手按病人，病人就必好了。」</div>
+<div class="verse"><span class="verse-number">19</span>主耶穌和他們說完了話，後來被接到天上，坐在神的右邊。</div>
+<div class="verse"><span class="verse-number">20</span>門徒出去，到處宣傳福音。主和他們同工，用神蹟隨着，證實所傳的道。阿們！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第16章記述耶穌復活的事件，是馬可福音的結語，也是整個基督徒信仰的根基所在。安息日過後，抹大拉的馬利亞、雅各的母親馬利亞和撒羅米帶著香料，七日頭一日清早來到墳墓，彼此說誰來把石頭滾開。抬頭一看，石頭已滾開了，她們進入墳墓，看見一個少年人坐在右邊穿著白袍，就甚驚恐。天使告訴她們耶穌已從死裡復活不在這裡，要她們去告訴門徒和彼得，說祂在他們以先往加利利去。婦女出來從墳墓逃跑，因又發抖又驚奇，什麼也沒有告訴人，因為她們害怕。馬可福音最早的抄本在此結束，後人補充的段落記述耶穌向抹大拉的馬利亞、兩個門徒和十一使徒顯現，最後差遣門徒往普天下去傳福音，承諾信的人將有趕鬼、說新方言、醫病的神蹟隨著。最後記述耶穌升天坐在神的右邊，門徒出去到處傳道，主和他們同工，並用神蹟隨著證實所傳的道。本章以復活的確信與傳道的使命為整部福音書作出結語。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 復活是改變一切的核心事件</strong><br>「他已經復活了，不在這裏」——這個宣告改變了整個歷史。婦女們帶着香膏來，帶着埋葬死人的心理準備，卻遇見了復活。復活宣告耶穌不只是偉大的老師或先知，而是勝過死亡的主。今天信仰的確據，建立在這個空墳墓的事實上。耶穌的復活是我們的盼望、使命和力量的根基。<br><br>
+<strong>2. 神在失敗者身上的恢復恩典</strong><br>天使特別提到「告訴他的門徒和彼得」——特別點名彼得。剛剛三次不認主的彼得，被特別提名邀請去見復活的耶穌。這是神的恢復文法：不是以失敗定義人，而是以祂的恩典重新定義。每一個曾跌倒的人，都聽見這個「和彼得」——你也在邀請名單上。<br><br>
+<strong>3. 大使命是門徒的終生委託</strong><br>「你們往普天下去，傳福音給萬民聽」——這個命令仍然有效。馬可福音以門徒出去傳福音、主和他們同工作為結尾。宣教不是少數人的特別呼召，而是每一個信徒的委託。「主和他們同工，用神蹟隨着，證實所傳的道」——同工的主從未離開，祂今天仍然與每一個出去傳福音的人同行。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>那少年人對她們說</strong>：「<strong>不要驚恐</strong>！你們尋找那釘十字架的拿撒勒人耶穌，他已經復活了，不在這裏。」（可16:6）</td>
+<td>耶穌的復活對你的日常信仰生活有多大的實際影響？就像一間宣告破產的公司突然被確認有大量資產而起死回生，耶穌的復活有沒有讓你以完全不同的方式面對困難和死亡？</td>
+</tr>
+<tr>
+<td><strong>天使說</strong>：「<strong>你們可以去告訴他</strong>的門徒和彼得。」（可16:7）</td>
+<td>你有沒有在跌倒和失敗後，相信神仍然在邀請你回到祂面前，而不是把你從名單上除去？就像名字被特別點名的人感受到被珍視，你願意接受神在彼得身上所彰顯的那份「即使跌倒也不棄絕」的恩典嗎？</td>
+</tr>
+<tr>
+<td><strong>他又對他們說</strong>：「<strong>你們往普天下去</strong>，傳福音給萬民聽。」（可16:15）</td>
+<td>你有沒有把「傳福音給萬民」看作是自己今天就要參與的使命？就像接力賽的每一棒都至關重要，你有沒有在你所在的地方——家庭、工作、社區——忠心地傳遞福音的接力棒？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

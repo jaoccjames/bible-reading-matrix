@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>俄巴底亞書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+俄巴底亞書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以東的審判與以色列的復興</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>俄巴底亞得了耶和華的默示。論以東說：我從耶和華那裏聽見信息，並有使者被差往列國去，說：起來罷，一同起來與以東爭戰！</div>
+<div class="verse"><span class="verse-number">2</span>我使你以東在列國中為最小的，被人大大藐視。</div>
+<div class="verse"><span class="verse-number">3</span>住在山穴中、居所在高處的啊，你因狂傲自欺，心裏說：誰能將我拉下地去呢？</div>
+<div class="verse"><span class="verse-number">4</span>你雖如大鷹高飛，在星宿之間搭窩，我必從那裏拉下你來。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">5</span>盜賊若來在你那裏，或強盜夜間而來（你何竟被剪除），豈不偷竊直到彀了呢？摘葡萄的若來到你那裏，豈不剩下些葡萄呢？</div>
+<div class="verse"><span class="verse-number">6</span>以掃的隱密處何竟被搜尋？他隱藏的寶物何竟被查出？</div>
+<div class="verse"><span class="verse-number">7</span>與你結盟的都送你上路，直到交界；與你和好的欺騙你，且勝過你；與你一同喫飯的設下網羅陷害你；在你心裏毫無聰明。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華說：到那日，我豈不從以東除滅智慧人？從以掃山除滅聰明人？</div>
+<div class="verse"><span class="verse-number">9</span>提幔哪，你的勇士必驚惶，甚至以掃山的人都被殺戮剪除。</div>
+<div class="verse"><span class="verse-number">10</span>因你向兄弟雅各行強暴，羞愧必遮蓋你，你也必永遠斷絕。</div>
+<div class="verse"><span class="verse-number">11</span>當外人擄掠雅各的財物，外邦人進入他的城門，為耶路撒冷拈鬮的日子，你竟站在一旁，像與他們同夥。</div>
+<div class="verse"><span class="verse-number">12</span>你兄弟遭難的日子，你不當瞪眼看着；猶大人被滅的日子，你不當因此歡樂；他們遭難的日子，你不當說狂傲的話。</div>
+<div class="verse"><span class="verse-number">13</span>我民遭災的日子，你不當進他們的城門；他們遭災的日子，你不當瞪眼看着他們受苦；他們遭災的日子，你不當伸手搶他們的財物；</div>
+<div class="verse"><span class="verse-number">14</span>你不當站在岔路口剪除他們中間逃脫的；他們遭難的日子，你不當將他們剩下的人交付仇敵。</div>
+<div class="verse"><span class="verse-number">15</span>耶和華降罰的日子臨近萬國。你怎樣行，他也必照樣向你行；你的報應必歸到你頭上。</div>
+<div class="verse"><span class="verse-number">16</span>你們猶大人在我聖山怎樣喝了苦杯，萬國也必照樣常常地喝；且喝且咽，他們就歸於無有。</div>
+<div class="verse"><span class="verse-number">17</span>在錫安山必有逃脫的人，那山也必成聖；雅各家必得原有的產業。</div>
+<div class="verse"><span class="verse-number">18</span>雅各家必成為大火；約瑟家必為火焰；以掃家必如碎稭；火必將他燒着吞滅。以掃家必無餘剩的。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">19</span>南地的人必得以掃山；高原的人必得非利士地，也得以法蓮地和撒瑪利亞地；便雅憫人必得基列。</div>
+<div class="verse"><span class="verse-number">20</span>在迦南人中被擄的以色列眾人必得地直到撒勒法；在西法拉中被擄的耶路撒冷人必得南地的城邑。</div>
+<div class="verse"><span class="verse-number">21</span>必有拯救者上到錫安山，審判以掃山；國度就歸耶和華了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+俄巴底亞書是舊約最短的書卷，只有21節，是一篇針對以東（以掃的後裔）的審判神諭。以東在以色列歷史上一直是兄弟也是仇敵，兩國的恩怨可追溯到雅各和以掃。本書的歷史背景最可能是主前586年耶路撒冷被巴比倫摧毀的那一次，以東人不但不援助兄弟，反而落井下石：站在一旁袖手旁觀、幸災樂禍地說狂傲的話、進城搶奪財物、在逃難的路口截殺逃跑者。神對以東列出了一系列「你不當……」的罪行（12-14節），然後宣告：「你怎樣行，他也必照樣向你行；你的報應必歸到你頭上。」本書以盼望作結：在錫安山必有逃脫的人，雅各家必恢復原有的產業，「國度就歸耶和華了」——這是整本書最終的神學宣告，超越了以東和以色列的衝突，指向神的主權和祂國度的最終勝利。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在弟兄遭難時幸災樂禍，是最深的背叛</strong><br>「你兄弟遭難的日子，你不當瞪眼看着」——以東的罪不只是主動傷害，更是在兄弟最脆弱的時刻的冷漠和幸災樂禍。這是對「愛鄰舍如同自己」最直接的否定。信徒面對他人（尤其是信仰群體中）的苦難時，那種下意識的「活該」或「終於」的感覺，是神嚴肅對待的罪。<br><br>
+<strong>2. 以為地勢之高帶來安全，是屬靈驕傲的典型形態</strong><br>「住在山穴中、居所在高處的啊，你因狂傲自欺，心裏說：誰能將我拉下地去呢？」以東依靠西珥山的地形自以為無人能攻。人常以自己的「高處」（地位、財富、關係、才能）自欺安全，卻忘記神可以從任何高處「將你拉下來」。<br><br>
+<strong>3. 「國度就歸耶和華了」：歷史的終點是神的主權被承認</strong><br>全書以這個簡短而有力的宣言作結，超越了所有的民族衝突。無論人間的爭奪如何複雜，歷史的終點是清楚的：國度歸耶和華。信徒在世界的紛爭中，可以安息於這個終極的確信。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你兄弟遭難的日子</strong>，<strong>你不當瞪眼看着</strong>；猶大人被滅的日子，你不當因此歡樂。（俄1:12）</td>
+<td>當你不喜歡的人或群體遭遇挫折時，你的第一個內心反應是什麼？就像一個內心「竊喜」的時刻，那個幸災樂禍的感覺往往比我們願意承認的更常見。你願意今天誠實地面對那個感覺，讓神的憐憫進入你對那人的態度嗎？</td>
+</tr>
+<tr>
+<td><strong>住在山穴中</strong>、<strong>居所在高處的啊</strong>，你因狂傲自欺，心裏說：誰能將我拉下地去呢？（俄1:3）</td>
+<td>你現在最依賴的「高處」是什麼——讓你感覺安全、以為無人能撼動的優勢或地位？就像以東人以山為盾，卻被神的審判越過，你的「山穴」有沒有讓你對神的主權產生了一種虛假的安全感？</td>
+</tr>
+<tr>
+<td><strong>必有拯救者上到錫</strong>安山，<strong>審判以掃山</strong>；國度就歸耶和華了。（俄1:21）</td>
+<td>「國度就歸耶和華了」——在一切紛爭和審判的最後，這是終局的宣告。當你面對世界的不公義和紛亂，這個句子如何成為你靈魂的錨？就像在暴風中確知港口的位置，「國度終歸耶和華」這個確信如何讓你在當下的亂局中保持心靈的平靜？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以弗所書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以弗所書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">基督測不透的豐富與大能的禱告</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>因此，我保羅為你們外邦人作了基督耶穌被囚的，替你們祈禱〔此句乃對照十四節所加〕。</div>
+<div class="verse"><span class="verse-number">2</span>諒必你們曾聽見神賜恩給我，將關切你們的職分託付我，</div>
+<div class="verse"><span class="verse-number">3</span>用啟示使我知道福音的奧祕，正如我以前略略寫過的。</div>
+<div class="verse"><span class="verse-number">4</span>你們念了，就能曉得我深知基督的奧祕。</div>
+<div class="verse"><span class="verse-number">5</span>這奧祕在以前的世代沒有叫人知道，像如今藉着聖靈啟示他的聖使徒和先知一樣。</div>
+<div class="verse"><span class="verse-number">6</span>這奧祕就是外邦人在基督耶穌裏，藉着福音，得以同為後嗣，同為一體，同蒙應許。</div>
+<div class="verse"><span class="verse-number">7</span>我作了這福音的執事，是照神的恩賜，這恩賜是照他運行的大能賜給我的。</div>
+<div class="verse"><span class="verse-number">8</span>我本來比眾聖徒中最小的還小，然而他還賜我這恩典，叫我把基督那測不透的豐富傳給外邦人，</div>
+<div class="verse"><span class="verse-number">9</span>又使眾人都明白，這歷代以來隱藏在創造萬物之神裏的奧祕是如何安排的，</div>
+<div class="verse"><span class="verse-number">10</span>為要藉着教會使天上執政的、掌權的，現在得知神百般的智慧。</div>
+<div class="verse"><span class="verse-number">11</span>這是照神從萬世以前，在我們主基督耶穌裏所定的旨意。</div>
+<div class="verse"><span class="verse-number">12</span>我們因信耶穌，就在他裏面放膽無懼，篤信不疑的來到神面前。</div>
+<div class="verse"><span class="verse-number">13</span>所以，我求你們不要因我為你們所受的患難喪膽，這原是你們的榮耀。</div>
+<div class="verse"><span class="verse-number">14</span>因此，我在父面前屈膝，</div>
+<div class="verse"><span class="verse-number">15</span>（天上地上的各〔或作：全〕家，都是從他得名）</div>
+<div class="verse"><span class="verse-number">16</span>求他按着他豐盛的榮耀，藉着他的靈，叫你們心裏的力量剛強起來，</div>
+<div class="verse"><span class="verse-number">17</span>使基督因你們的信，住在你們心裏，叫你們的愛心有根有基，</div>
+<div class="verse"><span class="verse-number">18</span>能以和眾聖徒一同明白基督的愛是何等長闊高深，</div>
+<div class="verse"><span class="verse-number">19</span>並知道這愛是過於人所能測度的，便叫神一切所充滿的，充滿了你們。</div>
+<div class="verse"><span class="verse-number">20</span>神能照着運行在我們心裏的大力，充充足足的成就一切，超過我們所求所想的。</div>
+<div class="verse"><span class="verse-number">21</span>但願他在教會中，並在基督耶穌裏，得着榮耀，直到世世代代，永永遠遠。阿們！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第3章記述保羅論述自己外邦人使徒的職分及其背後的奧秘，並獻上一篇為以弗所信徒的禱告，是整部書信從教義轉向實踐的中間橋樑。本章首先保羅說明神把奧秘的職分賜給他：這奧秘在以前的世代沒有叫人知道，現在藉著聖靈啟示了，就是外邦人在基督耶穌裡靠著福音，得以同為後嗣、同為一體、同蒙應許。接著說明他被賜了這恩典，要把這福音傳給外邦人，並使眾人都明白這奧秘是從創世以來隱藏在神裡面的，為要藉著教會使天上執政的、掌權的現在得知神百般的智慧。然後保羅獻上一篇禱告，求父神藉著祂的靈叫信徒心裡的力量剛強起來，叫基督因信住在他們心裡，叫他們在愛心上有根有基，能以和眾聖徒一同明白基督之愛是何等長闊高深，並知道這愛是過於人所能測度的，便叫神一切所充滿的充滿了他們。最後以頌讚作結，說神能照著運行在我們心裡的大力充充足足地成就一切，超過我們所求所想的。本章在奧秘與禱告的交織中呈現教會在宇宙史中的獨特位置。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 基督的愛是何等長闊高深</strong><br>「能以和眾聖徒一同明白基督的愛是何等長闊高深，並知道這愛是過於人所能測度的」——認識基督的愛有四個維度（長闊高深），說明這愛無法從任何一個角度完全測量。「過於人所能測度的」——不是說不可知，而是說永遠有更深的認識等待我們發現。每一次的屬靈成長，都是更深地進入一個已然無邊無際的愛裏。<br><br>
+<strong>2. 「超過我們所求所想」的能力</strong><br>「神能照着運行在我們心裏的大力，充充足足的成就一切，超過我們所求所想的」——神的能力不只是回應禱告，而是超越禱告的最大限度。「超過我們所求所想」——我們最大的禱告，對神來說還只是最小的請求。這個認識不是叫人不再禱告，而是讓禱告有更大的信心和期待。<br><br>
+<strong>3. 教會是神向宇宙彰顯智慧的舞台</strong><br>「為要藉着教會使天上執政的、掌權的，現在得知神百般的智慧」——教會不只是服事世人的工具，也是向屬靈界彰顯神智慧的舞台。合一的、多元的、充滿恩典的教會，是神向全宇宙的智慧宣告。教會的每一個愛的行動、每一個和好、每一個真實的相交，都在宇宙中迴響。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>神能照着運行在我</strong><strong>們心裏的大力</strong>，充充足足的成就一切，超過我們所求所想的。（弗3:20）</td>
+<td>你有沒有讓「超過我們所求所想」的確信，擴大你在禱告中的信心和期待？就像知道一個供應商能提供任何數量就讓人的訂單更大膽，你有沒有讓對神能力的確信，讓你在禱告中比以前更大膽地求告？</td>
+</tr>
+<tr>
+<td><strong>能以和眾聖徒一同</strong><strong>明白基督的愛是何</strong>等長闊高深，並知道這愛是過於人所能測度的，便叫神一切所充滿的，充滿了你們。（弗3:18-19）</td>
+<td>你有沒有讓認識基督的愛成為你靈命成長最深的動力，讓這個愛的認識不斷地更新和擴大你對神和對人的理解？就像越是了解一個偉大的人就越是被他吸引，你有沒有讓對基督之愛更深的認識，持續地吸引你更靠近祂？</td>
+</tr>
+<tr>
+<td><strong>我為你們屈膝</strong>……<strong>求他按着他豐盛的</strong>榮耀，藉着他的靈，叫你們心裏的力量剛強起來，使基督因你們的信，住在你們心裏。（弗3:14,16-17）</td>
+<td>你有沒有像保羅為以弗所人禱告那樣，為你所愛的人代禱——不只求他們外在的平安，而是求神使他們心裏的力量剛強，讓基督越來越深地住在他們心裏？就像最好的禮物不是物質而是靈命的建立，你有沒有讓代禱成為你對所愛之人最深的服事？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

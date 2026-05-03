@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>士師記第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+士師記第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神呼召軟弱的基甸</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列人又行耶和華眼中看為惡的事，耶和華就把他們交在米甸人手裏七年。</div>
+<div class="verse"><span class="verse-number">2</span>米甸人壓制以色列人；以色列人因為米甸人，就在山中挖穴、挖洞、建造營寨。</div>
+<div class="verse"><span class="verse-number">3</span>以色列人每逢撒種之後，米甸人、亞瑪力人，和東方人都上來攻打他們，</div>
+<div class="verse"><span class="verse-number">4</span>對着他們安營，毀壞土產，直到迦薩，沒有給以色列人留下食物，牛、羊、驢也沒有留下；</div>
+<div class="verse"><span class="verse-number">5</span>因為那些人帶着牲畜帳棚來，像蝗蟲那樣多，人和駱駝無數，都進入國內，毀壞全地。</div>
+<div class="verse"><span class="verse-number">6</span>以色列人因米甸人的緣故，極其窮乏，就呼求耶和華。</div>
+<div class="verse"><span class="verse-number">7</span>以色列人因米甸人的緣故，呼求耶和華，</div>
+<div class="verse"><span class="verse-number">8</span>耶和華就差遣先知到以色列人那裏，對他們說：「耶和華以色列的神如此說：『我曾領你們從埃及上來，出了為奴之家，</div>
+<div class="verse"><span class="verse-number">9</span>救你們脫離埃及人的手，並脫離一切欺壓你們之人的手，把他們從你們面前趕出，將他們的地賜給你們』；</div>
+<div class="verse"><span class="verse-number">10</span>又對你們說：『我是耶和華你們的神。你們住在亞摩利人的地，不可敬畏他們的神。你們竟不聽從我的話。』」</div>
+<div class="verse"><span class="verse-number">11</span>耶和華的使者到了俄弗拉，坐在亞比以謝族人約阿施的橡樹下。約阿施的兒子基甸正在酒醡那裏打麥子，為要防備米甸人。</div>
+<div class="verse"><span class="verse-number">12</span>耶和華的使者向基甸顯現，對他說：「大能的勇士啊，耶和華與你同在！」</div>
+<div class="verse"><span class="verse-number">13</span>基甸說：「主啊，耶和華若與我們同在，我們何至遭遇這一切事呢？我們的列祖不是向我們說『耶和華領我們從埃及上來』麼？他那樣奇妙的作為在那裏呢？現在他卻丟棄我們，將我們交在米甸人手裏。」</div>
+<div class="verse"><span class="verse-number">14</span>耶和華觀看基甸，說：「你靠着你這能力去從米甸人手裏拯救以色列人，不是我差遣你去的麼？」</div>
+<div class="verse"><span class="verse-number">15</span>基甸說：「主啊，我有何能拯救以色列人呢？我家在瑪拿西支派中是至貧窮的。我在我父家是至微小的。」</div>
+<div class="verse"><span class="verse-number">16</span>耶和華對他說：「我與你同在，你就必擊打米甸人，如擊打一人一樣。」</div>
+<div class="verse"><span class="verse-number">17</span>基甸說：「我若在你眼前蒙恩，求你給我一個證據，使我知道與我說話的就是主。</div>
+<div class="verse"><span class="verse-number">18</span>求你不要離開這裏，等我歸回將禮物帶來供在你面前。」主說：「我必等你回來。」</div>
+<div class="verse"><span class="verse-number">19</span>基甸去預備了一隻山羊羔，用一伊法細麵作了無酵餅，將肉放在筐內，把湯盛在壺中，帶到橡樹下，獻在使者面前。</div>
+<div class="verse"><span class="verse-number">20</span>神的使者吩咐基甸說：「將肉和無酵餅放在這磐石上，把湯倒出來。」他就這樣行了。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華的使者伸出手內的杖，杖頭挨了肉和無酵餅，就有火從磐石中出來，燒盡了肉和無酵餅。耶和華的使者也就不見了。</div>
+<div class="verse"><span class="verse-number">22</span>基甸見他是耶和華的使者，就說：「哀哉！主耶和華啊，我不好了，因為我覿面看見耶和華的使者。」</div>
+<div class="verse"><span class="verse-number">23</span>耶和華對他說：「你放心，不要懼怕，你必不至死。」</div>
+<div class="verse"><span class="verse-number">24</span>於是基甸在那裏為耶和華築了一座壇，起名叫「耶和華沙龍」〔就是耶和華賜平安的意思〕。（這壇在亞比以謝族的俄弗拉直到如今。）</div>
+<div class="verse"><span class="verse-number">25</span>當那夜，耶和華吩咐基甸說：「你取你父親的牛來，就是〔或作：和〕那七歲的第二隻牛，並拆毀你父親為巴力所築的壇，砍下壇旁的木偶，</div>
+<div class="verse"><span class="verse-number">26</span>在這磐石〔原文作保障〕上整整齊齊地為耶和華你的神築一座壇，將第二隻牛獻為燔祭，用你所砍下的木偶作柴。」</div>
+<div class="verse"><span class="verse-number">27</span>基甸就從他僕人中挑了十個人，照着耶和華吩咐他的行了。他因怕父家和本城的人，不敢在白晝行這事，就在夜間行了。</div>
+<div class="verse"><span class="verse-number">28</span>城裏的人清早起來，見巴力的壇拆毀，壇旁的木偶砍下，第二隻牛獻在新築的壇上，</div>
+<div class="verse"><span class="verse-number">29</span>就彼此說：「這事是誰作的呢？」他們訪查之後，就說：「這是約阿施的兒子基甸作的。」</div>
+<div class="verse"><span class="verse-number">30</span>城裏的人對約阿施說：「將你兒子交出來，好治死他；因為他拆毀了巴力的壇，砍下壇旁的木偶。」</div>
+<div class="verse"><span class="verse-number">31</span>約阿施回答站着攻擊他的眾人說：「你們是為巴力爭論麼？你們要救它麼？誰為它爭論，趁早將誰治死！巴力若果是神，有人拆毀它的壇，讓它為自己爭論吧！」</div>
+<div class="verse"><span class="verse-number">32</span>所以當日人稱基甸為耶路巴力，意思說：「他拆毀巴力的壇，讓巴力與他爭論。」</div>
+<div class="verse"><span class="verse-number">33</span>那時，米甸人、亞瑪力人，和東方人都聚集過河，在耶斯列平原安營。</div>
+<div class="verse"><span class="verse-number">34</span>耶和華的靈降在基甸身上，他就吹角；亞比以謝族都聚集跟隨他。</div>
+<div class="verse"><span class="verse-number">35</span>他打發人走遍瑪拿西地，瑪拿西人也聚集跟隨他；又打發人去見亞設人、西布倫人、拿弗他利人，他們也都出來與他們會合。</div>
+<div class="verse"><span class="verse-number">36</span>基甸對神說：「你若果照着所說的話，藉我手拯救以色列人，</div>
+<div class="verse"><span class="verse-number">37</span>我就把一團羊毛放在禾場上：若單是羊毛上有露水，別的地方都是乾的，我就知道你必照着所說的話，藉我手拯救以色列人。」</div>
+<div class="verse"><span class="verse-number">38</span>次日早晨基甸起來，見果然是這樣；將羊毛擠一擠，從羊毛中擰出滿盆的露水來。</div>
+<div class="verse"><span class="verse-number">39</span>基甸又對神說：「求你不要向我發怒，我再說這一次：讓我將羊毛再試一次。但願羊毛是乾的，別的地方都有露水。」</div>
+<div class="verse"><span class="verse-number">40</span>這夜神也如此行：獨羊毛上是乾的，別的地方都有露水。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章開始基甸的故事,是士師記中最詳細的記載之一。以色列人再次行惡,被米甸人欺壓七年,敵人像蝗蟲般掠奪他們的出產,使他們極其窮乏。神呼召基甸作拯救者,但基甸充滿懷疑和恐懼。他躲在酒醡裡打麥子,自認家族貧窮、自己微小,不斷向神求證據。神耐心地回應他的軟弱,用火燒盡祭物證明祂的同在,又兩次用羊毛的神蹟堅固他的信心。神首先要求基甸拆毀父親的巴力祭壇,從自己家中開始改革。雖然基甸因懼怕在夜間行事,但這行動顯示他願意順服。本章展現神如何耐心塑造一個軟弱、懷疑的人,使他成為大能的勇士。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神看見我們的潛力而非現狀</strong><br>天使稱呼躲在酒醡裡的基甸為「大能的勇士」,這不是諷刺,而是神看見他未來的樣子。基甸覺得自己微小貧窮,但神看見他裡面的可能性。神呼召我們不是基於現狀,而是基於祂要塑造我們成為的樣子。我們常因自己的軟弱而退縮,但神專門使用軟弱的人,在他們身上顯出祂的大能。關鍵不在於我們有多強,而在於神與我們同在。<br><br>
+<strong>2. 順服從對付自己家中的罪開始</strong><br>神差遣基甸前,先要求他拆毀父親的巴力祭壇。要改變國家,必須先從自己家開始;要拯救百姓,必須先潔淨自己。我們不能一邊事奉神,一邊容許家中有偶像。真實的復興從個人和家庭的悔改開始,不是等到環境完美才順服,而是先順服神,神就改變環境。基甸雖然害怕,仍然順服,這成為他領導的基礎。<br><br>
+<strong>3. 神耐心回應我們的軟弱</strong><br>基甸多次求證據,神都耐心回應。羊毛的神蹟看似是基甸信心不足,但神沒有責備,反而兩次證明祂的應許。這顯示神的恩慈和忍耐,祂理解我們的懷疑和恐懼。雖然求證據不是最完美的信心,但神仍然施恩幫助。我們可以誠實地帶著疑問來到神面前,祂會按我們的需要堅固我們,直到我們能剛強站立。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華的使者向基</strong><strong>甸顯現</strong>,對他說:大能的勇士啊,耶和華與你同在!(士師記6:12)</td>
+<td>神如何看待我們與我們如何看自己?就像種子雖小卻有成為大樹的潛力,我們是否因現狀的軟弱就放棄,還是相信神看見我們裡面的可能性?神的同在能改變什麼?</td>
+</tr>
+<tr>
+<td><strong>當那夜</strong>,<strong>耶和華吩咐基甸說</strong>:你取你父親的牛來,並拆毀你父親為巴力所築的壇,砍下壇旁的木偶。(士師記6:25)</td>
+<td>我們是否願意先對付自己家中的罪?就像打掃房子要從自己房間開始,我們是否常想改變別人,卻不願意先處理自己和家庭裡的問題?真實的事奉從哪裡開始?</td>
+</tr>
+<tr>
+<td><strong>基甸對神說</strong>:<strong>你若果照著所說的</strong>話,藉我手拯救以色列人,我就把一團羊毛放在禾場上。(士師記6:36-37)</td>
+<td>當我們對神的旨意不確定或害怕時,是否敢誠實向神表達?就像孩子會向父母再三確認,神是否容許我們帶著軟弱和疑問來到祂面前?我們如何在軟弱中尋求確據?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">永恆的王為受屈者伸冤施公義</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩，交與伶長。調用慕拉便）我要一心稱謝耶和華；我要傳揚你一切奇妙的作為。</div>
+<div class="verse"><span class="verse-number">2</span>我要因你歡喜快樂；至高者啊，我要歌頌你的名！</div>
+<div class="verse"><span class="verse-number">3</span>我的仇敵轉身退去的時候，他們一見你的面就跌倒滅亡。</div>
+<div class="verse"><span class="verse-number">4</span>因你已經為我伸冤，為我辨屈；你坐在寶座上，按公義審判。</div>
+<div class="verse"><span class="verse-number">5</span>你曾斥責外邦，你曾滅絕惡人；你曾塗抹他們的名，直到永永遠遠。</div>
+<div class="verse"><span class="verse-number">6</span>仇敵到了盡頭；他們被毀壞，直到永遠。你拆毀他們的城邑，連他們的名號都歸於無有。</div>
+<div class="verse"><span class="verse-number">7</span>惟耶和華坐着為王，直到永遠；他已經為審判設擺他的寶座。</div>
+<div class="verse"><span class="verse-number">8</span>他要按公義審判世界，按正直判斷萬民。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華又要給受欺壓的人作高臺，在患難的時候作高臺。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華啊，認識你名的人要倚靠你，因你沒有離棄尋求你的人。</div>
+<div class="verse"><span class="verse-number">11</span>應當歌頌居錫安的耶和華，將他所行的傳揚在眾民中。</div>
+<div class="verse"><span class="verse-number">12</span>因為那追討流人血之罪的，他記念受屈的人，不忘記困苦人的哀求。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華啊，你是從死門把我提拔起來的；求你憐恤我，看那恨我的人所加給我的苦難，</div>
+<div class="verse"><span class="verse-number">14</span>好叫我述說你一切的美德；我必在錫安城〔原文作女子〕的門因你的救恩歡樂。</div>
+<div class="verse"><span class="verse-number">15</span>外邦人陷在自己所掘的坑中；他們的腳在自己暗設的網羅裏纏住了。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華已將自己顯明了，他已施行審判；惡人被自己手所作的纏住了〔或作：他叫惡人被自己手所作的累住了〕。（細拉）</div>
+<div class="verse"><span class="verse-number">17</span>惡人，就是忘記神的外邦人，都必歸到陰間。</div>
+<div class="verse"><span class="verse-number">18</span>窮乏人必不永久被忘；困苦人的指望必不永遠落空。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華啊，求你起來，不容人得勝！願外邦人在你面前受審判！</div>
+<div class="verse"><span class="verse-number">20</span>耶和華啊，求你使外邦人恐懼；願他們知道自己不過是人。（細拉）</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第9篇與第10篇在希伯來原文中共同構成一首希伯來字母離合詩（Acrostic Psalm），即每節或每段以希伯來字母的順序開頭，七十士譯本甚至將兩篇合為一篇。本篇標明大衛所作，調用「慕拉便」（意義不詳，可能是曲調名稱）。
+
+      本篇的主要背景是大衛在戰勝仇敵後，以感謝與讚美回應神的拯救（1-2節），接著進入對神公義審判的神學默想與進一步的求告。全篇呈現兩個交織的主題：神過去對仇敵的審判（3-8節），以及神對受欺壓者的眷顧與保護（9-12節、18節）。
+
+      本篇的神學重心在於「耶和華坐着為王，直到永遠」（第7節）——神的永恆王權是一切公義盼望的基礎。對於那些在世界上遭受欺壓、被忽視的人，神「不忘記困苦人的哀求」（第12節）、「窮乏人必不永久被忘」（第18節）提供了最深切的安慰。本篇呼召信徒在感恩與盼望中傳揚神的作為，並在困苦中繼續倚靠那永遠為王的神。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 一心稱謝神是屬靈生命的優先回應</strong><br>「我要一心稱謝耶和華；我要傳揚你一切奇妙的作為。」（第1節）大衛在得勝後的第一個反應不是慶祝自己的功績，而是將榮耀歸給神。「一心」表明讚美的全然專注，沒有保留，沒有分心。這種把感謝神放在首位的屬靈習慣，塑造了信徒看待成功與得勝的方式：一切美好的發生，最終都要回到神奇妙作為的讚美之中。培養感恩的心態，是防止驕傲與自足的最佳屬靈操練。<br><br>
+<strong>2. 神永恆的王權是公義盼望的終極基礎</strong><br>「惟耶和華坐着為王，直到永遠；他已經為審判設擺他的寶座。」（第7節）在世界上充斥不公義、強權橫行的現實中，這句宣告是信徒最深的錨點。一切人間的政權都有終點，唯有神的王權是永恆的，而祂的統治以公義為原則。這個確信使信徒不陷入對世界局勢的絕望，而是在動盪中仍能保持盼望——因為掌管歷史的不是強者，而是那位公義的永恆君王。<br><br>
+<strong>3. 神不忘記受苦與被邊緣化的人</strong><br>「窮乏人必不永久被忘；困苦人的指望必不永遠落空。」（第18節）在人類社會中，弱勢者常常被遺忘、被忽視、被放棄。然而神明確宣告祂「記念受屈的人，不忘記困苦人的哀求」（第12節）。這是對受苦者最深的安慰，也是對信徒最有力的呼召：神對弱勢者的關懷，應當成為信徒在社會中行動的動力，以具體的行動延伸神的憐憫，讓那些被人忘記的人感受到神的記念。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我要一心稱謝耶和</strong>華；<strong>我要傳揚你一切奇</strong>妙的作為。（詩9:1）</td>
+<td>就像運動員得獎後第一個感謝教練，而非先接受媒體的讚美，當你生活中有好事發生時，你的第一反應是向神感謝，還是習慣先向周圍的人分享你的成就？這個次序揭示了你心中誰才是真正的第一位？</td>
+</tr>
+<tr>
+<td><strong>惟耶和華坐着為王</strong>，<strong>直到永遠</strong>；他已經為審判設擺他的寶座。（詩9:7）</td>
+<td>就像知道公正的法官必然出現，受害者便能在等待中不失去盼望，你在面對世界的不公義時，神永恆王權的確信是否真的能安定你的心，讓你選擇等待神的審判而非陷入絕望？</td>
+</tr>
+<tr>
+<td><strong>窮乏人必不永久被</strong>忘；<strong>困苦人的指望必不</strong>永遠落空。（詩9:18）</td>
+<td>就像郵局裡等待的號碼牌，每個人都在神的記念中有一個號碼，不會被跳過，你是否相信神記念每一個受苦的人，讓這信念驅使你也去關心那些在你生活周遭被社會遺忘的人？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

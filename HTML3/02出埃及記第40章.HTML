@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第40章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第40章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">會幕設立神榮耀充滿帳幕</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">2</span>「正月初一日，你要立起帳幕，</div>
+<div class="verse"><span class="verse-number">3</span>把法櫃安放在裏面，用幔子將櫃遮掩。</div>
+<div class="verse"><span class="verse-number">4</span>把桌子搬進去，擺設上面的物。把燈臺搬進去，點其上的燈。</div>
+<div class="verse"><span class="verse-number">5</span>把燒香的金壇安在法櫃前，掛上帳幕的門簾。</div>
+<div class="verse"><span class="verse-number">6</span>把燔祭壇安在帳幕門前。</div>
+<div class="verse"><span class="verse-number">7</span>把洗濯盆安在會幕和壇的中間，在盆裏盛水。</div>
+<div class="verse"><span class="verse-number">8</span>又在四圍立院帷，把院子的門簾掛上。</div>
+<div class="verse"><span class="verse-number">9</span>用膏油把帳幕和其中所有的都抹上，使帳幕和一切器具成聖，就都成聖。</div>
+<div class="verse"><span class="verse-number">10</span>又要抹燔祭壇和一切器具，使壇成聖，就都成為至聖。</div>
+<div class="verse"><span class="verse-number">11</span>要抹洗濯盆和盆座，使盆成聖。</div>
+<div class="verse"><span class="verse-number">12</span>要使亞倫和他兒子到會幕門口來，用水洗身。</div>
+<div class="verse"><span class="verse-number">13</span>要給亞倫穿上聖衣，又膏他，使他成聖，可以給我供祭司的職分；</div>
+<div class="verse"><span class="verse-number">14</span>又要使他兒子來，給他們穿上內袍。</div>
+<div class="verse"><span class="verse-number">15</span>怎樣膏他們的父親，也要照樣膏他們，使他們給我供祭司的職分。他們世世代代凡受膏的，就永遠當祭司的職任。」</div>
+<div class="verse"><span class="verse-number">16</span>摩西這樣行，都是照耶和華所吩咐他的。</div>
+<div class="verse"><span class="verse-number">17</span>第二年正月初一日，帳幕就立起來。</div>
+<div class="verse"><span class="verse-number">18</span>摩西立起帳幕，安上帶卯的座，立上板，穿上閂，立起柱子。</div>
+<div class="verse"><span class="verse-number">19</span>在帳幕以上搭罩棚，把罩棚的頂蓋蓋在其上，是照耶和華所吩咐他的。</div>
+<div class="verse"><span class="verse-number">20</span>又把法版放在櫃裏，把杠穿在櫃的兩旁，把施恩座安在櫃上。</div>
+<div class="verse"><span class="verse-number">21</span>把櫃抬進帳幕，掛上遮掩櫃的幔子，把法櫃遮掩了，是照耶和華所吩咐他的。</div>
+<div class="verse"><span class="verse-number">22</span>又把桌子安在會幕內，在帳幕北邊，在幔子外。</div>
+<div class="verse"><span class="verse-number">23</span>在桌子上將餅陳設在耶和華面前，是照耶和華所吩咐他的。</div>
+<div class="verse"><span class="verse-number">24</span>又把燈臺安在會幕內，在帳幕南邊，與桌子相對，</div>
+<div class="verse"><span class="verse-number">25</span>在耶和華面前點燈，是照耶和華所吩咐他的。</div>
+<div class="verse"><span class="verse-number">26</span>把金壇安在會幕內的幔子前，</div>
+<div class="verse"><span class="verse-number">27</span>在壇上燒了馨香料作的香，是照耶和華所吩咐他的。</div>
+<div class="verse"><span class="verse-number">28</span>又掛上帳幕的門簾。</div>
+<div class="verse"><span class="verse-number">29</span>在會幕的帳幕門前，安設燔祭壇，把燔祭和素祭獻在其上，是照耶和華所吩咐他的。</div>
+<div class="verse"><span class="verse-number">30</span>把洗濯盆安在會幕和壇的中間，盆中盛水，以便洗濯。</div>
+<div class="verse"><span class="verse-number">31</span>摩西和亞倫並亞倫的兒子在這盆裏洗手洗腳。</div>
+<div class="verse"><span class="verse-number">32</span>他們進會幕或就近壇的時候，便都洗濯，是照耶和華所吩咐他的。</div>
+<div class="verse"><span class="verse-number">33</span>在帳幕和壇的四圍立了院帷，把院子的門簾掛上。這樣，摩西就完了工。</div>
+<div class="verse"><span class="verse-number">34</span>當時，雲彩遮蓋會幕，耶和華的榮光就充滿了帳幕。</div>
+<div class="verse"><span class="verse-number">35</span>摩西不能進會幕；因為雲彩停在其上，並且耶和華的榮光充滿了帳幕。</div>
+<div class="verse"><span class="verse-number">36</span>每逢雲彩從帳幕收上去，以色列人就起程前往；</div>
+<div class="verse"><span class="verse-number">37</span>雲彩若不收上去，他們就不起程，直等到雲彩收上去。</div>
+<div class="verse"><span class="verse-number">38</span>日間，耶和華的雲彩是在帳幕以上；夜間，雲中有火，在以色列全家的眼前。在他們所行的路上都是這樣。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第40章是整卷書的終篇，記載會幕的正式設立和神榮耀充滿帳幕的高潮場景。以色列人出埃及後第二年正月初一日，摩西依照神所指示的順序，一件一件設立會幕：先立框架，安放約櫃和施恩座，掛上幔子；安放陳設餅桌、點亮燈台；在幔子前安設香壇，掛上門簾；在帳幕門前設立燔祭壇、安置洗濯盆；在四圍立院帷，掛上門簾。每個步驟都以「是照耶和華所吩咐他的」確認。完工之後，神的榮耀降臨，雲彩充滿會幕，神的榮光如此濃烈，連摩西都無法進入。從此以色列人的行進以雲彩為記號：雲彩升起就前行，雲彩不動就等候；日間雲彩引路，夜間火柱照明。整卷出埃及記從以色列在埃及的苦役開始，到神榮耀充滿祂所居住的帳幕，以完美的高潮作結，是救贖歷史中最偉大的篇章之一。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的榮耀充滿是整個建造工程的終極目的</strong><br>神榮耀充滿帳幕，連摩西也無法進入，是全卷出埃及記最震撼的結尾。整個從第25章到39章的詳細建造記錄，都是為了這一刻：神的榮耀降臨居住在祂子民中間。教會的建造、信徒靈命的成長、服事的委身，最終目的都不是為了組織的成功或個人的滿足，而是為了神的榮耀得以彰顯。<br><br>
+<strong>2. 按神的旨意行動，神的臨在就必隨之而來</strong><br>摩西按照神的指示一步一步完成每件工作，神的榮耀就充滿了帳幕。順服神的旨意是神同在的前提。信徒若渴望神的榮耀充滿個人的生命和群體，當從真實的順服開始，照神話語的原則生活和服事，神的同在和榮耀自然隨之而來。<br><br>
+<strong>3. 雲柱火柱是神持續引導的保證</strong><br>雲彩升起就前行，不升就等候，是以色列人行進的唯一標準——完全依從神的引導而非自己的計畫。信徒的人生旅程也當如此：在神的帶領下前行，在神的安靜中等候，不急進也不遲滯，每一步都與神的引導同步。這是整卷出埃及記留給信徒最深刻的屬靈功課。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>摩西這樣行</strong>，<strong>都是照耶和華所吩</strong>咐他的。（出40:16）</td>
+<td>就像廚師嚴格按照食譜的步驟才能做出應有的菜餚，摩西照神所吩咐一步一步設立會幕，神的榮耀隨即降臨。你在信仰生活中是否有「照神所吩咐」的態度——依循聖經的原則，而非按個人感覺或方便行事？這樣的順服在哪些生命面向上對你最具挑戰？</td>
+</tr>
+<tr>
+<td>當時，<strong>雲彩遮蓋會幕</strong>，<strong>耶和華的榮光就充</strong>滿了帳幕。（出40:34）</td>
+<td>就像一場精心準備的音樂會，當最後一個音符落下，掌聲響起那一刻，所有的辛苦都得到了最美的回應，神的榮光充滿是整個建造過程最壯麗的終點。你渴望在自己的生命和信仰群體中看見神的榮耀彰顯嗎？你認為什麼是讓神榮耀可以充滿的關鍵預備？</td>
+</tr>
+<tr>
+<td><strong>每逢雲彩從帳幕收</strong>上去，<strong>以色列人就起程前</strong>往；雲彩若不收上去，他們就不起程，直等到雲彩收上去。（出40:36-37）</td>
+<td>就像導航系統需要接收信號才能正確引路，以色列人完全依雲柱的動向決定前行或等候。你的重大人生決定——更換工作、搬遷、結婚——是否也在等候神的引導信號，還是自行決定後才「求神祝福」？如何培養對神引導的敏感度？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

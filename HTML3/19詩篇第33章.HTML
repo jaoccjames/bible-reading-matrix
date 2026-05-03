@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第33章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第33章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">萬國在神主權下：他說有就有的創造主</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>義人哪，你們應當靠耶和華歡樂；正直人的讚美是合宜的。</div>
+<div class="verse"><span class="verse-number">2</span>你們應當彈琴稱謝耶和華，用十弦瑟歌頌他。</div>
+<div class="verse"><span class="verse-number">3</span>應當向他唱新歌，彈得巧妙，聲音洪亮。</div>
+<div class="verse"><span class="verse-number">4</span>因為耶和華的言語正直；凡他所作的盡都誠實。</div>
+<div class="verse"><span class="verse-number">5</span>他喜愛仁義公平；遍地滿了耶和華的慈愛。</div>
+<div class="verse"><span class="verse-number">6</span>諸天藉耶和華的命而造；萬象藉他口中的氣而成。</div>
+<div class="verse"><span class="verse-number">7</span>他聚集海水如壘，收藏深洋在庫房。</div>
+<div class="verse"><span class="verse-number">8</span>願全地都敬畏耶和華！願世上的居民都懼怕他！</div>
+<div class="verse"><span class="verse-number">9</span>因為他說有，就有，命立，就立。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華使列國的籌算歸於無有，使眾民的思念無有功效。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華的籌算永遠立定；他心中的思念萬代常存。</div>
+<div class="verse"><span class="verse-number">12</span>以耶和華為神的，那國是有福的！他所揀選為自己產業的，那民是有福的！</div>
+<div class="verse"><span class="verse-number">13</span>耶和華從天上觀看；他看見一切的世人。</div>
+<div class="verse"><span class="verse-number">14</span>從他的居所往外察看地上一切的居民，</div>
+<div class="verse"><span class="verse-number">15</span>他是那造成他們眾人心的，留意他們一切作為的。</div>
+<div class="verse"><span class="verse-number">16</span>君王不能因兵多得勝；勇士不能因力大得救。</div>
+<div class="verse"><span class="verse-number">17</span>靠馬得救是枉然的；馬也不能因力大救人。</div>
+<div class="verse"><span class="verse-number">18</span>耶和華的眼目看顧敬畏他的人和仰望他慈愛的人，</div>
+<div class="verse"><span class="verse-number">19</span>要救他們的命脫離死亡，並使他們在饑荒中存活。</div>
+<div class="verse"><span class="verse-number">20</span>我們的心向來等候耶和華；他是我們的幫助，我們的盾牌。</div>
+<div class="verse"><span class="verse-number">21</span>我們的心必靠他歡喜，因為我們向來倚靠他的聖名。</div>
+<div class="verse"><span class="verse-number">22</span>耶和華啊，求你照着我們所仰望你的，向我們施行慈愛！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第33篇是詩篇中少數沒有標明作者的讚美詩之一，在希伯來聖經的排列中緊接著第32篇，可能是對第32篇末節「你們心裏正直的人都當歡呼」的呼應與延伸。本篇共22節，對應希伯來字母的22個字母數，雖非離合詩，但這樣的篇幅安排反映了一種完整性的意識。
+
+      全篇可分為三個主題部分：讚美的呼召（1-3節）、讚美的根基——神的話語與創造（4-9節）、神的主權超越萬國（10-19節）、以等候與信靠的宣告收結（20-22節）。「他說有，就有，命立，就立」（第9節）是全篇神學最精煉的宣言，呼應創世記1章神以話語創造的敘述。
+
+      本篇的神學核心在於神主權與人間力量的對比（16-17節）：君王的兵多、勇士的力大、馬匹的速力，都無法提供真正的得救；唯有神的眼目看顧敬畏祂的人，才是真實的保護與存活。這一對比在任何依靠人間力量的時代都有直接的挑戰性，呼召信徒以神的主權為最終的信靠根基。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的話語創造萬有是讚美最深的神學根基</strong><br>「因為他說有，就有，命立，就立。」（第9節）這句話是對創造奇蹟最精煉的神學宣告。神不需要任何材料、工具或過程；祂的話本身就是創造的力量。這個真理是讚美的神學根基：值得我們讚美的，不只是神所賜給我們的恩典，更是神本身的性格與能力——那位以言語創造宇宙的神，也以同樣的話語在我們生命中創造更新。明白這一點的信徒，讚美便不再只是情感的表達，而是對神本質的承認與回應。<br><br>
+<strong>2. 神的籌算永遠立定超越一切人間計謀</strong><br>「耶和華使列國的籌算歸於無有……耶和華的籌算永遠立定；他心中的思念萬代常存。」（第10-11節）在歷史洪流中，人類的計謀看似強大，卻終究會「歸於無有」；唯有神的旨意永遠立定。這個真理在政治動盪、社會混亂、個人規劃落空的時代格外重要：沒有任何人間的勢力能真正阻止神旨意的成就。信徒在面對各種不確定性時，可以以這個永恆的真理為錨，相信神的計劃正按祂的時間表推進，人的阻撓只是歷史中的暫時波瀾。<br><br>
+<strong>3. 神的眼目看顧敬畏祂的人是屬靈保護最真實的根源</strong><br>「耶和華的眼目看顧敬畏他的人和仰望他慈愛的人，要救他們的命脫離死亡，並使他們在饑荒中存活。」（第18-19節）在列出所有人間力量的虛妄之後，本篇揭示真正的保護來源：神的眼目。「眼目」在聖經中常象徵關愛的注視與積極的看顧，神的眼目看顧那些敬畏祂、仰望祂慈愛的人，這種看顧能在死亡與饑荒的極端處境中保守他們。這不是物質上的保障承諾，而是屬靈層面神主動眷顧的確信，是信徒在任何危機中最真實的依靠。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>因為他說有</strong>，就有，命立，就立。（詩33:9）</td>
+<td>就像工廠的總工程師只需下達指令，整條生產線就開始運作，你在禱告時是否真的相信對你說話、引導你、更新你的，是那位以言語創造宇宙的神，讓這認識使你的禱告從例行公事變為真實的敬畏？</td>
+</tr>
+<tr>
+<td><strong>耶和華使列國的籌</strong><strong>算歸於無有</strong>……耶和華的籌算永遠立定；他心中的思念萬代常存。（詩33:10-11）</td>
+<td>就像棋局中知道最終結果已定，過程中的挫折便不再令人絕望，當你看見世界的強權似乎在主導歷史走向時，「神的籌算永遠立定」的確信，是否真的成為你不陷入恐慌的屬靈錨點？</td>
+</tr>
+<tr>
+<td><strong>耶和華的眼目看顧</strong><strong>敬畏他的人和仰望</strong>他慈愛的人，（詩33:18）</td>
+<td>就像在人群中有人專注地注視著你、隨時準備幫助，那份被看顧的感受讓人安心，你是否真實地體驗過神的眼目看顧你的感受？那份被神注視的確信，如何影響你面對今日挑戰的態度？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

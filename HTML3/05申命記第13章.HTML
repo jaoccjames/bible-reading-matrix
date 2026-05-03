@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第13章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第13章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">辨識假先知與純正信仰的守護</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「你們中間若有先知或是作夢的起來，向你顯個神蹟奇事，</div>
+<div class="verse"><span class="verse-number">2</span>對你說：『我們去隨從你素來所不認識的別神，事奉他吧。』他所顯的神蹟奇事雖有應驗，</div>
+<div class="verse"><span class="verse-number">3</span>你也不可聽那先知或是那作夢之人的話；因為這是耶和華你們的神試驗你們，要知道你們是盡心盡性愛耶和華你們的神不是。</div>
+<div class="verse"><span class="verse-number">4</span>你們要順從耶和華你們的神，敬畏他，謹守他的誡命，聽從他的話，事奉他，專靠他。</div>
+<div class="verse"><span class="verse-number">5</span>那先知或是那作夢的既用言語叛逆那領你們出埃及地、救贖你脫離為奴之家的耶和華你們的神，要勾引你離開耶和華你神所吩咐你行的道，你便要將他治死。這樣，就把那惡從你們中間除掉。</div>
+<div class="verse"><span class="verse-number">6</span>「你的同胞弟兄，或是你的兒女，或是你懷中的妻，或是如同你性命的朋友，若暗中引誘你，說：『我們不如去事奉你和你列祖素來所不認識的別神，</div>
+<div class="verse"><span class="verse-number">7</span>是你四圍列國的神。』無論是離你近，離你遠，從地這邊到地那邊的神，</div>
+<div class="verse"><span class="verse-number">8</span>你不可依從他，也不可聽從他，眼不可顧惜他。你不可憐恤他，也不可遮庇他，</div>
+<div class="verse"><span class="verse-number">9</span>總要殺他；你先下手，然後眾民也下手，將他治死。</div>
+<div class="verse"><span class="verse-number">10</span>要用石頭打死他，因為他想要勾引你離開那領你出埃及地為奴之家的耶和華你的神。</div>
+<div class="verse"><span class="verse-number">11</span>以色列眾人都要聽見害怕，就不敢在你們中間再行這樣的惡了。</div>
+<div class="verse"><span class="verse-number">12</span>在耶和華你神所賜你居住的各城中，你若聽人說，有些匪類從你們中間的一座城出來勾引本城的居民，說：『我們不如去事奉你們素來所不認識的別神』；</div>
+<div class="verse"><span class="verse-number">13</span>併於上節</div>
+<div class="verse"><span class="verse-number">14</span>你就要探聽，查究，細細的訪問，果然是真，準有這可憎惡的事行在你們中間，</div>
+<div class="verse"><span class="verse-number">15</span>你必要用刀殺那城裏的居民，把城裏所有的，連牲畜，都用刀殺盡。</div>
+<div class="verse"><span class="verse-number">16</span>你從那城裏所奪的財物都要堆積在街市上，用火將城和其內所奪的財物都在耶和華你神面前燒盡；那城就永為荒堆，不可再建造。</div>
+<div class="verse"><span class="verse-number">17</span>那當毀滅的物連一點都不可粘你的手。你要聽從耶和華你神的話，遵守我今日所吩咐你的一切誡命，行耶和華你神眼中看為正的事，耶和華就必轉意，不發烈怒，恩待你，憐恤你，照他向你列祖所起的誓使你人數增多。」</div>
+<div class="verse"><span class="verse-number">18</span>見上節</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第十三章專注處理一個對信仰群體最危險的威脅：內部的引誘與假先知。本章列出三類引誘以色列人離棄神、去事奉別神的情況：第一類是假先知或作夢的人，即使他們所說的神蹟奇事真的應驗，若他們引導百姓離棄耶和華，就必須被處死（13:1-5）；第二類是親密的家人或朋友，即使是至親骨肉，若暗中勸誘去事奉別神，也不可心軟（13:6-11）；第三類是整個城市被惡人引導去事奉別神，則要徹底滅絕（13:12-16）。這些嚴厲的命令揭示了一個核心原則：對神的忠誠凌駕於一切人際關係和奇蹟現象之上。神特別提醒：奇蹟本身並不等於真理的印記，真先知與假先知的區別在於他們所引向的方向，是神還是別神。本章對今日基督徒辨別靈、測驗教導的原則仍有深刻的現實意義。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 辨別真假教導的標準是其所指向的方向，而非奇蹟現象</strong><br>「那先知……所說的話，哪怕有神蹟奇事……你不可聽那先知的話……因為這是耶和華你們的神試驗你們」（申13:1-3）。奇蹟本身不是真理的保證，魔鬼也能模仿神的作為。辨別的標準是：這個教導是否將人引向獨一的真神？今日面對各種屬靈聲音時，信徒必須以神的話語為鑰匙，而非以神蹟或「感覺對了」為憑依。<br><br>
+<strong>2. 對神的忠誠需要超越人情的軟弱</strong><br>「你的兄弟……或是你的妻子……或是你知心的朋友引誘你……你不可依從他」（申13:6）。引誘往往來自最親密的關係，因為親情的壓力最難抗拒。這提醒信徒：信仰的委身必須足夠深，深到能在最艱難的人際壓力下仍不動搖。這不是冷酷，而是清楚知道永恆的優先順序。<br><br>
+<strong>3. 信仰純潔的守護是整個群體的責任</strong><br>本章對三類引誘都有集體性的回應指令，說明維護信仰的純潔不只是個人的事，也是整個群體的共同責任。今日教會中的分辨與勸誡也應當建立在愛與真理的基礎上，以群體的智慧對抗個人的盲點，共同守護信仰的核心。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你不可依從他</strong>，<strong>也不可聽從他</strong>，眼不可顧惜他，你不可憐憫他，也不可遮掩他。」（申13:8）</td>
+<td>對神的忠誠有時需要抵擋最親密的人的壓力，就像飛機安全指示說先給自己戴上氧氣罩再幫別人，你是否曾因為怕得罪人而在信仰立場上妥協？那次的經歷帶給你什麼學習？</td>
+</tr>
+<tr>
+<td>「<strong>那先知或作夢的</strong>……<strong>所說的神蹟奇事</strong>……你們不可聽那先知的話；因為這是耶和華你們的神試驗你們。」（申13:1-3）</td>
+<td>神蹟不等於真理，就像特效化妝能做出以假亂真的效果，但內容物可能有害，你如何在日常生活中練習辨別各種屬靈教導，確保它們所指向的是真正的神？</td>
+</tr>
+<tr>
+<td>「<strong>你要除掉你們中間</strong>的惡，<strong>使以色列眾人都聽</strong>見，害怕，不再行這樣的惡事。」（申13:11）</td>
+<td>維護信仰純潔是群體的責任，就像一個健康的社區需要所有居民共同維護公共環境，你所在的信仰群體是否有健康的機制讓成員彼此守望、共同辨別真理？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

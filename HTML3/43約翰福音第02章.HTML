@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰福音第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰福音第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">迦拿的婚宴神蹟與潔淨聖殿</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>第三日，在加利利的迦拿有娶親的筵席，耶穌的母親在那裏。</div>
+<div class="verse"><span class="verse-number">2</span>耶穌和他的門徒也被請去赴席。</div>
+<div class="verse"><span class="verse-number">3</span>酒用盡了，耶穌的母親對他說：「他們沒有酒了。」</div>
+<div class="verse"><span class="verse-number">4</span>耶穌說：「母親〔原文作婦人〕，我與你有甚麼相干？我的時候還沒有到。」</div>
+<div class="verse"><span class="verse-number">5</span>他母親對用人說：「他告訴你們甚麼，你們就作甚麼。」</div>
+<div class="verse"><span class="verse-number">6</span>照猶太人潔淨的規矩，有六口石缸擺在那裏，每口可以盛兩三桶水。</div>
+<div class="verse"><span class="verse-number">7</span>耶穌對用人說：「把缸倒滿了水。」他們就倒滿了，直到缸口。</div>
+<div class="verse"><span class="verse-number">8</span>耶穌又說：「現在可以舀出來，送給管筵席的。」他們就送了去。</div>
+<div class="verse"><span class="verse-number">9</span>管筵席的嘗了那水變的酒，並不知道是那裏來的，只有舀水的用人知道。管筵席的便叫新郎來，</div>
+<div class="verse"><span class="verse-number">10</span>對他說：「人都是先擺上好酒，等客喝足了，才擺上次的，你倒把好酒留到如今！」</div>
+<div class="verse"><span class="verse-number">11</span>這是耶穌所行的頭一件神蹟，是在加利利的迦拿行的，顯出他的榮耀來；他的門徒就信他了。</div>
+<div class="verse"><span class="verse-number">12</span>這事以後，耶穌與他的母親、弟兄、和門徒都下迦百農去，在那裏住了不多幾日。</div>
+<div class="verse"><span class="verse-number">13</span>猶太人的逾越節近了，耶穌就上耶路撒冷去。</div>
+<div class="verse"><span class="verse-number">14</span>看見殿裏有賣牛、羊、鴿子的，並有兌換銀錢的人坐在那裏，</div>
+<div class="verse"><span class="verse-number">15</span>耶穌就拿繩子作成鞭子，把牛羊都趕出殿去，倒出兌換銀錢之人的銀錢，推翻他們的桌子，</div>
+<div class="verse"><span class="verse-number">16</span>又對賣鴿子的說：「把這些東西拿去！不要將我父的殿當作買賣的地方。</div>
+<div class="verse"><span class="verse-number">17</span>他的門徒就想起經上記着說：「我為你的殿心裏焦急，如同火燒。」</div>
+<div class="verse"><span class="verse-number">18</span>因此猶太人問他說：「你既作這些事，還顯甚麼神蹟給我們看呢？」</div>
+<div class="verse"><span class="verse-number">19</span>耶穌回答說：「你們拆毀這殿，我三日內要再建立起來。」</div>
+<div class="verse"><span class="verse-number">20</span>猶太人便說：「這殿是四十六年才造成的，你三日內就再建立起來麼？」</div>
+<div class="verse"><span class="verse-number">21</span>但耶穌這話是以他的身體為殿。</div>
+<div class="verse"><span class="verse-number">22</span>所以到他從死裏復活以後，門徒就想起他說過這話，便信了聖經和耶穌所說的。</div>
+<div class="verse"><span class="verse-number">23</span>當耶穌在耶路撒冷過逾越節的時候，有許多人看見他所行的神蹟，就信了他的名。</div>
+<div class="verse"><span class="verse-number">24</span>耶穌卻不將自己交託他們；因為他知道萬人，</div>
+<div class="verse"><span class="verse-number">25</span>也用不着誰見證人怎樣，因他知道人心裏所存的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第2章記述耶穌在迦拿行第一個神蹟將水變酒，以及耶穌在耶路撒冷潔淨聖殿，是約翰福音中耶穌身份與使命的雙重展示。本章首先描述第三日在加利利的迦拿有婚宴，酒用盡了，馬利亞告訴耶穌，耶穌說我的時候還沒有到，馬利亞吩咐用人說耶穌說什麼你們就做什麼。耶穌叫他們把六口石缸裝滿水，吩咐舀出來送給管筵席的，水就變成了酒。管筵席的嘗了說好酒留到如今，這是耶穌所行的第一件神蹟，在加利利的迦拿顯出祂的榮耀，門徒就信了祂。接著逾越節將近，耶穌上耶路撒冷，看見聖殿裡有賣牛羊鴿子的及兌換銀錢的，便拿繩子做鞭子趕出所有的人和牲畜，說不要將我父的殿當作買賣的地方。猶太人要求看神蹟，耶穌說你們拆毀這殿三日內我要再建立起來，門徒直到復活後才明白祂是指自己身體的殿，許多人看見祂行的神蹟就信了祂的名，但耶穌卻不將自己交託他們，因為祂知道萬人的心。本章以迦拿的喜慶開始、以聖殿的衝突結束，揭示耶穌的神性榮耀與對聖殿的主權宣告。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 耶穌的頭一個神蹟從普通的家庭需要開始</strong><br>耶穌的第一個神蹟不是在宗教場合，而是在一個婚宴上解決了缺酒的尷尬。這說明神的恩典不只是在崇高的屬靈時刻，也在生活的日常需要中。「顯出他的榮耀來；他的門徒就信他了」——神蹟的目的不只是滿足需要，而是啟示耶穌的身份和榮耀。馬利亞的方式也值得效法：不是強迫耶穌，而是把需要告訴祂，然後叫人「他告訴你們甚麼，你們就作甚麼」。<br><br>
+<strong>2. 對神的殿的熱情反映了對神的愛</strong><br>「我父的殿」——耶穌稱聖殿為父的殿，那份被「褻瀆」的義憤出於對父的愛。「門徒就想起經上記着說：我為你的殿心裏焦急，如同火燒。」這種義憤是愛的另一面：因為深愛，所以無法容忍被玷污。信徒的心是聖靈的殿（林前6:19），我們對自己心靈的「潔淨」是否也有這樣的熱情？<br><br>
+<strong>3. 耶穌知道人心裏所存的</strong><br>「耶穌卻不將自己交託他們，因為他知道萬人，也用不着誰見證人怎樣，因他知道人心裏所存的」——這句話是對觀察者的警告，也是給信徒的安慰。神知道我們的一切，包括那些我們沒有說出口的動機和掙扎。祂不被我們的外表所蒙騙，也不因我們的外表而拒絕我們。真誠地在祂面前是最重要的屬靈功課。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌的母親對用人</strong>說：「<strong>他告訴你們甚麼</strong>，你們就作甚麼。」（約2:5）</td>
+<td>你有沒有在禱告之後，願意順服耶穌的指引行動，即使那個指引看似不合邏輯？就像那些用人雖然不明白為什麼要把缸倒滿水，但遵從了，才看見神蹟，你願意在等候神的時候，先順服祂所說的嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>把這些東西拿去</strong>！不要將我父的殿當作買賣的地方。」（約2:16）</td>
+<td>你的心（聖靈居住的殿）有沒有讓「買賣」的精神佔據了本應禱告的空間？就像雜物佔滿了房間就找不到寧靜的角落，你有沒有清理那些在你心裏擠壓禱告和敬拜的東西？</td>
+</tr>
+<tr>
+<td><strong>約翰福音說</strong>：「<strong>耶穌卻不將自己交</strong>託他們；因為他知道萬人，也用不着誰見證人怎樣，因他知道人心裏所存的。」（約2:24-25）</td>
+<td>你有沒有在神面前誠實地活着，知道祂看見你最深處的動機，而非只是外表的表現？就像在最了解你的朋友面前不需要偽裝，你願意在全知的神面前以最真實的自己來到祂面前嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

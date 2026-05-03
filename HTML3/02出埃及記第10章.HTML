@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">第八至第九災：蝗蟲與黑暗</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華對摩西說：「你進去見法老。我使他和他臣僕的心剛硬，為要在他們中間顯我這些神蹟，</div>
+<div class="verse"><span class="verse-number">2</span>並要叫你將我向埃及人所作的事，和在他們中間所行的神蹟，傳於你兒子和你孫子的耳中，好叫你們知道我是耶和華。」</div>
+<div class="verse"><span class="verse-number">3</span>摩西、亞倫就進去見法老，對他說：「耶和華希伯來人的神這樣說：『你在我面前不肯自卑要到幾時呢？容我的百姓去，好事奉我。</div>
+<div class="verse"><span class="verse-number">4</span>你若不肯容我的百姓去，明天我要使蝗蟲進入你的境內，</div>
+<div class="verse"><span class="verse-number">5</span>遮滿地面，甚至看不見地，並且吃那冰雹所剩的和田間所長的一切樹木。</div>
+<div class="verse"><span class="verse-number">6</span>你的宮殿和你眾臣僕的房屋，並一切埃及人的房屋，都要被蝗蟲佔滿了；自從你祖宗和你祖宗的祖宗在世以來，直到今日，沒有見過這樣的災。』」摩西就轉身離開法老出去。</div>
+<div class="verse"><span class="verse-number">7</span>法老的臣僕對法老說：「這人為我們的網羅要到幾時呢？容這些人去事奉耶和華他們的神吧！埃及已經敗壞了，你還不知道嗎？」</div>
+<div class="verse"><span class="verse-number">8</span>於是摩西、亞倫被召回來見法老；法老對他們說：「你們去事奉耶和華你們的神；但那要去的是誰呢？」</div>
+<div class="verse"><span class="verse-number">9</span>摩西說：「我們要和我們老的少的、兒子女兒同去，且把羊群牛群一同帶去，因為我們務要向耶和華守節。」</div>
+<div class="verse"><span class="verse-number">10</span>法老對他們說：「我容你們和你們婦人孩子去的時候，耶和華與你們同在吧！你們要謹慎；因為有禍在你們眼前〔或作：你們存着惡意〕，</div>
+<div class="verse"><span class="verse-number">11</span>不可都去！你們這壯年人去事奉耶和華吧，因為這是你們所求的。」於是把他們從法老面前攆出去。</div>
+<div class="verse"><span class="verse-number">12</span>耶和華對摩西說：「你向埃及地伸杖，使蝗蟲到埃及地上來，吃地上一切的菜蔬，就是冰雹所剩的。」</div>
+<div class="verse"><span class="verse-number">13</span>摩西就向埃及地伸杖，那一晝一夜，耶和華使東風颳在埃及地上；到了早晨，東風把蝗蟲颳了來。</div>
+<div class="verse"><span class="verse-number">14</span>蝗蟲上來，落在埃及的四境，甚是利害；以前沒有這樣的，以後也必沒有。</div>
+<div class="verse"><span class="verse-number">15</span>因為這蝗蟲遮滿地面，甚至地都黑暗了，又吃地上一切的菜蔬和冰雹所剩樹上的果子。埃及遍地，無論是樹木，是田間的菜蔬，連一點青的也沒有留下。</div>
+<div class="verse"><span class="verse-number">16</span>於是法老急忙召了摩西、亞倫來，說：「我得罪耶和華你們的神，又得罪了你們。</div>
+<div class="verse"><span class="verse-number">17</span>現在求你，只這一次，饒恕我的罪，求耶和華你們的神使我脫離這一次的死亡。」</div>
+<div class="verse"><span class="verse-number">18</span>摩西就離開法老去求耶和華。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華轉了極大的西風，把蝗蟲颳起，吹入紅海；在埃及的四境連一個也沒有留下。</div>
+<div class="verse"><span class="verse-number">20</span>但耶和華使法老的心剛硬，不容以色列人去。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華對摩西說：「你向天伸杖，使埃及地黑暗；這黑暗似乎摸得着。」</div>
+<div class="verse"><span class="verse-number">22</span>摩西向天伸杖，埃及遍地就烏黑了三天。</div>
+<div class="verse"><span class="verse-number">23</span>三天之久，人不能相見，誰也不敢起來離開本處；惟有以色列人家中都有亮光。</div>
+<div class="verse"><span class="verse-number">24</span>法老就召摩西來，說：「你們去事奉耶和華；只是你們的羊群牛群要留下；你們的婦人孩子可以和你們同去。」</div>
+<div class="verse"><span class="verse-number">25</span>摩西說：「你總要把祭物和燔祭牲交給我們，使我們可以祭祀耶和華我們的神。</div>
+<div class="verse"><span class="verse-number">26</span>我們的牲畜也要帶去，連一蹄也不留下；因為我們要從其中取出來，事奉耶和華我們的神。我們未到那裏，還不知道用甚麼事奉耶和華。」</div>
+<div class="verse"><span class="verse-number">27</span>但耶和華使法老的心剛硬，不肯容他們去。</div>
+<div class="verse"><span class="verse-number">28</span>法老對摩西說：「你離開我去吧，你要小心，不要再見我的面！因為你見我面的那日你就必死！」</div>
+<div class="verse"><span class="verse-number">29</span>摩西說：「你說得好！我必不再見你的面了。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第10章記錄了第八和第九災：蝗蟲災和黑暗災。蝗蟲之災的嚴峻使法老的臣僕首次公開勸諫法老妥協，顯示法老的頑固已危及整個國家。摩西和亞倫與法老的談判破裂，法老只願意讓男丁去，摩西拒絕接受這樣的妥協。蝗蟲吃盡了雹災後殘存的一切植物，埃及的農業全面崩潰。法老再度請求代禱，災難撤去後再次食言。第九災是濃密的黑暗，「埃及人三日不能相見，也沒有人起來」，這是對埃及人最崇拜的太陽神拉的直接挑戰，而以色列人住的地方卻有光。法老提出新的妥協——可以帶孩子去，但牲畜要留下，摩西再度拒絕，堅持要帶一切人和牲畜去敬拜神。法老在憤怒中宣告，如果摩西再出現在他面前就必死。本章呈現剛硬之心的累積代價與不可妥協的敬拜原則。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 剛硬的心最終會傷害周圍的人</strong><br>法老的頑固不只是他個人的決定，而是整個埃及國家和百姓付出代價。他的臣僕已開始勸說他妥協，但他仍然不聽。這說明一個人的剛硬心腸，最終傷害的不只是自己，更波及周圍所倚賴他的人。領袖的靈性狀態對群體有深遠的影響。<br><br>
+<strong>2. 對神的敬拜不能接受任何形式的妥協</strong><br>法老多次提出妥協方案——只去男丁、留下牲畜等——但摩西每次都堅決拒絕。敬拜神的完整性不容許「部分順從」，真正的敬拜需要全人、全家的委身，不能以世俗的利益換取信仰的讓步。<br><br>
+<strong>3. 黑暗之災是對偶像崇拜的直接挑戰</strong><br>埃及最尊崇的神明是太陽神拉，而神使埃及陷入三天完全的黑暗，是對這一偶像的正面挑戰。以色列人住的地方有光，這一對比宣告：真正的光源不是太陽神，而是耶和華。信徒也需要辨認：我們所倚賴的是真正的光源，還是世上各種虛假的「太陽」？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>以色列人住的地方</strong><strong>都有光</strong>。（出10:23）</td>
+<td>就像停電時有備用發電機的家庭仍能正常運作，你在人生最黑暗的時刻，神的同在是否成為你真實的光？你如何在黑暗中持守這份光？</td>
+</tr>
+<tr>
+<td><strong>我們要帶着我們的</strong><strong>牛羊去</strong>，因為我們必用牛羊事奉耶和華我們的神；我們到了那裏，才知道當用甚麼事奉耶和華。（出10:26）</td>
+<td>就像全力投入一份工作而非帶着保留心態，你是否有過在信仰上保留部分不願全給神的經驗？是什麼讓你難以全然委身？</td>
+</tr>
+<tr>
+<td><strong>法老的臣僕對他說</strong>：「<strong>這人為我們是個網</strong>羅，求你容那些人去事奉耶和華他們的神；你還不知道埃及已經敗壞了嗎？」（出10:7）</td>
+<td>就像一個組織因領導者的固執而全體受損，你是否曾因堅持某種立場而牽連周圍的人？你如何辨別堅持是正確的，還是剛硬的驕傲？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

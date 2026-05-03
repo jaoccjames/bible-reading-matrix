@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">論斷、祈求與兩條路</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「你們不要論斷人，免得你們被論斷。</div>
+<div class="verse"><span class="verse-number">2</span>因為你們怎樣論斷人，也必怎樣被論斷；你們用甚麼量器量給人，也必用甚麼量器量給你們。</div>
+<div class="verse"><span class="verse-number">3</span>為甚麼看見你弟兄眼中有刺，卻不想自己眼中有梁木呢？</div>
+<div class="verse"><span class="verse-number">4</span>你自己眼中有梁木，怎能對你弟兄說：『容我去掉你眼中的刺』呢？</div>
+<div class="verse"><span class="verse-number">5</span>你這假冒為善的人！先去掉自己眼中的梁木，然後纔能看得清楚，去掉你弟兄眼中的刺。</div>
+<div class="verse"><span class="verse-number">6</span>不要把聖物給狗，也不要把你們的珍珠丟在豬前，恐怕牠踐踏了珍珠，轉過來咬你們。」</div>
+<div class="verse"><span class="verse-number">7</span>「你們祈求，就給你們；尋找，就尋見；叩門，就給你們開門。</div>
+<div class="verse"><span class="verse-number">8</span>因為凡祈求的，就得着；尋找的，就尋見；叩門的，就給他開門。</div>
+<div class="verse"><span class="verse-number">9</span>你們中間誰有兒子求餅，反給他石頭呢？</div>
+<div class="verse"><span class="verse-number">10</span>求魚，反給他蛇呢？</div>
+<div class="verse"><span class="verse-number">11</span>你們雖然不好，尚且知道拿好東西給兒女，何況你們在天上的父，豈不更把好東西給求他的人嗎？</div>
+<div class="verse"><span class="verse-number">12</span>所以，無論何事，你們願意人怎樣待你們，你們也要怎樣待人，因為這就是律法和先知的道理。」</div>
+<div class="verse"><span class="verse-number">13</span>「你們要進窄門。因為引到滅亡，那門是寬的，路是大的，進去的人也多；</div>
+<div class="verse"><span class="verse-number">14</span>引到永生，那門是窄的，路是小的，找着的人也少。」</div>
+<div class="verse"><span class="verse-number">15</span>「你們要防備假先知。他們到你們這裏來，外面披着羊皮，裏面卻是殘暴的狼。</div>
+<div class="verse"><span class="verse-number">16</span>憑着他們的果子，就可以認出他們來。荊棘上豈能摘葡萄呢？蒺藜裏豈能摘無花果呢？</div>
+<div class="verse"><span class="verse-number">17</span>這樣，凡好樹都結好果子，惟獨壞樹結壞果子。</div>
+<div class="verse"><span class="verse-number">18</span>好樹不能結壞果子；壞樹不能結好果子。</div>
+<div class="verse"><span class="verse-number">19</span>凡不結好果子的樹就砍下來，丟在火裏。</div>
+<div class="verse"><span class="verse-number">20</span>所以，憑着他們的果子，就可以認出他們來。」</div>
+<div class="verse"><span class="verse-number">21</span>「凡稱呼我『主阿，主阿』的人不能都進天國；惟獨遵行我天父旨意的人才能進去。</div>
+<div class="verse"><span class="verse-number">22</span>當那日必有許多人對我說：『主阿，主阿，我們不是奉你的名傳道，奉你的名趕鬼，奉你的名行許多異能嗎？』</div>
+<div class="verse"><span class="verse-number">23</span>我就明明的告訴他們說：『我從來不認識你們，你們這些作惡的人，離開我去吧！』」</div>
+<div class="verse"><span class="verse-number">24</span>「所以，凡聽見我這話就去行的，好比一個聰明人，把房子蓋在磐石上；</div>
+<div class="verse"><span class="verse-number">25</span>雨淋，水沖，風吹，撞着那房子，房子總不倒塌，因為根基立在磐石上。</div>
+<div class="verse"><span class="verse-number">26</span>凡聽見我這話不去行的，好比一個無知的人，把房子蓋在沙土上；</div>
+<div class="verse"><span class="verse-number">27</span>雨淋，水沖，風吹，撞着那房子，房子就倒塌了，並且倒塌得很大。」</div>
+<div class="verse"><span class="verse-number">28</span>耶穌講完了這些話，眾人都希奇他的教訓；</div>
+<div class="verse"><span class="verse-number">29</span>因為他教訓他們，正像有權柄的人，不像他們的文士。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第7章是登山寶訓的最後一章，耶穌就幾個重要主題作出總結性教導，並以強烈的呼召作為整段講道的結語。本章首先以論斷他人的警告開始，指出論斷人的將受同樣論斷，要先去掉自己眼中的梁木再去幫助別人。接著教導持續的禱告，以求、找、叩的動作說明天父願意將好東西賜給求祂的人。然後提出己所不欲勿施於人的黃金律則，說這是律法和先知的總綱。接著連串對比出現：走窄門與走寬門所通往的不同結果；好樹結好果、壞樹結壞果，以果子認出人的真實；以及宣稱奉主名行事卻不遵行天父旨意之人終將被拒絕的嚴肅警告。最後以蓋房於磐石與沙土的比喻作結，聽道並行道的人如蓋房在磐石上，能經得起風雨衝擊。眾人對耶穌的教訓感到希奇，因祂教導他們正像有權柄的人，不像文士。本章為整段登山寶訓作出鄭重總結。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 先自省再論斷是謙卑的智慧</strong><br>「眼中有梁木卻要去掉別人眼中的刺」是人際關係中最常見的盲點。耶穌不是說不能辨別是非，而是要先誠實面對自己的問題，才有資格幫助他人。自我省察需要勇氣，因為看見自己的錯誤比看見別人的更痛苦。謙卑的人先問「我有什麼問題」，而不是急着指出別人的缺失。<br><br>
+<strong>2. 天父是慈愛的神，必回應兒女的祈求</strong><br>祈求、尋找、叩門三個動詞在原文是持續性動作，表示恆切的禱告。神回應禱告的根基不是我們的功德，而是祂慈父的本性。就連不完全的地上父母都懂得給孩子好東西，更何況全善的天父。這段話邀請信徒以孩子的信任面對神，帶着一切需要來到祂面前，不要放棄祈求。<br><br>
+<strong>3. 真門徒的記號是行道而非口號</strong><br>「凡稱呼我主阿主阿的人不能都進天國」——這是對宗教形式主義的嚴肅警告。憑果子認識人，說明真信仰必然帶出行動的改變。把房子蓋在磐石上，就是聽了耶穌的話並去行；蓋在沙上，就是只聽不行。真正的信仰不只是認同耶穌的教導，而是讓這些教導塑造我們的日常生活。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們不要論斷人</strong>，<strong>免得你們被論斷</strong>。（太7:1）</td>
+<td>你有沒有在論斷別人之前，先誠實地審視自己？就像在批評別人的廚藝之前，先嘗嘗自己煮的菜，你能養成先自省再開口的習慣嗎？</td>
+</tr>
+<tr>
+<td><strong>你們祈求</strong>，<strong>就給你們</strong>；尋找，就尋見；叩門，就給你們開門。（太7:7）</td>
+<td>你在禱告上是否有恆切持續的操練，還是遇到困難才臨時抱佛腳？就像每天澆水的植物才能茁壯成長，你願意建立每日向神祈求、尋找的習慣嗎？</td>
+</tr>
+<tr>
+<td><strong>凡聽見我這話就去</strong>行的，<strong>好比一個聰明人</strong>，把房子蓋在磐石上。（太7:24）</td>
+<td>你聽到的聖經真理，有多少真正落實在你的生活中？就像學了游泳理論卻從不下水永遠學不會游泳，你願意讓神的話語從頭腦進入雙手，成為實際的行動嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

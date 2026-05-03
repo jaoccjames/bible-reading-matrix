@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多前書第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多前書第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">使徒的權柄與處境化的宣教</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我不是自由的嗎？我不是使徒嗎？我不是見過我們的主耶穌嗎？你們不是我在主裏面所作之工嗎？</div>
+<div class="verse"><span class="verse-number">2</span>假若在別人，我不是使徒，在你們，我總是使徒，因為你們在主裏正是我作使徒的印證。</div>
+<div class="verse"><span class="verse-number">3</span>我對那盤問我的人就是這樣分訴：</div>
+<div class="verse"><span class="verse-number">4</span>難道我們沒有權柄靠福音吃喝嗎？</div>
+<div class="verse"><span class="verse-number">5</span>難道我們沒有權柄娶信主的姐妹為妻，帶着一同往來，彷彿其餘的使徒和主的弟兄並磯法一樣嗎？</div>
+<div class="verse"><span class="verse-number">6</span>獨有我與巴拿巴沒有權柄不作工嗎？</div>
+<div class="verse"><span class="verse-number">7</span>有誰當兵自備糧餉呢？有誰栽葡萄園不吃園裏的果子呢？有誰牧養牛羊不吃牛羊的奶呢？</div>
+<div class="verse"><span class="verse-number">8</span>我說這話，豈是照人的意見；律法不也是這樣說嗎？</div>
+<div class="verse"><span class="verse-number">9</span>就如摩西的律法記着說：「牛在場上踹穀的時候，不可籠住他的嘴。」難道神所掛念的是牛嗎？</div>
+<div class="verse"><span class="verse-number">10</span>不全是為我們說的嗎？分明是為我們說的。因為耕種的當存着指望去耕種；打場的也當存得糧的指望去打場。</div>
+<div class="verse"><span class="verse-number">11</span>我們若把屬靈的種子撒在你們中間，就是從你們收割奉養肉身之物，這還算大事嗎？</div>
+<div class="verse"><span class="verse-number">12</span>若別人在你們身上有這權柄，何況我們呢？然而，我們沒有用過這權柄，倒凡事忍受，免得基督的福音被阻隔。</div>
+<div class="verse"><span class="verse-number">13</span>你們豈不知為聖事勞碌的就吃殿中的物嗎？伺候祭壇的就分領壇上的物嗎？</div>
+<div class="verse"><span class="verse-number">14</span>主也是這樣命定，叫傳福音的靠着福音養生。</div>
+<div class="verse"><span class="verse-number">15</span>但這權柄我全沒有用過。我寫這話，並非要你們這樣待我，因為我寧可死也不叫人使我所誇的落了空。</div>
+<div class="verse"><span class="verse-number">16</span>我傳福音原沒有可誇的，因為我是不得已的。若不傳福音，我便有禍了。</div>
+<div class="verse"><span class="verse-number">17</span>我若甘心作這事，就有賞賜；若不甘心，責任卻已經託付我了。</div>
+<div class="verse"><span class="verse-number">18</span>既是這樣，我的賞賜是甚麼呢？就是我傳福音的時候叫人不花錢得福音，免得用盡我傳福音的權柄。</div>
+<div class="verse"><span class="verse-number">19</span>我雖是自由的，無人轄管；然而我甘心作了眾人的僕人，為要多得人。</div>
+<div class="verse"><span class="verse-number">20</span>向猶太人，我就作猶太人，為要得猶太人；向律法以下的人，我雖不在律法以下，還是作律法以下的人，為要得律法以下的人。</div>
+<div class="verse"><span class="verse-number">21</span>向沒有律法的人，我就作沒有律法的人，為要得沒有律法的人；其實我在神面前，不是沒有律法；在基督面前，正在律法之下。</div>
+<div class="verse"><span class="verse-number">22</span>向軟弱的人，我就作軟弱的人，為要得軟弱的人。向甚麼樣的人，我就作甚麼樣的人。無論如何，總要救些人。</div>
+<div class="verse"><span class="verse-number">23</span>凡我所行的，都是為福音的緣故，為要與人同得這福音的好處。</div>
+<div class="verse"><span class="verse-number">24</span>豈不知在場上賽跑的都跑，但得獎賞的只有一人？你們也當這樣跑，好叫你們得着獎賞。</div>
+<div class="verse"><span class="verse-number">25</span>凡較力爭勝的，諸事都有節制，他們不過是要得能壞的冠冕；我們卻是要得不能壞的冠冕。</div>
+<div class="verse"><span class="verse-number">26</span>所以，我奔跑，不像無定向的；我鬥拳，不像打空氣的。</div>
+<div class="verse"><span class="verse-number">27</span>我是攻克己身，叫身服我，恐怕我傳福音給別人，自己反被棄絕了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第9章以保羅自己為例，說明他雖然有使徒的權利卻為了福音的緣故放棄這些權利，呼籲信徒效法他的捨己精神，並以運動員的比喻說明在信仰上要自律嚴謹。本章首先說明保羅是使徒、見過主耶穌、他們是保羅在主裡面做工的果效，他原可享受使徒應得的供給，就是帶著信主的妻子、不用親手做工、從傳道的事上得嚼食的權利，保羅以兵丁、種植葡萄園的、牧羊的、耕地的各種例子為根據，又引用律法和聖殿服事的先例，說明傳道人靠著福音養生是應當的。但保羅說他沒有用過這些權利，因為他傳福音是不得已的，若不傳就有禍了，若甘心傳就有賞賜，他甘願作眾人的僕人叫多人得救。接著說明他向甚麼樣的人就作甚麼樣的人，向猶太人就作猶太人，向律法以外的人就作律法以外的人，向軟弱的人就作軟弱的人，為要救一些人。最後以運動員的比喻說明凡比賽的人總要節制各事，他們不過是要得那能壞的冠冕，我們卻是要得那不能壞的，保羅說他是攻克己身叫身服我，恐怕我傳福音給別人，自己反被棄絕了。本章以保羅放棄使徒權利的榜樣展示事奉的核心精神。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 為了福音可以放棄合法的權利</strong><br>「然而，我們沒有用過這權柄，倒凡事忍受，免得基督的福音被阻隔」——自願放棄合法的權利，是為了福音的最大影響力。這是愛的最高表現——不是因為沒有資格，而是因為在特定的情況下，行使這個權利會阻礙更重要的事工。信仰的成熟包括這種「為了更大目的而放棄的能力」。<br><br>
+<strong>2. 「向甚麼樣的人，我就作甚麼樣的人」</strong><br>保羅的靈活不是機會主義，而是以服事對象為出發點的調適。他在核心（耶穌基督釘十字架）上從不妥協，但在文化形式上盡量接近對方。這是傳福音的最高智慧：讓信息進入對方的世界，而不要求對方先進入你的文化世界。今天的信徒在跨文化傳福音和同情性交流中，也需要這種「相同又不同」的平衡。<br><br>
+<strong>3. 「攻克己身」是服事者的日常操練</strong><br>「我是攻克己身，叫身服我，恐怕我傳福音給別人，自己反被棄絕了」——保羅以運動員訓練的比喻說明靈命操練的必要。傳福音給他人，同時自己靈命失落，是最大的諷刺和危機。屬靈紀律不是為了賺取救恩，而是為了保持服事的有效性和個人靈命的健全。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>向甚麼樣的人</strong>，<strong>我就作甚麼樣的人</strong>。無論如何，總要救些人。凡我所行的，都是為福音的緣故，為要與人同得這福音的好處。（林前9:22-23）</td>
+<td>你有沒有在傳福音時，學習進入對方的文化和處境，以對方能明白的方式分享信仰，而非要求對方先進入你的宗教文化？就像好的翻譯不改變意思但改變語言，你有沒有讓你的見證對不同的人都能聽懂和接觸？</td>
+</tr>
+<tr>
+<td><strong>我奔跑</strong>，<strong>不像無定向的</strong>；我鬥拳，不像打空氣的。我是攻克己身，叫身服我，恐怕我傳福音給別人，自己反被棄絕了。（林前9:26-27）</td>
+<td>你有沒有把靈命操練看作是服事有效性的必要前提，而非只是個人的宗教義務？就像一個不訓練的運動員無法在賽場上發揮，你有沒有建立規律的靈命操練，使你能長期有效地服事？</td>
+</tr>
+<tr>
+<td><strong>我傳福音原沒有可</strong>誇的，<strong>因為我是不得已的</strong>。若不傳福音，我便有禍了。（林前9:16）</td>
+<td>你有沒有感受到傳福音不只是選擇，而是一種「不得已」的使命感——一種內在的強迫力驅使你必須分享你所認識的好消息？就像知道救命信息卻不告訴危難中的人，你有沒有讓對失喪者的愛成為傳福音的內在動力？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

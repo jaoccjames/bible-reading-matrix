@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬可福音第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬可福音第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">赦罪醫治與新舊之爭</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>過了些日子，耶穌又進了迦百農。人聽見他在房子裏，</div>
+<div class="verse"><span class="verse-number">2</span>就有許多人聚集，甚至連門前都沒有空地；耶穌就對他們講道。</div>
+<div class="verse"><span class="verse-number">3</span>有人帶着一個癱子來見耶穌，是用四個人抬來的；</div>
+<div class="verse"><span class="verse-number">4</span>因為人多，不得近前，就把耶穌所在的房子，拆了房頂，既拆通了，就把癱子連所躺臥的褥子都縋下來。</div>
+<div class="verse"><span class="verse-number">5</span>耶穌見他們的信心，就對癱子說：「小子，你的罪赦了。」</div>
+<div class="verse"><span class="verse-number">6</span>有幾個文士坐在那裏，心裏議論，說：</div>
+<div class="verse"><span class="verse-number">7</span>「這個人為甚麼這樣說呢？他說僭妄的話了。除了神以外，誰能赦罪呢？」</div>
+<div class="verse"><span class="verse-number">8</span>耶穌心中知道他們心裏這樣議論，就說：「你們心裏為甚麼這樣議論呢？</div>
+<div class="verse"><span class="verse-number">9</span>或對癱子說『你的罪赦了』，或說『起來！拿你的褥子行走』；那一樣容易呢？</div>
+<div class="verse"><span class="verse-number">10</span>但要叫你們知道，人子在地上有赦罪的權柄。」就對癱子說：</div>
+<div class="verse"><span class="verse-number">11</span>「我吩咐你，起來！拿你的褥子回家去吧。」</div>
+<div class="verse"><span class="verse-number">12</span>那人就起來，立刻拿着褥子，當眾人面前出去了，以致眾人都驚奇，歸榮耀與神，說：「我們從來沒有見過這樣的事！」</div>
+<div class="verse"><span class="verse-number">13</span>耶穌又出到海邊去，眾人都就了他來，他便教訓他們。</div>
+<div class="verse"><span class="verse-number">14</span>耶穌經過的時候，看見亞勒腓的兒子利未坐在稅關上，就對他說：「你跟從我來。」他就起來，跟從了耶穌。</div>
+<div class="verse"><span class="verse-number">15</span>耶穌在利未家裏坐席的時候，有好些稅吏和罪人與耶穌並門徒一同坐席；因為這樣的人多，他們也跟隨耶穌。</div>
+<div class="verse"><span class="verse-number">16</span>法利賽人中的文士〔有古卷作文士和法利賽人〕看見耶穌和罪人並稅吏一同吃飯，就對他門徒說：「他和稅吏並罪人一同吃喝嗎？」</div>
+<div class="verse"><span class="verse-number">17</span>耶穌聽見，就對他們說：「康健的人用不着醫生，有病的人纔用得着。我來本不是召義人，乃是召罪人。」</div>
+<div class="verse"><span class="verse-number">18</span>當下，約翰的門徒和法利賽人禁食。他們來問耶穌說：「約翰的門徒和法利賽人的門徒禁食，你的門徒倒不禁食，這是為甚麼呢？」</div>
+<div class="verse"><span class="verse-number">19</span>耶穌對他們說：「新郎和陪伴之人同在的時候，陪伴之人豈能禁食呢？新郎還同在，他們不能禁食。</div>
+<div class="verse"><span class="verse-number">20</span>但日子將到，新郎要離開他們，那日他們就要禁食。</div>
+<div class="verse"><span class="verse-number">21</span>沒有人把新布縫在舊衣服上，恐怕所補上的新布帶壞了舊衣服，破的就更大了。</div>
+<div class="verse"><span class="verse-number">22</span>也沒有人把新酒裝在舊皮袋裏，恐怕酒把皮袋裂開，酒和皮袋就都壞了；惟把新酒裝在新皮袋裏。」</div>
+<div class="verse"><span class="verse-number">23</span>耶穌當安息日從麥地經過。他門徒行路的時候，掐了麥穗。</div>
+<div class="verse"><span class="verse-number">24</span>法利賽人對耶穌說：「看哪，他們在安息日為甚麼作不可作的事呢？」</div>
+<div class="verse"><span class="verse-number">25</span>耶穌對他們說：「經上記着大衛和跟從他的人缺乏飢餓之時所作的事，你們沒有念過嗎？</div>
+<div class="verse"><span class="verse-number">26</span>他當亞比亞他作大祭司的時候，怎麼進了神的殿，吃了陳設餅，又給跟從他的人吃。這餅除了祭司以外，人都不可吃。」</div>
+<div class="verse"><span class="verse-number">27</span>又對他們說：「安息日是為人設立的，人不是為安息日設立的。</div>
+<div class="verse"><span class="verse-number">28</span>所以，人子也是安息日的主。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第2章記述耶穌在迦百農的幾件事，衝突的種子在本章開始萌芽，文士與法利賽人的質疑首次出現。耶穌回到迦百農，人多到連門口都沒有空隙，四個人抬著癱子因無法進入便從屋頂把他縋下來，耶穌見他們的信心，先赦免癱子的罪，文士心裡認為這是褻瀆，耶穌洞察後以醫治癱子證明人子在地上有赦罪的權柄，眾人大為驚奇。接著耶穌呼召稅吏利未跟從祂，在利未家中與罪人和稅吏一同坐席，法利賽人質疑，耶穌說有病的人才需要醫生，祂來不是召義人而是召罪人。然後約翰的門徒和法利賽人的門徒禁食，有人問耶穌的門徒為何不禁食，耶穌以新郎在場、新布補舊衣、新酒裝舊皮袋等比喻回應，說明祂帶來的是全新的事。最後在安息日，門徒掐麥穗吃，法利賽人指責，耶穌以大衛吃陳設餅為例，宣告安息日是為人設立的，人子是安息日的主。本章呈現新時代與舊傳統之間不可調和的張力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 為他人的信心突破障礙是真實的愛</strong><br>四個人無法帶朋友進去，就拆屋頂縋下去——這是對癱子朋友最激烈的愛的行動。他們沒有說「沒辦法，人太多了」，而是尋找另一條路。耶穌看見的是「他們的信心」——複數，包括那四個朋友。有時候，我們的信心可以代人來到耶穌面前。為人禱告、帶人去聚會、持續在屬靈上為人守望，都是這種愛的行動。<br><br>
+<strong>2. 耶穌帶來的是更新而非修補</strong><br>新布不縫舊衣，新酒不裝舊皮袋——這兩個比喻宣告：耶穌帶來的福音是根本性的更新，而非對舊宗教框架的修補。法利賽人想把耶穌的教導納入現有的宗教體制，但這是不可能的。福音要求全新的心、全新的生命。信仰不是在原有生活方式上加一些宗教習慣，而是整個人被翻新。<br><br>
+<strong>3. 宗教規條不能淩駕人的真實需要</strong><br>「安息日是為人設立的，人不是為安息日設立的」——這句話有深遠的意義。神設立安息日是為了人的益處，不是為了讓規條成為人的負擔。一切宗教制度都是手段，不是目的。當規條傷害人、阻礙人親近神時，它就失去了本意。信仰的核心永遠是神與人的關係，而非規條的嚴格執行。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌見他們的信心</strong>，<strong>就對癱子說</strong>：「小子，你的罪赦了。」（可2:5）</td>
+<td>你有沒有為你愛的人、帶着堅持的信心來到耶穌面前禱告？就像那四個人不惜拆開屋頂只為讓朋友見到耶穌，你願意不顧障礙，持續為你身邊迷失的人禱告和代求嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌聽見</strong>，<strong>就對他們說</strong>：「康健的人用不着醫生，有病的人纔用得着。我來本不是召義人，乃是召罪人。」（可2:17）</td>
+<td>你有沒有因為自己的「病」——罪、軟弱、失敗——而覺得不配來到耶穌面前？就像越嚴重的病越需要好醫生，你知道耶穌最歡迎的正是那些知道自己需要祂的人嗎？</td>
+</tr>
+<tr>
+<td><strong>又對他們說</strong>：「<strong>安息日是為人設立</strong>的，人不是為安息日設立的。所以，人子也是安息日的主。」（可2:27-28）</td>
+<td>你有沒有讓宗教習慣和形式成為你真實親近神的障礙？就像時間表是幫助效率的工具，若讓它綑綁而無法靈活調整就失去意義，你的信仰形式有沒有幫助你更靠近神，還是成了另一種律法？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

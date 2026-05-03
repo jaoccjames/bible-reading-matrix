@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰貳書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰貳書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">在真理和愛中同行</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>作長老的寫信給蒙揀選的太太〔或作：教會；下同〕，和她的兒女，就是我誠心所愛的；不但我愛，也是一切知道真理之人所愛的。</div>
+<div class="verse"><span class="verse-number">2</span>愛你們是為真理的緣故，這真理存在我們裏面，也必永遠與我們同在。</div>
+<div class="verse"><span class="verse-number">3</span>恩惠，憐憫，平安從父神和他兒子耶穌基督在真理和愛心上必常與我們同在！</div>
+<div class="verse"><span class="verse-number">4</span>我見你的兒女，有照我們從父所受之命令遵行真理的，就甚歡喜。</div>
+<div class="verse"><span class="verse-number">5</span>太太啊，我現在勸你，我們大家要彼此相愛。這並不是我寫一條新命令給你，乃是我們從起初所受的命令。</div>
+<div class="verse"><span class="verse-number">6</span>我們若照他的命令行，這就是愛。你們從起初所聽見當行的，就是這命令。</div>
+<div class="verse"><span class="verse-number">7</span>因為世上有許多迷惑人的出來，他們不認耶穌基督是成了肉身來的；這就是那迷惑人、敵基督的。</div>
+<div class="verse"><span class="verse-number">8</span>你們要小心，不要失去你們〔有古卷作：我們〕所作的工，乃要得着滿足的賞賜。</div>
+<div class="verse"><span class="verse-number">9</span>凡越過基督的教訓不常守着的，就沒有神；常守這教訓的，就有父又有子。</div>
+<div class="verse"><span class="verse-number">10</span>若有人到你們那裏，不是傳這教訓，不要接他到家裏，也不要問他的安；</div>
+<div class="verse"><span class="verse-number">11</span>因為問他安的，就在他的惡行上有分。</div>
+<div class="verse"><span class="verse-number">12</span>我還有許多事要寫給你們，卻不願意用紙墨寫出來，但盼望到你們那裏，與你們當面談論，使你們的喜樂滿足。</div>
+<div class="verse"><span class="verse-number">13</span>你那蒙揀選之姐妹的兒女都問你安。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約翰貳書是新約中最短的書信之一，只有十三節，約在主後85至95年間，由約翰長老寫給蒙揀選的太太和她的兒女，可能是某個具體教會的隱喻說法。本書主題是在愛中行走、遵守誡命，以及防備那些不承認耶穌基督成了肉身來的人。本書以問安開篇，說他聽見她的兒女按照真理行事就甚歡喜，接著說這命令不是新命令，乃是我們從起初所受的，就是我們要彼此相愛，這愛就是照祂的誡命行。然後發出警告：因為世上有許多迷惑人的出來了，不承認耶穌基督是成了肉身來的，這就是那迷惑人的和敵基督者；你們要謹慎，不要失去你們做工所得的，乃要得著足足的賞賜；凡越過基督教訓不常守著的就沒有神，常守著這教訓的就有父又有子了。若有人到你們那裡不是傳這教訓的，不要接待他到家裡，也不要問他的安，因為問他安的就在他的惡行上有分了。最後說他有許多事要寫，不願意用紙墨，盼望親自去見他們，好使他們的喜樂可以滿足。本章以愛中行走和辨別假教師為核心，呈現約翰晚期對教義純正的高度關注。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 愛和遵命是同一件事</strong><br>「我們若照他的命令行，這就是愛」——約翰把愛和遵命完全連結：愛的具體內容就是遵行神的命令；遵命的動機就是愛。這打破了把愛和律法對立的錯誤理解：在約翰神學中，真正的愛是以神的誡命為框架的。<br><br>
+<strong>2. 守住基督教訓的重要性</strong><br>「凡越過基督的教訓不常守着的，就沒有神；常守這教訓的，就有父又有子」——「越過」基督的教訓，意味着失去了父和子。在假教訓的時代，守住基督的教訓不是守舊，而是守護生命的根基。<br><br>
+<strong>3. 對假教師的清晰邊界</strong><br>「若有人到你們那裏，不是傳這教訓，不要接他到家裏，也不要問他的安」——在古代，接待旅行的傳道者是提供資源和背書的行動。對假教師的接待，等同於支持他們的工作，使自己「在他的惡行上有分」。清晰的邊界保護了群體的屬靈健康。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我們若照他的命令</strong>行，<strong>這就是愛</strong>。你們從起初所聽見當行的，就是這命令。（約貳6）</td>
+<td>你有沒有讓「愛就是遵行神的命令」這個定義打破你對愛的狹窄理解，讓你認識到真正的愛是在神的誡命框架內表達的？就像真正的友誼不只是感情，也包括忠實和誠實，你有沒有讓愛和真理在你的信仰生命中並行？</td>
+</tr>
+<tr>
+<td><strong>凡越過基督的教訓</strong><strong>不常守着的</strong>，就沒有神；常守這教訓的，就有父又有子。（約貳9）</td>
+<td>你有沒有讓「守住基督的教訓」成為你辨別各種新興靈性教導的標準？就像一棟建築超出其根基能支撐的範圍就會倒塌，你有沒有讓對基督教訓的守護保護你不偏離真正的根基？</td>
+</tr>
+<tr>
+<td><strong>你們要小心</strong>，<strong>不要失去你們所作</strong>的工，乃要得着滿足的賞賜。（約貳8）</td>
+<td>你有沒有讓「不要失去所作的工」這個警告，使你對假教訓保持謹慎，同時積極地保守你已建立的信仰根基？就像一個農夫不讓害蟲毀掉他辛苦耕種的果實，你有沒有積極地保護你的信仰免受錯誤教導的侵蝕？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

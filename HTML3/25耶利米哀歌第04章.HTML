@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米哀歌第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米哀歌第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">昔日榮耀與今日淒涼的對比</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>黃金何其失光！純金何其變色！聖所的石頭倒在各市口上。</div>
+<div class="verse"><span class="verse-number">2</span>錫安寶貴的眾子好比精金，現在何竟算為窰匠手所作的瓦瓶？</div>
+<div class="verse"><span class="verse-number">3</span>野狗尚且把奶乳哺其子，我民的婦人倒成為殘忍，好像曠野的鴕鳥一般。</div>
+<div class="verse"><span class="verse-number">4</span>吃奶孩子的舌頭因乾渴貼住上膛；孩童求餅，無人擘給他們。</div>
+<div class="verse"><span class="verse-number">5</span>素來吃美好食物的，現今在街上變為孤寒；素來臥朱紅褥子的，現今躺臥糞堆。</div>
+<div class="verse"><span class="verse-number">6</span>都因我眾民的罪孽比所多瑪的罪還大；所多瑪雖然無人加手於她，還是轉眼之間被傾覆。</div>
+<div class="verse"><span class="verse-number">7</span>錫安的貴冑素來比雪純淨，比奶更白；他們的身體比紅寶玉〔或作：珊瑚〕更紅，像光潤的藍寶石一樣。</div>
+<div class="verse"><span class="verse-number">8</span>現在他們的面貌比煤炭更黑，以致在街上無人認識；他們的皮膚緊貼骨頭，枯乾如同槁木。</div>
+<div class="verse"><span class="verse-number">9</span>餓死的不如被刀殺的，因為這是缺了田間的土產，就身體衰弱，漸漸消滅。</div>
+<div class="verse"><span class="verse-number">10</span>慈心的婦人，當我眾民被毀滅的時候，親手煮自己的兒女作為食物。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華發怒成就他所定的，倒出他的烈怒；在錫安使火𤏲起，燒毀錫安的根基。</div>
+<div class="verse"><span class="verse-number">12</span>地上的君王和世上的居民都不信敵人和仇敵能進耶路撒冷的城門。</div>
+<div class="verse"><span class="verse-number">13</span>這都因她先知的罪惡和祭司的罪孽；他們在城中流了義人的血。</div>
+<div class="verse"><span class="verse-number">14</span>他們在街上如瞎子亂走，又被血玷污，以致人不能摸他們的衣服。</div>
+<div class="verse"><span class="verse-number">15</span>人向他們喊着說：不潔淨的，躲開，躲開！不要挨近我！他們逃走飄流的時候，列國中有人說：他們不可仍在這裏寄居。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華發怒，將他們分散，不再眷顧他們；人不重看祭司，也不厚待長老。</div>
+<div class="verse"><span class="verse-number">17</span>我們仰望人來幫助，以致眼目失明，還是枉然；我們所盼望的，竟盼望一個不能救人的國！</div>
+<div class="verse"><span class="verse-number">18</span>仇敵追趕我們的腳步像打獵的，以致我們不敢在自己的街上行走。我們的結局臨近；我們的日子滿足；我們的結局來到了。</div>
+<div class="verse"><span class="verse-number">19</span>追趕我們的比空中的鷹更快；他們在山上追逼我們，在曠野埋伏，等候我們。</div>
+<div class="verse"><span class="verse-number">20</span>耶和華的受膏者好比我們鼻中的氣，在他們的坑中被捉住；我們曾論到他說：我們必在他蔭下，在列國中存活。</div>
+<div class="verse"><span class="verse-number">21</span>住烏斯地的以東民哪，只管歡喜快樂；苦杯也必傳到你那裏；你必喝醉，以致露體。</div>
+<div class="verse"><span class="verse-number">22</span>錫安的民哪，你罪孽的刑罰受足了，耶和華必不使你再被擄去。以東的民哪，他必追討你的罪孽，顯露你的罪惡。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米哀歌第4章以強烈的對比手法描繪耶路撒冷淪陷前後的巨大落差，是全卷最具視覺衝擊力的一章。曾如「精金」的錫安之子，如今「面貌比煤炭更黑」；昔日「臥朱紅褥子的」，今日「躺臥糞堆」；素來慈心的婦人，「親手煮自己的兒女作為食物」。這些令人不忍卒讀的意象，真實反映了圍城飢荒的慘絕人寰。本章也點明了雙重的罪源：先知和祭司的罪孽（13節），他們「流了義人的血」，是宗教領袖的失職直接導致國家的滅亡。另一個誤判是倚靠外邦列強（17節）：「我們仰望人來幫助……還是枉然；我們所盼望的，竟盼望一個不能救人的國！」章末以盼望作結：「錫安的民哪，你罪孽的刑罰受足了，耶和華必不使你再被擄去」——審判是有限的，恢復終將來到。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 罪孽的代價往往遠超人的預期，令人不敢想象</strong><br>本章列出的種種慘況，從孩子求餅無人給，到慈母煮子為食，都是罪所帶來的代價層層累積的結果。罪的後果往往不在當下立即顯現，卻在時間的累積後爆發成難以想象的破壞。信徒在看似微小的妥協和背離面前，需要培養一種對罪後果的嚴肅認識，而不是輕描淡寫地說「沒什麼大不了」。<br><br>
+<strong>2. 領袖的失職與腐敗，會拖累整個群體滅亡</strong><br>「這都因她先知的罪孽和祭司的罪孽」（13節）——屬靈領袖的失職不只是個人的問題，而是群體的災難。流了義人的血的領袖，把整個城市帶向了毀滅。今日教會或社會中，領袖的道德失敗對群體的破壞力遠超個人問題。這提醒每一個有影響力的信徒，要以更高的標準要求自己的誠信與道德。<br><br>
+<strong>3. 倚靠無法拯救的人間力量是信仰最根本的錯誤</strong><br>「我們所盼望的，竟盼望一個不能救人的國！」——耶路撒冷眼目「因盼望埃及而失明」，卻忘了呼求那位真正能拯救的神。今日信徒常以各種「列國」代替神——金融體系、政治力量、科技解方——期望它們能解決最終的問題。在一切可見的幫助之前，先呼求那位不能拯救的以外的那一位，是信仰最根本的優先序。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>錫安寶貴的眾子好</strong><strong>比精金</strong>，現在何竟算為窰匠手所作的瓦瓶？（哀4:2）</td>
+<td>你是否有過「昔日的光彩不再」的感受——不論是關係、健康、事業還是靈命？就像一件曾經珍貴的物品因為疏於保養而失去光澤，你願意讓神幫你看清楚，是什麼讓你生命中某樣美好的東西漸漸「失光」，以便重新歸向祂嗎？</td>
+</tr>
+<tr>
+<td><strong>這都因她先知的罪</strong><strong>孽和祭司的罪孽</strong>；他們在城中流了義人的血。（哀4:13）</td>
+<td>你對那些對你有屬靈影響力的人——牧師、老師、父母——有沒有合理的道德期待？就像你希望醫生以高標準對待病人，你如何在「尊重領袖」和「辨別失職」之間保持平衡，同時也反思自己對跟隨者的責任？</td>
+</tr>
+<tr>
+<td><strong>我們仰望人來幫助</strong>，<strong>以致眼目失明</strong>，還是枉然；我們所盼望的，竟盼望一個不能救人的國！（哀4:17）</td>
+<td>你現在最依靠什麼來解決你最深的問題？就像把不漏水的希望放在一個破洞的桶子裡，你生命中有沒有某個你一直倚靠的「不能救人的國」——某個你期望它能解決一切卻一再讓你失望的事物或關係？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

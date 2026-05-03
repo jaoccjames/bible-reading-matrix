@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第47章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第47章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">定居歌珊與雅各祝福</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>約瑟進去告訴法老說：「我的父親和我的弟兄帶着羊群牛群，並一切所有的，從迦南地來了，如今在歌珊地。」</div>
+<div class="verse"><span class="verse-number">2</span>約瑟從他弟兄中挑出五個人來，引他們去見法老。</div>
+<div class="verse"><span class="verse-number">3</span>法老問約瑟的弟兄說：「你們以何事為業？」他們對法老說：「你僕人是牧羊的，連我們的祖宗也是牧羊的。」</div>
+<div class="verse"><span class="verse-number">4</span>他們又對法老說：「迦南地的饑荒甚大，僕人的羊群沒有草吃，所以我們來到這地寄居。現在求你容僕人住在歌珊地。」</div>
+<div class="verse"><span class="verse-number">5</span>法老對約瑟說：「你父親和你弟兄到你這裏來了，</div>
+<div class="verse"><span class="verse-number">6</span>埃及地都在你面前，只管叫你父親和你弟兄住在國中最好的地；他們可以住在歌珊地。你若知道他們中間有甚麼能人，就派他們看管我的牲畜。」</div>
+<div class="verse"><span class="verse-number">7</span>約瑟領他父親雅各進到法老面前，雅各就給法老祝福。</div>
+<div class="verse"><span class="verse-number">8</span>法老問雅各說：「你平生的年日是多少呢？」</div>
+<div class="verse"><span class="verse-number">9</span>雅各對法老說：「我寄居在世的年日是一百三十歲，我平生的年日又少又苦，不及我列祖在世寄居的年日。」</div>
+<div class="verse"><span class="verse-number">10</span>雅各又給法老祝福，就從法老面前出去了。</div>
+<div class="verse"><span class="verse-number">11</span>約瑟遵着法老的命，把埃及國最好的地，就是蘭塞境內的地，給他父親和弟兄居住，作為產業。</div>
+<div class="verse"><span class="verse-number">12</span>約瑟用糧食奉養他父親和他弟兄，並他父親全家的眷屬，都是照各家的人口奉養他們。</div>
+<div class="verse"><span class="verse-number">13</span>饑荒甚大，全地都絕了糧，甚至埃及地和迦南地的人因那饑荒的緣故都餓昏了。</div>
+<div class="verse"><span class="verse-number">14</span>約瑟收聚了埃及地和迦南地所有的銀子，就是眾人糴糧的銀子，約瑟就把那銀子帶到法老的宮裏。</div>
+<div class="verse"><span class="verse-number">15</span>埃及地和迦南地的銀子都花盡了，埃及眾人都來見約瑟，說：「我們的銀子都用盡了，求你給我們糧食，我們為甚麼死在你面前呢？」</div>
+<div class="verse"><span class="verse-number">16</span>約瑟說：「若是銀子用盡了，可以把你們的牲畜給我，我就為你們的牲畜給你們糧食。」</div>
+<div class="verse"><span class="verse-number">17</span>於是他們把牲畜趕到約瑟那裏，約瑟就拿糧食換了他們的牛、羊、驢、馬；那一年因換他們一切的牲畜，就用糧食養活他們。</div>
+<div class="verse"><span class="verse-number">18</span>那一年過去，第二年他們又來見約瑟，說：「我們不瞞我主，我們的銀子都花盡了，牲畜也都歸了我主。我們在我主眼前，除了我們的身體和田地之外，一無所剩。</div>
+<div class="verse"><span class="verse-number">19</span>你何忍見我們人死地荒呢？求你用糧食買我們的我們的地，我們和我們的地就要給法老效力。又求你給我們種子，使我們得以存活，不至死亡，地土也不至荒涼。」</div>
+<div class="verse"><span class="verse-number">20</span>於是，約瑟為法老買了埃及所有的地，埃及人因被饑荒所迫，各都賣了自己的田地；那地就都歸了法老。</div>
+<div class="verse"><span class="verse-number">21</span>至於百姓，約瑟叫他們，從埃及這邊直到埃及那邊，都各歸各城。</div>
+<div class="verse"><span class="verse-number">22</span>惟有祭司的地，約瑟沒有買，因為祭司有從法老所得的常俸。他們吃法老所給的常俸，所以他們不賣自己的地。</div>
+<div class="verse"><span class="verse-number">23</span>約瑟對百姓說：「我今日為法老買了你們和你們的地，看哪，這裏有種子給你們，你們可以種地。</div>
+<div class="verse"><span class="verse-number">24</span>後來打糧食的時候，你們要把五分之一納給法老，四分可以歸你們作地裏的種子，也作你們和你們家口孩童的食物。」</div>
+<div class="verse"><span class="verse-number">25</span>他們說：「你救了我們的性命。但願我們在我主眼前蒙恩，我們就作法老的僕人。」</div>
+<div class="verse"><span class="verse-number">26</span>於是約瑟為埃及地定下常例，直到今日：法老必得五分之一，惟獨祭司的地不歸法老。</div>
+<div class="verse"><span class="verse-number">27</span>以色列人住在埃及的歌珊地。他們在那裏置了產業，並且生育甚多。</div>
+<div class="verse"><span class="verse-number">28</span>雅各住在埃及地十七年，雅各平生的年日是一百四十七歲。</div>
+<div class="verse"><span class="verse-number">29</span>以色列的死期臨近了，他就叫了他兒子約瑟來，說：「我若在你眼前蒙恩，請你把手放在我大腿底下，用慈愛和誠實待我，請你不要將我葬在埃及。</div>
+<div class="verse"><span class="verse-number">30</span>我與我祖我父同睡的時候，你要將我帶出埃及，葬在他們所葬的地方。」約瑟說：「我必遵着你的命而行。」</div>
+<div class="verse"><span class="verse-number">31</span>雅各說：「你要向我起誓。」約瑟就向他起了誓，於是以色列在床頭上〔或作：扶着杖頭〕敬拜神。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載雅各一家正式定居埃及歌珊地的過程。約瑟帶領五個兄弟去見法老，法老慷慨賜給他們最好的土地。雅各被引見給法老時，兩次給法老祝福，並回顧自己一百三十年「又少又苦」的人生。本章也詳述約瑟在饑荒期間的經濟政策：先收銀子，再換牲畜，最後收購土地，建立五分之一納稅的制度。以色列人在歌珊地繁衍興旺，與埃及主流社會保持距離。雅各在埃及度過最後十七年平安的歲月，臨終前要求約瑟起誓將他葬回迦南，不要葬在埃及，顯明他對應許之地的信心。最後雅各在床頭敬拜神，以信心結束他的一生。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 屬神的人能成為他人的祝福</strong><br>雅各雖是寄居者，卻兩次為法老祝福。真正屬靈的人不是接受祝福的人，而是能祝福他人的管道。無論身分地位如何，我們都能因與神的關係成為周遭人的祝福，將神的恩典帶給世界。<br><br>
+<strong>2. 信心使人超越現實環境</strong><br>雅各雖在埃及享受安逸，臨終卻堅持葬回應許之地。真正的信心不被眼前舒適所迷惑，而是定睛在神的應許上。我們在世是客旅，真正的家鄉在神那裡，這種永恆的眼光使我們不被暫時的享受困住。<br><br>
+<strong>3. 智慧管理能渡過危機並建立秩序</strong><br>約瑟的經濟政策雖嚴厲但公平，拯救埃及人免於餓死並建立長久的制度。神賜給我們的智慧與恩賜不只是為自己，更是為群體的益處。在危機中展現的智慧與公義，能建立長遠的祝福與秩序。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>約瑟領他父親雅各</strong><strong>進到法老面前</strong>，雅各就給法老祝福。（創47:7）</td>
+<td>就像義工服務社區不論自身處境如何都能祝福人，雅各雖是難民卻祝福法老。我是否認為自己資源不足、地位不高就無法祝福人，還是相信因著與神的關係，我能成為任何人的祝福管道？</td>
+</tr>
+<tr>
+<td><strong>我寄居在世的年日</strong><strong>是一百三十歲</strong>，我平生的年日又少又苦。（創47:9）</td>
+<td>就像旅人不留戀旅館因為家在別處，雅各用「寄居」看待人生顯示永恆眼光。我對地上的成就、財富、享受，是當作終極目標緊抓不放，還是知道這些都是暫時的，真正的家鄉在神那裡？</td>
+</tr>
+<tr>
+<td><strong>請你不要將我葬在</strong>埃及。<strong>我與我祖我父同睡</strong>的時候，你要將我帶出埃及。（創47:29-30）</td>
+<td>就像遺囑顯示最在意的事，雅各臨終最關心的是葬在應許之地。我的人生優先順序是什麼？是追求舒適安逸，還是持守對神應許的信心，即使要付代價也不放棄？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

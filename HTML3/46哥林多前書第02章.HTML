@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多前書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多前書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">聖靈所賜的智慧</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>弟兄們，從前我到你們那裏去，並沒有用高言大智對你們宣傳神的奧祕。</div>
+<div class="verse"><span class="verse-number">2</span>因為我曾定了主意，在你們中間不知道別的，只知道耶穌基督並他釘十字架。</div>
+<div class="verse"><span class="verse-number">3</span>我在你們那裏，又軟弱又懼怕，又甚戰兢。</div>
+<div class="verse"><span class="verse-number">4</span>我說的話、講的道，不是用智慧委婉的言語，乃是用聖靈和大能的明證，</div>
+<div class="verse"><span class="verse-number">5</span>叫你們的信不在乎人的智慧，只在乎神的大能。</div>
+<div class="verse"><span class="verse-number">6</span>然而，在完全的人中，我們也講智慧。但不是這世上的智慧，也不是這世上有權有位、將要敗亡之人的智慧。</div>
+<div class="verse"><span class="verse-number">7</span>我們講的，乃是從前所隱藏、神奧祕的智慧，就是神在萬世以前預定使我們得榮耀的。</div>
+<div class="verse"><span class="verse-number">8</span>這智慧世上有權有位的人沒有一個知道的、他們若知道，就不把榮耀的主釘在十字架上了。</div>
+<div class="verse"><span class="verse-number">9</span>如經上所記：神為愛他的人所預備的是眼睛未曾看見，耳朵未曾聽見，人心也未曾想到的。</div>
+<div class="verse"><span class="verse-number">10</span>只有神藉着聖靈向我們顯明了，因為聖靈參透萬事，就是神深奧的事也參透了。</div>
+<div class="verse"><span class="verse-number">11</span>除了在人裏頭的靈，誰知道人的事？像這樣，除了神的靈，也沒有人知道神的事。</div>
+<div class="verse"><span class="verse-number">12</span>我們所領受的，並不是世上的靈，乃是從神來的靈，叫我們能知道神開恩賜給我們的事。</div>
+<div class="verse"><span class="verse-number">13</span>並且我們講說這些事，不是用人智慧所指教的言語，乃是用聖靈所指教的言語，將屬靈的話解釋屬靈的事〔或作：將屬靈的事講與屬靈的人〕。</div>
+<div class="verse"><span class="verse-number">14</span>然而，屬血氣的人不領會神聖靈的事，反倒以為愚拙，並且不能知道，因為這些事惟有屬靈的人纔能看透。</div>
+<div class="verse"><span class="verse-number">15</span>屬靈的人能看透萬事，卻沒有一人能看透了他。</div>
+<div class="verse"><span class="verse-number">16</span>誰曾知道主的心去教導他呢？但我們是有基督的心了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第2章繼續論述十字架的信息與人的智慧的對比，並說明神的奧秘是藉著聖靈啟示的，屬靈的事只有屬靈的人才能領悟。本章首先記述保羅說他到哥林多的時候，不是用高言大智來傳神的見證，因為他立定主意除了耶穌基督並祂釘十字架的事以外不知道別的；他的言語和講道不是用人智慧委婉的言詞，乃是用聖靈和大能的明證，叫你們的信不在乎人的智慧，只在乎神的大能。然後說明他所講的是在完全人中間的智慧，但不是這世界的智慧，乃是神奧秘的智慧，就是在萬世以前神預定要使我們得榮耀的，是世上的統治者沒有人知道的，若知道了就不會把榮耀的主釘在十字架上；這是眼睛未曾見過、耳朵未曾聽過、人心也未曾想到的，但神藉著聖靈將這些事向我們顯明了，因為聖靈參透萬事。接著說明我們所領受的不是世上的靈，乃是出於神的靈，叫我們能知道神開恩賜給我們的事，屬血氣的人不領會神聖靈的事，在他看來是愚拙的，因為這些事惟有屬靈的人才能看透。本章為聖靈啟示論提供了關鍵的神學基礎，也奠定謙卑傳道的榜樣。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 信仰的確據應建立在神的能力，不是人的邏輯</strong><br>「叫你們的信不在乎人的智慧，只在乎神的大能」——信仰若建立在最精彩的辯論或演說上，一旦遇見更強的辯論就會動搖。真正的信仰建立在神自己的工作——生命的改變、罪的赦免、內心的平安——這些「大能的明證」上，不會被任何反對的論點撼動。<br><br>
+<strong>2. 神的奧祕唯有聖靈才能啟示</strong><br>「神的事，除了神的靈，也沒有人知道」——認識神的真理不是一般的學問，需要神自己的揭示。「神藉着聖靈向我們顯明了」——這不是說不需要讀書和思考，而是說屬靈的理解需要聖靈的光照。讀聖經前禱告求聖靈開導，不是儀式，而是認識到我們需要神本身來幫助我們理解神的事。<br><br>
+<strong>3. 「我們是有基督的心了」</strong><br>「誰曾知道主的心去教導他呢？但我們是有基督的心了」——信徒透過聖靈，有認識神心意的能力。這不是說信徒全知，而是說信徒透過聖靈的同在，能夠接收神的智慧和引導。「有基督的心」是信仰最崇高的特權——思想和感受能夠與神的心意對齊。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我說的話</strong>、<strong>講的道</strong>，不是用智慧委婉的言語，乃是用聖靈和大能的明證，叫你們的信不在乎人的智慧，只在乎神的大能。（林前2:4-5）</td>
+<td>你的信仰是建立在聖靈大能的工作上，還是主要建立在某位講員說服力的論述上？就像房子建在岩石上比建在沙土上更穩固，你有沒有讓你的信仰根基是神自己在你生命中的真實工作？</td>
+</tr>
+<tr>
+<td><strong>只有神藉着聖靈向</strong><strong>我們顯明了</strong>，因為聖靈參透萬事，就是神深奧的事也參透了。（林前2:10）</td>
+<td>你在讀聖經和禱告時，有沒有真的仰賴聖靈的光照，讓祂揭示神的真理給你？就像只有翻譯員才能讓你聽懂外語，你有沒有讓聖靈成為你理解神話語的必要翻譯？</td>
+</tr>
+<tr>
+<td><strong>誰曾知道主的心去</strong><strong>教導他呢</strong>？但我們是有基督的心了。（林前2:16）</td>
+<td>你有沒有在日常決策中，尋求「有基督的心」——用祂的優先次序、祂的愛和祂的智慧來思考？就像一個學了多年的學生會不自覺地以老師的方式思考問題，你有沒有讓基督的心越來越成為你思考的框架？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

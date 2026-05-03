@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尼希米記第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+尼希米記第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">立約簽名，具體遵行神的律法</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>簽名的是：哈迦利亞的兒子省長尼希米，和西底家；</div>
+<div class="verse"><span class="verse-number">2</span>祭司：西萊雅、亞撒利雅、耶利米、</div>
+<div class="verse"><span class="verse-number">3</span>巴施戶珥、亞瑪利雅、瑪基雅、</div>
+<div class="verse"><span class="verse-number">4</span>哈突、示巴尼、瑪鹿、</div>
+<div class="verse"><span class="verse-number">5</span>哈琳、米利末、俄巴底亞、</div>
+<div class="verse"><span class="verse-number">6</span>但以理、近頓、巴錄、</div>
+<div class="verse"><span class="verse-number">7</span>米書蘭、亞比雅、米雅民、</div>
+<div class="verse"><span class="verse-number">8</span>瑪西亞、璧該、示瑪雅；</div>
+<div class="verse"><span class="verse-number">9</span>又有利未人，就是亞散尼的兒子耶書亞、希拿達的子孫賓內、甲篾；</div>
+<div class="verse"><span class="verse-number">10</span>還有他們的弟兄示巴尼、荷第雅、基利他、毘萊雅、哈難、</div>
+<div class="verse"><span class="verse-number">11</span>米迦、利合、哈沙比雅、</div>
+<div class="verse"><span class="verse-number">12</span>撒刻、示利比、示巴尼、</div>
+<div class="verse"><span class="verse-number">13</span>荷第雅、巴尼、比尼努；</div>
+<div class="verse"><span class="verse-number">14</span>又有民的首領，就是巴錄、巴哈摩押、以攔、薩土、巴尼、</div>
+<div class="verse"><span class="verse-number">15</span>布尼、押甲、比拜、</div>
+<div class="verse"><span class="verse-number">16</span>亞多尼雅、比革瓦伊、亞丁、</div>
+<div class="verse"><span class="verse-number">17</span>亞特、希西家、押朔、</div>
+<div class="verse"><span class="verse-number">18</span>荷第雅、哈順、比賽、</div>
+<div class="verse"><span class="verse-number">19</span>哈拉、亞拿突、尼拜、</div>
+<div class="verse"><span class="verse-number">20</span>抹比押、米書蘭、希悉、</div>
+<div class="verse"><span class="verse-number">21</span>米示薩別、撒督、押杜亞、</div>
+<div class="verse"><span class="verse-number">22</span>毘拉提、哈難、亞奈雅、</div>
+<div class="verse"><span class="verse-number">23</span>何細亞、哈拿尼雅、哈述、</div>
+<div class="verse"><span class="verse-number">24</span>哈羅黑、毘利哈、朔百、</div>
+<div class="verse"><span class="verse-number">25</span>利宏、哈沙拿、瑪西雅、</div>
+<div class="verse"><span class="verse-number">26</span>亞希雅、哈難、亞難、</div>
+<div class="verse"><span class="verse-number">27</span>瑪鹿、哈琳、巴拿。</div>
+<div class="verse"><span class="verse-number">28</span>其餘的民、祭司、利未人、守門的、歌唱的、尼提寧，和一切離絕鄰邦居民歸服神律法的，並他們的妻子、兒女，凡有知識能明白的，</div>
+<div class="verse"><span class="verse-number">29</span>都隨從他們貴冑的弟兄，發咒起誓，必遵行神藉他僕人摩西所傳的律法，謹守遵行耶和華我們主的一切誡命、典章、律例；</div>
+<div class="verse"><span class="verse-number">30</span>並不將我們的女兒嫁給這地的居民，也不為我們的兒子娶他們的女兒。</div>
+<div class="verse"><span class="verse-number">31</span>這地的居民若在安息日，或甚麼聖日，帶了貨物或糧食來賣給我們，我們必不買。每逢第七年必不耕種，凡欠我們債的必不追討。</div>
+<div class="verse"><span class="verse-number">32</span>我們又為自己定例，每年各人捐銀一舍客勒三分之一，為我們神殿的使用，</div>
+<div class="verse"><span class="verse-number">33</span>就是為陳設餅、常獻的素祭，和燔祭，安息日、月朔、節期所獻的與聖物，並以色列人的贖罪祭，以及我們神殿裏一切的費用。</div>
+<div class="verse"><span class="verse-number">34</span>我們的祭司、利未人，和百姓都掣籤，看每年是那一族按定期將獻祭的柴奉到我們神的殿裏，照着律法上所寫的，燒在耶和華我們神的壇上。</div>
+<div class="verse"><span class="verse-number">35</span>又定每年將我們地上初熟的土產和各樣樹上初熟的果子都奉到耶和華的殿裏。</div>
+<div class="verse"><span class="verse-number">36</span>又照律法上所寫的，將我們頭胎的兒子和首生的牛羊都奉到我們神的殿，交給我們神殿裏供職的祭司；</div>
+<div class="verse"><span class="verse-number">37</span>並將初熟之麥子所磨的麵和舉祭、各樣樹上初熟的果子、新酒與油奉給祭司，收在我們神殿的庫房裏，把我們地上所產的十分之一奉給利未人，因利未人在我們一切城邑的土產中當取十分之一。</div>
+<div class="verse"><span class="verse-number">38</span>利未人取十分之一的時候，亞倫的子孫中，當有一個祭司與利未人同在。利未人也當從十分之一中取十分之一，奉到我們神殿的屋子裏，收在庫房中。</div>
+<div class="verse"><span class="verse-number">39</span>以色列人和利未人要將五穀、新酒，和油為舉祭，奉到收存聖所器皿的屋子裏，就是供職的祭司、守門的、歌唱的所住的屋子。這樣，我們就不離棄我們神的殿。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+尼希米記第10章緊接第9章的認罪禱告，記錄百姓以具體立約回應神的方式。章節前半列出所有簽名的領袖名單——省長、祭司、利未人、百姓首領——顯示這是一個全群體參與的嚴肅承諾。約的內容涵蓋三個主要範疇：一是信仰的純正（不與外邦通婚）；二是安息日和聖年的遵守（不在聖日交易、第七年免債免耕）；三是對聖殿事奉的支持（奉獻十分之一、初熟之物、柴薪等）。全章以最後一句話作結：「這樣，我們就不離棄我們神的殿」——清楚點明整個立約的核心動機：不離棄神、持守與神的關係。這章展示悔改的果效必須落實在具體可執行的生活承諾中，而非停留在情感或言語的層次。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 屬靈承諾需要具體化和制度化才能持久</strong><br>百姓的悔改不只是一時的情緒，而是化為具體可查核的約定，並落實到安息日、通婚、奉獻等日常生活的各個層面。這顯示屬靈的更新若要持久，必須轉化為可操作的具體承諾，而非停留在「我會更加委身」的模糊感受中。信仰需要有「制度」的保護，使決志在時間中得以維持。<br><br>
+<strong>2. 全群體的共同立約是屬靈復興的公開宣告</strong><br>這份約是由領袖帶頭、眾民跟從、集體簽名的公開承諾。這種群體性的立約具有互相監督和彼此激勵的功能——我不只是對神承諾，也是在弟兄面前立下誓言。基督徒的屬靈生命不只是個人的事，群體的委身和彼此扶持，是持守信仰不可缺少的力量。<br><br>
+<strong>3. 不離棄神的殿是一切委身的核心目的</strong><br>本章以「這樣，我們就不離棄我們神的殿」作結，顯示所有的約定——無論是安息日、通婚、奉獻——都指向同一個目標：維持與神的關係，不讓聖殿（神的同在象徵）荒廢。信徒今日的各種屬靈紀律和委身，其根本目的也在於此：維持與神的親密，不讓心靈的聖殿荒蕪。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>都隨從他們貴冑的</strong>弟兄，<strong>發咒起誓</strong>，必遵行神藉他僕人摩西所傳的律法，謹守遵行耶和華我們主的一切誡命、典章、律例。（尼10:29）</td>
+<td>就像簽署合約使承諾具有法律約束力，公開立約是否讓你對屬靈承諾更認真？你有沒有曾在弟兄面前公開立下的屬靈承諾，現在仍在履行？</td>
+</tr>
+<tr>
+<td><strong>這地的居民若在安</strong>息日，<strong>或甚麼聖日</strong>，帶了貨物或糧食來賣給我們，我們必不買。（尼10:31）</td>
+<td>就像健身計畫需要在行事曆上定下固定時間才能持守，守安息日這類具體的屬靈紀律，是否在你的生活中已經落實？什麼讓你最難持守這樣的邊界？</td>
+</tr>
+<tr>
+<td>這樣，<strong>我們就不離棄我們</strong><strong>神的殿</strong>。（尼10:39）</td>
+<td>就像定期維護家中的設備才能防止它荒廢，所有的屬靈紀律最終都是為了不離棄神。回顧你現在的生活，你是否在某些方面正悄悄地「離棄神的殿」？你願意做出什麼具體改變？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

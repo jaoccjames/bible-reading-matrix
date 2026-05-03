@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記下第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記下第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大衛犯罪</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>過了一年，到列王出戰的時候，大衛又差派約押，率領臣僕和以色列眾人出戰。他們就打敗亞捫人，圍攻拉巴。大衛仍住在耶路撒冷。</div>
+<div class="verse"><span class="verse-number">2</span>一日，太陽平西，大衛從床上起來，在王宮的平頂上遊行，看見一個婦人沐浴，容貌甚美，</div>
+<div class="verse"><span class="verse-number">3</span>大衛就差人打聽那婦人是誰。有人說：「她是以連的女兒，赫人烏利亞的妻拔示巴。」</div>
+<div class="verse"><span class="verse-number">4</span>大衛差人去，將婦人接來；那時她的月經才得潔淨。她來了，大衛與她同房，她就回家去了。</div>
+<div class="verse"><span class="verse-number">5</span>於是她懷了孕，打發人去告訴大衛說：「我懷了孕。」</div>
+<div class="verse"><span class="verse-number">6</span>大衛差人到約押那裏，說：「你打發赫人烏利亞到我這裏來。」約押就打發烏利亞去見大衛。</div>
+<div class="verse"><span class="verse-number">7</span>烏利亞來了，大衛問約押好，也問兵好，又問爭戰的事怎樣。</div>
+<div class="verse"><span class="verse-number">8</span>大衛對烏利亞說：「你回家去，洗洗腳吧！」烏利亞出了王宮，隨後王送他一分食物。</div>
+<div class="verse"><span class="verse-number">9</span>烏利亞卻和他主人的僕人一同睡在宮門外，沒有回家去。</div>
+<div class="verse"><span class="verse-number">10</span>有人告訴大衛說：「烏利亞沒有回家去。」大衛就問烏利亞說：「你從遠路上來，為甚麼不回家去呢？」</div>
+<div class="verse"><span class="verse-number">11</span>烏利亞對大衛說：「約櫃和以色列與猶大兵都住在棚裏，我主約押和我主〔或作：王〕的僕人都在田野安營，我豈可回家吃喝、與妻子同寢呢？我敢在王面前起誓〔原文作我指着王和王的性命起誓〕：我決不行這事！」</div>
+<div class="verse"><span class="verse-number">12</span>大衛吩咐烏利亞說：「你今日仍住在這裏，明日我打發你去。」於是烏利亞那日和次日住在耶路撒冷。</div>
+<div class="verse"><span class="verse-number">13</span>大衛召了烏利亞來，叫他在自己面前吃喝，使他喝醉。到了晚上，烏利亞出去與他主的僕人一同住宿，還沒有回到家裏去。</div>
+<div class="verse"><span class="verse-number">14</span>次日早晨，大衛寫信與約押，交烏利亞隨手帶去。</div>
+<div class="verse"><span class="verse-number">15</span>信內寫着說：「要派烏利亞前進，到陣勢極險之處，你們便退後，使他被殺。」</div>
+<div class="verse"><span class="verse-number">16</span>約押圍城的時候，知道敵人那裏有勇士，便將烏利亞派在那裏。</div>
+<div class="verse"><span class="verse-number">17</span>城裏的人出來和約押打仗；大衛的僕人中有幾個被殺的，赫人烏利亞也死了。</div>
+<div class="verse"><span class="verse-number">18</span>於是，約押差人去將爭戰的一切事告訴大衛，</div>
+<div class="verse"><span class="verse-number">19</span>又囑咐使者說：「你把爭戰的一切事對王說完了，</div>
+<div class="verse"><span class="verse-number">20</span>王若發怒，問你說：『你們打仗為甚麼挨近城牆呢？豈不知敵人必從城上射箭麼？</div>
+<div class="verse"><span class="verse-number">21</span>從前打死耶路比設（就是耶路巴力，見士師記九章一節）兒子亞比米勒的是誰呢？豈不是一個婦人從城上拋下一塊上磨石來，打在他身上，他就死在提備斯麼？你們為甚麼挨近城牆呢？』你就說：『王的僕人赫人烏利亞也死了。』」</div>
+<div class="verse"><span class="verse-number">22</span>使者起身，來見大衛，照着約押所吩咐他的話奏告大衛。</div>
+<div class="verse"><span class="verse-number">23</span>使者對大衛說：「敵人強過我們，出到郊野與我們打仗，我們追殺他們，直到城門口。</div>
+<div class="verse"><span class="verse-number">24</span>射箭的從城上射王的僕人，射死幾個，赫人烏利亞也死了。」</div>
+<div class="verse"><span class="verse-number">25</span>王向使者說：「你告訴約押說：『不要因這事愁悶，刀劍或吞滅這人或吞滅那人，沒有一定的；你只管竭力攻城，將城傾覆。』可以用這話勉勵約押。」</div>
+<div class="verse"><span class="verse-number">26</span>烏利亞的妻聽見丈夫烏利亞死了，就為他哀哭。</div>
+<div class="verse"><span class="verse-number">27</span>哀哭的日子過了，大衛差人將她接到宮裏，她就作了大衛的妻，給大衛生了一個兒子。但大衛所行的這事，耶和華甚不喜悅。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載了大衛一生中最大的罪惡 - 與烏利亞的妻子拔示巴通姦,並謀殺烏利亞。當其他士兵在前線作戰時,大衛卻留在耶路撒冷,在閒懶中看見正在沐浴的拔示巴而動了淫念。事後為掩蓋罪行,大衛先試圖讓烏利亞回家與妻子同房,但烏利亞因忠誠而拒絕。最終大衛設計讓烏利亞在戰場上被殺。這一連串的罪 - 淫亂、欺騙、謀殺 - 顯示罪的可怕本質:一個小罪會導致更大的罪。本章以「但大衛所行的這事,耶和華甚不喜悅」結束,為下一章拿單的責備鋪路。這個悲劇提醒我們,無論地位多高,都可能陷入罪中。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 罪的漸進性</strong><br>大衛的罪始於一個眼目的情慾 - 看見拔示巴沐浴,接著是行動 - 召她進宮,然後是掩蓋 - 試圖讓烏利亞回家,最終是謀殺 - 設計殺死烏利亞。罪總是這樣一步步加深。我們必須在第一個試探出現時就斷然拒絕,因為一旦開始,罪會像滾雪球般越滾越大。小小的妥協會導致巨大的失敗。<br><br>
+<strong>2. 閒懶的危險</strong><br>當列王出戰時,大衛卻留在耶路撒冷。他本應在前線領導軍隊,卻選擇了安逸。閒懶給試探留下空間。當我們沒有專注於神給我們的使命時,就容易被試探擊倒。屬靈生命需要積極操練,不進則退。我們需要保持警醒,在神的呼召中忠心,不給魔鬼留地步。<br><br>
+<strong>3. 掩蓋罪的徒勞</strong><br>大衛企圖掩蓋罪行,卻越陷越深。掩蓋罪不僅無效,反而使罪變得更重。神看見一切,沒有什麼能向祂隱藏。真正的解決之道是認罪悔改,而不是遮掩。烏利亞的忠誠對比大衛的詭詐,更顯出罪的可恥。當我們犯罪時,唯一的出路是坦誠認罪,接受神的管教。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>過了一年</strong>,<strong>到列王出戰的時候</strong>,大衛差派約押,率領臣僕和以色列眾人出戰。大衛仍住在耶路撒冷。(撒下11:1)</td>
+<td>當我們應該積極投入服事時,就像該完成的工作卻選擇拖延,我們的閒懶和安逸是否為試探開了門?什麼使我們離開了神給我們的崗位?</td>
+</tr>
+<tr>
+<td><strong>烏利亞對大衛說</strong>:「<strong>約櫃和以色列與猶</strong>大兵都住在棚裡,我主約押和我主的僕人都在田野安營,我豈可回家吃喝、與妻子同寢呢?」(撒下11:11)</td>
+<td>當我們擁有特權時,就像可以提前下班卻選擇留下陪同事加班,我們是否願意為了他人的緣故放棄合理的享受?烏利亞的忠誠對我們有何提醒?</td>
+</tr>
+<tr>
+<td><strong>但大衛所行的這事</strong>,<strong>耶和華甚不喜悅</strong>。(撒下11:27)</td>
+<td>當我們以為掩蓋罪行成功時,就像刪除瀏覽紀錄以為沒人知道,我們是否忘記神無所不知?我們會因為害怕被發現而悔改,還是因為得罪了神而悔改?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

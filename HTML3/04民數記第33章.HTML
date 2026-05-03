@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第33章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+民數記第33章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">出埃及路程記錄命令清地</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列人按着軍隊，在摩西、亞倫的手下出埃及地所行的路程〔或作：站口；下同〕記在下面。</div>
+<div class="verse"><span class="verse-number">2</span>摩西遵着耶和華的吩咐記載他們所行的路程，其路程乃是這樣：</div>
+<div class="verse"><span class="verse-number">3</span>正月十五日，就是逾越節的次日，以色列人從蘭塞起行，在一切埃及人眼前昂然無懼地出去。</div>
+<div class="verse"><span class="verse-number">4</span>那時，埃及人正葬埋他們的長子，就是耶和華在他們中間所擊殺的；耶和華也敗壞他們的神。</div>
+<div class="verse"><span class="verse-number">5</span>以色列人從蘭塞起行，安營在疏割。</div>
+<div class="verse"><span class="verse-number">6</span>從疏割起行，安營在曠野邊的以倘。</div>
+<div class="verse"><span class="verse-number">7</span>從以倘起行，轉到比哈希錄，是在巴力洗分對面，就在密奪安營。</div>
+<div class="verse"><span class="verse-number">8</span>從比哈希錄對面起行，經過海中到了書珥曠野，又在伊坦的曠野走了三天的路程，就安營在瑪拉。</div>
+<div class="verse"><span class="verse-number">9</span>從瑪拉起行，來到以琳（以琳有十二股水泉，七十棵棕樹），就在那裏安營。</div>
+<div class="verse"><span class="verse-number">10</span>從以琳起行，安營在紅海邊。</div>
+<div class="verse"><span class="verse-number">11</span>從紅海邊起行，安營在汛的曠野。</div>
+<div class="verse"><span class="verse-number">12</span>從汛的曠野起行，安營在脫加。</div>
+<div class="verse"><span class="verse-number">13</span>從脫加起行，安營在亞錄。</div>
+<div class="verse"><span class="verse-number">14</span>從亞錄起行，安營在利非訂；在那裏，百姓沒有水喝。</div>
+<div class="verse"><span class="verse-number">15</span>從利非訂起行，安營在西乃的曠野。</div>
+<div class="verse"><span class="verse-number">16</span>從西乃的曠野起行，安營在基博羅哈他瓦。</div>
+<div class="verse"><span class="verse-number">17</span>從基博羅哈他瓦起行，安營在哈洗錄。</div>
+<div class="verse"><span class="verse-number">18</span>從哈洗錄起行，安營在利提瑪。</div>
+<div class="verse"><span class="verse-number">19</span>從利提瑪起行，安營在臨門帕烈。</div>
+<div class="verse"><span class="verse-number">20</span>從臨門帕烈起行，安營在立拿。</div>
+<div class="verse"><span class="verse-number">21</span>從立拿起行，安營在勒撒。</div>
+<div class="verse"><span class="verse-number">22</span>從勒撒起行，安營在基希拉他。</div>
+<div class="verse"><span class="verse-number">23</span>從基希拉他起行，安營在沙斐山。</div>
+<div class="verse"><span class="verse-number">24</span>從沙斐山起行，安營在哈拉大。</div>
+<div class="verse"><span class="verse-number">25</span>從哈拉大起行，安營在瑪吉希錄。</div>
+<div class="verse"><span class="verse-number">26</span>從瑪吉希錄起行，安營在他哈。</div>
+<div class="verse"><span class="verse-number">27</span>從他哈起行，安營在他拉。</div>
+<div class="verse"><span class="verse-number">28</span>從他拉起行，安營在密加。</div>
+<div class="verse"><span class="verse-number">29</span>從密加起行，安營在哈摩拿。</div>
+<div class="verse"><span class="verse-number">30</span>從哈摩拿起行，安營在摩西錄。</div>
+<div class="verse"><span class="verse-number">31</span>從摩西錄起行，安營在比尼亞干。</div>
+<div class="verse"><span class="verse-number">32</span>從比尼亞干起行，安營在曷哈及甲。</div>
+<div class="verse"><span class="verse-number">33</span>從曷哈及甲起行，安營在約巴他。</div>
+<div class="verse"><span class="verse-number">34</span>從約巴他起行，安營在阿博拿。</div>
+<div class="verse"><span class="verse-number">35</span>從阿博拿起行，安營在以旬迦別。</div>
+<div class="verse"><span class="verse-number">36</span>從以旬迦別起行，安營在尋的曠野，就是加低斯。</div>
+<div class="verse"><span class="verse-number">37</span>從加低斯起行，安營在何珥山，以東地的邊界。</div>
+<div class="verse"><span class="verse-number">38</span>以色列人出了埃及地後四十年，五月初一日，祭司亞倫遵着耶和華的吩咐上何珥山，就死在那裏。</div>
+<div class="verse"><span class="verse-number">39</span>亞倫死在何珥山的時候年一百二十三歲。</div>
+<div class="verse"><span class="verse-number">40</span>住在迦南南地的迦南人亞拉得王聽說以色列人來了。</div>
+<div class="verse"><span class="verse-number">41</span>以色列人從何珥山起行，安營在撒摩拿。</div>
+<div class="verse"><span class="verse-number">42</span>從撒摩拿起行，安營在普嫩。</div>
+<div class="verse"><span class="verse-number">43</span>從普嫩起行，安營在阿伯。</div>
+<div class="verse"><span class="verse-number">44</span>從阿伯起行，安營在以耶亞巴琳，摩押的邊界。</div>
+<div class="verse"><span class="verse-number">45</span>從以耶亞巴琳起行，安營在底本迦得。</div>
+<div class="verse"><span class="verse-number">46</span>從底本迦得起行，安營在亞門低比拉太音。</div>
+<div class="verse"><span class="verse-number">47</span>從亞門低比拉太音起行，安營在尼波對面的亞巴琳山裏。</div>
+<div class="verse"><span class="verse-number">48</span>從亞巴琳山起行，安營在摩押平原約但河邊、耶利哥對面。</div>
+<div class="verse"><span class="verse-number">49</span>他們在摩押平原沿約但河邊安營，從伯耶西末直到亞伯什亭。</div>
+<div class="verse"><span class="verse-number">50</span>耶和華在摩押平原約但河邊、耶利哥對面曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">51</span>「你吩咐以色列人說：你們過約但河進迦南地的時候，</div>
+<div class="verse"><span class="verse-number">52</span>就要從你們面前趕出那裏所有的居民，毀滅他們一切鏨成的石像和他們一切鑄成的偶像，又拆毀他們一切的邱壇。</div>
+<div class="verse"><span class="verse-number">53</span>你們要奪那地，住在其中，因我把那地賜給你們為業。</div>
+<div class="verse"><span class="verse-number">54</span>你們要按家室拈鬮，承受那地；人多的，要把產業多分給他們；人少的，要把產業少分給他們。拈出何地給何人，就要歸何人。你們要按宗族的支派承受。</div>
+<div class="verse"><span class="verse-number">55</span>倘若你們不趕出那地的居民，所容留的居民就必作你們眼中的刺，肋下的荊棘，也必在你們所住的地上擾害你們。</div>
+<div class="verse"><span class="verse-number">56</span>而且我素常有意怎樣待他們，也必照樣待你們。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+民數記第33章是整個以色列出埃及旅程的「路程日誌」，記錄了從埃及的蘭塞出發，到摩押平原、耶利哥對面的每一個安營地點，共計四十一個站口。這份記錄「遵着耶和華的吩咐」寫成，顯示神對以色列歷史旅程的每一個細節都有紀念和記錄的心意。
+這份路程記錄不只是歷史文件，更是信仰的見證：每一個地名背後，都有一段神供應、試驗、管教和引導的故事——從出埃及的大能、紅海的得救、曠野的試驗到亞倫在何珥山的去世。章末，神對以色列人進入迦南後的命令是：趕出那地的居民、毀滅偶像、拆毀邱壇，並警告「你們若不趕出那地的居民，所容留的居民就必作你們眼中的刺，肋下的荊棘」。這個警告後來在士師記中一一應驗。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 路程的記錄——神紀念每一個「走過的地方」</strong><br>四十年的旅程，四十一個站口，一一被記錄下來。神不只在乎目的地，也在乎旅程中的每一步。信仰生活的每一個「安營之處」——每一個成長的轉折、每一次的試驗和突破——在神眼中都是有價值的記錄。你的人生每一個走過的地方，神都記念。<br><br>
+<strong>2. 從蘭塞到摩押——回顧使人記念神的信實</strong><br>從出埃及到將進迦南，這份路程日誌讓以色列人在進入新階段之前，回頭看見神的帶領何等信實。在人生的重要轉折點，回顧神過去的帶領，是面對未知未來的信心資糧。定期回望「從哪裏來、神如何帶我到今天」，是屬靈生命成熟的標誌。<br><br>
+<strong>3. 「肋下的荊棘」——不完全的順服帶來長久的代價</strong><br>神警告如果不趕出迦南人，他們就必成為「眼中的刺，肋下的荊棘」。士師記清楚地記錄了這個警告的應驗。不完全的順服——留下「一點點」的妥協或偶像——往往成為信仰長期軟弱的根源。真正的委身需要對「留在心中的迦南人」進行認真的清理。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>摩西遵着耶和華的</strong><strong>吩咐記載他們所行</strong>的路程；其路程乃是這樣：正月十五日，就是逾越節的次日，以色列人從蘭塞起行，在一切埃及人眼前昂然無懼地出去。（民33:2-3）</td>
+<td>就像一個人把多年的成長日記翻出來，看見自己從哪裏出發、走了多遠，以色列的路程被一一記錄下來——如果有人把你信仰旅途的每一個「安營地點」都記錄下來，從你信主到現在，你能看見什麼樣的神的帶領軌跡？</td>
+</tr>
+<tr>
+<td><strong>以色列人出了埃及</strong><strong>地後四十年</strong>，五月初一日，祭司亞倫遵着耶和華的吩咐上何珥山，就死在那裏。（民33:38）</td>
+<td>就像旅途日誌中記錄了某個旅伴在路途中的離去，路程日誌中記下了亞倫的死——這提醒我們，旅途中有喜樂也有失落。你的信仰路程中，有哪些「在路上失去的人或事」，讓你的旅程帶着哀傷？你如何在哀傷中繼續前行？</td>
+</tr>
+<tr>
+<td>「<strong>你們若不趕出那地</strong><strong>的居民</strong>，所容留的居民就必作你們眼中的刺，肋下的荊棘，也必在你們所住的地上擾害你們。」（民33:55）</td>
+<td>就像一個傷口沒有完全清創，留下的細菌最終導致更大的感染，不完全清除的「迦南人」成了長久的荊棘——在你的生命中，有哪些「沒有完全處理」的妥協、習慣或舊有的偶像，至今仍是你屬靈生命的「眼中刺」？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

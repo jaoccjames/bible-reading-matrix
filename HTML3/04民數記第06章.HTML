@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+民數記第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">拿細耳願與祭司祝福禱文</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華對摩西說：</div>
+<div class="verse"><span class="verse-number">2</span>「你曉諭以色列人說：無論男女許了特別的願，就是拿細耳人的願〔拿細耳就是歸主的意思；下同〕，要離俗歸耶和華。</div>
+<div class="verse"><span class="verse-number">3</span>他就要遠離清酒濃酒，也不可喝甚麼清酒濃酒作的醋；不可喝甚麼葡萄汁，也不可吃鮮葡萄和乾葡萄。</div>
+<div class="verse"><span class="verse-number">4</span>在一切離俗的日子，凡葡萄樹上結的，自核至皮所作的物，都不可吃。</div>
+<div class="verse"><span class="verse-number">5</span>「在他一切許願離俗的日子，不可用剃頭刀剃頭，要由髮綹長長了。他要聖潔，直到離俗歸耶和華的日子滿了。</div>
+<div class="verse"><span class="verse-number">6</span>在他離俗歸耶和華的一切日子，不可挨近死屍。</div>
+<div class="verse"><span class="verse-number">7</span>他的父母或是弟兄姐妹死了的時候，他不可因他們使自己不潔淨，因為那離俗歸神的憑據是在他頭上。</div>
+<div class="verse"><span class="verse-number">8</span>在他一切離俗的日子是歸耶和華為聖。</div>
+<div class="verse"><span class="verse-number">9</span>「若在他旁邊忽然有人死了，以致沾染了他離俗的頭，他要在第七日得潔淨的時候剃頭。</div>
+<div class="verse"><span class="verse-number">10</span>第八日，他要把兩隻斑鳩或兩隻雛鴿帶到會幕門口，交給祭司。</div>
+<div class="verse"><span class="verse-number">11</span>祭司要獻一隻作贖罪祭，一隻作燔祭，為他贖那因死屍而有的罪，並要當日使他的頭成為聖潔。</div>
+<div class="verse"><span class="verse-number">12</span>他要另選離俗歸耶和華的日子，又要牽一隻一歲的公羊羔來作贖愆祭；但先前的日子要歸徒然，因為他在離俗之間被玷污了。</div>
+<div class="verse"><span class="verse-number">13</span>「拿細耳人滿了離俗的日子乃有這條例：人要領他到會幕門口，</div>
+<div class="verse"><span class="verse-number">14</span>他要將供物奉給耶和華，就是一隻沒有殘疾、一歲的公羊羔作燔祭，一隻沒有殘疾、一歲的母羊羔作贖罪祭，和一隻沒有殘疾的公綿羊作平安祭，</div>
+<div class="verse"><span class="verse-number">15</span>並一筐子無酵調油的細麵餅，與抹油的無酵薄餅，並同獻的素祭和奠祭。</div>
+<div class="verse"><span class="verse-number">16</span>祭司要在耶和華面前獻那人的贖罪祭和燔祭；</div>
+<div class="verse"><span class="verse-number">17</span>也要把那隻公羊和那筐無酵餅獻給耶和華作平安祭，又要將同獻的素祭和奠祭獻上。</div>
+<div class="verse"><span class="verse-number">18</span>拿細耳人要在會幕門口剃離俗的頭，把離俗頭上的髮放在平安祭下的火上。</div>
+<div class="verse"><span class="verse-number">19</span>他剃了以後，祭司就要取那已煮的公羊一條前腿，又從筐子裏取一個無酵餅和一個無酵薄餅，都放在他手上。</div>
+<div class="verse"><span class="verse-number">20</span>祭司要拿這些作為搖祭，在耶和華面前搖一搖；這與所搖的胸、所舉的腿同為聖物，歸給祭司。然後拿細耳人可以喝酒。</div>
+<div class="verse"><span class="verse-number">21</span>「許願的拿細耳人為離俗所獻的供物，和他以外所能得的獻給耶和華，就有這條例。他怎樣許願就當照離俗的條例行。」</div>
+<div class="verse"><span class="verse-number">22</span>耶和華曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">23</span>「你告訴亞倫和他兒子說：你們要這樣為以色列人祝福，說：</div>
+<div class="verse"><span class="verse-number">24</span>『願耶和華賜福給你，保護你。</div>
+<div class="verse"><span class="verse-number">25</span>願耶和華使他的臉光照你，賜恩給你。</div>
+<div class="verse"><span class="verse-number">26</span>願耶和華向你仰臉，賜你平安。』</div>
+<div class="verse"><span class="verse-number">27</span>他們要如此奉我的名為以色列人祝福；我也要賜福給他們。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+民數記第六章包含兩個重要主題。首先是拿細耳人（意為「歸主的人」）的條例：任何男女都可以自願許願，在特定期間完全分別歸神。拿細耳人需遵守三項禁止：不喝酒、不剃頭、不接觸死屍，以外在的行為表達內心分別為聖的立志。若期間不慎被玷污，需要從頭開始，且先前的日子歸為徒然。期滿後，拿細耳人要在會幕前獻上各種祭物，完成誓願。本章第二部分是著名的「亞倫祝福」（6:24-26），神命令亞倫和他兒子以三重祝福為以色列人禱告：賜福與保護、臉光照與賜恩、向你仰臉與賜平安。這段祝福被稱為聖經中最古老、最完整的祝福文，至今仍在許多基督教崇拜中使用，彰顯了神對祂子民全方位的關愛與祝福。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 全然分別歸神是更深委身的呼召</strong><br>拿細耳人的誓願是一種自願的、超越日常義務的委身行動。不喝酒、不剃頭、不近死屍，這些外在的禁制是內心全然獻身的可見標誌。這提醒信徒，除了一般的信仰責任之外，神也呼召人以特別的委身回應祂特別的呼召，這種委身需要持續的自我約束與專注。<br><br>
+<strong>2. 聖潔的生命需要謹慎守護，被玷污須重新開始</strong><br>拿細耳人若意外接觸死屍而被玷污，先前的離俗日子全部歸為徒然，必須重新開始。這看似嚴苛，卻反映了一個重要真理：聖潔的生命一旦被罪玷污，必須誠實面對、按照神的方式重新潔淨，不能輕描淡寫地繼續，也不應因此完全放棄。<br><br>
+<strong>3. 神的祝福是全方位的恩典傾注</strong><br>三重祝福涵蓋了人生最深切的需要：保護（免於危險）、恩典（蒙神喜悅）與平安（שָׁלוֹם，整全的安寧）。神的祝福不只是外在物質的賜予，更是一種關係性的臨在——神的臉光照代表神喜悅與同在，這才是真正祝福的根源。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>無論男女許了特別</strong>的願，<strong>就是拿細耳人的願</strong>，要離俗歸耶和華。」（民6:2）</td>
+<td>拿細耳人以具體的生活方式表達全然委身，就像運動員在備賽期間主動放棄某些娛樂以專注訓練一樣。在你的生命中，有沒有一個領域，你願意主動放下某些好事以更全心跟從神？</td>
+</tr>
+<tr>
+<td>「<strong>但先前的日子要歸</strong>徒然，<strong>因為他在離俗之間</strong>被玷污了。」（民6:12）</td>
+<td>被玷污後需從頭開始，就像馬拉松選手因犯規被取消成績、必須重新報名參賽一樣。當你在信仰的委身上跌倒，你是否願意誠實面對、重新開始，而非假裝沒事繼續走？</td>
+</tr>
+<tr>
+<td>「<strong>願耶和華賜福給你</strong>，<strong>保護你</strong>。願耶和華使他的臉光照你，賜恩給你。願耶和華向你仰臉，賜你平安。」（民6:24-26）</td>
+<td>神的三重祝福涵蓋保護、恩典與平安，就像一個全面的安全系統同時守護門、窗和內部一樣。今天，你是否能在內心領受這份祝福，相信神正以祂的臉光照著你的生命？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

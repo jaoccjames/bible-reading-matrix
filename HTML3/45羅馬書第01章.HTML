@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>羅馬書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+羅馬書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">福音的大能與人的罪性</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌基督的僕人保羅，奉召為使徒，特派傳神的福音。</div>
+<div class="verse"><span class="verse-number">2</span>這福音是神從前藉眾先知在聖經上所應許的，</div>
+<div class="verse"><span class="verse-number">3</span>論到他兒子我主耶穌基督。按肉體說，是從大衛後裔生的；</div>
+<div class="verse"><span class="verse-number">4</span>按聖善的靈說，因從死裏復活，以大能顯明是神的兒子。</div>
+<div class="verse"><span class="verse-number">5</span>我們從他受了恩惠並使徒的職分，在萬國之中叫人為他的名信服真道；</div>
+<div class="verse"><span class="verse-number">6</span>其中也有你們這蒙召屬耶穌基督的人。</div>
+<div class="verse"><span class="verse-number">7</span>我寫信給你們在羅馬、為神所愛、奉召作聖徒的眾人。願恩惠、平安從我們的父神並主耶穌基督歸與你們！</div>
+<div class="verse"><span class="verse-number">8</span>第一，我靠着耶穌基督，為你們眾人感謝我的神，因你們的信德傳遍了天下。</div>
+<div class="verse"><span class="verse-number">9</span>我在他兒子福音上，用心靈所事奉的神，可以見證我怎樣不住的提到你們；</div>
+<div class="verse"><span class="verse-number">10</span>在禱告之間常常懇求，或者照神的旨意，終能得平坦的道路往你們那裏去。</div>
+<div class="verse"><span class="verse-number">11</span>因為我切切的想見你們，要把些屬靈的恩賜分給你們，使你們可以堅固。</div>
+<div class="verse"><span class="verse-number">12</span>這樣，我在你們中間，因你與我彼此的信心，就可以同得安慰。</div>
+<div class="verse"><span class="verse-number">13</span>弟兄們，我不願意你們不知道，我屢次定意往你們那裏去，要在你們中間得些果子，如同在其餘的外邦人中一樣；只是到如今仍有阻隔。</div>
+<div class="verse"><span class="verse-number">14</span>無論是希利尼人、化外人、聰明人、愚拙人，我都欠他們的債，</div>
+<div class="verse"><span class="verse-number">15</span>所以情願盡我的力量，將福音也傳給你們在羅馬的人。</div>
+<div class="verse"><span class="verse-number">16</span>我不以福音為恥；這福音本是神的大能，要救一切相信的，先是猶太人，後是希利尼人。</div>
+<div class="verse"><span class="verse-number">17</span>因為神的義正在這福音上顯明出來；這義是本於信，以致於信。如經上所記：「義人必因信得生。」</div>
+<div class="verse"><span class="verse-number">18</span>原來，神的忿怒從天上顯明在一切不虔不義的人身上，就是那些行不義阻擋真理的人。</div>
+<div class="verse"><span class="verse-number">19</span>神的事情，人所能知道的，原顯明在人心裏，因為神已經給他們顯明。</div>
+<div class="verse"><span class="verse-number">20</span>自從造天地以來，神的永能和神性是明明可知的，雖是眼不能見，但藉着所造之物就可以曉得，叫人無可推諉。</div>
+<div class="verse"><span class="verse-number">21</span>因為，他們雖然知道神，卻不當作神榮耀他，也不感謝他。他們的思念變為虛妄，無知的心就昏暗了。</div>
+<div class="verse"><span class="verse-number">22</span>自稱為聰明，反成了愚拙，</div>
+<div class="verse"><span class="verse-number">23</span>將不能朽壞之神的榮耀變為偶像，彷彿必朽壞的人和飛禽、走獸、昆蟲的樣式。</div>
+<div class="verse"><span class="verse-number">24</span>所以，神任憑他們逞着心裏的情慾行污穢的事，以致彼此玷辱自己的身體。</div>
+<div class="verse"><span class="verse-number">25</span>他們將神的真實變為虛謊，去敬拜事奉受造之物，不敬奉那造物的主；主乃是可稱頌的，直到永遠。阿們！</div>
+<div class="verse"><span class="verse-number">26</span>因此，神任憑他們放縱可羞恥的情慾。他們的女人把順性的用處變為逆性的用處；</div>
+<div class="verse"><span class="verse-number">27</span>男人也是如此，棄了女人順性的用處，慾火攻心，彼此貪戀，男和男行可羞恥的事，就在自己身上受這妄為當得的報應。</div>
+<div class="verse"><span class="verse-number">28</span>他們既然故意不認識神，神就任憑他們存邪僻的心，行那些不合理的事；</div>
+<div class="verse"><span class="verse-number">29</span>裝滿了各樣不義、邪惡、貪婪、惡毒〔或作：陰毒〕，滿心是嫉妒、兇殺、爭競、詭詐、毒恨；</div>
+<div class="verse"><span class="verse-number">30</span>又是讒毀的、背後說人的、怨恨神的〔或作：被神所憎惡的〕、侮慢人的、狂傲的、自誇的、捏造惡事的、違背父母的。</div>
+<div class="verse"><span class="verse-number">31</span>無知的，背約的，無親情的，不憐憫人的。</div>
+<div class="verse"><span class="verse-number">32</span>他們雖知道神判定行這樣事的人是當死的，然而他們不但自己去行，還喜歡別人去行。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+羅馬書是保羅書信中最具系統性的神學著作，約寫於主後57至58年，從哥林多寫給羅馬的教會，是保羅計畫訪問羅馬、再往西班牙宣教前的自我介紹，也是基督教救恩論最完整的闡述。第1章以保羅自我介紹為福音而分別出來的使徒開篇，問候羅馬眾信徒，表達想去看他們、與他們互相得勉勵的心願。接著說明他不以福音為恥，因為這是神的大能要救一切相信的人，並宣告福音的核心：神的義正在其中顯明，是本於信以至於信，就如聖經所記義人必因信得生。然後從神的義轉到神的忿怒，說明神的忿怒從天上顯明在一切不虔不義的人身上，因為可以知道的事在他們心裡是明顯的，神的永能和神性可以藉著所造之物被認識，所以人沒有可推諉的。接著列述外邦人犯罪的歷程：他們雖知道神卻不當作神榮耀祂，心地昏暗，以人和動物的像代替不能朽壞之神的形象；神任憑他們放縱情慾行各種不潔的事；他們既不以知道神為重要，神就任憑他們存邪僻的心，行那些不合理的事，並且知道行這些事的人是當死的，自己去行又贊成別人去行。本章奠定全書罪與救恩的神學基礎。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 福音是神的大能，不是人的哲學</strong><br>「這福音本是神的大能，要救一切相信的」——福音不只是好消息的資訊，而是帶着神本身的能力。「大能」（希臘文dynamis，英文power的字根）說明福音有改變生命的力量。「要救一切相信的」說明這能力透過信心才能被接受。信徒傳福音的信心，應建立在「這是神的能力在運作」的確信上，而非自己說服能力的高低。<br><br>
+<strong>2. 從受造物認識創造主是神學基礎</strong><br>「自從造天地以來，神的永能和神性是明明可知的……叫人無可推諉」——普通啟示的教義：透過大自然，所有人都能知道有一位造物主的存在和大能。人不信神，不是因為證據不足，而是因為「故意不認識神」的心態。這說明傳福音的基礎：人心裏已有對神的初步認識，福音是在這個基礎上的完全啟示。<br><br>
+<strong>3. 不認識神帶來生命秩序的全面崩潰</strong><br>「神任憑他們……」三次出現——神的審判不只是將來的，現在的道德敗壞本身就是人拒絕神的後果。這不是說神主動使人放縱，而是說神在人堅持拒絕真理時，「撤手」讓人承受選擇的自然後果。人生秩序的混亂，往往根源於對神的拒絕和忽視。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我不以福音為恥</strong>；<strong>這福音本是神的大</strong>能，要救一切相信的，先是猶太人，後是希利尼人。（羅1:16）</td>
+<td>你有沒有在任何情況下為自己的信仰感到羞恥，而選擇沉默？就像醫生若有治癒絕症的藥方，他的責任是把這消息告訴所有人，你有沒有讓「這是神的大能」的確信，使你在任何場合都不以福音為恥？</td>
+</tr>
+<tr>
+<td><strong>自從造天地以來</strong>，<strong>神的永能和神性是</strong>明明可知的，雖是眼不能見，但藉着所造之物就可以曉得，叫人無可推諉。（羅1:20）</td>
+<td>你有沒有培養從大自然中認識神的習慣，讓日落、星空、生命的精妙讓你更深地敬拜那位造物主？就像觀看一幅巨畫能讓人對畫家產生敬意，你有沒有讓受造物成為讓你更認識和敬拜神的管道？</td>
+</tr>
+<tr>
+<td>因為，<strong>他們雖然知道神</strong>，<strong>卻不當作神榮耀他</strong>，也不感謝他。他們的思念變為虛妄，無知的心就昏暗了。（羅1:21）</td>
+<td>你有沒有在日常生活中，把神應得的榮耀歸給祂，並以感謝的心對待祂的一切恩賜？就像忘記感謝施恩者是缺乏品格的，你有沒有培養每天歸榮耀與神和感謝神的具體習慣？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

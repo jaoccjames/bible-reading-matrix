@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阿摩司書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+阿摩司書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">揀選帶來更大的責任</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列人哪，你們全家是我從埃及地領上來的，當聽耶和華攻擊你們的話：</div>
+<div class="verse"><span class="verse-number">2</span>在地上萬族中，我只認識你們；因此，我必追討你們的一切罪孽。</div>
+<div class="verse"><span class="verse-number">3</span>二人若不同心，豈能同行呢？</div>
+<div class="verse"><span class="verse-number">4</span>獅子若非抓食，豈能在林中咆哮呢？少壯獅子若無所得，豈能從洞中發聲呢？</div>
+<div class="verse"><span class="verse-number">5</span>若沒有機檻，雀鳥豈能陷在網羅裏呢？網羅若無所得，豈能從地上翻起呢？</div>
+<div class="verse"><span class="verse-number">6</span>城中若吹角，百姓豈不驚恐呢？災禍若臨到一城，豈非耶和華所降的嗎？</div>
+<div class="verse"><span class="verse-number">7</span>主耶和華若不將奧祕指示他的僕人眾先知，就一無所行。</div>
+<div class="verse"><span class="verse-number">8</span>獅子吼叫，誰不懼怕呢？主耶和華發命，誰能不說預言呢？</div>
+<div class="verse"><span class="verse-number">9</span>要在亞實突的宮殿中和埃及地的宮殿裏傳揚說：你們要聚集在撒瑪利亞的山上，就看見城中有何等大的擾亂與欺壓的事。</div>
+<div class="verse"><span class="verse-number">10</span>那些以強暴搶奪財物、積蓄在自己家中的人不知道行正直的事。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">11</span>所以主耶和華如此說：敵人必來圍攻這地，使你的勢力衰微，搶掠你的家宅。</div>
+<div class="verse"><span class="verse-number">12</span>耶和華如此說：「牧人怎樣從獅子口中搶回兩條羊腿或半個耳朵，住撒瑪利亞的以色列人躺臥在床角上或鋪繡花毯的榻上，他們得救也不過如此。」</div>
+<div class="verse"><span class="verse-number">13</span>主耶和華萬軍之神說：當聽這話，警戒雅各家。</div>
+<div class="verse"><span class="verse-number">14</span>我討以色列罪的日子，也要討伯特利祭壇的罪；壇角必被砍下，墜落於地。</div>
+<div class="verse"><span class="verse-number">15</span>我要拆毀過冬和過夏的房屋。象牙的房屋也必毀滅；高大的房屋都歸無有。這是耶和華說的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+阿摩司書第3章是一系列修辭性問題的集合，每個問題都是從因果關係出發：「二人若不同心，豈能同行？」「獅子若非抓食，豈能在林中咆哮？」「城中若吹角，百姓豈不驚恐？」這些問題的邏輯結論是：先知說預言，是因為耶和華說了話——阿摩司的預言不是他自己說的，而是神所命定的。本章的核心神學句是第2節：「在地上萬族中，我只認識你們；因此，我必追討你們的一切罪孽。」——「認識」在希伯來文中有親密揀選的意涵；正因被神揀選、被神親密認識，以色列的責任比其他民族更重，對失敗的追討也更嚴。這是「被揀選帶來更大責任」的核心原則。章末預告撒瑪利亞宮殿將被毀壞，那些靠着不義建造的「象牙房屋」必滅絕。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 被神揀選意味著更大的責任，而非特殊的豁免</strong><br>「我只認識你們……因此必追討你們的一切罪孽」——揀選不是豁免牌，而是更重的責任狀。信徒有時以為「我是基督徒，神必保護我」；阿摩司的神學說的是：正因你蒙揀選，你的失敗有更大的追討。特權和責任是同一件事的兩面。<br><br>
+<strong>2. 神在行動之前先透過先知說話，不是無預警的審判</strong><br>「主耶和華若不將奧祕指示他的僕人眾先知，就一無所行」（7節）——神的審判不是無預警的突然降臨，而是先透過先知警告，給人悔改的機會。這說明神不是急着審判，而是急着讓人知道並有機會回應。信徒讀先知書，本身就是神給今日人的預警。<br><br>
+<strong>3. 靠不義積累的財富不能成為避難所</strong><br>「那以強暴搶奪財物積蓄在自己家中的人」（10節）——財富若建立在不義上，神說它終將被搶奪一空。「象牙的房屋」是財富和奢華的象徵；神看見它的根基，不只是它的外表。信徒積累財富的方式，和財富的多少一樣在神的眼中。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>在地上萬族中</strong>，<strong>我只認識你們</strong>；因此，我必追討你們的一切罪孽。（摩3:2）</td>
+<td>「認識你們……因此追討」——被神親密認識是更大的責任，不是特殊的豁免。你是否有時以「我是基督徒」作為一種隱形的期待，以為自己應該比別人更受保護、更少面對後果？就像老師對班上資優生有更高的學術期望，神對那些「被祂認識的人」有更嚴格的品格要求，你如何回應這個呼召？</td>
+</tr>
+<tr>
+<td><strong>主耶和華若不將奧</strong><strong>祕指示他的僕人眾</strong>先知，就一無所行。（摩3:7）</td>
+<td>神在行動之前先說話——祂給人預警、給人機會。這說明神的心意是讓人知道並有機會回應。你讀聖經中那些「警告性的預言」時，是否把它們當作神給你的個人預警？就像安全演練是為了在真實情況發生時不手忙腳亂，你有沒有在「平時」讓神的警告塑造你，以免「緊急時刻」才後悔？</td>
+</tr>
+<tr>
+<td><strong>那些以強暴搶奪財</strong>物、<strong>積蓄在自己家中的</strong>人不知道行正直的事。（摩3:10）</td>
+<td>「不知道行正直的事」——長期的不義使人失去辨別正直的能力。你生活中有沒有某些「已經習慣的不義」——某種長期存在、你已不再感到不妥的行為或關係模式？就像人在霧中久了便不再察覺有霧，你願意今天請一個信任的人幫你照出那個「已習慣的霧」嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

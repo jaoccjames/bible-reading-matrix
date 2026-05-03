@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多前書第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多前書第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">蒙頭問題與聖餐的神聖性</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們該效法我，像我效法基督一樣。</div>
+<div class="verse"><span class="verse-number">2</span>我稱讚你們，因你們凡事記念我，又堅守我所傳給你們的。</div>
+<div class="verse"><span class="verse-number">3</span>我願意你們知道，基督是各人的頭；男人是女人的頭；神是基督的頭。</div>
+<div class="verse"><span class="verse-number">4</span>凡男人禱告或是講道〔或作：說預言；下同〕，若蒙着頭，就羞辱自己的頭。</div>
+<div class="verse"><span class="verse-number">5</span>凡女人禱告或是講道，若不蒙着頭，就羞辱自己的頭，因為這就如同剃了頭髮一樣。</div>
+<div class="verse"><span class="verse-number">6</span>女人若不蒙着頭，就該剪了頭髮；女人若以剪髮、剃髮為羞愧，就該蒙着頭。</div>
+<div class="verse"><span class="verse-number">7</span>男人本不該蒙着頭，因為他是神的形像和榮耀；但女人是男人的榮耀。</div>
+<div class="verse"><span class="verse-number">8</span>起初，男人不是由女人而出，女人乃是由男人而出。</div>
+<div class="verse"><span class="verse-number">9</span>並且男人不是為女人造的；女人乃是為男人造的。</div>
+<div class="verse"><span class="verse-number">10</span>因此，女人為天使的緣故，應當在頭上有服權柄的記號。</div>
+<div class="verse"><span class="verse-number">11</span>然而照主的安排，女也不是無男，男也不是無女。</div>
+<div class="verse"><span class="verse-number">12</span>因為女人原是由男人而出，男人也是由女人而出；但萬有都是出乎神。</div>
+<div class="verse"><span class="verse-number">13</span>你們自己審察，女人禱告神，不蒙着頭是合宜的嗎？</div>
+<div class="verse"><span class="verse-number">14</span>你們的本性不也指示你們，男人若有長頭髮，便是他的羞辱嗎？</div>
+<div class="verse"><span class="verse-number">15</span>但女人有長頭髮，乃是她的榮耀，因為這頭髮是給她作蓋頭的。</div>
+<div class="verse"><span class="verse-number">16</span>若有人想要辯駁，我們卻沒有這樣的規矩，神的眾教會也是沒有的。</div>
+<div class="verse"><span class="verse-number">17</span>我現今吩咐你們的話，不是稱讚你們；因為你們聚會不是受益，乃是招損。</div>
+<div class="verse"><span class="verse-number">18</span>第一，我聽說，你們聚會的時候彼此分門別類，我也稍微的信這話。</div>
+<div class="verse"><span class="verse-number">19</span>在你們中間不免有分門結黨的事，好叫那些有經驗的人顯明出來。</div>
+<div class="verse"><span class="verse-number">20</span>你們聚會的時候，算不得吃主的晚餐；</div>
+<div class="verse"><span class="verse-number">21</span>因為吃的時候，各人先吃自己的飯，甚至這個飢餓，那個酒醉。</div>
+<div class="verse"><span class="verse-number">22</span>你們要吃喝，難道沒有家麼？還是藐視神的教會，叫那沒有的羞愧呢？我向你們可怎麼說呢？可因此稱讚你們麼？我不稱讚！</div>
+<div class="verse"><span class="verse-number">23</span>我當日傳給你們的，原是從主領受的，就是主耶穌被賣的那一夜，拿起餅來，</div>
+<div class="verse"><span class="verse-number">24</span>祝謝了，就擘開，說：「這是我的身體，為你們捨〔有古卷作：擘開〕的，你們應當如此行，為的是記念我。」</div>
+<div class="verse"><span class="verse-number">25</span>飯後，也照樣拿起杯來，說：「這杯是用我的血所立的新約，你們每逢喝的時候，要如此行，為的是記念我。」</div>
+<div class="verse"><span class="verse-number">26</span>你們每逢吃這餅，喝這杯，是表明主的死，直等到他來。</div>
+<div class="verse"><span class="verse-number">27</span>所以，無論何人，不按理吃主的餅，喝主的杯，就是干犯主的身、主的血了。</div>
+<div class="verse"><span class="verse-number">28</span>人應當自己省察，然後吃這餅、喝這杯。</div>
+<div class="verse"><span class="verse-number">29</span>因為人吃喝，若不分辨是主的身體，就是吃喝自己的罪了。</div>
+<div class="verse"><span class="verse-number">30</span>因此，在你們中間有好些軟弱的與患病的，死〔原文作睡〕的也不少。</div>
+<div class="verse"><span class="verse-number">31</span>我們若是先分辨自己，就不至於受審。</div>
+<div class="verse"><span class="verse-number">32</span>我們受審的時候，乃是被主懲治，免得我們和世人一同定罪。</div>
+<div class="verse"><span class="verse-number">33</span>所以我弟兄們，你們聚會吃的時候，要彼此等待。</div>
+<div class="verse"><span class="verse-number">34</span>若有人飢餓，可以在家裏先吃，免得你們聚會，自己取罪。其餘的事，我來的時候再安排。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第11章論述兩個敬拜相關的問題：女人蒙頭的習俗與規範，以及主的晚餐被誤用的問題，是使徒行傳以外關於聖餐最早、最詳細的記述。本章首先論述蒙頭的問題，說明基督是各人的頭，男人是女人的頭，神是基督的頭，男人若蒙著頭禱告或說預言就羞辱了自己的頭，女人若不蒙著頭禱告或說預言就羞辱了自己的頭，男人原是神的形像和榮耀，女人卻是男人的榮耀，但在主裡面女人離不開男人男人也離不開女人。然後論述主的晚餐被誤用的問題：你們聚在一處已經不是吃主的晚餐了，因為你們吃的時候各人先吃自己的飯，甚至有飢餓的有喝醉的，你們藐視神的教會。接著詳述保羅所傳的主的晚餐傳統：主耶穌被賣的那一夜拿起餅來祝謝了就擘開說這是我的身體為你們捨的，你們應當如此行為的是紀念我；飯後也照樣拿起杯說這杯是用我的血所立的新約，你們每逢吃這餅喝這杯是表明主的死直到祂來。最後說明若有不按理吃喝的就是干犯主的身體和血，人應當自己省察然後吃喝。本章確立聖餐禮儀的神學根基，呈現教會敬拜秩序的重要性。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 聖餐是最嚴肅的紀念行動</strong><br>「你們每逢吃這餅、喝這杯，是表明主的死，直等到他來」——聖餐有三個時間維度：過去（主的死）、現在（每逢）、將來（直等到他來）。它是信仰歷史最濃縮的表達。「不按理」吃，是「干犯主的身、主的血」——態度的輕忽有嚴重的屬靈後果。因此，「人應當自己省察，然後吃」——自我省察是正確領受的前提。<br><br>
+<strong>2. 在聖餐中對弟兄的漠視就是對主的冒犯</strong><br>哥林多人各吃各的，讓窮人飢餓，富人酒醉——不只是無禮，而是從根本上違背了聖餐所表達的基督之愛。「不分辨是主的身體」不只指餅本身，也指教會這個身體——每一個弟兄姐妹都是基督身體的一部分。對弟兄的冷漠就是對基督身體的不敬。<br><br>
+<strong>3. 頭的次序彰顯創造的秩序和相互尊重</strong><br>頭的比喻不是說女性低劣，而是說在神的設計中有不同的角色和關係。「然而照主的安排，女也不是無男，男也不是無女……但萬有都是出乎神」——這個次序不是歧視，而是在相互依存中的角色分工，最終萬有都歸於神。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們每逢吃這餅</strong>，<strong>喝這杯</strong>，是表明主的死，直等到他來。所以，無論何人，不按理吃主的餅，喝主的杯，就是干犯主的身、主的血了。人應當自己省察，然後吃這餅、喝這杯。（林前11:26-28）</td>
+<td>你在每次領受聖餐前，有沒有真正地「自己省察」——讓這個時刻成為認罪、感恩和更新委身的機會？就像一個與老朋友的特別紀念晚餐需要全心投入，你有沒有讓聖餐成為你與主最深刻的相遇時刻？</td>
+</tr>
+<tr>
+<td><strong>主耶穌被賣的那一</strong>夜……說：<strong>這是我的身體</strong>，為你們捨的，你們應當如此行，為的是記念我。（林前11:23-24）</td>
+<td>「記念我」這個呼召對你有多深的意義？你有沒有讓對基督的記念——祂的犧牲、祂的愛、祂所付出的代價——真實地影響你每一天的生命選擇？就像得救者不斷思念救他的人，你有沒有讓「記念主」成為你每天的靈魂滋養？</td>
+</tr>
+<tr>
+<td>第一，<strong>我聽說</strong>，<strong>你們聚會的時候彼</strong>此分門別類；……你們聚會的時候，算不得吃主的晚餐；因為吃的時候，各人先吃自己的飯，甚至這個飢餓，那個酒醉。（林前11:18,20-21）</td>
+<td>你有沒有在你的信仰群體中，確認每一個弟兄姐妹都真實地被包括和照顧，而非在群體的活動中製造有人被忽略的局面？就像主人確保每一位客人都得到款待，你有沒有在你的群體中成為那個關注被遺忘者的人？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

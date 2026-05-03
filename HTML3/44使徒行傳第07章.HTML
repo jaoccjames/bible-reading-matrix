@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">司提反的申辯與殉道</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>大祭司就說：『這些事果然有嗎？』</div>
+<div class="verse"><span class="verse-number">2</span>司提反說：「諸位父兄請聽！當日我們的祖宗亞伯拉罕在米所波大米亞還未住哈蘭的時候，榮耀的神向他顯現，</div>
+<div class="verse"><span class="verse-number">3</span>對他說：『你要離開本地和親族，往我所要指示你的地方去。』</div>
+<div class="verse"><span class="verse-number">4</span>他就離開迦勒底人之地，住在哈蘭。他父親死了以後，神使他從那裏搬到你們現在所住之地。</div>
+<div class="verse"><span class="verse-number">5</span>在這地方，神並沒有給他產業，連立足之地也沒有給他；但應許要將這地賜給他和他的後裔為業；那時他還沒有兒子。</div>
+<div class="verse"><span class="verse-number">6</span>神說：『他的後裔必寄居外邦，那裏的人要叫他們作奴僕，苦待他們四百年。』</div>
+<div class="verse"><span class="verse-number">7</span>神又說：『使他們作奴僕的那國，我要懲罰。以後他們要出來，在這地方事奉我。』</div>
+<div class="verse"><span class="verse-number">8</span>神又賜他割禮的約。於是亞伯拉罕生了以撒，第八日給他行了割禮。以撒生雅各，雅各生十二位先祖。</div>
+<div class="verse"><span class="verse-number">9</span>先祖嫉妒約瑟，把他賣到埃及去；神卻與他同在，</div>
+<div class="verse"><span class="verse-number">10</span>救他脫離一切苦難，又使他在埃及王法老面前得恩典，有智慧。法老就派他作埃及國的宰相兼管全家。</div>
+<div class="verse"><span class="verse-number">11</span>後來埃及和迦南全地遭遇饑荒，大受艱難，我們的祖宗就絕了糧。</div>
+<div class="verse"><span class="verse-number">12</span>雅各聽見在埃及有糧，就打發我們的祖宗初次往那裏去。</div>
+<div class="verse"><span class="verse-number">13</span>第二次約瑟與弟兄們相認，他的親族也被法老知道了。</div>
+<div class="verse"><span class="verse-number">14</span>約瑟就打發弟兄請父親雅各和全家七十五個人都來。</div>
+<div class="verse"><span class="verse-number">15</span>於是雅各下了埃及，後來他和我們的祖宗都死在那裏；</div>
+<div class="verse"><span class="verse-number">16</span>又被帶到示劍，葬於亞伯拉罕在示劍用銀子從哈抹子孫買來的墳墓裏。</div>
+<div class="verse"><span class="verse-number">17</span>「及至神應許亞伯拉罕的日期將到，以色列民在埃及興盛眾多，</div>
+<div class="verse"><span class="verse-number">18</span>直到有不曉得約瑟的新王興起。</div>
+<div class="verse"><span class="verse-number">19</span>他用詭計待我們的宗族，苦害我們的祖宗，叫他們丟棄嬰孩，使嬰孩不能存活。</div>
+<div class="verse"><span class="verse-number">20</span>那時，摩西生下來，俊美非凡，在他父親家裏撫養了三個月。</div>
+<div class="verse"><span class="verse-number">21</span>他被丟棄的時候，法老的女兒拾了去，養為自己的兒子。</div>
+<div class="verse"><span class="verse-number">22</span>摩西學了埃及人一切的學問，說話行事都有才能。</div>
+<div class="verse"><span class="verse-number">23</span>「他將到四十歲，心中起意去看望他的弟兄以色列人；</div>
+<div class="verse"><span class="verse-number">24</span>到了那裏，見他們一個人受冤屈，就護庇他，為那受欺壓的人報仇，打死了那埃及人。</div>
+<div class="verse"><span class="verse-number">25</span>他以為弟兄必明白神是藉他的手搭救他們；他們卻不明白。</div>
+<div class="verse"><span class="verse-number">26</span>第二天，遇見兩個以色列人爭鬥，就勸他們和睦，說：『你們二位是弟兄，為甚麼彼此欺負呢？』</div>
+<div class="verse"><span class="verse-number">27</span>那欺負鄰舍的把他推開，說：『誰立你作我們的首領和審判官呢？</div>
+<div class="verse"><span class="verse-number">28</span>難道你要殺我，像昨天殺那埃及人麼？』</div>
+<div class="verse"><span class="verse-number">29</span>摩西聽見這話就逃走了，寄居於米甸；在那裏生了兩個兒子。</div>
+<div class="verse"><span class="verse-number">30</span>「過了四十年，在西乃山的曠野，有一位天使從荊棘火焰中向摩西顯現。</div>
+<div class="verse"><span class="verse-number">31</span>摩西見了那異象，便覺希奇，正進前觀看的時候，有主的聲音說：</div>
+<div class="verse"><span class="verse-number">32</span>『我是你列祖的神，就是亞伯拉罕的神，以撒的神，雅各的神。』摩西戰戰兢兢，不敢觀看。</div>
+<div class="verse"><span class="verse-number">33</span>主對他說：『把你腳上的鞋脫下來；因為你所站之地是聖地。</div>
+<div class="verse"><span class="verse-number">34</span>我的百姓在埃及所受的困苦，我實在看見了，他們悲歎的聲音，我也聽見了。我下來要救他們。你來！我要差你往埃及去。』</div>
+<div class="verse"><span class="verse-number">35</span>這摩西就是百姓棄絕說『誰立你作我們的首領和審判官』的；神卻藉那在荊棘中顯現之使者的手差派他作首領、作救贖的。</div>
+<div class="verse"><span class="verse-number">36</span>這人領百姓出來，在埃及，在紅海、在曠野，四十年間行了奇事神蹟。</div>
+<div class="verse"><span class="verse-number">37</span>那曾對以色列人說『神要從你們弟兄中間給你們興起一位先知像我』的，就是這位摩西。</div>
+<div class="verse"><span class="verse-number">38</span>這人曾在曠野會中和西乃山上，與那對他說話的天使同在，又與我們的祖宗同在，並且領受活潑的聖言傳給我們。</div>
+<div class="verse"><span class="verse-number">39</span>我們的祖宗不肯聽從，反棄絕他，心裏歸向埃及，</div>
+<div class="verse"><span class="verse-number">40</span>對亞倫說：『你且為我們造些神像，在我們前面引路；因為領我們出埃及地的那個摩西，我們不知道他遭了甚麼事。』</div>
+<div class="verse"><span class="verse-number">41</span>那時，他們造了一個牛犢，又拿祭物獻給那像，歡喜自己手中的工作。</div>
+<div class="verse"><span class="verse-number">42</span>神就轉臉不顧，任憑他們事奉天上的日月星辰，正如先知書上所寫的說：以色列家啊，你們四十年間在曠野，豈是將犧牲和祭物獻給我嗎？</div>
+<div class="verse"><span class="verse-number">43</span>你們抬着摩洛的帳幕和理番神的星，就是你們所造為要敬拜的像。因此，我要把你們遷到巴比倫外去。</div>
+<div class="verse"><span class="verse-number">44</span>「我們的祖宗在曠野，有法櫃的帳幕，是神吩咐摩西叫他照所看見的樣式作的。</div>
+<div class="verse"><span class="verse-number">45</span>這帳幕，我們的祖宗相繼承受。當神在他們面前趕出外邦人去的時候，他們同約書亞把帳幕搬進承受為業之地，直存到大衛的日子。</div>
+<div class="verse"><span class="verse-number">46</span>大衛在神面前蒙恩，祈求為雅各的神預備居所；</div>
+<div class="verse"><span class="verse-number">47</span>卻是所羅門為神造成殿宇。</div>
+<div class="verse"><span class="verse-number">48</span>其實，至高者並不住人手所造的，就如先知所言：</div>
+<div class="verse"><span class="verse-number">49</span>主說：天是我的座位，地是我的腳凳；你們要為我造何等的殿宇？那裏是我安息的地方呢？</div>
+<div class="verse"><span class="verse-number">50</span>這一切不都是我手所造的嗎？</div>
+<div class="verse"><span class="verse-number">51</span>「你們這硬着頸項、心與耳未受割禮的人，常時抗拒聖靈！你們的祖宗怎樣，你們也怎樣。</div>
+<div class="verse"><span class="verse-number">52</span>那一個先知不是你們祖宗逼迫呢？他們也把預先傳說那義者要來的人殺了；如今你們又把那義者賣了，殺了。</div>
+<div class="verse"><span class="verse-number">53</span>你們受了天使所傳的律法，竟不遵守。」</div>
+<div class="verse"><span class="verse-number">54</span>眾人聽見這話就極其惱怒，向司提反咬牙切齒。</div>
+<div class="verse"><span class="verse-number">55</span>但司提反被聖靈充滿，定睛望天，看見神的榮耀，又看見耶穌站在神的右邊，</div>
+<div class="verse"><span class="verse-number">56</span>就說：「我看見天開了，人子站在神的右邊。」</div>
+<div class="verse"><span class="verse-number">57</span>眾人大聲喊叫，摀着耳朵，齊心擁上前去，</div>
+<div class="verse"><span class="verse-number">58</span>把他推到城外，用石頭打他。作見證的人把衣裳放在一個少年人名叫掃羅的腳前。</div>
+<div class="verse"><span class="verse-number">59</span>他們正用石頭打的時候，司提反呼籲主說：「求主耶穌接收我的靈魂！」</div>
+<div class="verse"><span class="verse-number">60</span>又跪下大聲喊着說：「主啊，不要將這罪歸於他們！」說了這話，就睡了。掃羅也喜悅他被害。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第7章是使徒行傳中最長的一章，完整記述司提反在公會面前的申辯以及他殉道的事件，是新約第一位殉道者的完整見證。司提反以回顧以色列歷史的方式申辯：從亞伯拉罕蒙召、約瑟被賣入埃及、摩西被神興起帶領以色列人出埃及，一直到大衛和所羅門建殿，串聯起神在歷史中的作為。首先他說到亞伯拉罕因信遷往迦南、約瑟被兄弟忌妒賣到埃及神卻使他發達、摩西被法老女兒收養後被神呼召帶領出埃及、但以色列人在曠野轉心歸向偶像。最後司提反轉向控訴：你們這硬著頸項的人，你們和你們的祖宗常時抗拒聖靈，先知傳預言那義者的來臨你們殺了他，你們受了律法卻沒有遵守。眾人聽見心裡極其惱怒，司提反被聖靈充滿，看見天開了耶穌站在神的右邊，就大聲呼叫，眾人把他趕出城外用石頭打他，把衣服放在一個少年人掃羅的腳前，司提反求主不要將這罪歸於他們就睡了。本章是初代教會第一位殉道者的完整記錄，也是日後保羅歸主的重要背景。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 歷史的回顧揭示人類拒絕神使者的模式</strong><br>司提反的講道不是辯護，而是宣告：以色列的歷史是一部重複拒絕神代言人的歷史，從約瑟到摩西到先知，直到耶穌。這是一個「你們和你們祖宗一樣」的控訴。每一代人都有機會接受或拒絕神的呼召，而對現今這代人，神差遣了最終的使者——祂的兒子，他們竟然殺了祂。這個模式今天仍然存在：人心對神話語的抗拒是普遍的。<br><br>
+<strong>2. 「常時抗拒聖靈」是最深的屬靈問題</strong><br>「你們……常時抗拒聖靈！」——聖靈的工作是使人認識罪、認識耶穌、帶來改變，但人可以選擇抗拒。「心與耳未受割禮」是說他們的內心對神沒有開放和降服的意願。今天的人也可能外在有很多宗教活動，卻在內心持續抵擋聖靈的工作。定期省察：我有沒有在抗拒聖靈對我的呼召或改變？<br><br>
+<strong>3. 殉道者的禱告是最終的見證</strong><br>「主啊，不要將這罪歸於他們！」——在死亡的最後時刻，司提反的禱告是為殺害他的人代求，這是耶穌愛仇敵的教導的活出。「掃羅也喜悅他被害」——那個後來成為最偉大宣教士的保羅，第一次出現在司提反殉道的場景。誰知道司提反最後的禱告在掃羅心裏種下了什麼種子？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>司提反說</strong>：「<strong>你們這硬着頸項</strong>、心與耳未受割禮的人，常時抗拒聖靈！你們的祖宗怎樣，你們也怎樣。」（徒7:51）</td>
+<td>你有沒有在某些方面「抗拒聖靈」——知道神要改變你但仍然固執地拒絕？就像一直抵制良藥的病人只會越來越嚴重，你願意讓聖靈把你心裏那些尚未「受割禮」的硬心柔軟嗎？</td>
+</tr>
+<tr>
+<td><strong>司提反又跪下大聲</strong><strong>喊着說</strong>：「主啊，不要將這罪歸於他們！」說了這話，就睡了。（徒7:60）</td>
+<td>你有沒有效法司提反和耶穌的精神，為那些傷害或逼迫你的人禱告，求神不要追究他們的罪？就像寬恕不只是為了別人也是讓自己得釋放，你願意讓這個「不要將這罪歸於他們」的禱告，成為你面對仇敵的回應嗎？</td>
+</tr>
+<tr>
+<td><strong>司提反被聖靈充滿</strong>，<strong>定睛望天</strong>，看見神的榮耀，又看見耶穌站在神的右邊。（徒7:55）</td>
+<td>在你最黑暗、最難熬的時刻，你有沒有像司提反一樣「定睛望天」，讓神的榮耀成為你心靈的焦點？就像即使在最嘈雜的環境中鎖定一個固定的目標點，你願意在苦難中把眼光固定在那位在神右邊為你站立的耶穌上嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

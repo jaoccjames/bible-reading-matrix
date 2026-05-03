@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記下第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記下第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約櫃進城</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>大衛又聚集以色列中所有挑選的人三萬。</div>
+<div class="verse"><span class="verse-number">2</span>大衛起身，率領跟隨他的眾人前往，要從巴拉猶大將神的約櫃運來；這約櫃就是坐在二基路伯上萬軍之耶和華留名的約櫃。</div>
+<div class="verse"><span class="verse-number">3</span>他們將神的約櫃從岡上亞比拿達的家裏抬出來，放在新車上；亞比拿達的兩個兒子烏撒和亞希約趕這新車。</div>
+<div class="verse"><span class="verse-number">4</span>他們將神的約櫃從岡上亞比拿達家裏抬出來的時候，亞希約在櫃前行走。</div>
+<div class="verse"><span class="verse-number">5</span>大衛和以色列的全家在耶和華面前，用松木製造的各樣樂器和琴、瑟、鼓、鈸、鑼，作樂跳舞。</div>
+<div class="verse"><span class="verse-number">6</span>到了拿艮的禾場，因為牛失前蹄〔或作：驚跳〕，烏撒就伸手扶住神的約櫃。</div>
+<div class="verse"><span class="verse-number">7</span>神耶和華向烏撒發怒，因這錯誤擊殺他，他就死在神的約櫃旁。</div>
+<div class="verse"><span class="verse-number">8</span>大衛因耶和華擊殺〔原文作闖殺〕烏撒，心裏愁煩，就稱那地方為毘列斯烏撒，直到今日。</div>
+<div class="verse"><span class="verse-number">9</span>那日，大衛懼怕耶和華，說：「耶和華的約櫃怎可運到我這裏來？」</div>
+<div class="verse"><span class="verse-number">10</span>於是大衛不肯將耶和華的約櫃運進大衛的城，卻運到迦特人俄別以東的家中。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華的約櫃在迦特人俄別以東家中三個月；耶和華賜福給俄別以東和他的全家。</div>
+<div class="verse"><span class="verse-number">12</span>有人告訴大衛王說：「耶和華因為約櫃賜福給俄別以東的家和一切屬他的。」大衛就去，歡歡喜喜的將神的約櫃從俄別以東家中抬到大衛的城裏。</div>
+<div class="verse"><span class="verse-number">13</span>抬耶和華約櫃的人走了六步，大衛就獻牛與肥羊為祭。</div>
+<div class="verse"><span class="verse-number">14</span>大衛穿着細麻布的以弗得，在耶和華面前極力跳舞。</div>
+<div class="verse"><span class="verse-number">15</span>這樣，大衛和以色列的全家歡呼吹角，將耶和華的約櫃抬上來。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華的約櫃進了大衛城的時候，掃羅的女兒米甲從窗戶裏觀看，見大衛王在耶和華面前踴躍跳舞，心裏就輕視他。</div>
+<div class="verse"><span class="verse-number">17</span>眾人將耶和華的約櫃請進去，安放在所預備的地方，就是在大衛所搭的帳幕裏。大衛在耶和華面前獻燔祭和平安祭。</div>
+<div class="verse"><span class="verse-number">18</span>大衛獻完了燔祭和平安祭，就奉萬軍之耶和華的名給民祝福，</div>
+<div class="verse"><span class="verse-number">19</span>並且分給以色列眾人，無論男女，每人一個餅，一塊肉，一個葡萄餅；眾人就各回各家去了。</div>
+<div class="verse"><span class="verse-number">20</span>大衛回家要給眷屬祝福；掃羅的女兒米甲出來迎接他，說：「以色列王今日在臣僕的婢女眼前露體，如同一個輕賤人無恥露體一樣，有好大的榮耀啊！」</div>
+<div class="verse"><span class="verse-number">21</span>大衛對米甲說：「這是在耶和華面前；耶和華已揀選我，廢了你父和你父的全家，立我作耶和華民以色列的君，所以我必在耶和華面前跳舞。</div>
+<div class="verse"><span class="verse-number">22</span>我也必更加卑微，自己看為輕賤。你所說的那些婢女，她們倒要尊敬我。」</div>
+<div class="verse"><span class="verse-number">23</span>掃羅的女兒米甲，直到死日，沒有生養兒女。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載大衛第二次嘗試將約櫃迎入耶路撒冷。第一次因烏撒不按神所定的方式運送約櫃而被擊殺,使大衛心生畏懼。約櫃隨後在俄別以東家中停留三個月,期間神大大賜福給他家。當大衛聽聞此事,便歡歡喜喜地按照正確的方式將約櫃迎入大衛城。這標誌著耶路撒冷正式成為以色列的宗教與政治中心。大衛在約櫃前極力跳舞敬拜,卻遭妻子米甲輕視,顯示出真實敬拜與外在尊嚴之間的張力。本章在救恩歷史中具有重要意義,預示神的同在要與祂的百姓同在,也提醒我們必須以神所喜悅的方式來親近祂。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 敬畏神的聖潔</strong><br>烏撒之死提醒我們神的聖潔不容侵犯。即使出於好意,若不按神所定的方式親近祂,仍會招致審判。神是聖潔的,我們必須以敬畏的心,按照祂的話語來敬拜和事奉祂。人的熱心若不建立在對神屬性的正確認識上,反而會帶來災禍。<br><br>
+<strong>2. 神同在帶來祝福</strong><br>約櫃在俄別以東家中三個月,神就賜福給他全家。這顯明神的同在是一切祝福的源頭。當我們歡迎神在生命中居首位,我們的家庭、工作和人際關係都會蒙受祝福。神不僅是審判的神,更是恩典與祝福的神,祂樂意與敬畏祂的人同在。<br><br>
+<strong>3. 全心敬拜的真誠</strong><br>大衛在神面前極力跳舞,不顧個人尊嚴,專注於敬拜神。真正的敬拜不在乎別人的眼光,而在乎我們內心對神的渴慕。米甲因注重外在形象而輕視大衛,結果失去生育能力,顯示神看重內心的真誠勝過外表的體面。敬拜是向神獻上我們最好的,而不是為了取悅人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>神耶和華向烏撒發</strong>怒,<strong>因這錯誤擊殺他</strong>,他就死在神的約櫃旁。(撒下6:7)</td>
+<td>當我們做好事卻用錯方法時,就像好心幫忙卻弄巧成拙,神會如何看待我們的動機與方式?我們如何確保自己是按照神的心意而非自己的想法來服事祂?</td>
+</tr>
+<tr>
+<td><strong>耶和華的約櫃在迦</strong><strong>特人俄別以東家中</strong>三個月;耶和華賜福給俄別以東和他的全家。(撒下6:11)</td>
+<td>當我們真心接待神進入生命中,就像打開家門迎接貴客一樣,我們會經歷到哪些意想不到的祝福?我們是否願意給神在生命中留出最好的位置?</td>
+</tr>
+<tr>
+<td><strong>大衛穿著細麻布的</strong><strong>以弗得</strong>,在耶和華面前極力跳舞。(撒下6:14)</td>
+<td>當我們全心敬拜神時,就像在演唱會為喜愛的歌手熱情歡呼,我們是否也能不顧他人眼光,單單專注於向神獻上讚美?什麼攔阻了我們在敬拜中全然擺上?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

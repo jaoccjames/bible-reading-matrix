@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提摩太前書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+提摩太前書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">末世的警告與敬虔操練的益處</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>聖靈明說，在後來的時候，必有人離棄真道，聽從那引誘人的邪靈和鬼魔的道理。</div>
+<div class="verse"><span class="verse-number">2</span>這是因為說謊之人的假冒；這等人的良心如同被熱鐵烙慣了一般。</div>
+<div class="verse"><span class="verse-number">3</span>他們禁止嫁娶，又禁戒食物〔或作：又叫人戒葷〕，就是神所造、叫那信而明白真道的人感謝着領受的。</div>
+<div class="verse"><span class="verse-number">4</span>凡神所造的物都是好的，若感謝着領受，就沒有一樣可棄的，</div>
+<div class="verse"><span class="verse-number">5</span>都因神的道和人的祈求成為聖潔了。</div>
+<div class="verse"><span class="verse-number">6</span>你若將這些事提醒弟兄們，便是基督耶穌的好執事，在真道的話語和你向來所服從的善道上得了教育。</div>
+<div class="verse"><span class="verse-number">7</span>只是要棄絕那世俗的言語和老婦荒渺的話，在敬虔上操練自己。</div>
+<div class="verse"><span class="verse-number">8</span>「操練身體，益處還少；惟獨敬虔，凡事都有益處，因有今生和來生的應許。」</div>
+<div class="verse"><span class="verse-number">9</span>這話是可信的，是十分可佩服的。</div>
+<div class="verse"><span class="verse-number">10</span>我們勞苦努力，正是為此，因我們的指望在乎永生的神；他是萬人的救主，更是信徒的救主。</div>
+<div class="verse"><span class="verse-number">11</span>這些事，你要吩咐人，也要教導人。</div>
+<div class="verse"><span class="verse-number">12</span>不可叫人小看你年輕，總要在言語、行為、愛心、信心、清潔上，都作信徒的榜樣。</div>
+<div class="verse"><span class="verse-number">13</span>你要以宣讀、勸勉、教導為念，直等到我來。</div>
+<div class="verse"><span class="verse-number">14</span>你不要輕忽所得的恩賜，就是從前藉着預言、在眾長老按手的時候賜給你的。</div>
+<div class="verse"><span class="verse-number">15</span>這些事你要殷勤去作，並要在此專心，使眾人看出你的長進來。</div>
+<div class="verse"><span class="verse-number">16</span>你要謹慎自己和自己的教訓，要在這些事上恒心；因為這樣行，又能救自己，又能救聽你的人。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第4章警告末世會有離道背教的情形，並勸勉提摩太要做忠心的好執事，在生命與教導上都成為信徒的榜樣。本章首先說聖靈明說在後來的時候，必有人離棄真道，聽從那引誘人的邪靈和鬼魔的道理，這是因為說謊之人的假冒，這等人的良心如同被熱鐵烙慣了一般，他們禁止嫁娶，又禁戒食物，但那些食物本是神造的，叫信道明白真道的人感謝著領受，凡神所造的物都是好的，若感謝著領受就沒有一樣可棄的。你要把這些事告訴弟兄們，便是基督耶穌的好執事。接著呼召提摩太要操練自己以達到敬虔，因為操練身體益處還少，但敬虔的操練在各事上都有益處，有今生和來生的應許。然後說不拘什麼人也不可輕看他的年輕，要在言語、行為、愛心、信心、清潔各事上成為信徒的榜樣，要以宣讀、勸勉、教導為念，不可輕忽所得的恩賜。要思念這些事、專心做這些事，要謹慎自己和自己的教訓，因為這樣行，又能救自己，又能救聽你的人。本章呈現牧者自我培育的重要性，以敬虔的操練對抗末世的離道。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 敬虔在今生和來生都有益處</strong><br>「惟獨敬虔，凡事都有益處，因有今生和來生的應許」——敬虔（與神的同在關係）帶來的益處超越身體操練的益處，因為它有雙重的維度：今生（智慧、平安、方向）和來生（永恆的賞賜）。這不是說不要關顧身體健康，而是說把同樣的操練精神應用在敬虔上，回報遠遠更大。<br><br>
+<strong>2. 在各方面作信徒的榜樣</strong><br>「總要在言語、行為、愛心、信心、清潔上，都作信徒的榜樣」——這五個方面涵蓋了信仰生命的全貌：言語（你說什麼）、行為（你做什麼）、愛心（你如何對人）、信心（你如何信靠神）、清潔（你的道德清潔）。任何信徒，無論年齡，都有責任在這五方面作榜樣，讓生命成為會動的教訓。<br><br>
+<strong>3. 謹慎自己和教訓——雙重的責任</strong><br>「你要謹慎自己和自己的教訓」——傳道者有雙重的守護責任：自己的靈命（謹慎自己）和所傳的內容（自己的教訓）。生命和信息必須一致；傳正確的道但生命敗壞，或生命好但傳錯誤的道，都是失職。「因為這樣行，又能救自己，又能救聽你的人」——自己靈命的忠心，和所服事之人的得救，是同一件事的兩個面向。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>不可叫人小看你年</strong>輕，<strong>總要在言語</strong>、行為、愛心、信心、清潔上，都作信徒的榜樣。（提前4:12）</td>
+<td>你有沒有意識到你的生命在你的信仰群體中是一個活的榜樣，在言語、行為、愛心、信心和清潔五個方面都有示範的作用？就像老師的生命比他的話語更有影響力，你有沒有讓你的生命成為你信仰宣告最有力的支撐？</td>
+</tr>
+<tr>
+<td><strong>惟獨敬虔</strong>，<strong>凡事都有益處</strong>，因有今生和來生的應許。（提前4:8）</td>
+<td>你有沒有把「操練敬虔」——與神同行的紀律、禱告、讀聖經、服事——看作是最值得投資時間和精力的操練，因為它的回報是今生和來生的雙重益處？就像一個長期投資的人願意在現在放棄一些即時滿足，你有沒有讓對永恆益處的確信指引你的時間分配？</td>
+</tr>
+<tr>
+<td><strong>你要謹慎自己和自</strong><strong>己的教訓</strong>，要在這些事上恒心；因為這樣行，又能救自己，又能救聽你的人。（提前4:16）</td>
+<td>你有沒有把「謹慎自己的生命」和「謹慎自己的教訓」兩者都看得同樣重要，讓生命與所傳的信息保持一致？就像一個醫生若自己不遵守健康建議，他的話說服力就大打折扣，你有沒有讓你的生命使你的信仰見證更有說服力？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

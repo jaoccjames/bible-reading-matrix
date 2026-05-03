@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第89章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第89章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大衛之約的應許與困惑：慈愛信實永遠稱頌</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（以斯拉人以探的訓誨詩）我要歌唱耶和華的慈愛，直到永遠；我要用口將你的信實傳與萬代。</div>
+<div class="verse"><span class="verse-number">2</span>因我曾說：你的慈悲必建立到永遠；你的信實必堅立在天上。</div>
+<div class="verse"><span class="verse-number">3</span>我與我所揀選的人立了約，向我的僕人大衛起了誓：</div>
+<div class="verse"><span class="verse-number">4</span>我要建立你的後裔，直到永遠；要建立你的寶座，直到萬代。（細拉）</div>
+<div class="verse"><span class="verse-number">5</span>耶和華啊，諸天要稱讚你的奇事；在聖者的會中，要稱讚你的信實。</div>
+<div class="verse"><span class="verse-number">6</span>在天空誰能比耶和華呢？神的眾子中，誰能像耶和華呢？</div>
+<div class="verse"><span class="verse-number">7</span>他在聖者的會中，是大有威嚴的神，比一切在他四圍的更可畏懼。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華萬軍之神啊，那一個大能者像你耶和華？你的信實是在你的四圍。</div>
+<div class="verse"><span class="verse-number">9</span>你管轄海的狂傲；波浪翻騰，你就使他平靜了。</div>
+<div class="verse"><span class="verse-number">10</span>你打碎了拉哈伯，似乎是已殺的人；你用有能的膀臂打散了你的仇敵。</div>
+<div class="verse"><span class="verse-number">11</span>天屬你，地也屬你；世界和其中所充滿的都為你所建立。</div>
+<div class="verse"><span class="verse-number">12</span>南北為你所創造；他泊和黑門都因你的名歡呼。</div>
+<div class="verse"><span class="verse-number">13</span>你有大能的膀臂；你的手有力，你的右手也高舉。</div>
+<div class="verse"><span class="verse-number">14</span>公義和公平是你寶座的根基；慈愛和誠實行在你前面。</div>
+<div class="verse"><span class="verse-number">15</span>知道向你歡呼的，那民是有福的！耶和華阿，他們在你臉上的光裏行走。</div>
+<div class="verse"><span class="verse-number">16</span>他們因你的名終日歡樂，因你的公義得以高舉。</div>
+<div class="verse"><span class="verse-number">17</span>你是他們力量的榮耀；因為你喜悅我們，我們的角必被高舉。</div>
+<div class="verse"><span class="verse-number">18</span>我們的盾牌屬耶和華；我們的王屬以色列的聖者。</div>
+<div class="verse"><span class="verse-number">19</span>當時，你在異象中曉諭你的聖民，說：我已把救助之力加在那有能者的身上；我高舉那從民中所揀選的。</div>
+<div class="verse"><span class="verse-number">20</span>我尋得我的僕人大衛，用我的聖膏膏他。</div>
+<div class="verse"><span class="verse-number">21</span>我的手必使他堅立；我的膀臂也必堅固他。</div>
+<div class="verse"><span class="verse-number">22</span>仇敵必不勒索他；兇惡之子也不苦害他。</div>
+<div class="verse"><span class="verse-number">23</span>我要在他面前打碎他的敵人，擊殺那恨他的人。</div>
+<div class="verse"><span class="verse-number">24</span>只是我的信實和我的慈愛要與他同在；因我的名，他的角必被高舉。</div>
+<div class="verse"><span class="verse-number">25</span>我要使他的左手伸到海上，右手伸到河上。</div>
+<div class="verse"><span class="verse-number">26</span>他要稱呼我說：你是我的父，是我的神，是拯救我的磐石。</div>
+<div class="verse"><span class="verse-number">27</span>我也要立他為長子，為世上最高的君王。</div>
+<div class="verse"><span class="verse-number">28</span>我要為他存留我的慈愛，直到永遠；我與他立的約必要堅定。</div>
+<div class="verse"><span class="verse-number">29</span>我也要使他的後裔存到永遠，使他的寶座如天之久。</div>
+<div class="verse"><span class="verse-number">30</span>倘若他的子孫離棄我的律法，不照我的典章行，</div>
+<div class="verse"><span class="verse-number">31</span>背棄我的律例，不遵守我的誡命，</div>
+<div class="verse"><span class="verse-number">32</span>我就要用杖責罰他們的過犯，用鞭責罰他們的罪孽。</div>
+<div class="verse"><span class="verse-number">33</span>只是我必不將我的慈愛全然收回，也必不叫我的信實廢棄。</div>
+<div class="verse"><span class="verse-number">34</span>我必不背棄我的約，也不改變我口中所出的。</div>
+<div class="verse"><span class="verse-number">35</span>我一次指着自己的聖潔起誓：我決不向大衛說謊！</div>
+<div class="verse"><span class="verse-number">36</span>他的後裔要存到永遠；他的寶座在我面前如日之恒一般，</div>
+<div class="verse"><span class="verse-number">37</span>又如月亮永遠堅立，如天上確實的見證。（細拉）</div>
+<div class="verse"><span class="verse-number">38</span>但你惱怒你的受膏者，就丟掉棄絕他。</div>
+<div class="verse"><span class="verse-number">39</span>你厭惡了與僕人所立的約，將他的冠冕踐踏於地。</div>
+<div class="verse"><span class="verse-number">40</span>你拆毀了他一切的籬笆，使他的保障變為荒場。</div>
+<div class="verse"><span class="verse-number">41</span>凡過路的人都搶奪他；他成為鄰邦的羞辱。</div>
+<div class="verse"><span class="verse-number">42</span>你高舉了他敵人的右手；你叫他一切的仇敵歡喜。</div>
+<div class="verse"><span class="verse-number">43</span>你叫他的刀劍捲刃，叫他在爭戰之中站立不住。</div>
+<div class="verse"><span class="verse-number">44</span>你使他的光輝止息，將他的寶座推倒於地。</div>
+<div class="verse"><span class="verse-number">45</span>你減少他青年的日子，又使他蒙羞。（細拉）</div>
+<div class="verse"><span class="verse-number">46</span>耶和華啊，這要到幾時呢？你要將自己隱藏到永遠嗎？你的忿怒如火焚燒要到幾時呢？</div>
+<div class="verse"><span class="verse-number">47</span>求你想念我的時候是何等的短少；你創造世人，要使他們歸何等的虛空呢？</div>
+<div class="verse"><span class="verse-number">48</span>誰能常活免死、救他的靈魂脫離陰間的權柄呢？（細拉）</div>
+<div class="verse"><span class="verse-number">49</span>主啊，你從前憑你的信實向大衛立誓要施行的慈愛在那裏呢？</div>
+<div class="verse"><span class="verse-number">50</span>主啊，求你記念僕人們所受的羞辱，記念我怎樣將一切強盛民的羞辱存在我懷裏。</div>
+<div class="verse"><span class="verse-number">51</span>耶和華啊，你的仇敵用這羞辱羞辱了你的僕人，羞辱了你受膏者的腳蹤。</div>
+<div class="verse"><span class="verse-number">52</span>耶和華是應當稱頌的，直到永遠。阿們！阿們！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第89篇是以斯拉人以探的訓誨詩，也是詩篇第三卷（詩73-89篇）的結尾篇，以「耶和華是應當稱頌的，直到永遠。阿們！阿們！」的頌讚作為第三卷的終止式。本篇是詩篇中最長的詩篇之一，共52節，呈現了一個巨大的張力：神對大衛立約的莊嚴應許（1-37節），與當前大衛王朝似乎遭到棄絕的現實（38-51節）之間的衝突。
+
+      本篇的神學核心是「大衛之約」（撒下7章）——神應許大衛的後裔寶座永遠堅立。第33至34節是全篇最重要的神聖宣告：「只是我必不將我的慈愛全然收回，也必不叫我的信實廢棄。我必不背棄我的約，也不改變我口中所出的。」這個不可廢棄的約，是整個大衛王朝神學最深的根基，也是彌賽亞盼望的出發點。
+
+      後半部的困惑（第38節以下）與前半部的讚美形成強烈對比：眼前的失敗似乎使神的應許顯得遙遠。然而全篇以讚美神的頌詞收結——即使困惑未解，即使問題懸而未決，神仍是應當稱頌的。這種「在困惑中仍讚美」的信仰，是本篇給信仰群體最深的神學遺產，也是新約中藉基督完全成就大衛之約的舊約預期。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的慈愛與信實是信仰最不可動搖的根基</strong><br>「我要歌唱耶和華的慈愛，直到永遠；我要用口將你的信實傳與萬代。」（第1節）以探在詩篇開篇就宣告他的人生志向——歌唱耶和華的慈愛「直到永遠」、傳揚神的信實「與萬代」。這個志向超越了個人處境的好壞，表明神的慈愛與信實不依靠感受的確認，而是屬乎神本性的永恆真實。即使在第38節以下的困惑中，這個開篇的宣告仍然成立——神的慈愛與信實不因人的困惑而改變。<br><br>
+<strong>2. 公義與公平是神寶座的根基揭示神治理的倫理本質</strong><br>「公義和公平是你寶座的根基；慈愛和誠實行在你前面。」（第14節）神的統治不是任意的權力行使，而是建立在公義、公平、慈愛、誠實四大根基之上。這個宣告揭示神的主權不是威權主義的統治，而是在道德秩序中的聖潔治理。信徒在這樣的神面前可以安心倚靠——祂的決定是公義的，祂的行動是慈愛的，祂的話語是誠實的。<br><br>
+<strong>3. 在應許與現實的張力中仍讚美神是信仰最成熟的表現</strong><br>「耶和華是應當稱頌的，直到永遠。阿們！阿們！」（第52節）全篇以這個讚美作結，儘管之前的困惑（「你要將自己隱藏到永遠嗎？」，第46節）從未得到直接的回答。這種「帶著未解決的問題仍選擇讚美」的信仰，是屬靈成熟最深刻的表現。在新約的神學中，大衛之約的應許在耶穌基督身上得到最終的成就，使第89篇的困惑在永恆的框架中得到了最美的解答。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我要歌唱耶和華的</strong>慈愛，<strong>直到永遠</strong>；我要用口將你的信實傳與萬代。（詩89:1）</td>
+<td>就像一個被人深深幫助過的人，終生都想讓人知道那位恩人的美好，你是否有過「歌唱神慈愛直到永遠」的渴望，讓這個志向超越處境的好壞，成為你生命持續不變的方向？</td>
+</tr>
+<tr>
+<td><strong>公義和公平是你寶</strong><strong>座的根基</strong>；慈愛和誠實行在你前面。（詩89:14）</td>
+<td>就像一個政府若以公義、誠實為施政根基，人民便能以信任和安心回應，你是否真的相信神的統治是建立在「公義、公平、慈愛、誠實」之上，讓這份確信使你能在人生的每個結果中仍信任神的安排？</td>
+</tr>
+<tr>
+<td><strong>只是我必不將我的</strong><strong>慈愛全然收回</strong>，也必不叫我的信實廢棄。（詩89:33）</td>
+<td>就像一份永久有效的保證書，無論情況如何改變都不失效，你是否真的以「神的慈愛絕不全然收回」的確信面對生命中那些看似神已離去的時刻，讓這個不可廢棄的應許成為你最深的盼望錨點？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

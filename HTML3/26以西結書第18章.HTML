@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第18章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第18章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">個人責任與神不喜悅人死亡</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話又臨到我說：</div>
+<div class="verse"><span class="verse-number">2</span>「你們在以色列地怎麼用這俗語說『父親吃了酸葡萄，兒子的牙酸倒了』呢？」</div>
+<div class="verse"><span class="verse-number">3</span>主耶和華說：「我指着我的永生起誓，你們在以色列中，必不再有用這俗語的因由。</div>
+<div class="verse"><span class="verse-number">4</span>看哪，世人都是屬我的；為父的怎樣屬我，為子的也照樣屬我；犯罪的，他必死亡。</div>
+<div class="verse"><span class="verse-number">5</span>「人若是公義，且行正直與合理的事：</div>
+<div class="verse"><span class="verse-number">6</span>未曾在山上吃過祭偶像之物，未曾仰望以色列家的偶像，未曾玷污鄰舍的妻，未曾在婦人的經期內親近她，</div>
+<div class="verse"><span class="verse-number">7</span>未曾虧負人，乃將欠債之人的當頭還給他；未曾搶奪人的物件，卻將食物給飢餓的人吃，將衣服給赤身的人穿；</div>
+<div class="verse"><span class="verse-number">8</span>未曾向借錢的弟兄取利，也未曾向借糧的弟兄多要，縮手不作罪孽，在兩人之間，按至理判斷；</div>
+<div class="verse"><span class="verse-number">9</span>遵行我的律例，謹守我的典章，按誠實行事。這人是公義的，必定存活。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">10</span>「他若生一個兒子，作強盜，是流人血的，不行以上所說之善，反行其中之惡，乃在山上吃過祭偶像之物，並玷污鄰舍的妻，</div>
+<div class="verse"><span class="verse-number">11</span>併於上節</div>
+<div class="verse"><span class="verse-number">12</span>虧負困苦和窮乏的人，搶奪人的物，未曾將當頭還給人，仰望偶像，並行可憎的事，</div>
+<div class="verse"><span class="verse-number">13</span>向借錢的弟兄取利，向借糧的弟兄多要，這人豈能存活呢？他必不能存活。他行這一切可憎的事，必要死亡，他的罪〔原文作血〕必歸到他身上。</div>
+<div class="verse"><span class="verse-number">14</span>「他若生一個兒子，見父親所犯的一切罪便懼怕〔有古卷作思量〕，不照樣去作；</div>
+<div class="verse"><span class="verse-number">15</span>未曾在山上吃過祭偶像之物，未曾仰望以色列家的偶像，未曾玷污鄰舍的妻，</div>
+<div class="verse"><span class="verse-number">16</span>未曾虧負人，未曾取人的當頭，未曾搶奪人的物件，卻將食物給飢餓的人吃，將衣服給赤身的人穿，</div>
+<div class="verse"><span class="verse-number">17</span>縮手不害貧窮人，未曾向借錢的弟兄取利，也未曾向借糧的弟兄多要；他順從我的典章，遵行我的律例，就不因父親的罪孽死亡，定要存活。</div>
+<div class="verse"><span class="verse-number">18</span>至於他父親；因為欺人太甚，搶奪弟兄，在本國的民中行不善，他必因自己的罪孽死亡。</div>
+<div class="verse"><span class="verse-number">19</span>「你們還說：『兒子為何不擔當父親的罪孽呢？』兒子行正直與合理的事，謹守遵行我的一切律例，他必定存活。</div>
+<div class="verse"><span class="verse-number">20</span>惟有犯罪的，他必死亡。兒子必不擔當父親的罪孽，父親也不擔當兒子的罪孽。義人的善果必歸自己，惡人的惡報也必歸自己。</div>
+<div class="verse"><span class="verse-number">21</span>「惡人若回頭離開所作的一切罪惡，謹守我一切的律例，行正直與合理的事，他必定存活，不至死亡。</div>
+<div class="verse"><span class="verse-number">22</span>他所犯的一切罪過都不被記念，因所行的義，他必存活。</div>
+<div class="verse"><span class="verse-number">23</span>主耶和華說：惡人死亡，豈是我喜悅的嗎？不是喜悅他回頭離開所行的道存活嗎？</div>
+<div class="verse"><span class="verse-number">24</span>義人若轉離義行而作罪孽，照着惡人所行一切可憎的事而行，他豈能存活嗎？他所行的一切義都不被記念；他必因所犯的罪、所行的惡死亡。</div>
+<div class="verse"><span class="verse-number">25</span>「你們還說：『主的道不公平！』以色列家啊，你們當聽，我的道豈不公平嗎？你們的道豈不是不公平嗎？</div>
+<div class="verse"><span class="verse-number">26</span>義人若轉離義行而作罪孽死亡，他是因所作的罪孽死亡。</div>
+<div class="verse"><span class="verse-number">27</span>再者，惡人若回頭離開所行的惡，行正直與合理的事，他必將性命救活了。</div>
+<div class="verse"><span class="verse-number">28</span>因為他思量，回頭離開所犯的一切罪過，必定存活，不至死亡。</div>
+<div class="verse"><span class="verse-number">29</span>以色列家還說：『主的道不公平！』以色列家啊，我的道豈不公平嗎？你們的道豈不是不公平嗎？」</div>
+<div class="verse"><span class="verse-number">30</span>所以主耶和華說：「以色列家阿，我必按你們各人所行的審判你們。你們當回頭離開所犯的一切罪過。這樣，罪孽必不使你們敗亡。</div>
+<div class="verse"><span class="verse-number">31</span>你們要將所犯的一切罪過盡行拋棄，自作一個新心和新靈。以色列家啊，你們何必死亡呢？</div>
+<div class="verse"><span class="verse-number">32</span>主耶和華說：我不喜悅那死人之死，所以你們當回頭而存活。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第18章是整卷書中最具神學革命性的一章，直接挑戰了一個流行的錯誤神學：「父親吃了酸葡萄，兒子的牙酸倒了」——意即子女必然承擔父親的罪惡後果。神斷然否定這個宿命論：「犯罪的，他必死亡」；「兒子必不擔當父親的罪孽，父親也不擔當兒子的罪孽。義人的善果必歸自己，惡人的惡報也必歸自己」（20節）。本章通過三代人的比較（義父-惡子-義孫），說明神的評判是個人性的、當下性的，不受世代所決定。更重要的是：惡人若悔改，過去的惡不被記念；義人若轉離義行，過去的義也不被記念。這是高度個人責任的神學。章末的盼望宣告是全書最溫柔的一句話：「主耶和華說：我不喜悅那死人之死，所以你們當回頭而存活。」
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 屬靈責任是個人性的，不被先人的罪或義所決定</strong><br>「兒子必不擔當父親的罪孽」——你不是你父母的屬靈延伸，也不是由他們的失敗或成功所定義。每個人在神面前有自己的屬靈立場，需要自己作出選擇和回應。這既是警告（別人的義不能替你），也是解放（父母的失敗不能定義你）。<br><br>
+<strong>2. 悔改可以完全改變一個人在神眼中的立場</strong><br>「惡人若回頭離開所作的一切罪惡……他所犯的一切罪過都不被記念」——神的記憶可以被悔改所更新。這是最激進的恩典宣告：沒有任何過去的罪深到悔改無法帶來新開始。同樣，義人若轉離義行，過去的義也不被記念——這是嚴肅的警告：靈命需要持守，不能靠過去的屬靈資本過活。<br><br>
+<strong>3. 神不以人的死亡為樂，祂渴望人轉回存活</strong><br>「我不喜悅那死人之死，所以你們當回頭而存活」——這是整卷書最溫柔的一句話，也是神心腸最清楚的宣告。神的審判不是宣洩，而是最後的呼召。在所有的警告和審判背後，神的心意仍是讓人存活。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>惟有犯罪的</strong>，<strong>他必死亡</strong>。兒子必不擔當父親的罪孽，父親也不擔當兒子的罪孽。義人的善果必歸自己，惡人的惡報也必歸自己。（結18:20）</td>
+<td>你的屬靈生命有沒有在某程度上「倚賴」父母或長輩的信仰——以為因為他們虔誠，你就有某種保護？就像以為因為父母有健康的飲食習慣，你就可以不注意自己的飲食，屬靈的生命需要每個人自己親身經歷和回應。你今天「自己」在與神的關係上有多少真實的委身？</td>
+</tr>
+<tr>
+<td><strong>惡人若回頭離開所</strong><strong>作的一切罪惡</strong>，謹守我一切的律例，行正直與合理的事，他必定存活，不至死亡。他所犯的一切罪過都不被記念。（結18:21-22）</td>
+<td>你是否有過「我犯的罪太多太深，就算悔改神也不可能真的忘記」的想法？就像以為一份傷痕累累的記錄無法被清除，神「不被記念」的應許有多真實地進入了你對自己過去的理解？你願意讓這個應許成為你今天重新出發的根基嗎？</td>
+</tr>
+<tr>
+<td><strong>主耶和華說</strong>：<strong>我不喜悅那死人之</strong>死，所以你們當回頭而存活。（結18:32）</td>
+<td>「神不喜悅你的滅亡」——這句話如何改變你對神性情的理解？就像一個嚴格的父親在懲罰孩子，內心最深的渴望仍是孩子的好，神的一切嚴厲背後是這個渴望：「回頭而存活」。你願意把這句話作為今天向神回轉的邀請，做出那個「回頭」的動作嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

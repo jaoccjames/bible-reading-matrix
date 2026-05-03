@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記下第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記下第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大衛之約</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>王住在自己宮中，耶和華使他安靖，不被四圍的仇敵擾亂。</div>
+<div class="verse"><span class="verse-number">2</span>那時，王對先知拿單說：「看哪，我住在香柏木的宮中，神的約櫃反在幔子裏。」</div>
+<div class="verse"><span class="verse-number">3</span>拿單對王說：「你可以照你的心意而行，因為耶和華與你同在。」</div>
+<div class="verse"><span class="verse-number">4</span>當夜，耶和華的話臨到拿單說：</div>
+<div class="verse"><span class="verse-number">5</span>「你去告訴我僕人大衛，說耶和華如此說：『你豈可建造殿宇給我居住呢？</div>
+<div class="verse"><span class="verse-number">6</span>自從我領以色列人出埃及直到今日，我未曾住過殿宇，常在會幕和帳幕中行走。</div>
+<div class="verse"><span class="verse-number">7</span>凡我同以色列人所走的地方，我何曾向以色列一支派的士師，就是我吩咐牧養我民以色列的說：你們為何不給我建造香柏木的殿宇呢？』</div>
+<div class="verse"><span class="verse-number">8</span>「現在，你要告訴我僕人大衛，說萬軍之耶和華如此說：『我從羊圈中將你召來，叫你不再跟從羊群，立你作我民以色列的君。</div>
+<div class="verse"><span class="verse-number">9</span>你無論往那裏去，我常與你同在，剪除你的一切仇敵。我必使你得大名，好像世上大大有名的人一樣。</div>
+<div class="verse"><span class="verse-number">10</span>我必為我民以色列選定一個地方，栽培他們，使他們住自己的地方，不再遷移；兇惡之子也不像從前擾害他們，</div>
+<div class="verse"><span class="verse-number">11</span>並不像我命士師治理我民以色列的時候一樣。我必使你安靖，不被一切仇敵擾亂，並且我耶和華應許你，必為你建立家室。</div>
+<div class="verse"><span class="verse-number">12</span>你壽數滿足、與你列祖同睡的時候，我必使你的後裔接續你的位；我也必堅定他的國。</div>
+<div class="verse"><span class="verse-number">13</span>他必為我的名建造殿宇；我必堅定他的國位，直到永遠。</div>
+<div class="verse"><span class="verse-number">14</span>我要作他的父，他要作我的子；他若犯了罪，我必用人的杖責打他，用人的鞭責罰他。</div>
+<div class="verse"><span class="verse-number">15</span>但我的慈愛仍不離開他，像離開在你面前所廢棄的掃羅一樣。</div>
+<div class="verse"><span class="verse-number">16</span>你的家和你的國必在我〔原文作你〕面前永遠堅立。你的國位也必堅定，直到永遠。』」</div>
+<div class="verse"><span class="verse-number">17</span>拿單就按這一切話，照這默示，告訴大衛。</div>
+<div class="verse"><span class="verse-number">18</span>於是大衛王進去，坐在耶和華面前，說：「主耶和華啊，我是誰？我的家算甚麼？你竟使我到這地步呢？</div>
+<div class="verse"><span class="verse-number">19</span>主耶和華啊，這在你眼中還看為小，又應許你僕人的家至於久遠。主耶和華啊，這豈是人所常遇的事麼？</div>
+<div class="verse"><span class="verse-number">20</span>主耶和華啊，我還有何言可以對你說呢？因為你知道你的僕人。</div>
+<div class="verse"><span class="verse-number">21</span>你行這大事使僕人知道，是因你所應許的話，也是照你的心意。</div>
+<div class="verse"><span class="verse-number">22</span>主耶和華啊，你本為大，照我們耳中聽見，沒有可比你的；除你以外再無神。</div>
+<div class="verse"><span class="verse-number">23</span>世上有何民能比你的民以色列呢？你從埃及救贖他們作自己的子民，又在你贖出來的民面前行大而可畏的事，驅逐列邦人和他們的神，顯出你的大名。</div>
+<div class="verse"><span class="verse-number">24</span>你曾堅立你的民以色列作你的子民，直到永遠；你耶和華也作了他們的神。</div>
+<div class="verse"><span class="verse-number">25</span>「耶和華神啊，你所應許僕人和僕人家的話，求你堅定，直到永遠；照你所說的而行。</div>
+<div class="verse"><span class="verse-number">26</span>願人永遠尊你的名為大，說：『萬軍之耶和華是治理以色列的神。』這樣，你僕人大衛的家必在你面前堅立。</div>
+<div class="verse"><span class="verse-number">27</span>萬軍之耶和華以色列的神啊，因你啟示你的僕人說：『我必為你建立家室』，所以僕人大膽向你如此祈禱。</div>
+<div class="verse"><span class="verse-number">28</span>「主耶和華啊，惟有你是神。你的話是真實的；你也應許將這福氣賜給僕人。</div>
+<div class="verse"><span class="verse-number">29</span>現在求你賜福與僕人的家，可以永存在你面前。主耶和華啊，這是你所應許的。願你永遠賜福與僕人的家！」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載了聖經中極為重要的「大衛之約」。當大衛在宮中安享太平時,他看見自己住在華美的香柏木宮殿,而神的約櫃卻在帳幕裡,便想要為神建造聖殿。先知拿單起初同意,但神當夜向拿單顯現,告訴他大衛不可建殿,反而神要為大衛建立家室。神應許大衛的後裔要永遠坐在他的寶座上,這個應許最終在耶穌基督身上完全實現。大衛聽聞神的應許後,沒有因不能建殿而失望,反而謙卑地坐在神面前,獻上感恩和讚美的禱告。本章顯示神看重人的心勝過人的作為,也預示了彌賽亞國度的永恆性。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神看重內心過於外在</strong><br>大衛想為神建殿是出於愛神的心,雖然神不許他建殿,卻因他的心意而大大賜福。神看重的不是我們能為祂做什麼宏偉的工作,而是我們是否有一顆愛祂、尊榮祂的心。當我們的心對準神時,即使我們的計劃與神的旨意不同,神仍會因我們的心意而喜悅,並賜下更美好的祝福。<br><br>
+<strong>2. 神的計劃超越人的想像</strong><br>大衛想為神建殿,神卻要為大衛建立永遠的家室和國度。神的恩典和應許遠超過人所能想像的。我們常用有限的眼光來事奉神,但神的計劃總是更高、更遠、更美好。當我們順服神的帶領時,會發現祂為我們預備的遠超過我們為自己所計劃的。<br><br>
+<strong>3. 謙卑順服的態度</strong><br>大衛得知不能建殿,沒有抱怨或堅持己見,反而謙卑地接受並感恩。他「坐在耶和華面前」禱告,顯出他對神主權的尊重。真正屬靈的成熟不在於為神做了多少事,而在於能否謙卑順服神的旨意。當神的計劃與我們的期待不同時,我們的回應反映出我們對神的認識有多深。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你豈可建造殿宇給</strong><strong>我居住呢</strong>?我未曾住過殿宇,常在會幕和帳幕中行走。(撒下7:5-6)</td>
+<td>當我們熱心為神做事時,就像精心準備禮物卻發現對方另有需要,我們是否願意先尋求神的心意,而不是憑自己的熱心行事?我們如何分辨是神的旨意還是我們自己的想法?</td>
+</tr>
+<tr>
+<td><strong>我必使你的後裔接</strong><strong>續你的位</strong>;我也必堅定他的國。你的國位也必堅定,直到永遠。(撒下7:12,16)</td>
+<td>當神的應許遠超過我們的期待時,就像投資獲得意想不到的豐厚回報,我們是否相信神為我們預備的永恆計劃比眼前的成就更有價值?我們願意為永恆的事而放下暫時的成功嗎?</td>
+</tr>
+<tr>
+<td><strong>於是大衛王進去</strong>,<strong>坐在耶和華面前</strong>,說:「主耶和華啊,我是誰?我的家算什麼?你竟使我到這地步呢?」(撒下7:18)</td>
+<td>當我們經歷神的大恩時,就像突然獲得超乎能力的重責大任,我們是否能保持謙卑的心,認清一切成就都是出於神的恩典?什麼會使我們忘記自己原本的光景而驕傲自大?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

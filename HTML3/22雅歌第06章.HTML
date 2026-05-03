@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雅歌第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+雅歌第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">我屬我的良人他也戀慕我：重逢與歸屬的確認</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>［伴唱］你這女子中極美麗的，你的良人往何處去了？你的良人轉向何處去了，我們好與你同去尋找他。</div>
+<div class="verse"><span class="verse-number">2</span>［新娘］我的良人下入自己園中，到香花畦，在園內牧放群羊，採百合花。</div>
+<div class="verse"><span class="verse-number">3</span>我屬我的良人，我的良人也屬我；他在百合花中牧放群羊。</div>
+<div class="verse"><span class="verse-number">4</span>［新郎］我的佳偶啊，你美麗如得撒，秀美如耶路撒冷，威武如展開旌旗的軍隊。</div>
+<div class="verse"><span class="verse-number">5</span>求你掉轉眼目不看我，因你的眼目使我驚亂。你的頭髮如同山羊群臥在基列山旁。</div>
+<div class="verse"><span class="verse-number">6</span>你的牙齒如一群母羊洗淨上來，個個都有雙生，沒有一隻喪掉子的。</div>
+<div class="verse"><span class="verse-number">7</span>你的兩太陽在帕子內，如同一塊石榴。</div>
+<div class="verse"><span class="verse-number">8</span>有六十王后八十妃嬪，並有無數的童女。</div>
+<div class="verse"><span class="verse-number">9</span>我的鴿子，我的完全人，只有這一個是她母親獨生的，是生養她者所寶愛的。眾女子見了就稱她有福；王后妃嬪見了也讚美她。</div>
+<div class="verse"><span class="verse-number">10</span>［伴唱］那向外觀看、如晨光發現、美麗如月亮、皎潔如日頭、威武如展開旌旗軍隊的是誰呢？</div>
+<div class="verse"><span class="verse-number">11</span>［新娘］我下入核桃園，要看谷中青綠的植物，要看葡萄發芽沒有，石榴開花沒有。</div>
+<div class="verse"><span class="verse-number">12</span>不知不覺，我的心將我安置在我尊長的車中。</div>
+<div class="verse"><span class="verse-number">13</span>［伴唱］回來，回來，書拉密女；你回來，你回來，使我們得觀看你。［新娘］你們為何要觀看書拉密女，像觀看瑪哈念跳舞的呢？</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+雅歌第六章描繪了第五章新娘尋找良人之後的重逢，以及良人再次深情讚美新娘的場景。本章承接了上章的尋找焦慮，在第3節新娘以「我屬我的良人，我的良人也屬我」重申了她對兩人關係的確信——即使良人曾短暫不見，盟約的歸屬關係從未改變。第4節良人以「你美麗如得撒，秀美如耶路撒冷，威武如展開旌旗的軍隊」讚美新娘，「得撒」是北國以色列的首都，「耶路撒冷」是南國猶大的首都，以兩個最輝煌的城市作比，說明新娘在良人眼中是最高等級的美麗。第5節「你的眼目使我驚亂」，是全書最生動的句子之一，描繪了新娘一個眼神就讓良人心旌動搖的愛情魔力。第9節「只有這一個」，宣告了在眾多王后妃嬪之中，這位新娘的獨一無二——她對良人的意義無可取代，這是排他性的愛的宣告。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 即使在分離後，歸屬的確信仍然牢固</strong><br>第3節「我屬我的良人，我的良人也屬我」，在第五章的痛苦尋找之後，新娘並沒有懷疑兩人的關係，而是以這句歸屬宣言重新確認盟約的穩固。在屬靈層面，信徒在靈命乾枯、感受不到神同在的時期，最重要的不是感覺，而是信仰的宣告：「我仍然屬神，神仍然屬我」——這種盟約關係不以感受為基礎，而以神的信實為根基。<br><br>
+<strong>2. 在神眼中，我們是無可替代的「只有這一個」</strong><br>第9節「只有這一個」（She is the only one），是雅歌對神之愛的最深刻詮釋。在神無數的創造物中，每一個信徒對神來說都是「只有這一個」——神的愛不是被稀釋的普遍性關懷，而是充分個人化的深情。正如牧人為了一隻迷失的羊而捨棄九十九隻（路15:4），神對每一個靈魂的愛都是全然而獨特的。<br><br>
+<strong>3. 愛的威武：神的愛如同展開旌旗的軍隊</strong><br>第4節「威武如展開旌旗的軍隊」，以令人意外的軍事意象描繪新娘的美麗——她的美麗不只是柔和的，更是有力量的、令人肅然起敬的。在屬靈層面，教會（神的新娘）在這個世界中不只是溫柔的群體，更是有屬靈威武的群體：神的愛透過她的見證和行動，在黑暗中彰顯出不可抗拒的力量。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>我屬我的良人</strong>，<strong>我的良人也屬我</strong>。」（雅6:3）</td>
+<td>就像一枚婚戒，即使在夫妻分隔兩地的時候仍然戴在手指上，宣告著不因距離而改變的歸屬，你在靈命的低谷期（感受不到神的時刻），是否仍能宣告「我屬神，神也屬我」？那種確信是來自感受，還是來自對神信實的信心？</td>
+</tr>
+<tr>
+<td>「<strong>我的鴿子</strong>，<strong>我的完全人</strong>，只有這一個……眾女子見了就稱她有福。」（雅6:9）</td>
+<td>就像父母對每個孩子的愛都是100%，不因孩子數量而被分薄，神對每個信徒的愛也是完全而個人化的，你是否真的相信自己在神眼中是「只有這一個」？是什麼讓你感到自己對神來說可能不那麼特別或重要？</td>
+</tr>
+<tr>
+<td>「<strong>你的眼目使我驚亂</strong>。」（雅6:5）</td>
+<td>就像一位音樂家被一段即興演奏深深觸動，完全沉浸其中而忘了自己，信徒的真誠信靠也能如此深深地觸動神的心，你上一次感受到自己的信靠或禱告真實地「觸動了神」是什麼時候？那次經歷如何影響了你對禱告和信仰的態度？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

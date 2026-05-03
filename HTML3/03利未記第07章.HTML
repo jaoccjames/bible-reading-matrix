@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利未記第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+利未記第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">各祭條例總結：潔淨與感恩並重</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「贖愆祭的條例乃是如此：這祭是至聖的。</div>
+<div class="verse"><span class="verse-number">2</span>人在那裏宰燔祭牲，也要在那裏宰贖愆祭牲；其血，祭司要灑在壇的周圍。</div>
+<div class="verse"><span class="verse-number">3</span>又要將肥尾巴和蓋臟的脂油，</div>
+<div class="verse"><span class="verse-number">4</span>兩個腰子和腰子上的脂油，就是靠腰兩旁的脂油，並肝上的網子和腰子，一概取下。</div>
+<div class="verse"><span class="verse-number">5</span>祭司要在壇上焚燒，為獻給耶和華的火祭，是贖愆祭。</div>
+<div class="verse"><span class="verse-number">6</span>祭司中的男丁都可以吃這祭物；要在聖處吃，是至聖的。</div>
+<div class="verse"><span class="verse-number">7</span>贖罪祭怎樣，贖愆祭也是怎樣，兩個祭是一個條例。獻贖愆祭贖罪的祭司要得這祭物。</div>
+<div class="verse"><span class="verse-number">8</span>獻燔祭的祭司，無論為誰奉獻，要親自得他所獻那燔祭牲的皮。</div>
+<div class="verse"><span class="verse-number">9</span>凡在爐中烤的素祭和煎盤中作的，並鐵鏊上作的，都要歸那獻祭的祭司。</div>
+<div class="verse"><span class="verse-number">10</span>凡素祭，無論是油調和的是乾的，都要歸亞倫的子孫，大家均分。」</div>
+<div class="verse"><span class="verse-number">11</span>「人獻與耶和華平安祭的條例乃是這樣：</div>
+<div class="verse"><span class="verse-number">12</span>他若為感謝獻上，就要用調油的無酵餅和抹油的無酵薄餅，並用油調勻細麵作的餅，與感謝祭一同獻上。</div>
+<div class="verse"><span class="verse-number">13</span>要用有酵的餅和為感謝獻的平安祭，與供物一同獻上。</div>
+<div class="verse"><span class="verse-number">14</span>從各樣的供物中，他要把一個餅獻給耶和華為舉祭，是要歸給灑平安祭牲血的祭司。</div>
+<div class="verse"><span class="verse-number">15</span>為感謝獻平安祭牲的肉，要在獻的日子吃，一點不可留到早晨。</div>
+<div class="verse"><span class="verse-number">16</span>若所獻的是為還願，或是甘心獻的，必在獻祭的日子吃，所剩下的第二天也可以吃。</div>
+<div class="verse"><span class="verse-number">17</span>但所剩下的祭肉，到第三天要用火焚燒；</div>
+<div class="verse"><span class="verse-number">18</span>第三天若吃了平安祭的肉，這祭必不蒙悅納，人所獻的也不算為祭，反為可憎嫌的，吃這祭肉的，就必擔當他的罪孽。</div>
+<div class="verse"><span class="verse-number">19</span>「挨了污穢物的肉就不可吃，要用火焚燒。至於平安祭的肉，凡潔淨的人都要吃；</div>
+<div class="verse"><span class="verse-number">20</span>只是獻與耶和華平安祭的肉，人若不潔淨而吃了，這人必從民中剪除。</div>
+<div class="verse"><span class="verse-number">21</span>有人摸了甚麼不潔淨的物，或是人的不潔淨，或是不潔淨的牲畜，或是不潔可憎之物，吃了獻與耶和華平安祭的肉，這人必從民中剪除。」</div>
+<div class="verse"><span class="verse-number">22</span>耶和華對摩西說：</div>
+<div class="verse"><span class="verse-number">23</span>「你曉諭以色列人說：牛的脂油、綿羊的脂油、山羊的脂油，你們都不可吃。</div>
+<div class="verse"><span class="verse-number">24</span>自死的和被野獸撕裂的，那脂油可以作別的使用，只是你們萬不可吃。</div>
+<div class="verse"><span class="verse-number">25</span>無論何人吃了獻給耶和華當火祭牲畜的脂油，那人必從民中剪除。</div>
+<div class="verse"><span class="verse-number">26</span>在你們一切的住處，無論是雀鳥的血是野獸的血，你們都不可吃。</div>
+<div class="verse"><span class="verse-number">27</span>無論是誰吃血，那人必從民中剪除。」</div>
+<div class="verse"><span class="verse-number">28</span>耶和華對摩西說：</div>
+<div class="verse"><span class="verse-number">29</span>「你曉諭以色列人說：獻平安祭給耶和華的，要從平安祭中取些來奉給耶和華。</div>
+<div class="verse"><span class="verse-number">30</span>他親手獻給耶和華的火祭，就是脂油和胸，要帶來，好把胸在耶和華面前作搖祭，搖一搖。</div>
+<div class="verse"><span class="verse-number">31</span>祭司要把脂油在壇上焚燒，但胸要歸亞倫和他的子孫。</div>
+<div class="verse"><span class="verse-number">32</span>你們要從平安祭中把右腿作舉祭，奉給祭司。</div>
+<div class="verse"><span class="verse-number">33</span>亞倫子孫中，獻平安祭牲血和脂油的，要得這右腿為分；</div>
+<div class="verse"><span class="verse-number">34</span>因為我從以色列人的平安祭中，取了這搖的胸和舉的腿給祭司亞倫和他子孫，作他們從以色列人中所永得的分。」</div>
+<div class="verse"><span class="verse-number">35</span>這是從耶和華火祭中，作亞倫受膏的分和他子孫受膏的分，正在摩西〔原文作他〕叫他們前來給耶和華供祭司職分的日子，</div>
+<div class="verse"><span class="verse-number">36</span>就是在摩西〔原文作他〕膏他們的日子，耶和華吩咐以色列人給他們的。這是他們世世代代永得的分。</div>
+<div class="verse"><span class="verse-number">37</span>這就是燔祭、素祭、贖罪祭、贖愆祭和平安祭的條例，並承接聖職的禮，</div>
+<div class="verse"><span class="verse-number">38</span>都是耶和華在西乃山所吩咐摩西的，就是他在西乃曠野吩咐以色列人獻供物給耶和華之日所說的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+利未記第7章是獻祭律法（利1-7章）的總結章節，補充並完整了各種祭儀的條例，並以一個總覽性的聲明結尾（利7:37-38），宣告這些律例皆出自神在西乃山的吩咐。本章首先補充贖愆祭的條例，說明祭司的應得份；接著詳細規定平安祭三種形式（感恩祭、還願祭、甘心祭）的時效規定——感恩祭當日必須吃完，還願與甘心祭可留到次日，第三天剩餘的必須焚燒，不可食用。這些時效規定強調祭物的神聖性不能因時間拖延而消耗殆盡。本章也重申脂油與血的禁食規定，違者須「從民中剪除」，顯示這不只是衛生規定，而是屬靈身份的標誌。章末說明搖祭與舉祭的制度，確保祭司在事奉神的過程中得到合宜的供應，體現神對事奉者的照顧與公平。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 感恩要及時：感謝的心不可拖延</strong><br>感恩的平安祭「要在獻的日子吃，一點不可留到早晨」（利7:15），強調感恩必須即時、新鮮，不可拖延。當神的恩典臨到時，即時回應的感恩才能充分表達那份真實的喜樂與認知。若讓感恩「留到第三天」，它便從馨香的祭物變為「可憎嫌的」（利7:18）。這提醒信徒在每日生活中及時感謝神，而不是將感恩積存到「方便的時候」才表達。<br><br>
+<strong>2. 聖潔是參與的前提：不潔淨不可妄嘗聖物</strong><br>本章明確規定，不潔淨的人吃了平安祭的肉，必「從民中剪除」（利7:20）。神聖的事物需要以聖潔的狀態來參與，不可隨便混淆聖俗。這個原則對應新約保羅對聖餐的警告：「人要省察自己，然後才可以吃這餅」（林前11:28）。參與神所設立的聖禮，首先需要自我省察，確保內心的潔淨，這是對神同在的尊重。<br><br>
+<strong>3. 事奉者理當得供應：神的制度照顧服事之人</strong><br>本章詳細規定祭司從各種祭物中所應得的份（燔祭的皮、素祭的餘、平安祭的胸與右腿），這不是額外的特權，而是神親自設立的公平供應制度。神照顧全職事奉者的生計，使他們能專心事奉。這個原則延伸到新約：「傳福音的人理當靠着福音養生」（林前9:14），呼籲信徒支持事奉者，使神的工作得以持續推進。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>為感謝獻平安祭牲</strong>的肉，<strong>要在獻的日子吃</strong>，一點不可留到早晨。」（利7:15）</td>
+<td>感恩的祭物必須當日吃完，不可拖延，強調感謝要及時、新鮮。就像收到禮物當場道謝遠比三天後補發一封冷冰冰的訊息更有意義——你是否習慣把對神的感謝「留到以後」？今天你可以為哪一件事立刻向神表達感謝？</td>
+</tr>
+<tr>
+<td>「<strong>只是獻與耶和華平</strong><strong>安祭的肉</strong>，人若不潔淨而吃了，這人必從民中剪除。」（利7:20）</td>
+<td>以不潔淨的狀態妄自接觸聖物，後果是與神的子民隔離。就像帶着污染的器具操作無菌環境會破壞整個系統——你在領受聖餐、禱告、讀經前，是否認真省察自己的心靈狀態？「聖潔」的要求如何改變你參與屬靈操練的態度？</td>
+</tr>
+<tr>
+<td>「<strong>因為我從以色列人</strong><strong>的平安祭中</strong>，取了這搖的胸和舉的腿給祭司亞倫和他子孫，作他們從以色列人中所永得的分。」（利7:34）</td>
+<td>神親自設計了一套制度，確保事奉者能從信眾的奉獻中得到永得的供應。就像公司薪資制度保障員工穩定的生活——你對支持教會事工、牧者生計的態度是什麼？你是否將奉獻視為參與神在地上工作的具體行動？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

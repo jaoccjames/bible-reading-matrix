@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多後書第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多後書第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">天上的住處與和好的職分</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我們原知道，我們這地上的帳棚若拆毀了，必得神所造，不是人手所造，在天上永存的房屋。</div>
+<div class="verse"><span class="verse-number">2</span>我們在這帳棚裏歎息，深想得那從天上來的房屋，好像穿上衣服；</div>
+<div class="verse"><span class="verse-number">3</span>倘若穿上，被遇見的時候就不至於赤身了。</div>
+<div class="verse"><span class="verse-number">4</span>我們在這帳棚裏歎息勞苦，並非願意脫下這個，乃是願意穿上那個，好叫這必死的被生命吞滅了。</div>
+<div class="verse"><span class="verse-number">5</span>為此，培植我們的就是神，他又賜給我們聖靈作憑據〔原文作質〕。</div>
+<div class="verse"><span class="verse-number">6</span>所以，我們時常坦然無懼，並且曉得我們住在身內，便與主相離。</div>
+<div class="verse"><span class="verse-number">7</span>因我們行事為人是憑着信心，不是憑着眼見。</div>
+<div class="verse"><span class="verse-number">8</span>我們坦然無懼，是更願意離開身體與主同住。</div>
+<div class="verse"><span class="verse-number">9</span>所以，無論是住在身內，離開身外，我們立了志向，要得主的喜悅。</div>
+<div class="verse"><span class="verse-number">10</span>因為我們眾人必要在基督臺前顯露出來，叫各人按着本身所行的，或善或惡受報。</div>
+<div class="verse"><span class="verse-number">11</span>我們既知道主是可畏的，所以勸人。但我們在神面前是顯明的，盼望在你們的良心裏也是顯明的。</div>
+<div class="verse"><span class="verse-number">12</span>我們不是向你們再舉薦自己，乃是叫你們因我們有可誇之處，好對那憑外貌不憑內心誇口的人，有言可答。</div>
+<div class="verse"><span class="verse-number">13</span>我們若果顛狂，是為神；若果謹守，是為你們。</div>
+<div class="verse"><span class="verse-number">14</span>原來基督的愛激勵我們；因我們想，一人既替眾人死，眾人就都死了；</div>
+<div class="verse"><span class="verse-number">15</span>並且他替眾人死，是叫那些活着的人不再為自己活，乃為替他們死而復活的主活。</div>
+<div class="verse"><span class="verse-number">16</span>所以，我們從今以後，不憑着外貌〔原文作肉體；本節同〕認人了。雖然憑着外貌認過基督，如今卻不再這樣認他了。</div>
+<div class="verse"><span class="verse-number">17</span>若有人在基督裏，他就是新造的人，舊事已過，都變成新的了。</div>
+<div class="verse"><span class="verse-number">18</span>一切都是出於神；他藉着基督使我們與他和好，又將勸人與他和好的職分賜給我們。</div>
+<div class="verse"><span class="verse-number">19</span>這就是神在基督裏，叫世人與自己和好，不將他們的過犯歸到他們身上，並且將這和好的道理託付了我們。</div>
+<div class="verse"><span class="verse-number">20</span>所以，我們作基督的使者，就好像神藉我們勸你們一般。我們替基督求你們與神和好。</div>
+<div class="verse"><span class="verse-number">21</span>神使那無罪〔無罪：原文作不知罪〕的，替我們成為罪，好叫我們在他裏面成為神的義。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第5章圍繞末世盼望、最後的審判與和好的職事三大主題，是哥林多後書神學最精華的一章。本章首先說明保羅知道他們這地上的帳棚若拆毀了，必得神所造那房屋，是天上永存的房屋，他們在這帳棚裡歎息，切望得那從天上來的房屋，不是脫去這個乃是套上那個，使這必死的被生命吞滅。接著說明他們既然行事為人是憑著信心不是憑著眼見，所以無論是住在身內離主較遠，或是離開身體與主同在，他們都立了志向要得主的喜悅。然後宣告我們眾人都必須在基督臺前顯露出來，各人按著本身所行的或善或惡受報，這末世審判的確信激勵保羅盡心傳道。接著說明神在基督裡叫世人與自己和好，不將他們的過犯歸到他們身上，並將和好的道理托付給保羅他們。最後發出著名的宣告：我們作基督的使者，神藉我們勸你們與神和好。本章以永恆視野重新詮釋使徒事奉的意義，為新約和好神學奠定基礎。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「凡活着的，不再為自己活，乃為主活」</strong><br>「基督的愛激勵我們」——這是服事最深層的動機。「不再為自己活，乃為替他們死而復活的主活」——基督的死，解除了我為自己而活的義務和權利。若祂替我死了，則我「屬於祂」，我的生命不再只是我的。這是信仰最深的委身：把生命的主權從自己轉向基督。<br><br>
+<strong>2. 新造的人——身份的根本改變</strong><br>「若有人在基督裏，他就是新造的人，舊事已過，都變成新的了」——在基督裏的人有了根本新的身份。「新造」不只是行為的改善，而是本質的更新。這個真理是信仰的確信基礎，也是面對過去失敗時的平安所在：舊事已過，是確定的事實，不是努力達到的目標。<br><br>
+<strong>3. 和好的職分是每個信徒的使命</strong><br>「我們作基督的使者，就好像神藉我們勸你們一般。我們替基督求你們與神和好」——每一個信徒都是和好的使者，代表神向世人發出和好的邀請。「神使那無罪的，替我們成為罪，好叫我們在他裏面成為神的義」——這個代換是和好得以可能的神學根基：基督取了我們的罪，我們得了祂的義。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>若有人在基督裏</strong>，<strong>他就是新造的人</strong>，舊事已過，都變成新的了。（林後5:17）</td>
+<td>你有沒有讓「新造的人，舊事已過」這個宣告真實地進入你的自我認識，讓你從過去的失敗和舊有的身份中得到釋放？就像一個人正式改名後可以堂堂正正地以新名字生活，你有沒有以「新造的人」的身份，而非以舊日的罪疚和定義來生活？</td>
+</tr>
+<tr>
+<td><strong>原來基督的愛激勵</strong>我們……<strong>並且他替眾人死</strong>，是叫那些活着的人不再為自己活，乃為替他們死而復活的主活。（林後5:14-15）</td>
+<td>「基督的愛激勵」你的服事有多深？你有沒有讓「不再為自己活」不只是口號，而是真實地影響你如何使用時間、能力和資源？就像深刻受恩的人自然地不計代價地回報，你有沒有讓基督的愛成為你服事最深層的動力？</td>
+</tr>
+<tr>
+<td><strong>我們作基督的使者</strong>……<strong>我們替基督求你們</strong>與神和好。（林後5:20）</td>
+<td>你有沒有意識到你是神和好信息的「使者」，有責任邀請周圍的人與神和好？就像大使代表他的國家在外國宣達本國的立場，你有沒有讓自己成為一個真實地代表神、向人發出和好邀請的使者？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

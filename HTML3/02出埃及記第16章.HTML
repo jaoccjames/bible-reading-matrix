@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">嗎哪與鵪鶉：每日的供應</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列全會眾從以琳起行，在出埃及後第二個月十五日，到了以琳和西乃中間、汛的曠野。</div>
+<div class="verse"><span class="verse-number">2</span>以色列全會眾在曠野向摩西、亞倫發怨言，</div>
+<div class="verse"><span class="verse-number">3</span>說：「巴不得我們早死在埃及地、耶和華的手下；那時我們坐在肉鍋旁邊，吃得飽足。你們將我們領出來，到這曠野，是要叫這全會眾都餓死啊！」</div>
+<div class="verse"><span class="verse-number">4</span>耶和華對摩西說：「我要將糧食從天降給你們。百姓可以出去，每天收每天的分，我好試驗他們遵不遵我的法度。</div>
+<div class="verse"><span class="verse-number">5</span>到第六天，他們要把所收進來的預備好了，比每天所收的多一倍。」</div>
+<div class="verse"><span class="verse-number">6</span>摩西、亞倫對以色列眾人說：「到了晚上，你們要知道是耶和華將你們從埃及地領出來的。</div>
+<div class="verse"><span class="verse-number">7</span>早晨，你們要看見耶和華的榮耀，因為耶和華聽見你們向他所發的怨言了。我們算甚麼，你們竟向我們發怨言呢？」</div>
+<div class="verse"><span class="verse-number">8</span>摩西又說：「耶和華晚上必給你們肉吃，早晨必給你們食物得飽；因為你們向耶和華發的怨言，他都聽見了。我們算甚麼，你們的怨言不是向我們發的，乃是向耶和華發的。」</div>
+<div class="verse"><span class="verse-number">9</span>摩西對亞倫說：「你告訴以色列全會眾說：『你們就近耶和華面前，因為他已經聽見你們的怨言了。』」</div>
+<div class="verse"><span class="verse-number">10</span>亞倫正對以色列全會眾說話的時候，他們向曠野觀看，不料，耶和華的榮光在雲中顯現。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">12</span>「我已經聽見以色列人的怨言。你告訴他們說：『到黃昏的時候，你們要吃肉，早晨必有食物得飽，你們就知道我是耶和華你們的神。』」</div>
+<div class="verse"><span class="verse-number">13</span>到了晚上，有鵪鶉飛來，遮滿了營；早晨在營四圍的地上有露水。</div>
+<div class="verse"><span class="verse-number">14</span>露水上升之後，不料，野地面上有如白霜的小圓物。</div>
+<div class="verse"><span class="verse-number">15</span>以色列人看見，不知道是甚麼，就彼此對問說：「這是甚麼呢？」摩西對他們說：「這就是耶和華給你們吃的食物。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華所吩咐的是這樣：你們要按着各人的飯量，為帳棚裏的人，按着人數收起來，各拿一俄梅珥。」</div>
+<div class="verse"><span class="verse-number">17</span>以色列人就這樣行；有多收的，有少收的。</div>
+<div class="verse"><span class="verse-number">18</span>及至用俄梅珥量一量，多收的也沒有餘，少收的也沒有缺；各人按着自己的飯量收取。</div>
+<div class="verse"><span class="verse-number">19</span>摩西對他們說：「所收的，不許甚麼人留到早晨。」</div>
+<div class="verse"><span class="verse-number">20</span>然而他們不聽摩西的話，內中有留到早晨的，就生蟲變臭了；摩西便向他們發怒。</div>
+<div class="verse"><span class="verse-number">21</span>他們每日早晨，按着各人的飯量收取，日頭一發熱，就消化了。</div>
+<div class="verse"><span class="verse-number">22</span>到第六天，他們收了雙倍的食物，每人兩俄梅珥。會眾的官長來告訴摩西；</div>
+<div class="verse"><span class="verse-number">23</span>摩西對他們說：「耶和華這樣說：『明天是聖安息日，是向耶和華守的聖安息日。你們要烤的就烤了，要煮的就煮了，所剩下的都留到早晨。』」</div>
+<div class="verse"><span class="verse-number">24</span>他們就照摩西的吩咐留到早晨，也不臭，裏頭也沒有蟲子。</div>
+<div class="verse"><span class="verse-number">25</span>摩西說：「你們今天吃這個吧！因為今天是向耶和華守的安息日；你們在田野必找不着了。</div>
+<div class="verse"><span class="verse-number">26</span>六天可以收取，第七天乃是安息日，那一天必沒有了。」</div>
+<div class="verse"><span class="verse-number">27</span>第七天，百姓中有人出去收，甚麼也找不着。</div>
+<div class="verse"><span class="verse-number">28</span>耶和華對摩西說：「你們不肯守我的誡命和律法，要到幾時呢？</div>
+<div class="verse"><span class="verse-number">29</span>你們看！耶和華既將安息日賜給你們，所以第六天他賜給你們兩天的食物，第七天各人要住在自己的地方，不許甚麼人出去。」</div>
+<div class="verse"><span class="verse-number">30</span>於是百姓第七天安息了。</div>
+<div class="verse"><span class="verse-number">31</span>這食物，以色列家叫嗎哪；樣子像芫荽子，顏色是白的，滋味如同攙蜜的薄餅。</div>
+<div class="verse"><span class="verse-number">32</span>摩西說：「耶和華所吩咐的是這樣：『要將一滿俄梅珥〔俄梅珥就是伊法十分之一〕嗎哪留到世世代代，使後人可以看見我當日將你們領出埃及地，在曠野所給你們吃的食物。』」</div>
+<div class="verse"><span class="verse-number">33</span>摩西對亞倫說：「你拿一個罐子，盛一滿俄梅珥嗎哪，存在耶和華面前，要留到世世代代。」</div>
+<div class="verse"><span class="verse-number">34</span>耶和華怎麼吩咐摩西，亞倫就怎麼行，把嗎哪放在法櫃前存留。</div>
+<div class="verse"><span class="verse-number">35</span>以色列人吃嗎哪共四十年，直到進了有人居住之地，就是迦南的境界。</div>
+<div class="verse"><span class="verse-number">36</span>（俄梅珥乃伊法十分之一。）</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第16章記錄了以色列人在曠野因缺乏食物而發出抱怨，神以嗎哪和鵪鶉奇蹟性地供應。以色列人懷念埃及的食物，甚至將奴役生活理想化，說：「寧可死在埃及地，坐在肉鍋旁邊，吃得飽足」。神沒有因他們的怨言而懲罰，而是宣告要從天降糧，稱之為「嗎哪」，意思是「這是甚麼」。嗎哪的供應有嚴格的規則：每天只能收取當天所需，安息日前一天要多收，以備安息日使用，因為安息日沒有嗎哪降下。有些人不遵守，多收的嗎哪次日就生蟲發臭，安息日出去收卻什麼也找不着。神藉此訓練以色列人每天倚靠神的供應，建立安息日的觀念，學習在神的節奏中生活。本章是理解「每日的糧」這一禱告概念的重要背景，也是耶穌稱自己為「從天而來的糧」的舊約對應。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神以每日的供應訓練信徒的倚靠</strong><br>嗎哪不能囤積——每天的分量只夠當天用。這是神刻意設計的依賴訓練，要以色列人每天回到神面前，學習「今日的糧今日求」的信心生活。現代人常想要一次解決所有問題的方案，但神往往選擇每日更新的恩典，使我們保持與祂的持續關係。<br><br>
+<strong>2. 怨言揭示心中真正的倚靠對象</strong><br>以色列人懷念埃及的食物，這揭示他們的安全感仍然建立在舊日的物質保障上，而非新生的信仰。當我們在處境改變時懷念舊日的「埃及」，往往是因為我們的心仍然附着在世俗的安全感上。怨言是靈性診斷的工具，幫助我們看見心中真正倚賴的是什麼。<br><br>
+<strong>3. 安息日的規則確立了生命當有的節奏</strong><br>安息日不收嗎哪，是神將安息日聖別的具體教導。神以食物供應的方式讓以色列人體驗安息不是放縱，而是信靠——相信神在我休息時仍然供應。在講求效率與生產力的現代，安息日神學提醒我們：生命的節奏由神來設定，而非由市場或工作量決定。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華吩咐摩西說</strong>：「<strong>你取一罐嗎哪一俄</strong>梅珥，存在耶和華面前，要留到後代。」（出16:32）</td>
+<td>就像博物館保存歷史文物讓後人記住過去，你如何記念神在你生命中的供應？你是否建立了某種方式，讓自己和後代記住神過去的恩典？</td>
+</tr>
+<tr>
+<td><strong>以色列人吃嗎哪共</strong><strong>四十年</strong>，直到進了有人居住之地，就是迦南的境界。（出16:35）</td>
+<td>就像月薪制讓員工每月依賴雇主，你是否能接受神每日供應而非一次給足的方式？這種依賴對你與神的關係有什麼積極的意義？</td>
+</tr>
+<tr>
+<td><strong>摩西對亞倫說</strong>：「<strong>你拿一個罐子</strong>，盛上一俄梅珥嗎哪，放在耶和華面前，要存留到後代。」（出16:33）</td>
+<td>就像家族食譜的傳承讓飲食文化延續，你認為信仰傳承應該包含哪些具體的記念方式，幫助下一代記住神的供應？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

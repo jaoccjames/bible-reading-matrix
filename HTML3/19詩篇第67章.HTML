@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第67章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第67章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">蒙福是為使萬國認識神：個人祝福的宣教目的</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（一篇詩歌，交與伶長。用絲絃的樂器）願神憐憫我們，賜福與我們，用臉光照我們，（細拉）</div>
+<div class="verse"><span class="verse-number">2</span>好叫世界得知你的道路，萬國得知你的救恩。</div>
+<div class="verse"><span class="verse-number">3</span>神啊，願列邦稱讚你！願萬民都稱讚你！</div>
+<div class="verse"><span class="verse-number">4</span>願萬國都快樂歡呼；因為你必按公正審判萬民，引導世上的萬國。（細拉）</div>
+<div class="verse"><span class="verse-number">5</span>神啊，願列邦稱讚你！願萬民都稱讚你！</div>
+<div class="verse"><span class="verse-number">6</span>地已經出了土產；神，就是我們的神要賜福與我們。</div>
+<div class="verse"><span class="verse-number">7</span>神要賜福與我們；地的四極都要敬畏他！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第67篇是一首無名氏的詩歌，篇幅短小（僅7節），卻蘊含豐富的宣教神學。本篇以亞倫祝福（民6:24-26）為靈感，以「願神賜福…好叫」的結構，揭示以色列蒙福的宣教目的：神的祝福不是終點，而是使萬國認識神、讚美神的媒介。
+
+      本篇的中心張力在第1至2節：「願神憐憫我們，賜福與我們……好叫世界得知你的道路，萬國得知你的救恩。」「好叫」這兩個字是全篇的關鍵——祝福不是自己享用的，而是為了讓萬國得知神。這個「蒙福以祝福萬國」的主題，呼應了神對亞伯拉罕的呼召（創12:2-3）：「我要賜福給你……地上的萬族都要因你得福。」
+
+      詩篇67篇在結構上以兩次相同的疊句「願列邦稱讚你！願萬民都稱讚你！」（3、5節）為軸心，前後呼應，揭示讚美神的願景涵蓋全地所有的民族，而不只是以色列一族。這種普世宣教的視野，在整部舊約中是最清晰的預示之一。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 蒙福的目的是使萬國認識神</strong><br>「願神憐憫我們，賜福與我們……好叫世界得知你的道路，萬國得知你的救恩。」（第1-2節）本篇最深刻的神學洞見：神的祝福有其宣教目的。以色列蒙福，是為了成為萬國的通道，讓神的道路與救恩透過他們傳遞到地極。這個「蒙福以祝福」的邏輯，對信徒的個人生命同樣適用：我們所得到的一切恩賜、機會、資源，都有超越個人享用的宣教目的，都是成為他人認識神的橋梁。<br><br>
+<strong>2. 神公正地審判並引導萬國是普世讚美的根基</strong><br>「願萬國都快樂歡呼；因為你必按公正審判萬民，引導世上的萬國。」（第4節）萬國快樂的原因不是因為他們的強大，而是因為有一位公正引導者掌舵歷史。在人類歷史充滿不公義的審判和錯誤引導的陰影下，這個宣告是最深的盼望：神必按公正審判，並引導萬國走向祂的目的。這個確信使信徒能以盼望而非絕望看待世界歷史的混亂，知道最終有一位公正的引導者主持全局。<br><br>
+<strong>3. 個人的蒙福有地極的見證效果</strong><br>「神要賜福與我們；地的四極都要敬畏他！」（第7節）個人所蒙受的神的祝福，若被正確地「述說」和「傳遞」，其效果可以延伸到「地的四極」。這呼召每一位蒙福的信徒，不要獨善其身地享受神的祝福，而要成為見證人，讓神的榮耀因著自己的生命從個人擴展到更廣的世界。神賜福不是讓信徒成為「終點站」，而是使信徒成為祝福流通的「管道」。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>願神憐憫我們</strong>，<strong>賜福與我們</strong>……好叫世界得知你的道路，萬國得知你的救恩。（詩67:1-2）</td>
+<td>就像水庫蓄水的目的是灌溉農田而非只是存水，你所接受的神的祝福——才能、機會、財富、信仰——是否有「好叫萬國得知」的宣教目的意識，還是你主要把它們視為個人享受的資產？</td>
+</tr>
+<tr>
+<td>神啊，<strong>願列邦稱讚你</strong>！<strong>願萬民都稱讚你</strong>！（詩67:3）</td>
+<td>就像一個愛音樂的人，最大的心願不只是自己欣賞音樂，更是讓越來越多的人認識那份美，你對神的愛是否帶出了這種「願萬民都稱讚你」的心願，讓你的信仰自然地帶有宣教的視野？</td>
+</tr>
+<tr>
+<td><strong>神要賜福與我們</strong>；<strong>地的四極都要敬畏</strong>他！（詩67:7）</td>
+<td>就像一盞燈點亮後，它的光自然照亮周圍的空間，而非只照亮燈本身，你是否相信神賜給你的祝福若被正確使用，其效果可以延伸遠超你的個人範疇，讓地的四極因你的見證而更多地敬畏神？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

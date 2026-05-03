@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第28章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第28章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">復活顯現與大使命</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>安息日將盡，七日的頭一日，天快亮的時候，抹大拉的馬利亞和那個馬利亞來看墳墓。</div>
+<div class="verse"><span class="verse-number">2</span>忽然，地大震動；因為有主的使者從天上下來，把石頭滾開，坐在上面。</div>
+<div class="verse"><span class="verse-number">3</span>他的像貌如同閃電，衣服潔白如雪。</div>
+<div class="verse"><span class="verse-number">4</span>看守的人就因他嚇得渾身亂戰，甚至和死人一樣。</div>
+<div class="verse"><span class="verse-number">5</span>天使對婦女說：「不要害怕！我知道你們是尋找那釘十字架的耶穌。</div>
+<div class="verse"><span class="verse-number">6</span>他不在這裏，照他所說的，已經復活了。你們來看安放主的地方。</div>
+<div class="verse"><span class="verse-number">7</span>快去告訴他的門徒，說他從死裏復活了，並且在你們以先往加利利去，在那裏你們要見他。看哪，我已經告訴你們了。」</div>
+<div class="verse"><span class="verse-number">8</span>婦女們就急忙離開墳墓，又害怕，又大大的歡喜，跑去要報給他的門徒。</div>
+<div class="verse"><span class="verse-number">9</span>忽然，耶穌遇見她們，說：「願你們平安！」她們就上前抱住他的腳拜他。</div>
+<div class="verse"><span class="verse-number">10</span>耶穌對她們說：「不要害怕！你們去告訴我的弟兄，叫他們往加利利去，在那裏必見我。」</div>
+<div class="verse"><span class="verse-number">11</span>他們去的時候，看守的兵有幾個進城去，將所經歷的事都報給祭司長。</div>
+<div class="verse"><span class="verse-number">12</span>祭司長和長老聚集商議，就拿許多銀錢給兵丁，說：</div>
+<div class="verse"><span class="verse-number">13</span>「你們要這樣說：『夜間我們睡覺的時候，他的門徒來，把他偷去了。』</div>
+<div class="verse"><span class="verse-number">14</span>倘若這話被巡撫聽見，有我們勸他，保你們無事。」</div>
+<div class="verse"><span class="verse-number">15</span>兵丁受了銀錢，就照所囑咐他們的去行。這話就傳說在猶太人中間，直到今日。</div>
+<div class="verse"><span class="verse-number">16</span>十一個門徒往加利利去，到了耶穌約定的山上。</div>
+<div class="verse"><span class="verse-number">17</span>他們見了耶穌就拜他，然而還有人疑惑。</div>
+<div class="verse"><span class="verse-number">18</span>耶穌進前來，對他們說：「天上地下所有的權柄都賜給我了。</div>
+<div class="verse"><span class="verse-number">19</span>所以，你們要去，使萬民作我的門徒，奉父、子、聖靈的名給他們施洗〔或作：給他們施洗，歸於父、子、聖靈的名〕。</div>
+<div class="verse"><span class="verse-number">20</span>凡我所吩咐你們的，都教訓他們遵守，我就常與你們同在，直到世界的末了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第28章記述耶穌復活的事件，是整部馬太福音的結語，也是救恩歷史從受難走向榮耀的轉折點。安息日過後，七日的頭一日天快亮時，抹大拉的馬利亞和另一個馬利亞來看墳墓，地大震動，主的使者從天上降下滾開石頭，看守的兵嚇得如同死人。天使告訴婦女們耶穌已經復活，吩咐她們去告訴門徒說祂在他們以先往加利利去。婦女帶著恐懼又大大歡喜跑去告訴門徒，途中耶穌親自向她們顯現，她們抱住祂的腳拜祂。與此同時，守衛兵把所發生的事告訴祭司長，他們賄賂兵丁說耶穌的門徒趁夜間把祂偷去了，這謊言在猶太人中流傳。最後在加利利某山上，十一個門徒見耶穌，耶穌宣告天上地下所有的權柄都賜給了祂，差遣門徒往普天下去，使萬民作祂的門徒，奉父子聖靈的名施洗，並教訓他們遵守祂所吩咐的，應許說直到世界的末了祂天天與他們同在。本章以大使命和同在的應許為整部福音書作出壯闊的結語。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 復活是整個基督信仰的核心</strong><br>「他不在這裏，已經復活了」——這八個字改變了歷史。如果耶穌沒有復活，信仰就毫無意義；復活的耶穌確認了祂所有的話語和身份宣告是真實的。保羅後來說：「基督若沒有復活，你們的信便是徒然。」復活不只是個歷史事件，更是信徒生命的動力：我們不是服事一個死去的先知，而是跟隨一位活着的主。<br><br>
+<strong>2. 大使命建立在基督無限的權柄上</strong><br>耶穌說「天上地下所有的權柄都賜給我了，所以你們要去」——使命的基礎不是門徒的能力，而是基督的全權。這個「所以」連接了兩件事：基督的權柄與門徒的使命。我們去傳福音、使人作門徒，不是憑自己的力量，而是奉那位擁有全部權柄的基督之名。這給每一個自覺能力不足的信徒極大的勇氣。<br><br>
+<strong>3. 「我常與你們同在」是永恆的應許</strong><br>大使命以最美的應許作結：「我就常與你們同在，直到世界的末了。」這不是道別，而是永恆的陪伴宣言。門徒在沒有耶穌肉身的陪伴下走向世界，卻有祂靈的同在。每一個孤單的宣教士、在黑暗中的信徒、面對挑戰而不知所措的門徒，都可以倚靠這個應許：不是「你要獨力完成使命」，而是「我與你同在」。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>天使對婦女說</strong>：「<strong>不要害怕</strong>！……他不在這裏，照他所說的，已經復活了。」（太28:5-6）</td>
+<td>復活的事實對你的信仰有多大的意義？就像公司創辦人從宣告死亡中復甦會徹底改變公司的命運，你有沒有讓耶穌的復活真正改變你每一天的生命態度——從憂愁轉為盼望，從恐懼轉為勇氣？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>天上地下所有的權</strong>柄都賜給我了。所以，你們要去，使萬民作我的門徒。」（太28:18-19）</td>
+<td>你有沒有把使萬民作門徒看作是自己的使命，而非只是牧師或宣教士的工作？就像公司每個員工都是品牌的代言人，你知道每一個信徒都被差派去參與大使命嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>我就常與你們同在</strong>，直到世界的末了。」（太28:20）</td>
+<td>在你最孤單、最無助的時刻，你有沒有真實地倚靠耶穌「常與你同在」的應許？就像在黑暗的走廊知道父母就在旁邊讓人不再害怕，你願意把這個應許從頭腦帶入你真實的生活感受中嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

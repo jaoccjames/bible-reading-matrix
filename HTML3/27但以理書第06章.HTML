@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>但以理書第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+但以理書第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">獅子坑中的但以理與禱告的忠心</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>大利烏隨心所願，立一百二十個總督，治理通國。</div>
+<div class="verse"><span class="verse-number">2</span>又在他們以上立總長三人（但以理在其中），使總督在他們三人面前回覆事務，免得王受虧損。</div>
+<div class="verse"><span class="verse-number">3</span>因這但以理有美好的靈性，所以顯然超乎其餘的總長和總督，王又想立他治理通國。</div>
+<div class="verse"><span class="verse-number">4</span>那時，總長和總督尋找但以理誤國的把柄，為要參他；只是找不着他的錯誤過失，因他忠心辦事，毫無錯誤過失。</div>
+<div class="verse"><span class="verse-number">5</span>那些人便說：「我們要找參這但以理的把柄，除非在他神的律法中就尋不着。」</div>
+<div class="verse"><span class="verse-number">6</span>於是，總長和總督紛紛聚集來見王，說：「願大利烏王萬歲！</div>
+<div class="verse"><span class="verse-number">7</span>國中的總長、欽差、總督、謀士，和巡撫彼此商議，要立一條堅定的禁令〔或作：求王下旨要立一條云云〕，三十日內，不拘何人，若在王以外，或向神或向人求甚麼，就必扔在獅子坑中。</div>
+<div class="verse"><span class="verse-number">8</span>王啊，現在求你立這禁令，加蓋玉璽，使禁令決不更改；照瑪代和波斯人的例是不可更改的。」</div>
+<div class="verse"><span class="verse-number">9</span>於是大利烏王立這禁令，加蓋玉璽。</div>
+<div class="verse"><span class="verse-number">10</span>但以理知道這禁令蓋了玉璽，就到自己家裏（他樓上的窗戶開向耶路撒冷），一日三次，雙膝跪在他神面前，禱告感謝，與素常一樣。</div>
+<div class="verse"><span class="verse-number">11</span>那些人就紛紛聚集，見但以理在他神面前祈禱懇求。</div>
+<div class="verse"><span class="verse-number">12</span>他們便進到王前，提王的禁令，說：「王啊，三十日內不拘何人，若在王以外，或向神或向人求甚麼，必被扔在獅子坑中。王不是在這禁令上蓋了玉璽麼？」王回答說：「實有這事，照瑪代和波斯人的例是不可更改的。」</div>
+<div class="verse"><span class="verse-number">13</span>他們對王說：「王啊，那被擄之猶大人中的但以理不理你，也不遵你蓋了玉璽的禁令，他竟一日三次祈禱。」</div>
+<div class="verse"><span class="verse-number">14</span>王聽見這話，就甚愁煩，一心要救但以理，籌劃解救他，直到日落的時候。</div>
+<div class="verse"><span class="verse-number">15</span>那些人就紛紛聚集來見王，說：「王啊，當知道瑪代人和波斯人有例，凡王所立的禁令和律例都不可更改。」</div>
+<div class="verse"><span class="verse-number">16</span>王下令，人就把但以理帶來，扔在獅子坑中。王對但以理說：「你所常事奉的神，他必救你。」</div>
+<div class="verse"><span class="verse-number">17</span>有人搬石頭放在坑口，王用自己的璽和大臣的印，封閉那坑，使懲辦但以理的事毫無更改。</div>
+<div class="verse"><span class="verse-number">18</span>王回宮，終夜禁食，無人拿樂器到他面前，並且睡不着覺。</div>
+<div class="verse"><span class="verse-number">19</span>次日黎明，王就起來，急忙往獅子坑那裏去。</div>
+<div class="verse"><span class="verse-number">20</span>臨近坑邊，哀聲呼叫但以理，對但以理說：「永生神的僕人但以理啊，你所常事奉的神能救你脫離獅子嗎？」</div>
+<div class="verse"><span class="verse-number">21</span>但以理對王說：「願王萬歲！</div>
+<div class="verse"><span class="verse-number">22</span>我的神差遣使者，封住獅子的口，叫獅子不傷我；因我在神面前無辜，我在王面前也沒有行過虧損的事。」</div>
+<div class="verse"><span class="verse-number">23</span>王就甚喜樂，吩咐人將但以理從坑裏繫上來。於是但以理從坑裏被繫上來，身上毫無傷損，因為信靠他的神。</div>
+<div class="verse"><span class="verse-number">24</span>王下令，人就把那些控告但以理的人，連他們的妻子兒女都帶來，扔在獅子坑中。他們還沒有到坑底，獅子就抓住〔原文作勝了〕他們，咬碎他們的骨頭。</div>
+<div class="verse"><span class="verse-number">25</span>那時，大利烏王傳旨，曉諭住在全地各方、各國、各族的人說：「願你們大享平安！</div>
+<div class="verse"><span class="verse-number">26</span>現在我降旨曉諭我所統轄的全國人民，要在但以理的神面前，戰兢恐懼。因為他是永遠長存的活神，他的國永不敗壞；他的權柄永存無極！</div>
+<div class="verse"><span class="verse-number">27</span>他護庇人，搭救人，在天上地下施行神蹟奇事，救了但以理脫離獅子的口。」</div>
+<div class="verse"><span class="verse-number">28</span>如此，這但以理，當大利烏王在位的時候和波斯王古列在位的時候，大享亨通。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+但以理書第6章是全書最著名的敘事章節，場景在瑪代波斯王大利烏年間。但以理因有「美好的靈性」而超乎其他官員，王欲立他治理全國。嫉妒者無法找到他的錯處——「因他忠心辦事，毫無錯誤過失」——只能從他的宗教習慣下手。他們利用大利烏的自尊心，設立「三十日內不得向任何神或人禱告」的禁令。但以理知道禁令後，仍然一日三次向神禱告，「與素常一樣」。他被投入獅子坑，次日大利烏趕去，但以理安然無恙：「我的神差遣使者，封住獅子的口。」大利烏下令，誣陷但以理的人和他們的家屬被扔入獅子坑。之後大利烏曉諭萬民，稱但以理的神是「永遠長存的活神」。本章以「如此，這但以理……大享亨通」作結，顯示忠心有其報賞。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「與素常一樣」：信仰習慣在壓力下不改變，才是真實的信仰根基</strong><br>「與素常一樣」——但以理的禱告習慣在危機前和危機中是一樣的。他沒有在法律改變後才開始或停止禱告。信仰的真正考驗不是在正常時期，而是在代價出現時，「素常的習慣」是否仍然維持。真實的信仰習慣，是危機中的穩固根基，而非危機後才建立的緊急措施。<br><br>
+<strong>2. 忠心辦事、毫無錯失是信徒在世界中最有力的見證</strong><br>敵人找不到但以理的過錯——「只是找不着他的錯誤過失，因他忠心辦事，毫無錯誤過失」。信徒在職場和社會中最強的護盾，是無可指責的誠信和忠心。不是要靠自己的表現爭取保護，而是忠心辦事本身就是最有力的信仰見證，也使敵人找不到攻擊的根據。<br><br>
+<strong>3. 神的保護不一定阻止苦難，但在苦難中必然同在</strong><br>但以理仍然進了獅子坑——神沒有阻止他入坑，但差遣使者封住獅子的口。神的信實不是免去一切苦難，而是在苦難中的守護。信徒受苦時，不應問「神在哪裡？」而應問「神在這苦難中如何同在？」坑是真實的，但使者也是真實的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>但以理知道這禁令</strong><strong>蓋了玉璽</strong>，就到自己家裏，一日三次，雙膝跪在他神面前，禱告感謝，與素常一樣。（但6:10）</td>
+<td>「與素常一樣」——你的靈修習慣，在壓力、忙碌或危機的情況下是否仍然維持？就像一個日常運動的人在壓力最大的時候最需要運動，屬靈的習慣在最艱難時最需要維持。你最近的靈修習慣，更像「與素常一樣」，還是「等壓力過了再說」？</td>
+</tr>
+<tr>
+<td><strong>因這但以理有美好</strong><strong>的靈性</strong>，所以顯然超乎其餘的總長和總督。（但6:3上）</td>
+<td>「美好的靈性」讓但以理的工作表現超乎他人——靈命和工作表現不是對立的，而是相輔相成的。你是否有時把信仰和職業發展看作兩個分開的領域？就像一棵根扎得深的樹枝葉更茂盛，你的靈命健康有沒有積極地影響你的工作表現和人際關係？</td>
+</tr>
+<tr>
+<td><strong>我的神差遣使者</strong>，<strong>封住獅子的口</strong>，叫獅子不傷我；因我在神面前無辜，我在王面前也沒有行過虧損的事。（但6:22）</td>
+<td>「在神面前無辜，在王面前無過」——但以理的清白良心使他在最黑暗的坑中仍然平靜。你目前面對的最大壓力或威脅，若你在神面前和人面前都是清白的，這種清白如何讓你在「獅子坑」中保持平靜？若有某個地方你的良心不清白，那個地方是否正在讓你在壓力中更容易崩潰？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

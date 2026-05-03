@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第18章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第18章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">祭司的供應與預言的真假辨識</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「祭司利未人和利未全支派必在以色列中無分無業；他們所吃用的就是獻給耶和華的火祭和一切所捐的。</div>
+<div class="verse"><span class="verse-number">2</span>他們在弟兄中必沒有產業；耶和華是他們的產業，正如耶和華所應許他們的。</div>
+<div class="verse"><span class="verse-number">3</span>祭司從百姓所當得的分乃是這樣：凡獻牛或羊為祭的，要把前腿和兩腮並脾胃給祭司。</div>
+<div class="verse"><span class="verse-number">4</span>初收的五穀、新酒和油，並初剪的羊毛，也要給他；</div>
+<div class="verse"><span class="verse-number">5</span>因為耶和華你的神從你各支派中將他揀選出來，使他和他子孫永遠奉耶和華的名侍立，事奉。</div>
+<div class="verse"><span class="verse-number">6</span>「利未人無論寄居在以色列中的那一座城，若從那裏出來，一心願意到耶和華所選擇的地方，</div>
+<div class="verse"><span class="verse-number">7</span>就要奉耶和華他神的名事奉，像他眾弟兄利未人侍立在耶和華面前事奉一樣。</div>
+<div class="verse"><span class="verse-number">8</span>除了他賣祖父產業所得的以外，還要得一分祭物與他們同吃。」</div>
+<div class="verse"><span class="verse-number">9</span>「你到了耶和華你神所賜之地，那些國民所行可憎惡的事，你不可學着行。</div>
+<div class="verse"><span class="verse-number">10</span>你們中間不可有人使兒女經火，也不可有占卜的、觀兆的、用法術的、行邪術的、</div>
+<div class="verse"><span class="verse-number">11</span>用迷術的、交鬼的、行巫術的、過陰的。</div>
+<div class="verse"><span class="verse-number">12</span>凡行這些事的都為耶和華所憎惡；因那些國民行這可憎惡的事，所以耶和華你的神將他們從你面前趕出。</div>
+<div class="verse"><span class="verse-number">13</span>你要在耶和華你的神面前作完全人。」</div>
+<div class="verse"><span class="verse-number">14</span>「因你所要趕出的那些國民都聽信觀兆的和占卜的，至於你，耶和華你的神從來不許你這樣行。</div>
+<div class="verse"><span class="verse-number">15</span>耶和華你的神要從你們弟兄中間給你興起一位先知，像我，你們要聽從他。</div>
+<div class="verse"><span class="verse-number">16</span>正如你在何烈山大會的日子求耶和華你神一切的話，說：『求你不再叫我聽見耶和華我神的聲音，也不再叫我看見這大火，免得我死亡。』</div>
+<div class="verse"><span class="verse-number">17</span>耶和華就對我說：『他們所說的是。</div>
+<div class="verse"><span class="verse-number">18</span>我必在他們弟兄中間給他們興起一位先知像你。我要將當說的話傳給他；他要將我一切所吩咐的都傳給他們。</div>
+<div class="verse"><span class="verse-number">19</span>誰不聽他奉我名所說的話，我必討誰的罪。</div>
+<div class="verse"><span class="verse-number">20</span>若有先知擅敢託我的名說我所未曾吩咐他說的話，或是奉別神的名說話，那先知就必治死。』</div>
+<div class="verse"><span class="verse-number">21</span>你心裏若說：『耶和華所未曾吩咐的話，我們怎能知道呢？』</div>
+<div class="verse"><span class="verse-number">22</span>先知託耶和華的名說話，所說的若不成就，也無效驗，這就是耶和華所未曾吩咐的，是那先知擅自說的，你不要怕他。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第十八章處理兩個重要主題：利未祭司的生計供應，以及先知職分的規定與辨識標準。本章首先規定：利未人（祭司）在以色列中沒有地業，他們的產業是耶和華，靠祭物和十一奉獻維生（18:1-8）。這個規定確保了祭司全時間事奉神，不需要分心於農業或商業。接着，本章嚴格禁止以色列人效法迦南人的各種占卜、巫術、觀兆和與死人交通等習俗，因為這些是耶和華所憎惡的（18:9-14）。在此脈絡下，摩西預言神將興起一位像他一樣的先知——這是申命記中最重要的彌賽亞預言之一，新約聖經指認耶穌正是這位應許的先知（使徒行傳3:22）。本章最後給出辨別真假先知的標準：先知所說的若不成就，就不是出於耶和華（18:22），信徒不必懼怕那位假先知。本章在啟示論和彌賽亞論上都具有極其重要的神學地位。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的子民依靠神的供應，不需要依賴占卜獲取指引</strong><br>神禁止以色列人效法迦南各種占卜術，原因是神自己已預備了先知和律法來引導百姓（申18:14-15）。占卜術的根本問題是：它繞開了神所設立的啟示管道，向其他靈界力量尋求指引。今日信徒同樣需要警惕：當我們面對未知的未來感到焦慮，是否會轉向非神的方式尋求安慰或答案，而非回到神的話語和禱告中？<br><br>
+<strong>2. 神應許興起一位像摩西的先知，是彌賽亞預言的先聲</strong><br>「耶和華你的神要從你們弟兄中間給你興起一位先知像我，你們要聽從他」（申18:15）。這個預言在舊約歷史中從未完全被哪位先知所實現，直到耶穌的來臨——祂不只傳遞神的話，祂本身就是神的話（約翰福音1:1）。認識這條預言的線索，幫助我們看見整本聖經是一個有機整合的救恩故事。<br><br>
+<strong>3. 真假先知的試驗標準是神話語的應驗，而非個人魅力</strong><br>「你心裏若說：這話是耶和華說的呢，是先知擅自說的呢，我們如何才能知道？你不必懼怕他。若是先知托耶和華的名說話，所說的不成就、不應驗，這就是耶和華沒有說的」（申18:21-22）。辨別先知真假的關鍵是話語的應驗，而非說話者的自信、口才或跟隨者的多寡。今日教會中，同樣需要以神的話語核實一切的教導與預言。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>耶和華你的神要從</strong><strong>你們弟兄中間給你</strong>興起一位先知像我，你們要聽從他。」（申18:15）</td>
+<td>神藉先知親自向人說話，最終在耶穌基督身上完全成就，就像公司最終由創辦人親自出面處理最重要的事務，你是否認識並回應耶穌作為神最終、最完全的啟示，還是仍在尋找更多的「啟示」？</td>
+</tr>
+<tr>
+<td>「<strong>你們中間不可有人</strong><strong>使兒女經火</strong>，也不可有占卜的、觀兆的、用法術的……」（申18:10）</td>
+<td>向靈界力量尋求引導是對神的不信任，就像員工跳過主管去找競爭對手詢問公司決策一樣不合宜，在你面對重大決定時，你第一個尋求引導的對象是誰或是什麼？</td>
+</tr>
+<tr>
+<td>「<strong>那先知托我的名說</strong><strong>我所未曾吩咐他說</strong>的話……那先知必治死他。」（申18:20）；「若先知所說的，不成就、不應驗，這就是耶和華沒有說的，是那先知擅自說的。」（申18:22）</td>
+<td>真理的應驗是辨別真假教導的試金石，就像正規地圖的正確性需要在實際行走中被驗證，你如何在日常信仰生活中用神的話語來核實你所聽到的各種屬靈教導？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

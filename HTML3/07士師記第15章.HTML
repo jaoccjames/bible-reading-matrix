@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>士師記第15章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+士師記第15章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">報復循環與神的供應</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>過了些日子，到割麥子的時候，參孫帶着一隻山羊羔去看他的妻，說：「我要進內室見我的妻。」他岳父不容他進去，</div>
+<div class="verse"><span class="verse-number">2</span>說：「我估定你是極其恨她，因此我將她給了你的陪伴。她的妹子不是比她還美麗嗎？你可以娶來代替她吧！」</div>
+<div class="verse"><span class="verse-number">3</span>參孫說：「這回我加害於非利士人不算有罪。」</div>
+<div class="verse"><span class="verse-number">4</span>於是參孫去捉了三百隻狐狸〔或作：野狗〕，將狐狸尾巴一對一對地捆上，將火把捆在兩條尾巴中間，</div>
+<div class="verse"><span class="verse-number">5</span>點着火把，就放狐狸進入非利士人站着的禾稼，將堆集的禾捆和未割的禾稼，並橄欖園盡都燒了。</div>
+<div class="verse"><span class="verse-number">6</span>非利士人說：「這事是誰作的呢？」有人說：「是亭拿人的女婿參孫，因為他岳父將他的妻給了他的陪伴。」於是非利士人上去，用火燒了婦人和她的父親。</div>
+<div class="verse"><span class="verse-number">7</span>參孫對非利士人說：「你們既然這樣行，我必向你們報仇才肯罷休。」</div>
+<div class="verse"><span class="verse-number">8</span>參孫就大大擊殺他們，連腿帶腰都砍斷了。他便下去，住在以坦磐的穴內。</div>
+<div class="verse"><span class="verse-number">9</span>非利士人上去安營在猶大，布散在利希。</div>
+<div class="verse"><span class="verse-number">10</span>猶大人說：「你們為何上來攻擊我們呢？」他們說：「我們上來是要捆綁參孫；他向我們怎樣行，我們也要向他怎樣行。」</div>
+<div class="verse"><span class="verse-number">11</span>於是有三千猶大人下到以坦磐的穴內，對參孫說：「非利士人轄制我們，你不知道麼？你向我們行的是甚麼事呢？」他回答說：「他們向我怎樣行，我也要向他們怎樣行。」</div>
+<div class="verse"><span class="verse-number">12</span>猶大人對他說：「我們下來是要捆綁你，將你交在非利士人手中。」參孫說：「你們要向我起誓，應承你們自己不害死我。」</div>
+<div class="verse"><span class="verse-number">13</span>他們說：「我們斷不殺你，只要將你捆綁交在非利士人手中。」於是用兩條新繩捆綁參孫，將他從以坦磐帶上去。</div>
+<div class="verse"><span class="verse-number">14</span>參孫到了利希，非利士人都迎着喧嚷。耶和華的靈大大感動參孫，他臂上的繩就像火燒的麻一樣，他的綁繩都從他手上脫落下來。</div>
+<div class="verse"><span class="verse-number">15</span>他見一塊未乾的驢腮骨，就伸手拾起來，用以擊殺一千人。</div>
+<div class="verse"><span class="verse-number">16</span>參孫說：我用驢腮骨殺人成堆，用驢腮骨殺了一千人。</div>
+<div class="verse"><span class="verse-number">17</span>說完這話，就把那腮骨從手裏拋出去了。那地便叫拉末利希。</div>
+<div class="verse"><span class="verse-number">18</span>參孫甚覺口渴，就求告耶和華說：「你既藉僕人的手施行這麼大的拯救，豈可任我渴死、落在未受割禮的人手中呢？」</div>
+<div class="verse"><span class="verse-number">19</span>神就使利希的窪處裂開，有水從其中湧出來。參孫喝了，精神復原；因此那泉名叫隱哈歌利，那泉直到今日還在利希。</div>
+<div class="verse"><span class="verse-number">20</span>當非利士人轄制以色列人的時候，參孫作以色列的士師二十年。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載參孫與非利士人之間不斷升級的報復循環。參孫回去看妻子,發現岳父已把她給了別人,憤怒之下用三百隻狐狸尾巴綁火把燒毀非利士人的莊稼。非利士人報復,燒死參孫的妻子和岳父。參孫再報復,大大擊殺他們。非利士人攻打猶大,要求交出參孫。令人心痛的是,三千猶大人寧願向壓迫者妥協,也不願支持自己的拯救者,親手將參孫捆綁交給敵人。然而,聖靈再次降臨,參孫掙斷繩索,用驢腮骨擊殺一千非利士人。戰後他極度口渴,向神呼求,神使磐石裂開湧出泉水。本章展現參孫的矛盾:他有超自然的能力,卻被個人恩怨驅動;他為以色列爭戰,卻得不到同胞支持;他靠神得勝,卻缺乏屬靈成熟。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 報復的循環永無止境</strong><br>參孫與非利士人陷入以牙還牙的惡性循環:他燒莊稼,他們燒他妻子,他再擊殺他們,他們再追殺他。每次報復都升級,傷害越來越大,卻沒有解決問題。報復看似出了一口氣,實則是將自己綁在仇恨的鎖鏈上。聖經教導我們不要以惡報惡,將審判交給神。只有饒恕能打破報復的循環,只有愛能勝過仇恨。參孫的力量可以擊敗千人,卻無法勝過自己內心的憤怒。<br><br>
+<strong>2. 習慣被轄制的人拒絕拯救</strong><br>猶大人已經習慣被非利士人轄制四十年,當拯救者出現時,他們竟然將他捆綁交給敵人,只求保持現狀的「平安」。這是最悲哀的奴役:靈魂已經習慣鎖鏈,害怕自由帶來的改變。許多人寧願留在舒適的罪中,也不願接受帶來改變的救恩。教會有時也會為了暫時的安寧而妥協真理,選擇與世界和平共處而非為真道爭戰。習慣壓迫的人會敵視拯救者。<br><br>
+<strong>3. 在軟弱中呼求神必蒙應允</strong><br>參孫在極度口渴時向神呼求,神立即使磐石裂開湧出泉水。即使參孫有許多缺點,神仍然回應他的需要。這顯示神的憐憫:祂不是等我們完美才幫助,而是在我們軟弱中施恩。當我們走到盡頭、承認需要時,就是神工作的時刻。神能使無變有,使磐石出水,使沙漠開江河。我們只需謙卑呼求,神必垂聽。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>參孫說</strong>:<strong>你們既然這樣行</strong>,我必向你們報仇才肯罷休。參孫就大大擊殺他們,連腿帶腰都砍斷了。(士師記15:7-8)</td>
+<td>我們是否陷入報復的循環?就像社群媒體上的互相攻擊越演越烈,當我們說「他這樣對我,我也要這樣對他」時,何時才能停止?誰有勇氣先打破這循環?</td>
+</tr>
+<tr>
+<td><strong>猶大人對參孫說</strong>:<strong>非利士人轄制我們</strong>,你不知道嗎?我們下來是要捆綁你,將你交在非利士人手中。(士師記15:11-12)</td>
+<td>我們是否習慣被罪轄制而拒絕改變?就像長期受虐者反而害怕離開,當神要帶來拯救和改變時,我們是否因為害怕不確定而選擇留在熟悉的轄制中?</td>
+</tr>
+<tr>
+<td><strong>參孫甚覺口渴</strong>,<strong>就求告耶和華說</strong>:你既藉僕人的手施行這麼大的拯救,豈可任我渴死?神就使利希的窪處裂開,有水從其中湧出來。(士師記15:18-19)</td>
+<td>我們在極度軟弱時是否懂得呼求神?就像迷路時終於願意問路,當我們走到盡頭、承認自己的需要時,是否相信神能使磐石出水、使無變有?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

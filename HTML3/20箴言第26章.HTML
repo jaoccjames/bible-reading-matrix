@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第26章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第26章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">愚昧、懶惰與詭詐的警示：自挖陷坑者必自陷其中</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>夏天落雪，收割時下雨，都不相宜；愚昧人得尊榮也是如此。</div>
+<div class="verse"><span class="verse-number">2</span>麻雀往來，燕子翻飛；這樣，無故的咒詛也必不臨到。</div>
+<div class="verse"><span class="verse-number">3</span>鞭子是為打馬，轡頭是為勒驢；刑杖是為打愚昧人的背。</div>
+<div class="verse"><span class="verse-number">4</span>不要照愚昧人的愚妄話回答他，恐怕你與他一樣。</div>
+<div class="verse"><span class="verse-number">5</span>要照愚昧人的愚妄話回答他，免得他自以為有智慧。</div>
+<div class="verse"><span class="verse-number">6</span>藉愚昧人手寄信的，是砍斷自己的腳，自受〔原文作：喝〕損害。</div>
+<div class="verse"><span class="verse-number">7</span>瘸子的腳空存無用；箴言在愚昧人的口中也是如此。</div>
+<div class="verse"><span class="verse-number">8</span>將尊榮給愚昧人的，好像人把石子包在機弦裏。</div>
+<div class="verse"><span class="verse-number">9</span>箴言在愚昧人的口中，好像荊棘刺入醉漢的手。</div>
+<div class="verse"><span class="verse-number">10</span>雇愚昧人的，與雇過路人的，就像射傷眾人的弓箭手。</div>
+<div class="verse"><span class="verse-number">11</span>愚昧人行愚妄事，行了又行，就如狗轉過來喫牠所吐的。</div>
+<div class="verse"><span class="verse-number">12</span>你見自以為有智慧的人嗎？愚昧人比他更有指望。</div>
+<div class="verse"><span class="verse-number">13</span>懶惰人說：道上有猛獅，街上有壯獅。</div>
+<div class="verse"><span class="verse-number">14</span>門在樞紐轉動，懶惰人在床上也是如此。</div>
+<div class="verse"><span class="verse-number">15</span>懶惰人放手在盤子裏，就是向口撤回也以為勞乏。</div>
+<div class="verse"><span class="verse-number">16</span>懶惰人看自己比七個善於應對的人更有智慧。</div>
+<div class="verse"><span class="verse-number">17</span>過路被事激動，管理不幹己的爭競，好像人揪住狗耳。</div>
+<div class="verse"><span class="verse-number">18</span>人欺凌鄰舍，卻說：「我豈不是戲耍嗎？」他就像瘋狂的人拋擲火把、利箭，與殺人的兵器〔殺人的兵器原文作死亡〕。</div>
+<div class="verse"><span class="verse-number">19</span>併於上節</div>
+<div class="verse"><span class="verse-number">20</span>火缺了柴就必熄滅；無人傳舌，爭競便止息。</div>
+<div class="verse"><span class="verse-number">21</span>好爭競的人煽惑爭端，就如餘火加炭，火上加柴一樣。</div>
+<div class="verse"><span class="verse-number">22</span>傳舌人的言語，如同美食，深入人的心腹。</div>
+<div class="verse"><span class="verse-number">23</span>火熱的嘴，奸惡的心，好像銀渣包的瓦器。</div>
+<div class="verse"><span class="verse-number">24</span>怨恨人的，用嘴粉飾，心裏卻藏着詭詐；</div>
+<div class="verse"><span class="verse-number">25</span>他用甜言蜜語，你不可信他，因為他心中有七樣可憎惡的。</div>
+<div class="verse"><span class="verse-number">26</span>他雖用詭詐遮掩自己的怨恨，他的邪惡必在會中顯露。</div>
+<div class="verse"><span class="verse-number">27</span>挖陷坑的，自己必掉在其中；滾石頭的，石頭必反滾在他身上。</div>
+<div class="verse"><span class="verse-number">28</span>虛謊的舌恨他所壓傷的人；諂媚的口敗壞人的事。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第二十六章是箴言書中主題最集中、結構最鮮明的一章，全章可分為三個清晰的部分：論愚昧人（1-12節）、論懶惰人（13-16節）、論傳舌與詭詐（17-28節）。本章以豐富而往往帶有諷刺意味的比喻，對這三類人的行為進行了細緻而生動的描繪。值得注意的是第4-5節的明顯矛盾——「不要照愚昧人的愚妄話回答他」與「要照愚昧人的愚妄話回答他」，這並非抄寫錯誤，而是刻意並列，說明應對愚昧人需要情境判斷：有時沉默是智慧，有時卻必須回應以防止更大的誤導。第11節「愚昧人行愚妄事，行了又行，就如狗轉過來喫牠所吐的」，是全章最尖銳的比喻，說明愚昧的循環性。第27節「挖陷坑的，自己必掉在其中；滾石頭的，石頭必反滾在他身上」，是箴言書中惡有惡報法則最生動的表達之一。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 自以為有智慧比愚昧更危險，謙卑才是智慧的真正入口</strong><br>第12節「你見自以為有智慧的人嗎？愚昧人比他更有指望」，點出了一個出人意料的屬靈真理：公開的愚昧至少還有被改變的可能，但自以為是的「智慧」卻是智慧成長的最大障礙。人若真心相信自己不需要學習，便關閉了所有被改變的通道。謙卑地承認自己的無知，反而是真實智慧的開始。<br><br>
+<strong>2. 懶惰最大的欺騙是製造藉口合理化不行動</strong><br>第13-16節以層層遞進的方式描繪懶惰人的心理：先是捏造危險（道上有獅子），再是拒絕起身（門在樞紐轉動，他在床上也是），最後更以為自己比所有人都有智慧（比七個善於應對的人更聰明）。懶惰的最深危害不是表面上的不行動，而是它所產生的自我欺騙系統——讓人在無所作為中感到心安理得。<br><br>
+<strong>3. 惡謀終將反噬自身，神的公義在時間中必然彰顯</strong><br>第27節「挖陷坑的，自己必掉在其中；滾石頭的，石頭必反滾在他身上」，以生動的因果圖像宣告了神公義的最終彰顯。惡人設計陷害他人的謀略，最終往往成為傷害自己的工具。這一真理提醒信徒，在面對惡人得志的時刻，不必急於自己報復，因為神的公義必然在祂的時間中彰顯。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你見自以為有智慧</strong><strong>的人嗎</strong>？愚昧人比他更有指望。」（箴26:12）</td>
+<td>就像一個人若堅信地圖完全正確而拒絕修正，就算迷了路也不肯求助，你在哪個領域最容易有「我已經懂了，不需要再學」的心態？這種態度曾阻止你接受哪些重要的反饋或成長機會？</td>
+</tr>
+<tr>
+<td>「<strong>愚昧人行愚妄事</strong>，<strong>行了又行</strong>，就如狗轉過來喫牠所吐的。」（箴26:11）</td>
+<td>就像人若不從根本改變，往往會在不同的情境中重複犯下相似的錯誤，你生命中有沒有一個你不斷重複的模式——同樣的衝動、同樣的關係問題、同樣的失敗？是什麼讓你難以從這個循環中跳出？</td>
+</tr>
+<tr>
+<td>「<strong>挖陷坑的</strong>，<strong>自己必掉在其中</strong>；滾石頭的，石頭必反滾在他身上。」（箴26:27）</td>
+<td>就像歷史上許多設計迫害他人的人，最終在自己設計的制度中走向滅亡，你在面對不公義或惡意的對待時，你是否真的相信神的公義終將彰顯？這個信念如何影響你選擇不報復或不施詭計？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

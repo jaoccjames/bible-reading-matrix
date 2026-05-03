@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀上第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀上第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約櫃迎入聖殿，所羅門獻殿禱告祈求</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>那時，所羅門將以色列的長老和各支派的首領，並以色列的族長，招聚到耶路撒冷，要把耶和華的約櫃從大衛城就是錫安運上來。</div>
+<div class="verse"><span class="verse-number">2</span>以他念月，就是七月，在節前，以色列人都聚集到所羅門王那裏。</div>
+<div class="verse"><span class="verse-number">3</span>以色列長老來到，祭司便抬起約櫃，</div>
+<div class="verse"><span class="verse-number">4</span>祭司和利未人將耶和華的約櫃運上來，又將會幕和會幕的一切聖器具都帶上來。</div>
+<div class="verse"><span class="verse-number">5</span>所羅門王和聚集到他那裏的以色列全會眾，一同在約櫃前獻牛羊為祭，多得不可勝數。</div>
+<div class="verse"><span class="verse-number">6</span>祭司將耶和華的約櫃抬進內殿，就是至聖所，放在兩個基路伯的翅膀底下。</div>
+<div class="verse"><span class="verse-number">7</span>基路伯張着翅膀在約櫃之上，遮掩約櫃和抬櫃的杠。</div>
+<div class="verse"><span class="verse-number">8</span>這杠甚長，杠頭在內殿前的聖所可以看見，在殿外卻不能看見，直到如今還在那裏。</div>
+<div class="verse"><span class="verse-number">9</span>約櫃裏惟有兩塊石版，就是以色列人出埃及地後，耶和華與他們立約的時候摩西在何烈山所放的。除此以外，並無別物。</div>
+<div class="verse"><span class="verse-number">10</span>祭司從聖所出來的時候，有雲充滿耶和華的殿；</div>
+<div class="verse"><span class="verse-number">11</span>甚至祭司不能站立供職，因為耶和華的榮光充滿了殿。</div>
+<div class="verse"><span class="verse-number">12</span>那時所羅門說：耶和華曾說，他必住在幽暗之處。</div>
+<div class="verse"><span class="verse-number">13</span>我已經建造殿宇作你的居所，為你永遠的住處。</div>
+<div class="verse"><span class="verse-number">14</span>王轉臉為以色列會眾祝福，以色列會眾就都站立。</div>
+<div class="verse"><span class="verse-number">15</span>所羅門說：「耶和華以色列的神是應當稱頌的！因他親口向我父大衛所應許的，也親手成就了。</div>
+<div class="verse"><span class="verse-number">16</span>他說：『自從我領我民以色列出埃及以來，我未曾在以色列各支派中選擇一城建造殿宇為我名的居所，但揀選大衛治理我民以色列。』」</div>
+<div class="verse"><span class="verse-number">17</span>所羅門說：「我父大衛曾立意，要為耶和華以色列神的名建殿。</div>
+<div class="verse"><span class="verse-number">18</span>耶和華卻對我父大衛說：『你立意為我的名建殿，這意思甚好。</div>
+<div class="verse"><span class="verse-number">19</span>只是你不可建殿，惟你所生的兒子必為我名建殿。』</div>
+<div class="verse"><span class="verse-number">20</span>現在耶和華成就了他所應許的話，使我接續我父大衛坐以色列的國位，又為耶和華以色列神的名建造了殿。</div>
+<div class="verse"><span class="verse-number">21</span>我也在其中為約櫃預備一處。約櫃內有耶和華的約，就是他領我們列祖出埃及地的時候，與他們所立的約。」</div>
+<div class="verse"><span class="verse-number">22</span>所羅門當着以色列會眾，站在耶和華的壇前，向天舉手說：</div>
+<div class="verse"><span class="verse-number">23</span>「耶和華以色列的神啊，天上地下沒有神可比你的！你向那盡心行在你面前的僕人守約施慈愛；</div>
+<div class="verse"><span class="verse-number">24</span>向你僕人我父大衛所應許的話現在應驗了。你親口應許，親手成就，正如今日一樣。</div>
+<div class="verse"><span class="verse-number">25</span>耶和華以色列的神啊，你所應許你僕人我父大衛的話說：『你的子孫若謹慎自己的行為，在我面前行事像你所行的一樣，就不斷人坐以色列的國位。』現在求你應驗這話。</div>
+<div class="verse"><span class="verse-number">26</span>以色列的神啊，求你成就向你僕人我父大衛所應許的話。</div>
+<div class="verse"><span class="verse-number">27</span>「神果真住在地上麼？看哪，天和天上的天尚且不足你居住的，何況我所建的這殿呢？</div>
+<div class="verse"><span class="verse-number">28</span>惟求耶和華我的神垂顧僕人的禱告祈求，俯聽僕人今日在你面前的祈禱呼籲。</div>
+<div class="verse"><span class="verse-number">29</span>願你晝夜看顧這殿，就是你應許立為你名的居所；求你垂聽僕人向此處禱告的話。</div>
+<div class="verse"><span class="verse-number">30</span>你僕人和你民以色列向此處祈禱的時候，求你在天上你的居所垂聽，垂聽而赦免。</div>
+<div class="verse"><span class="verse-number">31</span>「人若得罪鄰舍，有人叫他起誓，他來到這殿在你的壇前起誓，</div>
+<div class="verse"><span class="verse-number">32</span>求你在天上垂聽，判斷你的僕人：定惡人有罪，照他所行的報應在他頭上；定義人有理，照他的義賞賜他。</div>
+<div class="verse"><span class="verse-number">33</span>「你的民以色列若得罪你，敗在仇敵面前，又歸向你，承認你的名，在這殿裏祈求禱告，</div>
+<div class="verse"><span class="verse-number">34</span>求你在天上垂聽，赦免你民以色列的罪，使他們歸回你賜給他們列祖之地。</div>
+<div class="verse"><span class="verse-number">35</span>「你的民因得罪你，你懲罰他們，使天閉塞不下雨；他們若向此處禱告，承認你的名，離開他們的罪，</div>
+<div class="verse"><span class="verse-number">36</span>求你在天上垂聽，赦免你僕人以色列民的罪，將當行的善道指教他們，且降雨在你的地，就是你賜給你民為業之地。</div>
+<div class="verse"><span class="verse-number">37</span>「國中若有饑荒、瘟疫、旱風、霉爛、蝗蟲、螞蚱，或有仇敵犯境圍困城邑，無論遭遇甚麼災禍疾病，</div>
+<div class="verse"><span class="verse-number">38</span>你的民以色列，或是眾人，或是一人，自覺有罪〔原文作災〕，向這殿舉手，無論祈求甚麼，禱告甚麼，</div>
+<div class="verse"><span class="verse-number">39</span>求你在天上你的居所垂聽赦免。你是知道人心的，要照各人所行的待他們（惟有你知道世人的心），</div>
+<div class="verse"><span class="verse-number">40</span>使他們在你賜給我們列祖之地上一生一世敬畏你。</div>
+<div class="verse"><span class="verse-number">41</span>「論到不屬你民以色列的外邦人，為你名從遠方而來，</div>
+<div class="verse"><span class="verse-number">42</span>（他們聽人論說你的大名和大能的手，並伸出來的膀臂）向這殿禱告，</div>
+<div class="verse"><span class="verse-number">43</span>求你在天上你的居所垂聽，照着外邦人所祈求的而行，使天下萬民都認識你的名，敬畏你像你的民以色列一樣；又使他們知道我建造的這殿是稱為你名下的。</div>
+<div class="verse"><span class="verse-number">44</span>「你的民若奉你的差遣，無論往何處去與仇敵爭戰，向耶和華所選擇的城與我為你名所建造的殿禱告，</div>
+<div class="verse"><span class="verse-number">45</span>求你在天上垂聽他們的禱告祈求，使他們得勝。</div>
+<div class="verse"><span class="verse-number">46</span>「你的民若得罪你（世上沒有不犯罪的人），你向他們發怒，將他們交給仇敵擄到仇敵之地，或遠或近，</div>
+<div class="verse"><span class="verse-number">47</span>他們若在擄到之地想起罪來，回心轉意，懇求你說：『我們有罪了，我們悖逆了，我們作惡了』；</div>
+<div class="verse"><span class="verse-number">48</span>他們若在擄到之地盡心盡性歸服你，又向自己的地，就是你賜給他們列祖之地和你所選擇的城，並我為你名所建造的殿禱告，</div>
+<div class="verse"><span class="verse-number">49</span>求你在天上你的居所垂聽他們的禱告祈求，為他們伸冤；</div>
+<div class="verse"><span class="verse-number">50</span>饒恕得罪你的民，赦免他們的一切過犯，使他們在擄他們的人面前蒙憐恤。</div>
+<div class="verse"><span class="verse-number">51</span>因為他們是你的子民，你的產業，是你從埃及領出來脫離鐵爐的。</div>
+<div class="verse"><span class="verse-number">52</span>願你的眼目看顧僕人，聽你民以色列的祈求，無論何時向你祈求，願你垂聽。</div>
+<div class="verse"><span class="verse-number">53</span>主耶和華啊，你將他們從地上的萬民中分別出來作你的產業，是照你領我們列祖出埃及的時候，藉你僕人摩西所應許的話。」</div>
+<div class="verse"><span class="verse-number">54</span>所羅門在耶和華的壇前屈膝跪着，向天舉手，在耶和華面前禱告祈求已畢，就起來，</div>
+<div class="verse"><span class="verse-number">55</span>站着，大聲為以色列全會眾祝福，說：</div>
+<div class="verse"><span class="verse-number">56</span>「耶和華是應當稱頌的！因為他照着一切所應許的賜平安給他的民以色列人，凡藉他僕人摩西應許賜福的話，一句都沒有落空。</div>
+<div class="verse"><span class="verse-number">57</span>願耶和華我們的神與我們同在，像與我們列祖同在一樣，不撇下我們，不丟棄我們，</div>
+<div class="verse"><span class="verse-number">58</span>使我們的心歸向他，遵行他的道，謹守他吩咐我們列祖的誡命、律例、典章。</div>
+<div class="verse"><span class="verse-number">59</span>我在耶和華面前祈求的這些話，願耶和華我們的神晝夜垂念，每日為他僕人與他民以色列伸冤，</div>
+<div class="verse"><span class="verse-number">60</span>使地上的萬民都知道惟獨耶和華是神，並無別神。</div>
+<div class="verse"><span class="verse-number">61</span>所以你們當向耶和華我們的神存誠實的心，遵行他的律例，謹守他的誡命，至終如今日一樣。」</div>
+<div class="verse"><span class="verse-number">62</span>王和以色列眾民一同在耶和華面前獻祭。</div>
+<div class="verse"><span class="verse-number">63</span>所羅門向耶和華獻平安祭，用牛二萬二千，羊十二萬。這樣，王和以色列眾民為耶和華的殿行奉獻之禮。</div>
+<div class="verse"><span class="verse-number">64</span>當日，王因耶和華殿前的銅壇太小，容不下燔祭、素祭，和平安祭牲的脂油，便將耶和華殿前院子當中分別為聖，在那裏獻燔祭、素祭，和平安祭牲的脂油。</div>
+<div class="verse"><span class="verse-number">65</span>那時，所羅門和以色列眾人，就是從哈馬口直到埃及小河所有的以色列人，都聚集成為大會，在耶和華我們的神面前守節七日又七日，共十四日。</div>
+<div class="verse"><span class="verse-number">66</span>第八日，王遣散眾民；他們都為王祝福。因見耶和華向他僕人大衛和他民以色列所施的一切恩惠，就都心中喜樂，各歸各家去了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀上第8章是全書最宏偉的篇章，記述聖殿奉獻典禮的全程，堪稱所羅門王朝的屬靈巔峰。所羅門召聚全以色列的長老和首領，隆重地將約櫃從錫安迎入新建的聖殿至聖所。祭司抬入約櫃之際，聖雲充滿全殿，耶和華的榮光浩大以致祭司無法站立供職——神親自降臨印證了聖殿的開幕。隨後，所羅門帶領全會眾敬拜，站在壇前向天舉手，奉獻了聖經中最完整的一篇奉獻禱文。這篇禱告涵蓋七種情境：個人犯罪、國家戰敗、天閉不雨、各種天災、外邦人來求、出征爭戰，以及被擄異地——每種情境都以「向此處禱告」為核心，呼求神的赦免與恢復。禱告後，所羅門為眾民祝福，獻上龐大的祭牲，全國歡慶十四日。本章是整本列王紀神學的核心，揭示了禱告、認罪、悔改與神赦免之間的立約關係。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的榮光充滿，是敬拜最真實的高峰</strong><br>當約櫃被安置於至聖所後，聖雲充滿全殿，連祭司都無法站立——這是神親自降臨的彰顯，超越一切人為的安排和儀式。這提醒信徒：真正的敬拜不在於場面的壯觀或程序的完美，而在於神的同在是否真實降臨。最美的敬拜時刻，是人在神的榮光面前俯伏、語言失效、只剩下敬畏的那一刻。<br><br>
+<strong>2. 禱告是在任何處境中與神恢復關係的橋樑</strong><br>所羅門的禱告覆蓋了人生幾乎所有的困境——從個人的罪到國家的敗亡，從天災到被擄異鄉——每種情況的解方都是「轉向神、認罪禱告」。這揭示了一個永恆的真理：無論人陷入何種困境，禱告和認罪悔改是與神恢復關係的唯一路徑。神的恩典永遠向悔改者敞開，不因環境的遠近或罪的深淺而關閉。<br><br>
+<strong>3. 神的救恩超越以色列，向萬民敞開</strong><br>所羅門特別為「不屬以色列的外邦人」禱告，求神也垂聽他們的祈求，「使天下萬民都認識你的名」。這顯示神的心意從來不只是一個民族的神，而是全地萬民的神。神揀選以色列是為了透過他們向萬邦見證；今日的教會同樣如此，被揀選不是為了獨享恩典，而是為了向世界傳遞神的救恩。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>甚至祭司不能站立</strong>供職，<strong>因為耶和華的榮光</strong>充滿了殿。」（王上8:11）</td>
+<td>就像強烈的陽光使人無法直視，神的榮光臨到使祭司無法繼續正常運作。你在敬拜或禱告中，有沒有過這樣的時刻——神的同在如此真實，以致你只能靜默俯伏，無法繼續「照常進行」？</td>
+</tr>
+<tr>
+<td>「<strong>神果真住在地上麼</strong>？看哪，<strong>天和天上的天尚且</strong>不足你居住的，何況我所建的這殿呢？」（王上8:27）</td>
+<td>就像一個小小的魚缸無法容納大海，所羅門承認最宏偉的聖殿也不足以限制神的廣大。你有沒有不自覺地把神「框」在某個固定的形式或場所裡，忘記祂超越一切人為框架的無限廣大？</td>
+</tr>
+<tr>
+<td>「<strong>他們若在擄到之地</strong><strong>盡心盡性歸服你</strong>……求你在天上……垂聽他們的禱告。」（王上8:48-49）</td>
+<td>就像GPS在迷路後仍能重新規劃路線引導回家，神在最遠的困境中仍垂聽真心悔改者的呼求。你現在是否有某種「被擄的感覺」——與神疏遠、與美好的狀態隔離？你願意今天就盡心歸向祂嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

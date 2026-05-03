@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何西阿書第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+何西阿書第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以法蓮追趕東風：虛謊與神的呼召</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以法蓮喫風，且追趕東風，時常增添虛謊和強暴，與亞述立約，把油送到埃及。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華與猶大爭辯，必照雅各所行的懲罰他，按他所作的報應他。</div>
+<div class="verse"><span class="verse-number">3</span>他在腹中抓住哥哥的腳跟，壯年的時候與神較力，</div>
+<div class="verse"><span class="verse-number">4</span>與天使較力，並且得勝，哭泣懇求，在伯特利遇見耶和華。耶和華萬軍之神在那裏曉諭我們以色列人；耶和華是他可記念的名。</div>
+<div class="verse"><span class="verse-number">5</span>併於上節</div>
+<div class="verse"><span class="verse-number">6</span>所以你當歸向你的神，謹守仁愛、公平，常常等候你的神。</div>
+<div class="verse"><span class="verse-number">7</span>以法蓮是商人，手裏有詭詐的天平，愛行欺騙。</div>
+<div class="verse"><span class="verse-number">8</span>以法蓮說：我果然成了富足，得了財寶；我所勞碌得來的，人必不見有甚麼不義，可算為罪的。</div>
+<div class="verse"><span class="verse-number">9</span>自從你出埃及地以來，我就是耶和華你的神；我必使你再住帳棚，如在大會的日子一樣。</div>
+<div class="verse"><span class="verse-number">10</span>我已曉諭眾先知，並且加增默示，藉先知設立比喻。</div>
+<div class="verse"><span class="verse-number">11</span>基列人沒有罪孽嗎？他們全然是虛假的。人在吉甲獻牛犢為祭，他們的祭壇好像田間犁溝中的亂堆。</div>
+<div class="verse"><span class="verse-number">12</span>從前雅各逃到亞蘭地，以色列為得妻服事人，為得妻與人放羊。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華藉先知領以色列從埃及上來；以色列也藉先知而得保存。</div>
+<div class="verse"><span class="verse-number">14</span>以法蓮大大惹動主怒，所以他流血的罪必歸在他身上。主必將那因以法蓮所受的羞辱歸還他。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+何西阿書第12章以一個沮喪的觀察開始：「以法蓮喫風，且追趕東風」——追逐空洞的虛謊，在亞述和埃及之間搞政治平衡，沒有根基。然後神提醒以色列的起源——雅各：他在腹中抓哥哥腳跟，壯年與神較力，哭泣懇求，在伯特利遇見神，且得勝。雅各的故事有個關鍵：他在無助時「哭泣懇求」，才在伯特利遇見神。神對以法蓮的呼召（6節）：「所以你當歸向你的神，謹守仁愛、公平，常常等候你的神。」接着指出以法蓮的驕傲（8節）：「我果然成了富足，得了財寶……並不見有甚麼不義可算為罪的」——以財富為義，是屬靈盲目的典型。章末神提醒以色列：祂藉先知領以色列出埃及，如今以色列卻激怒先知，這是「大大惹動主怒」。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 雅各的先例：哭泣懇求才在伯特利遇見神</strong><br>雅各強悍一生，最後在雅博渡口哭泣懇求——那個脆弱誠實的時刻，成了最深的相遇時刻。神對以色列的提醒：你們的父親是靠哭泣懇求遇見神的，不是靠政治手段和財富。在屬靈生命中，無助和誠實的哭泣往往比強悍的爭取更能帶來真實的神的相遇。<br><br>
+<strong>2. 「我得了財寶……沒有不義」：以富足為義是屬靈盲目</strong><br>「我果然成了富足……並不見有甚麼不義可算為罪的」——以財富的成功作為「沒有罪」的證明，是一種深刻的屬靈盲目。今日的「成功神學」也有同樣的危機：以物質的豐盛為屬靈良好狀態的標誌。神的標準不是財富的多少，而是「仁愛和公平」（6節）。<br><br>
+<strong>3. 「謹守仁愛、公平，常常等候你的神」：三個信仰的核心要素</strong><br>第6節是對以法蓮（也是對每個信徒）最實際的呼召：仁愛（慈愛善待人）、公平（公義的生活原則）、常常等候神（祈禱中的持守）。這三者是信仰最平衡的生命表達：對人的方式（仁愛）、對事的原則（公平）、對神的關係（等候）。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>所以你當歸向你的</strong>神，<strong>謹守仁愛</strong>、公平，常常等候你的神。（何12:6）</td>
+<td>「仁愛、公平、常常等候你的神」——這三者你目前哪個最弱？就像三條腿的凳子，少一條就不穩，信仰生命的平衡需要這三者同時維持。你願意今天具體地評估：在對人的仁愛、對事的公平、對神的等候中，哪一個需要最多的刻意加強？</td>
+</tr>
+<tr>
+<td><strong>與天使較力</strong>，<strong>並且得勝</strong>，哭泣懇求，在伯特利遇見耶和華。（何12:4）</td>
+<td>雅各是在哭泣懇求中遇見神的——不是在勝利中，而是在無助和誠實中。你上一次真正「哭泣懇求」地在神面前禱告是什麼時候？就像一個人只在表面上社交而從不真心傾訴，你和神的對話有沒有到達「哭泣懇求」的誠實深度，還是一直保持着「還不錯」的假裝？</td>
+</tr>
+<tr>
+<td><strong>以法蓮說</strong>：<strong>我果然成了富足</strong>，得了財寶；我所勞碌得來的，人必不見有甚麼不義，可算為罪的。（何12:8）</td>
+<td>「我成功了，所以我沒有罪」——以成就為正義的標誌是危險的自欺。你是否有時以「我還算不錯，事業/家庭/健康都挺好」來為自己的屬靈狀態辯護，卻迴避那些不舒服的屬靈問題？就像一個財務良好的公司，但管理文化卻很差，外在的成功不能掩蓋內在的問題。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

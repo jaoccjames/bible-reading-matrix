@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利未記第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+利未記第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">亞倫受膏：神親自揀選與分別為聖</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">2</span>「你將亞倫和他兒子一同帶來，並將聖衣、膏油，與贖罪祭的一隻公牛、兩隻公綿羊、一筐無酵餅都帶來，</div>
+<div class="verse"><span class="verse-number">3</span>又招聚會眾到會幕門口。」</div>
+<div class="verse"><span class="verse-number">4</span>摩西就照耶和華所吩咐的行了；於是會眾聚集在會幕門口。</div>
+<div class="verse"><span class="verse-number">5</span>摩西告訴會眾說：「這就是耶和華所吩咐當行的事。」</div>
+<div class="verse"><span class="verse-number">6</span>摩西帶了亞倫和他兒子來，用水洗了他們。</div>
+<div class="verse"><span class="verse-number">7</span>給亞倫穿上內袍，束上腰帶，穿上外袍，又加上以弗得，用其上巧工織的帶子把以弗得繫在他身上，</div>
+<div class="verse"><span class="verse-number">8</span>又給他戴上胸牌，把烏陵和土明放在胸牌內，</div>
+<div class="verse"><span class="verse-number">9</span>把冠冕戴在他頭上，在冠冕的前面釘上金牌，就是聖冠，都是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">10</span>摩西用膏油抹帳幕和其中所有的，使他成聖；</div>
+<div class="verse"><span class="verse-number">11</span>又用膏油在壇上彈了七次，又抹了壇和壇的一切器皿，並洗濯盆和盆座，使他成聖；</div>
+<div class="verse"><span class="verse-number">12</span>又把膏油倒在亞倫的頭上膏他，使他成聖。</div>
+<div class="verse"><span class="verse-number">13</span>摩西帶了亞倫的兒子來，給他們穿上內袍，束上腰帶，包上裹頭巾，都是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">14</span>他牽了贖罪祭的公牛來，亞倫和他兒子按手在贖罪祭公牛的頭上，</div>
+<div class="verse"><span class="verse-number">15</span>就宰了公牛。摩西用指頭蘸血，抹在壇上四角的周圍，使壇潔淨，把血倒在壇的腳那裏，使壇成聖，壇就潔淨了；</div>
+<div class="verse"><span class="verse-number">16</span>又取臟上所有的脂油和肝上的網子，並兩個腰子與腰子上的脂油，都燒在壇上；</div>
+<div class="verse"><span class="verse-number">17</span>惟有公牛，連皮帶肉並糞，用火燒在營外，都是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">18</span>他奉上燔祭的公綿羊；亞倫和他兒子按手在羊的頭上，</div>
+<div class="verse"><span class="verse-number">19</span>就宰了公羊。摩西把血灑在壇的周圍，</div>
+<div class="verse"><span class="verse-number">20</span>把羊切成塊子，把頭和肉塊並脂油都燒了。</div>
+<div class="verse"><span class="verse-number">21</span>用水洗了臟腑和腿，就把全羊燒在壇上為馨香的燔祭，是獻給耶和華的火祭，都是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">22</span>他又奉上第二隻公綿羊，就是承接聖職之禮的羊；亞倫和他兒子按手在羊的頭上，</div>
+<div class="verse"><span class="verse-number">23</span>就宰了羊。摩西把些血抹在亞倫的右耳垂上和右手的大拇指上，並右腳的大拇指上，</div>
+<div class="verse"><span class="verse-number">24</span>又帶了亞倫的兒子來，把些血抹在他們的右耳垂上和右手的大拇指上，並右腳的大拇指上，又把血灑在壇的周圍。</div>
+<div class="verse"><span class="verse-number">25</span>取脂油和肥尾巴，並臟上一切的脂油與肝上的網子，兩個腰子和腰子上的脂油，並右腿，</div>
+<div class="verse"><span class="verse-number">26</span>再從耶和華面前、盛無酵餅的筐子裏取出一個無酵餅，一個油餅，一個薄餅，都放在脂油和右腿上，</div>
+<div class="verse"><span class="verse-number">27</span>把這一切放在亞倫的手上和他兒子的手上作搖祭，在耶和華面前搖一搖。</div>
+<div class="verse"><span class="verse-number">28</span>摩西從他們的手上拿下來，燒在壇上的燔祭上，都是為承接聖職獻給耶和華馨香的火祭。</div>
+<div class="verse"><span class="verse-number">29</span>摩西拿羊的胸作為搖祭，在耶和華面前搖一搖，是承接聖職之禮，歸摩西的分，都是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">30</span>摩西取點膏油和壇上的血，彈在亞倫和他的衣服上，並他兒子和他兒子的衣服上，使他和他們的衣服一同成聖。</div>
+<div class="verse"><span class="verse-number">31</span>摩西對亞倫和他兒子說：「把肉煮在會幕門口，在那裏吃，又吃承接聖職筐子裏的餅，按我所吩咐的說〔或作：按所吩咐我的說〕：『這是亞倫和他兒子要吃的。』</div>
+<div class="verse"><span class="verse-number">32</span>剩下的肉和餅，你們要用火焚燒。</div>
+<div class="verse"><span class="verse-number">33</span>你們七天不可出會幕的門，等到你們承接聖職的日子滿了，因為主叫你們七天承接聖職。</div>
+<div class="verse"><span class="verse-number">34</span>像今天所行的都是耶和華吩咐行的，為你們贖罪。</div>
+<div class="verse"><span class="verse-number">35</span>七天你們要晝夜住在會幕門口，遵守耶和華的吩咐，免得你們死亡，因為所吩咐我的就是這樣。」</div>
+<div class="verse"><span class="verse-number">36</span>於是亞倫和他兒子行了耶和華藉着摩西所吩咐的一切事。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+利未記第8章記載亞倫和他兒子正式承接祭司聖職的典禮，是利未記敘事部分的開始。此前神已在出埃及記詳述祭司聖衣的製作（出28章）和受膏禮的指示（出29章），本章則記錄這些指示的具體執行。典禮在全會眾面前舉行，彰顯聖職承接的公開性與代表性。典禮流程包含五個核心環節：潔淨（用水洗）、穿聖衣、塗膏油、獻祭（贖罪祭、燔祭、承接聖職之禮的羊）、以及七天封閉在會幕前守候。「承接聖職之禮的羊」最具特色——其血被抹在亞倫和子孫的右耳垂、右手大拇指和右腳大拇指上，象徵他們的聽覺（聆聽神的話）、雙手（服事的工作）和腳步（行走的方向）都在神的主權下分別為聖。本章中「照耶和華所吩咐摩西的」一語重複出現多次，強調聖職的建立完全依據神的命令，沒有人為的創造。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 聖職的建立在乎神的揀選：服事的資格來自神的呼召</strong><br>亞倫和子孫的祭司職分完全是神主動揀選並設立的，不是他們自己爭取或憑能力取得的。整個典禮流程「都是照耶和華所吩咐摩西的」（利8:9、13、17、21等）。這告訴我們，真正的屬靈服事資格來自神的呼召與分別，而非人的才能、背景或自我推薦。這個原則挑戰那些以自我為中心進入服事的人：真正的服事首先是回應神的召喚。<br><br>
+<strong>2. 耳、手、腳都歸神：全人的分別為聖</strong><br>血抹在右耳垂（聆聽神的話）、右手大拇指（服事的工作）、右腳大拇指（行走的方向），這三個部位象徵信仰生活的三個層面：接收（聽）、行動（做）、方向（走）。真正的分別為聖不是某一層面的奉獻，而是整個生命——思想、行為與方向——都被神的血所覆蓋，置於神的管轄之下。這預示基督徒全人委身的呼召。<br><br>
+<strong>3. 七天的守候：準備服事需要專注與等待</strong><br>亞倫和子孫在承接聖職後，必須在會幕門口「晝夜住七天」（利8:35），不可出門。七天的封閉等候不是懲罰，而是進入正式服事前必要的預備期，讓他們在神面前集中靈性準備。這提醒我們：在進入重要的事奉角色前，需要有足夠的靈性預備——禱告、靜候、自我審視——而非急於行動。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>又把膏油倒在亞倫</strong><strong>的頭上膏他</strong>，使他成聖。」（利8:12）</td>
+<td>膏油從頭頂流下，象徵神的揀選與能力全然由上而來，不是人自己爭取的。就像公司任命主管是由上級決定，不是員工自封的——你在服事神的過程中，是以「被神呼召、倚靠神能力」的態度，還是以「展現自己能力、爭取認可」的態度在事奉？</td>
+</tr>
+<tr>
+<td>「<strong>摩西把些血抹在亞</strong><strong>倫的右耳垂上和右</strong>手的大拇指上，並右腳的大拇指上。」（利8:23）</td>
+<td>血抹在耳（聆聽）、手（行動）、腳（方向）三處，象徵事奉者全人歸神。就像簽署全授權委任書，把決策權全部交給委託對象——你的「耳」是否常常聆聽神的聲音？你的「手」所做的是否反映神的心意？你的「腳」踏出的每一步是否尋求神的引導？</td>
+</tr>
+<tr>
+<td>「<strong>七天你們要晝夜住</strong><strong>在會幕門口</strong>，遵守耶和華的吩咐，免得你們死亡。」（利8:35）</td>
+<td>正式服事前需要七天的預備與守候，不可急於出門行事。就像手術前需要充分的術前準備與消毒，不能省略這個步驟——你在承擔重要的服事或人生決定前，給自己多少時間在神面前靜候與預備？急於行動是否曾讓你在某次服事中走偏方向？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

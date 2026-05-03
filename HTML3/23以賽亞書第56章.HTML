@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第56章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第56章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">我的殿必稱為萬民禱告的殿：神接納外邦人與邊緣人</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華如此說：你們當守公平，行公義；因我的救恩臨近，我的公義將要顯現。</div>
+<div class="verse"><span class="verse-number">2</span>謹守安息日而不干犯，禁止己手而不作惡；如此行、如此持守的人便為有福。</div>
+<div class="verse"><span class="verse-number">3</span>與耶和華聯合的外邦人不要說：耶和華必定將我從他民中分別出來。太監也不要說：我是枯樹。</div>
+<div class="verse"><span class="verse-number">4</span>因為耶和華如此說：那些謹守我的安息日，揀選我所喜悅的事，持守我約的太監，</div>
+<div class="verse"><span class="verse-number">5</span>我必使他們在我殿中，在我牆內，有記念，有名號，比有兒女的更美。我必賜他們永遠的名，不能剪除。</div>
+<div class="verse"><span class="verse-number">6</span>還有那些與耶和華聯合的外邦人，要事奉他，要愛耶和華的名，要作他的僕人，就是凡守安息日不干犯，又持守他〔原文作我〕約的人。</div>
+<div class="verse"><span class="verse-number">7</span>我必領他們到我的聖山，使他們在禱告我的殿中喜樂。他們的燔祭和平安祭，在我壇上必蒙悅納，因我的殿必稱為萬民禱告的殿。</div>
+<div class="verse"><span class="verse-number">8</span>主耶和華，就是招聚以色列被趕散的，說：在這被招聚的人以外，我還要招聚別人歸併他們。</div>
+<div class="verse"><span class="verse-number">9</span>田野的諸獸都來吞喫吧！林中的諸獸也要如此。</div>
+<div class="verse"><span class="verse-number">10</span>他看守的人是瞎眼的，都沒有知識，都是啞吧狗，不能叫喚；但知作夢，躺臥，貪睡，</div>
+<div class="verse"><span class="verse-number">11</span>這些狗貪食，不知飽足。這些牧人不能明白，各人偏行己路，各從各方求自己的利益。</div>
+<div class="verse"><span class="verse-number">12</span>他們說：來吧！我去拿酒，我們飽飲濃酒；明日必和今日一樣，就是宴樂無量極大之日。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第五十六章開啟了以賽亞書第三部分（56-66章），從「安慰系列」（40-55章）的救恩宣告，轉向對真正敬虔生活的呼召和對腐敗領袖的批判。本章前半（1-8節）以令當時人震驚的宣言，宣告外邦人和太監——在當時被視為最邊緣、最無資格進入神殿的群體——在神的計劃中都有完整的地位。太監依照申命記23:1被排除在以色列會眾之外，外邦人依照慣例也被視為次等；但本章神明確宣告：只要「守我約」的，都將在神殿中得到「永遠的名號」（5節），甚至「比有兒女的更美」——這是對當時文化排斥的根本顛覆。第7節「我的殿必稱為萬民禱告的殿」，是舊約關於神的包容性最清楚的宣告，耶穌在潔淨聖殿時（太21:13；可11:17）直接引用這節話，批評聖殿已成「賊窩」而非「萬民禱告的殿」。本章後半（9-12節）批判了失職的領袖（瞎眼的守望者、貪食的啞狗），與前半的包容形成對比：神接納邊緣人，卻審判失職的領袖。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「我的殿必稱為萬民禱告的殿」：神的殿不是一個民族的專利</strong><br>第7節的宣告在以色列宗教排他性最強烈的時代，是一個徹底的神學革命。神的殿不是以色列人的私產，而是「萬民禱告的殿」——任何真誠尋求神的人都有資格在其中禱告。在新約的教會論中，這個原則得到完全的實現：教會是萬民可以親近神的地方。這呼召信徒以開放和接納的態度面對任何尋求神的人，無論其背景和過去。<br><br>
+<strong>2. 太監和外邦人的接納：神看心的態度勝過社會的身份</strong><br>第3-5節對太監和外邦人的接納，揭示了神揀選的標準：不是出生的族裔、不是肉體的完整性，而是「持守我約」、「愛耶和華的名」的心。這個原則在新約的使徒行傳8章（腓利向埃提阿伯太監傳福音）和10章（彼得向哥尼流傳福音）中得到具體的應驗。信徒不應以任何外在標準評判誰有資格接受神的愛，因為神的標準是心。<br><br>
+<strong>3. 失職的「啞狗領袖」：當守望者沉睡，群羊就面臨危險</strong><br>第10-12節批判的「瞎眼守望者」和「貪食的啞狗」，是以賽亞書對失職領袖最犀利的批判之一。「啞狗」不能叫喚（不能警告）、只知「貪睡」（靈命的懈怠）、「貪食不知飽足」（自私自利）。這對所有承擔領導責任的信徒（父母、牧者、教師）是嚴肅的提醒：領袖的失職不只影響個人，更影響所有交付給他們的人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>我必使他們在我殿</strong>中，<strong>在我牆內</strong>，有記念，有名號……我必賜他們永遠的名，不能剪除。」（賽56:5）</td>
+<td>就像一個曾被排斥在正式場合之外的人，突然收到了一張永久性的貴賓邀請函，那種被接納和被記念的感受是無以言表的，你是否有過感到自己「不夠資格」親近神的時刻？這節話如何改變你對自己在神面前的位置的認識？</td>
+</tr>
+<tr>
+<td>「<strong>我的殿必稱為萬民</strong><strong>禱告的殿</strong>。」（賽56:7）</td>
+<td>就像一個公園是所有市民共享的空間，不是某個社區的私產，神的殿是為所有尋求祂的人而設的，你的信仰群體（教會）在實踐上，是否真的對「萬民」——不同背景、文化、過去的人——保持開放和歡迎的態度？還是無形中設了些「隱形門檻」？</td>
+</tr>
+<tr>
+<td>「<strong>他看守的人是瞎眼</strong>的，<strong>都沒有知識</strong>，都是啞吧狗，不能叫喚。」（賽56:10）</td>
+<td>就像一個火警警報器，若感測器失靈卻不發出聲音，本來的保護功能就完全失效了，領袖若失去屬靈的敏銳和勇氣，就無法保護他所帶領的人，你在你的影響範圍中（家庭、工作、教會），是否有勇氣做一個「能叫喚」的守望者——在需要的時候說出真話？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

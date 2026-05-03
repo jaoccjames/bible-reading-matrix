@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶穌基督的家譜與降生</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>亞伯拉罕的後裔，大衛的子孫〔後裔，子孫：原文都作兒子；下同〕，耶穌基督的家譜：</div>
+<div class="verse"><span class="verse-number">2</span>亞伯拉罕生以撒；以撒生雅各；雅各生猶大和他的弟兄；</div>
+<div class="verse"><span class="verse-number">3</span>猶大從他瑪氏生法勒斯和謝拉；法勒斯生希斯崙；希斯崙生亞蘭；</div>
+<div class="verse"><span class="verse-number">4</span>亞蘭生亞米拿達；亞米拿達生拿順；拿順生撒門；</div>
+<div class="verse"><span class="verse-number">5</span>撒門從喇合氏生波阿斯；波阿斯從路得氏生俄備得；俄備得生耶西；</div>
+<div class="verse"><span class="verse-number">6</span>耶西生大衛王。大衛從烏利亞的妻子生所羅門；</div>
+<div class="verse"><span class="verse-number">7</span>所羅門生羅波安；羅波安生亞比雅；亞比雅生亞撒；</div>
+<div class="verse"><span class="verse-number">8</span>亞撒生約沙法；約沙法生約蘭；約蘭生烏西亞；</div>
+<div class="verse"><span class="verse-number">9</span>烏西亞生約坦；約坦生亞哈斯；亞哈斯生希西家；</div>
+<div class="verse"><span class="verse-number">10</span>希西家生瑪拿西；瑪拿西生亞們；亞們生約西亞；</div>
+<div class="verse"><span class="verse-number">11</span>百姓被遷到巴比倫的時候，約西亞生耶哥尼雅和他的弟兄。</div>
+<div class="verse"><span class="verse-number">12</span>遷到巴比倫之後，耶哥尼雅生撒拉鐵；撒拉鐵生所羅巴伯；</div>
+<div class="verse"><span class="verse-number">13</span>所羅巴伯生亞比玉；亞比玉生以利亞敬；以利亞敬生亞所；</div>
+<div class="verse"><span class="verse-number">14</span>亞所生撒督；撒督生亞金；亞金生以律；</div>
+<div class="verse"><span class="verse-number">15</span>以律生以利亞撒；以利亞撒生馬但；馬但生雅各；</div>
+<div class="verse"><span class="verse-number">16</span>雅各生約瑟，就是馬利亞的丈夫。那稱為基督的耶穌是從馬利亞生的。</div>
+<div class="verse"><span class="verse-number">17</span>這樣，從亞伯拉罕到大衛共有十四代；從大衛到遷至巴比倫的時候也有十四代；從遷至巴比倫的時候到基督又有十四代。</div>
+<div class="verse"><span class="verse-number">18</span>耶穌基督降生的事記在下面：他母親馬利亞已經許配了約瑟，還沒有迎娶，馬利亞就從聖靈懷了孕。</div>
+<div class="verse"><span class="verse-number">19</span>她丈夫約瑟是個義人，不願意明明的羞辱她，想要暗暗的把她休了。</div>
+<div class="verse"><span class="verse-number">20</span>正思念這事的時候，有主的使者向他夢中顯現，說：「大衛的子孫約瑟，不要怕！只管娶過你的妻子馬利亞來，因她所懷的孕是從聖靈來的。</div>
+<div class="verse"><span class="verse-number">21</span>她將要生一個兒子，你要給他起名叫耶穌，因他要將自己的百姓從罪惡裏救出來。」</div>
+<div class="verse"><span class="verse-number">22</span>這一切的事成就是要應驗主藉先知所說的話，</div>
+<div class="verse"><span class="verse-number">23</span>說：「必有童女懷孕生子；人要稱他的名為以馬內利。」（以馬內利繙出來就是「神與我們同在」。）</div>
+<div class="verse"><span class="verse-number">24</span>約瑟醒了，起來，就遵着主使者的吩咐把妻子娶過來；</div>
+<div class="verse"><span class="verse-number">25</span>只是沒有和她同房，等她生了兒子〔有古卷作：等她生了頭胎的兒子〕，就給他起名叫耶穌。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+馬太福音是新約四福音書之首，傳統上認為由使徒馬太（利未）所著，寫作對象主要是猶太基督徒群體，時間約在主後60至80年代之間。第1章以耶穌基督的家譜開篇，從亞伯拉罕一直追溯至約瑟，共列出四十二代，將耶穌置於猶太歷史與應許的脈絡之中。作者首先透過家譜確立耶穌作為大衛之子、亞伯拉罕之子的身份，呼應舊約對彌賽亞的預言。接著敘述約瑟發現馬利亞懷孕的困境，以及天使向他顯現、說明這孩子是從聖靈感孕而生的事件，並引用以賽亞書的預言強調耶穌的降生是神救贖計畫的應驗。最後記述約瑟遵照天使的吩咐，娶馬利亞為妻，並在耶穌出生後為祂起名耶穌。本章是整部福音書的奠基，確立耶穌的神性起源與救主身份，為後續的教導與事工鋪設根基。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神在歷史中信實地成就應許</strong><br>從亞伯拉罕到耶穌歷經兩千年，神按照自己的計劃，在精確的時間、透過特定的人物，成就了彌賽亞降臨的應許。家譜中不乏失敗者、外邦女性與有污點的人物，但神的旨意不因人的軟弱而受阻。這提醒信徒：神的應許必定成就，祂在我們生命中的工作也從不落空，即便我們看不見全局，祂仍掌管一切。<br><br>
+<strong>2. 耶穌是神與人同在的以馬內利</strong><br>天使宣告嬰孩名叫「耶穌」，因祂要將百姓從罪惡中救出來；先知預言也說人要稱祂為「以馬內利——神與我們同在」。這兩個名字道出救主的雙重身份：祂是拯救者，也是同在者。耶穌的降生不只是一個歷史事件，而是神親自進入人類處境的宣告，讓人在罪與苦難中不再孤單。<br><br>
+<strong>3. 順服神旨意的義人約瑟</strong><br>約瑟面對無法理解的處境——未婚妻懷孕——他的第一個反應是保護馬利亞，不願公開羞辱她。當天使在夢中向他說明神的計劃，他立即遵從，毫不拖延地把妻子娶過來。約瑟的義，不只是律法上的公義，更是對神話語敏感的順服。他的榜樣告訴我們：信心的順服，往往在不理解的情況下仍選擇信靠神。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>她將要生一個兒子</strong>，<strong>你要給他起名叫耶</strong>穌，因他要將自己的百姓從罪惡裏救出來。（太1:21）</td>
+<td>你是否真實經歷過耶穌將你從某種罪惡或捆綁中拯救出來？就像手機中毒後需要專業工程師才能徹底清除病毒，你知道只有耶穌才能真正解決人心深處的罪的問題嗎？</td>
+</tr>
+<tr>
+<td>說：「<strong>必有童女懷孕生子</strong>；<strong>人要稱他的名為以</strong>馬內利。」（以馬內利繙出來就是「神與我們同在」。）（太1:23）</td>
+<td>在你最孤單、最無助的時刻，你有沒有感受到神與你同在？就像在陌生城市迷路時突然接到熟悉朋友的電話，你知道以馬內利的耶穌時時與你同在嗎？</td>
+</tr>
+<tr>
+<td><strong>約瑟醒了</strong>，起來，<strong>就遵着主使者的吩</strong>咐把妻子娶過來。（太1:24）</td>
+<td>當神的引導與你原本的計劃不同時，你能像約瑟一樣立即順服嗎？就像導航重新規劃路線時你選擇跟從而不是堅持走舊路，你是否願意放下自己的想法，遵從神的吩咐？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

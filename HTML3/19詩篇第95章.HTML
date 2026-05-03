@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第95章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第95章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">來歡呼敬拜：今天不可硬心如曠野試探</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>來阿，我們要向耶和華歌唱，向拯救我們的磐石歡呼！</div>
+<div class="verse"><span class="verse-number">2</span>我們要來感謝他，用詩歌向他歡呼！</div>
+<div class="verse"><span class="verse-number">3</span>因耶和華為大神，為大王，超乎萬神之上。</div>
+<div class="verse"><span class="verse-number">4</span>地的深處在他手中；山的高峰也屬他。</div>
+<div class="verse"><span class="verse-number">5</span>海洋屬他，是他造的；旱地也是他手造成的。</div>
+<div class="verse"><span class="verse-number">6</span>來啊，我們要屈身敬拜，在造我們的耶和華面前跪下。</div>
+<div class="verse"><span class="verse-number">7</span>因為他是我們的神；我們是他草場的羊，是他手下的民。惟願你們今天聽他的話：</div>
+<div class="verse"><span class="verse-number">8</span>你們不可硬着心，像當日在米利巴，就是在曠野的瑪撒。</div>
+<div class="verse"><span class="verse-number">9</span>那時，你們的祖宗試我探我，並且觀看我的作為。</div>
+<div class="verse"><span class="verse-number">10</span>四十年之久，我厭煩那世代，說：這是心裏迷糊的百姓，竟不曉得我的作為！</div>
+<div class="verse"><span class="verse-number">11</span>所以，我在怒中起誓，說：他們斷不可進入我的安息！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第95篇是「耶和華作王」詩篇系列中的重要篇章，也是許多基督教傳統晨禱的開篇誦讀（稱為「Venite」，即拉丁文「來吧」）。本篇結構獨特，分為兩個截然不同的部分：前半（1-7節）是讚美的呼召，後半（7-11節）是神親自發言的嚴肅警告，形成鮮明的對比。
+
+      本篇被希伯來書3章7至11節引用，作為警告信徒不可在信仰上硬心的主要根據，說明本篇不只是歷史記錄，而是對每一個時代信仰者的警告：那個曾在曠野硬心、試探神的世代，失去了進入神安息的機會——今天的信徒同樣面對這個選擇。
+
+      第7節的「惟願你們今天聽他的話」是全篇最關鍵的轉折點，「今天」揭示了順從神的緊迫性——不是明天，不是「等到更好的時機」，而是「今天」。希伯來書引用此節時特別強調：「今天」是神的恩典之窗，硬心的危險不是在遙遠的未來，而是在每一個「今天」的抉擇中積累的。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 敬拜呼召以全身的謙卑回應神的偉大</strong><br>「來啊，我們要屈身敬拜，在造我們的耶和華面前跪下。」（第6節）本篇以身體的動作（屈身、跪下）描述敬拜，揭示真正的敬拜不只是情感的感受或思想的認同，更是全人（包括身體）在神面前的謙卑回應。神「為大神、為大王、超乎萬神之上」（第3節），掌管地的深處和山的高峰，這樣的神值得我們最深的謙卑——不只是口頭承認，更是生命全人的俯伏。<br><br>
+<strong>2. 今天聽神的話揭示順從的緊迫性</strong><br>「惟願你們今天聽他的話：你們不可硬着心。」（第7-8節）「今天」是個人信仰最關鍵的時間概念。靈性的硬化是一個漸進的過程——不是一次的決定，而是每一天的小選擇積累而成。每一個「今天」都是選擇的機會：聽神的話並順從，或以各種理由推遲。希伯來書特別強調這個「今天」——在神的恩典之窗仍開著的今天，及時回應神的呼召，是最重要的屬靈操練。<br><br>
+<strong>3. 試探神的後果揭示順從是進入神安息的必要條件</strong><br>「四十年之久，我厭煩那世代……他們斷不可進入我的安息！」（第10-11節）曠野那一代以色列人的悲劇，不是外在敵人的阻擋，而是自己硬心、試探神的結果。他們看見了神所有的奇事，卻仍然「心裏迷糊，不曉得神的作為」，最終失去了進入安息之地的機會。這個歷史警告提醒信徒：見過神的作為並不自動帶來順從；真正的信仰需要在每一個「今天」主動地選擇柔軟的心、聆聽神的聲音，並且順從。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>來啊，<strong>我們要屈身敬拜</strong>，<strong>在造我們的耶和華</strong>面前跪下。（詩95:6）</td>
+<td>就像在真正敬畏的人面前，人會自然地低下頭，而在不敬畏的人面前，則可以昂首而立，你的敬拜是否真的反映了你對神的敬畏——你是否常常只是「出席」敬拜，卻沒有真正在神面前「屈身」俯伏？</td>
+</tr>
+<tr>
+<td><strong>惟願你們今天聽他</strong>的話：<strong>你們不可硬着心</strong>。（詩95:7-8）</td>
+<td>就像每天的鍛煉決定長期的健康，靈性的柔軟也是在每一個「今天」的選擇中積累的，你今天是否選擇了一顆柔軟聆聽的心，還是讓某個理由成為你今天推遲回應神的藉口？</td>
+</tr>
+<tr>
+<td><strong>這是心裏迷糊的百</strong>姓，<strong>竟不曉得我的作為</strong>！（詩95:10）</td>
+<td>就像一個人即使親眼看過許多精采的表演，若從不反思其中的意義，也難以真正受到影響，曠野那一代「見過神的作為卻心裏迷糊」，你是否有意識地將神的作為存記在心，讓它真實地影響你的信仰選擇，而非只是聽過就忘記？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以斯拉記第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以斯拉記第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">歸回名冊：蒙召者各歸本城</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>巴比倫王尼布甲尼撒從前擄到巴比倫之猶大省的人，現在他們的子孫從被擄到之地回耶路撒冷和猶大，各歸本城。</div>
+<div class="verse"><span class="verse-number">2</span>他們是同着所羅巴伯、耶書亞、尼希米、西萊雅、利來雅、末底改、必珊、米斯拔、比革瓦伊、利宏、巴拿回來的。</div>
+<div class="verse"><span class="verse-number">3</span>以色列人民的數目記在下面：巴錄的子孫二千一百七十二名；</div>
+<div class="verse"><span class="verse-number">4</span>示法提雅的子孫三百七十二名；</div>
+<div class="verse"><span class="verse-number">5</span>亞拉的子孫七百七十五名；</div>
+<div class="verse"><span class="verse-number">6</span>巴哈摩押的後裔，就是耶書亞和約押的子孫二千八百一十二名；</div>
+<div class="verse"><span class="verse-number">7</span>以攔的子孫一千二百五十四名；</div>
+<div class="verse"><span class="verse-number">8</span>薩土的子孫九百四十五名；</div>
+<div class="verse"><span class="verse-number">9</span>薩改的子孫七百六十名；</div>
+<div class="verse"><span class="verse-number">10</span>巴尼的子孫六百四十二名；</div>
+<div class="verse"><span class="verse-number">11</span>比拜的子孫六百二十三名；</div>
+<div class="verse"><span class="verse-number">12</span>押甲的子孫一千二百二十二名；</div>
+<div class="verse"><span class="verse-number">13</span>亞多尼干的子孫六百六十六名；</div>
+<div class="verse"><span class="verse-number">14</span>比革瓦伊的子孫二千零五十六名；</div>
+<div class="verse"><span class="verse-number">15</span>亞丁的子孫四百五十四名；</div>
+<div class="verse"><span class="verse-number">16</span>亞特的後裔，就是希西家的子孫九十八名；</div>
+<div class="verse"><span class="verse-number">17</span>比賽的子孫三百二十三名；</div>
+<div class="verse"><span class="verse-number">18</span>約拉的子孫一百一十二名；</div>
+<div class="verse"><span class="verse-number">19</span>哈順的子孫二百二十三名；</div>
+<div class="verse"><span class="verse-number">20</span>吉罷珥人九十五名；</div>
+<div class="verse"><span class="verse-number">21</span>伯利恆人一百二十三名；</div>
+<div class="verse"><span class="verse-number">22</span>尼陀法人五十六名；</div>
+<div class="verse"><span class="verse-number">23</span>亞拿突人一百二十八名；</div>
+<div class="verse"><span class="verse-number">24</span>亞斯瑪弗人四十二名；</div>
+<div class="verse"><span class="verse-number">25</span>基列耶琳人、基非拉人、比錄人共七百四十三名；</div>
+<div class="verse"><span class="verse-number">26</span>拉瑪人、迦巴人共六百二十一名；</div>
+<div class="verse"><span class="verse-number">27</span>默瑪人一百二十二名；</div>
+<div class="verse"><span class="verse-number">28</span>伯特利人、艾人共二百二十三名；</div>
+<div class="verse"><span class="verse-number">29</span>尼波人五十二名；</div>
+<div class="verse"><span class="verse-number">30</span>末必人一百五十六名；</div>
+<div class="verse"><span class="verse-number">31</span>別的以攔子孫一千二百五十四名；</div>
+<div class="verse"><span class="verse-number">32</span>哈琳的子孫三百二十名；</div>
+<div class="verse"><span class="verse-number">33</span>羅德人、哈第人、阿挪人共七百二十五名；</div>
+<div class="verse"><span class="verse-number">34</span>耶利哥人三百四十五名；</div>
+<div class="verse"><span class="verse-number">35</span>西拿人三千六百三十名。</div>
+<div class="verse"><span class="verse-number">36</span>祭司：耶書亞家耶大雅的子孫九百七十三名；</div>
+<div class="verse"><span class="verse-number">37</span>音麥的子孫一千零五十二名；</div>
+<div class="verse"><span class="verse-number">38</span>巴施戶珥的子孫一千二百四十七名；</div>
+<div class="verse"><span class="verse-number">39</span>哈琳的子孫一千零一十七名。</div>
+<div class="verse"><span class="verse-number">40</span>利未人：何達威雅的後裔，就是耶書亞和甲篾的子孫七十四名。</div>
+<div class="verse"><span class="verse-number">41</span>歌唱的：亞薩的子孫一百二十八名。</div>
+<div class="verse"><span class="verse-number">42</span>守門的：沙龍的子孫、亞特的子孫、達們的子孫、亞谷的子孫、哈底大的子孫、朔拜的子孫，共一百三十九名。</div>
+<div class="verse"><span class="verse-number">43</span>尼提寧〔就是殿役〕：西哈的子孫、哈蘇巴的子孫、答巴俄的子孫、</div>
+<div class="verse"><span class="verse-number">44</span>基綠的子孫、西亞的子孫、巴頓的子孫、</div>
+<div class="verse"><span class="verse-number">45</span>利巴拿的子孫、哈迦巴的子孫、亞谷的子孫、</div>
+<div class="verse"><span class="verse-number">46</span>哈甲的子孫、薩買的子孫、哈難的子孫、</div>
+<div class="verse"><span class="verse-number">47</span>吉德的子孫、迦哈的子孫、利亞雅的子孫、</div>
+<div class="verse"><span class="verse-number">48</span>利汛的子孫、尼哥大的子孫、迦散的子孫、</div>
+<div class="verse"><span class="verse-number">49</span>烏撒的子孫、巴西亞的子孫、比賽的子孫、</div>
+<div class="verse"><span class="verse-number">50</span>押拿的子孫、米烏寧的子孫、尼普心的子孫、</div>
+<div class="verse"><span class="verse-number">51</span>巴卜的子孫、哈古巴的子孫、哈忽的子孫、</div>
+<div class="verse"><span class="verse-number">52</span>巴洗律的子孫、米希大的子孫、哈沙的子孫、</div>
+<div class="verse"><span class="verse-number">53</span>巴柯的子孫、西西拉的子孫、答瑪的子孫、</div>
+<div class="verse"><span class="verse-number">54</span>尼細亞的子孫、哈提法的子孫。</div>
+<div class="verse"><span class="verse-number">55</span>所羅門僕人的後裔，就是瑣太的子孫、瑣斐列的子孫、比路大的子孫、</div>
+<div class="verse"><span class="verse-number">56</span>雅拉的子孫、達昆的子孫、吉德的子孫、</div>
+<div class="verse"><span class="verse-number">57</span>示法提雅的子孫、哈替的子孫、玻黑列哈斯巴音的子孫、亞米的子孫。</div>
+<div class="verse"><span class="verse-number">58</span>尼提寧和所羅門僕人的後裔共三百九十二名。</div>
+<div class="verse"><span class="verse-number">59</span>從特米拉、特哈薩、基綠、押但、音麥上來的，不能指明他們的宗族譜系是以色列人不是；</div>
+<div class="verse"><span class="verse-number">60</span>他們是第來雅的子孫、多比雅的子孫、尼哥大的子孫，共六百五十二名。</div>
+<div class="verse"><span class="verse-number">61</span>祭司中，哈巴雅的子孫、哈哥斯的子孫、巴西萊的子孫；因為他們的先祖娶了基列人巴西萊的女兒為妻，所以起名叫巴西萊。</div>
+<div class="verse"><span class="verse-number">62</span>這三家的人在族譜之中尋查自己的譜系，卻尋不着，因此算為不潔，不准供祭司的職任。</div>
+<div class="verse"><span class="verse-number">63</span>省長對他們說：「不可吃至聖的物，直到有用烏陵和土明決疑的祭司興起來。」</div>
+<div class="verse"><span class="verse-number">64</span>會眾共有四萬二千三百六十名。</div>
+<div class="verse"><span class="verse-number">65</span>此外，還有他們的僕婢七千三百三十七名，又有歌唱的男女二百名。</div>
+<div class="verse"><span class="verse-number">66</span>他們有馬七百三十六匹，騾子二百四十五匹，</div>
+<div class="verse"><span class="verse-number">67</span>駱駝四百三十五隻，驢六千七百二十匹。</div>
+<div class="verse"><span class="verse-number">68</span>有些族長到了耶路撒冷耶和華殿的地方，便為神的殿甘心獻上禮物，要重新建造。</div>
+<div class="verse"><span class="verse-number">69</span>他們量力捐入工程庫的金子六萬一千達利克，銀子五千彌拿，並祭司的禮服一百件。</div>
+<div class="verse"><span class="verse-number">70</span>於是祭司、利未人、民中的一些人、歌唱的、守門的、尼提寧，並以色列眾人，各住在自己的城裏。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以斯拉記第2章是一份珍貴的歷史名冊，詳細記載了第一批從巴比倫歸回的以色列人名單，共約四萬二千三百六十人，另有僕婢七千餘人。這份名冊依序列出一般百姓、各地居民、祭司、利未人、歌唱的、守門的以及殿役（尼提寧）等各類人群。本章強調每個族群、每個家族都有其被記念的名字，顯示神的子民在祂眼中各有其位置與身分。值得注意的是，某些人因無法考證族譜而被暫時排除於聖職之外，說明神的事奉需要身分的清晰與純正。本章末尾記載歸回者到達耶路撒冷後的首要行動——甘心為重建聖殿奉獻，並各歸本城安頓。這份名冊既是歷史記錄，也是信仰見證，顯示神忠實地帶回祂所呼召的每一個人，使應許得以具體成真。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 每個蒙召者在神眼中都有名有份</strong><br>本章鉅細靡遺地列出各家族的名字與人數，看似單調的數字背後，是神對每一個歸回者的記念與珍視。在龐大的歷史洪流中，神不忘記任何一個回應呼召的人。這提醒信徒：無論在人看來多麼渺小或不起眼，神都認識我們的名字，我們的委身在神的記念冊上都有記錄，沒有一個忠心的腳蹤是白費的。<br><br>
+<strong>2. 身分的清晰是事奉的根基</strong><br>祭司中有人因族譜不清而被暫停聖職，直到有祭司用烏陵土明裁決。這顯示在神的事奉中，身分的清晰與純正至關重要。屬靈意義上，信徒需要清楚自己在基督裡的身分——是蒙救贖的神兒女，才能有把握地進入神的事奉，而非在模糊不清的屬靈狀態中試圖服事。<br><br>
+<strong>3. 甘心奉獻是歸回後的第一個回應</strong><br>歸回者抵達耶路撒冷後，族長們立刻「甘心獻上禮物」為重建聖殿。他們量力而為，各盡所能，沒有等候命令，而是出於愛和感恩自發奉獻。這種主動甘心的態度，是對神恩典最真實的回應，也是委身事奉的第一步，顯示歸回不只是地理上的移動，更是心志上對神的重新委身。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>巴比倫王尼布甲尼</strong><strong>撒從前擄到巴比倫</strong>之猶大省的人，現在他們的子孫從被擄到之地回耶路撒冷和猶大，各歸本城。（拉2:1）</td>
+<td>就像手機通訊錄記下每一位重要聯絡人，神的記念冊上是否也記著你的名字？你有否確認自己是已「歸回」、委身於神的子民？</td>
+</tr>
+<tr>
+<td><strong>這三家的人在族譜</strong><strong>之中尋查自己的譜</strong>系，卻尋不着，因此算為不潔，不准供祭司的職任。（拉2:62）</td>
+<td>就像需要提供有效身分證件才能通關，你在基督裡的屬靈身分是否清晰確定？這份確信如何影響你投入事奉的信心與勇氣？</td>
+</tr>
+<tr>
+<td><strong>有些族長到了耶路</strong><strong>撒冷耶和華殿的地</strong>方，便為神的殿甘心獻上禮物，要重新建造。（拉2:68）</td>
+<td>就像划船需要方向一致才能前進，當你蒙恩「歸回」到神面前時，甘心奉獻是你最自然的第一個回應，還是你仍在猶豫衡量代價？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

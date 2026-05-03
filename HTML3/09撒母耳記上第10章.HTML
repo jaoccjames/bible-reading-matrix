@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記上第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記上第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">掃羅受膏為王</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>撒母耳拿瓶膏油倒在掃羅的頭上，與他親嘴，說：「這不是耶和華膏你作他產業的君嗎？</div>
+<div class="verse"><span class="verse-number">2</span>你今日與我離別之後，在便雅憫境內的泄撒，靠近拉結的墳墓，要遇見兩個人。他們必對你說：『你去找的那幾頭驢已經找着了。現在你父親不為驢掛心，反為你擔憂，說：我為兒子怎麼纔好呢？』</div>
+<div class="verse"><span class="verse-number">3</span>你從那裏往前行，到了他泊的橡樹那裏，必遇見三個往伯特利去拜神的人：一個帶着三隻山羊羔，一個帶着三個餅，一個帶着一皮袋酒。</div>
+<div class="verse"><span class="verse-number">4</span>他們必問你安，給你兩個餅，你就從他們手中接過來。</div>
+<div class="verse"><span class="verse-number">5</span>此後你到神的山，在那裏有非利士人的防兵。你到了城的時候，必遇見一班先知從邱壇下來，前面有鼓瑟的、擊鼓的、吹笛的、彈琴的，他們都受感說話。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華的靈必大大感動你，你就與他們一同受感說話；你要變為新人。</div>
+<div class="verse"><span class="verse-number">7</span>這兆頭臨到你，你就可以趁時而作，因為神與你同在。</div>
+<div class="verse"><span class="verse-number">8</span>你當在我以先下到吉甲，我也必下到那裏獻燔祭和平安祭。你要等候七日，等我到了那裏，指示你當行的事。」</div>
+<div class="verse"><span class="verse-number">9</span>掃羅轉身離別撒母耳，神就賜他一個新心。當日這一切兆頭都應驗了。</div>
+<div class="verse"><span class="verse-number">10</span>掃羅到了那山，有一班先知遇見他，神的靈大大感動他，他就在先知中受感說話。</div>
+<div class="verse"><span class="verse-number">11</span>素來認識掃羅的，看見他和先知一同受感說話，就彼此說：「基士的兒子遇見甚麼了？掃羅也列在先知中麼？」</div>
+<div class="verse"><span class="verse-number">12</span>那地方有一個人說：「這些人的父親是誰呢？」此後有句俗語說：「掃羅也列在先知中嗎？」</div>
+<div class="verse"><span class="verse-number">13</span>掃羅受感說話已畢，就上邱壇去了。</div>
+<div class="verse"><span class="verse-number">14</span>掃羅的叔叔問掃羅和他僕人說：「你們往那裏去了？」回答說：「找驢去了。我們見沒有驢，就到了撒母耳那裏。」</div>
+<div class="verse"><span class="verse-number">15</span>掃羅的叔叔說：「請將撒母耳向你們所說的話告訴我。」</div>
+<div class="verse"><span class="verse-number">16</span>掃羅對他叔叔說：「他明明的告訴我們驢已經找着了。」至於撒母耳所說的國事，掃羅卻沒有告訴叔叔。</div>
+<div class="verse"><span class="verse-number">17</span>撒母耳將百姓招聚到米斯巴耶和華那裏，</div>
+<div class="verse"><span class="verse-number">18</span>對他們說：「耶和華以色列的神如此說：『我領你們以色列人出埃及，救你們脫離埃及人的手，又救你們脫離欺壓你們各國之人的手。』</div>
+<div class="verse"><span class="verse-number">19</span>你們今日卻厭棄了救你們脫離一切災難的神，說：『求你立一個王治理我們。』現在你們應當按着支派、宗族都站在耶和華面前。」</div>
+<div class="verse"><span class="verse-number">20</span>於是，撒母耳使以色列眾支派近前來掣籤，就掣出便雅憫支派來；</div>
+<div class="verse"><span class="verse-number">21</span>又使便雅憫支派按着宗族近前來，就掣出瑪特利族，從其中又掣出基士的兒子掃羅。眾人尋找他卻尋不着。</div>
+<div class="verse"><span class="verse-number">22</span>就問耶和華說：「那人到這裏來了沒有？」耶和華說：「他藏在器具中了。」</div>
+<div class="verse"><span class="verse-number">23</span>眾人就跑去從那裏領出他來。他站在百姓中間，身體比眾民高過一頭。</div>
+<div class="verse"><span class="verse-number">24</span>撒母耳對眾民說：「你們看耶和華所揀選的人，眾民中有可比他的麼？」眾民就大聲歡呼說：「願王萬歲！」</div>
+<div class="verse"><span class="verse-number">25</span>撒母耳將國法對百姓說明，又記在書上，放在耶和華面前，然後遣散眾民，各回各家去了。</div>
+<div class="verse"><span class="verse-number">26</span>掃羅往基比亞回家去，有神感動的一群人跟隨他。</div>
+<div class="verse"><span class="verse-number">27</span>但有些匪徒說：「這人怎能救我們呢？」就藐視他，沒有送他禮物；掃羅卻不理會。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載掃羅正式被膏立為以色列第一位君王的過程,分為私下受膏和公開被選兩個階段。撒母耳首先在私下為掃羅行膏立禮,並預言三個兆頭來印證神的揀選。這種雙重確認方式既顯明神的主權,也建立掃羅作王的正當性。掃羅受聖靈感動與先知一同說話,成為當地的佳話,甚至衍生出俗語「掃羅也列在先知中嗎?」隨後撒母耳在米斯巴召集全以色列,透過掣籤的方式公開確認神對掃羅的揀選。有趣的是,掃羅在被選中時竟然躲藏起來,顯示他內心的掙扎與不確定。儘管掃羅外表高大俊美,符合眾人對君王的期待,但也有人質疑他的能力。本章為掃羅的王權奠定基礎,同時也埋下後續衝突的伏筆。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的呼召伴隨聖靈的能力</strong><br>掃羅被膏立後,撒母耳預言神的靈會大大感動他,使他變為新人。這不只是職位的改變,更是生命本質的更新。神從不呼召人卻不給予能力,祂的託付總是伴隨著聖靈的同在和裝備。掃羅與先知一同受感說話的經歷,證明神的靈確實降臨在他身上。這顯示屬靈的事奉不能靠人的天賦或血氣,必須依靠聖靈的能力。然而,聖靈的恩賜不等於永久的保證,掃羅後來的失敗提醒我們,持續順服神比一時的恩膏更重要。能力來自神,但運用能力的選擇權在人。<br><br>
+<strong>2. 神透過環境印證祂的引導</strong><br>撒母耳預言三個具體的兆頭,每一個都按時應驗,向掃羅確認這確實是神的帶領。神不是要我們盲目跟隨,而是願意透過環境、話語和聖靈的感動來印證祂的心意。這些兆頭包括日常的相遇、供應的確認,以及屬靈經歷的應驗,涵蓋生活的各個層面。神的印證不只是為了消除疑慮,更是建立信心,讓人在未來的挑戰中能回顧神過去的信實。當我們尋求神的旨意時,可以求神透過多重管道確認,但關鍵是順服的心志,而非不斷要求更多證據。<br><br>
+<strong>3. 謙卑與逃避只有一線之隔</strong><br>掃羅被選為王時,竟然躲在器具中,這可能出於謙卑,也可能出於懼怕。真正的謙卑是認識自己的不足卻仍願意順服神的呼召,而逃避則是因懼怕而拒絕神的託付。掃羅的躲藏顯示他內心的矛盾——一方面知道自己被揀選,另一方面又不敢面對。神尊重人的感受,卻不允許人永遠躲藏。真正的屬靈成熟不是沒有恐懼,而是帶著恐懼仍然順服。掃羅後來的表現證明,初期的猶豫若未被真實的信靠取代,就會成為失敗的種子。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華的靈必大大</strong><strong>感動你</strong>,你就與他們一同受感說話;你要變為新人。(撒母耳記上10:6)</td>
+<td>我是否相信神的呼召必定伴隨著祂所賜的能力?就像接受新工作時公司會提供培訓和資源,我是否因為覺得自己能力不足而拒絕神的託付,忘記神會賜下聖靈來裝備我?</td>
+</tr>
+<tr>
+<td><strong>當日這一切兆頭都</strong><strong>應驗了</strong>。(撒母耳記上10:9)</td>
+<td>回顧過去,我能否看見神曾如何透過環境印證祂的引導?就像拼圖逐漸拼湊出完整圖案,我是否願意將生命中看似零散的事件連結起來,看見神一路的帶領與信實?</td>
+</tr>
+<tr>
+<td><strong>眾人尋找他卻尋不</strong>著,<strong>就問耶和華說</strong>:那人到這裡來了沒有?耶和華說:他藏在器具中了。(撒母耳記上10:22)</td>
+<td>面對神的呼召時,我是真正的謙卑還是在逃避責任?就像被點名上台分享時躲到後排,我是因為不配而謙卑等候神的時間,還是因為害怕而拒絕神要我承擔的使命?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約翰的疑惑與耶穌的邀請</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌吩咐完了十二個門徒，就離開那裏，往各城去傳道，教訓人。</div>
+<div class="verse"><span class="verse-number">2</span>約翰在監裏聽見基督所作的事，就打發兩個門徒去，</div>
+<div class="verse"><span class="verse-number">3</span>問他說：「那將要來的是你嗎？還是我們等候別人呢？」</div>
+<div class="verse"><span class="verse-number">4</span>耶穌回答說：「你們去，把所聽見，所看見的事告訴約翰。</div>
+<div class="verse"><span class="verse-number">5</span>就是瞎子看見，瘸子行走，長大痲瘋的潔淨，聾子聽見，死人復活，窮人有福音傳給他們。</div>
+<div class="verse"><span class="verse-number">6</span>凡不因我跌倒的就有福了！」</div>
+<div class="verse"><span class="verse-number">7</span>他們走的時候，耶穌就對眾人講論約翰說：「你們從前出到曠野是要看甚麼呢？要看風吹動的蘆葦麼？</div>
+<div class="verse"><span class="verse-number">8</span>你們出去到底是要看甚麼？要看穿細軟衣服的人麼？那穿細軟衣服的人是在王宮裏。</div>
+<div class="verse"><span class="verse-number">9</span>你們出去究竟是為甚麼？是要看先知麼？我告訴你們，是的，他比先知大多了。</div>
+<div class="verse"><span class="verse-number">10</span>經上記着說：『我要差遣我的使者在你前面預備道路』，所說的就是這個人。</div>
+<div class="verse"><span class="verse-number">11</span>我實在告訴你們，凡婦人所生的，沒有一個興起來大過施洗約翰的；然而天國裏最小的比他還大。</div>
+<div class="verse"><span class="verse-number">12</span>從施洗約翰的時候到如今，天國是努力進入的，努力的人就得着了。</div>
+<div class="verse"><span class="verse-number">13</span>因為眾先知和律法說預言，到約翰為止。</div>
+<div class="verse"><span class="verse-number">14</span>你們若肯領受，這人就是那應當來的以利亞。</div>
+<div class="verse"><span class="verse-number">15</span>有耳可聽的，就應當聽！</div>
+<div class="verse"><span class="verse-number">16</span>我可用甚麼比這世代呢？好像孩童坐在街市上招呼同伴，說：</div>
+<div class="verse"><span class="verse-number">17</span>我們向你們吹笛，你們不跳舞；我們向你們舉哀，你們不捶胸。</div>
+<div class="verse"><span class="verse-number">18</span>約翰來了，也不吃也不喝，人就說他是被鬼附着的；</div>
+<div class="verse"><span class="verse-number">19</span>人子來了，也吃也喝，人又說他是貪食好酒的人，是稅吏和罪人的朋友。但智慧之子總以智慧為是〔有古卷作：但智慧在行為上就顯為是〕。」</div>
+<div class="verse"><span class="verse-number">20</span>耶穌在諸城中行了許多異能，那些城的人終不悔改，就在那時候責備他們，說：</div>
+<div class="verse"><span class="verse-number">21</span>「哥拉汛哪，你有禍了！伯賽大啊，你有禍了！因為在你們中間所行的異能，若行在推羅、西頓，他們早已披麻蒙灰悔改了。</div>
+<div class="verse"><span class="verse-number">22</span>但我告訴你們，當審判的日子，推羅、西頓所受的，比你們還容易受呢！</div>
+<div class="verse"><span class="verse-number">23</span>迦百農啊，你已經升到天上〔或作：你將要升到天上嗎〕，將來必墜落陰間；因為在你那裏所行的異能，若行在所多瑪，他還可以存到今日。</div>
+<div class="verse"><span class="verse-number">24</span>但我告訴你們，當審判的日子，所多瑪所受的，比你還容易受呢！」</div>
+<div class="verse"><span class="verse-number">25</span>那時，耶穌說：「父啊，天地的主，我感謝你！因為你將這些事向聰明通達人就藏起來，向嬰孩就顯出來。</div>
+<div class="verse"><span class="verse-number">26</span>父阿，是的，因為你的美意本是如此。</div>
+<div class="verse"><span class="verse-number">27</span>一切所有的，都是我父交付我的；除了父，沒有人知道子；除了子和子所願意指示的，沒有人知道父。</div>
+<div class="verse"><span class="verse-number">28</span>凡勞苦擔重擔的人可以到我這裏來，我就使你們得安息。</div>
+<div class="verse"><span class="verse-number">29</span>我心裏柔和謙卑，你們當負我的軛，學我的樣式；這樣，你們心裏就必得享安息。</div>
+<div class="verse"><span class="verse-number">30</span>因為我的軛是容易的，我的擔子是輕省的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第11章記述施洗約翰從監獄中差人來問耶穌是否是那要來的，以及耶穌對當代人的批評與呼召。本章首先敘述約翰在獄中聽聞基督所做的事，差門徒來問祂是否就是那要來的。耶穌回答要他們把所見所聞告訴約翰：瞎子看見、瘸子行走、長大痲瘋的潔淨、聾子聽見、死人復活、窮人聽到福音。接著耶穌對群眾稱讚約翰超過先知，是為彌賽亞預備道路的使者，在女人所生的人中約翰是最大的，然而天國裡最小的比他還大。然後耶穌批評那世代像孩童互不配合，無論約翰的禁慾或祂自己的飲宴都受批評；又指責不悔改的哥拉汛、伯賽大、迦百農，宣告審判之日他們將比推羅、西頓、所多瑪更難受。最後發出著名的呼召：凡勞苦擔重擔的人都可以到耶穌這裡來，祂的軛是容易的，擔子是輕省的。本章展現耶穌對施洗約翰的高度評價與對不信之城的警告，並以溫柔的邀請作結。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 信心的疑惑不等於信仰的失敗</strong><br>約翰是耶穌親口稱讚的最大先知，卻在患難中產生疑惑。耶穌沒有責備他，而是以神蹟作見證、以祝福作回應。這告訴我們：在患難中懷疑神不是罪，誠實地帶着疑問來到耶穌面前是信心的表現。神不懼怕我們的疑問，祂用祂的作為來回答。信心不是沒有疑惑，而是帶着疑惑仍然尋求。<br><br>
+<strong>2. 頑梗的心使神蹟失去功效</strong><br>哥拉汛、伯賽大、迦百農親眼目睹了許多神蹟，卻終不悔改，比起連神蹟都沒有見過的推羅、西頓要受更重的審判。神蹟本身不能改變人心，若人心剛硬，再多的神蹟都無濟於事。真正的問題不是證據不足，而是心意是否願意回轉。看見了卻不願悔改，是最深的屬靈危機。<br><br>
+<strong>3. 耶穌的邀請給勞苦的人帶來真安息</strong><br>「凡勞苦擔重擔的人可以到我這裏來」——這個邀請跨越時代，直到今天仍然有效。耶穌說祂的軛是「容易的」，擔子是「輕省的」，不是說跟從祂沒有要求，而是說在祂裏面的重擔是可以承受的，因為祂柔和謙卑，與我們同挑。真安息不是沒有負擔，而是把負擔帶到耶穌面前，由祂與我們一同承擔。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌回答說</strong>：「<strong>你們去</strong>，把所聽見，所看見的事告訴約翰。就是瞎子看見，瘸子行走，長大痲瘋的潔淨，聾子聽見，死人復活，窮人有福音傳給他們。」（太11:4-5）</td>
+<td>當你對神產生疑惑時，你有沒有像約翰一樣誠實地帶着問題來到耶穌面前？就像對某件事不確定時直接問當事人最有效，你願意把你的疑問帶到禱告中，讓神的作為成為你的答案嗎？</td>
+</tr>
+<tr>
+<td><strong>凡勞苦擔重擔的人</strong><strong>可以到我這裏來</strong>，我就使你們得安息。（太11:28）</td>
+<td>你現在生命中有哪些沉重的擔子，讓你感到精疲力竭？就像揹着超重行李走遠路，你有沒有嘗試把這些擔子卸下，交給耶穌承擔？</td>
+</tr>
+<tr>
+<td><strong>我心裏柔和謙卑</strong>，<strong>你們當負我的軛</strong>，學我的樣式；這樣，你們心裏就必得享安息。（太11:29）</td>
+<td>你認為跟從耶穌是很重的負擔，還是真的感受到祂給你帶來的安息？就像換了一個好主管後工作性質沒變但壓力全然不同，你有沒有讓耶穌柔和謙卑的性情改變你面對生活的方式？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

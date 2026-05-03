@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記上第15章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記上第15章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">掃羅被神棄絕</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>撒母耳對掃羅說：「耶和華差遣我膏你為王，治理他的百姓以色列；所以你當聽從耶和華的話。</div>
+<div class="verse"><span class="verse-number">2</span>萬軍之耶和華如此說：『以色列人出埃及的時候，在路上亞瑪力人怎樣待他們，怎樣抵擋他們，我都沒忘。</div>
+<div class="verse"><span class="verse-number">3</span>現在你要去擊打亞瑪力人，滅盡他們所有的，不可憐惜他們，將男女、孩童、吃奶的，並牛、羊、駱駝，和驢盡行殺死。』」</div>
+<div class="verse"><span class="verse-number">4</span>於是掃羅招聚百姓在提拉因，數點他們，共有步兵二十萬，另有猶大人一萬。</div>
+<div class="verse"><span class="verse-number">5</span>掃羅到了亞瑪力的京城，在谷中設下埋伏。</div>
+<div class="verse"><span class="verse-number">6</span>掃羅對基尼人說：「你們離開亞瑪力人下去吧，恐怕我將你們和亞瑪力人一同殺滅；因為以色列人出埃及的時候，你們曾恩待他們。」於是基尼人離開亞瑪力人去了。</div>
+<div class="verse"><span class="verse-number">7</span>掃羅擊打亞瑪力人，從哈腓拉直到埃及前的書珥，</div>
+<div class="verse"><span class="verse-number">8</span>生擒了亞瑪力王亞甲，用刀殺盡亞瑪力的眾民。</div>
+<div class="verse"><span class="verse-number">9</span>掃羅和百姓卻憐惜亞甲，也愛惜上好的牛、羊、牛犢、羊羔，並一切美物，不肯滅絕。凡下賤瘦弱的，盡都殺了。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華的話臨到撒母耳說：</div>
+<div class="verse"><span class="verse-number">11</span>「我立掃羅為王，我後悔了；因為他轉去不跟從我，不遵守我的命令。」撒母耳便甚憂愁，終夜哀求耶和華。</div>
+<div class="verse"><span class="verse-number">12</span>撒母耳清早起來，迎接掃羅。有人告訴撒母耳說：「掃羅到了迦密，在那裏立了記念碑，又轉身下到吉甲。」</div>
+<div class="verse"><span class="verse-number">13</span>撒母耳到了掃羅那裏，掃羅對他說：「願耶和華賜福與你，耶和華的命令我已遵守了。」</div>
+<div class="verse"><span class="verse-number">14</span>撒母耳說：「我耳中聽見有羊叫、牛鳴，是從那裏來的呢？」</div>
+<div class="verse"><span class="verse-number">15</span>掃羅說：「這是百姓從亞瑪力人那裏帶來的；因為他們愛惜上好的牛羊，要獻與耶和華你的神；其餘的，我們都滅盡了。」</div>
+<div class="verse"><span class="verse-number">16</span>撒母耳對掃羅說：「你住口吧！等我將耶和華昨夜向我所說的話告訴你。」掃羅說：「請講。」</div>
+<div class="verse"><span class="verse-number">17</span>撒母耳對掃羅說：「從前你雖然以自己為小，豈不是被立為以色列支派的元首麼？耶和華膏你作以色列的王。</div>
+<div class="verse"><span class="verse-number">18</span>耶和華差遣你，吩咐你說，你去擊打那些犯罪的亞瑪力人，將他們滅絕淨盡。</div>
+<div class="verse"><span class="verse-number">19</span>你為何沒有聽從耶和華的命令，急忙擄掠財物，行耶和華眼中看為惡的事呢？」</div>
+<div class="verse"><span class="verse-number">20</span>掃羅對撒母耳說：「我實在聽從了耶和華的命令，行了耶和華所差遣我行的路，擒了亞瑪力王亞甲來，滅盡了亞瑪力人。</div>
+<div class="verse"><span class="verse-number">21</span>百姓卻在所當滅的物中取了最好的牛羊，要在吉甲獻與耶和華你的神。」</div>
+<div class="verse"><span class="verse-number">22</span>撒母耳說：「耶和華喜悅燔祭和平安祭，豈如喜悅人聽從他的話呢？聽命勝於獻祭；順從勝於公羊的脂油。</div>
+<div class="verse"><span class="verse-number">23</span>悖逆的罪與行邪術的罪相等；頑梗的罪與拜虛神和偶像的罪相同。你既厭棄耶和華的命令，耶和華也厭棄你作王。」</div>
+<div class="verse"><span class="verse-number">24</span>掃羅對撒母耳說：「我有罪了，我因懼怕百姓，聽從他們的話，就違背了耶和華的命令和你的言語。</div>
+<div class="verse"><span class="verse-number">25</span>現在求你赦免我的罪，同我回去，我好敬拜耶和華。」</div>
+<div class="verse"><span class="verse-number">26</span>撒母耳對掃羅說：「我不同你回去；因為你厭棄耶和華的命令，耶和華也厭棄你作以色列的王。」</div>
+<div class="verse"><span class="verse-number">27</span>撒母耳轉身要走，掃羅就扯住他外袍的衣襟，衣襟就撕斷了。</div>
+<div class="verse"><span class="verse-number">28</span>撒母耳對他說：「如此，今日耶和華使以色列國與你斷絕，將這國賜與比你更好的人。</div>
+<div class="verse"><span class="verse-number">29</span>以色列的大能者必不至說謊，也不至後悔；因為他迥非世人，決不後悔。」</div>
+<div class="verse"><span class="verse-number">30</span>掃羅說：「我有罪了，雖然如此，求你在我百姓的長老和以色列人面前抬舉我，同我回去，我好敬拜耶和華你的神。」</div>
+<div class="verse"><span class="verse-number">31</span>於是撒母耳轉身跟隨掃羅回去，掃羅就敬拜耶和華。</div>
+<div class="verse"><span class="verse-number">32</span>撒母耳說：「要把亞瑪力王亞甲帶到我這裏來。」亞甲就歡歡喜喜的來到他面前，心裏說，死亡的苦難必定過去了。</div>
+<div class="verse"><span class="verse-number">33</span>撒母耳說：「你既用刀使婦人喪子，這樣，你母親在婦人中也必喪子。」於是，撒母耳在吉甲耶和華面前將亞甲殺死。</div>
+<div class="verse"><span class="verse-number">34</span>撒母耳回了拉瑪。掃羅上他所住的基比亞，回自己的家去了。</div>
+<div class="verse"><span class="verse-number">35</span>撒母耳直到死的日子，再沒有見掃羅；但撒母耳為掃羅悲傷，是因耶和華後悔立他為以色列的王。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載掃羅最終被神棄絕的關鍵事件。神透過撒母耳命令掃羅徹底滅絕亞瑪力人,這是因為亞瑪力人曾在以色列出埃及時攻擊他們,神要施行審判。掃羅率軍擊敗亞瑪力人,卻沒有完全遵行神的命令——他留下亞瑪力王亞甲的性命,也保留了上好的牛羊。當撒母耳質問時,掃羅不但不承認錯誤,還推卸責任給百姓,聲稱留下牲畜是為了獻祭給神。撒母耳說出那句著名的話:「聽命勝於獻祭,順從勝於公羊的脂油」,宣告神已厭棄掃羅作王。掃羅此時才承認有罪,但他更在乎的是在百姓面前的面子,而非真正的悔改。撒母耳親手殺了亞甲,完成神的命令,然後離去,直到死都沒再見掃羅。這標誌著掃羅王朝的終結和大衛時代的開始。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 部分順服就是不順服</strong><br>掃羅確實攻打了亞瑪力人,殺了大部分的人和牲畜,但他保留了王和最好的牛羊。從人的角度看,他完成了任務的大部分,但神看這是徹底的不順服。真正的順服不是按照自己的判斷選擇性地執行,而是完全照神的話去行。掃羅以為可以在神的命令上打折扣,用「幾乎全做了」來掩蓋「沒有完全順服」。這顯示他心中真正的王不是神,而是他自己。我們也常常在神的命令上討價還價,保留一些自己認為重要的東西,卻不知這正暴露出我們內心的悖逆。<br><br>
+<strong>2. 宗教外表無法掩蓋內心的悖逆</strong><br>掃羅用「為了獻祭給神」作為不順服的藉口,這是何等諷刺。他以為可以用宗教行為來彌補悖逆,卻不知神要的是順服的心,不是外在的獻祭。撒母耳一針見血地指出:「聽命勝於獻祭,順從勝於公羊的脂油」。這句話貫穿整本聖經,顯明神看重的是內心,而非外在形式。我們不能一邊違背神的命令,一邊用禱告、奉獻、事奉來補償。真正的敬拜是順服,任何不順服的事奉都是神所厭惡的。悖逆的罪與行邪術相等,頑梗的罪與拜偶像相同。<br><br>
+<strong>3. 真悔改關注神的心意,假悔改只在乎自己的面子</strong><br>掃羅被揭穿後確實說「我有罪了」,但他真正在乎的是「在百姓面前抬舉我」。他的悔改是為了保住地位和面子,而非真正為得罪神而痛悔。真正的悔改是為罪憂傷,願意付代價改變;假的悔改只是為後果難過,希望減輕懲罰。掃羅兩次說「我有罪」,卻都緊接著「但是」——先是推卸責任給百姓,後是求撒母耳給他面子。他沒有真正承認自己的問題,只是想要後果消失。這提醒我們檢視自己的悔改:我們是真正為得罪神而痛心,還是只是為自己的損失感到遺憾?
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>掃羅和百姓卻憐惜</strong>亞甲,<strong>也愛惜上好的牛</strong>、羊、牛犢、羊羔,並一切美物,不肯滅絕。凡下賤瘦弱的,盡都殺了。(撒母耳記上15:9)</td>
+<td>我是否在順服神的命令時打折扣,保留自己認為有價值的部分?就像減肥時堅持運動卻捨不得放棄甜食,我是否選擇性地遵守神的話,在自己看為重要的事上妥協,以為「大部分順服」就夠了?</td>
+</tr>
+<tr>
+<td><strong>撒母耳說</strong>:<strong>耶和華喜悅燔祭和</strong>平安祭,豈如喜悅人聽從他的話呢?聽命勝於獻祭;順從勝於公羊的脂油。(撒母耳記上15:22)</td>
+<td>我是否以為熱心的宗教活動可以彌補生活中的不順服?就像工作偷懶卻猛請同事吃飯想彌補,我是否一邊違背神的命令,一邊用禱告、奉獻、事奉來安撫良心,忘記神要的是順服而非表演?</td>
+</tr>
+<tr>
+<td><strong>掃羅說</strong>:<strong>我有罪了</strong>,雖然如此,求你在我百姓的長老和以色列人面前抬舉我,同我回去,我好敬拜耶和華你的神。(撒母耳記上15:30)</td>
+<td>當我認罪時,我真正在乎的是得罪了神,還是只擔心自己的損失和面子?就像道歉時只想快點了事而不是真心悔改,我說「我錯了」之後是否緊接著「但是」,顯示我只想減輕後果,而非真正為罪痛悔?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第29章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第29章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">雷聲中的神：大自然宣告祂的威榮</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩）神的眾子啊，你們要將榮耀、能力歸給耶和華，歸給耶和華！</div>
+<div class="verse"><span class="verse-number">2</span>要將耶和華的名所當得的榮耀歸給他，以聖潔的〔的：或作為〕妝飾敬拜耶和華。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華的聲音發在水上；榮耀的神打雷，耶和華打雷在大水之上。</div>
+<div class="verse"><span class="verse-number">4</span>耶和華的聲音大有能力；耶和華的聲音滿有威嚴。</div>
+<div class="verse"><span class="verse-number">5</span>耶和華的聲音震破香柏樹；耶和華震碎利巴嫩的香柏樹。</div>
+<div class="verse"><span class="verse-number">6</span>他也使之跳躍如牛犢，使利巴嫩和西連跳躍如野牛犢。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華的聲音使火焰分岔。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華的聲音震動曠野；耶和華震動加低斯的曠野。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華的聲音驚動母鹿落胎，樹木也脫落淨光。凡在他殿中的，都稱說他的榮耀。</div>
+<div class="verse"><span class="verse-number">10</span>洪水氾濫之時，耶和華坐着為王；耶和華坐着為王，直到永遠。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華必賜力量給他的百姓；耶和華必賜平安的福給他的百姓。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第29篇是大衛所作，被稱為「雷暴詩篇」，以壯麗的詩意描繪一場雷雨暴風，並在其中聆聽神聲音的震撼。本篇開始呼召天上的「神的眾子」（可能指天使）向神獻上敬拜，然後以七次「耶和華的聲音」描述暴風的威力從地中海席捲至巴勒斯坦曠野的全過程。
+
+      在古代近東文化中，雷聲被理解為神明發言的聲音。大衛取用這一文化意象，卻將一切能力的榮耀歸給以色列的神——耶和華。「耶和華的聲音」七次出現，象徵完全與圓滿，揭示神的話語充滿整個受造世界，從浩瀚的海洋到廣大的曠野，沒有任何地方逃脫祂聲音的觸及。
+
+      本篇以「洪水氾濫之時，耶和華坐着為王」（第10節）達到神學頂峰，即使在最猛烈的自然災害中，神的王權也不搖動。最後兩節（11節）從宏大的宇宙視角收縮到信徒身上：「耶和華必賜力量給他的百姓；耶和華必賜平安的福給他的百姓。」那位掌管洪水與雷暴的神，同樣以力量與平安賜給每一個祂的子民。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 將榮耀歸給神是敬拜的根本動作</strong><br>「要將耶和華的名所當得的榮耀歸給他，以聖潔的妝飾敬拜耶和華。」（第2節）「所當得的榮耀」揭示敬拜不是隨意的表達，而是給予神祂本就配得的尊崇。大自然以它的壯麗自動彰顯神的榮耀，人類的敬拜則是有意識的、主動的、以聖潔為裝飾的回應。敬拜的本質是「歸給神」——將一切的尊榮、讚美、服從都指向祂，而非停留在自我感受的滿足或情緒的宣洩，這是信仰最純粹的行動。<br><br>
+<strong>2. 神的聲音在受造世界中彰顯祂絕對的能力</strong><br>七次「耶和華的聲音」從海洋、香柏樹、曠野到母鹿，沒有任何受造物能承受而不受影響。這揭示神的話語具有不可抗拒的能力——不只是在西奈山的啟示，也在每天的自然現象中持續彰顯。信徒若能以靈性的眼光看待自然界的壯麗，便能在雷聲、海浪、山嶺中聆聽到神聲音的迴響，讓受造世界的威嚴成為通向神之能力的窗口，使敬拜從禮拜堂延伸到每一個宏偉的自然場景。<br><br>
+<strong>3. 洪水中的永恆王權賜給子民力量與平安</strong><br>「洪水氾濫之時，耶和華坐着為王；耶和華坐着為王，直到永遠。」（第10節）在最猛烈的混沌中，神的王位不動搖。這個宣告的實際意義在第11節揭示：同一位在洪水中為王的神，「必賜力量給他的百姓，必賜平安的福給他的百姓」。平安（shalom）在希伯來文中是全面的平安——身心靈的完整。信徒所面對的人生「洪水」——疾病、失去、危機——都在這位永遠為王之神的掌管下，而祂的掌管最終轉化為子民的力量與平安。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>要將耶和華的名所</strong><strong>當得的榮耀歸給他</strong>，以聖潔的妝飾敬拜耶和華。（詩29:2）</td>
+<td>就像給人送禮時，好的禮物是根據對方的喜好與需要而準備，而非只圖自己方便，你的敬拜是否真的以神所當得的榮耀為出發點，還是更多停留在「讓自己感覺良好」的情緒滿足？</td>
+</tr>
+<tr>
+<td><strong>耶和華的聲音大有</strong>能力；<strong>耶和華的聲音滿有</strong>威嚴。（詩29:4）</td>
+<td>就像第一次站在大瀑布旁邊，震撼的水聲和水氣讓人立刻感受到自然的力量遠超人類，你上一次真實地震撼於神的偉大與能力是什麼時候？那次的經歷如何改變了你對神的認識？</td>
+</tr>
+<tr>
+<td><strong>耶和華必賜力量給</strong><strong>他的百姓</strong>；耶和華必賜平安的福給他的百姓。（詩29:11）</td>
+<td>就像知道風暴的總指揮官其實是自己的父親，就算風浪再猛烈也能保持一份內心的安定，你是否能將神掌管洪水的能力，與祂賜你平安的應許連結起來，讓宇宙性的神學真理成為你個人生命的安慰？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

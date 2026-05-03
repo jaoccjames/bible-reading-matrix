@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記上第19章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記上第19章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神護衛受逼迫者</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>掃羅對他兒子約拿單和眾臣僕說，要殺大衛；掃羅的兒子約拿單卻甚喜愛大衛。</div>
+<div class="verse"><span class="verse-number">2</span>約拿單告訴大衛說：「我父掃羅想要殺你，所以明日早晨你要小心，到一個僻靜地方藏身。</div>
+<div class="verse"><span class="verse-number">3</span>我就出到你所藏的田裏，站在我父親旁邊與他談論。我看他情形怎樣，我必告訴你。」</div>
+<div class="verse"><span class="verse-number">4</span>約拿單向他父親掃羅替大衛說好話，說：「王不可得罪王的僕人大衛；因為他未曾得罪你，他所行的都與你大有益處。</div>
+<div class="verse"><span class="verse-number">5</span>他拚命殺那非利士人，耶和華為以色列眾人大行拯救；那時你看見，甚是歡喜，現在為何無故要殺大衛，流無辜人的血，自己取罪呢？」</div>
+<div class="verse"><span class="verse-number">6</span>掃羅聽了約拿單的話，就指着永生的耶和華起誓說：「我必不殺他。」</div>
+<div class="verse"><span class="verse-number">7</span>約拿單叫大衛來，把這一切事告訴他，帶他去見掃羅。他就仍然侍立在掃羅面前。</div>
+<div class="verse"><span class="verse-number">8</span>此後又有爭戰的事。大衛出去與非利士人打仗，大大殺敗他們，他們就在他面前逃跑。</div>
+<div class="verse"><span class="verse-number">9</span>從耶和華那裏來的惡魔又降在掃羅身上（掃羅手裏拿槍坐在屋裏），大衛就用手彈琴。</div>
+<div class="verse"><span class="verse-number">10</span>掃羅用槍想要刺透大衛，釘在牆上；他卻躲開，掃羅的槍刺入牆內。當夜大衛逃走，躲避了。</div>
+<div class="verse"><span class="verse-number">11</span>掃羅打發人到大衛的房屋那裏窺探他，要等到天亮殺他。大衛的妻米甲對他說：「你今夜若不逃命，明日你要被殺。」</div>
+<div class="verse"><span class="verse-number">12</span>於是米甲將大衛從窗戶裏縋下去；大衛就逃走，躲避了。</div>
+<div class="verse"><span class="verse-number">13</span>米甲把家中的神像放在床上，頭枕在山羊毛裝的枕頭上，用被遮蓋。</div>
+<div class="verse"><span class="verse-number">14</span>掃羅打發人去捉拿大衛，米甲說：「他病了。」</div>
+<div class="verse"><span class="verse-number">15</span>掃羅又打發人去看大衛，說：「當連床將他抬來，我好殺他。」</div>
+<div class="verse"><span class="verse-number">16</span>使者進去，看見床上有神像，頭枕在山羊毛裝的枕頭上。</div>
+<div class="verse"><span class="verse-number">17</span>掃羅對米甲說：「你為甚麼這樣欺哄我，放我仇敵逃走呢？」米甲回答說：「他對我說：『你放我走，不然我要殺你。』」</div>
+<div class="verse"><span class="verse-number">18</span>大衛逃避，來到拉瑪見撒母耳，將掃羅向他所行的事述說了一遍。他和撒母耳就往拿約去居住。</div>
+<div class="verse"><span class="verse-number">19</span>有人告訴掃羅，說大衛在拉瑪的拿約。</div>
+<div class="verse"><span class="verse-number">20</span>掃羅打發人去捉拿大衛。去的人見有一班先知都受感說話，撒母耳站在其中監管他們；打發去的人也受神的靈感動說話。</div>
+<div class="verse"><span class="verse-number">21</span>有人將這事告訴掃羅，他又打發人去，他們也受感說話。掃羅第三次打發人去，他們也受感說話。</div>
+<div class="verse"><span class="verse-number">22</span>然後掃羅自己往拉瑪去，到了西沽的大井，問人說：「撒母耳和大衛在那裏呢？」有人說：「在拉瑪的拿約。」</div>
+<div class="verse"><span class="verse-number">23</span>他就往拉瑪的拿約去。神的靈也感動他，一面走一面說話，直到拉瑪的拿約。</div>
+<div class="verse"><span class="verse-number">24</span>他就脫了衣服，在撒母耳面前受感說話，一晝一夜露體躺臥。因此有句俗語說：「掃羅也列在先知中嗎？」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載掃羅公開表明要殺大衛的意圖，從隱藏的嫉妒升級為明顯的敵意。約拿單作為掃羅的兒子和大衛的摯友，面臨忠於父親與保護朋友的兩難。米甲作為掃羅的女兒和大衛的妻子，也選擇幫助丈夫逃脫。大衛逃到拉瑪尋求屬靈導師撒母耳的庇護。本章展現神透過不同管道保護祂所膏立的人：透過約拿單的勸說、米甲的機智、撒母耳的遮蓋，以及最終聖靈親自的干預。掃羅三次派人捉拿大衛都失敗，甚至親自前往也被聖靈制伏。這一章是大衛逃亡生涯的開始，也是神信實保護的明證，為大衛日後登基作王鋪路。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神必為義人預備出路</strong><br>神允許大衛經歷逼迫，卻劃定界線不讓他受真正的傷害。透過約拿單、米甲、撒母耳，甚至聖靈親自干預,神為大衛預備了多重保護。這顯明神掌管一切環境，祂知道我們所面對的每一個挑戰，也必在試煉中為我們開路。神的保護往往透過意想不到的方式臨到，可能是人的幫助，也可能是超自然的介入。<br><br>
+<strong>2. 順服神勝過討好人</strong><br>約拿單和米甲都面臨家庭忠誠與敬畏神的抉擇。約拿單選擇為無辜者發聲，米甲選擇保護丈夫。他們的行為顯明真正的孝順和忠誠，是建立在敬畏神的基礎上。當人的要求與神的心意衝突時，順服神才是最高原則。這需要勇氣和智慧，但神會尊榮那些尊榮祂的人。<br><br>
+<strong>3. 屬靈經歷不等於生命改變</strong><br>掃羅被聖靈感動說話，甚至一晝一夜受感說話，但他的生命本質並未改變，仍然追殺大衛。這警告我們：外在的屬靈恩賜或經歷，不能取代內心真實的悔改和順服。一個人可能有超自然的經歷，卻仍活在罪中。真正的屬靈生命在於持續與神同行，而非偶爾的屬靈高峰。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>約拿單向他父親掃</strong><strong>羅替大衛說好話</strong>，說：「王不可得罪王的僕人大衛；因為他未曾得罪你，他所行的都與你大有益處。」（撒上19:4）</td>
+<td>約拿單為無辜者發聲，冒著得罪父親的風險。就像在會議中看見同事被不公平對待，你會選擇沉默以保全自己，還是勇敢為真理說話？什麼因素影響你的選擇？</td>
+</tr>
+<tr>
+<td><strong>大衛的妻米甲對他</strong>說：「<strong>你今夜若不逃命</strong>，明日你要被殺。」於是米甲將大衛從窗戶裡縋下去；大衛就逃走，躲避了。（撒上19:11-12）</td>
+<td>米甲在父親與丈夫之間選擇了保護無辜者。就像孩子在父母離異時必須選邊站，當家庭關係與正確原則衝突時，你如何做出既合神心意又有智慧的抉擇？</td>
+</tr>
+<tr>
+<td><strong>他就脫了衣服</strong>，<strong>在撒母耳面前受感</strong>說話，一晝一夜露體躺臥。因此有句俗語說：「掃羅也列在先知中嗎？」（撒上19:24）</td>
+<td>掃羅有強烈的屬靈經歷，卻沒有生命的改變。就像運動員服用興奮劑得到短暫爆發力，追求屬靈的高峰經歷卻沒有真實的悔改和順服，這對你的信仰有什麼警示？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

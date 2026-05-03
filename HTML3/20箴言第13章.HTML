@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第13章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第13章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">近智慧人得智慧：言語謹慎與管教的價值</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>智慧子聽父親的教訓；褻慢人不聽責備。</div>
+<div class="verse"><span class="verse-number">2</span>人因口所結的果子，必享美福；奸詐人必遭強暴。</div>
+<div class="verse"><span class="verse-number">3</span>謹守口的，得保生命；大張嘴的，必致敗亡。</div>
+<div class="verse"><span class="verse-number">4</span>懶惰人羡慕，卻無所得；殷勤人必得豐裕。</div>
+<div class="verse"><span class="verse-number">5</span>義人恨惡謊言；惡人有臭名，且致慚愧。</div>
+<div class="verse"><span class="verse-number">6</span>行為正直的，有公義保守；犯罪的，被邪惡傾覆。</div>
+<div class="verse"><span class="verse-number">7</span>假作富足的，卻一無所有；裝作窮乏的，卻廣有財物。</div>
+<div class="verse"><span class="verse-number">8</span>人的資財是他生命的贖價；窮乏人卻聽不見威嚇的話。</div>
+<div class="verse"><span class="verse-number">9</span>義人的光明亮〔原文作歡喜〕；惡人的燈要熄滅。</div>
+<div class="verse"><span class="verse-number">10</span>驕傲只啟爭競；聽勸言的，卻有智慧。</div>
+<div class="verse"><span class="verse-number">11</span>不勞而得之財必然消耗；勤勞積蓄的，必見加增。</div>
+<div class="verse"><span class="verse-number">12</span>所盼望的遲延未得，令人心憂；所願意的臨到，卻是生命樹。</div>
+<div class="verse"><span class="verse-number">13</span>藐視訓言的，自取滅亡；敬畏誡命的，必得善報。</div>
+<div class="verse"><span class="verse-number">14</span>智慧人的法則〔或作：指教〕是生命的泉源，可以使人離開死亡的網羅。</div>
+<div class="verse"><span class="verse-number">15</span>美好的聰明使人蒙恩；奸詐人的道路崎嶇難行。</div>
+<div class="verse"><span class="verse-number">16</span>凡通達人都憑知識行事；愚昧人張揚自己的愚昧。</div>
+<div class="verse"><span class="verse-number">17</span>奸惡的使者必陷在禍患裏；忠信的使臣乃醫人的良藥。</div>
+<div class="verse"><span class="verse-number">18</span>棄絕管教的，必致貧受辱；領受責備的，必得尊榮。</div>
+<div class="verse"><span class="verse-number">19</span>所欲的成就，心覺甘甜；遠離惡事，為愚昧人所憎惡。</div>
+<div class="verse"><span class="verse-number">20</span>與智慧人同行的，必得智慧；和愚昧人作伴的，必受虧損。</div>
+<div class="verse"><span class="verse-number">21</span>禍患追趕罪人；義人必得善報。</div>
+<div class="verse"><span class="verse-number">22</span>善人給子孫遺留產業；罪人為義人積存資財。</div>
+<div class="verse"><span class="verse-number">23</span>窮人耕種多得糧食，但因不義，有消滅的。</div>
+<div class="verse"><span class="verse-number">24</span>不忍用杖打兒子的，是恨惡他；疼愛兒子的，隨時管教。</div>
+<div class="verse"><span class="verse-number">25</span>義人喫得飽足；惡人肚腹缺糧。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第十三章繼續展開智慧格言的主題，在二十五節的篇幅中涵蓋了言語謹慎、勤勞殷勤、謙卑受教、同伴選擇與管教子女等多個實際生活面向。本章的文化背景根植於古以色列的農業社會與家庭教育傳統，強調長輩的訓誨對年輕人具有塑造性的力量。第12節「所盼望的遲延未得，令人心憂；所願意的臨到，卻是生命樹」，以詩意的語言觸及了人類普遍的情感經驗——等待與盼望——並將盼望的實現與生命樹相連，暗示神的應許終將成就。第20節「與智慧人同行的，必得智慧；和愚昧人作伴的，必受虧損」，是箴言書中最廣為人知的格言之一，直接點出交友圈對人品格的深遠影響。第24節則論及管教子女——愛不是放任，而是願意在愛中施行必要的管教。全章在救恩歷史的脈絡中，強調神的教導（誡命）是生命的泉源，人若接受並遵行，必得善報與保守。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 謹守言語是保全生命的關鍵屬靈操練</strong><br>第3節「謹守口的，得保生命；大張嘴的，必致敗亡」，以生死的嚴肅語言強調言語控制的重要性。在屬靈生命中，言語的節制是自我管理最基本也最困難的一環。浮躁、輕率、不加思考的言語，往往帶來難以挽回的關係破裂；而謹慎的言語則能保護自己、建立他人、榮耀神。言語的管理，從內心的更新開始，是屬靈成熟的具體表現之一。<br><br>
+<strong>2. 同伴選擇深刻影響屬靈品格的塑造</strong><br>第20節「與智慧人同行的，必得智慧；和愚昧人作伴的，必受虧損」，是一條顛撲不破的屬靈法則。人是高度關係性的存在，我們所親近的人，在無形中塑造了我們的價值觀、習慣與思維方式。信徒在選擇人生的同行者時，當以智慧為標準，主動親近敬虔、有智慧的人，同時保持界限，不讓愚昧的行為方式侵蝕自己的靈魂。<br><br>
+<strong>3. 真愛包含管教，放任並非憐憫</strong><br>第24節「不忍用杖打兒子的，是恨惡他；疼愛兒子的，隨時管教」，顛覆了將管教等同於殘忍的誤解。真正的愛，有時意味著讓被愛的人承受必要的後果，以學習正確的選擇。這一原則不只適用於親子關係，也反映了神對信徒的態度——神的管教出於愛（箴3:12），是祂在塑造我們成為祂心意中那個人的方式。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>謹守口的</strong>，<strong>得保生命</strong>；大張嘴的，必致敗亡。」（箴13:3）</td>
+<td>就像駕駛在彎道上若不控制油門速度，很可能衝出路面，你在什麼情況下最容易「大張嘴」說出後悔的話？你有沒有一套幫助自己在開口前暫停思考的方法？</td>
+</tr>
+<tr>
+<td>「<strong>與智慧人同行的</strong>，<strong>必得智慧</strong>；和愚昧人作伴的，必受虧損。」（箴13:20）</td>
+<td>就像長期與不同生活習慣的室友同住，人的日常習慣不知不覺就會受到影響，你目前最親近的幾個朋友，他們的價值觀和生活方式，正在把你往哪個方向拉？</td>
+</tr>
+<tr>
+<td>「<strong>疼愛兒子的</strong>，<strong>隨時管教</strong>。」（箴13:24）</td>
+<td>就像優秀的教練在選手犯錯時立即糾正，而不是因為怕傷感情而沉默，在你的家庭或信仰群體中，你是否能在愛中說出必要的真話？是什麼讓你難以在愛中管教或糾正所愛的人？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

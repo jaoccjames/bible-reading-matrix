@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第46章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第46章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">我已造作也必保抱：神背負我們與偶像需要被抬的對比</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>彼勒屈身，尼波彎腰；巴比倫的偶像馱在獸和牲畜上。他們所抬的如今成了重馱，使牲畜疲乏，</div>
+<div class="verse"><span class="verse-number">2</span>都一同彎腰屈身，不能保全重馱，自己倒被擄去。</div>
+<div class="verse"><span class="verse-number">3</span>雅各家，以色列家一切餘剩的要聽我言：你們自從生下，就蒙我保抱，自從出胎，便蒙我懷搋。</div>
+<div class="verse"><span class="verse-number">4</span>直到你們年老，我仍這樣；直到你們髮白，我仍懷搋。我已造作，也必保抱；我必懷抱，也必拯救。</div>
+<div class="verse"><span class="verse-number">5</span>你們將誰與我相比，與我同等，可以與我比較，使我們相同呢？</div>
+<div class="verse"><span class="verse-number">6</span>那從囊中抓金子，用天平平銀子的人，雇銀匠製造神像，他們又俯伏，又叩拜。</div>
+<div class="verse"><span class="verse-number">7</span>他們將神像抬起，扛在肩上，安置在定處，他就站立，不離本位；人呼求他，他不能答應，也不能救人脫離患難。</div>
+<div class="verse"><span class="verse-number">8</span>你們當想念這事，自己作大丈夫。悖逆的人哪，要心裏思想。</div>
+<div class="verse"><span class="verse-number">9</span>你們要追念上古的事。因為我是神，並無別神；我是神，再沒有能比我的。</div>
+<div class="verse"><span class="verse-number">10</span>我從起初指明末後的事，從古時言明未成的事，說：我的籌算必立定；凡我所喜悅的，我必成就。</div>
+<div class="verse"><span class="verse-number">11</span>我召鷙鳥從東方來，召那成就我籌算的人從遠方來。我已說出，也必成就；我已謀定，也必作成。</div>
+<div class="verse"><span class="verse-number">12</span>你們這些心中頑梗、遠離公義的，當聽我言。</div>
+<div class="verse"><span class="verse-number">13</span>我使我的公義臨近，必不遠離。我的救恩必不遲延；我要為以色列我的榮耀，在錫安施行救恩。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第四十六章以一個令人印象深刻的對比開篇：巴比倫的偶像彼勒和尼波（第1-2節），在城市被攻陷時被抬上牲畜背上逃跑，但那些「神」卻成了牲畜的重擔，甚至連自己都保不住，更何況保護人？然後神的話語急轉，宣告了完全相反的關係：以色列的神不需要被抬，反而是神自己「抬」（保抱）以色列（第3-4節）——「自從生下就蒙我保抱，自從出胎便蒙我懷搋」。這個對比是以賽亞書最精彩的神學諷刺之一：偶像被人背，神背我們。第4節「直到你們年老，我仍這樣；直到你們髮白，我仍懷搋」，是全本以賽亞書中神對以色列最深情的承諾之一，宣告了神的護持貫穿人整個生命歷程，從出生到白頭，沒有任何生命階段神會撒手不管。第10-11節宣告了神的「預知性」主權：「我從起初指明末後的事……我已謀定，也必作成」——神在歷史尚未發生之前已然謀定，而且必然成就，沒有任何力量能阻擋。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 偶像需要被人抬，神卻抬我們：信仰物件的根本差別</strong><br>第1-4節的對比是全書中最有力的宗教比較：偶像（人造的神）需要人花費力氣製造、抬起、供養；真神卻是反過來——是神花費力氣「造作、保抱、懷抱、拯救」信仰者。這個對比問每一個信徒：你的信仰是你在花力氣「服事」的，還是你在接受神的「服事和懷抱」的？真信仰不是人努力維持的宗教活動，而是在神主動的懷抱中安息。<br><br>
+<strong>2. 「直到你們髮白，我仍懷搋」：神的護持貫穿整個生命</strong><br>第4節宣告神的護持從出生到老年，沒有任何生命階段的豁免。「直到髮白」——白髮象徵衰老和一切的退化，這正是人最容易被社會遺忘的階段；但神宣告，在那個階段，「我仍懷搋」。這對每一個正在衰老、感到被忽視或失去能力的信徒，是最深刻的安慰：神的護持不因你的年歲和能力的減退而改變。<br><br>
+<strong>3. 「我已謀定，也必作成」：神的計劃的確定性給信徒平靜</strong><br>第10-11節宣告了神從創世之前已謀定末後，而且「必作成」——這種神學確信對信徒的日常生活有深刻的影響。若神的計劃是確定的、不可阻擋的，信徒就不需要為神的計劃「焦慮和操勞」，而只需要在信仰和順從中配合神的作為。「我已謀定，也必作成」是信仰平靜最深的根基。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你們自從生下</strong>，<strong>就蒙我保抱</strong>，自從出胎，便蒙我懷搋。」（賽46:3）</td>
+<td>就像一個嬰孩從出生就被父母懷抱，完全不需要自己努力維持這個關係，神對信徒的懷抱也是同樣主動和無條件的，你在信仰中是否有過「我需要更努力才能維持神的愛」的感受？這節「自從生下就蒙我保抱」如何重塑那個感受？</td>
+</tr>
+<tr>
+<td>「<strong>直到你們年老</strong>，<strong>我仍這樣</strong>；直到你們髮白，我仍懷搋。」（賽46:4）</td>
+<td>就像一棵老樹根系越深越穩，而非因年老而枯死，神對信徒的護持在歲月中只會更深更穩，你對自己年老時的信仰生命有什麼樣的期盼和憂慮？「直到髮白我仍懷搋」如何回應那些憂慮？</td>
+</tr>
+<tr>
+<td>「<strong>我已謀定</strong>，<strong>也必作成</strong>。」（賽46:11）</td>
+<td>就像一個建築師的藍圖，雖然施工過程有各種障礙，但最終建築必按藍圖完成，因為設計師的意志貫穿始終，你目前最擔憂「不知道神的計劃能否成就」的是哪個領域？「我已謀定也必作成」如何幫助你在那個領域放下焦慮？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第41章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第41章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">基大利遇刺與百姓的驚逃</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>七月間，王的大臣宗室以利沙瑪的孫子、尼探雅的兒子以實瑪利帶着十個人，來到米斯巴見亞希甘的兒子基大利。他們在米斯巴一同喫飯。</div>
+<div class="verse"><span class="verse-number">2</span>尼探雅的兒子以實瑪利和同他來的那十個人起來，用刀殺了沙番的孫子亞希甘的兒子基大利，就是巴比倫王所立為全地省長的。</div>
+<div class="verse"><span class="verse-number">3</span>以實瑪利又殺了在米斯巴、基大利那裏的一切猶大人和所遇見的迦勒底兵丁。</div>
+<div class="verse"><span class="verse-number">4</span>他殺了基大利，無人知道。</div>
+<div class="verse"><span class="verse-number">5</span>第二天，有八十人從示劍和示羅，並撒瑪利亞來，鬍鬚剃去，衣服撕裂，身體劃破，手拿素祭和乳香，要奉到耶和華的殿。</div>
+<div class="verse"><span class="verse-number">6</span>尼探雅的兒子以實瑪利出米斯巴迎接他們，隨走隨哭；遇見了他們，就對他們說：「你們可以來見亞希甘的兒子基大利。」</div>
+<div class="verse"><span class="verse-number">7</span>他們到了城中，尼探雅的兒子以實瑪利和同着他的人就將他們殺了，拋在坑中。</div>
+<div class="verse"><span class="verse-number">8</span>只是他們中間有十個人對以實瑪利說：「不要殺我們，因為我們有許多大麥、小麥、油、蜜藏在田間。」於是他住了手，沒有將他們殺在弟兄中間。</div>
+<div class="verse"><span class="verse-number">9</span>以實瑪利將所殺之人的屍首都拋在坑裏基大利的旁邊；這坑是從前亞撒王因怕以色列王巴沙所挖的。尼探雅的兒子以實瑪利將那些被殺的人填滿了坑。</div>
+<div class="verse"><span class="verse-number">10</span>以實瑪利將米斯巴剩下的人，就是眾公主和仍住在米斯巴所有的百姓，原是護衛長尼布撒拉旦交給亞希甘的兒子基大利的，都擄去了。尼探雅的兒子以實瑪利擄了他們，要往亞捫人那裏去。</div>
+<div class="verse"><span class="verse-number">11</span>加利亞的兒子約哈難和同着他的眾軍長聽見尼探雅的兒子以實瑪利所行的一切惡，</div>
+<div class="verse"><span class="verse-number">12</span>就帶領眾人前往，要和尼探雅的兒子以實瑪利爭戰，在基遍的大水旁〔或作：大水池旁〕遇見他。</div>
+<div class="verse"><span class="verse-number">13</span>以實瑪利那裏的眾人看見加利亞的兒子約哈難和同着他的眾軍長，就都歡喜。</div>
+<div class="verse"><span class="verse-number">14</span>這樣，以實瑪利從米斯巴所擄去的眾人都轉身歸加利亞的兒子約哈難去了。</div>
+<div class="verse"><span class="verse-number">15</span>尼探雅的兒子以實瑪利和八個人脫離約哈難的手，逃往亞捫人那裏去了。</div>
+<div class="verse"><span class="verse-number">16</span>尼探雅的兒子以實瑪利殺了亞希甘的兒子基大利，從米斯巴將剩下的一切百姓、兵丁、婦女、孩童、太監擄到基遍之後，加利亞的兒子約哈難和同着他的眾軍長將他們都奪回來，</div>
+<div class="verse"><span class="verse-number">17</span>帶到靠近伯利恆的金罕寓〔或作：基羅特金罕〕住下，要進入埃及去；</div>
+<div class="verse"><span class="verse-number">18</span>因為尼探雅的兒子以實瑪利殺了巴比倫王所立為省長的亞希甘的兒子基大利，約哈難懼怕迦勒底人。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第41章是一個充滿背叛與暴力的悲劇。七月間，王室後裔以實瑪利在亞捫王的支持下，假借赴宴之名謀殺省長基大利和隨從，同時殺死一批從撒瑪利亞前來朝聖的無辜旅客——只有少數因透露藏有糧食而倖免。以實瑪利擄走所有剩下的百姓，準備投靠亞捫人。忠心的將領約哈難獲報，率兵追趕，在基遍追上，救回被擄的百姓；以實瑪利帶着八個人逃往亞捫。然而，雖然百姓得救，信心卻已瓦解——約哈難懼怕迦勒底人追究，決定帶眾人逃往埃及。基大利遇刺是繼耶路撒冷陷落後另一個打擊：在廢墟上重建的嘗試被暴力截斷，剩下的百姓陷入更深的恐慌與流亡。本章是理解第42至43章百姓逃往埃及的直接背景。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 忽視警告的代價往往由無辜者承受</strong><br>基大利不聽約哈難的警告，不只害了自己，更使聚集在他身邊信靠他的百姓陷入危機。領袖輕忽警告，往往不只是個人的失誤，而是波及所有跟隨他的人。這提醒有責任的信徒：認真對待那些令人不舒服的警告，不只是自我保護，更是對所有依靠你的人的責任。<br><br>
+<strong>2. 暴力和背叛在最脆弱的時刻造成最大的傷害</strong><br>以實瑪利在最需要合作重建的時刻，選擇謀殺和背叛。這讓剛剛開始恢復的共同體再次瓦解。人類的歷史反覆告訴我們：最深的破壞往往來自內部。信仰群體在最脆弱的時候，最需要彼此信任；而任何形式的內部背叛，都會造成遠超外部壓力的破壞。<br><br>
+<strong>3. 恐懼會使人做出逃離而非信靠的決定</strong><br>約哈難成功救回百姓，卻仍舊「懼怕迦勒底人」，選擇帶眾人逃往埃及而非留守。他救了人，卻被恐懼主導方向。信徒在做重要決定時，需要自問：「我的決定是出於信靠神的引導，還是出於逃避恐懼的本能？」以恐懼為指南針，往往把人帶往錯誤的方向。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>加利亞的兒子約哈</strong><strong>難在米斯巴私下對</strong>基大利說：「求你容我去殺尼探雅的兒子以實瑪利……」亞希甘的兒子基大利說：「你不可行這事，你所論以實瑪利的話是假的。」（耶40:15-16；41章背景）</td>
+<td>你有沒有因為「不相信壞事會發生」而在生命的某個重要關口輕忽了預警？就像拒絕相信天氣預報而不帶傘出門，你願意培養一種「認真對待警告、即使它讓你不舒服」的智慧習慣嗎？</td>
+</tr>
+<tr>
+<td><strong>尼探雅的兒子以實</strong><strong>瑪利和同他來的那</strong>十個人起來，用刀殺了沙番的孫子亞希甘的兒子基大利，就是巴比倫王所立為全地省長的。（耶41:2）</td>
+<td>你是否曾經歷過一個「本來好好的」局面，因為某個人的惡意或背叛而瞬間崩塌？在那樣的破壞之後，你如何重建對人的信任，同時又保持合理的謹慎？</td>
+</tr>
+<tr>
+<td><strong>約哈難懼怕迦勒底</strong>人。（耶41:18下）</td>
+<td>恐懼如何影響你的決策？就像在能見度低的霧中開車，恐懼常常使我們看不清楚真正的方向。你生活中有沒有一個目前被恐懼所主導的決定，你願意把它帶到神面前，讓信靠取代恐懼嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利未記第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+利未記第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">燔祭：完全獻上的敬拜之道</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華從會幕中呼叫摩西，對他說：</div>
+<div class="verse"><span class="verse-number">2</span>「你曉諭以色列人說：你們中間若有人獻供物給耶和華，要從牛群羊群中獻牲畜為供物。</div>
+<div class="verse"><span class="verse-number">3</span>「他的供物若以牛為燔祭，就要在會幕門口獻一隻沒有殘疾的公牛，可以在耶和華面前蒙悅納。</div>
+<div class="verse"><span class="verse-number">4</span>他要按手在燔祭牲的頭上，燔祭便蒙悅納，為他贖罪。</div>
+<div class="verse"><span class="verse-number">5</span>他要在耶和華面前宰公牛；亞倫子孫作祭司的，要奉上血，把血灑在會幕門口、壇的周圍。</div>
+<div class="verse"><span class="verse-number">6</span>那人要剝去燔祭牲的皮，把燔祭牲切成塊子。</div>
+<div class="verse"><span class="verse-number">7</span>祭司亞倫的子孫要把火放在壇上，把柴擺在火上。</div>
+<div class="verse"><span class="verse-number">8</span>亞倫子孫作祭司的，要把肉塊和頭並脂油擺在壇上火的柴上。</div>
+<div class="verse"><span class="verse-number">9</span>但燔祭的臟腑與腿要用水洗。祭司就要把一切全燒在壇上，當作燔祭，獻與耶和華為馨香的火祭。</div>
+<div class="verse"><span class="verse-number">10</span>「人的供物若以綿羊或山羊為燔祭，就要獻上沒有殘疾的公羊。</div>
+<div class="verse"><span class="verse-number">11</span>要把羊宰於壇的北邊，在耶和華面前；亞倫子孫作祭司的，要把羊血灑在壇的周圍。</div>
+<div class="verse"><span class="verse-number">12</span>要把燔祭牲切成塊子，連頭和脂油，祭司就要擺在壇上火的柴上；</div>
+<div class="verse"><span class="verse-number">13</span>但臟腑與腿要用水洗，祭司就要全然奉獻，燒在壇上。這是燔祭，是獻與耶和華為馨香的火祭。</div>
+<div class="verse"><span class="verse-number">14</span>「人奉給耶和華的供物，若以鳥為燔祭，就要獻斑鳩或是雛鴿為供物。</div>
+<div class="verse"><span class="verse-number">15</span>祭司要把鳥拿到壇前，揪下頭來，把鳥燒在壇上；鳥的血要流在壇的旁邊；</div>
+<div class="verse"><span class="verse-number">16</span>又要把鳥的嗉子和髒物〔髒物：或作翎毛〕除掉，丟在壇的東邊倒灰的地方。</div>
+<div class="verse"><span class="verse-number">17</span>要拿着鳥的兩個翅膀，把鳥撕開，只是不可撕斷；祭司要在壇上、在火的柴上焚燒。這是燔祭，是獻與耶和華為馨香的火祭。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+利未記是摩西五經的第三卷書，緊接出埃及記之後。出埃及記末尾記載，會幕建造完成，耶和華的榮光充滿其中（出40:34-35）。利未記第1章正是在此背景下展開——神從剛完工的會幕中呼叫摩西，開始頒布獻祭律法。本章的歷史背景是以色列民族剛出埃及不久，在曠野西乃山安營期間，神親自為祂的子民建立親近祂的途徑。燔祭（希伯來文 עֹלָה，「上升」之意）是利未記中首先介紹的祭儀，象徵將祭牲完全焚燒獻上，不留任何部分給獻祭者，代表信徒對神徹底且無保留的奉獻。本章依據獻祭者的經濟能力，提供三種可獻的牲畜：牛（最貴重）、綿羊或山羊（中等），以及斑鳩或雛鴿（最簡便），體現神對各階層百姓一視同仁的恩典，讓人人皆可就近親近祂。關鍵禮儀包括獻祭者「按手」於牲畜頭上，象徵認同與替代。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 完全獻上：不留餘地的委身</strong><br>燔祭的核心特徵是將祭牲「全然燒在壇上」（利1:9、13、17），沒有任何部分留給獻祭者自己。這與其他祭祀不同——平安祭等獻祭者可以分得祭肉。燔祭所象徵的，是一種毫無保留、全然獻上的屬靈態度。信徒與神的關係不是部分參與、有所保留的交易，而是將自己完全交付在神手中。這種委身精神呼應新約保羅所說的「將身體獻上，當作活祭」（羅12:1），是蒙神悅納的靈性生命根基。<br><br>
+<strong>2. 替代贖罪：代人受死的恩典之道</strong><br>獻祭者「按手在燔祭牲的頭上，燔祭便蒙悅納，為他贖罪」（利1:4），這個「按手」的動作具有深刻的神學意義，代表罪人將自己的罪轉移到無辜的牲畜身上，由牲畜替代承受死亡的刑罰。這一制度預表基督十字架的救贖——耶穌作為無罪的羔羊，承擔了全人類的罪孽，成為最終完全的代替贖罪。理解此背景，才能更深體會救恩的寶貴。<br><br>
+<strong>3. 接納各層：神的恩典不因貧富而有差異</strong><br>本章為不同經濟能力的人提供三種獻祭選擇：從昂貴的牛，到普通的羊，再到貧窮人可負擔的斑鳩或雛鴿。神的心意是讓每一個人，無論貧富，都能透過獻祭親近祂。這揭示了神恩典的普世性——祂不因人的外在條件而排斥任何人，只看重人真誠歸向祂的心。這與新約「信他的人，不因他受羞辱」（羅10:11）一脈相承。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>他要在壇上把一切</strong>全燒，<strong>當作燔祭</strong>，獻與耶和華為馨香的火祭。」（利1:9）</td>
+<td>燔祭要求將祭牲全然燒盡，不留任何部分給自己。就像把一份珍貴的合約完全簽讓給對方，不保留任何退路——你是否也曾在某件重要的事上，真正做到對神「毫無保留」的委身，而不是只獻上自己方便的部分？</td>
+</tr>
+<tr>
+<td>「<strong>他要按手在燔祭牲</strong><strong>的頭上</strong>，燔祭便蒙悅納，為他贖罪。」（利1:4）</td>
+<td>獻祭者按手於牲畜頭上，象徵將自己的罪轉移到替代者身上。就像簽署授權書將責任轉交給他人代為承擔——當你思想耶穌為你「按手受死」的替代之恩時，這份代價是否真實地觸動了你每日的感恩與生活回應？</td>
+</tr>
+<tr>
+<td>「<strong>人奉給耶和華的供</strong>物，<strong>若以鳥為燔祭</strong>，就要獻斑鳩或是雛鴿為供物。」（利1:14）</td>
+<td>神為貧窮人預備了以鳥為祭的選項，確保每個人都能親近祂。就像公共交通讓沒有車的人也能到達目的地——你是否曾因覺得自己的能力、恩賜或奉獻太微小而不敢來到神面前？神真正在意的是你願意來的心，而非你帶來的多寡。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

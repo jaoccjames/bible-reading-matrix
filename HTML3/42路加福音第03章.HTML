@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+路加福音第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">施洗約翰的宣告與耶穌的家譜</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>該撒提庇留在位第十五年，本丟彼拉多作猶太巡撫，希律作加利利分封的王，他兄弟腓力作以土利亞和特拉可尼地方分封的王，呂撒聶作亞比利尼分封的王，</div>
+<div class="verse"><span class="verse-number">2</span>亞那和該亞法作大祭司。那時，撒迦利亞的兒子約翰在曠野裏，神的話臨到他。</div>
+<div class="verse"><span class="verse-number">3</span>他就來到約但河一帶地方，宣講悔改的洗禮，使罪得赦。</div>
+<div class="verse"><span class="verse-number">4</span>正如先知以賽亞書上所記的話，說：在曠野有人聲喊着說：預備主的道，修直他的路！</div>
+<div class="verse"><span class="verse-number">5</span>一切山窪都要填滿；大小山崗都要削平！彎彎曲曲的地方要改為正直；高高低低的道路要改為平坦！</div>
+<div class="verse"><span class="verse-number">6</span>凡有血氣的，都要見神的救恩！</div>
+<div class="verse"><span class="verse-number">7</span>約翰對那出來要受他洗的眾人說：「毒蛇的種類！誰指示你們逃避將來的忿怒呢？</div>
+<div class="verse"><span class="verse-number">8</span>你們要結出果子來，與悔改的心相稱。不要自己心裏說：『有亞伯拉罕為我們的祖宗。』我告訴你們，神能從這些石頭中，給亞伯拉罕興起子孫來。</div>
+<div class="verse"><span class="verse-number">9</span>現在斧子已經放在樹根上，凡不結好果子的樹就砍下來，丟在火裏。」</div>
+<div class="verse"><span class="verse-number">10</span>眾人問他說：「這樣，我們當作甚麼呢？」</div>
+<div class="verse"><span class="verse-number">11</span>約翰回答說：「有兩件衣裳的，就分給那沒有的；有食物的，也當這樣行。」</div>
+<div class="verse"><span class="verse-number">12</span>又有稅吏來要受洗，問他說：「夫子，我們當作甚麼呢？」</div>
+<div class="verse"><span class="verse-number">13</span>約翰說：「除了例定的數目，不要多取。」</div>
+<div class="verse"><span class="verse-number">14</span>又有兵丁問他說：「我們當作甚麼呢？」約翰說：「不要以強暴待人，也不要訛詐人，自己有錢糧就當知足。」</div>
+<div class="verse"><span class="verse-number">15</span>百姓指望基督來的時候，人都心裏猜疑，或者約翰是基督。</div>
+<div class="verse"><span class="verse-number">16</span>約翰說：「我是用水給你們施洗，但有一位能力比我更大的要來，我就是給他解鞋帶也不配。他要用聖靈與火給你們施洗。</div>
+<div class="verse"><span class="verse-number">17</span>他手裏拿着簸箕，要揚淨他的場，把麥子收在倉裏，把糠用不滅的火燒盡了。」</div>
+<div class="verse"><span class="verse-number">18</span>約翰又用許多別的話勸百姓，向他們傳福音。</div>
+<div class="verse"><span class="verse-number">19</span>只是分封的王希律，因他兄弟之妻希羅底的緣故，並因他所行的一切惡事，受了約翰的責備；</div>
+<div class="verse"><span class="verse-number">20</span>又另外添了一件，就是把約翰收在監裏。</div>
+<div class="verse"><span class="verse-number">21</span>眾百姓都受了洗，耶穌也受了洗。正禱告的時候，天就開了，</div>
+<div class="verse"><span class="verse-number">22</span>聖靈降臨在他身上，形狀彷彿鴿子；又有聲音從天上來，說：「你是我的愛子，我喜悅你。」</div>
+<div class="verse"><span class="verse-number">23</span>耶穌開頭傳道，年紀約有三十歲。依人看來，他是約瑟的兒子；約瑟是希里的兒子；</div>
+<div class="verse"><span class="verse-number">24</span>希里是瑪塔的兒子；瑪塔是利未的兒子；利未是麥基的兒子；麥基是雅拿的兒子；雅拿是約瑟的兒子；</div>
+<div class="verse"><span class="verse-number">25</span>約瑟是瑪他提亞的兒子；瑪他提亞是亞摩斯的兒子；亞摩斯是拿鴻的兒子；拿鴻是以斯利的兒子；以斯利是拿該的兒子；</div>
+<div class="verse"><span class="verse-number">26</span>拿該是瑪押的兒子；瑪押是瑪他提亞的兒子；瑪他提亞是西美的兒子；西美是約瑟的兒子；約瑟是猶大的兒子；猶大是約亞拿的兒子；</div>
+<div class="verse"><span class="verse-number">27</span>約亞拿是利撒的兒子；利撒是所羅巴伯的兒子；所羅巴伯是撒拉鐵的兒子；撒拉鐵是尼利的兒子；尼利是麥基的兒子；</div>
+<div class="verse"><span class="verse-number">28</span>麥基是亞底的兒子；亞底是哥桑的兒子；哥桑是以摩當的兒子；以摩當是珥的兒子；珥是約細的兒子；</div>
+<div class="verse"><span class="verse-number">29</span>約細是以利以謝的兒子；以利以謝是約令的兒子；約令是瑪塔的兒子；瑪塔是利未的兒子；</div>
+<div class="verse"><span class="verse-number">30</span>利未是西緬的兒子；西緬是猶大的兒子；猶大是約瑟的兒子；約瑟是約南的兒子；約南是以利亞敬的兒子；</div>
+<div class="verse"><span class="verse-number">31</span>以利亞敬是米利亞的兒子；米利亞是買南的兒子；買南是瑪達他的兒子；瑪達他是拿單的兒子；拿單是大衛的兒子；</div>
+<div class="verse"><span class="verse-number">32</span>大衛是耶西的兒子；耶西是俄備得的兒子；俄備得是波阿斯的兒子；波阿斯是撒門的兒子；撒門是拿順的兒子；</div>
+<div class="verse"><span class="verse-number">33</span>拿順是亞米拿達的兒子；亞米拿達是亞蘭的兒子；亞蘭是希斯崙的兒子；希斯崙是法勒斯的兒子；法勒斯是猶大的兒子；</div>
+<div class="verse"><span class="verse-number">34</span>猶大是雅各的兒子；雅各是以撒的兒子；以撒是亞伯拉罕的兒子；亞伯拉罕是他拉的兒子；他拉是拿鶴的兒子；</div>
+<div class="verse"><span class="verse-number">35</span>拿鶴是西鹿的兒子；西鹿是拉吳的兒子；拉吳是法勒的兒子；法勒是希伯的兒子；希伯是沙拉的兒子；</div>
+<div class="verse"><span class="verse-number">36</span>沙拉是該南的兒子；該南是亞法撒的兒子；亞法撒是閃的兒子；閃是挪亞的兒子；挪亞是拉麥的兒子；</div>
+<div class="verse"><span class="verse-number">37</span>拉麥是瑪土撒拉的兒子；瑪土撒拉是以諾的兒子；以諾是雅列的兒子；雅列是瑪勒列的兒子；瑪勒列是該南的兒子；該南是以挪士的兒子；</div>
+<div class="verse"><span class="verse-number">38</span>以挪士是塞特的兒子；塞特是亞當的兒子；亞當是神的兒子。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第3章記述施洗約翰的傳道事業、耶穌受洗，以及耶穌按肉身的家譜，為耶穌公開事工的開始建立歷史與神學的雙重框架。本章首先以精確的歷史年代交代：提庇留凱撒在位第十五年，本丟彼拉多、希律等各地官員在任，亞那和該亞法做大祭司時，神的話臨到曠野中的約翰，說明約翰的事工是神在特定歷史時刻的介入。約翰在約旦河一帶傳洗禮的道，應驗以賽亞書預備主道的預言，對前來受洗的各類人宣告悔改的要求，並對稅吏、兵丁各給出具體的行為要求。接著約翰宣告自己以水施洗，但那比他更大的要以聖靈與火施洗。眾百姓受了洗後，耶穌也受了洗，正禱告時天開了，聖靈以鴿子形狀降在祂身上，天上有聲音說你是我的愛子我喜悅你。最後是耶穌的家譜，路加從耶穌追溯到亞當、神，強調耶穌作為全人類救主的普世意義，與馬太福音從亞伯拉罕起始的族譜不同，呈現路加外邦普世關懷的神學立場。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 悔改需要結出具體改變的果子</strong><br>約翰對不同職業的人給出具體的悔改指引：有衣服的分給人、稅吏不多收、兵丁不強暴訛詐。悔改不是情感的眼淚，而是行為的改變。「結出果子來，與悔改的心相稱」——內在的轉變必然帶出外在的行動。信仰若沒有在日常決策和行為中留下痕跡，就值得懷疑是否真實的悔改。<br><br>
+<strong>2. 宗教身份無法替代個人的回應</strong><br>「我們有亞伯拉罕為我們的祖宗」——這是當時猶太人的宗教優越感。約翰直接否定了依賴祖先信仰的安全感。每一代人都需要個人面對神的呼召，做出自己的回應；沒有「信仰基因」可以遺傳。家庭的信仰傳承是祝福，但不是救恩的根基。每個人必須自己接受或拒絕神的呼召。<br><br>
+<strong>3. 耶穌被天父宣告為愛子，建立在關係而非表現上</strong><br>「你是我的愛子，我喜悅你」——這個宣告在耶穌任何公開事工開始之前就發出。天父對耶穌的愛和喜悅，不是在祂行了神蹟之後，而是在祂站在水中受洗的那一刻。這告訴信徒：神對我們的愛和悅納，同樣不建立在我們的表現上，而是在關係的確立中。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>約翰回答說</strong>：「<strong>有兩件衣裳的</strong>，就分給那沒有的；有食物的，也當這樣行。」（路3:11）</td>
+<td>你的信仰有沒有帶出具體的、可見的行為改變，特別是在對物質的態度和對鄰舍的慷慨上？就像減肥計劃若體重沒有任何變化就要懷疑方法是否有效，你的悔改有沒有在生活中留下可觀察的果子？</td>
+</tr>
+<tr>
+<td><strong>又有聲音從天上來</strong>，說：「<strong>你是我的愛子</strong>，我喜悅你。」（路3:22）</td>
+<td>你有沒有真實地接受神在基督裏對你說的「我喜悅你」，而不是不斷地靠表現來贏得祂的認可？就像父母對嬰兒的愛不需要嬰兒先有成就，你能從神對你無條件的愛出發，自由地活出信仰嗎？</td>
+</tr>
+<tr>
+<td><strong>約翰說</strong>：「<strong>除了例定的數目</strong>，不要多取。」（路3:13）</td>
+<td>你在自己的職業崗位上，有沒有以誠實和公義的方式行事，讓信仰真正進入你的職場倫理？就像一個醫生的信仰應當影響他對病人的態度，你的基督徒身份有沒有具體地改變你如何對待工作上的責任和誠信？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

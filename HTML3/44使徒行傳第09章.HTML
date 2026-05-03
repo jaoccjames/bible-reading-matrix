@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">掃羅的悔改與彼得的神蹟</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>掃羅仍然向主的門徒口吐威嚇兇殺的話，去見大祭司，</div>
+<div class="verse"><span class="verse-number">2</span>求文書給大馬色的各會堂，若是找着信奉這道的人，無論男女，都准他捆綁帶到耶路撒冷。</div>
+<div class="verse"><span class="verse-number">3</span>掃羅行路，將到大馬色，忽然從天上發光，四面照着他；</div>
+<div class="verse"><span class="verse-number">4</span>他就仆倒在地，聽見有聲音對他說：「掃羅！掃羅！你為甚麼逼迫我？」</div>
+<div class="verse"><span class="verse-number">5</span>他說：「主啊！你是誰？」主說：「我就是你所逼迫的耶穌。</div>
+<div class="verse"><span class="verse-number">6</span>起來！進城去，你所當作的事，必有人告訴你。」</div>
+<div class="verse"><span class="verse-number">7</span>同行的人站在那裏，說不出話來，聽見聲音，卻看不見人。</div>
+<div class="verse"><span class="verse-number">8</span>掃羅從地上起來，睜開眼睛，竟不能看見甚麼。有人拉他的手，領他進了大馬色；</div>
+<div class="verse"><span class="verse-number">9</span>三日不能看見，也不吃也不喝。</div>
+<div class="verse"><span class="verse-number">10</span>當下，在大馬色有一個門徒，名叫亞拿尼亞。主在異象中對他說：「亞拿尼亞。」他說：「主，我在這裏。」</div>
+<div class="verse"><span class="verse-number">11</span>主對他說：「起來！往直街去，在猶大的家裏，訪問一個大數人，名叫掃羅。他正禱告，</div>
+<div class="verse"><span class="verse-number">12</span>又看見了一個人，名叫亞拿尼亞，進來按手在他身上，叫他能看見。」</div>
+<div class="verse"><span class="verse-number">13</span>亞拿尼亞回答說：「主啊，我聽見許多人說：這人怎樣在耶路撒冷多多苦害你的聖徒，</div>
+<div class="verse"><span class="verse-number">14</span>並且他在這裏有從祭司長得來的權柄捆綁一切求告你名的人。」</div>
+<div class="verse"><span class="verse-number">15</span>主對亞拿尼亞說：「你只管去！他是我所揀選的器皿，要在外邦人和君王，並以色列人面前宣揚我的名。</div>
+<div class="verse"><span class="verse-number">16</span>我也要指示他，為我的名必須受許多的苦難。」</div>
+<div class="verse"><span class="verse-number">17</span>亞拿尼亞就去了，進入那家，把手按在掃羅身上，說：「兄弟掃羅，在你來的路上向你顯現的主，就是耶穌，打發我來，叫你能看見，又被聖靈充滿。」</div>
+<div class="verse"><span class="verse-number">18</span>掃羅的眼睛上，好像有鱗立刻掉下來，他就能看見。於是起來受了洗；</div>
+<div class="verse"><span class="verse-number">19</span>吃過飯就健壯了。掃羅和大馬色的門徒同住了些日子，</div>
+<div class="verse"><span class="verse-number">20</span>就在各會堂裏宣傳耶穌，說他是神的兒子。</div>
+<div class="verse"><span class="verse-number">21</span>凡聽見的人都驚奇，說：「在耶路撒冷殘害求告這名的，不是這人嗎？並且他到這裏來，特要捆綁他們，帶到祭司長那裏。」</div>
+<div class="verse"><span class="verse-number">22</span>但掃羅越發有能力，駁倒住大馬色的猶太人，證明耶穌是基督。</div>
+<div class="verse"><span class="verse-number">23</span>過了好些日子，猶太人商議要殺掃羅，</div>
+<div class="verse"><span class="verse-number">24</span>但他們的計謀被掃羅知道了。他們又晝夜在城門守候，要殺他。</div>
+<div class="verse"><span class="verse-number">25</span>他的門徒就在夜間用筐子把他從城牆上縋下去。</div>
+<div class="verse"><span class="verse-number">26</span>掃羅到了耶路撒冷，想與門徒結交，他們卻都怕他，不信他是門徒。</div>
+<div class="verse"><span class="verse-number">27</span>惟有巴拿巴接待他，領去見使徒，把他在路上怎麼看見主，主怎麼向他說話，他在大馬色怎麼奉耶穌的名放膽傳道，都述說出來。</div>
+<div class="verse"><span class="verse-number">28</span>於是掃羅在耶路撒冷和門徒出入來往，</div>
+<div class="verse"><span class="verse-number">29</span>奉主的名放膽傳道，並與說希利尼話的猶太人講論辯駁；他們卻想法子要殺他。</div>
+<div class="verse"><span class="verse-number">30</span>弟兄們知道了就送他下該撒利亞，打發他往大數去。</div>
+<div class="verse"><span class="verse-number">31</span>那時，猶太、加利利、撒瑪利亞各處的教會都得平安，被建立；凡事敬畏主，蒙聖靈的安慰，人數就增多了。</div>
+<div class="verse"><span class="verse-number">32</span>彼得周流四方的時候，也到了居住呂大的聖徒那裏；</div>
+<div class="verse"><span class="verse-number">33</span>遇見一個人，名叫以尼雅，得了癱瘓，在褥子上躺臥八年。</div>
+<div class="verse"><span class="verse-number">34</span>彼得對他說：「以尼雅，耶穌基督醫好你了；起來！收拾你的褥子。」他就立刻起來了。</div>
+<div class="verse"><span class="verse-number">35</span>凡住呂大和沙崙的人都看見了他，就歸服主。</div>
+<div class="verse"><span class="verse-number">36</span>在約帕有一個女徒，名叫大比大，翻希利尼話就是多加〔就是羚羊的意思〕；她廣行善事，多施賙濟。</div>
+<div class="verse"><span class="verse-number">37</span>當時，她患病而死，有人把她洗了，停在樓上。</div>
+<div class="verse"><span class="verse-number">38</span>呂大原與約帕相近；門徒聽見彼得在那裏，就打發兩個人去見他，央求他說：「快到我們那裏去，不要耽延。」</div>
+<div class="verse"><span class="verse-number">39</span>彼得就起身和他們同去；到了，便有人領他上樓。眾寡婦都站在彼得旁邊哭，拿多加與他們同在時所做的裏衣外衣給他看。</div>
+<div class="verse"><span class="verse-number">40</span>彼得叫他們都出去，就跪下禱告，轉身對着死人說：「大比大，起來！」她就睜開眼睛，見了彼得，便坐起來。</div>
+<div class="verse"><span class="verse-number">41</span>彼得伸手扶她起來，叫眾聖徒和寡婦進去，把多加活活的交給他們。</div>
+<div class="verse"><span class="verse-number">42</span>這事傳遍了約帕，就有許多人信了主。</div>
+<div class="verse"><span class="verse-number">43</span>此後，彼得在約帕一個硝皮匠西門的家裏住了多日。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第9章記述掃羅在往大馬色路上的悔改歸主，是使徒行傳最重要的事件之一，也是整個保羅宣教事業的起點，另記述彼得在呂大醫治以尼雅和使大比大復活的事件。本章首先描述掃羅向主的門徒口吐威嚇兇殺的話，往大馬色去要拿捕信徒，在途中忽然從天上發光，掃羅就仆倒在地，聽見有聲音說掃羅掃羅你為什麼逼迫我，他說主啊你是誰，回答說我就是你所逼迫的耶穌，你起來進城必有人告訴你當做什麼。他起來睜開眼睛什麼也看不見，被帶進大馬色三日不看見什麼也不喫不喝。主告訴亞拿尼亞去找掃羅，說他是我所揀選的器皿，要在外邦人和以色列人面前宣揚我的名，他為我的名必受許多苦難。亞拿尼亞按手在他身上，有鱗狀的東西從他眼睛上掉下來，他就能看見，受了洗，力量恢復了。掃羅在大馬色的會堂傳道說耶穌是神的兒子，猶太人商議要殺他，門徒夜間用筐子把他縋下城牆，他回到耶路撒冷，巴拿巴帶他去見使徒。本章記述最偉大的悔改歸主事件，奠定保羅宣教事業的神學根基。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 逼迫基督的教會就是逼迫基督</strong><br>「我就是你所逼迫的耶穌」——這是基督論中最深刻的宣告之一：基督與祂的身體——教會——如此緊密相連，以至於傷害信徒就是傷害基督本身。這個認識對逼迫者是震撼，對被逼迫者是安慰：我們的苦難不是被神遺忘的，基督親自感受到了。同時也提醒信徒：彼此如何對待，就是如何對待基督。<br><br>
+<strong>2. 亞拿尼亞的順服是克服恐懼的信心</strong><br>亞拿尼亞聽到神要他去見掃羅，立刻提出反對：「我聽見許多人說這人怎樣苦害你的聖徒」。神說「你只管去！」——亞拿尼亞選擇了順服，即使沒有完全理解神的計劃。他去了，稱掃羅為「兄弟」——那個曾是教會死敵的人。克服對「敵人」的偏見，在神的指引下主動接近，這是信心的成熟表現。<br><br>
+<strong>3. 最不可能的人可以成為最有力的見證者</strong><br>「凡聽見的人都驚奇，說：在耶路撒冷殘害求告這名的，不是這人嗎？」——掃羅的改變是最令人震驚的見證。他的過去（迫害者）成了他見證最有力的部分：「他是我所揀選的器皿」。神能揀選最不可能的人，成就最不可能的事工。每一個有黑暗過去的人，都可能在神的揀選中成為最有說服力的見證。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主說：「<strong>我就是你所逼迫的</strong>耶穌。」（徒9:5）</td>
+<td>你有沒有意識到你如何對待其他信徒，就是如何對待耶穌本身？就像對待老闆的家人等於對待老闆，你有沒有以「我在服事基督」的心態，關心和服事你身邊每一個信徒？</td>
+</tr>
+<tr>
+<td><strong>亞拿尼亞就去了</strong>，<strong>進入那家</strong>，把手按在掃羅身上，說：「兄弟掃羅……」（徒9:17）</td>
+<td>你有沒有讓自己對某人的偏見或恐懼，阻礙了你順從神對你的差遣？就像亞拿尼亞雖然害怕仍然順從，你願意克服你心裏的偏見和恐懼，去作神差遣你作的事嗎？</td>
+</tr>
+<tr>
+<td>那時，猶太、<strong>加利利</strong>、<strong>撒瑪利亞各處的教</strong>會都得平安，被建立；凡事敬畏主，蒙聖靈的安慰，人數就增多了。（徒9:31）</td>
+<td>你有沒有注意到教會的「得平安、被建立、敬畏主、蒙聖靈安慰」與教會的增長之間的關聯？就像健康的樹自然結出果子，你有沒有把你個人的屬靈健康看作對教會增長的重要貢獻？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

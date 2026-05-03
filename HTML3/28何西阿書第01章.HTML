@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何西阿書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+何西阿書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">何西阿的婚姻與以色列的隱喻</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當烏西雅、約坦、亞哈斯、希西家作猶大王，約阿施的兒子耶羅波安作以色列王的時候，耶和華的話臨到備利的兒子何西阿。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華初次與何西阿說話，對他說：「你去娶淫婦為妻，也收那從淫亂所生的兒女；因為這地大行淫亂，離棄耶和華。」</div>
+<div class="verse"><span class="verse-number">3</span>於是，何西阿去娶了滴拉音的女兒歌篾。這婦人懷孕，給他生了一個兒子。</div>
+<div class="verse"><span class="verse-number">4</span>耶和華對何西阿說：「給他起名叫耶斯列；因為再過片時，我必討耶戶家在耶斯列殺人流血的罪，也必使以色列家的國滅絕。</div>
+<div class="verse"><span class="verse-number">5</span>到那日，我必在耶斯列平原折斷以色列的弓。」</div>
+<div class="verse"><span class="verse-number">6</span>歌篾又懷孕生了一個女兒，耶和華對何西阿說：「給她起名叫羅路哈瑪〔就是不蒙憐憫的意思〕；因為我必不再憐憫以色列家，決不赦免他們。</div>
+<div class="verse"><span class="verse-number">7</span>我卻要憐憫猶大家，使他們靠耶和華他們的神得救，不使他們靠弓、刀、爭戰、馬匹，與馬兵得救。」</div>
+<div class="verse"><span class="verse-number">8</span>歌篾給羅路哈瑪斷奶以後，又懷孕生了一個兒子。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華說：「給他起名叫羅阿米〔就是非我民的意思〕；因為你們不作我的子民，我也不作你們的神。」</div>
+<div class="verse"><span class="verse-number">10</span>然而，以色列的人數必如海沙，不可量，不可數。從前在甚麼地方對他們說「你們不是我的子民」，將來在那裏必對他們說「你們是永生神的兒子」。</div>
+<div class="verse"><span class="verse-number">11</span>猶大人和以色列人必一同聚集，為自己立一個首領，從這地上去〔或作：從被擄之地上來〕，因為耶斯列的日子必為大日。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+何西阿書第1章是全書最震撼的起點：神命令先知「去娶淫婦為妻，也收那從淫亂所生的兒女」，因為以色列大行淫亂、離棄耶和華。何西阿順命娶了歌篾，生下三個孩子，每個孩子的名字都是審判的宣告——耶斯列（神必討耶戶家流血之罪）、羅路哈瑪（不蒙憐憫）、羅阿米（非我民）。這個婚姻不只是個人故事，而是神對以色列關係的行動預言：神如丈夫，以色列如不忠的妻子。然而章末話鋒一轉，宣告恢復的應許：人數必如海沙，從前稱為「非我民」的地方，將稱為「永生神的兒子」；猶大和以色列將合一，「因為耶斯列的日子必為大日」（耶斯列一詞由審判轉為「神栽種」的意義）。本章是以色列歷史上最犀利的婚姻比喻，也是恩典最終超越審判的序章。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神命令先知以自己的婚姻成為信息的載體</strong><br>何西阿不只是傳遞信息，而是以自己的婚姻和家庭生活成為活生生的預言。神的呼召有時進入我們生命最親密的地方，讓我們的故事本身成為神信息的一部分。這提醒信徒：服事神不只在講壇上，我們的婚姻、家庭、日常生活本身，都可能是神對世界說話的方式。<br><br>
+<strong>2. 「非我民」到「永生神的兒子」：恩典超越審判是神的最終心意</strong><br>三個孩子的名字從審判宣告，到末段完全逆轉——「非我民」的將被稱為「我的民」，「不蒙憐憫」的將蒙憐憫。這顯示神的心意不是永久的棄絕，審判是工具，恢復才是目標。無論一個人過去的身份是多麼的「非我民」，神的恩典有能力徹底更新那個身份。<br><br>
+<strong>3. 孩子的名字：神透過日常命名宣告祂的心意</strong><br>每個孩子的名字都是神話語的具象化，讓百姓在日常生活中每次呼叫孩子名字，都是接觸神話語的時刻。神的信息不只在聖殿和節期，而是滲透進日常生活的每一個角落。信徒的日常習慣和語言，都可以成為不斷提醒自己神話語的機制。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華對我說</strong>：「<strong>你再去愛一個淫婦</strong>，就是她情人所愛的；好像以色列人，雖然偏向別神，喜愛葡萄餅，耶和華還是愛他們。」（何3:1）</td>
+<td>「雖然偏向別神，耶和華還是愛他們」——神的愛是在被背叛後仍然持續的愛。你有沒有某個你曾深深傷害的人，你仍然以某種方式繼續愛他？就像一個丈夫愛不忠的妻子，那種「仍然愛」的代價讓你更深地感受到神對你的愛的真實性嗎？</td>
+</tr>
+<tr>
+<td><strong>耶和華說</strong>：「<strong>給他起名叫羅阿米</strong>〔就是非我民的意思〕；因為你們不作我的子民，我也不作你們的神。」然而，以色列的人數必如海沙，不可量，不可數。（何1:9-10上）</td>
+<td>從「非我民」到「如海沙不可數」——審判的宣告和恢復的應許在同一個段落中出現。你對自己是否有過「我太差了，不配是神的民」的感受？就像把一張被撕碎的照片重新拼起來比原來更費心，神從「非我民」重建「我的民」的恩典，需要比最初創造更多的愛。那個恩典如何進入你對自己身份的認識？</td>
+</tr>
+<tr>
+<td><strong>從前在甚麼地方對</strong><strong>他們說</strong>「你們不是我的子民」，將來在那裏必對他們說「你們是永生神的兒子」。（何1:10下）</td>
+<td>「永生神的兒子」——這是你現在的身份，不是你將來需要努力達到的。你是否完全活在這個身份中，還是仍然以「非我民」的心態行事——以為自己不配、不被愛、只能勉強被接受？就像一個被領養的孩子需要時間真正接受自己是這家的孩子，你有沒有真正接受「永生神的兒子/女兒」這個身份？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

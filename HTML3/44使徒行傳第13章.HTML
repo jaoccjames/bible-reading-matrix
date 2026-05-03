@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第13章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第13章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">保羅第一次宣教旅程</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>在安提阿的教會中，有幾位先知和教師，就是巴拿巴和稱呼尼結的西面、古利奈人路求，與分封之王希律同養的馬念，並掃羅。</div>
+<div class="verse"><span class="verse-number">2</span>他們事奉主、禁食的時候，聖靈說：「要為我分派巴拿巴和掃羅，去作我召他們所作的工。」</div>
+<div class="verse"><span class="verse-number">3</span>於是禁食禱告，按手在他們頭上，就打發他們去了。</div>
+<div class="verse"><span class="verse-number">4</span>他們既被聖靈差遣，就下到西流基，從那裏坐船往居比路去。</div>
+<div class="verse"><span class="verse-number">5</span>到了撒拉米，就在猶太人各會堂裏傳講神的道，也有約翰作他們的幫手。</div>
+<div class="verse"><span class="verse-number">6</span>經過全島，直到帕弗，在那裏遇見一個有法術，假充先知的猶太人，名叫巴耶穌。</div>
+<div class="verse"><span class="verse-number">7</span>這人常和方伯士求保羅同在。士求保羅是個通達人，他請了巴拿巴和掃羅來，要聽神的道。</div>
+<div class="verse"><span class="verse-number">8</span>只是那行法術的以呂馬（這名繙出來就是行法術的意思）敵擋使徒，要叫方伯不信真道。</div>
+<div class="verse"><span class="verse-number">9</span>掃羅又名保羅，被聖靈充滿，定睛看他，</div>
+<div class="verse"><span class="verse-number">10</span>說：「你這充滿各樣詭詐奸惡，魔鬼的兒子，眾善的仇敵，你混亂主的正道還不止住嗎？</div>
+<div class="verse"><span class="verse-number">11</span>現在主的手加在你身上，你要瞎眼，暫且不見日光。」他的眼睛立刻昏蒙黑暗，四下裏求人拉着手領他。</div>
+<div class="verse"><span class="verse-number">12</span>方伯看見所作的事，很希奇主的道，就信了。</div>
+<div class="verse"><span class="verse-number">13</span>保羅和他的同人從帕弗開船，來到旁非利亞的別加，約翰就離開他們，回耶路撒冷去。</div>
+<div class="verse"><span class="verse-number">14</span>他們離了別加往前行，來到彼西底的安提阿，在安息日進會堂坐下。</div>
+<div class="verse"><span class="verse-number">15</span>讀完了律法和先知的書，管會堂的，叫人過去，對他們說：「二位兄台，若有甚麼勸勉眾人的話，請說。」</div>
+<div class="verse"><span class="verse-number">16</span>保羅就站起來，舉手，說：「以色列人和一切敬畏神的人，請聽。</div>
+<div class="verse"><span class="verse-number">17</span>這以色列民的神揀選了我們的祖宗，當民寄居埃及的時候抬舉他們，用大能的手領他們出來；</div>
+<div class="verse"><span class="verse-number">18</span>又在曠野容忍〔或作：撫養〕他們，約有四十年。</div>
+<div class="verse"><span class="verse-number">19</span>既滅了迦南地七族的人，就把那地分給他們為業；</div>
+<div class="verse"><span class="verse-number">20</span>此後給他們設立士師，約有四百五十年，直到先知撒母耳的時候。</div>
+<div class="verse"><span class="verse-number">21</span>後來他們求一個王，神就將便雅憫支派中基士的兒子掃羅，給他們作王四十年。</div>
+<div class="verse"><span class="verse-number">22</span>既廢了掃羅，就選立大衛作他們的王，又為他作見證說：『我尋得耶西的兒子大衛，他是合我心意的人，凡事要遵行我的旨意。』</div>
+<div class="verse"><span class="verse-number">23</span>從這人的後裔中，神已經照着所應許的，為以色列人立了一位救主，就是耶穌。</div>
+<div class="verse"><span class="verse-number">24</span>在他沒有出來以先，約翰向以色列眾民宣講悔改的洗禮。</div>
+<div class="verse"><span class="verse-number">25</span>約翰將行盡他的程途說：『你們以為我是誰？我不是基督；只是有一位在我以後來的，我解他腳上的鞋帶也是不配的。』</div>
+<div class="verse"><span class="verse-number">26</span>弟兄們，亞伯拉罕的子孫和你們中間敬畏神的人哪，這救世的道是傳給我們的。</div>
+<div class="verse"><span class="verse-number">27</span>耶路撒冷居住的人和他們的官長，因為不認識基督，也不明白每安息日所讀眾先知的書，就把基督定了死罪，正應了先知的預言；</div>
+<div class="verse"><span class="verse-number">28</span>雖然查不出他有當死的罪來，還是求彼拉多殺他；</div>
+<div class="verse"><span class="verse-number">29</span>既成就了經上指着他所記的一切話，就把他從木頭上取下來，放在墳墓裏。</div>
+<div class="verse"><span class="verse-number">30</span>神卻叫他從死裏復活。</div>
+<div class="verse"><span class="verse-number">31</span>那從加利利同他上耶路撒冷的人多日看見他，這些人如今在民間是他的見證。</div>
+<div class="verse"><span class="verse-number">32</span>我們也報好信息給你們，就是那應許祖宗的話，</div>
+<div class="verse"><span class="verse-number">33</span>神已經向我們這作兒女的應驗，叫耶穌復活了。正如詩篇第二篇上記着說：你是我的兒子，我今日生你。</div>
+<div class="verse"><span class="verse-number">34</span>論到神叫他從死裏復活，不再歸於朽壞，就這樣說：我必將所應許大衛那聖潔、可靠的恩典賜給你們。</div>
+<div class="verse"><span class="verse-number">35</span>又有一篇上說：你必不叫你的聖者見朽壞。</div>
+<div class="verse"><span class="verse-number">36</span>「大衛在世的時候遵行了神的旨意，就睡了〔或作：大衛按神的旨意服事了他那一世的人，就睡了〕，歸到他祖宗那裏，已見朽壞；</div>
+<div class="verse"><span class="verse-number">37</span>惟獨神所復活的，他並未見朽壞。</div>
+<div class="verse"><span class="verse-number">38</span>所以，弟兄們，你們當曉得：赦罪的道是由這人傳給你們的。</div>
+<div class="verse"><span class="verse-number">39</span>你們靠摩西的律法，在一切不得稱義的事上信靠這人，就都得稱義了。</div>
+<div class="verse"><span class="verse-number">40</span>所以，你們務要小心，免得先知書上所說的臨到你們。</div>
+<div class="verse"><span class="verse-number">41</span>主說：你們這輕慢的人要觀看，要驚奇，要滅亡；因為在你們的時候，我行一件事，雖有人告訴你們，你們總是不信。</div>
+<div class="verse"><span class="verse-number">42</span>他們出會堂的時候，眾人請他們到下安息日再講這話給他們聽。</div>
+<div class="verse"><span class="verse-number">43</span>散會以後，猶太人和敬虔進猶太教的人多有跟從保羅、巴拿巴的。二人對他們講道，勸他們務要恒久在神的恩中。</div>
+<div class="verse"><span class="verse-number">44</span>到下安息日，合城的人幾乎都來聚集，要聽神的道。</div>
+<div class="verse"><span class="verse-number">45</span>但猶太人看見人這樣多，就滿心嫉妒，硬駁保羅所說的話，並且毀謗。</div>
+<div class="verse"><span class="verse-number">46</span>保羅和巴拿巴放膽說：「神的道先講給你們原是應當的；只因你們棄絕這道，斷定自己不配得永生，我們就轉向外邦人去。</div>
+<div class="verse"><span class="verse-number">47</span>因為主曾這樣吩咐我們說：我已經立你作外邦人的光，叫你施行救恩，直到地極。」</div>
+<div class="verse"><span class="verse-number">48</span>外邦人聽見這話，就歡喜了，讚美神的道；凡預定得永生的人都信了。</div>
+<div class="verse"><span class="verse-number">49</span>於是主的道傳遍了那一帶地方。</div>
+<div class="verse"><span class="verse-number">50</span>但猶太人挑唆虔敬、尊貴的婦女和城內有名望的人，逼迫保羅、巴拿巴，將他們趕出境外。</div>
+<div class="verse"><span class="verse-number">51</span>二人對着眾人跺下腳上的塵土，就往以哥念去了。</div>
+<div class="verse"><span class="verse-number">52</span>門徒滿心喜樂，又被聖靈充滿。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第13章記述巴拿巴和掃羅從安提阿被差派出發的第一次宣教旅程，歷經塞浦路斯和小亞細亞，是使徒行傳宣教旅程敘事的正式開始，掃羅從此以保羅之名為人所知。本章首先記述安提阿教會在禁食禱告時，聖靈說要為祂分別巴拿巴和掃羅，眾人按手在他們身上就打發他們去了。他們從安提阿往塞浦路斯島，在各會堂傳道，島上省長士求保羅想聽神的道，但行邪術的以呂馬阻擋，保羅使他暫時失明，省長就信了。然後到了彼西底的安提阿，在會堂受邀講道，保羅以以色列歷史為脈絡，宣告耶穌是大衛後裔、彌賽亞，神叫祂從死裡復活，引用詩篇和以賽亞書的預言，說明罪的赦免是藉著耶穌而來的，律法所不能稱義的靠祂都可以稱義。下一個安息日幾乎全城人都聚集聽道，猶太人因嫉妒毀謗，保羅和巴拿巴宣告要轉向外邦人，外邦人聽見都歡喜，信了的都得了永生。猶太人把他們趕出境界，他們跺腳而去。本章標誌著有系統的外邦宣教事工的正式展開。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 宣教的差遣來自聖靈和禱告的群體</strong><br>「他們事奉主、禁食的時候，聖靈說：要為我分派巴拿巴和掃羅……於是禁食禱告，按手在他們頭上，就打發他們去了」——宣教的差遣不是個人的決定，而是在敬拜和禱告的群體中聖靈的呼召。教會的角色是確認、禱告、按手、差遣，然後持續的禱告支援。宣教士背後有一個禱告的群體，而禱告的群體使宣教成為整個教會的事工。<br><br>
+<strong>2. 「轉向外邦人」是神計劃的擴展而非遺棄</strong><br>「神的道先講給你們原是應當的；只因你們棄絕這道……我們就轉向外邦人去」——這不是情緒化的報復，而是神計劃的展開。以賽亞書的預言本來就包括「外邦人的光」。猶太人的拒絕成為福音轉向外邦人的機會，這在神的主權中都是有計劃的（參羅馬書11章）。「凡預定得永生的人都信了」——神的揀選和人的回應共同運作在救恩的展開中。<br><br>
+<strong>3. 被逼迫而歡喜是聖靈充滿的記號</strong><br>「門徒滿心喜樂，又被聖靈充滿」——二人被趕出境，卻門徒歡喜充滿。這與人的自然反應完全相反：被拒絕和逼迫，卻沒有苦毒和失志，反而是喜樂充滿。這種喜樂只能是聖靈所賜的，不是環境改善帶來的。在逆境中的喜樂，是基督信仰最有力的見證之一。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他們事奉主</strong>、<strong>禁食的時候</strong>，聖靈說：要為我分派巴拿巴和掃羅，去作我召他們所作的工。（徒13:2）</td>
+<td>你有沒有在禱告和事奉神的時候，敞開讓聖靈向你說話，引導你的人生方向？就像收音機只有調到正確的頻率才能接收信號，你有沒有在事奉和禱告中培養對聖靈聲音的敏感？</td>
+</tr>
+<tr>
+<td><strong>你們靠摩西的律法</strong>，<strong>在一切不得稱義的</strong>事上信靠這人，就都得稱義了。（徒13:39）</td>
+<td>你有沒有真正明白「因信稱義」——不是靠遵守規條，而是靠信靠基督？就像欠債的人不是靠自己的努力還清，而是靠有人替他還清，你有沒有把對稱義的信心完全放在基督身上，而非自己的宗教表現？</td>
+</tr>
+<tr>
+<td><strong>門徒滿心喜樂</strong>，<strong>又被聖靈充滿</strong>。（徒13:52）</td>
+<td>你有沒有在面對拒絕、失敗或逼迫時，仍然經歷那種「聖靈充滿的喜樂」？就像不依賴天氣的室內游泳池讓人隨時都可以游泳，你有沒有讓那種不依賴環境的聖靈喜樂成為你生命的底色？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

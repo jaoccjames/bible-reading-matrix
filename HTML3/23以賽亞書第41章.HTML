@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第41章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第41章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">不要害怕我必幫助你：神揀選的僕人與偶像的虛空</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>眾海島阿，當在我面前靜默；眾民當從新得力，都要近前來纔可以說話，我們可以彼此辯論。</div>
+<div class="verse"><span class="verse-number">2</span>誰從東方興起一人，憑公義召他來到腳前呢？耶和華將列國交給他，使他管轄君王，把他們如灰塵交與他的刀，如風吹的碎稭交與他的弓。</div>
+<div class="verse"><span class="verse-number">3</span>他追趕他們，走他所未走的道，坦然前行。</div>
+<div class="verse"><span class="verse-number">4</span>誰行作成就這事，從起初宣召歷代呢？就是我耶和華！我是首先的，也與末後的同在。</div>
+<div class="verse"><span class="verse-number">5</span>海島看見就都害怕；地極也都戰兢，就近前來。</div>
+<div class="verse"><span class="verse-number">6</span>他們各人幫助鄰舍，各人對弟兄說：壯膽吧！</div>
+<div class="verse"><span class="verse-number">7</span>木匠勉勵銀匠，用鎚打光的勉勵打砧的，論銲工說，銲得好；又用釘子釘穩，免得偶像動搖。</div>
+<div class="verse"><span class="verse-number">8</span>惟你以色列我的僕人，雅各我所揀選的，我朋友亞伯拉罕的後裔，</div>
+<div class="verse"><span class="verse-number">9</span>你是我從地極所領〔原文作抓〕來的，從地角所召來的，且對你說：你是我的僕人；我揀選你，並不棄絕你。</div>
+<div class="verse"><span class="verse-number">10</span>你不要害怕，因為我與你同在；不要驚惶，因為我是你的神。我必堅固你，我必幫助你；我必用我公義的右手扶持你。</div>
+<div class="verse"><span class="verse-number">11</span>凡向你發怒的必都抱愧蒙羞；與你相爭的必如無有，並要滅亡。</div>
+<div class="verse"><span class="verse-number">12</span>與你爭競的，你要找他們也找不着；與你爭戰的必如無有，成為虛無。</div>
+<div class="verse"><span class="verse-number">13</span>因為我耶和華你的神必攙扶你的右手，對你說：不要害怕！我必幫助你。</div>
+<div class="verse"><span class="verse-number">14</span>你這蟲雅各和你們以色列人，不要害怕！耶和華說：我必幫助你。你的救贖主就是以色列的聖者。</div>
+<div class="verse"><span class="verse-number">15</span>看哪，我已使你成為有快齒打糧的新器具；你要把山嶺打得粉碎，使岡陵如同糠秕。</div>
+<div class="verse"><span class="verse-number">16</span>你要把他簸揚，風要吹去；旋風要把他颳散。你倒要以耶和華為喜樂，以以色列的聖者為誇耀。</div>
+<div class="verse"><span class="verse-number">17</span>困苦窮乏人尋求水卻沒有；他們因口渴，舌頭乾燥。我耶和華必應允他們；我以色列的神必不離棄他們。</div>
+<div class="verse"><span class="verse-number">18</span>我要在淨光的高處開江河，在谷中開泉源；我要使沙漠變為水池，使乾地變為湧泉。</div>
+<div class="verse"><span class="verse-number">19</span>我要在曠野種上香柏樹、皂莢樹、番石榴樹，和野橄欖樹。我在沙漠要把松樹、杉樹，並黃楊樹一同栽植；</div>
+<div class="verse"><span class="verse-number">20</span>好叫人看見、知道、思想、明白；這是耶和華的手所作的，是以色列的聖者所造的。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華對假神說：你們要呈上你們的案件；雅各的君說：你們要聲明你們確實的理由。</div>
+<div class="verse"><span class="verse-number">22</span>可以聲明，指示我們將來必遇的事，說明先前的是甚麼事，好叫我們思索，得知事的結局，或者把將來的事指示我們。</div>
+<div class="verse"><span class="verse-number">23</span>要說明後來的事，好叫我們知道你們是神。你們或降福，或降禍，使我們驚奇，一同觀看。</div>
+<div class="verse"><span class="verse-number">24</span>看哪，你們屬乎虛無；你們的作為也屬乎虛空。那選擇你們的是可憎惡的。</div>
+<div class="verse"><span class="verse-number">25</span>我從北方興起一人；他是求告我名的，從日出之地而來。他必臨到掌權的，好像臨到灰泥，彷彿窰匠踹泥一樣。</div>
+<div class="verse"><span class="verse-number">26</span>誰從起初指明這事，使我們知道呢？誰從先前說明，使我們說他不錯呢？誰也沒有指明；誰也沒有說明；誰也沒有聽見你們的話。</div>
+<div class="verse"><span class="verse-number">27</span>我首先對錫安說：看哪，我要將一位報好信息的賜給耶路撒冷。</div>
+<div class="verse"><span class="verse-number">28</span>我看的時候並沒有人；我問的時候，他們中間也沒有謀士可以回答一句。</div>
+<div class="verse"><span class="verse-number">29</span>看哪，他們和他們的工作都是虛空，且是虛無。他們所鑄的偶像都是風，都是虛的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第四十一章延續第四十章「安慰的主題」，以神對以色列的揀選和保護（1-20節）以及對偶像的審判（21-29節）兩個部分構成。本章的核心是第8-13節神對以色列的直接宣告，其中第10節「你不要害怕，因為我與你同在」是以賽亞書後半部中最廣為人知的節次之一。「以色列我的僕人」（8節）是以賽亞書後半部的重要神學稱謂——以色列是神「揀選」的，且與「我朋友亞伯拉罕的後裔」相關聯，揭示了揀選關係的根基：不是以色列的功績，而是神與亞伯拉罕所立的盟約應許。第10節四個行動宣告（「我與你同在、我是你的神、我必堅固你、我必幫助你」），構成了神對信徒最完整的保護宣告。第21-29節透過「假神訴訟」的文學形式，要求偶像以預言能力來證明自己是神，而偶像無法回應——這揭示了偶像崇拜的根本虛空：偶像只是「虛空、虛無、風」，沒有說話的能力，也沒有介入歷史的力量。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「你不要害怕，因為我與你同在」：神的同在是恐懼最終的答案</strong><br>第10節是全章的神學核心。神沒有說「不要害怕，因為沒有危險」，而是說「不要害怕，因為我與你同在」——危機是真實的，但神的同在使危機不再是終點。這個宣告中有四個層次的承諾：同在（我與你）、身份（我是你的神）、能力（我必堅固你）、行動（我必幫助你）。任何一個層次都已足夠讓恐懼消退，四者合在一起，是信徒在任何恐懼中最完整的答案。<br><br>
+<strong>2. 「我揀選你，並不棄絕你」：神的揀選是信仰確信的根基</strong><br>第9節「我揀選你，並不棄絕你」，從兩個方向宣告了神的揀選：正面（揀選）和負面（不棄絕）。「並不棄絕你」特別重要——它回應了信徒最深的恐懼：「神會不會有一天不要我了？」神的回答是絕對的否定：「我並不棄絕你」。這個揀選不是依據以色列或信徒的優秀，而是神的主動恩典；也因此，它不會因為我們的失敗而取消。<br><br>
+<strong>3. 偶像是「虛空的風」：任何無法預言和介入歷史的，都不配被稱為神</strong><br>第21-29節的「假神訴訟」揭示了辨別真假神的標準：真神能預言（宣告將來的事）並實現（使預言成就）。偶像面對這個挑戰時「無人可以回答一句」（28節）。對信徒的實際意義是：任何只能提供安慰感，卻無法在歷史中真實作為的「信仰對象」，都是虛空的偶像。信徒應當以神的歷史作為和祂話語的應驗，建立信仰的確信。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你不要害怕</strong>，<strong>因為我與你同在</strong>；不要驚惶，因為我是你的神。我必堅固你，我必幫助你；我必用我公義的右手扶持你。」（賽41:10）</td>
+<td>就像一個孩子在黑暗中，只要感受到父親的手握著自己，恐懼就大幅降低，不是因為黑暗消失，而是因為知道有人陪伴，你目前最深的恐懼是什麼？在那個恐懼中，「我與你同在、我必幫助你」這個宣告對你有多真實？</td>
+</tr>
+<tr>
+<td>「<strong>你是我的僕人</strong>；<strong>我揀選你</strong>，並不棄絕你。」（賽41:9）</td>
+<td>就像一份永久的工作合同，不因員工的失誤而立即終止，「並不棄絕你」是神對信徒最強烈的忠誠宣告，你是否有過「神可能不再要我了」的恐懼？這句「並不棄絕你」如何回應那個恐懼？你的信仰確信是建立在神的揀選還是你自己的表現上？</td>
+</tr>
+<tr>
+<td>「看哪，<strong>他們和他們的工作</strong><strong>都是虛空</strong>，且是虛無。他們所鑄的偶像都是風，都是虛的。」（賽41:29）</td>
+<td>就像一個用力吹動的氣球，看起來很大、很有分量，但本質上只是空氣，你生命中是否有「風和虛空的偶像」——那些你投入極大信任和依賴、但實際上沒有能力真正幫助你的事物？如何從偶像轉向那位真正可以說話和行動的神？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

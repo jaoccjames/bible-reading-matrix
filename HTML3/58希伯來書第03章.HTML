@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>希伯來書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+希伯來書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">今日不可硬心與忍耐持守到底</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>同蒙天召的聖潔弟兄啊，你們應當思想我們所認為使者、為大祭司的耶穌。</div>
+<div class="verse"><span class="verse-number">2</span>他為那設立他的盡忠，如同摩西在神的全家盡忠一樣。</div>
+<div class="verse"><span class="verse-number">3</span>他比摩西算是更配多得榮耀，好像建造房屋的比房屋更尊榮；</div>
+<div class="verse"><span class="verse-number">4</span>因為房屋都必有人建造，但建造萬物的就是神。</div>
+<div class="verse"><span class="verse-number">5</span>摩西為僕人，在神的全家誠然盡忠，為要證明將來必傳說的事。</div>
+<div class="verse"><span class="verse-number">6</span>但基督為兒子，治理神的家；我們若將可誇的盼望和膽量堅持到底，便是他的家了。</div>
+<div class="verse"><span class="verse-number">7</span>聖靈有話說：你們今日若聽他的話，</div>
+<div class="verse"><span class="verse-number">8</span>就不可硬着心，像在曠野惹他發怒、試探他的時候一樣。</div>
+<div class="verse"><span class="verse-number">9</span>在那裏，你們的祖宗試我探我，並且觀看我的作為有四十年之久。</div>
+<div class="verse"><span class="verse-number">10</span>所以，我厭煩那世代的人，說：他們心裏常常迷糊，竟不曉得我的作為！</div>
+<div class="verse"><span class="verse-number">11</span>我就在怒中起誓說；他們斷不可進入我的安息。</div>
+<div class="verse"><span class="verse-number">12</span>弟兄們，你們要謹慎，免得你們中間或有人存着不信的惡心，把永生神離棄了。</div>
+<div class="verse"><span class="verse-number">13</span>總要趁着還有今日，天天彼此相勸，免得你們中間有人被罪迷惑，心裏就剛硬了。</div>
+<div class="verse"><span class="verse-number">14</span>我們若將起初確實的信心堅持到底，就在基督裏有分了。</div>
+<div class="verse"><span class="verse-number">15</span>經上說：「你們今日若聽他的話，就不可硬着心，像惹他發怒的日子一樣。」</div>
+<div class="verse"><span class="verse-number">16</span>那時，聽見他話惹他發怒的是誰呢？豈不是跟着摩西從埃及出來的眾人嗎？</div>
+<div class="verse"><span class="verse-number">17</span>神四十年之久，又厭煩誰呢？豈不是那些犯罪、屍首倒在曠野的人嗎？</div>
+<div class="verse"><span class="verse-number">18</span>又向誰起誓，不容他們進入他的安息呢；豈不是向那些不信從的人嗎？</div>
+<div class="verse"><span class="verse-number">19</span>這樣看來，他們不能進入安息是因為不信的緣故了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第3章宣告基督比摩西更大，並以以色列人在曠野因不信而倒斃的歷史作警戒，呼召信徒要守住信心，彼此相勉勵，免得因罪而剛硬了心。本章首先說信徒應當思想我們所認為使者、為大祭司的耶穌，祂對那設立祂的神是忠信的，如同摩西在神的全家也是忠信的。然後說基督比摩西更配得榮耀，就如建造房屋的比房屋更尊榮，摩西為僕人在神的全家忠信，是為了預先見證基督，但基督為兒子治理神的家，我們若將可誇的盼望和膽量堅持到底，便是祂的家了。接著大段引用詩篇九十五篇的警告：你們今日若聽祂的話就不可硬著心，你們的祖宗試探我、試驗我，雖然看見我的作為有四十年，我就厭煩那世代的人，我就在怒中起誓說他們斷不可進入我的安息。所以弟兄們要謹慎，免得你們中間或有人存著不信的惡心把永生神離棄了，要趁著還有今日天天彼此相勸，免得你們中間有人被罪迷惑，心裡就剛硬了，因為我們若將起初確實的信心堅持到底，就在基督裡有分了。本章以曠野世代的警告呼召信徒持守信心到底。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「今日」的緊迫性</strong><br>「你們今日若聽他的話，就不可硬着心」——「今日」是整章最重要的詞，出現多次。神的呼召有其當下性，不是遙遠的將來事。信仰的回應不能無限期推遲，因為「今日」若不聽，心就越來越硬。彼此相勸的責任也是「天天」的——不只是偶爾，而是每天在群體中彼此提醒，防止心的硬化。<br><br>
+<strong>2. 硬心是漸進的過程</strong><br>「你們要謹慎，免得你們中間或有人存着不信的惡心，把永生神離棄了……恐怕你們中間有人被罪迷惑，心裏就剛硬了」——「迷惑」然後「剛硬」，說明心的硬化是一個漸進的過程。罪的迷惑使心靈麻木，麻木的心靈對神的話語越來越不敏感。因此，早期的彼此相勸和自我省察，比到了完全硬心時再試圖回轉，要容易得多。<br><br>
+<strong>3. 持守到底是信仰的完全</strong><br>「我們若將起初確實的信心堅持到底，就在基督裏有分了」——持守到底不是額外的功德，而是真實信仰的本質特徵。初信的熱情若沒有持守的忍耐，就像種子落在石地上——很快就枯萎了。真正的信仰既有開始，也有貫穿全程的堅持。曠野世代的悲劇是他們出了埃及（有了開始），卻沒有進入應許地（沒有持守到底）。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>所以，<strong>聖靈有話說</strong>：<strong>你們今日若聽他的</strong>話，就不可硬着心。（來3:7-8）</td>
+<td>你有沒有讓「今日」的緊迫性，使你對神話語和聖靈感動的回應不拖延？就像緊急的醫療需要立即回應而非等到「方便的時候」，你有沒有養成「今日聽見就今日回應」的信仰習慣？</td>
+</tr>
+<tr>
+<td><strong>弟兄們</strong>，<strong>你們要謹慎</strong>，免得你們中間或有人存着不信的惡心，把永生神離棄了。總要趁着還有今日，天天彼此相勸，免得你們中間有人被罪迷惑，心裏就剛硬了。（來3:12-13）</td>
+<td>你有沒有在你的信仰群體中，承擔「天天彼此相勸」的責任，讓你的弟兄姐妹不至被罪迷惑、心漸剛硬？就像一個好的健身夥伴互相督促彼此不鬆懈，你有沒有讓屬靈的相互激勵成為你在信仰群體中的重要角色？</td>
+</tr>
+<tr>
+<td><strong>我們若將起初確實</strong><strong>的信心堅持到底</strong>，就在基督裏有分了。（來3:14）</td>
+<td>你有沒有讓「持守到底」作為你信仰目標的一部分，而非只看重開始時的熱情？就像一場馬拉松的勝利不在於第一公里跑得多快，而在於四十二公里都跑完了，你有沒有讓長程的信仰忍耐成為你信仰生命的重要追求？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

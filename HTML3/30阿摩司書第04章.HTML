@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阿摩司書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+阿摩司書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">五次警告後「仍不歸向我」</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們住撒瑪利亞山如巴珊母牛的啊，當聽我的話，你們欺負貧寒的，壓碎窮乏的，對家主說：拿酒來，我們喝吧！</div>
+<div class="verse"><span class="verse-number">2</span>主耶和華指着自己的聖潔起誓說：日子快到，人必用鉤子將你們鉤去，用魚鉤將你們餘剩的鉤去。</div>
+<div class="verse"><span class="verse-number">3</span>你們各人必從破口直往前行，投入哈門。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">4</span>以色列人哪，任你們往伯特利去犯罪，到吉甲加增罪過；每日早晨獻上你們的祭物，每三日奉上你們的十分之一。</div>
+<div class="verse"><span class="verse-number">5</span>任你們獻有酵的感謝祭，把甘心祭宣傳報告給眾人，因為是你們所喜愛的。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">6</span>我使你們在一切城中牙齒乾淨，在你們各處糧食缺乏，你們仍不歸向我。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">7</span>在收割的前三月，我使雨停止，不降在你們那裏；我降雨在這城，不降雨在那城；這塊地有雨，那塊地無雨；無雨的就枯乾了。</div>
+<div class="verse"><span class="verse-number">8</span>這樣，兩三城的人湊到一城去找水，卻喝不足；你們仍不歸向我。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">9</span>我以旱風、霉爛攻擊你們，你們園中許多菜蔬、葡萄樹、無花果樹、橄欖樹都被剪蟲所喫；你們仍不歸向我。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">10</span>我降瘟疫在你們中間，像在埃及一樣；用刀殺戮你們的少年人，使你們的馬匹被擄掠，營中屍首的臭氣撲鼻；你們仍不歸向我。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">11</span>我傾覆你們中間的城邑，如同我從前傾覆所多瑪、蛾摩拉一樣，使你們好像從火中抽出來的一根柴；你們仍不歸向我。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">12</span>以色列啊，我必向你如此行；以色列啊，我既這樣行，你當預備迎見你的神。</div>
+<div class="verse"><span class="verse-number">13</span>那創山、造風、將心意指示人、使晨光變為幽暗、腳踏在地之高處的，他的名是耶和華萬軍之神。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+阿摩司書第4章是全書最令人心痛的章節之一，因為它以五次相同的句式「你們仍不歸向我。這是耶和華說的」揭示了以色列對神管教的頑固拒絕。神一共賜下五種管教：牙齒乾淨（饑荒）、雨停（乾旱）、旱風和霉爛（農業失敗）、瘟疫和刀劍、傾覆城邑如所多瑪蛾摩拉——每一次警告之後，以色列「仍不歸向我」。本章開篇以「巴珊的母牛」稱呼撒瑪利亞的富貴女子，她們欺壓貧寒、對家主說「拿酒來我們喝」——奢靡冷漠的精英階層形象。章末是全書最莊嚴的呼召：「以色列啊，我既這樣行，你當預備迎見你的神。」這不只是威脅，也是最後的邀請——在審判降臨之前，神仍呼籲以色列轉回。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神用管教呼召人歸回，管教的目的是關係的恢復</strong><br>五次管教，每次都說「我必……使你……」——神主動介入，是因為祂仍渴望以色列歸回。管教不是神的報復，而是神渴望恢復關係的行動。信徒面對苦難時，值得問的不只是「神為何讓我受苦」，而是「神是否在藉此呼召我歸回？」<br><br>
+<strong>2. 「仍不歸向我」：人心對神呼召的頑固是最深的靈性問題</strong><br>五次管教，五次「仍不歸向」——人心的頑固，在面對一次又一次的警告後仍然不回頭，是屬靈最深的問題。這不是無知，而是意志的抵拒。信徒需要問自己：我現在面對的苦難或挑戰，神是否在其中呼召我「歸向」某個我一直迴避的改變？<br><br>
+<strong>3. 「預備迎見你的神」：終局的面對是人人必經的約會</strong><br>「你當預備迎見你的神」——這是全書最嚴肅的宣告之一。每個人最終都必面見神，或在此生的悔改中，或在最後的審判中。「預備」意味着現在就開始調整——不是等到「最後一刻」，而是現在就讓生命對準神的標準。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我使你們在一切城</strong><strong>中牙齒乾淨</strong>……你們仍不歸向我。這是耶和華說的。（摩4:6）</td>
+<td>神用五種方法管教以色列，每次都說「仍不歸向我」。你生命中有沒有某個神反覆用不同方式呼籲你改變的領域，而你一再「仍不歸向」？就像反覆響起的鬧鐘被一再按掉，你願意今天讓那個「第五次的鬧鐘」真正讓你起來，作出那個一直拖延的改變嗎？</td>
+</tr>
+<tr>
+<td><strong>你們住撒瑪利亞山</strong><strong>如巴珊母牛的啊</strong>……你們欺負貧寒的，壓碎窮乏的，對家主說：拿酒來，我們喝吧！（摩4:1）</td>
+<td>「巴珊的母牛」——肥美、自我中心、對窮人的苦難漠然。這個描述在今日物質豐盛、消費主義盛行的文化中有多大的現實感？你的生活方式有多大程度的「巴珊母牛」成分——享受豐盛卻對周圍的需要視而不見？你今天可以做一個具體的行動，讓自己「少像巴珊母牛」嗎？</td>
+</tr>
+<tr>
+<td><strong>以色列啊</strong>，<strong>我既這樣行</strong>，你當預備迎見你的神。（摩4:12）</td>
+<td>「預備迎見你的神」——這是警告，也是邀請。如果神今天要你「迎見祂」，你的生命有多少預備？就像知道有重要客人要來就趕緊整理房子，「預備迎見神」在你的日常生活中意味着哪些具體的調整——在態度、習慣、關係或時間的運用上？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

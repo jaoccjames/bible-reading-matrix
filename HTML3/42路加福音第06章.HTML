@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+路加福音第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">平原寶訓與建在磐石上的房子</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>有一個安息日，耶穌從麥地經過。他的門徒掐了麥穗，用手搓着吃。</div>
+<div class="verse"><span class="verse-number">2</span>有幾個法利賽人說：「你們為甚麼作安息日不可作的事呢？」</div>
+<div class="verse"><span class="verse-number">3</span>耶穌對他們說：「經上記着大衛和跟從他的人飢餓之時所作的事，連這個你們也沒有念過嗎？</div>
+<div class="verse"><span class="verse-number">4</span>他怎麼進了神的殿，拿陳設餅吃，又給跟從的人吃？這餅除了祭司以外，別人都不可吃。」</div>
+<div class="verse"><span class="verse-number">5</span>又對他們說：「人子是安息日的主。」</div>
+<div class="verse"><span class="verse-number">6</span>又有一個安息日，耶穌進了會堂教訓人，在那裏有一個人右手枯乾了。</div>
+<div class="verse"><span class="verse-number">7</span>文士和法利賽人窺探耶穌，在安息日治病不治病，要得把柄去告他。</div>
+<div class="verse"><span class="verse-number">8</span>耶穌卻知道他們的意念，就對那枯乾一隻手的人說：「起來！站在當中。」那人就起來，站着。</div>
+<div class="verse"><span class="verse-number">9</span>耶穌對他們說：「我問你們，在安息日行善行惡，救命害命，哪樣是可以的呢？」</div>
+<div class="verse"><span class="verse-number">10</span>他就周圍看着他們眾人，對那人說：「伸出手來！」他把手一伸，手就復了原。</div>
+<div class="verse"><span class="verse-number">11</span>他們就滿心大怒，彼此商議怎樣處治耶穌。</div>
+<div class="verse"><span class="verse-number">12</span>那時，耶穌出去，上山禱告，整夜禱告神；</div>
+<div class="verse"><span class="verse-number">13</span>到了天亮，叫他的門徒來，就從他們中間挑選十二個人，稱他們為使徒。</div>
+<div class="verse"><span class="verse-number">14</span>這十二個人有西門（耶穌又給他起名叫彼得），還有他兄弟安得烈，又有雅各和約翰，腓力和巴多羅買，</div>
+<div class="verse"><span class="verse-number">15</span>馬太和多馬，亞勒腓的兒子雅各和奮銳黨的西門，</div>
+<div class="verse"><span class="verse-number">16</span>雅各的兒子〔或作：兄弟〕猶大，和賣主的加略人猶大。</div>
+<div class="verse"><span class="verse-number">17</span>耶穌和他們下了山，站在一塊平地上；同站的有許多門徒，又有許多百姓，從猶太全地和耶路撒冷，並推羅、西頓的海邊來，都要聽他講道，又指望醫治他們的病；</div>
+<div class="verse"><span class="verse-number">18</span>還有被污鬼纏磨的，也得了醫治。</div>
+<div class="verse"><span class="verse-number">19</span>眾人都想要摸他；因為有能力從他身上發出來，醫好了他們。</div>
+<div class="verse"><span class="verse-number">20</span>耶穌舉目看着門徒，說：你們貧窮的人有福了！因為神的國是你們的。</div>
+<div class="verse"><span class="verse-number">21</span>你們飢餓的人有福了！因為你們將要飽足。你們哀哭的人有福了！因為你們將要喜笑。</div>
+<div class="verse"><span class="verse-number">22</span>「人為人子恨惡你們，拒絕你們，辱罵你們，棄掉你們的名，以為是惡，你們就有福了！</div>
+<div class="verse"><span class="verse-number">23</span>當那日，你們要歡喜跳躍，因為你們在天上的賞賜是大的。他們的祖宗待先知也是這樣。」</div>
+<div class="verse"><span class="verse-number">24</span>但你們富足的人有禍了！因為你們受過你們的安慰。</div>
+<div class="verse"><span class="verse-number">25</span>你們飽足的人有禍了！因為你們將要飢餓。你們喜笑的人有禍了！因為你們將要哀慟哭泣。</div>
+<div class="verse"><span class="verse-number">26</span>「人都說你們好的時候，你們就有禍了！因為他們的祖宗待假先知也是這樣。」</div>
+<div class="verse"><span class="verse-number">27</span>「只是我告訴你們這聽道的人，你們的仇敵，要愛他！恨你們的，要待他好！</div>
+<div class="verse"><span class="verse-number">28</span>咒詛你們的，要為他祝福！凌辱你們的，要為他禱告！</div>
+<div class="verse"><span class="verse-number">29</span>有人打你這邊的臉，連那邊的臉也由他打。有人奪你的外衣，連裏衣也由他拿去。</div>
+<div class="verse"><span class="verse-number">30</span>凡求你的，就給他。有人奪你的東西去，不用再要回來。</div>
+<div class="verse"><span class="verse-number">31</span>你們願意人怎樣待你們，你們也要怎樣待人。</div>
+<div class="verse"><span class="verse-number">32</span>你們若單愛那愛你們的人，有甚麼可酬謝的呢？就是罪人也愛那愛他們的人。</div>
+<div class="verse"><span class="verse-number">33</span>你們若善待那善待你們的人，有甚麼可酬謝的呢？就是罪人也是這樣行。</div>
+<div class="verse"><span class="verse-number">34</span>你們若借給人，指望從他收回，有甚麼可酬謝的呢？就是罪人也借給罪人，要如數收回。</div>
+<div class="verse"><span class="verse-number">35</span>你們倒要愛仇敵，也要善待他們，並要借給人不指望償還，你們的賞賜就必大了，你們也必作至高者的兒子；因為他恩待那忘恩的和作惡的。</div>
+<div class="verse"><span class="verse-number">36</span>你們要慈悲，像你們的父慈悲一樣。」</div>
+<div class="verse"><span class="verse-number">37</span>「你們不要論斷人，就不被論斷；你們不要定人的罪，就不被定罪；你們要饒恕人，就必蒙饒恕〔饒恕：原文作釋放〕；</div>
+<div class="verse"><span class="verse-number">38</span>你們要給人，就必有給你們的，並且用十足的升斗，連搖帶按，上尖下流的倒在你們懷裏；因為你們用甚麼量器量給人，也必用甚麼量器量給你們。」</div>
+<div class="verse"><span class="verse-number">39</span>耶穌又用比喻對他們說：「瞎子豈能領瞎子，兩個人不是都要掉在坑裏嗎？</div>
+<div class="verse"><span class="verse-number">40</span>學生不能高過先生；凡學成了的不過和先生一樣。</div>
+<div class="verse"><span class="verse-number">41</span>為甚麼看見你弟兄眼中有刺，卻不想自己眼中有梁木呢？</div>
+<div class="verse"><span class="verse-number">42</span>你不見自己眼中有梁木，怎能對你弟兄說：『容我去掉你眼中的刺』呢？你這假冒為善的人！先去掉自己眼中的梁木，然後纔能看得清楚，去掉你弟兄眼中的刺。」</div>
+<div class="verse"><span class="verse-number">43</span>「因為沒有好樹結壞果子，也沒有壞樹結好果子。</div>
+<div class="verse"><span class="verse-number">44</span>凡樹木看果子，就可以認出他來。人不是從荊棘上摘無花果，也不是從蒺藜裏摘葡萄。</div>
+<div class="verse"><span class="verse-number">45</span>善人從他心裏所存的善就發出善來；惡人從他心裏所存的惡就發出惡來；因為心裏所充滿的，口裏就說出來。」</div>
+<div class="verse"><span class="verse-number">46</span>「你們為甚麼稱呼我『主啊，主啊，』卻不遵我的話行呢？</div>
+<div class="verse"><span class="verse-number">47</span>凡到我這裏來，聽見我的話就去行的，我要告訴你們他像甚麼人：</div>
+<div class="verse"><span class="verse-number">48</span>他像一個人蓋房子，深深的挖地，把根基安在磐石上；到發大水的時候，水沖那房子，房子總不能搖動，因為根基立在磐石上〔有古卷作：因為蓋造得好〕。</div>
+<div class="verse"><span class="verse-number">49</span>惟有聽見不去行的，就像一個人在土地上蓋房子，沒有根基；水一沖，隨即倒塌了，並且那房子壞的很大。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第6章記述耶穌就安息日問題回應法利賽人、揀選十二使徒，並在平地上的講道中教導天國的倫理，是路加版本的登山寶訓。本章首先記述耶穌和門徒在安息日走過麥地，門徒掐麥穗揉著吃，法利賽人指責，耶穌以大衛吃陳設餅為例宣告人子是安息日的主。接著在另一個安息日，耶穌在會堂醫治一個右手枯乾的人，反問在安息日行善行惡哪樣是對的，然後醫治了那人，他們就滿心狂怒商議對付耶穌。然後耶穌整夜禱告，天亮時從門徒中揀選十二個使徒。接著在平地上耶穌教導大批群眾：先以四福四禍說明天國的價值倒置，接著教導愛仇敵、不要論斷、要慷慨施予，以瞎子領瞎子的比喻說明師傅的重要，以樹和果子的比喻說明行為反映內心。最後以蓋房在磐石與沙土上的比喻作結，強調聽道行道的重要性。本章呈現天國倫理的核心內容，以路加的外邦普世關懷貫穿全章。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 愛仇敵是超越人性的神聖呼召</strong><br>「你們的仇敵，要愛他！恨你們的，要待他好！咒詛你們的，要為他祝福！凌辱你們的，要為他禱告！」這四個動詞一層比一層深。愛仇敵不是要否認傷害的真實，而是選擇以神的方式回應——不是以惡報惡，而是以善勝惡。這是超越人性本能的呼召，只有倚靠神的恩典才能實踐。「你們要慈悲，像你們的父慈悲一樣」——效法天父是動力的根源。<br><br>
+<strong>2. 慷慨給予是天國的量器</strong><br>「你們要給人，就必有給你們的；並且用十足的升斗，連搖帶按，上尖下流的倒在你們懷裏」——這個圖像是中東市場稱量穀物的真實場景。給予的方式決定領受的方式。神的量器是豐盛的，但我們的量器決定了我們能承接多少。不是神吝嗇，而是我們的容器是否夠大、是否願意伸出雙手。<br><br>
+<strong>3. 聽道行道的生命建立在不可動搖的根基上</strong><br>「凡到我這裏來，聽見我的話就去行的……他像一個人蓋房子，深深的挖地，把根基安在磐石上」——路加的版本強調「深深的挖地」，說明根基不是表面的，而是要費力、要深挖的。信仰的根基不是出席教會次數或知道多少道理，而是在困難和患難的「洪水」來臨時，房子是否仍然屹立不動。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>你們倒要愛仇敵</strong>，也要善待他們，並要借給人不指望償還，你們的賞賜就必大了。」（路6:35）</td>
+<td>你生命中有沒有你覺得「最難愛」的人？就像對苦澀的食物需要慢慢調整口味，你願意開始禱告為那個傷害過你的人求福，讓神在你心裏開始改變對那人的感受嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>你們要給人</strong>，就必有給你們的；並且用十足的升斗，連搖帶按，上尖下流的倒在你們懷裏。」（路6:38）</td>
+<td>你在給予時——無論是時間、金錢還是關注——有沒有「連搖帶按」地給出，還是只給你感覺舒適的分量？就像用量大的容器量穀物會比小容器多得更多，你的慷慨程度決定你能承接多少神的供應嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>你們不要論斷人</strong>，就不被論斷；你們不要定人的罪，就不被定罪；你們要饒恕人，就必蒙饒恕。」（路6:37）</td>
+<td>你有沒有養成習慣在開口評論別人之前，先問自己「我的眼睛是否也有梁木？」就像評論別人的工作前先檢視自己的表現，你能把論斷他人的精力轉為自我省察和代為禱告嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

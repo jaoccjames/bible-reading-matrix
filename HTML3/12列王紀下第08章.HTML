@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀下第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀下第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">書念婦人回歸田產，以利沙預見哈薛為王</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以利沙曾對所救活之子的那婦人說：「你和你的全家要起身往你可住的地方去住，因為耶和華命饑荒降在這地七年。」</div>
+<div class="verse"><span class="verse-number">2</span>婦人就起身，照神人的話帶着全家往非利士地去，住了七年。</div>
+<div class="verse"><span class="verse-number">3</span>七年完了，那婦人從非利士地回來，就出去為自己的房屋田地哀告王。</div>
+<div class="verse"><span class="verse-number">4</span>那時王正與神人的僕人基哈西說：「請你將以利沙所行的一切大事告訴我。」</div>
+<div class="verse"><span class="verse-number">5</span>基哈西告訴王以利沙如何使死人復活，恰巧以利沙所救活她兒子的那婦人為自己的房屋田地來哀告王。基哈西說：「我主我王，這就是那婦人，這是她的兒子，就是以利沙所救活的。」</div>
+<div class="verse"><span class="verse-number">6</span>王問那婦人，她就把那事告訴王。於是王為她派一個太監，說：「凡屬這婦人的都還給她，自從她離開本地直到今日，她田地的出產也都還給她。」</div>
+<div class="verse"><span class="verse-number">7</span>以利沙來到大馬色，亞蘭王便哈達正患病。有人告訴王說：「神人來到這裏了。」</div>
+<div class="verse"><span class="verse-number">8</span>王就吩咐哈薛說：「你帶着禮物去見神人，託他求問耶和華，我這病能好不能好？」</div>
+<div class="verse"><span class="verse-number">9</span>於是哈薛用四十個駱駝，馱着大馬色的各樣美物為禮物，去見以利沙。到了他那裏，站在他面前，說：「你兒子亞蘭王便哈達打發我來見你，他問說：『我這病能好不能好？』」</div>
+<div class="verse"><span class="verse-number">10</span>以利沙對哈薛說：「你回去告訴他說，這病必能好；但耶和華指示我，他必要死。」</div>
+<div class="verse"><span class="verse-number">11</span>神人定睛看着哈薛，甚致他慚愧。神人就哭了；</div>
+<div class="verse"><span class="verse-number">12</span>哈薛說：「我主為甚麼哭？」回答說：「因為我知道你必苦害以色列人，用火焚燒他們的保障，用刀殺死他們的壯丁，摔死他們的嬰孩，剖開他們的孕婦。」</div>
+<div class="verse"><span class="verse-number">13</span>哈薛說：「你僕人算甚麼，不過是一條狗，焉能行這大事呢？」以利沙回答說：「耶和華指示我，你必作亞蘭王。」</div>
+<div class="verse"><span class="verse-number">14</span>哈薛離開以利沙，回去見他的主人。主人問他說：「以利沙對你說甚麼？」回答說：「他告訴我你必能好。」</div>
+<div class="verse"><span class="verse-number">15</span>次日，哈薛拿被窩浸在水中，蒙住王的臉，王就死了。於是哈薛篡了他的位。</div>
+<div class="verse"><span class="verse-number">16</span>以色列王亞哈的兒子約蘭第五年，猶大王約沙法還在位的時候，約沙法的兒子約蘭登基作了猶大王。</div>
+<div class="verse"><span class="verse-number">17</span>約蘭登基的時候年三十二歲，在耶路撒冷作王八年。</div>
+<div class="verse"><span class="verse-number">18</span>他行以色列諸王所行的，與亞哈家一樣；因為他娶了亞哈的女兒為妻，行耶和華眼中看為惡的事。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華卻因他僕人大衛的緣故，仍不肯滅絕猶大，照他所應許大衛的話，永遠賜燈光與他的子孫。</div>
+<div class="verse"><span class="verse-number">20</span>約蘭年間，以東人背叛猶大，脫離他的權下，自己立王。</div>
+<div class="verse"><span class="verse-number">21</span>約蘭率領所有的戰車往撒益去，夜間起來，攻打圍困他的以東人和車兵長；猶大兵就逃跑，各回各家去了。</div>
+<div class="verse"><span class="verse-number">22</span>這樣，以東人背叛猶大，脫離他的權下，直到今日。那時立拿人也背叛了。</div>
+<div class="verse"><span class="verse-number">23</span>約蘭其餘的事，凡他所行的，都寫在猶大列王記上。</div>
+<div class="verse"><span class="verse-number">24</span>約蘭與他列祖同睡，葬在大衛城他列祖的墳地裏。他兒子亞哈謝接續他作王。</div>
+<div class="verse"><span class="verse-number">25</span>以色列王亞哈的兒子約蘭十二年，猶大王約蘭的兒子亞哈謝登基。</div>
+<div class="verse"><span class="verse-number">26</span>他登基的時候年二十二歲，在耶路撒冷作王一年。他母親名叫亞他利雅，是以色列王暗利的孫女。</div>
+<div class="verse"><span class="verse-number">27</span>亞哈謝效法亞哈家行耶和華眼中看為惡的事，與亞哈家一樣，因為他是亞哈家的女婿。</div>
+<div class="verse"><span class="verse-number">28</span>他與亞哈的兒子約蘭同往基列的拉末去，與亞蘭王哈薛爭戰。亞蘭人打傷了約蘭，</div>
+<div class="verse"><span class="verse-number">29</span>約蘭王回到耶斯列，醫治在拉末與亞蘭王哈薛打仗的時候所受的傷。猶大王約蘭的兒子亞哈謝因為亞哈的兒子約蘭病了，就下到耶斯列看望他。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀下第8章是一章承上啟下的過渡篇章，以三個故事描述屬靈與政治的交織。第一個故事（1-6節）：以利沙先前提醒的書念婦人因聽信先知的話而提早離開，七年後回來尋回田產，恰好在王問基哈西以利沙神蹟的時刻趕到，時機奇妙，完全是神的安排，使她的請求立即得到王的支持。第二個故事（7-15節）：亞蘭王便哈達患病，差哈薛去問以利沙。以利沙卻凝視哈薛後哭泣，預知他將成為以色列的大敵，並宣告他將作亞蘭王。哈薛回去果然謀殺了便哈達並篡位，應驗預言。第三個故事（16-29節）：記述猶大王約蘭和亞哈謝兩王的惡行，因與亞哈家聯姻而行惡，以東和立拿趁機背叛脫離猶大。本章呈現了神在歷史中的主權：神的話語透過不同方式——先知的預言、個人的遭遇、政治的興衰——在複雜的歷史中精確成就。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 聽從神話語而行動的人，往往在神的時機得到奇妙的保護</strong><br>書念婦人因相信以利沙而提前離開，看似失去了一切；但七年後回來，神安排她的請求在最合適的時刻得到了完整的回應。聽從神的話語而行動，有時看起來是損失，實際上是神在安排一個更大的保護和恢復計畫。信徒在順服神的吩咐時，即使短期看起來不利，長遠看神的安排往往遠超所求所想。<br><br>
+<strong>2. 屬靈的敏銳使先知能在人的言語中看見歷史的走向</strong><br>以利沙凝視哈薛後哭泣，看見了這人將對以色列造成的傷害。他對哈薛說的不只是眼前的事，而是神所啟示的歷史走向。這提醒信徒：屬靈的成熟包括在日常的人際互動中，以靈性的眼光看見更深的實況，不被表面的禮貌外交所迷惑。敏銳的屬靈洞察力，是透過長年與神同行所培養的。<br><br>
+<strong>3. 與罪惡的婚姻聯盟終將導致屬靈的墮落</strong><br>猶大王約蘭因娶了亞哈的女兒，走上了亞哈家的道路，使猶大也陷入偶像崇拜。家庭和婚姻的屬靈連結，對靈命的影響是深遠而持久的。信徒在選擇最親密的人生伴侶時，必須認真考慮對方的信仰，因為這段連結將塑造生命的屬靈方向。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>七年完了</strong>，<strong>那婦人</strong>……就出去為自己的房屋田地哀告王……恰巧……王問說……基哈西就說：……王就為她派一個太監……凡屬這婦人的都還給她。」（王下8:3-6）</td>
+<td>就像一個人因意外提早離開工作崗位，卻剛好躲過了一場會傷害他的事件，書念婦人聽從神人的話而離去，神在最合適的時刻為她安排了完全的恢復。你有沒有過一次因順服神而看似失去卻最終蒙福的經歷？</td>
+</tr>
+<tr>
+<td>「<strong>神人定睛看着哈薛</strong>，<strong>甚致他慚愧</strong>。神人就哭了。」（王下8:11）</td>
+<td>就像一位洞悉學生潛力的老師，有時看見的不是眼前的表現而是長遠的走向，以利沙的哭泣反映了他對以色列未來苦難的深切感受。你是否也有過這樣的屬靈敏銳，在某種處境中感受到神對某人或某事的深切關懷？</td>
+</tr>
+<tr>
+<td>「<strong>他行以色列諸王所</strong>行的，<strong>與亞哈家一樣</strong>；因為他娶了亞哈的女兒為妻，行耶和華眼中看為惡的事。」（王下8:18）</td>
+<td>就像一個人的飲食習慣因長期同居而改變，最親密的關係對靈命的影響往往是潛移默化而深刻的。你最親密的人際關係——朋友、伴侶——是在引領你更靠近神，還是在不知不覺中把你帶離神？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

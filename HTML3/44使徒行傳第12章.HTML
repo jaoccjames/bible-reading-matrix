@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">彼得被救出監與希律的審判</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>那時，希律王下手苦害教會中幾個人，</div>
+<div class="verse"><span class="verse-number">2</span>用刀殺了約翰的哥哥雅各。</div>
+<div class="verse"><span class="verse-number">3</span>他見猶太人喜歡這事，又去捉拿彼得。那時正是除酵的日子。</div>
+<div class="verse"><span class="verse-number">4</span>希律拿了彼得，收在監裏，交付四班兵丁看守，每班四個人，意思要在逾越節後把他提出來，當着百姓辦他。</div>
+<div class="verse"><span class="verse-number">5</span>於是彼得被囚在監裏；教會卻為他切切的禱告神。</div>
+<div class="verse"><span class="verse-number">6</span>希律將要提他出來的前一夜，彼得被兩條鐵鍊鎖着，睡在兩個兵丁當中；看守的人也在門外看守。</div>
+<div class="verse"><span class="verse-number">7</span>忽然，有主的一個使者站在旁邊，屋裏有光照耀，天使拍彼得的肋旁，拍醒了他，說：「快快起來！」那鐵鍊就從他手上脫落下來。</div>
+<div class="verse"><span class="verse-number">8</span>天使對他說：「束上帶子，穿上鞋。」他就那樣作。天使又說：「披上外衣，跟着我來。」</div>
+<div class="verse"><span class="verse-number">9</span>彼得就出來跟着他，不知道天使所作是真的，只當見了異象。</div>
+<div class="verse"><span class="verse-number">10</span>過了第一層第二層監牢，就來到臨街的鐵門，那門自己開了。他們出來，走過一條街，天使便離開他去了。</div>
+<div class="verse"><span class="verse-number">11</span>彼得醒悟過來，說：「我現在真知道主差遣他的使者，救我脫離希律的手和猶太百姓一切所盼望的。」</div>
+<div class="verse"><span class="verse-number">12</span>想了一想，就往那稱呼馬可的約翰、他母親馬利亞家去，在那裏有好些人聚集禱告。</div>
+<div class="verse"><span class="verse-number">13</span>彼得敲外門，有一個使女，名叫羅大，出來探聽，</div>
+<div class="verse"><span class="verse-number">14</span>聽得是彼得的聲音，就歡喜的顧不得開門，跑進去告訴眾人說：「彼得站在門外。」</div>
+<div class="verse"><span class="verse-number">15</span>他們說：「你是瘋了！」使女極力的說：「真是他！」他們說：「必是他的天使！」</div>
+<div class="verse"><span class="verse-number">16</span>彼得不住的敲門。他們開了門，看見他，就甚驚奇。</div>
+<div class="verse"><span class="verse-number">17</span>彼得擺手，不要他們作聲，就告訴他們主怎樣領他出監；又說：「你們把這事告訴雅各和眾弟兄。」於是出去，往別處去了。</div>
+<div class="verse"><span class="verse-number">18</span>到了天亮，兵丁擾亂得很，不知道彼得往那裏去了。</div>
+<div class="verse"><span class="verse-number">19</span>希律找他，找不着，就審問看守的人，吩咐把他們拉去殺了。後來希律離開猶太，下該撒利亞去，住在那裏。</div>
+<div class="verse"><span class="verse-number">20</span>希律惱怒推羅、西頓的人。他們那一帶地方是從王的地土得糧，因此就託了王的內侍臣伯拉斯都的情，一心來求和。</div>
+<div class="verse"><span class="verse-number">21</span>希律在所定的日子，穿上朝服，坐在位上，對他們講論一番。</div>
+<div class="verse"><span class="verse-number">22</span>百姓喊着說：「這是神的聲音，不是人的聲音。」</div>
+<div class="verse"><span class="verse-number">23</span>希律不歸榮耀給神，所以主的使者立刻罰他，他被蟲所咬，氣就絕了。</div>
+<div class="verse"><span class="verse-number">24</span>神的道日見興旺，越發廣傳。</div>
+<div class="verse"><span class="verse-number">25</span>巴拿巴和掃羅辦完了他們供給的事，就從耶路撒冷回來，帶着稱呼馬可的約翰同去。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第12章記述希律王迫害教會、斬首使徒雅各、囚禁彼得，以及神蹟性地釋放彼得的事件，並以希律王受審判而死作結，是初期教會在政治逼迫中神蹟護佑的生動記錄。本章首先記述希律王用刀殺了約翰的哥哥雅各，見猶太人喜悅就又拿了彼得，把他交給四班兵丁看守，打算過了逾越節提出來，彼得兩手被鎖在兩個兵丁當中，教會切切地為他禱告。希律要提出他的那一夜，主的使者到了，大放光明，鎖鍊從彼得手上脫落，使者帶領他出了一道二道，城門自己開了，使者忽然離開，彼得才知這是真的而非幻象。彼得往馬可的母親馬利亞家去，有許多人聚集禱告，使女羅大認出彼得的聲音，因驚喜奔進去報信反而忘了開門，眾人起先不信，彼得進去後把事情告訴他們。天亮後兵丁大亂，希律窮究衛兵後吩咐帶去殺了。後來希律在該撒利亞演講，眾人稱為神的聲音，他不將榮耀歸給神，立刻被主的使者打了，被蟲所咬而死。神的道日見興旺廣傳。本章以神的保護與審判對比展示神的主權。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 切切禱告帶來奇妙的拯救</strong><br>「教會卻為他切切的禱告神」——「切切」原文意為「熱切地、恒切地」。教會沒有因為雅各被殺而絕望，而是更加熱切地為彼得禱告。神的回應超過了他們的期望——不只是保護，而是完全的釋放。有時候我們不相信禱告的神蹟會發生，但我們仍然禱告；那本身就是信心的表現，而神按祂的時間和方式回應。<br><br>
+<strong>2. 正在禱告的人反而不信禱告被回應</strong><br>眾人正在為彼得禱告，羅大告訴他們彼得在門口，他們卻說「你是瘋了！必是他的天使！」——這個反差既有趣又深刻：即使在禱告中，我們也常常不相信神真的回應了。這提醒我們：禱告不只是說出請求，更是真正相信神會回應的信心操練。神的回應常常在我們還沒有預備好接受的時候就到了。<br><br>
+<strong>3. 神的道日見興旺，不受世俗權柄左右</strong><br>希律達到世俗權力的頂點——被人稱為神，受人崇拜——卻在那一刻被審判而死。「神的道日見興旺，越發廣傳」緊接在希律的死後——是刻意的神學對比：世俗的王即使有殺死使徒的能力，也無法阻擋神的道的擴展。「神所不支持的，必要滅亡」——歷史是在神手中展開的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>教會卻為他切切的</strong><strong>禱告神</strong>。（徒12:5）</td>
+<td>在你面對似乎無法改變的困境或威脅時，你有沒有為此「切切地禱告」，還是只是形式性地提到一下？就像全力救人和例行公事地喊救人力度完全不同，你的禱告有沒有反映出你真正相信神會介入的熱切？</td>
+</tr>
+<tr>
+<td><strong>神的道日見興旺</strong>，<strong>越發廣傳</strong>。（徒12:24）</td>
+<td>在你觀察的範圍內，有沒有看見神的道仍然興旺廣傳？就像即使在嚴冬下種子仍然在地下準備發芽，你有沒有在困難的環境中，仍然相信神的道必然得勝擴展？</td>
+</tr>
+<tr>
+<td><strong>彼得醒悟過來</strong>，說：「<strong>我現在真知道主差</strong>遣他的使者，救我脫離希律的手……」（徒12:11）</td>
+<td>你有沒有在事後才「醒悟過來」，認出神在你生命中的保護和帶領？就像回頭看才發現整個人生的轉折都有神的手在引導，你願意培養在當下就認出並感謝神作為的眼光嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

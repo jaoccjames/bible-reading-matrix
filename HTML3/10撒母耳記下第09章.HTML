@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記下第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記下第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">恩待米非波設</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>大衛問說：「掃羅家還有剩下的人沒有？我要因約拿單的緣故向他施恩。」</div>
+<div class="verse"><span class="verse-number">2</span>掃羅家有一個僕人，名叫洗巴，有人叫他來見大衛，王問他說：「你是洗巴嗎？」回答說：「僕人是。」</div>
+<div class="verse"><span class="verse-number">3</span>王說：「掃羅家還有人沒有？我要照神的慈愛恩待他。」洗巴對王說：「還有約拿單的一個兒子，是瘸腿的。」</div>
+<div class="verse"><span class="verse-number">4</span>王說：「他在那裏？」洗巴對王說：「他在羅底巴，亞米利的兒子瑪吉家裏。」</div>
+<div class="verse"><span class="verse-number">5</span>於是大衛王打發人去，從羅底巴亞米利的兒子瑪吉家裏召了他來。</div>
+<div class="verse"><span class="verse-number">6</span>掃羅的孫子、約拿單的兒子米非波設來見大衛，伏地叩拜。大衛說：「米非波設！」米非波設說：「僕人在此。」</div>
+<div class="verse"><span class="verse-number">7</span>大衛說：「你不要懼怕，我必因你父親約拿單的緣故施恩與你，將你祖父掃羅的一切田地都歸還你；你也可以常與我同席吃飯。」</div>
+<div class="verse"><span class="verse-number">8</span>米非波設又叩拜，說：「僕人算甚麼，不過如死狗一般，竟蒙王這樣眷顧！」</div>
+<div class="verse"><span class="verse-number">9</span>王召了掃羅的僕人洗巴來，對他說：「我已將屬掃羅和他的一切家產都賜給你主人的兒子了。</div>
+<div class="verse"><span class="verse-number">10</span>你和你的眾子、僕人要為你主人的兒子米非波設耕種田地，把所產的拿來供他食用；他卻要常與我同席吃飯。」洗巴有十五個兒子，二十個僕人。</div>
+<div class="verse"><span class="verse-number">11</span>洗巴對王說：「凡我主我王吩咐僕人的，僕人都必遵行。」王又說：「米非波設必與我同席吃飯，如王的兒子一樣。」</div>
+<div class="verse"><span class="verse-number">12</span>米非波設有一個小兒子，名叫米迦。凡住在洗巴家裏的人都作了米非波設的僕人。</div>
+<div class="verse"><span class="verse-number">13</span>於是米非波設住在耶路撒冷，常與王同席吃飯。他兩腿都是瘸的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載大衛如何恩待他摯友約拿單的兒子米非波設。米非波設在五歲時因聽聞掃羅和約拿單戰死的消息,在逃難中跌傷,雙腿殘廢,一直隱藏在羅底巴。按當時習俗,新王通常會殺盡前朝王室成員以鞏固政權,但大衛卻主動尋找掃羅家的後人,要向他們施恩。當米非波設戰戰兢兢來見大衛時,大衛不但歸還他祖父的產業,更讓他與王同席吃飯,待他如王子。這不僅是大衛對約拿單盟約的信實,更彰顯了神恩典的本質。本章生動地預表了神如何以恩典待我們這些本應滅亡的罪人。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 主動施恩的愛</strong><br>大衛主動尋找掃羅家的人,要向他們施恩,而不是等待他們來求。這正是神愛的本質 - 在我們還作罪人的時候,神就主動差遣耶穌來尋找拯救我們。神的愛不是被動等待,而是主動尋找。我們是否也能主動去愛那些曾傷害我們的人,或是與我們有過節的人?真正的愛是主動的、不求回報的。<br><br>
+<strong>2. 盟約的信實</strong><br>大衛因與約拿單的盟約而恩待米非波設,顯示他是守約施慈愛的人。神也是守約的神,祂與我們立的新約必定成就。我們是否也是守信用的人?在這個常常毀約的世代,基督徒應當是最守信用的人,因為我們的神是信實的神,我們理當反映祂的性情。<br><br>
+<strong>3. 不配的恩典</strong><br>米非波設自稱「如死狗一般」,深知自己不配得王的恩寵。我們在神面前也是如此 - 本是可怒之子,卻蒙了憐憫。神不是因為我們配得,而是因為祂的慈愛而恩待我們。認識到自己的不配,才能真正領受並珍惜神的恩典,也才能以同樣的恩典待人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>大衛問說</strong>:「<strong>掃羅家還有剩下的</strong>人沒有?我要因約拿單的緣故向他施恩。」(撒下9:1)</td>
+<td>當我們想起曾經傷害我們的人時,就像想起曾經的競爭對手或敵人,我們是否願意主動尋找機會向他們或他們的家人施恩?什麼攔阻了我們主動去愛?</td>
+</tr>
+<tr>
+<td><strong>大衛說</strong>:「<strong>你不要懼怕</strong>,我必因你父親約拿單的緣故施恩與你,將你祖父掃羅的一切田地都歸還你。」(撒下9:7)</td>
+<td>當我們懷著恐懼來到神面前時,就像犯錯的孩子害怕父母責罰,神是否也對我們說「不要懼怕」並賜下恩典?我們如何才能真正領受神的赦免而不再恐懼?</td>
+</tr>
+<tr>
+<td><strong>米非波設又叩拜</strong>,說:「<strong>僕人算什麼</strong>,不過如死狗一般,竟蒙王這樣眷顧!」(撒下9:8)</td>
+<td>當我們領受神的恩典時,就像意外獲得遠超預期的禮物,我們是否認識到自己的不配,並因此更加感恩珍惜?我們會因為習慣了恩典而忘記感恩嗎?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

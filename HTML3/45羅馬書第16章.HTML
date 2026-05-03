@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>羅馬書第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+羅馬書第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">問安與榮耀頌</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我對你們舉薦我們的姐妹非比，她是堅革哩教會中的女執事。</div>
+<div class="verse"><span class="verse-number">2</span>請你們為主接待她，合乎聖徒的體統。她在何事上要你們幫助，你們就幫助她，因她素來幫助許多人，也幫助了我。</div>
+<div class="verse"><span class="verse-number">3</span>問百基拉和亞居拉安。他們在基督耶穌裏與我同工，</div>
+<div class="verse"><span class="verse-number">4</span>也為我的命將自己的頸項置之度外。不但我感謝他們，就是外邦的眾教會也感謝他們。</div>
+<div class="verse"><span class="verse-number">5</span>又問在他們家中的教會安。問我所親愛的以拜尼土安；他在亞西亞是歸基督初結的果子。</div>
+<div class="verse"><span class="verse-number">6</span>又問馬利亞安；她為你們多受勞苦。</div>
+<div class="verse"><span class="verse-number">7</span>又問我親屬與我一同坐監的安多尼古和猶尼亞安；他們在使徒中是有名望的，也是比我先在基督裏。</div>
+<div class="verse"><span class="verse-number">8</span>又問我在主裏面所親愛的暗伯利安。</div>
+<div class="verse"><span class="verse-number">9</span>又問在基督裏與我們同工的耳巴奴，並我所親愛的士大古安。</div>
+<div class="verse"><span class="verse-number">10</span>又問在基督裏經過試驗的亞比利安。問亞利多布家裏的人安。</div>
+<div class="verse"><span class="verse-number">11</span>又問我親屬希羅天安。問拿其數家在主裏的人安。</div>
+<div class="verse"><span class="verse-number">12</span>又問為主勞苦的土非拿氏和土富撒氏安。問可親愛為主多受勞苦的彼息氏安。</div>
+<div class="verse"><span class="verse-number">13</span>又問在主蒙揀選的魯孚和他母親安；他的母親就是我的母親。</div>
+<div class="verse"><span class="verse-number">14</span>又問亞遜其土、弗勒干、黑米、八羅巴、黑馬，並與他們在一處的弟兄們安。</div>
+<div class="verse"><span class="verse-number">15</span>又問非羅羅古和猶利亞，尼利亞和他姐妹，同阿林巴並與他們在一處的眾聖徒安。</div>
+<div class="verse"><span class="verse-number">16</span>你們親嘴問安，彼此務要聖潔。基督的眾教會都問你們安。</div>
+<div class="verse"><span class="verse-number">17</span>弟兄們，那些離間你們、叫你們跌倒、背乎所學之道的人，我勸你們要留意躲避他們。</div>
+<div class="verse"><span class="verse-number">18</span>因為這樣的人不服事我們的主基督，只服事自己的肚腹，用花言巧語誘惑那些老實人的心。</div>
+<div class="verse"><span class="verse-number">19</span>你們的順服已經傳於眾人，所以我為你們歡喜；但我願意你們在善上聰明，在惡上愚拙。</div>
+<div class="verse"><span class="verse-number">20</span>賜平安的神快要將撒但踐踏在你們腳下。願我主耶穌基督的恩常和你們同在！</div>
+<div class="verse"><span class="verse-number">21</span>與我同工的提摩太，和我的親屬路求、耶孫、所西巴德，問你們安。</div>
+<div class="verse"><span class="verse-number">22</span>我這代筆寫信的德丟，在主裏面問你們安。</div>
+<div class="verse"><span class="verse-number">23</span>那接待我、也接待全教會的該猶問你們安。</div>
+<div class="verse"><span class="verse-number">24</span>城內管銀庫的以拉都，和兄弟括土問你們安。</div>
+<div class="verse"><span class="verse-number">25</span>惟有神能照我所傳的福音和所講的耶穌基督，並照永古隱藏不言的奧祕，堅固你們的心。</div>
+<div class="verse"><span class="verse-number">26</span>這奧祕如今顯明出來，而且按着永生神的命，藉眾先知的書指示萬國的民，使他們信服真道。</div>
+<div class="verse"><span class="verse-number">27</span>願榮耀因耶穌基督歸與獨一全智的神，直到永遠。阿們！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第16章是羅馬書的結語，包含大量個人問安、勸戒謹防假教師，以及一段壯麗的頌讚，展示保羅廣闊的同工網絡和對教會合一的珍視。本章首先推薦女執事非比，請眾人接待她並在她有需要的事上幫助她，因她素來幫助許多人。然後長篇問候包括百基拉和亞居拉夫婦，說他們為保羅的命放下自己的頸項，不但保羅感謝他們就是外邦的眾教會也感謝他們；又問候以拜尼土、馬利亞、安多尼古和猶尼亞等許多同工，一共問候了二十六個人，其中也包括幾位婦女。接著插入一段嚴肅的警告：要留意那些悖逆你們所學之道叫人跌倒的人，要遠避他們，因為這樣的人不服事我們的主基督，只服事自己的肚腹，用花言巧語誘惑那些老實人的心。然後問候提摩太等同工，並代替書記第三布和其他人向眾人問好。最後以壯麗的頌讚作結：讚美那能照保羅所傳的福音使眾人所信從神，這奧秘藏了許多世代現今卻顯明出來，使萬民信從的神，願榮耀歸給獨一全智的神，藉著耶穌基督直到永遠。本章以廣泛的問安顯示初期教會的網絡連結。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 每個信徒的名字都在神心裏</strong><br>長串的問安清單顯示：保羅認識這些人，記得他們的名字、他們的服事、他們的故事。神的家不是抽象的教義，而是真實的人的群體，每個人都有名字、有故事、有貢獻。馬利亞「多受勞苦」，百基拉和亞居拉「為保羅的命置死」，以拜尼土是「初結的果子」——每個人的服事都被看見、被記念。在神眼裏，每一個忠心服事的人都是重要的。<br><br>
+<strong>2. 警惕製造分裂和為肚腹服事的人</strong><br>「那些……用花言巧語誘惑老實人的，要留意躲避」——假教師的特點不是明目張膽，而是用好聽的話（花言巧語）欺騙單純的人。「服事自己的肚腹」——個人利益的驅動是假教師的底色。分辨真假教師的方法：看他的教導是否帶來分裂，看他的動機是服事基督還是服事自己。「在善上聰明，在惡上愚拙」——對善要精通，對惡要無知。<br><br>
+<strong>3. 榮耀歸與獨一全智的神</strong><br>整卷羅馬書以神的榮耀作結：「願榮耀因耶穌基督歸與獨一全智的神，直到永遠」。從第1章人的罪性到第11章神的奧祕，到第12-16章生活的更新，全部都在神的榮耀這個框架下。神的計劃——從亙古隱藏到如今顯明的福音奧祕——最終目的是祂的榮耀。信徒生命的最終目的，也是讓神得榮耀。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>弟兄們</strong>，<strong>那些離間你們</strong>、叫你們跌倒、背乎所學之道的人，我勸你們要留意躲避他們。（羅16:17）</td>
+<td>你有沒有培養辨別「使人跌倒和製造分裂的教導」的能力，在接受新的教導時先以聖經和信仰群體的見識來驗證？就像食品標籤需要仔細閱讀才知道成分，你有沒有對你所接受的教導保持謹慎和辨別的態度？</td>
+</tr>
+<tr>
+<td><strong>願榮耀因耶穌基督</strong><strong>歸與獨一全智的神</strong>，直到永遠。阿們！（羅16:27）</td>
+<td>你有沒有讓「榮耀歸與神」成為你生命一切活動的終極目的——工作、服事、家庭、娛樂？就像一切音符最終都引向和弦的主音，你有沒有讓生命的每一部分都指向神的榮耀？</td>
+</tr>
+<tr>
+<td><strong>問百基拉和亞居拉</strong>安。<strong>他們在基督耶穌裏</strong>與我同工，也為我的命將自己的頸項置之度外。（羅16:3-4）</td>
+<td>你有沒有在你的信仰旅程中，認識並感謝那些「為你置之度外」的人——那些陪伴你、幫助你、甚至為你犧牲的弟兄姐妹？你有沒有讓自己也成為別人生命中這樣的同行者？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

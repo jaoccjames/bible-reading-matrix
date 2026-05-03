@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">差遣十二使徒傳道</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌叫了十二個門徒來，給他們權柄，能趕逐污鬼，並醫治各樣的病症。</div>
+<div class="verse"><span class="verse-number">2</span>這十二使徒的名：頭一個叫西門（又稱彼得），還有他兄弟安得烈，西庇太的兒子雅各和雅各的兄弟約翰，</div>
+<div class="verse"><span class="verse-number">3</span>腓力和巴多羅買，多馬和稅吏馬太，亞勒腓的兒子雅各，和達太，</div>
+<div class="verse"><span class="verse-number">4</span>奮銳黨的西門，還有賣耶穌的加略人猶大。</div>
+<div class="verse"><span class="verse-number">5</span>耶穌差這十二個人去，吩咐他們說：「外邦人的路，你們不要走；撒瑪利亞人的城，你們不要進；</div>
+<div class="verse"><span class="verse-number">6</span>寧可往以色列家迷失的羊那裏去。</div>
+<div class="verse"><span class="verse-number">7</span>隨走隨傳，說『天國近了！』</div>
+<div class="verse"><span class="verse-number">8</span>醫治病人，叫死人復活，叫長大痲瘋的潔淨，把鬼趕出去。你們白白的得來，也要白白的捨去。</div>
+<div class="verse"><span class="verse-number">9</span>腰袋裏不要帶金銀銅錢。</div>
+<div class="verse"><span class="verse-number">10</span>行路不要帶口袋；不要帶兩件褂子，也不要帶鞋和枴杖；因為工人得飲食是應當的。</div>
+<div class="verse"><span class="verse-number">11</span>你們無論進那一城，那一村，要打聽那裏誰是好人，就住在他家，直住到走的時候。</div>
+<div class="verse"><span class="verse-number">12</span>進他家裏去，要請他的安。</div>
+<div class="verse"><span class="verse-number">13</span>那家若配得平安，你們所求的平安就必臨到那家；若不配得，你們所求的平安仍歸你們。</div>
+<div class="verse"><span class="verse-number">14</span>凡不接待你們、不聽你們話的人，你們離開那家，或是那城的時候，就把腳上的塵土跺下去。</div>
+<div class="verse"><span class="verse-number">15</span>我實在告訴你們，當審判的日子，所多瑪和蛾摩拉所受的，比那城還容易受呢！」</div>
+<div class="verse"><span class="verse-number">16</span>「我差你們去，如同羊進入狼群；所以你們要靈巧像蛇，馴良像鴿子。</div>
+<div class="verse"><span class="verse-number">17</span>你們要防備人；因為他們要把你們交給公會，也要在會堂裏鞭打你們，</div>
+<div class="verse"><span class="verse-number">18</span>並且你們要為我的緣故被送到諸侯君王面前，對他們和外邦人作見證。</div>
+<div class="verse"><span class="verse-number">19</span>你們被交的時候，不要思慮怎樣說話，或說甚麼話。到那時候，必賜給你們當說的話；</div>
+<div class="verse"><span class="verse-number">20</span>因為不是你們自己說的，乃是你們父的靈在你們裏頭說的。</div>
+<div class="verse"><span class="verse-number">21</span>弟兄要把弟兄，父親要把兒子，送到死地；兒女要與父母為敵，害死他們；</div>
+<div class="verse"><span class="verse-number">22</span>並且你們要為我的名被眾人恨惡。惟有忍耐到底的必然得救。</div>
+<div class="verse"><span class="verse-number">23</span>有人在這城裏逼迫你們，就逃到那城裏去。我實在告訴你們，以色列的城邑，你們還沒有走遍，人子就到了。</div>
+<div class="verse"><span class="verse-number">24</span>學生不能高過先生；僕人不能高過主人。</div>
+<div class="verse"><span class="verse-number">25</span>學生和先生一樣，僕人和主人一樣，也就罷了。人既罵家主是別西卜〔別西卜：是鬼王的名〕，何況他的家人呢？」</div>
+<div class="verse"><span class="verse-number">26</span>「所以，不要怕他們；因為掩蓋的事沒有不露出來的，隱藏的事沒有不被人知道的。</div>
+<div class="verse"><span class="verse-number">27</span>我在暗中告訴你們的，你們要在明處說出來；你們耳中所聽的，要在房上宣揚出來。</div>
+<div class="verse"><span class="verse-number">28</span>那殺身體不能殺靈魂的，不要怕他們；惟有能把身體和靈魂都滅在地獄裏的，正要怕他。</div>
+<div class="verse"><span class="verse-number">29</span>兩個麻雀不是賣一分銀子嗎？若是你們的父不許，一個也不能掉在地上；</div>
+<div class="verse"><span class="verse-number">30</span>就是你們的頭髮也都被數過了。</div>
+<div class="verse"><span class="verse-number">31</span>所以，不要懼怕，你們比許多麻雀還貴重！」</div>
+<div class="verse"><span class="verse-number">32</span>「凡在人面前認我的，我在我天上的父面前也必認他；</div>
+<div class="verse"><span class="verse-number">33</span>凡在人面前不認我的，我在我天上的父面前也必不認他。」</div>
+<div class="verse"><span class="verse-number">34</span>「你們不要想我來是叫地上太平；我來並不是叫地上太平，乃是叫地上動刀兵。</div>
+<div class="verse"><span class="verse-number">35</span>因為我來是叫人與父親生疏，女兒與母親生疏，媳婦與婆婆生疏。</div>
+<div class="verse"><span class="verse-number">36</span>人的仇敵就是自己家裏的人。</div>
+<div class="verse"><span class="verse-number">37</span>「愛父母過於愛我的，不配作我的門徒；愛兒女過於愛我的，不配作我的門徒；</div>
+<div class="verse"><span class="verse-number">38</span>不背着他的十字架跟從我的，也不配作我的門徒。</div>
+<div class="verse"><span class="verse-number">39</span>得着生命的，將要失喪生命；為我失喪生命的，將要得着生命。」</div>
+<div class="verse"><span class="verse-number">40</span>「人接待你們就是接待我；接待我就是接待那差我來的。</div>
+<div class="verse"><span class="verse-number">41</span>人因為先知的名接待先知，必得先知所得的賞賜；人因為義人的名接待義人，必得義人所得的賞賜。</div>
+<div class="verse"><span class="verse-number">42</span>無論何人，因為門徒的名，只把一杯涼水給這小子裏的一個喝，我實在告訴你們，這人不能不得賞賜。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第10章是馬太福音五大教導段落中的第二段，記述耶穌差派十二門徒出去傳道前的詳細訓示。本章首先列出十二使徒的名單，包括彼得、安德烈、雅各、約翰、腓力、巴多羅買、多馬、馬太、亞勒腓的兒子雅各、達太、奮銳黨的西門及賣主的加略人猶大。接著耶穌差派他們先往以色列家迷失的羊那裡去，不往外邦人和撒瑪利亞人的地方，宣告天國近了、醫治病人、趕逐鬼魔，且不帶金銀或行囊，接受所到之處的款待。然後耶穌預告他們將面對逼迫，被拉到會堂、官府和王面前，要他們不要預謀說什麼，因聖靈會指示他們當說的話。本章後半強調在逼迫中的堅守，不要怕那殺身體的只怕那能把靈魂與身體都滅在地獄裡的；又說明跟從耶穌可能引發家庭衝突，要求門徒背起自己的十字架跟從祂。本章為初期宣教事工奠定神學基礎。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 宣教是蒙授權的使命而非個人選項</strong><br>耶穌「給他們權柄」再差遣他們——使徒不是憑自己的能力出去，而是帶着基督授予的權柄。「白白得來，也要白白捨去」提醒我們：神的恩典不是商品，宣教不是交易。每一個信徒都是被差遣者，帶着神賦予的恩賜與呼召，有責任將所領受的傳遞出去。<br><br>
+<strong>2. 跟從基督必有代價但不必恐懼</strong><br>耶穌誠實地告訴門徒將要面對的逼迫，但緊接着給出三個「不要怕」：掩蓋的事必顯露、神連麻雀都看顧何況信徒、在人面前認祂神也必認他。這不是天真的樂觀，而是以神的主權為根基的勇氣。恐懼往往比逼迫本身更能癱瘓人，耶穌的話語是對恐懼最直接的醫治。<br><br>
+<strong>3. 以基督為至高效忠的門徒生命</strong><br>「愛父母過於愛我的，不配作我的門徒」——這句話聽起來冷酷，卻是對門徒身份的誠實說明。跟從基督不是生命中的一個選項，而是重新排列所有關係的核心。十字架是門徒生命的記號，失喪是為了得着。這是反直覺的天國邏輯：只有把生命交給基督，才能真正活着。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>醫治病人</strong>，<strong>叫死人復活</strong>，叫長大痲瘋的潔淨，把鬼趕出去。你們白白的得來，也要白白的捨去。（太10:8）</td>
+<td>你是否把神給你的恩賜和恩典慷慨地分享給他人，而不是保留或出售？就像得到免費的好消息第一個反應是想告訴朋友，你有沒有把福音和神的恩典白白地傳遞給身邊的人？</td>
+</tr>
+<tr>
+<td><strong>就是你們的頭髮也</strong><strong>都被數過了</strong>。所以，不要懼怕，你們比許多麻雀還貴重！（太10:30-31）</td>
+<td>在你面對逼迫、批評或不確定的未來時，你有沒有相信神對你的細心看顧？就像父母記得孩子每一個重要時刻，你相信神對你的關注細膩到連頭髮都數過嗎？</td>
+</tr>
+<tr>
+<td><strong>凡在人面前認我的</strong>，<strong>我在我天上的父面</strong>前也必認他。（太10:32）</td>
+<td>你在職場、朋友圈中，願意公開承認自己是基督徒嗎？就像代理商公開代理某品牌才能獲得資源和支持，你願意在人前認耶穌，讓祂在天父面前也認你嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

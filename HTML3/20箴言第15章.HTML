@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第15章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第15章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">柔和回應與謙卑受教：尊榮前必有謙卑</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>回答柔和，使怒消退；言語暴戾，觸動怒氣。</div>
+<div class="verse"><span class="verse-number">2</span>智慧人的舌善發知識；愚昧人的口吐出愚昧。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華的眼目無處不在；惡人善人，他都鑒察。</div>
+<div class="verse"><span class="verse-number">4</span>溫良的舌是生命樹；乖謬的嘴使人心碎。</div>
+<div class="verse"><span class="verse-number">5</span>愚妄人藐視父親的管教；領受責備的，得着見識。</div>
+<div class="verse"><span class="verse-number">6</span>義人家中多有財寶；惡人得利反受擾害。</div>
+<div class="verse"><span class="verse-number">7</span>智慧人的嘴播揚知識；愚昧人的心並不如此。</div>
+<div class="verse"><span class="verse-number">8</span>惡人獻祭，為耶和華所憎惡；正直人祈禱，為他所喜悅。</div>
+<div class="verse"><span class="verse-number">9</span>惡人的道路，為耶和華所憎惡；追求公義的，為他所喜愛。</div>
+<div class="verse"><span class="verse-number">10</span>捨棄正路的，必受嚴刑；恨惡責備的，必致死亡。</div>
+<div class="verse"><span class="verse-number">11</span>陰間和滅亡尚在耶和華眼前，何況世人的心呢？</div>
+<div class="verse"><span class="verse-number">12</span>褻慢人不愛受責備；他也不就近智慧人。</div>
+<div class="verse"><span class="verse-number">13</span>心中喜樂，面帶笑容；心裏憂愁，靈被損傷。</div>
+<div class="verse"><span class="verse-number">14</span>聰明人心求知識；愚昧人口喫愚昧。</div>
+<div class="verse"><span class="verse-number">15</span>困苦人的日子都是愁苦；心中歡暢的，常享豐筵。</div>
+<div class="verse"><span class="verse-number">16</span>少有財寶，敬畏耶和華，強如多有財寶，煩亂不安。</div>
+<div class="verse"><span class="verse-number">17</span>吃素菜，彼此相愛，強如喫肥牛，彼此相恨。</div>
+<div class="verse"><span class="verse-number">18</span>暴怒的人挑啟爭端；忍怒的人止息紛爭。</div>
+<div class="verse"><span class="verse-number">19</span>懶惰人的道像荊棘的籬笆；正直人的路是平坦的大道。</div>
+<div class="verse"><span class="verse-number">20</span>智慧子使父親喜樂；愚昧人藐視母親。</div>
+<div class="verse"><span class="verse-number">21</span>無知的人以愚妄為樂；聰明的人按正直而行。</div>
+<div class="verse"><span class="verse-number">22</span>不先商議，所謀無效；謀士眾多，所謀乃成。</div>
+<div class="verse"><span class="verse-number">23</span>口善應對，自覺喜樂；話合其時，何等美好。</div>
+<div class="verse"><span class="verse-number">24</span>智慧人從生命的道上升，使他遠離在下的陰間。</div>
+<div class="verse"><span class="verse-number">25</span>耶和華必拆毀驕傲人的家，卻要立定寡婦的地界。</div>
+<div class="verse"><span class="verse-number">26</span>惡謀為耶和華所憎惡；良言乃為純淨。</div>
+<div class="verse"><span class="verse-number">27</span>貪戀財利的，擾害己家；恨惡賄賂的，必得存活。</div>
+<div class="verse"><span class="verse-number">28</span>義人的心，思量如何回答；惡人的口吐出惡言。</div>
+<div class="verse"><span class="verse-number">29</span>耶和華遠離惡人，卻聽義人的禱告。</div>
+<div class="verse"><span class="verse-number">30</span>眼有光，使心喜樂；好信息，使骨滋潤。</div>
+<div class="verse"><span class="verse-number">31</span>聽從生命責備的，必常在智慧人中。</div>
+<div class="verse"><span class="verse-number">32</span>棄絕管教的，輕看自己的生命；聽從責備的，卻得智慧。</div>
+<div class="verse"><span class="verse-number">33</span>敬畏耶和華是智慧的訓誨；尊榮以前，必有謙卑。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第十五章以「回答柔和，使怒消退」開篇，立即奠定本章的情感與關係主調——柔和的言語具有化解衝突的力量。全章三十三節涵蓋了言語的品質、神的全知、心靈的狀態、財富與內心平安的關係、謙卑受教，以及禱告的功效等多個主題。本章的神學亮點包括：第3節宣告「耶和華的眼目無處不在」，是神全知屬性的直接宣告；第8節指出，惡人的獻祭為神所憎惡，但正直人的禱告為神所喜悅，說明宗教行為若缺乏真實的心態，便毫無意義；第16-17節以「少財寶+敬畏神」勝過「多財寶+煩亂」、「素菜+相愛」勝過「肥牛+相恨」，鮮明地表達神國度對物質與關係的顛覆性排序；第33節「尊榮以前，必有謙卑」則以精煉的語言呈現了謙卑是通往尊榮的必經之路，是全章最具總結性的屬靈格言。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 柔和的言語是化解衝突、建造關係的屬靈力量</strong><br>第1節「回答柔和，使怒消退；言語暴戾，觸動怒氣」，以簡潔的對比揭示了語氣與態度在衝突中的決定性作用。面對憤怒或攻擊，人的本能反應往往是以強硬回應，但智慧卻指向相反的方向。柔和不等於軟弱，而是以克制與溫柔打破憤怒的循環。這種言語的品質，需要心靈的更新，是聖靈果子「溫柔」的具體彰顯。<br><br>
+<strong>2. 真正的富足在乎心中有神，而非倉中有糧</strong><br>第16-17節以雙重對比，說明敬畏神與彼此相愛的關係，其價值遠超過物質的豐富。這是箴言書的重要神學立場：物質本身不是惡的，但以物質為最終追求，便會帶來焦慮、嫉妒與關係破裂。一個心中有神、生活簡樸卻充滿愛的家庭，比財富豐裕卻充滿紛爭的家庭，在神眼中更為美好、也更讓人幸福。<br><br>
+<strong>3. 謙卑是通往尊榮的必經之路</strong><br>第33節「尊榮以前，必有謙卑」是箴言書的核心屬靈法則，在新約中也多次得到印證（太23:12；彼前5:6）。人的本性傾向於跳過謙卑、追求直接的尊榮；然而神的方式恰恰相反——祂高舉謙卑的人，壓制驕傲的人。這呼籲信徒在每一個服事、每一段關係中，選擇謙卑的姿態，相信神的時機與高舉方式。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>回答柔和</strong>，<strong>使怒消退</strong>；言語暴戾，觸動怒氣。」（箴15:1）</td>
+<td>就像消防員用水而非用油來滅火，柔和的回應能讓衝突降溫，你上一次在衝突中選擇「柔和回應」是什麼時候？結果如何？是什麼讓你在憤怒的情境中難以保持溫和？</td>
+</tr>
+<tr>
+<td>「<strong>少有財寶</strong>，<strong>敬畏耶和華</strong>，強如多有財寶，煩亂不安。」（箴15:16）</td>
+<td>就像住在小房子卻每天睡得安穩，比住在豪宅卻夜夜憂慮債務更令人羨慕，你目前生活中最大的「煩亂不安」來自哪裡？神在其中的位置，是否真的讓你感到不同？</td>
+</tr>
+<tr>
+<td>「<strong>尊榮以前</strong>，<strong>必有謙卑</strong>。」（箴15:33）</td>
+<td>就像種子必須先埋入土中才能發芽生長，謙卑是成長的必要過程，你目前在哪個領域——事業、信仰、家庭——正在經歷一段「被埋入土中」的謙卑時期？你如何看待這段過程？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

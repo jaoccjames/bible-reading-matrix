@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多後書第3章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多後書第3章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">新約的榮光與被聖靈改變</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我們豈是又舉薦自己嗎？豈像別人用人的薦信給你們或用你們的薦信給人嗎？</div>
+<div class="verse"><span class="verse-number">2</span>你們就是我們的薦信，寫在我們的心裏，被眾人所知道所念誦的。</div>
+<div class="verse"><span class="verse-number">3</span>你們明顯是基督的信，藉着我們修成的。不是用墨寫的，乃是用永生神的靈寫的；不是寫在石版上，乃是寫在心版上。</div>
+<div class="verse"><span class="verse-number">4</span>我們因基督，所以在神面前纔有這樣的信心。</div>
+<div class="verse"><span class="verse-number">5</span>並不是我們憑自己能承擔甚麼事；我們所能承擔的，乃是出於神。</div>
+<div class="verse"><span class="verse-number">6</span>他叫我們能承當這新約的執事，不是憑着字句，乃是憑着精意；因為那字句是叫人死，精意〔或作：聖靈〕是叫人活。</div>
+<div class="verse"><span class="verse-number">7</span>那用字刻在石頭上屬死的職事尚且有榮光，甚至以色列人因摩西面上的榮光，不能定睛看他的臉；這榮光原是漸漸退去的，</div>
+<div class="verse"><span class="verse-number">8</span>何況那屬靈的職事豈不更有榮光嗎？</div>
+<div class="verse"><span class="verse-number">9</span>若是定罪的職事有榮光，那稱義的職事榮光就越發大了。</div>
+<div class="verse"><span class="verse-number">10</span>那從前有榮光的，因這極大的榮光就算不得有榮光了；</div>
+<div class="verse"><span class="verse-number">11</span>若那廢掉的有榮光，這長存的就更有榮光了。</div>
+<div class="verse"><span class="verse-number">12</span>我們既有這樣的盼望，就大膽講說，</div>
+<div class="verse"><span class="verse-number">13</span>不像摩西將帕子蒙在臉上，叫以色列人不能定睛看到那將廢者的結局。</div>
+<div class="verse"><span class="verse-number">14</span>但他們的心地剛硬，直到今日誦讀舊約的時候，這帕子還沒有揭去。這帕子在基督裏已經廢去了。</div>
+<div class="verse"><span class="verse-number">15</span>然而直到今日，每逢誦讀摩西書的時候，帕子還在他們心上。</div>
+<div class="verse"><span class="verse-number">16</span>但他們的心幾時歸向主，帕子就幾時除去了。</div>
+<div class="verse"><span class="verse-number">17</span>主就是那靈；主的靈在那裏，那裏就得以自由。</div>
+<div class="verse"><span class="verse-number">18</span>我們眾人既然敞着臉，得以看見主的榮光，好像從鏡子裏返照，就變成主的形狀，榮上加榮，如同從主的靈變成的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第3章是哥林多後書神學最豐富的章節之一，保羅以新舊約對比的方式闡述新約事奉的榮耀，核心是聖靈賜生命與律法刻字的對比。本章首先回應那些質疑保羅資格的人，說他不需要薦信，因為哥林多人自己就是保羅的信，是用聖靈寫在心版上的。接著保羅說他們的才幹都是出於神，神使他們能承當這新約的執事，不是憑著字句乃是憑著聖靈，因為字句叫人死、聖靈叫人活。然後以摩西的職事作對比：摩西職事的榮耀是短暫的、是外在的，以致摩西用帕子遮臉；但新約的職事是更大的榮耀，是義的職事、是常存的榮耀。接著說明以色列人的心有帕子遮蓋，但人歸向主的時候，帕子就除去了。最後宣告主就是那靈，主的靈在哪裡那裡就得以自由，我們眾人敞開臉面如同鏡子反照主的榮光，就變化成主的形狀，榮上加榮，如同從主的靈變化的。本章是理解新約事奉神學的重要文獻，以聖靈的工作為基督徒生命轉化的根基。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 改變的生命是最有力的薦信</strong><br>「你們就是我們的薦信」——被基督改變的生命，是對傳道工作最有力的見證，比任何文書更有說服力。「不是用墨寫的，乃是用永生神的靈寫的；不是寫在石版上，乃是寫在心版上」——真正的屬靈工作是在人心裏的改變，不是外在的宗教規條。每一個真實改變的生命，都是神工作的宣告。<br><br>
+<strong>2. 「字句叫人死，精意叫人活」</strong><br>新約不是更嚴格的律法，而是聖靈帶來的心靈更新。「那字句是叫人死」——只有外在規條卻沒有內在聖靈的工作，只帶來定罪和死亡。「精意是叫人活」——聖靈的工作帶來的是生命、自由和真實的改變。信仰不是更努力地遵守更多規條，而是讓聖靈在心裏真實地工作。<br><br>
+<strong>3. 「榮上加榮」是聖靈持續的改變</strong><br>「就變成主的形狀，榮上加榮，如同從主的靈變成的」——靈命成長是一個持續的過程，不是一次性的完成。「敞着臉」——沒有帕子的遮蔽，能夠清晰地看見主的榮光。「返照」——越看越像，是默想和親近的自然結果。屬靈成長的方法不是更努力的自我修煉，而是持續地「看見主的榮光」——凝視基督，讓聖靈完成改變的工作。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我們眾人既然敞着</strong>臉，<strong>得以看見主的榮光</strong>，好像從鏡子裏返照，就變成主的形狀，榮上加榮，如同從主的靈變成的。（林後3:18）</td>
+<td>你有沒有讓「凝視主的榮光」——透過讀聖經、禱告、默想基督——成為你靈命成長的主要方法？就像一個人長時間與某人相處會不知不覺地受影響，你有沒有讓你與基督的親近關係成為你靈命轉化最自然的動力？</td>
+</tr>
+<tr>
+<td><strong>他叫我們能承當這</strong><strong>新約的執事</strong>，不是憑着字句，乃是憑着精意；因為那字句是叫人死，精意是叫人活。（林後3:6）</td>
+<td>你有沒有讓信仰從「遵守外在規條的努力」，進入「聖靈在心裏的真實工作」？就像學音樂最終是為了享受音樂而非只是練習音階，你有沒有讓你的信仰生活從儀式性的義務，進入與神活潑的相交？</td>
+</tr>
+<tr>
+<td><strong>你們就是我們的薦</strong>信，<strong>寫在我們的心裏</strong>，被眾人所知道所念誦的……不是寫在石版上，乃是寫在心版上。（林後3:2-3）</td>
+<td>你的生命改變有沒有成為向周圍人傳講基督最有力的見證？就像改變後的人格和生命讓人不需要解釋就能感受到，你有沒有讓你的生命成為那封「被眾人所知道所念誦的」活的推薦信？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

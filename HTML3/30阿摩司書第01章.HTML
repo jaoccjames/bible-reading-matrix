@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阿摩司書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+阿摩司書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">論列國的審判神諭</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當猶大王烏西雅，以色列王約阿施的兒子耶羅波安在位的時候，大地震前二年，提哥亞牧人中的阿摩司得默示論以色列。</div>
+<div class="verse"><span class="verse-number">2</span>他說：耶和華必從錫安吼叫，從耶路撒冷發聲；牧人的草場要悲哀；迦密的山頂要枯乾。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華如此說：大馬色三番四次的犯罪，我必不免去他的刑罰；因為他以打糧食的鐵器打過基列。</div>
+<div class="verse"><span class="verse-number">4</span>我卻要降火在哈薛的家中，燒滅便哈達的宮殿。</div>
+<div class="verse"><span class="verse-number">5</span>我必折斷大馬色的門閂，剪除亞文平原的居民和伯伊甸掌權的。亞蘭人必被擄到吉珥。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">6</span>耶和華如此說：迦薩三番四次的犯罪，我必不免去他的刑罰；因為他擄掠眾民交給以東。</div>
+<div class="verse"><span class="verse-number">7</span>我卻要降火在迦薩的城內，燒滅其中的宮殿。</div>
+<div class="verse"><span class="verse-number">8</span>我必剪除亞實突的居民和亞實基倫掌權的，也必反手攻擊以革倫。非利士人所餘剩的必都滅亡。這是主耶和華說的。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華如此說：推羅三番四次的犯罪，我必不免去他的刑罰；因為他將眾民交給以東，並不記念弟兄的盟約。</div>
+<div class="verse"><span class="verse-number">10</span>我卻要降火在推羅的城內，燒滅其中的宮殿。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華如此說：以東三番四次的犯罪，我必不免去他的刑罰；因為他拿刀追趕兄弟，毫無憐憫，發怒撕裂，永懷忿怒。</div>
+<div class="verse"><span class="verse-number">12</span>我卻要降火在提幔，燒滅波斯拉的宮殿。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華如此說：亞捫人三番四次的犯罪，我必不免去他們的刑罰；因為他們剖開基列的孕婦，擴張自己的境界。</div>
+<div class="verse"><span class="verse-number">14</span>我卻要在爭戰吶喊的日子，旋風狂暴的時候，點火在拉巴的城內，燒滅其中的宮殿。</div>
+<div class="verse"><span class="verse-number">15</span>他們的王和首領必一同被擄去。這是耶和華說的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+阿摩司書第1章是全書的序幕，先知阿摩司是提哥亞的牧人（非先知家族），被神呼召到北國以色列傳道，時在耶羅波安二世年間（主前約760年）。本章以固定的公式「三番四次的犯罪，我必不免去他的刑罰」，對以色列周邊的列國逐一宣告審判：大馬色（以鐵器踐踏基列）、迦薩（擄掠人口賣給以東）、推羅（不守盟約交人給以東）、以東（以刀追趕弟兄、永懷忿怒）、亞捫（為擴張疆土殺害孕婦）。每個罪行都涉及對人的尊嚴的侵犯：貿易奴隸、種族滅絕、殘忍的戰爭手段。神對列國的公義標準不只適用於以色列——外邦列國同樣在神的道德管治之下。本章採用「包圍論述」策略：先論周邊列國，使以色列聽眾以為是在審判仇敵，然後在第2章突然轉向指控以色列本身。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的公義管轄所有民族，不只限於以色列</strong><br>「三番四次的犯罪」——神對外邦列國的罪也有精確的記念和公義的審判。神的道德秩序是普世性的，不是以色列專屬的。今日信徒也應認識：神對世界各民族的公義要求，使信徒關心普世的公義，而非只關心信仰群體內部的道德。<br><br>
+<strong>2. 殘忍對待人的身體是最深重的罪之一</strong><br>「剖開基列的孕婦」「拿刀追趕弟兄」——這些是對人的基本尊嚴和生命的直接踐踏。神對這些暴行深惡痛絕。信徒對任何形式的對人殘忍——無論是物理的、社會的、還是制度性的——都應以神同樣的眼光嚴肅對待，不可視而不見。<br><br>
+<strong>3. 聆聽審判他人的警告時，要警覺是否同樣的審判也指向自己</strong><br>以色列人聽見神審判周邊列國，心裡可能竊喜；但阿摩司的策略是讓他們先點頭，然後轉身指控以色列。這個文學策略提醒信徒：當我們輕易認同對別人的指責時，需要問自己：「這個標準是否也指向我？」
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華如此說</strong>：<strong>大馬色三番四次的</strong>犯罪，我必不免去他的刑罰。（摩1:3上）</td>
+<td>「三番四次」——神對罪有精確的記念，不是隨意的懲罰。你是否相信神的審判是公義且精確的？就像一個公正的法官仔細審閱每一份證據，而不是隨意判決，神「三番四次」的計算使你對祂的公義有什麼感受——是敬畏，是安慰，還是不安？</td>
+</tr>
+<tr>
+<td><strong>亞捫人三番四次的</strong>犯罪，<strong>我必不免去他們的</strong>刑罰；因為他們剖開基列的孕婦，擴張自己的境界。（摩1:13）</td>
+<td>為了「擴張境界」而不惜傷害最脆弱的人——這是人的野心最醜陋的一面。你在追求個人利益或成長的過程中，是否也曾在無意間踐踏了比你更脆弱的人的利益？就像擴張地盤的大樹可能擠壓了旁邊的小植物，你今天願意省察自己的「擴張」有沒有傷害他人？</td>
+</tr>
+<tr>
+<td><strong>耶和華如此說</strong>：<strong>推羅三番四次的犯</strong>罪，我必不免去他的刑罰；因為他將眾民交給以東，並不記念弟兄的盟約。（摩1:9）</td>
+<td>「不記念弟兄的盟約」——背棄承諾、忘記約定是神嚴肅追討的罪。你在哪些關係中，曾因為利益的考量而「不記念」了某個盟約——無論是婚姻、友誼、商業還是服事的承諾？就像合約的約束力不因時間消逝而減弱，你願意今天重新「記念」你曾立下的那些約嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

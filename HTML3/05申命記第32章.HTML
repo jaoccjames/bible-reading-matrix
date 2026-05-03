@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第32章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第32章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">摩西之歌：歷史的見證與神的公義</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>諸天哪，側耳，我要說話；願地也聽我口中的言語。</div>
+<div class="verse"><span class="verse-number">2</span>我的教訓要淋漓如雨；我的言語要滴落如露，如細雨降在嫩草上，如甘霖降在菜蔬中。</div>
+<div class="verse"><span class="verse-number">3</span>我要宣告耶和華的名；你們要將大德歸與我們的神。</div>
+<div class="verse"><span class="verse-number">4</span>他是磐石，他的作為完全；他所行的無不公平，是誠實無偽的神，又公義，又正直。</div>
+<div class="verse"><span class="verse-number">5</span>這乖僻彎曲的世代向他行事邪僻；有這弊病就不是他的兒女。</div>
+<div class="verse"><span class="verse-number">6</span>愚昧無知的民哪，你們這樣報答耶和華麼？他豈不是你的父、將你買來的麼？他是製造你、建立你的。</div>
+<div class="verse"><span class="verse-number">7</span>你當追想上古之日，思念歷代之年；問你的父親，他必指示你；問你的長者，他必告訴你。</div>
+<div class="verse"><span class="verse-number">8</span>至高者將地業賜給列邦，將世人分開，就照以色列人的數目立定萬民的疆界。</div>
+<div class="verse"><span class="verse-number">9</span>耶和華的分本是他的百姓；他的產業本是雅各。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華遇見他在曠野荒涼野獸吼叫之地，就環繞他，看顧他，保護他，如同保護眼中的瞳人。</div>
+<div class="verse"><span class="verse-number">11</span>又如鷹攪動巢窩，在雛鷹以上兩翅搧展，接取雛鷹，背在兩翼之上。</div>
+<div class="verse"><span class="verse-number">12</span>這樣，耶和華獨自引導他，並無外邦神與他同在。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華使他乘駕地的高處，得吃田間的土產；又使他從磐石中咂蜜，從堅石中吸油；</div>
+<div class="verse"><span class="verse-number">14</span>也吃牛的奶油，羊的奶，羊羔的脂油，巴珊所出的公綿羊和山羊，與上好的麥子，也喝葡萄汁釀的酒。</div>
+<div class="verse"><span class="verse-number">15</span>但耶書崙漸漸肥胖，粗壯，光潤，踢跳，奔跑，便離棄造他的神，輕看救他的磐石；</div>
+<div class="verse"><span class="verse-number">16</span>敬拜別神，觸動神的憤恨，行可憎惡的事，惹了他的怒氣。</div>
+<div class="verse"><span class="verse-number">17</span>所祭祀的鬼魔並非真神，乃是素不認識的神，是近來新興的，是你列祖所不畏懼的。</div>
+<div class="verse"><span class="verse-number">18</span>你輕忽生你的磐石，忘記產你的神。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華看見他的兒女惹動他，就厭惡他們，說：</div>
+<div class="verse"><span class="verse-number">20</span>我要向他們掩面，看他們的結局如何。他們本是極乖僻的族類，心中無誠實的兒女。</div>
+<div class="verse"><span class="verse-number">21</span>他們以那「不算為神」的觸動我的憤恨，以虛無的神惹了我的怒氣。我也要以那「不成子民」的觸動他們的憤恨，以愚昧的國民惹了他們的怒氣。</div>
+<div class="verse"><span class="verse-number">22</span>因為在我怒中有火燒起，直燒到極深的陰間，把地和地的出產盡都焚燒，山的根基也燒着了。</div>
+<div class="verse"><span class="verse-number">23</span>我要將禍患堆在他們身上，把我的箭向他們射盡。</div>
+<div class="verse"><span class="verse-number">24</span>他們必因飢餓消瘦，被炎熱苦毒吞滅。我要打發野獸用牙齒咬他們，並土中腹行的，用毒氣害他們。</div>
+<div class="verse"><span class="verse-number">25</span>外頭有刀劍，內室有驚恐，使人喪亡，使少男、童女、吃奶的、白髮的，盡都滅絕。</div>
+<div class="verse"><span class="verse-number">26</span>我說，我必將他們分散遠方，使他們的名號從人間除滅。</div>
+<div class="verse"><span class="verse-number">27</span>惟恐仇敵惹動我，只怕敵人錯看，說：是我們手的能力，並非耶和華所行的。</div>
+<div class="verse"><span class="verse-number">28</span>因為以色列民毫無計謀，心中沒有聰明。</div>
+<div class="verse"><span class="verse-number">29</span>惟願他們有智慧，能明白這事，肯思念他們的結局。</div>
+<div class="verse"><span class="verse-number">30</span>若不是他們的磐石賣了他們，若不是耶和華交出他們，一人焉能追趕他們千人？二人焉能使萬人逃跑呢？</div>
+<div class="verse"><span class="verse-number">31</span>據我們的仇敵自己斷定，他們的磐石不如我們的磐石。</div>
+<div class="verse"><span class="verse-number">32</span>他們的葡萄樹是所多瑪的葡萄樹，蛾摩拉田園所生的；他們的葡萄是毒葡萄，全挂都是苦的。</div>
+<div class="verse"><span class="verse-number">33</span>他們的酒是大蛇的毒氣，是虺蛇殘害的惡毒。</div>
+<div class="verse"><span class="verse-number">34</span>這不都是積蓄在我這裏，封鎖在我府庫中麼？</div>
+<div class="verse"><span class="verse-number">35</span>他們失腳的時候，伸冤報應在我；因他們遭災的日子近了；那要臨在他們身上的必速速來到。</div>
+<div class="verse"><span class="verse-number">36</span>耶和華見他百姓毫無能力，無論困住的、自由的都沒有剩下，就必為他們伸冤，為他的僕人後悔。</div>
+<div class="verse"><span class="verse-number">37</span>他必說：他們的上帝，他們所投靠的磐石，</div>
+<div class="verse"><span class="verse-number">38</span>就是向來吃他們祭牲的脂油，喝他們奠祭之酒的，在那裏呢？他可以興起幫助你們，護衛你們。</div>
+<div class="verse"><span class="verse-number">39</span>你們如今要知道：我，惟有我是神；在我以外並無別神。我使人死，我使人活；我損傷，我也醫治，並無人能從我手中救出來。</div>
+<div class="verse"><span class="verse-number">40</span>我向天舉手說：我憑我的永生起誓：</div>
+<div class="verse"><span class="verse-number">41</span>我若磨我閃亮的刀，手掌審判之權，就必報復我的敵人，報應恨我的人。</div>
+<div class="verse"><span class="verse-number">42</span>我要使我的箭飲血飲醉，就是被殺被擄之人的血。我的刀要吃肉，乃是仇敵中首領之頭的肉。</div>
+<div class="verse"><span class="verse-number">43</span>你們外邦人當與主的百姓一同歡呼；因他要伸他僕人流血的冤，報應他的敵人，潔淨他的地，救贖他的百姓。</div>
+<div class="verse"><span class="verse-number">44</span>摩西和嫩的兒子約書亞去將這歌的一切話說給百姓聽。</div>
+<div class="verse"><span class="verse-number">45</span>摩西向以色列眾人說完了這一切的話，</div>
+<div class="verse"><span class="verse-number">46</span>又說：「我今日所警教你們的，你們都要放在心上；要吩咐你們的子孫謹守遵行這律法上的話。</div>
+<div class="verse"><span class="verse-number">47</span>因為這不是虛空、與你們無關的事，乃是你們的生命；在你們過約但河要得為業的地上必因這事日子得以長久。」</div>
+<div class="verse"><span class="verse-number">48</span>當日，耶和華吩咐摩西說：</div>
+<div class="verse"><span class="verse-number">49</span>「你上這亞巴琳山中的尼波山去，在摩押地與耶利哥相對，觀看我所要賜給以色列人為業的迦南地。</div>
+<div class="verse"><span class="verse-number">50</span>你必死在你所登的山上，歸你列祖〔原文作本民〕去，像你哥哥亞倫死在何珥山上，歸他的列祖一樣。</div>
+<div class="verse"><span class="verse-number">51</span>因為你們在尋的曠野，加低斯的米利巴水，在以色列人中沒有尊我為聖，得罪了我。</div>
+<div class="verse"><span class="verse-number">52</span>我所賜給以色列人的地，你可以遠遠的觀看，卻不得進去。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第三十二章是摩西的長詩，被稱為「摩西之歌」，是申命記文學性最高、神學最深刻的章節之一。這首詩以宇宙性的呼召開場（「諸天哪，側耳，我要說話；大地也要聽我口中的言語」，32:1），以此宣告這首歌的見證對象是整個受造界。詩歌的結構可分為幾個部分：神的公義與以色列的悖逆的對比（32:1-18）、神的懲罰（32:19-27）、神的最終拯救（32:28-43）。全詩的核心是對比：神是「磐石」，祂的作為是公義完全的（32:4），而以色列卻是「頑梗悖逆的世代」（32:5）。詩歌描述了以色列離棄「磐石」的神去拜別神、激怒神的歷史，以及神的管教之手。然而詩歌不以絕望結束，而是以神的最終得勝和對祂子民的憐憫作結：「他要為僕人的血伸冤……赦免他的地，救贖他的百姓」（32:43）。本章末尾，神再次命摩西上毘斯迦山遠觀迦南地，因為他只能遠望，不能進入。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神是永恆的磐石，祂的公義完全，是生命最穩固的根基</strong><br>「他是磐石，他的作為完全，他所行的無不公平，是誠實無偽的神，又公義，又正直」（申32:4）。在這首充滿歷史滄桑的詩歌中，神的「磐石」性情是全詩的對比核心：無論以色列如何悖逆、如何更換所倚靠的對象，神的公義與信實從未改變。人生的一切都可能搖動，唯有神是永不移動的磐石。<br><br>
+<strong>2. 離棄神去追尋偶像是人類歷史中最根本的悲劇</strong><br>詩歌描述以色列「離棄了造他的神，輕看了救他的磐石」（申32:15），去追求那些「不算神的神」（32:21）。這個主題在聖經中反覆出現：人類傾向於用有限的事物（成就、關係、財富）填補只有無限的神才能填滿的空虛。每一次的偶像崇拜，本質上都是對神的輕視，以及對自己真實需要的錯誤判斷。<br><br>
+<strong>3. 神的管教出於公義，但祂的最終目的是憐憫與復興</strong><br>這首詩從懲罰走向最終的拯救：「他要為僕人的血伸冤……赦免他的地，救贖他的百姓」（申32:43）。神的管教不是出於恨，而是出於對罪惡的公義審判；但祂的最終目的是復興祂的子民，這份憐憫的愛是整首詩歌的盼望所在。信仰中最深的安慰來自認識：即使在最嚴厲的管教中，神的眼目從未離開祂所愛的人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>他是磐石</strong>，<strong>他的作為完全</strong>，他所行的無不公平，是誠實無偽的神，又公義，又正直。」（申32:4）</td>
+<td>神的性情永不改變是最穩固的生命根基，就像建在岩石上的房子在颱風中仍然屹立，當你生命中的一切都在搖動時，是什麼幫助你繼續倚靠那「磐石」般的神？你有沒有把祂當作最終的根基？</td>
+</tr>
+<tr>
+<td>「<strong>但耶書倫漸漸肥胖</strong>，粗壯，光滑，<strong>就離棄了造他的神</strong>，輕看了救他的磐石。」（申32:15）</td>
+<td>豐盛和舒適是信仰最隱密的腐蝕劑，就像長期不運動的肌肉會在不知不覺中萎縮，當你的生活越來越舒適時，你是否有意識地檢查自己對神的倚靠是否在減弱？你如何防止「肥胖」使你輕看神？</td>
+</tr>
+<tr>
+<td>「<strong>他要為僕人的血伸</strong>冤，<strong>報仇加在敵人身上</strong>，報應那恨他之人，赦免他的地，救贖他的百姓。」（申32:43）</td>
+<td>神的公義最終走向憐憫與復興，就像嚴格的父親管教孩子最深的目的是讓孩子能好好成長，在你經歷神的管教或允許的困難時，你是否能在最深處仍然相信祂的目的是愛和復興，而非棄絕？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

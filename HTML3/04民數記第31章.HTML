@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民數記第31章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+民數記第31章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">報復米甸戰利品奉獻神</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華吩咐摩西說：</div>
+<div class="verse"><span class="verse-number">2</span>「你要在米甸人身上報以色列人的仇，後來要歸到你列祖〔原文作本民〕那裏。」</div>
+<div class="verse"><span class="verse-number">3</span>摩西吩咐百姓說：「要從你們中間叫人帶兵器出去攻擊米甸，好在米甸人身上為耶和華報仇。</div>
+<div class="verse"><span class="verse-number">4</span>從以色列眾支派中，每支派要打發一千人去打仗。」</div>
+<div class="verse"><span class="verse-number">5</span>於是從以色列千萬人中，每支派交出一千人，共一萬二千人，帶着兵器預備打仗。</div>
+<div class="verse"><span class="verse-number">6</span>摩西就打發每支派的一千人去打仗，並打發祭司以利亞撒的兒子非尼哈同去；非尼哈手裏拿着聖所的器皿和吹大聲的號筒。</div>
+<div class="verse"><span class="verse-number">7</span>他們就照耶和華所吩咐摩西的，與米甸人打仗，殺了所有的男丁。</div>
+<div class="verse"><span class="verse-number">8</span>在所殺的人中，殺了米甸的五王，就是以未、利金、蘇珥、戶珥、利巴，又用刀殺了比珥的兒子巴蘭。</div>
+<div class="verse"><span class="verse-number">9</span>以色列人擄了米甸人的婦女孩子，並將他們的牲畜、羊群，和所有的財物都奪了來，當作擄物，</div>
+<div class="verse"><span class="verse-number">10</span>又用火焚燒他們所住的城邑和所有的營寨，</div>
+<div class="verse"><span class="verse-number">11</span>把一切所奪的、所擄的，連人帶牲畜都帶了去，</div>
+<div class="verse"><span class="verse-number">12</span>將所擄的人，所奪的牲畜、財物，都帶到摩押平原，在約但河邊與耶利哥相對的營盤，交給摩西和祭司以利亞撒，並以色列的會眾。</div>
+<div class="verse"><span class="verse-number">13</span>摩西和祭司以利亞撒，並會眾一切的首領，都出到營外迎接他們。</div>
+<div class="verse"><span class="verse-number">14</span>摩西向打仗回來的軍長，就是千夫長、百夫長，發怒，</div>
+<div class="verse"><span class="verse-number">15</span>對他們說：「你們要存留這一切婦女的活命嗎？</div>
+<div class="verse"><span class="verse-number">16</span>這些婦女因巴蘭的計謀，叫以色列人在毘珥的事上得罪耶和華，以致耶和華的會眾遭遇瘟疫。</div>
+<div class="verse"><span class="verse-number">17</span>所以，你們要把一切的男孩和所有已嫁的女子都殺了。</div>
+<div class="verse"><span class="verse-number">18</span>但女孩子中，凡沒有出嫁的，你們都可以存留她的活命。</div>
+<div class="verse"><span class="verse-number">19</span>你們要在營外駐紮七日；凡殺了人的，和一切摸了被殺的，並你們所擄來的人口，第三日，第七日，都要潔淨自己，</div>
+<div class="verse"><span class="verse-number">20</span>也要因一切的衣服、皮物、山羊毛織的物，和各樣的木器，潔淨自己。」</div>
+<div class="verse"><span class="verse-number">21</span>祭司以利亞撒對打仗回來的兵丁說：「耶和華所吩咐摩西律法中的條例乃是這樣：</div>
+<div class="verse"><span class="verse-number">22</span>金、銀、銅、鐵、錫、鉛，</div>
+<div class="verse"><span class="verse-number">23</span>凡能見火的，你們要叫它經火就為潔淨，然而還要用除污穢的水潔淨它；凡不能見火的，你們要叫它過水。</div>
+<div class="verse"><span class="verse-number">24</span>第七日，你們要洗衣服，就為潔淨，然後可以進營。」</div>
+<div class="verse"><span class="verse-number">25</span>耶和華曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">26</span>「你和祭司以利亞撒，並會眾的各族長，要計算所擄來的人口和牲畜的總數。</div>
+<div class="verse"><span class="verse-number">27</span>把所擄來的分作兩半：一半歸與出去打仗的精兵，一半歸與全會眾。</div>
+<div class="verse"><span class="verse-number">28</span>又要從出去打仗所得的人口、牛、驢、羊群中，每五百取一，作為貢物奉給耶和華。</div>
+<div class="verse"><span class="verse-number">29</span>從他們一半之中，要取出來交給祭司以利亞撒，作為耶和華的舉祭。</div>
+<div class="verse"><span class="verse-number">30</span>從以色列人的一半之中，就是從人口、牛、驢、羊群、各樣牲畜中，每五十取一，交給看守耶和華帳幕的利未人。」</div>
+<div class="verse"><span class="verse-number">31</span>於是摩西和祭司以利亞撒照耶和華所吩咐摩西的行了。</div>
+<div class="verse"><span class="verse-number">32</span>除了兵丁所奪的財物以外，所擄來的：羊六十七萬五千隻；</div>
+<div class="verse"><span class="verse-number">33</span>牛七萬二千隻；</div>
+<div class="verse"><span class="verse-number">34</span>驢六萬一千匹；</div>
+<div class="verse"><span class="verse-number">35</span>女人共三萬二千口，都是沒有出嫁的。</div>
+<div class="verse"><span class="verse-number">36</span>出去打仗之人的分，就是他們所得的那一半，共計羊三十三萬七千五百隻，</div>
+<div class="verse"><span class="verse-number">37</span>從其中歸耶和華為貢物的，有六百七十五隻；</div>
+<div class="verse"><span class="verse-number">38</span>牛三萬六千隻，從其中歸耶和華為貢物的，有七十二隻；</div>
+<div class="verse"><span class="verse-number">39</span>驢三萬零五百匹，從其中歸耶和華為貢物的，有六十一匹；</div>
+<div class="verse"><span class="verse-number">40</span>人一萬六千口，從其中歸耶和華的，有三十二口。</div>
+<div class="verse"><span class="verse-number">41</span>摩西把貢物，就是歸與耶和華的舉祭，交給祭司以利亞撒，是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">42</span>以色列人所得的那一半，就是摩西從打仗的人取來分給他們的。</div>
+<div class="verse"><span class="verse-number">43</span>（會眾的那一半有：羊三十三萬七千五百隻；</div>
+<div class="verse"><span class="verse-number">44</span>牛三萬六千隻；</div>
+<div class="verse"><span class="verse-number">45</span>驢三萬零五百匹；</div>
+<div class="verse"><span class="verse-number">46</span>人一萬六千口。）</div>
+<div class="verse"><span class="verse-number">47</span>無論是人口是牲畜，摩西每五十取一，交給看守耶和華帳幕的利未人，是照耶和華所吩咐摩西的。</div>
+<div class="verse"><span class="verse-number">48</span>帶領千軍的各軍長，就是千夫長、百夫長，都近前來見摩西，</div>
+<div class="verse"><span class="verse-number">49</span>對他說：「僕人權下的兵已經計算總數，並不短少一人。</div>
+<div class="verse"><span class="verse-number">50</span>如今我們將各人所得的金器，就是腳鍊子、鐲子、打印的戒指、耳環、手釧，都送來為耶和華的供物，好在耶和華面前為我們的生命贖罪。」</div>
+<div class="verse"><span class="verse-number">51</span>摩西和祭司以利亞撒就收了他們的金子，都是打成的器皿。</div>
+<div class="verse"><span class="verse-number">52</span>千夫長、百夫長所獻給耶和華為舉祭的金子共有一萬六千七百五十舍客勒。</div>
+<div class="verse"><span class="verse-number">53</span>各兵丁都為自己奪了財物。</div>
+<div class="verse"><span class="verse-number">54</span>摩西和祭司以利亞撒收了千夫長、百夫長的金子，就帶進會幕，在耶和華面前作為以色列人的紀念。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+民數記第31章記載以色列人對米甸人的報復性戰役，這是摩西死前最後一次重大的軍事行動。神吩咐摩西「在米甸人身上報以色列人的仇」（因為第25章的誘惑事件），之後要歸到他列祖那裏。每支派出一千人，共一萬二千人，在祭司非尼哈的帶領下出征，殺了米甸的五王和先知巴蘭，擄掠了大批財物、人口和牲畜。
+摩西責備軍長們存留了婦女（就是引誘以色列人犯罪的），命令他們按律法潔淨戰士和戰利品。之後按神的命令，把戰利品分為兩半：一半歸打仗的精兵，一半歸全會眾；各取適當比例獻給耶和華為貢物。本章末，軍長們自願將所得的金器全部奉獻給耶和華，作為贖罪的「紀念」，因為全軍「並不短少一人」，他們以感恩的心獻上所有剩餘的戰利品。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神對罪有記憶——報應不輕忽</strong><br>這場戰役是對第25章米甸人誘惑以色列人的回應。幾章過去了，神沒有忘記那次的傷害。神的公義不是即時的衝動懲罰，而是在祂的時間中成就的確定性回應。這既是警告（罪的後果是真實的），也是安慰（神為受害者的公義必成就）。<br><br>
+<strong>2. 感恩的奉獻——保守了生命的感謝成為禮物</strong><br>軍長們說「僕人權下的兵已經計算總數，並不短少一人」，因此主動將所得的金器全數奉獻。這種感恩不是強迫的，而是對神保全他們生命的自然回應。最豐盛的奉獻往往不是出於規定，而是出於「數算蒙恩」之後的喜樂。回顧神的保護，讓感恩從心中溢出。<br><br>
+<strong>3. 潔淨的原則——進入神聖領域需要潔淨的過渡</strong><br>戰士從戰場回來，要在營外七天，按儀式潔淨自己，才可進營。戰場上的暴力和死亡，使人「沾染了不潔」，需要通過潔淨才能回到正常的共同體生活。這一原則指向信仰的一個真理：從世界的污染中回到神的面前，需要有意識的更新和潔淨的過渡時刻。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>帶領千軍的各軍長</strong>……<strong>對他說</strong>：「僕人……的兵已經計算總數，並不短少一人。如今我們將各人所得的金器……都送來……為耶和華的供物……在耶和華面前為我們的生命贖罪。」（民31:48-50）</td>
+<td>就像一個人在危機後安然歸來，第一件事是感謝那個保護了他的人，軍長們以「沒有一人死亡」為理由，主動奉上所有的金器——你最近一次真正「數算蒙恩」，計算神的保守和祝福，是什麼時候？那次數算帶出了什麼樣的感謝行動？</td>
+</tr>
+<tr>
+<td><strong>摩西說</strong>：「<strong>你們要在營外駐紮</strong>七日……都要潔淨自己，第三日，第七日，都要潔淨。」（民31:19）</td>
+<td>就像進入無菌室前需要先換上特定的衣物和消毒，從戰場回來的戰士需要經過七天的潔淨過渡——在你從「世俗生活」回到「屬靈生活」的轉換中，你是否有一些幫助你「潔淨過渡」的習慣，例如禱告、靜默、讀經？</td>
+</tr>
+<tr>
+<td><strong>他們就照耶和華所</strong><strong>吩咐摩西的行了</strong>：把戰利品分作兩半，一半歸出去打仗的精兵，一半歸全會眾。（民31:31）</td>
+<td>就像一個部門的成功，公司所有人都有份分享，神命令把戰利品公平地與全會眾分享——這讓你思考：你的「屬靈得勝」或「蒙恩的領受」是只藏在自己心裏，還是你有意識地與你的群體分享、一同蒙福？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第13章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第13章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">頭生的奉獻與出埃及之路</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華曉諭摩西說：</div>
+<div class="verse"><span class="verse-number">2</span>「以色列中凡頭生的，無論是人是牲畜，都是我的，要分別為聖歸我。」</div>
+<div class="verse"><span class="verse-number">3</span>摩西對百姓說：「你們要記念從埃及為奴之家出來的這日，因為耶和華用大能的手將你們從這地方領出來。有酵的餅都不可吃。</div>
+<div class="verse"><span class="verse-number">4</span>亞筆月間的這日是你們出來的日子。</div>
+<div class="verse"><span class="verse-number">5</span>將來耶和華領你進迦南人、赫人、亞摩利人、希未人、耶布斯人之地，就是他向你的祖宗起誓應許給你那流奶與蜜之地，那時你要在這月間守這禮。</div>
+<div class="verse"><span class="verse-number">6</span>你要吃無酵餅七日，到第七日要向耶和華守節。</div>
+<div class="verse"><span class="verse-number">7</span>這七日之久，要吃無酵餅；在你四境之內不可見有酵的餅，也不可見發酵的物。</div>
+<div class="verse"><span class="verse-number">8</span>當那日，你要告訴你的兒子說：『這是因耶和華在我出埃及的時候為我所行的事。</div>
+<div class="verse"><span class="verse-number">9</span>這要在你手上作記號，在你額上作紀念，使耶和華的律法常在你口中，因為耶和華曾用大能的手將你從埃及領出來。</div>
+<div class="verse"><span class="verse-number">10</span>所以你每年要按着日期守這例。』」</div>
+<div class="verse"><span class="verse-number">11</span>「將來，耶和華照他向你和你祖宗所起的誓將你領進迦南人之地，把這地賜給你，</div>
+<div class="verse"><span class="verse-number">12</span>那時你要將一切頭生的，並牲畜中頭生的，歸給耶和華；公的都要屬耶和華。</div>
+<div class="verse"><span class="verse-number">13</span>凡頭生的驢，你要用羊羔代贖；若不代贖，就要打折牠的頸項。凡你兒子中頭生的都要贖出來。</div>
+<div class="verse"><span class="verse-number">14</span>日後，你的兒子問你說：『這是甚麼意思？』你就說：『耶和華用大能的手將我們從埃及為奴之家領出來。</div>
+<div class="verse"><span class="verse-number">15</span>那時法老幾乎不容我們去，耶和華就把埃及地所有頭生的，無論是人是牲畜，都殺了。因此，我把一切頭生的公牲畜獻給耶和華為祭，但將頭生的兒子都贖出來。</div>
+<div class="verse"><span class="verse-number">16</span>這要在你手上作記號，在你額上作經文，因為耶和華用大能的手將我們從埃及領出來。』」</div>
+<div class="verse"><span class="verse-number">17</span>法老容百姓去的時候，非利士地的道路雖近，神卻不領他們從那裏走；因為神說：「恐怕百姓遇見打仗後悔，就回埃及去。」</div>
+<div class="verse"><span class="verse-number">18</span>所以神領百姓繞道而行，走紅海曠野的路。以色列人出埃及地，都帶着兵器上去。</div>
+<div class="verse"><span class="verse-number">19</span>摩西把約瑟的骸骨一同帶去；因為約瑟曾叫以色列人嚴嚴地起誓，對他們說：「神必眷顧你們，你們要把我的骸骨從這裏一同帶上去。」</div>
+<div class="verse"><span class="verse-number">20</span>他們從疏割起行，在曠野邊的以倘安營。</div>
+<div class="verse"><span class="verse-number">21</span>日間，耶和華在雲柱中領他們的路；夜間，在火柱中光照他們，使他們日夜都可以行走。</div>
+<div class="verse"><span class="verse-number">22</span>日間雲柱，夜間火柱，總不離開百姓的面前。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第13章記錄了神對以色列人兩項重要的吩咐：分別頭生的給神，以及守除酵節的規定，兩者都連結到出埃及的歷史記憶。神明確說明，一切頭生的屬於神，這是紀念神在埃及擊殺長子時越過以色列家的恩典，是對神救贖恩典的永恆回應。章節後半段描述以色列人離開埃及的路線選擇：神沒有帶他們走最短的非利士地之路，因為神知道以色列人若遇見戰爭可能後悔，而是帶他們繞道走曠野的路。摩西還帶上了約瑟的骸骨，實現約瑟臨終的遺願。整個旅程中，神以白天的雲柱和夜間的火柱引導他們，確保他們日夜都能前行。本章顯示神是一位細心的牧者，不僅拯救祂的子民，還親自為他們選擇最合適的道路，以神蹟性的方式引導他們。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 將頭生的分別給神，是對救贖恩典的感恩回應</strong><br>頭生的屬於神，這一規定的根基是神的救恩行動——神越過以色列人的家，保全了他們的頭生。獻上頭生的是一種感恩的宣告：「我所有最好的都屬於你，因為你先將我的生命保全。」這對信徒的意義是：我們所有最珍貴的——才能、時間、財富——理應首先分別給神，因為我們的生命本是祂所救贖的。<br><br>
+<strong>2. 神為祂的子民選擇最適合的道路，而非最短的路</strong><br>神繞道帶領以色列人，是因為祂預知他們在戰爭面前的軟弱，選擇了更長但更適合他們當前屬靈狀態的路徑。神的引導常常不是人所預期的最短路徑，而是最適合塑造人的路徑。信徒在生命的繞道中，應學習信任神知道我們能承受什麼，並為我們選擇了最適合的道路。<br><br>
+<strong>3. 神以雲柱火柱同在，確保子民在每個時刻都有引導</strong><br>雲柱和火柱是神臨在的具體象徵，確保以色列人白天黑夜都有引導，沒有一刻是孤立無援的。信徒雖然看不見雲柱火柱，但有神的話語和聖靈的引導，同樣確保在每一個轉折點上都有指引。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華在他們前面</strong>行，<strong>白天在雲柱中引導</strong>他們的路，夜間在火柱中光照他們，使他們日夜都可以行走。（出13:21）</td>
+<td>就像GPS在陌生城市中持續引導你，你是否相信神在你每一個人生階段都有其具體的引導？你如何辨認神在你生命中的「雲柱火柱」？</td>
+</tr>
+<tr>
+<td><strong>摩西把約瑟的骸骨</strong>帶着，<strong>因為約瑟曾叫以色</strong>列人嚴嚴地起誓，對他們說：「神必看顧你們，你們要把我的骸骨從這裏帶上去。」（出13:19）</td>
+<td>就像遵守長輩臨終遺願體現了對承諾的尊重，你如何看待對神和對人的承諾的重量？在你的生命中，是否有尚未履行的承諾需要認真對待？</td>
+</tr>
+<tr>
+<td><strong>你要在那日告訴你</strong><strong>的兒子說</strong>：『這是因耶和華在我出埃及的時候為我所行的事。』（出13:8）</td>
+<td>就像家人在餐桌上分享家族故事讓孩子認識自己的根，你如何將神在你生命中的工作傳遞給下一代或周圍的人？信仰的故事是否成為你日常分享的一部分？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

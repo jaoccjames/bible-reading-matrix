@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第14章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第14章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">敬畏耶和華是生命泉源：謹慎辨別真正的道路</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>智慧婦人建立家室；愚妄婦人親手拆毀。</div>
+<div class="verse"><span class="verse-number">2</span>行動正直的，敬畏耶和華；行事乖僻的，卻藐視他。</div>
+<div class="verse"><span class="verse-number">3</span>愚妄人口中驕傲，如杖責打己身；智慧人的嘴必保守自己。</div>
+<div class="verse"><span class="verse-number">4</span>家裏無牛，槽頭乾淨；土產加多乃憑牛力。</div>
+<div class="verse"><span class="verse-number">5</span>誠實見證人不說謊話；假見證人吐出謊言。</div>
+<div class="verse"><span class="verse-number">6</span>褻慢人尋智慧，卻尋不着；聰明人易得知識。</div>
+<div class="verse"><span class="verse-number">7</span>到愚昧人面前，不見他嘴中有知識。</div>
+<div class="verse"><span class="verse-number">8</span>通達人的智慧在乎明白己道；愚昧人的愚妄乃是詭詐〔或作：自歎〕。</div>
+<div class="verse"><span class="verse-number">9</span>愚妄人犯罪，以為戲耍〔或作：贖愆祭愚弄愚妄人〕；正直人互相喜悅。</div>
+<div class="verse"><span class="verse-number">10</span>心中的苦楚，自己知道；心裏的喜樂，外人無干。</div>
+<div class="verse"><span class="verse-number">11</span>奸惡人的房屋必傾倒；正直人的帳棚必興盛。</div>
+<div class="verse"><span class="verse-number">12</span>有一條路，人以為正，至終成為死亡之路。</div>
+<div class="verse"><span class="verse-number">13</span>人在喜笑中，心也憂愁；快樂至極就生愁苦。</div>
+<div class="verse"><span class="verse-number">14</span>心中背道的，必滿得自己的結果；善人必從自己的行為得以知足。</div>
+<div class="verse"><span class="verse-number">15</span>愚蒙人是話都信；通達人步步謹慎。</div>
+<div class="verse"><span class="verse-number">16</span>智慧人懼怕，就遠離惡事；愚妄人卻狂傲自恃。</div>
+<div class="verse"><span class="verse-number">17</span>輕易發怒的，行事愚妄；設立詭計的，被人恨惡。</div>
+<div class="verse"><span class="verse-number">18</span>愚蒙人得愚昧為產業；通達人得知識為冠冕。</div>
+<div class="verse"><span class="verse-number">19</span>壞人俯伏在善人面前；惡人俯伏在義人門口。</div>
+<div class="verse"><span class="verse-number">20</span>貧窮人連鄰舍也恨他；富足人朋友最多。</div>
+<div class="verse"><span class="verse-number">21</span>藐視鄰舍的，這人有罪；憐憫貧窮的，這人有福。</div>
+<div class="verse"><span class="verse-number">22</span>謀惡的，豈非走入迷途麼？謀善的，必得慈愛和誠實。</div>
+<div class="verse"><span class="verse-number">23</span>諸般勤勞都有益處；嘴上多言乃致窮乏。</div>
+<div class="verse"><span class="verse-number">24</span>智慧人的財為自己的冠冕；愚妄人的愚昧終是愚昧。</div>
+<div class="verse"><span class="verse-number">25</span>作真見證的，救人性命；吐出謊言的，施行詭詐。</div>
+<div class="verse"><span class="verse-number">26</span>敬畏耶和華的，大有倚靠；他的兒女也有避難所。</div>
+<div class="verse"><span class="verse-number">27</span>敬畏耶和華就是生命的泉源，可以使人離開死亡的網羅。</div>
+<div class="verse"><span class="verse-number">28</span>帝王榮耀在乎民多；君王衰敗在乎民少。</div>
+<div class="verse"><span class="verse-number">29</span>不輕易發怒的，大有聰明；性情暴躁的，大顯愚妄。</div>
+<div class="verse"><span class="verse-number">30</span>心中安靜是肉體的生命；嫉妒是骨中的朽爛。</div>
+<div class="verse"><span class="verse-number">31</span>欺壓貧寒的，是辱沒造他的主；憐憫窮乏的，乃是尊敬主。</div>
+<div class="verse"><span class="verse-number">32</span>惡人在所行的惡上必被推倒；義人臨死，有所投靠。</div>
+<div class="verse"><span class="verse-number">33</span>智慧存在聰明人心中；愚昧人心裏所存的，顯而易見。</div>
+<div class="verse"><span class="verse-number">34</span>公義使邦國高舉；罪惡是人民的羞辱。</div>
+<div class="verse"><span class="verse-number">35</span>智慧的臣子蒙王恩惠；貽羞的僕人遭其震怒。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第十四章是所羅門格言集中篇幅最長的章節之一，共三十五節，涵蓋了家庭、言語、情緒管理、社會公義、敬畏神等多個主題。本章最重要的神學宣告出現在第12節與第27節：「有一條路，人以為正，至終成為死亡之路」提醒信徒不可自恃自己的判斷；「敬畏耶和華就是生命的泉源」則指向真正安全感的唯一根基。在古以色列的社會背景中，本章反映了對貧窮者的關懷（21節、31節）——藐視貧窮人即是辱沒神，這一神學觀念在整個舊約中一再出現。第30節「心中安靜是肉體的生命；嫉妒是骨中的朽爛」以醫學語言表達了情緒對肉體健康的影響，極具現代心理學的洞見。第34節「公義使邦國高舉；罪惡是人民的羞辱」則將個人道德與國家興衰相連，說明屬靈品格的社會性影響。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 自以為正的路可能通往死亡，謙卑尋求神的引導至關重要</strong><br>第12節「有一條路，人以為正，至終成為死亡之路」是箴言書中最嚴肅的警告之一。人的自我認知有其盲點，憑感覺「感覺正確」並不等同於真正正確。這提醒信徒在做重要決定時，不能僅憑自己的直覺或邏輯，而必須在神面前謙卑尋求，讓祂的話語和聖靈的引導來校準方向，否則即使出發點良善，也可能走向危險。<br><br>
+<strong>2. 敬畏耶和華是心靈真正安全感的唯一根基</strong><br>第26-27節連續宣告，敬畏耶和華帶來「大有倚靠」、成為「生命的泉源」。在一個充滿不確定性的世界中，人常常尋求各種形式的安全感——財富、地位、關係——但這些都是有限且可失去的。唯有建立在對神敬畏的生命，才能在各樣風浪中找到真正穩固的錨點，這種安全感不依賴環境，而根植於神永恆不變的本性。<br><br>
+<strong>3. 憐憫貧窮是尊敬神的具體行動</strong><br>第31節「欺壓貧寒的，是辱沒造他的主；憐憫窮乏的，乃是尊敬主」，將對他人的態度直接與對神的態度相連。信徒對弱勢者的憐憫或忽視，不只是社會道德問題，更是屬靈表達——因為每一個人都是按神的形象所造。真正敬畏神的人，必然在日常生活中對周圍的貧窮與需要有所回應，而非視而不見。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>有一條路</strong>，<strong>人以為正</strong>，至終成為死亡之路。」（箴14:12）</td>
+<td>就像地圖上某條路看起來是捷徑，實際走才發現是死路，你生命中有沒有曾經「覺得是對的」但事後發現錯了的決定？那次經歷如何改變了你尋求引導的方式？</td>
+</tr>
+<tr>
+<td>「<strong>敬畏耶和華就是生</strong><strong>命的泉源</strong>，可以使人離開死亡的網羅。」（箴14:27）</td>
+<td>就像乾旱地區的居民若找到一口永不枯竭的水井，便不再為缺水而憂慮，你在生活中最大的「不安全感」是什麼？敬畏神的生命如何能成為你那口永不枯竭的泉源？</td>
+</tr>
+<tr>
+<td>「<strong>憐憫窮乏的</strong>，<strong>乃是尊敬主</strong>。」（箴14:31）</td>
+<td>就像人若真的尊重一位朋友，就會善待他所珍視的人，你對周圍貧窮或弱勢之人的態度，是否反映了你對「神愛每一個人」這信念的真實程度？你目前有什麼具體的機會去實踐憐憫？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

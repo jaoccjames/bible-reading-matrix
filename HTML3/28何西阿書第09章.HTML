@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何西阿書第9章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+何西阿書第9章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以法蓮如曠野的葡萄：蒙揀選與背棄</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列啊，不要像外邦人歡喜快樂；因為你行邪淫離棄你的神，在各穀場上如妓女喜愛賞賜。</div>
+<div class="verse"><span class="verse-number">2</span>穀場和酒醡都不彀以色列人使用；新酒也必缺乏。</div>
+<div class="verse"><span class="verse-number">3</span>他們必不得住耶和華的地；以法蓮卻要歸回埃及，必在亞述喫不潔淨的食物。</div>
+<div class="verse"><span class="verse-number">4</span>他們必不得向耶和華奠酒，即便奠酒也不蒙悅納。他們的祭物必如居喪者的食物，凡喫的必被玷污；因他們的食物只為自己的口腹，必不奉入耶和華的殿。</div>
+<div class="verse"><span class="verse-number">5</span>在大會的日子，到耶和華的節期，你們怎樣行呢？</div>
+<div class="verse"><span class="verse-number">6</span>看哪，他們逃避災難；埃及人必收殮他們的屍首，摩弗人必葬埋他們的骸骨。他們用銀子作的美物上必長蒺藜；他們的帳棚中必生荊棘。</div>
+<div class="verse"><span class="verse-number">7</span>以色列人必知道降罰的日子臨近，報應的時候來到。（民說：作先知的是愚昧；受靈感的是狂妄，皆因他們多多作孽，大懷怨恨。）</div>
+<div class="verse"><span class="verse-number">8</span>以法蓮曾作我神守望的；至於先知，在他一切的道上作為捕鳥人的網羅，在他神的家中懷怨恨。</div>
+<div class="verse"><span class="verse-number">9</span>以法蓮深深的敗壞，如在基比亞的日子一樣。耶和華必記念他們的罪孽，追討他們的罪惡。</div>
+<div class="verse"><span class="verse-number">10</span>主說：我遇見以色列如葡萄在曠野；我看見你們的列祖如無花果樹上春季初熟的果子。他們卻來到巴力毘珥專拜那可羞恥的，就成為可憎惡的，與他們所愛的一樣。</div>
+<div class="verse"><span class="verse-number">11</span>至於以法蓮人，他們的榮耀必如鳥飛去，必不生產，不懷胎，不成孕。</div>
+<div class="verse"><span class="verse-number">12</span>縱然養大兒女，我卻必使他們喪子，甚至不留一個。我離棄他們，他們就有禍了。</div>
+<div class="verse"><span class="verse-number">13</span>我看以法蓮如推羅栽於美地。以法蓮卻要將自己的兒女帶出來，交與行殺戮的人。</div>
+<div class="verse"><span class="verse-number">14</span>耶和華啊，求你加給他們，加甚麼呢？要使他們胎墜乳乾。</div>
+<div class="verse"><span class="verse-number">15</span>耶和華說：他們一切的惡事都在吉甲；我在那裏憎惡他們。因他們所行的惡，我必從我地上趕出他們去，不再憐愛他們；他們的首領都是悖逆的。</div>
+<div class="verse"><span class="verse-number">16</span>以法蓮受責罰，根本枯乾，必不能結果，即或生產，我必殺他們所生的愛子。</div>
+<div class="verse"><span class="verse-number">17</span>我的神必棄絕他們，因為他們不聽從他；他們也必飄流在列國中。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+何西阿書第9章是對以色列被擄和喪失祝福的宣告，充滿悲傷和憤怒。以色列「如妓女」在穀場上歡喜，以歡慶的宗教節期代替真實的委身；神宣告穀場和酒醡將告匱乏，百姓將回到埃及（被奴役）和亞述（被擄）的狀態。最深刻的意象在第10節：「我遇見以色列如葡萄在曠野；我看見你們的列祖如無花果樹上春季初熟的果子」——神以喜悅尋得以色列，如在曠野中發現珍貴的果子；然而他們在巴力毘珥「成為可憎惡的」。本章也出現了先知何西阿以「愚昧人」和「狂妄」（7節）被百姓嘲弄，說明真先知在被拒絕的環境中傳達不受歡迎的信息是何等孤獨。章末以神的棄絕作結：「我的神必棄絕他們，因為他們不聽從他；他們也必飄流在列國中。」
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神最初看見我們，如在曠野找到珍貴的果子</strong><br>「我遇見以色列如葡萄在曠野」——神對以色列的第一個感受是在意想不到之處發現珍寶的喜悅。這個圖像讓信徒看見：神主動尋找、神對找到我們的喜悅、以及我們在神眼中的珍貴。我們不是神被迫接受的對象，而是神主動尋找並以喜悅發現的珍寶。<br><br>
+<strong>2. 歡樂節期中的宗教，若與真實的委身脫節，是神所不喜悅的</strong><br>以色列「不要像外邦人歡喜快樂」——不是說信仰不能有喜樂，而是那種建立在偶像崇拜和屬世慶典上的歡樂，是神所棄絕的。宗教的歡樂需要有真實的關係和委身為根基，否則就是空洞的儀式表演。信徒的歡樂應當是「在神裏面的喜樂」，而非「用宗教活動獲得的快感」。<br><br>
+<strong>3. 不聽從先知是把自己的判斷置於神話語之上</strong><br>百姓稱先知為「愚昧人」和「狂妄」——他們用「靈感不靠譜」來迴避不舒服的真話。今日信徒也可能用「這個解釋太極端」或「那個說法太保守」來拒絕真實的屬靈提醒。面對不舒服的神的話，首要的問題不是「我喜不喜歡這個信息」，而是「這是否真實地出於神」。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主說：<strong>我遇見以色列如葡</strong><strong>萄在曠野</strong>；我看見你們的列祖如無花果樹上春季初熟的果子。（何9:10上）</td>
+<td>神最初遇見你，如在曠野發現珍貴果子般喜悅。你是否感受到神對找到你的喜悅？就像一個珍貴的東西被發現，那種被珍視的感受是真實的。你對神「找到你」的珍視，有多深地進入了你對自己價值的認識，而不只是頭腦上的知道？</td>
+</tr>
+<tr>
+<td><strong>以色列啊</strong>，<strong>不要像外邦人歡喜</strong>快樂；因為你行邪淫離棄你的神，在各穀場上如妓女喜愛賞賜。（何9:1）</td>
+<td>你的信仰帶來的喜樂，是「在神裏面的喜樂」還是「借助宗教活動獲得的情緒滿足」？就像婚禮的歡樂和婚姻的喜樂是不同的深度，你的屬靈喜樂有沒有深入到「在神裏面的關係」，還是停留在宗教活動的表面感受？</td>
+</tr>
+<tr>
+<td><strong>以法蓮曾作我神守</strong>望的；<strong>至於先知</strong>，在他一切的道上作為捕鳥人的網羅。（何9:8上）</td>
+<td>真先知在被嘲弄的環境中仍然傳達真實的信息。你身邊有沒有某個「說了不受歡迎的真話」的人，你過去是否以「他太極端」來迴避他的信息？就像一個說出壞消息的醫生不是壞消息本身，你願意重新考慮那個你曾經拒絕的屬靈提醒，看看其中是否有真實的神的話？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

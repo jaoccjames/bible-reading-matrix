@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哈巴谷書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哈巴谷書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">先知的控訴：為何不義得勝？</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>先知哈巴谷所得的默示。</div>
+<div class="verse"><span class="verse-number">2</span>他說：耶和華啊！我呼求你，你不應允，要到幾時呢？我因強暴哀求你，你還不拯救。</div>
+<div class="verse"><span class="verse-number">3</span>你為何使我看見罪孽？你為何看着奸惡而不理呢？毀滅和強暴在我面前，又起了爭端和相鬥的事。</div>
+<div class="verse"><span class="verse-number">4</span>因此律法放鬆，公理也不顯明；惡人圍困義人，所以公理顯然顛倒。</div>
+<div class="verse"><span class="verse-number">5</span>耶和華說：你們要向列國中觀看，大大驚奇；因為在你們的時候，我行一件事，雖有人告訴你們，你們總是不信。</div>
+<div class="verse"><span class="verse-number">6</span>我必興起迦勒底人，就是那殘忍暴躁之民，通行遍地，佔據那不屬自己的住處。</div>
+<div class="verse"><span class="verse-number">7</span>他威武可畏，判斷和勢力都任意發出。</div>
+<div class="verse"><span class="verse-number">8</span>他的馬比豹更快，比晚上的豺狼更猛。馬兵踊躍爭先，都從遠方而來；他們飛跑如鷹抓食，</div>
+<div class="verse"><span class="verse-number">9</span>都為行強暴而來，定住臉面向前，將擄掠的人聚集，多如塵沙。</div>
+<div class="verse"><span class="verse-number">10</span>他們譏誚君王，笑話首領，嗤笑一切保障，築壘攻取。</div>
+<div class="verse"><span class="verse-number">11</span>他以自己的勢力為神，像風猛然掃過，顯為有罪。</div>
+<div class="verse"><span class="verse-number">12</span>耶和華我的神，我的聖者啊，你不是從亙古而有嗎？我們必不致死。耶和華啊，你派定他為要刑罰人；磐石啊，你設立他為要懲治人。</div>
+<div class="verse"><span class="verse-number">13</span>你眼目清潔，不看邪僻，不看奸惡；行詭詐的，你為何看着不理呢？惡人吞滅比自己公義的，你為何靜默不語呢？</div>
+<div class="verse"><span class="verse-number">14</span>你為何使人如海中的魚，又如沒有管轄的爬物呢？</div>
+<div class="verse"><span class="verse-number">15</span>他用鉤鉤住，用網捕獲，用拉網聚集他們；因此，他歡喜快樂，</div>
+<div class="verse"><span class="verse-number">16</span>就向網獻祭，向網燒香，因他由此得肥美的分和富裕的食物。</div>
+<div class="verse"><span class="verse-number">17</span>他豈可屢次倒空網羅，將列國的人時常殺戮，毫不顧惜呢？</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+哈巴谷書是先知書中最獨特的一卷，因為它不是先知向百姓說話，而是先知向神提問——一場關於神的公義的誠實對話。第1章分兩個回合。第一回合（2-4節）：哈巴谷直接控訴神：「我呼求你，你不應允……你為何使我看見罪孽，你為何看着奸惡而不理呢？」猶大國內充滿強暴、爭端，律法放鬆，公理顛倒——先知以真實的困惑和義憤向神發出最赤裸的問題。神的回答（5-11節）讓情況更糟：「我必興起迦勒底人」——神用比猶大更邪惡的外邦人來審判猶大。第二回合（12-17節）：哈巴谷再度困惑：你眼目清潔不看邪僻，卻為何讓惡人（迦勒底）吞滅比自己公義的人？迦勒底人捕人如魚，向網獻祭，要屢次殺戮？本章留下一個未解的問題，設下了第2章回答的張力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 向神誠實地提問，是信仰成熟的表現，不是不信</strong><br>哈巴谷直接問神「為何」，沒有掩飾困惑和義憤。這種誠實的問題在聖經中有充分的先例（約伯記、詩篇的哀歌詩）。真實的信仰有空間容納最難的問題；把疑惑壓抑在宗教語言下，不是更高的信仰，而是可能是更大的屬靈問題。把最難的問題帶到神面前，本身就是信仰的行動。<br><br>
+<strong>2. 神的答案有時讓情況看起來更難以接受</strong><br>神說「我用迦勒底人」——這個回答加深了哈巴谷的困惑而非解決它。神的方式常常不是立即移除苦難，而是在更大的計畫框架中解釋苦難的意義，而那個框架往往需要更多的信心才能接受。信徒祈求神顯明祂的工作時，需要有心理準備：神的回答可能讓情況看起來更複雜，而非更簡單。<br><br>
+<strong>3. 「我指着我的永生起誓」：神的存在是一切問題的最終錨點</strong><br>第12節：「耶和華啊，你不是從亙古而有嗎？我們必不致死。」哈巴谷在困惑中，仍然有一個不能動搖的確信：神從亙古而有，「我們必不致死」。在一切都不確定的時候，這個「神存在且不改變」的確信，是所有其他信心的最終根基。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華啊</strong>！<strong>我呼求你</strong>，你不應允，要到幾時呢？我因強暴哀求你，你還不拯救。（哈1:2）</td>
+<td>你有沒有過這種感覺：「神啊，我已禱告很久了，你還不回應，要到幾時？」就像一個在急診室外等候消息的家屬，那種無力和迫切的等候，你願意把那份「要到幾時」的誠實感受帶到神面前，而不是用宗教語言把它蓋住嗎？</td>
+</tr>
+<tr>
+<td><strong>耶和華我的神</strong>，<strong>我的聖者啊</strong>，你不是從亙古而有嗎？我們必不致死。（哈1:12上）</td>
+<td>在最大的困惑和不理解中，哈巴谷仍然抓住「你從亙古而有」這個確信。你的信仰中，有沒有一個「不管情況如何，我確信神存在且不改變」的根基？就像船錨不依賴天氣，而是深入海底，你的信仰根基有沒有這樣的深度？</td>
+</tr>
+<tr>
+<td><strong>你眼目清潔</strong>，<strong>不看邪僻</strong>，不看奸惡；行詭詐的，你為何看着不理呢？惡人吞滅比自己公義的，你為何靜默不語呢？（哈1:13）</td>
+<td>「惡人吞滅公義人，你為何靜默不語」——這是信仰中最難的問題之一。你在自己的生活或世界中，有沒有一個讓你感到「神為何靜默」的不義？就像一個沉默的目擊者讓受害者最難受，你如何在神「似乎靜默」的時候，仍然相信祂的公義？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">結局臨到：末日的宣告</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話又臨到我說：</div>
+<div class="verse"><span class="verse-number">2</span>「人子啊，主耶和華對以色列地如此說：結局到了，結局到了地的四境！</div>
+<div class="verse"><span class="verse-number">3</span>現在你的結局已經臨到，我必使我的怒氣歸與你，也必按你的行為審判你，照你一切可憎的事刑罰你。</div>
+<div class="verse"><span class="verse-number">4</span>我眼必不顧惜你，也不可憐你，卻要按你所行的報應你，照你中間可憎的事刑罰你。你就知道我是耶和華。</div>
+<div class="verse"><span class="verse-number">5</span>「主耶和華如此說：有一災，獨有一災；看哪，臨近了！</div>
+<div class="verse"><span class="verse-number">6</span>結局來了，結局來了，向你興起。看哪，來到了！</div>
+<div class="verse"><span class="verse-number">7</span>境內的居民哪，所定的災臨到你，時候到了，日子近了，乃是鬨嚷並非在山上歡呼的日子。</div>
+<div class="verse"><span class="verse-number">8</span>我快要將我的忿怒傾在你身上，向你成就我怒中所定的，按你的行為審判你，照你一切可憎的事刑罰你。</div>
+<div class="verse"><span class="verse-number">9</span>我眼必不顧惜你，也不可憐你，必按你所行的報應你，照你中間可憎的事刑罰你。你就知道擊打你的是我耶和華。</div>
+<div class="verse"><span class="verse-number">10</span>「看哪，看哪，日子快到了，所定的災已經發出。杖已經開花，驕傲已經發芽。</div>
+<div class="verse"><span class="verse-number">11</span>強暴興起，成了罰惡的杖。以色列人，或是他們的群眾，或是他們的財寶，無一存留，他們中間也沒有得尊榮的。</div>
+<div class="verse"><span class="verse-number">12</span>時候到了，日子近了，買主不可歡喜，賣主不可愁煩，因為烈怒已經臨到他們眾人身上。</div>
+<div class="verse"><span class="verse-number">13</span>賣主雖然存活，卻不能歸回再得所賣的，因為這異象關乎他們眾人。誰都不得歸回，也沒有人在他的罪孽中堅立自己。」</div>
+<div class="verse"><span class="verse-number">14</span>「他們已經吹角，預備齊全，卻無一人出戰，因為我的烈怒臨到他們眾人身上。</div>
+<div class="verse"><span class="verse-number">15</span>在外有刀劍，在內有瘟疫、饑荒；在田野的，必遭刀劍而死；在城中的，必有饑荒、瘟疫吞滅他。</div>
+<div class="verse"><span class="verse-number">16</span>其中所逃脫的就必逃脫，各人因自己的罪孽在山上發出悲聲，好像谷中的鴿子哀鳴。</div>
+<div class="verse"><span class="verse-number">17</span>手都發軟，膝弱如水。</div>
+<div class="verse"><span class="verse-number">18</span>要用麻布束腰，被戰兢所蓋；各人臉上羞愧，頭上光禿。</div>
+<div class="verse"><span class="verse-number">19</span>他們要將銀子拋在街上，金子看如污穢之物。當耶和華發怒的日子，他們的金銀不能救他們，不能使心裏知足，也不能使肚腹飽滿，因為這金銀作了他們罪孽的絆腳石。</div>
+<div class="verse"><span class="verse-number">20</span>論到耶和華妝飾華美的殿，他建立得威嚴，他們卻在其中製造可憎可厭的偶像，所以這殿我使他們看如污穢之物。</div>
+<div class="verse"><span class="verse-number">21</span>我必將這殿交付外邦人為掠物，交付地上的惡人為擄物；他們也必褻瀆這殿。</div>
+<div class="verse"><span class="verse-number">22</span>我必轉臉不顧以色列人，他們褻瀆我隱密之所，強盜也必進去褻瀆。</div>
+<div class="verse"><span class="verse-number">23</span>「要製造鎖鍊；因為這地遍滿流血的罪，城邑充滿強暴的事，</div>
+<div class="verse"><span class="verse-number">24</span>所以我必使列國中最惡的人來佔據他們的房屋；我必使強暴人的驕傲止息，他們的聖所都要被褻瀆。</div>
+<div class="verse"><span class="verse-number">25</span>毀滅臨近了，他們要求平安，卻無平安可得。</div>
+<div class="verse"><span class="verse-number">26</span>災害加上災害，風聲接連風聲；他們必向先知求異象，但祭司講的律法、長老設的謀略都必斷絕。</div>
+<div class="verse"><span class="verse-number">27</span>君要悲哀，王要披淒涼為衣，國民的手都發顫。我必照他們的行為待他們，按他們應得的審判他們，他們就知道我是耶和華。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第7章是一篇結構強烈、重複疊加的末日神諭，反覆強調「結局來了」。神以「結局、結局、結局」的節奏宣告以色列地的終局，如同倒數計時的最後通牒。本章的獨特之處在於它對財富的評價：「他們要將銀子拋在街上，金子看如污穢之物。當耶和華發怒的日子，他們的金銀不能救他們」（19節）——在終極危機面前，一切積累的財富瞬間失去意義，甚至成了「罪孽的絆腳石」。先知、祭司、長老的謀略全都斷絕（26節），任何人間的資源都無法解救。本章末尾以一種悲劇性的畫面作結：君王悲哀，王披淒涼為衣，國民的手都發顫。神的目的仍然是「他們就知道我是耶和華」——在一切毀滅的終點，認識神是唯一剩下的真實。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 財富在終極危機前暴露其真實價值的限度</strong><br>金銀被拋在街上，因為在刀劍飢荒面前買不到一點平安。這是對財富最極端的測試：當最大的危機來臨，你的財富能給你多少保障？不是要人輕視財富，而是清醒地看見財富的邊界，讓它在神的位置之下，而不是之上。<br><br>
+<strong>2. 「結局」的臨近使一切優先序變得清晰</strong><br>當神說「結局來了」，人突然意識到什麼是真正重要的。在日常的忙碌中，優先序常常被瑣事所模糊。思考人生的「結局」——無論是個人的死亡還是更大的審判——是重新校準人生優先序最有效的視角。<br><br>
+<strong>3. 在危機中尋求各種人間資源，卻獨獨遺忘了神</strong><br>「他們向先知求異象，但祭司講的律法、長老設的謀略都必斷絕」——人在危機中四處尋求，卻沒有真正轉向那位能解救的神。信徒需要培養「第一個呼求神」而非「最後才想到神」的習慣。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>他們要將銀子拋在</strong>街上，<strong>金子看如污穢之物</strong>。當耶和華發怒的日子，他們的金銀不能救他們，不能使心裏知足，也不能使肚腹飽滿，因為這金銀作了他們罪孽的絆腳石。（結7:19）</td>
+<td>你目前最在意的財物或財務狀況，在你人生最大的危機面前，它的保障能力有多強？就像大停電時才發現家裡滿滿的電器全都沒用，你願意今天重新排列你的「保障清單」，把神放在最頂端嗎？</td>
+</tr>
+<tr>
+<td><strong><strong>結局來了</strong></strong>，結局來了，向你興起。看哪，來到了！（結7:6）</td>
+<td>「結局」的意識會改變你的優先序。如果你知道今天是你在某個關係、工作或機會上的最後一天，你最想做或說的是什麼？這個反思，能否幫助你今天作出一個更重要的選擇？</td>
+</tr>
+<tr>
+<td><strong>他們向先知求異象</strong>，<strong>但祭司講的律法</strong>、長老設的謀略都必斷絕。（結7:26）</td>
+<td>在危機中你通常第一個求助的對象是誰？就像緊急時你打的第一通電話說明了你真正的倚靠，你的「第一個電話」是打給神，還是打給各種人間資源，等到都試過了才禱告？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

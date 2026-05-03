@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約書亞記第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約書亞記第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">日頭停住，耶和華為以色列爭戰南征</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶路撒冷王亞多尼洗德聽見約書亞奪了艾城，盡行毀滅，怎樣待耶利哥和耶利哥的王，也照樣待艾城和艾城的王，又聽見基遍的居民與以色列人立了和約，住在他們中間，</div>
+<div class="verse"><span class="verse-number">2</span>就甚懼怕；因為基遍是一座大城，如都城一般，比艾城更大，並且城內的人都是勇士。</div>
+<div class="verse"><span class="verse-number">3</span>所以耶路撒冷王亞多尼洗德打發人去見希伯崙王何咸、耶末王毘蘭、拉吉王雅非亞，和伊磯倫王底璧，說：</div>
+<div class="verse"><span class="verse-number">4</span>「求你們上來幫助我，我們好攻打基遍，因為他們與約書亞和以色列人立了和約。」</div>
+<div class="verse"><span class="verse-number">5</span>於是五個亞摩利王，就是耶路撒冷王、希伯崙王、耶末王、拉吉王、伊磯倫王，大家聚集，率領他們的眾軍上去，對着基遍安營，攻打基遍。</div>
+<div class="verse"><span class="verse-number">6</span>基遍人就打發人往吉甲的營中去見約書亞，說：「你不要袖手不顧你的僕人，求你速速上來拯救我們，幫助我們，因為住山地亞摩利人的諸王都聚集攻擊我們。」</div>
+<div class="verse"><span class="verse-number">7</span>於是約書亞和他一切兵丁，並大能的勇士，都從吉甲上去。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華對約書亞說：「不要怕他們；因為我已將他們交在你手裏，他們無一人能在你面前站立得住。」</div>
+<div class="verse"><span class="verse-number">9</span>約書亞就終夜從吉甲上去，猛然臨到他們那裏。</div>
+<div class="verse"><span class="verse-number">10</span>耶和華使他們在以色列人面前潰亂。約書亞在基遍大大的殺敗他們，追趕他們，在伯和崙的上坡路擊殺他們，直到亞西加和瑪基大。</div>
+<div class="verse"><span class="verse-number">11</span>他們在以色列人面前逃跑，正在伯和崙下坡的時候，耶和華從天上降大冰雹〔原文作石頭〕在他們身上，直降到亞西加，打死他們。被冰雹打死的，比以色列人用刀殺死的還多。</div>
+<div class="verse"><span class="verse-number">12</span>當耶和華將亞摩利人交付以色列人的日子，約書亞就禱告耶和華，在以色列人眼前說：日頭啊，你要停在基遍；月亮啊，你要止在亞雅崙谷。</div>
+<div class="verse"><span class="verse-number">13</span>於是日頭停留，月亮止住，直等國民向敵人報仇。這事豈不是寫在雅煞珥書上麼？日頭在天當中停住，不急速下落，約有一日之久。</div>
+<div class="verse"><span class="verse-number">14</span>在這日以前，這日以後，耶和華聽人的禱告，沒有像這日的，是因耶和華為以色列爭戰。</div>
+<div class="verse"><span class="verse-number">15</span>約書亞和以色列眾人回到吉甲的營中。</div>
+<div class="verse"><span class="verse-number">16</span>那五王逃跑，藏在瑪基大洞裏。</div>
+<div class="verse"><span class="verse-number">17</span>有人告訴約書亞說：「那五王已經找到了，都藏在瑪基大洞裏。」</div>
+<div class="verse"><span class="verse-number">18</span>約書亞說：「你們把幾塊大石頭滾到洞口，派人看守，</div>
+<div class="verse"><span class="verse-number">19</span>你們卻不可耽延，要追趕你們的仇敵，擊殺他們儘後邊的人，不容他們進自己的城邑，因為耶和華你們的神已經把他們交在你們手裏。」</div>
+<div class="verse"><span class="verse-number">20</span>約書亞和以色列人大大殺敗他們，直到將他們滅盡；其中剩下的人都進了堅固的城。</div>
+<div class="verse"><span class="verse-number">21</span>眾百姓就安然回瑪基大營中，到約書亞那裏。沒有一人敢向以色列人饒舌。</div>
+<div class="verse"><span class="verse-number">22</span>約書亞說：「打開洞口，將那五王從洞裏帶出來，領到我面前。」</div>
+<div class="verse"><span class="verse-number">23</span>眾人就這樣行，將那五王，就是耶路撒冷王、希伯崙王、耶末王、拉吉王、伊磯倫王，從洞裏帶出來，領到約書亞面前。</div>
+<div class="verse"><span class="verse-number">24</span>帶出那五王到約書亞面前的時候，約書亞就召了以色列眾人來，對那些和他同去的軍長說：「你們近前來，把腳踏在這些王的頸項上。」他們就近前來，把腳踏在這些王的頸項上。</div>
+<div class="verse"><span class="verse-number">25</span>約書亞對他們說：「你們不要懼怕，也不要驚惶。應當剛強壯膽，因為耶和華必這樣待你們所要攻打的一切仇敵。」</div>
+<div class="verse"><span class="verse-number">26</span>隨後約書亞將這五王殺死，掛在五棵樹上。他們就在樹上直掛到晚上。</div>
+<div class="verse"><span class="verse-number">27</span>日頭要落的時候，約書亞一吩咐，人就把屍首從樹上取下來，丟在他們藏過的洞裏，把幾塊大石頭放在洞口，直存到今日。</div>
+<div class="verse"><span class="verse-number">28</span>當日，約書亞奪了瑪基大，用刀擊殺城中的人和王；將其中一切人口盡行殺滅，沒有留下一個。他待瑪基大王，像從前待耶利哥王一樣。</div>
+<div class="verse"><span class="verse-number">29</span>約書亞和以色列眾人從瑪基大往立拿去，攻打立拿。</div>
+<div class="verse"><span class="verse-number">30</span>耶和華將立拿和立拿的王也交在以色列人手裏。約書亞攻打這城，用刀擊殺了城中的一切人口，沒有留下一個。他待立拿王，像從前待耶利哥王一樣。</div>
+<div class="verse"><span class="verse-number">31</span>約書亞和以色列眾人從立拿往拉吉去，對着拉吉安營，攻打這城。</div>
+<div class="verse"><span class="verse-number">32</span>耶和華將拉吉交在以色列人的手裏。第二天約書亞就奪了拉吉，用刀擊殺了城中的一切人口，是照他向立拿一切所行的。</div>
+<div class="verse"><span class="verse-number">33</span>那時基色王荷蘭上來幫助拉吉，約書亞就把他和他的民都擊殺了，沒有留下一個。</div>
+<div class="verse"><span class="verse-number">34</span>約書亞和以色列眾人從拉吉往伊磯倫去，對着伊磯倫安營，攻打這城。</div>
+<div class="verse"><span class="verse-number">35</span>當日就奪了城，用刀擊殺了城中的人。那日，約書亞將城中的一切人口盡行殺滅，是照他向拉吉一切所行的。</div>
+<div class="verse"><span class="verse-number">36</span>約書亞和以色列眾人從伊磯倫上希伯崙去，攻打這城，</div>
+<div class="verse"><span class="verse-number">37</span>就奪了希伯崙和屬希伯崙的諸城邑，用刀將城中的人與王，並那些城邑中的人口，都擊殺了，沒有留下一個，是照他向伊磯倫所行的，把城中的一切人口盡行殺滅。</div>
+<div class="verse"><span class="verse-number">38</span>約書亞和以色列眾人回到底璧，攻打這城，</div>
+<div class="verse"><span class="verse-number">39</span>就奪了底璧和屬底璧的城邑，又擒獲底璧的王，用刀將這些城中的人口盡行殺滅，沒有留下一個。他待底璧和底璧王，像從前待希伯崙和立拿與立拿王一樣。</div>
+<div class="verse"><span class="verse-number">40</span>這樣，約書亞擊殺全地的人，就是山地、南地、高原、山坡的人，和那些地的諸王，沒有留下一個。將凡有氣息的盡行殺滅，正如耶和華以色列的神所吩咐的。</div>
+<div class="verse"><span class="verse-number">41</span>約書亞從加低斯巴尼亞攻擊到迦薩，又攻擊歌珊全地，直到基遍。</div>
+<div class="verse"><span class="verse-number">42</span>約書亞一時殺敗了這些王，並奪了他們的地，因為耶和華以色列的神為以色列爭戰。</div>
+<div class="verse"><span class="verse-number">43</span>於是約書亞和以色列眾人回到吉甲的營中。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約書亞記第10章記載以色列人南部征戰中最戲劇性的一幕。基遍因與以色列立約，成為五王聯軍的攻擊目標。基遍向約書亞求援，約書亞遵照神的應許連夜急行，突然臨到敵軍。耶和華親自介入，先使敵軍潰亂，又從天降下大冰雹打死大批敵人，被冰雹打死的甚至比刀殺的還多。在這關鍵時刻，約書亞向神禱告，求日頭停住——神應允了這前所未有的禱告，日頭在天中停留約一日之久，使以色列人有足夠時間殲滅敵軍。五王藏身洞穴被擒後，約書亞以此激勵眾軍長，踩踏五王頸項，宣告神必照樣踐踏一切仇敵。此後，約書亞繼續南征，連取數城，直到迦南南部大片土地落入以色列人手中。本章的核心宣告是：「耶和華以色列的神為以色列爭戰」，彰顯神是歷史的主宰。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神能為信靠祂的人改變自然秩序</strong><br>日頭停住是聖經中最震撼的神蹟之一。神為了以色列人得勝，甚至讓天體運行停頓——「在這日以前，這日以後，耶和華聽人的禱告，沒有像這日的」。這宣告了一個深刻的真理：神不受自然定律的限制，祂可以為完成祂的旨意而干預受造界的運作。信徒面對人力無法解決的困境時，神仍能以超乎想像的方式介入，這呼召信徒以禱告取代絕望。<br><br>
+<strong>2. 禱告是屬靈爭戰中最有力的武器</strong><br>約書亞在戰場上的禱告，引發了歷史上最奇特的神蹟。他沒有等戰後才感謝神，而是在爭戰中即時禱告、即時得應允。這提醒信徒：禱告不是補充工具，而是屬靈爭戰的主要策略。在困境最深的時刻，最需要的不是更多的謀略，而是以信心的禱告呼求那位能移山填海的神。<br><br>
+<strong>3. 神為祂子民爭戰，是一切屬靈得勝的根本</strong><br>本章最後清楚總結：「耶和華以色列的神為以色列爭戰。」無論是冰雹、日頭停留，還是每一場城池的攻奪，得勝的榮耀都歸於神，而非人的英勇。約書亞是忠心順服的器皿，但主角始終是神。信徒在屬靈爭戰或人生困境中，必須記住自己的本分是忠心行動，而最終的得勝屬於那位為我們爭戰的神。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>在這日以前</strong>，<strong>這日以後</strong>，耶和華聽人的禱告，沒有像這日的，是因耶和華為以色列爭戰。」（書10:14）</td>
+<td>就像緊急求救電話能在最關鍵的時刻連上最重要的人，約書亞在戰場上的即時禱告得到了前所未有的回應。你是否也相信神今天仍能回應看似不可能的禱告？你有沒有讓禱告成為第一反應？</td>
+</tr>
+<tr>
+<td>「<strong>不要懼怕</strong>，<strong>也不要驚惶</strong>。應當剛強壯膽，因為耶和華必這樣待你們所要攻打的一切仇敵。」（書10:25）</td>
+<td>就像教練在比賽最艱難的時刻走進場邊提醒球員「我們能贏」，約書亞以五王被踐踏的事實激勵眾人。你生命中有哪些「仇敵」讓你懼怕，而你需要以神過去的信實來重燃剛強壯膽的信心？</td>
+</tr>
+<tr>
+<td>「<strong>約書亞一時殺敗了</strong><strong>這些王</strong>，並奪了他們的地，因為耶和華以色列的神為以色列爭戰。」（書10:42）</td>
+<td>就像划船需要水流的方向配合才能事半功倍，以色列人的得勝是因為神親自為他們爭戰。你在面對生命挑戰時，是否已確認自己走在神的旨意中，讓神為你爭戰而非只靠自己的力量硬撐？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

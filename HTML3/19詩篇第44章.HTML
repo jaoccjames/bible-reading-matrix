@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第44章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第44章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">記念神古時作為：在苦難中呼求神醒起</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（可拉後裔的訓誨詩，交與伶長）神啊，你在古時，我們列祖的日子所行的事，我們親耳聽見了；我們的列祖也給我們述說過。</div>
+<div class="verse"><span class="verse-number">2</span>你曾用手趕出外邦人，卻栽培了我們列祖；你苦待列邦，卻叫我們列祖發達。</div>
+<div class="verse"><span class="verse-number">3</span>因為他們不是靠自己的刀劍得地土，也不是靠自己的膀臂得勝，乃是靠你的右手、你的膀臂，和你臉上的亮光，因為你喜悅他們。</div>
+<div class="verse"><span class="verse-number">4</span>神啊，你是我的王；求你出令使雅各得勝。</div>
+<div class="verse"><span class="verse-number">5</span>我們靠你要推倒我們的敵人，靠你的名要踐踏那起來攻擊我們的人。</div>
+<div class="verse"><span class="verse-number">6</span>因為，我必不靠我的弓；我的刀也不能使我得勝。</div>
+<div class="verse"><span class="verse-number">7</span>惟你救了我們脫離敵人，使恨我們的人羞愧。</div>
+<div class="verse"><span class="verse-number">8</span>我們終日因神誇耀，還要永遠稱謝你的名。（細拉）</div>
+<div class="verse"><span class="verse-number">9</span>但如今你丟棄了我們，使我們受辱，不和我們的軍兵同去。</div>
+<div class="verse"><span class="verse-number">10</span>你使我們向敵人轉身退後；那恨我們的人任意搶奪。</div>
+<div class="verse"><span class="verse-number">11</span>你使我們當作快要被吃的羊，把我們分散在列邦中。</div>
+<div class="verse"><span class="verse-number">12</span>你賣了你的子民也不賺利，所得的價值並不加添你的資財。</div>
+<div class="verse"><span class="verse-number">13</span>你使我們受鄰國的羞辱，被四圍的人嗤笑譏刺。</div>
+<div class="verse"><span class="verse-number">14</span>你使我們在列邦中作了笑談，使眾民向我們搖頭。</div>
+<div class="verse"><span class="verse-number">15</span>我的凌辱終日在我面前，我臉上的羞愧將我遮蔽，</div>
+<div class="verse"><span class="verse-number">16</span>都因那辱罵毀謗人的聲音，又因仇敵和報仇人的緣故。</div>
+<div class="verse"><span class="verse-number">17</span>這都臨到我們身上，我們卻沒有忘記你，也沒有違背你的約。</div>
+<div class="verse"><span class="verse-number">18</span>我們的心沒有退後；我們的腳也沒有偏離你的路。</div>
+<div class="verse"><span class="verse-number">19</span>你在野狗之處壓傷我們，用死蔭遮蔽我們。</div>
+<div class="verse"><span class="verse-number">20</span>倘若我們忘了神的名，或向別神舉手，</div>
+<div class="verse"><span class="verse-number">21</span>神豈不鑒察這事麼？因為他曉得人心裏的隱祕。</div>
+<div class="verse"><span class="verse-number">22</span>我們為你的緣故終日被殺；人看我們如將宰的羊。</div>
+<div class="verse"><span class="verse-number">23</span>主啊，求你睡醒，為何儘睡呢？求你興起，不要永遠丟棄我們。</div>
+<div class="verse"><span class="verse-number">24</span>你為何掩面，不顧我們所遭的苦難和所受的欺壓？</div>
+<div class="verse"><span class="verse-number">25</span>我們的性命伏於塵土；我們的肚腹緊貼地面。</div>
+<div class="verse"><span class="verse-number">26</span>求你起來幫助我們！憑你的慈愛救贖我們！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第44篇是可拉後裔所作的集體哀歌，是詩篇中最坦率也最具挑戰性的詩篇之一。本篇的信仰張力極為罕見：詩人代表整個民族，聲稱他們並沒有背叛神，也沒有轉向別神，卻仍然遭受苦難——這直接挑戰了「受苦必是因為犯罪」的簡單因果論。
+
+      全篇分為三部分：回顧神在歷史中的作為（1-8節）、描述當前的災難與羞辱（9-16節）、申辯沒有背約而呼求神介入（17-26節）。詩人大膽地質問神「為何儘睡」、「為何掩面」，這些問句不是對神的不敬，而是信仰最真實的掙扎——當神的作為似乎與祂的性格矛盾時，誠實地提出質問，正是深度信仰關係的表現。
+
+      保羅在羅馬書8章36節引用第22節「我們為你的緣故終日被殺」，說明在新約時代，信仰者同樣可能在義中受苦，但神的愛在這一切中都無法被隔絕。這為本篇的神學困境提供了最終的回答：受苦不一定代表神的懲罰，卻可能是信仰最深的見證。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 記念神歷史作為是在困境中維持信心的根基</strong><br>「神啊，你在古時，我們列祖的日子所行的事，我們親耳聽見了。」（第1節）詩人在最深的苦難中，第一個動作是記念神過去的作為。這種「歷史性的信仰」——把當前的困境放在神更大的歷史作為背景中觀看——是保持信心最重要的屬靈操練之一。當我們只看眼前的黑暗，神似乎缺席；但當我們從歷史中看神的足跡，便能在現在的黑暗中找到盼望的錨點。<br><br>
+<strong>2. 在義中受苦是信仰最深的掙扎也是最真實的見證</strong><br>「我們為你的緣故終日被殺；人看我們如將宰的羊。」（第22節）本篇的信仰困境是：義人也可能在沒有犯罪的情況下受苦。這直接挑戰了「受苦=犯罪的報應」的機械式神學。保羅引用此節說明，在新約時代，信徒可能因為跟隨基督而受苦，但這種苦難不是神的拋棄，而是信仰最深的見證。在義中受苦的信徒，與耶穌的苦難有最深的連結，也分享祂最終的得勝。<br><br>
+<strong>3. 大膽地向神呼求介入是誠實信仰關係的表達</strong><br>「主啊，求你睡醒，為何儘睡呢？求你興起，不要永遠丟棄我們！」（第23節）這種大膽的呼求，在今天的宗教文化中常被視為不敬，但詩篇的傳統告訴我們：誠實地向神表達困惑、沮喪甚至質問，是深度信仰關係最真實的表現。神不需要我們假裝一切都很好；祂呼召我們帶著真實的心情到祂面前，讓禱告從表演變為真實的靈魂交流。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>因為他們不是靠自</strong><strong>己的刀劍得地土</strong>，也不是靠自己的膀臂得勝，乃是靠你的右手、你的膀臂。（詩44:3）</td>
+<td>就像一場球賽的最終結果，不只取決於球員的技術，更取決於整個球隊背後的支援體系，你在回顧過去的成就時，是否真的承認那些「靠自己得來」的成果，其實有更多是神的右手在背後成就的？</td>
+</tr>
+<tr>
+<td><strong>這都臨到我們身上</strong>，<strong>我們卻沒有忘記你</strong>，也沒有違背你的約。（詩44:17）</td>
+<td>就像在最艱難的考驗中仍堅守承諾，是誠信品格最真實的時刻，當苦難臨到時，你是否有過那種「我沒有做錯什麼，為何神仍讓這事發生」的困惑？那份困惑如何讓你更深地與神摔跤，還是使你轉身離去？</td>
+</tr>
+<tr>
+<td><strong>求你起來幫助我們</strong>！<strong>憑你的慈愛救贖我</strong>們！（詩44:26）</td>
+<td>就像在最困難的時候，仍然選擇撥打求救電話而非放棄，即使你不完全明白為何陷入這個困境，你是否仍然選擇以「憑你的慈愛」作為呼求的根基，而非在困惑中走向沉默或放棄？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提摩太後書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+提摩太後書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">在恩典上剛強與不以福音為恥</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>奉神旨意，照着在基督耶穌裏生命的應許，作基督耶穌使徒的保羅</div>
+<div class="verse"><span class="verse-number">2</span>寫信給我親愛的兒子提摩太。願恩惠、憐憫、平安從父神和我們主基督耶穌歸與你！</div>
+<div class="verse"><span class="verse-number">3</span>我感謝神，就是我接續祖先用清潔的良心所事奉的神。祈禱的時候，不住的想念你，</div>
+<div class="verse"><span class="verse-number">4</span>記念你的眼淚，晝夜切切的想要見你，好叫我滿心快樂。</div>
+<div class="verse"><span class="verse-number">5</span>想到你心裏無偽之信，這信是先在你外祖母羅以和你母親友尼基心裏的，我深信也在你的心裏。</div>
+<div class="verse"><span class="verse-number">6</span>為此我提醒你，使你將神藉我按手所給你的恩賜再如火挑旺起來。</div>
+<div class="verse"><span class="verse-number">7</span>因為神賜給我們，不是膽怯的心，乃是剛強、仁愛、謹守的心。</div>
+<div class="verse"><span class="verse-number">8</span>你不要以給我們的主作見證為恥，也不要以我這為主被囚的為恥；總要按神的能力，與我為福音同受苦難。</div>
+<div class="verse"><span class="verse-number">9</span>神救了我們，以聖召召我們，不是按我們的行為，乃是按他的旨意和恩典；這恩典是萬古之先，在基督耶穌裏賜給我們的，</div>
+<div class="verse"><span class="verse-number">10</span>但如今藉着我們救主基督耶穌的顯現纔表明出來了。他已經把死廢去，藉着福音，將不能壞的生命彰顯出來。</div>
+<div class="verse"><span class="verse-number">11</span>我為這福音奉派作傳道的，作使徒，作師傅。</div>
+<div class="verse"><span class="verse-number">12</span>為這緣故，我也受這些苦難。然而我不以為恥；因為知道我所信的是誰，也深信他能保全我所交付他的〔或作：他所交託我的〕，直到那日。</div>
+<div class="verse"><span class="verse-number">13</span>你從我聽的那純正話語的規模，要用在基督耶穌裏的信心和愛心，常常守着。</div>
+<div class="verse"><span class="verse-number">14</span>從前所交託你的善道，你要靠着那住在我們裏面的聖靈牢牢的守着。</div>
+<div class="verse"><span class="verse-number">15</span>凡在亞西亞的人都離棄我，這是你知道的，其中有腓吉路和黑摩其尼。</div>
+<div class="verse"><span class="verse-number">16</span>願主憐憫阿尼色弗一家的人；因他屢次使我暢快，不以我的鎖鍊為恥，</div>
+<div class="verse"><span class="verse-number">17</span>反倒在羅馬的時候，殷勤的找我，並且找着了。</div>
+<div class="verse"><span class="verse-number">18</span>願主使他在那日得主的憐憫。他在以弗所怎樣多多的服事我，是你明明知道的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+提摩太後書被許多學者認為是保羅最後一封書信，約在主後67至68年間，保羅即將殉道前從羅馬監獄寫給提摩太，充滿臨終前的深情囑咐，是新約中最具個人色彩的書信之一。第1章以問安開篇，保羅感謝神，說他晝夜不住地在禱告中提到提摩太，記念他的眼淚，想要見他，心中就滿了喜樂，他想起了提摩太的真實信心，這信心先在他外祖母羅以和母親友尼基心裡，保羅深信也在提摩太心裡。接著保羅勸提摩太要將神藉保羅按手所給他的恩賜再如火挑旺起來，因為神賜給我們不是膽怯的心，乃是剛強、仁愛、謹守的心，所以不要以給我們的主作見證為恥，也不要以他這個為主被囚的為恥，總要按神的能力與我為福音同受苦難。接著保羅說神救了我們用聖召召我們，不是按我們的行為，乃是按祂的旨意和恩典，這恩典是萬古之先在基督耶穌裡賜給我們的，但如今藉著我們救主基督耶穌的顯現才表明出來了，祂已經把死廢去，藉著福音將不能朽壞的生命彰顯出來。然後提到阿尼色弗屢次使他得以舒暢，不以保羅的鎖鍊為恥。本章以深情囑咐呈現保羅對忠心服事的最後呼召。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 剛強、仁愛、謹守——信仰的心志</strong><br>「神賜給我們，不是膽怯的心，乃是剛強、仁愛、謹守的心」——三種心志是神所賜的：剛強（面對困難的力量）、仁愛（面對他人的愛心）、謹守（面對自己的自律）。膽怯不是信仰應有的狀態，因為聖靈所賜的是勇氣和力量。這個宣告對每一個因軟弱而退縮的信徒都有提醒和鼓勵。<br><br>
+<strong>2. 我知道我所信的是誰</strong><br>「我知道我所信的是誰，也深信他能保全我所交付他的」——保羅的確信不建立在清楚知道事情的進展或結果，而是建立在認識那掌管一切的神是誰。「我所信的是誰」（who），不是「我所信的是什麼」（what）——信仰最終是對位格的信靠，不只是對命題的同意。<br><br>
+<strong>3. 信仰的傳承——家庭到個人到後代</strong><br>「這信是先在你外祖母羅以和你母親友尼基心裏的，我深信也在你的心裏」——三代的信仰傳承。信仰不是自動遺傳的，但家庭是最自然的傳遞管道。外祖母的信心，透過母親，影響了提摩太。每一個信徒都應問：我的信心是否在感染和傳遞給下一代？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>神賜給我們</strong>，<strong>不是膽怯的心</strong>，乃是剛強、仁愛、謹守的心。（提後1:7）</td>
+<td>在你面對信仰上的挑戰、公開見證的機會或服事的壓力時，你有沒有領受和使用神所賜的「剛強、仁愛、謹守的心」，而非讓膽怯主導你的回應？就像知道自己身上有一件強力的護甲但不穿上毫無意義，你有沒有讓神所賜的心志真實地在你的言行中顯出來？</td>
+</tr>
+<tr>
+<td><strong>我知道我所信的是</strong>誰，<strong>也深信他能保全我</strong>所交付他的，直到那日。（提後1:12）</td>
+<td>你有沒有在最不確定、最困難的時刻，讓「我知道我所信的是誰」成為你站立的根基，而非依賴對未來的清楚視野？就像一個信任可靠嚮導的登山者即使在迷霧中也能繼續前行，你有沒有讓對那位值得信靠的神的認識，成為你在不確定中的確信？</td>
+</tr>
+<tr>
+<td><strong>我提到你心裏無偽</strong>之信，<strong>這信是先在你外祖</strong>母羅以和你母親友尼基心裏的，我深信也在你的心裏。（提後1:5）</td>
+<td>你有沒有認識到你的信仰受到了前一代人（父母、祖父母、牧者）的深遠影響，並且有責任把這個信心的薪火傳遞給下一代？就像接力賽的每一棒都需要全力跑完再精準交棒，你有沒有在接受了信仰傳承之後，也積極地傳遞給你影響範圍內的人？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

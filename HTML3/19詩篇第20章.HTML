@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第20章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第20章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">出征前的祈禱：倚靠神名而非人力</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的詩，交與伶長）願耶和華在你遭難的日子應允你；願名為雅各神的高舉你。</div>
+<div class="verse"><span class="verse-number">2</span>願他從聖所救助你，從錫安堅固你，</div>
+<div class="verse"><span class="verse-number">3</span>記念你的一切供獻，悅納你的燔祭，（細拉）</div>
+<div class="verse"><span class="verse-number">4</span>將你心所願的賜給你，成就你的一切籌算。</div>
+<div class="verse"><span class="verse-number">5</span>我們要因你的救恩誇勝，要奉我們神的名豎立旌旗。願耶和華成就你一切所求的！</div>
+<div class="verse"><span class="verse-number">6</span>現在我知道耶和華救護他的受膏者，必從他的聖天上應允他，用右手的能力救護他。</div>
+<div class="verse"><span class="verse-number">7</span>有人靠車，有人靠馬，但我們要提到耶和華我們神的名。</div>
+<div class="verse"><span class="verse-number">8</span>他們都屈身仆倒，我們卻起來，立得正直。</div>
+<div class="verse"><span class="verse-number">9</span>求耶和華施行拯救；我們呼求的時候，願王應允我們！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第20篇是大衛所作的「王室詩篇」，可能是以色列百姓在王出征前，為王獻上的祝福與祈禱。本篇與第21篇形成一對：第20篇是出征前的祈禱，第21篇是得勝後的感謝。
+
+      本篇在結構上呈現會眾（或祭司）為王代禱（1-5節）、個人（或先知）宣告信心的確據（6節）、眾人以信仰宣言對比世人的依靠（7-8節），以及最後的呼求（9節）。本篇核心的神學張力在第7節達到頂峰：當時最強大的軍事力量是戰車與馬匹，然而以色列的信心不建立在這些上，而是建立在耶和華神的名上。
+
+      「提到耶和華我們神的名」不只是口頭的宣稱，更是一種信仰的定向——把一切的信賴、期望與榮耀，都指向那位真正掌管勝敗的神。本篇對所有在人生重要關口面臨挑戰的信徒，提供了最深刻的屬靈定向：在準備與努力之外，最終的信靠必須建立在神的名上，而非任何人間的資源與能力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在危難前為彼此代禱是信仰群體的標誌</strong><br>本篇呈現的是整個信仰群體為即將面對危難的王代禱，這種為他人在危難前獻上代禱的行動，是信仰群體最美的彰顯。「願耶和華在你遭難的日子應允你」——這種代禱不是在得勝後的感謝，而是在挑戰前的扶持。信仰不是孤立的個人行動，而是群體性的相互托住。呼召信徒在他人面臨重要關口時，主動以禱告支持，讓這種代禱成為教會生命最真實的見證。<br><br>
+<strong>2. 心所願的籌算需要放在神的旨意中尋求成就</strong><br>「將你心所願的賜給你，成就你的一切籌算。」（第4節）這句代禱揭示了一個微妙的屬靈真理：神願意成就信徒心中的籌算，但前提是這心願與籌算已經在神面前以供獻與燔祭（第3節）的態度擺上。真正的禱告不是命令神成就我的計劃，而是在神面前呈上我的計劃，讓神鑒察與潔淨，使我的心願逐漸與神的旨意吻合。這樣的籌算，神才樂意成就。<br><br>
+<strong>3. 靠神的名而非人間資源是信仰的根本立場</strong><br>「有人靠車，有人靠馬，但我們要提到耶和華我們神的名。」（第7節）這是整篇最鮮明的信仰宣言。世人以最先進的軍事科技（戰車與馬）為信心基礎，以色列人的信心卻建立在神的名上。這個對比放在今天同樣有力：有人靠資金、靠人脈、靠學歷、靠技術；而信徒的根本立場是「提到耶和華我們神的名」——在一切準備之上，仍以神為最終的倚靠，不讓任何人間資源篡奪神在心中的首位。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>將你心所願的賜給</strong>你，<strong>成就你的一切籌算</strong>。（詩20:4）</td>
+<td>就像在提交計劃書之前先向有經驗的導師請益，讓計劃更符合實際需求，你是否習慣在做人生重要決定前，先在神面前擺上你的籌算，讓神的旨意有機會修正或確認你的方向，而非只在遇到困難時才求神？</td>
+</tr>
+<tr>
+<td><strong>現在我知道耶和華</strong><strong>救護他的受膏者</strong>，必從他的聖天上應允他，用右手的能力救護他。（詩20:6）</td>
+<td>就像運動選手在比賽前已確信教練的支持，能以更平靜的心態上場，你在面對人生重要挑戰時，是否有「現在我知道神必救護我」這樣的確信，讓這信心改變你面對挑戰的心態？</td>
+</tr>
+<tr>
+<td><strong>有人靠車</strong>，<strong>有人靠馬</strong>，但我們要提到耶和華我們神的名。（詩20:7）</td>
+<td>就像在停電時才發現平常依賴的電器設備完全失靈，你在面對挑戰時所真正依靠的是什麼？是學歷、人脈、資金，還是神的名？當你的「車和馬」都失效時，你的信心還有根基嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

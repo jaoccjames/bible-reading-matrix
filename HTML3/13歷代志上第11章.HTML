@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歷代志上第11章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+歷代志上第11章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大衛登基：勇士雲集，耶路撒冷歸一</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列眾人聚集到希伯崙見大衛，說：「我們原是你的骨肉。</div>
+<div class="verse"><span class="verse-number">2</span>從前掃羅作王的時候，率領以色列人出入的是你；耶和華你的神也曾應許你說：『你必牧養我的民以色列，作以色列的君。』」</div>
+<div class="verse"><span class="verse-number">3</span>於是以色列的長老都來到希伯崙見大衛王。大衛在希伯崙耶和華面前與他們立約，他們就膏大衛作以色列的王，是照耶和華藉撒母耳所說的話。</div>
+<div class="verse"><span class="verse-number">4</span>大衛和以色列眾人到了耶路撒冷，就是耶布斯；那時耶布斯人住在那裏。</div>
+<div class="verse"><span class="verse-number">5</span>耶布斯人對大衛說：「你決不能進這地方。」然而大衛攻取錫安的保障，就是大衛的城。</div>
+<div class="verse"><span class="verse-number">6</span>大衛說：「誰先攻打耶布斯人，必作首領元帥。」洗魯雅的兒子約押先上去，就作了元帥。</div>
+<div class="verse"><span class="verse-number">7</span>大衛住在保障裏，所以那保障叫作大衛城。</div>
+<div class="verse"><span class="verse-number">8</span>大衛又從米羅起，四圍建築城牆，其餘的是約押修理。</div>
+<div class="verse"><span class="verse-number">9</span>大衛日見強盛，因為萬軍之耶和華與他同在。</div>
+<div class="verse"><span class="verse-number">10</span>以下記錄跟隨大衛勇士的首領，就是奮勇幫助他得國、照着耶和華吩咐以色列人的話、與以色列人一同立他作王的。</div>
+<div class="verse"><span class="verse-number">11</span>大衛勇士的數目記在下面：哈革摩尼的兒子雅朔班，他是軍長的統領，一時舉槍殺了三百人。</div>
+<div class="verse"><span class="verse-number">12</span>其次是亞合人朵多的兒子以利亞撒，他是三個勇士裏的一個。</div>
+<div class="verse"><span class="verse-number">13</span>他從前與大衛在巴斯達閔，非利士人聚集要打仗。那裏有一塊長滿大麥的田，眾民就在非利士人面前逃跑；</div>
+<div class="verse"><span class="verse-number">14</span>這勇士便站在那田間擊殺非利士人，救護了那田。耶和華使以色列人大獲全勝。</div>
+<div class="verse"><span class="verse-number">15</span>三十個勇士中的三個人下到磐石那裏，進了亞杜蘭洞見大衛；非利士的軍隊在利乏音谷安營。</div>
+<div class="verse"><span class="verse-number">16</span>那時大衛在山寨，非利士人的防營在伯利恆。</div>
+<div class="verse"><span class="verse-number">17</span>大衛渴想，說：「甚願有人將伯利恆城門旁井裏的水打來給我喝！」</div>
+<div class="verse"><span class="verse-number">18</span>這三個勇士就闖過非利士人的營盤，從伯利恆城門旁的井裏打水，拿來奉給大衛。他卻不肯喝，將水奠在耶和華面前，</div>
+<div class="verse"><span class="verse-number">19</span>說：「我的神啊，這三個人冒死去打水，這水好像他們的血一般，我斷不敢喝！」如此，大衛不肯喝。這是三個勇士所作的事。</div>
+<div class="verse"><span class="verse-number">20</span>約押的兄弟亞比篩是這三個勇士的首領；他舉槍殺了三百人，就在三個勇士裏得了名。</div>
+<div class="verse"><span class="verse-number">21</span>他在這三個勇士裏是最尊貴的，所以作他們的首領；只是不及前三個勇士。</div>
+<div class="verse"><span class="verse-number">22</span>有甲薛勇士耶何耶大的兒子比拿雅行過大能的事：他殺了摩押人亞利伊勒的兩個兒子，又在下雪的時候下坑裏去殺了一個獅子，</div>
+<div class="verse"><span class="verse-number">23</span>又殺了一個埃及人。埃及人身高五肘，手裏拿着槍，槍桿粗如織布的機軸；比拿雅只拿着棍子下去，從埃及人手裏奪過槍來，用那槍將他刺死。</div>
+<div class="verse"><span class="verse-number">24</span>這是耶何耶大的兒子比拿雅所行的事，就在三個勇士裏得了名。</div>
+<div class="verse"><span class="verse-number">25</span>他比那三十個勇士都尊貴，只是不及前三個勇士。大衛立他作護衛長。</div>
+<div class="verse"><span class="verse-number">26</span>軍中的勇士有約押的兄弟亞撒黑，伯利恆人朵多的兒子伊勒哈難，</div>
+<div class="verse"><span class="verse-number">27</span>哈律人沙瑪，比倫人希利斯，</div>
+<div class="verse"><span class="verse-number">28</span>提哥亞人益吉的兒子以拉，亞拿突人亞比以謝，</div>
+<div class="verse"><span class="verse-number">29</span>戶沙人西比該，亞合人以來，</div>
+<div class="verse"><span class="verse-number">30</span>尼陀法人瑪哈萊，尼陀法人巴拿的兒子希立，</div>
+<div class="verse"><span class="verse-number">31</span>便雅憫族基比亞人利拜的兒子以太，比拉頓人比拿雅，</div>
+<div class="verse"><span class="verse-number">32</span>迦實溪人戶萊，亞拉巴人亞比，</div>
+<div class="verse"><span class="verse-number">33</span>巴路米人押斯瑪弗，沙本人以利雅哈巴，</div>
+<div class="verse"><span class="verse-number">34</span>基孫人哈深的眾子，哈拉人沙基的兒子約拿單，</div>
+<div class="verse"><span class="verse-number">35</span>哈拉人沙甲的兒子亞希暗，吾珥的兒子以利法勒，</div>
+<div class="verse"><span class="verse-number">36</span>米基拉人希弗，比倫人亞希雅，</div>
+<div class="verse"><span class="verse-number">37</span>迦密人希斯羅，伊斯拜的兒子拿萊，</div>
+<div class="verse"><span class="verse-number">38</span>拿單的兄弟約珥，哈基利的兒子彌伯哈，</div>
+<div class="verse"><span class="verse-number">39</span>亞捫人洗勒，比錄人拿哈萊（拿哈萊是給洗魯雅的兒子約押拿兵器的），</div>
+<div class="verse"><span class="verse-number">40</span>以帖人以拉，以帖人迦立，</div>
+<div class="verse"><span class="verse-number">41</span>赫人烏利亞，亞萊的兒子撒拔，</div>
+<div class="verse"><span class="verse-number">42</span>流便人示撒的兒子亞第拿（他是流便支派中的一個族長，率領三十人），</div>
+<div class="verse"><span class="verse-number">43</span>瑪迦的兒子哈難，彌特尼人約沙法，</div>
+<div class="verse"><span class="verse-number">44</span>亞施他拉人烏西亞，亞羅珥人何坦的兒子沙瑪、耶利，</div>
+<div class="verse"><span class="verse-number">45</span>提洗人申利的兒子耶疊和他的兄弟約哈，</div>
+<div class="verse"><span class="verse-number">46</span>瑪哈未人以利業，伊利拿安的兒子耶利拜、約沙未雅，摩押人伊特瑪、</div>
+<div class="verse"><span class="verse-number">47</span>以利業、俄備得，並米瑣八人雅西業。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+歷代志上第十一章是全書敘事的真正開端，記述大衛在希伯崙被全以色列膏立為王（1-3節），隨即攻取耶路撒冷、建立大衛城（4-9節），並詳列跟隨大衛的三十七位勇士名單（10-47節）。
+
+      本章的神學重心在於：大衛的登基是照「耶和華藉撒母耳所說的話」（3節）成就的，是神的應許得到實現的時刻。大衛的成功不是靠個人謀略，而是因「萬軍之耶和華與他同在」（9節）。勇士們的忠心效命，從著名的三傑故事（伯利恆水井事件，15-19節）到眾多名字的記錄，顯示神的計畫是透過一群委身跟隨的人共同成就的。三個勇士冒死為大衛打水，大衛卻不肯喝，將水澆奠給耶和華，這個細節充分展現了大衛敬虔與感恩的心。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的應許必在神所定的時候成就</strong><br>大衛等待多年，在洞穴中躲避、在戰場上奮鬥，但登基為王的時刻是「照耶和華藉撒母耳所說的話」（3節）。神的應許不因等待而消失，只是在神所定的時候成就。對信徒而言，當應許似乎遲延時，那往往是神在塑造器皿的過程，而非應許失效的信號。<br><br>
+<strong>2. 偉大的成就需要忠心之人的共同參與</strong><br>大衛的勝利不是孤身成就的，本章三分之二的篇幅都在記錄那些與他並肩的勇士。每一個名字都是神計畫中不可或缺的一部分。在神的國度裡，沒有孤立的英雄——每一項偉大的使命，都需要一群願意委身的人彼此扶持。<br><br>
+<strong>3. 真正的領袖將榮耀歸給神</strong><br>三個勇士冒死打水奉給大衛，大衛卻不肯喝，將水澆奠給耶和華（18-19節）。這個舉動說明大衛深知：他人的捨命不是為了他，而是為了更大的使命。真正的領袖不把下屬的犧牲用來滿足個人需求，而是將一切榮耀歸回神。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>大衛日見強盛</strong>，<strong>因為萬軍之耶和華</strong>與他同在。（代上11:9）</td>
+<td>大衛的強盛來自神的同在，而非個人的能力，就像一支手電筒的亮度取決於電池而非燈泡本身——你目前所倚靠的「電池」是什麼？是自己的才能、人脈，還是神的同在？</td>
+</tr>
+<tr>
+<td><strong>這三個勇士就闖過</strong><strong>非利士人的營盤</strong>……大衛卻不肯喝，將水奠在耶和華面前，說：「這水好像他們的血一般，我斷不敢喝！」（代上11:18-19）</td>
+<td>大衛將最珍貴的禮物澆奠給神，而不是據為己有，就像一個人把得獎感言的第一句用來感謝神，而非炫耀自己的努力——你是否習慣把得到的最好的東西先獻給神？</td>
+</tr>
+<tr>
+<td><strong>大衛在希伯崙耶和</strong><strong>華面前與他們立約</strong>，他們就膏大衛作以色列的王，是照耶和華藉撒母耳所說的話。（代上11:3）</td>
+<td>大衛登基的那一刻，是多年前神藉撒母耳所說之話的應驗，就像一粒種子在土裡等候多時，終於在正確的季節破土而出——你心中有哪個神的應許，正在等候祂所定的時候成就？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

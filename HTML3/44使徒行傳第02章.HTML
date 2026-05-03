@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使徒行傳第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+使徒行傳第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">五旬節聖靈降臨與初代教會</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>五旬節到了，門徒都聚集在一處。</div>
+<div class="verse"><span class="verse-number">2</span>忽然，從天上有響聲下來，好像一陣大風吹過，充滿了他們所坐的屋子，</div>
+<div class="verse"><span class="verse-number">3</span>又有舌頭如火焰顯現出來，分開落在他們各人頭上。</div>
+<div class="verse"><span class="verse-number">4</span>他們就都被聖靈充滿，按着聖靈所賜的口才說起別國的話來。</div>
+<div class="verse"><span class="verse-number">5</span>那時，有虔誠的猶太人從天下各國來，住在耶路撒冷。</div>
+<div class="verse"><span class="verse-number">6</span>這聲音一響，眾人都來聚集，各人聽見門徒用眾人的鄉談說話，就甚納悶；</div>
+<div class="verse"><span class="verse-number">7</span>都驚訝希奇說：「看哪，這說話的不都是加利利人嗎？</div>
+<div class="verse"><span class="verse-number">8</span>我們各人，怎麼聽見他們說我們生來所用的鄉談呢？</div>
+<div class="verse"><span class="verse-number">9</span>我們帕提亞人、瑪代人、以攔人，和住在米所波大米亞、猶太、加帕多家、本都、亞西亞、</div>
+<div class="verse"><span class="verse-number">10</span>弗呂家、旁非利亞、埃及的人，並靠近古利奈的呂彼亞一帶地方的人，從羅馬來的客旅中，或是猶太人，或是進猶太教的人，</div>
+<div class="verse"><span class="verse-number">11</span>革哩底和亞拉伯人，都聽見他們用我們的鄉談，講說神的大作為。」</div>
+<div class="verse"><span class="verse-number">12</span>眾人就都驚訝猜疑，彼此說：「這是甚麼意思呢？」</div>
+<div class="verse"><span class="verse-number">13</span>還有人譏誚說：他們無非是新酒灌滿了。</div>
+<div class="verse"><span class="verse-number">14</span>彼得和十一個使徒站起，高聲說：「猶太人和一切住在耶路撒冷的人哪，這件事你們當知道，也當側耳聽我的話。</div>
+<div class="verse"><span class="verse-number">15</span>你們想這些人是醉了；其實不是醉了，因為時候剛到巳初。</div>
+<div class="verse"><span class="verse-number">16</span>這正是先知約珥所說的：</div>
+<div class="verse"><span class="verse-number">17</span>神說：在末後的日子，我要將我的靈澆灌凡有血氣的。你們的兒女要說預言；你們的少年人要見異象；老年人要作異夢。</div>
+<div class="verse"><span class="verse-number">18</span>在那些日子，我要將我的靈澆灌我的僕人和使女，他們就要說預言。</div>
+<div class="verse"><span class="verse-number">19</span>在天上、我要顯出奇事；在地下、我要顯出神蹟；有血，有火，有煙霧。</div>
+<div class="verse"><span class="verse-number">20</span>日頭要變為黑暗，月亮要變為血；這都在主大而明顯的日子未到以前。</div>
+<div class="verse"><span class="verse-number">21</span>到那時候，凡求告主名的，就必得救。</div>
+<div class="verse"><span class="verse-number">22</span>「以色列人哪，請聽我的話：神藉着拿撒勒人耶穌在你們中間施行異能、奇事神蹟，將他證明出來，這是你們自己知道的。</div>
+<div class="verse"><span class="verse-number">23</span>他既按着神的定旨先見被交與人，你們就藉着無法之人的手，把他釘在十字架上殺了。</div>
+<div class="verse"><span class="verse-number">24</span>神卻將死的痛苦解釋了，叫他復活，因為他原不能被死拘禁。</div>
+<div class="verse"><span class="verse-number">25</span>大衛指着他說：我看見主常在我眼前；他在我右邊，叫我不至於搖動。</div>
+<div class="verse"><span class="verse-number">26</span>所以，我心裏歡喜，我的靈〔原文作舌〕快樂；並且我的肉身要安居在指望中。</div>
+<div class="verse"><span class="verse-number">27</span>因你必不將我的靈魂撇在陰間，也不叫你的聖者見朽壞。</div>
+<div class="verse"><span class="verse-number">28</span>你已將生命的道路指示我，必叫我因見你的面〔或作：叫我在你面前〕得着滿足的快樂。</div>
+<div class="verse"><span class="verse-number">29</span>「弟兄們！先祖大衛的事，我可以明明的對你們說：他死了，也葬埋了，並且他的墳墓直到今日還在我們這裏。</div>
+<div class="verse"><span class="verse-number">30</span>大衛既是先知，又曉得神曾向他起誓，要從他的後裔中立一位坐在他的寶座上，</div>
+<div class="verse"><span class="verse-number">31</span>就預先看明這事，講論基督復活說：他的靈魂不撇在陰間；他的肉身也不見朽壞。</div>
+<div class="verse"><span class="verse-number">32</span>這耶穌，神已經叫他復活了，我們都為這事作見證。</div>
+<div class="verse"><span class="verse-number">33</span>他既被神的右手高舉〔或作：他既高舉在神的右邊〕，又從父受了所應許的聖靈，就把你們所看見所聽見的，澆灌下來。</div>
+<div class="verse"><span class="verse-number">34</span>大衛並沒有升到天上，但自己說：主對我主說：你坐在我的右邊，</div>
+<div class="verse"><span class="verse-number">35</span>等我使你仇敵作你的腳凳。</div>
+<div class="verse"><span class="verse-number">36</span>「故此，以色列全家當確實的知道，你們釘在十字架上的這位耶穌，神已經立他為主，為基督了。」</div>
+<div class="verse"><span class="verse-number">37</span>眾人聽見這話，覺得扎心，就對彼得和其餘的使徒說：「弟兄們，我們當怎樣行？」</div>
+<div class="verse"><span class="verse-number">38</span>彼得說：「你們各人要悔改，奉耶穌基督的名受洗，叫你們的罪得赦，就必領受所賜的聖靈；</div>
+<div class="verse"><span class="verse-number">39</span>因為這應許是給你們和你們的兒女，並一切在遠方的人，就是主我們神所召來的。」</div>
+<div class="verse"><span class="verse-number">40</span>彼得還用許多話作見證，勸勉他們說：「你們當救自己脫離這彎曲的世代。」</div>
+<div class="verse"><span class="verse-number">41</span>於是領受他話的人就受了洗。那一天，門徒約添了三千人，</div>
+<div class="verse"><span class="verse-number">42</span>都恒心遵守使徒的教訓，彼此交接，擘餅，祈禱。</div>
+<div class="verse"><span class="verse-number">43</span>眾人都懼怕；使徒又行了許多奇事神蹟。</div>
+<div class="verse"><span class="verse-number">44</span>信的人都在一處，凡物公用；</div>
+<div class="verse"><span class="verse-number">45</span>並且賣了田產，家業，照各人所需用的分給各人。</div>
+<div class="verse"><span class="verse-number">46</span>他們天天同心合意恒切的在殿裏，且在家中擘餅，存着歡喜、誠實的心用飯，</div>
+<div class="verse"><span class="verse-number">47</span>讚美神，得眾民的喜愛。主將得救的人天天加給他們。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第2章記述五旬節聖靈降臨的事件、彼得的第一篇佈道，以及初代教會群體生活的開始，是使徒行傳最具轉折意義的一章，也是基督教教會的正式誕生日。五旬節那一天門徒都聚集在一處，忽然從天上有響聲下來，好像一陣大風吹過，充滿了所坐的屋子，又有舌頭如火焰的分開落在他們各人頭上，他們就都被聖靈充滿，按著聖靈所賜的口才說起別國的話來。那時虔誠的猶太人從天下各國來到耶路撒冷，聽見這聲音都來聚集，各人聽見用自己的話說話就甚驚奇，有人嘲笑說他們喝醉了。彼得站起來傳講耶穌基督的死與復活，引用詩篇說神使祂復活了，神已立這耶穌為主為基督了。眾人聽見心裡刺痛問該怎麼辦，彼得說你們各人要悔改、奉耶穌基督的名受洗，罪就得赦免，就必領受聖靈的恩賜，那天有三千人悔改受洗。門徒都恆心遵守使徒的教訓、彼此交接、擘餅、祈禱，凡物公用，天天同心合意在殿裡，主將得救的人天天加給他們。本章為整部使徒行傳的聖靈事工奠定神學基礎。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 五旬節是教會使命的起點</strong><br>五旬節聖靈降臨，是整個宣教歷史的出發點——不是依靠人的計劃和能力，而是被聖靈充滿和驅動。「說起別國的話」不只是語言神蹟，更是象徵：福音要跨越一切語言和文化的界限。聖靈是跨文化宣教的主導者。今天教會的使命也需要同樣的聖靈充滿，而非只靠人的策略和組織。<br><br>
+<strong>2. 彼得的講道是以復活為核心的見證</strong><br>彼得的五旬節講道簡潔有力，核心是耶穌的死、復活和高升：「神已經立他為主，為基督了」。「眾人聽見這話，覺得扎心」——神話語的能力在於它能觸動心靈最深處，引發對自己狀態的認識。彼得沒有用技巧說服，而是直接宣告真理。見證不是辯論，而是宣告神已完成的事實。<br><br>
+<strong>3. 初代教會是見證性群體的範本</strong><br>「恒心遵守使徒的教訓、彼此交接、擘餅、祈禱」——四個特質定義了初代教會：學習、群體、聖餐、禱告。「凡物公用」不是共產主義，而是愛的自然流露。「主將得救的人天天加給他們」——教會增長不是靠人的策略，而是健康生命的自然結果。這四個特質今天仍然是健康教會的根基。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們各人要悔改</strong>，<strong>奉耶穌基督的名受</strong>洗，叫你們的罪得赦，就必領受所賜的聖靈。（徒2:38）</td>
+<td>你有沒有真實地領受和持續地仰賴聖靈的充滿，讓祂成為你信仰生活的能力來源？就像電器需要插電才能運作，你的信仰生活有沒有與聖靈的能力保持連接？</td>
+</tr>
+<tr>
+<td><strong>他們都恒心遵守使</strong><strong>徒的教訓</strong>，彼此交接，擘餅，祈禱。（徒2:42）</td>
+<td>你有沒有在你的信仰群體中恒心建立這四個習慣——學習神的話、真實的群體相交、聖餐、禱告？就像一株植物需要陽光水土礦物質同時供應，你的靈命有沒有同時培養這四個方面？</td>
+</tr>
+<tr>
+<td><strong>主將得救的人天天</strong><strong>加給他們</strong>。（徒2:47）</td>
+<td>你的生命和你所在的教會群體，有沒有因為真實的基督徒生命而自然地吸引人、帶出增長？就像一個真正美好的地方人們會主動推薦給朋友，你的信仰生活有沒有成為吸引人認識基督的見證？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

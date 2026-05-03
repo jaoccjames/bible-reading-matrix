@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第17章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第17章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">耶穌登山變像與芥菜種信心</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>過了六天，耶穌帶着彼得、雅各，和雅各的兄弟約翰，暗暗的上了高山，</div>
+<div class="verse"><span class="verse-number">2</span>就在他們面前變了形像，臉面明亮如日頭，衣裳潔白如光。</div>
+<div class="verse"><span class="verse-number">3</span>忽然，有摩西、以利亞向他們顯現，同耶穌說話。</div>
+<div class="verse"><span class="verse-number">4</span>彼得對耶穌說：「主啊，我們在這裏真好！你若願意，我就在這裏搭三座棚，一座為你，一座為摩西，一座為以利亞。」</div>
+<div class="verse"><span class="verse-number">5</span>說話之間，忽然有一朵光明的雲彩遮蓋他們，且有聲音從雲彩裏出來，說：「這是我的愛子，我所喜悅的。你們要聽他！」</div>
+<div class="verse"><span class="verse-number">6</span>門徒聽見，就俯伏在地，極其害怕。</div>
+<div class="verse"><span class="verse-number">7</span>耶穌進前來，摸他們，說：「起來，不要害怕！」</div>
+<div class="verse"><span class="verse-number">8</span>他們舉目不見一人，只見耶穌在那裏。</div>
+<div class="verse"><span class="verse-number">9</span>下山的時候，耶穌吩咐他們說：「人子還沒有從死裏復活，你們不要將所看見的告訴人。」</div>
+<div class="verse"><span class="verse-number">10</span>門徒問耶穌說：「文士為甚麼說以利亞必須先來？」</div>
+<div class="verse"><span class="verse-number">11</span>耶穌回答說：「以利亞固然先來，並要復興萬事；</div>
+<div class="verse"><span class="verse-number">12</span>只是我告訴你們，以利亞已經來了，人卻不認識他，竟任意待他。人子也將要這樣受他們的害。」</div>
+<div class="verse"><span class="verse-number">13</span>門徒這纔明白耶穌所說的是指着施洗的約翰。</div>
+<div class="verse"><span class="verse-number">14</span>耶穌和門徒到了眾人那裏，有一個人來見耶穌，跪下，說：</div>
+<div class="verse"><span class="verse-number">15</span>「主啊，憐憫我的兒子。他害癲癇的病很苦，屢次跌在火裏，屢次跌在水裏。</div>
+<div class="verse"><span class="verse-number">16</span>我帶他到你門徒那裏，他們卻不能醫治他。」</div>
+<div class="verse"><span class="verse-number">17</span>耶穌說：「噯！這又不信又悖謬的世代啊，我在你們這裏要到幾時呢？我忍耐你們要到幾時呢？把他帶到我這裏來吧！」</div>
+<div class="verse"><span class="verse-number">18</span>耶穌斥責那鬼，鬼就出來；從此孩子就痊癒了。</div>
+<div class="verse"><span class="verse-number">19</span>門徒暗暗的到耶穌跟前，說：「我們為甚麼不能趕出那鬼呢？」</div>
+<div class="verse"><span class="verse-number">20</span>耶穌說：「是因你們的信心小。我實在告訴你們，你們若有信心，像一粒芥菜種，就是對這座山說：『你從這邊挪到那邊。』它也必挪去；並且你們沒有一件不能作的事了。</div>
+<div class="verse"><span class="verse-number">21</span>至於這一類的鬼，若不禱告、禁食，他就不出來〔或作：不能趕他出來〕。」</div>
+<div class="verse"><span class="verse-number">22</span>他們還住在加利利的時候，耶穌對門徒說：「人子將要被交在人手裏。</div>
+<div class="verse"><span class="verse-number">23</span>他們要殺害他，第三日他要復活。」門徒就大大的憂愁。</div>
+<div class="verse"><span class="verse-number">24</span>到了迦百農，有收丁稅的人來見彼得，說：「你們的先生不納丁稅〔丁稅約有半塊錢〕嗎？」</div>
+<div class="verse"><span class="verse-number">25</span>彼得說：「納。」他進了屋子，耶穌先向他說：「西門，你的意思如何？世上的君王向誰徵收關稅、丁稅？是向自己的兒子呢？是向外人呢？」</div>
+<div class="verse"><span class="verse-number">26</span>彼得說：「是向外人。」耶穌說：「既然如此，兒子就可以免稅了。</div>
+<div class="verse"><span class="verse-number">27</span>但恐怕觸犯〔觸犯：原文作絆倒〕他們，你且往海邊去釣魚，把先釣上來的魚拿起來，開了他的口，必得一塊錢，可以拿去給他們，作你我的稅銀。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第17章記述登山變像的異象、醫治被鬼附男孩的事件，以及耶穌第二次預告受難。本章首先描述耶穌帶彼得、雅各、約翰上了高山，在他們面前變了形像，臉面明亮如日頭，衣裳潔白如光，摩西與以利亞出現與祂說話。彼得提議搭三座棚，光明的雲彩遮蓋他們，雲中有聲音說這是我的愛子你們要聽祂。門徒俯伏在地極其害怕，耶穌撫摸他們，吩咐人子沒有從死裡復活以前不要告訴人。下山後門徒問以利亞必先來的問題，耶穌解釋以利亞已來，指施洗約翰。接著群眾中一人的兒子被鬼附，門徒不能趕出，耶穌斥責鬼孩子當即得醫治，並告訴門徒這類鬼非禱告禁食不能出去。然後耶穌第二次預告被賣與復活，門徒甚是憂愁。最後在迦百農，為免跌倒人，耶穌以神蹟方式從魚口得錢繳納聖殿稅。本章在榮耀與受苦的交織中呈現耶穌的神性與祂必走向十字架的道路。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 登山變像確立耶穌至高無上的身份</strong><br>耶穌在門徒面前顯現神性的榮光，摩西代表律法，以利亞代表先知，兩者都在耶穌面前。天父的聲音再次宣告祂的愛子身份，並加上命令：「你們要聽他！」這是對整本聖經啟示的最高確認：耶穌不只是眾先知之一，而是所有啟示的終點與成全者。在一切困惑中，天父的聲音給出最清晰的指引：聽耶穌的話。<br><br>
+<strong>2. 真信心不在大小而在真實的倚靠</strong><br>耶穌說如芥菜種般的信心就能移山，這不是說信心大才有效力，而是說真實的信心——哪怕微小——倚靠的是全能的神。門徒之所以趕不出鬼，不是信心的「量」不足，而是信心的「質」有問題：沒有透過禱告禁食來深化對神的倚靠。信心不是自我激勵，而是在神面前謙卑、尋求。<br><br>
+<strong>3. 耶穌為他人的益處甘心降低自己的權利</strong><br>耶穌身為神的兒子，本可免繳丁稅，卻因不願絆倒人而主動納稅，甚至行神蹟為彼得也提供稅銀。這個細節深刻地展示耶穌的服事精神：不是主張自己的權利，而是為他人的益處考量。信徒當效法：在可以行使自己權利的時候，考量是否會使弟兄跌倒。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>有聲音從雲彩裏出</strong>來，說：「<strong>這是我的愛子</strong>，我所喜悅的。你們要聽他！」（太17:5）</td>
+<td>在你生命中眾多聲音中，你有沒有把耶穌的話放在最高的位置？就像在嘈雜的場合中專注聽某一個人說話需要刻意的選擇，你每天有沒有在紛亂中靜下來聽耶穌的聲音？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>是因你們的信心小</strong>。我實在告訴你們，你們若有信心像一粒芥菜種，就是對這座山說：『你從這邊挪到那邊。』它也必挪去。」（太17:20）</td>
+<td>你在禱告時是真心相信神能成就，還是只是在走過場？就像打電話給真正有能力解決問題的人和打給沒有能力的人心態完全不同，你禱告時是否真的相信那位接聽禱告的神有能力回應？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>但恐怕觸犯他們</strong>，你且往海邊去釣魚……可以拿去給他們，作你我的稅銀。」（太17:27）</td>
+<td>你有沒有為了不讓人跌倒，而主動放棄自己的某些合理權利？就像在安靜的圖書館裏自動把手機調靜音雖然沒有規定，你願意在生活中多顧及他人的感受，學習耶穌的體貼嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

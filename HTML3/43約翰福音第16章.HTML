@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰福音第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰福音第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">聖靈的工作與「我已勝了世界」</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「我已將這些事告訴你們，使你們不至於跌倒。</div>
+<div class="verse"><span class="verse-number">2</span>人要把你們趕出會堂，並且時候將到，凡殺你們的就以為是事奉神。</div>
+<div class="verse"><span class="verse-number">3</span>他們這樣行，是因未曾認識父，也未曾認識我。</div>
+<div class="verse"><span class="verse-number">4</span>我將這事告訴你們，是叫你們到了時候可以想起我對你們說過了。」「我起先沒有將這事告訴你們，因為我與你們同在。</div>
+<div class="verse"><span class="verse-number">5</span>現今我往差我來的父那裏去，你們中間並沒有人問我：『你往那裏去？』</div>
+<div class="verse"><span class="verse-number">6</span>只因我將這事告訴你們，你們就滿心憂愁。</div>
+<div class="verse"><span class="verse-number">7</span>然而，我將真情告訴你們，我去是與你們有益的；我若不去，保惠師就不到你們這裏來；我若去，就差他來。</div>
+<div class="verse"><span class="verse-number">8</span>他既來了，就要叫世人為罪、為義、為審判，自己責備自己。</div>
+<div class="verse"><span class="verse-number">9</span>為罪，是因他們不信我；</div>
+<div class="verse"><span class="verse-number">10</span>為義，是因我往父那裏去，你們就不再見我；</div>
+<div class="verse"><span class="verse-number">11</span>為審判，是因這世界的王受了審判。</div>
+<div class="verse"><span class="verse-number">12</span>「我還有好些事要告訴你們，但你們現在擔當不了〔或作：不能領會〕。</div>
+<div class="verse"><span class="verse-number">13</span>只等真理的聖靈來了，他要引導你們明白〔原文作進入〕一切的真理；因為他不是憑自己說的，乃是把他所聽見的都說出來，並要把將來的事告訴你們。</div>
+<div class="verse"><span class="verse-number">14</span>他要榮耀我，因為他要將受於我的告訴你們。</div>
+<div class="verse"><span class="verse-number">15</span>凡父所有的，都是我的；所以我說，他要將受於我的告訴你們。」</div>
+<div class="verse"><span class="verse-number">16</span>「等不多時，你們就不得見我；再等不多時，你們還要見我。」</div>
+<div class="verse"><span class="verse-number">17</span>有幾個門徒就彼此說：「他對我們說：『等不多時，你們就不得見我；再等不多時，你們還要見我』；又說：『因我往父那裏去。』這是甚麼意思呢？」</div>
+<div class="verse"><span class="verse-number">18</span>門徒彼此說：「他說『等不多時』到底是甚麼意思呢？我們不明白他所說的話。」</div>
+<div class="verse"><span class="verse-number">19</span>耶穌看出他們要問他，就說：「我說『等不多時，你們就不得見我；再等不多時，你們還要見我』，你們為這話彼此相問嗎？</div>
+<div class="verse"><span class="verse-number">20</span>我實實在在的告訴你們，你們將要痛哭、哀號，世人倒要喜樂；你們將要憂愁，然而你們的憂愁要變為喜樂。</div>
+<div class="verse"><span class="verse-number">21</span>婦人生產的時候就憂愁，因為她的時候到了；既生了孩子，就不再記念那苦楚，因為歡喜世上生了一個人。</div>
+<div class="verse"><span class="verse-number">22</span>你們現在也是憂愁，但我要再見你們，你們的心就喜樂了；這喜樂也沒有人能奪去。</div>
+<div class="verse"><span class="verse-number">23</span>到那日，你們甚麼也就不問我了。我實實在在的告訴你們，你們若向父求甚麼，他必因我的名賜給你們。</div>
+<div class="verse"><span class="verse-number">24</span>向來你們沒有奉我的名求甚麼，如今你們求，就必得着，叫你們的喜樂可以滿足。」</div>
+<div class="verse"><span class="verse-number">25</span>「這些事，我是用比喻對你們說的；時候將到，我不再用比喻對你們說，乃要將父明明的告訴你們。</div>
+<div class="verse"><span class="verse-number">26</span>到那日，你們要奉我的名祈求；我並不對你們說，我要為你們求父。</div>
+<div class="verse"><span class="verse-number">27</span>父自己愛你們；因為你們已經愛我，又信我是從父出來的。</div>
+<div class="verse"><span class="verse-number">28</span>我從父出來，到了世界；我又離開世界，往父那裏去。」</div>
+<div class="verse"><span class="verse-number">29</span>門徒說：「如今你是明說，並不用比喻了。</div>
+<div class="verse"><span class="verse-number">30</span>現在我們曉得你凡事都知道，也不用人問你，因此我們信你是從神出來的。」</div>
+<div class="verse"><span class="verse-number">31</span>耶穌說：「現在你們信麼？</div>
+<div class="verse"><span class="verse-number">32</span>看哪，時候將到，且是已經到了，你們要分散，各歸自己的地方去，留下我獨自一人；其實我不是獨自一人，因為有父與我同在。</div>
+<div class="verse"><span class="verse-number">33</span>我將這些事告訴你們，是要叫你們在我裏面有平安。在世上你們有苦難，但你們可以放心，我已經勝了世界。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第16章繼續離別講論，耶穌預告門徒將受逼迫、聖靈的工作、祂的離去與再來，以及在祂裡面得平安的應許，是離別講論中對聖靈角色描述最完整的一章。本章首先預告門徒將被趕出會堂，凡殺他們的還以為是事奉神，這事都要臨到他們是因為不認識父也不認識耶穌。接著耶穌說祂去是有益處的，因祂若不去保惠師就不來，保惠師來了就要叫世人為罪、為義、為審判自己責備自己；等真理的聖靈來了要引導你們明白一切的真理，祂要榮耀耶穌。然後耶穌說過不多時你們就不見我再過不多時你們還要見我，你們將要痛哭哀號，世界要快樂，你們憂愁反要變為喜樂，好像婦人生孩子有憂愁，孩子生下來就不記得苦楚了。那時你們奉我的名無論向父求什麼父必賜給你們，你們就喜樂、喜樂就沒有人能奪去。最後耶穌說在世上你們有苦難，但你們可以放心，我已經勝了世界。本章以聖靈的應許和勝利的平安作結，為門徒面對逼迫提供屬靈的力量根基。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 聖靈的來臨是比耶穌肉身同在更有益的</strong><br>「我去是與你們有益的；我若不去，保惠師就不到你們這裏來」——這是最令人驚訝的聲明。耶穌肉身同在，只能與一個地點的門徒同在；聖靈降臨，可以住在每一個信徒裏面，無論時間和地點。聖靈比肉身的耶穌更廣泛、更深入地同在——在每一個禱告中、每一個讀經時、每一個服事中。這讓信徒珍惜聖靈的同在超過對任何外在環境的期待。<br><br>
+<strong>2. 奉耶穌名的禱告有父的直接回應</strong><br>「你們若向父求甚麼，他必因我的名賜給你們」——這個應許讓禱告不再是一個模糊的宗教活動，而是有確切對象和確切根基的信仰行動。「父自己愛你們」——禱告的回應不是因為耶穌說服了父，而是因為父本身就愛我們。奉耶穌的名，是在祂的關係中、在祂的義上、按照祂的心意所作的祈求，必蒙回應。<br><br>
+<strong>3. 「我已經勝了世界」是信徒的根本確信</strong><br>「在世上你們有苦難，但你們可以放心，我已經勝了世界」——耶穌沒有否認世上有苦難，而是宣告在苦難的現實上加了一個更大的現實：祂已經勝了。「已經」是過去完成式——在門徒面對苦難之前，勝利已經成就。信徒不是在等候勝利，而是在已確立的勝利中面對苦難。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>在世上你們有苦難</strong>，但你們可以放心，我已經勝了世界。」（約16:33）</td>
+<td>在你面對各樣苦難、逼迫或困境時，你有沒有真實地把「我已勝了世界」作為你站立的根基？就像球隊在確知最終結果的情況下的每一場比賽，你能在「已確立的勝利」這個確信中，帶着平安面對眼前的苦難嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>我將真情告訴你們</strong>，我去是與你們有益的；我若不去，保惠師就不到你們這裏來。」（約16:7）</td>
+<td>你有沒有真實地體驗到聖靈在你生命中的引導、安慰和能力？就像從筆信到視頻通話讓溝通更深入，你有沒有讓聖靈從「頭腦知道的真理」進入「生命活出的力量」？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>向來你們沒有奉我</strong>的名求甚麼，如今你們求，就必得着，叫你們的喜樂可以滿足。」（約16:24）</td>
+<td>你有沒有充分使用奉耶穌名禱告的特權，將你真實的需要帶到父面前？就像有一個有強大影響力的朋友願意為你作擔保，你有沒有以信心、以耶穌的名，把那些讓你憂愁的事帶到父面前？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

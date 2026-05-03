@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哈該書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哈該書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">後殿的榮耀必大過前殿</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>七月二十一日，耶和華的話臨到先知哈該說：</div>
+<div class="verse"><span class="verse-number">2</span>「你要曉諭猶大省長撒拉鐵的兒子所羅巴伯和約撒答的兒子大祭司約書亞，並剩下的百姓，說：</div>
+<div class="verse"><span class="verse-number">3</span>你們中間存留的，有誰見過這殿從前的榮耀呢？現在你們看着如何？豈不在眼中看如無有嗎？」</div>
+<div class="verse"><span class="verse-number">4</span>耶和華說：「所羅巴伯啊，雖然如此，你當剛強！約撒答的兒子大祭司約書亞啊，你也當剛強！這地的百姓，你們都當剛強作工，因為我與你們同在。這是萬軍之耶和華說的。</div>
+<div class="verse"><span class="verse-number">5</span>這是照着你們出埃及我與你們立約的話。那時，我的靈住在你們中間，你們不要懼怕。」</div>
+<div class="verse"><span class="verse-number">6</span>萬軍之耶和華如此說：「過不多時，我必再一次震動天地、滄海，與旱地。</div>
+<div class="verse"><span class="verse-number">7</span>我必震動萬國；萬國的珍寶必都運來〔或作：萬國所羡慕的必來到〕，我就使這殿滿了榮耀。這是萬軍之耶和華說的。」</div>
+<div class="verse"><span class="verse-number">8</span>萬軍之耶和華說：「銀子是我的，金子也是我的。</div>
+<div class="verse"><span class="verse-number">9</span>這殿後來的榮耀必大過先前的榮耀；在這地方我必賜平安。這是萬軍之耶和華說的。」</div>
+<div class="verse"><span class="verse-number">10</span>大利烏王第二年九月二十四日，耶和華的話臨到先知哈該說：</div>
+<div class="verse"><span class="verse-number">11</span>萬軍之耶和華如此說：「你要向祭司問律法，</div>
+<div class="verse"><span class="verse-number">12</span>說：若有人用衣襟兜聖肉，這衣襟挨着餅，或湯，或酒，或油，或別的食物，便算為聖嗎？」祭司說：「不算為聖。」</div>
+<div class="verse"><span class="verse-number">13</span>哈該又說：「若有人因摸死屍染了污穢，然後挨着這些物的那一樣，這物算污穢嗎？」祭司說：「必算污穢。」</div>
+<div class="verse"><span class="verse-number">14</span>於是哈該說：「耶和華說：這民這國，在我面前也是如此；他們手下的各樣工作都是如此；他們在壇上所獻的也是如此。」</div>
+<div class="verse"><span class="verse-number">15</span>現在你們要追想，此日以前，耶和華的殿沒有一塊石頭壘在石頭上的光景。</div>
+<div class="verse"><span class="verse-number">16</span>在那一切日子，有人來到穀堆，想得二十斗，只得了十斗。有人來到酒池，想得五十桶，只得了二十桶。</div>
+<div class="verse"><span class="verse-number">17</span>在你們手下的各樣工作上，我以旱風、霉爛、冰雹攻擊你們，你們仍不歸向我。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">18</span>你們要追想此日以前，就是從這九月二十四日起，追想到立耶和華殿根基的日子。</div>
+<div class="verse"><span class="verse-number">19</span>倉裏有穀種嗎？葡萄樹、無花果樹、石榴樹、橄欖樹都沒有結果子。從今日起，我必賜福與你們。</div>
+<div class="verse"><span class="verse-number">20</span>這月二十四日，耶和華的話二次臨到哈該說：</div>
+<div class="verse"><span class="verse-number">21</span>「你要告訴猶大省長所羅巴伯說：我必震動天地。</div>
+<div class="verse"><span class="verse-number">22</span>我必傾覆列國的寶座，除滅列邦的勢力，並傾覆戰車和坐在其上的。馬必跌倒，騎馬的敗落，各人被弟兄的刀所殺。</div>
+<div class="verse"><span class="verse-number">23</span>萬軍之耶和華說：我僕人撒拉鐵的兒子所羅巴伯啊，到那日，我必以你為印，因我揀選了你。這是萬軍之耶和華說的。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+哈該書第2章分三個神諭。第一個神諭（1-9節）：聖殿重建工程開始後一個月，有些年長的人可能記得所羅門聖殿的昔日榮耀，看見新殿的簡陋而沮喪。神的回應是「你們當剛強！因為我與你們同在」，並且宣告：「這殿後來的榮耀必大過先前的榮耀；在這地方我必賜平安」——這個應許在基督第一次進入聖殿時得到部分應驗，在末世得到完全應驗。第二個神諭（10-19節）：以律法中潔淨和污穢的傳遞原理說明一個屬靈真理——潔淨不能透過接觸傳遞，但污穢可以。百姓未獻殿之前的一切獻物和勞動，都因內在的污穢而失效；但從「立殿根基的日子起」，神賜福的轉折點到來。第三個神諭（20-23節）：對所羅巴伯個人的應許——神要震動列國，使所羅巴伯成為印記（「印」代表最高的委任和權柄），因「我揀選了你」——這是彌賽亞性的應許，在耶穌身上得到終極應驗。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「後殿的榮耀必大過先前」：神的計畫不以人看見的「昔日榮耀」為標準</strong><br>年長者比較新舊殿而沮喪，神說「後來的榮耀必大過先前的」——神的計畫不以人類歷史的高峰為終點。個人的靈命和信仰群體的歷程，不必要求「回到從前的輝煌」，因為神的計畫是向前、向更大的榮耀邁進，而不是停留在對過去的懷念中。<br><br>
+<strong>2. 「剛強！」：在信仰低落的時刻，神的鼓勵比分析更重要</strong><br>神三次說「當剛強」（4節），不是解釋為什麼要剛強，而是命令剛強——因為「我與你們同在」。信仰低落時，有時需要的不是更多的神學解釋，而是那個簡單而直接的命令：起來，剛強，因神與你同在。「我與你們同在」是所有「剛強」的唯一根基。<br><br>
+<strong>3. 污穢的傳遞比潔淨更容易：屬靈環境的重要性</strong><br>律法原理：聖肉接觸其他食物，那食物不因此變聖；但污穢的人接觸任何東西，那東西就被污染。這顯示「聖潔的傳遞」需要更多努力和條件，而「污穢的傳遞」更容易和自然。信仰群體的屬靈環境管理，因此非常重要：一個群體中的屬靈污穢，比聖潔更容易傳播。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>這殿後來的榮耀必</strong><strong>大過先前的榮耀</strong>；在這地方我必賜平安。這是萬軍之耶和華說的。（該2:9）</td>
+<td>你是否有時在回望信仰或人生的「昔日榮耀」——某段特別豐盛的靈性經歷或生命時期——並以此為標準，覺得現在遠不如從前？神說「後殿的榮耀必大過前殿」，這讓你對未來的靈命旅程有什麼新的期待？就像一個種子破土的過程不如成熟的果子美麗，你願意相信神的計畫是向前而非停留在過去嗎？</td>
+</tr>
+<tr>
+<td><strong>所羅巴伯啊</strong>，<strong>雖然如此</strong>，你當剛強！約撒答的兒子大祭司約書亞啊，你也當剛強！這地的百姓，你們都當剛強作工，因為我與你們同在。（該2:4）</td>
+<td>「當剛強」是命令，不是感受的描述。在你目前感到最「軟弱」的地方，神的命令是「剛強」，根基是「我與你們同在」。就像戰場上的將領不問士兵有沒有勇敢的感覺，而是說「起身前進」，你今天需要在哪個領域，聽從「當剛強」的命令，而不是等待「剛強」的感覺來了才行動？</td>
+</tr>
+<tr>
+<td><strong>萬軍之耶和華說</strong>：<strong>我僕人撒拉鐵的兒</strong>子所羅巴伯啊，到那日，我必以你為印，因我揀選了你。（該2:23）</td>
+<td>「因我揀選了你」——神揀選的根基不是人的資格，而是神自己的選擇。所羅巴伯在列國的大動盪中仍得到「印」的保証，因為神揀選了他。你是否相信神也揀選了你，在你的時代、你的位置，完成祂特定的目的？就像一把鑰匙為某個特定的鎖而造，你願意接受「神為你而揀選」的身分，活出與那個揀選相稱的生命嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

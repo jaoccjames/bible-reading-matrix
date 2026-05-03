@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">行動預言：側臥象徵以色列的罪</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「人子啊，你要拿一塊磚，擺在你面前，將一座耶路撒冷城畫在其上，</div>
+<div class="verse"><span class="verse-number">2</span>又圍困這城，造臺築壘，安營攻擊，在四圍安設撞錘攻城，</div>
+<div class="verse"><span class="verse-number">3</span>又要拿個鐵鏊，放在你和城的中間，作為鐵牆。你要對面攻擊這城，使城被困；這樣，好作以色列家的預兆。</div>
+<div class="verse"><span class="verse-number">4</span>「你要向左側臥，承當以色列家的罪孽；要按你向左側臥的日數，擔當他們的罪孽。</div>
+<div class="verse"><span class="verse-number">5</span>因為我已將他們作孽的年數定為你向左側臥的日數，就是三百九十日，你要這樣擔當以色列家的罪孽。</div>
+<div class="verse"><span class="verse-number">6</span>再者，你滿了這些日子，還要向右側臥，擔當猶大家的罪孽。我給你定規側臥四十日，一日頂一年。</div>
+<div class="verse"><span class="verse-number">7</span>你要露出膀臂，面向被困的耶路撒冷，說預言攻擊這城。</div>
+<div class="verse"><span class="verse-number">8</span>我用繩索捆綁你，使你不能輾轉，直等你滿了困城的日子。</div>
+<div class="verse"><span class="verse-number">9</span>「你要取小麥、大麥、豆子、紅豆、小米、粗麥，裝在一個器皿中，用以為自己作餅；要按你側臥的三百九十日吃這餅。</div>
+<div class="verse"><span class="verse-number">10</span>你所吃的要按分兩吃，每日二十舍客勒，按時而吃。</div>
+<div class="verse"><span class="verse-number">11</span>你喝水也要按制子，每日喝一欣六分之一，按時而喝。</div>
+<div class="verse"><span class="verse-number">12</span>你吃這餅像吃大麥餅一樣，要用人糞在眾人眼前燒烤。」</div>
+<div class="verse"><span class="verse-number">13</span>耶和華說：「以色列人在我所趕他們到的各國中，也必這樣吃不潔淨的食物。」</div>
+<div class="verse"><span class="verse-number">14</span>我說：「哎！主耶和華啊，我素來未曾被玷污，從幼年到如今沒有吃過自死的，或被野獸撕裂的，那可憎的肉也未曾入我的口。」</div>
+<div class="verse"><span class="verse-number">15</span>於是他對我說：「看哪，我給你牛糞代替人糞，你要將你的餅烤在其上。」</div>
+<div class="verse"><span class="verse-number">16</span>他又對我說：「人子啊，我必在耶路撒冷折斷他們的杖，就是斷絕他們的糧。他們吃餅要按分兩，憂慮而吃；喝水也要按制子，驚惶而喝；</div>
+<div class="verse"><span class="verse-number">17</span>使他們缺糧缺水，彼此驚惶，因自己的罪孽消滅。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第4章是整本先知書中最奇特的行動預言之一。神命令以西結做幾件令人費解的事：在磚上畫耶路撒冷城並模擬圍城、向左側臥390日象徵以色列家的罪孽年數、向右側臥40日象徵猶大家的罪孽、用混合穀物作餅並以極少分量進食——這些都是生動的啞劇式預言，讓被擄百姓無需言語就能看見神的信息。側臥是以西結以自己身體承擔象徵意義的行為，是使命代入到生命深處的極致。本章也記載了以西結一個人性化的反應：當神要他用人糞烤餅時，他以祭司的潔淨戒律為由提出異議，神隨即給予了調整（用牛糞代替）。這個細節顯示神對人的尊重，也顯示先知在神的命令下仍有人性的掙扎空間。最後的信息是：耶路撒冷將面臨嚴峻的圍城饑荒，憂慮地吃餅、驚惶地喝水，是即將來到的現實。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神有時以生命的行動代替言語，讓信息更深地觸動人心</strong><br>側臥390日不是說教，而是把身體化為信息的媒介。這種「以生命傳信息」的方式遠比言語更有力量。今日信徒的生命見證——我們如何對待金錢、如何面對壓力、如何在失去中保持信心——本身就是無聲的「行動預言」，在周圍人眼前傳遞關於神的信息。<br><br>
+<strong>2. 短缺與限制有時是神訓練信徒信靠祂的功課</strong><br>極少分量的食物、按時計量的水——這些限制預表了圍城時的匱乏，但也映照出一個更廣的屬靈真理：在資源被縮減時，人最清楚自己真正倚靠的是什麼。神有時在物質上使人感到「不夠」，正是為了讓我們發現「神是夠用的」這個真理。<br><br>
+<strong>3. 罪的積累有其歷史的重量，需要誠實面對</strong><br>390日加40日，象徵以色列和猶大歷代積累的罪孽年數。罪不是孤立的行為，而是有歷史積累的過程。個人和群體的屬靈問題，往往是長期積累的結果，不是一夜之間形成的。承認罪的歷史深度，才能對悔改有正確的嚴肅態度。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>人子啊</strong>，<strong>我必在耶路撒冷折</strong>斷他們的杖，就是斷絕他們的糧。他們吃餅要按分兩，憂慮而吃；喝水也要按制子，驚惶而喝。（結4:16）</td>
+<td>當你的資源被縮減——時間、金錢、健康——你的第一反應是焦慮、還是信靠？就像突然停電讓你意識到自己多依賴電力，當你最習以為常的供應被移去，你會更清楚看見自己真正倚靠的是什麼。你今天最依靠的「糧食」是什麼？</td>
+</tr>
+<tr>
+<td><strong>你要向左側臥</strong>，<strong>承當以色列家的罪</strong>孽；要按你向左側臥的日數，擔當他們的罪孽。（結4:4）</td>
+<td>以西結以自己身體承擔象徵性的罪的重量。你有沒有願意為所愛的群體——家庭、教會、社區——「代入」他們的重擔，在神面前為他們代禱，甚至承受某種代價？就像舉重運動員把槓鈴扛上肩，代禱是把別人的重擔扛到神面前的屬靈動作。</td>
+</tr>
+<tr>
+<td>我說：「哎！<strong>主耶和華啊</strong>，<strong>我素來未曾被玷污</strong>……」於是他對我說：「看哪，我給你牛糞代替人糞。」（結4:14-15）</td>
+<td>以西結在神的命令前提出了一個出於信念的異議，神接受並調整了。你是否知道在神面前可以「誠實說出你的掙扎」，而不是假裝一切都好？就像對真正信任的人才會說出真實的困難，你願意在禱告中對神更誠實地表達你的掙扎，讓祂來回應嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

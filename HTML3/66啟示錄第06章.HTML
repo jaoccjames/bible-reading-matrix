@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>啟示錄第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+啟示錄第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">七號的審判與苦澀的小書卷</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我看見羔羊揭開七印中第一印的時候，就聽見四活物中的一個活物，聲音如雷，說：「你來！」</div>
+<div class="verse"><span class="verse-number">2</span>我就觀看，見有一匹白馬；騎在馬上的，拿着弓，並有冠冕賜給他。他便出來，勝了又要勝。</div>
+<div class="verse"><span class="verse-number">3</span>揭開第二印的時候，我聽見第二個活物說：「你來。」</div>
+<div class="verse"><span class="verse-number">4</span>就另有一匹馬出來，是紅的，有權柄給了那騎馬的，可以從地上奪去太平，使人彼此相殺；又有一把大刀賜給他。</div>
+<div class="verse"><span class="verse-number">5</span>揭開第三印的時候，我聽見第三個活物說：「你來！」我就觀看，見有一匹黑馬；騎在馬上的，手裏拿着天平。</div>
+<div class="verse"><span class="verse-number">6</span>我聽見在四活物中似乎有聲音說：「一錢銀子買一升麥子，一錢銀子買三升大麥；油和酒不可蹧蹋。」</div>
+<div class="verse"><span class="verse-number">7</span>揭開第四印的時候，我聽見第四個活物說：「你來！」</div>
+<div class="verse"><span class="verse-number">8</span>我就觀看，見有一匹灰色馬；騎在馬上的，名字叫作死，陰府也隨着他；有權柄賜給他們，可以用刀劍、饑荒、瘟疫〔或作：死亡〕、野獸，殺害地上四分之一的人。</div>
+<div class="verse"><span class="verse-number">9</span>揭開第五印的時候，我看見在祭壇底下，有為神的道、並為作見證被殺之人的靈魂，</div>
+<div class="verse"><span class="verse-number">10</span>大聲喊着說：「聖潔真實的主啊，你不審判住在地上的人，給我們伸流血的冤，要等到幾時呢？」</div>
+<div class="verse"><span class="verse-number">11</span>於是有白衣賜給他們各人；又有話對他們說，還要安息片時，等着一同作僕人的和他們的弟兄也像他們被殺，滿足了數目。</div>
+<div class="verse"><span class="verse-number">12</span>揭開第六印的時候，我又看見地大震動，日頭變黑像毛布，滿月變紅像血，</div>
+<div class="verse"><span class="verse-number">13</span>天上的星辰墜落於地，如同無花果樹被大風搖動，落下未熟的果子一樣。</div>
+<div class="verse"><span class="verse-number">14</span>天就挪移，好像書卷被捲起來；山嶺海島都被挪移離開本位。</div>
+<div class="verse"><span class="verse-number">15</span>地上的君王、臣宰、將軍、富戶、壯士，和一切為奴的、自主的，都藏在山洞和巖石穴裏，</div>
+<div class="verse"><span class="verse-number">16</span>向山和巖石說：「倒在我們身上吧！把我們藏起來，躲避坐寶座者的面目和羔羊的忿怒；</div>
+<div class="verse"><span class="verse-number">17</span>因為他們忿怒的大日到了，誰能站得住呢？」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第6章記述羔羊逐一揭開七印中的前六印，帶出四騎士、殉道者的呼求、天地大震動等審判異象，描繪末世審判的展開過程。本章首先記述羔羊揭開第一印，有白馬出現，騎馬的拿著弓帶著冠冕出來征服；揭開第二印，有紅馬出現，騎馬的得著大刀施行殺戮；揭開第三印，有黑馬出現，騎馬的拿著天秤，有聲音說一升麥子要一錢銀子，三升大麥也要一錢銀子；揭開第四印，有灰色馬出現，騎馬的名字叫死，陰府也跟著他，有權柄用刀劍饑荒瘟疫和地上的野獸殺害四分之一的人。接著揭開第五印，殉道者的靈魂呼叫說聖潔真實的主啊，你不審判住在地上的人，給我們申冤要等到幾時呢，他們各人得了白袍，被告知還要再等一些時候。最後揭開第六印，地大震動，太陽變黑月亮變紅，星辰墜落，天就挪移，山嶺海島都被挪移，地上的君王和各等人都躲在山洞裡，向山和石頭說倒在我們身上吧，把我們藏起來躲避坐寶座的面和羔羊的忿怒。本章以六印的展開描繪末世審判的多重向度。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 天上寂靜二刻——禱告的重量</strong><br>「羔羊揭開第七印的時候，天上寂靜約有二刻」——在整個天上壯觀的讚美之後，突然的寂靜是因為眾聖徒的祈禱將要升上去。這說明禱告在神計劃中的分量：天上都為之靜默。「那香的煙和眾聖徒的祈禱從天使的手中一同升到神面前」——禱告不是白費的，它到達神的面前，並且在神的計劃中起作用。<br><br>
+<strong>2. 「仍舊不悔改」——審判的失敗回應</strong><br>「其餘未曾被這些災所殺的人仍舊不悔改……」——審判的目的之一是呼召悔改，但人心的頑固使這個呼召落空。這揭示了神的心意：祂「不願有一人沉淪，乃願人人都悔改」；但人可以拒絕，即使在最嚴厲的審判中。<br><br>
+<strong>3. 甜如蜜又發苦的書卷</strong><br>「在我口中果然甜如蜜，吃了以後，肚子覺得發苦了」——神的話語（先知信息）初嘗是甜的，因為它是神的話；但其中關於審判和苦難的信息，使先知「肚子發苦」——因為他看見的是人類將面對的苦難和神的嚴肅審判。真正的先知對神的信息有喜樂（甜），也有憂愁（苦）。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>那香的煙和眾聖徒</strong><strong>的祈禱從天使的手</strong>中一同升到神面前。天使拿着香爐，盛滿了壇上的火，倒在地上；隨有雷轟、大聲、閃電、地震。（啟8:4-5）</td>
+<td>你有沒有讓「眾聖徒的禱告升到神面前、並帶出地上改變」這個圖像，更新你對禱告功效的確信——你的每一個禱告都被神接收，並在祂的計劃中有其作用？就像看不見空氣不代表它不存在，你有沒有讓對禱告無形效力的確信帶出你更熱切的代禱？</td>
+</tr>
+<tr>
+<td><strong>第七位天使吹號</strong>，<strong>天上就有大聲音說</strong>：世上的國成了我主和主基督的國；他要作王，直到永永遠遠。（啟11:15）</td>
+<td>你有沒有讓「世上的國成了我主和主基督的國」這個最終的宣告，成為你在面對地上一切黑暗和不義時的確信——知道結局已由神定下，祂必作王直到永永遠遠？就像知道比賽結果讓人能以平靜的心看待中途的困難，你有沒有讓終末的確信帶出你當下的平靜和盼望？</td>
+</tr>
+<tr>
+<td><strong>我從天使手中把小</strong><strong>書卷接過來</strong>，吃盡了，在我口中果然甜如蜜，吃了以後，肚子覺得發苦了。（啟10:10）</td>
+<td>你有沒有讓神的話語進入你最深的感受——既享受它的甜蜜（神的應許和愛），也承受它的苦澀（神審判的嚴肅和你對失喪者的憂愁）？就像成熟的品格包括能夠承受甜與苦，你有沒有讓對神話語的接受超越只尋求「感覺好的信息」？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

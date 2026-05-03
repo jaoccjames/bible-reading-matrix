@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第13章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第13章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">腰帶的比喻與驕傲的審判</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華對我如此說：「你去買一根麻布帶子束腰，不可放在水中。」</div>
+<div class="verse"><span class="verse-number">2</span>我就照着耶和華的話，買了一根帶子束腰。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華的話第二次臨到我說：</div>
+<div class="verse"><span class="verse-number">4</span>「要拿着你所買的腰帶，就是你腰上的帶子，起來往伯拉河去，將腰帶藏在那裏的磐石穴中。」</div>
+<div class="verse"><span class="verse-number">5</span>我就去，照着耶和華所吩咐我的，將腰帶藏在伯拉河邊。</div>
+<div class="verse"><span class="verse-number">6</span>過了多日，耶和華對我說：「你起來往伯拉河去，將我吩咐你藏在那裏的腰帶取出來。」</div>
+<div class="verse"><span class="verse-number">7</span>我就往伯拉河去，將腰帶從我所藏的地方刨出來，見腰帶已經變壞，毫無用了。</div>
+<div class="verse"><span class="verse-number">8</span>耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">9</span>「耶和華如此說：我必照樣敗壞猶大的驕傲和耶路撒冷的大驕傲。</div>
+<div class="verse"><span class="verse-number">10</span>這惡民不肯聽我的話，按自己頑梗的心而行，隨從別神，事奉敬拜，他們也必像這腰帶變為無用。」</div>
+<div class="verse"><span class="verse-number">11</span>耶和華說：「腰帶怎樣緊貼人腰，照樣，我也使以色列全家和猶大全家緊貼我，好叫他們屬我為子民，使我得名聲，得頌讚，得榮耀；他們卻不肯聽。」</div>
+<div class="verse"><span class="verse-number">12</span>「所以你要對他們說：『耶和華以色列的神如此說：各罈都要盛滿了酒。』他們必對你說：『我們豈不確知各罈都要盛滿了酒呢？』</div>
+<div class="verse"><span class="verse-number">13</span>你就要對他們說：『耶和華如此說：我必使這地的一切居民，就是坐大衛寶座的君王和祭司，與先知，並耶路撒冷的一切居民，都酩酊大醉。』」</div>
+<div class="verse"><span class="verse-number">14</span>耶和華說：「我要使他們彼此相碰，就是父與子彼此相碰；我必不可憐，不顧惜，不憐憫，以致滅絕他們。」</div>
+<div class="verse"><span class="verse-number">15</span>你們當聽，當側耳而聽。不要驕傲，因為耶和華已經說了。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華你們的神未使黑暗來到，你們的腳未在昏暗山上絆跌之先，當將榮耀歸給他；免得你們盼望光明，他使光明變為死蔭，成為幽暗。</div>
+<div class="verse"><span class="verse-number">17</span>你們若不聽這話，我必因你們的驕傲在暗地哭泣；我眼必痛哭流淚，因為耶和華的群眾被擄去了。</div>
+<div class="verse"><span class="verse-number">18</span>你要對君王和太后說：你們當自卑，坐在下邊；因你們的頭巾，就是你們的華冠，已經脫落了。</div>
+<div class="verse"><span class="verse-number">19</span>南方的城盡都關閉，無人開放；猶大全被擄掠，且擄掠淨盡。</div>
+<div class="verse"><span class="verse-number">20</span>你們要舉目觀看從北方來的人。先前賜給你的群眾，就是你佳美的群眾，如今在那裏呢？</div>
+<div class="verse"><span class="verse-number">21</span>耶和華立你自己所交的朋友為首，轄制你，那時你還有甚麼話說呢？痛苦豈不將你抓住像產難的婦人麼？</div>
+<div class="verse"><span class="verse-number">22</span>你若心裏說：這一切事為何臨到我呢？你的衣襟揭起，你的腳跟受傷，是因你的罪孽甚多。</div>
+<div class="verse"><span class="verse-number">23</span>古實人豈能改變皮膚呢？豹豈能改變斑點呢？若能，你們這習慣行惡的便能行善了。</div>
+<div class="verse"><span class="verse-number">24</span>所以我必用曠野的風吹散他們，像吹過的碎稭一樣。</div>
+<div class="verse"><span class="verse-number">25</span>耶和華說：這是你所當得的，是我量給你的分；因為你忘記我，倚靠虛假〔或作：偶像〕。</div>
+<div class="verse"><span class="verse-number">26</span>所以我要揭起你的衣襟，蒙在你臉上，顯出你的醜陋。</div>
+<div class="verse"><span class="verse-number">27</span>你那些可憎惡之事，就是在田野的山上行姦淫，發嘶聲，做淫亂的事我都看見了。耶路撒冷阿，你有禍了！你不肯潔淨，還要到幾時呢？</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第13章以一個生動的行動預言開始：神命令耶利米買一根麻布腰帶，藏在伯拉河的磐石縫中，再去取出，腰帶已腐爛毫無用處。這象徵以色列與猶大原本要緊貼耶和華、成為祂榮耀的子民，卻因不聽話、隨從偶像，而敗壞如腐爛的腰帶。「伯拉河」可能指幼發拉底河（巴比倫），預示被擄的命運。第12至14節以「罈子盛酒」比喻神將使全國上下，從君王到百姓，都陷入混亂敗壞（如醉酒）的審判中。第15至27節是強烈的警告與勸告：在審判完全降臨之前，還有轉機——若肯將榮耀歸給神，謙卑悔改。然而13章末尾以悲嘆作結：「豹豈能改變斑點呢？」顯示習慣罪惡的人，若沒有神的介入，自行改變是極難的事。本章揭示驕傲是導致滅亡的根本原因，謙卑歸神是唯一出路。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神設計子民與祂緊密相連</strong><br>腰帶的比喻深刻揭示神的心意：如同腰帶緊貼人腰，神設計以色列緊貼祂，使祂得名聲、頌讚、榮耀。這不是宗教義務，而是關係的呼召。今日信徒也是如此被設計：我們與神的連結越緊密，生命越有意義；一旦脫離這關係，如同腐爛的腰帶，失去功用。保持與神的緊密連結，是信仰生命的核心功課。<br><br>
+<strong>2. 驕傲是屬靈生命最大的攔阻</strong><br>第15節明確說「不要驕傲，因為耶和華已經說了」。驕傲使人不肯聽神的話，讓人依賴自己的判斷而非神的引導。當人驕傲地活在「我可以掌控」的幻覺中，就已走上傾覆之路。神要求的謙卑不是軟弱，而是真實地承認自己的有限，讓神的話和旨意成為生命的坐標。<br><br>
+<strong>3. 習慣性的罪需要神的干預才能改變</strong><br>「古實人豈能改變皮膚呢？豹豈能改變斑點呢？」這句話既是描述，也是呼召：靠人的努力，根深蒂固的惡習難以改變。這應當驅使我們轉向神，承認自己的軟弱，倚靠聖靈的更新。真正的改變來自神的恩典，而非道德上的自我努力；認識自身的限制，才是尋求神改造的開始。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華說</strong>：「<strong>腰帶怎樣緊貼人腰</strong>，照樣，我也使以色列全家和猶大全家緊貼我，好叫他們屬我為子民，使我得名聲，得頌讚，得榮耀；他們卻不肯聽。」（耶13:11）</td>
+<td>你與神的關係有多緊密？是緊緊相連，還是已漸漸疏遠？就像藍牙耳機距離太遠就斷線，你是否發現自己和神的「連線」正在減弱，需要重新靠近？</td>
+</tr>
+<tr>
+<td><strong>你們當聽</strong>，<strong>當側耳而聽</strong>。不要驕傲，因為耶和華已經說了。（耶13:15）</td>
+<td>你生活中有哪些領域，是因為驕傲而不願意聽取神或他人的提醒？就像戴着降噪耳機根本聽不見別人說話，你的驕傲是否讓你屏蔽了神的聲音，使你錯失了重要的警告？</td>
+</tr>
+<tr>
+<td><strong>古實人豈能改變皮</strong>膚呢？<strong>豹豈能改變斑點呢</strong>？若能，你們這習慣行惡的便能行善了。（耶13:23）</td>
+<td>你是否有某個長年的壞習慣，靠自己屢次嘗試改變卻失敗？就像手動刪除電腦病毒卻總是復發，你願意承認這需要神的力量介入，而不是單靠意志力嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第56章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第56章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">我懼怕時倚靠神：眼淚都記在祢的皮袋裡</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（非利士人在迦特拿住大衛，那時，他作這金詩，交與伶長。調用遠方無聲鴿）神啊，求你憐憫我，因為人要把我吞了，終日攻擊欺壓我。</div>
+<div class="verse"><span class="verse-number">2</span>我的仇敵終日要把我吞了，因逞驕傲攻擊我的人甚多。</div>
+<div class="verse"><span class="verse-number">3</span>我懼怕的時候要倚靠你。</div>
+<div class="verse"><span class="verse-number">4</span>我倚靠神，我要讚美他的話；我倚靠神，必不懼怕。血氣之輩能把我怎麼樣呢？</div>
+<div class="verse"><span class="verse-number">5</span>他們終日顛倒我的話；他們一切的心思都是要害我。</div>
+<div class="verse"><span class="verse-number">6</span>他們聚集，埋伏窺探我的腳蹤，等候要害我的命。</div>
+<div class="verse"><span class="verse-number">7</span>他們豈能因罪孽逃脫麼？神啊，求你在怒中使眾民墮落！</div>
+<div class="verse"><span class="verse-number">8</span>我幾次流離，你都記數；求你把我眼淚裝在你的皮袋裏。這不都記在你冊子上麼？</div>
+<div class="verse"><span class="verse-number">9</span>我呼求的日子，我的仇敵都要轉身退後。神幫助我，這是我所知道的。</div>
+<div class="verse"><span class="verse-number">10</span>我倚靠神，我要讚美他的話；我倚靠耶和華，我要讚美他的話。</div>
+<div class="verse"><span class="verse-number">11</span>我倚靠神，必不懼怕。人能把我怎麼樣呢？</div>
+<div class="verse"><span class="verse-number">12</span>神啊，我向你所許的願在我身上；我要將感謝祭獻給你。</div>
+<div class="verse"><span class="verse-number">13</span>因為你救我的命脫離死亡。你豈不是救護我的腳不跌倒、使我在生命光中行在神面前麼？</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第56篇是大衛在迦特被非利士人拿住時所作的「金詩」，背景記錄在撒母耳記上21章10至15節。大衛為了逃避掃羅，逃到非利士的城市迦特，卻被當地人認出，處境危急，被迫裝瘋才得脫身。在這種人為刀俎我為魚肉的極度危機中，大衛寫下了本篇。
+
+      本篇最突出的特色是兩個相同的疊句（第4、10-11節）：「我倚靠神，必不懼怕。血氣之輩能把我怎麼樣呢？」這個宣告出現在描述仇敵攻擊的背景中，揭示大衛在懼怕的時刻如何以信仰的宣言壓制恐懼。「我懼怕的時候要倚靠你」（第3節）是本篇最誠實也最有力的信仰告白——大衛沒有假裝不懼怕，而是承認懼怕並在懼怕中選擇倚靠。
+
+      第8節「求你把我眼淚裝在你的皮袋裏」是整部詩篇最感人的意象之一。「皮袋」是古代用來收藏珍貴液體的容器，表明神把信徒每一滴眼淚都珍視地收藏起來。「這不都記在你冊子上麼？」揭示神不只收藏眼淚，更記錄每一個痛苦的時刻——沒有一滴眼淚在神面前是白流的。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在懼怕中仍選擇倚靠神是信仰最剛強的時刻</strong><br>「我懼怕的時候要倚靠你。」（第3節）大衛沒有說「我不懼怕，因為我倚靠你」，而是承認懼怕，並在懼怕中仍然選擇倚靠。這種「帶著懼怕的倚靠」是信仰最真實的形式。信仰不是沒有感受恐懼，而是在感受恐懼的同時，仍然做出「我要倚靠你」的選擇。這種在懼怕中的信仰行動，比在平靜中的信仰宣告更有力量，因為它需要克服的不只是外在的危機，更是內在的恐懼感受。<br><br>
+<strong>2. 神將我們每一滴眼淚都收藏記念是最深的安慰</strong><br>「求你把我眼淚裝在你的皮袋裏。這不都記在你冊子上麼？」（第8節）這個意象揭示神對受苦者的細心與珍視：沒有一滴眼淚是在神不知情的情況下流下的，更沒有一滴是被神視為無關緊要而忽略的。神把每一滴眼淚都視為珍貴到要裝在皮袋裡保存、記在冊子上記念的。這個真理對在苦難中感到被神遺忘的信徒，是最深切的安慰：你的眼淚，神都看見了，都記念了。<br><br>
+<strong>3. 人不能對倚靠神的人做什麼揭示最終的安全感</strong><br>「我倚靠神，必不懼怕。血氣之輩能把我怎麼樣呢？」（第4、11節）這個問句的答案是隱含的：在神的掌管下，血氣之輩最終能做的是有限的。「血氣之輩」強調了人類力量的有限性——不論多麼強大的人，都只是血肉之軀，終有其限制。這不是輕看危險，而是以更大的參照系看待危險——在那位掌管生死的神面前，人間最大的威脅都有其邊界，這個認識是信徒真正自由的根源。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我懼怕的時候要倚</strong>靠你。（詩56:3）</td>
+<td>就像一個人在高空鋼索上感到恐懼，卻仍然選擇繼續走，因為他相信安全網在下面，你是否有過那種「帶著懼怕仍選擇倚靠」的信仰時刻？那次的經歷如何改變了你對「信心」的理解？</td>
+</tr>
+<tr>
+<td><strong>求你把我眼淚裝在</strong><strong>你的皮袋裏</strong>。這不都記在你冊子上麼？（詩56:8）</td>
+<td>就像一位細心的父母記得孩子每一次哭泣的原因，神記念你每一滴眼淚，你是否相信那些你獨自流下的、沒有人看見的眼淚，神都看見了、都收藏了？這個確信如何影響你在孤獨受苦時的感受？</td>
+</tr>
+<tr>
+<td><strong>我倚靠神</strong>，<strong>必不懼怕</strong>。血氣之輩能把我怎麼樣呢？（詩56:11）</td>
+<td>就像知道一場比賽的勝負早已由更高層次的規則決定，讓球員能以更平靜的心態應對場上的對手，你是否真的相信在那位掌管一切的神面前，一切人間的威脅都有其限制，讓這確信從懼怕中釋放你？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

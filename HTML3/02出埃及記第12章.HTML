@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出埃及記第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+出埃及記第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">逾越節的設立與出埃及</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華在埃及地曉諭摩西、亞倫說：</div>
+<div class="verse"><span class="verse-number">2</span>「你們要以本月為正月，為一年之首。</div>
+<div class="verse"><span class="verse-number">3</span>你們吩咐以色列全會眾說：本月初十日，各人要按着父家取羊羔，一家一隻。</div>
+<div class="verse"><span class="verse-number">4</span>若是一家的人太少，吃不了一隻羊羔，本人就要和他隔壁的鄰舍共取一隻。你們預備羊羔，要按着人數和飯量計算。</div>
+<div class="verse"><span class="verse-number">5</span>要無殘疾、一歲的公羊羔，你們或從綿羊裏取，或從山羊裏取，都可以。</div>
+<div class="verse"><span class="verse-number">6</span>要留到本月十四日，在黃昏的時候，以色列全會眾把羊羔宰了。</div>
+<div class="verse"><span class="verse-number">7</span>各家要取點血，塗在吃羊羔的房屋左右的門框上和門楣上。</div>
+<div class="verse"><span class="verse-number">8</span>當夜要吃羊羔的肉；用火烤了，與無酵餅和苦菜同吃。</div>
+<div class="verse"><span class="verse-number">9</span>不可吃生的，斷不可吃水煮的，要帶着頭、腿、五臟，用火烤了吃。</div>
+<div class="verse"><span class="verse-number">10</span>不可剩下一點留到早晨；若留到早晨，要用火燒了。</div>
+<div class="verse"><span class="verse-number">11</span>你們吃羊羔當腰間束帶，腳上穿鞋，手中拿杖，趕緊地吃；這是耶和華的逾越節。</div>
+<div class="verse"><span class="verse-number">12</span>因為那夜我要巡行埃及地，把埃及地一切頭生的，無論是人是牲畜，都擊殺了，又要敗壞埃及一切的神。我是耶和華。</div>
+<div class="verse"><span class="verse-number">13</span>這血要在你們所住的房屋上作記號；我一見這血，就越過你們去。我擊殺埃及地頭生的時候，災殃必不臨到你們身上滅你們。」</div>
+<div class="verse"><span class="verse-number">14</span>「你們要記念這日，守為耶和華的節，作為你們世世代代永遠的定例。</div>
+<div class="verse"><span class="verse-number">15</span>你們要吃無酵餅七日。頭一日要把酵從你們各家中除去；因為從頭一日起，到第七日為止，凡吃有酵之餅的，必從以色列中剪除。</div>
+<div class="verse"><span class="verse-number">16</span>頭一日你們當有聖會，第七日也當有聖會。這兩日之內，除了預備各人所要吃的以外，無論何工都不可作。</div>
+<div class="verse"><span class="verse-number">17</span>你們要守無酵節，因為我正當這日把你們的軍隊從埃及地領出來。所以，你們要守這日，作為世世代代永遠的定例。</div>
+<div class="verse"><span class="verse-number">18</span>從正月十四日晚上，直到二十一日晚上，你們要吃無酵餅。</div>
+<div class="verse"><span class="verse-number">19</span>在你們各家中，七日之內不可有酵；因為凡吃有酵之物的，無論是寄居的，是本地的，必從以色列的會中剪除。</div>
+<div class="verse"><span class="verse-number">20</span>有酵的物，你們都不可吃；在你們一切住處要吃無酵餅。」</div>
+<div class="verse"><span class="verse-number">21</span>於是，摩西召了以色列的眾長老來，對他們說：「你們要按着家口取出羊羔，把這逾越節的羊羔宰了。</div>
+<div class="verse"><span class="verse-number">22</span>拿一把牛膝草，蘸盆裏的血，打在門楣上和左右的門框上。你們誰也不可出自己的房門，直到早晨。</div>
+<div class="verse"><span class="verse-number">23</span>因為耶和華要巡行擊殺埃及人，他看見血在門楣上和左右的門框上，就必越過那門，不容滅命的進你們的房屋，擊殺你們。</div>
+<div class="verse"><span class="verse-number">24</span>這例，你們要守着，作為你們和你們子孫永遠的定例。</div>
+<div class="verse"><span class="verse-number">25</span>日後，你們到了耶和華按着所應許賜給你們的那地，就要守這禮。</div>
+<div class="verse"><span class="verse-number">26</span>你們的兒女問你們說：『行這禮是甚麼意思？』</div>
+<div class="verse"><span class="verse-number">27</span>你們就說：『這是獻給耶和華逾越節的祭。當以色列人在埃及的時候，他擊殺埃及人，越過以色列人的房屋，救了我們各家。』」於是百姓低頭下拜。</div>
+<div class="verse"><span class="verse-number">28</span>耶和華怎樣吩咐摩西、亞倫，以色列人就怎樣行。</div>
+<div class="verse"><span class="verse-number">29</span>到了半夜，耶和華把埃及地所有的長子，就是從坐寶座的法老，直到被擄囚在監裏之人的長子，以及一切頭生的牲畜，盡都殺了。</div>
+<div class="verse"><span class="verse-number">30</span>法老和一切臣僕，並埃及眾人，夜間都起來了。在埃及有大哀號，無一家不死一個人的。</div>
+<div class="verse"><span class="verse-number">31</span>夜間，法老召了摩西、亞倫來，說：「起來！連你們帶以色列人，從我民中出去，依你們所說的，去事奉耶和華吧！</div>
+<div class="verse"><span class="verse-number">32</span>也依你們所說的，連羊群牛群帶着走吧！並要為我祝福。」</div>
+<div class="verse"><span class="verse-number">33</span>埃及人催促百姓，打發他們快快出離那地，因為埃及人說：「我們都要死了。」</div>
+<div class="verse"><span class="verse-number">34</span>百姓就拿着沒有酵的生麵，把摶麵盆包在衣服中，扛在肩頭上。</div>
+<div class="verse"><span class="verse-number">35</span>以色列人照着摩西的話行，向埃及人要金器、銀器，和衣裳。</div>
+<div class="verse"><span class="verse-number">36</span>耶和華叫百姓在埃及人眼前蒙恩，以致埃及人給他們所要的。他們就把埃及人的財物奪去了。</div>
+<div class="verse"><span class="verse-number">37</span>以色列人從蘭塞起行，往疏割去；除了婦人孩子，步行的男人約有六十萬。</div>
+<div class="verse"><span class="verse-number">38</span>又有許多閒雜人，並有羊群牛群，和他們一同上去。</div>
+<div class="verse"><span class="verse-number">39</span>他們用埃及帶出來的生麵烤成無酵餅。這生麵原沒有發起；因為他們被催逼離開埃及，不能耽延，也沒有為自己預備甚麼食物。</div>
+<div class="verse"><span class="verse-number">40</span>以色列人住在埃及共有四百三十年。</div>
+<div class="verse"><span class="verse-number">41</span>正滿了四百三十年的那一天，耶和華的軍隊都從埃及地出來了。</div>
+<div class="verse"><span class="verse-number">42</span>這夜是耶和華的夜；因耶和華領他們出了埃及地，所以當向耶和華謹守，是以色列眾人世世代代該謹守的。</div>
+<div class="verse"><span class="verse-number">43</span>耶和華對摩西、亞倫說：「逾越節的例是這樣：外邦人都不可吃這羊羔。</div>
+<div class="verse"><span class="verse-number">44</span>但各人用銀子買的奴僕，既受了割禮就可以吃。</div>
+<div class="verse"><span class="verse-number">45</span>寄居的和雇工人都不可吃。</div>
+<div class="verse"><span class="verse-number">46</span>應當在一個房子裏吃；不可把一點肉從房子裏帶到外頭去。羊羔的骨頭一根也不可折斷。</div>
+<div class="verse"><span class="verse-number">47</span>以色列全會眾都要守這禮。</div>
+<div class="verse"><span class="verse-number">48</span>若有外人寄居在你們中間，願向耶和華守逾越節，他所有的男子務要受割禮，然後才容他前來遵守，他也就像本地人一樣；但未受割禮的，都不可吃這羊羔。</div>
+<div class="verse"><span class="verse-number">49</span>本地人和寄居在你們中間的外人同歸一例。」</div>
+<div class="verse"><span class="verse-number">50</span>耶和華怎樣吩咐摩西、亞倫，以色列眾人就怎樣行了。</div>
+<div class="verse"><span class="verse-number">51</span>正當那日，耶和華將以色列人按着他們的軍隊，從埃及地領出來。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+出埃及記第12章是全書最重要的章節之一，記錄了逾越節的設立及以色列人實際出埃及的過程。神吩咐以色列人在尼散月十日選取無瑕羔羊，十四日在黃昏時宰殺，用牛膝草蘸羊血塗在門楣和門框上，當夜火烤羊肉，與無酵餅和苦菜同吃，腰間束帶、腳穿鞋、手拿杖，準備出發。神宣告祂在午夜巡行埃及，凡有羊血塗抹的門，死亡之使者就越過，這是「逾越節」名稱的由來。午夜，死亡之使者擊殺埃及所有長子，從法老的長子到囚犯的長子，全埃及哭聲大作。法老在震驚中命令以色列人立刻離去。以色列人在四百三十年後離開埃及，共有六十萬男丁，加上婦孺，人數極為龐大。本章不僅是歷史事件的記錄，更是新約逾越節羔羊基督受難的預表，是整個救恩神學的核心原型。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 逾越節羔羊的血是蒙保守的根基，預表基督的救贖</strong><br>羔羊必須無瑕，血必須塗抹在門框上，死亡才能越過那家。這一儀式的每個細節都在預表耶穌基督——無瑕的羔羊，祂的血使凡信祂的人得到神審判的越過。逾越節是理解整個新約救贖的解碼器，使信徒明白：蒙救不是因為人的努力或品格，而是因為羔羊之血的塗抹。<br><br>
+<strong>2. 救恩需要個人的回應與行動</strong><br>知道羔羊的血的作用是不夠的，每個家庭必須親自宰殺羔羊，親手塗抹羊血。救恩的提供雖然是神的恩典，但需要每個人的主動回應。信仰不是旁觀者的知識，而是親身參與的行動——信靠、接受、應用神所提供的救恩。<br><br>
+<strong>3. 苦難與紀念的儀式幫助信仰代代傳承</strong><br>神命令以色列人世世代代守逾越節，並在子女詢問時講述出埃及的故事。儀式與紀念是信仰傳承的重要工具，使神的救恩行動不被遺忘，讓每一代人都能重溫神的恩典。今日的聖餐也繼承了這一精神，使信徒持續記念基督的救贖。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>這血要在你們所住</strong><strong>的房屋上作記號</strong>；我一見這血，就越過你們去，我毀滅埃及地的時候，災殃必不臨到你們身上。（出12:13）</td>
+<td>就像門禁系統識別授權標誌才允許通行，你對基督寶血的保守有多真實的認識？這份信心如何改變你面對生命中「審判時刻」的態度？</td>
+</tr>
+<tr>
+<td><strong>你們要記念這日</strong>，<strong>守為耶和華的節</strong>，作為你們世世代代永遠的定例。（出12:14）</td>
+<td>就像家族傳統讓下一代感受到根與身份，你如何將神對你的恩典與拯救傳遞給下一代或身邊的人？信仰的傳承在你的生命中是否是一個有意識的行動？</td>
+</tr>
+<tr>
+<td><strong>你們吃羊羔</strong>，<strong>要腰間束帶</strong>，腳上穿鞋，手中拿杖，趕緊吃；這是耶和華的逾越節。（出12:11）</td>
+<td>就像趕火車時所有行李必須事先備好，準備好跟隨神的行動意味着什麼？你目前的生命狀態，是隨時可以回應神呼召的「束帶待命」，還是安逸於舒適圈而未準備好？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

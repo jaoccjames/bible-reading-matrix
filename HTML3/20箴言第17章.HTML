@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第17章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第17章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">喜樂是良藥：真友誼、熬煉與言語的智慧</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>設筵滿屋，大家相爭，不如有塊乾餅，大家相安。</div>
+<div class="verse"><span class="verse-number">2</span>僕人辦事聰明，必管轄貽羞之子，又在眾子中同分產業。</div>
+<div class="verse"><span class="verse-number">3</span>鼎為煉銀，爐為煉金；惟有耶和華熬煉人心。</div>
+<div class="verse"><span class="verse-number">4</span>行惡的，留心聽奸詐之言；說謊的，側耳聽邪惡之語。</div>
+<div class="verse"><span class="verse-number">5</span>戲笑窮人的，是辱沒造他的主；幸災樂禍的，必不免受罰。</div>
+<div class="verse"><span class="verse-number">6</span>子孫為老人的冠冕；父親是兒女的榮耀。</div>
+<div class="verse"><span class="verse-number">7</span>愚頑人說美言本不相宜，何況君王說謊話呢？</div>
+<div class="verse"><span class="verse-number">8</span>賄賂在餽送的人眼中看為寶玉，隨處運動都得順利。</div>
+<div class="verse"><span class="verse-number">9</span>遮掩人過的，尋求人愛；屢次挑錯的，離間密友。</div>
+<div class="verse"><span class="verse-number">10</span>一句責備話深入聰明人的心，強如責打愚昧人一百下。</div>
+<div class="verse"><span class="verse-number">11</span>惡人只尋背叛，所以必有嚴厲的使者奉差攻擊他。</div>
+<div class="verse"><span class="verse-number">12</span>寧可遇見丟崽子的母熊，不可遇見正行愚妄的愚昧人。</div>
+<div class="verse"><span class="verse-number">13</span>以惡報善的，禍患必不離他的家。</div>
+<div class="verse"><span class="verse-number">14</span>紛爭的起頭如水放開，所以，在爭鬧之先必當止息爭競。</div>
+<div class="verse"><span class="verse-number">15</span>定惡人為義的，定義人為惡的，這都為耶和華所憎惡。</div>
+<div class="verse"><span class="verse-number">16</span>愚昧人既無聰明，為何手拿價銀買智慧呢？</div>
+<div class="verse"><span class="verse-number">17</span>朋友乃時常親愛，弟兄為患難而生。</div>
+<div class="verse"><span class="verse-number">18</span>在鄰舍面前擊掌作保乃是無知的人。</div>
+<div class="verse"><span class="verse-number">19</span>喜愛爭競的，是喜愛過犯；高立家門的，乃自取敗壞。</div>
+<div class="verse"><span class="verse-number">20</span>心存邪僻的，尋不着好處；舌弄是非的，陷在禍患中。</div>
+<div class="verse"><span class="verse-number">21</span>生愚昧子的，必自愁苦；愚頑人的父毫無喜樂。</div>
+<div class="verse"><span class="verse-number">22</span>喜樂的心乃是良藥；憂傷的靈使骨枯乾。</div>
+<div class="verse"><span class="verse-number">23</span>惡人暗中受賄賂，為要顛倒判斷。</div>
+<div class="verse"><span class="verse-number">24</span>明哲人眼前有智慧；愚昧人眼望地極。</div>
+<div class="verse"><span class="verse-number">25</span>愚昧子使父親愁煩，使母親憂苦。</div>
+<div class="verse"><span class="verse-number">26</span>刑罰義人為不善；責打君子為不義。</div>
+<div class="verse"><span class="verse-number">27</span>寡少言語的，有知識；性情溫良的，有聰明。</div>
+<div class="verse"><span class="verse-number">28</span>愚昧人若靜默不言也可算為智慧；閉口不說也可算為聰明。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第十七章是所羅門格言集中最兼具人情味與屬靈深度的一章，涵蓋了家庭關係、友誼的本質、神的熬煉、言語謹慎與喜樂的力量等多個貼近人心的主題。本章開篇以「設筵滿屋，大家相爭，不如有塊乾餅，大家相安」（1節），直接挑戰了以物質豐富衡量幸福的世俗觀念，強調關係的和諧遠比物質的豐盛更珍貴。第3節「鼎為煉銀，爐為煉金；惟有耶和華熬煉人心」，以冶金的比喻說明神透過試煉精煉人心的過程，是本章的神學亮點。第17節「朋友乃時常親愛，弟兄為患難而生」，是箴言書中對友誼最深刻的描述之一，說明真正的友誼在患難中才得以彰顯。第22節「喜樂的心乃是良藥；憂傷的靈使骨枯乾」，以醫學語言表達了情緒與身體健康之間的聯繫，在現代心理學中也得到廣泛的印證。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神透過試煉熬煉人心，患難是屬靈純化的過程</strong><br>第3節以鼎煉銀、爐煉金的比喻，說明神使用生命中的困難、壓力與試煉，來精煉信徒的品格與信心。金銀在高溫中才能去除雜質，人也在壓力與困難中才能暴露並去除內心的驕傲、恐懼與自私。這提醒信徒不要急於逃脫試煉，而應在其中謙卑地問：「神在這熬煉的過程中，要在我身上成就什麼？」<br><br>
+<strong>2. 真正的友誼在患難中彰顯，是神所賜的珍貴禮物</strong><br>第17節「朋友乃時常親愛，弟兄為患難而生」，揭示了真友誼的本質：不只在順境中相伴，更在患難中堅守。這種友誼是神恩典的具體彰顯，提醒信徒珍惜那些在艱難中仍選擇陪伴的人，也呼籲信徒自己成為這樣的朋友。在教會群體中，弟兄姐妹之間的相互扶持，正是這種患難友誼的屬靈彰顯。<br><br>
+<strong>3. 喜樂的心是身心靈健康的屬靈良藥</strong><br>第22節「喜樂的心乃是良藥；憂傷的靈使骨枯乾」，指向了一個深刻的屬靈真理：靈魂的狀態深刻影響肉體的健康。這裡的喜樂不是膚淺的快樂，而是根植於對神信靠的深層平安與喜悅。信徒被呼召在神面前培養這種喜樂，不是忽視苦難，而是在苦難中仍能在神裡面找到滋養生命的泉源。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>鼎為煉銀</strong>，<strong>爐為煉金</strong>；惟有耶和華熬煉人心。」（箴17:3）</td>
+<td>就像金匠在高溫中不斷攪動金屬，目的是讓雜質浮現並去除，你目前或過去所經歷的困難，有沒有讓你看見自己內心某些需要被精煉的部分？神在那段過程中試圖除去你生命中的什麼？</td>
+</tr>
+<tr>
+<td>「<strong>朋友乃時常親愛</strong>，<strong>弟兄為患難而生</strong>。」（箴17:17）</td>
+<td>就像雨傘的價值在下雨時才真正顯現，真正的友誼在患難中才能被辨識，你生命中有沒有在你最艱難的時刻仍然陪伴你的朋友？你自己是否也曾在朋友患難時選擇同行而非退縮？</td>
+</tr>
+<tr>
+<td>「<strong>喜樂的心乃是良藥</strong>；<strong>憂傷的靈使骨枯乾</strong>。」（箴17:22）</td>
+<td>就像長期精神壓力會導致免疫系統下降，靈魂的憂傷也能在肉體上造成影響，你現在靈魂的狀態如何？什麼讓你的心喜樂，什麼讓你憂傷？你如何在神裡面培養那種能醫治人的真實喜樂？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

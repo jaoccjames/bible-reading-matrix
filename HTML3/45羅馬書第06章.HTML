@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>羅馬書第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+羅馬書第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">向罪死，向神活</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>這樣，怎麼說呢？我們可以仍在罪中、叫恩典顯多麼？</div>
+<div class="verse"><span class="verse-number">2</span>斷乎不可！我們在罪上死了的人豈可仍在罪中活着呢？</div>
+<div class="verse"><span class="verse-number">3</span>豈不知我們這受洗歸入基督耶穌的人是受洗歸入他的死嗎？</div>
+<div class="verse"><span class="verse-number">4</span>所以，我們藉着洗禮歸入死，和他一同埋葬，原是叫我們一舉一動有新生的樣式，像基督藉着父的榮耀從死裏復活一樣。</div>
+<div class="verse"><span class="verse-number">5</span>我們若在他死的形狀上與他聯合，也要在他復活的形狀上與他聯合；</div>
+<div class="verse"><span class="verse-number">6</span>因為知道我們的舊人和他同釘十字架，使罪身滅絕，叫我們不再作罪的奴僕；</div>
+<div class="verse"><span class="verse-number">7</span>因為已死的人是脫離了罪。</div>
+<div class="verse"><span class="verse-number">8</span>我們若是與基督同死，就信必與他同活。</div>
+<div class="verse"><span class="verse-number">9</span>因為知道基督既從死裏復活，就不再死，死也不再作他的主了。</div>
+<div class="verse"><span class="verse-number">10</span>他死是向罪死了，只有一次；他活是向神活着。</div>
+<div class="verse"><span class="verse-number">11</span>這樣，你們向罪也當看自己是死的；向神在基督耶穌裏，卻當看自己是活的。</div>
+<div class="verse"><span class="verse-number">12</span>所以，不要容罪在你們必死的身上作王，使你們順從身子的私慾。</div>
+<div class="verse"><span class="verse-number">13</span>也不要將你們的肢體獻給罪作不義的器具；倒要像從死裏復活的人，將自己獻給神，並將肢體作義的器具獻給神。</div>
+<div class="verse"><span class="verse-number">14</span>罪必不能作你們的主，因你們不在律法之下，乃在恩典之下。</div>
+<div class="verse"><span class="verse-number">15</span>這卻怎麼樣呢？我們在恩典之下，不在律法之下，就可以犯罪麼？斷乎不可！</div>
+<div class="verse"><span class="verse-number">16</span>豈不曉得你們獻上自己作奴僕，順從誰，就作誰的奴僕嗎？或作罪的奴僕，以至於死；或作順命的奴僕，以至成義。</div>
+<div class="verse"><span class="verse-number">17</span>感謝神！因為你們從前雖然作罪的奴僕，現今卻從心裏順服了所傳給你們道理的模範。</div>
+<div class="verse"><span class="verse-number">18</span>你們既從罪裏得了釋放，就作了義的奴僕。</div>
+<div class="verse"><span class="verse-number">19</span>我因你們肉體的軟弱，就照人的常話對你們說。你們從前怎樣將肢體獻給不潔不法作奴僕，以至於不法；現今也要照樣將肢體獻給義作奴僕，以至於成聖。</div>
+<div class="verse"><span class="verse-number">20</span>因為你們作罪之奴僕的時候，就不被義約束了。</div>
+<div class="verse"><span class="verse-number">21</span>你們現今所看為羞恥的事，當日有甚麼果子呢？那些事的結局就是死。</div>
+<div class="verse"><span class="verse-number">22</span>但現今，你們既從罪裏得了釋放，作了神的奴僕，就有成聖的果子，那結局就是永生。</div>
+<div class="verse"><span class="verse-number">23</span>因為罪的工價乃是死；惟有神的恩賜，在我們的主基督耶穌裏，乃是永生。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第6章回應稱義教義可能引發的誤解，說明信徒不應繼續活在罪中，因為藉著洗禮已與基督同死同復活，舊我已被釘死，應當把自己獻給神作義的器具。本章首先以問句帶出主題：我們可以仍在罪中叫恩典顯多嗎，斷乎不可，我們在罪上死了的人豈可仍在其中活著呢。接著說明洗禮的意義：我們受洗歸入基督耶穌是受洗歸入祂的死，藉著洗禮歸入死和祂一同埋葬，原是叫我們一舉一動有新生的樣式，就像基督藉著父的榮耀從死裡復活一樣。我們若在祂死的形狀上與祂聯合，也必在祂復活的形狀上與祂聯合；我們的舊我和祂同釘十字架，使罪身滅絕，叫我們不再作罪的奴僕，因為已死的人是脫離了罪。然後說明信徒的身份轉換：你們也當看自己是向罪死、向神活的，在基督耶穌裡就當如此看自己；不要讓罪在你們必死的身上做王，倒要將自己獻給神作義的器具。最後以主從論作結：罪的工價乃是死，但神的恩賜在基督耶穌我們的主裡乃是永生。本章呈現成聖生活的神學基礎，將救恩與道德轉化緊密相連。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 與基督同死同活是信仰身份的核心</strong><br>「我們的舊人和他同釘十字架」——這不只是比喻，而是真實的屬靈事件。信徒在基督裏已經死了，也在基督裏復活了；舊的「我」在定義上已經終結。這個身份的認知影響行為：「看自己是死的」不是感覺，而是選擇性的認識——我選擇認同基督的死對我罪性的終結，並在新的生命裏活着。<br><br>
+<strong>2. 獻上自己是信仰生活的主動選擇</strong><br>「將你們的肢體作義的器具獻給神」——不是被動的等待，而是主動的決定。信仰不是讓神「使用」我們而我們毫不在乎；而是我們主動選擇把自己每一部分——思想、時間、才能、身體——獻給神作義的工具。這種主動的自我獻上，是信仰成熟的標誌。<br><br>
+<strong>3. 「罪的工價乃是死」對應「神的恩賜乃是永生」</strong><br>「工價」是應得的報酬，「恩賜」是白白給的。罪的後果是應得的，是我們作了選擇的結果；但永生是神的恩賜，是神主動給予的。保羅刻意使用這兩個不同的詞，強調救恩的性質：永生不是我們掙來的，而是在基督耶穌裏從神白白領受的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>這樣，<strong>你們向罪也當看自</strong><strong>己是死的</strong>；向神在基督耶穌裏，卻當看自己是活的。（羅6:11）</td>
+<td>你有沒有學習在面對罪的誘惑時，主動「看自己向罪是死的」——以信仰的身份認識取代情慾的衝動？就像一個在餐桌上認識自己是吃素者的人不需要再考慮肉食，你有沒有讓你在基督裏死而復活的身份影響你的日常選擇？</td>
+</tr>
+<tr>
+<td><strong>倒要像從死裏復活</strong>的人，<strong>將自己獻給神</strong>，並將肢體作義的器具獻給神。（羅6:13）</td>
+<td>你有沒有把你的身體各部分——思想、眼目、手腳、口舌——主動地獻給神作義的器具？就像工具的用途由使用者決定，你有沒有讓神成為你生命各部分的真正主人和使用者？</td>
+</tr>
+<tr>
+<td><strong>因為罪的工價乃是</strong>死；<strong>惟有神的恩賜</strong>，在我們的主基督耶穌裏，乃是永生。（羅6:23）</td>
+<td>你有沒有深刻地感受到永生是完全不配得的恩賜，讓這個對比帶出你對神深深的感謝和對罪的厭惡？就像重病後被免費治癒的人對醫療有不同的珍視，你有沒有讓對「永生是恩賜」的認識改變你對罪和對神的態度？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

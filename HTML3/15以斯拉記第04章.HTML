@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以斯拉記第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以斯拉記第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">敵人攔阻，建殿工程被迫停止</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>猶大和便雅憫的敵人聽說被擄歸回的人為耶和華以色列的神建造殿宇，</div>
+<div class="verse"><span class="verse-number">2</span>就去見所羅巴伯和以色列的族長，對他們說：「請容我們與你們一同建造；因為我們尋求你們的神，與你們一樣。自從亞述王以撒哈頓帶我們上這地以來，我們常祭祀神。」</div>
+<div class="verse"><span class="verse-number">3</span>但所羅巴伯、耶書亞，和其餘以色列的族長對他們說：「我們建造神的殿與你們無干，我們自己為耶和華以色列的神協力建造，是照波斯王古列所吩咐的。」</div>
+<div class="verse"><span class="verse-number">4</span>那地的民，就在猶大人建造的時候，使他們的手發軟，擾亂他們；</div>
+<div class="verse"><span class="verse-number">5</span>從波斯王古列年間，直到波斯王大利烏登基的時候，賄買謀士，要敗壞他們的謀算。</div>
+<div class="verse"><span class="verse-number">6</span>在亞哈隨魯纔登基的時候，上本控告猶大和耶路撒冷的居民。</div>
+<div class="verse"><span class="verse-number">7</span>亞達薛西年間，比施蘭、米特利達、他別，和他們的同黨上本奏告波斯王亞達薛西。本章是用亞蘭文字，亞蘭方言。</div>
+<div class="verse"><span class="verse-number">8</span>省長利宏、書記伸帥要控告耶路撒冷人，也上本奏告亞達薛西王。</div>
+<div class="verse"><span class="verse-number">9</span>省長利宏、書記伸帥，和同黨的底拿人、亞法薩提迦人、他毘拉人、亞法撒人、亞基衛人、巴比倫人、書珊迦人、底亥人、以攔人，</div>
+<div class="verse"><span class="verse-number">10</span>和尊大的亞斯那巴所遷移、安置在撒瑪利亞城，並大河西一帶地方的人等，</div>
+<div class="verse"><span class="verse-number">11</span>上奏亞達薛西王說：「河西的臣民云云：</div>
+<div class="verse"><span class="verse-number">12</span>王該知道，從王那裏上到我們這裏的猶大人，已經到耶路撒冷重建這反叛惡劣的城，築立根基，建造城牆。</div>
+<div class="verse"><span class="verse-number">13</span>如今王該知道，他們若建造這城，城牆完畢就不再與王進貢，交課，納稅，終久王必受虧損。</div>
+<div class="verse"><span class="verse-number">14</span>我們既食御鹽，不忍見王喫虧，因此奏告於王。</div>
+<div class="verse"><span class="verse-number">15</span>請王考察先王的實錄，必在其上查知這城是反叛的城，與列王和各省有害；自古以來，其中常有悖逆的事，因此這城曾被拆毀。</div>
+<div class="verse"><span class="verse-number">16</span>我們謹奏王知，這城若再建造，城牆完畢，河西之地王就無分了。」</div>
+<div class="verse"><span class="verse-number">17</span>那時王諭覆省長利宏、書記伸帥，和他們的同黨，就是住撒瑪利亞並河西一帶地方的人，說：「願你們平安云云。</div>
+<div class="verse"><span class="verse-number">18</span>你們所上的本，已經明讀在我面前。</div>
+<div class="verse"><span class="verse-number">19</span>我已命人考查，得知此城古來果然背叛列王，其中常有反叛悖逆的事。</div>
+<div class="verse"><span class="verse-number">20</span>從前耶路撒冷也有大君王統管河西全地，人就給他們進貢，交課，納稅。</div>
+<div class="verse"><span class="verse-number">21</span>現在你們要出告示命這些人停工，使這城不得建造，等我降旨。</div>
+<div class="verse"><span class="verse-number">22</span>你們當謹慎，不可遲延，為何容害加重，使王受虧損呢？」</div>
+<div class="verse"><span class="verse-number">23</span>亞達薛西王的上諭讀在利宏和書記伸帥，並他們的同黨面前，他們就急忙往耶路撒冷去見猶大人，用勢力強迫他們停工。</div>
+<div class="verse"><span class="verse-number">24</span>於是，在耶路撒冷神殿的工程就停止了，直停到波斯王大利烏第二年。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以斯拉記第4章記載建殿工程遭受阻撓的始末。歸回百姓開始重建聖殿時，撒瑪利亞一帶的居民要求參與，被所羅巴伯等領袖婉拒，因這些人雖自稱敬拜以色列的神，但實為混合宗教，身分不純正。被拒後，這些人便轉為公開敵對，以賄賂、謀算等手段持續騷擾。本章還記錄了後來在亞達薛西王年間（時序上晚於所羅巴伯時代）寫給王的控告信，信中誣稱耶路撒冷為反叛的城，導致王下令停工。這段描述橫跨多位波斯王朝，說明阻撓並非短暫事件，而是長期且有組織的攻擊。最終工程被迫停止，直到大利烏王第二年先知哈該、撒迦利亞出來激勵百姓，才得以重新動工。本章揭示神的工程必然面對屬靈爭戰。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的工程必然面對敵擋與試探</strong><br>建殿的工程一啟動，敵人便立刻出現，先以假意合作試圖滲透，後以公開攻擊阻撓。這是屬靈規律：凡有意義的神聖工作，必定引來仇敵的攔阻。信徒需明白，面對阻力不是工作出了問題的信號，反而可能正是神的工程價值所在。保持清醒的屬靈辨別，認出敵人不同策略的面貌，是繼續前行的關鍵。<br><br>
+<strong>2. 分辨合作者的屬靈身分至關重要</strong><br>所羅巴伯拒絕敵人的「善意合作」，看似強硬，實則是正確的屬靈辨別。那些人的信仰是混雜的，若讓他們加入，建殿的純正性便會受損。在神的事奉上，「人多好辦事」的思維可能帶來比攔阻更深遠的破壞。信徒需要智慧分辨誰是同工，而非只圖眼前的便利和人力支援。<br><br>
+<strong>3. 暫時的停頓不等於神的旨意落空</strong><br>工程雖被迫停止，但這不是終局。神在其後的章節中再次激動人心，工程得以恢復。人的阻撓可以造成延誤，卻不能永久阻止神的計畫。信徒在事奉中遭遇停滯時，不應絕望，而要在等候中繼續信靠，因為神的旨意不受人的阻攔所左右，祂必在合宜的時間重新開路。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>但所羅巴伯</strong>、<strong>耶書亞</strong>，和其餘以色列的族長對他們說：「我們建造神的殿與你們無干，我們自己為耶和華以色列的神協力建造，是照波斯王古列所吩咐的。」（拉3:3）</td>
+<td>就像照片濾鏡只能美化表面，無法改變實質，辨別合作者的真實動機比接受一切幫助更重要。你曾面對過以「善意」包裝的不當合作邀請嗎？你如何分辨？</td>
+</tr>
+<tr>
+<td><strong>那地的民</strong>，<strong>就在猶大人建造的</strong>時候，使他們的手發軟，擾亂他們；從波斯王古列年間，直到波斯王大利烏登基的時候，賄買謀士，要敗壞他們的謀算。（拉4:4-5）</td>
+<td>就像手機通知會分散注意力，讓你無法專注重要的事，持續的騷擾與攪擾是否曾讓你的心「發軟」，想放棄神所交付的使命？你用什麼方法保持專注？</td>
+</tr>
+<tr>
+<td>於是，<strong>在耶路撒冷神殿的</strong><strong>工程就停止了</strong>，直停到波斯王大利烏第二年。（拉4:24）</td>
+<td>就像GPS會重新規劃路線，暫時的繞路不代表目的地改變，事奉的停頓是否讓你懷疑神的旨意？你如何在等候中維持對神計畫的信心？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

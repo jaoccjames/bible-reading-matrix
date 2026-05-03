@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第19章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第19章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">憐憫貧窮是借給神：耶和華的籌算終必立定</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>行為純正的貧窮人勝過乖謬愚妄的富足人。</div>
+<div class="verse"><span class="verse-number">2</span>心無知識的，乃為不善；腳步急快的，難免犯罪。</div>
+<div class="verse"><span class="verse-number">3</span>人的愚昧傾敗他的道；他的心也抱怨耶和華。</div>
+<div class="verse"><span class="verse-number">4</span>財物使朋友增多；但窮人朋友遠離。</div>
+<div class="verse"><span class="verse-number">5</span>作假見證的，必不免受罰；吐出謊言的，終不能逃脫。</div>
+<div class="verse"><span class="verse-number">6</span>好施散的，有多人求他的恩情；愛送禮的，人都為他的朋友。</div>
+<div class="verse"><span class="verse-number">7</span>貧窮人，弟兄都恨他；何況他的朋友，更遠離他！他用言語追隨，他們卻走了。</div>
+<div class="verse"><span class="verse-number">8</span>得着智慧的，愛惜生命；保守聰明的，必得好處。</div>
+<div class="verse"><span class="verse-number">9</span>作假見證的，不免受罰；吐出謊言的，也必滅亡。</div>
+<div class="verse"><span class="verse-number">10</span>愚昧人宴樂度日是不合宜的；何況僕人管轄王子呢？</div>
+<div class="verse"><span class="verse-number">11</span>人有見識就不輕易發怒；寬恕人的過失便是自己的榮耀。</div>
+<div class="verse"><span class="verse-number">12</span>王的忿怒好像獅子吼叫；他的恩典卻如草上的甘露。</div>
+<div class="verse"><span class="verse-number">13</span>愚昧的兒子是父親的禍患；妻子的爭吵如雨連連滴漏。</div>
+<div class="verse"><span class="verse-number">14</span>房屋錢財是祖宗所遺留的；惟有賢慧的妻是耶和華所賜的。</div>
+<div class="verse"><span class="verse-number">15</span>懶惰使人沉睡；懈怠的人必受飢餓。</div>
+<div class="verse"><span class="verse-number">16</span>謹守誡命的，保全生命；輕忽己路的，必致死亡。</div>
+<div class="verse"><span class="verse-number">17</span>憐憫貧窮的，就是借給耶和華；他的善行，耶和華必償還。</div>
+<div class="verse"><span class="verse-number">18</span>趁有指望，管教你的兒子；你的心不可任他死亡。</div>
+<div class="verse"><span class="verse-number">19</span>暴怒的人必受刑罰；你若救他，必須再救。</div>
+<div class="verse"><span class="verse-number">20</span>你要聽勸教，受訓誨，使你終久有智慧。</div>
+<div class="verse"><span class="verse-number">21</span>人心多有計謀；惟有耶和華的籌算纔能立定。</div>
+<div class="verse"><span class="verse-number">22</span>施行仁慈的，令人愛慕；窮人強如說謊言的。</div>
+<div class="verse"><span class="verse-number">23</span>敬畏耶和華的，得着生命；他必恒久知足，不遭禍患。</div>
+<div class="verse"><span class="verse-number">24</span>懶惰人放手在盤子裏，就是向口撤回，他也不肯。</div>
+<div class="verse"><span class="verse-number">25</span>鞭打褻慢人，愚蒙人必長見識；責備明哲人，他就明白知識。</div>
+<div class="verse"><span class="verse-number">26</span>虐待父親、攆出母親的，是貽羞致辱之子。</div>
+<div class="verse"><span class="verse-number">27</span>我兒，不可聽了教訓而又偏離知識的言語。</div>
+<div class="verse"><span class="verse-number">28</span>匪徒作見證戲笑公平；惡人的口吞下罪孽。</div>
+<div class="verse"><span class="verse-number">29</span>刑罰是為褻慢人預備的；鞭打是為愚昧人的背預備的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第十九章在格言集中以「人與神」、「人與貧窮」、「人與家庭」三個向度展開屬靈教導。本章清楚呈現了貧窮與財富的屬靈意涵：財物使朋友增多，但窮人被遺棄（4節、7節），然而行為純正的貧窮人仍勝過乖謬的富足人（1節）。本章在古以色列社會背景中，反映了對貧窮者的同情與對欺壓者的警告。第17節「憐憫貧窮的，就是借給耶和華；他的善行，耶和華必償還」，是舊約中對「施恩於貧窮等於施恩於神」這一神學的最直接表達。第21節「人心多有計謀；惟有耶和華的籌算纔能立定」，再次強調了神的主權超越人的計劃。第11節「人有見識就不輕易發怒；寬恕人的過失便是自己的榮耀」，將寬恕定義為有見識之人的表現，而非軟弱的妥協。本章在整本箴言書中強調，真正的智慧彰顯在對貧窮者的憐憫、對神計劃的順服，以及在衝突中選擇寬恕的品格上。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 憐憫貧窮是向神借貸，必得神的償還</strong><br>第17節「憐憫貧窮的，就是借給耶和華」，以借貸的語言，說明幫助貧窮人不是損失，而是向神的一種「投資」，神必親自承擔回報的責任。這一宣告徹底改變了施予的動機——不是為了回報，而是出於對神的信靠：我幫助的人是神所珍愛的，神必不虧欠。這種信仰驅動的慷慨，是屬靈成熟的重要標誌。<br><br>
+<strong>2. 神的籌算超越人的計謀，順服是智慧的選擇</strong><br>第21節「人心多有計謀；惟有耶和華的籌算纔能立定」，是對人類計劃有限性的清醒宣告。人的謀略再多、再精密，都有可能因為神的主權而改變方向。這不是叫信徒放棄計劃，而是提醒他們以謙卑的心持守計劃，並保持對神旨意的開放。當神的籌算與人的計謀不同時，信徒需要智慧辨別，並有勇氣順服。<br><br>
+<strong>3. 寬恕他人的過失是有智慧之人的榮耀</strong><br>第11節「人有見識就不輕易發怒；寬恕人的過失便是自己的榮耀」，將寬恕提升為智慧品格的彰顯，而非軟弱的表現。真正的寬恕需要力量——放下被傷害的憤怒、放棄報復的衝動、選擇以恩典回應虧欠。這種寬恕不是忽視過錯，而是在看清過錯之後仍選擇憐憫，這正是神恩典的倒影。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>憐憫貧窮的</strong>，<strong>就是借給耶和華</strong>；他的善行，耶和華必償還。」（箴19:17）</td>
+<td>就像把錢存入最可靠的銀行，保證不會倒閉且一定有回報，你對幫助貧窮人或有需要的人，是否有「白費力氣」或「得不到回報」的感覺？若真的相信神會償還，你的給予方式會有什麼不同？</td>
+</tr>
+<tr>
+<td>「<strong>人心多有計謀</strong>；<strong>惟有耶和華的籌算</strong>纔能立定。」（箴19:21）</td>
+<td>就像工程師精心設計的建築方案，可能因地質勘查結果而需要全面修改，你最近有沒有一個「精心計劃」被改變了方向？你在那個改變中，如何尋找神的手跡？</td>
+</tr>
+<tr>
+<td>「<strong>人有見識就不輕易</strong>發怒；<strong>寬恕人的過失便是</strong>自己的榮耀。」（箴19:11）</td>
+<td>就像高品質的濾水系統能過濾雜質而不阻塞水流，有見識的人能過濾憤怒而不讓它決定行動，你在最近的某次受傷或冒犯中，你的回應更像「即時爆發」還是「深思後寬恕」？是什麼幫助你（或阻礙你）選擇寬恕？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

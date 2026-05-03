@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提多書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+提多書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">設立長老與純正的教訓</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>神的僕人，耶穌基督的使徒保羅，憑着神選民的信心與敬虔真理的知識，</div>
+<div class="verse"><span class="verse-number">2</span>盼望那無謊言的神在萬古之先所應許的永生，</div>
+<div class="verse"><span class="verse-number">3</span>到了日期，藉着傳揚的工夫把他的道顯明了；這傳揚的責任是按着神我們救主的命令交託了我。</div>
+<div class="verse"><span class="verse-number">4</span>現在寫信給提多，就是照着我們共信之道作我真兒子的。願恩惠、平安從父神和我們的救主基督耶穌歸與你。</div>
+<div class="verse"><span class="verse-number">5</span>我從前留你在革哩底，是要你將那沒有辦完的事都辦整齊了，又照我所吩咐你的，在各城設立長老。</div>
+<div class="verse"><span class="verse-number">6</span>若有無可指責的人，只作一個婦人的丈夫，兒女也是信主的，沒有人告他們是放蕩不服約束的，就可以設立。</div>
+<div class="verse"><span class="verse-number">7</span>監督既是神的管家，必須無可指責，不任性，不暴躁，不因酒滋事，不打人，不貪無義之財。</div>
+<div class="verse"><span class="verse-number">8</span>樂意接待遠人，好善，莊重，公平，聖潔自持。</div>
+<div class="verse"><span class="verse-number">9</span>堅守所教真實的道理，就能將純正的教訓勸化人，又能把爭辯的人駁倒了。</div>
+<div class="verse"><span class="verse-number">10</span>因為有許多人不服約束，說虛空話欺哄人；那奉割禮的更是這樣。</div>
+<div class="verse"><span class="verse-number">11</span>這些人的口總要堵住。他們因貪不義之財，將不該教導的教導人，敗壞人的全家。</div>
+<div class="verse"><span class="verse-number">12</span>有革哩底人中的一個本地先知說：「革哩底人常說謊話，乃是惡獸，又饞又懶。」</div>
+<div class="verse"><span class="verse-number">13</span>這個見證是真的。所以，你要嚴嚴的責備他們，使他們在真道上純全無疵，</div>
+<div class="verse"><span class="verse-number">14</span>不聽猶太人荒渺的言語和離棄真道之人的誡命。</div>
+<div class="verse"><span class="verse-number">15</span>在潔淨的人，凡物都潔淨；在污穢不信的人，甚麼都不潔淨，連心地和天良也都污穢了。</div>
+<div class="verse"><span class="verse-number">16</span>他們說是認識神，行事卻和他相背，本是可憎惡的，是悖逆的，在各樣善事上是可廢棄的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+提多書是保羅寫給他的同工提多的書信，約在主後63至65年間，此時提多在革哩底島牧養教會。第1章以保羅的問安開篇，說明他是神的僕人、耶穌基督的使徒，按著神選民的信仰和與敬虔相符的真道，是指望那無謊言之神在萬古之先所應許的永生。接著說明他差提多留在革哩底，為要在各城設立長老，列出長老的資格：無可指摘、只做一個婦人的丈夫、兒女也是信主的；因為監督既是神的管家，必須無可指摘，不任性、不暴躁、不因酒滋事、不打人、不貪無義之財，只要樂意接待遠人，好善、謹慎、公正、聖潔、自持，堅守所教真實可信的道理，既能將純正的教訓勸化人，又能駁倒那些說反話的人。接著指出革哩底人的特性，引用當地詩人說革哩底人常說謊話、是惡獸是懶饞的肚腹，這話是真的，所以要嚴嚴責備他們，使他們在信仰上純全，不聽猶太人荒渺的話語和那些棄絕真理之人的誡命，因為心地純潔的人，凡物都潔淨；但在那污穢不信的人，甚麼都不潔淨，連心地和天良也被污穢了。本章為教會領袖資格提供革哩底處境下的具體指引。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 堅守真理才能勸化人和駁倒謬誤</strong><br>「堅守所教真實的道理，就能將純正的教訓勸化人，又能把爭辯的人駁倒了」——領袖對真理的堅守是雙面作用的：對信徒是勸化（積極的教育），對假教師是駁倒（防禦性的護衛）。若領袖自己在真理上沒有紮根，就既不能教育信徒，也不能識別和對抗假教訓。<br><br>
+<strong>2. 說認識神卻行事與神相背</strong><br>「他們說是認識神，行事卻和他相背」——這是最嚴重的信仰危機：用神的語言，行相反的事。知識上的「認識神」必須與行為上的「照神的心意行事」一致。否則，所謂的認識神不過是一個空洞的宣告。這個警告適用於所有人，不只是假教師。<br><br>
+<strong>3. 革哩底人的文化與情境化牧養</strong><br>保羅引用革哩底本地先知的話（「革哩底人常說謊話，乃是惡獸，又饞又懶」），說明提多的工作需要考慮當地文化的特殊挑戰。情境化的牧養不是降低標準，而是識別當地文化的弱點，有針對性地帶出更新。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>監督既是神的管家</strong>，<strong>必須無可指責</strong>……堅守所教真實的道理，就能將純正的教訓勸化人，又能把爭辯的人駁倒了。（多1:7,9）</td>
+<td>你有沒有讓自己在真理上的紮根——透過認真的讀經、學習和默想——成為你能夠服事他人和辨別謬誤的根基？就像一個深知材料的工匠既能創作又能鑑別，你有沒有讓對真理的深度認識使你有能力勸化和保護？</td>
+</tr>
+<tr>
+<td><strong>他們說是認識神</strong>，<strong>行事卻和他相背</strong>，本是可憎惡的，是悖逆的，在各樣善事上是可廢棄的。（多1:16）</td>
+<td>你有沒有定期讓自己的言語和行為接受神話語的校準，確認你所說的「認識神」真實地反映在你的日常行事為人中？就像最可靠的品牌保證來自產品品質而非廣告聲明，你有沒有讓你對神的認識在生命中留下可見的印記？</td>
+</tr>
+<tr>
+<td><strong>在潔淨的人</strong>，<strong>凡物都潔淨</strong>；在污穢不信的人，甚麼都不潔淨，連心地和天良也都污穢了。（多1:15）</td>
+<td>你有沒有讓心地和天良的潔淨成為你信仰生命最重要的追求，知道一切的服事和行為最終源自你心靈的狀態？就像一泉清潔的水源保證流出的水是潔淨的，你有沒有讓你的靈魂成為讓你一切行事都潔淨的根源？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

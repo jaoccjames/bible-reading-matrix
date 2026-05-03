@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以斯拉記第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以斯拉記第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">禁食求神保佑，平安抵達聖城</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>當亞達薛西王年間，同我從巴比倫上來的人，他們的族長和他們的家譜記在下面：</div>
+<div class="verse"><span class="verse-number">2</span>屬非尼哈的子孫有革順；屬以他瑪的子孫有但以理；屬大衛的子孫有哈突；</div>
+<div class="verse"><span class="verse-number">3</span>屬巴錄的後裔，就是示迦尼的子孫有撒迦利亞，同着他，按家譜計算，男丁一百五十人；</div>
+<div class="verse"><span class="verse-number">4</span>屬巴哈摩押的子孫有西拉希雅的兒子以利約乃，同着他有男丁二百；</div>
+<div class="verse"><span class="verse-number">5</span>屬示迦尼的子孫有雅哈悉的兒子，同着他有男丁三百；</div>
+<div class="verse"><span class="verse-number">6</span>屬亞丁的子孫有約拿單的兒子以別，同着他有男丁五十；</div>
+<div class="verse"><span class="verse-number">7</span>屬以攔的子孫有亞他利雅的兒子耶篩亞，同着他有男丁七十；</div>
+<div class="verse"><span class="verse-number">8</span>屬示法提雅的子孫有米迦勒的兒子西巴第雅，同着他有男丁八十；</div>
+<div class="verse"><span class="verse-number">9</span>屬約押的子孫有耶歇的兒子俄巴底亞，同着他有男丁二百一十八；</div>
+<div class="verse"><span class="verse-number">10</span>屬示羅密的子孫有約細斐的兒子，同着他有男丁一百六十；</div>
+<div class="verse"><span class="verse-number">11</span>屬比拜的子孫有比拜的兒子撒迦利亞，同着他有男丁二十八；</div>
+<div class="verse"><span class="verse-number">12</span>屬押甲的子孫有哈加坦的兒子約哈難，同着他有男丁一百一十；</div>
+<div class="verse"><span class="verse-number">13</span>屬亞多尼干的子孫，就是末尾的，他們的名字是以利法列、耶利、示瑪雅，同着他們有男丁六十；</div>
+<div class="verse"><span class="verse-number">14</span>屬比革瓦伊的子孫有烏太和撒布，同着他們有男丁七十。</div>
+<div class="verse"><span class="verse-number">15</span>我招聚這些人在流入亞哈瓦的河邊，我們在那裏住了三日。我查看百姓和祭司，見沒有利未人在那裏，</div>
+<div class="verse"><span class="verse-number">16</span>就召首領以利以謝、亞列、示瑪雅、以利拿單、雅立、以利拿單、拿單、撒迦利亞、米書蘭，又召教習約雅立和以利拿單。</div>
+<div class="verse"><span class="verse-number">17</span>我打發他們往迦西斐雅地方去見那裏的首領易多，又告訴他們當向易多和他的弟兄尼提寧說甚麼話，叫他們為我們神的殿帶使用的人來。</div>
+<div class="verse"><span class="verse-number">18</span>蒙我們神施恩的手幫助我們，他們在以色列的曾孫、利未的孫子、抹利的後裔中帶一個通達人來；還有示利比和他的眾子與弟兄共一十八人。</div>
+<div class="verse"><span class="verse-number">19</span>又有哈沙比雅，同着他有米拉利的子孫耶篩亞，並他的眾子和弟兄共二十人。</div>
+<div class="verse"><span class="verse-number">20</span>從前大衛和眾首領派尼提寧服事利未人，現在從這尼提寧中也帶了二百二十人來，都是按名指定的。</div>
+<div class="verse"><span class="verse-number">21</span>那時，我在亞哈瓦河邊宣告禁食，為要在我們神面前克苦己心，求他使我們和婦人孩子，並一切所有的，都得平坦的道路。</div>
+<div class="verse"><span class="verse-number">22</span>我求王撥步兵馬兵幫助我們抵擋路上的仇敵，本以為羞恥；因我曾對王說：「我們神施恩的手必幫助一切尋求他的；但他的能力和忿怒必攻擊一切離棄他的。」</div>
+<div class="verse"><span class="verse-number">23</span>所以我們禁食祈求我們的神，他就應允了我們。</div>
+<div class="verse"><span class="verse-number">24</span>我分派祭司長十二人，就是示利比、哈沙比雅，和他們的弟兄十人，</div>
+<div class="verse"><span class="verse-number">25</span>將王和謀士、軍長，並在那裏的以色列眾人為我們神殿所獻的金銀和器皿，都秤了交給他們。</div>
+<div class="verse"><span class="verse-number">26</span>我秤了交在他們手中的銀子有六百五十他連得；銀器重一百他連得；金子一百他連得；</div>
+<div class="verse"><span class="verse-number">27</span>金碗二十個，重一千達利克；上等光銅的器皿兩個，寶貴如金。</div>
+<div class="verse"><span class="verse-number">28</span>我對他們說：「你們歸耶和華為聖，器皿也為聖；金銀是甘心獻給耶和華你們列祖之神的。</div>
+<div class="verse"><span class="verse-number">29</span>你們當警醒看守，直到你們在耶路撒冷耶和華殿的庫內，在祭司長和利未族長，並以色列的各族長面前過了秤。」</div>
+<div class="verse"><span class="verse-number">30</span>於是，祭司、利未人按着分量接受金銀和器皿，要帶到耶路撒冷我們神的殿裏。</div>
+<div class="verse"><span class="verse-number">31</span>正月十二日，我們從亞哈瓦河邊起行，要往耶路撒冷去。我們神的手保佑我們，救我們脫離仇敵和路上埋伏之人的手。</div>
+<div class="verse"><span class="verse-number">32</span>我們到了耶路撒冷，在那裏住了三日。</div>
+<div class="verse"><span class="verse-number">33</span>第四日，在我們神的殿裏把金銀和器皿都秤了，交在祭司烏利亞的兒子米利末的手中。同着他有非尼哈的兒子以利亞撒，還有利未人耶書亞的兒子約撒拔和賓內的兒子挪亞底。</div>
+<div class="verse"><span class="verse-number">34</span>當時都點了數目，按着分量寫在冊上。</div>
+<div class="verse"><span class="verse-number">35</span>從擄到之地歸回的人向以色列的神獻燔祭，就是為以色列眾人獻公牛十二隻，公綿羊九十六隻，綿羊羔七十七隻，又獻公山羊十二隻作贖罪祭，這都是向耶和華焚獻的。</div>
+<div class="verse"><span class="verse-number">36</span>他們將王的諭旨交給王所派的總督與河西的省長，他們就幫助百姓，又供給神殿裏所需用的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以斯拉記第8章記載以斯拉率領的第二批歸回隊伍的名單，以及旅途前的預備與旅途中的保守。出發前，以斯拉發現隊伍中缺少利未人，便特別差派人前往招募，表明他對事奉人才的重視。在亞哈瓦河邊等候期間，以斯拉宣告禁食禱告，為的是求神保佑這一趟漫長危險的旅程。他特別說明，因為曾在王面前宣告神能幫助一切尋求祂的人，所以不願再求王派兵護送，以免讓神的名受損。這份信仰的宣信需要勇氣，也需要真實的信靠作後盾。禁食祈禱後，神應允了他們，整段旅程平安抵達。到達耶路撒冷後，他們嚴謹地交接所攜帶的金銀器皿，並獻祭敬拜。全章展示以斯拉在行政、屬靈和信仰見證上的全面領袖典範。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 禁食禱告是面對危險時的屬靈優先選擇</strong><br>以斯拉面對漫長且危險的旅程，選擇禁食祈求神的保護，而非倚靠人的武力。這顯示他對自己信仰宣言的認真——既然說了神必幫助尋求祂的人，就要活出這信心。禁食不是宗教表演，而是「克苦己心」，是在神面前謙卑自己、專心尋求的行動。在重大決定或危難面前，禱告勝過任何人為的安排。<br><br>
+<strong>2. 以信仰宣告作見證需要以行動來支撐</strong><br>以斯拉不求王派兵，是因為他不能讓自己之前在王面前的宣告落空——若口說神能保佑，卻又四處尋求人的保護，便是言行不一。這種信仰的一致性，既是對神信靠的實踐，也是向外邦王所作的真實見證。信徒說出的屬靈宣告，在面對考驗時是否仍能站立，正是信仰深度的試金石。
+3
+忠心保管神的託付是事奉的誠信基礎
+以斯拉對所攜帶的金銀器皿嚴格秤重、登記、交接，從出發到抵達都有清楚的記錄。他對管家職分的嚴謹，顯示他明白這不是自己的財物，而是神聖的托付。在今日，神賦予信徒的才幹、資源和職責，同樣需要忠心、透明、負責任的管理，因為這些都是向神交帳的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>那時，<strong>我在亞哈瓦河邊宣</strong><strong>告禁食</strong>，為要在我們神面前克苦己心，求他使我們和婦人孩子，並一切所有的，都得平坦的道路。（拉8:21）</td>
+<td>就像出遠門前先仔細檢查行李和路況，在重大決定前禁食禱告是你的習慣，還是只有到了走投無路時才想到？你上一次真正「克苦己心」尋求神是甚麼時候？</td>
+</tr>
+<tr>
+<td><strong>我求王撥步兵馬兵</strong><strong>幫助我們抵擋路上</strong>的仇敵，本以為羞恥；因我曾對王說：「我們神施恩的手必幫助一切尋求他的。」（拉8:22）</td>
+<td>就像公開承諾要做到某件事後，就必須真的去做，否則會失信，你的屬靈宣告和你實際的生命行為是否一致？你是否曾在言行不一的壓力下選擇了真實的信靠？</td>
+</tr>
+<tr>
+<td><strong>我們神的手保佑我</strong>們，<strong>救我們脫離仇敵和</strong>路上埋伏之人的手。（拉8:31）</td>
+<td>就像搬到新城市前無法完全預知所有風險，但仍要踏出那一步，你最近一次在不確定中信靠神的保護出發是什麼經歷？事後你如何看神的同在與保守？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

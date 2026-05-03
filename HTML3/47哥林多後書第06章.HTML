@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多後書第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多後書第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">悅納的時候與分別聖潔</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我們與神同工的，也勸你們不可徒受他的恩典。</div>
+<div class="verse"><span class="verse-number">2</span>因為他說：『在悅納的時候，我應允了你；在拯救的日子，我搭救了你。』看哪！現在正是悅納的時候；現在正是拯救的日子。</div>
+<div class="verse"><span class="verse-number">3</span>我們凡事都不叫人有妨礙，免得這職分被人毀謗；</div>
+<div class="verse"><span class="verse-number">4</span>反倒在各樣的事上表明自己是神的用人，就如在許多的忍耐、患難、窮乏、困苦、</div>
+<div class="verse"><span class="verse-number">5</span>鞭打、監禁、擾亂、勤勞、儆醒、不食、</div>
+<div class="verse"><span class="verse-number">6</span>廉潔、知識、恒忍、恩慈、聖靈的感化、無偽的愛心、</div>
+<div class="verse"><span class="verse-number">7</span>真實的道理、神的大能；仁義的兵器在左在右；</div>
+<div class="verse"><span class="verse-number">8</span>榮耀、羞辱，惡名、美名；似乎是誘惑人的，卻是誠實的；</div>
+<div class="verse"><span class="verse-number">9</span>似乎不為人所知，卻是人所共知的；似乎要死，卻是活着的；似乎受責罰，卻是不至喪命的；</div>
+<div class="verse"><span class="verse-number">10</span>似乎憂愁，卻是常常快樂的；似乎貧窮，卻是叫許多人富足的；似乎一無所有，卻是樣樣都有的。</div>
+<div class="verse"><span class="verse-number">11</span>哥林多人哪，我們向你們，口是張開的，心是寬宏的。</div>
+<div class="verse"><span class="verse-number">12</span>你們狹窄，原不在乎我們，是在乎自己的心腸狹窄。</div>
+<div class="verse"><span class="verse-number">13</span>你們也要照樣用寬宏的心報答我。我這話正像對自己的孩子說的。</div>
+<div class="verse"><span class="verse-number">14</span>你們和不信的原不相配，不要同負一軛。義和不義有甚麼相交呢？光明和黑暗有甚麼相通呢？</div>
+<div class="verse"><span class="verse-number">15</span>基督和彼列〔彼列就是撒但的別名〕有甚麼相和呢？信主的和不信主的有甚麼相干呢？</div>
+<div class="verse"><span class="verse-number">16</span>神的殿和偶像有甚麼相同呢？因為我們是永生神的殿，就如神曾說：我要在他們中間居住，在他們中間來往；我要作他們的神；他們要作我的子民。</div>
+<div class="verse"><span class="verse-number">17</span>又說：你們務要從他們中間出來，與他們分別；不要沾不潔淨的物，我就收納你們。</div>
+<div class="verse"><span class="verse-number">18</span>我要作你們的父；你們要作我的兒女。這是全能的主說的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第6章延續保羅對使徒事奉的辯護，以一長串苦難清單展示他的忠心，並呼籲哥林多人與不信的人分離。本章首先勸哥林多人不可徒受神的恩典，說現在正是悅納的時候、拯救的日子。接著保羅列出一份詳細的苦難清單，說明他在各樣事上表明自己是神的用人：在患難、在窮乏、在困苦、在鞭打、在監禁、在擾亂、在勞碌、在警醒、在禁食，以至清潔、知識、恆忍、恩慈、聖靈的感化、無偽的愛心、真實的道理、神的大能。這份對比清單呈現使徒事奉的矛盾性：看似可憐卻使多人富足，看似一無所有卻樣樣都有。接著保羅直接呼籲哥林多人敞開心懷，說他的心是寬大的。最後引用舊約多處的話，說明信和不信原不相稱，光明和黑暗有什麼相通，神的殿和偶像有什麼相同，他們是永生神的殿，因此呼籲他們從外邦人中出來分別為聖，神必接納他們、作他們的父。本章以使徒的苦難清單與呼籲分別，呈現事奉的代價與聖潔的呼召。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 現在正是拯救的日子——不可拖延</strong><br>「現在正是悅納的時候；現在正是拯救的日子」——神的恩典有其時機，「徒受」恩典就是辜負了這個時機。每一個人今天活着的事實，都是神給的機會，不是應得的理所當然。這個緊迫感對傳福音者和未信者都說話：前者應積極傳，後者不可拖延回應。<br><br>
+<strong>2. 「一無所有，卻是樣樣都有」</strong><br>保羅的對比說明了信仰生命的悖論：表面的貧窮和真實的富足；表面的憂愁和真實的喜樂；表面的软弱和真實的力量。這不是自我欺騙，而是從不同的尺度衡量同一件事——從永恆的視角，靈裏的富足使一切物質的缺乏顯得微不足道。信仰打開了一個全新的衡量體系。<br><br>
+<strong>3. 「不同負一軛」的原則</strong><br>「義和不義有甚麼相交？光明和黑暗有甚麼相通？」——這個原則不是叫信徒不與不信者接觸（那樣就要「離開世界」），而是說在根本性的生命委身上（婚姻、核心合夥關係、信仰實踐），信徒與不信者有根本的差異。不是因為藐視不信者，而是因為這種根本的不相容最終會帶來衝突和損害。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>看哪！<strong>現在正是悅納的時</strong>候；<strong>現在正是拯救的日</strong>子。（林後6:2）</td>
+<td>你有沒有讓「現在正是拯救的日子」這個緊迫性，影響你今天面對未信者的態度和行動？就像知道有人正在緊急狀況中讓救援者不敢拖延，你有沒有讓對失喪者靈魂的關切，推動你今天就採取傳福音的行動？</td>
+</tr>
+<tr>
+<td><strong>似乎憂愁</strong>，<strong>卻是常常快樂的</strong>；似乎貧窮，卻是叫許多人富足的；似乎一無所有，卻是樣樣都有的。（林後6:10）</td>
+<td>你有沒有從永恆的視角重新衡量你的處境——讓屬靈的富足和喜樂在物質的貧乏和外在的逆境中顯得更真實？就像財富不是只靠銀行存款來量度，你有沒有定期清點你在基督裏真正擁有的財富？</td>
+</tr>
+<tr>
+<td><strong>你們和不信的原不</strong>相配，<strong>不要同負一軛</strong>。（林後6:14）</td>
+<td>你有沒有在你最重要的生命關係和委身上——婚姻、核心夥伴關係——謹慎地評估是否會因「不同負一軛」而在信仰上受到根本的拉扯？就像兩頭牛若步伐和方向不同，不論多努力都只會原地打轉，你有沒有讓這個原則指引你最重要的關係選擇？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

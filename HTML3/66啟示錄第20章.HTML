@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>啟示錄第20章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+啟示錄第20章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">生命水的河與末後的呼籲</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我又看見一位天使從天降下，手裏拿着無底坑的鑰匙和一條大鍊子。</div>
+<div class="verse"><span class="verse-number">2</span>他捉住那龍，就是古蛇，又叫魔鬼，也叫撒但，把牠捆綁一千年，</div>
+<div class="verse"><span class="verse-number">3</span>扔在無底坑裏，將無底坑關閉，用印封上，使牠不得再迷惑列國。等到那一千年完了，以後必須暫時釋放牠。</div>
+<div class="verse"><span class="verse-number">4</span>我又看見幾個寶座，也有坐在上面的，並有審判的權柄賜給他們。我又看見那些因為給耶穌作見證，並為神之道被斬者的靈魂，和那沒有拜過獸與獸像，也沒有在額上和手上受過它印記之人的靈魂，他們都復活了，與基督一同作王一千年。</div>
+<div class="verse"><span class="verse-number">5</span>這是頭一次的復活。（其餘的死人還沒有復活，直等那一千年完了。）</div>
+<div class="verse"><span class="verse-number">6</span>在頭一次復活有分的有福了，聖潔了！第二次的死在他們身上沒有權柄。他們必作神和基督的祭司，並要與基督一同作王一千年。</div>
+<div class="verse"><span class="verse-number">7</span>那一千年完了，撒但必從監牢裏被釋放，</div>
+<div class="verse"><span class="verse-number">8</span>出來要迷惑地上四方〔原文作角〕的列國，就是歌革和瑪各，叫他們聚集爭戰。他們的人數多如海沙。</div>
+<div class="verse"><span class="verse-number">9</span>他們上來遍滿了全地，圍住聖徒的營與蒙愛的城，就有火從天降下，燒滅了他們。</div>
+<div class="verse"><span class="verse-number">10</span>那迷惑他們的魔鬼被扔在硫磺的火湖裏，就是獸和假先知所在的地方。他們必晝夜受痛苦，直到永永遠遠。</div>
+<div class="verse"><span class="verse-number">11</span>我又看見一個白色的大寶座與坐在上面的；從他面前天地都逃避，再無可見之處了。</div>
+<div class="verse"><span class="verse-number">12</span>我又看見死了的人，無論大小，都站在寶座前。案卷展開了，並且另有一卷展開，就是生命冊。死了的人都憑着這些案卷所記載的，照他們所行的受審判。</div>
+<div class="verse"><span class="verse-number">13</span>於是海交出其中的死人；死亡和陰間也交出其中的死人；他們都照各人所行的受審判。</div>
+<div class="verse"><span class="verse-number">14</span>死亡和陰間也被扔在火湖裏；這火湖就是第二次的死。</div>
+<div class="verse"><span class="verse-number">15</span>若有人名字沒記在生命冊上，他就被扔在火湖裏。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第20章記述撒但被捆綁一千年、千年國度、撒但被放出後的最後叛亂，以及白色大寶座的最後審判，是啟示錄末世論中最受神學爭議的一章。本章首先記述天使拿著鎖鍊和無底坑的鑰匙把撒但捆綁關在無底坑一千年，免得他再迷惑列國，等到一千年完了，他必須暫時獲釋。約翰又看見一些寶座，坐在上面的就得了審判的權柄，都是為耶穌作見證並為神之道被斬首的，他們復活了，與基督一同作王一千年，這是頭一次的復活，在這復活有分的是有福的聖潔人，第二次的死沒有權柄管他們。一千年完了，撒但從監獄裡被釋放出來，要出去迷惑地上四方的列國，他們的數目多如海沙，他們上來遍滿了全地，圍住聖徒的營和蒙愛的城，就有火從天降下燒滅了他們，那迷惑他們的魔鬼被扔在硫磺的火湖裡。接著約翰看見一個白色大寶座，死而復活的人在寶座前受審，海洋和陰間都交出其中的死人，他們各照自己所行的受審判，死亡和陰間也被扔在火湖裡，這火湖就是第二次的死，若有人的名字沒有記在生命冊上，他就被扔在火湖裡。本章以千年國度與最後審判展示歷史的終末與神審判的完全。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 生命水的河從神和羔羊的寶座流出</strong><br>「明亮如水晶，從神和羔羊的寶座流出來」——生命水的源頭是神和羔羊。這個圖像回應了創世記的伊甸（有河流出），也超越伊甸：這次不只是自然的河，而是從神的寶座直接流出的生命之河。「生命樹……所結的果子……樹上的葉子乃為醫治萬民」——萬民都將在這個生命樹下得醫治和更新。<br><br>
+<strong>2. 「他們要見他的面」——最高的恩典</strong><br>「他們要見他的面，他的名字必寫在他們的額上」——在舊約，連摩西都不能見神的面而活（出33:20）；但在新天新地，信徒要見神的面——這是超越舊約一切啟示的最終恩典，是整個救贖歷史的終點和目的地。「他們要作王，直到永永遠遠」——被創造的人最終得到永遠的尊榮。<br><br>
+<strong>3. 「主耶穌啊，我願你來！」</strong><br>「說這話的說：是了，我必快來！阿們。主耶穌啊，我願你來！」——整本啟示錄以這個期待和應答作結，也是整本聖經的最後一個禱告。基督宣告「我必快來！」，信徒的回應是「我願你來！」——這是最純粹的信仰表達：對主再來的渴慕和熱切期待，是信仰旅程的終極動力和盼望。「凡願意的，都可以白白取生命的水喝」——直到最後的時刻，邀請仍然敞開，從不排除任何願意的人。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>在河這邊與那邊有</strong><strong>生命樹</strong>，結十二樣果子……樹上的葉子乃為醫治萬民……他們要見他的面。他的名字必寫在他們的額上。（啟22:2,4）</td>
+<td>你有沒有讓「見神的面」這個終末盼望成為你整個信仰生命最深的渴慕和動力？就像兩地相隔的思念讓見面的盼望成為一切努力的意義，你有沒有讓對「見神的面」的渴慕成為你信仰旅程的終極方向？</td>
+</tr>
+<tr>
+<td><strong>聖靈和新婦都說</strong>：來！<strong>聽見的人也該說</strong>：來！口渴的人也當來；願意的，都可以白白取生命的水喝。（啟22:17）</td>
+<td>你有沒有讓啟示錄最後的邀請——「凡願意的，都可以白白取生命的水喝」——成為你向未信者傳福音的激勵，把這個直到最後仍然敞開的邀請，迫切地傳達給你身邊每一個仍然可以回應的人？就像在門關閉前的最後廣播讓人更緊迫地行動，你有沒有讓對末世臨近的確信帶出你傳福音的急迫感？</td>
+</tr>
+<tr>
+<td><strong>說這話的說</strong>：是了，<strong>我必快來</strong>！阿們。主耶穌啊，我願你來！……願主耶穌的恩惠常與眾聖徒同在。阿們！（啟22:20-21）</td>
+<td>你有沒有讓「主耶穌啊，我願你來！」成為你真實的禱告——而非只是禮儀性的結語？你有沒有真實地渴望主的再來，讓這個渴慕影響你如何看待今世的一切，以及你如何預備自己在那日能「安然見主」？就像整本聖經以這個渴慕和盼望作結，你有沒有讓這成為你信仰生命最終的姿態？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

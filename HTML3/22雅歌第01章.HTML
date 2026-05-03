@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雅歌第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+雅歌第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">你的愛情比酒更美：渴慕與被愛的初心</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>所羅門的歌，是歌中的雅歌。</div>
+<div class="verse"><span class="verse-number">2</span>［新娘］願他用口與我親嘴；因你的愛情比酒更美。</div>
+<div class="verse"><span class="verse-number">3</span>你的膏油馨香；你的名如同倒出來的香膏，所以眾童女都愛你。</div>
+<div class="verse"><span class="verse-number">4</span>願你吸引我，我們就快跑跟隨你。王帶我進了內室，我們必因你歡喜快樂。［伴唱］我們要稱讚你的愛情，勝似稱讚美酒。［新娘］她們愛你是理所當然的。</div>
+<div class="verse"><span class="verse-number">5</span>耶路撒冷的眾女子啊，我雖然黑，卻是秀美，如同基達的帳棚，好像所羅門的幔子。</div>
+<div class="verse"><span class="verse-number">6</span>不要因日頭把我曬黑了就輕看我。我同母的弟兄向我發怒，他們使我看守葡萄園；我自己的葡萄園卻沒有看守。</div>
+<div class="verse"><span class="verse-number">7</span>我心所愛的啊，求你告訴我，你在何處牧羊？晌午在何處使羊歇臥？我何必在你同伴的羊群旁邊好像蒙着臉的人呢？</div>
+<div class="verse"><span class="verse-number">8</span>［伴唱］你這女子中極美麗的，你若不知道，只管跟隨羊群的腳蹤去，把你的山羊羔牧放在牧人帳棚的旁邊。</div>
+<div class="verse"><span class="verse-number">9</span>［新郎］我的佳偶，我將你比法老車上套的駿馬。</div>
+<div class="verse"><span class="verse-number">10</span>你的兩腮因髮辮而秀美；你的頸項因珠串而華麗。</div>
+<div class="verse"><span class="verse-number">11</span>［伴唱］我們要為你編上金辮，鑲上銀釘。</div>
+<div class="verse"><span class="verse-number">12</span>［新娘］王正坐席的時候，我的哪噠香膏發出香味。</div>
+<div class="verse"><span class="verse-number">13</span>我以我的良人為一袋沒藥，常在我懷中。</div>
+<div class="verse"><span class="verse-number">14</span>我以我的良人為一棵鳳仙花，在隱基底葡萄園中。</div>
+<div class="verse"><span class="verse-number">15</span>［新郎］我的佳偶，你甚美麗！你甚美麗！你的眼好像鴿子眼。</div>
+<div class="verse"><span class="verse-number">16</span>［新娘］我的良人哪，你甚美麗可愛！我們以青草為床榻，</div>
+<div class="verse"><span class="verse-number">17</span>以香柏樹為房屋的棟梁，以松樹為椽子。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+雅歌是聖經舊約中最獨特的書卷，以戲劇性的詩歌形式，描繪新郎與新娘之間深情的愛情對話，傳統上認為是所羅門王所著。雅歌的詮釋在歷史上有兩大主流：一是字面意義，指男女之間純潔美好的婚姻之愛；二是寓意解釋，將其理解為神（或彌賽亞）與以色列（或教會）之間的愛情關係。兩種詮釋並不互相排斥——神設計的婚姻之愛，本就是神與人之間盟約之愛的美麗圖像。第一章是全書的開場，以新娘熱切渴慕的獨白「願他用口與我親嘴；因你的愛情比酒更美」（2節）定調，充滿了主動、大膽、真誠的愛的表達。第5-6節新娘坦承自己皮膚被曬黑，有自我形象的軟弱，卻仍宣告「我雖然黑，卻是秀美」，反映了在所愛之人眼中的接納對自我認同的影響。整章在自然意象（香膏、百合花、香柏樹）的映襯下，描繪了兩情相悅的純美愛情。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真實的渴慕是愛的開端，神也渴望與人建立親密關係</strong><br>第2節新娘熱切的渴慕——「願他用口與我親嘴」——是雅歌整卷最核心的屬靈隱喻。無論在婚姻層面還是屬靈層面，這種對親密的主動渴望，都是愛關係的生命力所在。在屬靈層面，信徒對神的渴慕，正如詩篇42:1「鹿渴慕溪水，我的心渴慕你，神啊！」——這種真實的渴望是信仰生命健康的標誌，也是神所悅納的禱告態度。<br><br>
+<strong>2. 在所愛之人的眼光中，我們的不完美得到接納</strong><br>第5-6節新娘坦然面對自己被曬黑的皮膚，卻宣告「我雖然黑，卻是秀美」——這種自信不是來自自我欺騙，而是來自被愛的確信。在屬靈層面，信徒在神面前不需隱藏軟弱或缺陷，因為神的愛不以完美為條件。神對信徒說的「你甚美麗」（15節），是在充分知道我們的不足之後仍然發出的愛的宣告，這種接納是信徒自我認同最深的根基。<br><br>
+<strong>3. 愛情的吸引力引人追隨，神的名如同倒出來的香膏</strong><br>第3-4節描述良人的名如同倒出來的香膏，使眾人都愛他、願意跟隨他。在屬靈層面，這是對耶穌基督之名的美麗預表——祂的名因著祂的品格、慈愛和恩典，對每一個渴慕的靈魂都散發出無法抗拒的香氣。信徒被祂的愛吸引而跟隨，正如詩篇34:8「你們要嘗嘗主恩的滋味，便知道他是美善」。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>因你的愛情比酒更</strong>美。」（雅1:2）</td>
+<td>就像最好的葡萄酒讓人愉悅、放鬆、沉浸其中，但那種感覺仍有限制，而真正的愛情帶來的滿足遠超於此，你是否有過被神的愛「醉倒」的靈性時刻——那種深知被愛、完全安歇的感受？是什麼帶你進入那種與神的親密？</td>
+</tr>
+<tr>
+<td>「<strong>我雖然黑</strong>，<strong>卻是秀美</strong>。」（雅1:5）</td>
+<td>就像一朵在烈日下生長的野花，雖然沒有溫室花朵的嬌嫩，卻有著更深的根系和生命力，你在自我認同上有哪些感到「被曬黑」的地方——外貌、過去、失敗？神的眼光如何改變你看自己的方式？</td>
+</tr>
+<tr>
+<td>「<strong>你的名如同倒出來</strong><strong>的香膏</strong>，所以眾童女都愛你。」（雅1:3）</td>
+<td>就像香水打開瓶蓋時香氣立即飄散，無聲無息卻無所不至，神的名藉著祂的作為和信徒的見證，在人心中留下不可消除的印記，你身邊有誰曾透過他們的生命，讓你感受到神的「香氣」？你自己的生命是否也散發出這樣的香氣？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

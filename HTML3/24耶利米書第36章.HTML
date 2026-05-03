@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第36章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第36章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">書卷被燒與重新抄寫</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>猶大王約西亞的兒子約雅敬第四年，耶和華的話臨到耶利米說：</div>
+<div class="verse"><span class="verse-number">2</span>「你取一書卷，將我對你說攻擊以色列和猶大，並各國的一切話，從我對你說話的那日，就是從約西亞的日子起直到今日，都寫在其上。</div>
+<div class="verse"><span class="verse-number">3</span>或者猶大家聽見我想要降與他們的一切災禍，各人就回頭，離開惡道，我好赦免他們的罪孽和罪惡。」</div>
+<div class="verse"><span class="verse-number">4</span>所以，耶利米召了尼利亞的兒子巴錄來；巴錄就從耶利米口中，將耶和華對耶利米所說的一切話寫在書卷上。</div>
+<div class="verse"><span class="verse-number">5</span>耶利米吩咐巴錄說：「我被拘管，不能進耶和華的殿。</div>
+<div class="verse"><span class="verse-number">6</span>所以你要去趁禁食的日子，在耶和華殿中將耶和華的話，就是你從我口中所寫在書卷上的話，念給百姓和一切從猶大城邑出來的人聽。</div>
+<div class="verse"><span class="verse-number">7</span>或者他們在耶和華面前懇求各人回頭，離開惡道，因為耶和華向這百姓所說要發的怒氣和忿怒是大的。」</div>
+<div class="verse"><span class="verse-number">8</span>尼利亞的兒子巴錄就照先知耶利米一切所吩咐的去行，在耶和華的殿中從書上念耶和華的話。</div>
+<div class="verse"><span class="verse-number">9</span>猶大王約西亞的兒子約雅敬第五年九月，耶路撒冷的眾民和那從猶大城邑來到耶路撒冷的眾民，在耶和華面前宣告禁食的日子，</div>
+<div class="verse"><span class="verse-number">10</span>巴錄就在耶和華殿的上院，耶和華殿的新門口，沙番的兒子文士基瑪利雅的屋內，念書上耶利米的話給眾民聽。</div>
+<div class="verse"><span class="verse-number">11</span>沙番的孫子、基瑪利雅的兒子米該亞聽見書上耶和華的一切話，</div>
+<div class="verse"><span class="verse-number">12</span>他就下到王宮，進入文士的屋子。眾首領，就是文士以利沙瑪、示瑪雅的兒子第萊雅、亞革波的兒子以利拿單、沙番的兒子基瑪利雅、哈拿尼雅的兒子西底家，和其餘的首領都坐在那裏。</div>
+<div class="verse"><span class="verse-number">13</span>於是米該亞對他們述說他所聽見的一切話，就是巴錄向百姓念那書的時候所聽見的。</div>
+<div class="verse"><span class="verse-number">14</span>眾首領就打發古示的曾孫、示利米雅的孫子、尼探雅的兒子猶底到巴錄那裏，對他說：「你將所念給百姓聽的書卷拿在手中到我們這裏來。」尼利亞的兒子巴錄就手拿書卷來到他們那裏。</div>
+<div class="verse"><span class="verse-number">15</span>他們對他說：「請你坐下，念給我們聽。」巴錄就念給他們聽。</div>
+<div class="verse"><span class="verse-number">16</span>他們聽見這一切話就害怕，面面相觀，對巴錄說：「我們必須將這一切話告訴王。」</div>
+<div class="verse"><span class="verse-number">17</span>他們問巴錄說：「請你告訴我們，你怎樣從他口中寫這一切話呢？」</div>
+<div class="verse"><span class="verse-number">18</span>巴錄回答說：「他用口向我說這一切話，我就用筆墨寫在書上。」</div>
+<div class="verse"><span class="verse-number">19</span>眾首領對巴錄說：「你和耶利米要去藏起來，不可叫人知道你們在那裏。」</div>
+<div class="verse"><span class="verse-number">20</span>眾首領進院見王，卻先把書卷存在文士以利沙瑪的屋內，以後將這一切話說給王聽。</div>
+<div class="verse"><span class="verse-number">21</span>王就打發猶底去拿這書卷來，他便從文士以利沙瑪的屋內取來，念給王和王左右侍立的眾首領聽。</div>
+<div class="verse"><span class="verse-number">22</span>那時正是九月，王坐在過冬的房屋裏，王的前面火盆中有燒着的火。</div>
+<div class="verse"><span class="verse-number">23</span>猶底念了三四篇〔或作：行〕，王就用文士的刀將書卷割破，扔在火盆中，直到全卷在火中燒盡了。</div>
+<div class="verse"><span class="verse-number">24</span>王和聽見這一切話的臣僕都不懼怕，也不撕裂衣服。</div>
+<div class="verse"><span class="verse-number">25</span>以利拿單和第萊雅，並基瑪利雅懇求王不要燒這書卷，他卻不聽。</div>
+<div class="verse"><span class="verse-number">26</span>王就吩咐哈米勒的兒子〔或作：王的兒子〕耶拉篾和亞斯列的兒子西萊雅，並亞伯疊的兒子示利米雅，去捉拿文士巴錄和先知耶利米。耶和華卻將他們隱藏。</div>
+<div class="verse"><span class="verse-number">27</span>王燒了書卷（其上有巴錄從耶利米口中所寫的話）以後，耶和華的話臨到耶利米說：</div>
+<div class="verse"><span class="verse-number">28</span>「你再取一卷，將猶大王約雅敬所燒第一卷上的一切話寫在其上。</div>
+<div class="verse"><span class="verse-number">29</span>論到猶大王約雅敬你要說，耶和華如此說：你燒了書卷，說：『你為甚麼在其上寫着說，巴比倫王必要來毀滅這地，使這地上絕了人民牲畜呢？』</div>
+<div class="verse"><span class="verse-number">30</span>所以耶和華論到猶大王約雅敬說：他後裔中必沒有人坐在大衛的寶座上；他的屍首必被拋棄，白日受炎熱，黑夜受寒霜。</div>
+<div class="verse"><span class="verse-number">31</span>我必因他和他後裔，並他臣僕的罪孽刑罰他們。我要使我所說的一切災禍臨到他們和耶路撒冷的居民，並猶大人；只是他們不聽。」</div>
+<div class="verse"><span class="verse-number">32</span>於是，耶利米又取一書卷交給尼利亞的兒子文士巴錄，他就從耶利米的口中寫了猶大王約雅敬所燒前卷上的一切話，另外又添了許多相彷的話。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第36章記載主前605年（約雅敬第四年）神命令耶利米將多年以來的預言寫成書卷，委託書記巴錄在禁食日公開宣讀。耶利米本人因受拘管無法進殿，故藉巴錄傳達——這是聖經中第一次記載先知口述、書記筆錄的過程，也是認識舊約先知書形成的重要背景。書卷引發不同反應：百姓驚懼，首領害怕並層層上報，最終被宣讀給約雅敬王聽。王的反應是本章最震撼的場景：他一邊聽，一邊用刀割斷書卷丟入火盆，直到全卷燒盡，面不改色、絕不懼怕。這是對神話語最公然的蔑視。神的回應是：你燒了書卷，但你燒不掉神的話——耶利米再取一書卷，內容完整重寫，更添許多相仿的話。神對此王的審判是：後裔中無人坐大衛寶座，屍首暴露，白日受熱、黑夜受霜。本章揭示人對神話語的態度決定命運，而神的話永遠不能被消滅。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的話不因人的拒絕而消失</strong><br>約雅敬王把書卷燒盡，以為可以消滅神的審判——結果神命令耶利米重新寫一卷，且更多。這是整本聖經中最有力的宣告之一：神的話永遠不被廢棄。人可以拒絕、忽略、甚至「燒掉」神話語在自己生命中的地位，但神的話本身不受影響，祂的計畫仍然推進。這對信徒是安慰：真理不因反對而消滅；對不信者是警告：迴避神的話不能改變其效力。<br><br>
+<strong>2. 對神話語的態度顯示靈性的真實狀態</strong><br>百姓聽了「懼怕」，首領聽了「害怕」，王聽了卻「漠然燒掉」。三種反應代表三種靈性深度：懼怕是初步的回應；害怕但採取行動是更深的責任感；公然拒絕是完全剛硬的靈性狀態。信徒聽到神的話時的內心反應，是靈性狀況最誠實的晴雨計。什麼樣的話能讓你停下來、什麼樣的話讓你漠然，值得自我檢視。<br><br>
+<strong>3. 忠心的服事需要勇氣承擔後果</strong><br>巴錄忠心地宣讀，耶利米被迫隱藏，卻沒有停止服事。他們的使命不因敵意而終止，反而更加確定。在強大的政治壓力下，神「將他們隱藏」——保護不一定是免於一切危險，但神在其中同在。忠心的服事者不一定有一帆風順的結果，卻有神的同行與保護。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>於是，<strong>耶利米又取一書卷</strong><strong>交給尼利亞的兒子</strong>文士巴錄，他就從耶利米的口中寫了猶大王約雅敬所燒前卷上的一切話，另外又添了許多相彷的話。（耶36:32）</td>
+<td>你有沒有試圖「燒掉」神話語在你生活中的某個提醒，用忙碌、娛樂或合理化來消音？就像把手機靜音以為就不用處理那則訊息，神的話仍然在那裡，你願意今天重新打開那個你一直迴避的經文嗎？</td>
+</tr>
+<tr>
+<td><strong>王和聽見這一切話</strong><strong>的臣僕都不懼怕</strong>，也不撕裂衣服。（耶36:24）</td>
+<td>你上一次因為神的話而真正「懼怕」——不是恐懼而是敬畏地改變方向——是什麼時候？就像消防警報響了卻沒人疏散，對神話語的警告漠然不動是最危險的靈性狀態，你今天讀到的神話語是否在你心中產生了任何反應？</td>
+</tr>
+<tr>
+<td><strong>耶和華卻將他們隱</strong>藏。（耶36:26下）</td>
+<td>當你因忠心事奉而面臨壓力或代價，你是否相信神仍在其中保護你？就像在大風雨中植物的根往往扎得更深，你願意在服事的艱難中，把自己的「藏身之處」交給神，讓祂決定如何保護你嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

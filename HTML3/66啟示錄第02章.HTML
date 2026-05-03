@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>啟示錄第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+啟示錄第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">七封書信——以弗所到推雅推喇</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「你要寫信給以弗所教會的使者，說：『那右手拿着七星、在七個金燈臺中間行走的，說：</div>
+<div class="verse"><span class="verse-number">2</span>我知道你的行為、勞碌、忍耐，也知道你不能容忍惡人。你也曾試驗那自稱為使徒卻不是使徒的，看出他們是假的來。</div>
+<div class="verse"><span class="verse-number">3</span>你也能忍耐，曾為我的名勞苦，並不乏倦。</div>
+<div class="verse"><span class="verse-number">4</span>然而有一件事我要責備你，就是你把起初的愛心離棄了。</div>
+<div class="verse"><span class="verse-number">5</span>所以，應當回想你是從那裏墜落的，並要悔改，行起初所行的事。你若不悔改，我就臨到你那裏，把你的燈臺從原處挪去。</div>
+<div class="verse"><span class="verse-number">6</span>然而你還有一件可取的事，就是你恨惡尼哥拉一黨人的行為，這也是我所恨惡的。</div>
+<div class="verse"><span class="verse-number">7</span>聖靈向眾教會所說的話，凡有耳的，就應當聽！得勝的，我必將神樂園中生命樹的果子賜給他吃。』」</div>
+<div class="verse"><span class="verse-number">8</span>「你要寫信給士每拿教會的使者，說：『那首先的、末後的、死過又活的，說：</div>
+<div class="verse"><span class="verse-number">9</span>我知道你的患難，你的貧窮（你卻是富足的），也知道那自稱是猶太人所說的毀謗話，其實他們不是猶太人，乃是撒但一會的人。</div>
+<div class="verse"><span class="verse-number">10</span>你將要受的苦你不用怕。魔鬼要把你們中間幾個人下在監裏，叫你們被試煉，你們必受患難十日。你務要至死忠心，我就賜給你那生命的冠冕。</div>
+<div class="verse"><span class="verse-number">11</span>聖靈向眾教會所說的話，凡有耳的，就應當聽！得勝的，必不受第二次死的害。』」</div>
+<div class="verse"><span class="verse-number">12</span>「你要寫信給別迦摩教會的使者，說：『那有兩刃利劍的，說：</div>
+<div class="verse"><span class="verse-number">13</span>我知道你的居所，就是有撒但座位之處；當我忠心的見證人安提帕在你們中間、撒但所住的地方被殺之時，你還堅守我的名，沒有棄絕我的道。</div>
+<div class="verse"><span class="verse-number">14</span>然而，有幾件事我要責備你：因為在你那裏有人服從了巴蘭的教訓；這巴蘭曾教導巴勒將絆腳石放在以色列人面前，叫他們吃祭偶像之物，行姦淫的事。</div>
+<div class="verse"><span class="verse-number">15</span>你那裏也有人照樣服從了尼哥拉一黨人的教訓。</div>
+<div class="verse"><span class="verse-number">16</span>所以，你當悔改；若不悔改，我就快臨到你那裏，用我口中的劍攻擊他們。</div>
+<div class="verse"><span class="verse-number">17</span>聖靈向眾教會所說的話，凡有耳的，就應當聽！得勝的，我必將那隱藏的嗎哪賜給他，並賜他一塊白石，石上寫着新名；除了那領受的以外，沒有人能認識。』」</div>
+<div class="verse"><span class="verse-number">18</span>「你要寫信給推雅推喇教會的使者，說：『那眼目如火焰、腳像光明銅的神之子說：</div>
+<div class="verse"><span class="verse-number">19</span>我知道你的行為、愛心、信心、勤勞、忍耐，又知道你末後所行的善事，比起初所行的更多。</div>
+<div class="verse"><span class="verse-number">20</span>然而，有一件事我要責備你，就是你容讓那自稱是先知的婦人耶洗別教導我的僕人，引誘他們行姦淫，吃祭偶像之物。</div>
+<div class="verse"><span class="verse-number">21</span>我曾給她悔改的機會，她卻不肯悔改她的淫行。</div>
+<div class="verse"><span class="verse-number">22</span>看哪，我要叫她病臥在床。那些與她行淫的人，若不悔改所行的，我也要叫他們同受大患難。</div>
+<div class="verse"><span class="verse-number">23</span>我又要殺死她的黨類〔原文作兒女〕，叫眾教會知道，我是那察看人肺腑心腸的，並要照你們的行為報應你們各人。</div>
+<div class="verse"><span class="verse-number">24</span>至於你們推雅推喇其餘的人，就是一切不從那教訓、不曉得他們素常所說撒但深奧之理的人，我告訴你們，我不將別的擔子放在你們身上。</div>
+<div class="verse"><span class="verse-number">25</span>但你們已經有的，總要持守，直等到我來。</div>
+<div class="verse"><span class="verse-number">26</span>那得勝又遵守我命令到底的，我要賜給他權柄制伏列國；</div>
+<div class="verse"><span class="verse-number">27</span>他必用鐵杖轄管〔轄管：原文作牧〕他們，將他們如同窰戶的瓦器打得粉碎，像我從我父領受的權柄一樣。</div>
+<div class="verse"><span class="verse-number">28</span>我又要把晨星賜給他。</div>
+<div class="verse"><span class="verse-number">29</span>聖靈向眾教會所說的話，凡有耳的，就應當聽！』」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第2章記述主耶穌向以弗所、士每拿、別迦摩、推雅推喇四個教會所發的信息，每封信都包含對教會現況的描述、稱讚、責備和末世的應許，是基督對初期教會的直接評鑑。本章首先是寫給以弗所教會的信，稱讚他們不能容忍惡人、試驗假使徒，但責備他們把起初的愛心離棄了，要他們悔改行起初所行的事，否則要把燈臺從原處挪去，得勝的必吃神樂園中生命樹的果子。接著是寫給士每拿教會的信，說他知道他們的患難與貧窮，實在是富足的，不要懼怕將要受的苦難，忠心至死就必得生命的冠冕，得勝的必不受第二次死的害。然後是寫給別迦摩教會的信，稱讚他們持守主名沒有棄絕信仰，但責備他們中間有些人拿著巴蘭的教訓和尼哥拉黨的教訓，要他們悔改，得勝的要得隱藏的嗎哪和白石，石上寫著新名字。最後是寫給推雅推喇教會的信，稱讚他們的愛心信心和服事日有增長，但責備他們容忍女先知耶洗別教人行淫拜偶像，得勝的要賜管轄萬國的權柄，並賜晨星。本章以耶穌對四個教會的全面評鑑展示祂對教會的主權與關懷。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 離棄起初的愛心是最危險的衰退</strong><br>「你把起初的愛心離棄了」——以弗所教會有所有的美德：努力、忍耐、辨別力、拒絕惡人，卻失去了最重要的：對基督最初的愛。宗教的勤奮可以在愛漸漸冷卻時繼續運作，使人看不見內在的衰退。「回想你是從那裏墜落的，並要悔改」——回憶起初的愛，是恢復的起點。<br><br>
+<strong>2. 至死忠心才得生命的冠冕</strong><br>「你務要至死忠心，我就賜給你那生命的冠冕」——士每拿的受迫害信徒得到的應許，不是脫離患難，而是「至死忠心」的呼召和「生命的冠冕」的賞賜。這是在生死威脅下的最高信仰標準：忠心不依賴環境，而是直到最後一刻。<br><br>
+<strong>3. 每封信都有「得勝的」的應許</strong><br>每封信都以「得勝的……我必……」作結——說明啟示錄是一本關於得勝的書。「得勝」不是世俗意義上的成功，而是在患難、試探和迫害中持守信仰的忠心。每一個得勝的信徒，都有基督特別準備的獎賞：生命樹的果子、隱藏的嗎哪、白石……
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>然而有一件事我要</strong><strong>責備你</strong>，就是你把起初的愛心離棄了。所以，應當回想你是從那裏墜落的，並要悔改，行起初所行的事。（啟2:4-5）</td>
+<td>你有沒有誠實地省察，你對基督的愛和對信仰的熱心有沒有從你最初信主時的高度悄悄地消退？就像一段關係若不刻意維護就會漸漸冷卻，你有沒有定期「回想」你起初的愛，並採取行動重燃那份愛？</td>
+</tr>
+<tr>
+<td><strong>你將要受的苦你不</strong>用怕……<strong>你務要至死忠心</strong>，我就賜給你那生命的冠冕。（啟2:10）</td>
+<td>在你面對因信仰而來的代價和苦難時，你有沒有讓「至死忠心，得生命的冠冕」這個應許成為你持守的動力，而非因苦難而退縮？就像長跑運動員在最後衝刺時靠着終點線的獎賞堅持，你有沒有讓最終的賞賜支撐你當下的忠心？</td>
+</tr>
+<tr>
+<td><strong>聖靈向眾教會所說</strong>的話，<strong>凡有耳的</strong>，就應當聽！（啟2:7）</td>
+<td>你有沒有讓啟示錄中給七個教會的批評和鼓勵，也應用在你自己的信仰群體和個人生命上，而非只把它看作歷史上其他教會的故事？就像鏡子的功用是給看的人照自己而非觀賞鏡子本身，你有沒有讓這些信件照出你自己的屬靈狀態？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

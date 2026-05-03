@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何西阿書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+何西阿書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">無誠實無良善無人認識神</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以色列人哪，你們當聽耶和華的話。耶和華與這地的居民爭辯，因這地上無誠實，無良善，無人認識神。</div>
+<div class="verse"><span class="verse-number">2</span>但起假誓，不踐前言，殺害，偷盜，姦淫，行強暴，殺人流血，接連不斷。</div>
+<div class="verse"><span class="verse-number">3</span>因此，這地悲哀，其上的民、田野的獸、空中的鳥必都衰微，海中的魚也必消滅。</div>
+<div class="verse"><span class="verse-number">4</span>然而，人都不必爭辯，也不必指責，因為這民與抗拒祭司的人一樣。</div>
+<div class="verse"><span class="verse-number">5</span>你這祭司必日間跌倒；先知也必夜間與你一同跌倒；我必滅絕你的母親。</div>
+<div class="verse"><span class="verse-number">6</span>我的民因無知識而滅亡。你棄掉知識，我也必棄掉你，使你不再給我作祭司。你既忘了你神的律法，我也必忘記你的兒女。</div>
+<div class="verse"><span class="verse-number">7</span>祭司越發增多，就越發得罪我；我必使他們的榮耀變為羞辱。</div>
+<div class="verse"><span class="verse-number">8</span>他們吃我民的贖罪祭，滿心願意我民犯罪。</div>
+<div class="verse"><span class="verse-number">9</span>將來民如何，祭司也必如何；我必因他們所行的懲罰他們，照他們所作的報應他們。</div>
+<div class="verse"><span class="verse-number">10</span>他們吃，卻不得飽；行淫，而不得立後；因為他們離棄耶和華，不遵他的命。</div>
+<div class="verse"><span class="verse-number">11</span>姦淫和酒，並新酒，奪去人的心。</div>
+<div class="verse"><span class="verse-number">12</span>我的民求問木偶，以為木杖能指示他們；因為他們的淫心使他們失迷，他們就行淫離棄神，不守約束，</div>
+<div class="verse"><span class="verse-number">13</span>在各山頂，各高岡的橡樹、楊樹、栗樹之下，獻祭燒香，因為樹影美好。所以，你們的女兒淫亂，你們的新婦〔或作：兒婦；下同〕行淫。</div>
+<div class="verse"><span class="verse-number">14</span>你們的女兒淫亂，你們的新婦行淫，我卻不懲罰她們；因為你們自己離群與娼妓同居，與妓女一同獻祭。這無知的民必致傾倒。</div>
+<div class="verse"><span class="verse-number">15</span>以色列啊，你雖然行淫，猶大卻不可犯罪。不要往吉甲去，不要上到伯亞文，也不要指着永生的耶和華起誓。</div>
+<div class="verse"><span class="verse-number">16</span>以色列倔強，猶如倔強的母牛；現在耶和華要放他們，如同放羊羔在寬闊之地。</div>
+<div class="verse"><span class="verse-number">17</span>以法蓮親近偶像，任憑他吧！</div>
+<div class="verse"><span class="verse-number">18</span>他們所喝的已經發酸，他們時常行淫，他們的官長最愛羞恥的事。</div>
+<div class="verse"><span class="verse-number">19</span>風把他們裹在翅膀裏；他們因所獻的祭必致蒙羞。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+何西阿書第4章是以色列社會腐敗的全面診斷，神開始與以色列「爭辯」（法庭語言）。診斷第一刀切在根本：「這地上無誠實，無良善，無人認識神」。接着是症狀的列舉：假誓、殺害、偷盜、姦淫、流血，罪行「接連不斷」。特別嚴厲的是對祭司的責備（4-9節）：「我的民因無知識而滅亡。你棄掉知識，我也必棄掉你，使你不再給我作祭司。」祭司的本職是傳遞神的知識，但他們「忘了神的律法」；更糟的是，他們靠百姓犯罪為生（「他們吃我民的贖罪祭，滿心願意我民犯罪」）。章末揭示核心問題：「淫心」使人失去辨別能力，讓人棄絕神的約束，在各種邱壇拜偶像。本章是何西阿書整個審判神諭的基礎。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「無人認識神」是一切道德敗壞的根源</strong><br>「無誠實，無良善，無人認識神」——這三者是連貫的：缺乏對神的認識，導致缺乏良善（道德基礎），進而缺乏誠實（人際信任）。社會的道德問題，在神學上的根源是對神的無知。信仰不只是個人的虔誠，而是整個文明道德秩序的基礎。<br><br>
+<strong>2. 靈命的知識是領袖的首要責任，也是被遺忘的首要責任</strong><br>「我的民因無知識而滅亡」——祭司的失職直接造成百姓的無知和滅亡。今日任何屬靈領袖都承擔着同樣的責任：提供真實的神的知識，而非只是讓人「感覺良好」的宗教服務。領袖的成敗，在神的眼中與群體的屬靈知識水平直接相關。<br><br>
+<strong>3. 淫心使人失去辨別力，走進偶像崇拜</strong><br>「淫心在他們裏面，他們也不認識耶和華」——心中的「淫」（對神以外之物的過度依附）從內部腐蝕認識神的能力。不只是外在行為的問題，而是心的取向問題：心所愛的若不是神，就會失去認識神的能力。信徒需要定期檢視：我的心的愛慕和依附，正在影響我認識神的清晰度嗎？
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華與這地的居</strong><strong>民爭辯</strong>，因這地上無誠實，無良善，無人認識神。（何4:1）</td>
+<td>「無人認識神」是道德敗壞的根源。你認為你所在的社區或社會，「認識神」的程度如何影響了那個社會的道德狀況？就像缺乏根基的樹在風中更容易倒，信仰的根基（認識神）的缺失，你在哪裡看見它最明顯的影響？</td>
+</tr>
+<tr>
+<td><strong>我的民因無知識而</strong>滅亡。<strong>你棄掉知識</strong>，我也必棄掉你，使你不再給我作祭司。你既忘了你神的律法，我也必忘記你的兒女。（何4:6）</td>
+<td>「因無知識而滅亡」——你現在對神的認識，有沒有持續地成長？就像一個醫生若不繼續學習就會對病人有害，屬靈領袖（包括任何影響他人信仰的人）若停止成長就會危害跟隨者。你最近一次真正「增加神的知識」（不只是重溫舊的）是什麼時候？</td>
+</tr>
+<tr>
+<td><strong>淫心在他們裏面</strong>，<strong>他們也不認識耶和</strong>華。（何5:4下）</td>
+<td>「淫心」（對神以外之物的過度依附）影響認識神的能力。你現在的心最「依附」什麼？就像眼睛盯着一樣東西太久，轉開後會看見殘影而看不清楚其他事物，你的心是否有某種「依附」正在模糊你對神的視野？你願意讓神幫你辨認那個「淫心」嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

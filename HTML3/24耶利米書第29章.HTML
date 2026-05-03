@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第29章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第29章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">給被擄者的信與七十年的盼望</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>先知耶利米從耶路撒冷寄信與被擄的祭司、先知，和眾民，並生存的長老，就是尼布甲尼撒從耶路撒冷擄到巴比倫去的。</div>
+<div class="verse"><span class="verse-number">2</span>（這在耶哥尼雅王和太后、太監，並猶大、耶路撒冷的首領，以及工匠、鐵匠都離了耶路撒冷以後。）</div>
+<div class="verse"><span class="verse-number">3</span>他藉沙番的兒子以利亞薩和希勒家的兒子基瑪利的手寄去。他們二人是猶大王西底家打發往巴比倫去見尼布甲尼撒王的。</div>
+<div class="verse"><span class="verse-number">4</span>信上說：「萬軍之耶和華以色列的神對一切被擄去的（就是我使他們從耶路撒冷被擄到巴比倫的人）如此說：</div>
+<div class="verse"><span class="verse-number">5</span>你們要蓋造房屋，住在其中；栽種田園，吃其中所產的；</div>
+<div class="verse"><span class="verse-number">6</span>娶妻生兒女，為你們的兒子娶妻，使你們的女兒嫁人，生兒養女。在那裏生養眾多，不至減少。</div>
+<div class="verse"><span class="verse-number">7</span>我所使你們被擄到的那城，你們要為那城求平安，為那城禱告耶和華；因為那城得平安，你們也隨着得平安。</div>
+<div class="verse"><span class="verse-number">8</span>萬軍之耶和華以色列的神如此說：不要被你們中間的先知和占卜的誘惑，也不要聽信自己所作的夢；</div>
+<div class="verse"><span class="verse-number">9</span>因為他們託我的名對你們說假預言，我並沒有差遣他們。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">10</span>「耶和華如此說：為巴比倫所定的七十年滿了以後，我要眷顧你們，向你們成就我的恩言，使你們仍回此地。</div>
+<div class="verse"><span class="verse-number">11</span>耶和華說：我知道我向你們所懷的意念是賜平安的意念，不是降災禍的意念，要叫你們末後有指望。</div>
+<div class="verse"><span class="verse-number">12</span>你們要呼求我，禱告我，我就應允你們。</div>
+<div class="verse"><span class="verse-number">13</span>你們尋求我，若專心尋求我，就必尋見。</div>
+<div class="verse"><span class="verse-number">14</span>耶和華說：我必被你們尋見，我也必使你們被擄的人歸回，將你們從各國中和我所趕你們到的各處招聚了來，又將你們帶回我使你們被擄掠離開的地方。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">15</span>「你們說：『耶和華在巴比倫為我們興起先知』；</div>
+<div class="verse"><span class="verse-number">16</span>所以耶和華論到坐大衛寶座的王和住在這城裏的一切百姓，就是未曾與你們一同被擄的弟兄，</div>
+<div class="verse"><span class="verse-number">17</span>萬軍之耶和華如此說：『看哪，我必使刀劍、饑荒、瘟疫臨到他們，使他們像極壞的無花果，壞得不可吃。</div>
+<div class="verse"><span class="verse-number">18</span>我必用刀劍、饑荒、瘟疫追趕他們，使他們在天下萬國拋來拋去，在我所趕他們到的各國中，令人咒詛、驚駭、嗤笑、羞辱。</div>
+<div class="verse"><span class="verse-number">19</span>耶和華說：這是因為他們沒有聽從我的話，就是我從早起來差遣我僕人眾先知去說的，無奈他們不聽。這是耶和華說的。</div>
+<div class="verse"><span class="verse-number">20</span>所以你們一切被擄去的，就是我從耶路撒冷打發到巴比倫去的，當聽耶和華的話。』」</div>
+<div class="verse"><span class="verse-number">21</span>萬軍之耶和華以色列的神論到哥賴雅的兒子亞哈，並瑪西雅的兒子西底家，如此說：「他們是託我名向你們說假預言的，我必將他們交在巴比倫王尼布甲尼撒的手中；他要在你們眼前殺害他們。</div>
+<div class="verse"><span class="verse-number">22</span>住巴比倫一切被擄的猶大人必藉這二人賭咒說：『願耶和華使你像巴比倫王在火中燒的西底家和亞哈一樣。』</div>
+<div class="verse"><span class="verse-number">23</span>這二人是在以色列中行了醜事，與鄰舍的妻行淫，又假託我名說我未曾吩咐他們的話。知道的是我，作見證的也是我。這是耶和華說的。」</div>
+<div class="verse"><span class="verse-number">24</span>「論到尼希蘭人示瑪雅，你當說，</div>
+<div class="verse"><span class="verse-number">25</span>萬軍之耶和華以色列的神如此說：你曾用自己的名寄信給耶路撒冷的眾民和祭司瑪西雅的兒子西番雅，並眾祭司，說：</div>
+<div class="verse"><span class="verse-number">26</span>『耶和華已經立你西番雅為祭司，代替祭司耶何耶大，使耶和華殿中有官長，好將一切狂妄自稱為先知的人用枷枷住，用鎖鎖住。</div>
+<div class="verse"><span class="verse-number">27</span>現在亞拿突人耶利米向你們自稱為先知，你們為何沒有責備他呢？</div>
+<div class="verse"><span class="verse-number">28</span>因為他寄信給我們在巴比倫的人說：被擄的事必長久。你們要蓋造房屋，住在其中；栽種田園，吃其中所產的。』」</div>
+<div class="verse"><span class="verse-number">29</span>祭司西番雅就把這信念給先知耶利米聽。</div>
+<div class="verse"><span class="verse-number">30</span>於是耶和華的話臨到耶利米說：</div>
+<div class="verse"><span class="verse-number">31</span>「你當寄信給一切被擄的人說：『耶和華論到尼希蘭人示瑪雅說：因為示瑪雅向你們說預言，我並沒有差遣他，他使你們倚靠謊言；</div>
+<div class="verse"><span class="verse-number">32</span>所以耶和華如此說：我必刑罰尼希蘭人示瑪雅和他的後裔，他必無一人存留住在這民中，也不得見我所要賜與我百姓的福樂，因為他向耶和華說了叛逆的話。這是耶和華說的。』」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第29章記載耶利米從耶路撒冷寄給被擄至巴比倫的猶大人一封信，約在主前597年哥尼雅被擄之後不久。這封信是整本聖經中最具實際屬靈指導意義的牧養文件之一。被擄的百姓可能正陷在「我們很快就回去」的虛假盼望中——由巴比倫中的假先知如亞哈、西底家等人所散布。耶利米的信帶來截然不同的指示：蓋房、栽種、娶妻、生養——換句話說，在巴比倫「生根」，因為你們要在那裏住七十年。更震撼的是第7節：「為那城求平安，為那城禱告耶和華」——要為統治你們的外邦城市禱告！這是顛覆性的信息，卻也是最真實的智慧：在神允許的處境中尋求安居，是信心而非妥協。本章第11節的「我知道我向你們所懷的意念……」是整本聖經中最廣為引用的安慰性經文之一。章末處理了巴比倫中假先知的問題，以及一位在耶路撒冷試圖打壓耶利米的人的審判。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在神允許的處境中扎根，是信心的功課</strong><br>「蓋房、栽種、娶妻、生養」——這不是對困境的妥協，而是在神允許的現實中忠心生活的指令。逃避現實或沉溺於「快回去」的幻想，使人無法在當下有效地活。信徒面對不如意的工作、關係或環境時，有時神的旨意不是「快快脫離」，而是「在這裡扎根成長」。接受當下的處境，在其中忠心盡責，是信仰成熟的標誌。<br><br>
+<strong>2. 為敵對我們的環境代禱是屬靈成熟的行動</strong><br>「為那城求平安，為那城禱告」——這個指令要求被擄者為壓迫他們的異族城市禱告。這超越人的本能，是對仇敵的積極祝福。耶穌在登山寶訓中同樣說「為逼迫你們的禱告」。在充滿敵意的環境中為對方禱告，不是軟弱，而是信仰實踐的最高難度，也是最有能力改變處境的屬靈行動。<br><br>
+<strong>3. 神的計畫包含平安的未來與可尋見的關係</strong><br>第11至13節是本章的核心：「我知道我向你們所懷的意念是賜平安的意念……你們要呼求我……你們尋求我，若專心尋求我，就必尋見。」這三節揭示了與神的關係是雙向的：神有美好的計畫，但信徒需要呼求、禱告、專心尋求。信仰不是被動等待神降福，而是主動尋求神、以禱告連結神的計畫的過程。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我所使你們被擄到</strong><strong>的那城</strong>，你們要為那城求平安，為那城禱告耶和華；因為那城得平安，你們也隨着得平安。（耶29:7）</td>
+<td>你對目前生活或工作的環境是批評多於禱告，還是積極為它求平安？就像一個園丁對花園的態度是澆水還是抱怨土地不好，你願意把對現況的抱怨，轉化為具體的代禱行動嗎？</td>
+</tr>
+<tr>
+<td><strong>耶和華說</strong>：<strong>我知道我向你們所</strong>懷的意念是賜平安的意念，不是降災禍的意念，要叫你們末後有指望。（耶29:11）</td>
+<td>當生命走進低谷，你是否仍能相信神對你懷有平安的意念？就像看不見目的地但仍相信導航系統是正確的，你能在看不見出路的時候，仍然相信神的心意是「末後有指望」嗎？</td>
+</tr>
+<tr>
+<td><strong>你們尋求我</strong>，<strong>若專心尋求我</strong>，就必尋見。（耶29:13）</td>
+<td>你最近尋求神的方式是「走過場」還是「專心」？就像搜尋引擎輸入越精確的關鍵字就越能找到想要的資料，你願意在禱告中放下分心，以「全心」的專注尋求神，讓祂被你尋見嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

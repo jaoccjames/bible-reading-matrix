@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀下第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀下第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以利沙行四大神蹟，彰顯神對卑微者的供應</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>有一個先知門徒的妻哀求以利沙說：「你僕人我丈夫死了，他敬畏耶和華是你所知道的。現在有債主來，要取我兩個兒子作奴僕。」</div>
+<div class="verse"><span class="verse-number">2</span>以利沙問她說：「我可以為你作甚麼呢？你告訴我，你家裏有甚麼？」她說：「婢女家中除了一瓶油之外，沒有甚麼。」</div>
+<div class="verse"><span class="verse-number">3</span>以利沙說：「你去，向你眾鄰舍借空器皿，不要少借；</div>
+<div class="verse"><span class="verse-number">4</span>回到家裏，關上門，你和你兒子在裏面將油倒在所有的器皿裏，倒滿了的放在一邊。」</div>
+<div class="verse"><span class="verse-number">5</span>於是，婦人離開以利沙去了，關上門，自己和兒子在裏面；兒子把器皿拿來，她就倒油。</div>
+<div class="verse"><span class="verse-number">6</span>器皿都滿了，她對兒子說：「再給我拿器皿來。」兒子說：「再沒有器皿了。」油就止住了。</div>
+<div class="verse"><span class="verse-number">7</span>婦人去告訴神人，神人說：「你去賣油還債，所剩的你和你兒子可以靠着度日。」</div>
+<div class="verse"><span class="verse-number">8</span>一日，以利沙走到書念，在那裏有一個大戶的婦人強留他吃飯。此後，以利沙每從那裏經過就進去吃飯。</div>
+<div class="verse"><span class="verse-number">9</span>婦人對丈夫說：「我看出那常從我們這裏經過的是聖潔的神人。</div>
+<div class="verse"><span class="verse-number">10</span>我們可以為他在牆上蓋一間小樓，在其中安放床榻、桌子、椅子、燈臺，他來到我們這裏，就可以住在其間。」</div>
+<div class="verse"><span class="verse-number">11</span>一日，以利沙來到那裏，就進了那樓躺臥。</div>
+<div class="verse"><span class="verse-number">12</span>以利沙吩咐僕人基哈西說：「你叫這書念婦人來。」他就把婦人叫了來，婦人站在以利沙面前。</div>
+<div class="verse"><span class="verse-number">13</span>以利沙吩咐僕人說：「你對她說：你既為我們費了許多心思，可以為你作甚麼呢？你向王或元帥有所求的沒有？」她回答說：「我在我本鄉安居無事。」</div>
+<div class="verse"><span class="verse-number">14</span>以利沙對僕人說：「究竟當為她作甚麼呢？」基哈西說：「她沒有兒子，她丈夫也老了。」</div>
+<div class="verse"><span class="verse-number">15</span>以利沙說：「再叫她來。」於是叫了她來，她就站在門口。</div>
+<div class="verse"><span class="verse-number">16</span>以利沙說：「明年到這時候，你必抱一個兒子。」她說：「神人，我主啊，不要那樣欺哄婢女。」</div>
+<div class="verse"><span class="verse-number">17</span>婦人果然懷孕，到了那時候，生了一個兒子，正如以利沙所說的。</div>
+<div class="verse"><span class="verse-number">18</span>孩子漸漸長大，一日到他父親和收割的人那裏，</div>
+<div class="verse"><span class="verse-number">19</span>他對父親說：「我的頭啊，我的頭啊！」他父親對僕人說：「把他抱到他母親那裏。」</div>
+<div class="verse"><span class="verse-number">20</span>僕人抱去，交給他母親；孩子坐在母親的膝上，到晌午就死了。</div>
+<div class="verse"><span class="verse-number">21</span>他母親抱他上了樓，將他放在神人的床上，關上門出來，</div>
+<div class="verse"><span class="verse-number">22</span>呼叫她丈夫說：「你叫一個僕人給我牽一匹驢來，我要快快的去見神人，就回來。」</div>
+<div class="verse"><span class="verse-number">23</span>丈夫說：「今日不是月朔，也不是安息日，你為何要去見他呢？」婦人說：「平安無事。」</div>
+<div class="verse"><span class="verse-number">24</span>於是備上驢，對僕人說：「你快快趕着走，我若不吩咐你，就不要遲慢。」</div>
+<div class="verse"><span class="verse-number">25</span>婦人就往迦密山去見神人。神人遠遠的看見她，對僕人基哈西說：「看哪，書念的婦人來了！</div>
+<div class="verse"><span class="verse-number">26</span>你跑去迎接她，問她說：你平安嗎？你丈夫平安嗎？孩子平安嗎？」她說：「平安。」</div>
+<div class="verse"><span class="verse-number">27</span>婦人上了山，到神人那裏，就抱住神人的腳。基哈西前來要推開她，神人說：「由她吧！因為她心裏愁苦，耶和華向我隱瞞，沒有指示我。」</div>
+<div class="verse"><span class="verse-number">28</span>婦人說：「我何嘗向我主求過兒子呢？我豈沒有說過，不要欺哄我嗎？」</div>
+<div class="verse"><span class="verse-number">29</span>以利沙吩咐基哈西說：「你束上腰，手拿我的杖前去；若遇見人，不要向他問安；人若向你問安，也不要回答；要把我的杖放在孩子臉上。」</div>
+<div class="verse"><span class="verse-number">30</span>孩子的母親說：「我指着永生的耶和華，又敢在你面前起誓，我必不離開你。」於是以利沙起身，隨着她去了。</div>
+<div class="verse"><span class="verse-number">31</span>基哈西先去，把杖放在孩子臉上，卻沒有聲音，也沒有動靜。基哈西就迎着以利沙回來，告訴他說：「孩子還沒有醒過來。」</div>
+<div class="verse"><span class="verse-number">32</span>以利沙來到，進了屋子，看見孩子死了，放在自己的床上。</div>
+<div class="verse"><span class="verse-number">33</span>他就關上門，只有自己和孩子在裏面，他便祈禱耶和華，</div>
+<div class="verse"><span class="verse-number">34</span>上床伏在孩子身上，口對口，眼對眼，手對手；既伏在孩子身上，孩子的身體就漸漸溫和了。</div>
+<div class="verse"><span class="verse-number">35</span>然後他下來，在屋裏來往走了一趟，又上去伏在孩子身上，孩子打了七個噴嚏，就睜開眼睛了。</div>
+<div class="verse"><span class="verse-number">36</span>以利沙叫基哈西說：「你叫這書念婦人來」；於是叫了她來。以利沙說：「將你兒子抱起來。」</div>
+<div class="verse"><span class="verse-number">37</span>婦人就進來，在以利沙腳前俯伏於地，抱起她兒子出去了。</div>
+<div class="verse"><span class="verse-number">38</span>以利沙又來到吉甲，那地正有饑荒。先知門徒坐在他面前，他吩咐僕人說：「你將大鍋放在火上，給先知門徒熬湯。」</div>
+<div class="verse"><span class="verse-number">39</span>有一個人去到田野掐菜，遇見一棵野瓜藤，就摘了一兜野瓜回來，切了擱在熬湯的鍋中，因為他們不知道是甚麼東西；</div>
+<div class="verse"><span class="verse-number">40</span>倒出來給眾人吃，吃的時候，都喊叫說：「神人哪，鍋中有致死的毒物！」所以眾人不能吃了。</div>
+<div class="verse"><span class="verse-number">41</span>以利沙說：「拿點麵來」，就把麵撒在鍋中，說：「倒出來，給眾人吃吧！」鍋中就沒有毒了。</div>
+<div class="verse"><span class="verse-number">42</span>有一個人從巴力沙利沙來，帶着初熟大麥作的餅二十個，並新穗子，裝在口袋裏送給神人。神人說：「把這些給眾人吃。」</div>
+<div class="verse"><span class="verse-number">43</span>僕人說：「這一點豈可擺給一百人吃呢？」以利沙說：「你只管給眾人吃吧！因為耶和華如此說，眾人必吃了，還剩下。」</div>
+<div class="verse"><span class="verse-number">44</span>僕人就擺在眾人面前，他們吃了，果然還剩下，正如耶和華所說的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀下第4章是以利沙神蹟事蹟最密集的一章，記述了四件截然不同卻共同彰顯神豐盛供應的奇事。第一件：先知門徒的寡婦面臨債主要取走兒子為奴，以利沙指示她借器皿、倒油，油不斷流直到器皿滿盡，解了她的困境，還清了債。第二件：書念婦人熱心款待以利沙，以利沙預言她雖丈夫年老，明年仍必生子；預言應驗，但孩子後來暴病身亡，書念婦人以信心和毅力前往迦密山求以利沙，以利沙親自趕去，在孩子身上口對口伏臥禱告，孩子復活。第三件：以利沙在飢荒中解除門徒誤食毒湯的危機，以麵撒入鍋中，毒性消失。第四件：有人獻上二十個大麥餅，以利沙吩咐擺給一百人吃，眾人吃了還有剩餘，應驗了耶和華所說的話。四件神蹟涵蓋了財務困境、喪親之痛、食物危機和供應不足，展現神對日常生活各層面的關顧和能力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的供應從我們手中所有的開始</strong><br>寡婦說「除了一瓶油之外，沒有甚麼」，以利沙沒有要她去尋找更多，而是從那一瓶油開始。神的神蹟往往從人手中已有的「小事」展開，關鍵是按照神的指示去使用它。信徒面對資源匱乏時，不應先問「我有多少」，而應問「神要我用手中所有的做什麼」。一瓶油在順服中可以變成許多瓶。<br><br>
+<strong>2. 帶着眼淚去抓住神，是信仰最真實的樣子</strong><br>書念婦人在孩子死後，沒有崩潰哭泣等待，而是以毅力和信心策馬奔赴以利沙，抓住神人的腳。她沒有放棄，沒有接受死亡的最終裁決，而是在痛苦中去找那個能連結神的人。這種「帶著眼淚仍然奔向神」的信心，正是在絕望中最真實的信仰表達。<br><br>
+<strong>3. 神能使不足的成為足夠，甚至有餘</strong><br>二十個餅擺給一百人吃，不只夠吃，還剩下來——這預示了耶穌五餅二魚的神蹟。神的供應不受「明顯不夠」的數學邏輯所限制。信徒在事奉中面對資源或能力看似不足時，應當先把所有的擺在神面前，讓神來決定如何使用，因為祂所給的話「眾人必吃了，還剩下」從未落空。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「她說：『<strong>婢女家中除了一瓶</strong><strong>油之外</strong>，沒有甚麼。』」（王下4:2）</td>
+<td>就像一位廚師以廚房剩下的最後幾樣食材，做出一頓令人驚嘆的佳餚，神從寡婦僅有的一瓶油開始了一個神蹟。你現在手中的「一瓶油」是什麼？你是否願意把它完全交給神使用，而非先說「只有這一點，不夠做甚麼」？</td>
+</tr>
+<tr>
+<td>「<strong>婦人上了山</strong>，<strong>到神人那裏</strong>，就抱住神人的腳。基哈西前來要推開她，神人說：『由她吧！因為她心裏愁苦。』」（王下4:27）</td>
+<td>就像一個在暴風雨中緊緊抱住樹幹不放手的人，書念婦人在孩子死後仍緊抓住神人的腳求助。你有沒有過這樣的時刻——在最痛苦的哀愁中，仍然選擇緊緊抓住神而不放手？</td>
+</tr>
+<tr>
+<td>「<strong>以利沙說</strong>：『<strong>你只管給眾人吃吧</strong>！因為耶和華如此說，眾人必吃了，還剩下。』……他們吃了，果然還剩下。」（王下4:43-44）</td>
+<td>就像一個人以為存款不夠付帳單，卻在月底發現神奇地不只夠用還有結餘，以利沙的話應驗了看似不可能的供應。在你的服事或生活中，有沒有「二十個餅要擺給一百人吃」的時刻？你有信心相信神能使不足的成為足夠嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

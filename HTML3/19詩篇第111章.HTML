@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第111章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第111章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">讚美耶和華的作為：敬畏是智慧的開端</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們要讚美耶和華！我要在正直人的大會中，並公會中，一心稱謝耶和華。</div>
+<div class="verse"><span class="verse-number">2</span>耶和華的作為本為大；凡喜愛的都必考察。</div>
+<div class="verse"><span class="verse-number">3</span>他所行的是尊榮和威嚴；他的公義存到永遠。</div>
+<div class="verse"><span class="verse-number">4</span>他行了奇事，使人記念；耶和華有恩惠，有憐憫。</div>
+<div class="verse"><span class="verse-number">5</span>他賜糧食給敬畏他的人；他必永遠記念他的約。</div>
+<div class="verse"><span class="verse-number">6</span>他向百姓顯出大能的作為，把外邦的地賜給他們為業。</div>
+<div class="verse"><span class="verse-number">7</span>他手所行的是誠實公平；他的訓詞都是確實的，</div>
+<div class="verse"><span class="verse-number">8</span>是永永遠遠堅定的，是按誠實正直設立的。</div>
+<div class="verse"><span class="verse-number">9</span>他向百姓施行救贖，命定他的約，直到永遠；他的名聖而可畏。</div>
+<div class="verse"><span class="verse-number">10</span>敬畏耶和華是智慧的開端；凡遵行他命令的是聰明人。耶和華是永遠當讚美的！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第111篇是一首「字母詩篇」，在希伯來原文中，每半節都以希伯來字母依序開頭，從第一個字母到最後一個字母（22個字母），形成完整的字母疊詩結構。這種刻意的文學結構，表明對神的讚美是有序的、全面的、覆蓋所有可能性的。
+
+      本篇與第112篇是「姊妹詩篇」，兩者都以「你們要讚美耶和華！」開篇，都以相似的字母詩篇形式寫成，一篇讚美神的作為（111篇），另一篇描述敬畏神之人的福分（112篇）。
+
+      第10節「敬畏耶和華是智慧的開端；凡遵行他命令的是聰明人」是本篇最著名的一節，也是箴言1章7節「敬畏耶和華是知識的開端」的詩篇版本。「智慧的開端」（beginning of wisdom）表明敬畏神不只是宗教行為，更是一切真智慧的起點——沒有對神的敬畏，其他一切知識都缺乏最根本的方向與框架。這個宣告是整個希伯來智慧文學傳統的核心命題。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 喜愛考察神的作為是屬靈生命持續深化的動力</strong><br>「耶和華的作為本為大；凡喜愛的都必考察。」（第2節）「考察」（或「研究」）神的作為，是主動的知識追求，而非被動的觀察。「凡喜愛的」——只有那些真正喜愛神作為的人，才會有動力去深入研究。這個宣告呼召信徒培養對神作為的好奇心與喜愛：不只滿足於表面的知識，而是以喜悅的心深入研究神在歷史、自然和個人生命中的作為，讓這種研究成為信仰持續深化的動力。<br><br>
+<strong>2. 神的訓詞永遠堅定是信仰最穩固的認識論根基</strong><br>「他的訓詞都是確實的，是永永遠遠堅定的，是按誠實正直設立的。」（第7-8節）在一個後現代的世界中，一切真理都被相對化，神的訓詞的「永遠堅定」是信仰最具革命性的宣告。神的話語不隨時代改變，不受文化左右，不被政治力量扭曲——它是按「誠實正直」設立的，是最終可信賴的真理標準。信徒在神的話語上建立人生，是建立在永遠堅定的根基上，而非沙土之上。<br><br>
+<strong>3. 敬畏耶和華是智慧的開端揭示屬靈認識與世俗智慧的根本差異</strong><br>「敬畏耶和華是智慧的開端；凡遵行他命令的是聰明人。」（第10節）「開端」表明敬畏神不只是智慧的「一部分」，而是整個智慧大廈的基礎。沒有這個根基，其他一切知識都無法找到最終的意義框架。這個真理呼召信徒以敬畏神作為所有思考和學習的出發點，而非將信仰視為知識系統的補充或裝飾。真正的聰明人是「遵行神命令的人」——行動上的順從，是智慧最真實的驗證。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華的作為本為</strong>大；<strong>凡喜愛的都必考察</strong>。（詩111:2）</td>
+<td>就像一個真正喜愛音樂的人，會主動地深入研究他所愛音樂的歷史和結構，你是否有過那種「喜愛神的作為而主動深入考察」的學習驅動，讓你對神的認識不停留在表面，而是越來越深入？</td>
+</tr>
+<tr>
+<td><strong>他的訓詞都是確實</strong>的，<strong>是永永遠遠堅定的</strong>，是按誠實正直設立的。（詩111:7-8）</td>
+<td>就像在一片不斷移動的沙地上，發現一塊永遠不動的磐石可以站立，你是否真的以「神的訓詞永遠堅定」的確信，在這個相對主義的時代中，讓神的話語成為你判斷真理的最終標準？</td>
+</tr>
+<tr>
+<td><strong>敬畏耶和華是智慧</strong><strong>的開端</strong>；凡遵行他命令的是聰明人。（詩111:10）</td>
+<td>就像知道方程式的答案必須從正確的公式出發，你是否真的以「敬畏耶和華」作為你所有學習和思考的出發點，讓這份敬畏成為你分辨智慧與愚昧最根本的標準？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

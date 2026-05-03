@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多前書第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多前書第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">聖靈的恩賜與教會的身體</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>弟兄們，論到屬靈的恩賜，我不願意你們不明白。</div>
+<div class="verse"><span class="verse-number">2</span>你們作外邦人的時候，隨事被牽引，受迷惑，去服事那啞吧偶像，這是你們知道的。</div>
+<div class="verse"><span class="verse-number">3</span>所以我告訴你們，被神的靈感動的，沒有說「耶穌是可咒詛」的；若不是被聖靈感動的，也沒有能說「耶穌是主」的。</div>
+<div class="verse"><span class="verse-number">4</span>恩賜原有分別，聖靈卻是一位。</div>
+<div class="verse"><span class="verse-number">5</span>職事也有分別，主卻是一位。</div>
+<div class="verse"><span class="verse-number">6</span>功用也有分別，神卻是一位，在眾人裏面運行一切的事。</div>
+<div class="verse"><span class="verse-number">7</span>聖靈顯在各人身上，是叫人得益處。</div>
+<div class="verse"><span class="verse-number">8</span>這人蒙聖靈賜他智慧的言語，那人也蒙這位聖靈賜他知識的言語，</div>
+<div class="verse"><span class="verse-number">9</span>又有一人蒙這位聖靈賜他信心，還有一人蒙這位聖靈賜他醫病的恩賜，</div>
+<div class="verse"><span class="verse-number">10</span>又叫一人能行異能，又叫一人能作先知，又叫一人能辨別諸靈，又叫一人能說方言，又叫一人能繙方言。</div>
+<div class="verse"><span class="verse-number">11</span>這一切都是這位聖靈所運行、隨己意分給各人的。</div>
+<div class="verse"><span class="verse-number">12</span>就如身子是一個，卻有許多肢體；而且肢體雖多，仍是一個身子；基督也是這樣。</div>
+<div class="verse"><span class="verse-number">13</span>我們不拘是猶太人，是希利尼人，是為奴的，是自主的，都從一位聖靈受洗，成了一個身體，飲於一位聖靈。</div>
+<div class="verse"><span class="verse-number">14</span>身子原不是一個肢體，乃是許多肢體。</div>
+<div class="verse"><span class="verse-number">15</span>設若腳說：「我不是手，所以不屬乎身子；」它不能因此就不屬乎身子。</div>
+<div class="verse"><span class="verse-number">16</span>設若耳說：「我不是眼，所以不屬乎身子；」它也不能因此就不屬乎身子。</div>
+<div class="verse"><span class="verse-number">17</span>若全身是眼，從那裏聽聲呢？若全身是耳，從那裏聞味呢？</div>
+<div class="verse"><span class="verse-number">18</span>但如今，神隨自己的意思把肢體俱各安排在身上了。</div>
+<div class="verse"><span class="verse-number">19</span>若都是一個肢體，身子在那裏呢？</div>
+<div class="verse"><span class="verse-number">20</span>但如今肢體是多的，身子卻是一個。</div>
+<div class="verse"><span class="verse-number">21</span>眼不能對手說：「我用不着你；」頭也不能對腳說：「我用不着你。」</div>
+<div class="verse"><span class="verse-number">22</span>不但如此，身上肢體人以為軟弱的，更是不可少的。</div>
+<div class="verse"><span class="verse-number">23</span>身上肢體，我們看為不體面的，越發給它加上體面；不俊美的，越發得着俊美。</div>
+<div class="verse"><span class="verse-number">24</span>我們俊美的肢體，自然用不着裝飾；但神配搭這身子，把加倍的體面給那有缺欠的肢體，</div>
+<div class="verse"><span class="verse-number">25</span>免得身上分門別類，總要肢體彼此相顧。</div>
+<div class="verse"><span class="verse-number">26</span>若一個肢體受苦，所有的肢體就一同受苦；若一個肢體得榮耀，所有的肢體就一同快樂。</div>
+<div class="verse"><span class="verse-number">27</span>你們就是基督的身子，並且各自作肢體。</div>
+<div class="verse"><span class="verse-number">28</span>神在教會所設立的：第一是使徒，第二是先知，第三是教師，其次是行異能的，再次是得恩賜醫病的，幫助人的，治理事的，說方言的。</div>
+<div class="verse"><span class="verse-number">29</span>豈都是使徒嗎？豈都是先知嗎？豈都是教師嗎？豈都是行異能的嗎？</div>
+<div class="verse"><span class="verse-number">30</span>豈都是得恩賜醫病的嗎？豈都是說方言的嗎？豈都是繙方言的嗎？</div>
+<div class="verse"><span class="verse-number">31</span>你們要切切的求那更大的恩賜。我現今把最妙的道指示你們。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第12章論述屬靈恩賜的多樣性與合一性，以身體各肢體的比喻說明教會中不同恩賜都來自同一位聖靈，各有其功用且互相需要，是新約中對屬靈恩賜最系統性的論述之一。本章首先說明論到屬靈的恩賜你們應當知道，恩賜原有分別但聖靈是一位，職事也有分別但主是一位，功用也有分別但神是一位在眾人裡面做一切的事，聖靈顯在各人身上是叫人得益處。接著列舉各樣的恩賜：智慧的言語、知識的言語、信心、醫病的恩賜、行異能、作先知、辨別諸靈、說方言、翻方言，這一切都是這位聖靈所運行隨己意分給各人的。然後以身體各肢體的比喻說明教會的合一性，身子原非一個肢體乃是許多肢體，各肢體不能說不屬乎身子，也不能彼此說我用不著你；那些肢體看似軟弱的是不可少的，那些我們以為不體面的肢體我們越發給它加上體面；若一個肢體受苦所有肢體就一同受苦，若一個肢體得榮耀所有肢體就一同快樂。最後說明你們就是基督的身子各自作肢體，神在教會所設立的第一是使徒第二是先知第三是教師，其次是行異能的、得恩賜醫病的等等。本章確立教會恩賜多元統一的神學原則。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 多樣的恩賜來自同一位聖靈</strong><br>「恩賜原有分別，聖靈卻是一位」——多樣性本身就是神設計的，不是問題，而是豐盛。每一種恩賜都是聖靈的工作，沒有「次等」的恩賜。「聖靈所運行、隨己意分給各人的」——恩賜是神的主權賜予，不是人的努力獲得，也不應成為驕傲的根據。認識自己的恩賜是服事的出發點。<br><br>
+<strong>2. 每個肢體都有其不可或缺性</strong><br>「身上肢體人以為軟弱的，更是不可少的」——教會裏那些「不起眼」的成員，往往有最基本的功能。「眼不能對手說：我用不着你」——沒有任何成員可以說「我不需要你」或「你不需要我」。真正的合一建立在每個成員都被看見、都被需要的基礎上，而非少數「明星」的全盤主導。<br><br>
+<strong>3. 一個肢體的喜怒就是全身的喜怒</strong><br>「若一個肢體受苦，所有的肢體就一同受苦；若一個肢體得榮耀，所有的肢體就一同快樂」——這是最深的屬靈相互聯繫，也是對教會群體最高的呼召。不只是知道弟兄的苦，而是真實地「一同受苦」；不只是為弟兄的喜樂表示高興，而是「一同快樂」。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>這一切都是這位聖</strong><strong>靈所運行</strong>、隨己意分給各人的。（林前12:11）</td>
+<td>你有沒有認識到你的恩賜是聖靈隨祂的意思賜給你的，而非靠自己的努力取得的？就像被選為代表的人是因為委任者的決定而非自我推選，你有沒有以感謝和謙卑來使用神賜給你的恩賜？</td>
+</tr>
+<tr>
+<td><strong>身上肢體人以為軟</strong>弱的，<strong>更是不可少的</strong>……若一個肢體受苦，所有的肢體就一同受苦；若一個肢體得榮耀，所有的肢體就一同快樂。（林前12:22,26）</td>
+<td>你有沒有在你的教會群體中，真實地關心那些在服事上「不起眼」的弟兄姐妹，並且在他們受苦時真的「一同受苦」？就像一個真正的家庭不只在喜慶時聚集，在苦難時更加彼此扶持，你有沒有讓教會成為你真實的家庭？</td>
+</tr>
+<tr>
+<td><strong>你們就是基督的身</strong>子，<strong>並且各自作肢體</strong>。（林前12:27）</td>
+<td>你有沒有真實地接受自己是「基督身體的一部分」這個身份，讓它改變你對教會的態度——從「去教會」到「我就是教會的一部分」？就像身體的部分不只是在運動時才啟動，你有沒有讓你的信仰群體身份成為每天持續的屬靈實在？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

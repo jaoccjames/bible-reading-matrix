@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬太福音第21章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬太福音第21章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">榮進耶路撒冷與潔淨聖殿</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌和門徒將近耶路撒冷，到了伯法其，在橄欖山那裏。</div>
+<div class="verse"><span class="verse-number">2</span>耶穌就打發兩個門徒，對他們說：「你們往對面村子裏去，必看見一匹驢拴在那裏，還有驢駒同在一處；你們解開，牽到我這裏來。</div>
+<div class="verse"><span class="verse-number">3</span>若有人對你們說甚麼，你們就說：『主要用牠。』那人必立時讓你們牽來。</div>
+<div class="verse"><span class="verse-number">4</span>這事成就是要應驗先知的話，說：</div>
+<div class="verse"><span class="verse-number">5</span>要對錫安的居民〔原文作女子〕說：看哪，你的王來到你這裏，是溫柔的，又騎着驢，就是騎着驢駒子。」</div>
+<div class="verse"><span class="verse-number">6</span>門徒就照耶穌所吩咐的去行，</div>
+<div class="verse"><span class="verse-number">7</span>牽了驢和驢駒來，把自己的衣服搭在上面，耶穌就騎上。</div>
+<div class="verse"><span class="verse-number">8</span>眾人多半把衣服鋪在路上；還有人砍下樹枝來鋪在路上。</div>
+<div class="verse"><span class="verse-number">9</span>前行後隨的眾人喊着說：和散那〔原有求救的意思，在此乃稱頌的話〕歸於大衛的子孫！奉主名來的是應當稱頌的！高高在上和散那！」</div>
+<div class="verse"><span class="verse-number">10</span>耶穌既進了耶路撒冷，合城都驚動了，說：「這是誰？」</div>
+<div class="verse"><span class="verse-number">11</span>眾人說：「這是加利利拿撒勒的先知耶穌。」</div>
+<div class="verse"><span class="verse-number">12</span>耶穌進了神的殿，趕出殿裏一切作買賣的人，推倒兌換銀錢之人的桌子，和賣鴿子之人的凳子；</div>
+<div class="verse"><span class="verse-number">13</span>對他們說：「經上記着說：我的殿必稱為禱告的殿，你們倒使它成為賊窩了。」</div>
+<div class="verse"><span class="verse-number">14</span>在殿裏有瞎子、瘸子到耶穌跟前，他就治好了他們。</div>
+<div class="verse"><span class="verse-number">15</span>祭司長和文士看見耶穌所行的奇事，又見小孩子在殿裏喊着說：「和散那歸於大衛的子孫！」就甚惱怒，</div>
+<div class="verse"><span class="verse-number">16</span>對他說：「這些人所說的，你聽見了嗎？」耶穌說：「是的。經上說『你從嬰孩和吃奶的口中完全了讚美』的話，你們沒有念過嗎？」</div>
+<div class="verse"><span class="verse-number">17</span>於是離開他們，出城到伯大尼去，在那裏住宿。</div>
+<div class="verse"><span class="verse-number">18</span>早晨回城的時候，他餓了，</div>
+<div class="verse"><span class="verse-number">19</span>看見路旁有一棵無花果樹，就走到跟前，在樹上找不着甚麼，不過有葉子，就對樹說：「從今以後，你永不結果子。」那無花果樹就立刻枯乾了。</div>
+<div class="verse"><span class="verse-number">20</span>門徒看見了，便希奇說：「無花果樹怎麼立刻枯乾了呢？」</div>
+<div class="verse"><span class="verse-number">21</span>耶穌回答說：「我實在告訴你們，你們若有信心，不疑惑，不但能行無花果樹上所行的事，就是對這座山說：『你挪開此地，投在海裏！』也必成就。</div>
+<div class="verse"><span class="verse-number">22</span>你們禱告，無論求甚麼，只要信，就必得着。」</div>
+<div class="verse"><span class="verse-number">23</span>耶穌進了殿，正教訓人的時候，祭司長和民間的長老來問他說：「你仗着甚麼權柄作這些事？給你這權柄的是誰呢？」</div>
+<div class="verse"><span class="verse-number">24</span>耶穌回答說：「我也要問你們一句話，你們若告訴我，我就告訴你們我仗着甚麼權柄作這些事。</div>
+<div class="verse"><span class="verse-number">25</span>約翰的洗禮是從那裏來的？是從天上來的？是從人間來的呢？」他們彼此商議說：「我們若說『從天上來，』他必對我們說：『這樣，你們為甚麼不信他呢？』</div>
+<div class="verse"><span class="verse-number">26</span>若說『從人間來』，我們又怕百姓，因為他們都以約翰為先知。」</div>
+<div class="verse"><span class="verse-number">27</span>於是回答耶穌說：「我們不知道。」耶穌說：「我也不告訴你們我仗着甚麼權柄作這些事。」</div>
+<div class="verse"><span class="verse-number">28</span>又說：「一個人有兩個兒子。他來對大兒子說：『我兒，你今天到葡萄園裏去作工。』</div>
+<div class="verse"><span class="verse-number">29</span>他回答說：『我不去』，以後自己懊悔，就去了。</div>
+<div class="verse"><span class="verse-number">30</span>又來對小兒子也是這樣說。他回答說：『父阿，我去』，他卻不去。</div>
+<div class="verse"><span class="verse-number">31</span>你們想，這兩個兒子是那一個遵行父命呢？」他們說：「大兒子。」耶穌說：「我實在告訴你們，稅吏和娼妓倒比你們先進神的國。</div>
+<div class="verse"><span class="verse-number">32</span>因為約翰遵着義路到你們這裏來，你們卻不信他；稅吏和娼妓倒信他。你們看見了，後來還是不懊悔去信他。」</div>
+<div class="verse"><span class="verse-number">33</span>「你們再聽一個比喻：有個家主栽了一個葡萄園，周圍圈上籬笆，裏面挖了一個壓酒池，蓋了一座樓，租給園戶，就往外國去了。</div>
+<div class="verse"><span class="verse-number">34</span>收果子的時候近了，就打發僕人到園戶那裏去收果子。</div>
+<div class="verse"><span class="verse-number">35</span>園戶拿住僕人，打了一個，殺了一個，用石頭打死一個。</div>
+<div class="verse"><span class="verse-number">36</span>主人又打發別的僕人去，比先前更多；園戶還是照樣待他們。</div>
+<div class="verse"><span class="verse-number">37</span>後來打發他的兒子到他們那裏去，意思說：『他們必尊敬我的兒子。』</div>
+<div class="verse"><span class="verse-number">38</span>不料，園戶看見他兒子，就彼此說：『這是承受產業的。來吧，我們殺他，佔他的產業！』</div>
+<div class="verse"><span class="verse-number">39</span>他們就拿住他，推出葡萄園外，殺了。</div>
+<div class="verse"><span class="verse-number">40</span>園主來的時候要怎樣處治這些園戶呢？」</div>
+<div class="verse"><span class="verse-number">41</span>他們說：「要下毒手除滅那些惡人，將葡萄園另租給那按着時候交果子的園戶。」</div>
+<div class="verse"><span class="verse-number">42</span>耶穌說：「經上寫着：匠人所棄的石頭已作了房角的頭塊石頭。這是主所作的，在我們眼中看為希奇。這經你們沒有念過嗎？</div>
+<div class="verse"><span class="verse-number">43</span>所以我告訴你們，神的國必從你們奪去，賜給那能結果子的百姓。</div>
+<div class="verse"><span class="verse-number">44</span>誰掉在這石頭上，必要跌碎；這石頭掉在誰的身上，就要把誰砸得稀爛。」</div>
+<div class="verse"><span class="verse-number">45</span>祭司長和法利賽人聽見他的比喻，就看出他是指着他們說的。</div>
+<div class="verse"><span class="verse-number">46</span>他們想要捉拿他，只是怕眾人，因為眾人以他為先知。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第21章記述耶穌進入耶路撒冷，標誌著受難週的開始，包含榮進聖城、潔淨聖殿及幾段重要的衝突性對話。耶穌吩咐門徒牽來一匹驢駒，騎驢進城，眾人將衣服和棕樹枝鋪在路上高呼和散那，應驗撒迦利亞書的預言。進入耶路撒冷後，耶穌進入聖殿趕出所有作買賣的，推倒兌換銀錢之人的桌子，宣告聖殿是禱告的殿，他們卻使它成了賊窩。次日清晨耶穌咒詛無花果樹，樹立刻枯乾，向門徒說明有信心禱告的能力。然後在聖殿裡，祭司長和長老質問耶穌的權柄從哪裡來，耶穌反問約翰的洗禮從哪裡來，他們不能回答耶穌也不告訴他們。接著說兩個兒子的比喻，說明稅吏和娼妓比宗教領袖更先進神的國；又講葡萄園兇惡園戶的比喻，影射他們將殺害神的兒子，神必將葡萄園轉給別人，應驗建殿石頭的預言。本章揭開耶穌與宗教領袖之間最後決裂的序幕。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 耶穌是謙卑的王，以服事而非強權進入人心</strong><br>耶穌騎驢而非白馬進城，這是刻意的選擇——祂是以謙卑、和平的彌賽亞身份來，而非以政治軍事征服者的姿態。「溫柔的王」是耶穌最真實的形象。祂進城時受萬人擁戴，卻最終走上十字架。這告訴我們：基督的國度不靠武力征服，而靠愛的犧牲，祂的王權透過服事與捨命建立。<br><br>
+<strong>2. 禱告的殿不可成為交易的場所</strong><br>耶穌潔淨聖殿，是對宗教商業化最直接的批判。當神聖的場所和行為成為謀取利益的工具，神是憤怒的。今日信徒也需省察：我的信仰生活是否已成為「表演」或「交換」？禱告本質上是親近神，而非透過宗教儀式換取神的服務。<br><br>
+<strong>3. 信仰需要結出真實的果子</strong><br>無花果樹有葉無果，被咒詛枯乾，象徵一切外表繁盛卻無實質生命的宗教。惡園戶不只不交果子，還拒絕神的使者和兒子。這兩個圖像都指向同一個屬靈危機：徒具宗教外表卻沒有生命的改變。神的期待不是宗教活動的參與，而是在生命中真實結出義的果子——愛、悔改、服事、順服。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>眾人多半把衣服鋪</strong><strong>在路上</strong>，前行後隨的眾人喊着說：「和散那歸於大衛的子孫！奉主名來的是應當稱頌的！」（太21:8-9）</td>
+<td>耶穌今天進入你的生命和日常，你會以什麼方式歡迎祂？就像為重要貴賓鋪路清道，你願意在生活中「讓路」給耶穌，讓祂成為每天的優先嗎？</td>
+</tr>
+<tr>
+<td><strong>對他們說</strong>：「<strong>經上記着說</strong>：我的殿必稱為禱告的殿，你們倒使它成為賊窩了。」（太21:13）</td>
+<td>你的禱告生活是真實與神同在的相交，還是帶着某種目的或表演的成分？就像一段友誼若只有在需要幫忙時才聯繫，你與神的關係是真實親密的，還是功能性的？</td>
+</tr>
+<tr>
+<td><strong>你們禱告</strong>，<strong>無論求甚麼</strong>，只要信，就必得着。（太21:22）</td>
+<td>你在禱告中有沒有真實的信心——相信神聽見並能成就？就像按下訂購按鈕之後相信商品會送到而不再焦慮，你能在禱告之後把事情交託神，不再憂慮嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多前書第4章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多前書第4章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">使徒的忠心與以父之心的牧養</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>人應當以我們為基督的執事，為神奧祕事的管家。</div>
+<div class="verse"><span class="verse-number">2</span>所求於管家的，是要他有忠心。</div>
+<div class="verse"><span class="verse-number">3</span>我被你們論斷，或被別人論斷，我都以為極小的事；連我自己也不論斷自己。</div>
+<div class="verse"><span class="verse-number">4</span>我雖不覺得自己有錯，卻也不能因此得以稱義；但判斷我的乃是主。</div>
+<div class="verse"><span class="verse-number">5</span>所以，時候未到，甚麼都不要論斷，只等主來，他要照出暗中的隱情，顯明人心的意念。那時，各人要從神那裏得着稱讚。</div>
+<div class="verse"><span class="verse-number">6</span>弟兄們，我為你們的緣故，拿這些事轉比自己和亞波羅，叫你們效法我們不可過於聖經所記，免得你們自高自大，貴重這個，輕看那個。</div>
+<div class="verse"><span class="verse-number">7</span>使你與人不同的是誰呢？你有甚麼不是領受的呢；若是領受的，為何自誇，彷彿不是領受的呢？</div>
+<div class="verse"><span class="verse-number">8</span>你們已經飽足了！已經豐富了！不用我們，自己就作王了！我願意你們果真作王，叫我們也得與你們一同作王。</div>
+<div class="verse"><span class="verse-number">9</span>我想神把我們使徒明明列在末後，好像定死罪的囚犯；因為我們成了一臺戲，給世人和天使觀看。</div>
+<div class="verse"><span class="verse-number">10</span>我們為基督的緣故算是愚拙的，你們在基督裏倒是聰明的；我們軟弱，你們倒強壯；你們有榮耀，我們倒被藐視。</div>
+<div class="verse"><span class="verse-number">11</span>直到如今，我們還是又飢又渴，又赤身露體，又挨打，又沒有一定的住處，</div>
+<div class="verse"><span class="verse-number">12</span>並且勞苦，親手作工。被人咒罵，我們就祝福；被人逼迫，我們就忍受；</div>
+<div class="verse"><span class="verse-number">13</span>被人毀謗，我們就善勸。直到如今，人還把我們看作世界上的污穢，萬物中的渣滓。</div>
+<div class="verse"><span class="verse-number">14</span>我寫這話，不是叫你們羞愧，乃是警戒你們，好像我所親愛的兒女一樣。</div>
+<div class="verse"><span class="verse-number">15</span>你們學基督的，師傅雖有一萬，為父的卻是不多，因我在基督耶穌裏用福音生了你們。</div>
+<div class="verse"><span class="verse-number">16</span>所以，我求你們效法我。</div>
+<div class="verse"><span class="verse-number">17</span>因此我已打發提摩太到你們那裏去。他在主裏面，是我所親愛，有忠心的兒子。他必提醒你們，記念我在基督裏怎樣行事，在各處各教會中怎樣教導人。</div>
+<div class="verse"><span class="verse-number">18</span>有些人自高自大，以為我不到你們那裏去；</div>
+<div class="verse"><span class="verse-number">19</span>然而，主若許我，我必快到你們那裏去，並且我所要知道的，不是那些自高自大之人的言語，乃是他們的權能。</div>
+<div class="verse"><span class="verse-number">20</span>因為神的國不在乎言語，乃在乎權能。</div>
+<div class="verse"><span class="verse-number">21</span>你們願意怎麼樣呢？是願意我帶着刑杖到你們那裏去呢？還是要我存慈愛溫柔的心呢？</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第4章以使徒職分的謙卑為哥林多人的驕傲作出挑戰，保羅描述使徒所受的苦難和藐視，對比哥林多人的自以為是，並以父親的口吻勸勉他們效法他。本章首先說明人應當以我們為基督的執事，為神奧秘事的管家，所求於管家的是要他有忠心，審斷我的乃是主，所以時候未到甚麼都不要論斷，等主來了要照出暗中的隱情，顯明人心的意念。然後對哥林多人說你們已經飽足了、已經豐富了、不用我們已經作王了；神把使徒明顯在末後，好像死刑的囚犯，使徒成了一台戲給世人和天使觀看，為基督的緣故算是愚拙的，你們在基督裡倒是聰明的；我們軟弱你們倒強壯；你們有榮耀我們倒被藐視。直到如今我們還是又飢又渴、赤身露體，被毆打、居無定所，親手勞苦作工，人咒罵我們我們就祝福，人逼迫我們我們就忍受。接著說明他說這些話不是羞辱他們，乃是警戒他們，因為就算他們有一萬個老師在基督裡的父卻不多，因為他是藉著福音生了他們，所以叫他們效法他。本章以使徒受苦的現實挑戰哥林多人膚淺的成功神學。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 管家的唯一要求是忠心，不是成功</strong><br>「所求於管家的，是要他有忠心」——傳道人和服事者的評估標準不是果效、數字或掌聲，而是忠心。「判斷我的乃是主」——最終的評估者不是教會、不是聽眾、不是批評者，而是那位最後來臨的主。這解放了服事者：你的責任是忠心做好神交託你的部分，結果的評判交給神。<br><br>
+<strong>2. 比較和驕傲是教會生命最大的毒素</strong><br>「使你與人不同的是誰呢？你有甚麼不是領受的呢？若是領受的，為何自誇，彷彿不是領受的呢？」——一切比較的背後是忘記了「一切都是領受的」。才幹、機遇、信仰、恩賜，都是神的賜予，不是自己製造的。承認一切都是「領受的」，是消除驕傲最根本的方法。<br><br>
+<strong>3. 以父之心的牧養——生命的傳遞</strong><br>「你們學基督的，師傅雖有一萬，為父的卻是不多」——保羅不只是傳授信息，而是以屬靈父親的身份把生命傳遞給哥林多人。父親的關心不只是教導，還包括責備（「我寫這話，不是叫你們羞愧，乃是警戒你們」）和榜樣（「我求你們效法我」）。真正的牧養是生命的傳遞，不只是信息的傳達。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>所求於管家的</strong>，<strong>是要他有忠心</strong>。我被你們論斷……我都以為極小的事……判斷我的乃是主。（林前4:2-4）</td>
+<td>你有沒有學習把服事的評估標準從「別人的看法」轉向「主的評估」，在只有主一人知道的地方仍然忠心？就像一個正直的商人不因沒有監察就偷工減料，你有沒有讓主的評估而非人的眼光，成為你服事品質的標準？</td>
+</tr>
+<tr>
+<td><strong>使你與人不同的是</strong>誰呢？<strong>你有甚麼不是領受</strong>的呢？若是領受的，為何自誇，彷彿不是領受的呢？（林前4:7）</td>
+<td>你有沒有讓「一切都是領受的」這個認識，消解你對他人的比較心和自己的驕傲感？就像繼承了豐厚遺產的人不能誇耀自己的財富，你有沒有以感謝取代驕傲，以謙卑取代比較？</td>
+</tr>
+<tr>
+<td><strong>你們學基督的</strong>，<strong>師傅雖有一萬</strong>，為父的卻是不多；因我在基督耶穌裏用福音生了你們。所以，我求你們效法我。（林前4:15-16）</td>
+<td>你有沒有在你的信仰群體中，扮演類似「屬靈父母」的角色——不只傳遞信息，而是以自己的生命和榜樣陪伴和塑造他人的靈命？就像好父母是最有影響力的生命導師，你有沒有讓你的生命成為他人可以效法的榜樣？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

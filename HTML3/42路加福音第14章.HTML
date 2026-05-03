@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音第14章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+路加福音第14章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">宴席比喻與做門徒的代價</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>安息日，耶穌到一個法利賽人的首領家裏去喫飯，他們就窺探他。</div>
+<div class="verse"><span class="verse-number">2</span>在他面前有一個患水臌的人。</div>
+<div class="verse"><span class="verse-number">3</span>耶穌對律法師和法利賽人說：「安息日治病，可以不可以？」</div>
+<div class="verse"><span class="verse-number">4</span>他們卻不言語。耶穌就治好那人，叫他走了；</div>
+<div class="verse"><span class="verse-number">5</span>便對他們說：「你們中間誰有驢或有牛，在安息日掉在井裏，不立時拉牠上來呢？」</div>
+<div class="verse"><span class="verse-number">6</span>他們不能對答這話。</div>
+<div class="verse"><span class="verse-number">7</span>耶穌見所請的客揀擇首位，就用比喻對他們說：</div>
+<div class="verse"><span class="verse-number">8</span>「你被人請去赴婚姻的筵席，不要坐在首位上，恐怕有比你尊貴的客被他請來；</div>
+<div class="verse"><span class="verse-number">9</span>那請你們的人前來對你說：『讓座給這一位吧！』你就羞羞慚慚的退到末位上去了。</div>
+<div class="verse"><span class="verse-number">10</span>你被請的時候，就去坐在末位上，好叫那請你的人來對你說：『朋友，請上坐。』那時，你在同席的人面前就有光彩了。</div>
+<div class="verse"><span class="verse-number">11</span>因為，凡自高的，必降為卑，自卑的，必升為高。」</div>
+<div class="verse"><span class="verse-number">12</span>耶穌又對請他的人說：「你擺設午飯或晚飯，不要請你的朋友、弟兄、親屬，和富足的鄰舍，恐怕他們也請你，你就得了報答。</div>
+<div class="verse"><span class="verse-number">13</span>你擺設筵席，倒要請那貧窮的、殘廢的、瘸腿的、瞎眼的，你就有福了！</div>
+<div class="verse"><span class="verse-number">14</span>因為他們沒有甚麼可報答你。到義人復活的時候，你要得着報答。」</div>
+<div class="verse"><span class="verse-number">15</span>同席的有一人聽見這話，就對耶穌說：「在神國裏喫飯的有福了！」</div>
+<div class="verse"><span class="verse-number">16</span>耶穌對他說：「有一人擺設大筵席，請了許多客。</div>
+<div class="verse"><span class="verse-number">17</span>到了坐席的時候，打發僕人去對所請的人說：『請來罷！樣樣都齊備了。』</div>
+<div class="verse"><span class="verse-number">18</span>眾人一口同音的推辭。頭一個說：『我買了一塊地，必須去看看。請你准我辭了。』</div>
+<div class="verse"><span class="verse-number">19</span>又有一個說：『我買了五對牛，要去試一試。請你准我辭了。』</div>
+<div class="verse"><span class="verse-number">20</span>又有一個說：『我纔娶了妻，所以不能去。』</div>
+<div class="verse"><span class="verse-number">21</span>那僕人回來，把這事都告訴了主人。家主就動怒，對僕人說：『快出去，到城裏大街小巷，領那貧窮的、殘廢的、瞎眼的、瘸腿的來。』</div>
+<div class="verse"><span class="verse-number">22</span>僕人說：『主啊，你所吩咐的已經辦了，還有空座。』</div>
+<div class="verse"><span class="verse-number">23</span>主人對僕人說，『你出去到路上和籬笆那裏，勉強人進來，坐滿我的屋子。</div>
+<div class="verse"><span class="verse-number">24</span>我告訴你們，先前所請的人，沒有一個得嘗我的筵席。』」</div>
+<div class="verse"><span class="verse-number">25</span>有極多的人和耶穌同行。他轉過來對他們說：</div>
+<div class="verse"><span class="verse-number">26</span>「人到我這裏來，若不愛我勝過愛〔愛我勝過愛：原文作恨〕自己的父母、妻子、兒女、弟兄、姐妹，和自己的性命，就不能作我的門徒。</div>
+<div class="verse"><span class="verse-number">27</span>凡不背着自己十字架跟從我的，也不能作我的門徒。</div>
+<div class="verse"><span class="verse-number">28</span>你們那一個要蓋一座樓，不先坐下算計花費，能蓋成不能呢？</div>
+<div class="verse"><span class="verse-number">29</span>恐怕安了地基，不能成功，看見的人都笑話他，說：</div>
+<div class="verse"><span class="verse-number">30</span>『這個人開了工，卻不能完工。』</div>
+<div class="verse"><span class="verse-number">31</span>或是一個王出去和別的王打仗，豈不先坐下酌量，能用一萬兵去敵那領二萬兵來攻打他的嗎？</div>
+<div class="verse"><span class="verse-number">32</span>若是不能，就趁敵人還遠的時候，派使者去求和息的條款。</div>
+<div class="verse"><span class="verse-number">33</span>這樣，你們無論甚麼人，若不撇下一切所有的，就不能作我的門徒。」</div>
+<div class="verse"><span class="verse-number">34</span>「鹽本是好的；鹽若失了味，可用甚麼叫它再鹹呢？</div>
+<div class="verse"><span class="verse-number">35</span>或用在田裏，或堆在糞裏，都不合式，只好丟在外面。有耳可聽的，就應當聽！」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第14章記述耶穌在一個法利賽人領袖家中吃飯時的一系列教導，包含在安息日醫治水臌病人、關於謙遜赴宴的教導、大筵席的比喻，以及跟從祂的代價，是路加福音飲食場景神學的集中體現。本章首先敘述耶穌在安息日進入一個法利賽人領袖的家吃飯，有一個患水臌病的人在面前，耶穌詢問在安息日治病是否合法，眾人不作聲，耶穌就醫治了那人。接著觀察到客人搶坐首位，耶穌教導謙卑坐末位的智慧，說自己謙卑的必升為高；又勸主人請客不要請有能力回請的，而要請貧窮、殘廢、瘸腿、瞎眼的，在義人復活的時候必得賞賜。然後講大筵席的比喻：所邀的人各以田地、買賣、娶妻為由一一推辭，主人就差僕人往城裡路上帶進窮人、殘廢等各樣人，說明原先受邀的人沒有一個能嘗到這筵席。最後耶穌說明跟從的代價：必須愛祂過於一切親人，要先坐下計算代價，如同建塔和打仗要先評估能力，鹽若失了味便毫無用處。本章呈現天國邀請的廣泛性與跟從的高代價。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 天國筵席的邀請對所有人開放</strong><br>大筵席的比喻揭示一個震撼的倒轉：原本被邀請的人因各種現實原因推辭（地、牛、妻——代表財產、事業、家庭），主人就去請那些原本不在受邀名單上的人。天國的邀請不受資格限制，反而是那些自認「沒資格」的人——貧窮的、殘廢的、瞎眼的——更能回應。今天的問題不是「我夠格嗎」，而是「我願不願意把我手上的事情放下去赴席」。<br><br>
+<strong>2. 謙卑自貶是天國升高的方式</strong><br>「凡自高的，必降為卑，自卑的，必升為高」——不搶首位、邀請無力回報的人，這兩個教導指向同一個精神：放棄對回報和地位的計算。謙卑不是表演，而是真正不把自己放在中心位置的心態。宴請貧窮的人沒有任何「投資回報」，這正是它的道德價值所在——在沒有任何好處的情況下選擇給予，就像神對我們的恩典一樣。<br><br>
+<strong>3. 做門徒需要算計清楚的代價與委身</strong><br>「先坐下算計」——耶穌不鼓勵衝動的決志，而是邀請人正視跟從祂的代價。蓋樓和打仗的比喻都說明：輕率的開始而沒有持續的委身，比不開始更糟糕。「無論什麼人若不撇下一切所有的，就不能作我的門徒」——不是一個嚇跑人的條件，而是一個清醒的邀請：你願意把一切放在耶穌之後嗎？這是門徒生命的基礎。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>凡自高的</strong>，必降為卑；自卑的，必升為高。」（路14:11）</td>
+<td>你在社交場合、工作環境中，有沒有習慣性地謀取地位和認可？就像在滿座的電梯中每個人都往前擠，你願意選擇主動退後、謙卑讓位，讓這成為你生命的習慣嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>你擺設筵席</strong>，倒要請那貧窮的、殘廢的、瘸腿的、瞎眼的，你就有福了！因為他們沒有甚麼可報答你。」（路14:13-14）</td>
+<td>你的付出和服事，有多少是針對那些有能力回報你的人？你有沒有刻意地為那些「沒有甚麼可報答你」的人服事和給予，讓你的慷慨純粹是出於愛而非期望回報？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「這樣，<strong>你們無論甚麼人</strong>，若不撇下一切所有的，就不能作我的門徒。」（路14:33）</td>
+<td>你有沒有認真地「坐下算計」跟從基督的代價，並做出清醒而全面的委身？就像接受一份工作前要了解完整的職責，你對門徒生命的理解和委身有沒有深刻到讓你願意面對所有的代價？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

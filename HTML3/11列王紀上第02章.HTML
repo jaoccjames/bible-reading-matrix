@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列王紀上第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+列王紀上第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大衛臨終囑咐，所羅門鞏固國位除患</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>大衛的死期臨近了，就囑咐他兒子所羅門說：</div>
+<div class="verse"><span class="verse-number">2</span>「我現在要走世人必走的路。所以，你當剛強，作大丈夫，</div>
+<div class="verse"><span class="verse-number">3</span>遵守耶和華你神所吩咐的，照着摩西律法上所寫的行主的道，謹守他的律例、誡命、典章、法度。這樣，你無論作甚麼事，不拘往何處去，盡都亨通。</div>
+<div class="verse"><span class="verse-number">4</span>耶和華必成就向我所應許的話說：『你的子孫若謹慎自己的行為，盡心盡意誠誠實實的行在我面前，就不斷人坐以色列的國位。』</div>
+<div class="verse"><span class="verse-number">5</span>你知道洗魯雅的兒子約押向我所行的，就是殺了以色列的兩個元帥：尼珥的兒子押尼珥和益帖的兒子亞瑪撒。他在太平之時流這二人的血，如在爭戰之時一樣，將這血染了腰間束的帶和腳上穿的鞋。</div>
+<div class="verse"><span class="verse-number">6</span>所以你要照你的智慧行，不容他白頭安然下陰間。</div>
+<div class="verse"><span class="verse-number">7</span>你當恩待基列人巴西萊的眾子，使他們常與你同席吃飯；因為我躲避你哥哥押沙龍的時候，他們拿食物來迎接我。</div>
+<div class="verse"><span class="verse-number">8</span>在你這裏有巴戶琳的便雅憫人，基拉的兒子示每；我往瑪哈念去的那日，他用狠毒的言語咒罵我，後來卻下約但河迎接我，我就指着耶和華向他起誓說：『我必不用刀殺你。』</div>
+<div class="verse"><span class="verse-number">9</span>現在你不要以他為無罪。你是聰明人，必知道怎樣待他，使他白頭見殺，流血下到陰間。」</div>
+<div class="verse"><span class="verse-number">10</span>大衛與他列祖同睡，葬在大衛城。</div>
+<div class="verse"><span class="verse-number">11</span>大衛作以色列王四十年：在希伯崙作王七年，在耶路撒冷作王三十三年。</div>
+<div class="verse"><span class="verse-number">12</span>所羅門坐他父親大衛的位，他的國甚是堅固。</div>
+<div class="verse"><span class="verse-number">13</span>哈及的兒子亞多尼雅去見所羅門的母親拔示巴，拔示巴問他說：「你來是為平安麼？」回答說：「是為平安」；</div>
+<div class="verse"><span class="verse-number">14</span>又說：「我有話對你說。」拔示巴說：「你說吧。」</div>
+<div class="verse"><span class="verse-number">15</span>亞多尼雅說：「你知道國原是歸我的，以色列眾人也都仰望我作王，不料，國反歸了我兄弟，因他得國是出乎耶和華。</div>
+<div class="verse"><span class="verse-number">16</span>現在我有一件事求你，望你不要推辭。」拔示巴說：「你說吧。」</div>
+<div class="verse"><span class="verse-number">17</span>他說：「求你請所羅門王將書念的女子亞比煞賜我為妻，因他必不推辭你。」</div>
+<div class="verse"><span class="verse-number">18</span>拔示巴說：「好，我必為你對王提說。」</div>
+<div class="verse"><span class="verse-number">19</span>於是，拔示巴去見所羅門王，要為亞多尼雅提說；王起來迎接，向她下拜，就坐在位上，吩咐人為王母設一座位，她便坐在王的右邊。</div>
+<div class="verse"><span class="verse-number">20</span>拔示巴說：「我有一件小事求你，望你不要推辭。」王說：「請母親說，我必不推辭。」</div>
+<div class="verse"><span class="verse-number">21</span>拔示巴說：「求你將書念的女子亞比煞賜給你哥哥亞多尼雅為妻。」</div>
+<div class="verse"><span class="verse-number">22</span>所羅門王對他母親說：「為何單替他求書念的女子亞比煞呢？也可以為他求國吧！他是我的哥哥，他有祭司亞比亞他和洗魯雅的兒子約押為輔佐。」</div>
+<div class="verse"><span class="verse-number">23</span>所羅門王就指着耶和華起誓說：「亞多尼雅這話是自己送命，不然，願神重重的降罰與我。</div>
+<div class="verse"><span class="verse-number">24</span>耶和華堅立我，使我坐在父親大衛的位上，照着所應許的話為我建立家室；現在我指着永生的耶和華起誓，亞多尼雅今日必被治死。」</div>
+<div class="verse"><span class="verse-number">25</span>於是所羅門王差遣耶何耶大的兒子比拿雅，將亞多尼雅殺死。</div>
+<div class="verse"><span class="verse-number">26</span>王對祭司亞比亞他說：「你回亞拿突歸自己的田地去吧！你本是該死的，但因你在我父親大衛面前抬過主耶和華的約櫃，又與我父親同受一切苦難，所以我今日不將你殺死。」</div>
+<div class="verse"><span class="verse-number">27</span>所羅門就革除亞比亞他，不許他作耶和華的祭司。這樣，便應驗耶和華在示羅論以利家所說的話。</div>
+<div class="verse"><span class="verse-number">28</span>約押雖然沒有歸從押沙龍，卻歸從了亞多尼雅。他聽見這風聲，就逃到耶和華的帳幕，抓住祭壇的角。</div>
+<div class="verse"><span class="verse-number">29</span>有人告訴所羅門王說：「約押逃到耶和華的帳幕，現今在祭壇的旁邊。」所羅門就差遣耶何耶大的兒子比拿雅，說：「你去將他殺死。」</div>
+<div class="verse"><span class="verse-number">30</span>比拿雅來到耶和華的帳幕，對約押說：「王吩咐說，你出來吧！」他說：「我不出去，我要死在這裏。」比拿雅就去回覆王，說約押如此如此回答我。</div>
+<div class="verse"><span class="verse-number">31</span>王說：「你可以照着他的話行，殺死他，將他葬埋，好叫約押流無辜人血的罪不歸我和我的父家了。</div>
+<div class="verse"><span class="verse-number">32</span>耶和華必使約押流人血的罪歸到他自己的頭上；因為他用刀殺了兩個比他又義又好的人，就是以色列元帥尼珥的兒子押尼珥和猶大元帥益帖的兒子亞瑪撒，我父親大衛卻不知道。</div>
+<div class="verse"><span class="verse-number">33</span>故此，流這二人血的罪必歸到約押和他後裔的頭上，直到永遠；惟有大衛和他的後裔，並他的家與國，必從耶和華那裏得平安，直到永遠。」</div>
+<div class="verse"><span class="verse-number">34</span>於是耶何耶大的兒子比拿雅上去，將約押殺死，葬在曠野約押自己的墳墓〔原文作房屋〕裏。</div>
+<div class="verse"><span class="verse-number">35</span>王就立耶何耶大的兒子比拿雅作元帥，代替約押，又使祭司撒督代替亞比亞他。</div>
+<div class="verse"><span class="verse-number">36</span>王差遣人將示每召來，對他說：「你要在耶路撒冷建造房屋居住，不可出來往別處去。</div>
+<div class="verse"><span class="verse-number">37</span>你當確實的知道，你何日出來過汲淪溪，何日必死！你的罪〔原文作血〕必歸到自己的頭上。」</div>
+<div class="verse"><span class="verse-number">38</span>示每對王說：「這話甚好！我主我王怎樣說，僕人必怎樣行。」於是示每多日住在耶路撒冷。</div>
+<div class="verse"><span class="verse-number">39</span>過了三年，示每的兩個僕人逃到迦特王瑪迦的兒子亞吉那裏去。有人告訴示每說：「你的僕人在迦特。」</div>
+<div class="verse"><span class="verse-number">40</span>示每起來，備上驢，往迦特到亞吉那裏去找他的僕人，就從迦特帶他僕人回來。</div>
+<div class="verse"><span class="verse-number">41</span>有人告訴所羅門說：「示每出耶路撒冷往迦特去，回來了。」</div>
+<div class="verse"><span class="verse-number">42</span>王就差遣人將示每召了來，對他說：「我豈不是叫你指着耶和華起誓，並且警戒你說『你當確實的知道，你哪日出來往別處去，那日必死』麼？你也對我說：『這話甚好，我必聽從。』</div>
+<div class="verse"><span class="verse-number">43</span>現在你為何不遵守你指着耶和華起的誓和我所吩咐你的命令呢？」</div>
+<div class="verse"><span class="verse-number">44</span>王又對示每說：「你向我父親大衛所行的一切惡事，你自己心裏也知道，所以耶和華必使你的罪惡歸到自己的頭上；</div>
+<div class="verse"><span class="verse-number">45</span>惟有所羅門王必得福，並且大衛的國位必在耶和華面前堅定，直到永遠。」</div>
+<div class="verse"><span class="verse-number">46</span>於是王吩咐耶何耶大的兒子比拿雅，他就去殺死示每。這樣，便堅定了所羅門的國位。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+列王紀上第2章記述大衛王臨終的最後囑咐，以及所羅門繼位後一連串的鞏固行動。大衛在病榻上向所羅門留下兩條核心遺言：屬靈上，要謹守耶和華的律法，這是亨通的秘訣；政治上，要妥善處理幾個遺留的問題人物——曾流無辜血的元帥約押、以及昔日咒罵大衛的示每。大衛去世後，所羅門面對亞多尼雅再度藉求娶王妃試圖染指王權的舉動，果斷將其處決；隨後革除支持亞多尼雅的祭司亞比亞他、處決逃往聖壇的約押，最後以示每違背誓約為由將其賜死。這一系列行動清除了王室內部的政治隱患，使所羅門的王位完全穩固。本章在呈現政治現實的同時，也揭示了神的話語如何在歷史事件中應驗，包括對以利家的預言在亞比亞他被革職一事上得到應驗。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 屬靈的囑咐比政治的遺囑更重要</strong><br>大衛在生命終結之際，對所羅門最重要的囑咐不是政治策略，而是「謹守耶和華你神所吩咐的……這樣，你無論作甚麼事，不拘往何處去，盡都亨通」。大衛以一生的經歷總結出這一真理：敬畏神、遵行祂的律法，是一切成功的根基。在今日急功近利的文化中，這個優先次序常被顛倒——先求成功，後才想到信仰。大衛的遺言提醒我們：靈命的根基決定一切地上事業的高度。<br><br>
+<strong>2. 罪的代價終必到來，神的公義不會永遠延遲</strong><br>約押多年來仗着功勞和勢力逃避追究，示每以誓言暫時保命，亞多尼雅以謙遜姿態換取了緩刑。然而每個人最終都因自己所作的惡付出了代價。這說明神的公義雖有時顯得「遲延」，卻從不缺席。信徒不應因惡人暫時得享太平而沮喪，也不應因自己尚未承擔後果而對罪掉以輕心。時機未到，不代表帳目未記。<br><br>
+<strong>3. 神的話語在歷史中精確應驗，增強信徒的信心</strong><br>亞比亞他被革除祭司職分，作者特別指出「這樣，便應驗耶和華在示羅論以利家所說的話」。神在幾代之前所說的預言，在看似平常的政治事件中靜靜應驗。這提醒信徒：神的話語從不落空，祂在歷史中默默編織祂旨意的網絡。即使過程漫長、方式出人意外，神的應許與審判都必按時成就。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>遵守耶和華你神所</strong><strong>吩咐的</strong>……你無論作甚麼事，不拘往何處去，盡都亨通。」（王上2:3）</td>
+<td>就像一棟建築的地基決定它能承受多高的樓層，大衛告訴所羅門屬靈根基決定一切事業的高度。你現在最在意的「亨通」是什麼？你是否相信遵行神的話是通往真正亨通最直接的路？</td>
+</tr>
+<tr>
+<td>「<strong>所羅門就革除亞比</strong>亞他，<strong>不許他作耶和華的</strong>祭司。這樣，便應驗耶和華在示羅論以利家所說的話。」（王上2:27）</td>
+<td>就像一份早已寫好的劇本在舞台上被精確演出，神幾代前的預言在政治事件中靜靜應驗。這讓你對神話語的可信性有何新的體悟？對神尚未應驗的應許，你如何持守信心？</td>
+</tr>
+<tr>
+<td>「<strong>現在你為何不遵守</strong><strong>你指着耶和華起的</strong>誓和我所吩咐你的命令呢？」（王上2:43）</td>
+<td>就像GPS設定了路線後若中途偏離就會觸發警告，示每的誓言設下了清楚的界限，他卻因小事越界。你是否也曾以「只是小事」為由，輕忽了對神或對人的承諾？這種習慣會帶來什麼長遠的影響？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

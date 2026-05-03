@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+路加福音第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">不義管家比喻與財主和拉撒路</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌又對門徒說：「有一個財主的管家，別人向他主人告他浪費主人的財物。</div>
+<div class="verse"><span class="verse-number">2</span>主人叫他來，對他說：『我聽見你這事怎麼樣呢？把你所經管的交代明白，因你不能再作我的管家。』</div>
+<div class="verse"><span class="verse-number">3</span>那管家心裏說：『主人辭我，不用我再作管家，我將來作甚麼？鋤地呢？無力；討飯呢？怕羞。</div>
+<div class="verse"><span class="verse-number">4</span>我知道怎麼行，好叫人在我不作管家之後，接我到他們家裏去。』</div>
+<div class="verse"><span class="verse-number">5</span>於是把欠他主人債的，一個一個的叫了來，問頭一個說：『你欠我主人多少？』</div>
+<div class="verse"><span class="verse-number">6</span>他說：『一百簍〔每簍約五十斤〕油。』管家說：『拿你的賬，快坐下，寫五十。』</div>
+<div class="verse"><span class="verse-number">7</span>又問一個說：『你欠多少？』他說：『一百石麥子。』管家說：『拿你的賬，寫八十。』</div>
+<div class="verse"><span class="verse-number">8</span>主人就誇獎這不義的管家作事聰明；因為今世之子，在世事之上，較比光明之子更加聰明。</div>
+<div class="verse"><span class="verse-number">9</span>我又告訴你們，要藉着那不義的錢財結交朋友，到了錢財無用的時候，他們可以接你們到永存的帳幕裏去。</div>
+<div class="verse"><span class="verse-number">10</span>人在最小的事上忠心，在大事上也忠心；在最小的事上不義，在大事上也不義。</div>
+<div class="verse"><span class="verse-number">11</span>倘若你們在不義的錢財上不忠心，誰還把那真實的錢財託付你們呢？</div>
+<div class="verse"><span class="verse-number">12</span>倘若你們在別人的東西上不忠心，誰還把你們自己的東西給你們呢？</div>
+<div class="verse"><span class="verse-number">13</span>一個僕人不能事奉兩個主；不是惡這個愛那個，就是重這個輕那個。你們不能又事奉神，又事奉瑪門。」</div>
+<div class="verse"><span class="verse-number">14</span>法利賽人是貪愛錢財的，他們聽見這一切話，就嗤笑耶穌。</div>
+<div class="verse"><span class="verse-number">15</span>耶穌對他們說：「你們是在人面前自稱為義的，你們的心，神卻知道；因為人所尊貴的，是神看為可憎惡的。</div>
+<div class="verse"><span class="verse-number">16</span>律法和先知到約翰為止，從此神國的福音傳開了，人人努力要進去。</div>
+<div class="verse"><span class="verse-number">17</span>天地廢去較比律法的一點一畫落空還容易。</div>
+<div class="verse"><span class="verse-number">18</span>凡休妻另娶的就是犯姦淫；娶被休之妻的也是犯姦淫。」</div>
+<div class="verse"><span class="verse-number">19</span>有一個財主穿着紫色袍和細麻布衣服，天天奢華宴樂。</div>
+<div class="verse"><span class="verse-number">20</span>又有一個討飯的，名叫拉撒路，渾身生瘡，被人放在財主門口，</div>
+<div class="verse"><span class="verse-number">21</span>要得財主桌子上掉下來的零碎充飢；並且狗來餂他的瘡。</div>
+<div class="verse"><span class="verse-number">22</span>後來那討飯的死了，被天使帶去放在亞伯拉罕的懷裏。財主也死了，並且埋葬了。</div>
+<div class="verse"><span class="verse-number">23</span>他在陰間受痛苦，舉目遠遠的望見亞伯拉罕，又望見拉撒路在他懷裏，</div>
+<div class="verse"><span class="verse-number">24</span>就喊着說：『我祖亞伯拉罕哪，可憐我吧！打發拉撒路來，用指頭尖蘸點水，涼涼我的舌頭；因為我在這火焰裏，極其痛苦。』</div>
+<div class="verse"><span class="verse-number">25</span>亞伯拉罕說：『兒啊，你該回想你生前享過福，拉撒路也受過苦；如今他在這裏得安慰，你倒受痛苦。</div>
+<div class="verse"><span class="verse-number">26</span>不但這樣，並且在你我之間，有深淵限定，以致人要從這邊過到你們那邊是不能的；要從那邊過到我們這邊也是不能的。』</div>
+<div class="verse"><span class="verse-number">27</span>財主說：『我祖啊！既是這樣，求你打發拉撒路到我父家去；</div>
+<div class="verse"><span class="verse-number">28</span>因為我還有五個弟兄，他可以對他們作見證，免得他們也來到這痛苦的地方。』</div>
+<div class="verse"><span class="verse-number">29</span>亞伯拉罕說：『他們有摩西和先知的話可以聽從。』</div>
+<div class="verse"><span class="verse-number">30</span>他說：『我祖亞伯拉罕哪，不是的，若有一個從死裏復活的，到他們那裏去的，他們必要悔改。』</div>
+<div class="verse"><span class="verse-number">31</span>亞伯拉罕說：『若不聽從摩西和先知的話，就是有一個從死裏復活的，他們也是不聽勸。』」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第16章記述不義管家的比喻、財主和拉撒路的比喻，以及幾句關於律法、離婚和財富的教導，是路加福音中對財富與永恆議題探討最深入的一章。本章首先講不義管家的比喻：一個管家因浪費主人的財物將被辭退，便暗中減少欠主人各債戶的債務以為自己預備退路，主人稱讚他的精明。耶穌說今世之子在謀算世事上比光明之子更精明，要用金錢結交朋友，使錢財無用的時候有人接你們進永久的帳幕，在最小的事上忠心的在大事上也忠心，不能又事奉神又事奉瑪門。接著法利賽人因貪愛錢財而嗤笑耶穌，耶穌說他們在人面前自以為義，但神看透人心，人所尊貴的是神看為可憎的。然後說律法和先知到約翰為止，天國的福音正在傳講，人人努力要進去，天地廢去比律法的一點一畫廢去還容易，並再提休妻再娶的問題。最後講財主和拉撒路的比喻：財主豐衣足食，拉撒路臥在財主門口，死後拉撒路在亞伯拉罕懷裡，財主在陰間受苦，財主求差拉撒路去提醒他的五個兄弟，亞伯拉罕說他們有摩西和先知若不聽就是有人從死裡復活也不信。本章呈現財富的危險性與永恆的現實。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 忠心在小事上是神所看重的</strong><br>「人在最小的事上忠心，在大事上也忠心」——這個原則說明品格的一致性。不義管家在危機中展示了世俗的精明，耶穌不是讚美他的不義，而是呼召信徒把同樣的聰明用在永恆的投資上。日常生活中的小事——誠實、準時、負責、慷慨——不是瑣碎的，而是品格的試煉場，也是神評估忠心的標準。<br><br>
+<strong>2. 事奉神和事奉瑪門是不可調和的兩主</strong><br>「你們不能又事奉神，又事奉瑪門」——瑪門不只是錢財，而是對錢財的倚靠和效忠。這兩者之間的衝突不是因為錢財本身邪惡，而是因為人心只能有一個終極效忠。法利賽人「貪愛錢財」，他們在外表上尊敬神，但心裏的效忠是瑪門。「人所尊貴的，是神看為可憎惡的」——神看的是心裏真實的主人是誰。<br><br>
+<strong>3. 今世的忽視是永恆結局的預兆</strong><br>財主對門口的拉撒路視而不見——不是主動欺壓，只是漠視。陰間的深淵，根源於今生中那道漠視他人的「深淵」。財主的問題不是他致富，而是他在富足中的冷漠。此刻的我們仍然活着，仍然有機會改變——「他們有摩西和先知的話」。神的話語已足夠引導悔改，若今天不聽，就是有復活的人說話也不聽。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>人在最小的事上忠</strong>心，在大事上也忠心；在最小的事上不義，在大事上也不義。」（路16:10）</td>
+<td>你在日常生活的「小事」上——準時、誠實、負責、慷慨——有沒有同樣的忠心？就像一個鐘錶若小齒輪失調整個機器就停止運作，你願意讓神從你日常的小忠心開始建立你的品格嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>一個僕人不能事奉</strong>兩個主……你們不能又事奉神，又事奉瑪門。」（路16:13）</td>
+<td>在你的生活中，金錢和財務對你的決策有多大的影響力？就像手機只能有一個主要操作系統，你的生命有沒有清楚地讓神成為唯一的主人，而非讓錢財共同分享這個位置？</td>
+</tr>
+<tr>
+<td><strong>亞伯拉罕說</strong>：「<strong>若不聽從摩西和先</strong>知的話，就是有一個從死裏復活的，他們也是不聽勸。」（路16:31）</td>
+<td>你有沒有認真對待你已知道的神的話語，而非等候更大的神蹟才願意回應？就像收到重要信件不開封，再多的特快郵件也無法幫你，你今天願意回應你已知道的神的呼召嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

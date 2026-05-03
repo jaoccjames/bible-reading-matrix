@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰壹書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰壹書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">在光明中行與認罪得赦的確信</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>論到從起初原有的生命之道，就是我們所聽見、所看見、親眼看過、親手摸過的。</div>
+<div class="verse"><span class="verse-number">2</span>（這生命已經顯現出來，我們也看見過，現在又作見證，將原與父同在、且顯現與我們那永遠的生命、傳給你們。）</div>
+<div class="verse"><span class="verse-number">3</span>我們將所看見、所聽見的傳給你們，使你們與我們相交。我們乃是與父並他兒子耶穌基督相交的。</div>
+<div class="verse"><span class="verse-number">4</span>我們將這些話寫給你們，使你們〔有古卷作：我們〕的喜樂充足。</div>
+<div class="verse"><span class="verse-number">5</span>神就是光，在他毫無黑暗。這是我們從主所聽見、又報給你們的信息。</div>
+<div class="verse"><span class="verse-number">6</span>我們若說是與神相交，卻仍在黑暗裏行，就是說謊話，不行真理了。</div>
+<div class="verse"><span class="verse-number">7</span>我們若在光明中行，如同神在光明中，就彼此相交，他兒子耶穌的血也洗淨我們一切的罪。</div>
+<div class="verse"><span class="verse-number">8</span>我們若說自己無罪，便是自欺，真理不在我們心裏了。</div>
+<div class="verse"><span class="verse-number">9</span>我們若認自己的罪，神是信實的，是公義的，必要赦免我們的罪，洗淨我們一切的不義。</div>
+<div class="verse"><span class="verse-number">10</span>我們若說自己沒有犯過罪，便是以神為說謊的，他的道也不在我們心裏了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約翰壹書是使徒約翰晚年所寫的書信，約在主後85至95年間，對象是受到諾斯底主義影響的教會群體，核心主題是真正的基督徒群體的特質：行在光中、遵守誡命、彼此相愛。第1章以莊嚴的開篇宣告作者的見證：論到那從起初原有的生命之道，就是我們所聽見、所看見、親眼看過、親手摸過的，這生命已經顯現出來，我們也看見了，現在又報告你們，讓你們與我們相交，我們乃是與父並祂兒子耶穌基督相交的。接著說神是光在祂毫無黑暗，如果說我們與神相交卻仍在黑暗中行走，便是說謊話行事不真實；若在光明中行走如同神在光明中，就彼此相交，祂兒子耶穌的血也洗淨我們一切的罪。然後回應那些否認自己有罪的人：我們若說我們沒有罪便是自欺，真理不在我們心裡了；我們若認自己的罪，神是信實的是公義的，必要赦免我們的罪，洗淨我們一切的不義；我們若說我們沒有犯過罪便是以神為說謊的，祂的道也不在我們心裡了。本章以光明與黑暗的對比、相交與認罪的主題，為整卷書信的神學架構奠定基礎。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 見證是信仰的根基</strong><br>「所聽見、所看見、親眼看過、親手摸過」——四個感官的強調說明約翰的見證是真實的、歷史的，不是神話或哲學推測。親身見證的傳遞使信仰的根基是歷史事件，而非主觀體驗。<br><br>
+<strong>2. 「神就是光」——與神相交的本質</strong><br>「神就是光，在他毫無黑暗」——光的比喻說明神的本質是徹底的透明和純潔。在光中行走，就是在真理和誠實中生活。「在黑暗裏行」包括關係上的虛假——假裝有相交而實際上沒有。<br><br>
+<strong>3. 認罪是持續在光明中行的途徑</strong><br>「我們若認自己的罪，神是信實的，是公義的，必要赦免我們的罪」——「信實的，是公義的」說明赦免的根基建立在神可靠的性情和基督已完成的工上。「洗淨我們一切的不義」——赦免是全面的，不是部分的。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我們若認自己的罪</strong>，<strong>神是信實的</strong>，是公義的，必要赦免我們的罪，洗淨我們一切的不義。（約壹1:9）</td>
+<td>你有沒有讓認罪成為你信仰生活中定期的、真誠的習慣，讓神的「信實和公義的赦免」持續地洗淨你、維持你在光明中與神的相交？就像定期清潔讓生活空間保持整潔，你有沒有讓定期認罪成為維護你與神相交清潔的屬靈習慣？</td>
+</tr>
+<tr>
+<td><strong>我們若在光明中行</strong>，<strong>如同神在光明中</strong>，就彼此相交，他兒子耶穌的血也洗淨我們一切的罪。（約壹1:7）</td>
+<td>你有沒有讓「在光明中行」——誠實面對自己的罪、透明地活在神和弟兄面前——成為你生命的常態，讓這種誠實帶出與神和與人更深的相交？就像在光明中沒有可以隱藏的，你有沒有讓誠實和透明成為你信仰生命的基本姿態？</td>
+</tr>
+<tr>
+<td><strong>我們乃是與父並他</strong><strong>兒子耶穌基督相交</strong>的。我們將這些話寫給你們，使你們的喜樂充足。（約壹1:3-4）</td>
+<td>你有沒有讓與父並子的相交成為你「喜樂充足」的根源，而非倚賴環境或人際關係的好壞？就像一個已連接到電源的燈不因外部環境的黑暗而滅，你有沒有讓與神的相交成為你喜樂不依環境的穩定源泉？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

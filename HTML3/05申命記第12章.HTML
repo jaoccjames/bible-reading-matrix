@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申命記第12章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+申命記第12章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">敬拜中心化與分別聖潔原則</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「你們存活於世的日子，在耶和華你們列祖的神所賜你們為業的地上，要謹守遵行的律例、典章乃是這些：</div>
+<div class="verse"><span class="verse-number">2</span>你們要將所趕出的國民事奉神的各地方，無論是在高山，在小山，在各青翠樹下，都毀壞了；</div>
+<div class="verse"><span class="verse-number">3</span>也要拆毀他們的祭壇，打碎他們的柱像，用火焚燒他們的木偶，砍下他們雕刻的神像，並將其名從那地方除滅。</div>
+<div class="verse"><span class="verse-number">4</span>你們不可照他們那樣事奉耶和華你們的神。</div>
+<div class="verse"><span class="verse-number">5</span>但耶和華你們的神從你們各支派中選擇何處為立他名的居所，你們就當往那裏去求問，</div>
+<div class="verse"><span class="verse-number">6</span>將你們的燔祭、平安祭、十分取一之物，和手中的舉祭，並還願祭、甘心祭，以及牛群羊群中頭生的，都奉到那裏。</div>
+<div class="verse"><span class="verse-number">7</span>在那裏，耶和華你們神的面前，你們和你們的家屬都可以吃，並且因你手所辦的一切事蒙耶和華你的神賜福，就都歡樂。</div>
+<div class="verse"><span class="verse-number">8</span>我們今日在這裏所行的是各人行自己眼中看為正的事，你們將來不可這樣行；</div>
+<div class="verse"><span class="verse-number">9</span>因為你們還沒有到耶和華你神所賜你的安息地，所給你的產業。</div>
+<div class="verse"><span class="verse-number">10</span>但你們過了約但河，得以住在耶和華你們神使你們承受為業之地，又使你們太平，不被四圍的一切仇敵擾亂，安然居住。</div>
+<div class="verse"><span class="verse-number">11</span>那時要將我所吩咐你們的燔祭、平安祭、十分取一之物，和手中的舉祭，並向耶和華許願獻的一切美祭，都奉到耶和華你們神所選擇要立為他名的居所。</div>
+<div class="verse"><span class="verse-number">12</span>你們和兒女、僕婢，並住在你們城裏無分無業的利未人，都要在耶和華你們的上帝面前歡樂。</div>
+<div class="verse"><span class="verse-number">13</span>你要謹慎，不可在你所看中的各處獻燔祭。</div>
+<div class="verse"><span class="verse-number">14</span>惟獨耶和華從你那一支派中所選擇的地方，你就要在那裏獻燔祭，行我一切所吩咐你的。</div>
+<div class="verse"><span class="verse-number">15</span>「然而，在你各城裏都可以照耶和華你神所賜你的福分，隨心所欲宰牲吃肉；無論潔淨人不潔淨人都可以吃，就如吃羚羊與鹿一般。</div>
+<div class="verse"><span class="verse-number">16</span>只是不可吃血，要倒在地上，如同倒水一樣。</div>
+<div class="verse"><span class="verse-number">17</span>你的五穀、新酒，和油的十分之一，或是牛群羊群中頭生的，或是你許願獻的，甘心獻的，或是手中的舉祭，都不可在你城裏吃。</div>
+<div class="verse"><span class="verse-number">18</span>但要在耶和華你的神面前吃，在耶和華你神所要選擇的地方，你和兒女、僕婢，並住在你城裏的利未人，都可以吃；也要因你手所辦的，在耶和華你神面前歡樂。</div>
+<div class="verse"><span class="verse-number">19</span>你要謹慎，在你所住的地方永不可丟棄利未人。</div>
+<div class="verse"><span class="verse-number">20</span>「耶和華你的神照他所應許擴張你境界的時候，你心裏想要吃肉，說：『我要吃肉』，就可以隨心所欲的吃肉。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華你神所選擇要立他名的地方若離你太遠，就可以照我所吩咐的，將耶和華賜給你的牛羊取些宰了，可以隨心所欲在你城裏吃。</div>
+<div class="verse"><span class="verse-number">22</span>你吃那肉，要像吃羚羊與鹿一般；無論潔淨人不潔淨人都可以吃。</div>
+<div class="verse"><span class="verse-number">23</span>只是你要心意堅定，不可吃血，因為血是生命；不可將血〔原文作生命〕與肉同吃。</div>
+<div class="verse"><span class="verse-number">24</span>不可吃血，要倒在地上，如同倒水一樣。</div>
+<div class="verse"><span class="verse-number">25</span>不可吃血。這樣，你行耶和華眼中看為正的事，你和你的子孫就可以得福。</div>
+<div class="verse"><span class="verse-number">26</span>只是你分別為聖的物和你的還願祭要奉到耶和華所選擇的地方去。</div>
+<div class="verse"><span class="verse-number">27</span>你的燔祭，連肉帶血，都要獻在耶和華你神的壇上。平安祭的血要倒在耶和華你神的壇上；平安祭的肉，你自己可以吃。</div>
+<div class="verse"><span class="verse-number">28</span>你要謹守聽從我所吩咐的一切話，行耶和華你神眼中看為善，看為正的事。這樣，你和你的子孫就可以永遠享福。」</div>
+<div class="verse"><span class="verse-number">29</span>「耶和華你神將你要去趕出的國民從你面前剪除，你得了他們的地居住，</div>
+<div class="verse"><span class="verse-number">30</span>那時就要謹慎，不可在他們除滅之後隨從他們的惡俗，陷入網羅，也不可訪問他們的神說：『這些國民怎樣事奉他們的神，我也要照樣行。』</div>
+<div class="verse"><span class="verse-number">31</span>你不可向耶和華你的神這樣行，因為他們向他們的神行了耶和華所憎嫌所恨惡的一切事，甚至將自己的兒女用火焚燒，獻與他們的神。</div>
+<div class="verse"><span class="verse-number">32</span>凡我所吩咐的，你們都要謹守遵行，不可加添，也不可刪減。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+申命記第十二章開啟了申命記「律例典章」的核心部分（第12-26章），也是以色列人進入迦南後必須遵守的宗教制度的首要規定。本章的核心主題是「敬拜的中心化」：神要求以色列人廢除迦南人的一切祭壇與偶像，只在神所選定的唯一地方獻祭敬拜，不可各行其是。這個「唯一敬拜地點」的原則在神學上具有重大意義：它強調神是獨一真神，敬拜祂的方式不能由人自行決定，只能按神的指定進行，防止各地祭壇因地方化而混入異教習俗。本章也區分了聖物（獻給神的）與俗物（日常飲食）：平日可在各城隨心宰殺吃肉，但燔祭、十一奉獻、還願祭等必須帶到神所選擇的地方。本章最後嚴肅警告：不可效法迦南人那可憎的習俗，包括以自己兒女獻火祭的惡行。結語再次強調：神的話語不可加添也不可刪減。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 敬拜神必須按照神的方式，而非按照人的喜好</strong><br>神明確指定要在祂所選擇的地方獻祭，不可在各處隨意敬拜（申12:5-6）。這個原則說明：敬拜的對象是神，因此敬拜的方式也必須由神來定義，而非由崇拜者自行設計。今日的敬拜若以「我覺得這樣感覺很好」為標準，而非以神的話語為根基，便有流於自我中心的危險。<br><br>
+<strong>2. 在喜樂中敬拜是神對百姓的心意</strong><br>「在那裏，耶和華你們神的面前，你們和你們的家屬都可以吃，並且因你手所辦的一切事蒙耶和華你的神賜福，就都歡樂」（申12:7）。神的敬拜不是一味嚴肅的宗教義務，而是包含了喜樂與感恩的團體慶典。信仰生活應帶有喜樂的色彩，當神的子民因神的恩典聚集，這本身就是對神最真實的見證。<br><br>
+<strong>3. 分別聖潔意味著拒絕效法世界的惡俗</strong><br>「你們要謹慎，不可在他們除滅之後隨從他們的惡俗，陷入網羅」（申12:30）。以色列人不是活在真空中，他們進入的是已有宗教文化的土地。神的警告是：即使異教徒的習俗看起來很有吸引力，也不可效法。今日信徒同樣面對文化的壓力，「別人都這樣做」從來不是信徒的行為標準，神的話語才是唯一的尺度。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>但耶和華你們的神</strong><strong>從你們各支派中選</strong>擇何處為立他名的居所，你們就當往那裏去求問。」（申12:5）</td>
+<td>神指定敬拜的方式，不是讓人自行決定，就像重要會議需要在主辦方指定地點舉行，不能各自在家開，你的敬拜生活是否有以神的話語為中心，還是更多以個人的方便與感受為依歸？</td>
+</tr>
+<tr>
+<td>「<strong>在那裏</strong>，<strong>耶和華你們神的面</strong>前，你們和你們的家屬都可以吃……就都歡樂。」（申12:7）</td>
+<td>在神面前一起歡樂是敬拜的本質，就像家庭聚餐最珍貴的不是食物而是同桌相聚的喜樂，你在教會敬拜中是否真實地體驗過這種因神的同在而產生的喜樂？如何能更常經歷它？</td>
+</tr>
+<tr>
+<td>「<strong>你們要謹慎</strong>，<strong>不可在他們除滅之</strong>後隨從他們的惡俗，陷入網羅。」（申12:30）</td>
+<td>效法世界的習俗是隱形的網羅，就像慢慢調高的水溫讓人沒有察覺危險，你生活中有哪些逐漸被文化或社會風氣影響的習慣，需要拿到神面前對照祂的話語重新審視？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

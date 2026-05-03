@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箴言第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+箴言第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">謀算在人，指引在神：謙卑與驕傲的分水嶺</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>心中的謀算在乎人；舌頭的應對由於耶和華。</div>
+<div class="verse"><span class="verse-number">2</span>人一切所行的，在自己眼中看為清潔；惟有耶和華衡量人心。</div>
+<div class="verse"><span class="verse-number">3</span>你所作的，要交託耶和華，你所謀的，就必成立。</div>
+<div class="verse"><span class="verse-number">4</span>耶和華所造的，各適其用；就是惡人也為禍患的日子所造。</div>
+<div class="verse"><span class="verse-number">5</span>凡心裏驕傲的，為耶和華所憎惡；雖然連手，他必不免受罰。</div>
+<div class="verse"><span class="verse-number">6</span>因憐憫誠實，罪孽得贖；敬畏耶和華的，遠離惡事。</div>
+<div class="verse"><span class="verse-number">7</span>人所行的，若蒙耶和華喜悅，耶和華也使他的仇敵與他和好。</div>
+<div class="verse"><span class="verse-number">8</span>多有財利，行事不義，不如少有財利，行事公義。</div>
+<div class="verse"><span class="verse-number">9</span>人心籌算自己的道路；惟耶和華指引他的腳步。</div>
+<div class="verse"><span class="verse-number">10</span>王的嘴中有神語，審判之時，他的口必不差錯。</div>
+<div class="verse"><span class="verse-number">11</span>公道的天平和秤都屬耶和華；囊中一切法碼都為他所定。</div>
+<div class="verse"><span class="verse-number">12</span>作惡，為王所憎惡，因國位是靠公義堅立。</div>
+<div class="verse"><span class="verse-number">13</span>公義的嘴為王所喜悅；說正直話的，為王所喜愛。</div>
+<div class="verse"><span class="verse-number">14</span>王的震怒如殺人的使者；但智慧人能止息王怒。</div>
+<div class="verse"><span class="verse-number">15</span>王的臉光使人有生命；王的恩典好像春雲時雨。</div>
+<div class="verse"><span class="verse-number">16</span>得智慧勝似得金子；選聰明強如選銀子。</div>
+<div class="verse"><span class="verse-number">17</span>正直人的道是遠離惡事；謹守己路的，是保全性命。</div>
+<div class="verse"><span class="verse-number">18</span>驕傲在敗壞以先；狂心在跌倒之前。</div>
+<div class="verse"><span class="verse-number">19</span>心裏謙卑與窮乏人來往，強如將擄物與驕傲人同分。</div>
+<div class="verse"><span class="verse-number">20</span>謹守訓言的，必得好處；倚靠耶和華的，便為有福。</div>
+<div class="verse"><span class="verse-number">21</span>心中有智慧，必稱為通達人；嘴中的甜言，加增人的學問。</div>
+<div class="verse"><span class="verse-number">22</span>人有智慧就有生命的泉源；愚昧人必被愚昧懲治。</div>
+<div class="verse"><span class="verse-number">23</span>智慧人的心教訓他的口，又使他的嘴增長學問。</div>
+<div class="verse"><span class="verse-number">24</span>良言如同蜂房，使心覺甘甜，使骨得醫治。</div>
+<div class="verse"><span class="verse-number">25</span>有一條路，人以為正，至終成為死亡之路。</div>
+<div class="verse"><span class="verse-number">26</span>勞力人的胃口使他勞力，因為他的口腹催逼他。</div>
+<div class="verse"><span class="verse-number">27</span>匪徒圖謀奸惡，嘴上彷彿有燒焦的火。</div>
+<div class="verse"><span class="verse-number">28</span>乖僻人播散紛爭；傳舌的離間密友。</div>
+<div class="verse"><span class="verse-number">29</span>強暴人誘惑鄰舍，領他走不善之道。</div>
+<div class="verse"><span class="verse-number">30</span>眼目緊合的，圖謀乖僻；嘴唇緊閉的，成就邪惡。</div>
+<div class="verse"><span class="verse-number">31</span>白髮是榮耀的冠冕，在公義的道上必能得着。</div>
+<div class="verse"><span class="verse-number">32</span>不輕易發怒的，勝過勇士；治服己心的，強如取城。</div>
+<div class="verse"><span class="verse-number">33</span>籤放在懷裏，定事由耶和華。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+箴言第十六章是箴言書格言集中神學密度最高的章節之一，其中前九節幾乎每節都提到耶和華，形成一個以神為中心的「神主權宣告集」。本章清楚地呈現了人的謀算與神的主權之間的張力：人有計劃的自由，但最終的結果在乎神（1節、3節、9節、33節）。在歷史背景上，第10-15節以「王」為主題，反映了所羅門時代對理想君王的期望——公義、智慧、憐憫。本章的高峰之一是第18節「驕傲在敗壞以先；狂心在跌倒之前」，這是整個聖經中最廣為人知的格言之一，在新約與歷史中一再得到印證。第32節「不輕易發怒的，勝過勇士；治服己心的，強如取城」，則以出人意料的比喻，宣告情緒管理是屬靈力量的更高表現。全章在整本箴言書中位居中心位置，以「人謀神算」與「驕傲謙卑」兩大主題，呈現了智慧生命的核心屬靈張力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 人謀算，神指引——信靠神的主權是屬靈平安的根基</strong><br>第1節「心中的謀算在乎人；舌頭的應對由於耶和華」，第9節「人心籌算自己的道路；惟耶和華指引他的腳步」，共同宣告了人的計劃與神的主權並行不悖的真理。信徒不應因「神掌權」而不做計劃，也不應因「自己有計劃」而忘記神的指引。真正的信靠，是在盡力謀算之後，將結果交託給那位比我們更有智慧的神，並相信祂的安排勝過我們的計算。<br><br>
+<strong>2. 驕傲是靈命敗壞的前兆，謙卑是蒙福的入口</strong><br>第18節「驕傲在敗壞以先；狂心在跌倒之前」與第19節「心裏謙卑與窮乏人來往，強如將擄物與驕傲人同分」，形成了一組強烈的屬靈對比。驕傲不僅是道德缺失，更是屬靈危機的警訊——人在驕傲中失去對自身限制的認知，也失去對神依賴的意識，因而走向敗壞。謙卑則開啟神的恩典與供應，是屬靈生命持續成長的必要姿態。<br><br>
+<strong>3. 治服己心是最高的屬靈力量</strong><br>第32節以「勇士」和「取城」作比較，說明控制自己的怒氣與情緒，比外在的武力征服更需要力量與智慧。在現代充滿刺激與誘發情緒的環境中，情緒管理是信徒最重要的屬靈操練之一。聖靈所結的「節制」果子，正是這種內在力量的屬靈根源。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>人心籌算自己的道</strong>路；<strong>惟耶和華指引他的</strong>腳步。」（箴16:9）</td>
+<td>就像旅人出發前制定詳細的行程，卻因天氣或意外需要臨時更改，你是否有過精心計劃卻被神改變方向的經歷？那次的「改道」最終帶你到了哪裡？你從中學到了什麼？</td>
+</tr>
+<tr>
+<td>「<strong>驕傲在敗壞以先</strong>；<strong>狂心在跌倒之前</strong>。」（箴16:18）</td>
+<td>就像登山者在接近頂峰時若因輕視山的危險而放鬆警惕，反而最容易發生意外，你在人生哪個「高峰時刻」——事業、關係或信仰——最容易產生驕傲？你如何在成功中保持謙卑？</td>
+</tr>
+<tr>
+<td>「<strong>不輕易發怒的</strong>，<strong>勝過勇士</strong>；治服己心的，強如取城。」（箴16:32）</td>
+<td>就像核電廠的控制系統能管理巨大的能量而不爆炸，情緒的自我管理比釋放憤怒需要更高的能力，你在哪些情況下最難控制自己的怒氣？你目前有哪些幫助自己「治服己心」的方法？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

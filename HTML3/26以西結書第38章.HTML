@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以西結書第38章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以西結書第38章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">歌革瑪各之戰與神的審判計畫</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話臨到我說：</div>
+<div class="verse"><span class="verse-number">2</span>「人子啊，你要面向瑪各地的歌革，就是羅施、米設、土巴的王發預言攻擊他，</div>
+<div class="verse"><span class="verse-number">3</span>說主耶和華如此說：羅施、米設、土巴的王歌革啊，我與你為敵。</div>
+<div class="verse"><span class="verse-number">4</span>我必用鉤子鉤住你的腮頰，調轉你，將你和你的軍兵、馬匹、馬兵帶出來，都披掛整齊，成了大隊，有大小盾牌，各拿刀劍。</div>
+<div class="verse"><span class="verse-number">5</span>波斯人、古實人，和弗人〔又作呂彼亞人〕，各拿盾牌，頭上戴盔；</div>
+<div class="verse"><span class="verse-number">6</span>歌篾人和他的軍隊，北方極處的陀迦瑪族和他的軍隊，這許多國的民都同着你。</div>
+<div class="verse"><span class="verse-number">7</span>「那聚集到你這裏的各隊都當準備；你自己也要準備，作他們的大帥。</div>
+<div class="verse"><span class="verse-number">8</span>過了多日，你必被差派。到末後之年，你必來到脫離刀劍從列國收回之地，到以色列常久荒涼的山上；但那從列國中招聚出來的必在其上安然居住。</div>
+<div class="verse"><span class="verse-number">9</span>你和你的軍隊，並同着你許多國的民，必如暴風上來，如密雲遮蓋地面。」</div>
+<div class="verse"><span class="verse-number">10</span>主耶和華如此說：「到那時，你心必起意念，圖謀惡計，</div>
+<div class="verse"><span class="verse-number">11</span>說：『我要上那無城牆的鄉村，我要到那安靜的民那裏，他們都沒有城牆，無門、無閂，安然居住。</div>
+<div class="verse"><span class="verse-number">12</span>我去要搶財為擄物，奪貨為掠物，反手攻擊那從前荒涼、現在有人居住之地，又攻擊那住世界中間、從列國招聚、得了牲畜財貨的民。』</div>
+<div class="verse"><span class="verse-number">13</span>示巴人、底但人、他施的客商，和其間的少壯獅子都必問你說：『你來要搶財為擄物嗎？你聚集軍隊要奪貨為掠物嗎？要奪取金銀，擄去牲畜、財貨嗎？要搶奪許多財寶為擄物嗎？』</div>
+<div class="verse"><span class="verse-number">14</span>「人子啊，你要因此發預言，對歌革說，主耶和華如此說：到我民以色列安然居住之日，你豈不知道嗎？</div>
+<div class="verse"><span class="verse-number">15</span>你必從本地，從北方的極處率領許多國的民來，都騎着馬，乃一大隊極多的軍兵。</div>
+<div class="verse"><span class="verse-number">16</span>歌革啊，你必上來攻擊我的民以色列，如密雲遮蓋地面。末後的日子，我必帶你來攻擊我的地，到我在外邦人眼前，在你身上顯為聖的時候，好叫他們認識我。</div>
+<div class="verse"><span class="verse-number">17</span>主耶和華如此說：我在古時藉我的僕人以色列的先知所說的，就是你嗎？當日他們多年預言我必帶你來攻擊以色列人。」</div>
+<div class="verse"><span class="verse-number">18</span>主耶和華說：「歌革上來攻擊以色列地的時候，我的怒氣要從鼻孔裏發出。</div>
+<div class="verse"><span class="verse-number">19</span>我發憤恨和烈怒如火說：那日在以色列地必有大震動，</div>
+<div class="verse"><span class="verse-number">20</span>甚至海中的魚、天空的鳥、田野的獸，並地上的一切昆蟲，和其上的眾人，因見我的面就都震動；山嶺必崩裂，陡巖必塌陷，牆垣都必坍倒。」</div>
+<div class="verse"><span class="verse-number">21</span>主耶和華說：「我必命我的諸山發刀劍來攻擊歌革；人都要用刀劍殺害弟兄。</div>
+<div class="verse"><span class="verse-number">22</span>我必用瘟疫和流血的事刑罰他。我也必將暴雨、大雹與火，並硫磺降與他和他的軍隊，並他所率領的眾民。</div>
+<div class="verse"><span class="verse-number">23</span>我必顯為大，顯為聖，在多國人的眼前顯現；他們就知道我是耶和華。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以西結書第38章開始「歌革瑪各神諭」（38-39章），是以西結書中末世論色彩最濃厚的段落，也是解釋最具爭議性的章節，在啟示錄20章得到呼應。歌革是「羅施、米設、土巴的王」（具體身分歷代有不同的解釋），他率領多國聯軍（波斯、古實、弗、歌篾、陀迦瑪族）入侵以色列。然而神說這場入侵是神「帶你來攻擊我的地」（16節）——仇敵以為是他們自己的計謀，實際上是神在末後的日子主動引導他們進來，為要在外邦人眼前顯為聖，並藉着消滅他們彰顯神的榮耀。當歌革進攻之時，神以地震、瘟疫、流血、暴雨、大雹、火與硫磺應對，使侵略者自相殘殺。本章的核心信息是：神對歷史有完全的主宰，即使是仇敵的入侵，也在神的計畫與掌控之內；末後的審判是神親自介入歷史的顯現。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 仇敵的攻擊在神的主權下服務於神更大的計畫</strong><br>「我必帶你來攻擊我的地」——歌革以為是自己的計謀，神說是祂的安排。敵人的攻擊不超越神的主宰，反而在神的計畫中服務於更大的目的。信徒面對攻擊和迫害，可以有這樣的確信：這在神的視野中，並且神要從中成就比入侵者所想的更大的事。<br><br>
+<strong>2. 神在末後之年的介入是為讓萬民認識祂</strong><br>「在你身上顯為聖的時候，好叫他們認識我」——神最終的末世性行動，目的仍是讓萬民認識神。審判和榮耀都指向同一個目標：讓所有人知道「我是耶和華」。這給信徒一個世界觀：歷史的終點不是混沌，而是神的榮耀被普遍認識的時刻。<br><br>
+<strong>3. 神的保護建立在祂的聖名，不在以色列自己的軍事能力</strong><br>以色列面對「大隊極多的軍兵」，卻沒有靠自己的力量抵擋——神親自以地震、瘟疫、大雹等介入。終極的保護不在於人的防衛系統，而在於神親自的介入。信徒在面對比自己強大得多的對手時，這個真理是最穩固的安慰。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>末後的日子</strong>，<strong>我必帶你來攻擊我</strong>的地，到我在外邦人眼前，在你身上顯為聖的時候，好叫他們認識我。（結38:16）</td>
+<td>「好叫他們認識我」——神允許某些挑戰發生，是為了在其中顯現祂的聖潔和能力。你生命中有沒有某個困境，你現在回看，正是神「在其中顯為聖」的場合？就像電影中最黑暗的場景往往是英雄最精彩的時刻，你能在現在的困境中，抱持「神要在這裡顯現」的期待嗎？</td>
+</tr>
+<tr>
+<td><strong>我必用鉤子鉤住你</strong><strong>的腮頰</strong>，調轉你，將你和你的軍兵……帶出來。（結38:4上）</td>
+<td>歌革以為自己在主動出擊，實際上神在「鉤住」他。你生命中有沒有某個「仇敵的攻擊」，事後回看，其實是神把那個對手帶到一個特定的地方，以至於更大的計畫可以成就？這個視角如何改變你面對現有挑戰的心態？</td>
+</tr>
+<tr>
+<td><strong>我發憤恨和烈怒如</strong>火說：<strong>那日在以色列地必</strong>有大震動。（結38:19）</td>
+<td>神以地震、瘟疫、大雹、火、硫磺回應歌革——這是神的忿怒對不義的強烈回應。你是否相信神對不義有真實的忿怒，而不只是溫和的不悅？就像法官對謀殺案的判決需要相稱的嚴厲，神對罪惡的忿怒是公義的必要部分。這個真理如何既讓你敬畏，也讓你放心地把世界的不公義交給祂？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

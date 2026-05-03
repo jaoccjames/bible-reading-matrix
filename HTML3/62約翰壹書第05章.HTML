@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰壹書第5章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰壹書第5章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">信心勝過世界與永生的確知</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>凡信耶穌是基督的，都是從神而生，凡愛生他之神的，也必愛從神生的。</div>
+<div class="verse"><span class="verse-number">2</span>我們若愛神，又遵守他的誡命，從此就知道我們愛神的兒女。</div>
+<div class="verse"><span class="verse-number">3</span>我們遵守神的誡命，這就是愛他了，並且他的誡命不是難守的。</div>
+<div class="verse"><span class="verse-number">4</span>因為凡從神生的，就勝過世界；使我們勝了世界的，就是我們的信心。</div>
+<div class="verse"><span class="verse-number">5</span>勝過世界的是誰呢？不是那信耶穌是神兒子的嗎？</div>
+<div class="verse"><span class="verse-number">6</span>這藉着水和血而來的，就是耶穌基督；不是單用水，乃是用水又用血，</div>
+<div class="verse"><span class="verse-number">7</span>並且有聖靈作見證，因為聖靈就是真理。</div>
+<div class="verse"><span class="verse-number">8</span>作見證的原來有三：就是聖靈、水，與血，這三樣也都歸於一。</div>
+<div class="verse"><span class="verse-number">9</span>我們既領受人的見證，神的見證更該領受〔該領受：原文作大〕了，因神的見證是為他兒子作的。</div>
+<div class="verse"><span class="verse-number">10</span>信神兒子的，就有這見證在他心裏；不信神的，就是將神當作說謊的，因不信神為他兒子作的見證。</div>
+<div class="verse"><span class="verse-number">11</span>這見證就是神賜給我們永生；這永生也是在他兒子裏面。</div>
+<div class="verse"><span class="verse-number">12</span>人有了神的兒子就有生命，沒有神的兒子就沒有生命。</div>
+<div class="verse"><span class="verse-number">13</span>我將這些話寫給你們信奉神兒子之名的人，要叫你們知道自己有永生。</div>
+<div class="verse"><span class="verse-number">14</span>我們若照他的旨意求甚麼，他就聽我們，這是我們向他所存坦然無懼的心。</div>
+<div class="verse"><span class="verse-number">15</span>既然知道他聽我們一切所求的，就知道我們所求於他的，無不得着。</div>
+<div class="verse"><span class="verse-number">16</span>人若看見弟兄犯了不至於死的罪，就當為他祈求，神必將生命賜給他；有至於死的罪，我不說當為這罪祈求。</div>
+<div class="verse"><span class="verse-number">17</span>凡不義的事都是罪，也有不至於死的罪。</div>
+<div class="verse"><span class="verse-number">18</span>我們知道凡從神生的，必不犯罪，從神生的，必保守自己〔有古卷作：那從神生的必保護他〕，那惡者也就無法害他。</div>
+<div class="verse"><span class="verse-number">19</span>我們知道，我們是屬神的，全世界都臥在那惡者手下。</div>
+<div class="verse"><span class="verse-number">20</span>我們也知道，神的兒子已經來到，且將智慧賜給我們，使我們認識那位真實的，我們也在那位真實的裏面，就是在他兒子耶穌基督裏面。這是真神，也是永生。</div>
+<div class="verse"><span class="verse-number">21</span>小子們哪，你們要自守，遠避偶像！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第5章是約翰壹書的結語，就信仰戰勝世界、神兒子的見證、代禱的事以及認識真神的確據給出教導，以知道你們有永生作結，給予信徒確定的確信。本章首先說凡信耶穌是基督的都是從神而生，凡從神生的就勝過世界，這就是那勝過世界的勝利，就是我們的信心，那信神兒子的勝過世界的就是誰呢，不是那信耶穌是神兒子的嗎。接著說為耶穌是神的兒子而作見證的有三個，就是聖靈、水和血，這三樣是一致的；人的見證尚且可信，神的見證更大，那信神兒子的就有這見證在心裡，那不信神的就是以神為說謊的，因為不信神為祂兒子作的見證。然後說這些話約翰寫給那些信奉神兒子之名的人，要他們知道自己有永生；若有人見弟兄犯了不至於死的罪，就當為他求，神必將生命賜給他；義人的禱告大有功效。最後說我們知道我們是屬神的，那全世界都臥在那惡者手下，並且我們知道神的兒子已經來到，且將悟性賜給我們使我們認識那位真實的，我們也在那真實的裡面，就是在祂兒子耶穌基督裡面，祂是真神也是永生。你們要自守遠避偶像。本章以確信永生和認識真神為整卷書信作出充滿信心的總結。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 信心是勝過世界的力量</strong><br>「使我們勝了世界的，就是我們的信心」——信心不只是被動地接受救恩，而是主動地勝過世界的力量。「信耶穌是神兒子的」——信心的對象是清楚的，不是一個模糊的神，而是耶穌——那是基督、是神的兒子。信心的具體內容決定它的效力。<br><br>
+<strong>2. 「知道自己有永生」——書信的目的</strong><br>「要叫你們知道自己有永生」——「知道」是約翰壹書的核心詞彙之一。這種確知不是自以義的驕傲，而是建立在神的應許上的信仰確據。若不確定自己是否得救，就無法安心服事；信心的確據帶出自由的愛和服事。<br><br>
+<strong>3. 人有了神的兒子就有生命</strong><br>「人有了神的兒子就有生命，沒有神的兒子就沒有生命」——永生與否完全取決於是否「有神的兒子」，不是取決於道德成就或宗教努力。這個宣告既是包容的邀請（任何人都可以「有」神的兒子），也是排他的宣告（沒有神的兒子就沒有生命）。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我將這些話寫給你</strong><strong>們信奉神兒子之名</strong>的人，要叫你們知道自己有永生。（約壹5:13）</td>
+<td>你有沒有讓「知道自己有永生」成為你信仰的確信——不是驕傲，而是建立在神應許上的安穩？就像一個持有有效護照的人在旅途中有確定的身份，你有沒有讓這個確知帶出你更自由、更有力的信仰和服事？</td>
+</tr>
+<tr>
+<td><strong>使我們勝了世界的</strong>，<strong>就是我們的信心</strong>。勝過世界的是誰呢？不是那信耶穌是神兒子的嗎？（約壹5:4-5）</td>
+<td>你有沒有讓你的信心成為你面對世界壓力和誘惑時真實的力量，而非只是一個被動持有的教義？就像一個功夫不是在沒有對手時才有用，你有沒有讓你的信心在真實的世界挑戰中顯出它的勝過之力？</td>
+</tr>
+<tr>
+<td><strong>神賜給我們永生</strong>；<strong>這永生也是在他兒</strong>子裏面。人有了神的兒子就有生命，沒有神的兒子就沒有生命。（約壹5:11-12）</td>
+<td>你有沒有讓「有了神的兒子就有生命」這個簡明的福音宣告，成為你傳福音時的核心信息，讓所有人都清楚地聽見這個決定一切的關鍵？就像最重要的信息應該最清楚地傳達，你有沒有讓這個簡單卻決定性的真理成為你見證的核心？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第16章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第16章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">約伯申訴：我有見證在天上</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>約伯回答說：</div>
+<div class="verse"><span class="verse-number">2</span>這樣的話我聽了許多；你們安慰人，反叫人愁煩。</div>
+<div class="verse"><span class="verse-number">3</span>虛空的言語有窮盡麼？有甚麼話惹動你回答呢？</div>
+<div class="verse"><span class="verse-number">4</span>我也能說你們那樣的話；你們若處在我的境遇，我也會聯絡言語攻擊你們，又能向你們搖頭。</div>
+<div class="verse"><span class="verse-number">5</span>但我必用口堅固你們，用嘴消解你們的憂愁。</div>
+<div class="verse"><span class="verse-number">6</span>我雖說話，憂愁仍不得消解；我雖停住不說，憂愁就離開我嗎？</div>
+<div class="verse"><span class="verse-number">7</span>但現在神使我困倦，使親友遠離我，</div>
+<div class="verse"><span class="verse-number">8</span>又抓住我，作見證攻擊我；我身體的枯瘦也當面見證我的不是。</div>
+<div class="verse"><span class="verse-number">9</span>主發怒撕裂我，逼迫我，向我切齒；我的敵人怒目看我。</div>
+<div class="verse"><span class="verse-number">10</span>他們向我開口，打我的臉羞辱我，聚會攻擊我。</div>
+<div class="verse"><span class="verse-number">11</span>神把我交給不敬虔的人，把我扔到惡人的手中。</div>
+<div class="verse"><span class="verse-number">12</span>我素來安逸，他折斷我，掐住我的頸項，把我摔碎，又立我為他的箭靶子。</div>
+<div class="verse"><span class="verse-number">13</span>他的弓箭手四面圍繞我；他破裂我的肺腑，並不留情，把我的膽傾倒在地上，</div>
+<div class="verse"><span class="verse-number">14</span>將我破裂又破裂，如同勇士向我直闖。</div>
+<div class="verse"><span class="verse-number">15</span>我縫麻布在我皮膚上，把我的角放在塵土中。</div>
+<div class="verse"><span class="verse-number">16</span>我的臉因哭泣發紫，在我的眼皮上有死蔭。</div>
+<div class="verse"><span class="verse-number">17</span>我的手中卻無強暴；我的祈禱也是清潔。</div>
+<div class="verse"><span class="verse-number">18</span>地啊，不要遮蓋我的血！不要阻擋我的哀求！</div>
+<div class="verse"><span class="verse-number">19</span>現今，在天有我的見證，在上有我的中保。</div>
+<div class="verse"><span class="verse-number">20</span>我的朋友譏誚我，我卻向神眼淚汪汪。</div>
+<div class="verse"><span class="verse-number">21</span>願人得與神辯白，如同人與朋友辯白一樣；</div>
+<div class="verse"><span class="verse-number">22</span>因為再過幾年，我必走那往而不返之路。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第16章是約伯在第二輪辯論中最情感充沛的回應，也包含了全書中最重要的信仰宣告之一。他先批評朋友的「安慰」只是讓人愁煩，然後描述自己所受苦難的生動畫面：神折斷他、逼迫他、拿他當箭靶、破裂他的肺腑。但就在最深的絕望描述中，突然出現了一道光：「現今，在天有我的見證，在上有我的中保。」這是繼第9章渴望中保之後，約伯更清楚地宣告天上有一位站在他那邊的見證者。他說「我向神眼淚汪汪」，並渴望能像人與朋友辯白一樣與神辯白。本章展示了苦難中信仰的奇特現象：最深的控訴與最深的盼望，同時存在於同一個靈魂中。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真正的安慰需要傾聽，而非急於說話</strong><br>約伯說「這樣的話我聽了許多；你們安慰人，反叫人愁煩」，並說「我也能說你們那樣的話」——他知道那些話，但知道那些話和真正得到安慰是兩回事。真實的安慰首先是同在和傾聽，而非理論和解釋。<br><br>
+<strong>2. 「在天有我的見證，在上有我的中保」是信仰的核心盼望</strong><br>在最深的絕望中，約伯突然宣告天上有一位他的見證者和中保。這是整本書中最光明的一刻——苦難沒有使他的信仰消失，反而逼出了對天上中保最真實的渴望。這個渴望在基督裡得到了完全的實現。<br><br>
+<strong>3. 眼淚和信仰可以並存，哭泣不代表信仰的失敗</strong><br>「我向神眼淚汪汪」——約伯帶著眼淚向神說話，這不是信仰的軟弱，而是信仰的真實。他沒有因為信神就壓制眼淚，也沒有因為眼淚而停止信神。眼淚和信仰在苦難中的並存，是屬靈成熟最真實的樣貌。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們安慰人</strong>，<strong>反叫人愁煩</strong>；你們虛空的言語有窮盡麼？（伯16:2-3）</td>
+<td>就像一個渴望傾聽的人卻被不停地給建議，適得其反的安慰讓人更孤單。你有沒有給過讓人「更愁煩」的安慰？那次之後你如何調整自己陪伴他人的方式？</td>
+</tr>
+<tr>
+<td>現今，<strong>在天有我的見證</strong>，<strong>在上有我的中保</strong>。（伯16:19）</td>
+<td>就像在法庭上最需要的是一個了解你的完整故事的見證人，天上有見證者和中保的確信是苦難中最深的依靠。你知道基督是你的中保嗎？在你最受誤解的時刻，這個事實給你帶來了什麼？</td>
+</tr>
+<tr>
+<td><strong>我向神眼淚汪汪</strong>。<strong>願人得與神辯白</strong>，如同人與朋友辯白一樣。（伯16:20-21）</td>
+<td>就像向最親密的朋友說出最痛苦的話，帶着眼淚向神說話是信仰最真實的樣貌。你有沒有曾帶著眼淚向神說話的經歷？那段對話讓你與神的關係有什麼改變？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

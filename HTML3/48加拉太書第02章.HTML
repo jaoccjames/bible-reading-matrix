@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>加拉太書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+加拉太書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">彼得的假冒與「我已與基督同釘」</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>過了十四年，我同巴拿巴又上耶路撒冷去，並帶着提多同去。</div>
+<div class="verse"><span class="verse-number">2</span>我是奉啟示上去的，把我在外邦人中所傳的福音，對弟兄們陳說；卻是背地裏對那有名望之人說的，惟恐我現在，或是從前，徒然奔跑。</div>
+<div class="verse"><span class="verse-number">3</span>但與我同去的提多，雖是希利尼人，也沒有勉強他受割禮；</div>
+<div class="verse"><span class="verse-number">4</span>因為有偷着引進來的假弟兄，私下窺探我們在基督耶穌裏的自由，要叫我們作奴僕。</div>
+<div class="verse"><span class="verse-number">5</span>我們就是一刻的工夫也沒有容讓順服他們，為要叫福音的真理仍存在你們中間。</div>
+<div class="verse"><span class="verse-number">6</span>至於那些有名望的，不論他是何等人，都與我無干。神不以外貌取人。那些有名望的，並沒有加增我甚麼，</div>
+<div class="verse"><span class="verse-number">7</span>反倒看見了主託我傳福音給那未受割禮的人，正如託彼得傳福音給那受割禮的人。</div>
+<div class="verse"><span class="verse-number">8</span>（那感動彼得、叫他為受割禮之人作使徒的，也感動我，叫我為外邦人作使徒；）</div>
+<div class="verse"><span class="verse-number">9</span>又知道所賜給我的恩典，那稱為教會柱石的雅各、磯法、約翰，就向我和巴拿巴用右手行相交之禮，叫我們往外邦人那裏去，他們往受割禮的人那裏去。</div>
+<div class="verse"><span class="verse-number">10</span>只是願意我們記念窮人；這也是我本來熱心去行的。</div>
+<div class="verse"><span class="verse-number">11</span>後來，磯法到了安提阿；因他有可責之處，我就當面抵擋他。</div>
+<div class="verse"><span class="verse-number">12</span>從雅各那裏來的人未到以先，他和外邦人一同吃飯，及至他們來到，他因怕奉割禮的人，就退去與外邦人隔開了。</div>
+<div class="verse"><span class="verse-number">13</span>其餘的猶太人也都隨着他裝假，甚至連巴拿巴也隨夥裝假。</div>
+<div class="verse"><span class="verse-number">14</span>但我一看見他們行的不正，與福音的真理不合，就在眾人面前對磯法說：「你既是猶太人，若隨外邦人行事，不隨猶太人行事，怎麼還勉強外邦人隨猶太人呢？」</div>
+<div class="verse"><span class="verse-number">15</span>我們這生來的猶太人，不是外邦的罪人；</div>
+<div class="verse"><span class="verse-number">16</span>既知道人稱義不是因行律法，乃是因信耶穌基督，連我們也信了基督耶穌，使我們因信基督稱義，不因行律法稱義；因為凡有血氣的，沒有一人因行律法稱義。</div>
+<div class="verse"><span class="verse-number">17</span>我們若求在基督裏稱義，卻仍舊是罪人，難道基督是叫人犯罪的嗎？斷乎不是！</div>
+<div class="verse"><span class="verse-number">18</span>我素來所拆毀的，若重新建造，這就證明自己是犯罪的人。</div>
+<div class="verse"><span class="verse-number">19</span>我因律法，就向律法死了，叫我可以向神活着。</div>
+<div class="verse"><span class="verse-number">20</span>我已經與基督同釘十字架，現在活着的不再是我，乃是基督在我裏面活着；並且我如今在肉身活着，是因信神的兒子而活；他是愛我，為我捨己。</div>
+<div class="verse"><span class="verse-number">21</span>我不廢掉神的恩；義若是藉着律法得的，基督就是徒然死了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第2章繼續保羅對其使徒身份和福音獨立性的申辯，記述他第二次上耶路撒冷與使徒的會面，以及他在安提阿當面抵擋彼得的事件，最後提出稱義的核心命題。本章首先記述保羅十四年後再次上耶路撒冷，私下把所傳的福音告訴那有名望的人，他們看出保羅蒙託傳福音給外邦人，就與他用右手相交，表示合夥。接著記述安提阿事件：彼得起初與外邦人一同吃飯，但雅各那裡有人來了，他就退縮分開，保羅當面抵擋他，因為他的行為與福音的真理不合。這個事件揭示早期教會對猶太人與外邦人關係的重大神學爭議。然後保羅提出因信稱義的命題：人稱義不是因行律法，乃是因信耶穌基督，就連猶太人也是靠信基督而稱義，不是靠行律法，因為凡靠行律法稱義的都是被咒詛的。最後說明他已與基督同釘十字架，現在活著的不再是他，乃是基督在他裡面活著，現在他在肉身活著，是因信神兒子而活。本章以個人見證和神學論述交織，是理解保羅神學的關鍵文本。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「我已經與基督同釘十字架」</strong><br>「現在活着的不再是我，乃是基督在我裏面活着」——這是信仰身份最深刻的宣告。「我」作為自我意志和自我中心的掌控者，已在十字架上終結；取而代之的是基督在裏面的生命。這不是消除個性，而是把生命的主導者從自我換為基督。「他是愛我，為我捨己」——這個「為我」的個人化，是信仰最深的確信。<br><br>
+<strong>2. 面對假冒時的勇氣</strong><br>彼得因「怕奉割禮的人」而退縮，保羅「當面抵擋他」——這顯示了信仰的成熟需要在壓力下的勇氣。彼得的行為不是個人的罪，而是影響整個社群的神學偏差：讓外邦信徒以為還需要遵守猶太規條。保羅保護福音真理的勇氣，來自對因信稱義的確信，不是來自個人恩怨。<br><br>
+<strong>3. 靠律法稱義是廢掉神的恩</strong><br>「我不廢掉神的恩；義若是藉着律法得的，基督就是徒然死了」——若有任何人類的行為可以使人稱義，基督的死就是不必要的。承認自己需要基督才能稱義，就是承認律法的不能；而回到律法去稱義，就是否認基督死亡的必要性。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我已經與基督同釘</strong><strong>十字架</strong>，現在活着的不再是我，乃是基督在我裏面活着；並且我如今在肉身活着，是因信神的兒子而活；他是愛我，為我捨己。（加2:20）</td>
+<td>「基督在我裏面活着」這個宣告有沒有真實地進入你的日常生活——讓你的決定、反應和優先次序越來越像基督，而不是越來越像以自我為中心的舊人？就像一個人住在你心裏會影響你思考的方式，你有沒有讓基督真實地住在你心裏並從裏面改變你？</td>
+</tr>
+<tr>
+<td><strong>人稱義不是因行律</strong>法，<strong>乃是因信耶穌基督</strong>……因為凡有血氣的，沒有一人因行律法稱義。（加2:16）</td>
+<td>你有沒有在靈命上有時不自覺地滑回「靠行為换取神的悅納」的心態，而非活在「因信稱義」的確信中？就像學走路後仍有時會爬行，你有沒有定期確認你的信仰根基仍然是純粹的恩典，而非恩典加行為？</td>
+</tr>
+<tr>
+<td><strong>我呼籲神給我的心</strong><strong>作見證</strong>，我沒有往哥林多去是為要寬容你們。……我們並不是轄管你們的信心，乃是幫助你們的快樂。（加2:23,但需調整引用——應為）彼得既是猶太人，若隨外邦人行事，不隨猶太人行事，怎麼還勉強外邦人隨猶太人呢？（加2:14）</td>
+<td>你有沒有在信仰群體中，因為害怕某些人的眼光而在信仰立場上退縮，行事不按福音的真理？就像彼得因怕人而裝假，你有沒有讓對人的懼怕影響你對神真理的持守？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

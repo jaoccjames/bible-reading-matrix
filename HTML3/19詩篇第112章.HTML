@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第112章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第112章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">敬畏神之人的祝福：心堅定不懼惡信息</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你們要讚美耶和華！敬畏耶和華，甚喜愛他命令的，這人便為有福！</div>
+<div class="verse"><span class="verse-number">2</span>他的後裔在世必強盛；正直人的後代必要蒙福。</div>
+<div class="verse"><span class="verse-number">3</span>他家中有貨物，有錢財；他的公義存到永遠。</div>
+<div class="verse"><span class="verse-number">4</span>正直人在黑暗中，有光向他發現；他有恩惠，有憐憫，有公義。</div>
+<div class="verse"><span class="verse-number">5</span>施恩與人、借貸與人的，這人事情順利；他被審判的時候要訴明自己的冤。</div>
+<div class="verse"><span class="verse-number">6</span>他永不動搖；義人被記念，直到永遠。</div>
+<div class="verse"><span class="verse-number">7</span>他必不怕兇惡的信息；他心堅定，倚靠耶和華。</div>
+<div class="verse"><span class="verse-number">8</span>他心確定，總不懼怕，直到他看見敵人遭報。</div>
+<div class="verse"><span class="verse-number">9</span>他施捨錢財，賙濟貧窮；他的仁義存到永遠。他的角必被高舉，大有榮耀。</div>
+<div class="verse"><span class="verse-number">10</span>惡人看見便惱恨，必咬牙而消化；惡人的心願要歸滅絕。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第112篇是詩篇第111篇的「姊妹篇」，同為字母詩篇（希伯來文按字母順序排列），兩篇關係密切：111篇讚美神的性格與作為，112篇描繪效法神性格、敬畏祂的人所得的祝福。兩篇合在一起，形成一幅「神的性格→人的效法→蒙福的生命」的完整神學圖景。
+
+      本篇以「敬畏耶和華，甚喜愛他命令的，這人便為有福！」開篇，揭示真正的幸福不在於外在的條件，而在於與神的關係——敬畏祂、喜愛祂的命令。接下來的祝福描述（後裔強盛、家中豐盛、黑暗中有光）都是這種敬虔生命的自然延伸。
+
+      第7節「他必不怕兇惡的信息；他心堅定，倚靠耶和華」是本篇最廣為人知的節次，描繪敬畏神之人面對壞消息的獨特回應：「不怕」，因為「心堅定，倚靠耶和華」。這種面對壞消息的從容，不是來自情感的麻木，而是來自對那位掌管一切之神的深度信靠——神不只掌管好消息，也在壞消息中同在並掌管。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 敬畏神甚喜愛祂命令是真正有福生命的根基</strong><br>「敬畏耶和華，甚喜愛他命令的，這人便為有福！」（第1節）「甚喜愛」表明這不是勉強的服從，而是由衷的喜悅。當一個人真正敬畏神、以神的命令為喜樂，他的生命便獲得了所有祝福的根基——不只是外在的成功，更是生命的方向與內在的平安。這種「喜愛神命令」的心態，是真正活出信仰而非只是履行宗教義務的核心差異。<br><br>
+<strong>2. 在黑暗中有光發現揭示義人面對逆境的獨特資源</strong><br>「正直人在黑暗中，有光向他發現；他有恩惠，有憐憫，有公義。」（第4節）義人也經歷黑暗——本篇沒有承諾敬畏神的人不會遭遇逆境；但它宣告，在黑暗中「有光向他發現」。這個光不是義人自己發出的，而是被「發現」——是神的恩惠、憐憫、公義的光，在義人的黑暗中照耀。敬畏神的人在困境中有別人所沒有的光源，使他能在黑暗中仍看見方向。<br><br>
+<strong>3. 心堅定倚靠耶和華使人不怕兇惡的信息</strong><br>「他必不怕兇惡的信息；他心堅定，倚靠耶和華。」（第7節）在一個充斥壞消息的世界中，這個宣告是信仰最現實的應許之一。「不怕」不是因為沒有壞消息，而是因為「心堅定，倚靠耶和華」——信仰的錨點使心靈不被壞消息所淹沒。這種心靈的穩定不是情感的麻木，而是對那位掌管一切的神的深度信靠，使信徒能在最壞的消息中仍保持靈魂的重心。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>敬畏耶和華</strong>，<strong>甚喜愛他命令的</strong>，這人便為有福！（詩112:1）</td>
+<td>就像一個人真正喜歡健康飲食，就不需要靠意志力強迫自己，而是由衷地享受它，你對神命令的態度是「甚喜愛」還是「勉強遵守」？什麼能幫助你從義務的服從轉化為由衷的喜悅？</td>
+</tr>
+<tr>
+<td><strong>正直人在黑暗中</strong>，<strong>有光向他發現</strong>；他有恩惠，有憐憫，有公義。（詩112:4）</td>
+<td>就像在漆黑的山洞中，只有帶著光源的人才能看見前路，你是否相信即使在最深的逆境中，信仰給你一種旁人所沒有的光源——神的恩惠、憐憫和公義，在你的黑暗中照耀前路？</td>
+</tr>
+<tr>
+<td><strong>他必不怕兇惡的信</strong>息；<strong>他心堅定</strong>，倚靠耶和華。（詩112:7）</td>
+<td>就像一個人知道颱風來臨但住在堅固大樓中，比住在木屋的人更能平靜地看待同一場風暴，你對神的倚靠，是否真的成為你面對「兇惡的信息」時內心穩定的根基，而非只是在平靜時的理智認同？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

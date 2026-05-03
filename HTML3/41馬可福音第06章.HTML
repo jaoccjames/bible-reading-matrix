@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬可福音第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+馬可福音第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">差遣門徒與五餅二魚</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶穌離開那裏，來到自己的家鄉；門徒也跟從他。</div>
+<div class="verse"><span class="verse-number">2</span>到了安息日，他在會堂裏教訓人。眾人聽見，就甚希奇，說：「這人從那裏有這些事呢？所賜給他的是甚麼智慧？他手所作的是何等的異能呢？</div>
+<div class="verse"><span class="verse-number">3</span>這不是那木匠嗎？不是馬利亞的兒子雅各、約西、猶大、西門的長兄嗎？他妹妹們不也是在我們這裏嗎？」他們就厭棄他。〔厭棄他：原文作因他跌倒〕</div>
+<div class="verse"><span class="verse-number">4</span>耶穌對他們說：「大凡先知，除了本地、親屬、本家之外，沒有不被人尊敬的。」</div>
+<div class="verse"><span class="verse-number">5</span>耶穌就在那裏不得行甚麼異能，不過按手在幾個病人身上，治好他們。</div>
+<div class="verse"><span class="verse-number">6</span>他也詫異他們不信，就往周圍鄉村教訓人去了。</div>
+<div class="verse"><span class="verse-number">7</span>耶穌叫了十二個門徒來，差遣他們兩個兩個的出去，也賜給他們權柄，制伏污鬼；</div>
+<div class="verse"><span class="verse-number">8</span>並且囑咐他們：「行路的時候不要帶食物和口袋，腰袋裏也不要帶錢，除了拐杖以外，甚麼都不要帶；</div>
+<div class="verse"><span class="verse-number">9</span>只要穿鞋，也不要穿兩件褂子」，</div>
+<div class="verse"><span class="verse-number">10</span>又對他們說：「你們無論到何處，進了人的家，就住在那裏，直到離開那地方。</div>
+<div class="verse"><span class="verse-number">11</span>何處的人不接待你們，不聽你們，你們離開那裏的時候，就把腳上的塵土跺下去，對他們作見證。」</div>
+<div class="verse"><span class="verse-number">12</span>門徒就出去傳道，叫人悔改，</div>
+<div class="verse"><span class="verse-number">13</span>又趕出許多的鬼，用油抹了許多病人，治好他們。</div>
+<div class="verse"><span class="verse-number">14</span>耶穌的名聲傳揚出來。希律王聽見了，就說：「施洗的約翰從死裏復活了，所以這些異能由他裏面發出來。」</div>
+<div class="verse"><span class="verse-number">15</span>但別人說：「是以利亞。」又有人說：「是先知，正像先知中的一位。」</div>
+<div class="verse"><span class="verse-number">16</span>希律聽見卻說：「是我所斬的約翰，他復活了。」</div>
+<div class="verse"><span class="verse-number">17</span>先是希律為他兄弟腓力的妻子希羅底的緣故，差人去拿住約翰，鎖在監裏，因為希律已經娶了那婦人。</div>
+<div class="verse"><span class="verse-number">18</span>約翰曾對希律說：「你娶你兄弟的妻子是不合理的。」</div>
+<div class="verse"><span class="verse-number">19</span>於是希羅底懷恨他，想要殺他，只是不能；</div>
+<div class="verse"><span class="verse-number">20</span>因為希律知道約翰是義人，是聖人，所以敬畏他，保護他，聽他講論，就多照着行〔有古卷作：游移不定〕，並且樂意聽他。</div>
+<div class="verse"><span class="verse-number">21</span>有一天，恰巧是希律的生日，希律擺設筵席，請了大臣和千夫長，並加利利作首領的。</div>
+<div class="verse"><span class="verse-number">22</span>希羅底的女兒進來跳舞，使希律和同席的人都歡喜。王就對女子說：「你隨意向我求甚麼，我必給你；」</div>
+<div class="verse"><span class="verse-number">23</span>又對她起誓說：「隨你向我求甚麼，就是我國的一半，我也必給你。」</div>
+<div class="verse"><span class="verse-number">24</span>她就出去對她母親說：「我可以求甚麼呢？」她母親說：「施洗約翰的頭。」</div>
+<div class="verse"><span class="verse-number">25</span>她就急忙進去見王，求他說：「我願王立時把施洗約翰的頭放在盤子裏給我。」</div>
+<div class="verse"><span class="verse-number">26</span>王就甚憂愁；但因他所起的誓，又因同席的人，就不肯推辭，</div>
+<div class="verse"><span class="verse-number">27</span>隨即差一個護衛兵，吩咐拿約翰的頭來。護衛兵就去，在監裏斬了約翰，</div>
+<div class="verse"><span class="verse-number">28</span>把頭放在盤子裏，拿來給女子，女子就給她母親。</div>
+<div class="verse"><span class="verse-number">29</span>約翰的門徒聽見了，就來把他的屍首領去，葬在墳墓裏。</div>
+<div class="verse"><span class="verse-number">30</span>使徒聚集到耶穌那裏，將一切所作的事、所傳的道全告訴他。</div>
+<div class="verse"><span class="verse-number">31</span>他就說：「你們來，同我暗暗的到曠野地方去歇一歇。」這是因為來往的人多，他們連吃飯也沒有工夫。</div>
+<div class="verse"><span class="verse-number">32</span>他們就坐船，暗暗的往曠野地方去。</div>
+<div class="verse"><span class="verse-number">33</span>眾人看見他們去，有許多認識他們的，就從各城步行，一同跑到那裏，比他們先趕到了。</div>
+<div class="verse"><span class="verse-number">34</span>耶穌出來，見有許多的人，就憐憫他們，因為他們如同羊沒有牧人一般，於是開口教訓他們許多道理。</div>
+<div class="verse"><span class="verse-number">35</span>天已經晚了，門徒進前來，說：「這是野地，天已經晚了，</div>
+<div class="verse"><span class="verse-number">36</span>請叫眾人散開，他們好往四面鄉村裏去，自己買甚麼吃。」</div>
+<div class="verse"><span class="verse-number">37</span>耶穌回答說：「你們給他們吃吧。」門徒說：「我們可以去買二十兩銀子的餅，給他們吃嗎？」</div>
+<div class="verse"><span class="verse-number">38</span>耶穌說：「你們有多少餅，可以去看看。」他們知道了，就說：「五個餅，兩條魚。」</div>
+<div class="verse"><span class="verse-number">39</span>耶穌吩咐他們，叫眾人一幫一幫的坐在青草地上。</div>
+<div class="verse"><span class="verse-number">40</span>眾人就一排一排的坐下，有一百一排的，有五十一排的。</div>
+<div class="verse"><span class="verse-number">41</span>耶穌拿着這五個餅，兩條魚，望着天祝福，擘開餅，遞給門徒，擺在眾人面前，也把那兩條魚分給眾人。</div>
+<div class="verse"><span class="verse-number">42</span>他們都吃，並且吃飽了。</div>
+<div class="verse"><span class="verse-number">43</span>門徒就把碎餅碎魚收拾起來，裝滿了十二個籃子。</div>
+<div class="verse"><span class="verse-number">44</span>吃餅的男人共有五千。</div>
+<div class="verse"><span class="verse-number">45</span>耶穌隨即催門徒上船，先渡到那邊伯賽大去，等他叫眾人散開。</div>
+<div class="verse"><span class="verse-number">46</span>他既辭別了他們，就往山上去禱告。</div>
+<div class="verse"><span class="verse-number">47</span>到了晚上，船在海中，耶穌獨自在岸上；</div>
+<div class="verse"><span class="verse-number">48</span>看見門徒因風不順，搖櫓甚苦。夜裏約有四更天，就在海面上走，往他們那裏去，意思要走過他們去。</div>
+<div class="verse"><span class="verse-number">49</span>但門徒看見他在海面上走，以為是鬼怪，就喊叫起來；</div>
+<div class="verse"><span class="verse-number">50</span>因為他們都看見了他，且甚驚慌。耶穌連忙對他們說：「你們放心！是我，不要怕！」</div>
+<div class="verse"><span class="verse-number">51</span>於是到他們那裏，上了船，風就住了；他們心裏十分驚奇。</div>
+<div class="verse"><span class="verse-number">52</span>這是因為他們不明白那分餅的事，心裏還是愚頑。</div>
+<div class="verse"><span class="verse-number">53</span>既渡過去，來到革尼撒勒地方，就靠了岸，</div>
+<div class="verse"><span class="verse-number">54</span>一下船，眾人認得是耶穌，</div>
+<div class="verse"><span class="verse-number">55</span>就跑遍那一帶地方，聽見他在何處，便將有病的人用褥子抬到那裏。</div>
+<div class="verse"><span class="verse-number">56</span>凡耶穌所到的地方，或村中，或城裏，或鄉間，他們都將病人放在街市上，求耶穌只容他們摸他的衣裳繸子；凡摸着的人就都好了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第6章記述耶穌在拿撒勒受拒絕、差派十二門徒出去傳道、施洗約翰被斬首，以及五餅二魚與水上行走的神蹟，是馬可福音中事件最豐富的一章。耶穌來到自己的家鄉在會堂教導，眾人希奇但也輕視祂，耶穌感嘆先知在本鄉不受尊重，因他們不信就在那裡沒有多行異能。接著差派十二人兩個兩個出去，給他們權柄制服污鬼，吩咐不要帶食物和錢袋，不受歡迎之處就跺掉腳上的塵土，他們出去傳道叫人悔改，趕鬼醫病。本章中段插入希律王斬首施洗約翰的事，因約翰曾責備希律娶兄弟之妻，希羅底的女兒舞蹈後，希律應允她所求的，她依母親指示要約翰的頭，希律雖不願仍下令斬首。使徒回來後，耶穌帶他們往曠野休息，但群眾先到那裡，耶穌動了慈心教訓他們，傍晚以五餅二魚使五千人吃飽，剩下十二籃。之後耶穌打發門徒上船，自己上山禱告，夜間在水面上走向門徒，彼得等人驚恐，耶穌安慰他們上船後風就住了。本章呈現服事、殉道與神蹟的多重主題。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 熟悉容易製造輕視，輕視阻礙神的工作</strong><br>拿撒勒人因為太熟悉耶穌，反而輕視祂。「這不是那木匠嗎？」——熟悉讓他們只看見耶穌的人性而不見祂的神性。耶穌「也詫異他們不信」，並因不信而不多行異能。這告訴我們：對神的話語和屬靈的事情過於熟悉，可能讓我們失去敬畏和開放的心，從而阻礙了神在我們生命中的工作。<br><br>
+<strong>2. 倚靠神的簡單順服帶來豐盛的果效</strong><br>門徒被差遣時幾乎空手而去，卻趕出許多鬼、醫治許多病人。他們的成功不在裝備充足，而在倚靠那差遣他們的主。神的供應往往是在我們走出去之後才顯明的。害怕資源不足而裹足不前，常常讓我們錯過神工作的機會。信心的順服開啟神能力的通道。<br><br>
+<strong>3. 神的憐憫見人的需要而行動</strong><br>耶穌在極度疲憊的情況下，見到蜂擁而至的人群，卻沒有不耐煩——「就憐憫他們」。五餅二魚的神蹟是從「我憐憫這眾人」開始的。神的供應往往源於祂的憐憫，而不是我們的功德。信徒當培養這種以憐憫看待他人的眼光：在疲憊中仍看見需要，在沒有能力時仍願意把所有的交給耶穌。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌出來</strong>，<strong>見有許多的人</strong>，就憐憫他們，因為他們如同羊沒有牧人一般，於是開口教訓他們許多道理。（可6:34）</td>
+<td>當你看見身邊困苦迷失的人時，你心中第一個感受是什麼？就像看見受傷的動物本能地想幫助，你有沒有培養出一顆對周圍人的需要敏感、充滿憐憫的心？</td>
+</tr>
+<tr>
+<td><strong>耶穌隨即對他們說</strong>：「<strong>你們放心</strong>！是我，不要怕！」（可6:50）</td>
+<td>在你最驚惶、最看不清方向的時刻，你有沒有聽見耶穌說「是我，不要怕」？就像黑暗中聽見熟悉聲音讓人頓時安心，你願意在恐懼中定下心來，認出那個在風浪中走向你的是耶穌嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌回答說</strong>：「<strong>你們給他們吃吧</strong>。」（可6:37）</td>
+<td>當你面對自己能力所不及的需要，你第一個反應是「這不可能」還是把有限的帶到耶穌面前？就像把僅剩的食材交給大廚可以做出意想不到的美食，你願意把你的「五餅二魚」交給耶穌，讓祂成就超乎你想像的供應嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

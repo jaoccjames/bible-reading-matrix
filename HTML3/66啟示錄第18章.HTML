@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>啟示錄第18章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+啟示錄第18章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">千禧年與大白寶座的審判</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>此後，我看見另有一位有大權柄的天使從天降下，地就因他的榮耀發光。</div>
+<div class="verse"><span class="verse-number">2</span>他大聲喊着說：巴比倫大城傾倒了！傾倒了！成了鬼魔的住處和各樣污穢之靈的巢穴〔或作：牢獄；下同〕，並各樣污穢可憎之雀鳥的巢穴。</div>
+<div class="verse"><span class="verse-number">3</span>因為列國都被她邪淫大怒的酒傾倒了。地上的君王與她行淫；地上的客商因她奢華太過就發了財。</div>
+<div class="verse"><span class="verse-number">4</span>我又聽見從天上有聲音說：我的民哪，你們要從那城出來，免得與她一同有罪，受她所受的災殃；</div>
+<div class="verse"><span class="verse-number">5</span>因她的罪惡滔天，她的不義，神已經想起來了。</div>
+<div class="verse"><span class="verse-number">6</span>她怎樣待人，也要怎樣待她，按她所行的加倍的報應她；用她調酒的杯加倍的調給她喝。</div>
+<div class="verse"><span class="verse-number">7</span>她怎樣榮耀自己，怎樣奢華，也當叫她照樣痛苦悲哀，因她心裏說：我坐了皇后的位，並不是寡婦，決不至於悲哀。</div>
+<div class="verse"><span class="verse-number">8</span>所以在一天之內，她的災殃要一齊來到，就是死亡、悲哀、饑荒。她又要被火燒盡了，因為審判她的主神大有能力。</div>
+<div class="verse"><span class="verse-number">9</span>地上的君王，素來與她行淫、一同奢華的，看見燒她的煙，就必為她哭泣哀號。</div>
+<div class="verse"><span class="verse-number">10</span>因怕她的痛苦，就遠遠的站着說：哀哉！哀哉！巴比倫大城，堅固的城啊，一時之間你的刑罰就來到了。</div>
+<div class="verse"><span class="verse-number">11</span>地上的客商也都為她哭泣悲哀，因為沒有人再買她們的貨物了；</div>
+<div class="verse"><span class="verse-number">12</span>這貨物就是金、銀、寶石、珍珠、細麻布、紫色料、綢子、朱紅色料、各樣香木、各樣象牙的器皿、各樣極寶貴的木頭，和銅、鐵、漢白玉的器皿，</div>
+<div class="verse"><span class="verse-number">13</span>並肉桂、荳蔻、香料、香膏、乳香、酒、油、細麵、麥子、牛、羊、車、馬，和奴僕、人口。</div>
+<div class="verse"><span class="verse-number">14</span>巴比倫哪，你所貪愛的果子離開了你；你一切的珍饈美味，和華美的物件也從你中間毀滅，決不能再見了。</div>
+<div class="verse"><span class="verse-number">15</span>販賣這些貨物、藉着她發了財的客商，因怕她的痛苦，就遠遠的站着哭泣悲哀，說：</div>
+<div class="verse"><span class="verse-number">16</span>哀哉！哀哉！這大城啊，素常穿着細麻、紫色、朱紅色的衣服，又用金子、寶石，和珍珠為妝飾。</div>
+<div class="verse"><span class="verse-number">17</span>一時之間，這麼大的富厚就歸於無有了。凡船主和坐船往各處去的，並眾水手，連所有靠海為業的，都遠遠的站着，</div>
+<div class="verse"><span class="verse-number">18</span>看見燒她的煙，就喊着說：有何城能比這大城呢？」</div>
+<div class="verse"><span class="verse-number">19</span>他們又把塵土撒在頭上，哭泣悲哀，喊着說：哀哉！哀哉！這大城啊。凡有船在海中的，都因她的珍寶成了富足！她在一時之間就成了荒場！</div>
+<div class="verse"><span class="verse-number">20</span>天哪，眾聖徒、眾使徒、眾先知啊，你們都要因她歡喜，因為神已經在她身上伸了你們的冤。</div>
+<div class="verse"><span class="verse-number">21</span>有一位大力的天使舉起一塊石頭，好像大磨石，扔在海裏，說：巴比倫大城也必這樣猛力的被扔下去，決不能再見了。</div>
+<div class="verse"><span class="verse-number">22</span>彈琴、作樂、吹笛、吹號的聲音，在你中間決不能再聽見；各行手藝人在你中間決不能再遇見；推磨的聲音在你中間決不能再聽見；</div>
+<div class="verse"><span class="verse-number">23</span>燈光在你中間決不能再照耀；新郎和新婦的聲音，在你中間決不能再聽見。你的客商原來是地上的尊貴人；萬國也被你的邪術迷惑了。</div>
+<div class="verse"><span class="verse-number">24</span>先知和聖徒，並地上一切被殺之人的血，都在這城裏看見了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第18章記述大巴比倫的傾倒及地上君王商人的哀歌，宣告人類罪惡文明體系的終結，並呼召神的子民從她中間出來。本章首先記述另一位大力天使從天降下，大聲宣告大巴比倫傾倒了，成了鬼魔的住處和各樣污穢之靈的巢穴，因為列國都喝了她淫亂大怒的酒。接著有聲音從天上說我的民哪，你們要從她中間出來，免得與她一同有罪受她所受的災殃，因為她的罪惡滔天，神已經想起她的不義來了，她如何待人也要如何待她，加倍還她。地上的君王看見燒她的煙就為她哭泣哀號，遠遠地站著說禍哉禍哉，你這大城啊，因為一時之間你的刑罰就來到了。商人們也因再沒有人買他們的貨物而哭泣悲哀，列出大量的貨物名單表示她昔日的繁榮，駕船之人和所有靠海為業的遠遠地站著，看見燒她的煙說有甚麼城能與這大城相比呢，他們把塵土撒在頭上。天上和聖徒使徒先知卻應當為這城的事歡喜，因為神已經在這城上為你們伸冤了。然後有一位大力天使舉起一塊石頭如同大磨石扔在海裡說巴比倫大城也必這樣猛力地被扔下去，絕對找不到了，在她身上找不到彈琴唱歌的聲音，你的商人原來是地上的大戶，萬國也被你的邪術迷惑了，先知聖徒並地上一切被殺之人的血都在這城裡看出來了。本章以巴比倫的傾倒宣告人類驕傲文明的終結。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 頭一次的復活——殉道者的特殊地位</strong><br>「在頭一次復活有分的有福了，聖潔了！第二次的死在他們身上沒有權柄」——為主忠心受苦甚至為主死的人，有特別的地位：第二次的死（火湖）對他們沒有能力。這是對受迫害教會最大的安慰：你所受的苦，在神的計劃中有永恆的意義和回報。<br><br>
+<strong>2. 撒但的最終結局</strong><br>「那迷惑他們的魔鬼被扔在硫磺的火湖裏……他們必晝夜受痛苦，直到永永遠遠」——撒但在整個歷史中作為仇敵，在啟示錄中一章章地敗退：從天上被摔下，到被捆綁，最後被永遠扔在火湖。這個最終結局給信徒確信：你的仇敵不是永恆的，他有已確定的終結。<br><br>
+<strong>3. 大白寶座——每個人都必面對的審判</strong><br>「死了的人，無論大小，都站在寶座前」——「無論大小」說明沒有任何人可以逃避。「照他們所行的受審判」——行為是審判的依據，但生命冊是最終的關鍵：「若有人名字沒記在生命冊上，他就被扔在火湖裏」。名字寫在生命冊上，是最終最重要的問題。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>在頭一次復活有分</strong><strong>的有福了</strong>，聖潔了！第二次的死在他們身上沒有權柄；他們必作神和基督的祭司，並要與基督一同作王一千年。（啟20:6）</td>
+<td>你有沒有讓「在頭一次復活有分的有福了」這個確信，使你把為主受的苦和付的代價，看作是在累積永恆的地位和賞賜，而非白白受苦？就像一個清楚自己最終薪酬的員工可以在艱苦的工作中仍然充滿動力，你有沒有讓對最終賞賜的確信帶出你當下忠心的動力？</td>
+</tr>
+<tr>
+<td><strong>我又看見死了的人</strong>，<strong>無論大小</strong>，都站在寶座前。案卷展開了，並且另有一卷展開，就是生命冊。死了的人都憑着這些案卷所記載的，照他們所行的受審判。若有人名字沒記在生命冊上，他就被扔在火湖裏。（啟20:12,15）</td>
+<td>你有沒有讓「每個人都將站在大白寶座前」這個現實，帶出你今日的敬畏和認真——讓你的每一個選擇和行動都在「那日我將如何交帳」的意識下進行？就像知道有一個最終考核的學生不敢馬虎，你有沒有讓對審判的清醒認識帶出你今日信仰的嚴肅性？</td>
+</tr>
+<tr>
+<td><strong>那迷惑他們的魔鬼</strong><strong>被扔在硫磺的火湖</strong>裏，就是獸和假先知所在的地方。他們必晝夜受痛苦，直到永永遠遠。（啟20:10）</td>
+<td>你有沒有讓撒但最終確定的結局成為你在屬靈爭戰中的信心——知道你的仇敵有確定的終結，他的能力是有限的和有時限的？就像知道一個強大的敵人已確定要失敗讓戰士更有勇氣堅持，你有沒有讓對撒但終局的確信帶出你在屬靈爭戰中更大的勇氣？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約伯記第25章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約伯記第25章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">比勒達第三次發言：人在神面前何能稱義</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>書亞人比勒達回答說：</div>
+<div class="verse"><span class="verse-number">2</span>神有治理之權，有威嚴可畏；他在高處施行和平。</div>
+<div class="verse"><span class="verse-number">3</span>他的諸軍豈能數算？他的光亮一發，誰不蒙照呢？</div>
+<div class="verse"><span class="verse-number">4</span>這樣在神面前，人怎能稱義？婦人所生的怎能潔淨？</div>
+<div class="verse"><span class="verse-number">5</span>在神眼前，月亮也無光亮，星宿也不清潔。</div>
+<div class="verse"><span class="verse-number">6</span>何況如蟲的人，如蛆的世人呢！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約伯記第25章是全書最短的一章，只有六節，也是書亞人比勒達的最後一次發言。他的論點極為簡短：神的能力和主宰是絕對的（萬軍都在祂掌管中，祂的光照亮一切），因此人在神面前根本無法稱義或潔淨——就連月亮也不明亮、星宿也不潔淨，何況如蛆蟲的世人？比勒達的發言越來越簡短，顯示他已無話可說，但仍不願承認約伯的申訴有其正當性。他重複了以利法的論點（第4章、第15章14-16節），卻沒有任何新的見解。本章短而有力地揭示了三友神學的終局：他們把神的超越性用作壓制人的工具，而不是激發更深的尋求。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的超越和威嚴是真實的，但不應成為讓人絕望的論點</strong><br>「萬軍豈不在他那裏？他的光不是照在各人身上嗎？」這描述本是榮耀的神學，但比勒達接下來說「人豈能在神面前稱義」，把神的偉大變成了人的無能為力的依據。神的大，應激勵人謙卑尋求，而非讓人放棄。<br><br>
+<strong>2. 在找不到新論點時，重複別人說過的話不是智慧</strong><br>比勒達的第三次發言比第一次（第8章）短得多，且幾乎沒有新內容。這是三友神學枯竭的信號——他們的框架無法容納約伯的複雜情況，到最後只能重複。承認自己沒有答案，有時比重複無效的答案更有智慧。<br><br>
+<strong>3. 對「人的卑微」的強調，需要與「神對人的愛」相平衡</strong><br>比勒達只強調人如蛆蟲，卻沒有提到神對人的憐愛。聖經對人的評價是矛盾的——人既是塵土（創3:19），也是按神形象所造的（創1:27），既是罪人，也是蒙愛的受造物。只強調一面，會扭曲對神和人的完整認識。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>神有權柄和可畏的</strong>威嚴；<strong>他在高處制定和平</strong>。（伯25:2）</td>
+<td>就像看見星空的浩瀚讓人感到自己渺小，神的威嚴可以讓人謙卑，也可以讓人覺得自己微不足道。你面對神的偉大時，通常的反應是敬畏和親近，還是渺小和絕望？這個反應說明了什麼？</td>
+</tr>
+<tr>
+<td><strong>在他面前</strong>，<strong>月亮也不明亮</strong>，星宿也不潔淨，何況如蛆蟲的世人，如蟲的世人呢？（伯25:5-6）</td>
+<td>就像拿最暗的燭火和太陽比較，人在神面前的卑微是真實的。但神同時也說人是「按祂的形象」造的。這兩種描述如何在你的信仰中共存？這如何影響你對自己價值的認識？</td>
+</tr>
+<tr>
+<td><strong>人豈能在神面前稱</strong>義？<strong>婦人所生的豈能潔</strong>淨嗎？（伯25:4）</td>
+<td>就像問「一般人能比得上奧運選手嗎」，答案當然是不，但這不等於放棄努力，人無法自我稱義的事實應該讓我們尋求神的義，而非放棄。你靠什麼在神面前站立？是自己的努力，還是神的恩典？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

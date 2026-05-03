@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第7章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第7章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以馬內利：童女生子神與我們同在的兆頭</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>烏西雅的孫子、約坦的兒子、猶大王亞哈斯在位的時候，亞蘭王利汛和利瑪利的兒子、以色列王比加上來攻打耶路撒冷，卻不能攻取。</div>
+<div class="verse"><span class="verse-number">2</span>有人告訴大衛家說：「亞蘭與以法蓮已經同盟。」王的心和百姓的心就都跳動，好像林中的樹被風吹動一樣。</div>
+<div class="verse"><span class="verse-number">3</span>耶和華對以賽亞說：「你和你的兒子施亞雅述出去，到上池的水溝頭，在漂布地的大路上，去迎接亞哈斯，</div>
+<div class="verse"><span class="verse-number">4</span>對他說：『你要謹慎安靜，不要因亞蘭王利汛和利瑪利的兒子這兩個冒煙的火把頭所發的烈怒害怕，也不要心裏膽怯。</div>
+<div class="verse"><span class="verse-number">5</span>因為亞蘭和以法蓮，並利瑪利的兒子，設惡謀害你，</div>
+<div class="verse"><span class="verse-number">6</span>說：我們可以上去攻擊猶大，擾亂他，攻破他，在其中立他比勒的兒子為王。</div>
+<div class="verse"><span class="verse-number">7</span>所以主耶和華如此說：這所謀的必立不住，也不得成就。</div>
+<div class="verse"><span class="verse-number">8</span>原來亞蘭的首城是大馬色；大馬色的首領是利汛。六十五年之內，以法蓮必然破壞，不再成為國民。</div>
+<div class="verse"><span class="verse-number">9</span>以法蓮的首城是撒瑪利亞；撒瑪利亞的首領是利瑪利的兒子。你們若是不信，定然不得立穩。』」</div>
+<div class="verse"><span class="verse-number">10</span>耶和華又曉諭亞哈斯說：</div>
+<div class="verse"><span class="verse-number">11</span>「你向耶和華你的神求一個兆頭：或求顯在深處，或求顯在高處。」</div>
+<div class="verse"><span class="verse-number">12</span>亞哈斯說：「我不求；我不試探耶和華。」</div>
+<div class="verse"><span class="verse-number">13</span>以賽亞說：「大衛家啊，你們當聽！你們使人厭煩豈算小事，還要使我的神厭煩嗎？</div>
+<div class="verse"><span class="verse-number">14</span>因此，主自己要給你們一個兆頭，必有童女懷孕生子，給他起名叫以馬內利〔就是神與我們同在的意思〕。</div>
+<div class="verse"><span class="verse-number">15</span>到他曉得棄惡擇善的時候，他必喫奶油與蜂蜜。</div>
+<div class="verse"><span class="verse-number">16</span>因為在這孩子還不曉得棄惡擇善之先，你所憎惡的那二王之地必致見棄。</div>
+<div class="verse"><span class="verse-number">17</span>耶和華必使亞述王攻擊你的日子臨到你和你的百姓，並你的父家，自從以法蓮離開猶大以來，未曾有這樣的日子。</div>
+<div class="verse"><span class="verse-number">18</span>「那時，耶和華要發噝聲，使埃及江河源頭的蒼蠅和亞述地的蜂子飛來；</div>
+<div class="verse"><span class="verse-number">19</span>都必飛來，落在荒涼的谷內、磐石的穴裏，和一切荊棘籬笆中，並一切的草場上。</div>
+<div class="verse"><span class="verse-number">20</span>「那時，主必用大河外賃的剃頭刀，就是亞述王，剃去頭髮和腳上的毛，並要剃淨鬍鬚。</div>
+<div class="verse"><span class="verse-number">21</span>「那時，一個人要養活一隻母牛犢，兩隻母綿羊；</div>
+<div class="verse"><span class="verse-number">22</span>因為出的奶多，他就得喫奶油，在境內所剩的人都要喫奶油與蜂蜜。</div>
+<div class="verse"><span class="verse-number">23</span>「從前，凡種一千棵葡萄樹、值銀一千舍客勒的地方，到那時必長荊棘和蒺藜。</div>
+<div class="verse"><span class="verse-number">24</span>人上那裏去，必帶弓箭，因為遍地滿了荊棘和蒺藜。</div>
+<div class="verse"><span class="verse-number">25</span>所有用鋤刨挖的山地，你因怕荊棘和蒺藜，不敢上那裏去；只可成了放牛之處，為羊踐踏之地。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第七章是以賽亞書中最著名、在新約被引用最多的章節之一，核心是第14節「童女懷孕生子，給他起名叫以馬內利」的預言。歷史背景是「敘以戰爭」（Syro-Ephraimite War，約735-732BC）：亞蘭（敘利亞）和以色列北國（以法蓮）聯盟，企圖逼迫猶大王亞哈斯加入反亞述聯盟，若亞哈斯拒絕便以武力推翻他。亞哈斯在恐懼中（2節，心「跳動如林中被風吹的樹」）考慮向亞述求助，而不是信靠神。以賽亞奉神命前來，帶著「施亞雅述」（意「餘民必歸回」）這個命名的兒子，以名字本身傳遞信息，要亞哈斯「謹慎安靜，不要害怕」（4節）並以信心立穩（9節）。第14節的「以馬內利」預言，在近的層面可能指向當時的一個孩子，作為敵軍失敗的時間兆頭；在終極層面，馬太福音1:23將此預言指向耶穌基督的降生，「以馬內利……神與我們同在」成為道成肉身最核心的宣告。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在危機中，神呼召我們「謹慎安靜，不要害怕」</strong><br>第4節「你要謹慎安靜，不要……害怕，也不要心裏膽怯」，是神在亞哈斯面對巨大政治威脅時的第一句話。神不先給出解決方案，而先呼召安靜與信心——這是因為恐懼使人做出錯誤的決定（亞哈斯後來去求助亞述，這個短視的決定帶來了更大的災難）。信徒在危機中最需要的，不是立即行動，而是先在神面前靜下來，聽清楚神的聲音，再作回應。<br><br>
+<strong>2. 「你們若是不信，定然不得立穩」：信心是穩定的根基</strong><br>第9節最後一句「你們若是不信，定然不得立穩」，在希伯來文中是一個精妙的雙關語（te'amenu…te'amenu，動詞同根）：信心和穩固來自同一個詞根，意味著真正的穩固只能建立在信心之上。亞哈斯選擇了倚靠亞述（強國的軍事力量），而非信靠神——這個選擇使猶大最終被亞述蹂躪。信徒在面對挑戰時，是選擇倚靠人的辦法，還是選擇在神面前信心立穩，這個選擇決定了最終的根基是否穩固。<br><br>
+<strong>3. 「以馬內利——神與我們同在」：這是所有應許的核心</strong><br>第14節「以馬內利」是整本聖經中最深刻的名字之一。無論是在以賽亞時代作為近期兆頭，還是在新約道成肉身中的終極成就，「神與我們同在」都是信仰最核心的安慰與力量。在任何危機、威脅或不確定性中，「以馬內利」的應許使信徒能以平靜的心面對，因為那位掌管萬有的神，選擇與我們同在。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>你要謹慎安靜</strong>，不要……害怕，<strong>也不要心裏膽怯</strong>。」（賽7:4）</td>
+<td>就像駕駛者在緊急煞車時若能保持鎮定，才能做出最好的反應，恐慌反而容易把車開向溝渠，你目前面對的最大威脅或壓力是什麼？在那個情況下你是否能先「謹慎安靜」，在神面前等候清晰的方向，而非倉皇行動？</td>
+</tr>
+<tr>
+<td>「<strong>你們若是不信</strong>，<strong>定然不得立穩</strong>。」（賽7:9）</td>
+<td>就像一棟建築物的穩固取決於地基的深度，而非外牆的厚度，信心是生命真正穩固的基礎，你目前在哪件事上最難以選擇信靠神，而傾向於依靠人的辦法或自己的能力？那個選擇如何影響了你內心的穩定感？</td>
+</tr>
+<tr>
+<td>「<strong>必有童女懷孕生子</strong>，<strong>給他起名叫以馬內</strong>利〔就是神與我們同在的意思〕。」（賽7:14）</td>
+<td>就像一個在黑暗房間裡的人，只要有一道光進來，整個空間就改變了，「神與我們同在」的事實就是那道光，你在最孤單、最困難的時刻，「以馬內利——神與我們同在」這個真理對你有多真實？是什麼讓你有時感受不到這個同在？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

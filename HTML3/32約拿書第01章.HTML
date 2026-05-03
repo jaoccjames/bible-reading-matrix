@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約拿書第1章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約拿書第1章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">逃避神的呼召與大魚的追捕</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶和華的話臨到亞米太的兒子約拿，說：</div>
+<div class="verse"><span class="verse-number">2</span>「你起來往尼尼微大城去，向其中的居民呼喊，因為他們的惡達到我面前。」</div>
+<div class="verse"><span class="verse-number">3</span>約拿卻起來，逃往他施去躲避耶和華；下到約帕，遇見一隻船，要往他施去。他就給了船價，上了船，要與船上的人同往他施去躲避耶和華。</div>
+<div class="verse"><span class="verse-number">4</span>然而耶和華使海中起大風，海就狂風大作，甚至船幾乎破壞。</div>
+<div class="verse"><span class="verse-number">5</span>水手便懼怕，各人哀求自己的神。他們將船上的貨物拋在海中，為要使船輕些。約拿已下到底艙，躺臥沉睡。</div>
+<div class="verse"><span class="verse-number">6</span>船主到他那裏對他說：「你這沉睡的人哪，為何這樣呢？起來，求告你的神，或者神顧念我們，使我們不至滅亡。」</div>
+<div class="verse"><span class="verse-number">7</span>船上的人彼此說：「來吧，我們掣籤，看看這災臨到我們是因誰的緣故。」於是他們掣籤，掣出約拿來。</div>
+<div class="verse"><span class="verse-number">8</span>眾人對他說：「請你告訴我們，這災臨到我們是因誰的緣故？你以何事為業？你從那裏來？你是哪一國？屬哪一族的人？」</div>
+<div class="verse"><span class="verse-number">9</span>他說：「我是希伯來人。我敬畏耶和華那創造滄海旱地之天上的神。」</div>
+<div class="verse"><span class="verse-number">10</span>他們就大大懼怕，對他說：「你作的是甚麼事呢？」他們已經知道他躲避耶和華，因為他告訴了他們。</div>
+<div class="verse"><span class="verse-number">11</span>他們問他說：「我們當向你怎樣行，使海浪平靜呢？」這話是因海浪越發翻騰。</div>
+<div class="verse"><span class="verse-number">12</span>他對他們說：「你們將我抬起來，拋在海中，海就平靜了；我知道你們遭這大風是因我的緣故。」</div>
+<div class="verse"><span class="verse-number">13</span>然而那些人竭力盪槳，要把船攏岸，卻是不能，因為海浪越發向他們翻騰。</div>
+<div class="verse"><span class="verse-number">14</span>他們便求告耶和華說：「耶和華啊，我們懇求你，不要因這人的性命使我們死亡，不要使流無辜血的罪歸與我們；因為你耶和華是隨自己的意旨行事。」</div>
+<div class="verse"><span class="verse-number">15</span>他們遂將約拿抬起，拋在海中，海的狂浪就平息了。</div>
+<div class="verse"><span class="verse-number">16</span>那些人便大大敬畏耶和華，向耶和華獻祭，並且許願。</div>
+<div class="verse"><span class="verse-number">17</span>耶和華安排一條大魚吞了約拿，他在魚腹中三日三夜。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+約拿書第1章是整本書戲劇性的開篇。神呼召亞米太的兒子約拿往尼尼微（亞述帝國的首都，以色列的頭號仇敵）宣告審判，約拿的回應卻是反向而行——「往他施去躲避耶和華」。他的逃跑本身就是神學的諷刺：先知相信神無所不在，卻試圖逃離神。在船上，約拿「下到底艙，躺臥沉睡」——在最大的危機中最深的睡著，是靈性麻木的象徵。外邦水手反而在祈禱、拋貨、問籤。當真相大白，約拿自己請求被拋入海中——這是一個自我犧牲的行動，但動機可能是逃避責任多於真正的捨己。外邦水手「大大敬畏耶和華」、向耶和華獻祭許願——整章中，外邦人的屬靈敏感反而超過了以色列的先知。神「安排一條大魚吞了約拿」，把逃跑者帶回到祂面前。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 逃避神的呼召只是把路走得更遠、更費力，卻到不了「他施」</strong><br>約拿「下到約帕」「上了船」「給了船價」——逃跑需要付代價，但終究無法逃離。神不是叫人輕鬆逃脫的。信徒有時也以為換了環境、換了工作、換了關係，就可以逃脫神的呼召；但神的呼召不受地理改變。<br><br>
+<strong>2. 外邦水手的靈性敏感超過了逃跑的先知</strong><br>水手「各人哀求自己的神」，後來向耶和華獻祭許願；約拿卻在危機中「沉睡」。這個對比是全書最大的諷刺之一：那些「不認識神」的外邦人，在靈性的敏感和回應上，竟超過了蒙召的先知。信徒不可因有信仰的名份，就以為靈性的回應是自動的。<br><br>
+<strong>3. 神安排大魚：神把逃跑者帶回，是恩典，不只是懲罰</strong><br>「耶和華安排一條大魚吞了約拿」——這是審判嗎？是恩典。如果沒有大魚，約拿就溺死在海中，再也沒有機會完成使命。神的「攔截」，哪怕是以不舒服的方式，往往是比放任逃跑更大的憐憫。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>約拿卻起來</strong>，<strong>逃往他施去躲避耶</strong>和華；下到約帕，遇見一隻船，要往他施去。他就給了船價，上了船，要與船上的人同往他施去躲避耶和華。（拿1:3）</td>
+<td>你有沒有過一段「往他施逃跑」的時期——知道神的呼召，卻用各種方式迴避？就像一個知道電話響起來但選擇不接的人，你現在有沒有一個神的呼召，你正用忙碌、計畫、或「先等等」來迴避？</td>
+</tr>
+<tr>
+<td><strong>約拿已下到底艙</strong>，<strong>躺臥沉睡</strong>。（拿1:5下）</td>
+<td>在最大的危機中「沉睡」，是靈性麻木的象徵。外邦水手在禱告、拋貨、問籤，而神的先知在睡覺。你生命中有沒有某個「當周圍的人都在靈性上警覺，而你卻沉睡」的時期？什麼讓你從那個「底艙的睡眠」中醒來？</td>
+</tr>
+<tr>
+<td><strong>耶和華安排一條大</strong><strong>魚吞了約拿</strong>，他在魚腹中三日三夜。（拿1:17）</td>
+<td>「神安排大魚」——這個攔截是恩典，不只是懲罰。你生命中有沒有某個「被大魚吞了」的時刻——某個強制你停下來的處境，事後你才看見那其實是神的憐憫？就像一場讓你不得不停下來的疾病，反而讓你找回了失去的方向，你願意為那條「大魚」感謝神嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

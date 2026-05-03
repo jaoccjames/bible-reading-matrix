@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提摩太前書第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+提摩太前書第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">敬虔加知足是大利與打那美好的仗</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>凡在軛下作僕人的，當以自己主人配受十分的恭敬，免得神的名和道理被人褻瀆。</div>
+<div class="verse"><span class="verse-number">2</span>僕人有信道的主人，不可因為與他是弟兄就輕看他；更要加意服事他；因為得服事之益處的，是信道蒙愛的。你要以此教訓人，勸勉人。</div>
+<div class="verse"><span class="verse-number">3</span>若有人傳異教，不服從我們主耶穌基督純正的話與那合乎敬虔的道理，</div>
+<div class="verse"><span class="verse-number">4</span>他是自高自大，一無所知，專好問難，爭辯言詞，從此就生出嫉妒、紛爭、毀謗、妄疑，</div>
+<div class="verse"><span class="verse-number">5</span>並那壞了心術、失喪真理之人的爭競。他們以敬虔為得利的門路。</div>
+<div class="verse"><span class="verse-number">6</span>然而，敬虔加上知足的心便是大利了；</div>
+<div class="verse"><span class="verse-number">7</span>因為我們沒有帶甚麼到世上來，也不能帶甚麼去。</div>
+<div class="verse"><span class="verse-number">8</span>只要有衣有食，就當知足。</div>
+<div class="verse"><span class="verse-number">9</span>但那些想要發財的人，就陷在迷惑、落在網羅和許多無知有害的私慾裏，叫人沉在敗壞和滅亡中。</div>
+<div class="verse"><span class="verse-number">10</span>貪財是萬惡之根。有人貪戀錢財，就被引誘離了真道，用許多愁苦把自己刺透了。</div>
+<div class="verse"><span class="verse-number">11</span>但你這屬神的人要逃避這些事，追求公義、敬虔、信心、愛心、忍耐、溫柔。</div>
+<div class="verse"><span class="verse-number">12</span>你要為真道打那美好的仗，持定永生。你為此被召，也在許多見證人面前，已經作了那美好的見證。</div>
+<div class="verse"><span class="verse-number">13</span>我在叫萬物生活的神面前，並在向本丟彼拉多作過那美好見證的基督耶穌面前囑咐你：</div>
+<div class="verse"><span class="verse-number">14</span>要守這命令，毫不玷污，無可指責，直到我們的主耶穌基督顯現。</div>
+<div class="verse"><span class="verse-number">15</span>到了日期，那可稱頌、獨有權能的萬王之王、萬主之主，</div>
+<div class="verse"><span class="verse-number">16</span>就是那獨一不死、住在人不能靠近的光裏，是人未曾看見、也是不能看見的，要將他顯明出來。但願尊貴和永遠的權能都歸給他。阿們！</div>
+<div class="verse"><span class="verse-number">17</span>你要囑咐那些今世富足的人，不要自高，也不要倚靠無定的錢財；只要倚靠那厚賜百物給我們享受的神。</div>
+<div class="verse"><span class="verse-number">18</span>又要囑咐他們行善，在好事上富足，甘心施捨，樂意供給〔或作：體貼〕人，</div>
+<div class="verse"><span class="verse-number">19</span>為自己積成美好的根基，預備將來，叫他們持定那真正的生命。</div>
+<div class="verse"><span class="verse-number">20</span>提摩太啊，你要保守所託付你的，躲避世俗的虛談和那敵真道、似是而非的學問。</div>
+<div class="verse"><span class="verse-number">21</span>已經有人自稱有這學問，就偏離了真道。願恩惠常與你們同在！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第6章是提摩太前書的結語，就僕人對主人的態度、虔敬知足的心、貪財的危害，以及對有錢信徒的勸勉給出教導，並以對提摩太個人的囑咐作結。本章首先說凡在軛下的僕人當以自己的主人配受十分的恭敬，免得神的名和道理被人褻瀆。然後說若有人傳異教，他是自高自大一無所知的，在字句上爭辯生出嫉妒、紛爭、毀謗、妄疑；他們以敬虔為得利的門路，然而敬虔加上知足的心便是大利了，因為我們沒有帶甚麼到世上來也不能帶甚麼去，只要有衣有食就當知足；那些想要發財的人就陷在迷惑、落在網羅和許多無知有害的私慾裡，因為貪財是萬惡之根。然後直接勸勉提摩太：你這屬神的人要逃避這些事，要追求公義、敬虔、信心、愛心、忍耐、溫柔，要為真道打那美好的仗，持守永生，並要謹守所交付的，躲避世俗的虛談和那似是而非的學問。最後就那些今世富足的人，勸他們不可自高也不可倚靠無定的錢財，只要倚靠神，要行善、在好事上富足、甘心施捨、樂意接濟人，為自己積成美好的根基。本章以知足敬虔結束全書。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 敬虔加知足是最大的財富</strong><br>「敬虔加上知足的心便是大利了」——這個等式顛覆了世俗的財富觀：不是更多的金錢或成就，而是敬虔（與神同行的關係）加上知足（對現有的滿足感），才是真正的富足。「沒有帶甚麼到世上來，也不能帶甚麼去」——永恆的視角使今世的財富相對化。知足是從永恆視角評估此刻的生命。<br><br>
+<strong>2. 貪財是萬惡之根</strong><br>「貪財是萬惡之根」——不是「錢財是萬惡之根」，而是「貪財」——對財富的貪愛和倚靠。財富本身不是問題（神是「厚賜百物給我們享受的神」），問題是心的位置。貪財把財富放在心裏最重要的位置，從而替代了神應在的地位；這是「偶像崇拜」的實質。<br><br>
+<strong>3. 「打那美好的仗」——信仰是主動的戰爭</strong><br>「你要為真道打那美好的仗，持定永生」——信仰不是被動的接受，而是主動的「打仗」。美好的仗，是值得全力以赴的仗，有「持定永生」的獎賞。「逃避……追求……打……持定」——四個動詞描述信仰生命的積極性：有所逃避，也有所追求；有所爭戰，也有所持守。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>敬虔加上知足的心</strong><strong>便是大利了</strong>；因為我們沒有帶甚麼到世上來，也不能帶甚麼去。只要有衣有食，就當知足。（提前6:6-8）</td>
+<td>你有沒有讓「敬虔加知足」成為你真實的財富觀，使你在與神同行的關係中和對現有的感恩中，找到比任何物質積累更真實的富足？就像一個知道真正財富在哪裏的人不會為假財富焦慮，你有沒有讓這個財富觀帶出你真實的內心平安？</td>
+</tr>
+<tr>
+<td><strong>貪財是萬惡之根</strong>。<strong>有人貪戀錢財</strong>，就被引誘離了真道，用許多愁苦把自己刺透了。（提前6:10）</td>
+<td>你有沒有定期省察自己對錢財的態度——是「擁有和使用錢財」還是「被錢財擁有和控制」？就像水可以使船航行但若進入船內就讓船沉沒，你有沒有讓金錢成為你使用的工具而非讓它成為控制你心的主人？</td>
+</tr>
+<tr>
+<td><strong>但你這屬神的人要</strong><strong>逃避這些事</strong>，追求公義、敬虔、信心、愛心、忍耐、溫柔。你要為真道打那美好的仗，持定永生。（提前6:11-12）</td>
+<td>你有沒有讓「打那美好的仗、持定永生」成為你信仰生命的積極框架，使你在逃避試探的同時，也主動追求各樣屬靈美德？就像一個真正的戰士既懂得撤退也懂得進攻，你有沒有讓你的信仰生活有這樣的積極戰略性？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

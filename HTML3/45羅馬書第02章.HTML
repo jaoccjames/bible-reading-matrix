@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>羅馬書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+羅馬書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">神公義的審判與真割禮</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>你這論斷人的，無論你是誰，也無可推諉。你在甚麼事上論斷人，就在甚麼事上定自己的罪；因你這論斷人的，自己所行卻和別人一樣。</div>
+<div class="verse"><span class="verse-number">2</span>我們知道這樣行的人，神必照真理審判他。</div>
+<div class="verse"><span class="verse-number">3</span>你這人哪，你論斷行這樣事的人，自己所行的卻和別人一樣，你以為能逃脫神的審判嗎？</div>
+<div class="verse"><span class="verse-number">4</span>還是你藐視他豐富的恩慈、寬容、忍耐，不曉得他的恩慈是領你悔改呢？</div>
+<div class="verse"><span class="verse-number">5</span>你竟任着你剛硬不悔改的心，為自己積蓄忿怒，以致神震怒，顯他公義審判的日子來到。</div>
+<div class="verse"><span class="verse-number">6</span>他必照各人的行為報應各人。</div>
+<div class="verse"><span class="verse-number">7</span>凡恒心行善、尋求榮耀、尊貴和不能朽壞之福的，就以永生報應他們；</div>
+<div class="verse"><span class="verse-number">8</span>惟有結黨、不順從真理、反順從不義的，就以忿怒、惱恨報應他們。</div>
+<div class="verse"><span class="verse-number">9</span>將患難、困苦加給一切作惡的人，先是猶太人，後是希利尼人；</div>
+<div class="verse"><span class="verse-number">10</span>卻將榮耀、尊貴、平安加給一切行善的人，先是猶太人，後是希利尼人。</div>
+<div class="verse"><span class="verse-number">11</span>因為神不偏待人。</div>
+<div class="verse"><span class="verse-number">12</span>凡沒有律法犯了罪的，也必不按律法滅亡；凡在律法以下犯了罪的，也必按律法受審判。</div>
+<div class="verse"><span class="verse-number">13</span>（原來在神面前，不是聽律法的為義，乃是行律法的稱義。</div>
+<div class="verse"><span class="verse-number">14</span>沒有律法的外邦人若順着本性行律法上的事，他們雖然沒有律法，自己就是自己的律法。</div>
+<div class="verse"><span class="verse-number">15</span>這是顯出律法的功用刻在他們心裏，他們是非之心同作見證，並且他們的思念互相較量，或以為是，或以為非。）</div>
+<div class="verse"><span class="verse-number">16</span>就在神藉耶穌基督審判人隱祕事的日子，照着我的福音所言。</div>
+<div class="verse"><span class="verse-number">17</span>你稱為猶太人，又倚靠律法，且指着神誇口；</div>
+<div class="verse"><span class="verse-number">18</span>既從律法中受了教訓，就曉得神的旨意，也能分別是非〔或作：也喜愛那美好的事〕；</div>
+<div class="verse"><span class="verse-number">19</span>又深信自己是給瞎子領路的，是黑暗中人的光，</div>
+<div class="verse"><span class="verse-number">20</span>是蠢笨人的師傅，是小孩子的先生，在律法上有知識和真理的模範。</div>
+<div class="verse"><span class="verse-number">21</span>你既是教導別人，還不教導自己嗎？你講說人不可偷竊，自己還偷竊嗎？</div>
+<div class="verse"><span class="verse-number">22</span>你說人不可姦淫，自己還姦淫嗎？你厭惡偶像，自己還偷竊廟中之物嗎？</div>
+<div class="verse"><span class="verse-number">23</span>你指着律法誇口，自己倒犯律法，玷辱神麼？</div>
+<div class="verse"><span class="verse-number">24</span>神的名在外邦人中，因你們受了褻瀆，正如經上所記的。</div>
+<div class="verse"><span class="verse-number">25</span>你若是行律法的，割禮固然於你有益；若是犯律法的，你的割禮就算不得割禮。</div>
+<div class="verse"><span class="verse-number">26</span>所以那未受割禮的，若遵守律法的條例，他雖然未受割禮，豈不算是有割禮嗎？</div>
+<div class="verse"><span class="verse-number">27</span>而且那本來未受割禮的，若能全守律法，豈不是要審判你這有儀文和割禮竟犯律法的人嗎？</div>
+<div class="verse"><span class="verse-number">28</span>因為外面作猶太人的，不是真猶太人；外面肉身的割禮，也不是真割禮。</div>
+<div class="verse"><span class="verse-number">29</span>惟有裏面作的，才是真猶太人；真割禮也是心裏的，在乎靈，不在乎儀文。這人的稱讚不是從人來的，乃是從神來的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第2章記述神公義的審判是不偏待人的，無論猶太人或外邦人都要按照他們的行為受審，批判以律法為誇口卻不遵守的猶太人，並說明真正的割禮是心裡的割禮。本章首先指出那批評別人卻行同樣事情的人是沒有可推諉的，神按真理審判行這些事的人，那審判別人的人自己行一樣的事能逃脫神的審判嗎。神的良善是引導人悔改，但那心硬不肯悔改的人為自己積蓄忿怒，等審判的日子忿怒顯明。神審判按各人所行的：堅忍行善求榮耀尊貴不能朽壞之福的，神就以永生報答他們；結黨不順從真理而順從不義的，神就以忿怒惱恨報應他們。神審判不偏待人，凡沒有律法犯罪的也沒有律法都要滅亡，外邦人若順著本性行律法上的事，他們的本性就是自己的律法，是非之心互相作見證。最後直接指向猶太人：你稱自己是猶太人、倚靠律法，但你教導別人卻不教導自己，你傳講人不可偷竊卻自己偷竊，所以神的名在外邦人中因你們受了褻瀆。真正的猶太人是裡面的猶太人，真正的割禮是心裡的割禮。本章以神不偏待人的審判挑戰一切形式的宗教優越感。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的寬容是為了引人悔改，不是縱容</strong><br>「他的恩慈是領你悔改呢？」——神的忍耐和寬容，不是因為祂不在乎罪，而是因為祂給人時間悔改。把神的長忍誤解為默許，是最危險的屬靈誤區。每一天被允許繼續活着，都是神恩典的邀請，而非罪可以繼續的許可。藐視恩慈的人，是在「為自己積蓄忿怒」——不是神在添加，而是人自己在累積後果。<br><br>
+<strong>2. 論斷他人和自己做同樣事是最深的虛偽</strong><br>「你論斷人，就在甚麼事上定自己的罪」——保羅點出了人類最普遍的屬靈盲點：對他人嚴格、對自己寬鬆。知道標準卻不遵守，甚至以知道標準來論斷不知道的人，是最嚴重的假冒為善。這挑戰信徒把對自己的要求等於或高於對他人的要求，以及在說人之前先省察自己。<br><br>
+<strong>3. 真割禮是心裏的，真信仰是內在的</strong><br>「惟有裏面作的，才是真猶太人；真割禮也是心裏的，在乎靈」——所有外在的宗教標誌，其最終目的是指向內心的真實改變。洗禮、教籍、宗教習慣，若沒有內心真實的信仰和悔改，就只是儀式。「這人的稱讚不是從人來的，乃是從神來的」——最終重要的是神的評價，不是人的認可。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>還是你藐視他豐富</strong><strong>的恩慈</strong>、寬容、忍耐，不曉得他的恩慈是領你悔改呢？（羅2:4）</td>
+<td>你有沒有把神對你的寬忍當作繼續拖延悔改的理由？就像一個患者知道病情卻因為暫時不痛就推遲手術，你有沒有讓神的恩慈成為促使你今天悔改和更新的動力？</td>
+</tr>
+<tr>
+<td><strong>你這論斷人的</strong>，<strong>無論你是誰</strong>，也無可推諉。你在甚麼事上論斷人，就在甚麼事上定自己的罪。（羅2:1）</td>
+<td>你有沒有對他人嚴格、對自己寬鬆的傾向，在批評他人的同時自己卻做類似的事？就像拿着放大鏡看別人的同時閉着眼看自己，你願意讓對他人同樣的標準，先適用在你自己身上嗎？</td>
+</tr>
+<tr>
+<td><strong>惟有裏面作的</strong>，<strong>才是真猶太人</strong>；真割禮也是心裏的，在乎靈，不在乎儀文。（羅2:29）</td>
+<td>你的信仰有沒有從外在的宗教儀式，深入到內心真實的委身和改變？就像一個鑽石的價值不在外表的光澤而在內在的品質，你有沒有讓你的信仰生命在內在上是真實的，而非只在外表上像一個基督徒？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

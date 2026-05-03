@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第58章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第58章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">不義的審判者：神是施行判斷的公義主宰</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的金詩，交與伶長。調用休要毀壞）世人哪，你們默然不語，真合公義麼？施行審判，豈按正直麼？</div>
+<div class="verse"><span class="verse-number">2</span>不然！你們是心中作惡；你們在地上秤出你們手所行的強暴。</div>
+<div class="verse"><span class="verse-number">3</span>惡人一出母胎就與神疏遠，一離母腹便走錯路，說謊話。</div>
+<div class="verse"><span class="verse-number">4</span>他們的毒氣好像蛇的毒氣；他們好像塞耳的聾虺，</div>
+<div class="verse"><span class="verse-number">5</span>不聽行法術的聲音，雖用極靈的咒語也是不聽。</div>
+<div class="verse"><span class="verse-number">6</span>神啊，求你敲碎他們口中的牙！耶和華啊，求你敲掉少壯獅子的大牙！</div>
+<div class="verse"><span class="verse-number">7</span>願他們消滅，如急流的水一般；他們瞅準射箭的時候，願箭頭彷彿砍斷。</div>
+<div class="verse"><span class="verse-number">8</span>願他們像蝸牛消化過去，又像婦人墜落未見天日的胎。</div>
+<div class="verse"><span class="verse-number">9</span>你們用荊棘燒火，鍋還未熱，他要用旋風把青的和燒着的一齊颳去。</div>
+<div class="verse"><span class="verse-number">10</span>義人見仇敵遭報就歡喜，要在惡人的血中洗腳。</div>
+<div class="verse"><span class="verse-number">11</span>因此，人必說：義人誠然有善報；在地上果有施行判斷的神！</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第58篇是大衛的「金詩」，是詩篇中最嚴厲的「咒詛詩篇」之一，充滿了對不義審判者與惡人的強烈控訴與詛咒。本篇的對象是「世人」中那些本應執行公義審判，卻以強暴扭曲正義的人——可能是宮廷中的官員或法官。
+
+      本篇首先揭露這些人的本質：外表沉默不言（默然不語），實際上卻在謀划強暴（第1-2節）；並揭示惡人從生命根源就已偏離（第3-5節）。接下來是強烈的咒詛禱告（第6-9節），以生動的意象呼求神的審判。最後以神必施行公義判斷的確信作結（第10-11節）。
+
+      本篇最重要的神學主張在末節：「在地上果有施行判斷的神！」這個宣告是對不公義橫行世界的信仰回應——公義最終不在人的法庭，而在神的審判。這個確信使受壓迫者能在等候神公義的過程中，保持靈魂的定力而不陷入絕望。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 對不義的憤慨是道德良知被神賦予的正當反應</strong><br>「世人哪，你們默然不語，真合公義麼？施行審判，豈按正直麼？」（第1節）大衛在本篇毫不掩飾對不義的憤怒。這種憤怒不是出於個人恩怨，而是對公義被踐踏的道德反應。神也對不義憤怒（詩7:11），因為神的本性是公義。信徒的道德良知被神的形象塑造，因此對不義有正當的憤慨是信仰的組成部分。然而，這種憤慨的正確出口是向神呼求審判，而非自己動手報復。<br><br>
+<strong>2. 惡的根源揭示人需要神的更新</strong><br>「惡人一出母胎就與神疏遠，一離母腹便走錯路，說謊話。」（第3節）大衛對惡的根源的描述令人深思：不是環境造成的問題，而是人從根源就有的偏離傾向。這呼應了保羅在羅馬書3章的論述：「沒有義人，連一個也沒有。」這個真理不是要我們對人絕望，而是讓我們深刻認識人類需要神從根本上的更新，而非僅靠教育或環境改善。<br><br>
+<strong>3. 神必施行公義判斷是受壓迫者最深的盼望根基</strong><br>「在地上果有施行判斷的神！」（第11節）在見盡人間不義的背景下，這個宣告是信仰最深的定論。地上的法庭可能腐敗，人間的審判者可能被收買，但神的審判不能被繞過。這個確信使受壓迫者能夠等候，而不在等候中絕望，因為他們知道有一位公正的審判者必然主持公道。這也是信徒面對任何人間不義時，選擇留下而非報復的屬靈根基。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>世人哪</strong>，<strong>你們默然不語</strong>，真合公義麼？施行審判，豈按正直麼？（詩58:1）</td>
+<td>就像見到有人在街上受欺負卻選擇視而不見，那種「沉默的共謀」本身就是一種不義，你在面對身邊的不公義時，是否有過因為涉及個人代價而選擇默然不語的時刻？那個沉默如何影響了你對公義的理解？</td>
+</tr>
+<tr>
+<td><strong>惡人一出母胎就與</strong><strong>神疏遠</strong>，一離母腹便走錯路，說謊話。（詩58:3）</td>
+<td>就像一台出廠時就有根本性缺陷的機器，再好的維修也只是治標，你是否真的認識到人的根本偏離需要神的創造性更新，而非只是行為上的改善——讓這認識使你在面對他人的罪時多一份理解，而非只有審判？</td>
+</tr>
+<tr>
+<td><strong>在地上果有施行判</strong><strong>斷的神</strong>！（詩58:11）</td>
+<td>就像知道最終的裁判是公正的，即使比賽過程中有爭議判決，球員仍能以更平靜的心繼續比賽，你對「神必施行公義判斷」的確信，是否真的能在你面對人間不義時，使你選擇等候神而非自行報復？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

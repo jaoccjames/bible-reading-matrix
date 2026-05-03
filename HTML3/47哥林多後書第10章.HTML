@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥林多後書第10章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+哥林多後書第10章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">屬靈爭戰的兵器與誇口的準則</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>我保羅，就是與你們見面的時候是謙卑的，不在你們那裏的時候向你們是勇敢的，如今親自藉着基督的溫柔、和平勸你們。</div>
+<div class="verse"><span class="verse-number">2</span>有人以為我是憑着血氣行事，我也以為必須用勇敢待這等人；求你們不要叫我在你們那裏的時候，有這樣的勇敢。</div>
+<div class="verse"><span class="verse-number">3</span>因為我們雖然在血氣中行事，卻不憑着血氣爭戰。</div>
+<div class="verse"><span class="verse-number">4</span>我們爭戰的兵器本不是屬血氣的，乃是在神面前有能力，可以攻破堅固的營壘，</div>
+<div class="verse"><span class="verse-number">5</span>將各樣的計謀，各樣攔阻人認識神的那些自高之事一概攻破了，又將人所有的心意奪回，使他都順服基督。</div>
+<div class="verse"><span class="verse-number">6</span>並且我已經預備好了，等你們十分順服的時候，要責罰那一切不順服的人。</div>
+<div class="verse"><span class="verse-number">7</span>你們是看眼前的嗎？倘若有人自信是屬基督的，他要再想想，他如何屬基督，我們也是如何屬基督的。</div>
+<div class="verse"><span class="verse-number">8</span>主賜給我們權柄，是要造就你們，並不是要敗壞你們；我就是為這權柄稍微誇口，也不至於慚愧。</div>
+<div class="verse"><span class="verse-number">9</span>我說這話，免得你們以為我寫信是要威嚇你們；</div>
+<div class="verse"><span class="verse-number">10</span>因為有人說：「他的信又沉重又利害，及至見面，卻是氣貌不揚，言語粗俗的。」</div>
+<div class="verse"><span class="verse-number">11</span>這等人當想，我們不在那裏的時候，信上的言語如何，見面的時候，行事也必如何。</div>
+<div class="verse"><span class="verse-number">12</span>因為我們不敢將自己和那自薦的人同列相比。他們用自己度量自己，用自己比較自己，乃是不通達的。</div>
+<div class="verse"><span class="verse-number">13</span>我們不願意分外誇口，只要照神所量給我們的界限搆到你們那裏。</div>
+<div class="verse"><span class="verse-number">14</span>我們並非過了自己的界限，好像搆不到你們那裏；因為我們早到你們那裏，傳了基督的福音。</div>
+<div class="verse"><span class="verse-number">15</span>我們不仗着別人所勞碌的，分外誇口；但指望你們信心增長的時候，所量給我們的界限，就可以因着你們更加開展，</div>
+<div class="verse"><span class="verse-number">16</span>得以將福音傳到你們以外的地方；並不是在別人界限之內，藉着他現成的事誇口。</div>
+<div class="verse"><span class="verse-number">17</span>但誇口的，當指着主誇口。</div>
+<div class="verse"><span class="verse-number">18</span>因為蒙悅納的，不是自己稱許的，乃是主所稱許的。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第10章標誌哥林多後書進入最後四章，語氣急劇轉變，保羅開始直接面對那些批評他的人，為自己的使徒身份作出最有力的辯護。本章首先保羅以基督的溫柔和寬容勸哥林多人，有人說他當面懦弱、不在時卻膽壯，他說等他來了就要有膽量對付那些認為他照著肉體行事的人。接著宣告他們雖然在肉身，卻不按肉體爭戰，他們爭戰的兵器本不是屬血氣的，乃是在神面前有能力，可以攻破堅固的營壘，辯駁各樣的辯論和各樣攔阻人認識神的高牆，將人所有的心意奪回使他們順服基督。然後回應那些說他書信有力、當面卻軟弱的批評，說他不在那裡時怎樣、到那裡時也必怎樣。接著保羅強調他不越分誇口，神量給他的工作範圍包括了哥林多，他盼望隨著信徒信心增長，工作範圍能擴張到哥林多以外的地方傳福音。最後引用舊約說自誇的當在主裡誇口，因為主所稱許的才算。本章為後面的使徒辯護奠定重要框架。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 屬靈爭戰不是用血氣的兵器</strong><br>「我們爭戰的兵器本不是屬血氣的，乃是在神面前有能力」——信徒面對的真正敵人不是有血有肉的人，而是「各樣攔阻人認識神的那些自高之事」。不是政治、辯論或人際操縱，而是禱告、真理、順服基督——這些是真正有效的屬靈武器。「攻破堅固的營壘」——那些根深蒂固的謬誤思想和心理障礙，只有屬靈的力量才能瓦解。<br><br>
+<strong>2. 用自己比較自己——最大的誇口謬誤</strong><br>「他們用自己度量自己，用自己比較自己，乃是不通達的」——只用自己的標準評估自己，是最自欺欺人的方式。真正的評估需要外部的客觀標準——神的話語和神的評價。比較也只在「神所量給我們的界限」內有意義；越界的比較只是驕傲。<br><br>
+<strong>3. 「主所稱許的」是唯一真實的評估</strong><br>「蒙悅納的，不是自己稱許的，乃是主所稱許的」——這個原則徹底地解放了服事者：不需要靠人的稱讚支撐，也不必因人的批評崩潰；唯一有分量的評估是主的評估。同時也警告服事者：人的稱讚可以是誤導的，自我稱許更是危險的；求主的稱許才是真正的目標。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我們爭戰的兵器本</strong><strong>不是屬血氣的</strong>，乃是在神面前有能力，可以攻破堅固的營壘，將各樣的計謀，各樣攔阻人認識神的那些自高之事一概攻破了。（林後10:4-5）</td>
+<td>你有沒有認識到你在信仰中真正的爭戰是屬靈的，並且使用屬靈的兵器——禱告、真理、順服——而非靠人際技巧和辯論來解決屬靈的問題？就像火不能用水的方式熄滅，你有沒有讓你的屬靈爭戰用屬靈的方法來進行？</td>
+</tr>
+<tr>
+<td><strong>誇口的</strong>，<strong>當指着主誇口</strong>。因為蒙悅納的，不是自己稱許的，乃是主所稱許的。（林後10:17-18）</td>
+<td>你有沒有讓「主所稱許的」成為你服事和生命的最終目標，使你能夠在人的批評中站立，也不被人的稱讚沖昏頭腦？就像一個清楚知道自己服事對象是誰的人，不會輕易被旁觀者的評論左右，你有沒有讓主的評估成為你最在乎的回應？</td>
+</tr>
+<tr>
+<td><strong>他們用自己度量自</strong>己，<strong>用自己比較自己</strong>，乃是不通達的。（林後10:12）</td>
+<td>你有沒有避免把自己與他人比較作為衡量靈命的方式，而是用神的標準來評估自己？就像每個學生最終是按照考試標準而非同班同學的成績被評估，你有沒有讓神的話語而非他人的表現，成為你靈命自我評估的標準？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

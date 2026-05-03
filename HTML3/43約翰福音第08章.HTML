@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>約翰福音第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+約翰福音第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">行淫被拿的婦人與我是世界的光</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>於是各人都回家去了；耶穌卻往橄欖山去，</div>
+<div class="verse"><span class="verse-number">2</span>清早又回到殿裏。眾百姓都到他那裏去，他就坐下，教訓他們。</div>
+<div class="verse"><span class="verse-number">3</span>文士和法利賽人帶着一個行淫時被拿的婦人來，叫她站在當中，</div>
+<div class="verse"><span class="verse-number">4</span>就對耶穌說：「夫子，這婦人是正行淫之時被拿的。</div>
+<div class="verse"><span class="verse-number">5</span>摩西在律法上吩咐我們把這樣的婦人用石頭打死。你說該把她怎麼樣呢？」</div>
+<div class="verse"><span class="verse-number">6</span>他們說這話，乃試探耶穌，要得着告他的把柄。耶穌卻彎着腰，用指頭在地上畫字。</div>
+<div class="verse"><span class="verse-number">7</span>他們還是不住的問他，耶穌就直起腰來，對他們說：「你們中間誰是沒有罪的，誰就可以先拿石頭打她。」</div>
+<div class="verse"><span class="verse-number">8</span>於是又彎着腰，用指頭在地上畫字。</div>
+<div class="verse"><span class="verse-number">9</span>他們聽見這話，就從老到少，一個一個的都出去了，只剩下耶穌一人，還有那婦人仍然站在當中。</div>
+<div class="verse"><span class="verse-number">10</span>耶穌就直起腰來，對她說：「婦人，那些人在那裏呢？沒有人定你的罪麼？」</div>
+<div class="verse"><span class="verse-number">11</span>她說：「主啊，沒有。」耶穌說：「我也不定你的罪。去吧，從此不要再犯罪了！」</div>
+<div class="verse"><span class="verse-number">12</span>耶穌又對眾人說：「我是世界的光。跟從我的，就不在黑暗裏走，必要得着生命的光。」</div>
+<div class="verse"><span class="verse-number">13</span>法利賽人對他說：「你是為自己作見證，你的見證不真。」</div>
+<div class="verse"><span class="verse-number">14</span>耶穌說：「我雖然為自己作見證，我的見證還是真的；因我知道我從那裏來，往那裏去；你們卻不知道我從那裏來，往那裏去。</div>
+<div class="verse"><span class="verse-number">15</span>你們是以外貌〔原文作憑肉身〕判斷人，我卻不判斷人。</div>
+<div class="verse"><span class="verse-number">16</span>就是判斷人，我的判斷也是真的；因為不是我獨自在這裏，還有差我來的父與我同在。</div>
+<div class="verse"><span class="verse-number">17</span>你們的律法上也記着說：『兩個人的見證是真的。』</div>
+<div class="verse"><span class="verse-number">18</span>我是為自己作見證，還有差我來的父也是為我作見證。」</div>
+<div class="verse"><span class="verse-number">19</span>他們就問他說：「你的父在那裏？」耶穌回答說：「你們不認識我，也不認識我的父；若是認識我，也就認識我的父。」</div>
+<div class="verse"><span class="verse-number">20</span>這些話是耶穌在殿裏的庫房、教訓人時所說的，也沒有人拿他，因為他的時候還沒有到。</div>
+<div class="verse"><span class="verse-number">21</span>耶穌又對他們說：「我要去了，你們要找我，並且你們要死在罪中。我所去的地方，你們不能到。」</div>
+<div class="verse"><span class="verse-number">22</span>猶太人說：「他說：『我所去的地方，你們不能到』，難道他要自盡麼？」</div>
+<div class="verse"><span class="verse-number">23</span>耶穌對他們說：「你們是從下頭來的，我是從上頭來的；你們是屬這世界的，我不是屬這世界的。</div>
+<div class="verse"><span class="verse-number">24</span>所以我對你們說，你們要死在罪中。你們若不信我是基督，必要死在罪中。」</div>
+<div class="verse"><span class="verse-number">25</span>他們就問他說：「你是誰？」耶穌對他們說：「就是我從起初所告訴你們的。</div>
+<div class="verse"><span class="verse-number">26</span>我有許多事講論你們，判斷你們；但那差我來的是真的，我在他那裏所聽見的，我就傳給世人。」</div>
+<div class="verse"><span class="verse-number">27</span>他們不明白耶穌是指着父說的。</div>
+<div class="verse"><span class="verse-number">28</span>所以耶穌說：「你們舉起人子以後，必知道我是基督，並且知道我沒有一件事是憑着自己作的。我說這些話乃是照着父所教訓我的。</div>
+<div class="verse"><span class="verse-number">29</span>那差我來的是與我同在；他沒有撇下我獨自在這裏，因為我常作他所喜悅的事。」</div>
+<div class="verse"><span class="verse-number">30</span>耶穌說這話的時候，就有許多人信他。</div>
+<div class="verse"><span class="verse-number">31</span>耶穌對信他的猶太人說：「你們若常常遵守我的道，就真是我的門徒；</div>
+<div class="verse"><span class="verse-number">32</span>你們必曉得真理，真理必叫你們得以自由。」</div>
+<div class="verse"><span class="verse-number">33</span>他們回答說：「我們是亞伯拉罕的後裔，從來沒有作過誰的奴僕。你怎麼說『你們必得自由』呢？」</div>
+<div class="verse"><span class="verse-number">34</span>耶穌回答說：「我實實在在的告訴你們，所有犯罪的就是罪的奴僕。</div>
+<div class="verse"><span class="verse-number">35</span>奴僕不能永遠住在家裏；兒子是永遠住在家裏。</div>
+<div class="verse"><span class="verse-number">36</span>所以天父的兒子若叫你們自由，你們就真自由了。</div>
+<div class="verse"><span class="verse-number">37</span>我知道你們是亞伯拉罕的子孫，你們卻想要殺我，因為你們心裏容不下我的道。</div>
+<div class="verse"><span class="verse-number">38</span>我所說的是在我父那裏看見的；你們所行的是在你們的父那裏聽見的。」</div>
+<div class="verse"><span class="verse-number">39</span>他們說：「我們的父就是亞伯拉罕。」耶穌說：「你們若是亞伯拉罕的兒子，就必行亞伯拉罕所行的事。</div>
+<div class="verse"><span class="verse-number">40</span>我將在神那裏所聽見的真理告訴了你們，現在你們卻想要殺我，這不是亞伯拉罕所行的事。</div>
+<div class="verse"><span class="verse-number">41</span>你們是行你們父所行的事。」他們說：「我們不是從淫亂生的；我們只有一位父，就是神。」</div>
+<div class="verse"><span class="verse-number">42</span>耶穌說：「倘若神是你們的父，你們就必愛我；因為我本是出於神，也是從神而來，並不是由着自己來，乃是他差我來。</div>
+<div class="verse"><span class="verse-number">43</span>你們為甚麼不明白我的話呢？無非是因你們不能聽我的道。</div>
+<div class="verse"><span class="verse-number">44</span>你們是出於你們的父魔鬼，你們父的私慾你們偏要行。他從起初是殺人的，不守真理，因他心裏沒有真理。他說謊是出於自己；因他本來是說謊的，也是說謊之人的父。</div>
+<div class="verse"><span class="verse-number">45</span>我將真理告訴你們，你們就因此不信我。</div>
+<div class="verse"><span class="verse-number">46</span>你們中間誰能指證我有罪呢？我既然將真理告訴你們，為甚麼不信我呢？</div>
+<div class="verse"><span class="verse-number">47</span>出於神的，必聽神的話；你們不聽，因為你們不是出於神。」</div>
+<div class="verse"><span class="verse-number">48</span>猶太人回答說：「我們說你是撒瑪利亞人，並且是鬼附着的，這話豈不正對麼？」</div>
+<div class="verse"><span class="verse-number">49</span>耶穌說：「我不是鬼附着的；我尊敬我的父，你們倒輕慢我。</div>
+<div class="verse"><span class="verse-number">50</span>我不求自己的榮耀，有一位為我求榮耀、定是非的。</div>
+<div class="verse"><span class="verse-number">51</span>我實實在在的告訴你們，人若遵守我的道，就永遠不見死。」</div>
+<div class="verse"><span class="verse-number">52</span>猶太人對他說：「現在我們知道你是鬼附着的。亞伯拉罕死了，眾先知也死了，你還說：『人若遵守我的道，就永遠不嘗死味。』</div>
+<div class="verse"><span class="verse-number">53</span>難道你比我們的祖宗亞伯拉罕還大麼？他死了，眾先知也死了，你將自己當作甚麼人呢？」</div>
+<div class="verse"><span class="verse-number">54</span>耶穌回答說：「我若榮耀自己，我的榮耀就算不得甚麼；榮耀我的乃是我的父，就是你們所說是你們的神。</div>
+<div class="verse"><span class="verse-number">55</span>你們未曾認識他；我卻認識他。我若說不認識他，我就是說謊的，像你們一樣；但我認識他，也遵守他的道。</div>
+<div class="verse"><span class="verse-number">56</span>你們的祖宗亞伯拉罕歡歡喜喜的仰望我的日子，既看見了就快樂。」</div>
+<div class="verse"><span class="verse-number">57</span>猶太人說：「你還沒有五十歲，豈見過亞伯拉罕呢？」</div>
+<div class="verse"><span class="verse-number">58</span>耶穌說：「我實實在在的告訴你們，還沒有亞伯拉罕就有了我。」</div>
+<div class="verse"><span class="verse-number">59</span>於是他們拿石頭要打他；耶穌卻躲藏，從殿裏出去了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+第8章記述行淫被拿的女人、耶穌自稱世界的光、與法利賽人就祂父親和祂身份的激烈爭論，以及宣告在亞伯拉罕未曾有之前我就是了，是約翰福音中衝突最激烈的一章。本章首先記述一個行淫被拿的女人被帶到耶穌面前試探祂，耶穌說你們中間誰是沒有罪的誰就可以先拿石頭打她，眾人從老到少都出去了，耶穌說他也不定她的罪叫她不要再犯罪了。接著耶穌說我是世界的光，跟從我的必得著生命的光，法利賽人說祂是為自己作見證不算數，耶穌說祂父也為祂作見證。然後就身份問題展開激烈對話：他們是從下頭的，祂是從上頭來的；他們若不信祂就必死在罪中；他們的父是魔鬼；亞伯拉罕歡歡喜喜地仰望祂的日子看見了就快樂。他們說你還沒有五十歲豈見過亞伯拉罕，耶穌說還沒有亞伯拉罕就有了我。他們就拿石頭打祂，耶穌卻躲避從殿裡出去。本章是約翰福音神學爭論最激烈的一章，以永恆的我是宣告揭示耶穌的神性本質。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 恩典的光照下沒有定罪，但要求生命改變</strong><br>行淫被拿的婦人被帶來是為了試探耶穌，卻成為了她生命的轉捩點。耶穌沒有為罪辯護，也沒有按律法定罪，而是說「我也不定你的罪。去吧，從此不要再犯罪了！」恩典與真理同在：恩典免除了審判，真理指出了道路。神的赦免不是對罪的漠視，而是在赦免中呼召生命的改變。「從此不要再犯罪」是自由的宣告，不是增加的負擔。<br><br>
+<strong>2. 真理叫人得着真正的自由</strong><br>「真理必叫你們得以自由」——猶太人反駁說從來沒有作過誰的奴僕；耶穌說「所有犯罪的就是罪的奴僕」。真正的自由不是不受約束，而是從罪的捆綁中得釋放。世界以「不受限制」為自由，基督教以「從罪的奴役中得自由」為自由。「天父的兒子若叫你們自由，你們就真自由了」——這個自由建立在神子的工作上，不是靠自己的努力。<br><br>
+<strong>3. 耶穌是世界的光，跟從祂就不在黑暗中</strong><br>「我是世界的光」——約翰福音七個「我是」宣告中的第二個。光照亮、揭露、引導。跟從光的人不只是自己得着光，也反射光。在充滿謊言和黑暗的世界，耶穌的光是絕對的參照點。「跟從我的，就不在黑暗裏走」——這是應許，也是條件；是恩賜，也是呼召。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>我也不定你的罪</strong>。去吧，從此不要再犯罪了！」（約8:11）</td>
+<td>你有沒有真實地接受耶穌「不定你的罪」的赦免，讓你從罪疚感中得釋放，同時以「從此不要再犯罪」的決心更新你的生命方向？就像既被釋放又有新的使命，你能在恩典和更新的決心中同時前行嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌說</strong>：「<strong>你們若常常遵守我</strong>的道，就真是我的門徒；你們必曉得真理，真理必叫你們得以自由。」（約8:31-32）</td>
+<td>你生命中有沒有哪些看不見的捆綁——罪的習慣、錯誤的思維、恐懼或苦毒——讓你其實不是自由的？就像囚犯已被釋放卻仍習慣性地蹲在牢房角落，你願意讓耶穌的真理真實地解開你生命中的捆綁嗎？</td>
+</tr>
+<tr>
+<td><strong>耶穌又對眾人說</strong>：「<strong>我是世界的光</strong>。跟從我的，就不在黑暗裏走，必要得着生命的光。」（約8:12）</td>
+<td>在你面對人生的不確定和迷失時，你有沒有轉向耶穌這個「世界的光」尋求方向？就像在黑暗中一盞燈就足以照亮前路，你願意在每一個不知道往哪裏去的時刻，讓耶穌的話語成為你的光嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

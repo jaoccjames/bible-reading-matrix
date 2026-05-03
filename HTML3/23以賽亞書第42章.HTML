@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以賽亞書第42章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+以賽亞書第42章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">壓傷的蘆葦他不折斷：神的僕人帶來公理與外邦的光</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>看哪，我的僕人，我所扶持、所揀選、心裏所喜悅的！我已將我的靈賜給他；他必將公理傳給外邦。</div>
+<div class="verse"><span class="verse-number">2</span>他不喧嚷，不揚聲，也不使街上聽見他的聲音。</div>
+<div class="verse"><span class="verse-number">3</span>壓傷的蘆葦，他不折斷；將殘的燈火，他不吹滅。他憑真實將公理傳開。</div>
+<div class="verse"><span class="verse-number">4</span>他不灰心，也不喪膽，直到他在地上設立公理；海島都等候他的訓誨。</div>
+<div class="verse"><span class="verse-number">5</span>創造諸天，鋪張穹蒼，將地和地所出的一併鋪開，賜氣息給地上的眾人，又賜靈性給行在其上之人的神耶和華，他如此說：</div>
+<div class="verse"><span class="verse-number">6</span>我耶和華憑公義召你，必攙扶你的手，保守你，使你作眾民的中保〔中保：原文作約〕，作外邦人的光，</div>
+<div class="verse"><span class="verse-number">7</span>開瞎子的眼，領被囚的出牢獄，領坐黑暗的出監牢。</div>
+<div class="verse"><span class="verse-number">8</span>我是耶和華，這是我的名；我必不將我的榮耀歸給假神，也不將我的稱讚歸給雕刻的偶像。</div>
+<div class="verse"><span class="verse-number">9</span>看哪，先前的事已經成就，現在我將新事說明，這事未發以先，我就說給你們聽。</div>
+<div class="verse"><span class="verse-number">10</span>航海的和海中所有的，海島和其上的居民，都當向耶和華唱新歌，從地極讚美他。</div>
+<div class="verse"><span class="verse-number">11</span>曠野和其中的城邑，並基達人居住的村莊都當揚聲；西拉的居民當歡呼，在山頂上吶喊。</div>
+<div class="verse"><span class="verse-number">12</span>他們當將榮耀歸給耶和華，在海島中傳揚他的頌讚。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華必像勇士出去，必像戰士激動熱心，要喊叫，大聲吶喊，要用大力攻擊仇敵。</div>
+<div class="verse"><span class="verse-number">14</span>我許久閉口不言，靜默不語；現在我要喊叫，像產難的婦人；我要急氣而喘哮。</div>
+<div class="verse"><span class="verse-number">15</span>我要使大山小岡變為荒場，使其上的花草都枯乾；我要使江河變為洲島，使水池都乾涸。</div>
+<div class="verse"><span class="verse-number">16</span>我要引瞎子行不認識的道，領他們走不知道的路；在他們面前使黑暗變為光明，使彎曲變為平直。這些事我都要行，並不離棄他們。</div>
+<div class="verse"><span class="verse-number">17</span>倚靠雕刻的偶像，對鑄造的偶像說：你是我們的神；這等人要退後，全然蒙羞。</div>
+<div class="verse"><span class="verse-number">18</span>你們這耳聾的，聽吧！你們這眼瞎的，看吧！使你們能看見。</div>
+<div class="verse"><span class="verse-number">19</span>誰比我的僕人眼瞎呢？誰比我差遣的使者耳聾呢？誰瞎眼像那與我和好的？誰瞎眼像耶和華的僕人呢？</div>
+<div class="verse"><span class="verse-number">20</span>你看見許多事卻不領會，耳朵開通卻不聽見。</div>
+<div class="verse"><span class="verse-number">21</span>耶和華因自己公義的緣故，喜歡使律法〔或作：訓誨〕為大，為尊。</div>
+<div class="verse"><span class="verse-number">22</span>但這百姓是被搶被奪的，都牢籠在坑中，隱藏在獄裏；他們作掠物，無人拯救，作擄物，無人說交還。</div>
+<div class="verse"><span class="verse-number">23</span>你們中間誰肯側耳聽此，誰肯留心而聽，以防將來呢？</div>
+<div class="verse"><span class="verse-number">24</span>誰將雅各交出當作擄物，將以色列交給搶奪的呢？豈不是耶和華嗎？就是我們所得罪的那位。他們不肯遵行他的道，也不聽從他的訓誨。</div>
+<div class="verse"><span class="verse-number">25</span>所以，他將猛烈的怒氣和爭戰的勇力傾倒在以色列的身上。在他四圍如火着起，他還不知道，燒着他，他也不介意。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+以賽亞書第四十二章包含了以賽亞書「僕人之歌」（Servant Songs）中的第一首（1-9節），是整本以賽亞書中最重要的彌賽亞預言之一。在新約中，馬太福音12:18-21直接引用本章1-4節，應用於耶穌基督的傳道事工，並宣告「這就是先知以賽亞所說的」。「僕人」在以賽亞書中有層次的意義：有時指以色列民族（41:8）；有時指特定的個人（如賽49、50、52-53章），在新約的應用中被解讀為彌賽亞耶穌。第1-4節描繪的這位僕人有三個獨特的品格：溫柔（不喧嚷、不揚聲，2節）、憐憫（壓傷的蘆葦不折斷，3節）、堅持（不灰心、不喪膽，4節）——這三者在耶穌的服事中得到完美的應驗。第3節「壓傷的蘆葦，他不折斷；將殘的燈火，他不吹滅」，是整本聖經對神憐憫心腸最溫柔的描繪之一，宣告神的彌賽亞不是來消滅軟弱者，而是來扶持和更新他們。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「壓傷的蘆葦他不折斷」：基督的憐憫使最脆弱的人得到保護</strong><br>第3節是以賽亞書中關於神的憐憫最動人的圖像。「壓傷的蘆葦」——幾乎折斷的、最脆弱的；「將殘的燈火」——快要熄滅的、最微弱的。對這兩者，神的僕人的態度是保護，而非消滅。這對每一個在信仰旅途中感到「壓傷」和「將殘」的信徒都是深刻的安慰：基督不是來評判你有多脆弱，而是來保護你、更新你，直到公理最終設立。<br><br>
+<strong>2. 「作外邦人的光」：神的救恩從以色列流向萬民</strong><br>第6-7節「使你作外邦人的光，開瞎子的眼，領被囚的出牢獄」，宣告了彌賽亞使命的普世性。神的救恩不只給以色列，更是「外邦人的光」。在耶穌傳道的開始（路4:18-19引用賽61章，主題相似），以及在保羅的宣教神學中，這節話成為外邦福音的根據（徒26:23引用「外邦人的光」）。對信徒的應用是：每一個接受了這光的人，也有責任把光帶向身邊尚在黑暗中的人。<br><br>
+<strong>3. 「我要引瞎子行不認識的道」：神的帶領超越人的認識範圍</strong><br>第16節「我要引瞎子行不認識的道，領他們走不知道的路……並不離棄他們」，是對信仰旅途中「走在不熟悉的道路上」的信徒最深的安慰。神沒有說「等你看清楚了再走」，而是說「我要引你行」——神的帶領先於人的理解。信徒在不確定和黑暗中，可以倚靠那位「引瞎子行不認識的道、並不離棄他們」的神，一步一步前行。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「<strong>壓傷的蘆葦</strong>，<strong>他不折斷</strong>；將殘的燈火，他不吹滅。他憑真實將公理傳開。」（賽42:3）</td>
+<td>就像一個好的陶藝師傅，對裂縫的陶器不是直接丟棄，而是用金粉填補（金繼技法），讓缺陷成為美麗的一部分，基督對「壓傷」和「將殘」者的態度是修復而非廢棄，你目前感到自己最「壓傷」或「將殘」的是哪個方面？這節話如何改變你對自己靈命狀態的看法？</td>
+</tr>
+<tr>
+<td>「<strong>使你作眾民的中保</strong>，<strong>作外邦人的光</strong>，開瞎子的眼，領被囚的出牢獄。」（賽42:6-7）</td>
+<td>就像一支蠟燭點亮另一支蠟燭，光不會因此減少，反而照亮的範圍更廣，神的救恩設計是傳遞的，你已經領受的「光」，有沒有在傳遞給你身邊在黑暗中的人？你認識誰是「坐在黑暗」中、需要有人引領他們「出牢獄」的？</td>
+</tr>
+<tr>
+<td>「<strong>我要引瞎子行不認</strong><strong>識的道</strong>，領他們走不知道的路……並不離棄他們。」（賽42:16）</td>
+<td>就像一個盲人牽著導盲犬，不是因為他看得見才前行，而是因為他信任那個引導他的，信仰的前行有時不需要看清楚前路，只需要信任那位引路的神，你目前生命中最「不認識的道」是什麼？你願意讓神引導你走那條不熟悉的路嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

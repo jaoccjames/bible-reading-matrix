@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>詩篇第17章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+詩篇第17章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">在神鑒察中求保護：以見神為滿足</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>（大衛的祈禱）耶和華啊，求你聽聞公義，側耳聽我的呼籲！求你留心聽我這不出於詭詐嘴唇的祈禱！</div>
+<div class="verse"><span class="verse-number">2</span>願我的判語從你面前發出；願你的眼睛觀看公正。</div>
+<div class="verse"><span class="verse-number">3</span>你已經試驗我的心；你在夜間鑒察我；你熬煉我，卻找不着甚麼；我立志叫我口中沒有過失。</div>
+<div class="verse"><span class="verse-number">4</span>論到人的行為，我藉着你嘴唇的言語自己謹守，不行強暴人的道路。</div>
+<div class="verse"><span class="verse-number">5</span>我的腳踏定了你的路徑；我的兩腳未曾滑跌。</div>
+<div class="verse"><span class="verse-number">6</span>神啊，我曾求告你，因為你必應允我；求你向我側耳，聽我的言語。</div>
+<div class="verse"><span class="verse-number">7</span>求你顯出你奇妙的慈愛來；你是那用右手拯救投靠你的脫離起來攻擊他們的人。</div>
+<div class="verse"><span class="verse-number">8</span>求你保護我，如同保護眼中的瞳人；將我隱藏在你翅膀的蔭下，</div>
+<div class="verse"><span class="verse-number">9</span>使我脫離那欺壓我的惡人，就是圍困我要害我命的仇敵。</div>
+<div class="verse"><span class="verse-number">10</span>他們的心被脂油包裹；他們用口說驕傲的話。</div>
+<div class="verse"><span class="verse-number">11</span>他們圍困了我們的腳步；他們瞪着眼，要把我們推倒在地。</div>
+<div class="verse"><span class="verse-number">12</span>他像獅子急要抓食，又像少壯獅子蹲伏在暗處。</div>
+<div class="verse"><span class="verse-number">13</span>耶和華啊，求你起來，前去迎敵，將他打倒！用你的刀救護我命脫離惡人。</div>
+<div class="verse"><span class="verse-number">14</span>耶和華啊，求你用手救我脫離世人，脫離那只在今生有福分的世人！你把你的財寶充滿他們的肚腹；他們因有兒女就心滿意足，將其餘的財物留給他們的嬰孩。</div>
+<div class="verse"><span class="verse-number">15</span>至於我，我必在義中見你的面；我醒了的時候，得見〔或作：着〕你的形像就心滿意足了。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+詩篇第17篇標明是「大衛的祈禱」，是詩篇中少數直接以「祈禱」為標題的詩篇之一（另有詩篇86、90、102、142篇）。本篇可能寫於大衛遭受仇敵追逼、急需神介入的某段危機時期。
+
+      本篇最獨特之處在於大衛呼求神作他的審判者，並宣稱自己在清白中接受神的試驗：「你已經試驗我的心；你在夜間鑒察我；你熬煉我，卻找不着甚麼。」這是極高的屬靈確信，大衛以在神面前的清白作為禱告蒙應允的基礎。
+
+      全篇的結構是：清白的申辯（1-5節）、求神保護（6-9節）、仇敵的描述（10-12節）、緊急的呼求（13-14節）、永恆盼望的結語（15節）。最後一節「我醒了的時候，得見你的形像就心滿意足了」是全篇最令人動容的高峰，將滿足的根源從今生的享受（第14節所描述的世人）轉移到見神的永恆盼望，呼應第16篇「在你面前有滿足的喜樂」的主題。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 在神全知的鑒察下仍能坦然禱告是屬靈成熟的標誌</strong><br>大衛邀請神試驗他的心、在夜間鑒察他，這需要靈魂的透明與誠實。「你熬煉我，卻找不著甚麼」不是自義的宣稱，而是在神面前沒有隱藏的坦然。許多人的禱告帶著「表演」的成分，在神面前說的與心裡想的未必一致。大衛的禱告卻是「不出於詭詐嘴唇的祈禱」——靈魂的赤裸誠實。這種在神面前的透明，正是深度禱告關係的基礎，也是屬靈成熟最真實的標誌。<br><br>
+<strong>2. 神如同保護眼中瞳人的珍愛是信徒的安全感根基</strong><br>「求你保護我，如同保護眼中的瞳人；將我隱藏在你翅膀的蔭下。」（第8節）「眼中的瞳人」是人體最敏感、也最本能地受保護的部位——任何靠近眼睛的東西都會引發即時的保護反應。大衛以此形容神對他的珍視與保護，表明神對信徒的愛是直覺性的、即時的、全然的。「翅膀的蔭下」則是溫柔庇護的意象。這兩個比喻合在一起，揭示神保護的力度與溫度：強大且溫柔，有力且親密。<br><br>
+<strong>3. 見神的形像是超越今生一切的終極滿足</strong><br>「我醒了的時候，得見你的形像就心滿意足了。」（第15節）大衛將自己的滿足與第14節那些「只在今生有福分的世人」作對比。世人以財富、兒女、物質為滿足；大衛的滿足建立在見神的形像上。這個「醒了」可能指清晨的覺醒，也可能預表死後復活的覺醒，在永恆中見神面的完全滿足。這種永恆的盼望，使信徒能在今生的任何缺乏中保持靈魂的滿足，因為最終的滿足不在今生的擁有，而在永恆中對神的面見。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你已經試驗我的心</strong>；<strong>你在夜間鑒察我</strong>；你熬煉我，卻找不着甚麼；（詩17:3）</td>
+<td>就像知道所有的通話都被錄音，人自然會謹慎說話，你是否真的活在神全知鑒察的意識下，讓這覺知從內而外影響你在無人看見時的選擇，還是只在有人注意時才展現「屬靈的一面」？</td>
+</tr>
+<tr>
+<td><strong>求你保護我</strong>，<strong>如同保護眼中的瞳</strong>人；將我隱藏在你翅膀的蔭下，（詩17:8）</td>
+<td>就像人不需要思考就會本能地閉眼保護瞳人，你是否真的相信神對你的珍愛與保護是即時且本能的，讓這確信在你感到脆弱受威脅時，帶給你真實的安全感而非只是美麗的比喻？</td>
+</tr>
+<tr>
+<td><strong>至於我</strong>，<strong>我必在義中見你的</strong>面；我醒了的時候，得見你的形像就心滿意足了。（詩17:15）</td>
+<td>就像旅途中的辛苦，因為知道終點是夢寐以求的目的地而變得值得，「見神的形像而心滿意足」的盼望，是否真的支撐著你在今生的各種缺乏與等待中，選擇繼續走在義的道路上？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

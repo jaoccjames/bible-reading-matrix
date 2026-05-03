@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記上第8章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記上第8章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">以色列求立王</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>撒母耳年紀老邁，就立他兒子作以色列的士師。</div>
+<div class="verse"><span class="verse-number">2</span>長子名叫約珥，次子名叫亞比亞；他們在別是巴作士師。</div>
+<div class="verse"><span class="verse-number">3</span>他兒子不行他的道，貪圖財利，收受賄賂，屈枉正直。</div>
+<div class="verse"><span class="verse-number">4</span>以色列的長老都聚集，來到拉瑪見撒母耳，</div>
+<div class="verse"><span class="verse-number">5</span>對他說：「你年紀老邁了，你兒子不行你的道。現在求你為我們立一個王治理我們，像列國一樣。」</div>
+<div class="verse"><span class="verse-number">6</span>撒母耳不喜悅他們說「立一個王治理我們」，他就禱告耶和華。</div>
+<div class="verse"><span class="verse-number">7</span>耶和華對撒母耳說：「百姓向你說的一切話，你只管依從；因為他們不是厭棄你，乃是厭棄我，不要我作他們的王。</div>
+<div class="verse"><span class="verse-number">8</span>自從我領他們出埃及到如今，他們常常離棄我，事奉別神。現在他們向你所行的，是照他們素來所行的。</div>
+<div class="verse"><span class="verse-number">9</span>故此你要依從他們的話，只是當警戒他們，告訴他們將來那王怎樣管轄他們。」</div>
+<div class="verse"><span class="verse-number">10</span>撒母耳將耶和華的話都傳給求他立王的百姓，說：</div>
+<div class="verse"><span class="verse-number">11</span>「管轄你們的王必這樣行：他必派你們的兒子為他趕車、跟馬，奔走在車前；</div>
+<div class="verse"><span class="verse-number">12</span>又派他們作千夫長、五十夫長，為他耕種田地，收割莊稼，打造軍器和車上的器械；</div>
+<div class="verse"><span class="verse-number">13</span>必取你們的女兒為他製造香膏，作飯烤餅；</div>
+<div class="verse"><span class="verse-number">14</span>也必取你們最好的田地、葡萄園、橄欖園賜給他的臣僕。</div>
+<div class="verse"><span class="verse-number">15</span>你們的糧食和葡萄園所出的，他必取十分之一給他的太監和臣僕；</div>
+<div class="verse"><span class="verse-number">16</span>又必取你們的僕人婢女，健壯的少年人和你們的驢，供他的差役。</div>
+<div class="verse"><span class="verse-number">17</span>你們的羊群，他必取十分之一，你們也必作他的僕人。</div>
+<div class="verse"><span class="verse-number">18</span>那時你們必因所選的王哀求耶和華，耶和華卻不應允你們。」</div>
+<div class="verse"><span class="verse-number">19</span>百姓竟不肯聽撒母耳的話，說：「不然！我們定要一個王治理我們，</div>
+<div class="verse"><span class="verse-number">20</span>使我們像列國一樣，有王治理我們，統領我們，為我們爭戰。」</div>
+<div class="verse"><span class="verse-number">21</span>撒母耳聽見百姓這一切話，就將這話陳明在耶和華面前。</div>
+<div class="verse"><span class="verse-number">22</span>耶和華對撒母耳說：「你只管依從他們的話，為他們立王。」撒母耳對以色列人說：「你們各歸各城去吧！」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載以色列歷史的重大轉折點,標誌著士師時代即將結束,王國時代即將開始。撒母耳年老時,百姓因其兒子不肖而要求立王。這發生在約公元前1050年,當時以色列仍處於士師統治的鬆散聯盟狀態。撒母耳作為最後一位士師,同時也是先知和祭司,在以色列中享有崇高地位。然而百姓看到周圍列國都有君王統治,便渴望擁有可見的領袖,以便像其他國家一樣有組織地對抗敵人。這個要求本質上反映了以色列對神的信心不足,他們寧願依靠人的制度而非神的直接引導。神允許他們的要求,但透過撒母耳警告他們君王制度將帶來的代價,為後來王國時期的興衰埋下伏筆。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 人的制度無法取代神的同在</strong><br>以色列人要求立王,本質上是用可見的人的領導取代看不見的神的統治。他們希望「像列國一樣」,卻忘記了自己的獨特身分——神的子民。這反映出人性常常渴望依靠可見、可掌控的事物,而非憑信心倚靠神。神警告他們君王將帶來沉重的代價,但仍尊重他們的選擇。這教導我們,神賜給人自由意志,但所有選擇都帶有後果。真正的安全不在於完美的制度或領袖,而在於與神保持親密的關係。<br><br>
+<strong>2. 領袖的失敗不是改變神心意的理由</strong><br>撒母耳的兒子行為不端成為百姓要求立王的藉口,但這反映出他們對神引導方式的不滿已久。一個領袖的失敗不應成為放棄神原本計劃的理由。神可以興起新的士師,但百姓選擇改變整個制度。這提醒我們,當面對屬靈領袖的軟弱時,不應質疑神的方式,而應尋求神的更新與修復。人會失敗,但神的信實永不改變,祂始終能在人的軟弱中成就祂的旨意。<br><br>
+<strong>3. 短視的選擇帶來長遠的代價</strong><br>百姓急於解決眼前的領導危機,卻忽視了神藉撒母耳所發出的嚴厲警告。神詳細列出君王將如何徵用他們的兒女、田地、牲畜,使他們成為僕人。但百姓執意要王,只看見當下的需要,看不見未來的重擔。這顯示人在做決定時常常被眼前的困難或慾望蒙蔽,缺乏長遠的眼光。屬靈的智慧需要我們不只問「這能解決我現在的問題嗎」,更要問「這符合神對我生命的長遠計劃嗎」。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華對撒母耳說</strong>:<strong>百姓向你說的一切</strong>話,你只管依從;因為他們不是厭棄你,乃是厭棄我,不要我作他們的王。(撒母耳記上8:7)</td>
+<td>當我們追求某個「更好的方案」時,是否察覺自己其實是在拒絕神的引導?就像選擇跟著導航而不信任副駕駛的指路,我們是否因為看不見神的作為,就寧願依靠可見可控的人事物?</td>
+</tr>
+<tr>
+<td><strong>他兒子不行他的道</strong>,<strong>貪圖財利</strong>,收受賄賂,屈枉正直。(撒母耳記上8:3)</td>
+<td>當我們看見屬靈領袖或榜樣跌倒時,是否會因此質疑神的道路?就像因為一個老師教得不好就否定整個學科的價值,我們是否把人的失敗當作放棄神原則的藉口,而不是尋求神的更新?</td>
+</tr>
+<tr>
+<td><strong>那時你們必因所選</strong><strong>的王哀求耶和華</strong>,耶和華卻不應允你們。(撒母耳記上8:18)</td>
+<td>我們做決定時,是否只看眼前的方便而忽略長遠的代價?就像刷信用卡時只想到立即擁有而不計算利息,我們是否常常為了解決當下的不舒服,而選擇一條將來會後悔的路?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

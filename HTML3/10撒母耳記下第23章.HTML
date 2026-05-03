@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撒母耳記下第23章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+撒母耳記下第23章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大衛勇士</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>以下是大衛末了的話。耶西的兒子大衛得居高位，是雅各神所膏的，作以色列的美歌者，說：</div>
+<div class="verse"><span class="verse-number">2</span>耶和華的靈藉着我說：他的話在我口中。</div>
+<div class="verse"><span class="verse-number">3</span>以色列的神、以色列的磐石曉諭我說：那以公義治理人民的，敬畏神執掌權柄，</div>
+<div class="verse"><span class="verse-number">4</span>他必像日出的晨光，如無雲的清晨，雨後的晴光，使地發生嫩草。</div>
+<div class="verse"><span class="verse-number">5</span>我家在神面前並非如此；神卻與我立永遠的約。這約凡事堅穩，關乎我的一切救恩和我一切所想望的，他豈不為我成就麼？</div>
+<div class="verse"><span class="verse-number">6</span>但匪類都必像荊棘被丟棄；人不敢用手拿他；</div>
+<div class="verse"><span class="verse-number">7</span>拿他的人必帶鐵器和槍桿，終久他必被火焚燒。</div>
+<div class="verse"><span class="verse-number">8</span>大衛勇士的名字記在下面：他革捫人約設巴設，又稱伊斯尼人亞底挪，他是軍長的統領，一時擊殺了八百人。</div>
+<div class="verse"><span class="verse-number">9</span>其次是亞合人朵多的兒子以利亞撒。從前非利士人聚集要打仗，以色列人迎着上去，有跟隨大衛的三個勇士向非利士人罵陣，其中有以利亞撒。</div>
+<div class="verse"><span class="verse-number">10</span>他起來擊殺非利士人，直到手臂疲乏，手黏住刀把。那日耶和華使以色列人大獲全勝；眾民在以利亞撒後頭專奪財物。</div>
+<div class="verse"><span class="verse-number">11</span>其次是哈拉人亞基的兒子沙瑪。一日，非利士人聚集成群，在一塊長滿紅豆的田裏，眾民就在非利士人面前逃跑。</div>
+<div class="verse"><span class="verse-number">12</span>沙瑪卻站在那田間擊殺非利士人，救護了那田。耶和華使以色列人大獲全勝。</div>
+<div class="verse"><span class="verse-number">13</span>收割的時候，有三十個勇士中的三個人下到亞杜蘭洞見大衛。非利士的軍兵在利乏音谷安營。</div>
+<div class="verse"><span class="verse-number">14</span>那時大衛在山寨，非利士人的防營在伯利恆。</div>
+<div class="verse"><span class="verse-number">15</span>大衛渴想，說：「甚願有人將伯利恆城門旁、井裏的水打來給我喝。」</div>
+<div class="verse"><span class="verse-number">16</span>這三個勇士就闖過非利士人的營盤，從伯利恆城門旁的井裏打水，拿來奉給大衛。他卻不肯喝，將水奠在耶和華面前，</div>
+<div class="verse"><span class="verse-number">17</span>說：「耶和華啊，這三個人冒死去打水；這水好像他們的血一般，我斷不敢喝。」如此，大衛不肯喝。這是三個勇士所作的事。</div>
+<div class="verse"><span class="verse-number">18</span>洗魯雅的兒子、約押的兄弟亞比篩是這三個勇士的首領；他舉槍殺了三百人，就在三個勇士裏得了名。</div>
+<div class="verse"><span class="verse-number">19</span>他在這三個勇士裏是最尊貴的，所以作他們的首領，只是不及前三個勇士。</div>
+<div class="verse"><span class="verse-number">20</span>有甲薛勇士耶何耶大的兒子比拿雅行過大能的事；他殺了摩押人亞利伊勒的兩個兒子，又在下雪的時候下坑裏去，殺了一個獅子，</div>
+<div class="verse"><span class="verse-number">21</span>又殺了一個強壯的埃及人；埃及人手裏拿着槍，比拿雅只拿着棍子下去，從埃及人手裏奪過槍來，用那槍將他殺死。</div>
+<div class="verse"><span class="verse-number">22</span>這是耶何耶大的兒子比拿雅所行的事，就在三個勇士裏得了名。</div>
+<div class="verse"><span class="verse-number">23</span>他比那三十個勇士都尊貴，只是不及前三個勇士。大衛立他作護衛長。</div>
+<div class="verse"><span class="verse-number">24</span>三十個勇士裏有約押的兄弟亞撒黑，伯利恆人朵多的兒子伊勒哈難，</div>
+<div class="verse"><span class="verse-number">25</span>哈律人沙瑪，哈律人以利加，</div>
+<div class="verse"><span class="verse-number">26</span>帕勒提人希利斯，提哥亞人益吉的兒子以拉，</div>
+<div class="verse"><span class="verse-number">27</span>亞拿突人亞比以謝，戶沙人米本乃，</div>
+<div class="verse"><span class="verse-number">28</span>亞合人撒們，尼陀法人瑪哈萊，</div>
+<div class="verse"><span class="verse-number">29</span>尼陀法人巴拿的兒子希立，便雅憫族、基比亞人利拜的兒子以太，</div>
+<div class="verse"><span class="verse-number">30</span>比拉頓人比拿雅，迦實溪人希太，</div>
+<div class="verse"><span class="verse-number">31</span>伯亞拉巴人亞比亞本，巴魯米人押斯瑪弗，</div>
+<div class="verse"><span class="verse-number">32</span>沙本人以利雅哈巴，雅善兒子中的約拿單，</div>
+<div class="verse"><span class="verse-number">33</span>哈拉人沙瑪，哈拉人沙拉的兒子亞希暗，</div>
+<div class="verse"><span class="verse-number">34</span>瑪迦人亞哈拜的兒子以利法列，基羅人亞希多弗的兒子以連，</div>
+<div class="verse"><span class="verse-number">35</span>迦密人希斯萊，亞巴人帕萊，</div>
+<div class="verse"><span class="verse-number">36</span>瑣巴人拿單的兒子以甲，迦得人巴尼，</div>
+<div class="verse"><span class="verse-number">37</span>亞捫人洗勒，比錄人拿哈萊（是給洗魯雅的兒子約押拿兵器的），</div>
+<div class="verse"><span class="verse-number">38</span>以帖人以拉，以帖人迦立，</div>
+<div class="verse"><span class="verse-number">39</span>赫人烏利亞，共有三十七人。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章記載大衛的末後之言和他勇士的事蹟。大衛的詩歌講述以公義治理的領袖必像日出的晨光,並重申神與他立的永遠之約。接著詳細記載大衛三個最勇猛的勇士和其他三十個勇士的英勇事蹟,包括他們如何冒死為大衛打水、如何擊殺無數敵人等。這些勇士忠心跟隨大衛,與他患難與共。本章特別記念烏利亞在勇士名單的最後,提醒人大衛曾犯的罪。本章顯示領袖需要忠心的跟隨者,也見證這些勇士對大衛的忠誠和愛戴,他們的名字被永遠記念。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 公義治理的重要</strong><br>大衛說「那以公義治理人民的,敬畏神執掌權柄,他必像日出的晨光」。真正的領袖不是追求權力,而是以公義和敬畏神的心服事。公義的治理帶來祝福,就像晨光帶來希望。我們在任何位份上,都要以公義和敬畏神的心行事,成為他人的祝福。<br><br>
+<strong>2. 忠誠的可貴</strong><br>三個勇士冒死為大衛打水,顯出他們對大衛的忠誠和愛戴。大衛不肯喝,將水奠在神面前,顯出他對這忠誠的珍惜。真正的領袖珍惜跟隨者的付出,不輕看他們的犧牲。我們是否珍惜那些為我們付出的人?是否記念他們的忠誠?<br><br>
+<strong>3. 烏利亞的提醒</strong><br>烏利亞被列在勇士名單的最後,這是對大衛罪的永遠提醒。聖經誠實記載神僕人的失敗,提醒我們無論多偉大的人都可能跌倒。我們要警醒,不要自以為站得穩。同時,神的恩典能遮蓋我們的罪,但罪的痕跡和後果仍會存在。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>那以公義治理人民</strong>的,<strong>敬畏神執掌權柄</strong>,他必像日出的晨光,如無雲的清晨,雨後的晴光,使地發生嫩草。(撒下23:3-4)</td>
+<td>當我們擁有權柄或影響力時,就像成為主管、父母或團隊領袖,我們是追求權力,還是以公義和敬畏神的心服事?如何成為帶來祝福的領袖?</td>
+</tr>
+<tr>
+<td><strong>這三個勇士就闖過</strong><strong>非利士人的營盤</strong>,從伯利恆城門旁的井裡打水,拿來奉給大衛。他卻不肯喝,將水奠在耶和華面前,說:「這水好像他們的血一般,我斷不敢喝。」(撒下23:16-17)</td>
+<td>當有人為我們犧牲時,就像父母為我們付出或同事為我們承擔,我們是視為理所當然,還是深深珍惜?我們如何回應別人的忠誠和付出?</td>
+</tr>
+<tr>
+<td><strong>赫人烏利亞</strong>,<strong>共有三十七人</strong>。(撒下23:39)</td>
+<td>當我們的過錯被記錄時,就像歷史無法抹去的污點,我們如何面對自己的失敗?烏利亞的名字對大衛是什麼提醒?我們如何從失敗中學習?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

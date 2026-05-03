@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阿摩司書第6章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+阿摩司書第6章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">安逸無慮的有禍了</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>國為列國之首，人最着名，且為以色列家所歸向，在錫安和撒瑪利亞山安逸無慮的，有禍了！</div>
+<div class="verse"><span class="verse-number">2</span>你們要過到甲尼察看，從那裏往大城哈馬去，又下到非利士人的迦特，看那些國比你們的國還強嗎？境界比你們的境界還寬嗎？</div>
+<div class="verse"><span class="verse-number">3</span>你們以為降禍的日子還遠，坐在位上盡行強暴〔或作：行強暴使審判臨近〕。</div>
+<div class="verse"><span class="verse-number">4</span>你們躺臥在象牙床上，舒身在榻上，吃群中的羊羔，棚裏的牛犢；</div>
+<div class="verse"><span class="verse-number">5</span>彈琴鼓瑟唱消閑的歌曲，為自己製造樂器，如同大衛所造的；</div>
+<div class="verse"><span class="verse-number">6</span>以大碗喝酒，用上等的油抹身，卻不為約瑟的苦難擔憂。</div>
+<div class="verse"><span class="verse-number">7</span>所以這些人必在被擄的人中首先被擄；舒身的人荒宴之樂必消滅了。</div>
+<div class="verse"><span class="verse-number">8</span>主耶和華萬軍之神指着自己起誓說：我憎惡雅各的榮華，厭棄他的宮殿；因此，我必將城和其中所有的都交付敵人。</div>
+<div class="verse"><span class="verse-number">9</span>那時，若在一房之內剩下十個人，也都必死。</div>
+<div class="verse"><span class="verse-number">10</span>死人的伯叔，就是燒他屍首的，要將這屍首搬到房外，問房屋內間的人說：「你那裏還有人沒有？」他必說：「沒有」；又說：「不要作聲，因為我們不可提耶和華的名。」</div>
+<div class="verse"><span class="verse-number">11</span>看哪，耶和華出令，大房就被攻破，小屋就被打裂。</div>
+<div class="verse"><span class="verse-number">12</span>馬豈能在崖石上奔跑？人豈能在那裏用牛耕種呢？你們卻使公平變為苦膽，使公義的果子變為茵蔯。</div>
+<div class="verse"><span class="verse-number">13</span>你們喜愛虛浮的事，自誇說：我們不是憑自己的力量取了角嗎？</div>
+<div class="verse"><span class="verse-number">14</span>耶和華萬軍之神說：以色列家阿，我必興起一國攻擊你們；他們必欺壓你們，從哈馬口直到亞拉巴的河。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+阿摩司書第6章的主要神諭是對撒瑪利亞和錫安的精英階層的嚴厲宣告。他們「安逸無慮」、「躺臥在象牙床上」、「吃群中的羊羔、棚裏的牛犢」、「彈琴鼓瑟唱消閑的歌曲」、「以大碗喝酒，用上等的油抹身」——卻「不為約瑟的苦難擔憂」。物質的豐盛使他們對社會苦難完全麻木。神宣告：「這些人必在被擄的人中首先被擄」——最享受的人將是最先受苦的人。第12節有精彩的嘲諷：「馬豈能在崖石上奔跑？人豈能在那裏用牛耕種呢？你們卻使公平變為苦膽，使公義的果子變為茵蔯」——把公平和公義倒置，就如同在崖石上耕種一樣荒謬。最後宣告神要興起一國欺壓以色列。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 「不為約瑟的苦難擔憂」：對社會苦難的麻木是安逸的最大罪</strong><br>以色列精英的罪不是主動的殘忍，而是消極的冷漠——他們只顧自己的享樂，對「約瑟的苦難」（社會弱勢群體）視而不見。神對這種冷漠和對主動作惡同樣嚴肅追討。今日的信徒，在物質豐盛中，有沒有對周圍社會苦難的感知能力？<br><br>
+<strong>2. 物質的豐盛若使人對神和人失去感知，就是屬靈的危機</strong><br>躺在象牙床上、飲大碗的酒——這些都不是罪，但當它們使人完全以自我享受為中心，就成了屬靈麻木的溫床。過度的舒適削弱了屬靈的敏感性。信徒需要主動抵抗「安逸使人麻木」的傾向。<br><br>
+<strong>3. 把公義倒置是文明最大的荒謬</strong><br>「使公平變為苦膽，使公義的果子變為茵蔯」——把本應如甘甜果子的公義，扭曲成苦澀的茵蔯，這是最深刻的社會罪：不只是不公義，而是把公義本身倒置，讓不義顯得正常、讓公義顯得奇怪。信徒在任何體制中，都需要辨認並抵抗這種「公義倒置」。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你們躺臥在象牙床</strong>上，<strong>舒身在榻上</strong>，吃群中的羊羔，棚裏的牛犢……卻不為約瑟的苦難擔憂。（摩6:4,6）</td>
+<td>「不為約瑟的苦難擔憂」——消極的冷漠與主動的作惡同樣是罪。你上一次真正為某個你本可以幫助卻沒有幫助的人的苦難「擔憂」是什麼時候？就像知道鄰居家失火卻繼續看電視，你今天的「象牙床」有沒有讓你對身邊的苦難失去感知？</td>
+</tr>
+<tr>
+<td><strong>所以這些人必在被</strong><strong>擄的人中首先被擄</strong>；舒身的人荒宴之樂必消滅了。（摩6:7）</td>
+<td>「最先被擄的是最安逸的」——神的公義顛覆了人以為安全的次序。你生命中有沒有某種「因安逸而感到虛假安全」的領域——某件你認為「不會出問題」但實際上在靈命上已開始出問題的事？就像看似穩固的椅子若底下的螺絲已鬆，人坐得越放鬆，危機越接近，你願意今天省察那把「椅子」嗎？</td>
+</tr>
+<tr>
+<td><strong>你們卻使公平變為</strong>苦膽，<strong>使公義的果子變為</strong>茵蔯。（摩6:12下）</td>
+<td>「把公義扭曲成苦澀的」——讓正確的事顯得奇怪，讓不義顯得正常。在你的工作環境、家庭或社區中，有沒有某種「公義倒置」的現象——正直的人被嘲笑，妥協的人被稱讚？就像鏡子被扭曲後照出來的都是變形的，你如何保持對真正公義的辨認能力，不被周圍的「倒置標準」塑造？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

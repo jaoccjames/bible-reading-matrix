@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第24章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第24章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">兩筐無花果的異象</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>巴比倫王尼布甲尼撒將猶大王約雅敬的兒子耶哥尼雅和猶大的首領，並工匠、鐵匠從耶路撒冷擄去，帶到巴比倫。這事以後，耶和華指給我看，有兩筐無花果，放在耶和華的殿前。</div>
+<div class="verse"><span class="verse-number">2</span>一筐是極好的無花果，好像是初熟的；一筐是極壞的無花果，壞得不可吃。</div>
+<div class="verse"><span class="verse-number">3</span>於是耶和華問我說：「耶利米你看見甚麼？」我說：「我看見無花果，好的極好，壞的極壞，壞得不可吃。」</div>
+<div class="verse"><span class="verse-number">4</span>耶和華的話臨到我說：「</div>
+<div class="verse"><span class="verse-number">5</span>耶和華以色列的神如此說：被擄去的猶大人，就是我打發離開這地到迦勒底人之地去的，我必看顧他們如這好無花果，使他們得好處。</div>
+<div class="verse"><span class="verse-number">6</span>我要眷顧他們，使他們得好處，領他們歸回這地。我也要建立他們，必不拆毀；栽植他們，並不拔出。</div>
+<div class="verse"><span class="verse-number">7</span>我要賜他們認識我的心，知道我是耶和華。他們要作我的子民，我要作他們的神，因為他們要一心歸向我。」</div>
+<div class="verse"><span class="verse-number">8</span>耶和華如此說：「我必將猶大王西底家和他的首領，以及剩在這地耶路撒冷的餘民，並住在埃及地的猶大人都交出來，好像那極壞、壞得不可吃的無花果。</div>
+<div class="verse"><span class="verse-number">9</span>我必使他們交出來，在天下萬國中拋來拋去，遭遇災禍；在我趕逐他們到的各處成為凌辱、笑談、譏刺、咒詛。</div>
+<div class="verse"><span class="verse-number">10</span>我必使刀劍、饑荒、瘟疫臨到他們，直到他們從我所賜給他們和他們列祖之地滅絕。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第24章是一個視覺性的啟示，發生在主前597年，巴比倫王尼布甲尼撒第一次攻打耶路撒冷、將哥尼雅王和貴族工匠擄走之後。神讓耶利米看見聖殿前兩筐無花果：一筐極好如初熟之果，一筐極壞不可食用。神解釋這個異象：好無花果代表被擄至巴比倫的猶大人——他們雖被擄，卻是神的計畫，神必眷顧、領回、建立、栽植他們，並要賜他們認識神的心，讓他們一心歸向神；壞無花果則代表留在耶路撒冷或逃往埃及的西底家王及其跟隨者——他們看似未受擄掠之苦，卻在神眼中是「交出來」之人，必遭刀劍、饑荒、瘟疫而滅絕。本章的神學顛覆了當時百姓的常識判斷：被擄者以為自己受苦，留守者以為自己有福；神卻說恰恰相反。神的視角與人的直覺往往相反——看似不幸的，可能是神的恩典；看似得勝的，可能正走向滅亡。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的評價標準與人的常識截然不同</strong><br>被擄的人看似受苦，留守的人看似有福——但神的判斷是反轉的。神說被擄者是「好無花果」，要被眷顧建立；留守者是「壞無花果」，要遭毀滅。這挑戰我們以世界的成功學來評斷神的作為。一個人的處境好壞，不能以外在的順逆作單一判斷；有時「被帶走的」正是神恩典的路徑，而「安穩留下的」卻可能是靈性的假象。<br><br>
+<strong>2. 管教之路可以成為恢復之路</strong><br>神對被擄者的心意是：眷顧、領回、建立、栽植、不拆毀、不拔出——最終「賜他們認識我的心」。被擄是審判，卻也是恩典的工具。在巴比倫的七十年，以色列人重新學習依靠神，不再倚賴聖殿和地土。艱難的處境可以成為靈命深化的土壤。信徒在生命的「被擄期」，若能回轉歸向神，那段艱難可能正是生命轉化的起點。<br><br>
+<strong>3. 認識神是一切恢復的核心目標</strong><br>第7節說「我要賜他們認識我的心，知道我是耶和華」，這是神一切作為的終極目標。神不只要帶回百姓的身體，更要恢復他們與神的關係。今日神對我們的帶領——無論是祝福或管教——終極目的也是讓我們更深地認識祂。每一個人生處境，若以「這件事讓我更認識神了嗎」來衡量，就得着了最重要的視角。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>耶和華以色列的神</strong><strong>如此說</strong>：被擄去的猶大人，就是我打發離開這地到迦勒底人之地去的，我必看顧他們如這好無花果，使他們得好處。（耶24:5）</td>
+<td>你生命中是否有一段「被擄」的時期——失業、疾病、失去——後來卻發現正是神的恩典在運作？就像冬天的樹看似枯死，其實正在蓄積春天爆發的能量，你能在當下的艱難中，相信神的眷顧仍在嗎？</td>
+</tr>
+<tr>
+<td><strong>我要賜他們認識我</strong>的心，<strong>知道我是耶和華</strong>。他們要作我的子民，我要作他們的神，因為他們要一心歸向我。（耶24:7）</td>
+<td>你經歷過哪些困境，事後才發現是讓你更認識神的機會？就像只有在黑暗中才能看見星星，某些讓你「看不見前路」的處境，是否反而讓你更清楚看見神的臉？</td>
+</tr>
+<tr>
+<td><strong>我必使刀劍</strong>、饑荒、<strong>瘟疫臨到他們</strong>，直到他們從我所賜給他們和他們列祖之地滅絕。（耶24:10）</td>
+<td>你是否有時靠着外在的「看似平安」而輕忽靈命的警訊？就像車子外表看似完好卻引擎已有問題，你願意讓神的光照進你看似「沒問題」的地方，做一次誠實的靈命檢視嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

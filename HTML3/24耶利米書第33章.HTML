@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耶利米書第33章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+耶利米書第33章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">大衛苗裔與永約的應許</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>耶利米還囚在護衛兵的院內，耶和華的話第二次臨到他說：</div>
+<div class="verse"><span class="verse-number">2</span>「成就的是耶和華，造作、為要建立的也是耶和華；耶和華是他的名。他如此說：</div>
+<div class="verse"><span class="verse-number">3</span>你求告我，我就應允你，並將你所不知道、又大又難的事指示你。</div>
+<div class="verse"><span class="verse-number">4</span>論到這城中的房屋和猶大王的宮室，就是拆毀為擋敵人高壘和刀劍的，耶和華以色列的神如此說：</div>
+<div class="verse"><span class="verse-number">5</span>人要與迦勒底人爭戰，正是拿死屍充滿這房屋，就是我在怒氣和忿怒中所殺的人，因他們的一切惡，我就掩面不顧這城。</div>
+<div class="verse"><span class="verse-number">6</span>看哪，我要使這城得以痊癒安舒，使城中的人得醫治，又將豐盛的平安和誠實顯明與他們。</div>
+<div class="verse"><span class="verse-number">7</span>我也要使猶大被擄的和以色列被擄的歸回，並建立他們和起初一樣。</div>
+<div class="verse"><span class="verse-number">8</span>我要除淨他們的一切罪，就是向我所犯的罪；又要赦免他們的一切罪，就是干犯我、違背我的罪。</div>
+<div class="verse"><span class="verse-number">9</span>這城要在地上萬國人面前使我得頌讚，得榮耀，名為可喜可樂之城。萬國人因聽見我向這城所賜的福樂、所施的恩惠平安，就懼怕戰兢。」</div>
+<div class="verse"><span class="verse-number">10</span>耶和華如此說：「你們論這地方，說是荒廢無人民無牲畜之地，但在這荒涼無人民無牲畜的猶大城邑和耶路撒冷的街上，</div>
+<div class="verse"><span class="verse-number">11</span>必再聽見有歡喜和快樂的聲音、新郎和新婦的聲音，並聽見有人說：要稱謝萬軍之耶和華，因耶和華本為善；他的慈愛永遠長存！又有奉感謝祭到耶和華殿中之人的聲音；因為我必使這地被擄的人歸回，和起初一樣。這是耶和華說的。」</div>
+<div class="verse"><span class="verse-number">12</span>萬軍之耶和華如此說：「在這荒廢無人民無牲畜之地，並其中所有的城邑，必再有牧人的住處；他們要使羊群躺臥在那裏。</div>
+<div class="verse"><span class="verse-number">13</span>在山地的城邑、高原的城邑、南地的城邑、便雅憫地、耶路撒冷四圍的各處，和猶大的城邑必再有羊群從數點的人手下經過。這是耶和華說的。」</div>
+<div class="verse"><span class="verse-number">14</span>耶和華說：「日子將到，我應許以色列家和猶大家的恩言必然成就。</div>
+<div class="verse"><span class="verse-number">15</span>當那日子，那時候，我必使大衛公義的苗裔長起來；他必在地上施行公平和公義。</div>
+<div class="verse"><span class="verse-number">16</span>在那日子猶大必得救，耶路撒冷必安然居住，他的名必稱為『耶和華我們的義』。</div>
+<div class="verse"><span class="verse-number">17</span>「因為耶和華如此說：大衛必永不斷人坐在以色列家的寶座上；</div>
+<div class="verse"><span class="verse-number">18</span>祭司、利未人在我面前也不斷人獻燔祭、燒素祭，時常辦理獻祭的事。」</div>
+<div class="verse"><span class="verse-number">19</span>耶和華的話臨到耶利米說：</div>
+<div class="verse"><span class="verse-number">20</span>「耶和華如此說：你們若能廢棄我所立白日黑夜的約，使白日黑夜不按時輪轉，</div>
+<div class="verse"><span class="verse-number">21</span>就能廢棄我與我僕人大衛所立的約，使他沒有兒子在他的寶座上為王，並能廢棄我與事奉我的祭司、利未人所立的約。</div>
+<div class="verse"><span class="verse-number">22</span>天上的萬象不能數算，海邊的塵沙也不能斗量；我必照樣使我僕人大衛的後裔和事奉我的利未人多起來。」</div>
+<div class="verse"><span class="verse-number">23</span>耶和華的話臨到耶利米說：</div>
+<div class="verse"><span class="verse-number">24</span>「你沒有揣摩這百姓的話嗎？他們說：『耶和華所揀選的二族，他已經棄絕了。』他們這樣藐視我的百姓，以為不再成國。</div>
+<div class="verse"><span class="verse-number">25</span>耶和華如此說：若是我立白日黑夜的約不能存住，若是我未曾安排天地的定例，</div>
+<div class="verse"><span class="verse-number">26</span>我就棄絕雅各的後裔和我僕人大衛的後裔，不使大衛的後裔治理亞伯拉罕、以撒、雅各的後裔；因為我必使他們被擄的人歸回，也必憐憫他們。」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+耶利米書第33章是「安慰之書」的終結篇，在第32章買地異象之後，神第二次在護衛院中向被囚的耶利米說話。本章以一個關鍵邀請開始：「你求告我，我就應允你，並將你所不知道、又大又難的事指示你」（3節）——這是整本聖經中最寬廣的禱告邀請之一。神應許醫治、恢復、建立、平安，並使這城成為「可喜可樂之城」，使萬國人懼怕。第14至16節重申第23章5至6節的彌賽亞應許：大衛公義的苗裔必長起來，施行公平公義，「他的名必稱為耶和華我們的義」。第17至22節以日夜輪轉的定律作比喻：就像白日黑夜的約不能廢棄，神與大衛和利未人所立的約也不能廢棄——大衛的後裔必永遠坐在寶座上，祭司的服事也必永不斷絕。這是神信實的最高宣告。章末（23-26節）神回應那些說「神已棄絕以色列」的人：我若沒有廢棄日夜的定例，就必不棄絕雅各的後裔；我必使他們被擄的人歸回，也必憐憫他們。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神邀請我們求告，並應許回應我們的禱告</strong><br>第3節是整本聖經中最廣為引用的禱告應許之一：「你求告我，我就應允你。」這是在最黑暗的時刻——先知被囚、城市被圍——神給出的最大邀請。「又大又難」的事，正是神的專長。禱告不是最後無計可施的手段，而是最先使用的力量。信徒面對任何困難，最根本的回應是：呼求這位應允禱告的神，讓祂指示「所不知道的事」。<br><br>
+<strong>2. 神的計畫包含真實的醫治與完全的赦免</strong><br>第6至8節宣告神要「使城得以痊癒安舒」、「除淨一切罪」、「赦免一切罪」。這不是輕描淡寫的安慰，而是對罪與破碎最根本的解決。在新約中，這個赦免藉耶穌基督的十字架完全成就。信徒面對個人的罪和失敗，不需要無盡地自責或尋求更多補救；神的赦免是真實的「除淨」，是完全的「不再記念」。<br><br>
+<strong>3. 神對信實的承諾比日夜輪轉更確定</strong><br>「若能廢棄日夜的約……就能廢棄我與大衛所立的約」——神以自然定律的不變性，比喻祂應許的確定性。這對在逆境中懷疑「神是否還記得祂的應許」的信徒是最有力的回答：只要太陽仍升起，神的話就仍有效。自然界每天都是神信實的見證，日夜輪轉是神應許不變的宣示。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>你求告我</strong>，<strong>我就應允你</strong>，並將你所不知道、又大又難的事指示你。（耶33:3）</td>
+<td>你有哪些「大而難」的事，你還沒有認真地帶到神面前求告？就像面對複雜的法律問題你會找最好的律師，你願意把那些讓你覺得「太難、太大」的困境，帶給那位說「我就應允你」的神嗎？</td>
+</tr>
+<tr>
+<td><strong>我要除淨他們的一</strong>切罪，<strong>就是向我所犯的罪</strong>；又要赦免他們的一切罪，就是干犯我、違背我的罪。（耶33:8）</td>
+<td>你是否有一個你覺得「神應該不會完全原諒我」的罪？就像覺得某個污漬用再多洗衣粉都洗不乾淨，你願意讓「除淨一切罪」這個宣告，進入你對那個罪的羞恥與自責中，接受真實的赦免嗎？</td>
+</tr>
+<tr>
+<td><strong>耶和華如此說</strong>：<strong>若是我立白日黑夜</strong>的約不能存住，若是我未曾安排天地的定例，我就棄絕雅各的後裔和我僕人大衛的後裔。（耶33:25-26上）</td>
+<td>今天早上太陽升起，這件事對你的信仰有什麼意義？就像每次看見日出可以提醒自己這是神信實的宣告，你願意把自然界的規律性，當作每天更新對神信實的信心的「日常提醒」嗎？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>瑪拉基書第2章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+瑪拉基書第2章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">利未的約與休妻的惡：忠誠的呼召</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>「眾祭司啊，這誡命是傳給你們的。</div>
+<div class="verse"><span class="verse-number">2</span>萬軍之耶和華說：你們若不聽從，也不放在心上，將榮耀歸與我的名，我就使咒詛臨到你們，使你們的福分變為咒詛；因你們不把誡命放在心上，我已經咒詛你們了。</div>
+<div class="verse"><span class="verse-number">3</span>我必斥責你們的種子，又把你們犧牲的糞抹在你們的臉上；你們要與糞一同除掉。</div>
+<div class="verse"><span class="verse-number">4</span>你們就知道我傳這誡命給你們，使我與利未〔或作：利未人〕所立的約可以常存。這是萬軍之耶和華說的。</div>
+<div class="verse"><span class="verse-number">5</span>我曾與他立生命和平安的約。我將這兩樣賜給他，使他存敬畏的心，他就敬畏我，懼怕我的名。</div>
+<div class="verse"><span class="verse-number">6</span>真實的律法在他口中，他嘴裏沒有不義的話。他以平安和正直與我同行，使多人回頭離開罪孽。</div>
+<div class="verse"><span class="verse-number">7</span>祭司的嘴裏當存知識，人也當由他口中尋求律法，因為他是萬軍之耶和華的使者。</div>
+<div class="verse"><span class="verse-number">8</span>你們卻偏離正道，使許多人在律法上跌倒。你們廢棄我與利未所立的約。這是萬軍之耶和華說的。</div>
+<div class="verse"><span class="verse-number">9</span>所以我使你們被眾人藐視，看為下賤；因你們不守我的道，竟在律法上瞻徇情面。」</div>
+<div class="verse"><span class="verse-number">10</span>我們豈不都是一位父麼？豈不是一位神所造的麼？我們各人怎麼以詭詐待弟兄，背棄了神與我們列祖所立的約呢？</div>
+<div class="verse"><span class="verse-number">11</span>猶大人行事詭詐，並且在以色列和耶路撒冷中行一件可憎的事；因為猶大人褻瀆耶和華所喜愛的聖潔〔或作：聖地〕，娶事奉外邦神的女子為妻。</div>
+<div class="verse"><span class="verse-number">12</span>凡行這事的，無論何人〔何人：原文作叫醒的，答應的〕，就是獻供物給萬軍之耶和華，耶和華也必從雅各的帳棚中剪除他。</div>
+<div class="verse"><span class="verse-number">13</span>你們又行了一件這樣的事，使前妻歎息哭泣的眼淚遮蓋耶和華的壇，以至耶和華不再看顧那供物，也不樂意從你們手中收納。</div>
+<div class="verse"><span class="verse-number">14</span>你們還說：「這是為甚麼呢？」因耶和華在你和你幼年所娶的妻中間作見證。她雖是你的配偶，又是你盟約的妻，你卻以詭詐待她。</div>
+<div class="verse"><span class="verse-number">15</span>雖然神有靈的餘力能造多人，他不是單造一人嗎？為何只造一人呢？乃是他願人得虔誠的後裔。所以當謹守你們的心，誰也不可以詭詐待幼年所娶的妻。</div>
+<div class="verse"><span class="verse-number">16</span>耶和華以色列的神說：「休妻的事和以強暴待妻的人都是我所恨惡的！所以當謹守你們的心，不可行詭詐。」這是萬軍之耶和華說的。</div>
+<div class="verse"><span class="verse-number">17</span>你們用言語煩瑣耶和華，你們還說：「我們在何事上煩瑣他呢？」因為你們說：「凡行惡的，耶和華眼看為善，並且他喜悅他們」；或說：「公義的神在那裏呢？」</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+瑪拉基書第2章分兩個主要主題，分別從宗教和家庭兩個領域批判以色列的不忠。第一部分（1-9節）繼續針對祭司：神提醒祭司他曾與利未立「生命和平安的約」，真正的利未祭司「以平安和正直與我同行，使多人回頭離開罪孽」——這是忠心牧養者的典範。但現在的祭司「偏離正道，使許多人在律法上跌倒」，於是神使他們被人藐視。第二部分（10-16節）轉向婚姻的忠誠：猶大人娶事奉外邦神的女子，並且休棄幼年所娶的妻，前妻的眼淚遮蓋了神的壇。神明確宣告：「耶和華以色列的神說：休妻的事和以強暴待妻的人都是我所恨惡的！」本章以第17節的指控結束：百姓說「行惡的，耶和華眼看為善」——這種扭曲的神學觀，為第3章神親自介入的審判設下張力。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 真正的祭司/牧者使人「回頭離開罪孽」，而非只提供宗教服務</strong><br>利未的理想形象：「真實的律法在他口中……使多人回頭離開罪孽」——祭司的核心職能是引人歸回神，而非僅執行宗教儀式。今日任何形式的屬靈帶領，若只停留在宗教服務的層次而不帶出人的生命改變，就偏離了這個核心。<br><br>
+<strong>2. 「我們豈不都是一位父嗎？」：信仰群體的弟兄情誼基於共同的神父</strong><br>第10節的問題建立了信仰倫理：我們都是一位神所造，這是彼此誠信對待的根基。以詭詐待弟兄，就是背棄神與列祖所立的約。信仰共同體的倫理不建立在「我感覺對你好」，而建立在「我們共同的父神」——這讓倫理有了神學的根基，不是軟性的情感，而是約的責任。<br><br>
+<strong>3. 婚姻的忠誠是神所深切在意的，休棄幼年之妻的眼淚遮蓋了神的壇</strong><br>「前妻的眼淚遮蓋耶和華的壇」——婚姻的破壞直接影響一個人的敬拜！神對婚約的忠誠有極為強烈的在意：休妻是祂所恨惡的。在追求個人幸福的文化中，這個宣告是嚴肅的呼召：婚約不只是兩個人之間的事，神是其中的見證者和維護者。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>真實的律法在他口</strong>中，<strong>他嘴裏沒有不義的</strong>話。他以平安和正直與我同行，使多人回頭離開罪孽。（瑪2:6）</td>
+<td>你的信仰榜樣——那些對你屬靈生命影響最深的人——他們有沒有讓你「回頭離開罪孽」？就像一個好的醫生不只讓你感覺良好，更讓你真正健康，你今天的屬靈影響力，有多少在引人「回頭」，有多少只是讓人「感覺被接受」？</td>
+</tr>
+<tr>
+<td><strong>耶和華以色列的神</strong>說：「<strong>休妻的事和以強暴</strong>待妻的人都是我所恨惡的！所以當謹守你們的心，不可行詭詐。」（瑪2:16）</td>
+<td>「謹守你們的心」是神防止婚姻破壞的根本建議——問題從心開始，不是從行為開始。你的心是否有某種「對配偶的詭詐或輕忽」——也許不是重大的背叛，而是日漸積累的冷漠、不誠實或不尊重？就像小裂縫若不修補終將崩潰，你今天願意謹守你的心，讓愛的決定先於感受嗎？</td>
+</tr>
+<tr>
+<td><strong>因耶和華在你和你</strong><strong>幼年所娶的妻中間</strong>作見證。她雖是你的配偶，又是你盟約的妻，你卻以詭詐待她。（瑪2:14）</td>
+<td>「耶和華在你們中間作見證」——婚姻有神作見證者和參與者。在你的婚姻或最親密的承諾關係中，「神是見證人」這個真實如何改變你對待那段關係的方式？就像一份有公正第三方見證的合約，比只有雙方簽名的更有約束力，你如何讓「神是你婚姻的見證者」成為你對待配偶方式的實際根基？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

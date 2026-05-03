@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創世記第38章 - 聖經重點與思考</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: #3498db;
+}
+
+.bible-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bible-icon.open {
+    transform: rotateY(180deg);
+}
+
+.chapter-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scripture-text {
+    display: none;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    line-height: 2;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.scripture-text.show {
+    display: block;
+}
+
+.verse {
+    margin-bottom: 10px;
+}
+
+.verse-number {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+details {
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+details[open] {
+    background: #f0f8ff;
+    border-color: #3498db;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+.content {
+    margin-top: 15px;
+    padding: 15px;
+    line-height: 1.9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+strong {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .chapter-subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+創世記第38章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">猶大與他瑪的故事</div>
+
+<div id="scriptureText" class="scripture-text">
+<div class="verse"><span class="verse-number">1</span>那時，猶大離開他弟兄下去，到一個亞杜蘭人名叫希拉的家裏去。</div>
+<div class="verse"><span class="verse-number">2</span>猶大在那裏看見一個迦南人名叫書亞的女兒，就娶她為妻，與她同房，</div>
+<div class="verse"><span class="verse-number">3</span>她就懷孕生了兒子，猶大給他起名叫珥。</div>
+<div class="verse"><span class="verse-number">4</span>她又懷孕生了兒子，母親給他起名叫俄南。</div>
+<div class="verse"><span class="verse-number">5</span>她復又生了兒子，給他起名叫示拉。她生示拉的時候，猶大正在基悉。</div>
+<div class="verse"><span class="verse-number">6</span>猶大為長子珥娶妻，名叫他瑪。</div>
+<div class="verse"><span class="verse-number">7</span>猶大的長子珥在耶和華眼中看為惡，耶和華就叫他死了。</div>
+<div class="verse"><span class="verse-number">8</span>猶大對俄南說：「你當與你哥哥的妻子同房，向她盡你為弟的本分，為你哥哥生子立後。」</div>
+<div class="verse"><span class="verse-number">9</span>俄南知道生子不歸自己，所以同房的時候便遺在地，免得給他哥哥留後。</div>
+<div class="verse"><span class="verse-number">10</span>俄南所作的在耶和華眼中看為惡，耶和華也就叫他死了。</div>
+<div class="verse"><span class="verse-number">11</span>猶大心裏說：「恐怕示拉也死，像他兩個哥哥一樣」，就對他兒婦他瑪說：「你去，在你父親家裏守寡，等我兒子示拉長大。」他瑪就回去，住在她父親家裏。</div>
+<div class="verse"><span class="verse-number">12</span>過了許久，猶大的妻子書亞的女兒死了。猶大得了安慰，就和他朋友亞杜蘭人希拉上亭拿去，到他剪羊毛的人那裏。</div>
+<div class="verse"><span class="verse-number">13</span>有人告訴他瑪說：「你的公公上亭拿剪羊毛去了。」</div>
+<div class="verse"><span class="verse-number">14</span>他瑪見示拉已經長大，還沒有娶她為妻，就脫了她作寡婦的衣裳，用帕子蒙着臉，又遮住身體，坐在亭拿路上的伊拿印城門口。</div>
+<div class="verse"><span class="verse-number">15</span>猶大看見她，以為是妓女，因為她蒙着臉。</div>
+<div class="verse"><span class="verse-number">16</span>猶大就轉到她那裏去，說：「來吧！讓我與你同寢。」他原不知道是他的兒婦。他瑪說：「你要與我同寢，把甚麼給我呢？」</div>
+<div class="verse"><span class="verse-number">17</span>猶大說：「我從羊群裏取一隻山羊羔，打發人送來給你。」他瑪說：「在未送以先，你願意給我一個當頭麼？」</div>
+<div class="verse"><span class="verse-number">18</span>他說：「我給你甚麼當頭呢？」他瑪說：「你的印、你的帶子，和你手裏的杖。」猶大就給了她，與她同寢，她就從猶大懷了孕。</div>
+<div class="verse"><span class="verse-number">19</span>他瑪起來走了，除去帕子，仍舊穿上作寡婦的衣裳。</div>
+<div class="verse"><span class="verse-number">20</span>猶大託他朋友亞杜蘭人送一隻山羊羔去，要從那女人手裏取回當頭來，卻找不着她，</div>
+<div class="verse"><span class="verse-number">21</span>就問那地方的人說：「伊拿印路旁的妓女在那裏？」他們說：「這裏並沒有妓女。」</div>
+<div class="verse"><span class="verse-number">22</span>他回去見猶大說：「我沒有找着她，並且那地方的人說：『這裏沒有妓女。』」</div>
+<div class="verse"><span class="verse-number">23</span>猶大說：「我把這山羊羔送去了，你竟找不着她。任憑她拿去吧，免得我們被羞辱。」</div>
+<div class="verse"><span class="verse-number">24</span>約過了三個月，有人告訴猶大說：「你的兒婦他瑪作了妓女，且因行淫有了身孕。」猶大說：「拉出她來，把她燒了！」</div>
+<div class="verse"><span class="verse-number">25</span>他瑪被拉出來的時候便打發人去見她公公，對他說：「這些東西是誰的，我就是從誰懷的孕。請你認一認，這印和帶子並杖都是誰的？」</div>
+<div class="verse"><span class="verse-number">26</span>猶大承認說：「她比我更有義，因為我沒有將她給我的兒子示拉。」從此猶大不再與她同寢了。</div>
+<div class="verse"><span class="verse-number">27</span>他瑪將要生產，不料她腹裏是一對雙生。</div>
+<div class="verse"><span class="verse-number">28</span>到生產的時候，一個孩子伸出一隻手來；收生婆拿紅線拴在他手上，說：「這是頭生的。」</div>
+<div class="verse"><span class="verse-number">29</span>隨後這孩子把手收回去，他哥哥生出來了；收生婆說：「你為甚麼搶着來呢？」因此給他起名叫法勒斯。</div>
+<div class="verse"><span class="verse-number">30</span>後來，他兄弟那手上有紅線的也生出來，就給他起名叫謝拉。</div>
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">
+本章插入約瑟故事中間，記載猶大的家族事件。猶大娶了迦南女子為妻，生了三個兒子。長子珥娶他瑪為妻後因惡行被神擊殺，次子俄南拒絕為兄長留後也遭神懲罰。猶大因懼怕而不將三子示拉給他瑪，她便設計假扮妓女與猶大同房懷孕。當猶大要處死她時，他瑪拿出印、帶子和杖為證，猶大被迫承認自己的過錯。他瑪生下雙胞胎法勒斯和謝拉，法勒斯成為大衛和耶穌基督的祖先。這段看似不道德的故事，卻顯明神的主權超越人的罪惡，在彎曲悖謬中仍成就救恩計畫。
+</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">
+<strong>1. 神的公義不偏待人</strong><br>珥和俄南的惡行都遭神審判，顯明神的公義不因身分地位而有偏袒。自私自利、不盡當盡責任的態度在神眼中同樣可憎。神看重的不只是外在行為，更是內心動機和對他人的責任心。<br><br>
+<strong>2. 承認錯誤勝過維護面子</strong><br>猶大原本要處死他瑪，但當真相揭露時勇於承認自己更有罪。真正的悔改需要誠實面對自己的過錯，而非用權勢或藉口掩蓋。認錯不是軟弱，而是走向成熟與恢復關係的開始。<br><br>
+<strong>3. 神的救恩計畫超越人的失敗</strong><br>這段充滿罪惡與混亂的故事，竟成為彌賽亞家譜的一部分。神不是使用完美的人，而是在破碎中成就救贖。祂的恩典能覆蓋人的軟弱，使羞恥轉化為榮耀，讓失敗成為見證。
+</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead>
+<tr>
+<th>經文</th>
+<th>思想題目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>俄南知道生子不歸</strong>自己，<strong>所以同房的時候便</strong>遺在地，免得給他哥哥留後。（創38:9）</td>
+<td>就像團隊合作時只做對自己有利的事而不顧整體利益，俄南的自私導致審判。我在工作或服事中，是否也只計算個人得失，逃避那些吃力不討好但該盡的責任，只想獲得好處卻不願付代價？</td>
+</tr>
+<tr>
+<td><strong>猶大承認說</strong>：<strong>她比我更有義</strong>，因為我沒有將她給我的兒子示拉。（創38:26）</td>
+<td>就像被抓包後選擇坦承而非狡辯能贏回尊重，猶大的認錯展現真實悔改。當我的錯誤或虧欠被揭露時，我是本能地防衛、找藉口，還是願意謙卑承認並承擔後果？</td>
+</tr>
+<tr>
+<td><strong>他瑪被拉出來的時</strong><strong>候便打發人去見她</strong>公公，對他說：這些東西是誰的，我就是從誰懷的孕。請你認一認。（創38:25）</td>
+<td>就像保留收據或記錄在糾紛時能證明真相，他瑪的智慧保住性命並維護公義。當我面對不公平或被誤解時，我是衝動反應還是有智慧地保存證據、選擇適當時機和方式為自己辯護？</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="
+    margin-top: 40px;
+    padding: 20px 0 5px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    line-height: 2;
+">
+    <div style="margin-bottom: 6px;">
+          <em>Content is user-generated by Claude and unverified.</em>
+    </div>
+    <div>
+        <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v3.html"
+           target="_blank"
+           style="
+               color: #3498db;
+               text-decoration: none;
+               font-weight: bold;
+               border: 1px solid #3498db;
+               padding: 4px 14px;
+               border-radius: 20px;
+               transition: all 0.2s;
+           "
+           onmouseover="this.style.background='#3498db';this.style.color='white'"
+           onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+        >📖 每日讀經方陣｜聖經經卷查詢 </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+    const scriptureText = document.getElementById('scriptureText');
+    const bibleIcon = document.getElementById('bibleIcon');
+    scriptureText.classList.toggle('show');
+    if (scriptureText.classList.contains('show')) {
+        bibleIcon.textContent = '📖';
+        bibleIcon.classList.add('open');
+    } else {
+        bibleIcon.textContent = '📕';
+        bibleIcon.classList.remove('open');
+    }
+}
+</script>
+
+</body>
+</html>

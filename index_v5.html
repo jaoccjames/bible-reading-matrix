@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>每日讀經方陣｜聖經經卷查詢</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <style>
+    :root{
+      --bg:#fff7cc;
+      --card:#fffdf2;
+      --text:#111;
+      --muted:#555;
+      --border:#e6d58a;
+      --accent:#8b6b00;
+      --built:#e7f5ff;
+      --unbuilt:#ffffff;
+      --builtChap:#e7f5ff;
+      --unbuiltChap:#ffffff;
+    }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap{max-width:1050px;margin:0 auto;padding:18px;}
+    h1{margin:8px 0 10px;text-align:center;font-size:26px;letter-spacing:.5px;}
+    .panel{
+      margin-top:14px;background:var(--card);
+      border:1px solid var(--border);border-radius:14px;
+      padding:14px;
+    }
+    .sectionTitle{
+      display:flex;align-items:center;justify-content:center;
+      margin:2px auto 12px;
+      width:320px;
+      background:#0b7285;
+      color:#fff;
+      font-weight:700;
+      border-radius:6px;
+      padding:10px 12px;
+      letter-spacing:.5px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:0;
+      border:2px solid #0b7285;
+      border-radius:6px;
+      overflow:hidden;
+      background:#fff;
+      width:min(520px, 100%);
+      margin:0 auto;
+    }
+    .cell{
+      display:flex;align-items:center;justify-content:center;
+      height:44px;
+      border-right:1px solid #0b7285;
+      border-bottom:1px solid #0b7285;
+      font-size:18px;
+      user-select:none;
+      cursor:pointer;
+      background:var(--built);
+    }
+    .cell:nth-child(5n){border-right:none;}
+    .cell.pad{background:var(--unbuilt);cursor:default;}
+    .cell:hover:not(.pad){filter:brightness(0.93);}
+    .cell.selected{background:#0b7285;color:#fff;font-weight:700;}
+    .crumb{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      margin-bottom:12px;
+    }
+    .crumbLeft{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+    .title2{font-size:18px;font-weight:700;}
+    .chapGrid{
+      display:grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap:8px;
+      margin-top:8px;
+    }
+    .chap{
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:10px 0;
+      text-align:center;
+      font-size:14px;
+      background:var(--builtChap);
+      cursor:pointer;
+      color:var(--accent);
+      font-weight:600;
+    }
+    .chap:hover{background:#0b7285;color:#fff;}
+    .err{margin-top:10px;color:#b00020;font-size:13px;display:none;}
+    .loading{margin-top:12px;text-align:center;color:var(--muted);font-size:13px;}
+    button{cursor:pointer;background:#fff3bf;border:1px solid var(--border);border-radius:10px;padding:8px 14px;font-size:14px;}
+    button:hover{background:#ffec99;}
+    @media (max-width:640px){
+      .grid{width:100%;}
+      .chapGrid{grid-template-columns: repeat(6, 1fr);}
+      .cell{height:46px;font-size:18px;}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>每日讀經方陣｜聖經經卷查詢</h1>
+
+  <div class="err" id="err"></div>
+  <div class="loading" id="loading">載入資料中…</div>
+
+  <div id="booksView">
+    <div class="panel">
+      <div class="sectionTitle">舊約</div>
+      <div class="grid" id="otGrid"></div>
+    </div>
+    <div class="panel" style="margin-top:14px;">
+      <div class="sectionTitle">新約</div>
+      <div class="grid" id="ntGrid"></div>
+    </div>
+  </div>
+
+  <div style="margin-top:28px;text-align:center;padding-bottom:24px;">
+    <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v4.html"
+       target="_blank"
+       style="color:#3498db;text-decoration:none;font-weight:bold;border:1px solid #3498db;padding:6px 18px;border-radius:20px;font-size:15px;transition:all 0.2s;"
+       onmouseover="this.style.background='#3498db';this.style.color='white'"
+       onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+    >📖 每日讀經方陣｜聖經經卷查詢</a>
+  </div>
+
+</div>
+
+<script>
+// ── 路徑設定 ──────────────────────────────────────────────────────────────────
+const RAW = 'https://raw.githubusercontent.com/jaoccjames/bible-reading-matrix/main/data';
+const FILE_CATALOG = RAW + '/' + encodeURIComponent('每日讀經方陣_聖經目錄_V1腓立比.csv');
+const FILE_STUDY   = RAW + '/' + encodeURIComponent('聖經研讀資料匯出_全部_V2較高品質新約各章背景簡介.csv');
+// 經文 JSON 路徑：RAW + '/01.json' … '/66.json'（直接在 /data/ 下）
+// ─────────────────────────────────────────────────────────────────────────────
+
+const ABBR = {
+  '創世記':'創','出埃及記':'出','利未記':'利','民數記':'民','申命記':'申',
+  '約書亞記':'書','士師記':'士','路得記':'得',
+  '撒母耳記上':'撒上','撒母耳記下':'撒下','列王紀上':'王上','列王紀下':'王下',
+  '歷代志上':'代上','歷代志下':'代下','以斯拉記':'拉','尼希米記':'尼','以斯帖記':'斯',
+  '約伯記':'伯','詩篇':'詩','箴言':'箴','傳道書':'傳','雅歌':'歌',
+  '以賽亞書':'賽','耶利米書':'耶','耶利米哀歌':'哀','以西結書':'結','但以理書':'但',
+  '何西阿書':'何','約珥書':'珥','阿摩司書':'摩','俄巴底亞書':'俄','約拿書':'拿',
+  '彌迦書':'彌','那鴻書':'鴻','哈巴谷書':'哈','西番雅書':'番','哈該書':'該','撒迦利亞書':'亞','瑪拉基書':'瑪',
+  '馬太福音':'太','馬可福音':'可','路加福音':'路','約翰福音':'約',
+  '使徒行傳':'徒','羅馬書':'羅','哥林多前書':'林前','哥林多後書':'林後',
+  '加拉太書':'加','以弗所書':'弗','腓立比書':'腓','歌羅西書':'西',
+  '帖撒羅尼迦前書':'帖前','帖撒羅尼迦後書':'帖後','提摩太前書':'提前','提摩太後書':'提後',
+  '提多書':'多','腓利門書':'門','希伯來書':'來','雅各書':'雅',
+  '彼得前書':'彼前','彼得後書':'彼後','約翰壹書':'約壹','約翰貳書':'約貳','約翰參書':'約參',
+  '猶大書':'猶','啟示錄':'啟'
+};
+
+let catalog   = [];
+let studyData = {};
+let bibleCache = {};
+let currentBook = null;
+
+const $ = id => document.getElementById(id);
+
+// ── 資料載入 ──────────────────────────────────────────────────────────────────
+
+async function fetchText(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error('HTTP ' + r.status + ': ' + url);
+  return r.text();
+}
+async function fetchJSON(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error('HTTP ' + r.status + ': ' + url);
+  return r.json();
+}
+
+function parseCSV(text, onRow) {
+  return new Promise((resolve, reject) => {
+    Papa.parse(text, {
+      header: true, skipEmptyLines: true,
+      complete: ({ data }) => { onRow(data); resolve(); },
+      error: reject
+    });
+  });
+}
+
+async function init() {
+  try {
+    const [catText, studyText] = await Promise.all([
+      fetchText(FILE_CATALOG),
+      fetchText(FILE_STUDY)
+    ]);
+
+    // 解析目錄 CSV
+    await parseCSV(catText, rows => {
+      catalog = rows
+        .filter(r => r['卷次'] && !isNaN(+r['卷次']))
+        .map(r => ({
+          n:  +r['卷次'],
+          zh: r['中文卷名'],
+          ab: r['中文縮寫'],
+          en: r['英文卷名'],
+          ch: +r['章數'],
+          nt: +r['卷次'] >= 40
+        }));
+    });
+
+    // 解析研讀資料 CSV，key = "卷次_章次"
+    const re = /^(\d+).+?第0*(\d+)[章篇]$/;
+    await parseCSV(studyText, rows => {
+      for (const r of rows) {
+        const m = (r['卷章名'] || '').match(re);
+        if (!m) continue;
+        studyData[+m[1] + '_' + +m[2]] = {
+          title: r['章標題']       || '',
+          bg:    r['背景簡介']     || '',
+          core:  r['核心屬靈意涵'] || '',
+          v1: r['重點經文_1']||'', q1: r['思想題目_1']||'',
+          v2: r['重點經文_2']||'', q2: r['思想題目_2']||'',
+          v3: r['重點經文_3']||'', q3: r['思想題目_3']||'',
+        };
+      }
+    });
+
+    $('loading').style.display = 'none';
+    renderBooks();
+  } catch(e) {
+    $('loading').style.display = 'none';
+    $('err').style.display = 'block';
+    $('err').textContent = '⚠️ 無法載入資料：' + e.message;
+  }
+}
+
+// ── 書卷矩陣 ──────────────────────────────────────────────────────────────────
+
+function renderBooks() {
+  fillGrid('otGrid', catalog.filter(b => !b.nt));
+  fillGrid('ntGrid', catalog.filter(b =>  b.nt));
+}
+
+function fillGrid(id, books) {
+  const grid = $(id);
+  grid.innerHTML = '';
+  const padTo = Math.ceil(books.length / 5) * 5;
+  for (let i = 0; i < padTo; i++) {
+    const cell = document.createElement('div');
+    if (!books[i]) {
+      cell.className = 'cell pad';
+    } else {
+      const b = books[i];
+      cell.className = 'cell';
+      cell.textContent = ABBR[b.zh] || b.zh;
+      cell.title = b.zh;
+      cell.onclick = () => selectBook(b, cell);
+    }
+    grid.appendChild(cell);
+  }
+}
+
+function selectBook(b, clickedCell) {
+  currentBook = b;
+  // 開新頁顯示章次
+  openBookPage(b);
+}
+
+// 以新視窗顯示書卷章次頁
+function openBookPage(b) {
+  const win = window.open('', '_blank');
+
+  // 產生章次按鈕 HTML
+  const chapBtns = [];
+  for (let c = 1; c <= b.ch; c++) {
+    chapBtns.push(
+      '<div class="chap" onclick="window.opener && window.opener.openChapterFromBook(' +
+      b.n + ',' + c + ',window)">' + c + '</div>'
+    );
+  }
+
+  const html = `<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>${b.zh} — 每日讀經方陣</title>
+<style>
+:root{--bg:#fff7cc;--card:#fffdf2;--border:#e6d58a;--accent:#8b6b00;--builtChap:#e7f5ff;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans TC","PingFang TC","Microsoft JhengHei",Arial,sans-serif;background:var(--bg);color:#111;padding:18px;}
+.wrap{max-width:700px;margin:0 auto;}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px;}
+.bookTitle{font-size:22px;font-weight:700;letter-spacing:.5px;}
+.homeBtn{cursor:pointer;background:#fff3bf;border:1px solid var(--border);border-radius:10px;padding:8px 16px;font-size:14px;text-decoration:none;color:#111;}
+.homeBtn:hover{background:#ffec99;}
+.chapGrid{display:grid;grid-template-columns:repeat(10,1fr);gap:8px;}
+.chap{border:1px solid var(--border);border-radius:10px;padding:10px 0;text-align:center;font-size:14px;background:var(--builtChap);cursor:pointer;color:var(--accent);font-weight:600;}
+.chap:hover{background:#0b7285;color:#fff;}
+@media(max-width:500px){.chapGrid{grid-template-columns:repeat(6,1fr);}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="bookTitle">${b.zh}（${ABBR[b.zh] || b.ab}）</div>
+    <a class="homeBtn" href="javascript:window.close()">回經卷</a>
+  </div>
+  <div class="chapGrid">
+    ${chapBtns.join('\n    ')}
+  </div>
+</div>
+<script>
+// 從父視窗取得資料並開啟章節頁
+// 章次格點擊後呼叫父視窗的 openChapterFromBook
+<\/script>
+</body>
+</html>`;
+
+  win.document.open();
+  win.document.write(html);
+  win.document.close();
+}
+
+// 供書卷新頁呼叫：設定 currentBook 並開啟章節
+async function openChapterFromBook(bookN, ch, callerWin) {
+  currentBook = catalog.find(b => b.n === bookN) || currentBook;
+  await openChapterPage(ch);
+}
+
+function goHome() {
+  $('chaptersView').style.display = 'none';
+  $('homeBtn').style.display = 'none';
+  document.querySelectorAll('.cell').forEach(c => c.classList.remove('selected'));
+  $('booksView').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ── 開新頁顯示章節內容（樣式完全照 01創世記第01章.HTML）────────────────────
+
+async function openChapterPage(ch) {
+  const bk = currentBook.n;
+  const sd = studyData[bk + '_' + ch] || {};
+
+  // 先開新視窗，顯示載入中
+  const win = window.open('', '_blank');
+  win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>載入中…</title></head><body style="font-family:serif;text-align:center;padding:3rem;color:#555">載入中…</body></html>');
+  win.document.close();
+
+  try {
+    // 經文懶載入（快取在父視窗）
+    if (!bibleCache[bk]) {
+      bibleCache[bk] = await fetchJSON(RAW + '/' + String(bk).padStart(2,'0') + '.json');
+    }
+    const verses = bibleCache[bk][String(ch)] || [];
+    const html = buildChapterHTML(ch, verses, sd);
+    win.document.open();
+    win.document.write(html);
+    win.document.close();
+  } catch(e) {
+    win.document.open();
+    win.document.write('<!DOCTYPE html><html><body style="font-family:serif;padding:2rem;color:#b00020">載入失敗：' + e.message + '</body></html>');
+    win.document.close();
+  }
+}
+
+// ── 產生章節頁面 HTML（完全照附加檔案樣式）──────────────────────────────────
+
+// ── 核心屬靈意涵：移植自 Python format_spiritual_content() ──────────────────
+// 格式A：「1. 標題\n說明」→ <strong>1. 標題</strong><br>說明
+// 格式B：「1. 【標題】\n說明」→ <strong>1. 【標題】</strong><br>說明
+function formatSpiritualContent(raw) {
+  const stripped = raw.trim();
+  let htmlParts = [];
+
+  if (/^\d+\.\s*【/.test(stripped)) {
+    // 格式 B：1. 【標題】
+    const segments = stripped.split(/(\d+\.\s*【[^】]+】)/);
+    for (let i = 1; i < segments.length; i += 2) {
+      const header = segments[i].trim();
+      const body   = (segments[i+1] || '').trim().replace(/^\n+|\n+$/g, '');
+      htmlParts.push('<strong>' + escHtml(header) + '</strong><br>' + escHtml(body));
+    }
+  } else {
+    // 格式 A：1. 標題\n說明
+    const segments = stripped.split(/(\d+\.\s)/);
+    for (let i = 1; i < segments.length; i += 2) {
+      const numDot  = segments[i];
+      const content = segments[i+1] || '';
+      const lines   = content.split('\n');
+      const titleLine = lines[0].trim();
+      const body      = lines.slice(1).join('\n').trim();
+      htmlParts.push('<strong>' + escHtml(numDot + titleLine) + '</strong><br>' + escHtml(body));
+    }
+  }
+
+  return htmlParts.join('<br><br>\n');
+}
+
+// ── 重點經文自動加粗關鍵詞（移植自 Python auto_highlight）────────────────────
+// 經文：抽取 3-8 字中文詞組（最多2個），用 <strong> 標記
+// 思想題目：不做任何處理，直接輸出
+function autoHighlightVerse(verseText) {
+  // 去除書卷引用（如「（創1:1）」），再找關鍵詞
+  const body = verseText.replace(/（[^）]+）|\([^\)]+\)/g, '').trim();
+  const kws  = (body.match(/[\u4e00-\u9fff]{3,8}/g) || []).slice(0, 2);
+  let result = escHtml(verseText);
+  for (const kw of kws) {
+    // 在已 escHtml 的字串中替換（中文不含特殊 HTML 字元，可直接替換）
+    result = result.replace(escHtml(kw), '<strong>' + escHtml(kw) + '</strong>');
+  }
+  return result;
+}
+
+function buildChapterHTML(ch, verses, sd) {
+  const bkZh = currentBook.zh;
+  const title = sd.title || '';
+
+  // 經文 HTML
+  const versesHTML = verses.map(v =>
+    '<div class="verse"><span class="verse-number">' + v.v + '</span>' + escHtml(v.t) + '</div>'
+  ).join('\n');
+
+  // 核心屬靈意涵：標題紅色粗體，內文正常
+  const coreHTML = formatSpiritualContent(sd.core || '（暫無資料）');
+
+  // 重點經文與思想題目
+  // 經文：自動加粗關鍵詞（紅色）；思想題目：不加粗
+  const pairs = [
+    { v: sd.v1, q: sd.q1 },
+    { v: sd.v2, q: sd.q2 },
+    { v: sd.v3, q: sd.q3 }
+  ].filter(p => p.v && p.v !== 'nan' && p.v.trim());
+
+  const tableRows = pairs.map(p =>
+    '<tr><td>' + autoHighlightVerse(p.v) + '</td><td>' + escHtml(p.q) + '</td></tr>'
+  ).join('\n');
+
+  return `<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${bkZh}第${ch}章 - 聖經重點與思考</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: "Microsoft JhengHei","Segoe UI",Arial,sans-serif;
+  line-height:1.8; color:#333;
+  background: linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%);
+  padding:20px;
+}
+.container { max-width:900px; margin:0 auto; background:white; padding:40px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.1); }
+h1 {
+  font-size:2.2em; color:#2c3e50; border-bottom:3px solid #3498db;
+  padding-bottom:15px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; margin-bottom:10px;
+}
+h1:hover { color:#3498db; }
+.bible-icon { margin-left:15px; transition:transform 0.3s ease; }
+.bible-icon.open { transform:rotateY(180deg); }
+.chapter-subtitle { font-size:1.2em; color:#7f8c8d; font-weight:bold; text-align:center; margin-bottom:30px; }
+.scripture-text {
+  display:none; background:#f8f9fa; border-left:4px solid #3498db;
+  padding:20px; line-height:2; max-height:500px; overflow-y:auto;
+  border-radius:4px; margin-bottom:20px;
+}
+.scripture-text.show { display:block; }
+.verse { margin-bottom:10px; }
+.verse-number { color:#3498db; font-weight:bold; margin-right:8px; }
+details { margin:20px 0; border:2px solid #e0e0e0; border-radius:8px; padding:15px; background:#fafafa; transition:all 0.3s ease; }
+details:hover { border-color:#3498db; box-shadow:0 2px 8px rgba(52,152,219,0.2); }
+details[open] { background:#f0f8ff; border-color:#3498db; }
+summary { font-size:1.2em; font-weight:bold; color:#2980b9; cursor:pointer; padding:10px; list-style:none; position:relative; padding-left:30px; }
+summary::-webkit-details-marker { display:none; }
+summary::before { content:'▶'; position:absolute; left:10px; transition:transform 0.3s ease; }
+details[open] summary::before { transform:rotate(90deg); }
+summary:hover { color:#3498db; }
+.content { margin-top:15px; padding:15px; line-height:1.9; }
+table { width:100%; border-collapse:collapse; margin-top:20px; }
+th { background:#3498db; color:white; padding:15px; font-size:1.1em; text-align:left; }
+td { padding:15px; border:1px solid #ddd; vertical-align:top; }
+tr:nth-child(even) { background:#f9f9f9; }
+tr:hover { background:#f0f8ff; }
+strong { color:#c0392b; font-weight:bold; }
+@media (max-width:768px) {
+  .container { padding:20px; }
+  h1 { font-size:1.6em; }
+  .chapter-subtitle { font-size:1em; }
+  table { font-size:0.9em; }
+  th,td { padding:10px; }
+  summary { font-size:1em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="toggleScripture()">
+${bkZh}第${ch}章
+<span id="bibleIcon" class="bible-icon">📕</span>
+</h1>
+
+<div class="chapter-subtitle">${escHtml(title)}</div>
+
+<div id="scriptureText" class="scripture-text">
+${versesHTML}
+</div>
+
+<details>
+<summary>背景簡介</summary>
+<div class="content">${escHtml(sd.bg || '（暫無資料）')}</div>
+</details>
+
+<details>
+<summary>核心屬靈意涵</summary>
+<div class="content">${coreHTML}</div>
+</details>
+
+<details open>
+<summary>重點經文與思想題目</summary>
+<div class="content">
+<table>
+<thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+<tbody>
+${tableRows || '<tr><td colspan="2">（暫無資料）</td></tr>'}
+</tbody>
+</table>
+</div>
+</details>
+
+</div>
+
+<footer style="margin-top:40px;padding:20px 0 5px 0;border-top:1px solid #e0e0e0;text-align:center;font-size:0.85em;color:#999;line-height:2;">
+  <div><em>Content is user-generated by Claude and unverified.</em></div>
+</footer>
+
+</div>
+
+<script>
+function toggleScripture() {
+  const t = document.getElementById('scriptureText');
+  const i = document.getElementById('bibleIcon');
+  t.classList.toggle('show');
+  if (t.classList.contains('show')) { i.textContent='📖'; i.classList.add('open'); }
+  else { i.textContent='📕'; i.classList.remove('open'); }
+}
+<\/script>
+</body>
+</html>`;
+}
+
+// HTML 跳脫，防止注入
+function escHtml(s) {
+  return String(s)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+init();
+</script>
+</body>
+</html>

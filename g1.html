@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>新朋友4週入門讀經</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans TC',Arial,sans-serif;background:#F5F5F5;color:#212121}
+.top-bar{background:#263238;color:#fff;padding:24px 32px}
+.top-bar h1{font-size:22px;font-weight:700;margin-bottom:6px}
+.top-bar p{font-size:13px;color:#B0BEC5}
+.nav-bar{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.12);padding:12px 32px}
+.nav-week{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.nav-week:last-child{margin-bottom:0}
+.nav-week-label{font-size:11px;font-weight:700;width:190px;flex-shrink:0}
+.nav-day{display:inline-block;width:28px;height:28px;line-height:26px;text-align:center;border-radius:50%;border:2px solid;font-size:11px;font-weight:700;text-decoration:none;transition:all .15s}
+.nav-day:hover{opacity:.7}
+.cards-wrap{max-width:760px;margin:28px auto;padding:0 16px 60px}
+.email-card{margin-bottom:32px;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10)}
+.email-header{padding:14px 20px;display:flex;align-items:center;gap:14px}
+.day-badge{background:rgba(255,255,255,.25);color:#fff;font-size:14px;font-weight:800;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.week-label{color:rgba(255,255,255,.85);font-size:12px;font-weight:600}
+.email-body{padding:20px 24px 24px}
+.subject-line{font-size:13px;color:#546E7A;margin-bottom:2px}
+.subject-line em{font-style:normal;font-weight:700;color:#212121;font-size:14px}
+.opener{font-size:14.5px;line-height:1.8;color:#37474F;margin-bottom:18px}
+.read-btn-wrap{text-align:center;margin-bottom:20px}
+.read-btn{display:inline-block;padding:12px 28px;border-radius:8px;color:#fff;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:.3px}
+.read-btn:hover{opacity:.88}
+.questions{padding:16px 18px;border-radius:8px;margin-top:4px}
+.q-label{font-size:11px;font-weight:700;color:#546E7A;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
+.q-item{font-size:13.5px;line-height:1.7;color:#37474F;margin-bottom:10px;padding-left:36px;position:relative}
+.q-item:last-child{margin-bottom:0}
+.q-num{position:absolute;left:0;font-size:12px;font-weight:800;width:28px}
+.hint{max-width:760px;margin:0 auto 6px;padding:0 16px;font-size:12px;color:#90A4AE;text-align:right}
+@media(max-width:600px){
+  .nav-bar{padding:10px 16px}
+  .nav-week-label{width:100%;margin-bottom:4px}
+  .email-body{padding:16px}
+}
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <h1>📖 新朋友4週入門讀經</h1>
+  <p>每份模板包含：今日主題 ｜ 引言開場 ｜ 閱讀連結 ｜ 思想題目</p>
+</div>
+<div class="nav-bar">
+<div class="nav-week"><span class="nav-week-label" style="color:#E65100">第一週：萬物的起源與人類的故事</span><a href="#day1" class="nav-day" style="border-color:#E65100;color:#E65100">1</a><a href="#day2" class="nav-day" style="border-color:#E65100;color:#E65100">2</a><a href="#day3" class="nav-day" style="border-color:#E65100;color:#E65100">3</a><a href="#day4" class="nav-day" style="border-color:#E65100;color:#E65100">4</a><a href="#day5" class="nav-day" style="border-color:#E65100;color:#E65100">5</a><a href="#day6" class="nav-day" style="border-color:#E65100;color:#E65100">6</a><a href="#day7" class="nav-day" style="border-color:#E65100;color:#E65100">7</a></div><div class="nav-week"><span class="nav-week-label" style="color:#2E7D32">第二週：耶穌是誰</span><a href="#day8" class="nav-day" style="border-color:#2E7D32;color:#2E7D32">8</a><a href="#day9" class="nav-day" style="border-color:#2E7D32;color:#2E7D32">9</a><a href="#day10" class="nav-day" style="border-color:#2E7D32;color:#2E7D32">10</a><a href="#day11" class="nav-day" style="border-color:#2E7D32;color:#2E7D32">11</a><a href="#day12" class="nav-day" style="border-color:#2E7D32;color:#2E7D32">12</a><a href="#day13" class="nav-day" style="border-color:#2E7D32;color:#2E7D32">13</a><a href="#day14" class="nav-day" style="border-color:#2E7D32;color:#2E7D32">14</a></div><div class="nav-week"><span class="nav-week-label" style="color:#1565C0">第三週：十字架、復活與教會誕生</span><a href="#day15" class="nav-day" style="border-color:#1565C0;color:#1565C0">15</a><a href="#day16" class="nav-day" style="border-color:#1565C0;color:#1565C0">16</a><a href="#day17" class="nav-day" style="border-color:#1565C0;color:#1565C0">17</a><a href="#day18" class="nav-day" style="border-color:#1565C0;color:#1565C0">18</a><a href="#day19" class="nav-day" style="border-color:#1565C0;color:#1565C0">19</a><a href="#day20" class="nav-day" style="border-color:#1565C0;color:#1565C0">20</a><a href="#day21" class="nav-day" style="border-color:#1565C0;color:#1565C0">21</a></div><div class="nav-week"><span class="nav-week-label" style="color:#6A1B9A">第四週：這信仰對我意味著什麼</span><a href="#day22" class="nav-day" style="border-color:#6A1B9A;color:#6A1B9A">22</a><a href="#day23" class="nav-day" style="border-color:#6A1B9A;color:#6A1B9A">23</a><a href="#day24" class="nav-day" style="border-color:#6A1B9A;color:#6A1B9A">24</a><a href="#day25" class="nav-day" style="border-color:#6A1B9A;color:#6A1B9A">25</a><a href="#day26" class="nav-day" style="border-color:#6A1B9A;color:#6A1B9A">26</a><a href="#day27" class="nav-day" style="border-color:#6A1B9A;color:#6A1B9A">27</a><a href="#day28" class="nav-day" style="border-color:#6A1B9A;color:#6A1B9A">28</a></div>
+</div>
+<div class="hint">點擊上方天數快速跳轉 ↑</div>
+<div class="cards-wrap">
+<div class="email-card" id="day1">
+  <div class="email-header" style="background:#E65100">
+    <span class="day-badge">Day 1</span>
+    <span class="week-label">第一週：萬物的起源與人類的故事</span>
+  </div>
+  <div class="email-body" style="background:#FFF3E0">
+    <div class="subject-line">📨 今日主題：<em>【Day 1】宇宙是怎麼來的？一個關於起源的古老答案</em></div>
+    <hr style="border:none;border-top:1px solid #FFE0B2;margin:14px 0">
+    <p class="opener">今天要讀的是整本聖經的第一章。它不是一本科學教科書，而是一個宣告：這個宇宙不是意外，是被造的，而且造它的那位說，這一切都是「好的」。讀完之後，你會想問自己一個問題：如果真有一位創造者，那對我意味著什麼？</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=創世記&ch=01" class="read-btn" style="background:#E65100">📖 今天讀：創世記 第01章〈神創造天地與人類〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #E65100;background:#FFE0B2">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q1</span>你相信萬有都是神創造的嗎?就像看到精美建築就知道有設計師,你能在大自然中看見創造主的智慧嗎?</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q2</span>你是否看重自己和他人的神聖價值?就像名畫因畫家而珍貴,你知道每個人都按神形像而造,都有無比尊榮嗎?</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q3</span>你如何看待你的工作和責任?就像管家要為主人管理產業,你知道工作是神給你的神聖使命嗎?</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day2">
+  <div class="email-header" style="background:#E65100">
+    <span class="day-badge">Day 2</span>
+    <span class="week-label">第一週：萬物的起源與人類的故事</span>
+  </div>
+  <div class="email-body" style="background:#FFF3E0">
+    <div class="subject-line">📨 今日主題：<em>【Day 2】人類為什麼那麼容易做錯事？</em></div>
+    <hr style="border:none;border-top:1px solid #FFE0B2;margin:14px 0">
+    <p class="opener">這一章問的是：人類為什麼那麼容易做出自己後來後悔的事？一個古老的故事，給出了一個出人意料的答案——不是「我們不夠努力」，而是「我們從一開始就走錯了方向」。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=創世記&ch=03" class="read-btn" style="background:#E65100">📖 今天讀：創世記 第03章〈人類墮落與神的救贖應許〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #E65100;background:#FFE0B2">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q1</span>你是否容易懷疑神的話語和良善?就像聽信謠言就懷疑真相,你會因環境或他人的話而質疑神嗎?</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q2</span>你是否因為眼目的情慾而犯罪?就像看到打折就衝動購物,你能抵擋看似美好卻違背神心意的誘惑嗎?</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q3</span>你是否知道基督已經勝過撒但?就像疫苗已經研發出來就不用怕疾病,你知道耶穌已為你得勝,你可以靠祂勝過罪嗎?</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day3">
+  <div class="email-header" style="background:#E65100">
+    <span class="day-badge">Day 3</span>
+    <span class="week-label">第一週：萬物的起源與人類的故事</span>
+  </div>
+  <div class="email-body" style="background:#FFF3E0">
+    <div class="subject-line">📨 今日主題：<em>【Day 3】全世界最多人讀過的一首詩</em></div>
+    <hr style="border:none;border-top:1px solid #FFE0B2;margin:14px 0">
+    <p class="opener">詩篇第23篇被翻譯成的語言數量，大概比任何其他文字都多。它只有短短幾行，卻讓無數面對死亡的人得到安慰，讓無數感到迷失的人重新找到方向。今天讀完，你會明白為什麼。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=詩篇&ch=023" class="read-btn" style="background:#E65100">📖 今天讀：詩篇 第023篇〈耶和華是我的牧者：生命全程的看顧〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #E65100;background:#FFE0B2">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q1</span>就像信任有口碑的旅行社安排行程，就算不知道每個細節也能安心出發，「耶和華是我的牧者」這個宣告，是否真的成為你面對生活不確定性時的根基，讓你從焦慮轉為安心交託？</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q2</span>就像在漆黑的隧道中，知道身旁有人握著手，黑暗本身並不因此消失，但恐懼卻大大減少，你目前人生的「死蔭幽谷」是什麼？你是否真實地感受到神與你同在的安慰，還是只知道這個道理卻感覺不到？</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q3</span>就像訂閱了永久有效的保險，無論發生什麼都有保障，「一生一世必有恩惠慈愛隨着我」的確信，是否真的讓你在面對未知的未來時，能以信心取代焦慮，以盼望取代恐懼？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day4">
+  <div class="email-header" style="background:#E65100">
+    <span class="day-badge">Day 4</span>
+    <span class="week-label">第一週：萬物的起源與人類的故事</span>
+  </div>
+  <div class="email-body" style="background:#FFF3E0">
+    <div class="subject-line">📨 今日主題：<em>【Day 4】一個好人突然失去一切——然後呢？</em></div>
+    <hr style="border:none;border-top:1px solid #FFE0B2;margin:14px 0">
+    <p class="opener">約伯是個好人，卻在一天之內失去了所有的財產、所有的孩子。這一章記錄他最初的反應——不是憤怒，不是放棄，而是一句讓人難以置信的話。你覺得你能說出那句話嗎？</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=約伯記&ch=01" class="read-btn" style="background:#E65100">📖 今天讀：約伯記 第01章〈完全正直的約伯遭受試煉〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #E65100;background:#FFE0B2">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q1</span>就像有人質疑你的善行是否真心，而非出於利益，「你敬神是否無故」這個問題是否也曾出現在你心中？若神收回所有的祝福，你的信仰還會在嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q2</span>就像在最痛苦的時刻，有人仍然選擇感恩而非咒詛，約伯的敬拜不是沒有眼淚，而是在眼淚中仍轉向神。你有沒有在最大的失去中，找到一句仍能對神說的話？</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q3</span>就像水流動才能灌溉，承認神對一切有主權才能使人在失去中不被絕望淹沒，「收取的也是耶和華」這句話對你最難說出口的是哪一樣失去？你能把那樣東西交在神手中嗎？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day5">
+  <div class="email-header" style="background:#E65100">
+    <span class="day-badge">Day 5</span>
+    <span class="week-label">第一週：萬物的起源與人類的故事</span>
+  </div>
+  <div class="email-body" style="background:#FFF3E0">
+    <div class="subject-line">📨 今日主題：<em>【Day 5】你現在正處於人生哪個季節？</em></div>
+    <hr style="border:none;border-top:1px solid #FFE0B2;margin:14px 0">
+    <p class="opener">「有哭泣的時候，也有歡笑的時候；有哀慟的時候，也有跳舞的時候。」這是三千年前寫的，卻像在說你現在的生活。今天這一章只問你一個問題：你現在正處於哪個季節？</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=傳道書&ch=03" class="read-btn" style="background:#E65100">📖 今天讀：傳道書 第03章〈凡事都有定期：神造萬物各按其時成為美好〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #E65100;background:#FFE0B2">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q1</span>就像農夫知道不同的農作物有不同的生長季節，在錯誤的季節播種或收割都會失敗，你目前正處於人生的哪個「季節」？你是否接受了這個季節的本質，還是一直想跳到另一個季節？</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q2</span>就像拼圖的每一片單獨看都很片面，只有拼在一起才顯出完整的圖像，你生命中有沒有某個當時感覺很糟糕的時刻，事後才看出它在整幅圖中的美好意義？那次經歷如何加深了你對神主權的信靠？</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q3</span>就像面對浩瀚的星空，人自然會感到自身的渺小與對宇宙的敬畏，你在哪些生命經歷或自然景象中，最強烈地感受到神的偉大與不可參透？那種感受如何影響你與神的關係？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day6">
+  <div class="email-header" style="background:#E65100">
+    <span class="day-badge">Day 6</span>
+    <span class="week-label">第一週：萬物的起源與人類的故事</span>
+  </div>
+  <div class="email-body" style="background:#FFF3E0">
+    <div class="subject-line">📨 今日主題：<em>【Day 6】一個國王的最誠實告白</em></div>
+    <hr style="border:none;border-top:1px solid #FFE0B2;margin:14px 0">
+    <p class="opener">這首詩是以色列最偉大的君王大衛寫的——在他做了一件非常糟糕的事之後。它可能是人類歷史上最誠實的一次道歉。讀完你會發現，真正的認錯，比我們想像的更難，也更自由。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=詩篇&ch=051" class="read-btn" style="background:#E65100">📖 今天讀：詩篇 第051篇〈大衛的悔罪詩：求神造清潔的心與更新的靈〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #E65100;background:#FFE0B2">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q1</span>就像法律違規最終是對制訂法律的政府的違背，而非只是對其他人的冒犯，你在認罪時是否觸及那個最深的維度——不只說「我做錯了」，而是真正地承認「我得罪了你，神」，讓認罪成為真實的關係修復？</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q2</span>就像一個老舊的鍋子再怎麼清洗也去不掉深層的鏽蝕，需要工匠重新鑄造，你是否認識到自己心靈的更新超過你自己能做到的程度，讓你真實地呼求神從無到有地為你造新心，而非只靠意志力改變行為？</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q3</span>就像一位摯友在你真心道歉時，能感受到那份誠意而不計較禮物的輕重，你是否相信神對你「憂傷痛悔的心」有最深的珍視，讓這確信給你勇氣帶著破碎的心回到神面前，而非等到「準備好了」才認罪？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day7">
+  <div class="email-header" style="background:#E65100">
+    <span class="day-badge">Day 7</span>
+    <span class="week-label">第一週：萬物的起源與人類的故事</span>
+  </div>
+  <div class="email-body" style="background:#FFF3E0">
+    <div class="subject-line">📨 今日主題：<em>【Day 7】當你累到撐不下去的時候</em></div>
+    <hr style="border:none;border-top:1px solid #FFE0B2;margin:14px 0">
+    <p class="opener">「連少年人也會疲乏困倦，強壯的也必全然跌倒。」這句話寫在將近三千年前，但在今天讀起來，像是專門為你寫的。今天這一章說：累了不是失敗，等候才是力量。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=以賽亞書&ch=40" class="read-btn" style="background:#E65100">📖 今天讀：以賽亞書 第40章〈等候耶和華的必如鷹展翅：安慰話語與神的無限能力〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #E65100;background:#FFE0B2">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q1</span>就像一棟建在沙上的美麗建築，風雨一來就轟然倒塌；建在岩石上的即使外觀不起眼，卻能屹立不動，你目前生命中最多精力投入的，是「草花」（必然枯乾的）還是「神的話」（永遠立定的）？若重新分配，你最想調整的是什麼？</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q2</span>就像一個細心的父親知道孩子的體力限制，在長途旅行中不催趕，而是把最小的孩子抱起來，神對你的帶領是按照你的實際能力，而非一刀切的期待，你目前感到最「疲弱」的是哪個方面？你是否允許神「抱著你」，而不是強迫自己跑得更快？</div>
+      <div class="q-item"><span class="q-num" style="color:#E65100">Q3</span>就像手機需要接上電源才能充電，「等候耶和華」就是把生命接上神的電源，在安靜和信靠中讓力量被更新，你上一次真正「等候」神——不是等神解決問題，而是在祂面前安靜讓力量更新——是什麼時候？你如何在忙碌的生活中建立「等候神」的空間？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day8">
+  <div class="email-header" style="background:#2E7D32">
+    <span class="day-badge">Day 8</span>
+    <span class="week-label">第二週：耶穌是誰</span>
+  </div>
+  <div class="email-body" style="background:#E8F5E9">
+    <div class="subject-line">📨 今日主題：<em>【Day 8】有一個嬰兒出生在馬槽裡</em></div>
+    <hr style="border:none;border-top:1px solid #C8E6C9;margin:14px 0">
+    <p class="opener">兩千年前的某個夜晚，在一個小鎮的馬槽裡，一個嬰兒出生了。那個夜晚，先是幾個牧羊人來了，後來整個世界都改變了。今天讀的，就是那個夜晚的記錄。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=路加福音&ch=02" class="read-btn" style="background:#2E7D32">📖 今天讀：路加福音 第02章〈耶穌降生與聖殿的尋找〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #2E7D32;background:#C8E6C9">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q1</span>耶穌的降生對你是真正的「大喜」，還是只是一個每年重複的節日？就像一個長期盼望的好消息真正到來時讓人喜不自勝，你有沒有讓救主降生的事實每天更新你的喜樂？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q2</span>你有沒有培養一個「存在心裏反復思想」的習慣，讓神的作為在你的心裏沉澱？就像細嚼慢嚥比快速吞食更能吸收營養，你願意在讀經後給神的話語留出時間，讓它在你心裏發酵和深化嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q3</span>你的生命中，「父的事」——神給你的使命和呼召——有沒有真正佔據最核心的位置？就像任何志業若不是真正的首要優先，就很容易被其他緊急事務擠掉，你有沒有讓神的優先次序真正決定你如何使用時間和精力？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day9">
+  <div class="email-header" style="background:#2E7D32">
+    <span class="day-badge">Day 9</span>
+    <span class="week-label">第二週：耶穌是誰</span>
+  </div>
+  <div class="email-body" style="background:#E8F5E9">
+    <div class="subject-line">📨 今日主題：<em>【Day 9】他叫幾個漁夫「跟從我」，他們真的去了</em></div>
+    <hr style="border:none;border-top:1px solid #C8E6C9;margin:14px 0">
+    <p class="opener">他走在海邊，看見幾個正在打魚的人，說：「來跟從我。」他們立刻放下漁網，跟著去了。這一章的節奏快得像電影，三十節裡有神蹟、有趕鬼、有呼召——你很難不想繼續讀下去。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=馬可福音&ch=01" class="read-btn" style="background:#2E7D32">📖 今天讀：馬可福音 第01章〈福音的起頭與呼召門徒〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #2E7D32;background:#C8E6C9">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q1</span>你生命中有沒有某種「不潔」——罪、過去的傷痛、社會的排斥——讓你覺得自己不配靠近耶穌？就像那個患痲瘋的人帶着顫抖的信心說「你若肯」，你願意帶着這份信心來到耶穌面前嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q2</span>你有沒有把禱告放在每天的首位，在忙碌開始之前先與神獨處？就像手術前外科醫生仔細準備比手術本身更重要，你願意在每天「出發」之前先透過禱告確認方向嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q3</span>面對耶穌的呼召，你生命中有什麼「網」是你最難放下的？就像習慣了某種工作模式的人換跑道需要極大的勇氣，你願意為了跟從耶穌，放下那些讓你感到安全熟悉的東西嗎？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day10">
+  <div class="email-header" style="background:#2E7D32">
+    <span class="day-badge">Day 10</span>
+    <span class="week-label">第二週：耶穌是誰</span>
+  </div>
+  <div class="email-body" style="background:#E8F5E9">
+    <div class="subject-line">📨 今日主題：<em>【Day 10】太初有道——一個讓哲學家著迷的開場白</em></div>
+    <hr style="border:none;border-top:1px solid #C8E6C9;margin:14px 0">
+    <p class="opener">「太初有道，道與神同在，道就是神。」這是約翰福音的開場白，兩千年來讓無數哲學家和神學家著迷。今天這一章是整個耶穌故事最深刻的序言——用詩的語言，說一件不可思議的事。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=約翰福音&ch=01" class="read-btn" style="background:#2E7D32">📖 今天讀：約翰福音 第01章〈道成肉身與第一批門徒〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #2E7D32;background:#C8E6C9">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q1</span>「道成肉身」這個真理對你的日常信仰有多大的影響？就像知道皇室成員親自走訪讓人感到尊榮和驚訝，你有沒有讓「神親自進入人類歷史」這個事實帶出對神深深的敬畏和感恩？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q2</span>你有沒有真實地活在「神的兒女」這個身份裏，而非以孤兒的心態面對生命的挑戰？就像知道自己是富裕家庭的孩子會讓人面對人生更有底氣，你有沒有讓「我是神的兒女」影響你的自我認識和面對困難的態度？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q3</span>你有沒有像安得烈一樣，在自己認識了耶穌之後，主動帶身邊最親近的人來見祂？就像試吃到好吃的食物第一個反應是想推薦給朋友，你有沒有把遇見耶穌的喜悅分享給你最在乎的人？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day11">
+  <div class="email-header" style="background:#2E7D32">
+    <span class="day-badge">Day 11</span>
+    <span class="week-label">第二週：耶穌是誰</span>
+  </div>
+  <div class="email-body" style="background:#E8F5E9">
+    <div class="subject-line">📨 今日主題：<em>【Day 11】靈魂深處的飢渴，你有感覺過嗎？</em></div>
+    <hr style="border:none;border-top:1px solid #C8E6C9;margin:14px 0">
+    <p class="opener">她一個人在大太陽底下去打水——因為她不想遇見村裡的人。但那天，有人在井邊等著她，說了一句讓她完全沒想到的話。這是一個關於靈魂飢渴的故事，讀完你很可能會想問：那口活水，我可以喝嗎？</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=約翰福音&ch=04" class="read-btn" style="background:#2E7D32">📖 今天讀：約翰福音 第04章〈井旁的撒瑪利亞婦人與活水〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #2E7D32;background:#C8E6C9">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q1</span>你有沒有感受到靈魂深處的飢渴——試圖用各種方式填滿，卻發現還是再渴？就像喝海水越喝越渴，你有沒有讓那位給活水的耶穌，成為你靈魂真正的滿足泉源？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q2</span>你的敬拜有沒有「心靈和誠實」——真實地在神面前，而非走過場或表演？就像一封用心手寫的信比印刷品更有溫度，你願意讓你的禱告和敬拜成為你真實靈魂的傾倒，而非宗教的表演嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q3</span>你有沒有因為自己遇見耶穌的經歷，就迫不及待地去告訴身邊的人？就像那婦人連水罐都忘了拿，就跑去分享，你上一次迫切地和某人分享耶穌是甚麼時候？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day12">
+  <div class="email-header" style="background:#2E7D32">
+    <span class="day-badge">Day 12</span>
+    <span class="week-label">第二週：耶穌是誰</span>
+  </div>
+  <div class="email-body" style="background:#E8F5E9">
+    <div class="subject-line">📨 今日主題：<em>【Day 12】一個年輕女孩說了改變歷史的一句話</em></div>
+    <hr style="border:none;border-top:1px solid #C8E6C9;margin:14px 0">
+    <p class="opener">天使對一個年輕的農村女孩說，她要成為神之子的母親。她沒有尖叫，沒有逃跑，說了一句改變了整個人類歷史的話：「情願照你的話成就在我身上。」今天讀的，是那個對話。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=路加福音&ch=01" class="read-btn" style="background:#2E7D32">📖 今天讀：路加福音 第01章〈天使報喜與馬利亞的頌讚〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #2E7D32;background:#C8E6C9">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q1</span>你有沒有像馬利亞一樣，在不完全理解的情況下，仍然選擇順服神的呼召？就像接受一個新職務不是因為已經準備好，而是因為信任那個委任你的人，你願意帶着不確定的信心說「照你的話成就在我身上」嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q2</span>你有沒有在神呼召你做某件事時，因為感到不夠格而懼怕？就像從未公開表演的人被邀請上台感到驚慌，你知道神的呼召是以祂的恩典為根基，而非以你的資格為前提嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q3</span>你有沒有在日常生活中，培養一顆以神為大的心——不只在教會，也在工作、家庭和娛樂中？就像一個人真正愛慕某人時，那個人的事會自然佔據他大部分的思念，你對神的愛有沒有自然地溢出在你的日常中？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day13">
+  <div class="email-header" style="background:#2E7D32">
+    <span class="day-badge">Day 13</span>
+    <span class="week-label">第二週：耶穌是誰</span>
+  </div>
+  <div class="email-body" style="background:#E8F5E9">
+    <div class="subject-line">📨 今日主題：<em>【Day 13】全聖經最感人的一個父親</em></div>
+    <hr style="border:none;border-top:1px solid #C8E6C9;margin:14px 0">
+    <p class="opener">一個兒子向父親要了家產，跑去花光，然後在豬圈裡醒悟過來。他決定回家，準備好認罪的說詞——但父親在他「相離還遠」的時候就已經跑出去了。這是全聖經最感人的一個故事。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=路加福音&ch=15" class="read-btn" style="background:#2E7D32">📖 今天讀：路加福音 第15章〈失羊、失錢與浪子回頭〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #2E7D32;background:#C8E6C9">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q1</span>你有沒有在某個方面「離家遠走」而現在需要「醒悟過來」回轉？就像在錯誤方向上開車越遠只會越偏，你願意在神的邀請下，對準方向、起來回家嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q2</span>你有沒有真實地體驗到神在你悔改時的「跑來相迎」，而非「等待你先說完才決定原不原諒」？就像父親跑出去迎接而非在家等待，你知道神的恩典是比你的悔改更先到達的嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q3</span>你有沒有「大兒子」的心態——對他人蒙恩感到不平，覺得自己的忠心沒有得到相應的獎賞？就像習慣資歷制度的老員工看見新人快速晉升感到不滿，你願意讓神更新你的心，為弟兄的回頭真實地歡喜嗎？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day14">
+  <div class="email-header" style="background:#2E7D32">
+    <span class="day-badge">Day 14</span>
+    <span class="week-label">第二週：耶穌是誰</span>
+  </div>
+  <div class="email-body" style="background:#E8F5E9">
+    <div class="subject-line">📨 今日主題：<em>【Day 14】「神愛世人」——這四個字到底是什麼意思？</em></div>
+    <hr style="border:none;border-top:1px solid #C8E6C9;margin:14px 0">
+    <p class="opener">「神愛世人，甚至將祂的獨生子賜給他們。」這一句話，是全聖經被引用最多的一句。但它到底是什麼意思？今天這一章，耶穌親口告訴一個深夜來拜訪祂的學者。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=約翰福音&ch=03" class="read-btn" style="background:#2E7D32">📖 今天讀：約翰福音 第03章〈重生的教導與神愛世人〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #2E7D32;background:#C8E6C9">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q1</span>你有沒有真實地經歷重生——不只是宗教知識或道德改善，而是內心被聖靈更新的全新開始？就像蛹蛻變成蝴蝶是質的改變而非量的累積，你有沒有讓神的靈在你裏面作真實的更新？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q2</span>「神愛世人」這四個字對你是頭腦的道理還是心裏的確據？就像父母對孩子的愛不只是理論而是每天的行動，你有沒有讓神對你個人的愛成為你生命力量的泉源？</div>
+      <div class="q-item"><span class="q-num" style="color:#2E7D32">Q3</span>在你的服事、人際關係和事業中，你有沒有讓基督和他人越來越大，讓自己越來越小的心志？就像燈光不是為了照亮自己而是照亮所在的空間，你的生命有沒有以彰顯基督而非突顯自己為目標？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day15">
+  <div class="email-header" style="background:#1565C0">
+    <span class="day-badge">Day 15</span>
+    <span class="week-label">第三週：十字架、復活與教會誕生</span>
+  </div>
+  <div class="email-body" style="background:#E3F2FD">
+    <div class="subject-line">📨 今日主題：<em>【Day 15】在最後一頓晚餐，他說了什麼？</em></div>
+    <hr style="border:none;border-top:1px solid #BBDEFB;margin:14px 0">
+    <p class="opener">這是耶穌最後一次和門徒吃飯。他說，這個餅是我的身體，這個杯是我的血。然後他去了一個園子，跪下來禱告，汗如血滴。今天讀的，是那個夜晚最後幾個小時的記錄。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=路加福音&ch=22" class="read-btn" style="background:#1565C0">📖 今天讀：路加福音 第22章〈最後晚餐與客西馬尼的禱告〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #1565C0;background:#BBDEFB">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q1</span>每次你領受聖餐，有沒有真實地思念基督的犧牲，讓這個記念更新你對祂的愛和委身？就像每年的紀念日讓人重新感受某段關係的意義，你願意讓聖餐成為你生命中最深刻的屬靈記念嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q2</span>你有沒有在軟弱和失敗中，感受到耶穌「轉身看你」的眼光——不是定罪，而是帶着愛和召喚的眼神？就像父母的一個眼神能讓做錯事的孩子瞬間懊悔和改變，你願意讓耶穌的目光重新找到你嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q3</span>在你最難熬、最想逃跑的處境中，你有沒有能力像耶穌一樣，誠實說出你的感受，同時把意志交給神？就像一位運動員在身體極限時仍選擇信任教練的計劃，你願意在「客西馬尼」時刻說「只要成就你的意思」嗎？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day16">
+  <div class="email-header" style="background:#1565C0">
+    <span class="day-badge">Day 16</span>
+    <span class="week-label">第三週：十字架、復活與教會誕生</span>
+  </div>
+  <div class="email-body" style="background:#E3F2FD">
+    <div class="subject-line">📨 今日主題：<em>【Day 16】「真理是什麼？」——他問完就轉身走了</em></div>
+    <hr style="border:none;border-top:1px solid #BBDEFB;margin:14px 0">
+    <p class="opener">羅馬總督問耶穌：「真理是什麼？」然後沒有等回答就轉身走了出去。這個細節在兩千年後讀起來，仍然讓人覺得刺痛。今天這一章，記錄了耶穌被捕那一夜最戲劇性的幾個場面。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=約翰福音&ch=18" class="read-btn" style="background:#1565C0">📖 今天讀：約翰福音 第18章〈被捕、彼得不認主與彼拉多的審訊〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #1565C0;background:#BBDEFB">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q1</span>你有沒有「凡屬真理的人就聽我的話」——認出耶穌的聲音並跟從？就像天生對音樂有感受力的人會被真正的音樂深深打動，你的心靈有沒有對耶穌的聲音有這樣的敏感和回應？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q2</span>你有沒有在面對關於真理和人生意義的問題時，真正停下來尋找答案，而非轉身離去繼續忙碌？就像問了緊急的問題卻沒有等待回答，你有沒有讓自己真正停在耶穌面前，尋找那個終極的回答？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q3</span>你在面對你不願意的處境時，有沒有能力說出類似的話——承認這是神給你的，並選擇接受？就像苦藥雖苦卻是治病所需，你願意讓耶穌的順服態度成為你面對人生苦杯的模型嗎？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day17">
+  <div class="email-header" style="background:#1565C0">
+    <span class="day-badge">Day 17</span>
+    <span class="week-label">第三週：十字架、復活與教會誕生</span>
+  </div>
+  <div class="email-body" style="background:#E3F2FD">
+    <div class="subject-line">📨 今日主題：<em>【Day 17】「成了！」——這兩個字是什麼意思？</em></div>
+    <hr style="border:none;border-top:1px solid #BBDEFB;margin:14px 0">
+    <p class="opener">他在十字架上說的最後一句話，只有兩個字：「成了。」不是「結束了」，是「完成了」。今天這一章，是整個故事最沉重、也最重要的一天。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=約翰福音&ch=19" class="read-btn" style="background:#1565C0">📖 今天讀：約翰福音 第19章〈受難、十字架與「成了！」〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #1565C0;background:#BBDEFB">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q1</span>「成了！」這個宣告有沒有真實地進入你的心，讓你從靠行為換取神恩典的努力中得釋放？就像繳清的賬單讓人徹底放下，你有沒有讓基督十字架「成了」的完整性成為你靈魂安息的根基？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q2</span>在你自己最掙扎的時候，你有沒有仍然顧念周圍的人的需要？就像急救員在災難現場仍然訓練有素地照顧每一個傷者，你願意讓耶穌這種即使在苦難中仍然顧念他人的愛，塑造你的生命嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q3</span>耶穌是你真正的王嗎——不只是名義上的主，而是在你的決策、時間、金錢和關係上都有主權的王？就像一個國家宣稱尊重某法律但實際行為完全相反，你的生活方式有沒有真正讓耶穌作王？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day18">
+  <div class="email-header" style="background:#1565C0">
+    <span class="day-badge">Day 18</span>
+    <span class="week-label">第三週：十字架、復活與教會誕生</span>
+  </div>
+  <div class="email-body" style="background:#E3F2FD">
+    <div class="subject-line">📨 今日主題：<em>【Day 18】她在墓園裡哭，然後有人叫了她的名字</em></div>
+    <hr style="border:none;border-top:1px solid #BBDEFB;margin:14px 0">
+    <p class="opener">清早，抹大拉的馬利亞來到墓前，看見石頭移開了，她哭了起來。然後有一個人叫了她的名字——只是她的名字，沒有別的。今天讀的，是復活那個早晨最私密的一幕。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=約翰福音&ch=20" class="read-btn" style="background:#1565C0">📖 今天讀：約翰福音 第20章〈復活與多馬的信仰告白〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #1565C0;background:#BBDEFB">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q1</span>你有沒有感受過復活的主用你的名字呼喚你——在禱告中、在聖言裏、在生命的轉折點上？就像在人群中聽到有人叫自己的名字會立刻轉過去，你有沒有讓耳朵開着，去聽那位認識你名字的主的呼喚？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q2</span>你有沒有因自己「沒有親眼見到」而覺得信仰不夠紮實？就像法庭上的陪審員憑可靠的證詞作出裁決而不需要親臨現場，你願意讓門徒的可靠見證、聖靈的內在見證成為你信心堅實的根基嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q3</span>你有沒有從對耶穌身份的智識認識，進入「我的主！我的神！」這樣個人的信仰告白？就像從讀書了解某人到真正認識那人的那一刻有質的飛躍，你有沒有讓你對耶穌的信仰成為最個人、最深切的認信？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day19">
+  <div class="email-header" style="background:#1565C0">
+    <span class="day-badge">Day 19</span>
+    <span class="week-label">第三週：十字架、復活與教會誕生</span>
+  </div>
+  <div class="email-body" style="background:#E3F2FD">
+    <div class="subject-line">📨 今日主題：<em>【Day 19】兩個沮喪的人走在路上，有人跟上來了</em></div>
+    <hr style="border:none;border-top:1px solid #BBDEFB;margin:14px 0">
+    <p class="opener">兩個失望的人走在回鄉的路上，有個陌生人跟上來，一路上和他們談話，給他們講聖經。到了要分開的地方，他們挽留他留下來吃飯。擘餅的時候，他們認出他了——然後他消失了。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=路加福音&ch=24" class="read-btn" style="background:#1565C0">📖 今天讀：路加福音 第24章〈復活顯現與往普天下傳福音的使命〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #1565C0;background:#BBDEFB">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q1</span>你有沒有在讀聖經或聽道時，心裏感受到那種火熱——彷彿有什麼被點燃了？就像好書能讓人廢寢忘食，你願意尋求那種讓你心火熱的與神話語的相遇，讓聖經不只是功課而是靈性的滋養嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q2</span>你有沒有有時候在「死人中找活人」——在已過去的事、失去的關係或舊的生命中尋找意義，卻忘記復活的基督是活的，就在今天與你同行？就像盯着空的舊籠卻忘了鳥已經自由地飛翔，你願意把目光轉向那位復活、仍然活着的主嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q3</span>你有沒有認識到自己是「這些事的見證」，並且依靠聖靈的能力來活出這個見證？就像法庭的證人只需如實陳述所見所聞，你願意以你親身所經歷的神的恩典，成為你向周圍人傳達的真實見證嗎？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day20">
+  <div class="email-header" style="background:#1565C0">
+    <span class="day-badge">Day 20</span>
+    <span class="week-label">第三週：十字架、復活與教會誕生</span>
+  </div>
+  <div class="email-body" style="background:#E3F2FD">
+    <div class="subject-line">📨 今日主題：<em>【Day 20】一個演講，三千人當場改變心意</em></div>
+    <hr style="border:none;border-top:1px solid #BBDEFB;margin:14px 0">
+    <p class="opener">五旬節那天，有一百二十個人聚集在一起，忽然有大風的聲音充滿房間，舌頭如火焰落在他們頭上。彼得站起來講了一篇話——三千個人當場決定受洗。這就是教會的第一天。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=使徒行傳&ch=02" class="read-btn" style="background:#1565C0">📖 今天讀：使徒行傳 第02章〈五旬節聖靈降臨與初代教會〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #1565C0;background:#BBDEFB">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q1</span>你有沒有真實地領受和持續地仰賴聖靈的充滿，讓祂成為你信仰生活的能力來源？就像電器需要插電才能運作，你的信仰生活有沒有與聖靈的能力保持連接？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q2</span>你有沒有在你的信仰群體中恒心建立這四個習慣——學習神的話、真實的群體相交、聖餐、禱告？就像一株植物需要陽光水土礦物質同時供應，你的靈命有沒有同時培養這四個方面？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q3</span>你的生命和你所在的教會群體，有沒有因為真實的基督徒生命而自然地吸引人、帶出增長？就像一個真正美好的地方人們會主動推薦給朋友，你的信仰生活有沒有成為吸引人認識基督的見證？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day21">
+  <div class="email-header" style="background:#1565C0">
+    <span class="day-badge">Day 21</span>
+    <span class="week-label">第三週：十字架、復活與教會誕生</span>
+  </div>
+  <div class="email-body" style="background:#E3F2FD">
+    <div class="subject-line">📨 今日主題：<em>【Day 21】歷史上最驚人的生命轉變之一</em></div>
+    <hr style="border:none;border-top:1px solid #BBDEFB;margin:14px 0">
+    <p class="opener">他是最兇猛的基督徒迫害者，親眼看著人被石頭打死。然後在一條路上，他突然仆倒在地，聽見有聲音說：「你為什麼逼迫我？」他從那一刻開始，成了完全不同的人。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=使徒行傳&ch=09" class="read-btn" style="background:#1565C0">📖 今天讀：使徒行傳 第09章〈掃羅的悔改與彼得的神蹟〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #1565C0;background:#BBDEFB">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q1</span>你有沒有意識到你如何對待其他信徒，就是如何對待耶穌本身？就像對待老闆的家人等於對待老闆，你有沒有以「我在服事基督」的心態，關心和服事你身邊每一個信徒？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q2</span>你有沒有讓自己對某人的偏見或恐懼，阻礙了你順從神對你的差遣？就像亞拿尼亞雖然害怕仍然順從，你願意克服你心裏的偏見和恐懼，去作神差遣你作的事嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#1565C0">Q3</span>你有沒有注意到教會的「得平安、被建立、敬畏主、蒙聖靈安慰」與教會的增長之間的關聯？就像健康的樹自然結出果子，你有沒有把你個人的屬靈健康看作對教會增長的重要貢獻？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day22">
+  <div class="email-header" style="background:#6A1B9A">
+    <span class="day-badge">Day 22</span>
+    <span class="week-label">第四週：這信仰對我意味著什麼</span>
+  </div>
+  <div class="email-body" style="background:#F3E5F5">
+    <div class="subject-line">📨 今日主題：<em>【Day 22】「在我還很糟糕的時候，他就愛我了」</em></div>
+    <hr style="border:none;border-top:1px solid #E1BEE7;margin:14px 0">
+    <p class="opener">「在我們還作罪人的時候，基督就為我們死。」這句話的邏輯，和所有人際關係的邏輯都不一樣：不是「你好了我才愛你」，而是「你最糟的時候我已經來了」。今天這一章解釋這是什麼意思。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=羅馬書&ch=05" class="read-btn" style="background:#6A1B9A">📖 今天讀：羅馬書 第05章〈稱義帶來的和平與基督的愛〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #6A1B9A;background:#E1BEE7">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q1</span>你有沒有真實地相信神對你的愛不是建立在你的表現或狀態上，而是在你最糟糕的時候就已確立的？就像最深刻的父母之愛在孩子最不可愛的時候仍然不變，你有沒有讓「在我還作罪人的時候」成為你信仰安全感的根基？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q2</span>你有沒有學習在困難中「歡歡喜喜」——不是假裝快樂，而是看見神透過這困難在你身上工作的目的？就像運動員知道痛苦的訓練是為了更好的競技表現，你有沒有讓患難成為你靈命成長的機會而非絕望的理由？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q3</span>你有沒有真實地活在「與神相和」的狀態中，而非感到自己還需要不斷努力才能被神接納？就像和解後的關係不再有隔閡，你有沒有讓稱義的確信帶出你與神深刻的和平與安息？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day23">
+  <div class="email-header" style="background:#6A1B9A">
+    <span class="day-badge">Day 23</span>
+    <span class="week-label">第四週：這信仰對我意味著什麼</span>
+  </div>
+  <div class="email-body" style="background:#F3E5F5">
+    <div class="subject-line">📨 今日主題：<em>【Day 23】世界上關於愛，最美的十五行字</em></div>
+    <hr style="border:none;border-top:1px solid #E1BEE7;margin:14px 0">
+    <p class="opener">「愛是恆久忍耐，又有恩慈；愛是不嫉妒，不自誇，不張狂……」這十五行字，常常在婚禮上被朗讀。但這不只是愛情的描述——它是人類關係中最高的標準，也是最誠實的一面鏡子。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=哥林多前書&ch=13" class="read-btn" style="background:#6A1B9A">📖 今天讀：哥林多前書 第13章〈愛是最妙的道路〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #6A1B9A;background:#E1BEE7">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q1</span>你有沒有省察自己的服事、奉獻和宗教行為，確認它們是從真實的愛出發，而非出於義務感、自我形象或期待回報？就像食物需要有滋養成分才能讓人得益，你的服事有沒有愛這個「核心滋養成分」？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q2</span>你有沒有把愛的這十五個品質作為鏡子，看看你對最親近的人（家人、好友）的愛在哪些方面仍有成長空間？就像訓練項目的清單幫助運動員識別需要加強的部分，你願意讓愛的描述成為你靈命成長的具體方向嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q3</span>你有沒有讓「愛是最大的」這個真理影響你在教會生活中的優先次序——把建立真實的愛的關係，放在追求恩賜和宗教成就之上？就像橋的承重能力比橋的外觀更重要，你有沒有讓愛成為你所有服事和關係的根本支撐？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day24">
+  <div class="email-header" style="background:#6A1B9A">
+    <span class="day-badge">Day 24</span>
+    <span class="week-label">第四週：這信仰對我意味著什麼</span>
+  </div>
+  <div class="email-body" style="background:#F3E5F5">
+    <div class="subject-line">📨 今日主題：<em>【Day 24】「耶穌哭了」——為什麼神會哭？</em></div>
+    <hr style="border:none;border-top:1px solid #E1BEE7;margin:14px 0">
+    <p class="opener">「耶穌哭了。」這是全聖經最短的一節，只有三個字。但這三個字說的是：神哭了。為什麼？今天讀的，是耶穌最大的一個神蹟——以及在那之前，他先做的那件事。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=約翰福音&ch=11" class="read-btn" style="background:#6A1B9A">📖 今天讀：約翰福音 第11章〈拉撒路復活與密謀殺耶穌〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #6A1B9A;background:#E1BEE7">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q1</span>你對「復活在我，生命也在我」有沒有個人的、確定的信仰，而非只是頭腦的知識？就像知道某人會游泳和相信他能救你溺水是不同的程度，你有沒有讓這個真理成為你面對死亡和苦難的確據？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q2</span>在你最深的悲傷和痛苦中，你有沒有感受到那位「會哭的神」與你同在？就像知道有人真正理解你的痛苦讓悲傷不那麼孤單，你願意讓耶穌的眼淚告訴你祂真實地感受到你所承受的嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q3</span>你生命中有沒有「需要挪開的石頭」——某個阻礙你進入神更豐盛生命的障礙？就像挪開石頭是人力可以做的，而叫死人復活是只有耶穌能作的，你願意盡你所能行動，讓耶穌作那只有祂能作的事嗎？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day25">
+  <div class="email-header" style="background:#6A1B9A">
+    <span class="day-badge">Day 25</span>
+    <span class="week-label">第四週：這信仰對我意味著什麼</span>
+  </div>
+  <div class="email-body" style="background:#F3E5F5">
+    <div class="subject-line">📨 今日主題：<em>【Day 25】「沒有人能從我手裡把你奪去」</em></div>
+    <hr style="border:none;border-top:1px solid #E1BEE7;margin:14px 0">
+    <p class="opener">「我賜給他們永生；他們永不滅亡，誰也不能從我手裡把他們奪去。」這是一個承諾。今天這一章，耶穌用「好牧人」來說明祂和每一個跟從祂的人之間，是什麼樣的關係。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=約翰福音&ch=10" class="read-btn" style="background:#6A1B9A">📖 今天讀：約翰福音 第10章〈好牧人的比喻與永恆的保守〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #6A1B9A;background:#E1BEE7">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q1</span>你現在的生命有沒有「豐盛」的特質——不只是存活，而是真實的意義、喜樂和飽足？就像健康不只是不生病而是充滿活力，你有沒有在與耶穌的關係中經歷那種豐盛的生命？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q2</span>你有沒有培養「認識牧人聲音」的能力——在日常生活中辨別耶穌的引導，與其他的聲音分辨？就像認識家人的聲音在電話裏不需多說，你與耶穌的關係是否親密到讓你能在靈裏辨認祂的聲音？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q3</span>你有沒有讓耶穌「雙手保守」你的確據，成為你生命中的安全感基礎？就像知道被強壯的人保護讓人行路有安全感，你願意把這個「永不滅亡、誰也不能奪去」的應許作為每天生命的確信嗎？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day26">
+  <div class="email-header" style="background:#6A1B9A">
+    <span class="day-badge">Day 26</span>
+    <span class="week-label">第四週：這信仰對我意味著什麼</span>
+  </div>
+  <div class="email-body" style="background:#F3E5F5">
+    <div class="subject-line">📨 今日主題：<em>【Day 26】「我是道路、真理、生命」——這是什麼意思？</em></div>
+    <hr style="border:none;border-top:1px solid #E1BEE7;margin:14px 0">
+    <p class="opener">「我就是道路、真理、生命。」如果你只能讀耶穌說過的一句話，很多人會選這一句。今天這一章是耶穌被捕前一晚，對門徒說的話——關於他去哪裡，以及他會留下什麼。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=約翰福音&ch=14" class="read-btn" style="background:#6A1B9A">📖 今天讀：約翰福音 第14章〈我是道路真理生命與保惠師的應許〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #6A1B9A;background:#E1BEE7">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q1</span>「我就是道路、真理、生命」對你不只是頭腦的信條，而是每天生活的實際嗎？就像地圖必須被使用才有價值，你有沒有每天走在這條道路上，活在這個真理裏，汲取這個生命的泉源？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q2</span>你有沒有真實地領受耶穌所賜的「不像世人所賜的」那種平安？就像安心地熟睡和輾轉反側是完全不同的體驗，你有沒有讓這個超越環境的平安進入你最憂愁和膽怯的地方？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q3</span>在你最孤單、最感到被遺棄的時刻，你有沒有讓耶穌「我不撇下你們為孤兒」的應許成為你的確信？就像即使在黑暗中也知道父母在旁邊讓孩子不懼怕，你願意讓聖靈的同在成為你每天的安慰嗎？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day27">
+  <div class="email-header" style="background:#6A1B9A">
+    <span class="day-badge">Day 27</span>
+    <span class="week-label">第四週：這信仰對我意味著什麼</span>
+  </div>
+  <div class="email-body" style="background:#F3E5F5">
+    <div class="subject-line">📨 今日主題：<em>【Day 27】一個在監獄裡寫的快樂指南</em></div>
+    <hr style="border:none;border-top:1px solid #E1BEE7;margin:14px 0">
+    <p class="opener">這封信是在監獄裡寫的，主題卻是喜樂。「要在主裡常常喜樂；我再說，你們要喜樂。」這不是空話，而是一個在最壞處境裡真實活出來的人說的話。今天是第27天，倒數第二章。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=腓立比書&ch=04" class="read-btn" style="background:#6A1B9A">📖 今天讀：腓立比書 第04章〈一切環境中的知足與平安的秘訣〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #6A1B9A;background:#E1BEE7">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q1</span>你有沒有在感到憂慮的時刻，立刻轉向禱告——把憂慮的事具體地帶到神面前，同時帶着感謝？就像在黑暗中即時開燈而非埋怨黑暗，你有沒有把「禱告替換憂慮」練習成你的第一反應？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q2</span>你現在的生命處境，是你在學習知足的課堂，還是你認為需要先改變處境才能開始好好生活？就像體操選手在任何場地都保持水準，你有沒有讓「靠着加給我力量的」成為你在任何處境中都能知足的根基？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q3</span>你有沒有主動管理你的思想輸入——你所閱讀、觀看和思考的內容——讓它更多地符合這個清單，而非任由負面、污穢或虛假的思想佔據你的心？就像選擇健康的飲食需要主動選擇和有時拒絕，你有沒有主動地選擇你思念的對象？</div>
+    </div>
+  </div>
+</div>
+<div class="email-card" id="day28">
+  <div class="email-header" style="background:#6A1B9A">
+    <span class="day-badge">Day 28</span>
+    <span class="week-label">第四週：這信仰對我意味著什麼</span>
+  </div>
+  <div class="email-body" style="background:#F3E5F5">
+    <div class="subject-line">📨 今日主題：<em>【Day 28】「你愛我嗎？」——他問了三次</em></div>
+    <hr style="border:none;border-top:1px solid #E1BEE7;margin:14px 0">
+    <p class="opener">復活後的耶穌在海邊生了一堆炭火，烤了魚和餅，等門徒上岸吃早餐。吃完之後，他問彼得：「你愛我嗎？」問了三次。今天是第28天，最後一章。讀完之後，這個問題也在等你回答。</p>
+    <div class="read-btn-wrap">
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v5.html?book=約翰福音&ch=21" class="read-btn" style="background:#6A1B9A">📖 今天讀：約翰福音 第21章〈提比哩亞海邊的早餐與彼得的恢復〉</a>
+    </div>
+    <div class="questions" style="border-left:4px solid #6A1B9A;background:#E1BEE7">
+      <div class="q-label">💬 讀完之後，可以想一想：</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q1</span>你有沒有在失敗之後，讓耶穌的「你愛我麼」進入你的心，在那裏找到更深的恢復和更新的委身？就像骨折後正確的康復治療讓骨頭比原來更堅固，你願意讓神透過你的失敗和恢復，把你建立得更堅固嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q2</span>你有沒有在日常生活的平凡時刻，注意到復活的主正在等候與你相遇？就像最深刻的對話有時發生在廚房餐桌而非正式場合，你願意在你生活的平常處找到那位說「來吃早飯」的主嗎？</div>
+      <div class="q-item"><span class="q-num" style="color:#6A1B9A">Q3</span>你有沒有習慣將自己的信仰生活和他人比較，而不是專注在神對你個人的呼召？就像每條跑道上的選手只需要跑好自己那條道，你願意放下對他人的關注，把焦點放在神給你獨特的「跟從我」上嗎？</div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

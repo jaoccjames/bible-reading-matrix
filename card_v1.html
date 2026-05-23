@@ -409,6 +409,23 @@ function downloadCard() {
   });
 }
 
+// ── iframe 偵測：在 iframe 裡時移除頁面背景、padding，隱藏返回連結 ──────────
+(function() {
+  const inIframe = window.self !== window.top;
+  if (inIframe) {
+    document.body.style.background = 'transparent';
+    document.body.style.padding = '0';
+    document.body.style.minHeight = 'auto';
+    document.body.style.justifyContent = 'flex-start';
+    // 外框陰影也不需要（modal 本身已有陰影）
+    const inner = document.getElementById('vcModalInner');
+    if (inner) inner.style.boxShadow = 'none';
+    // 返回連結隱藏
+    const back = document.getElementById('backLink');
+    if (back) back.style.display = 'none';
+  }
+})();
+
 init();
 </script>
 </body>

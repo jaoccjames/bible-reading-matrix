@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>經文卡</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    :root {
+      --teal: #0b7285;
+      --blue: #3498db;
+      --bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+        "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+    }
+
+    /* ── 狀態訊息 ── */
+    #statusMsg {
+      font-size: 15px;
+      color: #555;
+      text-align: center;
+      padding: 40px;
+    }
+    #statusMsg.err { color: #b00020; }
+
+    /* ── 卡片容器（截圖範圍外） ── */
+    #cardWrap {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* ── 經文卡外框（DDE8F0 背景 + 圓角，與 index_v6 一致） ── */
+    #vcModalInner {
+      background: #DDE8F0;
+      border-radius: 28px;
+      padding: 8px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+    }
+
+    /* ── 經文卡主體 ── */
+    .vc-outer {
+      background: #F2F7FA;
+      border-radius: 20px;
+      padding: 36px 28px 32px;
+      font-family: 'Georgia', '新細明體', serif;
+    }
+    .vc-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .vc-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      padding: 4px 13px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-family: sans-serif;
+    }
+    .vc-icon-lg { font-size: 24px; line-height: 1; }
+    .vc-title {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.38;
+      margin: 0 0 5px;
+    }
+    .vc-subtitle {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      margin: 0 0 16px;
+      font-family: sans-serif;
+    }
+    .vc-divider { width: 100%; height: 0.5px; margin: 0 0 18px; }
+    .vc-body {
+      font-size: 14px;
+      line-height: 1.9;
+      margin: 0 0 22px;
+    }
+    .vc-verse-block {
+      border-radius: 12px;
+      padding: 15px 18px 14px;
+      overflow: hidden;
+    }
+    .vc-drop-cap {
+      float: left;
+      font-size: 46px;
+      font-weight: 700;
+      line-height: 0.82;
+      margin-right: 4px;
+      margin-top: 4px;
+    }
+    .vc-verse-text {
+      font-size: 14px;
+      line-height: 1.8;
+      margin: 0 0 8px;
+      overflow: hidden;
+    }
+    .vc-verse-ref {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-family: sans-serif;
+      clear: both;
+      padding-top: 3px;
+    }
+
+    /* ── 下載按鈕（截圖範圍外） ── */
+    .vc-dl-wrap {
+      padding: 10px 0 4px;
+      text-align: center;
+    }
+    .vc-dl-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      max-width: 340px;
+      padding: 13px 0;
+      border: none;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      font-family: sans-serif;
+      transition: all 0.2s;
+      color: #fff;
+    }
+    .vc-dl-btn:hover { filter: brightness(0.9); transform: translateY(-1px); }
+    .vc-dl-btn:disabled { opacity: 0.6; cursor: default; transform: none; }
+
+    /* ── 返回連結 ── */
+    #backLink {
+      font-size: 13px;
+      color: var(--teal);
+      text-decoration: none;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+      margin-top: 4px;
+    }
+    #backLink:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <div id="statusMsg">載入經文卡資料中…</div>
+
+  <div id="cardWrap">
+    <div id="vcModalInner">
+      <!-- 截圖主體 -->
+      <div class="vc-outer" id="vcCard">
+        <div class="vc-top-row">
+          <div class="vc-tag" id="vcTag"></div>
+          <div class="vc-icon-lg" id="vcIconLg"></div>
+        </div>
+        <div class="vc-title" id="vcTitle"></div>
+        <div class="vc-subtitle" id="vcSubtitle"></div>
+        <div class="vc-divider" id="vcDivider"></div>
+        <div class="vc-body" id="vcBody"></div>
+        <div class="vc-verse-block" id="vcVerseBlock">
+          <div class="vc-verse-text" id="vcVerseText"></div>
+          <div class="vc-verse-ref" id="vcVerseRef"></div>
+        </div>
+      </div>
+      <!-- 下載按鈕 -->
+      <div class="vc-dl-wrap">
+        <button class="vc-dl-btn" id="vcDlBtn" onclick="downloadCard()">
+          ⬇️ 下載經文卡
+        </button>
+      </div>
+    </div>
+
+    <a id="backLink" href="#" target="_blank">↩ 返回聖經研讀頁面</a>
+  </div>
+
+<script>
+// ── 路徑設定（與 index_v6 相同） ────────────────────────────────────────────
+const RAW = 'https://raw.githubusercontent.com/jaoccjames/bible-reading-matrix/main/data';
+const FILE_CATALOG    = RAW + '/' + encodeURIComponent('每日讀經方陣_聖經目錄_V1腓立比.csv');
+const FILE_VERSE_CARD = RAW + '/' + encodeURIComponent('經文卡_1189章.csv');
+// ──────────────────────────────────────────────────────────────────────────
+
+// 領域 → 色票（與 index_v6 完全一致）
+const DOMAIN_COLORS = {
+  '信仰': { tag:'#C0D8E8', tagText:'#1A4A6A', divider:'#90B8D0', verse:'#C0D8E8', verseText:'#0A2030', dropCap:'#1A6090', ref:'#1A6090', icon:'💙' },
+  '禱告': { tag:'#D8ECD8', tagText:'#1A4A1A', divider:'#90C090', verse:'#D8ECD8', verseText:'#0A200A', dropCap:'#1A7A1A', ref:'#1A7A1A', icon:'🙌' },
+  '服事': { tag:'#EDD9BC', tagText:'#7A4A18', divider:'#C8A060', verse:'#EDD9BC', verseText:'#3A2408', dropCap:'#A06820', ref:'#A06820', icon:'✨' },
+  '品格': { tag:'#E8D8F0', tagText:'#4A1A6A', divider:'#B090C8', verse:'#E8D8F0', verseText:'#200A30', dropCap:'#6A1A90', ref:'#6A1A90', icon:'⚖️' },
+  '敬拜': { tag:'#F0E8C8', tagText:'#6A4A10', divider:'#C8A830', verse:'#F0E8C8', verseText:'#301808', dropCap:'#8A6010', ref:'#8A6010', icon:'🎵' },
+  '悔改': { tag:'#F0D8D8', tagText:'#6A1A1A', divider:'#C89090', verse:'#F0D8D8', verseText:'#300A0A', dropCap:'#901A1A', ref:'#901A1A', icon:'🕊️' },
+  '見證': { tag:'#D8ECD8', tagText:'#1A5A1A', divider:'#80B880', verse:'#D8ECD8', verseText:'#0A280A', dropCap:'#1A7A1A', ref:'#1A7A1A', icon:'🌟' },
+  '奉獻': { tag:'#F5E8D0', tagText:'#7A4A18', divider:'#C8A060', verse:'#F5E8D0', verseText:'#3A2408', dropCap:'#A06820', ref:'#A06820', icon:'💝' },
+  '領袖': { tag:'#D8E8F0', tagText:'#1A3A6A', divider:'#8090C8', verse:'#D8E8F0', verseText:'#0A1830', dropCap:'#1A3A90', ref:'#1A3A90', icon:'👑' },
+  '財務': { tag:'#D8F0D8', tagText:'#1A5A1A', divider:'#70B870', verse:'#D8F0D8', verseText:'#0A280A', dropCap:'#1A6A1A', ref:'#1A6A1A', icon:'🌱' },
+  '婚姻': { tag:'#F0D8E8', tagText:'#6A1A4A', divider:'#C880B0', verse:'#F0D8E8', verseText:'#300A20', dropCap:'#901A6A', ref:'#901A6A', icon:'💑' },
+};
+const DEFAULT_COLORS = { tag:'#E8E8E8', tagText:'#444', divider:'#CCC', verse:'#E8E8E8', verseText:'#222', dropCap:'#555', ref:'#555', icon:'📖' };
+
+const $ = id => document.getElementById(id);
+
+function esc(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+async function fetchText(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return r.text();
+}
+
+function parseCSV(text) {
+  return new Promise((resolve, reject) => {
+    Papa.parse(text, {
+      header: true, skipEmptyLines: true,
+      complete: ({ data }) => resolve(data),
+      error: reject
+    });
+  });
+}
+
+// ── 書卷名 → 卷次 對照（從目錄 CSV 讀取，這裡預先內嵌常用對照） ──────────────
+// 完整對照在目錄 CSV 中；這裡先設空物件，init() 後填入
+let bookMap = {}; // zh → n
+
+// ── 主流程 ────────────────────────────────────────────────────────────────────
+async function init() {
+  const params   = new URLSearchParams(window.location.search);
+  const bookParam = params.get('book');
+  const chParam   = params.get('ch');
+
+  if (!bookParam || !chParam) {
+    showErr('請在網址加上 ?book=書卷名&ch=章次，例如 ?book=歷代志下&ch=24');
+    return;
+  }
+
+  try {
+    const [catText, vcText] = await Promise.all([
+      fetchText(FILE_CATALOG),
+      fetchText(FILE_VERSE_CARD)
+    ]);
+
+    const catRows = await parseCSV(catText);
+    for (const r of catRows) {
+      if (r['卷次'] && r['中文卷名']) {
+        bookMap[r['中文卷名']] = +r['卷次'];
+      }
+    }
+
+    // 查書卷號
+    const bookNum = bookMap[bookParam]
+      || Object.entries(bookMap).find(([k]) => k.startsWith(bookParam))?.[1];
+
+    if (!bookNum) {
+      showErr('找不到書卷「' + bookParam + '」，請確認書卷中文全名，例如：歷代志下');
+      return;
+    }
+
+    const ch = parseInt(chParam, 10);
+    if (isNaN(ch) || ch < 1) {
+      showErr('章次格式不正確：' + chParam);
+      return;
+    }
+
+    // 查經文卡
+    const reVC = /^(\d+).+?第0*(\d+)[章篇]$/;
+    const vcRows = await parseCSV(vcText);
+    let vc = null;
+    for (const r of vcRows) {
+      const m = (r['卷章名'] || '').match(reVC);
+      if (m && +m[1] === bookNum && +m[2] === ch) {
+        vc = {
+          domain: r['領域'] || '',
+          title:  r['標題'] || '',
+          body:   r['勉勵'] || '',
+          verse:  r['經文'] || '',
+        };
+        break;
+      }
+    }
+
+    if (!vc) {
+      showErr('找不到「' + bookParam + '第' + ch + '章」的經文卡（資料尚未建立）');
+      return;
+    }
+
+    renderCard(vc, bookParam, ch);
+
+  } catch(e) {
+    showErr('載入失敗：' + e.message);
+  }
+}
+
+function showErr(msg) {
+  $('statusMsg').textContent = '⚠️ ' + msg;
+  $('statusMsg').classList.add('err');
+}
+
+function renderCard(vc, bookName, ch) {
+  const domain = vc.domain || '信仰';
+  const colors = DOMAIN_COLORS[domain] || DEFAULT_COLORS;
+
+  // 拆解經文
+  const verseRaw = vc.verse || '';
+  const refMatch = verseRaw.match(/《([^》]+)》\s*$/);
+  const refText  = refMatch ? '📖 ' + refMatch[0] : '';
+  const verseBody = refMatch
+    ? verseRaw.slice(0, verseRaw.lastIndexOf(refMatch[0])).trim()
+    : verseRaw;
+  const firstChar = verseBody.charAt(0);
+  const restVerse = verseBody.slice(1);
+
+  // 標題拆行
+  const titleRaw = vc.title || '';
+  const titleHTML = titleRaw.replace(/你的/, '<br>你的');
+
+  // 套色
+  $('vcTag').style.background = colors.tag;
+  $('vcTag').style.color      = colors.tagText;
+  $('vcTag').innerHTML        = colors.icon + ' ' + esc(domain);
+  $('vcIconLg').textContent   = '✨';
+  $('vcTitle').innerHTML      = titleHTML;
+  $('vcTitle').style.color    = '#152A3A';
+  $('vcSubtitle').textContent = bookName + ' 第' + ch + '章';
+  $('vcSubtitle').style.color = colors.ref;
+  $('vcDivider').style.background = colors.divider;
+  $('vcBody').innerHTML       = esc(vc.body).replace(/\n/g, '<br>');
+  $('vcBody').style.color     = '#2A3848';
+  $('vcVerseBlock').style.background = colors.verse;
+  $('vcVerseText').innerHTML  =
+    '<span class="vc-drop-cap" style="color:' + colors.dropCap + '">' + esc(firstChar) + '</span>' +
+    esc(restVerse);
+  $('vcVerseText').style.color = colors.verseText;
+  $('vcVerseRef').textContent  = refText;
+  $('vcVerseRef').style.color  = colors.ref;
+
+  // 下載按鈕顏色
+  const dlBtn = $('vcDlBtn');
+  dlBtn.style.background = colors.dropCap;
+  dlBtn.textContent = '⬇️ 下載經文卡';
+
+  // 返回連結
+  const backUrl = 'https://jaoccjames.github.io/bible-reading-matrix/index_v6.html'
+    + '?book=' + encodeURIComponent(bookName) + '&ch=' + ch;
+  $('backLink').href = backUrl;
+
+  // 更新頁面標題
+  document.title = '經文卡｜' + bookName + '第' + ch + '章';
+
+  // 顯示卡片
+  $('statusMsg').style.display = 'none';
+  $('cardWrap').style.display = 'flex';
+}
+
+function downloadCard() {
+  const btn = $('vcDlBtn');
+  const origText = btn.textContent;
+  btn.textContent = '⏳ 產生圖片中…';
+  btn.disabled = true;
+
+  // 取得書卷名與章次（從 subtitle）
+  const subtitleEl = $('vcSubtitle');
+  const subtitleText = subtitleEl ? subtitleEl.textContent : '經文卡';
+
+  html2canvas($('vcCard'), {
+    scale: 3,
+    backgroundColor: null,
+    useCORS: true,
+    logging: false,
+    allowTaint: true
+  }).then(function(canvas) {
+    const link = document.createElement('a');
+    link.download = '經文卡_' + subtitleText.replace(/\s/g, '') + '.png';
+    link.href = canvas.toDataURL('image/png');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    btn.textContent = '✅ 已下載！';
+    setTimeout(() => {
+      btn.textContent = origText;
+      btn.disabled = false;
+    }, 3000);
+  }).catch(function(err) {
+    btn.textContent = '❌ 下載失敗，請重試';
+    btn.disabled = false;
+    console.error(err);
+  });
+}
+
+init();
+</script>
+</body>
+</html>

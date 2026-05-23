@@ -203,8 +203,9 @@
     /* ── 經文卡 iframe ── */
     #vcFrame{
       width:100%;border:none;border-radius:20px;
-      min-height:580px;display:block;
+      height:400px;display:block;   /* 初始高度，JS 會動態撐高 */
       background:transparent;
+      overflow:hidden;
     }
 
     .err{margin-top:10px;color:#b00020;font-size:13px;display:none;}
@@ -537,6 +538,14 @@ function toggleScripture() {
   i.classList.toggle('open', open);
 }
 
+// ── iframe 高度自動調整（接收 card_v1 回報的內容高度）────────────────────────
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'vcCardHeight') {
+    const frame = $('vcFrame');
+    if (frame) frame.style.height = e.data.height + 'px';
+  }
+});
+
 // ── 經文卡 Modal（iframe 版）────────────────────────────────────────────────
 const CARD_PAGE = 'card_v1.html';   // 與 index_v6.html 同目錄
 
@@ -544,7 +553,9 @@ function openVerseCard() {
   const bookName = currentBook ? currentBook.zh : '';
   const ch = currentCh;
   const src = CARD_PAGE + '?book=' + encodeURIComponent(bookName) + '&ch=' + ch;
-  $('vcFrame').src = src;
+  const frame = $('vcFrame');
+  frame.style.height = '400px';   // 重設初始高度
+  frame.src = src;
   $('vcModal').classList.add('show');
   document.body.style.overflow = 'hidden';
 }

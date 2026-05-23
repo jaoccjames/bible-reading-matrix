@@ -372,6 +372,17 @@ function renderCard(vc, bookName, ch) {
   // 顯示卡片
   $('statusMsg').style.display = 'none';
   $('cardWrap').style.display = 'flex';
+
+  // 回報內容高度給父頁面（讓 iframe 自動撐高，消除雙重捲軸）
+  if (window.self !== window.top) {
+    // 等 DOM 繪製完再量高度
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        const h = document.body.scrollHeight;
+        window.parent.postMessage({ type: 'vcCardHeight', height: h }, '*');
+      }, 80);
+    });
+  }
 }
 
 function downloadCard() {
@@ -417,6 +428,7 @@ function downloadCard() {
     document.body.style.padding = '0';
     document.body.style.minHeight = 'auto';
     document.body.style.justifyContent = 'flex-start';
+    document.body.style.overflow = 'hidden'; // 不讓 iframe 自己出現捲軸
     // 外框陰影也不需要（modal 本身已有陰影）
     const inner = document.getElementById('vcModalInner');
     if (inner) inner.style.boxShadow = 'none';

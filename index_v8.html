@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>每日讀經方陣｜聖經經卷查詢</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#f5f7fa;
+      --text:#111;
+      --muted:#555;
+      --border:#c3cfe2;
+      --accent:#1a6080;
+      --built:#e7f5ff;
+      --unbuilt:#ffffff;
+      --builtChap:#e7f5ff;
+      --teal:#0b7285;
+      --blue:#3498db;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+        "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap{max-width:1050px;margin:0 auto;padding:18px;}
+    h1{margin:8px 0 10px;text-align:center;font-size:26px;letter-spacing:.5px;}
+
+    .breadcrumb{ display:none; }
+    .bc-link{cursor:pointer;color:var(--teal);font-weight:600;text-decoration:underline;}
+    .bc-link:hover{color:var(--blue);}
+    .bc-sep{color:#bbb;}
+    .bc-cur{color:var(--text);font-weight:700;}
+
+    .panel{
+      margin-top:14px;background:var(--card);
+      border:1px solid var(--border);border-radius:14px;padding:14px;
+    }
+    .sectionTitle{
+      display:flex;align-items:center;justify-content:center;
+      margin:2px auto 12px;width:320px;
+      background:var(--teal);color:#fff;font-weight:700;
+      border-radius:6px;padding:10px 12px;letter-spacing:.5px;
+    }
+    .grid{
+      display:grid;grid-template-columns:repeat(5,1fr);
+      gap:0;border:2px solid var(--teal);border-radius:6px;
+      overflow:hidden;background:#fff;width:min(520px,100%);margin:0 auto;
+    }
+    .cell{
+      display:flex;align-items:center;justify-content:center;
+      height:44px;border-right:1px solid var(--teal);
+      border-bottom:1px solid var(--teal);
+      font-size:18px;user-select:none;cursor:pointer;background:var(--built);
+    }
+    .cell:nth-child(5n){border-right:none;}
+    .cell.pad{background:var(--unbuilt);cursor:default;}
+    .cell:hover:not(.pad){filter:brightness(0.93);}
+    .cell.selected{background:var(--teal);color:#fff;font-weight:700;}
+
+    .chapGrid{
+      display:grid;grid-template-columns:repeat(10,1fr);
+      gap:8px;margin-top:8px;
+    }
+    .chap{
+      border:1px solid var(--border);border-radius:10px;
+      padding:10px 0;text-align:center;font-size:14px;
+      background:var(--builtChap);cursor:pointer;
+      color:var(--accent);font-weight:600;
+    }
+    .chap:hover{background:var(--teal);color:#fff;}
+
+    body.layer3{
+      background: linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%);
+    }
+    body.layer3 h1,
+    body.layer3 .breadcrumb,
+    body.layer3 #footerLink,
+    body.layer3 .err,
+    body.layer3 .loading{
+      display:none !important;
+    }
+    body.layer3 .wrap{
+      max-width:none;
+      padding:0;
+    }
+    #chapterView{
+      max-width:900px;margin:20px auto 0;background:white;
+      padding:40px;border-radius:12px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    }
+    .ch-title{
+      font-size:2.2em;color:#2c3e50;font-weight:bold;
+      font-family:"Microsoft JhengHei","Segoe UI",Arial,sans-serif;
+      border-bottom:3px solid var(--blue);
+      padding-bottom:15px;margin-bottom:10px;
+      cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .ch-title:hover{color:var(--blue);}
+    .bible-icon{margin-left:15px;transition:transform 0.3s ease;}
+    .bible-icon.open{transform:rotateY(180deg);}
+    .ch-subtitle{
+      font-size:1.2em;color:#7f8c8d;font-weight:bold;
+      text-align:center;margin-bottom:30px;
+    }
+    .scripture-text{
+      display:none;background:#f8f9fa;border-left:4px solid var(--blue);
+      padding:20px;line-height:2;max-height:500px;overflow-y:auto;
+      border-radius:4px;margin-bottom:20px;
+    }
+    .scripture-text.show{display:block;}
+    .verse{margin-bottom:10px;}
+    .verse-number{color:var(--blue);font-weight:bold;margin-right:8px;}
+    details{
+      margin:20px 0;border:2px solid #e0e0e0;border-radius:8px;
+      padding:15px;background:#fafafa;transition:all 0.3s ease;
+    }
+    details:hover{border-color:var(--blue);box-shadow:0 2px 8px rgba(52,152,219,0.2);}
+    details[open]{background:#f0f8ff;border-color:var(--blue);}
+    summary{
+      font-size:1.2em;font-weight:bold;color:#2980b9;cursor:pointer;
+      padding:10px;list-style:none;position:relative;padding-left:30px;
+    }
+    summary::-webkit-details-marker{display:none;}
+    summary::before{content:'▶';position:absolute;left:10px;transition:transform 0.3s ease;}
+    details[open] summary::before{transform:rotate(90deg);}
+    summary:hover{color:var(--blue);}
+    .ch-content{margin-top:15px;padding:15px;line-height:1.9;}
+    table{width:100%;border-collapse:collapse;margin-top:20px;}
+    th{background:var(--blue);color:white;padding:15px;font-size:1.1em;text-align:left;}
+    td{padding:15px;border:1px solid #ddd;vertical-align:top;}
+    tr:nth-child(even){background:#f9f9f9;}
+    tr:hover{background:#f0f8ff;}
+    strong{color:#c0392b;font-weight:bold;}
+    .ch-footer{
+      margin-top:40px;padding:20px 0 5px;
+      border-top:1px solid #e0e0e0;
+      text-align:center;font-size:0.85em;color:#999;line-height:2;
+    }
+    .ch-footer-link{
+      display:inline-block;margin-top:8px;
+      color:#3498db;text-decoration:none;font-weight:bold;
+      border:1px solid #3498db;padding:6px 18px;border-radius:20px;
+      font-size:15px;transition:all 0.2s;
+    }
+    .ch-footer-link:hover{background:#3498db;color:white;}
+
+    /* ── 經文卡按鈕 ── */
+    .verse-card-btn-wrap{
+      text-align:center;
+      margin:28px 0 8px;
+    }
+    .verse-card-btn{
+      display:inline-flex;align-items:center;gap:8px;
+      background:linear-gradient(135deg,#1a6080,#0b7285);
+      color:#fff;font-size:16px;font-weight:700;
+      border:none;border-radius:30px;
+      padding:13px 32px;cursor:pointer;letter-spacing:.5px;
+      box-shadow:0 4px 14px rgba(11,114,133,0.35);
+      transition:all 0.2s;
+    }
+    .verse-card-btn:hover{
+      background:linear-gradient(135deg,#0b7285,#085a6e);
+      box-shadow:0 6px 20px rgba(11,114,133,0.45);
+      transform:translateY(-1px);
+    }
+
+    /* ── 經文卡 Modal ── */
+    #vcModal{
+      display:none;position:fixed;inset:0;z-index:9999;
+      background:rgba(0,0,0,0.55);
+      align-items:center;justify-content:center;
+      padding:16px;
+    }
+    #vcModal.show{ display:flex; }
+    #vcModalInner{
+      background:#DDE8F0;
+      border-radius:28px;padding:0 0 12px;
+      max-width:380px;width:100%;
+      max-height:90vh;overflow-y:auto;
+      box-shadow:0 20px 60px rgba(0,0,0,0.3);
+      animation:vcSlideIn 0.28s ease;
+    }
+    @keyframes vcSlideIn{
+      from{transform:translateY(30px);opacity:0;}
+      to{transform:translateY(0);opacity:1;}
+    }
+    #vcModalClose{
+      position:absolute;top:12px;right:16px;
+      font-size:22px;cursor:pointer;color:#fff;
+      background:rgba(0,0,0,0.35);border:none;
+      border-radius:50%;width:34px;height:34px;
+      display:flex;align-items:center;justify-content:center;
+      z-index:10000;transition:background 0.2s;
+    }
+    #vcModalClose:hover{background:rgba(0,0,0,0.6);}
+
+    /* ── 經文卡 iframe ── */
+    #vcFrame{
+      width:100%;border:none;border-radius:20px;
+      height:400px;display:block;   /* 初始高度，JS 會動態撐高 */
+      background:transparent;
+      overflow:hidden;
+    }
+
+    .err{margin-top:10px;color:#b00020;font-size:13px;display:none;}
+    .loading{margin-top:12px;text-align:center;color:var(--muted);font-size:13px;}
+    .title2{font-size:18px;font-weight:700;margin-bottom:12px;}
+
+    @media(max-width:768px){
+      #chapterView{padding:20px;}
+      .ch-title{font-size:1.6em;}
+      .ch-subtitle{font-size:1em;}
+      table{font-size:0.9em;}
+      th,td{padding:10px;}
+      summary{font-size:1em;}
+    }
+    @media(max-width:640px){
+      .grid{width:100%;}
+      .chapGrid{grid-template-columns:repeat(6,1fr);}
+      .cell{height:46px;font-size:18px;}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>每日讀經方陣｜聖經經卷查詢</h1>
+  <div class="breadcrumb" id="breadcrumb"></div>
+  <div class="err" id="err"></div>
+  <div class="loading" id="loading">載入資料中…</div>
+
+  <!-- 第一層：書卷矩陣 -->
+  <div id="booksView">
+    <div class="panel">
+      <div class="sectionTitle">舊約</div>
+      <div class="grid" id="otGrid"></div>
+    </div>
+    <div class="panel" style="margin-top:14px;">
+      <div class="sectionTitle">新約</div>
+      <div class="grid" id="ntGrid"></div>
+    </div>
+  </div>
+
+  <!-- 第二層：章次選擇 -->
+  <div id="chaptersView" style="display:none;">
+    <div class="panel">
+      <div class="title2" id="chapTitle"></div>
+      <div class="chapGrid" id="chapGrid"></div>
+    </div>
+  </div>
+
+  <!-- 第三層：章節內容 -->
+  <div id="chapterView" style="display:none;">
+    <div class="ch-title" id="chTitle" onclick="toggleScripture()">
+      <span id="chTitleText"></span>
+      <span id="bibleIcon" class="bible-icon">📕</span>
+    </div>
+    <div class="ch-subtitle" id="chSubtitle"></div>
+    <div id="scriptureText" class="scripture-text"></div>
+    <details>
+      <summary>背景簡介</summary>
+      <div class="ch-content" id="chBg"></div>
+    </details>
+    <details>
+      <summary>核心屬靈意涵</summary>
+      <div class="ch-content" id="chCore"></div>
+    </details>
+    <details open>
+      <summary>重點經文與思想題目</summary>
+      <div class="ch-content">
+        <table>
+          <thead><tr><th>經文</th><th>思想題目</th></tr></thead>
+          <tbody id="chTable"></tbody>
+        </table>
+      </div>
+    </details>
+
+    <!-- ── 經文卡按鈕 ── -->
+    <div class="verse-card-btn-wrap" id="vcBtnWrap" style="display:none;">
+      <button class="verse-card-btn" onclick="openVerseCard()">
+        💎 本章經文卡 
+      </button>
+    </div>
+
+    <div class="ch-footer">
+      <div><em>Content is user-generated by Claude and unverified.</em></div>
+      <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v7.html"
+         target="_blank" class="ch-footer-link">📖 每日讀經方陣｜聖經經卷查詢</a>
+    </div>
+  </div>
+
+  <div id="footerLink" style="margin-top:28px;text-align:center;padding-bottom:24px;display:flex;flex-direction:column;align-items:center;gap:12px;">
+    <a href="https://jaoccjames.github.io/bible-reading-matrix/index_v7.html"
+       target="_blank"
+       style="color:#3498db;text-decoration:none;font-weight:bold;border:1px solid #3498db;padding:6px 18px;border-radius:20px;font-size:15px;"
+       onmouseover="this.style.background='#3498db';this.style.color='white'"
+       onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+    >📖 每日讀經方陣｜聖經經卷查詢</a>
+    <a href="https://jaoccjames.github.io/bible-reading-matrix/g1.html"
+       target="_blank"
+       style="color:#3498db;text-decoration:none;font-weight:bold;border:1px solid #3498db;padding:6px 18px;border-radius:20px;font-size:15px;"
+       onmouseover="this.style.background='#3498db';this.style.color='white'"
+       onmouseout="this.style.background='transparent';this.style.color='#3498db'"
+    >📖 新朋友4週入門讀經 (測試版)</a>
+  </div>
+</div>
+
+<!-- ── 經文卡 Modal ── -->
+<div id="vcModal">
+  <div style="position:relative;max-width:400px;width:100%;">
+    <button id="vcModalClose" onclick="closeVerseCard()">✕</button>
+    <div id="vcModalInner">
+      <!-- 經文卡內容由 card_v1.html 負責渲染（含下載按鈕） -->
+      <iframe id="vcFrame" src="" title="經文卡"></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── 路徑設定 ──────────────────────────────────────────────────────────────────
+const RAW = 'https://cdn.jsdelivr.net/gh/jaoccjames/bible-reading-matrix@main/data';
+const FILE_CATALOG    = RAW + '/' + encodeURIComponent('每日讀經方陣_聖經目錄_V1腓立比.csv');
+const FILE_STUDY      = RAW + '/' + encodeURIComponent('聖經研讀資料匯出_全部_V2(較高品質新約各章背景簡介_彼得前後書).csv');
+// ─────────────────────────────────────────────────────────────────────────────
+
+const ABBR = {
+  '創世記':'創','出埃及記':'出','利未記':'利','民數記':'民','申命記':'申',
+  '約書亞記':'書','士師記':'士','路得記':'得',
+  '撒母耳記上':'撒上','撒母耳記下':'撒下','列王紀上':'王上','列王紀下':'王下',
+  '歷代志上':'代上','歷代志下':'代下','以斯拉記':'拉','尼希米記':'尼','以斯帖記':'斯',
+  '約伯記':'伯','詩篇':'詩','箴言':'箴','傳道書':'傳','雅歌':'歌',
+  '以賽亞書':'賽','耶利米書':'耶','耶利米哀歌':'哀','以西結書':'結','但以理書':'但',
+  '何西阿書':'何','約珥書':'珥','阿摩司書':'摩','俄巴底亞書':'俄','約拿書':'拿',
+  '彌迦書':'彌','那鴻書':'鴻','哈巴谷書':'哈','西番雅書':'番','哈該書':'該',
+  '撒迦利亞書':'亞','瑪拉基書':'瑪',
+  '馬太福音':'太','馬可福音':'可','路加福音':'路','約翰福音':'約',
+  '使徒行傳':'徒','羅馬書':'羅','哥林多前書':'林前','哥林多後書':'林後',
+  '加拉太書':'加','以弗所書':'弗','腓立比書':'腓','歌羅西書':'西',
+  '帖撒羅尼迦前書':'帖前','帖撒羅尼迦後書':'帖後',
+  '提摩太前書':'提前','提摩太後書':'提後',
+  '提多書':'多','腓利門書':'門','希伯來書':'來','雅各書':'雅',
+  '彼得前書':'彼前','彼得後書':'彼後',
+  '約翰壹書':'約壹','約翰貳書':'約貳','約翰參書':'約參',
+  '猶大書':'猶','啟示錄':'啟'
+};
+
+
+let catalog    = [];
+let studyData  = {};
+let bibleCache = {};
+let currentBook = null;
+let currentCh   = null;
+
+const $ = id => document.getElementById(id);
+
+// ── 資料載入 ──────────────────────────────────────────────────────────────────
+async function fetchText(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error('HTTP ' + r.status + ': ' + url);
+  return r.text();
+}
+async function fetchJSON(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error('HTTP ' + r.status + ': ' + url);
+  return r.json();
+}
+function parseCSV(text, onRow) {
+  return new Promise((resolve, reject) => {
+    Papa.parse(text, {
+      header: true, skipEmptyLines: true,
+      complete: ({ data }) => { onRow(data); resolve(); },
+      error: reject
+    });
+  });
+}
+
+async function init() {
+  try {
+    const [catText, studyText] = await Promise.all([
+      fetchText(FILE_CATALOG),
+      fetchText(FILE_STUDY),
+    ]);
+
+    await parseCSV(catText, rows => {
+      catalog = rows
+        .filter(r => r['卷次'] && !isNaN(+r['卷次']))
+        .map(r => ({
+          n:  +r['卷次'], zh: r['中文卷名'],
+          ab: r['中文縮寫'], en: r['英文卷名'],
+          ch: +r['章數'], nt: +r['卷次'] >= 40
+        }));
+    });
+
+    const re = /^(\d+).+?第0*(\d+)[章篇]$/;
+    await parseCSV(studyText, rows => {
+      for (const r of rows) {
+        const m = (r['卷章名'] || '').match(re);
+        if (!m) continue;
+        studyData[+m[1] + '_' + +m[2]] = {
+          title: r['章標題']       || '',
+          bg:    r['背景簡介']     || '',
+          core:  r['核心屬靈意涵'] || '',
+          v1: r['重點經文_1']||'', q1: r['思想題目_1']||'',
+          v2: r['重點經文_2']||'', q2: r['思想題目_2']||'',
+          v3: r['重點經文_3']||'', q3: r['思想題目_3']||'',
+        };
+      }
+    });
+
+
+    $('loading').style.display = 'none';
+    renderBooks();
+  } catch(e) {
+    $('loading').style.display = 'none';
+    $('err').style.display = 'block';
+    $('err').textContent = '⚠️ 無法載入資料：' + e.message;
+    throw e;
+  }
+}
+
+// ── 層切換 ────────────────────────────────────────────────────────────────────
+function showLayer(layer) {
+  $('booksView').style.display    = layer === 1 ? '' : 'none';
+  $('chaptersView').style.display = layer === 2 ? '' : 'none';
+  $('chapterView').style.display  = layer === 3 ? '' : 'none';
+  $('footerLink').style.display   = layer === 1 ? '' : 'none';
+  document.body.classList.toggle('layer3', layer === 3);
+}
+
+function renderBreadcrumb(layer) {
+  $('breadcrumb').innerHTML = '';
+}
+
+// ── 第一層 ────────────────────────────────────────────────────────────────────
+function renderBooks() {
+  fillGrid('otGrid', catalog.filter(b => !b.nt));
+  fillGrid('ntGrid', catalog.filter(b =>  b.nt));
+  showLayer(1);
+}
+function fillGrid(id, books) {
+  const grid = $(id);
+  grid.innerHTML = '';
+  const padTo = Math.ceil(books.length / 5) * 5;
+  for (let i = 0; i < padTo; i++) {
+    const cell = document.createElement('div');
+    if (!books[i]) {
+      cell.className = 'cell pad';
+    } else {
+      const b = books[i];
+      cell.className = 'cell';
+      cell.textContent = ABBR[b.zh] || b.zh;
+      cell.title = b.zh;
+      cell.onclick = () => goLayer2(b);
+    }
+    grid.appendChild(cell);
+  }
+}
+function goLayer1() {
+  currentBook = null; currentCh = null;
+  showLayer(1);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── 第二層 ────────────────────────────────────────────────────────────────────
+function goLayer2(b) {
+  if (b) currentBook = b;
+  if (!currentBook) return;
+  $('chapTitle').textContent = currentBook.zh + '（' + (ABBR[currentBook.zh] || currentBook.ab) + '）— 請選章次';
+  const grid = $('chapGrid');
+  grid.innerHTML = '';
+  for (let c = 1; c <= currentBook.ch; c++) {
+    const d = document.createElement('div');
+    d.className = 'chap';
+    d.textContent = c;
+    d.onclick = () => goLayer3(c);
+    grid.appendChild(d);
+  }
+  showLayer(2);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── 第三層 ────────────────────────────────────────────────────────────────────
+async function goLayer3(ch) {
+  currentCh = ch;
+  const bk = currentBook.n;
+  const sd = studyData[bk + '_' + ch] || {};
+
+  $('chTitleText').textContent = currentBook.zh + '第' + ch + '章';
+  $('bibleIcon').textContent = '📕';
+  $('scriptureText').innerHTML = '載入經文中…';
+  $('scriptureText').classList.remove('show');
+  $('chSubtitle').textContent = sd.title || '';
+  $('chBg').textContent  = sd.bg   || '（暫無資料）';
+  $('chCore').innerHTML  = formatSpiritualContent(sd.core || '（暫無資料）');
+
+  const pairs = [
+    { v: sd.v1, q: sd.q1 },
+    { v: sd.v2, q: sd.q2 },
+    { v: sd.v3, q: sd.q3 }
+  ].filter(p => p.v && p.v !== 'nan' && p.v.trim());
+
+  $('chTable').innerHTML = pairs.length
+    ? pairs.map(p =>
+        '<tr><td>' + autoHighlightVerse(p.v) + '</td><td>' + escHtml(p.q) + '</td></tr>'
+      ).join('')
+    : '<tr><td colspan="2">（暫無資料）</td></tr>';
+
+  // 經文卡按鈕：只要進入第三層就顯示
+  $('vcBtnWrap').style.display = '';
+
+  showLayer(3);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  try {
+    if (!bibleCache[bk]) {
+      bibleCache[bk] = await fetchJSON(RAW + '/' + String(bk).padStart(2,'0') + '.json');
+    }
+    const verses = bibleCache[bk][String(ch)] || [];
+    $('scriptureText').innerHTML = verses.map(v =>
+      '<div class="verse"><span class="verse-number">' + v.v + '</span>' + escHtml(v.t) + '</div>'
+    ).join('');
+  } catch(e) {
+    $('scriptureText').innerHTML = '⚠️ 經文載入失敗：' + escHtml(e.message);
+  }
+}
+
+function toggleScripture() {
+  const t = $('scriptureText');
+  const i = $('bibleIcon');
+  t.classList.toggle('show');
+  const open = t.classList.contains('show');
+  i.textContent = open ? '📖' : '📕';
+  i.classList.toggle('open', open);
+}
+
+// ── iframe 高度自動調整（接收 card_v1 回報的內容高度）────────────────────────
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'vcCardHeight') {
+    const frame = $('vcFrame');
+    if (frame) frame.style.height = e.data.height + 'px';
+  }
+});
+
+// ── 經文卡 Modal（iframe 版）────────────────────────────────────────────────
+const CARD_PAGE = 'card_v1.html';   // 與 index_v7.html 同目錄
+
+function openVerseCard() {
+  const bookName = currentBook ? currentBook.zh : '';
+  const ch = currentCh;
+  const src = CARD_PAGE + '?book=' + encodeURIComponent(bookName) + '&ch=' + ch;
+  const frame = $('vcFrame');
+  frame.style.height = '400px';   // 重設初始高度
+  frame.src = src;
+  $('vcModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeVerseCard() {
+  $('vcModal').classList.remove('show');
+  document.body.style.overflow = '';
+  // 清空 iframe，避免背景仍在跑
+  setTimeout(() => { $('vcFrame').src = ''; }, 300);
+}
+
+// 點 modal 背景關閉
+$('vcModal').addEventListener('click', function(e) {
+  if (e.target === this) closeVerseCard();
+});
+
+// ── 工具函式 ──────────────────────────────────────────────────────────────────
+function formatSpiritualContent(raw) {
+  const stripped = raw.trim();
+  let parts = [];
+  if (/^\d+\.\s*【/.test(stripped)) {
+    const segs = stripped.split(/(\d+\.\s*【[^】]+】)/);
+    for (let i = 1; i < segs.length; i += 2) {
+      const header = segs[i].trim();
+      const body   = (segs[i+1] || '').trim().replace(/^\n+|\n+$/g,'');
+      parts.push('<strong>' + escHtml(header) + '</strong><br>' + escHtml(body));
+    }
+  } else {
+    const segs = stripped.split(/(\d+\.\s)/);
+    for (let i = 1; i < segs.length; i += 2) {
+      const numDot = segs[i];
+      const lines  = (segs[i+1] || '').split('\n');
+      parts.push('<strong>' + escHtml(numDot + lines[0].trim()) + '</strong><br>' +
+                 escHtml(lines.slice(1).join('\n').trim()));
+    }
+  }
+  return parts.join('<br><br>\n');
+}
+
+function autoHighlightVerse(verseText) {
+  const body = verseText.replace(/（[^）]+）|\([^\)]+\)/g,'').trim();
+  const kws  = (body.match(/[\u4e00-\u9fff]{3,8}/g) || []).slice(0,2);
+  let result = escHtml(verseText);
+  for (const kw of kws) {
+    result = result.replace(escHtml(kw), '<strong>' + escHtml(kw) + '</strong>');
+  }
+  return result;
+}
+
+function escHtml(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── URL 參數跳層 ──────────────────────────────────────────────────────────────
+async function handleUrlParams() {
+  const params    = new URLSearchParams(window.location.search);
+  const bookParam = params.get('book');
+  const nParam    = params.get('n');
+  const chParam   = params.get('ch');
+  if (!bookParam && !nParam) return;
+  let found = null;
+  if (nParam) {
+    found = catalog.find(b => b.n === +nParam);
+  } else if (bookParam) {
+    found = catalog.find(b => b.zh === bookParam)
+         || catalog.find(b => b.ab === bookParam)
+         || catalog.find(b => b.en === bookParam)
+         || catalog.find(b => b.zh.startsWith(bookParam));
+  }
+  if (!found) {
+    $('err').style.display = 'block';
+    $('err').textContent = '⚠️ 找不到書卷：' + (bookParam || 'n=' + nParam);
+    return;
+  }
+  currentBook = found;
+  if (chParam) {
+    await goLayer3(+chParam);
+  } else {
+    goLayer2(found);
+  }
+}
+
+init().then(handleUrlParams);
+</script>
+</body>
+</html>
